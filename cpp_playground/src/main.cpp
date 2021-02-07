@@ -1,6 +1,47 @@
-﻿#include <iostream>
+﻿#include <conio.h>
+#include <iostream>
+#include <sstream>
+#include <Windows.h>
+
+std::string MakeMenuString()
+{
+	std::stringstream ss;
+	ss << "+ Menu" << std::endl;
+	ss << "1 : add something" << std::endl;
+
+	ss << std::endl << "Press Number" << std::endl;
+
+	return std::string( ss.str() );
+}
+
+void ShowMenu()
+{
+	static std::string menu_string( std::move( MakeMenuString() ) );
+	std::cout << menu_string;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	system( "mode con lines=50 cols=120" );
+
+	int input = 0;
+	while( true )
+	{
+		ShowMenu();
+
+		input = _getch();
+		system( "cls" );
+
+		switch( input )
+		{
+		case 27: // ESC
+			return 0;
+		}
+
+		std::cout << std::endl << "Press Any Key" << std::endl;
+		_getch();
+		system( "cls" );
+	}
+
+	return 0;
 }
