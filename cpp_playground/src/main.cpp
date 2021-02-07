@@ -3,11 +3,13 @@
 #include <sstream>
 #include <Windows.h>
 
+#include "random_test_StatusSaveAndLoad.h"
+
 std::string MakeMenuString()
 {
 	std::stringstream ss;
 	ss << "+ Menu" << std::endl;
-	ss << "1 : add something" << std::endl;
+	ss << "1 : random_test::Status_Save_And_Load" << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -34,6 +36,10 @@ int main()
 
 		switch( input )
 		{
+		case '1':
+			random_test::StatusSaveAndLoad();
+			break;
+
 		case 27: // ESC
 			return 0;
 		}
