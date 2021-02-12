@@ -9,7 +9,7 @@ std::string MakeMenuString()
 {
 	std::stringstream ss;
 	ss << "+ Menu" << std::endl;
-	ss << "1 : random_test::Status_Save_And_Load" << std::endl;
+	ss << "1 : " << random_test::StatusSaveAndLoad::GetTitle() << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
