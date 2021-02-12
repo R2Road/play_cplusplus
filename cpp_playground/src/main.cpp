@@ -37,7 +37,7 @@ int main()
 		switch( input )
 		{
 		case '1':
-			random_test::StatusSaveAndLoad();
+			random_test::StatusSaveAndLoad::Do();
 			break;
 
 		case 27: // ESC

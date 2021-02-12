@@ -73,7 +73,7 @@ namespace random_test
 		std::cout << std::endl;
 	}
 
-	void StatusSaveAndLoad()
+	void StatusSaveAndLoad::Do()
 	{
 		Status_Save();
 		Status_Load();

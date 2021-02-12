@@ -2,5 +2,9 @@
 
 namespace random_test
 {
-	void StatusSaveAndLoad();
+	class  StatusSaveAndLoad
+	{
+	public:
+		static void Do();
+	};
 }
