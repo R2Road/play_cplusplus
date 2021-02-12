@@ -16,13 +16,16 @@ namespace random_test
 		std::mt19937 random_engine( rd() );
 		std::uniform_int_distribution<int> dist( 0, 999 );
 
-		std::cout << dist( random_engine ) << std::endl;
-		std::cout << dist( random_engine ) << std::endl;
-		std::cout << dist( random_engine ) << std::endl;
+		std::cout << "\t+ Make Random Engine & Test Output" << std::endl;
+		std::cout << "\t\t" << dist( random_engine ) << std::endl;
+		std::cout << "\t\t" << dist( random_engine ) << std::endl;
+		std::cout << "\t\t" << dist( random_engine ) << std::endl;
+		std::cout << std::endl;
 
 		//
 		// status save
 		//
+		std::cout << "\t+ Save : Current Random Status" << std::endl;
 		{
 			std::ofstream fs( "random_test_Status.dat" );
 			fs << random_engine;
@@ -37,12 +40,12 @@ namespace random_test
 		std::cout << std::endl;
 
 		{
-			std::cout << "+ Test Step 1" << std::endl;
+			std::cout << "\t+ Test Step 1" << std::endl;
 
 			std::ifstream ifs( "random_test_Status.dat" );
 			if( ifs.fail() )
 			{
-				std::cout << "    Failed : Need - random_test::Status_Save" << std::endl;
+				std::cout << "\t\tFailed : Need - random_test::Status_Save" << std::endl;
 				return;
 			}
 
@@ -50,23 +53,23 @@ namespace random_test
 			ifs >> random_engine;
 			std::uniform_int_distribution<int> dist( 0, 999 );
 
-			std::cout << dist( random_engine ) << std::endl;
-			std::cout << dist( random_engine ) << std::endl;
-			std::cout << dist( random_engine ) << std::endl;
+			std::cout << "\t\t" << dist( random_engine ) << std::endl;
+			std::cout << "\t\t" << dist( random_engine ) << std::endl;
+			std::cout << "\t\t" << dist( random_engine ) << std::endl;
 			std::cout << std::endl;
 		}
 
 		{
-			std::cout << "+ Test Step 2" << std::endl;
+			std::cout << "\t+ Test Step 2" << std::endl;
 
 			std::ifstream ifs( "random_test_Status.dat" );
 			std::mt19937 random_engine;
 			ifs >> random_engine;
 			std::uniform_int_distribution<int> dist( 0, 999 );
 
-			std::cout << dist( random_engine ) << std::endl;
-			std::cout << dist( random_engine ) << std::endl;
-			std::cout << dist( random_engine ) << std::endl;
+			std::cout << "\t\t" << dist( random_engine ) << std::endl;
+			std::cout << "\t\t" << dist( random_engine ) << std::endl;
+			std::cout << "\t\t" << dist( random_engine ) << std::endl;
 			std::cout << std::endl;
 		}
 
