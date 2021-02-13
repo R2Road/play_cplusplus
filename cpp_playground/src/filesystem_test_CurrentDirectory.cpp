@@ -47,8 +47,20 @@ namespace
 	{
 		std::cout << "== Directory Iterator ==" << std::endl;
 
+		std::cout << "\t" << "+ Directory : " << std::endl;
+		std::cout << "\t\t" << std::filesystem::current_path() << std::endl;
+		std::cout << std::endl;
+
+		std::cout << "\t" << "+ View" << std::endl;
 		std::filesystem::directory_iterator itr( std::filesystem::current_path() );
 		for( auto i : itr )
+		{
+			std::cout << "\t\t" << i.path() << std::endl;
+			std::cout << "\t\t\t" << ( std::filesystem::is_regular_file( i.path() ) ? "file" : "directory" ) << std::endl;
+		}
+
+		std::cout << std::endl;
+	}
 		{
 			std::cout << "\t" << i.path() << std::endl;
 		}
