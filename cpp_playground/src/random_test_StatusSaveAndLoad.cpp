@@ -89,6 +89,9 @@ namespace random_test
 	void StatusSaveAndLoad::Do()
 	{
 		Status_Save();
+
+		std::cout << std::endl << std::endl;
+
 		Status_Load();
 	}
 }
