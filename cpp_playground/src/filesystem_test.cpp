@@ -22,24 +22,6 @@ namespace
 
 		std::cout << "\t" << cwd2 << std::endl;
 		std::cout << std::endl;
-
-
-
-		std::cout << "== Append, Operator / ==" << std::endl;
-
-		cwd /= "test.txt";
-
-		std::cout << "\t" << cwd << std::endl;
-		std::cout << std::endl;
-
-
-
-		std::cout << "== Remove File Name ==" << std::endl;
-
-		cwd.remove_filename();
-
-		std::cout << "\t" << cwd << std::endl;
-		std::cout << std::endl;
 	}
 
 	void TestDirectoryIterator()
@@ -73,6 +55,34 @@ namespace
 
 		std::cout << std::endl;
 	}
+
+	void TestPathOperation()
+	{
+		std::cout << "== Path Operation ==" << std::endl;
+
+		std::filesystem::path cwd = std::filesystem::current_path();
+		std::cout << "\t" << "+ Directory : " << std::endl;
+		std::cout << "\t\t" << cwd << std::endl;
+		std::cout << std::endl;
+
+
+
+		std::cout << "\t" << "+ Append, Operator /" << std::endl;
+
+		cwd /= "test.txt";
+
+		std::cout << "\t\t" << cwd << std::endl;
+		std::cout << std::endl;
+
+
+
+		std::cout << "\t" << "+ Remove File Name" << std::endl;
+
+		cwd.remove_filename();
+
+		std::cout << "\t\t" << cwd << std::endl;
+		std::cout << std::endl;
+	}
 }
 
 namespace filesystem_test
@@ -88,5 +98,9 @@ namespace filesystem_test
 		std::cout << std::endl << std::endl;
 
 		TestRecursiveDirectoryIterator();
+
+		std::cout << std::endl << std::endl;
+
+		TestPathOperation();
 	}
 }
