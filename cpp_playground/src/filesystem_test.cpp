@@ -9,19 +9,19 @@ namespace
 	{
 		std::cout << "== Current Directory ==" << std::endl;
 
-		std::filesystem::path cwd = std::filesystem::current_path();
+		std::filesystem::path p = std::filesystem::current_path();
 
-		std::cout << "\t" << cwd << std::endl;
+		std::cout << "\t" << p << std::endl;
 		std::cout << std::endl;
 
 
 
 		std::cout << "== Temp Directory ==" << std::endl;
 
-		std::filesystem::path cwd2 = std::filesystem::temp_directory_path();
+		std::filesystem::path p2 = std::filesystem::temp_directory_path();
 
-		std::cout << "\t" << cwd2 << std::endl;
-		std::cout << std::endl;
+		std::cout << "\t" << p2 << std::endl;
+		std::cout << std::endl;	
 	}
 
 	void TestDirectoryIterator()
@@ -60,27 +60,27 @@ namespace
 	{
 		std::cout << "== Path Operation ==" << std::endl;
 
-		std::filesystem::path cwd = std::filesystem::current_path();
+		std::filesystem::path p = std::filesystem::current_path();
 		std::cout << "\t" << "+ Directory : " << std::endl;
-		std::cout << "\t\t" << cwd << std::endl;
+		std::cout << "\t\t" << p << std::endl;
 		std::cout << std::endl;
 
 
 
 		std::cout << "\t" << "+ Append, Operator /" << std::endl;
 
-		cwd /= "test.txt";
+		p /= "test.txt";
 
-		std::cout << "\t\t" << cwd << std::endl;
+		std::cout << "\t\t" << p << std::endl;
 		std::cout << std::endl;
 
 
 
 		std::cout << "\t" << "+ Remove File Name" << std::endl;
 
-		cwd.remove_filename();
+		p.remove_filename();
 
-		std::cout << "\t\t" << cwd << std::endl;
+		std::cout << "\t\t" << p << std::endl;
 		std::cout << std::endl;
 	}
 }
