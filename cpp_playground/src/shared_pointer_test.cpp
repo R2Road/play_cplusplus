@@ -3,9 +3,9 @@
 #include <iostream>
 #include <memory>
 
-namespace shared_pointer_test
+namespace
 {
-	void SharedPtr::Do()
+	void Test1()
 	{
 		std::cout << "== Shared Pointer ==" << std::endl;
 
@@ -19,7 +19,11 @@ namespace shared_pointer_test
 		*test_sp_2 = 11;
 		std::cout << "\t" << "+ Change Value with Const Sp" << std::endl;
 		std::cout << "\t\t" << *test_sp_2 << std::endl;
+	}
 
+	void Test2()
+	{
+		std::cout << "== Shared Pointer Has Const Value ==" << std::endl;
 
 		std::shared_ptr<const int> const_test_sp( new int( 10 ) );
 		std::cout << "\t" << "+ Make Sp Has Const Value" << std::endl;
@@ -28,5 +32,17 @@ namespace shared_pointer_test
 		//*const_test_sp = 11;
 		//std::cout << "\t" << "+ Change Value with Sp Has Const Value" << std::endl;
 		//std::cout << "\t\t" << *const_test_sp << std::endl;
+	}
+}
+
+namespace shared_pointer_test
+{
+	void SharedPtr::Do()
+	{
+		Test1();
+
+		std::cout << std::endl << std::endl;
+
+		Test2();
 	}
 }
