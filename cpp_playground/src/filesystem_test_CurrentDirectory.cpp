@@ -3,9 +3,9 @@
 #include <filesystem>
 #include <iostream>
 
-namespace filesystem_test
+namespace
 {
-	void CurrentDirectory::Do()
+	void TestCurrentDirectory()
 	{
 		std::cout << "== Current Directory ==" << std::endl;
 
@@ -31,5 +31,13 @@ namespace filesystem_test
 
 		std::cout << "\t" << cwd << std::endl;
 		std::cout << std::endl;
+	}
+}
+
+namespace filesystem_test
+{
+	void CurrentDirectory::Do()
+	{
+		TestCurrentDirectory();
 	}
 }
