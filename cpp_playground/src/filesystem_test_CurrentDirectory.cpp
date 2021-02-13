@@ -42,6 +42,19 @@ namespace
 		std::cout << "\t" << cwd << std::endl;
 		std::cout << std::endl;
 	}
+
+	void TestDirectoryIterator()
+	{
+		std::cout << "== Directory Iterator ==" << std::endl;
+
+		std::filesystem::directory_iterator itr( std::filesystem::current_path() );
+		for( auto i : itr )
+		{
+			std::cout << "\t" << i.path() << std::endl;
+		}
+
+		std::cout << std::endl;
+	}
 }
 
 namespace filesystem_test
@@ -53,5 +66,9 @@ namespace filesystem_test
 		std::cout << std::endl << std::endl;
 
 		TestTempDirectory();
+
+		std::cout << std::endl << std::endl;
+
+		TestDirectoryIterator();
 	}
 }
