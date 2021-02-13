@@ -4,7 +4,7 @@
 #include <Windows.h>
 
 #include "filesystem_test.h"
-#include "random_test_StatusSaveAndLoad.h"
+#include "random_test.h"
 #include "shared_pointer_test.h"
 
 

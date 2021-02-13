@@ -1,4 +1,4 @@
-#include "random_test_StatusSaveAndLoad.h"
+#include "random_test.h"
 
 #include <filesystem>
 #include <fstream>
