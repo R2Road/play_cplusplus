@@ -12,10 +12,10 @@
     <ClCompile Include="src\random_test_StatusSaveAndLoad.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\filesystem_test_CurrentDirectory.cpp">
+    <ClCompile Include="src\shared_pointer_test.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\shared_pointer_test.cpp">
+    <ClCompile Include="src\filesystem_test.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -23,10 +23,10 @@
     <ClInclude Include="src\random_test_StatusSaveAndLoad.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\filesystem_test_CurrentDirectory.h">
+    <ClInclude Include="src\shared_pointer_test.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\shared_pointer_test.h">
+    <ClInclude Include="src\filesystem_test.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

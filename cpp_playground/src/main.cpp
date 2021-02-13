@@ -3,7 +3,7 @@
 #include <sstream>
 #include <Windows.h>
 
-#include "filesystem_test_CurrentDirectory.h"
+#include "filesystem_test.h"
 #include "random_test_StatusSaveAndLoad.h"
 #include "shared_pointer_test.h"
 
