@@ -1,9 +1,19 @@
 #include "random_test_StatusSaveAndLoad.h"
 
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <random>
-#include <cassert>
+#include <string>
+
+namespace
+{
+	const char* GetFilePath()
+	{
+		static std::string temp_string = ( std::filesystem::current_path() / "Debug" / "random_test_Status.dat" ).string();
+		return temp_string.c_str();
+	}
+}
 
 namespace random_test
 {
@@ -27,7 +37,7 @@ namespace random_test
 		//
 		std::cout << "\t+ Save : Current Random Status" << std::endl;
 		{
-			std::ofstream fs( "random_test_Status.dat" );
+			std::ofstream fs( GetFilePath() );
 			fs << random_engine;
 		}
 
@@ -42,7 +52,7 @@ namespace random_test
 		{
 			std::cout << "\t+ Test Step 1" << std::endl;
 
-			std::ifstream ifs( "random_test_Status.dat" );
+			std::ifstream ifs( GetFilePath() );
 			if( ifs.fail() )
 			{
 				std::cout << "\t\tFailed : Need - random_test::Status_Save" << std::endl;
@@ -62,7 +72,7 @@ namespace random_test
 		{
 			std::cout << "\t+ Test Step 2" << std::endl;
 
-			std::ifstream ifs( "random_test_Status.dat" );
+			std::ifstream ifs( GetFilePath() );
 			std::mt19937 random_engine;
 			ifs >> random_engine;
 			std::uniform_int_distribution<int> dist( 0, 999 );
