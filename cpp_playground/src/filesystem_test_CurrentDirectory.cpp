@@ -32,6 +32,16 @@ namespace
 		std::cout << "\t" << cwd << std::endl;
 		std::cout << std::endl;
 	}
+
+	void TestTempDirectory()
+	{
+		std::cout << "== Temp Directory ==" << std::endl;
+
+		std::filesystem::path cwd = std::filesystem::temp_directory_path();
+
+		std::cout << "\t" << cwd << std::endl;
+		std::cout << std::endl;
+	}
 }
 
 namespace filesystem_test
@@ -39,5 +49,9 @@ namespace filesystem_test
 	void CurrentDirectory::Do()
 	{
 		TestCurrentDirectory();
+
+		std::cout << std::endl << std::endl;
+
+		TestTempDirectory();
 	}
 }
