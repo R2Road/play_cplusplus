@@ -5,13 +5,22 @@
 
 namespace
 {
-	void TestCurrentDirectory()
+	void TestGetDirectoryPath()
 	{
 		std::cout << "== Current Directory ==" << std::endl;
 
 		std::filesystem::path cwd = std::filesystem::current_path();
 
 		std::cout << "\t" << cwd << std::endl;
+		std::cout << std::endl;
+
+
+
+		std::cout << "== Temp Directory ==" << std::endl;
+
+		std::filesystem::path cwd2 = std::filesystem::temp_directory_path();
+
+		std::cout << "\t" << cwd2 << std::endl;
 		std::cout << std::endl;
 
 
@@ -28,16 +37,6 @@ namespace
 		std::cout << "== Remove File Name ==" << std::endl;
 
 		cwd.remove_filename();
-
-		std::cout << "\t" << cwd << std::endl;
-		std::cout << std::endl;
-	}
-
-	void TestTempDirectory()
-	{
-		std::cout << "== Temp Directory ==" << std::endl;
-
-		std::filesystem::path cwd = std::filesystem::temp_directory_path();
 
 		std::cout << "\t" << cwd << std::endl;
 		std::cout << std::endl;
@@ -80,11 +79,7 @@ namespace filesystem_test
 {
 	void CurrentDirectory::Do()
 	{
-		TestCurrentDirectory();
-
-		std::cout << std::endl << std::endl;
-
-		TestTempDirectory();
+		TestGetDirectoryPath();
 
 		std::cout << std::endl << std::endl;
 
