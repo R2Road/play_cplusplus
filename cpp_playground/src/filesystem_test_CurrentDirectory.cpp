@@ -61,6 +61,13 @@ namespace
 
 		std::cout << std::endl;
 	}
+
+	void TestRecursiveDirectoryIterator()
+	{
+		std::cout << "== Recursive Directory Iterator ==" << std::endl;
+
+		std::filesystem::recursive_directory_iterator itr( std::filesystem::current_path() / "src" );
+		for( auto i : itr )
 		{
 			std::cout << "\t" << i.path() << std::endl;
 		}
@@ -82,5 +89,9 @@ namespace filesystem_test
 		std::cout << std::endl << std::endl;
 
 		TestDirectoryIterator();
+
+		std::cout << std::endl << std::endl;
+
+		TestRecursiveDirectoryIterator();
 	}
 }
