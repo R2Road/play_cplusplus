@@ -15,12 +15,18 @@
     <ClCompile Include="src\filesystem_test_CurrentDirectory.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\shared_pointer_test.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\random_test_StatusSaveAndLoad.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\filesystem_test_CurrentDirectory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared_pointer_test.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

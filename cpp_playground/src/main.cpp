@@ -3,8 +3,9 @@
 #include <sstream>
 #include <Windows.h>
 
-#include "random_test_StatusSaveAndLoad.h"
 #include "filesystem_test_CurrentDirectory.h"
+#include "random_test_StatusSaveAndLoad.h"
+#include "shared_pointer_test.h"
 
 
 std::string MakeMenuString()
@@ -13,6 +14,7 @@ std::string MakeMenuString()
 	ss << "+ Menu" << std::endl;
 	ss << "1 : " << filesystem_test::CurrentDirectory::GetTitle() << std::endl;
 	ss << "2 : " << random_test::StatusSaveAndLoad::GetTitle() << std::endl;
+	ss << "3 : " << shared_pointer_test::SharedPtr::GetTitle() << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -44,6 +46,9 @@ int main()
 			break;
 		case '2':
 			random_test::StatusSaveAndLoad::Do();
+			break;
+		case '3':
+			shared_pointer_test::SharedPtr::Do();
 			break;
 
 		case 27: // ESC
