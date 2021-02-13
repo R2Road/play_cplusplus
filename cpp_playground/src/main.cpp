@@ -4,12 +4,15 @@
 #include <Windows.h>
 
 #include "random_test_StatusSaveAndLoad.h"
+#include "filesystem_test_CurrentDirectory.h"
+
 
 std::string MakeMenuString()
 {
 	std::stringstream ss;
 	ss << "+ Menu" << std::endl;
-	ss << "1 : " << random_test::StatusSaveAndLoad::GetTitle() << std::endl;
+	ss << "1 : " << filesystem_test::CurrentDirectory::GetTitle() << std::endl;
+	ss << "2 : " << random_test::StatusSaveAndLoad::GetTitle() << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -37,6 +40,9 @@ int main()
 		switch( input )
 		{
 		case '1':
+			filesystem_test::CurrentDirectory::Do();
+			break;
+		case '2':
 			random_test::StatusSaveAndLoad::Do();
 			break;
 

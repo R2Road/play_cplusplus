@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\filesystem_test_CurrentDirectory.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\random_test_StatusSaveAndLoad.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\filesystem_test_CurrentDirectory.h" />
     <ClInclude Include="src\random_test_StatusSaveAndLoad.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
