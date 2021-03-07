@@ -94,6 +94,18 @@ namespace
 	{
 		static constexpr const char c = '0' + U;
 	};
+
+	template<int N>
+	struct CalculatePlaceValue
+	{
+		static constexpr size_t place_value = ( N > 0 ? 1 : 0 ) + CalculatePlaceValue<N/10>::place_value;
+	};
+
+	template<>
+	struct CalculatePlaceValue<0>
+	{
+		static constexpr size_t place_value = 0;
+	};
 }
 namespace template_meta_programming_test
 {
@@ -131,6 +143,19 @@ namespace template_meta_programming_test
 			std::cout << "\t" << "+ << ConvertUnits2Character<10>::c" << std::endl;
 
 			std::cout << "\t\t" << "result : " << ConvertUnits2Character<10>::c << std::endl;
+		}
+
+		std::cout << std::endl << std::endl;
+
+		{
+			std::cout << "\t" << "+ << CalculatePlaceValue<1>::c" << std::endl;
+			std::cout << "\t\t" << "result : " << CalculatePlaceValue<1>::place_value << std::endl;
+
+			std::cout << "\t" << "+ << CalculatePlaceValue<100>::c" << std::endl;
+			std::cout << "\t\t" << "result : " << CalculatePlaceValue<100>::place_value << std::endl;
+
+			std::cout << "\t" << "+ << CalculatePlaceValue<123456>::c" << std::endl;
+			std::cout << "\t\t" << "result : " << CalculatePlaceValue<123456>::place_value << std::endl;
 		}
 
 		std::cout << std::endl << std::endl;
