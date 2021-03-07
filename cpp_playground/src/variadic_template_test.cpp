@@ -59,12 +59,6 @@ namespace
 		return ( integer_list + ... ); // fold
 	}
 
-	template <typename I, typename... IntegerList>
-	int subtract_args_1( I integer, IntegerList... integer_list ) {
-		std::cout << "\t\t" << "call - subtract_args_1( I integer, IntegerList... integer_list ) return ( integer + ... + integer_list )" << std::endl;
-		return ( integer - ... - integer_list ); // fold
-	}
-
 	void SumValues_Test1()
 	{
 		std::cout << "== Sum Values ==" << std::endl;
@@ -86,8 +80,32 @@ namespace
 
 			std::cout << "\t\t\t" << sum_result << std::endl;
 		}
+	}
+}
+namespace variadic_template_test
+{
+	void SumValues::Do()
+	{
+		SumValues_Test1();
 
 		std::cout << std::endl << std::endl;
+	}
+}
+
+
+
+
+namespace
+{
+	template <typename I, typename... IntegerList>
+	int subtract_args_1( I integer, IntegerList... integer_list ) {
+		std::cout << "\t\t" << "call - subtract_args_1( I integer, IntegerList... integer_list ) return ( integer + ... + integer_list )" << std::endl;
+		return ( integer - ... - integer_list ); // fold
+	}
+
+	void SubtractValues_Test1()
+	{
+		std::cout << "== Subtract Values ==" << std::endl;
 
 		{
 			std::cout << "\t" << "+ subtract_args_1( 100, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
@@ -100,9 +118,9 @@ namespace
 }
 namespace variadic_template_test
 {
-	void SumValues::Do()
+	void SubtractValues::Do()
 	{
-		SumValues_Test1();
+		SubtractValues_Test1();
 
 		std::cout << std::endl << std::endl;
 	}
