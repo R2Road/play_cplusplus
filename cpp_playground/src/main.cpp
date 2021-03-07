@@ -17,6 +17,7 @@ std::string MakeMenuString()
 	ss << "2 : " << random_test::StatusSaveAndLoad::GetTitle() << std::endl;
 	ss << "3 : " << shared_pointer_test::SharedPtr::GetTitle() << std::endl;
 	ss << "4 : " << variadic_template_test::PrintValues::GetTitle() << std::endl;
+	ss << "5 : " << variadic_template_test::SumValues::GetTitle() << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -55,6 +56,9 @@ int main()
 			break;
 		case '4':
 			variadic_template_test::PrintValues::Do();
+			break;
+		case '5':
+			variadic_template_test::SumValues::Do();
 			break;
 
 		case 27: // ESC
