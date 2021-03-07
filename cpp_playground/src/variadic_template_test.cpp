@@ -1,7 +1,6 @@
 #include "variadic_template_test.h"
 
 #include <iostream>
-#include <memory>
 
 namespace
 {
