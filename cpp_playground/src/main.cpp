@@ -7,6 +7,7 @@
 #include "random_test.h"
 #include "shared_pointer_test.h"
 #include "variadic_template_test.h"
+#include "template_meta_programming_test.h"
 
 
 std::string MakeMenuString()
@@ -19,6 +20,7 @@ std::string MakeMenuString()
 	ss << "4 : " << variadic_template_test::PrintValues::GetTitle() << std::endl;
 	ss << "5 : " << variadic_template_test::SumValues::GetTitle() << std::endl;
 	ss << "6 : " << variadic_template_test::SubtractValues::GetTitle() << std::endl;
+	ss << "7 : " << template_meta_programming_test::CalculateFactorial::GetTitle() << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -63,6 +65,9 @@ int main()
 			break;
 		case '6':
 			variadic_template_test::SubtractValues::Do();
+			break;
+		case '7':
+			template_meta_programming_test::CalculateFactorial::Do();
 			break;
 
 		case 27: // ESC
