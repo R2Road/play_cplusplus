@@ -18,7 +18,7 @@ namespace
 
 	template <typename... Types>
 	void print_args( Types... args ) {
-		std::cout << "\t\t" << "call - print_args" << std::endl;
+		std::cout << "\t\t" << "call - print_args( Types... args )" << std::endl;
 		print( args... );
 	}
 
