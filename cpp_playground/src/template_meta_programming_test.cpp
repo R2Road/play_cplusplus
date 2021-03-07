@@ -5,15 +5,15 @@
 namespace
 {
 	template<int N>
-	struct Factorial
+	int Factorial()
 	{
-		static const int f = N * Factorial<N - 1>::f;
+		return ( N * Factorial<N - 1>() );
 	};
 
 	template<>
-	struct Factorial<1>
+	int Factorial<1>()
 	{
-		static const int f = 1;
+		return 1;
 	};
 }
 
@@ -26,7 +26,7 @@ namespace template_meta_programming_test
 		{
 			std::cout << "\t" << "+ Factorial<2>::f" << std::endl;
 
-			std::cout << "\t\t" << "result : " << Factorial<2>::f << std::endl;
+			std::cout << "\t\t" << "result : " << Factorial<2>() << std::endl;
 		}
 
 		std::cout << std::endl << std::endl;
@@ -34,7 +34,7 @@ namespace template_meta_programming_test
 		{
 			std::cout << "\t" << "+ Factorial<4>::f" << std::endl;
 
-			std::cout << "\t\t" << "result : " << Factorial<4>::f << std::endl;
+			std::cout << "\t\t" << "result : " << Factorial<4>() << std::endl;
 		}
 
 		std::cout << std::endl << std::endl;
@@ -42,7 +42,7 @@ namespace template_meta_programming_test
 		{
 			std::cout << "\t" << "+ Factorial<10>::f" << std::endl;
 
-			std::cout << "\t\t" << "result : " << Factorial<10>::f << std::endl;
+			std::cout << "\t\t" << "result : " << Factorial<10>() << std::endl;
 		}
 
 		std::cout << std::endl << std::endl;
