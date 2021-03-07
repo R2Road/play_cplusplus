@@ -4,11 +4,11 @@
     <Filter Include="src">
       <UniqueIdentifier>{77a45f2c-1f22-46b3-9c35-5ee34c38a7b9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="win32">
+      <UniqueIdentifier>{d5e79e51-a985-40c0-9fd4-70428e34f847}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\shared_pointer_test.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -17,6 +17,9 @@
     </ClCompile>
     <ClCompile Include="src\random_test.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>win32</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
