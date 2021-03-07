@@ -29,7 +29,7 @@ void ShowMenu()
 
 int main()
 {
-	system( "mode con lines=50 cols=120" );
+	system( "mode con lines=60 cols=120" );
 
 	int input = 0;
 	while( true )
