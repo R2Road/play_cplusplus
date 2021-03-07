@@ -6,6 +6,7 @@
 #include "filesystem_test.h"
 #include "random_test.h"
 #include "shared_pointer_test.h"
+#include "variadic_template_test.h"
 
 
 std::string MakeMenuString()
@@ -15,6 +16,7 @@ std::string MakeMenuString()
 	ss << "1 : " << filesystem_test::CurrentDirectory::GetTitle() << std::endl;
 	ss << "2 : " << random_test::StatusSaveAndLoad::GetTitle() << std::endl;
 	ss << "3 : " << shared_pointer_test::SharedPtr::GetTitle() << std::endl;
+	ss << "4 : " << variadic_template_test::PrintValues::GetTitle() << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -49,6 +51,9 @@ int main()
 			break;
 		case '3':
 			shared_pointer_test::SharedPtr::Do();
+			break;
+		case '4':
+			variadic_template_test::PrintValues::Do();
 			break;
 
 		case 27: // ESC

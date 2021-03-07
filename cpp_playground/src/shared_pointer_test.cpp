@@ -10,7 +10,7 @@ namespace
 		std::cout << "== Shared Pointer ==" << std::endl;
 
 		std::shared_ptr<int> test_sp( new int( 10 ) );
-		std::cout << "\t" << "+ Make Sp" << std::endl;
+			
 		std::cout << "\t\t" << "+ std::shared_ptr<int> test_sp( new int( 10 ) )" << std::endl;
 		std::cout << "\t\t\t" << *test_sp << std::endl;
 		std::cout << std::endl;
