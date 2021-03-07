@@ -21,6 +21,7 @@ std::string MakeMenuString()
 	ss << "5 : " << variadic_template_test::SumValues::GetTitle() << std::endl;
 	ss << "6 : " << variadic_template_test::SubtractValues::GetTitle() << std::endl;
 	ss << "7 : " << template_meta_programming_test::CalculateFactorial::GetTitle() << std::endl;
+	ss << "8 : " << template_meta_programming_test::Integer2String::GetTitle() << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -68,6 +69,9 @@ int main()
 			break;
 		case '7':
 			template_meta_programming_test::CalculateFactorial::Do();
+			break;
+		case '8':
+			template_meta_programming_test::Integer2String::Do();
 			break;
 
 		case 27: // ESC

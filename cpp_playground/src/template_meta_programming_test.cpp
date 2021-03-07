@@ -1,6 +1,7 @@
 #include "template_meta_programming_test.h"
 
 #include <iostream>
+#include <string>
 
 namespace
 {
@@ -30,7 +31,6 @@ namespace
 		static const int f = 1;
 	};
 }
-
 namespace template_meta_programming_test
 {
 	void CalculateFactorial::Do()
@@ -63,6 +63,33 @@ namespace template_meta_programming_test
 			std::cout << "\t\t" << "calc : ";
 			FactorialPrinter<10>();
 			std::cout << "\t\t" << "result : " << Factorial<10>::f << std::endl;
+		}
+
+		std::cout << std::endl << std::endl;
+	}
+}
+
+
+
+
+
+namespace
+{
+	template<int N>
+	struct ConvertInteger2String_1
+	{
+		static std::string c;
+	};
+	template<int N> std::string ConvertInteger2String_1<N>::c = std::to_string( N );
+}
+namespace template_meta_programming_test
+{
+	void Integer2String::Do()
+	{
+		std::cout << "== TMP : Integer 2 String ==" << std::endl;
+
+		{
+			std::cout << "\t\t" << "result : " << ConvertInteger2String_1<2>::c.c_str() << std::endl;
 		}
 
 		std::cout << std::endl << std::endl;

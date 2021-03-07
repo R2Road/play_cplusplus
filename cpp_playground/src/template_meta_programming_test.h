@@ -8,4 +8,12 @@ namespace template_meta_programming_test
 		static const char* GetTitle() { return "TMP : Factorial"; }
 		static void Do();
 	};
+
+
+	class Integer2String
+	{
+	public:
+		static const char* GetTitle() { return "TMP : Integer 2 String"; }
+		static void Do();
+	};
 }
