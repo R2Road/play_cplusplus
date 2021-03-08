@@ -88,12 +88,6 @@ namespace
 		static constexpr size_t size = sizeof...( chars );
 		static constexpr const char c[size + 1] = { chars..., '\0' };
 	};
-
-	template<int U>
-	struct ConvertUnits2Character
-	{
-		static constexpr const char c = '0' + U;
-	};
 }
 namespace template_meta_programming_test
 {
@@ -118,19 +112,6 @@ namespace template_meta_programming_test
 			std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::c" << std::endl;
 
 			std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::c << std::endl;
-		}
-
-		std::cout << std::endl << std::endl;
-
-		{
-			std::cout << "\t" << "+ << ConvertUnits2Character<9>::c" << std::endl;
-
-			std::cout << "\t\t" << "result : " << ConvertUnits2Character<9>::c << std::endl;
-
-
-			std::cout << "\t" << "+ << ConvertUnits2Character<10>::c" << std::endl;
-
-			std::cout << "\t\t" << "result : " << ConvertUnits2Character<10>::c << std::endl;
 		}
 
 		std::cout << std::endl << std::endl;
@@ -180,6 +161,12 @@ namespace template_meta_programming_test
 
 namespace
 {
+	template<int U>
+	struct ConvertUnits2Character
+	{
+		static constexpr const char c = '0' + U;
+	};
+
 	template<int N>
 	struct ConvertInteger2String_2
 	{
@@ -190,6 +177,21 @@ namespace template_meta_programming_test
 {
 	void Integer2String_II::Do()
 	{
+		std::cout << "== TMP : Units 2 Character ==" << std::endl;
+
+		{
+			std::cout << "\t" << "+ << ConvertUnits2Character<9>::c" << std::endl;
+
+			std::cout << "\t\t" << "result : " << ConvertUnits2Character<9>::c << std::endl;
+
+
+			std::cout << "\t" << "+ << ConvertUnits2Character<10>::c" << std::endl;
+
+			std::cout << "\t\t" << "result : " << ConvertUnits2Character<10>::c << std::endl;
+		}
+
+		std::cout << std::endl << std::endl;
+
 		std::cout << "== TMP : Integer 2 String II ==" << std::endl;
 
 		{
