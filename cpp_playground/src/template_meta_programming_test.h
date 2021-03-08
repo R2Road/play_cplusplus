@@ -16,4 +16,12 @@ namespace template_meta_programming_test
 		static const char* GetTitle() { return "TMP : Integer 2 String"; }
 		static void Do();
 	};
+
+
+	class CalculatePlaceValue
+	{
+	public:
+		static const char* GetTitle() { return "TMP : Place Value"; }
+		static void Do();
+	};
 }
