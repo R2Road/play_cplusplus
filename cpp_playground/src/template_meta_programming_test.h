@@ -24,4 +24,12 @@ namespace template_meta_programming_test
 		static const char* GetTitle() { return "TMP : Place Value"; }
 		static void Do();
 	};
+
+
+	class Integer2String_II
+	{
+	public:
+		static const char* GetTitle() { return "TMP : Integer 2 String II"; }
+		static void Do();
+	};
 }

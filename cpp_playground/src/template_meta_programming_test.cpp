@@ -173,3 +173,28 @@ namespace template_meta_programming_test
 		std::cout << std::endl << std::endl;
 	}
 }
+
+
+
+
+
+namespace
+{
+	template<int N>
+	struct ConvertInteger2String_2
+	{
+		static constexpr size_t size = CalculatePlaceValue4Integer<N>::place_value;
+	};
+}
+namespace template_meta_programming_test
+{
+	void Integer2String_II::Do()
+	{
+		std::cout << "== TMP : Integer 2 String II ==" << std::endl;
+
+		{
+			std::cout << "\t" << "+ ConvertInteger2String_2<101010>::size" << std::endl;
+			std::cout << "\t\t" << "result : " << ConvertInteger2String_2<101010>::size << std::endl;
+		}
+	}
+}

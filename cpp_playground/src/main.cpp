@@ -23,6 +23,7 @@ std::string MakeMenuString()
 	ss << "7 : " << template_meta_programming_test::CalculateFactorial::GetTitle() << std::endl;
 	ss << "8 : " << template_meta_programming_test::Integer2String::GetTitle() << std::endl;
 	ss << "9 : " << template_meta_programming_test::CalculatePlaceValue::GetTitle() << std::endl;
+	ss << "Q : " << template_meta_programming_test::Integer2String_II::GetTitle() << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -76,6 +77,9 @@ int main()
 			break;
 		case '9':
 			template_meta_programming_test::CalculatePlaceValue::Do();
+			break;
+		case 'q':
+			template_meta_programming_test::Integer2String_II::Do();
 			break;
 
 		case 27: // ESC
