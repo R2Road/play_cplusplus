@@ -8,6 +8,7 @@
 #include "shared_pointer_test.h"
 #include "variadic_template_test.h"
 #include "template_meta_programming_test.h"
+#include "optional_test.h"
 
 
 std::string MakeMenuString()
@@ -24,6 +25,7 @@ std::string MakeMenuString()
 	ss << "8 : " << template_meta_programming_test::Integer2String::GetTitle() << std::endl;
 	ss << "9 : " << template_meta_programming_test::CalculatePlaceValue::GetTitle() << std::endl;
 	ss << "Q : " << template_meta_programming_test::Integer2String_II::GetTitle() << std::endl;
+	ss << "W : " << optional_test::Basic::GetTitle() << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -80,6 +82,9 @@ int main()
 			break;
 		case 'q':
 			template_meta_programming_test::Integer2String_II::Do();
+			break;
+		case 'w':
+			optional_test::Basic::Do();
 			break;
 
 		case 27: // ESC
