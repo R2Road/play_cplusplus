@@ -41,7 +41,7 @@ namespace optional_test
 
 		std::cout << "\t+ Assign 2 Optional " << std::endl;
 		std::cout << "\t\t- op_ts = ts" << std::endl;
-		std::cout << "\t\t";
+		std::cout << "\t\t\t";
 		op_ts = ts;
 		std::cout << std::endl;
 		std::cout << "\t\t- Call : has_value()" << std::endl;
