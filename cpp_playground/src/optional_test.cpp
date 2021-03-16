@@ -7,9 +7,9 @@ namespace
 {
 	struct TestStruct
 	{
-		TestStruct() { std::cout << "- Call : TestStruct::TestStruct()"; }
-		TestStruct( const int i ) : I( i ) { std::cout << "- Call : TestStruct::TestStruct( const int i )"; }
-		TestStruct( const TestStruct& ) { std::cout << "- Call : TestStruct::TestStruct( const TestStruct& )"; }
+		TestStruct() { std::cout << "- Call : TestStruct::TestStruct()" << std::endl; }
+		TestStruct( const int i ) : I( i ) { std::cout << "- Call : TestStruct::TestStruct( const int i )" << std::endl; }
+		TestStruct( const TestStruct& ) { std::cout << "- Call : TestStruct::TestStruct( const TestStruct& )" << std::endl; }
 
 		int I = 111;
 	};
@@ -39,7 +39,6 @@ namespace optional_test
 		std::cout << "\t\t- TestStruct ts;" << std::endl;
 		std::cout << "\t\t\t";
 		TestStruct ts;
-		std::cout << std::endl;
 
 
 		std::cout << std::endl << std::endl;
@@ -60,7 +59,6 @@ namespace optional_test
 		std::cout << "\t\t- op_ts = ts" << std::endl;
 		std::cout << "\t\t\t";
 		op_ts = ts;
-		std::cout << std::endl;
 		std::cout << "\t\t- Call : has_value()" << std::endl;
 		std::cout << "\t\t\t" << op_ts.has_value() << std::endl;
 
@@ -83,20 +81,20 @@ namespace optional_test
 			std::cout << "\t\t\t";
 			const auto result = GetTestStruct( 0 );
 			std::cout << "\t\t- Call : has_value()" << std::endl;
-			std::cout << "\t\t\t" << result.has_value() << std::endl;
+			std::cout << "\t\t\t" << result.has_value() << std::endl << std::endl;
 		}
 		{
 			std::cout << "\t\t- GetTestStruct( 1 );" << std::endl;
 			std::cout << "\t\t\t";
 			const auto result = GetTestStruct( 1 );
 			std::cout << "\t\t- Call : has_value()" << std::endl;
-			std::cout << "\t\t\t" << result.has_value() << std::endl;
+			std::cout << "\t\t\t" << result.has_value() << std::endl << std::endl;
 		}
 		{
 			std::cout << "\t\t- GetTestStruct( 2 );" << std::endl;
 			const auto result = GetTestStruct( 2 );
 			std::cout << "\t\t- Call : has_value()" << std::endl;
-			std::cout << "\t\t\t" << result.has_value() << std::endl;
+			std::cout << "\t\t\t" << result.has_value() << std::endl << std::endl;
 		}
 
 
