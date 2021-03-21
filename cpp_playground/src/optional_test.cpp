@@ -120,7 +120,7 @@ namespace optional_test
 			//
 			std::cout << "\t\t- Not Working : std::optional<TestStruct&> maybe_test_struct_ref = t_1;" << std::endl << std::endl;
 
-			std::optional < std::reference_wrapper<TestStruct>> maybe_test_struct_ref = t_1;
+			std::optional<std::reference_wrapper<TestStruct>> maybe_test_struct_ref = t_1;
 			std::cout << "\t\t- Working : std::optional<std::reference_wrapper<TestStruct>> maybe_test_struct_ref = t_1;" << std::endl << std::endl;
 
 			maybe_test_struct_ref = t_2;
