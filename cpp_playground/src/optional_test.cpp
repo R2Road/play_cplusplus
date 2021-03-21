@@ -1,5 +1,6 @@
 #include "optional_test.h"
 
+#include <functional>
 #include <iostream>
 #include <optional>
 
@@ -95,6 +96,35 @@ namespace optional_test
 			const auto result = GetTestStruct( 2 );
 			std::cout << "\t\t- Call : has_value()" << std::endl;
 			std::cout << "\t\t\t" << result.has_value() << std::endl << std::endl;
+		}
+
+
+		std::cout << std::endl << std::endl;
+
+
+		{
+			std::cout << "\t+ Reference " << std::endl;
+
+			std::cout << "\t\t- TestStruct t_1;" << std::endl;
+			std::cout << "\t\t\t";
+			TestStruct t_1;
+			std::cout << std::endl;
+
+			std::cout << "\t\t- TestStruct t_2;" << std::endl;
+			std::cout << "\t\t\t";
+			TestStruct t_2;
+			std::cout << std::endl;
+
+			//
+			//std::optional<TestStruct&> maybe_test_struct_ref = t_1;
+			//
+			std::cout << "\t\t- Not Working : std::optional<TestStruct&> maybe_test_struct_ref = t_1;" << std::endl << std::endl;
+
+			std::optional < std::reference_wrapper<TestStruct>> maybe_test_struct_ref = t_1;
+			std::cout << "\t\t- Working : std::optional<std::reference_wrapper<TestStruct>> maybe_test_struct_ref = t_1;" << std::endl << std::endl;
+
+			maybe_test_struct_ref = t_2;
+			std::cout << "\t\t- Working : maybe_test_struct_ref = t_2;" << std::endl << std::endl;
 		}
 
 
