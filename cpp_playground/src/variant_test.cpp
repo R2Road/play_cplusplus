@@ -31,5 +31,17 @@ namespace variant_test
 
 
 		std::cout << std::endl << std::endl;
+
+
+		{
+			std::cout << "\t+ std::variant<int, int> v;" << std::endl;
+
+			std::variant<int, int> v;
+			std::cout << "\t\t- Has Problem Using Same Type" << std::endl << std::endl;
+			std::cout << "\t\t- Not Working : v = 1;" << std::endl << std::endl;
+			//
+			//v = 1;
+			//
+		}
 	}
 }
