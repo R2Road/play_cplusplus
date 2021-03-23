@@ -77,6 +77,17 @@ namespace
 		return ( integer_list + ... ); // fold
 	}
 
+	template<int N, int... IntegerList>
+	struct SumArgs
+	{
+		static constexpr int result = N + SumArgs<IntegerList...>::result;
+	};
+	template<>
+	struct SumArgs<0>
+	{
+		static constexpr int result = 0;
+	};
+
 	void SumValues_Test1()
 	{
 		std::cout << "== Sum Values ==" << std::endl;
@@ -95,6 +106,17 @@ namespace
 			std::cout << "\t" << "+ sum_args_2( 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
 
 			const auto sum_result = sum_args_2( 1, 2, 3, 4, 5, 6, 7, 8, 9 );
+
+			std::cout << "\t\t\t" << sum_result << std::endl;
+		}
+
+		std::cout << std::endl << std::endl;
+
+		{
+			std::cout << "\t" << "+ SumArgs<1, 2, 3, 4, 5, 6, 7, 8, 9, 0>::result" << std::endl;
+			std::cout << "\t\t" << "0 is End Indicator" << std::endl;
+
+			const auto sum_result = SumArgs<1, 2, 3, 4, 5, 6, 7, 8, 9, 0>::result;
 
 			std::cout << "\t\t\t" << sum_result << std::endl;
 		}
