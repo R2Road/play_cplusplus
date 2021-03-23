@@ -23,6 +23,9 @@ namespace variadic_template_test
 	}
 }
 
+
+
+
 namespace
 {
 	template <typename T>
