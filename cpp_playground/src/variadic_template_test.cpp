@@ -87,8 +87,10 @@ namespace
 	{
 		static constexpr int result = 0;
 	};
-
-	void SumValues_Test1()
+}
+namespace variadic_template_test
+{
+	void SumValues::Do()
 	{
 		std::cout << "== Sum Values ==" << std::endl;
 
@@ -120,13 +122,6 @@ namespace
 
 			std::cout << "\t\t\t" << sum_result << std::endl;
 		}
-	}
-}
-namespace variadic_template_test
-{
-	void SumValues::Do()
-	{
-		SumValues_Test1();
 
 		std::cout << std::endl << std::endl;
 	}
