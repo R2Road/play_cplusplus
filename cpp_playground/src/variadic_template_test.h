@@ -2,6 +2,13 @@
 
 namespace variadic_template_test
 {
+	class SizeOfArgs
+	{
+	public:
+		static const char* GetTitle() { return "Variadic Template : Size Of Args"; }
+		static void Do();
+	};
+
 	class PrintValues
 	{
 	public:

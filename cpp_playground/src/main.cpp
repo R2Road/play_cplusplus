@@ -28,6 +28,7 @@ std::string MakeMenuString()
 	ss << "Q : " << template_meta_programming_test::Integer2String_II::GetTitle() << std::endl;
 	ss << "W : " << optional_test::Basic::GetTitle() << std::endl;
 	ss << "E : " << variant_test::Basic::GetTitle() << std::endl;
+	ss << "R : " << variadic_template_test::SizeOfArgs::GetTitle() << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -90,6 +91,9 @@ int main()
 			break;
 		case 'e':
 			variant_test::Basic::Do();
+			break;
+		case 'r':
+			variadic_template_test::SizeOfArgs::Do();
 			break;
 
 		case 27: // ESC

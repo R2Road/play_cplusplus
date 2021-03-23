@@ -2,6 +2,25 @@
 
 #include <iostream>
 
+namespace variadic_template_test
+{
+	template<typename... Types>
+	struct ArgsCount
+	{
+		static constexpr std::size_t size = sizeof...( Types );
+	};
+
+	void SizeOfArgs::Do()
+	{
+		std::cout << "== Size Of Args ==" << std::endl;
+
+		std::cout << "\t" << "+ ArgsCount<int, float, int, int, bool>::size" << std::endl;
+		std::cout << "\t\t" << ArgsCount<int, float, int, int, bool>::size << std::endl;
+
+		std::cout << std::endl << std::endl;
+	}
+}
+
 namespace
 {
 	template <typename T>
