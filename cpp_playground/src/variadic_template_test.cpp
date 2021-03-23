@@ -75,15 +75,20 @@ namespace
 		return ( integer_list + ... ); // fold
 	}
 
-	template<int N, int... IntegerList>
-	struct SumArgs
-	{
-		static constexpr int result = N + SumArgs<IntegerList...>::result;
-	};
+
+	template<int... IntegerList>
+	struct SumArgs;
+
 	template<>
-	struct SumArgs<0>
+	struct SumArgs<>
 	{
 		static constexpr int result = 0;
+	};
+
+	template<int N, int... IntegerList>
+	struct SumArgs<N, IntegerList...>
+	{
+		static constexpr int result = N + SumArgs<IntegerList...>::result;
 	};
 }
 namespace variadic_template_test
@@ -115,10 +120,19 @@ namespace variadic_template_test
 		std::cout << std::endl << std::endl;
 
 		{
-			std::cout << "\t" << "+ SumArgs<1, 2, 3, 4, 5, 6, 7, 8, 9, 0>::result" << std::endl;
-			std::cout << "\t\t" << "0 is End Indicator" << std::endl;
+			std::cout << "\t" << "+ SumArgs<1>::result" << std::endl;
 
-			const auto sum_result = SumArgs<1, 2, 3, 4, 5, 6, 7, 8, 9, 0>::result;
+			const auto sum_result = SumArgs<1>::result;
+
+			std::cout << "\t\t\t" << sum_result << std::endl;
+		}
+
+		std::cout << std::endl << std::endl;
+
+		{
+			std::cout << "\t" << "+ SumArgs<1, 2, 3, 4, 5, 6, 7, 8, 9>::result" << std::endl;
+
+			const auto sum_result = SumArgs<1, 2, 3, 4, 5, 6, 7, 8, 9>::result;
 
 			std::cout << "\t\t\t" << sum_result << std::endl;
 		}
