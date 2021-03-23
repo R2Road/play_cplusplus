@@ -39,22 +39,16 @@ namespace
 		std::cout << "\t\t" << "call - print_args( Types... args )" << std::endl;
 		print( args... );
 	}
-
-	void Test1()
+}
+namespace variadic_template_test
+{
+	void PrintValues::Do()
 	{
 		std::cout << "== PrintValues ==" << std::endl;
 
 		std::cout << "\t" << "+ print( 1, 2, 3, 4, ""variadic_template_test"", 3.141592 )" << std::endl;
 
 		print_args( 1, 2, 3, 4, "variadic_template_test", 3.141592 );
-	}
-}
-
-namespace variadic_template_test
-{
-	void PrintValues::Do()
-	{
-		Test1();
 
 		std::cout << std::endl << std::endl;
 	}
@@ -151,8 +145,10 @@ namespace
 		std::cout << "\t\t" << "call - subtract_args_1( I integer, IntegerList... integer_list ) return ( integer + ... + integer_list )" << std::endl;
 		return ( integer - ... - integer_list ); // fold
 	}
-
-	void SubtractValues_Test1()
+}
+namespace variadic_template_test
+{
+	void SubtractValues::Do()
 	{
 		std::cout << "== Subtract Values ==" << std::endl;
 
@@ -163,13 +159,6 @@ namespace
 
 			std::cout << "\t\t\t" << sum_result << std::endl;
 		}
-	}
-}
-namespace variadic_template_test
-{
-	void SubtractValues::Do()
-	{
-		SubtractValues_Test1();
 
 		std::cout << std::endl << std::endl;
 	}
