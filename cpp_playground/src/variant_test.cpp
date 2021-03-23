@@ -43,5 +43,27 @@ namespace variant_test
 			//v = 1;
 			//
 		}
+
+
+		std::cout << std::endl << std::endl;
+
+
+		{
+			std::cout << "\t+ std::variant<int, float> v;" << std::endl;
+
+			std::variant<int, float> v;
+
+
+			v = 1;
+			std::cout << "\t\t- v = 1;" << std::endl;
+			std::cout << "\t\t\t- Call : v.index();" << std::endl;
+			std::cout << "\t\t\t\t" << v.index() << std::endl;
+			
+			
+			v = 2.f;
+			std::cout << "\t\t- v = 2.f;" << std::endl;
+			std::cout << "\t\t\t- Call : v.index();" << std::endl;
+			std::cout << "\t\t\t\t" << v.index() << std::endl;
+		}
 	}
 }
