@@ -66,12 +66,12 @@ namespace variadic_template_test
 namespace
 {
 	template <typename... IntegerList>
-	int sum_args_1( IntegerList... integer_list ) {
+	int sum_args_with_fold_1( IntegerList... integer_list ) {
 		return ( ... + integer_list ); // fold
 	}
 
 	template <typename... IntegerList>
-	int sum_args_2( IntegerList... integer_list ) {
+	int sum_args_with_fold_2( IntegerList... integer_list ) {
 		return ( integer_list + ... ); // fold
 	}
 
@@ -93,10 +93,10 @@ namespace variadic_template_test
 		std::cout << "== Sum Values ==" << std::endl;
 
 		{
-			std::cout << "\t" << "+ sum_args_1( 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
-			std::cout << "\t\t" << "call - sum_args_1( Types... integer_list ) return ( ... + integer_list )" << std::endl;
+			std::cout << "\t" << "+ sum_args_with_fold_1( 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
+			std::cout << "\t\t" << "call - sum_args_with_fold_1( Types... integer_list ) return ( ... + integer_list )" << std::endl;
 
-			const auto sum_result = sum_args_1( 1, 2, 3, 4, 5, 6, 7, 8, 9 );
+			const auto sum_result = sum_args_with_fold_1( 1, 2, 3, 4, 5, 6, 7, 8, 9 );
 
 			std::cout << "\t\t\t" << sum_result << std::endl;
 		}
@@ -104,10 +104,10 @@ namespace variadic_template_test
 		std::cout << std::endl << std::endl;
 
 		{
-			std::cout << "\t" << "+ sum_args_2( 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
-			std::cout << "\t\t" << "call - sum_args_2( Types... integer_list ) return ( integer_list + ... )" << std::endl;
+			std::cout << "\t" << "+ sum_args_with_fold_2( 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
+			std::cout << "\t\t" << "call - sum_args_with_fold_2( Types... integer_list ) return ( integer_list + ... )" << std::endl;
 
-			const auto sum_result = sum_args_2( 1, 2, 3, 4, 5, 6, 7, 8, 9 );
+			const auto sum_result = sum_args_with_fold_2( 1, 2, 3, 4, 5, 6, 7, 8, 9 );
 
 			std::cout << "\t\t\t" << sum_result << std::endl;
 		}
