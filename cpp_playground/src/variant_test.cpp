@@ -58,12 +58,16 @@ namespace variant_test
 			std::cout << "\t\t- v = 1;" << std::endl;
 			std::cout << "\t\t\t- Call : v.index();" << std::endl;
 			std::cout << "\t\t\t\t" << v.index() << std::endl;
+			std::cout << "\t\t\t- Call : std::get<0>( v );" << std::endl;
+			std::cout << "\t\t\t\t" << std::get<0>( v ) << std::endl;
 			
 			
-			v = 2.f;
-			std::cout << "\t\t- v = 2.f;" << std::endl;
+			v = 2.1f;
+			std::cout << "\t\t- v = 2.1f;" << std::endl;
 			std::cout << "\t\t\t- Call : v.index();" << std::endl;
 			std::cout << "\t\t\t\t" << v.index() << std::endl;
+			std::cout << "\t\t\t- Call : std::get<1>( v );" << std::endl;
+			std::cout << "\t\t\t\t" << std::get<1>( v ) << std::endl;
 		}
 	}
 }
