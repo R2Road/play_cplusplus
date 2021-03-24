@@ -69,5 +69,42 @@ namespace variant_test
 			std::cout << "\t\t\t- Call : std::get<1>( v );" << std::endl;
 			std::cout << "\t\t\t\t" << std::get<1>( v ) << std::endl;
 		}
+
+
+		std::cout << std::endl << std::endl;
+
+
+		{
+			struct TestStruct
+			{
+				TestStruct( int i ) : mI( i ) {}
+				int mI;
+			};
+
+			std::cout << "\t+ std::monostate" << std::endl;
+			std::cout << "\t\t- std::monostate is Empty Struct" << std::endl << std::endl;
+
+			std::cout << "\t\t struct TestStruct" << std::endl;
+			std::cout << "\t\t {" << std::endl;
+			std::cout << "\t\t\t TestStruct( int i ) : mI( i ) {}" << std::endl;
+			std::cout << "\t\t\t int mI;" << std::endl;
+			std::cout << "\t\t }" << std::endl << std::endl;
+
+			std::cout << "\t\t- Not Working : std::variant<TestStruct, int, float> v;" << std::endl;
+			std::cout << "\t\t\tFirst Type Need Default Constructor" << std::endl << std::endl;
+			//
+			//std::variant<TestStruct, int, float> v;
+			//
+			
+			{
+				std::cout << "\t\t- Working : std::variant<std::monostate, TestStruct, int, float> v;" << std::endl << std::endl;
+				std::variant<std::monostate, TestStruct, int, float> v;
+			}
+
+			{
+				std::cout << "\t\t- Working : std::variant<char, TestStruct, int, float> v;" << std::endl << std::endl;
+				std::variant<char, TestStruct, int, float> v;
+			}
+		}
 	}
 }
