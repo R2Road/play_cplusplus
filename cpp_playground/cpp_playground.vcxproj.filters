@@ -33,6 +33,9 @@
     <ClCompile Include="src\variant_test.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\tuple_test.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -54,6 +57,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\variant_test.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tuple_test.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

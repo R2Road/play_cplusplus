@@ -25,6 +25,7 @@
     <ClCompile Include="src\shared_pointer_test.cpp" />
     <ClCompile Include="src\template_meta_programming_test.cpp" />
     <ClCompile Include="src\optional_test.cpp" />
+    <ClCompile Include="src\tuple_test.cpp" />
     <ClCompile Include="src\variadic_template_test.cpp" />
     <ClCompile Include="src\variant_test.cpp" />
   </ItemGroup>
@@ -34,6 +35,7 @@
     <ClInclude Include="src\shared_pointer_test.h" />
     <ClInclude Include="src\template_meta_programming_test.h" />
     <ClInclude Include="src\optional_test.h" />
+    <ClInclude Include="src\tuple_test.h" />
     <ClInclude Include="src\variadic_template_test.h" />
     <ClInclude Include="src\variant_test.h" />
   </ItemGroup>

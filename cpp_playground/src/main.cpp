@@ -10,6 +10,7 @@
 #include "template_meta_programming_test.h"
 #include "optional_test.h"
 #include "variant_test.h"
+#include "tuple_test.h"
 
 
 std::string MakeMenuString()
@@ -29,6 +30,7 @@ std::string MakeMenuString()
 	ss << "W : " << optional_test::Basic::GetTitle() << std::endl;
 	ss << "E : " << variant_test::Basic::GetTitle() << std::endl;
 	ss << "R : " << variadic_template_test::SizeOfArgs::GetTitle() << std::endl;
+	ss << "T : " << tuple_test::Basic::GetTitle() << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -94,6 +96,9 @@ int main()
 			break;
 		case 'r':
 			variadic_template_test::SizeOfArgs::Do();
+			break;
+		case 't':
+			tuple_test::Basic::Do();
 			break;
 
 		case 27: // ESC
