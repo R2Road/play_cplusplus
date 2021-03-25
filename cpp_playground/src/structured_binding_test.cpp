@@ -1,6 +1,7 @@
 #include "structured_binding_test.h"
 
 #include <iostream>
+#include <tuple>
 #include <utility>
 
 namespace structured_binding_test
@@ -56,6 +57,24 @@ namespace structured_binding_test
 
 			std::cout << "\t\t\t" << " - first : " << first << std::endl;
 			std::cout << "\t\t\t" << " - second : " << second << std::endl;
+		}
+
+
+		std::cout << std::endl << std::endl;
+
+
+		{
+			std::cout << "\t+ with Tuple" << std::endl;
+
+			std::cout << "\t\t" << "auto temp_tuple = std::make_tuple( 3, 'c', 6.28f );" << std::endl << std::endl;
+			auto temp_tuple = std::make_tuple( 3, 'c', 6.28f );
+
+			std::cout << "\t\t" << "auto[first, second, third] = temp_tuple;" << std::endl;
+			auto[first, second, third] = temp_tuple;
+
+			std::cout << "\t\t\t" << " - first : " << first << std::endl;
+			std::cout << "\t\t\t" << " - second : " << second << std::endl;
+			std::cout << "\t\t\t" << " - third : " << third << std::endl;
 		}
 
 
