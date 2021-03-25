@@ -11,6 +11,7 @@
 #include "optional_test.h"
 #include "variant_test.h"
 #include "tuple_test.h"
+#include "structured_binding_test.h"
 
 
 std::string MakeMenuString()
@@ -31,6 +32,7 @@ std::string MakeMenuString()
 	ss << "E : " << variant_test::Basic::GetTitle() << std::endl;
 	ss << "R : " << variadic_template_test::SizeOfArgs::GetTitle() << std::endl;
 	ss << "T : " << tuple_test::Basic::GetTitle() << std::endl;
+	ss << "Y : " << structured_binding_test::Basic::GetTitle() << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -99,6 +101,9 @@ int main()
 			break;
 		case 't':
 			tuple_test::Basic::Do();
+			break;
+		case 'y':
+			structured_binding_test::Basic::Do();
 			break;
 
 		case 27: // ESC

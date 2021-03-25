@@ -23,6 +23,7 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\random_test.cpp" />
     <ClCompile Include="src\shared_pointer_test.cpp" />
+    <ClCompile Include="src\structured_binding_test.cpp" />
     <ClCompile Include="src\template_meta_programming_test.cpp" />
     <ClCompile Include="src\optional_test.cpp" />
     <ClCompile Include="src\tuple_test.cpp" />
@@ -33,6 +34,7 @@
     <ClInclude Include="src\filesystem_test.h" />
     <ClInclude Include="src\random_test.h" />
     <ClInclude Include="src\shared_pointer_test.h" />
+    <ClInclude Include="src\structured_binding_test.h" />
     <ClInclude Include="src\template_meta_programming_test.h" />
     <ClInclude Include="src\optional_test.h" />
     <ClInclude Include="src\tuple_test.h" />
