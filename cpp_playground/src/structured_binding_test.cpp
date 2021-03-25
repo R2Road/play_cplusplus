@@ -43,5 +43,22 @@ namespace structured_binding_test
 
 
 		std::cout << std::endl << std::endl;
+
+
+		{
+			std::cout << "\t+ with Pair" << std::endl;
+
+			std::cout << "\t\t" << "auto temp_pair = std::make_pair( 2, 'b' );" << std::endl << std::endl;
+			auto temp_pair = std::make_pair( 2, 'b' );
+
+			std::cout << "\t\t" << "auto[first, second] = temp_pair;" << std::endl;
+			auto[first, second] = temp_pair;
+
+			std::cout << "\t\t\t" << " - first : " << first << std::endl;
+			std::cout << "\t\t\t" << " - second : " << second << std::endl;
+		}
+
+
+		std::cout << std::endl << std::endl;
 	}
 }
