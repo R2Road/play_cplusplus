@@ -226,9 +226,19 @@ namespace variadic_template_test
 			std::cout << "\t\t" << "return ( ... - integer_list );" << std::endl;
 			std::cout << std::endl;
 
-			std::cout << "\t\t" << "Call : subtract_args_with_fold_2( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
+			{
+				std::cout << "\t\t" << "Call : subtract_args_with_fold_2( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
 
-			std::cout << "\t\t\t" << subtract_args_with_fold_2( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << std::endl;
+				std::cout << "\t\t\t" << subtract_args_with_fold_2( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << std::endl;
+			}
+
+			std::cout << std::endl;
+
+			{
+				std::cout << "\t\t" << "Test : ( ( ( ( ( ( ( ( ( 100 - 1 ) - 2 ) - 3 ) - 4 ) - 5 ) - 6 ) - 7 ) - 8 ) - 9 );" << std::endl;
+
+				std::cout << "\t\t\t" << ( ( ( ( ( ( ( ( ( 100 - 1 ) - 2 ) - 3 ) - 4 ) - 5 ) - 6 ) - 7 ) - 8 ) - 9 ) << std::endl;
+			}
 		}
 
 		std::cout << std::endl << std::endl;
