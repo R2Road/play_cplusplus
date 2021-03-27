@@ -33,6 +33,7 @@ std::string MakeMenuString()
 	ss << "R : " << variadic_template_test::SizeOfArgs::GetTitle() << std::endl;
 	ss << "T : " << tuple_test::Basic::GetTitle() << std::endl;
 	ss << "Y : " << structured_binding_test::Basic::GetTitle() << std::endl;
+	ss << "U : " << random_test::Basic::GetTitle() << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -104,6 +105,9 @@ int main()
 			break;
 		case 'y':
 			structured_binding_test::Basic::Do();
+			break;
+		case 'u':
+			random_test::Basic::Do();
 			break;
 
 		case 27: // ESC

@@ -2,6 +2,15 @@
 
 namespace random_test
 {
+	class  Basic
+	{
+	public:
+		static const char* GetTitle() { return "Random : Basic"; }
+		static void Do();
+	};
+
+
+
 	class  StatusSaveAndLoad
 	{
 	public:
