@@ -194,6 +194,46 @@ namespace variadic_template_test
 
 				std::cout << "\t\t\t" << "?????????????????????" << std::endl;
 			}
+
+			std::cout << std::endl;
+
+			{
+				std::cout << "\t\t" << "Call : subtract_args_with_fold_1( 10, 1, 1 );" << std::endl;
+
+				std::cout << "\t\t\t" << subtract_args_with_fold_1( 10, 1, 1 ) << std::endl;
+
+				std::cout << "\t\t\t" << "?????????????????????" << std::endl;
+			}
+
+			std::cout << std::endl;
+
+			{
+				std::cout << "\t\t" << "Call : subtract_args_with_fold_1( 1, 1, 1 );" << std::endl;
+
+				std::cout << "\t\t\t" << subtract_args_with_fold_1( 1, 1, 1 ) << std::endl;
+
+				std::cout << "\t\t\t" << "?????????????????????" << std::endl;
+			}
+
+			std::cout << std::endl;
+
+			{
+				std::cout << "\t\t" << "Call : subtract_args_with_fold_1( 1, 1, 2 );" << std::endl;
+
+				std::cout << "\t\t\t" << subtract_args_with_fold_1( 1, 1, 2 ) << std::endl;
+
+				std::cout << "\t\t\t" << "?????????????????????" << std::endl;
+			}
+
+			std::cout << std::endl;
+
+			{
+				std::cout << "\t\t" << "Call : subtract_args_with_fold_1( 1, 1, 2, 3 );" << std::endl;
+
+				std::cout << "\t\t\t" << subtract_args_with_fold_1( 1, 1, 2, 3 ) << std::endl;
+
+				std::cout << "\t\t\t" << "?????????????????????" << std::endl;
+			}
 		}
 
 		std::cout << std::endl << std::endl;
