@@ -42,9 +42,7 @@ namespace
 		static std::string temp_string = ( std::filesystem::current_path() / "Debug" / "random_test_Status.dat" ).string();
 		return temp_string.c_str();
 	}
-}
-namespace random_test
-{
+
 	void Status_Save()
 	{
 		std::cout << "== Status Save ==" << std::endl;
@@ -113,7 +111,9 @@ namespace random_test
 
 		std::cout << std::endl;
 	}
-
+}
+namespace random_test
+{
 	void StatusSaveAndLoad::Do()
 	{
 		Status_Save();
