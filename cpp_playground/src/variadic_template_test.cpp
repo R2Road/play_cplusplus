@@ -167,57 +167,57 @@ namespace variadic_template_test
 		std::cout << "== Subtract Values ==" << std::endl;
 
 		{
-			std::cout << "\t" << "+ subtract_args_with_fold_1( 10, 5 );" << std::endl;
+			std::cout << "\t" << "+ int subtract_args_with_fold_1(IntegerList... integer_list )" << std::endl;
 			std::cout << "\t\t" << "return ( integer_list - ... );" << std::endl;
+			std::cout << std::endl;
 
-			const auto sum_result = subtract_args_with_fold_1( 10, 5 );
+			{
+				std::cout << "\t\t" << "Call : subtract_args_with_fold_1( 10, 5 );" << std::endl;
 
-			std::cout << "\t\t\t" << sum_result << std::endl;
+				std::cout << "\t\t\t" << subtract_args_with_fold_1( 10, 5 ) << std::endl;
+			}
+
+			std::cout << std::endl;
+
+			{
+				std::cout << "\t\t" << "Call : subtract_args_with_fold_1( 5, 10 );" << std::endl;
+
+				std::cout << "\t\t\t" << subtract_args_with_fold_1( 5, 10 ) << std::endl;
+			}
+
+			std::cout << std::endl;
+
+			{
+				std::cout << "\t\t" << "Call : subtract_args_with_fold_1( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 );" << std::endl;
+
+				std::cout << "\t\t\t" << subtract_args_with_fold_1( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << std::endl;
+
+				std::cout << "\t\t\t" << "?????????????????????" << std::endl;
+			}
 		}
 
 		std::cout << std::endl << std::endl;
 
 		{
-			std::cout << "\t" << "+ subtract_args_with_fold_1( 5, 10 );" << std::endl;
-			std::cout << "\t\t" << "return ( integer_list - ... );" << std::endl;
-
-			const auto sum_result = subtract_args_with_fold_1( 5, 10 );
-
-			std::cout << "\t\t\t" << sum_result << std::endl;
-		}
-
-		std::cout << std::endl << std::endl;
-
-		{
-			std::cout << "\t" << "+ subtract_args_with_fold_1( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
-			std::cout << "\t\t" << "return ( integer_list - ... );" << std::endl;
-
-			const auto sum_result = subtract_args_with_fold_1( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 );
-
-			std::cout << "\t\t\t" << sum_result << std::endl;
-			std::cout << "\t" << "?????????????????????" << std::endl;
-		}
-
-		std::cout << std::endl << std::endl;
-
-		{
-			std::cout << "\t" << "+ subtract_args_with_fold_2( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
+			std::cout << "\t" << "+ int subtract_args_with_fold_2(IntegerList... integer_list )" << std::endl;
 			std::cout << "\t\t" << "return ( ... - integer_list );" << std::endl;
+			std::cout << std::endl;
 
-			const auto sum_result = subtract_args_with_fold_2( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 );
+			std::cout << "\t\t" << "Call : subtract_args_with_fold_2( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
 
-			std::cout << "\t\t\t" << sum_result << std::endl;
+			std::cout << "\t\t\t" << subtract_args_with_fold_2( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << std::endl;
 		}
 
 		std::cout << std::endl << std::endl;
 
 		{
-			std::cout << "\t" << "+ subtract_args_with_fold_3( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
-			std::cout << "\t\t" << "return ( integer - ... - integer_list )" << std::endl;
+			std::cout << "\t" << "+ int subtract_args_with_fold_3( I integer, IntegerList... integer_list )" << std::endl;
+			std::cout << "\t\t" << "return ( integer - ... - integer_list );" << std::endl;
+			std::cout << std::endl;
 
-			const auto sum_result = subtract_args_with_fold_3( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 );
+			std::cout << "\t\t" << "Call : subtract_args_with_fold_3( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
 
-			std::cout << "\t\t\t" << sum_result << std::endl;
+			std::cout << "\t\t\t" << subtract_args_with_fold_3( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << std::endl;
 		}
 
 		std::cout << std::endl << std::endl;
