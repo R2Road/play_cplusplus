@@ -40,9 +40,17 @@ namespace
 	}
 
 	template <typename... Types>
-	void print_args( Types... args ) {
-		std::cout << "\t\t" << "call - print_args( Types... args )" << std::endl;
+	void print_args_1( Types... args ) {
+		std::cout << "\t\t" << "call - print_args_1( Types... args )" << std::endl;
 		print( args... );
+	}
+
+
+	template <typename... Types>
+	void print_args_2( Types... args ) {
+		std::cout << "\t\t" << "call - print_args_2( Types... args )" << std::endl;
+		std::cout << "\t\t\t - ";
+		( std::cout << ... << args ) << std::endl;
 	}
 }
 namespace variadic_template_test
@@ -51,11 +59,20 @@ namespace variadic_template_test
 	{
 		std::cout << "== PrintValues ==" << std::endl;
 
-		std::cout << "\t" << "+ print( 1, 2, 3, 4, ""variadic_template_test"", 3.141592 )" << std::endl;
+		{
+			std::cout << "\t" << "+ print_args_1( 1, 2, 3, 4, ""variadic_template_test"", 3.141592 )" << std::endl;
 
-		print_args( 1, 2, 3, 4, "variadic_template_test", 3.141592 );
+			print_args_1( 1, 2, 3, 4, "variadic_template_test", 3.141592 );
+		}
 
 		std::cout << std::endl << std::endl;
+
+		{
+			std::cout << "\t" << "+ print_args_2( 1, 2, 3, 4, ""variadic_template_test"", 3.141592 )" << std::endl;
+
+			print_args_2( 1, 2, 3, 4, "variadic_template_test", 3.141592 );
+		}
+
 	}
 }
 
