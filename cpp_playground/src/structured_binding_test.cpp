@@ -4,6 +4,18 @@
 #include <tuple>
 #include <utility>
 
+namespace
+{
+	std::pair<int, float> GetDummyPair()
+	{
+		return std::make_pair( 1, 3.14f );
+	}
+
+	std::tuple<int, float, char> GetDummyTuple()
+	{
+		return std::make_tuple( 2, 6.28f, 'b' );
+	}
+}
 namespace structured_binding_test
 {
 	void Basic::Do()
@@ -71,6 +83,35 @@ namespace structured_binding_test
 
 			std::cout << "\t\t" << "auto[first, second, third] = temp_tuple;" << std::endl;
 			auto[first, second, third] = temp_tuple;
+
+			std::cout << "\t\t\t" << " - first : " << first << std::endl;
+			std::cout << "\t\t\t" << " - second : " << second << std::endl;
+			std::cout << "\t\t\t" << " - third : " << third << std::endl;
+		}
+
+
+		std::cout << std::endl << std::endl;
+
+
+		{
+			std::cout << "\t+ with Function x 1" << std::endl;
+
+			std::cout << "\t\t" << "auto[first, second] = GetDummyPair();" << std::endl;
+			auto[first, second] = GetDummyPair();
+
+			std::cout << "\t\t\t" << " - first : " << first << std::endl;
+			std::cout << "\t\t\t" << " - second : " << second << std::endl;
+		}
+
+
+		std::cout << std::endl << std::endl;
+
+
+		{
+			std::cout << "\t+ with Function x 2" << std::endl;
+
+			std::cout << "\t\t" << "auto[first, second, third] = GetDummyTuple();" << std::endl;
+			auto[first, second, third] = GetDummyTuple();
 
 			std::cout << "\t\t\t" << " - first : " << first << std::endl;
 			std::cout << "\t\t\t" << " - second : " << second << std::endl;
