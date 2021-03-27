@@ -174,6 +174,11 @@ namespace
 
 	template <typename I, typename... IntegerList>
 	int subtract_args_with_fold_3( I integer, IntegerList... integer_list ) {
+		return ( integer_list - ... - integer ); // fold
+	}
+
+	template <typename I, typename... IntegerList>
+	int subtract_args_with_fold_4( I integer, IntegerList... integer_list ) {
 		return ( integer - ... - integer_list ); // fold
 	}
 }
@@ -245,10 +250,22 @@ namespace variadic_template_test
 
 		{
 			std::cout << "\t" << "+ int subtract_args_with_fold_3( I integer, IntegerList... integer_list )" << std::endl;
-			std::cout << "\t\t" << "return ( integer - ... - integer_list );" << std::endl;
+			std::cout << "\t\t" << "return ( integer_list - ... - integer );" << std::endl;
 			std::cout << std::endl;
 
 			std::cout << "\t\t" << "Call : subtract_args_with_fold_3( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
+
+			std::cout << "\t\t\t" << subtract_args_with_fold_4( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << std::endl;
+		}
+
+		std::cout << std::endl << std::endl;
+
+		{
+			std::cout << "\t" << "+ int subtract_args_with_fold_4( I integer, IntegerList... integer_list )" << std::endl;
+			std::cout << "\t\t" << "return ( integer - ... - integer_list );" << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "\t\t" << "Call : subtract_args_with_fold_4( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
 
 			std::cout << "\t\t\t" << subtract_args_with_fold_3( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << std::endl;
 		}
