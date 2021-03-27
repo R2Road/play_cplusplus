@@ -13,23 +13,47 @@ namespace random_test
 	{
 		std::cout << "== Basic ==" << std::endl << std::endl;
 
-		std::random_device rd;
-		std::default_random_engine random_engine( rd() );
-		std::uniform_int_distribution<int> dist( 0, 2 );
-
-		std::cout << "\t+ Make Random Engine" << std::endl;
-		std::cout << "\t\t" << "std::uniform_int_distribution<int> dist( 0, 2 );" << std::endl << std::endl;
-
-		std::cout << "\t\t" << "Loop : 10" << std::endl;
-
-		for( int i = 0; 10 > i; ++i )
 		{
-			std::cout << "\t\t\t - " << dist( random_engine ) << std::endl;
+			std::cout << "\t+ Range Check" << std::endl;
+			std::cout << "\t\t" << "std::uniform_int_distribution<int> dist( 0, 2 );" << std::endl << std::endl;
+
+			std::random_device rd;
+			std::default_random_engine random_engine( rd() );
+			std::uniform_int_distribution<int> dist( 0, 2 );
+
+			std::cout << "\t\t" << "Loop : 10" << std::endl;
+
+			for( int i = 0; 10 > i; ++i )
+			{
+				std::cout << "\t\t\t - " << dist( random_engine ) << std::endl;
+			}
+
+			std::cout << std::endl;
+
+			std::cout << "\t\t" << "Contained Min and Max;" << std::endl;
 		}
 
-		std::cout << std::endl;
+		std::cout << std::endl << std::endl;
 
-		std::cout << "\t\t" << "Contained Min and Max;" << std::endl;
+		{
+			std::cout << "\t+ Range Check" << std::endl;
+			std::cout << "\t\t" << "std::uniform_real_distribution<float> dist( 0, 2 );" << std::endl << std::endl;
+
+			std::random_device rd;
+			std::default_random_engine random_engine( rd() );
+			std::uniform_real_distribution<float> dist( 0.f, 0.1f );
+
+			std::cout << "\t\t" << "Loop : 10" << std::endl;
+
+			for( int i = 0; 10 > i; ++i )
+			{
+				std::cout << "\t\t\t - " << dist( random_engine ) << std::endl;
+			}
+
+			std::cout << std::endl;
+
+			std::cout << "\t\t" << "Contained Min;" << std::endl;
+		}
 	}
 }
 
