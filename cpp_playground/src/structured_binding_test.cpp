@@ -30,7 +30,7 @@ namespace structured_binding_test
 			std::cout << "\t\t" << "{" << std::endl;
 			std::cout << "\t\t\t" << "int i = 1;" << std::endl;
 			std::cout << "\t\t\t" << "char c = 'a';" << std::endl;
-			std::cout << "\t\t\t" << "bool b = true;" << std::endl;
+			std::cout << "\t\t\t" << "float f = 3.14f;" << std::endl;
 			std::cout << "\t\t" << "};" << std::endl << std::endl;
 
 			struct TestStruct
@@ -43,7 +43,7 @@ namespace structured_binding_test
 			std::cout << "\t\t" << "TestStruct t;" << std::endl << std::endl;
 			TestStruct t;
 
-			std::cout << "\t\t" << "auto[i, c, b] = t;" << std::endl;
+			std::cout << "\t\t" << "auto[i, c, f] = t;" << std::endl;
 			auto[i, c, f] = t;
 
 			std::cout << "\t\t\t" << " - i : " << i << std::endl;
