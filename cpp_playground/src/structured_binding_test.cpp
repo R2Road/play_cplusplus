@@ -20,10 +20,7 @@ namespace structured_binding_test
 {
 	void Basic::Do()
 	{
-		std::cout << "== Structured Binding : Basic ==" << std::endl;
-
-
-		std::cout << std::endl << std::endl;
+		std::cout << "== Structured Binding : Basic ==" << std::endl << std::endl;
 
 
 		{

@@ -8,10 +8,7 @@ namespace variant_test
 {
 	void Basic::Do()
 	{
-		std::cout << "== Variant : Basic ==" << std::endl;
-
-
-		std::cout << std::endl << std::endl;
+		std::cout << "== Variant : Basic ==" << std::endl << std::endl;
 
 
 		{
