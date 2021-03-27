@@ -61,6 +61,17 @@ namespace
 		//std::cout << "\t" << "+ Change Value with Sp Has Const Value" << std::endl;
 		//std::cout << "\t\t" << *const_test_sp << std::endl;
 	}
+
+	void Test3()
+	{
+		std::cout << "== Make Shared ==" << std::endl << std::endl;
+
+		std::cout << "\t" << "auto test_sp = std::make_shared<int>( 10 );" << std::endl;
+		auto test_sp = std::make_shared<int>( 10 );
+
+		std::cout << "\t\t - Print : " << *test_sp << std::endl;
+		std::cout << std::endl;
+	}
 }
 
 namespace shared_pointer_test
@@ -72,5 +83,9 @@ namespace shared_pointer_test
 		std::cout << std::endl << std::endl;
 
 		Test2();
+
+		std::cout << std::endl << std::endl;
+
+		Test3();
 	}
 }
