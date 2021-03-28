@@ -175,7 +175,7 @@ namespace
 	struct ConvertInteger2String_2<0, Chars...>
 	{
 		static constexpr size_t size = ( sizeof...( Chars ) ) + 8 + 1;
-		static constexpr const char c[size + 8 + 1] = { Chars..., ' ', 'M', 'O', 'O', 'Y', 'A', 'H', 'O', '\0' };
+		static constexpr const char c[size] = { Chars..., ' ', 'M', 'O', 'O', 'Y', 'A', 'H', 'O', '\0' };
 		static constexpr const char* s = c;
 	};
 
