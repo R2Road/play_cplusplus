@@ -97,7 +97,6 @@ namespace template_meta_programming_test
 
 		{
 			std::cout << "\t" << "+ ConvertInteger2String_1<2>::c.c_str()" << std::endl;
-
 			std::cout << "\t\t" << "result : " << ConvertInteger2String_1<2>::c.c_str() << std::endl;
 		}
 
@@ -105,12 +104,10 @@ namespace template_meta_programming_test
 
 		{
 			std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::size" << std::endl;
-
 			std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::size << std::endl;
 
 
 			std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::c" << std::endl;
-
 			std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::c << std::endl;
 		}
 
