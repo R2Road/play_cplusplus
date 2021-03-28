@@ -174,18 +174,16 @@ namespace
 	template<char... Chars>
 	struct ConvertInteger2String_2<0, Chars...>
 	{
-		static constexpr size_t size = sizeof...( Chars );
-		static constexpr const char c[size + 1] = { Chars..., '\0' };
-
-		static constexpr const char* GetString() { return c; }
+		static constexpr size_t size = ( sizeof...( Chars ) ) + 8 + 1;
+		static constexpr const char c[size + 8 + 1] = { Chars..., ' ', 'M', 'O', 'O', 'Y', 'A', 'H', 'O', '\0' };
+		static constexpr const char* s = c;
 	};
 
 	template<int N, char... Chars>
 	struct ConvertInteger2String_2
 	{
-		static constexpr size_t size = ConvertInteger2String_2<N/10, ConvertUnits2Character<N%10>::c, Chars...>::size;
-
-		static constexpr const char* GetString() { return ConvertInteger2String_2<N / 10, ConvertUnits2Character<N % 10>::c, Chars...>::GetString(); }
+		static constexpr size_t size = ConvertInteger2String_2<N / 10, ConvertUnits2Character<N % 10>::c, Chars...>::size;
+		static constexpr const char* s = ConvertInteger2String_2<N / 10, ConvertUnits2Character<N % 10>::c, Chars...>::s;
 	};
 }
 namespace template_meta_programming_test
@@ -217,7 +215,7 @@ namespace template_meta_programming_test
 		{
 			std::cout << "\t" << "+ ConvertInteger2String_2<101010>" << std::endl;
 			std::cout << "\t\t" << "size : " << ConvertInteger2String_2<101010>::size << std::endl;
-			std::cout << "\t\t" << "result : " << ConvertInteger2String_2<101010>::GetString() << std::endl;
+			std::cout << "\t\t" << "string : " << ConvertInteger2String_2<101010>::s << std::endl;
 		}
 	}
 }
