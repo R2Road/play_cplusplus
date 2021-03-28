@@ -16,8 +16,8 @@ namespace tuple_test
 
 
 		{
-			std::cout << "\t+ std::variant<int, std::string, bool> v;" << std::endl;
-			std::tuple<int, std::string, bool> v;
+			std::cout << "\t+ std::variant<int, std::string, char> v;" << std::endl;
+			std::tuple<int, std::string, char> v;
 
 			std::cout << "\t\t- Call : std::get<0>( v );" << std::endl;
 			std::cout << "\t\t\t" << std::get<0>( v ) << std::endl;
@@ -52,8 +52,8 @@ namespace tuple_test
 
 
 		{
-			std::cout << "\t+ auto v = std::make_tuple( 10, ""Kim"", true );" << std::endl;
-			auto v = std::make_tuple( 10, "Kim", true );
+			std::cout << "\t+ auto v = std::make_tuple( 10, ""Kim"", 'c' );" << std::endl;
+			auto v = std::make_tuple( 10, "Kim", 'c' );
 
 			std::cout << "\t\t- Call : std::get<0>( v );" << std::endl;
 			std::cout << "\t\t\t" << std::get<0>( v ) << std::endl;
