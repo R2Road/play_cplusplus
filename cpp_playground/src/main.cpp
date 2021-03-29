@@ -13,6 +13,7 @@
 #include "tuple_test.h"
 #include "structured_binding_test.h"
 #include "const_pointer_test.h"
+#include "assert_test.h"
 
 
 std::string MakeMenuString()
@@ -36,6 +37,7 @@ std::string MakeMenuString()
 	ss << "Y : " << structured_binding_test::Basic::GetTitle() << std::endl;
 	ss << "U : " << random_test::Basic::GetTitle() << std::endl;
 	ss << "I : " << const_pointer_test::Basic::GetTitle() << std::endl;
+	ss << "O : " << const_pointer_test::Basic::GetTitle() << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -113,6 +115,9 @@ int main()
 			break;
 		case 'i':
 			const_pointer_test::Basic::Do();
+			break;
+		case 'o':
+			assert_test::Basic::Do();
 			break;
 
 		case 27: // ESC
