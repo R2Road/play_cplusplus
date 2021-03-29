@@ -39,6 +39,9 @@
     <ClCompile Include="src\structured_binding_test.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\const_pointer_test.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -66,6 +69,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\structured_binding_test.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\const_pointer_test.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

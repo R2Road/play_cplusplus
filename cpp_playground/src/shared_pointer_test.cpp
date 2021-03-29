@@ -29,18 +29,6 @@ namespace
 
 		std::cout << "\t\t\t - Print : " << *test_sp_2 << std::endl;
 		std::cout << std::endl;
-
-
-		int a = 0;
-		int b = 0;
-		const int* pa_1 = &a;
-		pa_1 = &b;
-		//*pa_1 = b; // error
-
-		int* const pa_2 = &a;
-		//pa_2 = &b; // error
-		*pa_2 = b;
-
 	}
 
 	void Test2()
