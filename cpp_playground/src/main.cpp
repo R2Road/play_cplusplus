@@ -38,6 +38,7 @@ std::string MakeMenuString()
 	ss << "U : " << random_test::Basic::GetTitle() << std::endl;
 	ss << "I : " << const_pointer_test::Basic::GetTitle() << std::endl;
 	ss << "O : " << const_pointer_test::Basic::GetTitle() << std::endl;
+	ss << "P : " << template_meta_programming_test::MultiTypePackage::GetTitle() << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -118,6 +119,9 @@ int main()
 			break;
 		case 'o':
 			assert_test::Basic::Do();
+			break;
+		case 'p':
+			template_meta_programming_test::MultiTypePackage::Do();
 			break;
 
 		case 27: // ESC

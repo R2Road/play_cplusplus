@@ -32,4 +32,12 @@ namespace template_meta_programming_test
 		static const char* GetTitle() { return "TMP : Integer 2 String II"; }
 		static void Do();
 	};
+
+
+	class MultiTypePackage
+	{
+	public:
+		static const char* GetTitle() { return "TMP : Multi Type Package"; }
+		static void Do();
+	};
 }

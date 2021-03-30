@@ -213,3 +213,49 @@ namespace template_meta_programming_test
 		}
 	}
 }
+
+
+
+
+
+namespace
+{
+	template<typename... Types>
+	class MTPackage;
+
+	template<>
+	class MTPackage<>
+	{};
+
+	template<typename _This, typename... _Rest>
+	class MTPackage<_This, _Rest...> : private MTPackage<_Rest...>
+	{
+	public:
+		using ThisT = _This;
+		using BaseT = MTPackage<_Rest...>;
+
+		constexpr MTPackage() : BaseT(), val() {}
+
+		template<class _This2, class... _Rest2>
+		constexpr MTPackage( _This2 arg, _Rest2... args ) : BaseT( args... ), val( arg ) {}
+
+		ThisT val;
+	};
+}
+namespace template_meta_programming_test
+{
+	void MultiTypePackage::Do()
+	{
+		{
+			std::cout << "== TMP : Multi Type Package ==" << std::endl;
+
+			std::cout << "\t" << "+ MTPackage<int, float, char> mtp;" << std::endl;
+
+			MTPackage<int, float, char> mtp { 1, 2.f, '3' };
+
+			std::cout << "\t\t" << "result : " << mtp.val << std::endl;
+		}
+
+		std::cout << std::endl << std::endl;
+	}
+}
