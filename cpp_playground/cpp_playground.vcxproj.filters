@@ -45,7 +45,7 @@
     <ClCompile Include="src\assert_test.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\stringview_test.cpp">
+    <ClCompile Include="src\string_view_test.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,7 +83,7 @@
     <ClInclude Include="src\assert_test.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\stringview_test.h">
+    <ClInclude Include="src\string_view_test.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
