@@ -16,8 +16,7 @@ namespace stringview_test
 			std::cout << "\t" << "+ std::string_view view = \"String View Test_1\";" << std::endl << std::endl;
 			std::string_view view = "String View Test_1";
 
-			std::cout << "\t\t - Print" << std::endl;
-			std::cout << "\t\t\t" << view << std::endl;
+			std::cout << "\t\t - Print : " << view << std::endl;
 		}
 
 		std::cout << std::endl << std::endl;
@@ -28,8 +27,7 @@ namespace stringview_test
 			std::string str = "String View Test_2";
 			std::string_view view = str;
 
-			std::cout << "\t\t - Print" << std::endl;
-			std::cout << "\t\t\t" << view << std::endl;
+			std::cout << "\t\t - Print : " << view << std::endl;
 		}
 
 		std::cout << std::endl << std::endl;
@@ -54,8 +52,7 @@ namespace stringview_test
 
 			std::cout << "\t\t - Has Literal \"sv\"" << std::endl;
 			std::cout << "\t\t - \"sv\" make constexpr string_view" << std::endl;
-			std::cout << "\t\t - Print" << std::endl;
-			std::cout << "\t\t\t" << view << std::endl;
+			std::cout << "\t\t\t - Print : " << view << std::endl;
 		}
 
 		std::cout << std::endl << std::endl;
@@ -67,8 +64,7 @@ namespace stringview_test
 			std::cout << "\t\t - view.remove_prefix( 3u );" << std::endl;
 			view.remove_prefix( 3u );
 
-			std::cout << "\t\t\t - Print" << std::endl;
-			std::cout << "\t\t\t\t" << view << std::endl;
+			std::cout << "\t\t\t - Print : " << view << std::endl;
 		}
 
 		std::cout << std::endl << std::endl;
@@ -80,8 +76,7 @@ namespace stringview_test
 			std::cout << "\t\t - view.remove_suffix( 4u );" << std::endl;
 			view.remove_suffix( 4u );
 
-			std::cout << "\t\t\t - Print" << std::endl;
-			std::cout << "\t\t\t\t" << view << std::endl;
+			std::cout << "\t\t\t - Print : " << view << std::endl;
 		}
 
 		std::cout << std::endl << std::endl;
