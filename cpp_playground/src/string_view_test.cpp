@@ -59,5 +59,31 @@ namespace stringview_test
 		}
 
 		std::cout << std::endl << std::endl;
+
+		{
+			std::cout << "\t" << "+ std::string_view view = \"String View Test_5\"sv;" << std::endl << std::endl;
+			auto view = "String View Test_5"sv;
+
+			std::cout << "\t\t - view.remove_prefix( 3u );" << std::endl;
+			view.remove_prefix( 3u );
+
+			std::cout << "\t\t\t - Print" << std::endl;
+			std::cout << "\t\t\t\t" << view << std::endl;
+		}
+
+		std::cout << std::endl << std::endl;
+
+		{
+			std::cout << "\t" << "+ std::string_view view = \"String View Test_6\"sv;" << std::endl << std::endl;
+			auto view = "String View Test_6"sv;
+
+			std::cout << "\t\t - view.remove_suffix( 4u );" << std::endl;
+			view.remove_suffix( 4u );
+
+			std::cout << "\t\t\t - Print" << std::endl;
+			std::cout << "\t\t\t\t" << view << std::endl;
+		}
+
+		std::cout << std::endl << std::endl;
 	}
 }
