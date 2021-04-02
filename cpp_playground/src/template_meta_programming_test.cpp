@@ -190,15 +190,15 @@ namespace template_meta_programming_test
 		{
 			std::cout << "== TMP : Units 2 Character ==" << std::endl;
 
-			std::cout << "\t" << "+ << ConvertUnits2Character<1>::c" << std::endl;
+			std::cout << "\t" << "+ ConvertUnits2Character<1>::c" << std::endl;
 			std::cout << "\t\t" << "result : " << ConvertUnits2Character<1>::c << std::endl;
 
 
-			std::cout << "\t" << "+ << ConvertUnits2Character<9>::c" << std::endl;
+			std::cout << "\t" << "+ ConvertUnits2Character<9>::c" << std::endl;
 			std::cout << "\t\t" << "result : " << ConvertUnits2Character<9>::c << std::endl;
 
 
-			std::cout << "\t" << "+ << ConvertUnits2Character<10>::c" << std::endl;
+			std::cout << "\t" << "+ ConvertUnits2Character<10>::c" << std::endl;
 			std::cout << "\t\t" << "result : " << ConvertUnits2Character<10>::c << std::endl;
 		}
 
