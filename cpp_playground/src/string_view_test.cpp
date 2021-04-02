@@ -11,7 +11,7 @@ namespace stringview_test
 		std::cout << "== StringView ==" << std::endl << std::endl;
 
 		{
-			std::cout << "\t" << "+ std::string_view sv = ""String View Test_1"";" << std::endl << std::endl;
+			std::cout << "\t" << "+ std::string_view sv = \"String View Test_1\";" << std::endl << std::endl;
 			std::string_view sv = "String View Test_1";
 
 			std::cout << "\t\t - Print" << std::endl;
@@ -21,7 +21,7 @@ namespace stringview_test
 		std::cout << std::endl << std::endl;
 
 		{
-			std::cout << "\t" << "+ std::string s = ""String View Test_2"";" << std::endl;
+			std::cout << "\t" << "+ std::string s = \"String View Test_2\";" << std::endl;
 			std::cout << "\t" << "+ std::string_view sv = s;" << std::endl << std::endl;
 			std::string s = "String View Test_2";
 			std::string_view sv = s;
