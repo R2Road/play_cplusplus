@@ -4,6 +4,8 @@
 #include <string>
 #include <string_view>
 
+using namespace std::string_view_literals;
+
 namespace stringview_test
 {
 	void Basic::Do()
@@ -42,6 +44,18 @@ namespace stringview_test
 			{
 				std::cout << "\t\t\t\t" << c << std::endl;
 			}
+		}
+
+		std::cout << std::endl << std::endl;
+
+		{
+			std::cout << "\t" << "+ std::string_view view = \"String View Test_4\"sv;" << std::endl << std::endl;
+			auto view = "String View Test_4"sv;
+
+			std::cout << "\t\t - Has Literal \"sv\"" << std::endl;
+			std::cout << "\t\t - \"sv\" make constexpr string_view" << std::endl;
+			std::cout << "\t\t - Print" << std::endl;
+			std::cout << "\t\t\t" << view << std::endl;
 		}
 
 		std::cout << std::endl << std::endl;
