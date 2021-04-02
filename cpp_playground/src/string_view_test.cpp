@@ -33,8 +33,8 @@ namespace stringview_test
 		std::cout << std::endl << std::endl;
 
 		{
-			std::cout << "\t" << "+ std::string_view view = \"String View Test_3\";" << std::endl;
-			std::string_view view = "String View Test_3";
+			std::cout << "\t" << "+ std::string_view view = \"test 3\";" << std::endl;
+			std::string_view view = "test 3";
 
 			std::cout << "\t\t - Enable Ranged For" << std::endl;
 			std::cout << "\t\t\t - for( const auto c : view )" << std::endl;
