@@ -86,7 +86,7 @@ namespace stringview_test
 			auto view = "String View Test_7"sv;
 
 			std::cout << "\t+ auto view2 = view.substr( 7u, 4u );" << std::endl;
-			auto view_2 = view.substr( 7u, 4u );
+			auto view_2 = view.substr( 12u, 6u );
 
 			std::cout << "\t\t - Print : " << view_2 << std::endl;
 		}
