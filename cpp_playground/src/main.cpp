@@ -38,7 +38,7 @@ std::string MakeMenuString()
 	ss << "Y : " << structured_binding_test::Basic::GetTitle() << std::endl;
 	ss << "U : " << random_test::Basic::GetTitle() << std::endl;
 	ss << "I : " << const_pointer_test::Basic::GetTitle() << std::endl;
-	ss << "O : " << const_pointer_test::Basic::GetTitle() << std::endl;
+	ss << "O : " << assert_test::Basic::GetTitle() << std::endl;
 	ss << "P : " << template_meta_programming_test::MultiTypePackage::GetTitle() << std::endl;
 	ss << "A : " << stringview_test::Basic::GetTitle() << std::endl;
 
