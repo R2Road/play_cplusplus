@@ -7,6 +7,9 @@
     <Filter Include="test">
       <UniqueIdentifier>{77a45f2c-1f22-46b3-9c35-5ee34c38a7b9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scenegraph">
+      <UniqueIdentifier>{8ee2966b-cc60-4aee-b5fa-533d7ec8b9fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\shared_pointer_test.cpp">
@@ -48,6 +51,9 @@
     <ClCompile Include="src\string_view_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_Scene.cpp">
+      <Filter>scenegraph</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -85,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="src\string_view_test.h">
       <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_Scene.h">
+      <Filter>scenegraph</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
