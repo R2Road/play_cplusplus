@@ -80,5 +80,17 @@ namespace stringview_test
 		}
 
 		std::cout << std::endl << std::endl;
+
+		{
+			std::cout << "\t" << "+ std::string_view view = \"String View Test_7\"sv;" << std::endl;
+			auto view = "String View Test_7"sv;
+
+			std::cout << "\t+ auto view2 = view.substr( 7u, 4u );" << std::endl;
+			auto view_2 = view.substr( 7u, 4u );
+
+			std::cout << "\t\t - Print : " << view_2 << std::endl;
+		}
+
+		std::cout << std::endl << std::endl;
 	}
 }
