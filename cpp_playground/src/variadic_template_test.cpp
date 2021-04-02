@@ -60,7 +60,7 @@ namespace variadic_template_test
 		std::cout << "== PrintValues ==" << std::endl;
 
 		{
-			std::cout << "\t" << "+ print_args_1( 1, 2, 3, 4, ""variadic_template_test"", 3.141592 )" << std::endl;
+			std::cout << "\t" << "+ print_args_1( 1, 2, 3, 4, \"variadic_template_test\", 3.141592 )" << std::endl;
 
 			print_args_1( 1, 2, 3, 4, "variadic_template_test", 3.141592 );
 		}
@@ -68,7 +68,7 @@ namespace variadic_template_test
 		std::cout << std::endl << std::endl;
 
 		{
-			std::cout << "\t" << "+ print_args_2( 1, 2, 3, 4, ""variadic_template_test"", 3.141592 )" << std::endl;
+			std::cout << "\t" << "+ print_args_2( 1, 2, 3, 4, \"variadic_template_test\", 3.141592 )" << std::endl;
 
 			print_args_2( 1, 2, 3, 4, "variadic_template_test", 3.141592 );
 		}

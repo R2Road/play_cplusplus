@@ -12,7 +12,7 @@ namespace assert_test
 		std::cout << std::endl;
 
 		{
-			std::cout << "\t" << "+ assert( 1 > 2 && ""What The Fuck"" );" << std::endl << std::endl;
+			std::cout << "\t" << "+ assert( 1 > 2 && \"What The Fuck\" );" << std::endl << std::endl;
 			assert( 1 > 2 && "What The Fuck" );
 		}
 
