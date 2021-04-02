@@ -11,34 +11,34 @@ namespace stringview_test
 		std::cout << "== StringView ==" << std::endl << std::endl;
 
 		{
-			std::cout << "\t" << "+ std::string_view sv = \"String View Test_1\";" << std::endl << std::endl;
-			std::string_view sv = "String View Test_1";
+			std::cout << "\t" << "+ std::string_view view = \"String View Test_1\";" << std::endl << std::endl;
+			std::string_view view = "String View Test_1";
 
 			std::cout << "\t\t - Print" << std::endl;
-			std::cout << "\t\t\t" << sv << std::endl;
+			std::cout << "\t\t\t" << view << std::endl;
 		}
 
 		std::cout << std::endl << std::endl;
 
 		{
-			std::cout << "\t" << "+ std::string s = \"String View Test_2\";" << std::endl;
-			std::cout << "\t" << "+ std::string_view sv = s;" << std::endl << std::endl;
-			std::string s = "String View Test_2";
-			std::string_view sv = s;
+			std::cout << "\t" << "+ std::string str = \"String View Test_2\";" << std::endl;
+			std::cout << "\t" << "+ std::string_view view = str;" << std::endl << std::endl;
+			std::string str = "String View Test_2";
+			std::string_view view = str;
 
 			std::cout << "\t\t - Print" << std::endl;
-			std::cout << "\t\t\t" << sv << std::endl;
+			std::cout << "\t\t\t" << view << std::endl;
 		}
 
 		std::cout << std::endl << std::endl;
 
 		{
-			std::cout << "\t" << "+ std::string_view sv = \"String View Test_3\";" << std::endl;
-			std::string_view sv = "String View Test_3";
+			std::cout << "\t" << "+ std::string_view view = \"String View Test_3\";" << std::endl;
+			std::string_view view = "String View Test_3";
 
 			std::cout << "\t\t - Enable Ranged For" << std::endl;
-			std::cout << "\t\t\t - for( const auto c : sv )" << std::endl;
-			for( const auto c : sv )
+			std::cout << "\t\t\t - for( const auto c : view )" << std::endl;
+			for( const auto c : view )
 			{
 				std::cout << "\t\t\t\t" << c << std::endl;
 			}
