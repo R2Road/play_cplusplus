@@ -4,7 +4,7 @@
 #include <string>
 #include <string_view>
 
-using namespace std::string_view_literals;
+using namespace std::string_view_literals; // for sv
 
 namespace stringview_test
 {
