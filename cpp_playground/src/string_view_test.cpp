@@ -47,7 +47,7 @@ namespace stringview_test
 		std::cout << std::endl << std::endl;
 
 		{
-			std::cout << "\t" << "+ std::string_view view = \"String View Test_4\"sv;" << std::endl << std::endl;
+			std::cout << "\t" << "+ auto view = \"String View Test_4\"sv;" << std::endl << std::endl;
 			auto view = "String View Test_4"sv;
 
 			std::cout << "\t\t - Has Literal \"sv\"" << std::endl;
@@ -58,7 +58,7 @@ namespace stringview_test
 		std::cout << std::endl << std::endl;
 
 		{
-			std::cout << "\t" << "+ std::string_view view = \"String View Test_5\"sv;" << std::endl << std::endl;
+			std::cout << "\t" << "+ auto view = \"String View Test_5\"sv;" << std::endl << std::endl;
 			auto view = "String View Test_5"sv;
 
 			std::cout << "\t\t - view.remove_prefix( 3u );" << std::endl;
@@ -70,7 +70,7 @@ namespace stringview_test
 		std::cout << std::endl << std::endl;
 
 		{
-			std::cout << "\t" << "+ std::string_view view = \"String View Test_6\"sv;" << std::endl << std::endl;
+			std::cout << "\t" << "+ auto view = \"String View Test_6\"sv;" << std::endl << std::endl;
 			auto view = "String View Test_6"sv;
 
 			std::cout << "\t\t - view.remove_suffix( 4u );" << std::endl;
@@ -82,7 +82,7 @@ namespace stringview_test
 		std::cout << std::endl << std::endl;
 
 		{
-			std::cout << "\t" << "+ std::string_view view = \"String View Test_7\"sv;" << std::endl;
+			std::cout << "\t" << "+ auto view = \"String View Test_7\"sv;" << std::endl;
 			auto view = "String View Test_7"sv;
 
 			std::cout << "\t+ auto view2 = view.substr( 7u, 4u );" << std::endl;
