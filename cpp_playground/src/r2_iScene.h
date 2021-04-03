@@ -11,11 +11,18 @@ namespace r2
 	class iScene
 	{
 	public:
+		enum eResult
+		{
+			RunTest,
+			ChangeScene,
+			Exit,
+		};
+
 		iScene( Director* const director ) : mDirector( director ) {}
 		virtual ~iScene() {}
 
 		virtual void ShowMenu() = 0;
-		virtual bool Do( const int key_code ) = 0;
+		virtual eResult Do( const int key_code ) = 0;
 
 	protected:
 		Director* mDirector;

@@ -64,16 +64,18 @@ namespace r2
 		std::cout << menu_string;
 	}
 
-	bool Scene::Do( const int key_code )
+	iScene::eResult Scene::Do( const int key_code )
 	{
 		switch( key_code )
 		{
 		case '1':
 			filesystem_test::CurrentDirectory::Do();
 			break;
+
 		case '2':
 			mDirector->Setup( r2::RandomTestScene::Create( mDirector ) );
-			break;
+			return iScene::eResult::ChangeScene;
+
 		case '3':
 			shared_pointer_test::SharedPtr::Do();
 			break;
@@ -128,9 +130,9 @@ namespace r2
 			break;
 
 		case 27: // ESC
-			return false;
+			return iScene::eResult::Exit;
 		}
 
-		return true;
+		return iScene::eResult::RunTest;
 	}
 }

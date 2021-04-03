@@ -24,15 +24,19 @@ namespace r2
 			input = _getch();
 			system( "cls" );
 
-			if( mScene->Do( input ) )
+			switch( mScene->Do( input ) )
 			{
+			case iScene::eResult::RunTest:
 				std::cout << std::endl << "Press Any Key" << std::endl;
 				_getch();
 				system( "cls" );
-			}
-			else
-			{
 				break;
+
+			//case iScene::eResult::ChangeScene:
+				//break;
+
+			case iScene::eResult::Exit:
+				return;
 			}
 		}
 	}
