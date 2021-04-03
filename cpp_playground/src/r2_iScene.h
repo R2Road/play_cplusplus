@@ -9,6 +9,8 @@ namespace r2
 	class iScene
 	{
 	public:
+		virtual ~iScene() {}
+
 		virtual int Do() = 0;
 	};
 }
