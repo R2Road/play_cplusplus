@@ -54,6 +54,9 @@
     <ClCompile Include="src\r2_Scene.cpp">
       <Filter>scenegraph</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_Director.cpp">
+      <Filter>scenegraph</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -93,6 +96,9 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_Scene.h">
+      <Filter>scenegraph</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_Director.h">
       <Filter>scenegraph</Filter>
     </ClInclude>
   </ItemGroup>
