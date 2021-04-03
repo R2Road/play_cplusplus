@@ -16,11 +16,15 @@ namespace r2
 
 	void Director::Update()
 	{
+		int input = 0;
 		while( true )
 		{
 			mScene->ShowMenu();
 
-			if( mScene->Do() )
+			input = _getch();
+			system( "cls" );
+
+			if( mScene->Do( input ) )
 			{
 				std::cout << std::endl << "Press Any Key" << std::endl;
 				_getch();

@@ -13,6 +13,6 @@ namespace r2
 		static SceneUp Create();
 
 		void ShowMenu() override;
-		int Do() override;
+		int Do( const int key_code ) override;
 	};
 }

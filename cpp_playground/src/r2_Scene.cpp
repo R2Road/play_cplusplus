@@ -61,12 +61,9 @@ namespace r2
 		std::cout << menu_string;
 	}
 
-	int Scene::Do()
+	int Scene::Do( const int key_code )
 	{
-		const int input = _getch();
-		system( "cls" );
-
-		switch( input )
+		switch( key_code )
 		{
 		case '1':
 			filesystem_test::CurrentDirectory::Do();
