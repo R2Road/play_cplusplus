@@ -1,10 +1,12 @@
 #pragma once
 
+#include "r2_iScene.h"
+
 namespace r2
 {
-	class Scene
+	class Scene : public iScene
 	{
 	public:
-		int Do();
+		int Do() override;
 	};
 }
