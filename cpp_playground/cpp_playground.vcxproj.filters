@@ -10,6 +10,9 @@
     <Filter Include="scenegraph">
       <UniqueIdentifier>{8ee2966b-cc60-4aee-b5fa-533d7ec8b9fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scene">
+      <UniqueIdentifier>{b9566801-30ec-4d55-bd6d-040901fc06e3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\shared_pointer_test.cpp">
@@ -51,11 +54,11 @@
     <ClCompile Include="src\string_view_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_Scene.cpp">
-      <Filter>scenegraph</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2_Director.cpp">
       <Filter>scenegraph</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_Scene.cpp">
+      <Filter>scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,14 +98,14 @@
     <ClInclude Include="src\string_view_test.h">
       <Filter>test</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_Scene.h">
-      <Filter>scenegraph</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2_Director.h">
       <Filter>scenegraph</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_iScene.h">
       <Filter>scenegraph</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_Scene.h">
+      <Filter>scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
