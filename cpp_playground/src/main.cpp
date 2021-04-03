@@ -9,7 +9,7 @@ int main()
 	system( "mode con lines=60 cols=120" );
 
 	r2::Director director;
-	director.Setup( r2::Scene::Create() );
+	director.Setup( r2::Scene::Create( &director ) );
 
 	director.Update();
 

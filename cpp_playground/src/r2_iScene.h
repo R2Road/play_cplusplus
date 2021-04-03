@@ -4,14 +4,20 @@
 
 namespace r2
 {
+	class Director;
+
 	using SceneUp = std::unique_ptr<class iScene>;
 
 	class iScene
 	{
 	public:
+		iScene( Director* const director ) : mDirector( director ) {}
 		virtual ~iScene() {}
 
 		virtual void ShowMenu() = 0;
 		virtual int Do( const int key_code ) = 0;
+
+	private:
+		Director* mDirector;
 	};
 }

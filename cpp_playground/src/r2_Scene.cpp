@@ -50,9 +50,11 @@ std::string MakeMenuString()
 
 namespace r2
 {
-	SceneUp Scene::Create()
+	Scene::Scene( Director* const director ) : iScene( director ) {}
+
+	SceneUp Scene::Create( Director* const director )
 	{
-		return SceneUp( new ( std::nothrow ) MyT );
+		return SceneUp( new ( std::nothrow ) MyT( director ) );
 	}
 
 	void Scene::ShowMenu()
