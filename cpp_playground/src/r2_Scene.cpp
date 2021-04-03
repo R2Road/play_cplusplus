@@ -4,8 +4,10 @@
 #include <iostream>
 #include <sstream>
 
+#include "r2_Director.h"
+#include "r2_RandomTestScene.h"
+
 #include "filesystem_test.h"
-#include "random_test.h"
 #include "shared_pointer_test.h"
 #include "variadic_template_test.h"
 #include "template_meta_programming_test.h"
@@ -23,7 +25,7 @@ std::string MakeMenuString()
 	std::stringstream ss;
 	ss << "+ Menu" << std::endl;
 	ss << "1 : " << filesystem_test::CurrentDirectory::GetTitle() << std::endl;
-	ss << "2 : " << random_test::StatusSaveAndLoad::GetTitle() << std::endl;
+	ss << "2 : " << "Random" << std::endl;
 	ss << "3 : " << shared_pointer_test::SharedPtr::GetTitle() << std::endl;
 	ss << "4 : " << variadic_template_test::PrintValues::GetTitle() << std::endl;
 	ss << "5 : " << variadic_template_test::SumValues::GetTitle() << std::endl;
@@ -37,7 +39,6 @@ std::string MakeMenuString()
 	ss << "R : " << variadic_template_test::SizeOfArgs::GetTitle() << std::endl;
 	ss << "T : " << tuple_test::Basic::GetTitle() << std::endl;
 	ss << "Y : " << structured_binding_test::Basic::GetTitle() << std::endl;
-	ss << "U : " << random_test::Basic::GetTitle() << std::endl;
 	ss << "I : " << const_pointer_test::Basic::GetTitle() << std::endl;
 	ss << "O : " << assert_test::Basic::GetTitle() << std::endl;
 	ss << "P : " << template_meta_programming_test::MultiTypePackage::GetTitle() << std::endl;
@@ -71,7 +72,7 @@ namespace r2
 			filesystem_test::CurrentDirectory::Do();
 			break;
 		case '2':
-			random_test::StatusSaveAndLoad::Do();
+			mDirector->Setup( r2::RandomTestScene::Create( mDirector ) );
 			break;
 		case '3':
 			shared_pointer_test::SharedPtr::Do();
@@ -111,9 +112,6 @@ namespace r2
 			break;
 		case 'y':
 			structured_binding_test::Basic::Do();
-			break;
-		case 'u':
-			random_test::Basic::Do();
 			break;
 		case 'i':
 			const_pointer_test::Basic::Do();

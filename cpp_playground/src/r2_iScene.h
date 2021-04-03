@@ -17,7 +17,7 @@ namespace r2
 		virtual void ShowMenu() = 0;
 		virtual bool Do( const int key_code ) = 0;
 
-	private:
+	protected:
 		Director* mDirector;
 	};
 }

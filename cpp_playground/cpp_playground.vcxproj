@@ -24,6 +24,7 @@
     <ClCompile Include="src\filesystem_test.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\r2_Director.cpp" />
+    <ClCompile Include="src\r2_RandomTestScene.cpp" />
     <ClCompile Include="src\r2_Scene.cpp" />
     <ClCompile Include="src\random_test.cpp" />
     <ClCompile Include="src\shared_pointer_test.cpp" />
@@ -41,6 +42,7 @@
     <ClInclude Include="src\filesystem_test.h" />
     <ClInclude Include="src\r2_Director.h" />
     <ClInclude Include="src\r2_iScene.h" />
+    <ClInclude Include="src\r2_RandomTestScene.h" />
     <ClInclude Include="src\r2_Scene.h" />
     <ClInclude Include="src\random_test.h" />
     <ClInclude Include="src\shared_pointer_test.h" />
