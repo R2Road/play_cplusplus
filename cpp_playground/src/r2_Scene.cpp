@@ -56,6 +56,11 @@ void ShowMenu()
 
 namespace r2
 {
+	SceneUp Scene::Create()
+	{
+		return SceneUp( new ( std::nothrow ) MyT );
+	}
+
 	int Scene::Do()
 	{
 		int input = 0;

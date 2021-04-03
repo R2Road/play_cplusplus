@@ -9,11 +9,7 @@ namespace r2
 	public:
 		Director();
 
-		template<typename T>
-		void Setup()
-		{
-			mScene.reset( new ( std::nothrow ) T );
-		}
+		void Setup( SceneUp scene );
 
 		bool Update();
 

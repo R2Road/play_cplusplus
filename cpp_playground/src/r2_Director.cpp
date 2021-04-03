@@ -1,11 +1,16 @@
 #include "r2_Director.h"
 
-#include "r2_Scene.h"
+#include <utility>
 
 namespace r2
 {
 	Director::Director() : mScene()
 	{}
+
+	void Director::Setup( SceneUp scene )
+	{
+		mScene = std::move( scene );
+	}
 
 	bool Director::Update()
 	{
