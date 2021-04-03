@@ -11,6 +11,7 @@ namespace r2
 	public:
 		virtual ~iScene() {}
 
+		virtual void ShowMenu() = 0;
 		virtual int Do() = 0;
 	};
 }

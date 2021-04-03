@@ -48,12 +48,6 @@ std::string MakeMenuString()
 	return std::string( ss.str() );
 }
 
-void ShowMenu()
-{
-	static std::string menu_string( std::move( MakeMenuString() ) );
-	std::cout << menu_string;
-}
-
 namespace r2
 {
 	SceneUp Scene::Create()
@@ -61,13 +55,15 @@ namespace r2
 		return SceneUp( new ( std::nothrow ) MyT );
 	}
 
+	void Scene::ShowMenu()
+	{
+		static std::string menu_string( std::move( MakeMenuString() ) );
+		std::cout << menu_string;
+	}
+
 	int Scene::Do()
 	{
-		int input = 0;
-
-		ShowMenu();
-
-		input = _getch();
+		const int input = _getch();
 		system( "cls" );
 
 		switch( input )

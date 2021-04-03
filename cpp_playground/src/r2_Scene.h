@@ -12,6 +12,7 @@ namespace r2
 	public:
 		static SceneUp Create();
 
+		void ShowMenu() override;
 		int Do() override;
 	};
 }

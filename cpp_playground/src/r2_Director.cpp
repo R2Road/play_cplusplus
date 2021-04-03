@@ -18,6 +18,8 @@ namespace r2
 	{
 		while( true )
 		{
+			mScene->ShowMenu();
+
 			if( mScene->Do() )
 			{
 				std::cout << std::endl << "Press Any Key" << std::endl;
