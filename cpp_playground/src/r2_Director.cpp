@@ -12,10 +12,8 @@ namespace r2
 		mScene = std::move( scene );
 	}
 
-	bool Director::Update()
+	void Director::Update()
 	{
 		mScene->Do();
-
-		return true;
 	}
 }

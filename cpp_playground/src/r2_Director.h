@@ -11,7 +11,7 @@ namespace r2
 
 		void Setup( SceneUp scene );
 
-		bool Update();
+		void Update();
 
 	private:
 		SceneUp mScene;
