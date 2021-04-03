@@ -64,84 +64,78 @@ namespace r2
 	int Scene::Do()
 	{
 		int input = 0;
-		while( true )
+
+		ShowMenu();
+
+		input = _getch();
+		system( "cls" );
+
+		switch( input )
 		{
-			ShowMenu();
+		case '1':
+			filesystem_test::CurrentDirectory::Do();
+			break;
+		case '2':
+			random_test::StatusSaveAndLoad::Do();
+			break;
+		case '3':
+			shared_pointer_test::SharedPtr::Do();
+			break;
+		case '4':
+			variadic_template_test::PrintValues::Do();
+			break;
+		case '5':
+			variadic_template_test::SumValues::Do();
+			break;
+		case '6':
+			variadic_template_test::SubtractValues::Do();
+			break;
+		case '7':
+			template_meta_programming_test::CalculateFactorial::Do();
+			break;
+		case '8':
+			template_meta_programming_test::Integer2String::Do();
+			break;
+		case '9':
+			template_meta_programming_test::CalculatePlaceValue::Do();
+			break;
+		case 'q':
+			template_meta_programming_test::Integer2String_II::Do();
+			break;
+		case 'w':
+			optional_test::Basic::Do();
+			break;
+		case 'e':
+			variant_test::Basic::Do();
+			break;
+		case 'r':
+			variadic_template_test::SizeOfArgs::Do();
+			break;
+		case 't':
+			tuple_test::Basic::Do();
+			break;
+		case 'y':
+			structured_binding_test::Basic::Do();
+			break;
+		case 'u':
+			random_test::Basic::Do();
+			break;
+		case 'i':
+			const_pointer_test::Basic::Do();
+			break;
+		case 'o':
+			assert_test::Basic::Do();
+			break;
+		case 'p':
+			template_meta_programming_test::MultiTypePackage::Do();
+			break;
 
-			input = _getch();
-			system( "cls" );
+		case 'a':
+			stringview_test::Basic::Do();
+			break;
 
-			switch( input )
-			{
-			case '1':
-				filesystem_test::CurrentDirectory::Do();
-				break;
-			case '2':
-				random_test::StatusSaveAndLoad::Do();
-				break;
-			case '3':
-				shared_pointer_test::SharedPtr::Do();
-				break;
-			case '4':
-				variadic_template_test::PrintValues::Do();
-				break;
-			case '5':
-				variadic_template_test::SumValues::Do();
-				break;
-			case '6':
-				variadic_template_test::SubtractValues::Do();
-				break;
-			case '7':
-				template_meta_programming_test::CalculateFactorial::Do();
-				break;
-			case '8':
-				template_meta_programming_test::Integer2String::Do();
-				break;
-			case '9':
-				template_meta_programming_test::CalculatePlaceValue::Do();
-				break;
-			case 'q':
-				template_meta_programming_test::Integer2String_II::Do();
-				break;
-			case 'w':
-				optional_test::Basic::Do();
-				break;
-			case 'e':
-				variant_test::Basic::Do();
-				break;
-			case 'r':
-				variadic_template_test::SizeOfArgs::Do();
-				break;
-			case 't':
-				tuple_test::Basic::Do();
-				break;
-			case 'y':
-				structured_binding_test::Basic::Do();
-				break;
-			case 'u':
-				random_test::Basic::Do();
-				break;
-			case 'i':
-				const_pointer_test::Basic::Do();
-				break;
-			case 'o':
-				assert_test::Basic::Do();
-				break;
-			case 'p':
-				template_meta_programming_test::MultiTypePackage::Do();
-				break;
-
-			case 'a':
-				stringview_test::Basic::Do();
-				break;
-
-			case 27: // ESC
-				return 0;
-			}
-
-			std::cout << std::endl << "Press Any Key" << std::endl;
-			_getch();
-			system( "cls" );
+		case 27: // ESC
+			return 0;
 		}
 	}
 }

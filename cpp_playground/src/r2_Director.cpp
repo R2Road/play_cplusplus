@@ -1,5 +1,7 @@
 #include "r2_Director.h"
 
+#include <conio.h>
+#include <iostream>
 #include <utility>
 
 namespace r2
@@ -14,6 +16,18 @@ namespace r2
 
 	void Director::Update()
 	{
-		mScene->Do();
+		while( true )
+		{
+			if( mScene->Do() )
+			{
+				std::cout << std::endl << "Press Any Key" << std::endl;
+				_getch();
+				system( "cls" );
+			}
+			else
+			{
+				break;
+			}
+		}
 	}
 }
