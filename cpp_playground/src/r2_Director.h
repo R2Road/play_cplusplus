@@ -1,11 +1,9 @@
 #pragma once
 
-#include <memory>
+#include "r2_iScene.h"
 
 namespace r2
 {
-	using SceneUp = std::unique_ptr<class Scene>;
-
 	class Director
 	{
 	public:
