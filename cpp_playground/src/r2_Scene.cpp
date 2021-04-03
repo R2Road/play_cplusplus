@@ -63,7 +63,7 @@ namespace r2
 		std::cout << menu_string;
 	}
 
-	int Scene::Do( const int key_code )
+	bool Scene::Do( const int key_code )
 	{
 		switch( key_code )
 		{
@@ -130,7 +130,9 @@ namespace r2
 			break;
 
 		case 27: // ESC
-			return 0;
+			return false;
 		}
+
+		return true;
 	}
 }

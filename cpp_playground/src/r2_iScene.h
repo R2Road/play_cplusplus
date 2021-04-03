@@ -15,7 +15,7 @@ namespace r2
 		virtual ~iScene() {}
 
 		virtual void ShowMenu() = 0;
-		virtual int Do( const int key_code ) = 0;
+		virtual bool Do( const int key_code ) = 0;
 
 	private:
 		Director* mDirector;
