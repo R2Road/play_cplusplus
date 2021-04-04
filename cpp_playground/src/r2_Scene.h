@@ -10,8 +10,8 @@ namespace r2
 		using MyT = Scene;
 
 	public:
-		Scene( Director* const director );
-		static SceneUp Create( Director* const director );
+		Scene( Director& director );
+		static SceneUp Create( Director& director );
 
 		void ShowMenu() override;
 		eResult Do( const int key_code ) override;

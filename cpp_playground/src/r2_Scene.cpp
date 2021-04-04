@@ -51,9 +51,9 @@ std::string MakeMenuString()
 
 namespace r2
 {
-	Scene::Scene( Director* const director ) : iScene( director ) {}
+	Scene::Scene( Director& director ) : iScene( director ) {}
 
-	SceneUp Scene::Create( Director* const director )
+	SceneUp Scene::Create( Director& director )
 	{
 		return SceneUp( new ( std::nothrow ) MyT( director ) );
 	}
@@ -73,7 +73,7 @@ namespace r2
 			break;
 
 		case '2':
-			mDirector->Setup( r2::RandomTestScene::Create( mDirector ) );
+			mDirector.Setup( r2::RandomTestScene::Create( mDirector ) );
 			return iScene::eResult::ChangeScene;
 
 		case '3':

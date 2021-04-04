@@ -15,7 +15,7 @@ int main()
 	// Setup
 	//
 	r2::Director director;
-	director.Setup( r2::Scene::Create( &director ) );
+	director.Setup( r2::Scene::Create( director ) );
 
 	//
 	// Process

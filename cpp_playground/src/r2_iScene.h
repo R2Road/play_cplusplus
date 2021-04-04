@@ -18,13 +18,13 @@ namespace r2
 			Exit,
 		};
 
-		iScene( Director* const director ) : mDirector( director ) {}
+		iScene( Director& director ) : mDirector( director ) {}
 		virtual ~iScene() {}
 
 		virtual void ShowMenu() = 0;
 		virtual eResult Do( const int key_code ) = 0;
 
 	protected:
-		Director* mDirector;
+		Director& mDirector;
 	};
 }

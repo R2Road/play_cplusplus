@@ -24,9 +24,9 @@ namespace
 
 namespace r2
 {
-	RandomTestScene::RandomTestScene( Director* const director ) : iScene( director ) {}
+	RandomTestScene::RandomTestScene( Director& director ) : iScene( director ) {}
 
-	SceneUp RandomTestScene::Create( Director* const director )
+	SceneUp RandomTestScene::Create( Director& director )
 	{
 		return SceneUp( new ( std::nothrow ) MyT( director ) );
 	}
@@ -49,7 +49,7 @@ namespace r2
 			break;
 
 		case 27: // ESC
-			mDirector->Setup( r2::Scene::Create( mDirector ) );
+			mDirector.Setup( r2::Scene::Create( mDirector ) );
 			return iScene::eResult::ChangeScene;
 		}
 
