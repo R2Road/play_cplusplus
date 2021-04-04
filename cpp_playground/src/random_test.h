@@ -1,8 +1,10 @@
 #pragma once
 
+#include "r2_iNode.h"
+
 namespace random_test
 {
-	class  Basic
+	class Basic : public r2::iNode<Basic>
 	{
 	public:
 		static const char* GetTitle() { return "Random : Basic"; }
@@ -11,7 +13,7 @@ namespace random_test
 
 
 
-	class  StatusSaveAndLoad
+	class StatusSaveAndLoad : public r2::iNode<StatusSaveAndLoad>
 	{
 	public:
 		static const char* GetTitle() { return "Random : Status Save And Load"; }

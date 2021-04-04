@@ -1,8 +1,10 @@
 #pragma once
 
+#include "r2_iNode.h"
+
 namespace tuple_test
 {
-	class  Basic
+	class Basic : public r2::iNode<Basic>
 	{
 	private:
 		Basic() = delete;

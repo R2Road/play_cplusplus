@@ -113,5 +113,8 @@
     <ClInclude Include="src\r2_RootScene.h">
       <Filter>scene</Filter>
     </ClInclude>
+    <ClInclude Include="src\r2_iNode.h">
+      <Filter>scenegraph</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

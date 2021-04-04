@@ -1,8 +1,10 @@
 #pragma once
 
+#include "r2_iNode.h"
+
 namespace template_meta_programming_test
 {
-	class CalculateFactorial
+	class CalculateFactorial : public r2::iNode<CalculateFactorial>
 	{
 	public:
 		static const char* GetTitle() { return "TMP : Factorial"; }
@@ -10,7 +12,7 @@ namespace template_meta_programming_test
 	};
 
 
-	class Integer2String
+	class Integer2String : public r2::iNode<Integer2String>
 	{
 	public:
 		static const char* GetTitle() { return "TMP : Integer 2 String"; }
@@ -18,7 +20,7 @@ namespace template_meta_programming_test
 	};
 
 
-	class CalculatePlaceValue
+	class CalculatePlaceValue : public r2::iNode<CalculatePlaceValue>
 	{
 	public:
 		static const char* GetTitle() { return "TMP : Place Value"; }
@@ -26,7 +28,7 @@ namespace template_meta_programming_test
 	};
 
 
-	class Integer2String_II
+	class Integer2String_II : public r2::iNode<Integer2String_II>
 	{
 	public:
 		static const char* GetTitle() { return "TMP : Integer 2 String II"; }
@@ -34,7 +36,7 @@ namespace template_meta_programming_test
 	};
 
 
-	class MultiTypePackage
+	class MultiTypePackage : public r2::iNode<MultiTypePackage>
 	{
 	public:
 		static const char* GetTitle() { return "TMP : Multi Type Package"; }
