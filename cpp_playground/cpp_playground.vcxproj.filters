@@ -13,6 +13,9 @@
     <Filter Include="scene">
       <UniqueIdentifier>{b9566801-30ec-4d55-bd6d-040901fc06e3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="r2">
+      <UniqueIdentifier>{411d5d4b-fad6-4a62-8f7a-1cdb2fa1ce82}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\shared_pointer_test.cpp">
@@ -115,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="src\r2_iNode.h">
       <Filter>scenegraph</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_Singleton.h">
+      <Filter>r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
