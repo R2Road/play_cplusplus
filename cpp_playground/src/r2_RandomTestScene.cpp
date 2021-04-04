@@ -13,8 +13,8 @@ namespace
 	{
 		std::stringstream ss;
 		ss << "+ Menu" << std::endl;
-		ss << "1 : " << random_test::Basic::GetTitle() << std::endl;
-		ss << "2 : " << random_test::StatusSaveAndLoad::GetTitle() << std::endl;
+		ss << "1 : " << random_test::Basic::GetInstance().GetTitle() << std::endl;
+		ss << "2 : " << random_test::StatusSaveAndLoad::GetInstance().GetTitle() << std::endl;
 
 		ss << std::endl << "Press Number" << std::endl;
 
@@ -46,10 +46,10 @@ namespace r2
 		switch( key_code )
 		{
 		case '1':
-			random_test::Basic::Do();
+			random_test::Basic::GetInstance().Do();
 			break;
 		case '2':
-			random_test::StatusSaveAndLoad::Do();
+			random_test::StatusSaveAndLoad::GetInstance().Do();
 			break;
 
 		case 27: // ESC

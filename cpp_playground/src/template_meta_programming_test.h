@@ -7,39 +7,39 @@ namespace template_meta_programming_test
 	class CalculateFactorial : public r2::iNode<CalculateFactorial>
 	{
 	public:
-		static const char* GetTitle() { return "TMP : Factorial"; }
-		static void Do();
+		const char* GetTitle() const override { return "TMP : Factorial"; }
+		void Do() override;
 	};
 
 
 	class Integer2String : public r2::iNode<Integer2String>
 	{
 	public:
-		static const char* GetTitle() { return "TMP : Integer 2 String"; }
-		static void Do();
+		const char* GetTitle() const override { return "TMP : Integer 2 String"; }
+		void Do() override;
 	};
 
 
 	class CalculatePlaceValue : public r2::iNode<CalculatePlaceValue>
 	{
 	public:
-		static const char* GetTitle() { return "TMP : Place Value"; }
-		static void Do();
+		const char* GetTitle() const override { return "TMP : Place Value"; }
+		void Do() override;
 	};
 
 
 	class Integer2String_II : public r2::iNode<Integer2String_II>
 	{
 	public:
-		static const char* GetTitle() { return "TMP : Integer 2 String II"; }
-		static void Do();
+		const char* GetTitle() const override { return "TMP : Integer 2 String II"; }
+		void Do() override;
 	};
 
 
 	class MultiTypePackage : public r2::iNode<MultiTypePackage>
 	{
 	public:
-		static const char* GetTitle() { return "TMP : Multi Type Package"; }
-		static void Do();
+		const char* GetTitle() const override { return "TMP : Multi Type Package"; }
+		void Do() override;
 	};
 }

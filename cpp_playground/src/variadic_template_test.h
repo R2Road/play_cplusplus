@@ -7,28 +7,28 @@ namespace variadic_template_test
 	class SizeOfArgs : public r2::iNode<SizeOfArgs>
 	{
 	public:
-		static const char* GetTitle() { return "Variadic Template : Size Of Args"; }
-		static void Do();
+		const char* GetTitle() const override { return "Variadic Template : Size Of Args"; }
+		void Do() override;
 	};
 
 	class PrintValues : public r2::iNode<PrintValues>
 	{
 	public:
-		static const char* GetTitle() { return "Variadic Template : Print Types"; }
-		static void Do();
+		const char* GetTitle() const override { return "Variadic Template : Print Types"; }
+		void Do() override;
 	};
 
 	class SumValues : public r2::iNode<SumValues>
 	{
 	public:
-		static const char* GetTitle() { return "Variadic Template : Sum Values"; }
-		static void Do();
+		const char* GetTitle() const override { return "Variadic Template : Sum Values"; }
+		void Do() override;
 	};
 
 	class SubtractValues : public r2::iNode<SubtractValues>
 	{
 	public:
-		static const char* GetTitle() { return "Variadic Template : Subtract Values"; }
-		static void Do();
+		const char* GetTitle() const override { return "Variadic Template : Subtract Values"; }
+		void Do() override;
 	};
 }

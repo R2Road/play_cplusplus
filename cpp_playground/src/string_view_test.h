@@ -7,7 +7,7 @@ namespace stringview_test
 	class Basic : public r2::iNode<Basic>
 	{
 	public:
-		static const char* GetTitle() { return "StringView : Basic"; }
-		static void Do();
+		const char* GetTitle() const override { return "StringView : Basic"; }
+		void Do() override;
 	};
 }

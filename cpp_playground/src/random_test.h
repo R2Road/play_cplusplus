@@ -7,8 +7,8 @@ namespace random_test
 	class Basic : public r2::iNode<Basic>
 	{
 	public:
-		static const char* GetTitle() { return "Random : Basic"; }
-		static void Do();
+		const char* GetTitle() const override { return "Random : Basic"; }
+		void Do() override;
 	};
 
 
@@ -16,7 +16,7 @@ namespace random_test
 	class StatusSaveAndLoad : public r2::iNode<StatusSaveAndLoad>
 	{
 	public:
-		static const char* GetTitle() { return "Random : Status Save And Load"; }
-		static void Do();
+		const char* GetTitle() const override { return "Random : Status Save And Load"; }
+		void Do() override;
 	};
 }

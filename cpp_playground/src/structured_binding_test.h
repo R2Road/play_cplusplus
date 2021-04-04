@@ -6,11 +6,8 @@ namespace structured_binding_test
 {
 	class Basic : public r2::iNode<Basic>
 	{
-	private:
-		Basic() = delete;
-
 	public:
-		static const char* GetTitle() { return "Structured Binding : Basic"; }
-		static void Do();
+		const char* GetTitle() const override { return "Structured Binding : Basic"; }
+		void Do() override;
 	};
 }

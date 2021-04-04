@@ -7,7 +7,7 @@ namespace filesystem_test
 	class CurrentDirectory : public r2::iNode<CurrentDirectory>
 	{
 	public:
-		static const char* GetTitle() { return "File System : Current Directory"; }
-		static void Do();
+		const char* GetTitle() const override { return "File System : Current Directory"; }
+		void Do() override;
 	};
 }

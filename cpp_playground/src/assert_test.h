@@ -7,7 +7,7 @@ namespace assert_test
 	class Basic : public r2::iNode<Basic>
 	{
 	public:
-		static const char* GetTitle() { return "Assert : Basic"; }
-		static void Do();
+		const char* GetTitle() const override { return "Assert : Basic"; }
+		void Do() override;
 	};
 }
