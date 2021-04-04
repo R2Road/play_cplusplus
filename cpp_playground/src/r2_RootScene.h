@@ -4,13 +4,13 @@
 
 namespace r2
 {
-	class Scene : public iScene
+	class RootScene : public iScene
 	{
 	private:
-		using MyT = Scene;
+		using MyT = RootScene;
 
 	public:
-		Scene( Director& director );
+		RootScene( Director& director );
 
 		static SceneUp Create( Director& director );
 

@@ -4,7 +4,7 @@
 #include <sstream>
 
 #include "r2_Director.h"
-#include "r2_Scene.h"
+#include "r2_RootScene.h"
 #include "random_test.h"
 
 namespace
@@ -53,7 +53,7 @@ namespace r2
 			break;
 
 		case 27: // ESC
-			mDirector.Setup( r2::Scene::Create( mDirector ) );
+			mDirector.Setup( r2::RootScene::Create( mDirector ) );
 			return iScene::eResult::ChangeScene;
 		}
 

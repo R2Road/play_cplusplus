@@ -1,4 +1,4 @@
-#include "r2_Scene.h"
+#include "r2_RootScene.h"
 
 #include <conio.h>
 #include <iostream>
@@ -51,24 +51,24 @@ std::string MakeMenuString()
 
 namespace r2
 {
-	Scene::Scene( Director& director ) : iScene( director ) {}
+	RootScene::RootScene( Director& director ) : iScene( director ) {}
 
-	SceneUp Scene::Create( Director& director )
+	SceneUp RootScene::Create( Director& director )
 	{
 		return SceneUp( new ( std::nothrow ) MyT( director ) );
 	}
 
-	void Scene::ShowTitle() const
+	void RootScene::ShowTitle() const
 	{
 		std::cout << "# Root #" << std::endl << std::endl;
 	}
-	void Scene::ShowMenu() const
+	void RootScene::ShowMenu() const
 	{
 		static std::string menu_string( std::move( MakeMenuString() ) );
 		std::cout << menu_string;
 	}
 
-	iScene::eResult Scene::Do( const int key_code )
+	iScene::eResult RootScene::Do( const int key_code )
 	{
 		switch( key_code )
 		{

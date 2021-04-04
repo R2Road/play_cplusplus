@@ -1,7 +1,7 @@
 ﻿#include <Windows.h>
 
 #include "r2_Director.h"
-#include "r2_Scene.h"
+#include "r2_RootScene.h"
 
 int main()
 {
@@ -15,7 +15,7 @@ int main()
 	// Setup
 	//
 	r2::Director director;
-	director.Setup( r2::Scene::Create( director ) );
+	director.Setup( r2::RootScene::Create( director ) );
 
 	//
 	// Process
