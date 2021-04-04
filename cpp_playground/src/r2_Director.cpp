@@ -21,8 +21,8 @@ namespace r2
 		{
 			mScene->ShowTitle();
 			mScene->ShowMenu();
-
 			input = _getch();
+
 			system( "cls" );
 
 			switch( mScene->Do( input ) )
@@ -30,6 +30,7 @@ namespace r2
 			case iScene::eResult::RunTest:
 				std::cout << std::endl << "Press Any Key" << std::endl;
 				_getch();
+
 				system( "cls" );
 				break;
 
