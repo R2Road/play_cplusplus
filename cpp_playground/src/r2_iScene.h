@@ -21,6 +21,7 @@ namespace r2
 		iScene( Director& director ) : mDirector( director ) {}
 		virtual ~iScene() {}
 
+		virtual void ShowTitle() const = 0;
 		virtual void ShowMenu() = 0;
 		virtual eResult Do( const int key_code ) = 0;
 

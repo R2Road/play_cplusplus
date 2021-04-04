@@ -31,6 +31,10 @@ namespace r2
 		return SceneUp( new ( std::nothrow ) MyT( director ) );
 	}
 
+	void RandomTestScene::ShowTitle() const
+	{
+		std::cout << "# Random #" << std::endl << std::endl;
+	}
 	void RandomTestScene::ShowMenu()
 	{
 		static std::string menu_string( std::move( MakeMenuString() ) );

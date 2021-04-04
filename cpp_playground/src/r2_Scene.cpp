@@ -58,6 +58,10 @@ namespace r2
 		return SceneUp( new ( std::nothrow ) MyT( director ) );
 	}
 
+	void Scene::ShowTitle() const
+	{
+		std::cout << "# Root #" << std::endl << std::endl;
+	}
 	void Scene::ShowMenu()
 	{
 		static std::string menu_string( std::move( MakeMenuString() ) );
