@@ -35,7 +35,7 @@ namespace r2
 	{
 		std::cout << "# Random #" << std::endl << std::endl;
 	}
-	void RandomTestScene::ShowMenu()
+	void RandomTestScene::ShowMenu() const
 	{
 		static std::string menu_string( std::move( MakeMenuString() ) );
 		std::cout << menu_string;

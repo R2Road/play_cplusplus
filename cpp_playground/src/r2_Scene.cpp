@@ -62,7 +62,7 @@ namespace r2
 	{
 		std::cout << "# Root #" << std::endl << std::endl;
 	}
-	void Scene::ShowMenu()
+	void Scene::ShowMenu() const
 	{
 		static std::string menu_string( std::move( MakeMenuString() ) );
 		std::cout << menu_string;
