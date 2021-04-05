@@ -9,6 +9,13 @@
 
 namespace random_test
 {
+	const r2::iNode::TitleFunc Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Random : Basic";
+		};
+	}
 	r2::eTestResult Basic::Do()
 	{
 		std::cout << "== Basic ==" << std::endl << std::endl;
@@ -140,6 +147,13 @@ namespace
 }
 namespace random_test
 {
+	const r2::iNode::TitleFunc StatusSaveAndLoad::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Random : Status Save And Load";
+		};
+	}
 	r2::eTestResult StatusSaveAndLoad::Do()
 	{
 		Status_Save();

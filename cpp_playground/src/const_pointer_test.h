@@ -8,7 +8,7 @@ namespace const_pointer_test
 	class Basic : public r2::iNode, public r2::SingleTon<Basic>
 	{
 	public:
-		const char* GetTitle() const override { return "Const Pointer : Basic"; }
+		const TitleFunc GetTitleFunction() const override;
 		r2::eTestResult Do() override;
 	};
 }

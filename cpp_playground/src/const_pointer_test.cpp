@@ -4,6 +4,13 @@
 
 namespace const_pointer_test
 {
+	const r2::iNode::TitleFunc Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Const Pointer : Basic";
+		};
+	}
 	r2::eTestResult Basic::Do()
 	{
 		std::cout << "== Const Pointer ==" << std::endl << std::endl;

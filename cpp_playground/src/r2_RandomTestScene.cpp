@@ -13,8 +13,8 @@ namespace
 	{
 		std::stringstream ss;
 		ss << "+ Menu" << std::endl;
-		ss << "1 : " << random_test::Basic::GetInstance().GetTitle() << std::endl;
-		ss << "2 : " << random_test::StatusSaveAndLoad::GetInstance().GetTitle() << std::endl;
+		ss << "1 : " << random_test::Basic::GetInstance().GetTitleFunction()() << std::endl;
+		ss << "2 : " << random_test::StatusSaveAndLoad::GetInstance().GetTitleFunction()() << std::endl;
 
 		ss << std::endl << "Press Number" << std::endl;
 

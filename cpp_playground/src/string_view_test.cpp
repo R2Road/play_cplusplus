@@ -8,6 +8,13 @@ using namespace std::string_view_literals; // for sv
 
 namespace stringview_test
 {
+	const r2::iNode::TitleFunc Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "StringView : Basic";
+		};
+	}
 	r2::eTestResult Basic::Do()
 	{
 		std::cout << "== StringView ==" << std::endl << std::endl;

@@ -64,6 +64,13 @@ namespace
 
 namespace shared_pointer_test
 {
+	const r2::iNode::TitleFunc SharedPtr::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Memory : Shared Pointer";
+		};
+	}
 	r2::eTestResult SharedPtr::Do()
 	{
 		Test1();

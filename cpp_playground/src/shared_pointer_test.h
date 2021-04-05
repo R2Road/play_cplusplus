@@ -8,7 +8,7 @@ namespace shared_pointer_test
 	class SharedPtr : public r2::iNode, public r2::SingleTon<SharedPtr>
 	{
 	public:
-		const char* GetTitle() const override { return "Memory : Shared Pointer"; }
+		const TitleFunc GetTitleFunction() const override;
 		r2::eTestResult Do() override;
 	};
 }

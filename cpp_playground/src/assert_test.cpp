@@ -5,6 +5,14 @@
 
 namespace assert_test
 {
+	const r2::iNode::TitleFunc Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Assert : Basic";
+		};
+	}
+
 	r2::eTestResult Basic::Do()
 	{
 		std::cout << "== Assert ==" << std::endl << std::endl;

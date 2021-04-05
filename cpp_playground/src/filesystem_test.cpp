@@ -87,6 +87,14 @@ namespace
 
 namespace filesystem_test
 {
+
+	const r2::iNode::TitleFunc CurrentDirectory::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "File System : Current Directory";
+		};
+	}
 	r2::eTestResult CurrentDirectory::Do()
 	{
 		TestGetDirectoryPath();

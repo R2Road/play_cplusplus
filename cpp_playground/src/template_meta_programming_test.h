@@ -8,7 +8,7 @@ namespace template_meta_programming_test
 	class CalculateFactorial : public r2::iNode, public r2::SingleTon<CalculateFactorial>
 	{
 	public:
-		const char* GetTitle() const override { return "TMP : Factorial"; }
+		const TitleFunc GetTitleFunction() const override;
 		r2::eTestResult Do() override;
 	};
 
@@ -16,7 +16,7 @@ namespace template_meta_programming_test
 	class Integer2String : public r2::iNode, public r2::SingleTon<Integer2String>
 	{
 	public:
-		const char* GetTitle() const override { return "TMP : Integer 2 String"; }
+		const TitleFunc GetTitleFunction() const override;
 		r2::eTestResult Do() override;
 	};
 
@@ -24,7 +24,7 @@ namespace template_meta_programming_test
 	class CalculatePlaceValue : public r2::iNode, public r2::SingleTon<CalculatePlaceValue>
 	{
 	public:
-		const char* GetTitle() const override { return "TMP : Place Value"; }
+		const TitleFunc GetTitleFunction() const override;
 		r2::eTestResult Do() override;
 	};
 
@@ -32,7 +32,7 @@ namespace template_meta_programming_test
 	class Integer2String_II : public r2::iNode, public r2::SingleTon<Integer2String_II>
 	{
 	public:
-		const char* GetTitle() const override { return "TMP : Integer 2 String II"; }
+		const TitleFunc GetTitleFunction() const override;
 		r2::eTestResult Do() override;
 	};
 
@@ -40,7 +40,7 @@ namespace template_meta_programming_test
 	class MultiTypePackage : public r2::iNode, public r2::SingleTon<MultiTypePackage>
 	{
 	public:
-		const char* GetTitle() const override { return "TMP : Multi Type Package"; }
+		const TitleFunc GetTitleFunction() const override;
 		r2::eTestResult Do() override;
 	};
 }

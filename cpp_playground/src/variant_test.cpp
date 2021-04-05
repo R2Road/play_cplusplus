@@ -6,6 +6,13 @@
 
 namespace variant_test
 {
+	const r2::iNode::TitleFunc Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Variant : Basic";
+		};
+	}
 	r2::eTestResult Basic::Do()
 	{
 		std::cout << "== Variant : Basic ==" << std::endl << std::endl;

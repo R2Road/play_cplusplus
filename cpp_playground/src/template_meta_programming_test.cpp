@@ -33,6 +33,13 @@ namespace
 }
 namespace template_meta_programming_test
 {
+	const r2::iNode::TitleFunc CalculateFactorial::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "TMP : Factorial";
+		};
+	}
 	r2::eTestResult CalculateFactorial::Do()
 	{
 		std::cout << "== TMP : Calculate Factorial ==" << std::endl;
@@ -93,6 +100,13 @@ namespace
 }
 namespace template_meta_programming_test
 {
+	const r2::iNode::TitleFunc Integer2String::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "TMP : Integer 2 String";
+		};
+	}
 	r2::eTestResult Integer2String::Do()
 	{
 		std::cout << "== TMP : Integer 2 String ==" << std::endl;
@@ -137,6 +151,13 @@ namespace
 }
 namespace template_meta_programming_test
 {
+	const r2::iNode::TitleFunc CalculatePlaceValue::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "TMP : Place Value";
+		};
+	}
 	r2::eTestResult CalculatePlaceValue::Do()
 	{
 		std::cout << "== TMP : Calculate Place Value 4 Integer ==" << std::endl;
@@ -191,6 +212,13 @@ namespace
 }
 namespace template_meta_programming_test
 {
+	const r2::iNode::TitleFunc Integer2String_II::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "TMP : Integer 2 String II";
+		};
+	}
 	r2::eTestResult Integer2String_II::Do()
 	{
 		{
@@ -252,6 +280,13 @@ namespace
 }
 namespace template_meta_programming_test
 {
+	const r2::iNode::TitleFunc MultiTypePackage::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "TMP : Multi Type Package";
+		};
+	}
 	r2::eTestResult MultiTypePackage::Do()
 	{
 		{

@@ -12,6 +12,13 @@ namespace
 }
 namespace variadic_template_test
 {
+	const r2::iNode::TitleFunc SizeOfArgs::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Variadic Template : Size Of Args";
+		};
+	}
 	r2::eTestResult SizeOfArgs::Do()
 	{
 		std::cout << "== Size Of Args ==" << std::endl;
@@ -57,6 +64,13 @@ namespace
 }
 namespace variadic_template_test
 {
+	const r2::iNode::TitleFunc PrintValues::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Variadic Template : Print Types";
+		};
+	}
 	r2::eTestResult PrintValues::Do()
 	{
 		std::cout << "== PrintValues ==" << std::endl;
@@ -112,6 +126,13 @@ namespace
 }
 namespace variadic_template_test
 {
+	const r2::iNode::TitleFunc SumValues::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Variadic Template : Sum Values";
+		};
+	}
 	r2::eTestResult SumValues::Do()
 	{
 		std::cout << "== Sum Values ==" << std::endl;
@@ -189,6 +210,13 @@ namespace
 }
 namespace variadic_template_test
 {
+	const r2::iNode::TitleFunc SubtractValues::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Variadic Template : Subtract Values";
+		};
+	}
 	r2::eTestResult SubtractValues::Do()
 	{
 		std::cout << "== Subtract Values ==" << std::endl;

@@ -18,6 +18,13 @@ namespace
 }
 namespace structured_binding_test
 {
+	const r2::iNode::TitleFunc Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Structured Binding : Basic";
+		};
+	}
 	r2::eTestResult Basic::Do()
 	{
 		std::cout << "== Structured Binding : Basic ==" << std::endl << std::endl;

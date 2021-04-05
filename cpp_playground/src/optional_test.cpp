@@ -31,6 +31,13 @@ namespace
 }
 namespace optional_test
 {
+	const r2::iNode::TitleFunc Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Optional : Basic";
+		};
+	}
 	r2::eTestResult Basic::Do()
 	{
 		std::cout << "== Optional : Basic ==" << std::endl;

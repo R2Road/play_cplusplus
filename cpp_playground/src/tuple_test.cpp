@@ -6,6 +6,13 @@
 
 namespace tuple_test
 {
+	const r2::iNode::TitleFunc Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Tuple : Basic";
+		};
+	}
 	r2::eTestResult Basic::Do()
 	{
 		std::cout << "== Tuple : Basic ==" << std::endl;

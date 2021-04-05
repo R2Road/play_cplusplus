@@ -24,25 +24,25 @@ std::string MakeMenuString()
 {
 	std::stringstream ss;
 	ss << "+ Menu" << std::endl;
-	ss << "1 : " << filesystem_test::CurrentDirectory::GetInstance().GetTitle() << std::endl;
+	ss << "1 : " << filesystem_test::CurrentDirectory::GetInstance().GetTitleFunction()() << std::endl;
 	ss << "2 : " << "Random" << std::endl;
-	ss << "3 : " << shared_pointer_test::SharedPtr::GetInstance().GetTitle() << std::endl;
-	ss << "4 : " << variadic_template_test::PrintValues::GetInstance().GetTitle() << std::endl;
-	ss << "5 : " << variadic_template_test::SumValues::GetInstance().GetTitle() << std::endl;
-	ss << "6 : " << variadic_template_test::SubtractValues::GetInstance().GetTitle() << std::endl;
-	ss << "7 : " << template_meta_programming_test::CalculateFactorial::GetInstance().GetTitle() << std::endl;
-	ss << "8 : " << template_meta_programming_test::Integer2String::GetInstance().GetTitle() << std::endl;
-	ss << "9 : " << template_meta_programming_test::CalculatePlaceValue::GetInstance().GetTitle() << std::endl;
-	ss << "Q : " << template_meta_programming_test::Integer2String_II::GetInstance().GetTitle() << std::endl;
-	ss << "W : " << optional_test::Basic::GetInstance().GetTitle() << std::endl;
-	ss << "E : " << variant_test::Basic::GetInstance().GetTitle() << std::endl;
-	ss << "R : " << variadic_template_test::SizeOfArgs::GetInstance().GetTitle() << std::endl;
-	ss << "T : " << tuple_test::Basic::GetInstance().GetTitle() << std::endl;
-	ss << "Y : " << structured_binding_test::Basic::GetInstance().GetTitle() << std::endl;
-	ss << "I : " << const_pointer_test::Basic::GetInstance().GetTitle() << std::endl;
-	ss << "O : " << assert_test::Basic::GetInstance().GetTitle() << std::endl;
-	ss << "P : " << template_meta_programming_test::MultiTypePackage::GetInstance().GetTitle() << std::endl;
-	ss << "A : " << stringview_test::Basic::GetInstance().GetTitle() << std::endl;
+	ss << "3 : " << shared_pointer_test::SharedPtr::GetInstance().GetTitleFunction()() << std::endl;
+	ss << "4 : " << variadic_template_test::PrintValues::GetInstance().GetTitleFunction()() << std::endl;
+	ss << "5 : " << variadic_template_test::SumValues::GetInstance().GetTitleFunction()() << std::endl;
+	ss << "6 : " << variadic_template_test::SubtractValues::GetInstance().GetTitleFunction()() << std::endl;
+	ss << "7 : " << template_meta_programming_test::CalculateFactorial::GetInstance().GetTitleFunction()() << std::endl;
+	ss << "8 : " << template_meta_programming_test::Integer2String::GetInstance().GetTitleFunction()() << std::endl;
+	ss << "9 : " << template_meta_programming_test::CalculatePlaceValue::GetInstance().GetTitleFunction()() << std::endl;
+	ss << "Q : " << template_meta_programming_test::Integer2String_II::GetInstance().GetTitleFunction()() << std::endl;
+	ss << "W : " << optional_test::Basic::GetInstance().GetTitleFunction()() << std::endl;
+	ss << "E : " << variant_test::Basic::GetInstance().GetTitleFunction()() << std::endl;
+	ss << "R : " << variadic_template_test::SizeOfArgs::GetInstance().GetTitleFunction()() << std::endl;
+	ss << "T : " << tuple_test::Basic::GetInstance().GetTitleFunction()() << std::endl;
+	ss << "Y : " << structured_binding_test::Basic::GetInstance().GetTitleFunction()() << std::endl;
+	ss << "I : " << const_pointer_test::Basic::GetInstance().GetTitleFunction()() << std::endl;
+	ss << "O : " << assert_test::Basic::GetInstance().GetTitleFunction()() << std::endl;
+	ss << "P : " << template_meta_programming_test::MultiTypePackage::GetInstance().GetTitleFunction()() << std::endl;
+	ss << "A : " << stringview_test::Basic::GetInstance().GetTitleFunction()() << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
