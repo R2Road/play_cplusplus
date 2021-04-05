@@ -15,7 +15,5 @@ namespace r2
 		static SceneUp Create( Director& director );
 
 		void ShowTitle() const override;
-		void ShowMenu() const override;
-		eTestResult Do( const int key_code ) override;
 	};
 }
