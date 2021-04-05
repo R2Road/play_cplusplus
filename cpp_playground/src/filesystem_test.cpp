@@ -87,7 +87,7 @@ namespace
 
 namespace filesystem_test
 {
-	void CurrentDirectory::Do()
+	r2::eTestResult CurrentDirectory::Do()
 	{
 		TestGetDirectoryPath();
 
@@ -102,5 +102,7 @@ namespace filesystem_test
 		std::cout << std::endl << std::endl;
 
 		TestPathOperation();
+
+		return r2::eTestResult::RunTest;
 	}
 }

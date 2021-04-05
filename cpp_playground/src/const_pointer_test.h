@@ -9,6 +9,6 @@ namespace const_pointer_test
 	{
 	public:
 		const char* GetTitle() const override { return "Const Pointer : Basic"; }
-		void Do() override;
+		r2::eTestResult Do() override;
 	};
 }

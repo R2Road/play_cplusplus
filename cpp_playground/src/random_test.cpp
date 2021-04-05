@@ -9,7 +9,7 @@
 
 namespace random_test
 {
-	void Basic::Do()
+	r2::eTestResult Basic::Do()
 	{
 		std::cout << "== Basic ==" << std::endl << std::endl;
 
@@ -54,6 +54,8 @@ namespace random_test
 
 			std::cout << "\t\t" << "Contained Min;" << std::endl;
 		}
+
+		return r2::eTestResult::RunTest;
 	}
 }
 
@@ -138,12 +140,14 @@ namespace
 }
 namespace random_test
 {
-	void StatusSaveAndLoad::Do()
+	r2::eTestResult StatusSaveAndLoad::Do()
 	{
 		Status_Save();
 
 		std::cout << std::endl << std::endl;
 
 		Status_Load();
+
+		return r2::eTestResult::RunTest;
 	}
 }

@@ -9,6 +9,6 @@ namespace tuple_test
 	{
 	public:
 		const char* GetTitle() const override { return "Tuple : Basic"; }
-		void Do() override;
+		r2::eTestResult Do() override;
 	};
 }

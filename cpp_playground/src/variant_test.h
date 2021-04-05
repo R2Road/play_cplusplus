@@ -9,6 +9,6 @@ namespace variant_test
 	{
 	public:
 		const char* GetTitle() const override { return "Variant : Basic"; }
-		void Do() override;
+		r2::eTestResult Do() override;
 	};
 }

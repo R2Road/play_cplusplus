@@ -9,6 +9,6 @@ namespace filesystem_test
 	{
 	public:
 		const char* GetTitle() const override { return "File System : Current Directory"; }
-		void Do() override;
+		r2::eTestResult Do() override;
 	};
 }

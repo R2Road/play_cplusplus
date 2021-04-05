@@ -31,7 +31,7 @@ namespace
 }
 namespace optional_test
 {
-	void Basic::Do()
+	r2::eTestResult Basic::Do()
 	{
 		std::cout << "== Optional : Basic ==" << std::endl;
 
@@ -129,5 +129,7 @@ namespace optional_test
 
 
 		std::cout << std::endl << std::endl;
+
+		return r2::eTestResult::RunTest;
 	}
 }

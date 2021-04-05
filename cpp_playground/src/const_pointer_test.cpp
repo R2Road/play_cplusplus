@@ -4,7 +4,7 @@
 
 namespace const_pointer_test
 {
-	void Basic::Do()
+	r2::eTestResult Basic::Do()
 	{
 		std::cout << "== Const Pointer ==" << std::endl << std::endl;
 
@@ -61,5 +61,7 @@ namespace const_pointer_test
 			std::cout << "\t" << "Error : int* const temp_pointer_const = &temp_const_int_1;" << std::endl;
 			//int* const temp_pointer_const = &temp_const_int_1;
 		}
+
+		return r2::eTestResult::RunTest;
 	}
 }

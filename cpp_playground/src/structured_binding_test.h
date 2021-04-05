@@ -9,6 +9,6 @@ namespace structured_binding_test
 	{
 	public:
 		const char* GetTitle() const override { return "Structured Binding : Basic"; }
-		void Do() override;
+		r2::eTestResult Do() override;
 	};
 }

@@ -12,7 +12,7 @@ namespace
 }
 namespace variadic_template_test
 {
-	void SizeOfArgs::Do()
+	r2::eTestResult SizeOfArgs::Do()
 	{
 		std::cout << "== Size Of Args ==" << std::endl;
 
@@ -20,6 +20,8 @@ namespace variadic_template_test
 		std::cout << "\t\t" << ArgsCount<int, float, int, int, bool>::size << std::endl;
 
 		std::cout << std::endl << std::endl;
+
+		return r2::eTestResult::RunTest;
 	}
 }
 
@@ -55,7 +57,7 @@ namespace
 }
 namespace variadic_template_test
 {
-	void PrintValues::Do()
+	r2::eTestResult PrintValues::Do()
 	{
 		std::cout << "== PrintValues ==" << std::endl;
 
@@ -73,6 +75,7 @@ namespace variadic_template_test
 			print_args_2( 1, 2, 3, 4, "variadic_template_test", 3.141592 );
 		}
 
+		return r2::eTestResult::RunTest;
 	}
 }
 
@@ -109,7 +112,7 @@ namespace
 }
 namespace variadic_template_test
 {
-	void SumValues::Do()
+	r2::eTestResult SumValues::Do()
 	{
 		std::cout << "== Sum Values ==" << std::endl;
 
@@ -154,6 +157,8 @@ namespace variadic_template_test
 		}
 
 		std::cout << std::endl << std::endl;
+
+		return r2::eTestResult::RunTest;
 	}
 }
 
@@ -184,7 +189,7 @@ namespace
 }
 namespace variadic_template_test
 {
-	void SubtractValues::Do()
+	r2::eTestResult SubtractValues::Do()
 	{
 		std::cout << "== Subtract Values ==" << std::endl;
 
@@ -271,5 +276,7 @@ namespace variadic_template_test
 		}
 
 		std::cout << std::endl << std::endl;
+
+		return r2::eTestResult::RunTest;
 	}
 }

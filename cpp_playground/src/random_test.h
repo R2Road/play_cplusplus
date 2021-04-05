@@ -9,7 +9,7 @@ namespace random_test
 	{
 	public:
 		const char* GetTitle() const override { return "Random : Basic"; }
-		void Do() override;
+		r2::eTestResult Do() override;
 	};
 
 
@@ -18,6 +18,6 @@ namespace random_test
 	{
 	public:
 		const char* GetTitle() const override { return "Random : Status Save And Load"; }
-		void Do() override;
+		r2::eTestResult Do() override;
 	};
 }

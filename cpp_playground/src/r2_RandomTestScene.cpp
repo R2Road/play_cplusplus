@@ -46,11 +46,9 @@ namespace r2
 		switch( key_code )
 		{
 		case '1':
-			random_test::Basic::GetInstance().Do();
-			break;
+			return random_test::Basic::GetInstance().Do();
 		case '2':
-			random_test::StatusSaveAndLoad::GetInstance().Do();
-			break;
+			return random_test::StatusSaveAndLoad::GetInstance().Do();
 
 		case 27: // ESC
 			mDirector.Setup( r2::RootScene::Create( mDirector ) );

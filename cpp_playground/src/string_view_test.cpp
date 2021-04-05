@@ -8,7 +8,7 @@ using namespace std::string_view_literals; // for sv
 
 namespace stringview_test
 {
-	void Basic::Do()
+	r2::eTestResult Basic::Do()
 	{
 		std::cout << "== StringView ==" << std::endl << std::endl;
 
@@ -92,5 +92,7 @@ namespace stringview_test
 		}
 
 		std::cout << std::endl << std::endl;
+
+		return r2::eTestResult::RunTest;
 	}
 }

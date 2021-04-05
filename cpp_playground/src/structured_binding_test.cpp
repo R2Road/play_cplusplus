@@ -18,7 +18,7 @@ namespace
 }
 namespace structured_binding_test
 {
-	void Basic::Do()
+	r2::eTestResult Basic::Do()
 	{
 		std::cout << "== Structured Binding : Basic ==" << std::endl << std::endl;
 
@@ -117,5 +117,7 @@ namespace structured_binding_test
 
 
 		std::cout << std::endl << std::endl;
+
+		return r2::eTestResult::RunTest;
 	}
 }

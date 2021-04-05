@@ -64,7 +64,7 @@ namespace
 
 namespace shared_pointer_test
 {
-	void SharedPtr::Do()
+	r2::eTestResult SharedPtr::Do()
 	{
 		Test1();
 
@@ -75,5 +75,7 @@ namespace shared_pointer_test
 		std::cout << std::endl << std::endl;
 
 		Test3();
+
+		return r2::eTestResult::RunTest;
 	}
 }

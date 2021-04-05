@@ -9,6 +9,6 @@ namespace assert_test
 	{
 	public:
 		const char* GetTitle() const override { return "Assert : Basic"; }
-		void Do() override;
+		r2::eTestResult Do() override;
 	};
 }

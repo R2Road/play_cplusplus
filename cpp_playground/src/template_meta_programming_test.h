@@ -9,7 +9,7 @@ namespace template_meta_programming_test
 	{
 	public:
 		const char* GetTitle() const override { return "TMP : Factorial"; }
-		void Do() override;
+		r2::eTestResult Do() override;
 	};
 
 
@@ -17,7 +17,7 @@ namespace template_meta_programming_test
 	{
 	public:
 		const char* GetTitle() const override { return "TMP : Integer 2 String"; }
-		void Do() override;
+		r2::eTestResult Do() override;
 	};
 
 
@@ -25,7 +25,7 @@ namespace template_meta_programming_test
 	{
 	public:
 		const char* GetTitle() const override { return "TMP : Place Value"; }
-		void Do() override;
+		r2::eTestResult Do() override;
 	};
 
 
@@ -33,7 +33,7 @@ namespace template_meta_programming_test
 	{
 	public:
 		const char* GetTitle() const override { return "TMP : Integer 2 String II"; }
-		void Do() override;
+		r2::eTestResult Do() override;
 	};
 
 
@@ -41,6 +41,6 @@ namespace template_meta_programming_test
 	{
 	public:
 		const char* GetTitle() const override { return "TMP : Multi Type Package"; }
-		void Do() override;
+		r2::eTestResult Do() override;
 	};
 }

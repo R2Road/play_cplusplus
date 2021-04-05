@@ -9,6 +9,6 @@ namespace optional_test
 	{
 	public:
 		const char* GetTitle() const override { return "Optional : Basic"; }
-		void Do() override;
+		r2::eTestResult Do() override;
 	};
 }

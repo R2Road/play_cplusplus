@@ -9,6 +9,6 @@ namespace stringview_test
 	{
 	public:
 		const char* GetTitle() const override { return "StringView : Basic"; }
-		void Do() override;
+		r2::eTestResult Do() override;
 	};
 }

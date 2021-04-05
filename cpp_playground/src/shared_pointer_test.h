@@ -9,6 +9,6 @@ namespace shared_pointer_test
 	{
 	public:
 		const char* GetTitle() const override { return "Memory : Shared Pointer"; }
-		void Do() override;
+		r2::eTestResult Do() override;
 	};
 }

@@ -33,7 +33,7 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	void CalculateFactorial::Do()
+	r2::eTestResult CalculateFactorial::Do()
 	{
 		std::cout << "== TMP : Calculate Factorial ==" << std::endl;
 
@@ -66,6 +66,8 @@ namespace template_meta_programming_test
 		}
 
 		std::cout << std::endl << std::endl;
+
+		return r2::eTestResult::RunTest;
 	}
 }
 
@@ -91,7 +93,7 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	void Integer2String::Do()
+	r2::eTestResult Integer2String::Do()
 	{
 		std::cout << "== TMP : Integer 2 String ==" << std::endl;
 
@@ -112,6 +114,8 @@ namespace template_meta_programming_test
 		}
 
 		std::cout << std::endl << std::endl;
+
+		return r2::eTestResult::RunTest;
 	}
 }
 
@@ -133,7 +137,7 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	void CalculatePlaceValue::Do()
+	r2::eTestResult CalculatePlaceValue::Do()
 	{
 		std::cout << "== TMP : Calculate Place Value 4 Integer ==" << std::endl;
 
@@ -149,6 +153,8 @@ namespace template_meta_programming_test
 		}
 
 		std::cout << std::endl << std::endl;
+
+		return r2::eTestResult::RunTest;
 	}
 }
 
@@ -185,7 +191,7 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	void Integer2String_II::Do()
+	r2::eTestResult Integer2String_II::Do()
 	{
 		{
 			std::cout << "== TMP : Units 2 Character ==" << std::endl;
@@ -211,6 +217,8 @@ namespace template_meta_programming_test
 			std::cout << "\t\t" << "size : " << ConvertInteger2String_2<101010>::size << std::endl;
 			std::cout << "\t\t" << "string : " << ConvertInteger2String_2<101010>::str << std::endl;
 		}
+
+		return r2::eTestResult::RunTest;
 	}
 }
 
@@ -244,7 +252,7 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	void MultiTypePackage::Do()
+	r2::eTestResult MultiTypePackage::Do()
 	{
 		{
 			std::cout << "== TMP : Multi Type Package ==" << std::endl;
@@ -257,5 +265,7 @@ namespace template_meta_programming_test
 		}
 
 		std::cout << std::endl << std::endl;
+
+		return r2::eTestResult::RunTest;
 	}
 }

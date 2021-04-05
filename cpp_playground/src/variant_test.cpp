@@ -6,7 +6,7 @@
 
 namespace variant_test
 {
-	void Basic::Do()
+	r2::eTestResult Basic::Do()
 	{
 		std::cout << "== Variant : Basic ==" << std::endl << std::endl;
 
@@ -103,5 +103,7 @@ namespace variant_test
 				std::variant<char, TestStruct, int, float> v;
 			}
 		}
+
+		return r2::eTestResult::RunTest;
 	}
 }

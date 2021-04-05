@@ -5,7 +5,7 @@
 
 namespace assert_test
 {
-	void Basic::Do()
+	r2::eTestResult Basic::Do()
 	{
 		std::cout << "== Assert ==" << std::endl << std::endl;
 
@@ -17,5 +17,7 @@ namespace assert_test
 		}
 
 		std::cout << std::endl << std::endl;
+
+		return r2::eTestResult::RunTest;
 	}
 }

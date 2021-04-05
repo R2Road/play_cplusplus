@@ -6,7 +6,7 @@
 
 namespace tuple_test
 {
-	void Basic::Do()
+	r2::eTestResult Basic::Do()
 	{
 		std::cout << "== Tuple : Basic ==" << std::endl;
 
@@ -66,5 +66,7 @@ namespace tuple_test
 
 
 		std::cout << std::endl << std::endl;
+
+		return r2::eTestResult::RunTest;
 	}
 }
