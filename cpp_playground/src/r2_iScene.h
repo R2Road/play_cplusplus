@@ -18,7 +18,7 @@ namespace r2
 
 		virtual void ShowTitle() const = 0;
 		virtual void ShowMenu() const = 0;
-		virtual eResult Do( const int key_code ) = 0;
+		virtual eTestResult Do( const int key_code ) = 0;
 
 	protected:
 		Director& mDirector;

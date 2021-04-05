@@ -68,7 +68,7 @@ namespace r2
 		std::cout << menu_string;
 	}
 
-	eResult RootScene::Do( const int key_code )
+	eTestResult RootScene::Do( const int key_code )
 	{
 		switch( key_code )
 		{
@@ -78,7 +78,7 @@ namespace r2
 
 		case '2':
 			mDirector.Setup( r2::RandomTestScene::Create( mDirector ) );
-			return eResult::ChangeScene;
+			return eTestResult::ChangeScene;
 
 		case '3':
 			shared_pointer_test::SharedPtr::GetInstance().Do();
@@ -134,9 +134,9 @@ namespace r2
 			break;
 
 		case 27: // ESC
-			return eResult::Exit;
+			return eTestResult::Exit;
 		}
 
-		return eResult::RunTest;
+		return eTestResult::RunTest;
 	}
 }

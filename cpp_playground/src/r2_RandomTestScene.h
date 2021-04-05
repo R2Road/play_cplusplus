@@ -15,6 +15,6 @@ namespace r2
 
 		void ShowTitle() const override;
 		void ShowMenu() const override;
-		eResult Do( const int key_code ) override;
+		eTestResult Do( const int key_code ) override;
 	};
 }
