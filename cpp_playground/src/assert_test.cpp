@@ -13,19 +13,22 @@ namespace assert_test
 		};
 	}
 
-	r2::eTestResult Basic::Do()
+	const r2::iNode::DoFunc Basic::GetDoFunction() const
 	{
-		std::cout << "== Assert ==" << std::endl << std::endl;
-
-		std::cout << std::endl;
-
+		return []()->r2::eTestResult
 		{
-			std::cout << "\t" << "+ assert( 1 > 2 && \"What The Fuck\" );" << std::endl << std::endl;
-			assert( 1 > 2 && "What The Fuck" );
-		}
+			std::cout << "== Assert ==" << std::endl << std::endl;
 
-		std::cout << std::endl << std::endl;
+			std::cout << std::endl;
 
-		return r2::eTestResult::RunTest;
+			{
+				std::cout << "\t" << "+ assert( 1 > 2 && \"What The Fuck\" );" << std::endl << std::endl;
+				assert( 1 > 2 && "What The Fuck" );
+			}
+
+			std::cout << std::endl << std::endl;
+
+			return r2::eTestResult::RunTest;
+		};
 	}
 }

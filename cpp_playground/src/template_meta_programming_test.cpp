@@ -40,41 +40,44 @@ namespace template_meta_programming_test
 			return "TMP : Factorial";
 		};
 	}
-	r2::eTestResult CalculateFactorial::Do()
+	const r2::iNode::DoFunc CalculateFactorial::GetDoFunction() const
 	{
-		std::cout << "== TMP : Calculate Factorial ==" << std::endl;
-
+		return []()->r2::eTestResult
 		{
-			std::cout << "\t" << "+ Factorial<2>::f" << std::endl;
+			std::cout << "== TMP : Calculate Factorial ==" << std::endl;
 
-			std::cout << "\t\t" << "calc : ";
-			FactorialPrinter<2>();
-			std::cout << "\t\t" << "result : " << Factorial<2>::f << std::endl;
-		}
+			{
+				std::cout << "\t" << "+ Factorial<2>::f" << std::endl;
 
-		std::cout << std::endl << std::endl;
+				std::cout << "\t\t" << "calc : ";
+				FactorialPrinter<2>();
+				std::cout << "\t\t" << "result : " << Factorial<2>::f << std::endl;
+			}
 
-		{
-			std::cout << "\t" << "+ Factorial<4>::f" << std::endl;
+			std::cout << std::endl << std::endl;
 
-			std::cout << "\t\t" << "calc : ";
-			FactorialPrinter<4>();
-			std::cout << "\t\t" << "result : " << Factorial<4>::f << std::endl;
-		}
+			{
+				std::cout << "\t" << "+ Factorial<4>::f" << std::endl;
 
-		std::cout << std::endl << std::endl;
+				std::cout << "\t\t" << "calc : ";
+				FactorialPrinter<4>();
+				std::cout << "\t\t" << "result : " << Factorial<4>::f << std::endl;
+			}
 
-		{
-			std::cout << "\t" << "+ Factorial<10>::f" << std::endl;
+			std::cout << std::endl << std::endl;
 
-			std::cout << "\t\t" << "calc : ";
-			FactorialPrinter<10>();
-			std::cout << "\t\t" << "result : " << Factorial<10>::f << std::endl;
-		}
+			{
+				std::cout << "\t" << "+ Factorial<10>::f" << std::endl;
 
-		std::cout << std::endl << std::endl;
+				std::cout << "\t\t" << "calc : ";
+				FactorialPrinter<10>();
+				std::cout << "\t\t" << "result : " << Factorial<10>::f << std::endl;
+			}
 
-		return r2::eTestResult::RunTest;
+			std::cout << std::endl << std::endl;
+
+			return r2::eTestResult::RunTest;
+		};
 	}
 }
 
@@ -107,29 +110,32 @@ namespace template_meta_programming_test
 			return "TMP : Integer 2 String";
 		};
 	}
-	r2::eTestResult Integer2String::Do()
+	const r2::iNode::DoFunc Integer2String::GetDoFunction() const
 	{
-		std::cout << "== TMP : Integer 2 String ==" << std::endl;
-
+		return []()->r2::eTestResult
 		{
-			std::cout << "\t" << "+ ConvertInteger2String_1<2>::c.c_str()" << std::endl;
-			std::cout << "\t\t" << "result : " << ConvertInteger2String_1<2>::c.c_str() << std::endl;
-		}
+			std::cout << "== TMP : Integer 2 String ==" << std::endl;
 
-		std::cout << std::endl << std::endl;
+			{
+				std::cout << "\t" << "+ ConvertInteger2String_1<2>::c.c_str()" << std::endl;
+				std::cout << "\t\t" << "result : " << ConvertInteger2String_1<2>::c.c_str() << std::endl;
+			}
 
-		{
-			std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::size" << std::endl;
-			std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::size << std::endl;
+			std::cout << std::endl << std::endl;
+
+			{
+				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::size" << std::endl;
+				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::size << std::endl;
 
 
-			std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::c" << std::endl;
-			std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::c << std::endl;
-		}
+				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::c" << std::endl;
+				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::c << std::endl;
+			}
 
-		std::cout << std::endl << std::endl;
+			std::cout << std::endl << std::endl;
 
-		return r2::eTestResult::RunTest;
+			return r2::eTestResult::RunTest;
+		};
 	}
 }
 
@@ -158,24 +164,27 @@ namespace template_meta_programming_test
 			return "TMP : Place Value";
 		};
 	}
-	r2::eTestResult CalculatePlaceValue::Do()
+	const r2::iNode::DoFunc CalculatePlaceValue::GetDoFunction() const
 	{
-		std::cout << "== TMP : Calculate Place Value 4 Integer ==" << std::endl;
-
+		return []()->r2::eTestResult
 		{
-			std::cout << "\t" << "+ CalculatePlaceValue<1>::c" << std::endl;
-			std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<1>::place_value << std::endl;
+			std::cout << "== TMP : Calculate Place Value 4 Integer ==" << std::endl;
 
-			std::cout << "\t" << "+ CalculatePlaceValue<100>::c" << std::endl;
-			std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<100>::place_value << std::endl;
+			{
+				std::cout << "\t" << "+ CalculatePlaceValue<1>::c" << std::endl;
+				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<1>::place_value << std::endl;
 
-			std::cout << "\t" << "+ CalculatePlaceValue<123456>::c" << std::endl;
-			std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<123456>::place_value << std::endl;
-		}
+				std::cout << "\t" << "+ CalculatePlaceValue<100>::c" << std::endl;
+				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<100>::place_value << std::endl;
 
-		std::cout << std::endl << std::endl;
+				std::cout << "\t" << "+ CalculatePlaceValue<123456>::c" << std::endl;
+				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<123456>::place_value << std::endl;
+			}
 
-		return r2::eTestResult::RunTest;
+			std::cout << std::endl << std::endl;
+
+			return r2::eTestResult::RunTest;
+		};
 	}
 }
 
@@ -219,34 +228,37 @@ namespace template_meta_programming_test
 			return "TMP : Integer 2 String II";
 		};
 	}
-	r2::eTestResult Integer2String_II::Do()
+	const r2::iNode::DoFunc Integer2String_II::GetDoFunction() const
 	{
+		return []()->r2::eTestResult
 		{
-			std::cout << "== TMP : Units 2 Character ==" << std::endl;
+			{
+				std::cout << "== TMP : Units 2 Character ==" << std::endl;
 
-			std::cout << "\t" << "+ ConvertUnits2Character<1>::c" << std::endl;
-			std::cout << "\t\t" << "result : " << ConvertUnits2Character<1>::c << std::endl;
-
-
-			std::cout << "\t" << "+ ConvertUnits2Character<9>::c" << std::endl;
-			std::cout << "\t\t" << "result : " << ConvertUnits2Character<9>::c << std::endl;
+				std::cout << "\t" << "+ ConvertUnits2Character<1>::c" << std::endl;
+				std::cout << "\t\t" << "result : " << ConvertUnits2Character<1>::c << std::endl;
 
 
-			std::cout << "\t" << "+ ConvertUnits2Character<10>::c" << std::endl;
-			std::cout << "\t\t" << "result : " << ConvertUnits2Character<10>::c << std::endl;
-		}
+				std::cout << "\t" << "+ ConvertUnits2Character<9>::c" << std::endl;
+				std::cout << "\t\t" << "result : " << ConvertUnits2Character<9>::c << std::endl;
 
-		std::cout << std::endl << std::endl;
 
-		{
-			std::cout << "== TMP : Integer 2 String II ==" << std::endl;
+				std::cout << "\t" << "+ ConvertUnits2Character<10>::c" << std::endl;
+				std::cout << "\t\t" << "result : " << ConvertUnits2Character<10>::c << std::endl;
+			}
 
-			std::cout << "\t" << "+ ConvertInteger2String_2<101010>" << std::endl;
-			std::cout << "\t\t" << "size : " << ConvertInteger2String_2<101010>::size << std::endl;
-			std::cout << "\t\t" << "string : " << ConvertInteger2String_2<101010>::str << std::endl;
-		}
+			std::cout << std::endl << std::endl;
 
-		return r2::eTestResult::RunTest;
+			{
+				std::cout << "== TMP : Integer 2 String II ==" << std::endl;
+
+				std::cout << "\t" << "+ ConvertInteger2String_2<101010>" << std::endl;
+				std::cout << "\t\t" << "size : " << ConvertInteger2String_2<101010>::size << std::endl;
+				std::cout << "\t\t" << "string : " << ConvertInteger2String_2<101010>::str << std::endl;
+			}
+
+			return r2::eTestResult::RunTest;
+		};
 	}
 }
 
@@ -287,20 +299,23 @@ namespace template_meta_programming_test
 			return "TMP : Multi Type Package";
 		};
 	}
-	r2::eTestResult MultiTypePackage::Do()
+	const r2::iNode::DoFunc MultiTypePackage::GetDoFunction() const
 	{
+		return []()->r2::eTestResult
 		{
-			std::cout << "== TMP : Multi Type Package ==" << std::endl;
+			{
+				std::cout << "== TMP : Multi Type Package ==" << std::endl;
 
-			std::cout << "\t" << "+ MTPackage<int, float, char> mtp;" << std::endl;
+				std::cout << "\t" << "+ MTPackage<int, float, char> mtp;" << std::endl;
 
-			MTPackage<int, float, char> mtp { 1, 2.f, '3' };
+				MTPackage<int, float, char> mtp{ 1, 2.f, '3' };
 
-			std::cout << "\t\t" << "result : " << mtp.val << std::endl;
-		}
+				std::cout << "\t\t" << "result : " << mtp.val << std::endl;
+			}
 
-		std::cout << std::endl << std::endl;
+			std::cout << std::endl << std::endl;
 
-		return r2::eTestResult::RunTest;
+			return r2::eTestResult::RunTest;
+		};
 	}
 }

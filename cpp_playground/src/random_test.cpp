@@ -16,53 +16,56 @@ namespace random_test
 			return "Random : Basic";
 		};
 	}
-	r2::eTestResult Basic::Do()
+	const r2::iNode::DoFunc Basic::GetDoFunction() const
 	{
-		std::cout << "== Basic ==" << std::endl << std::endl;
-
+		return []()->r2::eTestResult
 		{
-			std::cout << "\t+ Range Check" << std::endl;
-			std::cout << "\t\t" << "std::uniform_int_distribution<int> dist( 0, 2 );" << std::endl << std::endl;
+			std::cout << "== Basic ==" << std::endl << std::endl;
 
-			std::random_device rd;
-			std::default_random_engine random_engine( rd() );
-			std::uniform_int_distribution<int> dist( 0, 2 );
-
-			std::cout << "\t\t" << "Loop : 10" << std::endl;
-
-			for( int i = 0; 10 > i; ++i )
 			{
-				std::cout << "\t\t\t - " << dist( random_engine ) << std::endl;
+				std::cout << "\t+ Range Check" << std::endl;
+				std::cout << "\t\t" << "std::uniform_int_distribution<int> dist( 0, 2 );" << std::endl << std::endl;
+
+				std::random_device rd;
+				std::default_random_engine random_engine( rd() );
+				std::uniform_int_distribution<int> dist( 0, 2 );
+
+				std::cout << "\t\t" << "Loop : 10" << std::endl;
+
+				for( int i = 0; 10 > i; ++i )
+				{
+					std::cout << "\t\t\t - " << dist( random_engine ) << std::endl;
+				}
+
+				std::cout << std::endl;
+
+				std::cout << "\t\t" << "Contained Min and Max;" << std::endl;
 			}
 
-			std::cout << std::endl;
+			std::cout << std::endl << std::endl;
 
-			std::cout << "\t\t" << "Contained Min and Max;" << std::endl;
-		}
-
-		std::cout << std::endl << std::endl;
-
-		{
-			std::cout << "\t+ Range Check" << std::endl;
-			std::cout << "\t\t" << "std::uniform_real_distribution<float> dist( 0, 2 );" << std::endl << std::endl;
-
-			std::random_device rd;
-			std::default_random_engine random_engine( rd() );
-			std::uniform_real_distribution<float> dist( 0.f, 0.1f );
-
-			std::cout << "\t\t" << "Loop : 10" << std::endl;
-
-			for( int i = 0; 10 > i; ++i )
 			{
-				std::cout << "\t\t\t - " << dist( random_engine ) << std::endl;
+				std::cout << "\t+ Range Check" << std::endl;
+				std::cout << "\t\t" << "std::uniform_real_distribution<float> dist( 0, 2 );" << std::endl << std::endl;
+
+				std::random_device rd;
+				std::default_random_engine random_engine( rd() );
+				std::uniform_real_distribution<float> dist( 0.f, 0.1f );
+
+				std::cout << "\t\t" << "Loop : 10" << std::endl;
+
+				for( int i = 0; 10 > i; ++i )
+				{
+					std::cout << "\t\t\t - " << dist( random_engine ) << std::endl;
+				}
+
+				std::cout << std::endl;
+
+				std::cout << "\t\t" << "Contained Min;" << std::endl;
 			}
 
-			std::cout << std::endl;
-
-			std::cout << "\t\t" << "Contained Min;" << std::endl;
-		}
-
-		return r2::eTestResult::RunTest;
+			return r2::eTestResult::RunTest;
+		};
 	}
 }
 
@@ -154,14 +157,17 @@ namespace random_test
 			return "Random : Status Save And Load";
 		};
 	}
-	r2::eTestResult StatusSaveAndLoad::Do()
+	const r2::iNode::DoFunc StatusSaveAndLoad::GetDoFunction() const
 	{
-		Status_Save();
+		return []()->r2::eTestResult
+		{
+			Status_Save();
 
-		std::cout << std::endl << std::endl;
+			std::cout << std::endl << std::endl;
 
-		Status_Load();
+			Status_Load();
 
-		return r2::eTestResult::RunTest;
+			return r2::eTestResult::RunTest;
+		};
 	}
 }

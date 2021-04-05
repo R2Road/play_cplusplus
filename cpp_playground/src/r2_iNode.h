@@ -15,6 +15,6 @@ namespace r2
 		virtual ~iNode() {}
 
 		virtual const TitleFunc GetTitleFunction() const = 0;
-		virtual eTestResult Do() = 0;
+		virtual const DoFunc GetDoFunction() const = 0;
 	};
 }

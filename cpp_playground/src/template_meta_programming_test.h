@@ -9,7 +9,7 @@ namespace template_meta_programming_test
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
-		r2::eTestResult Do() override;
+		const DoFunc GetDoFunction() const override;
 	};
 
 
@@ -17,7 +17,7 @@ namespace template_meta_programming_test
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
-		r2::eTestResult Do() override;
+		const DoFunc GetDoFunction() const override;
 	};
 
 
@@ -25,7 +25,7 @@ namespace template_meta_programming_test
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
-		r2::eTestResult Do() override;
+		const DoFunc GetDoFunction() const override;
 	};
 
 
@@ -33,7 +33,7 @@ namespace template_meta_programming_test
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
-		r2::eTestResult Do() override;
+		const DoFunc GetDoFunction() const override;
 	};
 
 
@@ -41,6 +41,6 @@ namespace template_meta_programming_test
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
-		r2::eTestResult Do() override;
+		const DoFunc GetDoFunction() const override;
 	};
 }

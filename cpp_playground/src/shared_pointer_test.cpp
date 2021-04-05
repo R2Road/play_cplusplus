@@ -71,18 +71,21 @@ namespace shared_pointer_test
 			return "Memory : Shared Pointer";
 		};
 	}
-	r2::eTestResult SharedPtr::Do()
+	const r2::iNode::DoFunc SharedPtr::GetDoFunction() const
 	{
-		Test1();
+		return []()->r2::eTestResult
+		{
+			Test1();
 
-		std::cout << std::endl << std::endl;
+			std::cout << std::endl << std::endl;
 
-		Test2();
+			Test2();
 
-		std::cout << std::endl << std::endl;
+			std::cout << std::endl << std::endl;
 
-		Test3();
+			Test3();
 
-		return r2::eTestResult::RunTest;
+			return r2::eTestResult::RunTest;
+		};
 	}
 }

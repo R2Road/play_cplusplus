@@ -95,22 +95,25 @@ namespace filesystem_test
 			return "File System : Current Directory";
 		};
 	}
-	r2::eTestResult CurrentDirectory::Do()
+	const r2::iNode::DoFunc CurrentDirectory::GetDoFunction() const
 	{
-		TestGetDirectoryPath();
+		return []()->r2::eTestResult
+		{
+			TestGetDirectoryPath();
 
-		std::cout << std::endl << std::endl;
+			std::cout << std::endl << std::endl;
 
-		TestDirectoryIterator();
+			TestDirectoryIterator();
 
-		std::cout << std::endl << std::endl;
+			std::cout << std::endl << std::endl;
 
-		TestRecursiveDirectoryIterator();
+			TestRecursiveDirectoryIterator();
 
-		std::cout << std::endl << std::endl;
+			std::cout << std::endl << std::endl;
 
-		TestPathOperation();
+			TestPathOperation();
 
-		return r2::eTestResult::RunTest;
+			return r2::eTestResult::RunTest;
+		};
 	}
 }

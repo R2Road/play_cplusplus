@@ -9,7 +9,7 @@ namespace random_test
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
-		r2::eTestResult Do() override;
+		const DoFunc GetDoFunction() const override;
 	};
 
 
@@ -18,6 +18,6 @@ namespace random_test
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
-		r2::eTestResult Do() override;
+		const DoFunc GetDoFunction() const override;
 	};
 }

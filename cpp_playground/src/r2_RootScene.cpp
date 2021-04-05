@@ -73,47 +73,47 @@ namespace r2
 		switch( key_code )
 		{
 		case '1':
-			return filesystem_test::CurrentDirectory::GetInstance().Do();
+			return filesystem_test::CurrentDirectory::GetInstance().GetDoFunction()();
 
 		case '2':
 			mDirector.Setup( r2::RandomTestScene::Create( mDirector ) );
 			return eTestResult::ChangeScene;
 
 		case '3':
-			return shared_pointer_test::SharedPtr::GetInstance().Do();
+			return shared_pointer_test::SharedPtr::GetInstance().GetDoFunction()();
 		case '4':
-			return variadic_template_test::PrintValues::GetInstance().Do();
+			return variadic_template_test::PrintValues::GetInstance().GetDoFunction()();
 		case '5':
-			return variadic_template_test::SumValues::GetInstance().Do();
+			return variadic_template_test::SumValues::GetInstance().GetDoFunction()();
 		case '6':
-			return variadic_template_test::SubtractValues::GetInstance().Do();
+			return variadic_template_test::SubtractValues::GetInstance().GetDoFunction()();
 		case '7':
-			return template_meta_programming_test::CalculateFactorial::GetInstance().Do();
+			return template_meta_programming_test::CalculateFactorial::GetInstance().GetDoFunction()();
 		case '8':
-			return template_meta_programming_test::Integer2String::GetInstance().Do();
+			return template_meta_programming_test::Integer2String::GetInstance().GetDoFunction()();
 		case '9':
-			return template_meta_programming_test::CalculatePlaceValue::GetInstance().Do();
+			return template_meta_programming_test::CalculatePlaceValue::GetInstance().GetDoFunction()();
 		case 'q':
-			return template_meta_programming_test::Integer2String_II::GetInstance().Do();
+			return template_meta_programming_test::Integer2String_II::GetInstance().GetDoFunction()();
 		case 'w':
-			return optional_test::Basic::GetInstance().Do();
+			return optional_test::Basic::GetInstance().GetDoFunction()();
 		case 'e':
-			return variant_test::Basic::GetInstance().Do();
+			return variant_test::Basic::GetInstance().GetDoFunction()();
 		case 'r':
-			return variadic_template_test::SizeOfArgs::GetInstance().Do();
+			return variadic_template_test::SizeOfArgs::GetInstance().GetDoFunction()();
 		case 't':
-			return tuple_test::Basic::GetInstance().Do();
+			return tuple_test::Basic::GetInstance().GetDoFunction()();
 		case 'y':
-			return structured_binding_test::Basic::GetInstance().Do();
+			return structured_binding_test::Basic::GetInstance().GetDoFunction()();
 		case 'i':
-			return const_pointer_test::Basic::GetInstance().Do();
+			return const_pointer_test::Basic::GetInstance().GetDoFunction()();
 		case 'o':
-			return assert_test::Basic::GetInstance().Do();
+			return assert_test::Basic::GetInstance().GetDoFunction()();
 		case 'p':
-			return template_meta_programming_test::MultiTypePackage::GetInstance().Do();
+			return template_meta_programming_test::MultiTypePackage::GetInstance().GetDoFunction()();
 
 		case 'a':
-			return stringview_test::Basic::GetInstance().Do();
+			return stringview_test::Basic::GetInstance().GetDoFunction()();
 
 		case 27: // ESC
 			return eTestResult::Exit;

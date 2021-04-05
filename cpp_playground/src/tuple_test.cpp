@@ -13,67 +13,70 @@ namespace tuple_test
 			return "Tuple : Basic";
 		};
 	}
-	r2::eTestResult Basic::Do()
+	const r2::iNode::DoFunc Basic::GetDoFunction() const
 	{
-		std::cout << "== Tuple : Basic ==" << std::endl;
-
-
-		std::cout << std::endl << std::endl;
-
-
+		return []()->r2::eTestResult
 		{
-			std::cout << "\t+ std::tuple<int, std::string, char> v;" << std::endl;
-			std::tuple<int, std::string, char> v;
-
-			std::cout << "\t\t- Call : std::get<0>( v );" << std::endl;
-			std::cout << "\t\t\t" << std::get<0>( v ) << std::endl;
-
-			std::cout << "\t\t- Call : std::get<1>( v );" << std::endl;
-			std::cout << "\t\t\t" << std::get<1>( v ) << std::endl;
-
-			std::cout << "\t\t- Call : std::get<2>( v );" << std::endl;
-			std::cout << "\t\t\t" << std::get<2>( v ) << std::endl;
-		}
+			std::cout << "== Tuple : Basic ==" << std::endl;
 
 
-		std::cout << std::endl << std::endl;
+			std::cout << std::endl << std::endl;
 
 
-		{
-			std::cout << "\t+ std::tuple<int, std::string, bool> v{ 2, \"park\", 'b' };" << std::endl;
-			std::tuple<int, std::string, char> v{ 2, "park", 'b' };
+			{
+				std::cout << "\t+ std::tuple<int, std::string, char> v;" << std::endl;
+				std::tuple<int, std::string, char> v;
 
-			std::cout << "\t\t- Call : std::get<0>( v );" << std::endl;
-			std::cout << "\t\t\t" << std::get<0>( v ) << std::endl;
+				std::cout << "\t\t- Call : std::get<0>( v );" << std::endl;
+				std::cout << "\t\t\t" << std::get<0>( v ) << std::endl;
 
-			std::cout << "\t\t- Call : std::get<1>( v );" << std::endl;
-			std::cout << "\t\t\t" << std::get<1>( v ) << std::endl;
+				std::cout << "\t\t- Call : std::get<1>( v );" << std::endl;
+				std::cout << "\t\t\t" << std::get<1>( v ) << std::endl;
 
-			std::cout << "\t\t- Call : std::get<2>( v );" << std::endl;
-			std::cout << "\t\t\t" << std::get<2>( v ) << std::endl;
-		}
-
-
-		std::cout << std::endl << std::endl;
+				std::cout << "\t\t- Call : std::get<2>( v );" << std::endl;
+				std::cout << "\t\t\t" << std::get<2>( v ) << std::endl;
+			}
 
 
-		{
-			std::cout << "\t+ auto v = std::make_tuple( 10, \"Kim\", 'c' );" << std::endl;
-			auto v = std::make_tuple( 10, "Kim", 'c' );
-
-			std::cout << "\t\t- Call : std::get<0>( v );" << std::endl;
-			std::cout << "\t\t\t" << std::get<0>( v ) << std::endl;
-
-			std::cout << "\t\t- Call : std::get<1>( v );" << std::endl;
-			std::cout << "\t\t\t" << std::get<1>( v ) << std::endl;
-
-			std::cout << "\t\t- Call : std::get<2>( v );" << std::endl;
-			std::cout << "\t\t\t" << std::get<2>( v ) << std::endl;
-		}
+			std::cout << std::endl << std::endl;
 
 
-		std::cout << std::endl << std::endl;
+			{
+				std::cout << "\t+ std::tuple<int, std::string, bool> v{ 2, \"park\", 'b' };" << std::endl;
+				std::tuple<int, std::string, char> v{ 2, "park", 'b' };
 
-		return r2::eTestResult::RunTest;
+				std::cout << "\t\t- Call : std::get<0>( v );" << std::endl;
+				std::cout << "\t\t\t" << std::get<0>( v ) << std::endl;
+
+				std::cout << "\t\t- Call : std::get<1>( v );" << std::endl;
+				std::cout << "\t\t\t" << std::get<1>( v ) << std::endl;
+
+				std::cout << "\t\t- Call : std::get<2>( v );" << std::endl;
+				std::cout << "\t\t\t" << std::get<2>( v ) << std::endl;
+			}
+
+
+			std::cout << std::endl << std::endl;
+
+
+			{
+				std::cout << "\t+ auto v = std::make_tuple( 10, \"Kim\", 'c' );" << std::endl;
+				auto v = std::make_tuple( 10, "Kim", 'c' );
+
+				std::cout << "\t\t- Call : std::get<0>( v );" << std::endl;
+				std::cout << "\t\t\t" << std::get<0>( v ) << std::endl;
+
+				std::cout << "\t\t- Call : std::get<1>( v );" << std::endl;
+				std::cout << "\t\t\t" << std::get<1>( v ) << std::endl;
+
+				std::cout << "\t\t- Call : std::get<2>( v );" << std::endl;
+				std::cout << "\t\t\t" << std::get<2>( v ) << std::endl;
+			}
+
+
+			std::cout << std::endl << std::endl;
+
+			return r2::eTestResult::RunTest;
+		};
 	}
 }
