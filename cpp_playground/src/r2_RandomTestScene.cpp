@@ -41,7 +41,7 @@ namespace r2
 		std::cout << menu_string;
 	}
 
-	iScene::eResult RandomTestScene::Do( const int key_code )
+	eResult RandomTestScene::Do( const int key_code )
 	{
 		switch( key_code )
 		{
@@ -54,9 +54,9 @@ namespace r2
 
 		case 27: // ESC
 			mDirector.Setup( r2::RootScene::Create( mDirector ) );
-			return iScene::eResult::ChangeScene;
+			return eResult::ChangeScene;
 		}
 
-		return iScene::eResult::RunTest;
+		return eResult::RunTest;
 	}
 }

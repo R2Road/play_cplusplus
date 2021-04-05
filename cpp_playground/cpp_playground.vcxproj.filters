@@ -122,5 +122,8 @@
     <ClInclude Include="src\r2_Singleton.h">
       <Filter>r2</Filter>
     </ClInclude>
+    <ClInclude Include="src\r2_eTestResult.h">
+      <Filter>scenegraph</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

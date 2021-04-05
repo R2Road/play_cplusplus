@@ -2,6 +2,8 @@
 
 #include <memory>
 
+#include "r2_eTestResult.h"
+
 namespace r2
 {
 	class Director;
@@ -11,13 +13,6 @@ namespace r2
 	class iScene
 	{
 	public:
-		enum eResult
-		{
-			RunTest,
-			ChangeScene,
-			Exit,
-		};
-
 		iScene( Director& director ) : mDirector( director ) {}
 		virtual ~iScene() {}
 

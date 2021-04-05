@@ -27,7 +27,7 @@ namespace r2
 
 			switch( mScene->Do( input ) )
 			{
-			case iScene::eResult::RunTest:
+			case eResult::RunTest:
 				std::cout << std::endl << "Press Any Key" << std::endl;
 				_getch();
 
@@ -37,7 +37,7 @@ namespace r2
 			//case iScene::eResult::ChangeScene:
 				//break;
 
-			case iScene::eResult::Exit:
+			case eResult::Exit:
 				return;
 			}
 		}

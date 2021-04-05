@@ -41,6 +41,7 @@
     <ClInclude Include="src\const_pointer_test.h" />
     <ClInclude Include="src\filesystem_test.h" />
     <ClInclude Include="src\r2_Director.h" />
+    <ClInclude Include="src\r2_eTestResult.h" />
     <ClInclude Include="src\r2_iNode.h" />
     <ClInclude Include="src\r2_iScene.h" />
     <ClInclude Include="src\r2_RandomTestScene.h" />
