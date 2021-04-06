@@ -17,6 +17,7 @@
 #include "const_pointer_test.h"
 #include "assert_test.h"
 #include "string_view_test.h"
+#include "enum_test.h"
 
 namespace r2
 {
@@ -55,6 +56,7 @@ namespace r2
 			ret->AddChild( 'p', template_meta_programming_test::MultiTypePackage::GetInstance() );
 
 			ret->AddChild( 'a', stringview_test::Basic::GetInstance() );
+			ret->AddChild( 'b', enum_test::Basic::GetInstance() );
 
 			ret->AddChild(
 				27
