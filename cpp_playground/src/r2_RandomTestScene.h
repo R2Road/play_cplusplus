@@ -1,9 +1,13 @@
 #pragma once
 
-#include "r2_Scene.h"
+#include <memory>
 
 namespace r2
 {
+	using SceneUp = std::unique_ptr<class Scene>;
+
+	class Director;
+
 	class RandomTestScene
 	{
 	private:

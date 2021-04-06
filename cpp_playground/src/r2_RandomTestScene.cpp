@@ -4,6 +4,7 @@
 
 #include "r2_Director.h"
 #include "r2_RootScene.h"
+#include "r2_Scene.h"
 #include "random_test.h"
 
 namespace r2
