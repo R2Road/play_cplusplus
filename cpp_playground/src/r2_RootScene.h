@@ -1,17 +1,19 @@
 #pragma once
 
-#include "r2_Scene.h"
+#include <memory>
 
 namespace r2
 {
-	class RootScene : public Scene
+	using SceneUp = std::unique_ptr<class Scene>;
+
+	class Director;
+
+	class RootScene
 	{
 	private:
-		using MyT = RootScene;
+		RootScene() = delete;
 
 	public:
-		RootScene( Director& director, const char* title_string );
-
 		static SceneUp Create( Director& director );
 	};
 }
