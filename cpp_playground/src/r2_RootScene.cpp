@@ -56,7 +56,8 @@ namespace r2
 			ret->AddChild( 'p', template_meta_programming_test::MultiTypePackage::GetInstance() );
 
 			ret->AddChild( 'a', stringview_test::Basic::GetInstance() );
-			ret->AddChild( 'b', enum_test::Basic::GetInstance() );
+			ret->AddChild( 's', enum_test::Basic::GetInstance() );
+			ret->AddChild( 'd', enum_test::Convert::GetInstance() );
 
 			ret->AddChild(
 				27
