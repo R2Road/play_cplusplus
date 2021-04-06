@@ -8,7 +8,7 @@
 
 namespace r2
 {
-	enum eTestResult; 
+	enum class eTestResult; 
 
 	class iNode;
 	class Director;

@@ -2,7 +2,7 @@
 
 namespace r2
 {
-	enum eTestResult
+	enum class eTestResult
 	{
 		RunTest,
 		ChangeScene,
