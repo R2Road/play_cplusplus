@@ -4,6 +4,8 @@
 #include <iostream>
 #include <utility>
 
+#include "r2_eTestResult.h"
+
 namespace r2
 {
 	Director::Director() : mScene()

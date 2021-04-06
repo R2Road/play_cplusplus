@@ -66,6 +66,9 @@
     <ClCompile Include="src\r2_RootScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_Scene.cpp">
+      <Filter>scenegraph</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
