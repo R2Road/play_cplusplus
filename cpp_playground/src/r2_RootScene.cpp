@@ -19,7 +19,7 @@
 
 namespace r2
 {
-	RootScene::RootScene( Director& director, const char* title_string ) : iScene( director, title_string )
+	RootScene::RootScene( Director& director, const char* title_string ) : Scene( director, title_string )
 	{
 		AddChild( '1', filesystem_test::CurrentDirectory::GetInstance() );
 

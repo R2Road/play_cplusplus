@@ -34,7 +34,7 @@ namespace r2
 				system( "cls" );
 				break;
 
-			//case iScene::eTestResult::ChangeScene:
+			//case eTestResult::ChangeScene:
 				//break;
 
 			case eTestResult::Exit:

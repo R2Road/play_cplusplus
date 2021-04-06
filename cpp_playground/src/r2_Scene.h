@@ -16,16 +16,16 @@ namespace r2
 {
 	class Director;
 
-	using SceneUp = std::unique_ptr<class iScene>;
-	class iScene
+	using SceneUp = std::unique_ptr<class Scene>;
+	class Scene
 	{
 	public:
-		iScene( Director& director, const char* title_string ) :
+		Scene( Director& director, const char* title_string ) :
 			mDirector( director )
 			, mTitleString( title_string )
 			, mTests()
 		{}
-		virtual ~iScene() {}
+		virtual ~Scene() {}
 
 		void ShowTitle() const
 		{

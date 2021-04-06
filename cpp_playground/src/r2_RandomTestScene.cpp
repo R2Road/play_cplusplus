@@ -8,7 +8,7 @@
 
 namespace r2
 {
-	RandomTestScene::RandomTestScene( Director& director, const char* title_string ) : iScene( director, title_string )
+	RandomTestScene::RandomTestScene( Director& director, const char* title_string ) : Scene( director, title_string )
 	{
 		AddChild( '1', random_test::Basic::GetInstance() );
 		AddChild( '2', random_test::StatusSaveAndLoad::GetInstance() );
