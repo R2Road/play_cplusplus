@@ -4,14 +4,12 @@
 
 namespace r2
 {
-	class RandomTestScene : public Scene
+	class RandomTestScene
 	{
 	private:
-		using MyT = RandomTestScene;
+		RandomTestScene() = delete;
 
 	public:
-		RandomTestScene( Director& director, const char* title_string );
-
 		static SceneUp Create( Director& director );
 	};
 }

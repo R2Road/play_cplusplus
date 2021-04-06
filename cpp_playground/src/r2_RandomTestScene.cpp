@@ -8,24 +8,25 @@
 
 namespace r2
 {
-	RandomTestScene::RandomTestScene( Director& director, const char* title_string ) : Scene( director, title_string )
-	{
-		AddChild( '1', random_test::Basic::GetInstance() );
-		AddChild( '2', random_test::StatusSaveAndLoad::GetInstance() );
-
-		AddChild(
-			27
-			, []()->const char* { return "\nESC : Return To Root"; }
-			, [this]()->const eTestResult
-			{
-				mDirector.Setup( r2::RootScene::Create( mDirector ) );
-				return eTestResult::ChangeScene;
-			}
-		);
-	}
-
 	SceneUp RandomTestScene::Create( Director& director )
 	{
-		return SceneUp( new ( std::nothrow ) MyT( director, "Random" ) );
+		SceneUp ret( new ( std::nothrow ) Scene( director, "Random" ) );
+
+		{
+			ret->AddChild( '1', random_test::Basic::GetInstance() );
+			ret->AddChild( '2', random_test::StatusSaveAndLoad::GetInstance() );
+
+			ret->AddChild(
+				27
+				, []()->const char* { return "\nESC : Return To Root"; }
+				, [&director]()->const eTestResult
+				{
+					director.Setup( r2::RootScene::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+		}
+
+		return ret;
 	}
 }
