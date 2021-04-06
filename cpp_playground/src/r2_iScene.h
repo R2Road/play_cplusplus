@@ -4,6 +4,7 @@
 #include <functional>
 #include <iostream>
 #include <memory>
+#include <string_view>
 #include <tuple>
 #include <vector>
 
@@ -19,10 +20,17 @@ namespace r2
 	class iScene
 	{
 	public:
-		iScene( Director& director ) : mDirector( director ), mTests() {}
+		iScene( Director& director, const char* title_string ) :
+			mDirector( director )
+			, mTitleString( title_string )
+			, mTests()
+		{}
 		virtual ~iScene() {}
 
-		virtual void ShowTitle() const = 0;
+		void ShowTitle() const
+		{
+			std::cout << "# " << mTitleString << " #" << std::endl << std::endl;
+		}
 
 		void ShowMenu() const
 		{
@@ -64,6 +72,7 @@ namespace r2
 
 	protected:
 		Director& mDirector;
+		std::string_view mTitleString;
 
 		std::vector<std::tuple<char, std::function<const char*()>, std::function<const r2::eTestResult()>>> mTests;
 	};

@@ -10,9 +10,8 @@ namespace r2
 		using MyT = RandomTestScene;
 
 	public:
-		RandomTestScene( Director& director );
-		static SceneUp Create( Director& director );
+		RandomTestScene( Director& director, const char* title_string );
 
-		void ShowTitle() const override;
+		static SceneUp Create( Director& director );
 	};
 }

@@ -19,7 +19,7 @@
 
 namespace r2
 {
-	RootScene::RootScene( Director& director ) : iScene( director )
+	RootScene::RootScene( Director& director, const char* title_string ) : iScene( director, title_string )
 	{
 		AddChild( '1', filesystem_test::CurrentDirectory::GetInstance() );
 
@@ -61,11 +61,6 @@ namespace r2
 
 	SceneUp RootScene::Create( Director& director )
 	{
-		return SceneUp( new ( std::nothrow ) MyT( director ) );
-	}
-
-	void RootScene::ShowTitle() const
-	{
-		std::cout << "# Root #" << std::endl << std::endl;
+		return SceneUp( new ( std::nothrow ) MyT( director, "Root" ) );
 	}
 }

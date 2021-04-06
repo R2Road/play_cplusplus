@@ -10,10 +10,8 @@ namespace r2
 		using MyT = RootScene;
 
 	public:
-		RootScene( Director& director );
+		RootScene( Director& director, const char* title_string );
 
 		static SceneUp Create( Director& director );
-
-		void ShowTitle() const override;
 	};
 }
