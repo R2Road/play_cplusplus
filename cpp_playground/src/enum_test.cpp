@@ -43,6 +43,16 @@ namespace enum_test
 				std::cout << "\t\t\t - " << typeid( std::underlying_type<eTestNewEnum>::type ).name() << std::endl;
 			}
 
+			std::cout << std::endl << std::endl;
+
+			{
+				std::cout << "\t + " << "enum class eTestNewEnum : char {};" << std::endl << std::endl;
+				enum class eTestNewEnum : char {};
+
+				std::cout << "\t\t - " << "typeid( std::underlying_type<eTestNewEnum>::type ).name()" << std::endl;
+				std::cout << "\t\t\t - " << typeid( std::underlying_type<eTestNewEnum>::type ).name() << std::endl;
+			}
+
 			return r2::eTestResult::RunTest;
 		};
 	}
