@@ -17,6 +17,8 @@ namespace r2
 	class Scene
 	{
 	public:
+		using TestContainerT = std::vector<std::tuple<char, std::function<const char*( )>, std::function<const r2::eTestResult()>>>;
+
 		Scene( Director& director, const char* title_string );
 		virtual ~Scene() {}
 
@@ -32,6 +34,6 @@ namespace r2
 		Director& mDirector;
 		std::string_view mTitleString;
 
-		std::vector<std::tuple<char, std::function<const char*()>, std::function<const r2::eTestResult()>>> mTests;
+		TestContainerT mTests;
 	};
 }
