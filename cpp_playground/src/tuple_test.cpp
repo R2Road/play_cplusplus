@@ -4,6 +4,8 @@
 #include <string>
 #include <tuple>
 
+#include "r2_eTestResult.h"
+
 namespace tuple_test
 {
 	const r2::iNode::TitleFunc Basic::GetTitleFunction() const

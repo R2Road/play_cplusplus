@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 
+#include "r2_eTestResult.h"
+
 namespace
 {
 	template<int N>

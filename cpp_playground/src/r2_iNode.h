@@ -2,10 +2,10 @@
 
 #include <functional>
 
-#include "r2_eTestResult.h"
-
 namespace r2
 {
+	enum class eTestResult;
+
 	class iNode
 	{
 	public:

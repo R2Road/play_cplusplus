@@ -4,6 +4,8 @@
 #include <string>
 #include <string_view>
 
+#include "r2_eTestResult.h"
+
 using namespace std::string_view_literals; // for sv
 
 namespace stringview_test

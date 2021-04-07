@@ -3,6 +3,8 @@
 #include <iostream>
 #include <memory>
 
+#include "r2_eTestResult.h"
+
 namespace
 {
 	void Test1()

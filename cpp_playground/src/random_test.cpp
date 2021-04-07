@@ -6,6 +6,8 @@
 #include <random>
 #include <string>
 
+#include "r2_eTestResult.h"
+
 
 namespace random_test
 {

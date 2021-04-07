@@ -4,6 +4,8 @@
 #include <iostream>
 #include <optional>
 
+#include "r2_eTestResult.h"
+
 namespace
 {
 	struct TestStruct

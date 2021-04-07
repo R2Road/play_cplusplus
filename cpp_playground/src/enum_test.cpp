@@ -4,6 +4,8 @@
 #include <typeinfo> // typeid
 #include <type_traits>
 
+#include "r2_eTestResult.h"
+
 namespace enum_test
 {
 	const r2::iNode::TitleFunc Basic::GetTitleFunction() const

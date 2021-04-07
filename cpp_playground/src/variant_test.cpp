@@ -3,6 +3,8 @@
 #include <iostream>
 #include <variant>
 
+#include "r2_eTestResult.h"
+
 
 namespace variant_test
 {

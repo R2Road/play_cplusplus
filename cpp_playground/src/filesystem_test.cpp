@@ -3,6 +3,8 @@
 #include <filesystem>
 #include <iostream>
 
+#include "r2_eTestResult.h"
+
 namespace
 {
 	void TestGetDirectoryPath()

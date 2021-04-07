@@ -3,6 +3,8 @@
 #include <cassert>
 #include <iostream>
 
+#include "r2_eTestResult.h"
+
 namespace assert_test
 {
 	const r2::iNode::TitleFunc Basic::GetTitleFunction() const

@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "r2_eTestResult.h"
+
 namespace
 {
 	template<typename... Types>

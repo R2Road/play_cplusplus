@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "r2_Director.h"
+#include "r2_eTestResult.h"
 #include "r2_RandomTestScene.h"
 #include "r2_Scene.h"
 

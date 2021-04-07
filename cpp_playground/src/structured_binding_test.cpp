@@ -4,6 +4,8 @@
 #include <tuple>
 #include <utility> // pair
 
+#include "r2_eTestResult.h"
+
 namespace
 {
 	std::pair<int, float> GetDummyPair()

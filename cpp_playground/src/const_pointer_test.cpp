@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "r2_eTestResult.h"
+
 namespace const_pointer_test
 {
 	const r2::iNode::TitleFunc Basic::GetTitleFunction() const
