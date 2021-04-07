@@ -102,9 +102,11 @@ namespace enum_test
 				std::cout << "\t" << "{" << std::endl;
 				std::cout << "\t\t" << "return static_cast<std::underlying_type_t<EnumT>>( e );" << std::endl;
 				std::cout << "\t" << "}" << std::endl << std::endl;
+				std::cout << std::endl;
 
 				std::cout << "\t" << "+ " << "Enum2Value( eNewEnum::three )" << std::endl;
 				std::cout << "\t\t" << "- " << Enum2Value( eNewEnum::three ) << std::endl;
+				std::cout << "\t\t" << "- " << typeid( Enum2Value( eNewEnum::three ) ).name() << std::endl;
 			}
 
 			return r2::eTestResult::RunTest;
