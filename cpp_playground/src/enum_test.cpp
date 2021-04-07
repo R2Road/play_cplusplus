@@ -82,6 +82,14 @@ namespace enum_test
 		{
 			std::cout << "== Convert ==" << std::endl << std::endl;
 
+			std::cout << "\t" << "template<typename EnumT>" << std::endl;
+			std::cout << "\t" << "constexpr auto Enum2Value( EnumT e )" << std::endl;
+			std::cout << "\t" << "{" << std::endl;
+			std::cout << "\t\t" << "return static_cast<std::underlying_type_t<EnumT>>( e );" << std::endl;
+			std::cout << "\t" << "}" << std::endl;
+
+			std::cout << std::endl << std::endl << std::endl;
+
 			{
 				std::cout << "\t" << "enum eOldEnum" << std::endl;
 				std::cout << "\t" << "{" << std::endl;
@@ -97,16 +105,31 @@ namespace enum_test
 					, three
 				};
 
-				std::cout << "\t" << "template<typename EnumT>" << std::endl;
-				std::cout << "\t" << "constexpr auto Enum2Value( EnumT e )" << std::endl;
-				std::cout << "\t" << "{" << std::endl;
-				std::cout << "\t\t" << "return static_cast<std::underlying_type_t<EnumT>>( e );" << std::endl;
-				std::cout << "\t" << "}" << std::endl << std::endl;
-				std::cout << std::endl;
-
 				std::cout << "\t" << "+ " << "Enum2Value( eOldEnum::three )" << std::endl;
 				std::cout << "\t\t" << "- " << Enum2Value( eOldEnum::three ) << std::endl;
 				std::cout << "\t\t" << "- " << typeid( Enum2Value( eOldEnum::three ) ).name() << std::endl;
+			}
+
+			std::cout << std::endl << std::endl << std::endl;
+
+			{
+				std::cout << "\t" << "enum class eNewEnum : short" << std::endl;
+				std::cout << "\t" << "{" << std::endl;
+				std::cout << "\t\t" << "hana" << std::endl;
+				std::cout << "\t\t" << ", dul" << std::endl;
+				std::cout << "\t\t" << ", set" << std::endl;
+				std::cout << "\t" << "}" << std::endl << std::endl;
+
+				enum class eNewEnum : short
+				{
+					hana
+					, dul
+					, set
+				};
+
+				std::cout << "\t" << "+ " << "Enum2Value( eNewEnum::dul )" << std::endl;
+				std::cout << "\t\t" << "- " << Enum2Value( eNewEnum::dul ) << std::endl;
+				std::cout << "\t\t" << "- " << typeid( Enum2Value( eNewEnum::dul ) ).name() << std::endl;
 			}
 
 			return r2::eTestResult::RunTest;
