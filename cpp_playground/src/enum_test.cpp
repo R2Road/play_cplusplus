@@ -83,14 +83,14 @@ namespace enum_test
 			std::cout << "== Convert ==" << std::endl << std::endl;
 
 			{
-				std::cout << "\t" << "enum eNewEnum" << std::endl;
+				std::cout << "\t" << "enum eOldEnum" << std::endl;
 				std::cout << "\t" << "{" << std::endl;
 				std::cout << "\t\t" << "one" << std::endl;
 				std::cout << "\t\t" << ", two" << std::endl;
 				std::cout << "\t\t" << ", three" << std::endl;
 				std::cout << "\t" << "}" << std::endl << std::endl;
 
-				enum eNewEnum
+				enum eOldEnum
 				{
 					one
 					, two
@@ -104,9 +104,9 @@ namespace enum_test
 				std::cout << "\t" << "}" << std::endl << std::endl;
 				std::cout << std::endl;
 
-				std::cout << "\t" << "+ " << "Enum2Value( eNewEnum::three )" << std::endl;
-				std::cout << "\t\t" << "- " << Enum2Value( eNewEnum::three ) << std::endl;
-				std::cout << "\t\t" << "- " << typeid( Enum2Value( eNewEnum::three ) ).name() << std::endl;
+				std::cout << "\t" << "+ " << "Enum2Value( eOldEnum::three )" << std::endl;
+				std::cout << "\t\t" << "- " << Enum2Value( eOldEnum::three ) << std::endl;
+				std::cout << "\t\t" << "- " << typeid( Enum2Value( eOldEnum::three ) ).name() << std::endl;
 			}
 
 			return r2::eTestResult::RunTest;
