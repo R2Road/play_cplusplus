@@ -61,6 +61,7 @@ namespace r2
 			ret->AddChild( 's', enum_test::Basic::GetInstance() );
 			ret->AddChild( 'd', enum_test::Convert::GetInstance() );
 			ret->AddChild( 'f', new_test::Basic::GetInstance() );
+			ret->AddChild( 'g', new_test::PlacementNew::GetInstance() );
 
 			ret->AddChild(
 				27

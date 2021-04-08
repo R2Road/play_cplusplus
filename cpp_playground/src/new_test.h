@@ -11,4 +11,11 @@ namespace new_test
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 	};
+
+	class PlacementNew : public r2::iNode, public r2::SingleTon<PlacementNew>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
 }

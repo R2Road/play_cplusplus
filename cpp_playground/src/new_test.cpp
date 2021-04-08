@@ -14,7 +14,6 @@ namespace new_test
 			return "New : Basic";
 		};
 	}
-
 	const r2::iNode::DoFunc Basic::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
@@ -55,6 +54,36 @@ namespace new_test
 
 				delete[] str;
 				std::cout << "\t" << "+ delete[] str;" << std::endl;
+			}
+
+			std::cout << std::endl << std::endl;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	const r2::iNode::TitleFunc PlacementNew::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Placement New : Basic";
+		};
+	}
+	const r2::iNode::DoFunc PlacementNew::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "== Placement New ==" << std::endl << std::endl;
+
+			{
+				int i = 123;
+				int* ip = new (&i) int;
+
+				std::cout << "\t" << "+ int i = 123;" << std::endl;
+				std::cout << "\t" << "+ int* ip = new (&i) int;" << std::endl;
+				std::cout << "\t\t" << "- Print ip : " << *ip << std::endl;
 			}
 
 			std::cout << std::endl << std::endl;
