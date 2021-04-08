@@ -20,8 +20,6 @@ namespace new_test
 		{
 			std::cout << "== New ==" << std::endl << std::endl;
 
-			std::cout << std::endl;
-
 			{
 				int* i = new int( 1 );
 
