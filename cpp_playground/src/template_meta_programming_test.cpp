@@ -87,6 +87,48 @@ namespace template_meta_programming_test
 
 
 
+namespace template_meta_programming_test
+{
+	template<char... chars>
+	struct ConvertCharacter2String_1
+	{
+		static constexpr size_t size = sizeof...( chars );
+		static constexpr const char c[size + 1] = { chars..., '\0' };
+	};
+
+	const r2::iNode::TitleFunc Character2String::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "TMP : Character 2 String";
+		};
+	}
+	const r2::iNode::DoFunc Character2String::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "== TMP : Character 2 String ==" << std::endl << std::endl;
+
+			{
+				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::size" << std::endl;
+				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::size << std::endl;
+
+
+				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::c" << std::endl;
+				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::c << std::endl;
+			}
+
+			std::cout << std::endl << std::endl;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
+
+
+
+
+
 namespace
 {
 	template<int N>
@@ -95,13 +137,6 @@ namespace
 		static std::string c;
 	};
 	template<int N> std::string ConvertInteger2String_1<N>::c = std::to_string( N );
-
-	template<char... chars>
-	struct ConvertCharacter2String_1
-	{
-		static constexpr size_t size = sizeof...( chars );
-		static constexpr const char c[size + 1] = { chars..., '\0' };
-	};
 }
 namespace template_meta_programming_test
 {
@@ -116,22 +151,11 @@ namespace template_meta_programming_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== TMP : Integer 2 String ==" << std::endl;
+			std::cout << "== TMP : Integer 2 String ==" << std::endl << std::endl;
 
 			{
 				std::cout << "\t" << "+ ConvertInteger2String_1<2>::c.c_str()" << std::endl;
 				std::cout << "\t\t" << "result : " << ConvertInteger2String_1<2>::c.c_str() << std::endl;
-			}
-
-			std::cout << std::endl << std::endl;
-
-			{
-				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::size" << std::endl;
-				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::size << std::endl;
-
-
-				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::c" << std::endl;
-				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::c << std::endl;
 			}
 
 			std::cout << std::endl << std::endl;

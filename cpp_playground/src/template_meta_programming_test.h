@@ -13,6 +13,14 @@ namespace template_meta_programming_test
 	};
 
 
+	class Character2String : public r2::iNode, public r2::SingleTon<Character2String>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
+
+
 	class Integer2String : public r2::iNode, public r2::SingleTon<Integer2String>
 	{
 	public:
