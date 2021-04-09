@@ -4,6 +4,7 @@
 
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
+#include "r2_PointerTestScene.h"
 #include "r2_RandomTestScene.h"
 #include "r2_TemplateMetaProgrammingScene.h"
 
@@ -31,6 +32,16 @@ namespace r2
 
 			ret->AddChild(
 				'2'
+				, []()->const char* { return "Pointer"; }
+				, [&director]()->const eTestResult
+			{
+				director.Setup( r2::PointerTestScene::Create( director ) );
+				return eTestResult::ChangeScene;
+			}
+			);
+
+			ret->AddChild(
+				'3'
 				, []()->const char* { return "Random"; }
 				, [&director]()->const eTestResult
 				{
@@ -40,7 +51,7 @@ namespace r2
 			);
 
 			ret->AddChild(
-				'3'
+				'4'
 				, []()->const char* { return "Template Meta Programming"; }
 				, [&director]()->const eTestResult
 				{
@@ -49,17 +60,16 @@ namespace r2
 				}
 			);
 
-			ret->AddChild( '4', shared_pointer_test::SharedPtr::GetInstance() );
-			ret->AddChild( '5', variadic_template_test::PrintValues::GetInstance() );
-			ret->AddChild( '6', variadic_template_test::SumValues::GetInstance() );
-			ret->AddChild( '7', variadic_template_test::SubtractValues::GetInstance() );			
+			ret->AddChild( '5', shared_pointer_test::SharedPtr::GetInstance() );
+			ret->AddChild( '6', variadic_template_test::PrintValues::GetInstance() );
+			ret->AddChild( '7', variadic_template_test::SumValues::GetInstance() );
+			ret->AddChild( '8', variadic_template_test::SubtractValues::GetInstance() );			
 			ret->AddChild( 'w', optional_test::Basic::GetInstance() );
 			ret->AddChild( 'e', variant_test::Basic::GetInstance() );
 			ret->AddChild( 'r', variadic_template_test::SizeOfArgs::GetInstance() );
 			ret->AddChild( 't', tuple_test::Basic::GetInstance() );
 			ret->AddChild( 'y', structured_binding_test::Basic::GetInstance() );
-			ret->AddChild( 'u', pointer_test::Basic::GetInstance() );
-			ret->AddChild( 'i', pointer_test::ConstPointer::GetInstance() );
+			
 			ret->AddChild( 'o', assert_test::Basic::GetInstance() );
 			ret->AddChild( 'a', stringview_test::Basic::GetInstance() );
 			ret->AddChild( 's', enum_test::Basic::GetInstance() );
