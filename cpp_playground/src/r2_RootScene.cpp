@@ -58,6 +58,7 @@ namespace r2
 			ret->AddChild( 'r', variadic_template_test::SizeOfArgs::GetInstance() );
 			ret->AddChild( 't', tuple_test::Basic::GetInstance() );
 			ret->AddChild( 'y', structured_binding_test::Basic::GetInstance() );
+			ret->AddChild( 'u', pointer_test::Basic::GetInstance() );
 			ret->AddChild( 'i', pointer_test::ConstPointer::GetInstance() );
 			ret->AddChild( 'o', assert_test::Basic::GetInstance() );
 			ret->AddChild( 'a', stringview_test::Basic::GetInstance() );

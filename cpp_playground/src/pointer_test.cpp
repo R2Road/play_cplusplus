@@ -6,6 +6,42 @@
 
 namespace pointer_test
 {
+	const r2::iNode::TitleFunc Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Basic";
+		};
+	}
+	const r2::iNode::DoFunc Basic::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "== Basic ==" << std::endl << std::endl;
+
+			std::cout << "\t" << "int i = 123;" << std::endl;
+			std::cout << "\t" << "int* ip= &i;" << std::endl;
+			int i = 123;
+			int* ip= &i;
+
+			std::cout << std::endl;
+
+			{
+				std::cout << "\t\t" << "adress : " << ip << std::endl;
+			}
+
+			std::cout << std::endl;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
+
+
+
+
+namespace pointer_test
+{
 	const r2::iNode::TitleFunc ConstPointer::GetTitleFunction() const
 	{
 		return []()->const char*
