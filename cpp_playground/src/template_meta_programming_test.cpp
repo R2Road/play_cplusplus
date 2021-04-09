@@ -46,7 +46,7 @@ namespace template_meta_programming_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== TMP : Calculate Factorial ==" << std::endl;
+			std::cout << "== TMP : Calculate Factorial ==" << std::endl << std::endl;
 
 			{
 				std::cout << "\t" << "+ Factorial<2>::f" << std::endl;
@@ -113,6 +113,7 @@ namespace template_meta_programming_test
 				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::size" << std::endl;
 				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::size << std::endl;
 
+				std::cout << std::endl;
 
 				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::c" << std::endl;
 				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::c << std::endl;
@@ -194,17 +195,17 @@ namespace template_meta_programming_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== TMP : Calculate Place Value 4 Integer ==" << std::endl;
+			std::cout << "== TMP : Calculate Place Value 4 Integer ==" << std::endl << std::endl;
 
 			{
 				std::cout << "\t" << "+ CalculatePlaceValue<1>::c" << std::endl;
-				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<1>::place_value << std::endl;
+				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<1>::place_value << std::endl << std::endl;
 
 				std::cout << "\t" << "+ CalculatePlaceValue<100>::c" << std::endl;
-				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<100>::place_value << std::endl;
+				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<100>::place_value << std::endl << std::endl;
 
 				std::cout << "\t" << "+ CalculatePlaceValue<123456>::c" << std::endl;
-				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<123456>::place_value << std::endl;
+				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<123456>::place_value << std::endl << std::endl;
 			}
 
 			std::cout << std::endl << std::endl;
