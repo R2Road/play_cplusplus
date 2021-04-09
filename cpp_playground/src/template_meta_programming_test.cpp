@@ -154,8 +154,8 @@ namespace template_meta_programming_test
 			std::cout << "== TMP : Integer 2 String ==" << std::endl << std::endl;
 
 			{
-				std::cout << "\t" << "+ ConvertInteger2String_1<2>::c.c_str()" << std::endl;
-				std::cout << "\t\t" << "result : " << ConvertInteger2String_1<2>::c.c_str() << std::endl;
+				std::cout << "\t" << "+ ConvertInteger2String_1<2468>::c.c_str()" << std::endl;
+				std::cout << "\t\t" << "result : " << ConvertInteger2String_1<2468>::c.c_str() << std::endl;
 			}
 
 			std::cout << std::endl << std::endl;
