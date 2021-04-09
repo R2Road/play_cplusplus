@@ -84,6 +84,20 @@ namespace new_test
 				std::cout << "\t\t" << "- Print ip : " << *ip << std::endl;
 			}
 
+			std::cout << std::endl << std::endl << std::endl;
+
+			{
+				int i = 65;
+				std::cout << "\t" << "+ int i = 65;" << std::endl;
+				std::cout << "\t\t" << "- Print i : " << i << std::endl;
+
+				std::cout << std::endl;
+
+				char* cp = new ( &i ) char;
+				std::cout << "\t" << "+ char* cp = new ( &i ) char;" << std::endl;
+				std::cout << "\t\t" << "- Print cp : " << *cp << std::endl;
+			}
+
 			std::cout << std::endl << std::endl;
 
 			return r2::eTestResult::RunTest;
