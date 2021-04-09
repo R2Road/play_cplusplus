@@ -19,15 +19,30 @@ namespace pointer_test
 		{
 			std::cout << "== Basic ==" << std::endl << std::endl;
 
-			std::cout << "\t" << "int i = 123;" << std::endl;
-			std::cout << "\t" << "int* ip= &i;" << std::endl;
-			int i = 123;
-			int* ip= &i;
+			{
+				std::cout << "\t" << "int i = 123;" << std::endl;
+				std::cout << "\t" << "int* ip= &i;" << std::endl;
+				int i = 123;
+				int* ip = &i;
+
+				std::cout << "\t + " << "adress of ip " << std::endl;
+				std::cout << "\t\t - " << ip << std::endl;
+			}
 
 			std::cout << std::endl;
 
 			{
-				std::cout << "\t\t" << "adress : " << ip << std::endl;
+				std::cout << "\t" << "int ip[] = { 123, 234, 456 };" << std::endl;
+				int ip[] = { 123, 234, 456 };
+
+				std::cout << "\t + " << "adress of ip " << std::endl;
+				std::cout << "\t\t - " << ip << std::endl;
+
+				std::cout << "\t + " << "ip + 1;" << std::endl;
+				std::cout << "\t\t - " << ip + 1 << std::endl;
+
+				std::cout << "\t + " << "offset : ( ( ip + 1 ) - ip )" << std::endl;
+				std::cout << "\t\t - " << ( ( ip + 1 ) - ip ) << std::endl;
 			}
 
 			std::cout << std::endl;
