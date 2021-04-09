@@ -48,9 +48,6 @@
     <ClCompile Include="src\structured_binding_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\const_pointer_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="src\assert_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -77,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="src\r2_TemplateMetaProgrammingScene.cpp">
       <Filter>scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pointer_test.cpp">
+      <Filter>test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -105,9 +105,6 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\structured_binding_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\const_pointer_test.h">
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\assert_test.h">
@@ -145,6 +142,9 @@
     </ClInclude>
     <ClInclude Include="src\r2_TemplateMetaProgrammingScene.h">
       <Filter>scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pointer_test.h">
+      <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
