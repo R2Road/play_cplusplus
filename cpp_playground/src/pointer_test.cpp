@@ -29,7 +29,7 @@ namespace pointer_test
 				std::cout << "\t\t - " << ip << std::endl;
 			}
 
-			std::cout << std::endl;
+			std::cout << std::endl << std::endl;
 
 			{
 				std::cout << "\t" << "int ip[] = { 123, 234, 456 };" << std::endl;
@@ -42,7 +42,14 @@ namespace pointer_test
 				std::cout << "\t\t - " << ip + 1 << std::endl;
 
 				std::cout << "\t + " << "offset : ( ( ip + 1 ) - ip )" << std::endl;
-				std::cout << "\t\t - " << ( ( ip + 1 ) - ip ) << std::endl;
+				std::cout << "\t\t - " << ( ( ip + 1 ) - ip ) << std::endl << std::endl << std::endl;
+
+				std::cout << "\t" << "int t1 = ( int )ip" << std::endl;
+				std::cout << "\t" << "int t2 = ( int )( ip + 1 );" << std::endl;
+				std::cout << "\t + " << "offset : ( t2 - t1 )" << std::endl;
+				int t1 = ( int )ip;
+				int t2 = ( int )( ip + 1 );
+				std::cout << "\t\t - " << ( t2 - t1 ) << std::endl;
 			}
 
 			std::cout << std::endl;
