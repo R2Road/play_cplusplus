@@ -29,6 +29,7 @@
     <ClCompile Include="src\r2_RandomTestScene.cpp" />
     <ClCompile Include="src\r2_RootScene.cpp" />
     <ClCompile Include="src\r2_Scene.cpp" />
+    <ClCompile Include="src\r2_TemplateMetaProgrammingScene.cpp" />
     <ClCompile Include="src\random_test.cpp" />
     <ClCompile Include="src\shared_pointer_test.cpp" />
     <ClCompile Include="src\string_view_test.cpp" />
@@ -52,6 +53,7 @@
     <ClInclude Include="src\r2_RandomTestScene.h" />
     <ClInclude Include="src\r2_RootScene.h" />
     <ClInclude Include="src\r2_Singleton.h" />
+    <ClInclude Include="src\r2_TemplateMetaProgrammingScene.h" />
     <ClInclude Include="src\random_test.h" />
     <ClInclude Include="src\shared_pointer_test.h" />
     <ClInclude Include="src\string_view_test.h" />
