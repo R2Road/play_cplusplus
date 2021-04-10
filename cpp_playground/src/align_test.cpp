@@ -197,4 +197,86 @@ namespace align_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	const r2::iNode::TitleFunc AlignAs::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Align : Align As";
+		};
+	}
+	const r2::iNode::DoFunc AlignAs::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "== Align As ==" << std::endl << std::endl;
+
+			{
+				std::cout << "\t" << "struct alignas( 32 ) EmptyStruct {};" << std::endl << std::endl;
+				struct alignas( 32 ) EmptyStruct {};
+
+				std::cout << "\t" << "+ align of EmptyStruct : " << alignof( EmptyStruct ) << std::endl;
+				std::cout << "\t\t" << "- size of EmptyStruct : " << sizeof( EmptyStruct ) << std::endl << std::endl;
+			}
+
+			std::cout << std::endl << std::endl << std::endl;
+
+			{
+				std::cout << "\t" << "struct alignas( 8 ) CharIntFloatStruct" << std::endl;
+				std::cout << "\t" << "{" << std::endl;
+				std::cout << "\t\t" << "char c;" << std::endl;
+				std::cout << "\t\t" << "int i;" << std::endl;
+				std::cout << "\t\t" << "float f;" << std::endl;
+				std::cout << "\t" << "}" << std::endl << std::endl;
+				struct alignas( 8 ) CharIntFloatStruct
+				{
+					char c;
+					int i;
+					float f;
+				};
+
+				std::cout << "\t" << "+ align of CharIntFloatStruct : " << alignof( CharIntFloatStruct ) << std::endl;
+				std::cout << "\t\t" << "- size of CharIntFloatStruct : " << sizeof( CharIntFloatStruct ) << std::endl << std::endl;
+			}
+
+			std::cout << std::endl << std::endl << std::endl;
+
+			{
+				std::cout << "\t" << "struct alignas( 0 ) IntStruct" << std::endl;
+				std::cout << "\t" << "{" << std::endl;
+				std::cout << "\t\t" << "int i;" << std::endl;
+				std::cout << "\t" << "}" << std::endl << std::endl;
+				struct alignas( 0 ) IntStruct
+				{
+					int i;
+				};
+
+				std::cout << "\t" << "+ align of IntStruct : " << alignof( IntStruct ) << std::endl;
+				std::cout << "\t\t" << "- size of IntStruct : " << sizeof( IntStruct ) << std::endl << std::endl;
+
+				std::cout << "\t" << "+ Ignore 0" << std::endl << std::endl;
+			}
+
+			std::cout << std::endl << std::endl << std::endl;
+
+			{
+				std::cout << "\t" << "struct alignas( 1 ) IntStruct" << std::endl;
+				std::cout << "\t" << "{" << std::endl;
+				std::cout << "\t\t" << "int i;" << std::endl;
+				std::cout << "\t" << "}" << std::endl << std::endl;
+				//struct alignas( 1 ) IntStruct
+				//{
+				//	int i;
+				//};
+
+				std::cout << "\t" << "+ 1 is Error : At Least A Default Size Is Required" << std::endl << std::endl;
+			}
+
+			std::cout << std::endl << std::endl;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }

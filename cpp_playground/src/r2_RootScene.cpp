@@ -80,6 +80,7 @@ namespace r2
 
 			ret->AddChild( 'z', align_test::Basic::GetInstance() );
 			ret->AddChild( 'x', align_test::MixedStruct::GetInstance() );
+			ret->AddChild( 'c', align_test::AlignAs::GetInstance() );
 
 			ret->AddChild(
 				27
