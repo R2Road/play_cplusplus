@@ -65,7 +65,6 @@ namespace r2
 			ret->AddChild( '6', variadic_template_test::PrintValues::GetInstance() );
 			ret->AddChild( '7', variadic_template_test::SumValues::GetInstance() );
 			ret->AddChild( '8', variadic_template_test::SubtractValues::GetInstance() );			
-			ret->AddChild( 'q', align_test::Basic::GetInstance() );
 			ret->AddChild( 'w', optional_test::Basic::GetInstance() );
 			ret->AddChild( 'e', variant_test::Basic::GetInstance() );
 			ret->AddChild( 'r', variadic_template_test::SizeOfArgs::GetInstance() );
@@ -78,6 +77,9 @@ namespace r2
 			ret->AddChild( 'd', enum_test::Convert::GetInstance() );
 			ret->AddChild( 'f', new_test::Basic::GetInstance() );
 			ret->AddChild( 'g', new_test::PlacementNew::GetInstance() );
+
+			ret->AddChild( 'z', align_test::Basic::GetInstance() );
+			ret->AddChild( 'x', align_test::MixedStruct::GetInstance() );
 
 			ret->AddChild(
 				27

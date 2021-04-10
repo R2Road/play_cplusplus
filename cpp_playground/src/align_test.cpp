@@ -17,7 +17,6 @@ namespace align_test
 			return "Align : Basic";
 		};
 	}
-
 	const r2::iNode::DoFunc Basic::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
@@ -112,6 +111,85 @@ namespace align_test
 
 				std::cout << "\t" << "+ align of std::alignof( std::deque<int> ) : " << alignof( std::deque<int> ) << std::endl;
 				std::cout << "\t\t" << "- size of std::deque<int> : " << sizeof( std::deque<int> ) << std::endl << std::endl;
+			}
+
+			std::cout << std::endl << std::endl;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	const r2::iNode::TitleFunc MixedStruct::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Align : Mixed Struct";
+		};
+	}
+	const r2::iNode::DoFunc MixedStruct::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "== Mixed Struct ==" << std::endl << std::endl;
+
+			struct EmptyStruct {};
+
+			struct CharIntFloatStruct
+			{
+				char c;
+				int i;
+				float f;
+			};
+
+			struct DoubleStruct
+			{
+				double d;
+			};
+
+
+			struct Mixed_1_Empty_N_CIF_Struct
+			{
+				EmptyStruct e;
+				CharIntFloatStruct c;
+			};
+
+			struct Mixed_2_Empty_N_D_Struct
+			{
+				EmptyStruct e;
+				DoubleStruct c;
+			};
+
+			struct Mixed_3_Empty_N_CIF_D_Struct
+			{
+				EmptyStruct e;
+				CharIntFloatStruct c;
+				DoubleStruct d;
+			};
+
+			{
+				std::cout << "\t" << "+ align of EmptyStruct : " << alignof( EmptyStruct ) << std::endl;
+				std::cout << "\t\t" << "- size of EmptyStruct : " << sizeof( EmptyStruct ) << std::endl << std::endl;
+
+				std::cout << "\t" << "+ align of CharIntFloatStruct : " << alignof( CharIntFloatStruct ) << std::endl;
+				std::cout << "\t\t" << "- size of CharIntFloatStruct : " << sizeof( CharIntFloatStruct ) << std::endl << std::endl;
+
+				std::cout << "\t" << "+ align of DoubleStruct : " << alignof( DoubleStruct ) << std::endl;
+				std::cout << "\t\t" << "- size of DoubleStruct : " << sizeof( DoubleStruct ) << std::endl << std::endl;
+			}
+
+			std::cout << std::endl << std::endl << std::endl;
+
+			{
+				std::cout << "\t" << "+ align of Mixed_1_Empty_N_CIF_Struct : " << alignof( Mixed_1_Empty_N_CIF_Struct ) << std::endl;
+				std::cout << "\t\t" << "- size of Mixed_1_Empty_N_CIF_Struct : " << sizeof( Mixed_1_Empty_N_CIF_Struct ) << std::endl << std::endl;
+
+				std::cout << "\t" << "+ align of Mixed_2_Empty_N_D_Struct : " << alignof( Mixed_2_Empty_N_D_Struct ) << std::endl;
+				std::cout << "\t\t" << "- size of Mixed_2_Empty_N_D_Struct : " << sizeof( Mixed_2_Empty_N_D_Struct ) << std::endl << std::endl;
+
+				std::cout << "\t" << "+ align of Mixed_3_Empty_N_CIF_D_Struct : " << alignof( Mixed_3_Empty_N_CIF_D_Struct ) << std::endl;
+				std::cout << "\t\t" << "- size of Mixed_3_Empty_N_CIF_D_Struct : " << sizeof( Mixed_3_Empty_N_CIF_D_Struct ) << std::endl << std::endl;
 			}
 
 			std::cout << std::endl << std::endl;
