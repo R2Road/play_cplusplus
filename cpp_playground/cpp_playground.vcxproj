@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\align_test.cpp" />
     <ClCompile Include="src\assert_test.cpp" />
     <ClCompile Include="src\pointer_test.cpp" />
     <ClCompile Include="src\enum_test.cpp" />
@@ -42,6 +43,7 @@
     <ClCompile Include="src\variant_test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\align_test.h" />
     <ClInclude Include="src\assert_test.h" />
     <ClInclude Include="src\pointer_test.h" />
     <ClInclude Include="src\enum_test.h" />

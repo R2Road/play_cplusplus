@@ -81,6 +81,9 @@
     <ClCompile Include="src\r2_PointerTestScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\align_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -151,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="src\r2_PointerTestScene.h">
       <Filter>scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\align_test.h">
+      <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

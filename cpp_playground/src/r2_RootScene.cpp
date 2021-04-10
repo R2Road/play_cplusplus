@@ -20,6 +20,7 @@
 #include "string_view_test.h"
 #include "enum_test.h"
 #include "new_test.h"
+#include "align_test.h"
 
 namespace r2
 {
@@ -64,6 +65,7 @@ namespace r2
 			ret->AddChild( '6', variadic_template_test::PrintValues::GetInstance() );
 			ret->AddChild( '7', variadic_template_test::SumValues::GetInstance() );
 			ret->AddChild( '8', variadic_template_test::SubtractValues::GetInstance() );			
+			ret->AddChild( 'q', align_test::Basic::GetInstance() );
 			ret->AddChild( 'w', optional_test::Basic::GetInstance() );
 			ret->AddChild( 'e', variant_test::Basic::GetInstance() );
 			ret->AddChild( 'r', variadic_template_test::SizeOfArgs::GetInstance() );
