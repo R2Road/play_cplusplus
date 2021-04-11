@@ -21,6 +21,7 @@
 #include "enum_test.h"
 #include "new_test.h"
 #include "align_test.h"
+#include "korean_test.h"
 
 namespace r2
 {
@@ -81,6 +82,7 @@ namespace r2
 			ret->AddChild( 'z', align_test::Basic::GetInstance() );
 			ret->AddChild( 'x', align_test::MixedStruct::GetInstance() );
 			ret->AddChild( 'c', align_test::AlignAs::GetInstance() );
+			ret->AddChild( 'b', korean_test::Basic::GetInstance() );
 
 			ret->AddChild(
 				27
