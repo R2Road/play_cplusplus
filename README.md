@@ -1,12 +1,10 @@
 # cplusplus_playground
 
-## 작업환경 | Overview
+## 개괄 | Overview
 - 이런 저런 c++ 기능 확인
 
 
 ## 작업환경 | Environment
-
-```markdown
 - OS
   - Windows 10
 
@@ -18,4 +16,3 @@
 
 - external library
   - vld
-```
