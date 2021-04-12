@@ -14,7 +14,7 @@
   - C++ 17
 
 - editor
-  - Visual Studio Community 2017 15.9.16
+  - Visual Studio Community 2017 15.9.27
 
 - external library
   - vld
