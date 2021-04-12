@@ -1,7 +1,7 @@
 # cplusplus_playground
 
 ## 작업환경 | Overview
-- 이런 저런 c++ 17 기능 확인
+- 이런 저런 c++ 기능 확인
 
 
 ## 작업환경 | Environment
@@ -11,8 +11,11 @@
   - Windows 10
 
 - language
-  - C++
+  - C++ 17
 
 - editor
   - Visual Studio Community 2017 15.9.16
+
+- external library
+  - vld
 ```
