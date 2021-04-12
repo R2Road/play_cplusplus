@@ -1,6 +1,5 @@
+#include "pch.h"
 #include "variadic_template_test.h"
-
-#include <iostream>
 
 #include "r2_eTestResult.h"
 

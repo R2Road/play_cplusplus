@@ -1,7 +1,7 @@
+#include "pch.h"
 #include "assert_test.h"
 
 #include <cassert>
-#include <iostream>
 
 #include "r2_eTestResult.h"
 

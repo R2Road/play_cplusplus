@@ -1,7 +1,7 @@
+#include "pch.h"
 #include "optional_test.h"
 
 #include <functional>
-#include <iostream>
 #include <optional>
 
 #include "r2_eTestResult.h"

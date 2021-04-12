@@ -1,7 +1,7 @@
+#include "pch.h"
 #include "align_test.h"
 
 #include <deque>
-#include <iostream>
 #include <memory>
 #include <unordered_map>
 #include <vector>
@@ -293,7 +293,7 @@ namespace align_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Align ==" << std::endl << std::endl;
+			std::cout << "== Align ==" << std::ends << std::ends;
 
 			//{
 			//	std::cout << "\t" << "double d;" << std::endl;

@@ -1,6 +1,5 @@
+#include "pch.h"
 #include "r2_PointerTestScene.h"
-
-#include <iostream>
 
 #include "r2_Director.h"
 #include "r2_eTestResult.h"

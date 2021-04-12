@@ -1,6 +1,5 @@
+#include "pch.h"
 #include "pointer_test.h"
-
-#include <iostream>
 
 #include "r2_eTestResult.h"
 

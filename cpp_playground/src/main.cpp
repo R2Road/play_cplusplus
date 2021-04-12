@@ -1,4 +1,5 @@
-﻿#include <Windows.h>
+﻿#include "pch.h"
+#include <Windows.h>
 
 #if defined( DEBUG ) || defined( _DEBUG )
 	#include <vld.h>

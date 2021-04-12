@@ -1,6 +1,6 @@
+#include "pch.h"
 #include "template_meta_programming_test.h"
 
-#include <iostream>
 #include <string>
 
 #include "r2_eTestResult.h"

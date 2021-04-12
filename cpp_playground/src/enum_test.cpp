@@ -1,6 +1,6 @@
+#include "pch.h"
 #include "enum_test.h"
 
-#include <iostream>
 #include <typeinfo> // typeid
 #include <type_traits>
 

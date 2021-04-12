@@ -1,6 +1,6 @@
+#include "pch.h"
 #include "shared_pointer_test.h"
 
-#include <iostream>
 #include <memory>
 
 #include "r2_eTestResult.h"

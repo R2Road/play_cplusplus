@@ -87,6 +87,9 @@
     <ClCompile Include="src\korean_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="src\pch.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -163,6 +166,9 @@
     </ClInclude>
     <ClInclude Include="src\korean_test.h">
       <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pch.h">
+      <Filter>win32</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

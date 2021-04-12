@@ -1,8 +1,8 @@
+#include "pch.h"
 #include "random_test.h"
 
 #include <filesystem>
 #include <fstream>
-#include <iostream>
 #include <random>
 #include <string>
 

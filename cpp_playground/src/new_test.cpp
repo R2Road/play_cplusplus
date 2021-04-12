@@ -1,6 +1,6 @@
+#include "pch.h"
 #include "new_test.h"
 
-#include <iostream>
 #include <new>
 
 #include "r2_eTestResult.h"

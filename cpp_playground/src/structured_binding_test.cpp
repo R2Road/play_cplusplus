@@ -1,6 +1,6 @@
+#include "pch.h"
 #include "structured_binding_test.h"
 
-#include <iostream>
 #include <tuple>
 #include <utility> // pair
 

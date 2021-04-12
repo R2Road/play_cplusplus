@@ -1,6 +1,6 @@
+#include "pch.h"
 #include "korean_test.h"
 
-#include <iostream>
 #include <locale>
 
 #include "r2_eTestResult.h"

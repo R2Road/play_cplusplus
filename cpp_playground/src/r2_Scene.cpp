@@ -1,7 +1,7 @@
+#include "pch.h"
 #include "r2_Scene.h"
 
 #include <cctype> // std::toupper
-#include <iostream>
 
 #include "r2_eTestResult.h"
 #include "r2_iNode.h"
