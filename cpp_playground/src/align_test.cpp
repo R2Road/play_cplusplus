@@ -279,4 +279,77 @@ namespace align_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	const r2::iNode::TitleFunc Align::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Align : Align";
+		};
+	}
+	const r2::iNode::DoFunc Align::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "== Align ==" << std::endl << std::endl;
+
+			//{
+			//	std::cout << "\t" << "double d;" << std::endl;
+			//	std::cout << "\t" << "void* dp = &d;" << std::endl;
+			//	double d = 1;
+			//	void* dp = &d;
+
+			//	std::cout << "\t + " << "adress of dp " << std::endl;
+			//	std::cout << "\t\t - " << dp << std::endl << std::endl;
+
+			//	std::size_t space_size = sizeof( double );
+			//	std::cout << "\t + " << "space size" << std::endl;
+			//	std::cout << "\t\t - " << space_size << std::endl;
+
+			//	const std::size_t align = alignof( int );
+			//	auto ip3 = std::align( align, sizeof( int ), dp, space_size );
+
+			//	std::cout << "\t + " << "space size" << std::endl;
+			//	std::cout << "\t\t - " << space_size << std::endl;
+
+			//	std::cout << "\t + " << "adress of ip3" << std::endl;
+			//	std::cout << "\t\t - " << ip3 << std::endl;
+
+			//	std::cout << "\t + " << "adress of dp" << std::endl;
+			//	std::cout << "\t\t - " << dp << std::endl;
+			//}
+
+			{
+				char buffer[] = "------------------------";
+				void * pt = buffer;
+
+				std::cout << "\t + " << "orig : " << buffer << std::endl;
+				std::cout << "\t + " << "adress of pt : " << pt << std::endl << std::endl;
+
+				std::cout << "\t + " << "Process" << std::endl;
+
+				std::size_t space = sizeof( buffer ) - 1;
+				while( std::align( alignof( int ), sizeof( char ), pt, space ) )
+				{
+					char* temp = static_cast<char*>( pt );
+					*temp = '*';
+					++temp;
+					space -= sizeof( char );
+
+					std::cout << "\t\t - " << "adress of pt : " << pt << std::endl;
+					std::cout << "\t\t - " << "cvrt : " << buffer << std::endl << std::endl;
+
+					pt = temp;
+				}
+
+				std::cout << "\t" << "result : " << buffer << std::endl;
+			}
+
+			std::cout << std::endl << std::endl;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }

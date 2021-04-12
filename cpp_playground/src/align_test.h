@@ -25,4 +25,11 @@ namespace align_test
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 	};
+
+	class Align : public r2::iNode, public r2::SingleTon<Align>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
 }
