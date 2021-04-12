@@ -19,64 +19,64 @@ namespace tuple_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Tuple : Basic ==" << std::endl;
+			std::cout << "== Tuple : Basic ==" << r2::linefeed;
 
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 
 			{
-				std::cout << "\t+ std::tuple<int, std::string, char> v;" << std::endl;
+				std::cout << "\t+ std::tuple<int, std::string, char> v;" << r2::linefeed;
 				std::tuple<int, std::string, char> v;
 
-				std::cout << "\t\t- Call : std::get<0>( v );" << std::endl;
-				std::cout << "\t\t\t" << std::get<0>( v ) << std::endl;
+				std::cout << "\t\t- Call : std::get<0>( v );" << r2::linefeed;
+				std::cout << "\t\t\t" << std::get<0>( v ) << r2::linefeed;
 
-				std::cout << "\t\t- Call : std::get<1>( v );" << std::endl;
-				std::cout << "\t\t\t" << std::get<1>( v ) << std::endl;
+				std::cout << "\t\t- Call : std::get<1>( v );" << r2::linefeed;
+				std::cout << "\t\t\t" << std::get<1>( v ) << r2::linefeed;
 
-				std::cout << "\t\t- Call : std::get<2>( v );" << std::endl;
-				std::cout << "\t\t\t" << std::get<2>( v ) << std::endl;
+				std::cout << "\t\t- Call : std::get<2>( v );" << r2::linefeed;
+				std::cout << "\t\t\t" << std::get<2>( v ) << r2::linefeed;
 			}
 
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 
 			{
-				std::cout << "\t+ std::tuple<int, std::string, bool> v{ 2, \"park\", 'b' };" << std::endl;
+				std::cout << "\t+ std::tuple<int, std::string, bool> v{ 2, \"park\", 'b' };" << r2::linefeed;
 				std::tuple<int, std::string, char> v{ 2, "park", 'b' };
 
-				std::cout << "\t\t- Call : std::get<0>( v );" << std::endl;
-				std::cout << "\t\t\t" << std::get<0>( v ) << std::endl;
+				std::cout << "\t\t- Call : std::get<0>( v );" << r2::linefeed;
+				std::cout << "\t\t\t" << std::get<0>( v ) << r2::linefeed;
 
-				std::cout << "\t\t- Call : std::get<1>( v );" << std::endl;
-				std::cout << "\t\t\t" << std::get<1>( v ) << std::endl;
+				std::cout << "\t\t- Call : std::get<1>( v );" << r2::linefeed;
+				std::cout << "\t\t\t" << std::get<1>( v ) << r2::linefeed;
 
-				std::cout << "\t\t- Call : std::get<2>( v );" << std::endl;
-				std::cout << "\t\t\t" << std::get<2>( v ) << std::endl;
+				std::cout << "\t\t- Call : std::get<2>( v );" << r2::linefeed;
+				std::cout << "\t\t\t" << std::get<2>( v ) << r2::linefeed;
 			}
 
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 
 			{
-				std::cout << "\t+ auto v = std::make_tuple( 10, \"Kim\", 'c' );" << std::endl;
+				std::cout << "\t+ auto v = std::make_tuple( 10, \"Kim\", 'c' );" << r2::linefeed;
 				auto v = std::make_tuple( 10, "Kim", 'c' );
 
-				std::cout << "\t\t- Call : std::get<0>( v );" << std::endl;
-				std::cout << "\t\t\t" << std::get<0>( v ) << std::endl;
+				std::cout << "\t\t- Call : std::get<0>( v );" << r2::linefeed;
+				std::cout << "\t\t\t" << std::get<0>( v ) << r2::linefeed;
 
-				std::cout << "\t\t- Call : std::get<1>( v );" << std::endl;
-				std::cout << "\t\t\t" << std::get<1>( v ) << std::endl;
+				std::cout << "\t\t- Call : std::get<1>( v );" << r2::linefeed;
+				std::cout << "\t\t\t" << std::get<1>( v ) << r2::linefeed;
 
-				std::cout << "\t\t- Call : std::get<2>( v );" << std::endl;
-				std::cout << "\t\t\t" << std::get<2>( v ) << std::endl;
+				std::cout << "\t\t- Call : std::get<2>( v );" << r2::linefeed;
+				std::cout << "\t\t\t" << std::get<2>( v ) << r2::linefeed;
 			}
 
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};

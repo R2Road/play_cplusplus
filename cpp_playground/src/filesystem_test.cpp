@@ -9,81 +9,81 @@ namespace
 {
 	void TestGetDirectoryPath()
 	{
-		std::cout << "== Current Directory ==" << std::endl;
+		std::cout << "== Current Directory ==" << r2::linefeed;
 
 		std::filesystem::path p = std::filesystem::current_path();
 
-		std::cout << "\t" << p << std::endl;
-		std::cout << std::endl;
+		std::cout << "\t" << p << r2::linefeed;
+		std::cout << r2::linefeed;
 
 
 
-		std::cout << "== Temp Directory ==" << std::endl;
+		std::cout << "== Temp Directory ==" << r2::linefeed;
 
 		std::filesystem::path p2 = std::filesystem::temp_directory_path();
 
-		std::cout << "\t" << p2 << std::endl;
-		std::cout << std::endl;	
+		std::cout << "\t" << p2 << r2::linefeed;
+		std::cout << r2::linefeed;	
 	}
 
 	void TestDirectoryIterator()
 	{
-		std::cout << "== Directory Iterator ==" << std::endl;
+		std::cout << "== Directory Iterator ==" << r2::linefeed;
 
-		std::cout << "\t" << "+ Directory : " << std::endl;
-		std::cout << "\t\t" << std::filesystem::current_path() << std::endl;
-		std::cout << std::endl;
+		std::cout << "\t" << "+ Directory : " << r2::linefeed;
+		std::cout << "\t\t" << std::filesystem::current_path() << r2::linefeed;
+		std::cout << r2::linefeed;
 
-		std::cout << "\t" << "+ View" << std::endl;
+		std::cout << "\t" << "+ View" << r2::linefeed;
 		std::filesystem::directory_iterator itr( std::filesystem::current_path() );
 		for( auto i : itr )
 		{
-			std::cout << "\t\t" << i.path() << std::endl;
-			std::cout << "\t\t\t" << ( std::filesystem::is_regular_file( i.path() ) ? "file" : "directory" ) << std::endl;
+			std::cout << "\t\t" << i.path() << r2::linefeed;
+			std::cout << "\t\t\t" << ( std::filesystem::is_regular_file( i.path() ) ? "file" : "directory" ) << r2::linefeed;
 		}
 
-		std::cout << std::endl;
+		std::cout << r2::linefeed;
 	}
 
 	void TestRecursiveDirectoryIterator()
 	{
-		std::cout << "== Recursive Directory Iterator ==" << std::endl;
+		std::cout << "== Recursive Directory Iterator ==" << r2::linefeed;
 
 		std::filesystem::recursive_directory_iterator itr( std::filesystem::current_path() / "src" );
 		for( auto i : itr )
 		{
-			std::cout << "\t" << i.path() << std::endl;
+			std::cout << "\t" << i.path() << r2::linefeed;
 		}
 
-		std::cout << std::endl;
+		std::cout << r2::linefeed;
 	}
 
 	void TestPathOperation()
 	{
-		std::cout << "== Path Operation ==" << std::endl;
+		std::cout << "== Path Operation ==" << r2::linefeed;
 
 		std::filesystem::path p = std::filesystem::current_path();
-		std::cout << "\t" << "+ Directory : " << std::endl;
-		std::cout << "\t\t" << p << std::endl;
-		std::cout << std::endl;
+		std::cout << "\t" << "+ Directory : " << r2::linefeed;
+		std::cout << "\t\t" << p << r2::linefeed;
+		std::cout << r2::linefeed;
 
 
 
-		std::cout << "\t" << "+ Append, Operator /" << std::endl;
+		std::cout << "\t" << "+ Append, Operator /" << r2::linefeed;
 
 		p /= "test.txt";
 
-		std::cout << "\t\t" << p << std::endl;
-		std::cout << std::endl;
+		std::cout << "\t\t" << p << r2::linefeed;
+		std::cout << r2::linefeed;
 
 
 
-		std::cout << "\t" << "+ Remove File Name" << std::endl;
+		std::cout << "\t" << "+ Remove File Name" << r2::linefeed;
 
 		p.remove_filename();
 
-		std::cout << "\t\t" << p << std::endl;
-		std::cout << std::endl;
+		std::cout << "\t\t" << p << r2::linefeed;
+		std::cout << r2::linefeed;
 	}
 }
 
@@ -103,15 +103,15 @@ namespace filesystem_test
 		{
 			TestGetDirectoryPath();
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			TestDirectoryIterator();
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			TestRecursiveDirectoryIterator();
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			TestPathOperation();
 

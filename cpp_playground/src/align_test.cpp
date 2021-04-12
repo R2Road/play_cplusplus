@@ -21,23 +21,23 @@ namespace align_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Basic ==" << std::endl << std::endl;
+			std::cout << "== Basic ==" << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ align of char : " << alignof( char ) << std::endl;
-				std::cout << "\t\t" << "- size of char : " << sizeof( char ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of char : " << alignof( char ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of char : " << sizeof( char ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ align of int : " << alignof( int ) << std::endl;
-				std::cout << "\t\t" << "- size of int : " << sizeof( int ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of int : " << alignof( int ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of int : " << sizeof( int ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ align of bool : " << alignof( bool ) << std::endl;
-				std::cout << "\t\t" << "- size of bool : " << sizeof( bool ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of bool : " << alignof( bool ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of bool : " << sizeof( bool ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ align of double : " << alignof( double ) << std::endl;
-				std::cout << "\t\t" << "- size of double : " << sizeof( double ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of double : " << alignof( double ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of double : " << sizeof( double ) << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
 
 			{
 				struct EmptyStruct {};
@@ -75,45 +75,45 @@ namespace align_test
 					double d;
 				};
 
-				std::cout << "\t" << "+ align of EmptyStruct : " << alignof( EmptyStruct ) << std::endl;
-				std::cout << "\t\t" << "- size of EmptyStruct : " << sizeof( EmptyStruct ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of EmptyStruct : " << alignof( EmptyStruct ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of EmptyStruct : " << sizeof( EmptyStruct ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ align of IntFloatCharStruct : " << alignof( IntFloatCharStruct ) << std::endl;
-				std::cout << "\t\t" << "- size of IntFloatCharStruct : " << sizeof( IntFloatCharStruct ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of IntFloatCharStruct : " << alignof( IntFloatCharStruct ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of IntFloatCharStruct : " << sizeof( IntFloatCharStruct ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ align of CharCharCharStruct : " << alignof( CharCharCharStruct ) << std::endl;
-				std::cout << "\t\t" << "- size of CharCharCharStruct : " << sizeof( CharCharCharStruct ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of CharCharCharStruct : " << alignof( CharCharCharStruct ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of CharCharCharStruct : " << sizeof( CharCharCharStruct ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ align of CharDoubleStruct : " << alignof( CharDoubleStruct ) << std::endl;
-				std::cout << "\t\t" << "- size of CharDoubleStruct : " << sizeof( CharDoubleStruct ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of CharDoubleStruct : " << alignof( CharDoubleStruct ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of CharDoubleStruct : " << sizeof( CharDoubleStruct ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ align of CharBoolStruct : " << alignof( CharBoolStruct ) << std::endl;
-				std::cout << "\t\t" << "- size of CharBoolStruct : " << sizeof( CharBoolStruct ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of CharBoolStruct : " << alignof( CharBoolStruct ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of CharBoolStruct : " << sizeof( CharBoolStruct ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ align of CharIntDoubleStruct : " << alignof( CharIntDoubleStruct ) << std::endl;
-				std::cout << "\t\t" << "- size of CharIntDoubleStruct : " << sizeof( CharIntDoubleStruct ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of CharIntDoubleStruct : " << alignof( CharIntDoubleStruct ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of CharIntDoubleStruct : " << sizeof( CharIntDoubleStruct ) << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ align of std::list<char> : " << alignof( std::list<char> ) << std::endl;
-				std::cout << "\t\t" << "- size of std::list<char> : " << sizeof( std::list<char> ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of std::list<char> : " << alignof( std::list<char> ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of std::list<char> : " << sizeof( std::list<char> ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ align of std::list<int> : " << alignof( std::list<int> ) << std::endl;
-				std::cout << "\t\t" << "- size of std::list<int> : " << sizeof( std::list<int> ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of std::list<int> : " << alignof( std::list<int> ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of std::list<int> : " << sizeof( std::list<int> ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ align of std::vector<int> : " << alignof( std::vector<int> ) << std::endl;
-				std::cout << "\t\t" << "- size of std::vector<int> : " << sizeof( std::vector<int> ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of std::vector<int> : " << alignof( std::vector<int> ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of std::vector<int> : " << sizeof( std::vector<int> ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ align of std::alignof( std::unordered_map<int, int> ) : " << alignof( std::unordered_map<int, int> ) << std::endl;
-				std::cout << "\t\t" << "- size of std::unordered_map<int, int> : " << sizeof( std::unordered_map<int, int> ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of std::alignof( std::unordered_map<int, int> ) : " << alignof( std::unordered_map<int, int> ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of std::unordered_map<int, int> : " << sizeof( std::unordered_map<int, int> ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ align of std::alignof( std::deque<int> ) : " << alignof( std::deque<int> ) << std::endl;
-				std::cout << "\t\t" << "- size of std::deque<int> : " << sizeof( std::deque<int> ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of std::alignof( std::deque<int> ) : " << alignof( std::deque<int> ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of std::deque<int> : " << sizeof( std::deque<int> ) << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};
@@ -132,7 +132,7 @@ namespace align_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Mixed Struct ==" << std::endl << std::endl;
+			std::cout << "== Mixed Struct ==" << r2::linefeed << r2::linefeed;
 
 			struct EmptyStruct {};
 
@@ -169,30 +169,30 @@ namespace align_test
 			};
 
 			{
-				std::cout << "\t" << "+ align of EmptyStruct : " << alignof( EmptyStruct ) << std::endl;
-				std::cout << "\t\t" << "- size of EmptyStruct : " << sizeof( EmptyStruct ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of EmptyStruct : " << alignof( EmptyStruct ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of EmptyStruct : " << sizeof( EmptyStruct ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ align of CharIntFloatStruct : " << alignof( CharIntFloatStruct ) << std::endl;
-				std::cout << "\t\t" << "- size of CharIntFloatStruct : " << sizeof( CharIntFloatStruct ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of CharIntFloatStruct : " << alignof( CharIntFloatStruct ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of CharIntFloatStruct : " << sizeof( CharIntFloatStruct ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ align of DoubleStruct : " << alignof( DoubleStruct ) << std::endl;
-				std::cout << "\t\t" << "- size of DoubleStruct : " << sizeof( DoubleStruct ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of DoubleStruct : " << alignof( DoubleStruct ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of DoubleStruct : " << sizeof( DoubleStruct ) << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ align of Mixed_1_Empty_N_CIF_Struct : " << alignof( Mixed_1_Empty_N_CIF_Struct ) << std::endl;
-				std::cout << "\t\t" << "- size of Mixed_1_Empty_N_CIF_Struct : " << sizeof( Mixed_1_Empty_N_CIF_Struct ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of Mixed_1_Empty_N_CIF_Struct : " << alignof( Mixed_1_Empty_N_CIF_Struct ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of Mixed_1_Empty_N_CIF_Struct : " << sizeof( Mixed_1_Empty_N_CIF_Struct ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ align of Mixed_2_Empty_N_D_Struct : " << alignof( Mixed_2_Empty_N_D_Struct ) << std::endl;
-				std::cout << "\t\t" << "- size of Mixed_2_Empty_N_D_Struct : " << sizeof( Mixed_2_Empty_N_D_Struct ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of Mixed_2_Empty_N_D_Struct : " << alignof( Mixed_2_Empty_N_D_Struct ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of Mixed_2_Empty_N_D_Struct : " << sizeof( Mixed_2_Empty_N_D_Struct ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ align of Mixed_3_Empty_N_CIF_D_Struct : " << alignof( Mixed_3_Empty_N_CIF_D_Struct ) << std::endl;
-				std::cout << "\t\t" << "- size of Mixed_3_Empty_N_CIF_D_Struct : " << sizeof( Mixed_3_Empty_N_CIF_D_Struct ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of Mixed_3_Empty_N_CIF_D_Struct : " << alignof( Mixed_3_Empty_N_CIF_D_Struct ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of Mixed_3_Empty_N_CIF_D_Struct : " << sizeof( Mixed_3_Empty_N_CIF_D_Struct ) << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};
@@ -211,25 +211,25 @@ namespace align_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Align As ==" << std::endl << std::endl;
+			std::cout << "== Align As ==" << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "struct alignas( 32 ) EmptyStruct {};" << std::endl << std::endl;
+				std::cout << "\t" << "struct alignas( 32 ) EmptyStruct {};" << r2::linefeed << r2::linefeed;
 				struct alignas( 32 ) EmptyStruct {};
 
-				std::cout << "\t" << "+ align of EmptyStruct : " << alignof( EmptyStruct ) << std::endl;
-				std::cout << "\t\t" << "- size of EmptyStruct : " << sizeof( EmptyStruct ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of EmptyStruct : " << alignof( EmptyStruct ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of EmptyStruct : " << sizeof( EmptyStruct ) << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "struct alignas( 8 ) CharIntFloatStruct" << std::endl;
-				std::cout << "\t" << "{" << std::endl;
-				std::cout << "\t\t" << "char c;" << std::endl;
-				std::cout << "\t\t" << "int i;" << std::endl;
-				std::cout << "\t\t" << "float f;" << std::endl;
-				std::cout << "\t" << "}" << std::endl << std::endl;
+				std::cout << "\t" << "struct alignas( 8 ) CharIntFloatStruct" << r2::linefeed;
+				std::cout << "\t" << "{" << r2::linefeed;
+				std::cout << "\t\t" << "char c;" << r2::linefeed;
+				std::cout << "\t\t" << "int i;" << r2::linefeed;
+				std::cout << "\t\t" << "float f;" << r2::linefeed;
+				std::cout << "\t" << "}" << r2::linefeed << r2::linefeed;
 				struct alignas( 8 ) CharIntFloatStruct
 				{
 					char c;
@@ -237,44 +237,44 @@ namespace align_test
 					float f;
 				};
 
-				std::cout << "\t" << "+ align of CharIntFloatStruct : " << alignof( CharIntFloatStruct ) << std::endl;
-				std::cout << "\t\t" << "- size of CharIntFloatStruct : " << sizeof( CharIntFloatStruct ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of CharIntFloatStruct : " << alignof( CharIntFloatStruct ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of CharIntFloatStruct : " << sizeof( CharIntFloatStruct ) << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "struct alignas( 0 ) IntStruct" << std::endl;
-				std::cout << "\t" << "{" << std::endl;
-				std::cout << "\t\t" << "int i;" << std::endl;
-				std::cout << "\t" << "}" << std::endl << std::endl;
+				std::cout << "\t" << "struct alignas( 0 ) IntStruct" << r2::linefeed;
+				std::cout << "\t" << "{" << r2::linefeed;
+				std::cout << "\t\t" << "int i;" << r2::linefeed;
+				std::cout << "\t" << "}" << r2::linefeed << r2::linefeed;
 				struct alignas( 0 ) IntStruct
 				{
 					int i;
 				};
 
-				std::cout << "\t" << "+ align of IntStruct : " << alignof( IntStruct ) << std::endl;
-				std::cout << "\t\t" << "- size of IntStruct : " << sizeof( IntStruct ) << std::endl << std::endl;
+				std::cout << "\t" << "+ align of IntStruct : " << alignof( IntStruct ) << r2::linefeed;
+				std::cout << "\t\t" << "- size of IntStruct : " << sizeof( IntStruct ) << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ Ignore 0" << std::endl << std::endl;
+				std::cout << "\t" << "+ Ignore 0" << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "struct alignas( 1 ) IntStruct" << std::endl;
-				std::cout << "\t" << "{" << std::endl;
-				std::cout << "\t\t" << "int i;" << std::endl;
-				std::cout << "\t" << "}" << std::endl << std::endl;
+				std::cout << "\t" << "struct alignas( 1 ) IntStruct" << r2::linefeed;
+				std::cout << "\t" << "{" << r2::linefeed;
+				std::cout << "\t\t" << "int i;" << r2::linefeed;
+				std::cout << "\t" << "}" << r2::linefeed << r2::linefeed;
 				//struct alignas( 1 ) IntStruct
 				//{
 				//	int i;
 				//};
 
-				std::cout << "\t" << "+ 1 is Error : At Least A Default Size Is Required" << std::endl << std::endl;
+				std::cout << "\t" << "+ 1 is Error : At Least A Default Size Is Required" << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};
@@ -296,39 +296,39 @@ namespace align_test
 			std::cout << "== Align ==" << std::ends << std::ends;
 
 			//{
-			//	std::cout << "\t" << "double d;" << std::endl;
-			//	std::cout << "\t" << "void* dp = &d;" << std::endl;
+			//	std::cout << "\t" << "double d;" << r2::linefeed;
+			//	std::cout << "\t" << "void* dp = &d;" << r2::linefeed;
 			//	double d = 1;
 			//	void* dp = &d;
 
-			//	std::cout << "\t + " << "adress of dp " << std::endl;
-			//	std::cout << "\t\t - " << dp << std::endl << std::endl;
+			//	std::cout << "\t + " << "adress of dp " << r2::linefeed;
+			//	std::cout << "\t\t - " << dp << r2::linefeed << r2::linefeed;
 
 			//	std::size_t space_size = sizeof( double );
-			//	std::cout << "\t + " << "space size" << std::endl;
-			//	std::cout << "\t\t - " << space_size << std::endl;
+			//	std::cout << "\t + " << "space size" << r2::linefeed;
+			//	std::cout << "\t\t - " << space_size << r2::linefeed;
 
 			//	const std::size_t align = alignof( int );
 			//	auto ip3 = std::align( align, sizeof( int ), dp, space_size );
 
-			//	std::cout << "\t + " << "space size" << std::endl;
-			//	std::cout << "\t\t - " << space_size << std::endl;
+			//	std::cout << "\t + " << "space size" << r2::linefeed;
+			//	std::cout << "\t\t - " << space_size << r2::linefeed;
 
-			//	std::cout << "\t + " << "adress of ip3" << std::endl;
-			//	std::cout << "\t\t - " << ip3 << std::endl;
+			//	std::cout << "\t + " << "adress of ip3" << r2::linefeed;
+			//	std::cout << "\t\t - " << ip3 << r2::linefeed;
 
-			//	std::cout << "\t + " << "adress of dp" << std::endl;
-			//	std::cout << "\t\t - " << dp << std::endl;
+			//	std::cout << "\t + " << "adress of dp" << r2::linefeed;
+			//	std::cout << "\t\t - " << dp << r2::linefeed;
 			//}
 
 			{
 				char buffer[] = "------------------------";
 				void * pt = buffer;
 
-				std::cout << "\t + " << "orig : " << buffer << std::endl;
-				std::cout << "\t + " << "adress of pt : " << pt << std::endl << std::endl;
+				std::cout << "\t + " << "orig : " << buffer << r2::linefeed;
+				std::cout << "\t + " << "adress of pt : " << pt << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t + " << "Process" << std::endl;
+				std::cout << "\t + " << "Process" << r2::linefeed;
 
 				std::size_t space = sizeof( buffer ) - 1;
 				while( std::align( alignof( int ), sizeof( char ), pt, space ) )
@@ -338,16 +338,16 @@ namespace align_test
 					++temp;
 					space -= sizeof( char );
 
-					std::cout << "\t\t - " << "adress of pt : " << pt << std::endl;
-					std::cout << "\t\t - " << "cvrt : " << buffer << std::endl << std::endl;
+					std::cout << "\t\t - " << "adress of pt : " << pt << r2::linefeed;
+					std::cout << "\t\t - " << "cvrt : " << buffer << r2::linefeed << r2::linefeed;
 
 					pt = temp;
 				}
 
-				std::cout << "\t" << "result : " << buffer << std::endl;
+				std::cout << "\t" << "result : " << buffer << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};

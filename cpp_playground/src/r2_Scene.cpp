@@ -16,12 +16,12 @@ namespace r2
 
 	void Scene::ShowTitle() const
 	{
-		std::cout << "# " << mTitleString << " #" << std::endl << std::endl;
+		std::cout << "# " << mTitleString << " #" << r2::linefeed << r2::linefeed;
 	}
 
 	void Scene::ShowMenu() const
 	{
-		std::cout << "+ Menu" << std::endl;
+		std::cout << "+ Menu" << r2::linefeed;
 
 		for( const auto t : mTests )
 		{
@@ -29,10 +29,10 @@ namespace r2
 				<< static_cast<char>( std::toupper( std::get<0>( t ) ) )
 				<< " : "
 				<< std::get<1>( t )( )
-				<< std::endl;
+				<< r2::linefeed;
 		}
 
-		std::cout << std::endl << "Select Menu";
+		std::cout << r2::linefeed << "Select Menu";
 	}
 
 	eTestResult Scene::Do( const int key_code )

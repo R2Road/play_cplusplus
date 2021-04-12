@@ -19,40 +19,40 @@ namespace enum_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Enum ==" << std::endl << std::endl;
+			std::cout << "== Enum ==" << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t + " << "enum eTestOldEnum {};" << std::endl << std::endl;
+				std::cout << "\t + " << "enum eTestOldEnum {};" << r2::linefeed << r2::linefeed;
 				enum eTestOldEnum {};
 
-				std::cout << "\t\t - " << "std::is_enum<eTestOldEnum>::value" << std::endl;
-				std::cout << "\t\t\t - " << std::is_enum<eTestOldEnum>::value << std::endl;
+				std::cout << "\t\t - " << "std::is_enum<eTestOldEnum>::value" << r2::linefeed;
+				std::cout << "\t\t\t - " << std::is_enum<eTestOldEnum>::value << r2::linefeed;
 
-				std::cout << "\t\t - " << "typeid( std::underlying_type<eTestEnum_1>::type ).name()" << std::endl;
-				std::cout << "\t\t\t - " << typeid( std::underlying_type<eTestOldEnum>::type ).name() << std::endl;
+				std::cout << "\t\t - " << "typeid( std::underlying_type<eTestEnum_1>::type ).name()" << r2::linefeed;
+				std::cout << "\t\t\t - " << typeid( std::underlying_type<eTestOldEnum>::type ).name() << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t + " << "enum class eTestNewEnum {};" << std::endl << std::endl;
+				std::cout << "\t + " << "enum class eTestNewEnum {};" << r2::linefeed << r2::linefeed;
 				enum class eTestNewEnum {};
 
-				std::cout << "\t\t - " << "std::is_enum<eTestNewEnum>::value" << std::endl;
-				std::cout << "\t\t\t - " << std::is_enum<eTestNewEnum>::value << std::endl;
+				std::cout << "\t\t - " << "std::is_enum<eTestNewEnum>::value" << r2::linefeed;
+				std::cout << "\t\t\t - " << std::is_enum<eTestNewEnum>::value << r2::linefeed;
 
-				std::cout << "\t\t - " << "typeid( std::underlying_type<eTestNewEnum>::type ).name()" << std::endl;
-				std::cout << "\t\t\t - " << typeid( std::underlying_type<eTestNewEnum>::type ).name() << std::endl;
+				std::cout << "\t\t - " << "typeid( std::underlying_type<eTestNewEnum>::type ).name()" << r2::linefeed;
+				std::cout << "\t\t\t - " << typeid( std::underlying_type<eTestNewEnum>::type ).name() << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t + " << "enum class eTestNewEnum : char {};" << std::endl << std::endl;
+				std::cout << "\t + " << "enum class eTestNewEnum : char {};" << r2::linefeed << r2::linefeed;
 				enum class eTestNewEnum : char {};
 
-				std::cout << "\t\t - " << "typeid( std::underlying_type<eTestNewEnum>::type ).name()" << std::endl;
-				std::cout << "\t\t\t - " << typeid( std::underlying_type<eTestNewEnum>::type ).name() << std::endl;
+				std::cout << "\t\t - " << "typeid( std::underlying_type<eTestNewEnum>::type ).name()" << r2::linefeed;
+				std::cout << "\t\t\t - " << typeid( std::underlying_type<eTestNewEnum>::type ).name() << r2::linefeed;
 			}
 
 			return r2::eTestResult::RunTest;
@@ -80,23 +80,23 @@ namespace enum_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Convert ==" << std::endl << std::endl;
+			std::cout << "== Convert ==" << r2::linefeed << r2::linefeed;
 
-			std::cout << "\t" << "template<typename EnumT>" << std::endl;
-			std::cout << "\t" << "constexpr auto Enum2Value( EnumT e )" << std::endl;
-			std::cout << "\t" << "{" << std::endl;
-			std::cout << "\t\t" << "return static_cast<std::underlying_type_t<EnumT>>( e );" << std::endl;
-			std::cout << "\t" << "}" << std::endl;
+			std::cout << "\t" << "template<typename EnumT>" << r2::linefeed;
+			std::cout << "\t" << "constexpr auto Enum2Value( EnumT e )" << r2::linefeed;
+			std::cout << "\t" << "{" << r2::linefeed;
+			std::cout << "\t\t" << "return static_cast<std::underlying_type_t<EnumT>>( e );" << r2::linefeed;
+			std::cout << "\t" << "}" << r2::linefeed;
 
-			std::cout << std::endl << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "enum eOldEnum" << std::endl;
-				std::cout << "\t" << "{" << std::endl;
-				std::cout << "\t\t" << "one" << std::endl;
-				std::cout << "\t\t" << ", two" << std::endl;
-				std::cout << "\t\t" << ", three" << std::endl;
-				std::cout << "\t" << "}" << std::endl << std::endl;
+				std::cout << "\t" << "enum eOldEnum" << r2::linefeed;
+				std::cout << "\t" << "{" << r2::linefeed;
+				std::cout << "\t\t" << "one" << r2::linefeed;
+				std::cout << "\t\t" << ", two" << r2::linefeed;
+				std::cout << "\t\t" << ", three" << r2::linefeed;
+				std::cout << "\t" << "}" << r2::linefeed << r2::linefeed;
 
 				enum eOldEnum
 				{
@@ -105,20 +105,20 @@ namespace enum_test
 					, three
 				};
 
-				std::cout << "\t" << "+ " << "Enum2Value( eOldEnum::three )" << std::endl;
-				std::cout << "\t\t" << "- " << Enum2Value( eOldEnum::three ) << std::endl;
-				std::cout << "\t\t" << "- " << typeid( Enum2Value( eOldEnum::three ) ).name() << std::endl;
+				std::cout << "\t" << "+ " << "Enum2Value( eOldEnum::three )" << r2::linefeed;
+				std::cout << "\t\t" << "- " << Enum2Value( eOldEnum::three ) << r2::linefeed;
+				std::cout << "\t\t" << "- " << typeid( Enum2Value( eOldEnum::three ) ).name() << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "enum class eNewEnum : short" << std::endl;
-				std::cout << "\t" << "{" << std::endl;
-				std::cout << "\t\t" << "hana" << std::endl;
-				std::cout << "\t\t" << ", dul" << std::endl;
-				std::cout << "\t\t" << ", set" << std::endl;
-				std::cout << "\t" << "}" << std::endl << std::endl;
+				std::cout << "\t" << "enum class eNewEnum : short" << r2::linefeed;
+				std::cout << "\t" << "{" << r2::linefeed;
+				std::cout << "\t\t" << "hana" << r2::linefeed;
+				std::cout << "\t\t" << ", dul" << r2::linefeed;
+				std::cout << "\t\t" << ", set" << r2::linefeed;
+				std::cout << "\t" << "}" << r2::linefeed << r2::linefeed;
 
 				enum class eNewEnum : short
 				{
@@ -127,9 +127,9 @@ namespace enum_test
 					, set
 				};
 
-				std::cout << "\t" << "+ " << "Enum2Value( eNewEnum::dul )" << std::endl;
-				std::cout << "\t\t" << "- " << Enum2Value( eNewEnum::dul ) << std::endl;
-				std::cout << "\t\t" << "- " << typeid( Enum2Value( eNewEnum::dul ) ).name() << std::endl;
+				std::cout << "\t" << "+ " << "Enum2Value( eNewEnum::dul )" << r2::linefeed;
+				std::cout << "\t\t" << "- " << Enum2Value( eNewEnum::dul ) << r2::linefeed;
+				std::cout << "\t\t" << "- " << typeid( Enum2Value( eNewEnum::dul ) ).name() << r2::linefeed;
 			}
 
 			return r2::eTestResult::RunTest;

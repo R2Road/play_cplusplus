@@ -30,7 +30,7 @@ namespace r2
 			switch( mScene->Do( input ) )
 			{
 			case eTestResult::RunTest:
-				std::cout << std::endl << "Press Any Key" << std::endl;
+				std::cout << r2::linefeed << "Press Any Key" << r2::linefeed;
 				_getch();
 
 				system( "cls" );

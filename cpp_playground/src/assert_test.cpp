@@ -19,16 +19,16 @@ namespace assert_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Assert ==" << std::endl << std::endl;
+			std::cout << "== Assert ==" << r2::linefeed << r2::linefeed;
 
-			std::cout << std::endl;
+			std::cout << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ assert( 1 > 2 && \"What The Fuck\" );" << std::endl << std::endl;
+				std::cout << "\t" << "+ assert( 1 > 2 && \"What The Fuck\" );" << r2::linefeed << r2::linefeed;
 				assert( 1 > 2 && "What The Fuck" );
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};

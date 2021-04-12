@@ -24,12 +24,12 @@ namespace variadic_template_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Size Of Args ==" << std::endl;
+			std::cout << "== Size Of Args ==" << r2::linefeed;
 
-			std::cout << "\t" << "+ ArgsCount<int, float, int, int, bool>::size" << std::endl;
-			std::cout << "\t\t" << ArgsCount<int, float, int, int, bool>::size << std::endl;
+			std::cout << "\t" << "+ ArgsCount<int, float, int, int, bool>::size" << r2::linefeed;
+			std::cout << "\t\t" << ArgsCount<int, float, int, int, bool>::size << r2::linefeed;
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};
@@ -48,22 +48,22 @@ namespace
 
 	template <typename T, typename... Types>
 	void print( T arg, Types... args ) {
-		std::cout << "\t\t" << "call - print( T arg, Types... args ) : " << arg << std::endl;
+		std::cout << "\t\t" << "call - print( T arg, Types... args ) : " << arg << r2::linefeed;
 		print( args... );
 	}
 
 	template <typename... Types>
 	void print_args_1( Types... args ) {
-		std::cout << "\t\t" << "call - print_args_1( Types... args )" << std::endl;
+		std::cout << "\t\t" << "call - print_args_1( Types... args )" << r2::linefeed;
 		print( args... );
 	}
 
 
 	template <typename... Types>
 	void print_args_2( Types... args ) {
-		std::cout << "\t\t" << "call - print_args_2( Types... args )" << std::endl;
+		std::cout << "\t\t" << "call - print_args_2( Types... args )" << r2::linefeed;
 		std::cout << "\t\t\t - ";
-		( std::cout << ... << args ) << std::endl;
+		( std::cout << ... << args ) << r2::linefeed;
 	}
 }
 namespace variadic_template_test
@@ -79,18 +79,18 @@ namespace variadic_template_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== PrintValues ==" << std::endl;
+			std::cout << "== PrintValues ==" << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ print_args_1( 1, 2, 3, 4, \"variadic_template_test\", 3.141592 )" << std::endl;
+				std::cout << "\t" << "+ print_args_1( 1, 2, 3, 4, \"variadic_template_test\", 3.141592 )" << r2::linefeed;
 
 				print_args_1( 1, 2, 3, 4, "variadic_template_test", 3.141592 );
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ print_args_2( 1, 2, 3, 4, \"variadic_template_test\", 3.141592 )" << std::endl;
+				std::cout << "\t" << "+ print_args_2( 1, 2, 3, 4, \"variadic_template_test\", 3.141592 )" << r2::linefeed;
 
 				print_args_2( 1, 2, 3, 4, "variadic_template_test", 3.141592 );
 			}
@@ -144,49 +144,49 @@ namespace variadic_template_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Sum Values ==" << std::endl;
+			std::cout << "== Sum Values ==" << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ sum_args_with_fold_1( 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
-				std::cout << "\t\t" << "return ( ... + integer_list )" << std::endl;
+				std::cout << "\t" << "+ sum_args_with_fold_1( 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << r2::linefeed;
+				std::cout << "\t\t" << "return ( ... + integer_list )" << r2::linefeed;
 
 				const auto sum_result = sum_args_with_fold_1( 1, 2, 3, 4, 5, 6, 7, 8, 9 );
 
-				std::cout << "\t\t\t" << sum_result << std::endl;
+				std::cout << "\t\t\t" << sum_result << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ sum_args_with_fold_2( 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
-				std::cout << "\t\t" << "return ( integer_list + ... )" << std::endl;
+				std::cout << "\t" << "+ sum_args_with_fold_2( 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << r2::linefeed;
+				std::cout << "\t\t" << "return ( integer_list + ... )" << r2::linefeed;
 
 				const auto sum_result = sum_args_with_fold_2( 1, 2, 3, 4, 5, 6, 7, 8, 9 );
 
-				std::cout << "\t\t\t" << sum_result << std::endl;
+				std::cout << "\t\t\t" << sum_result << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ SumArgs<1>::result" << std::endl;
+				std::cout << "\t" << "+ SumArgs<1>::result" << r2::linefeed;
 
 				const auto sum_result = SumArgs<1>::result;
 
-				std::cout << "\t\t\t" << sum_result << std::endl;
+				std::cout << "\t\t\t" << sum_result << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ SumArgs<1, 2, 3, 4, 5, 6, 7, 8, 9>::result" << std::endl;
+				std::cout << "\t" << "+ SumArgs<1, 2, 3, 4, 5, 6, 7, 8, 9>::result" << r2::linefeed;
 
 				const auto sum_result = SumArgs<1, 2, 3, 4, 5, 6, 7, 8, 9>::result;
 
-				std::cout << "\t\t\t" << sum_result << std::endl;
+				std::cout << "\t\t\t" << sum_result << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};
@@ -231,91 +231,91 @@ namespace variadic_template_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Subtract Values ==" << std::endl;
+			std::cout << "== Subtract Values ==" << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ int subtract_args_with_fold_1(IntegerList... integer_list )" << std::endl;
-				std::cout << "\t\t" << "return ( integer_list - ... );" << std::endl;
-				std::cout << std::endl;
+				std::cout << "\t" << "+ int subtract_args_with_fold_1(IntegerList... integer_list )" << r2::linefeed;
+				std::cout << "\t\t" << "return ( integer_list - ... );" << r2::linefeed;
+				std::cout << r2::linefeed;
 
 				{
-					std::cout << "\t\t" << "Call : subtract_args_with_fold_1( 10, 5 );" << std::endl;
+					std::cout << "\t\t" << "Call : subtract_args_with_fold_1( 10, 5 );" << r2::linefeed;
 
-					std::cout << "\t\t\t" << subtract_args_with_fold_1( 10, 5 ) << std::endl;
+					std::cout << "\t\t\t" << subtract_args_with_fold_1( 10, 5 ) << r2::linefeed;
 				}
 
-				std::cout << std::endl;
+				std::cout << r2::linefeed;
 
 				{
-					std::cout << "\t\t" << "Call : subtract_args_with_fold_1( 5, 10 );" << std::endl;
+					std::cout << "\t\t" << "Call : subtract_args_with_fold_1( 5, 10 );" << r2::linefeed;
 
-					std::cout << "\t\t\t" << subtract_args_with_fold_1( 5, 10 ) << std::endl;
+					std::cout << "\t\t\t" << subtract_args_with_fold_1( 5, 10 ) << r2::linefeed;
 				}
 
-				std::cout << std::endl;
+				std::cout << r2::linefeed;
 
 				{
-					std::cout << "\t\t" << "Call : subtract_args_with_fold_1( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 );" << std::endl;
+					std::cout << "\t\t" << "Call : subtract_args_with_fold_1( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 );" << r2::linefeed;
 
-					std::cout << "\t\t\t" << subtract_args_with_fold_1( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << std::endl;
+					std::cout << "\t\t\t" << subtract_args_with_fold_1( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << r2::linefeed;
 				}
 
-				std::cout << std::endl;
+				std::cout << r2::linefeed;
 
 				{
-					std::cout << "\t\t" << "Test : ( 100 - ( 1 - ( 2 - ( 3 - ( 4 - ( 5 - ( 6 - ( 7 - ( 8 - 9 ) ) ) ) ) ) ) ) );" << std::endl;
+					std::cout << "\t\t" << "Test : ( 100 - ( 1 - ( 2 - ( 3 - ( 4 - ( 5 - ( 6 - ( 7 - ( 8 - 9 ) ) ) ) ) ) ) ) );" << r2::linefeed;
 
-					std::cout << "\t\t\t" << ( 100 - ( 1 - ( 2 - ( 3 - ( 4 - ( 5 - ( 6 - ( 7 - ( 8 - 9 ) ) ) ) ) ) ) ) ) << std::endl;
+					std::cout << "\t\t\t" << ( 100 - ( 1 - ( 2 - ( 3 - ( 4 - ( 5 - ( 6 - ( 7 - ( 8 - 9 ) ) ) ) ) ) ) ) ) << r2::linefeed;
 				}
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ int subtract_args_with_fold_2(IntegerList... integer_list )" << std::endl;
-				std::cout << "\t\t" << "return ( ... - integer_list );" << std::endl;
-				std::cout << std::endl;
+				std::cout << "\t" << "+ int subtract_args_with_fold_2(IntegerList... integer_list )" << r2::linefeed;
+				std::cout << "\t\t" << "return ( ... - integer_list );" << r2::linefeed;
+				std::cout << r2::linefeed;
 
 				{
-					std::cout << "\t\t" << "Call : subtract_args_with_fold_2( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
+					std::cout << "\t\t" << "Call : subtract_args_with_fold_2( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << r2::linefeed;
 
-					std::cout << "\t\t\t" << subtract_args_with_fold_2( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << std::endl;
+					std::cout << "\t\t\t" << subtract_args_with_fold_2( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << r2::linefeed;
 				}
 
-				std::cout << std::endl;
+				std::cout << r2::linefeed;
 
 				{
-					std::cout << "\t\t" << "Test : ( ( ( ( ( ( ( ( ( 100 - 1 ) - 2 ) - 3 ) - 4 ) - 5 ) - 6 ) - 7 ) - 8 ) - 9 );" << std::endl;
+					std::cout << "\t\t" << "Test : ( ( ( ( ( ( ( ( ( 100 - 1 ) - 2 ) - 3 ) - 4 ) - 5 ) - 6 ) - 7 ) - 8 ) - 9 );" << r2::linefeed;
 
-					std::cout << "\t\t\t" << ( ( ( ( ( ( ( ( ( 100 - 1 ) - 2 ) - 3 ) - 4 ) - 5 ) - 6 ) - 7 ) - 8 ) - 9 ) << std::endl;
+					std::cout << "\t\t\t" << ( ( ( ( ( ( ( ( ( 100 - 1 ) - 2 ) - 3 ) - 4 ) - 5 ) - 6 ) - 7 ) - 8 ) - 9 ) << r2::linefeed;
 				}
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ int subtract_args_with_fold_3( I integer, IntegerList... integer_list )" << std::endl;
-				std::cout << "\t\t" << "return ( integer_list - ... - integer );" << std::endl;
-				std::cout << std::endl;
+				std::cout << "\t" << "+ int subtract_args_with_fold_3( I integer, IntegerList... integer_list )" << r2::linefeed;
+				std::cout << "\t\t" << "return ( integer_list - ... - integer );" << r2::linefeed;
+				std::cout << r2::linefeed;
 
-				std::cout << "\t\t" << "Call : subtract_args_with_fold_3( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
+				std::cout << "\t\t" << "Call : subtract_args_with_fold_3( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << r2::linefeed;
 
-				std::cout << "\t\t\t" << subtract_args_with_fold_4( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << std::endl;
+				std::cout << "\t\t\t" << subtract_args_with_fold_4( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ int subtract_args_with_fold_4( I integer, IntegerList... integer_list )" << std::endl;
-				std::cout << "\t\t" << "return ( integer - ... - integer_list );" << std::endl;
-				std::cout << std::endl;
+				std::cout << "\t" << "+ int subtract_args_with_fold_4( I integer, IntegerList... integer_list )" << r2::linefeed;
+				std::cout << "\t\t" << "return ( integer - ... - integer_list );" << r2::linefeed;
+				std::cout << r2::linefeed;
 
-				std::cout << "\t\t" << "Call : subtract_args_with_fold_4( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << std::endl;
+				std::cout << "\t\t" << "Call : subtract_args_with_fold_4( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << r2::linefeed;
 
-				std::cout << "\t\t\t" << subtract_args_with_fold_3( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << std::endl;
+				std::cout << "\t\t\t" << subtract_args_with_fold_3( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};

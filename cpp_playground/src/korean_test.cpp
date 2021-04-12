@@ -19,32 +19,32 @@ namespace korean_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Korean ==" << std::endl << std::endl;
+			std::cout << "== Korean ==" << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ const char* korean = \"한글 출력\";" << std::endl;
+				std::cout << "\t" << "+ const char* korean = \"한글 출력\";" << r2::linefeed;
 				const char* korean = "한글 출력";
 
-				std::cout << "\t\t" << "- " << korean << std::endl << std::endl;
+				std::cout << "\t\t" << "- " << korean << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ use std::cout" << std::endl << std::endl;
+				std::cout << "\t" << "+ use std::cout" << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ const wchar_t* korean = L\"한글 출력\";" << std::endl;
+				std::cout << "\t" << "+ const wchar_t* korean = L\"한글 출력\";" << r2::linefeed;
 				const wchar_t* korean = L"한글 출력";
 
-				std::cout << "\t" << "+ std::wcout.imbue( std::locale( \"kor\" ) );" << std::endl;
+				std::cout << "\t" << "+ std::wcout.imbue( std::locale( \"kor\" ) );" << r2::linefeed;
 				std::wcout.imbue( std::locale( "kor" ) );
 
-				std::wcout << "\t\t" << "- " << korean << std::endl << std::endl;
+				std::wcout << "\t\t" << "- " << korean << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ use std::wcout" << std::endl << std::endl;
+				std::cout << "\t" << "+ use std::wcout" << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};

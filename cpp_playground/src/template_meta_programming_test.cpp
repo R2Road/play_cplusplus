@@ -17,7 +17,7 @@ namespace
 	template<>
 	void FactorialPrinter<1>()
 	{
-		std::cout << 1 << std::endl;
+		std::cout << 1 << r2::linefeed;
 	};
 
 
@@ -46,37 +46,37 @@ namespace template_meta_programming_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== TMP : Calculate Factorial ==" << std::endl << std::endl;
+			std::cout << "== TMP : Calculate Factorial ==" << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ Factorial<2>::f" << std::endl;
+				std::cout << "\t" << "+ Factorial<2>::f" << r2::linefeed;
 
 				std::cout << "\t\t" << "calc : ";
 				FactorialPrinter<2>();
-				std::cout << "\t\t" << "result : " << Factorial<2>::f << std::endl;
+				std::cout << "\t\t" << "result : " << Factorial<2>::f << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ Factorial<4>::f" << std::endl;
+				std::cout << "\t" << "+ Factorial<4>::f" << r2::linefeed;
 
 				std::cout << "\t\t" << "calc : ";
 				FactorialPrinter<4>();
-				std::cout << "\t\t" << "result : " << Factorial<4>::f << std::endl;
+				std::cout << "\t\t" << "result : " << Factorial<4>::f << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ Factorial<10>::f" << std::endl;
+				std::cout << "\t" << "+ Factorial<10>::f" << r2::linefeed;
 
 				std::cout << "\t\t" << "calc : ";
 				FactorialPrinter<10>();
-				std::cout << "\t\t" << "result : " << Factorial<10>::f << std::endl;
+				std::cout << "\t\t" << "result : " << Factorial<10>::f << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};
@@ -107,19 +107,19 @@ namespace template_meta_programming_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== TMP : Character 2 String ==" << std::endl << std::endl;
+			std::cout << "== TMP : Character 2 String ==" << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::size" << std::endl;
-				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::size << std::endl;
+				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::size" << r2::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::size << r2::linefeed;
 
-				std::cout << std::endl;
+				std::cout << r2::linefeed;
 
-				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::c" << std::endl;
-				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::c << std::endl;
+				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::c" << r2::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::c << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};
@@ -152,14 +152,14 @@ namespace template_meta_programming_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== TMP : Integer 2 String ==" << std::endl << std::endl;
+			std::cout << "== TMP : Integer 2 String ==" << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ ConvertInteger2String_1<2468>::c.c_str()" << std::endl;
-				std::cout << "\t\t" << "result : " << ConvertInteger2String_1<2468>::c.c_str() << std::endl;
+				std::cout << "\t" << "+ ConvertInteger2String_1<2468>::c.c_str()" << r2::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertInteger2String_1<2468>::c.c_str() << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};
@@ -195,20 +195,20 @@ namespace template_meta_programming_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== TMP : Calculate Place Value 4 Integer ==" << std::endl << std::endl;
+			std::cout << "== TMP : Calculate Place Value 4 Integer ==" << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ CalculatePlaceValue<1>::c" << std::endl;
-				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<1>::place_value << std::endl << std::endl;
+				std::cout << "\t" << "+ CalculatePlaceValue<1>::c" << r2::linefeed;
+				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<1>::place_value << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ CalculatePlaceValue<100>::c" << std::endl;
-				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<100>::place_value << std::endl << std::endl;
+				std::cout << "\t" << "+ CalculatePlaceValue<100>::c" << r2::linefeed;
+				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<100>::place_value << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ CalculatePlaceValue<123456>::c" << std::endl;
-				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<123456>::place_value << std::endl << std::endl;
+				std::cout << "\t" << "+ CalculatePlaceValue<123456>::c" << r2::linefeed;
+				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<123456>::place_value << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};
@@ -260,28 +260,28 @@ namespace template_meta_programming_test
 		return []()->r2::eTestResult
 		{
 			{
-				std::cout << "== TMP : Units 2 Character ==" << std::endl << std::endl;
+				std::cout << "== TMP : Units 2 Character ==" << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ ConvertUnits2Character<1>::c" << std::endl;
-				std::cout << "\t\t" << "result : " << ConvertUnits2Character<1>::c << std::endl << std::endl;
-
-
-				std::cout << "\t" << "+ ConvertUnits2Character<9>::c" << std::endl;
-				std::cout << "\t\t" << "result : " << ConvertUnits2Character<9>::c << std::endl << std::endl;
+				std::cout << "\t" << "+ ConvertUnits2Character<1>::c" << r2::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertUnits2Character<1>::c << r2::linefeed << r2::linefeed;
 
 
-				std::cout << "\t" << "+ ConvertUnits2Character<10>::c" << std::endl;
-				std::cout << "\t\t" << "result : " << ConvertUnits2Character<10>::c << std::endl << std::endl;
+				std::cout << "\t" << "+ ConvertUnits2Character<9>::c" << r2::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertUnits2Character<9>::c << r2::linefeed << r2::linefeed;
+
+
+				std::cout << "\t" << "+ ConvertUnits2Character<10>::c" << r2::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertUnits2Character<10>::c << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "== TMP : Integer 2 String II ==" << std::endl << std::endl;
+				std::cout << "== TMP : Integer 2 String II ==" << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ ConvertInteger2String_2<101010>" << std::endl;
-				std::cout << "\t\t" << "size : " << ConvertInteger2String_2<101010>::size << std::endl;
-				std::cout << "\t\t" << "string : " << ConvertInteger2String_2<101010>::str << std::endl;
+				std::cout << "\t" << "+ ConvertInteger2String_2<101010>" << r2::linefeed;
+				std::cout << "\t\t" << "size : " << ConvertInteger2String_2<101010>::size << r2::linefeed;
+				std::cout << "\t\t" << "string : " << ConvertInteger2String_2<101010>::str << r2::linefeed;
 			}
 
 			return r2::eTestResult::RunTest;
@@ -331,16 +331,16 @@ namespace template_meta_programming_test
 		return []()->r2::eTestResult
 		{
 			{
-				std::cout << "== TMP : Multi Type Package ==" << std::endl;
+				std::cout << "== TMP : Multi Type Package ==" << r2::linefeed;
 
-				std::cout << "\t" << "+ MTPackage<int, float, char> mtp;" << std::endl;
+				std::cout << "\t" << "+ MTPackage<int, float, char> mtp;" << r2::linefeed;
 
 				MTPackage<int, float, char> mtp{ 1, 2.f, '3' };
 
-				std::cout << "\t\t" << "result : " << mtp.val << std::endl;
+				std::cout << "\t\t" << "result : " << mtp.val << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};

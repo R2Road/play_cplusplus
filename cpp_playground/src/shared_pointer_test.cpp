@@ -9,58 +9,58 @@ namespace
 {
 	void Test1()
 	{
-		std::cout << "== Shared Pointer ==" << std::endl << std::endl;
+		std::cout << "== Shared Pointer ==" << r2::linefeed << r2::linefeed;
 
-		std::cout << "\t" << "+ Make Sp" << std::endl;
-		std::cout << "\t\t" << "std::shared_ptr<int> test_sp( new int( 10 ) )" << std::endl;
+		std::cout << "\t" << "+ Make Sp" << r2::linefeed;
+		std::cout << "\t\t" << "std::shared_ptr<int> test_sp( new int( 10 ) )" << r2::linefeed;
 		std::shared_ptr<int> test_sp( new int( 10 ) );
 
-		std::cout << "\t\t\t - Print : " << *test_sp << std::endl << std::endl;
+		std::cout << "\t\t\t - Print : " << *test_sp << r2::linefeed << r2::linefeed;
 
 
-		std::cout << "\t" << "+ Copy To Const Sp" << std::endl;
-		std::cout << "\t\t" << "const auto test_sp_2 = test_sp;" << std::endl;
+		std::cout << "\t" << "+ Copy To Const Sp" << r2::linefeed;
+		std::cout << "\t\t" << "const auto test_sp_2 = test_sp;" << r2::linefeed;
 		const auto test_sp_2 = test_sp;
 
-		std::cout << std::endl;
+		std::cout << r2::linefeed;
 
 
-		std::cout << "\t" << "+ Change Value with Const Sp" << std::endl;
-		std::cout << "\t\t" << "*test_sp_2 = 11;" << std::endl;
+		std::cout << "\t" << "+ Change Value with Const Sp" << r2::linefeed;
+		std::cout << "\t\t" << "*test_sp_2 = 11;" << r2::linefeed;
 		*test_sp_2 = 11;
 
-		std::cout << "\t\t\t - Print : " << *test_sp_2 << std::endl;
-		std::cout << std::endl;
+		std::cout << "\t\t\t - Print : " << *test_sp_2 << r2::linefeed;
+		std::cout << r2::linefeed;
 	}
 
 	void Test2()
 	{
-		std::cout << "== Shared Pointer Has Const Value ==" << std::endl << std::endl;
+		std::cout << "== Shared Pointer Has Const Value ==" << r2::linefeed << r2::linefeed;
 
-		std::cout << "\t" << "+ Make Sp Has Const Value" << std::endl;
-		std::cout << "\t\t" << "std::shared_ptr<const int> test_sp( new int( 10 ) )" << std::endl;
+		std::cout << "\t" << "+ Make Sp Has Const Value" << r2::linefeed;
+		std::cout << "\t\t" << "std::shared_ptr<const int> test_sp( new int( 10 ) )" << r2::linefeed;
 		std::shared_ptr<const int> const_test_sp( new int( 10 ) );
 
-		std::cout << "\t\t\t - Print : " << *const_test_sp << std::endl;
-		std::cout << std::endl;
+		std::cout << "\t\t\t - Print : " << *const_test_sp << r2::linefeed;
+		std::cout << r2::linefeed;
 
-		std::cout << "\t" << "+ Failed : Change Value" << std::endl;
-		std::cout << std::endl;
+		std::cout << "\t" << "+ Failed : Change Value" << r2::linefeed;
+		std::cout << r2::linefeed;
 
 		//*const_test_sp = 11;
-		//std::cout << "\t" << "+ Change Value with Sp Has Const Value" << std::endl;
-		//std::cout << "\t\t" << *const_test_sp << std::endl;
+		//std::cout << "\t" << "+ Change Value with Sp Has Const Value" << r2::linefeed;
+		//std::cout << "\t\t" << *const_test_sp << r2::linefeed;
 	}
 
 	void Test3()
 	{
-		std::cout << "== Make Shared ==" << std::endl << std::endl;
+		std::cout << "== Make Shared ==" << r2::linefeed << r2::linefeed;
 
-		std::cout << "\t" << "auto test_sp = std::make_shared<int>( 10 );" << std::endl;
+		std::cout << "\t" << "auto test_sp = std::make_shared<int>( 10 );" << r2::linefeed;
 		auto test_sp = std::make_shared<int>( 10 );
 
-		std::cout << "\t\t - Print : " << *test_sp << std::endl;
-		std::cout << std::endl;
+		std::cout << "\t\t - Print : " << *test_sp << r2::linefeed;
+		std::cout << r2::linefeed;
 	}
 }
 
@@ -79,11 +79,11 @@ namespace shared_pointer_test
 		{
 			Test1();
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			Test2();
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			Test3();
 

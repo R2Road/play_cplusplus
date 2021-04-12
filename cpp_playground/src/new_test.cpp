@@ -18,43 +18,43 @@ namespace new_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== New ==" << std::endl << std::endl;
+			std::cout << "== New ==" << r2::linefeed << r2::linefeed;
 
 			{
 				int* i = new int( 1 );
 
-				std::cout << "\t" << "+ int* i = new int( 1 );" <<  std::endl;
-				std::cout << "\t\t" << "- " << *i << std::endl;
+				std::cout << "\t" << "+ int* i = new int( 1 );" <<  r2::linefeed;
+				std::cout << "\t\t" << "- " << *i << r2::linefeed;
 
 				delete i;
-				std::cout << "\t" << "+ delete i;" << std::endl;
+				std::cout << "\t" << "+ delete i;" << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			{
 				int* i = new ( std::nothrow ) int( 2 );
 
-				std::cout << "\t" << "+ int* i = new ( std::nothrow ) int( 2 );" << std::endl;
-				std::cout << "\t\t" << "- " << *i << std::endl;
+				std::cout << "\t" << "+ int* i = new ( std::nothrow ) int( 2 );" << r2::linefeed;
+				std::cout << "\t\t" << "- " << *i << r2::linefeed;
 
 				delete i;
-				std::cout << "\t" << "+ delete i;" << std::endl;
+				std::cout << "\t" << "+ delete i;" << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			{
 				char* str = new char[7];
 
-				std::cout << "\t" << "+ char* str = new char[7];" << std::endl;
-				std::cout << "\t\t" << "- " << str << std::endl;
+				std::cout << "\t" << "+ char* str = new char[7];" << r2::linefeed;
+				std::cout << "\t\t" << "- " << str << r2::linefeed;
 
 				delete[] str;
-				std::cout << "\t" << "+ delete[] str;" << std::endl;
+				std::cout << "\t" << "+ delete[] str;" << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};
@@ -73,32 +73,32 @@ namespace new_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Placement New ==" << std::endl << std::endl;
+			std::cout << "== Placement New ==" << r2::linefeed << r2::linefeed;
 
 			{
 				int i = 123;
 				int* ip = new (&i) int;
 
-				std::cout << "\t" << "+ int i = 123;" << std::endl;
-				std::cout << "\t" << "+ int* ip = new (&i) int;" << std::endl;
-				std::cout << "\t\t" << "- Print ip : " << *ip << std::endl;
+				std::cout << "\t" << "+ int i = 123;" << r2::linefeed;
+				std::cout << "\t" << "+ int* ip = new (&i) int;" << r2::linefeed;
+				std::cout << "\t\t" << "- Print ip : " << *ip << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
 
 			{
 				int i = 65;
-				std::cout << "\t" << "+ int i = 65;" << std::endl;
-				std::cout << "\t\t" << "- Print i : " << i << std::endl;
+				std::cout << "\t" << "+ int i = 65;" << r2::linefeed;
+				std::cout << "\t\t" << "- Print i : " << i << r2::linefeed;
 
-				std::cout << std::endl;
+				std::cout << r2::linefeed;
 
 				char* cp = new ( &i ) char;
-				std::cout << "\t" << "+ char* cp = new ( &i ) char;" << std::endl;
-				std::cout << "\t\t" << "- Print cp : " << *cp << std::endl;
+				std::cout << "\t" << "+ char* cp = new ( &i ) char;" << r2::linefeed;
+				std::cout << "\t\t" << "- Print cp : " << *cp << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};

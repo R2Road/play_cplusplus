@@ -16,42 +16,42 @@ namespace pointer_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Basic ==" << std::endl << std::endl;
+			std::cout << "== Basic ==" << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "int i = 123;" << std::endl;
-				std::cout << "\t" << "int* ip= &i;" << std::endl;
+				std::cout << "\t" << "int i = 123;" << r2::linefeed;
+				std::cout << "\t" << "int* ip= &i;" << r2::linefeed;
 				int i = 123;
 				int* ip = &i;
 
-				std::cout << "\t + " << "adress of ip " << std::endl;
-				std::cout << "\t\t - " << ip << std::endl;
+				std::cout << "\t + " << "adress of ip " << r2::linefeed;
+				std::cout << "\t\t - " << ip << r2::linefeed;
 			}
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 			{
-				std::cout << "\t" << "int ip[] = { 123, 234, 456 };" << std::endl;
+				std::cout << "\t" << "int ip[] = { 123, 234, 456 };" << r2::linefeed;
 				int ip[] = { 123, 234, 456 };
 
-				std::cout << "\t + " << "adress of ip " << std::endl;
-				std::cout << "\t\t - " << ip << std::endl;
+				std::cout << "\t + " << "adress of ip " << r2::linefeed;
+				std::cout << "\t\t - " << ip << r2::linefeed;
 
-				std::cout << "\t + " << "ip + 1;" << std::endl;
-				std::cout << "\t\t - " << ip + 1 << std::endl;
+				std::cout << "\t + " << "ip + 1;" << r2::linefeed;
+				std::cout << "\t\t - " << ip + 1 << r2::linefeed;
 
-				std::cout << "\t + " << "offset : ( ( ip + 1 ) - ip )" << std::endl;
-				std::cout << "\t\t - " << ( ( ip + 1 ) - ip ) << std::endl << std::endl << std::endl;
+				std::cout << "\t + " << "offset : ( ( ip + 1 ) - ip )" << r2::linefeed;
+				std::cout << "\t\t - " << ( ( ip + 1 ) - ip ) << r2::linefeed << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "int t1 = ( int )ip" << std::endl;
-				std::cout << "\t" << "int t2 = ( int )( ip + 1 );" << std::endl;
-				std::cout << "\t + " << "offset : ( t2 - t1 )" << std::endl;
+				std::cout << "\t" << "int t1 = ( int )ip" << r2::linefeed;
+				std::cout << "\t" << "int t2 = ( int )( ip + 1 );" << r2::linefeed;
+				std::cout << "\t + " << "offset : ( t2 - t1 )" << r2::linefeed;
 				int t1 = ( int )ip;
 				int t2 = ( int )( ip + 1 );
-				std::cout << "\t\t - " << ( t2 - t1 ) << std::endl;
+				std::cout << "\t\t - " << ( t2 - t1 ) << r2::linefeed;
 			}
 
-			std::cout << std::endl;
+			std::cout << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};
@@ -74,59 +74,59 @@ namespace pointer_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Const Pointer ==" << std::endl << std::endl;
+			std::cout << "== Const Pointer ==" << r2::linefeed << r2::linefeed;
 
-			std::cout << "\t" << "int temp_int_1 = 0;" << std::endl;
-			std::cout << "\t" << "int temp_int_2 = 0;" << std::endl;
+			std::cout << "\t" << "int temp_int_1 = 0;" << r2::linefeed;
+			std::cout << "\t" << "int temp_int_2 = 0;" << r2::linefeed;
 			int temp_int_1 = 0;
 			int temp_int_2 = 0;
 
-			std::cout << std::endl;
+			std::cout << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ const int* temp_const_pointer = &temp_int_1;" << std::endl;
+				std::cout << "\t" << "+ const int* temp_const_pointer = &temp_int_1;" << r2::linefeed;
 				const int* temp_const_pointer = &temp_int_1;
 
-				std::cout << "\t\t" << "OK : temp_const_pointer = &temp_int_2;" << std::endl;
+				std::cout << "\t\t" << "OK : temp_const_pointer = &temp_int_2;" << r2::linefeed;
 				temp_const_pointer = &temp_int_2;
 
-				std::cout << "\t\t" << "Error : *temp_const_pointer = temp_int_2; " << std::endl;
+				std::cout << "\t\t" << "Error : *temp_const_pointer = temp_int_2; " << r2::linefeed;
 				//*temp_const_pointer = temp_int_2;
 			}
 
-			std::cout << std::endl;
+			std::cout << r2::linefeed;
 
 			{
-				std::cout << "\t" << "+ int* const temp_pointer_const = &temp_int_1;" << std::endl;
+				std::cout << "\t" << "+ int* const temp_pointer_const = &temp_int_1;" << r2::linefeed;
 				int* const temp_pointer_const = &temp_int_1;
 
-				std::cout << "\t\t" << "Error : temp_pointer_const = &temp_int_2;" << std::endl;
+				std::cout << "\t\t" << "Error : temp_pointer_const = &temp_int_2;" << r2::linefeed;
 				//temp_pointer_const = &temp_int_2;
 
-				std::cout << "\t\t" << "OK : *temp_pointer_const = temp_int_2;" << std::endl;
+				std::cout << "\t\t" << "OK : *temp_pointer_const = temp_int_2;" << r2::linefeed;
 				*temp_pointer_const = temp_int_2;
 			}
 
 
 
-			std::cout << std::endl << std::endl;
+			std::cout << r2::linefeed << r2::linefeed;
 
 
 
-			std::cout << "\t" << "const int temp_const_int_1 = 0;" << std::endl;
+			std::cout << "\t" << "const int temp_const_int_1 = 0;" << r2::linefeed;
 			const int temp_const_int_1 = 0;
 
-			std::cout << std::endl;
+			std::cout << r2::linefeed;
 
 			{
-				std::cout << "\t" << "OK : const int* temp_pointer_const = &temp_const_int_1;" << std::endl;
+				std::cout << "\t" << "OK : const int* temp_pointer_const = &temp_const_int_1;" << r2::linefeed;
 				const int* temp_pointer_const = &temp_const_int_1;
 			}
 
-			std::cout << std::endl;
+			std::cout << r2::linefeed;
 
 			{
-				std::cout << "\t" << "Error : int* const temp_pointer_const = &temp_const_int_1;" << std::endl;
+				std::cout << "\t" << "Error : int* const temp_pointer_const = &temp_const_int_1;" << r2::linefeed;
 				//int* const temp_pointer_const = &temp_const_int_1;
 			}
 
