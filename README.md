@@ -1,7 +1,7 @@
 # cplusplus_playground
 
 ## 개괄 | Overview
-- 이런 저런 c++ 기능 확인
+- 이런 저런 C++ 기능 확인 | Play with C++
 
 
 ## 작업환경 | Environment
