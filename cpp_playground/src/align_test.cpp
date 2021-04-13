@@ -293,7 +293,7 @@ namespace align_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Align ==" << std::ends << std::ends;
+			std::cout << "== Align ==" << r2::linefeed << r2::linefeed;
 
 			//{
 			//	std::cout << "\t" << "double d;" << r2::linefeed;
