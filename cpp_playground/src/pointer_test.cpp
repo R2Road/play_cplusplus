@@ -16,7 +16,9 @@ namespace pointer_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Basic ==" << r2::linefeed << r2::linefeed;
+			std::cout << "== Basic ==" << r2::linefeed;
+
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "int i = 123;" << r2::linefeed;
@@ -28,7 +30,7 @@ namespace pointer_test
 				std::cout << "\t\t - " << ip << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "int ip[] = { 123, 234, 456 };" << r2::linefeed;
@@ -51,7 +53,7 @@ namespace pointer_test
 				std::cout << "\t\t - " << ( t2 - t1 ) << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed;
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
@@ -74,17 +76,19 @@ namespace pointer_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Const Pointer ==" << r2::linefeed << r2::linefeed;
+			std::cout << "== Const Pointer ==" << r2::linefeed;
 
-			std::cout << "\t" << "int temp_int_1 = 0;" << r2::linefeed;
-			std::cout << "\t" << "int temp_int_2 = 0;" << r2::linefeed;
-			int temp_int_1 = 0;
-			int temp_int_2 = 0;
-
-			std::cout << r2::linefeed;
+			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ const int* temp_const_pointer = &temp_int_1;" << r2::linefeed;
+				std::cout << "\t" << "int temp_int_1 = 0;" << r2::linefeed;
+				std::cout << "\t" << "int temp_int_2 = 0;" << r2::linefeed;
+				int temp_int_1 = 0;
+				int temp_int_2 = 0;
+
+				std::cout << r2::linefeed;
+
+				std::cout << "\t" << "+ const int* temp_const_pointer = &temp_int_1;" << r2::linefeed << r2::linefeed;
 				const int* temp_const_pointer = &temp_int_1;
 
 				std::cout << "\t\t" << "OK : temp_const_pointer = &temp_int_2;" << r2::linefeed;
@@ -92,12 +96,12 @@ namespace pointer_test
 
 				std::cout << "\t\t" << "Error : *temp_const_pointer = temp_int_2; " << r2::linefeed;
 				//*temp_const_pointer = temp_int_2;
-			}
 
-			std::cout << r2::linefeed;
 
-			{
-				std::cout << "\t" << "+ int* const temp_pointer_const = &temp_int_1;" << r2::linefeed;
+				std::cout << r2::linefeed << r2::linefeed;
+
+
+				std::cout << "\t" << "+ int* const temp_pointer_const = &temp_int_1;" << r2::linefeed << r2::linefeed;
 				int* const temp_pointer_const = &temp_int_1;
 
 				std::cout << "\t\t" << "Error : temp_pointer_const = &temp_int_2;" << r2::linefeed;
@@ -107,28 +111,24 @@ namespace pointer_test
 				*temp_pointer_const = temp_int_2;
 			}
 
-
-
-			std::cout << r2::linefeed << r2::linefeed;
-
-
-
-			std::cout << "\t" << "const int temp_const_int_1 = 0;" << r2::linefeed;
-			const int temp_const_int_1 = 0;
-
-			std::cout << r2::linefeed;
+			std::cout << r2::split;
 
 			{
+				std::cout << "\t" << "const int temp_const_int_1 = 0;" << r2::linefeed;
+				const int temp_const_int_1 = 0;
+
+				std::cout << r2::linefeed;
+
 				std::cout << "\t" << "OK : const int* temp_pointer_const = &temp_const_int_1;" << r2::linefeed;
 				const int* temp_pointer_const = &temp_const_int_1;
-			}
 
-			std::cout << r2::linefeed;
+				std::cout << r2::linefeed;
 
-			{
 				std::cout << "\t" << "Error : int* const temp_pointer_const = &temp_const_int_1;" << r2::linefeed;
 				//int* const temp_pointer_const = &temp_const_int_1;
 			}
+
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
