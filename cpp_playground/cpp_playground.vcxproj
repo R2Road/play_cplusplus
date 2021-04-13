@@ -28,6 +28,7 @@
     <ClCompile Include="src\filesystem_test.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\new_test.cpp" />
+    <ClCompile Include="src\r2_AlignScene.cpp" />
     <ClCompile Include="src\r2_Director.cpp" />
     <ClCompile Include="src\r2_PointerTestScene.cpp" />
     <ClCompile Include="src\r2_RandomTestScene.cpp" />
@@ -54,6 +55,7 @@
     <ClInclude Include="src\enum_test.h" />
     <ClInclude Include="src\filesystem_test.h" />
     <ClInclude Include="src\new_test.h" />
+    <ClInclude Include="src\r2_AlignScene.h" />
     <ClInclude Include="src\r2_Director.h" />
     <ClInclude Include="src\r2_eTestResult.h" />
     <ClInclude Include="src\r2_iNode.h" />

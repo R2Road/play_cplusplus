@@ -93,6 +93,9 @@
     <ClCompile Include="src\r2_VariadicTemplateScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_AlignScene.cpp">
+      <Filter>scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -174,6 +177,9 @@
       <Filter>win32</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_VariadicTemplateScene.h">
+      <Filter>scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_AlignScene.h">
       <Filter>scene</Filter>
     </ClInclude>
   </ItemGroup>
