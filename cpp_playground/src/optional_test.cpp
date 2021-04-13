@@ -86,7 +86,6 @@ namespace optional_test
 			std::cout << r2::linefeed << r2::linefeed;
 
 
-			bool has_value = false;
 			std::cout << "\t+ GetTestStruct() " << r2::linefeed;
 			{
 				std::cout << "\t\t- GetTestStruct( 0 );" << r2::linefeed;
