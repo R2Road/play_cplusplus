@@ -6,6 +6,7 @@
 #include "r2_PointerTestScene.h"
 #include "r2_RandomTestScene.h"
 #include "r2_TemplateMetaProgrammingScene.h"
+#include "r2_VariadicTemplateScene.h"
 
 #include "filesystem_test.h"
 #include "shared_pointer_test.h"
@@ -53,6 +54,16 @@ namespace r2
 
 			ret->AddChild(
 				'4'
+				, []()->const char* { return "Variadic Template"; }
+				, [&director]()->const eTestResult
+				{
+					director.Setup( r2::VariadicTemplateScene::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+
+			ret->AddChild(
+				'5'
 				, []()->const char* { return "Template Meta Programming"; }
 				, [&director]()->const eTestResult
 				{
@@ -61,13 +72,9 @@ namespace r2
 				}
 			);
 
-			ret->AddChild( '5', shared_pointer_test::SharedPtr::GetInstance() );
-			ret->AddChild( '6', variadic_template_test::PrintValues::GetInstance() );
-			ret->AddChild( '7', variadic_template_test::SumValues::GetInstance() );
-			ret->AddChild( '8', variadic_template_test::SubtractValues::GetInstance() );			
+			ret->AddChild( '6', shared_pointer_test::SharedPtr::GetInstance() );
 			ret->AddChild( 'w', optional_test::Basic::GetInstance() );
 			ret->AddChild( 'e', variant_test::Basic::GetInstance() );
-			ret->AddChild( 'r', variadic_template_test::SizeOfArgs::GetInstance() );
 			ret->AddChild( 't', tuple_test::Basic::GetInstance() );
 			ret->AddChild( 'y', structured_binding_test::Basic::GetInstance() );
 			
