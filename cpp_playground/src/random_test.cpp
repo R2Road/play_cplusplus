@@ -22,7 +22,7 @@ namespace random_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Basic ==" << r2::linefeed << r2::linefeed;
+			std::cout << "# Basic #" << r2::linefeed << r2::linefeed;
 
 			{
 				std::cout << "\t+ Range Check" << r2::linefeed;
@@ -83,7 +83,7 @@ namespace
 
 	void Status_Save()
 	{
-		std::cout << "== Status Save ==" << r2::linefeed;
+		std::cout << "# Status Save #" << r2::linefeed;
 		std::cout << r2::linefeed;
 
 		std::random_device rd;
@@ -110,7 +110,7 @@ namespace
 
 	void Status_Load()
 	{
-		std::cout << "== Status Load ==" << r2::linefeed;
+		std::cout << "# Status Load #" << r2::linefeed;
 		std::cout << r2::linefeed;
 
 		{

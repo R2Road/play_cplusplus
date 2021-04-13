@@ -18,7 +18,7 @@ namespace new_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== New ==" << r2::linefeed << r2::linefeed;
+			std::cout << "# New #" << r2::linefeed << r2::linefeed;
 
 			{
 				int* i = new int( 1 );
@@ -73,7 +73,7 @@ namespace new_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Placement New ==" << r2::linefeed << r2::linefeed;
+			std::cout << "# Placement New #" << r2::linefeed << r2::linefeed;
 
 			{
 				int i = 123;

@@ -16,7 +16,7 @@ namespace pointer_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Basic ==" << r2::linefeed;
+			std::cout << "# Basic #" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -76,7 +76,7 @@ namespace pointer_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Const Pointer ==" << r2::linefeed;
+			std::cout << "# Const Pointer #" << r2::linefeed;
 
 			std::cout << r2::split;
 

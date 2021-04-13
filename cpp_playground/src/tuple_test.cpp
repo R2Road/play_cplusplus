@@ -19,7 +19,7 @@ namespace tuple_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Tuple : Basic ==" << r2::linefeed;
+			std::cout << "# Tuple : Basic #" << r2::linefeed;
 
 
 			std::cout << r2::linefeed << r2::linefeed;

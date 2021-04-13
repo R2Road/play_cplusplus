@@ -21,7 +21,7 @@ namespace align_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Basic ==" << r2::linefeed << r2::linefeed;
+			std::cout << "# Basic #" << r2::linefeed << r2::linefeed;
 
 			{
 				std::cout << "\t" << "+ align of char : " << alignof( char ) << r2::linefeed;
@@ -132,7 +132,7 @@ namespace align_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Mixed Struct ==" << r2::linefeed << r2::linefeed;
+			std::cout << "# Mixed Struct #" << r2::linefeed << r2::linefeed;
 
 			struct EmptyStruct {};
 
@@ -211,7 +211,7 @@ namespace align_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Align As ==" << r2::linefeed << r2::linefeed;
+			std::cout << "# Align As #" << r2::linefeed << r2::linefeed;
 
 			{
 				std::cout << "\t" << "struct alignas( 32 ) EmptyStruct {};" << r2::linefeed << r2::linefeed;
@@ -293,7 +293,7 @@ namespace align_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Align ==" << r2::linefeed << r2::linefeed;
+			std::cout << "# Align #" << r2::linefeed << r2::linefeed;
 
 			//{
 			//	std::cout << "\t" << "double d;" << r2::linefeed;

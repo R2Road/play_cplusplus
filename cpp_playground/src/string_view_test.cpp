@@ -21,7 +21,7 @@ namespace stringview_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== StringView ==" << r2::linefeed << r2::linefeed;
+			std::cout << "# StringView #" << r2::linefeed << r2::linefeed;
 
 			{
 				std::cout << "\t" << "+ std::string_view view = \"String View Test_1\";" << r2::linefeed << r2::linefeed;

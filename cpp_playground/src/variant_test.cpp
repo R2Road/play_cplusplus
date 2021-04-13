@@ -19,7 +19,7 @@ namespace variant_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Variant : Basic ==" << r2::linefeed << r2::linefeed;
+			std::cout << "# Variant : Basic #" << r2::linefeed << r2::linefeed;
 
 
 			{

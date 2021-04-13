@@ -19,7 +19,7 @@ namespace korean_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Korean ==" << r2::linefeed << r2::linefeed;
+			std::cout << "# Korean #" << r2::linefeed << r2::linefeed;
 
 			{
 				std::cout << "\t" << "+ const char* korean = \"한글 출력\";" << r2::linefeed;

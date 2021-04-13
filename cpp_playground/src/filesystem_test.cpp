@@ -9,7 +9,7 @@ namespace
 {
 	void TestGetDirectoryPath()
 	{
-		std::cout << "== Current Directory ==" << r2::linefeed;
+		std::cout << "# Current Directory #" << r2::linefeed;
 
 		std::filesystem::path p = std::filesystem::current_path();
 
@@ -18,7 +18,7 @@ namespace
 
 
 
-		std::cout << "== Temp Directory ==" << r2::linefeed;
+		std::cout << "# Temp Directory #" << r2::linefeed;
 
 		std::filesystem::path p2 = std::filesystem::temp_directory_path();
 
@@ -28,7 +28,7 @@ namespace
 
 	void TestDirectoryIterator()
 	{
-		std::cout << "== Directory Iterator ==" << r2::linefeed;
+		std::cout << "# Directory Iterator #" << r2::linefeed;
 
 		std::cout << "\t" << "+ Directory : " << r2::linefeed;
 		std::cout << "\t\t" << std::filesystem::current_path() << r2::linefeed;
@@ -47,7 +47,7 @@ namespace
 
 	void TestRecursiveDirectoryIterator()
 	{
-		std::cout << "== Recursive Directory Iterator ==" << r2::linefeed;
+		std::cout << "# Recursive Directory Iterator #" << r2::linefeed;
 
 		std::filesystem::recursive_directory_iterator itr( std::filesystem::current_path() / "src" );
 		for( auto i : itr )
@@ -60,7 +60,7 @@ namespace
 
 	void TestPathOperation()
 	{
-		std::cout << "== Path Operation ==" << r2::linefeed;
+		std::cout << "# Path Operation #" << r2::linefeed;
 
 		std::filesystem::path p = std::filesystem::current_path();
 		std::cout << "\t" << "+ Directory : " << r2::linefeed;

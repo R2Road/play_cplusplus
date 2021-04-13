@@ -31,7 +31,7 @@ namespace structured_binding_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Structured Binding : Basic ==" << r2::linefeed << r2::linefeed;
+			std::cout << "# Structured Binding : Basic #" << r2::linefeed << r2::linefeed;
 
 
 			{

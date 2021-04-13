@@ -44,7 +44,7 @@ namespace optional_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "== Optional : Basic ==" << r2::linefeed;
+			std::cout << "# Optional : Basic #" << r2::linefeed;
 
 
 			std::cout << "\t+ Make Test Struct" << r2::linefeed;
