@@ -64,7 +64,7 @@ namespace r2
 
 			ret->AddChild(
 				'5'
-				, []()->const char* { return "Template"; }
+				, []()->const char* { return r2::TemplateScene::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
 					director.Setup( r2::TemplateScene::Create( director ) );
