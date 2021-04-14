@@ -335,15 +335,23 @@ namespace align_test
 				std::size_t space = sizeof( buffer ) - 1;
 				while( std::align( alignof( int ), sizeof( char ), pt, space ) )
 				{
+					std::cout << "\t\t - " << "old adress of pt : " << pt << r2::linefeed;
+
+					if( !std::align( alignof( int ), sizeof( char ), pt, space ) )
+					{
+						break;
+					}
+
 					char* temp = static_cast<char*>( pt );
 					*temp = '*';
 					++temp;
 					space -= sizeof( char );
 
-					std::cout << "\t\t - " << "adress of pt : " << pt << r2::linefeed;
-					std::cout << "\t\t - " << "convert : " << buffer << r2::linefeed << r2::linefeed;
-
 					pt = temp;
+
+					std::cout << "\t\t - " << "convert : " << buffer << r2::linefeed;
+					std::cout << "\t\t - " << "new adress of pt : " << pt << r2::linefeed;
+					std::cout << r2::linefeed;
 				}
 
 				std::cout << "\t" << "result : " << buffer << r2::linefeed;
