@@ -293,33 +293,99 @@ namespace align_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Align #" << r2::linefeed << r2::linefeed;
+			std::cout << "# Align #" << r2::linefeed;
 
-			//{
-			//	std::cout << "\t" << "double d;" << r2::linefeed;
-			//	std::cout << "\t" << "void* dp = &d;" << r2::linefeed;
-			//	double d = 1;
-			//	void* dp = &d;
+			std::cout << r2::split;
 
-			//	std::cout << "\t + " << "adress of dp " << r2::linefeed;
-			//	std::cout << "\t\t - " << dp << r2::linefeed << r2::linefeed;
+			{
+				std::cout << "\t" << "double d;" << r2::linefeed;
+				std::cout << "\t" << "void* dp = &d;" << r2::linefeed;
+				double d = 1;
 
-			//	std::size_t space_size = sizeof( double );
-			//	std::cout << "\t + " << "space size" << r2::linefeed;
-			//	std::cout << "\t\t - " << space_size << r2::linefeed;
+				void* dp = &d;
+				std::cout << "\t\t - " << "adress of dp : " << dp << r2::linefeed;
 
-			//	const std::size_t align = alignof( int );
-			//	auto ip3 = std::align( align, sizeof( int ), dp, space_size );
+				std::size_t space = sizeof( double );
+				std::cout << "\t\t - " << "space size : " << space << r2::linefeed << r2::linefeed;
 
-			//	std::cout << "\t + " << "space size" << r2::linefeed;
-			//	std::cout << "\t\t - " << space_size << r2::linefeed;
+				std::cout << "\t" << "std::align( alignof( int ), sizeof( int ), dp, space )" << r2::linefeed;
+				if( std::align( alignof( int ), sizeof( int ), dp, space ) )
+				{
+					std::cout << "\t\t - " << "success" << r2::linefeed;
+				}
+				else
+				{
+					std::cout << "\t\t - " << "failed" << r2::linefeed;
+				}
 
-			//	std::cout << "\t + " << "adress of ip3" << r2::linefeed;
-			//	std::cout << "\t\t - " << ip3 << r2::linefeed;
+				{
+					std::cout << "\t\t - " << "adress of dp : " << dp << r2::linefeed;
+					std::cout << "\t\t - " << "space size : " << space << r2::linefeed;
+					std::cout << r2::linefeed;
+				}
 
-			//	std::cout << "\t + " << "adress of dp" << r2::linefeed;
-			//	std::cout << "\t\t - " << dp << r2::linefeed;
-			//}
+				std::cout << r2::linefeed;
+
+				{
+					char* cp = static_cast<char*>( dp );
+					++cp;
+
+					dp = cp;
+					space -= sizeof( char );
+
+					std::cout << "\t" << "move" << r2::linefeed;
+					std::cout << "\t\t - " << "adress of dp : " << dp << r2::linefeed;
+					std::cout << "\t\t - " << "space size : " << space << r2::linefeed;
+					std::cout << r2::linefeed;
+				}
+
+				std::cout << "\t" << "std::align( alignof( int ), sizeof( int ), dp, space )" << r2::linefeed;
+				if( std::align( alignof( int ), sizeof( int ), dp, space ) )
+				{
+					std::cout << "\t\t - " << "success" << r2::linefeed;
+				}
+				else
+				{
+					std::cout << "\t\t - " << "failed" << r2::linefeed;
+				}
+
+				{
+					std::cout << "\t\t - " << "adress of dp : " << dp << r2::linefeed;
+					std::cout << "\t\t - " << "space size : " << space << r2::linefeed;
+					std::cout << r2::linefeed;
+				}
+
+				std::cout << r2::linefeed;
+
+				{
+					char* cp = static_cast<char*>( dp );
+					++cp;
+
+					dp = cp;
+					space -= sizeof( char );
+
+					std::cout << "\t" << "move" << r2::linefeed;
+					std::cout << "\t\t - " << "adress of dp : " << dp << r2::linefeed;
+					std::cout << "\t\t - " << "space size : " << space << r2::linefeed;
+					std::cout << r2::linefeed;
+				}
+
+				std::cout << "\t" << "std::align( alignof( int ), sizeof( int ), dp, space )" << r2::linefeed;
+				if( std::align( alignof( int ), sizeof( int ), dp, space ) )
+				{
+					std::cout << "\t\t - " << "success" << r2::linefeed;
+				}
+				else
+				{
+					std::cout << "\t\t - " << "failed" << r2::linefeed;
+				}
+
+				{
+					std::cout << "\t\t - " << "adress of dp : " << dp << r2::linefeed;
+					std::cout << "\t\t - " << "space size : " << space << r2::linefeed;
+					std::cout << r2::linefeed;
+				}
+			}
 
 			std::cout << r2::split;
 
