@@ -282,18 +282,139 @@ namespace align_test
 
 
 
+	const r2::iNode::TitleFunc Align_0::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Align : Align 0";
+		};
+	}
+	const r2::iNode::DoFunc Align_0::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# Align 0 #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				int i = 1;
+				void* ip = &i;
+				std::size_t space = sizeof( i );
+
+				std::cout << "\t" << "int i = 1;" << r2::linefeed;
+				std::cout << "\t" << "void* ip = &i;" << r2::linefeed;
+				std::cout << "\t\t - " << "adress of ip : " << ip << r2::linefeed;
+				std::cout << "\t\t - " << "space : " << space << r2::linefeed << r2::linefeed;
+
+				std::cout << "\t" << "std::align( alignof( char ), sizeof( char ), dp, space )" << r2::linefeed;
+				if( std::align( alignof( char ), sizeof( char ), ip, space ) )
+				{
+					std::cout << "\t\t - " << "success" << r2::linefeed;
+				}
+				else
+				{
+					std::cout << "\t\t - " << "failed" << r2::linefeed;
+				}
+
+				{
+					std::cout << "\t\t - " << "adress of ip : " << ip << r2::linefeed;
+					std::cout << "\t\t - " << "space : " << space << r2::linefeed;
+					std::cout << r2::linefeed;
+				}
+
+				std::cout << r2::linefeed;
+
+				{
+					int move_amount = 3;
+
+					char* cp = static_cast<char*>( ip );
+					cp += move_amount;
+
+					ip = cp;
+					space -= sizeof( char ) * move_amount;
+
+					std::cout << "\t" << "move " << move_amount << r2::linefeed;
+					std::cout << "\t\t - " << "adress of ip : " << ip << r2::linefeed;
+					std::cout << "\t\t - " << "space : " << space << r2::linefeed;
+					std::cout << r2::linefeed;
+
+					std::cout << r2::linefeed;
+
+					std::cout << "\t" << "std::align( alignof( char ), sizeof( char ), dp, space )" << r2::linefeed;
+					if( std::align( alignof( char ), sizeof( char ), ip, space ) )
+					{
+						std::cout << "\t\t - " << "success" << r2::linefeed;
+					}
+					else
+					{
+						std::cout << "\t\t - " << "failed" << r2::linefeed;
+					}
+
+					{
+						std::cout << "\t\t - " << "adress of ip : " << ip << r2::linefeed;
+						std::cout << "\t\t - " << "space : " << space << r2::linefeed;
+						std::cout << r2::linefeed;
+					}
+				}
+
+				std::cout << r2::linefeed;
+
+				{
+					int move_amount = 1;
+
+					char* cp = static_cast<char*>( ip );
+					cp += move_amount;
+
+					ip = cp;
+					space -= sizeof( char ) * move_amount;
+
+					std::cout << "\t" << "move " << move_amount << r2::linefeed;
+					std::cout << "\t\t - " << "adress of ip : " << ip << r2::linefeed;
+					std::cout << "\t\t - " << "space : " << space << r2::linefeed;
+					std::cout << r2::linefeed;
+
+					std::cout << r2::linefeed;
+
+					std::cout << "\t" << "std::align( alignof( char ), sizeof( char ), dp, space )" << r2::linefeed;
+					if( std::align( alignof( char ), sizeof( char ), ip, space ) )
+					{
+						std::cout << "\t\t - " << "success" << r2::linefeed;
+					}
+					else
+					{
+						std::cout << "\t\t - " << "failed" << r2::linefeed;
+					}
+
+					{
+						std::cout << "\t\t - " << "adress of ip : " << ip << r2::linefeed;
+						std::cout << "\t\t - " << "space : " << space << r2::linefeed;
+						std::cout << r2::linefeed;
+					}
+				}
+
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
 	const r2::iNode::TitleFunc Align_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Align : Align";
+			return "Align : Align 1";
 		};
 	}
 	const r2::iNode::DoFunc Align_1::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Align #" << r2::linefeed;
+			std::cout << "# Align 1 #" << r2::linefeed;
 
 			std::cout << r2::split;
 
