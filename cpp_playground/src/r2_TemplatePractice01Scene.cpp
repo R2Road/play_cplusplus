@@ -11,7 +11,7 @@ namespace r2
 {
 	SceneUp TemplatePractice01Scene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, "Template Practice 01" ) );
+		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
 
 		{
 			ret->AddChild(

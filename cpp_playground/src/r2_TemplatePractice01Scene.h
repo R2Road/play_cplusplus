@@ -14,6 +14,7 @@ namespace r2
 		TemplatePractice01Scene() = delete;
 
 	public:
+		static const char* GetTitle() { return "Template Practice 01"; }
 		static SceneUp Create( Director& director );
 	};
 }

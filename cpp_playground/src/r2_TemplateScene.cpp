@@ -27,7 +27,7 @@ namespace r2
 
 			ret->AddChild(
 				'2'
-				, []()->const char* { return "Template Practice 01"; }
+				, []()->const char* { return r2::TemplatePractice01Scene::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
 					director.Setup( r2::TemplatePractice01Scene::Create( director ) );
