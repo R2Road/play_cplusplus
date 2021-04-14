@@ -14,9 +14,7 @@ namespace r2
 		SceneUp ret( new ( std::nothrow ) Scene( director, "Root" ) );
 
 		{
-			ret->AddChild( '1', align_test::Basic::GetInstance() );
-			ret->AddChild( '2', align_test::MixedStruct::GetInstance() );
-			ret->AddChild( '3', align_test::AlignAs::GetInstance() );
+			ret->AddChild( '1', align_test::AlignAs::GetInstance() );
 			ret->AddChild( 'q', align_test::Align_0::GetInstance() );
 			ret->AddChild( 'w', align_test::Align_1::GetInstance() );
 			ret->AddChild( 'e', align_test::Align_2::GetInstance() );

@@ -96,6 +96,12 @@
     <ClCompile Include="src\r2_AlignScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\alignof_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_AlignOfScene.cpp">
+      <Filter>scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -180,6 +186,12 @@
       <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_AlignScene.h">
+      <Filter>scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\alignof_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_AlignOfScene.h">
       <Filter>scene</Filter>
     </ClInclude>
   </ItemGroup>

@@ -7,6 +7,7 @@
 #include "r2_RandomTestScene.h"
 #include "r2_TemplateMetaProgrammingScene.h"
 #include "r2_VariadicTemplateScene.h"
+#include "r2_AlignOfScene.h"
 #include "r2_AlignScene.h"
 
 #include "filesystem_test.h"
@@ -73,6 +74,16 @@ namespace r2
 
 			ret->AddChild(
 				'6'
+				, []()->const char* { return "Align Of"; }
+				, [&director]()->const eTestResult
+				{
+					director.Setup( r2::AlignOfScene::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+
+			ret->AddChild(
+				'7'
 				, []()->const char* { return "Align"; }
 				, [&director]()->const eTestResult
 				{
@@ -81,7 +92,7 @@ namespace r2
 				}
 			);
 
-			ret->AddChild( '7', shared_pointer_test::SharedPtr::GetInstance() );
+			ret->AddChild( '8', shared_pointer_test::SharedPtr::GetInstance() );
 
 			ret->AddChild( 'w', optional_test::Basic::GetInstance() );
 			ret->AddChild( 'e', variant_test::Basic::GetInstance() );

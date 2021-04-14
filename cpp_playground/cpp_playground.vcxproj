@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\alignof_test.cpp" />
     <ClCompile Include="src\align_test.cpp" />
     <ClCompile Include="src\assert_test.cpp" />
     <ClCompile Include="src\korean_test.cpp" />
@@ -28,6 +29,7 @@
     <ClCompile Include="src\filesystem_test.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\new_test.cpp" />
+    <ClCompile Include="src\r2_AlignOfScene.cpp" />
     <ClCompile Include="src\r2_AlignScene.cpp" />
     <ClCompile Include="src\r2_Director.cpp" />
     <ClCompile Include="src\r2_PointerTestScene.cpp" />
@@ -47,6 +49,7 @@
     <ClCompile Include="src\variant_test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\alignof_test.h" />
     <ClInclude Include="src\align_test.h" />
     <ClInclude Include="src\assert_test.h" />
     <ClInclude Include="src\korean_test.h" />
@@ -55,6 +58,7 @@
     <ClInclude Include="src\enum_test.h" />
     <ClInclude Include="src\filesystem_test.h" />
     <ClInclude Include="src\new_test.h" />
+    <ClInclude Include="src\r2_AlignOfScene.h" />
     <ClInclude Include="src\r2_AlignScene.h" />
     <ClInclude Include="src\r2_Director.h" />
     <ClInclude Include="src\r2_eTestResult.h" />
