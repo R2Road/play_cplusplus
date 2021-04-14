@@ -5,7 +5,7 @@
 #include "r2_eTestResult.h"
 #include "r2_PointerTestScene.h"
 #include "r2_RandomTestScene.h"
-#include "r2_TemplateMetaProgrammingScene.h"
+#include "r2_TemplateScene.h"
 #include "r2_VariadicTemplateScene.h"
 #include "r2_AlignOfScene.h"
 #include "r2_AlignScene.h"
@@ -64,10 +64,10 @@ namespace r2
 
 			ret->AddChild(
 				'5'
-				, []()->const char* { return "Template Meta Programming"; }
+				, []()->const char* { return "Template"; }
 				, [&director]()->const eTestResult
 				{
-					director.Setup( r2::TemplateMetaProgrammingScene::Create( director ) );
+					director.Setup( r2::TemplateScene::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);
