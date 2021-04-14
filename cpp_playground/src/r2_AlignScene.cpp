@@ -11,7 +11,7 @@ namespace r2
 {
 	SceneUp AlignScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, "Root" ) );
+		SceneUp ret( new ( std::nothrow ) Scene( director, "Align" ) );
 
 		{
 			ret->AddChild( '1', align_test::AlignAs::GetInstance() );
