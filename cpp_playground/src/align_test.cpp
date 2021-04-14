@@ -282,14 +282,14 @@ namespace align_test
 
 
 
-	const r2::iNode::TitleFunc Align::GetTitleFunction() const
+	const r2::iNode::TitleFunc Align_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align : Align";
 		};
 	}
-	const r2::iNode::DoFunc Align::GetDoFunction() const
+	const r2::iNode::DoFunc Align_1::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -386,6 +386,27 @@ namespace align_test
 					std::cout << r2::linefeed;
 				}
 			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+	
+	const r2::iNode::TitleFunc Align_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Align : Align 2";
+		};
+	}
+	const r2::iNode::DoFunc Align_2::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# Align 2 #" << r2::linefeed;
 
 			std::cout << r2::split;
 
