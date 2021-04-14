@@ -105,6 +105,9 @@
     <ClCompile Include="src\r2_TemplateScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_TemplatePractice01Scene.cpp">
+      <Filter>scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -198,6 +201,9 @@
       <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_TemplateScene.h">
+      <Filter>scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_TemplatePractice01Scene.h">
       <Filter>scene</Filter>
     </ClInclude>
   </ItemGroup>

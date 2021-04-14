@@ -6,6 +6,7 @@
 #include "r2_RootScene.h"
 
 #include "r2_TemplateMetaProgrammingScene.h"
+#include "r2_TemplatePractice01Scene.h"
 
 namespace r2
 {
@@ -20,6 +21,16 @@ namespace r2
 				, [&director]()->const eTestResult
 				{
 					director.Setup( r2::TemplateMetaProgrammingScene::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+
+			ret->AddChild(
+				'2'
+				, []()->const char* { return "Template Practice 01"; }
+				, [&director]()->const eTestResult
+				{
+					director.Setup( r2::TemplatePractice01Scene::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

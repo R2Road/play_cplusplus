@@ -37,6 +37,7 @@
     <ClCompile Include="src\r2_RootScene.cpp" />
     <ClCompile Include="src\r2_Scene.cpp" />
     <ClCompile Include="src\r2_TemplateMetaProgrammingScene.cpp" />
+    <ClCompile Include="src\r2_TemplatePractice01Scene.cpp" />
     <ClCompile Include="src\r2_TemplateScene.cpp" />
     <ClCompile Include="src\r2_VariadicTemplateScene.cpp" />
     <ClCompile Include="src\random_test.cpp" />
@@ -70,6 +71,7 @@
     <ClInclude Include="src\r2_RootScene.h" />
     <ClInclude Include="src\r2_Singleton.h" />
     <ClInclude Include="src\r2_TemplateMetaProgrammingScene.h" />
+    <ClInclude Include="src\r2_TemplatePractice01Scene.h" />
     <ClInclude Include="src\r2_TemplateScene.h" />
     <ClInclude Include="src\r2_VariadicTemplateScene.h" />
     <ClInclude Include="src\random_test.h" />
