@@ -5,7 +5,7 @@
 #include "r2_eTestResult.h"
 #include "r2_TemplateScene.h"
 
-#include "template_meta_programming_test.h"
+#include "template_practice_part_01_test.h"
 
 namespace r2
 {
@@ -14,6 +14,8 @@ namespace r2
 		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
 
 		{
+			ret->AddChild( '1', template_practice_part_01_test::Practice01::GetInstance() );
+
 			ret->AddChild(
 				27
 				, []()->const char* { return "\nESC : Return To Root"; }

@@ -108,6 +108,9 @@
     <ClCompile Include="src\r2_TemplatePractice01Scene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\template_practice_part_01_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -205,6 +208,9 @@
     </ClInclude>
     <ClInclude Include="src\r2_TemplatePractice01Scene.h">
       <Filter>scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\template_practice_part_01_test.h">
+      <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
