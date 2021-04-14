@@ -339,7 +339,7 @@ namespace align_test
 					space -= sizeof( char );
 
 					std::cout << "\t\t - " << "adress of pt : " << pt << r2::linefeed;
-					std::cout << "\t\t - " << "cvrt : " << buffer << r2::linefeed << r2::linefeed;
+					std::cout << "\t\t - " << "convert : " << buffer << r2::linefeed << r2::linefeed;
 
 					pt = temp;
 				}
