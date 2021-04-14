@@ -321,6 +321,8 @@ namespace align_test
 			//	std::cout << "\t\t - " << dp << r2::linefeed;
 			//}
 
+			std::cout << r2::split;
+
 			{
 				char buffer[] = "------------------------";
 				void * pt = buffer;
@@ -347,7 +349,7 @@ namespace align_test
 				std::cout << "\t" << "result : " << buffer << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
