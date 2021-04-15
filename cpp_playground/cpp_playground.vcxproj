@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\alignas_test.cpp" />
     <ClCompile Include="src\alignof_test.cpp" />
     <ClCompile Include="src\align_test.cpp" />
     <ClCompile Include="src\assert_test.cpp" />
@@ -52,6 +53,7 @@
     <ClCompile Include="src\variant_test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\alignas_test.h" />
     <ClInclude Include="src\alignof_test.h" />
     <ClInclude Include="src\align_test.h" />
     <ClInclude Include="src\assert_test.h" />

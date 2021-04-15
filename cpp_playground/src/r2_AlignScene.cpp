@@ -5,6 +5,7 @@
 #include "r2_eTestResult.h"
 #include "r2_RootScene.h"
 
+#include "alignas_test.h"
 #include "align_test.h"
 
 namespace r2
@@ -15,6 +16,7 @@ namespace r2
 
 		{
 			ret->AddChild( '1', align_test::AlignAs::GetInstance() );
+
 			ret->AddChild( 'q', align_test::Align_0::GetInstance() );
 			ret->AddChild( 'w', align_test::Align_1::GetInstance() );
 			ret->AddChild( 'e', align_test::Align_2::GetInstance() );
