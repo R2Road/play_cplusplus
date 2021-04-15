@@ -77,11 +77,17 @@ namespace new_test
 
 			{
 				int i = 123;
-				int* ip = new (&i) int;
+				float* fp = new (&i) float;
 
 				std::cout << "\t" << "+ int i = 123;" << r2::linefeed;
-				std::cout << "\t" << "+ int* ip = new (&i) int;" << r2::linefeed;
-				std::cout << "\t\t" << "- Print ip : " << *ip << r2::linefeed;
+				std::cout << "\t" << "+ float* fp = new (&i) float;" << r2::linefeed;
+				std::cout << "\t\t" << "- Print fp : " << *fp << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				*fp = 3.14;
+				std::cout << "\t" << "+ *fp = 3.14;" << r2::linefeed;
+				std::cout << "\t\t" << "- Print fp : " << *fp << r2::linefeed;
 			}
 
 			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
