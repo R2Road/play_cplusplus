@@ -8,9 +8,9 @@
 #include "r2_TemplateScene.h"
 #include "r2_VariadicTemplateScene.h"
 #include "r2_AlignScene.h"
+#include "r2_MemoryScene.h"
 
 #include "filesystem_test.h"
-#include "shared_pointer_test.h"
 #include "optional_test.h"
 #include "variant_test.h"
 #include "tuple_test.h"
@@ -81,7 +81,15 @@ namespace r2
 				}
 			);
 
-			ret->AddChild( '7', shared_pointer_test::SharedPtr::GetInstance() );
+			ret->AddChild(
+				'7'
+				, []()->const char* { return r2::MemoryScene::GetTitle(); }
+				, [&director]()->const eTestResult
+				{
+					director.Setup( r2::MemoryScene::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
 
 			ret->AddChild( 'w', optional_test::Basic::GetInstance() );
 			ret->AddChild( 'e', variant_test::Basic::GetInstance() );

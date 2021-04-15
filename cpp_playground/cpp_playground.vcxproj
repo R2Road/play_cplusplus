@@ -32,6 +32,7 @@
     <ClCompile Include="src\new_test.cpp" />
     <ClCompile Include="src\r2_AlignScene.cpp" />
     <ClCompile Include="src\r2_Director.cpp" />
+    <ClCompile Include="src\r2_MemoryScene.cpp" />
     <ClCompile Include="src\r2_PointerTestScene.cpp" />
     <ClCompile Include="src\r2_RandomTestScene.cpp" />
     <ClCompile Include="src\r2_RootScene.cpp" />
@@ -66,6 +67,7 @@
     <ClInclude Include="src\r2_Director.h" />
     <ClInclude Include="src\r2_eTestResult.h" />
     <ClInclude Include="src\r2_iNode.h" />
+    <ClInclude Include="src\r2_MemoryScene.h" />
     <ClInclude Include="src\r2_PointerTestScene.h" />
     <ClInclude Include="src\r2_Scene.h" />
     <ClInclude Include="src\r2_RandomTestScene.h" />

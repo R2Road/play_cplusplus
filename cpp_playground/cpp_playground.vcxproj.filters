@@ -111,6 +111,9 @@
     <ClCompile Include="src\alignas_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_MemoryScene.cpp">
+      <Filter>scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -211,6 +214,9 @@
     </ClInclude>
     <ClInclude Include="src\alignas_test.h">
       <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_MemoryScene.h">
+      <Filter>scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
