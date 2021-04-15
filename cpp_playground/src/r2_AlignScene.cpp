@@ -5,6 +5,7 @@
 #include "r2_eTestResult.h"
 #include "r2_RootScene.h"
 
+#include "alignof_test.h"
 #include "alignas_test.h"
 #include "align_test.h"
 
@@ -15,11 +16,14 @@ namespace r2
 		SceneUp ret( new ( std::nothrow ) Scene( director, "Align" ) );
 
 		{
-			ret->AddChild( '1', align_test::AlignAs::GetInstance() );
+			ret->AddChild( '1', alignof_test::Basic::GetInstance() );
+			ret->AddChild( '2', alignof_test::MixedStruct::GetInstance() );
 
-			ret->AddChild( 'q', align_test::Align_0::GetInstance() );
-			ret->AddChild( 'w', align_test::Align_1::GetInstance() );
-			ret->AddChild( 'e', align_test::Align_2::GetInstance() );
+			ret->AddChild( 'q', align_test::AlignAs::GetInstance() );
+
+			ret->AddChild( 'z', align_test::Align_0::GetInstance() );
+			ret->AddChild( 'x', align_test::Align_1::GetInstance() );
+			ret->AddChild( 'c', align_test::Align_2::GetInstance() );
 
 			ret->AddChild(
 				27
