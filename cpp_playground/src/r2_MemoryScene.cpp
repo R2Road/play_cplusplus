@@ -6,6 +6,7 @@
 #include "r2_RootScene.h"
 
 #include "shared_pointer_test.h"
+#include "memory_pool_test.h"
 
 namespace r2
 {
@@ -15,6 +16,7 @@ namespace r2
 
 		{
 			ret->AddChild( '1', shared_pointer_test::SharedPtr::GetInstance() );
+			ret->AddChild( 'q', memory_pool_test::Step01::GetInstance() );
 
 			ret->AddChild(
 				27

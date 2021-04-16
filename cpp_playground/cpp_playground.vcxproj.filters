@@ -114,6 +114,9 @@
     <ClCompile Include="src\r2_MemoryScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\memory_pool_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -217,6 +220,9 @@
     </ClInclude>
     <ClInclude Include="src\r2_MemoryScene.h">
       <Filter>scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\memory_pool_test.h">
+      <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
