@@ -11,10 +11,24 @@
 int main()
 {
 	//
-	// Environment
+	// Environment : Title
 	//
 	SetConsoleTitle( TEXT( "cpp_playground" ) );
+
+	//
+	// Environment : Size
+	//
 	system( "mode con lines=60 cols=120" );
+
+	//
+	// Environment : Position
+	//
+	{
+		HWND hWnd = GetConsoleWindow();
+		RECT rectClient;
+		GetClientRect( hWnd, &rectClient );
+		MoveWindow( hWnd, 0, 0, rectClient.right - rectClient.left, rectClient.bottom - rectClient.top, TRUE );
+	}
 
 	//
 	// Setup
