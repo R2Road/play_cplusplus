@@ -20,4 +20,13 @@ namespace console_test
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 	};
+
+
+
+	class ChangeWindowName : public r2::iNode, public r2::SingleTon<ChangeWindowName>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
 }

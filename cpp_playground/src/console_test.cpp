@@ -117,4 +117,36 @@ namespace console_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	const r2::iNode::TitleFunc ChangeWindowName::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Console : Change Window Name";
+		};
+	}
+	const r2::iNode::DoFunc ChangeWindowName::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			{
+				SetConsoleTitle( TEXT( "console_test : ChangeWindowName" ) );
+			}
+
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::cout << "Press Any Key : Roll Back Window Name" << r2::linefeed;
+			_getch();
+
+			{
+				SetConsoleTitle( TEXT( "cpp_playground" ) );
+			}
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
