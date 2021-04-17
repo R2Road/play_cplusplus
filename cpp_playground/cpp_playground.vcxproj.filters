@@ -120,6 +120,9 @@
     <ClCompile Include="src\console_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_GameScene.cpp">
+      <Filter>scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -229,6 +232,9 @@
     </ClInclude>
     <ClInclude Include="src\console_test.h">
       <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_GameScene.h">
+      <Filter>scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

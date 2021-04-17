@@ -9,6 +9,7 @@
 #include "r2_VariadicTemplateScene.h"
 #include "r2_AlignScene.h"
 #include "r2_MemoryScene.h"
+#include "r2_GameScene.h"
 
 #include "filesystem_test.h"
 #include "optional_test.h"
@@ -110,6 +111,16 @@ namespace r2
 			ret->AddChild( 'v', console_test::ChangeWindowPosition::GetInstance() );
 			ret->AddChild( 'b', console_test::ChangeWindowName::GetInstance() );
 			ret->AddChild( 'n', console_test::MoveCursor::GetInstance() );
+
+			ret->AddChild(
+				32
+				, []()->const char* { return r2::GameScene::GetTitle(); }
+				, [&director]()->const eTestResult
+				{
+					director.Setup( r2::GameScene::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
 
 			ret->AddChild(
 				27

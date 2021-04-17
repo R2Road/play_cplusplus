@@ -32,6 +32,10 @@ namespace r2
 			{
 				std::cout << "\nESC";
 			}
+			else if( 32 == std::get<0>( t ) ) // SPACE_BAR
+			{
+				std::cout << "\nSPACE";
+			}
 			else
 			{
 				std::cout << static_cast<char>( std::toupper( std::get<0>( t ) ) );
