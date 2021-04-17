@@ -7,7 +7,7 @@
 
 namespace
 {
-	template<int N>
+	template<std::size_t N>
 	struct CharBuffer
 	{
 		CharBuffer() :
