@@ -226,7 +226,9 @@ namespace console_test
 				{
 					system( "cls" );
 
-					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed << r2::linefeed;
+					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+					std::cout << "\t" << " + Key : W, A, S, D" << r2::linefeed;
+
 
 					SetConsoleCursorPosition( stdHandle, pos );
 
