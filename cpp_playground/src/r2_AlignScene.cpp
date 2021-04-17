@@ -13,7 +13,7 @@ namespace r2
 {
 	SceneUp AlignScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, "Align" ) );
+		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
 
 		{
 			ret->AddChild( '1', alignof_test::Basic::GetInstance() );
