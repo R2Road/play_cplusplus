@@ -18,7 +18,7 @@ namespace
 		}
 
 		char b[N];
-		std::size_t size;
+		const std::size_t size;
 	};
 
 	using MemoryBlock = CharBuffer<64>;
