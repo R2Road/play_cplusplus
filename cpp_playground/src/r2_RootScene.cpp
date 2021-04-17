@@ -107,7 +107,8 @@ namespace r2
 			ret->AddChild( 'z', korean_test::Basic::GetInstance() );
 			ret->AddChild( 'x', console_test::GetWindowSize::GetInstance() );
 			ret->AddChild( 'c', console_test::ChangeWindowSize::GetInstance() );
-			ret->AddChild( 'v', console_test::ChangeWindowName::GetInstance() );
+			ret->AddChild( 'v', console_test::ChangeWindowPosition::GetInstance() );
+			ret->AddChild( 'b', console_test::ChangeWindowName::GetInstance() );
 
 			ret->AddChild(
 				27

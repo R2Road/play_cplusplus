@@ -120,6 +120,43 @@ namespace console_test
 
 
 
+	const r2::iNode::TitleFunc ChangeWindowPosition::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Console : Change Window Position";
+		};
+	}
+	const r2::iNode::DoFunc ChangeWindowPosition::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				RECT rectClient, rectWindow;
+				HWND hWnd = GetConsoleWindow();
+				GetClientRect( hWnd, &rectClient );
+				GetWindowRect( hWnd, &rectWindow );
+				
+				int posx = GetSystemMetrics( SM_CXSCREEN ) / 2 - ( rectWindow.right - rectWindow.left ) / 2;
+				int posy = GetSystemMetrics( SM_CYSCREEN ) / 2 - ( rectWindow.bottom - rectWindow.top ) / 2;
+
+				MoveWindow( hWnd, posx, posy, rectClient.right - rectClient.left, rectClient.bottom - rectClient.top, TRUE );
+
+				std::cout << "\t" << "Move To Center" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	const r2::iNode::TitleFunc ChangeWindowName::GetTitleFunction() const
 	{
 		return []()->const char*

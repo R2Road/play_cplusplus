@@ -23,6 +23,15 @@ namespace console_test
 
 
 
+	class ChangeWindowPosition : public r2::iNode, public r2::SingleTon<ChangeWindowPosition>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
+
+
+
 	class ChangeWindowName : public r2::iNode, public r2::SingleTon<ChangeWindowName>
 	{
 	public:
