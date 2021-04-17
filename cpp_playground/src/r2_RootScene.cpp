@@ -73,7 +73,7 @@ namespace r2
 
 			ret->AddChild(
 				'6'
-				, []()->const char* { return "Align"; }
+				, []()->const char* { return r2::AlignScene::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
 					director.Setup( r2::AlignScene::Create( director ) );

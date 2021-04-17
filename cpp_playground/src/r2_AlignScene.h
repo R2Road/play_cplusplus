@@ -14,6 +14,7 @@ namespace r2
 		AlignScene() = delete;
 
 	public:
+		static const char* GetTitle() { return "Align"; }
 		static SceneUp Create( Director& director );
 	};
 }
