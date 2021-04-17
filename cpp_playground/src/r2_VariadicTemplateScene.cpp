@@ -21,7 +21,7 @@ namespace r2
 
 			ret->AddChild(
 				27
-				, []()->const char* { return "\nESC : Return To Root"; }
+				, []()->const char* { return "Return To Root"; }
 				, [&director]()->const eTestResult
 				{
 					director.Setup( r2::RootScene::Create( director ) );

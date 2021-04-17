@@ -113,7 +113,7 @@ namespace r2
 
 			ret->AddChild(
 				27
-				, []()->const char* { return "\nESC : Exit"; }
+				, []()->const char* { return "Exit"; }
 				, []()->const eTestResult { return eTestResult::Exit; }
 			);
 		}

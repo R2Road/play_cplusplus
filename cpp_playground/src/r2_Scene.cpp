@@ -25,11 +25,24 @@ namespace r2
 
 		for( const auto t : mTests )
 		{
-			std::cout
-				<< static_cast<char>( std::toupper( std::get<0>( t ) ) )
-				<< " : "
-				<< std::get<1>( t )( )
-				<< r2::linefeed;
+			//
+			// Key
+			//
+			if( 27 == std::get<0>( t ) ) // ESC
+			{
+				std::cout << "\nESC";
+			}
+			else
+			{
+				std::cout << static_cast<char>( std::toupper( std::get<0>( t ) ) );
+			}
+
+			std::cout << " : ";
+			
+			//
+			// Name
+			//
+			std::cout << std::get<1>( t )( ) << r2::linefeed;
 		}
 
 		std::cout << r2::linefeed << "Select Menu";

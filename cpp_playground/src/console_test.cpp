@@ -247,7 +247,7 @@ namespace console_test
 						pos.X += 1;
 						break;
 
-					case 27:
+					case 27: // ESC
 						process = false;
 						break;
 					}
