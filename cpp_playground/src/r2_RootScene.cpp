@@ -109,6 +109,7 @@ namespace r2
 			ret->AddChild( 'c', console_test::ChangeWindowSize::GetInstance() );
 			ret->AddChild( 'v', console_test::ChangeWindowPosition::GetInstance() );
 			ret->AddChild( 'b', console_test::ChangeWindowName::GetInstance() );
+			ret->AddChild( 'n', console_test::MoveCursor::GetInstance() );
 
 			ret->AddChild(
 				27

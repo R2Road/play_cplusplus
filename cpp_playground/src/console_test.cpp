@@ -203,4 +203,56 @@ namespace console_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	const r2::iNode::TitleFunc MoveCursor::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Console : Move Cursor";
+		};
+	}
+	const r2::iNode::DoFunc MoveCursor::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			{
+				HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+				COORD pos = { 0, 0 };
+
+				bool process = true;
+				while( process )
+				{
+					system( "cls" );
+
+					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed << r2::linefeed;
+
+					SetConsoleCursorPosition( stdHandle, pos );
+
+					switch( _getch() )
+					{
+					case 'w': // up
+						pos.Y -= 1;
+						break;
+					case 's': // down
+						pos.Y += 1;
+						break;
+					case 'a': // left
+						pos.X -= 1;
+						break;
+					case 'd': // right
+						pos.X += 1;
+						break;
+
+					case 27:
+						process = false;
+						break;
+					}
+				}
+			}
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
