@@ -53,7 +53,7 @@ namespace r2
 
 			ret->AddChild(
 				'4'
-				, []()->const char* { return "Variadic Template"; }
+				, []()->const char* { return r2::VariadicTemplateScene::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
 					director.Setup( r2::VariadicTemplateScene::Create( director ) );

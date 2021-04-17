@@ -14,6 +14,7 @@ namespace r2
 		VariadicTemplateScene() = delete;
 
 	public:
+		static const char* GetTitle() { return "Variadic Template"; }
 		static SceneUp Create( Director& director );
 	};
 }

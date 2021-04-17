@@ -11,7 +11,7 @@ namespace r2
 {
 	SceneUp VariadicTemplateScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, "Variadic Template" ) );
+		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
 
 		{
 			ret->AddChild( '1', variadic_template_test::PrintValues::GetInstance() );
