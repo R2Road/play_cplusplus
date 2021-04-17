@@ -23,6 +23,7 @@
     <ClCompile Include="src\alignof_test.cpp" />
     <ClCompile Include="src\align_test.cpp" />
     <ClCompile Include="src\assert_test.cpp" />
+    <ClCompile Include="src\console_test.cpp" />
     <ClCompile Include="src\korean_test.cpp" />
     <ClCompile Include="src\memory_pool_test.cpp" />
     <ClCompile Include="src\pch.cpp" />
@@ -58,6 +59,7 @@
     <ClInclude Include="src\alignof_test.h" />
     <ClInclude Include="src\align_test.h" />
     <ClInclude Include="src\assert_test.h" />
+    <ClInclude Include="src\console_test.h" />
     <ClInclude Include="src\korean_test.h" />
     <ClInclude Include="src\memory_pool_test.h" />
     <ClInclude Include="src\pch.h" />

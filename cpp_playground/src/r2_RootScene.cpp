@@ -21,6 +21,7 @@
 #include "enum_test.h"
 #include "new_test.h"
 #include "korean_test.h"
+#include "console_test.h"
 
 namespace r2
 {
@@ -103,7 +104,8 @@ namespace r2
 			ret->AddChild( 'f', new_test::Basic::GetInstance() );
 			ret->AddChild( 'g', new_test::PlacementNew::GetInstance() );
 
-			ret->AddChild( 'b', korean_test::Basic::GetInstance() );
+			ret->AddChild( 'z', korean_test::Basic::GetInstance() );
+			ret->AddChild( 'x', console_test::GetWindowSize::GetInstance() );
 
 			ret->AddChild(
 				27
