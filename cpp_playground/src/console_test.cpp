@@ -35,6 +35,12 @@ namespace console_test
 				const auto height = static_cast<int>( csbi.srWindow.Bottom - csbi.srWindow.Top + 1 );
 				std::cout << "\t\t - Width : " << width << r2::linefeed;
 				std::cout << "\t\t - Height : " << width << r2::linefeed;
+
+				std::cout << r2::linefeed;
+				std::cout << "\t\t - Left : " << csbi.srWindow.Left << r2::linefeed;
+				std::cout << "\t\t - Top : " << csbi.srWindow.Top << r2::linefeed;
+				std::cout << "\t\t - Right : " << csbi.srWindow.Right << r2::linefeed;
+				std::cout << "\t\t - Bottom : " << csbi.srWindow.Bottom << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -53,6 +59,12 @@ namespace console_test
 				const auto height = static_cast<int>( csbi.srWindow.Bottom - csbi.srWindow.Top + 1 );
 				std::cout << "\t\t - Width : " << width << r2::linefeed;
 				std::cout << "\t\t - Height : " << width << r2::linefeed;
+
+				std::cout << r2::linefeed;
+				std::cout << "\t\t - Left : " << csbi.srWindow.Left << r2::linefeed;
+				std::cout << "\t\t - Top : " << csbi.srWindow.Top << r2::linefeed;
+				std::cout << "\t\t - Right : " << csbi.srWindow.Right << r2::linefeed;
+				std::cout << "\t\t - Bottom : " << csbi.srWindow.Bottom << r2::linefeed;
 			}
 
 			std::cout << r2::split;
