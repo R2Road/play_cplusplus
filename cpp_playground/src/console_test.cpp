@@ -131,11 +131,28 @@ namespace console_test
 	{
 		return []()->r2::eTestResult
 		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed << r2::linefeed;
+
+			std::cout << r2::split;
+
 			{
-				SetConsoleTitle( TEXT( "console_test : ChangeWindowName" ) );
+				TCHAR window_name_string[MAX_PATH];
+				GetConsoleTitle( window_name_string, MAX_PATH );
+
+				std::cout << "\t + " << "Current Window Name" << r2::linefeed;
+				std::wcout << "\t\t - " << window_name_string << r2::linefeed;
 			}
 
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
+
+			{
+				auto* window_name_string = TEXT( "console_test : ChangeWindowName" );
+
+				SetConsoleTitle( window_name_string );
+
+				std::cout << "\t + " << "New Window Name" << r2::linefeed;
+				std::wcout << "\t\t - " << window_name_string << r2::linefeed;
+			}
 
 			std::cout << r2::split;
 
