@@ -6,7 +6,7 @@
 #include "r2_RootScene.h"
 
 #include "r2_TemplateMetaProgrammingScene.h"
-#include "r2_TemplatePractice01Scene.h"
+#include "r2_TemplatePracticeScene.h"
 
 namespace r2
 {
