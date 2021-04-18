@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "r2_RootScene.h"
 
+#include "r2_ConsoleScene.h"
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
 #include "r2_PointerTestScene.h"
@@ -22,7 +23,6 @@
 #include "enum_test.h"
 #include "new_test.h"
 #include "korean_test.h"
-#include "console_test.h"
 
 namespace r2
 {
@@ -31,10 +31,20 @@ namespace r2
 		SceneUp ret( new ( std::nothrow ) Scene( director, "Root" ) );
 
 		{
-			ret->AddChild( '1', filesystem_test::CurrentDirectory::GetInstance() );
+			ret->AddChild(
+				'1'
+				, []()->const char* { return ConsoleScene::GetTitle(); }
+				, [&director]()->const eTestResult
+				{
+					director.Setup( ConsoleScene::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+
+			ret->AddChild( '2', filesystem_test::CurrentDirectory::GetInstance() );
 
 			ret->AddChild(
-				'2'
+				'3'
 				, []()->const char* { return "Pointer"; }
 				, [&director]()->const eTestResult
 				{
@@ -44,7 +54,7 @@ namespace r2
 			);
 
 			ret->AddChild(
-				'3'
+				'4'
 				, []()->const char* { return "Random"; }
 				, [&director]()->const eTestResult
 				{
@@ -54,7 +64,7 @@ namespace r2
 			);
 
 			ret->AddChild(
-				'4'
+				'5'
 				, []()->const char* { return r2::VariadicTemplateScene::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
@@ -64,7 +74,7 @@ namespace r2
 			);
 
 			ret->AddChild(
-				'5'
+				'6'
 				, []()->const char* { return r2::TemplateScene::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
@@ -74,7 +84,7 @@ namespace r2
 			);
 
 			ret->AddChild(
-				'6'
+				'7'
 				, []()->const char* { return r2::AlignScene::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
@@ -84,7 +94,7 @@ namespace r2
 			);
 
 			ret->AddChild(
-				'7'
+				'8'
 				, []()->const char* { return r2::MemoryScene::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
@@ -106,11 +116,6 @@ namespace r2
 			ret->AddChild( 'g', new_test::PlacementNew::GetInstance() );
 
 			ret->AddChild( 'z', korean_test::Basic::GetInstance() );
-			ret->AddChild( 'x', console_test::GetWindowSize::GetInstance() );
-			ret->AddChild( 'c', console_test::ChangeWindowSize::GetInstance() );
-			ret->AddChild( 'v', console_test::ChangeWindowPosition::GetInstance() );
-			ret->AddChild( 'b', console_test::ChangeWindowName::GetInstance() );
-			ret->AddChild( 'n', console_test::MoveCursor::GetInstance() );
 
 			ret->AddChild(
 				32
