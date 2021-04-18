@@ -102,9 +102,6 @@
     <ClCompile Include="src\r2_TemplateScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_TemplatePractice01Scene.cpp">
-      <Filter>scene</Filter>
-    </ClCompile>
     <ClCompile Include="src\template_practice_part_01_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -128,6 +125,9 @@
     </ClCompile>
     <ClCompile Include="src\template_practice_part_02_test.cpp">
       <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_TemplatePracticeScene.cpp">
+      <Filter>scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -221,9 +221,6 @@
     <ClInclude Include="src\r2_TemplateScene.h">
       <Filter>scene</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_TemplatePractice01Scene.h">
-      <Filter>scene</Filter>
-    </ClInclude>
     <ClInclude Include="src\template_practice_part_01_test.h">
       <Filter>test</Filter>
     </ClInclude>
@@ -247,6 +244,9 @@
     </ClInclude>
     <ClInclude Include="src\template_practice_part_02_test.h">
       <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_TemplatePracticeScene.h">
+      <Filter>scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

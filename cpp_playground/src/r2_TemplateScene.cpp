@@ -27,10 +27,10 @@ namespace r2
 
 			ret->AddChild(
 				'2'
-				, []()->const char* { return r2::TemplatePractice01Scene::GetTitle(); }
+				, []()->const char* { return r2::TemplatePracticeScene::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
-					director.Setup( r2::TemplatePractice01Scene::Create( director ) );
+					director.Setup( r2::TemplatePracticeScene::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

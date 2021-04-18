@@ -8,13 +8,13 @@ namespace r2
 
 	class Director;
 
-	class TemplatePractice01Scene
+	class TemplatePracticeScene
 	{
 	private:
-		TemplatePractice01Scene() = delete;
+		TemplatePracticeScene() = delete;
 
 	public:
-		static const char* GetTitle() { return "Template Practice 01"; }
+		static const char* GetTitle() { return "Template Practice"; }
 		static SceneUp Create( Director& director );
 	};
 }

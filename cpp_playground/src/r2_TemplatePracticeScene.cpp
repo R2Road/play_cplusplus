@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_TemplatePractice01Scene.h"
+#include "r2_TemplatePracticeScene.h"
 
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
@@ -10,7 +10,7 @@
 
 namespace r2
 {
-	SceneUp TemplatePractice01Scene::Create( Director& director )
+	SceneUp TemplatePracticeScene::Create( Director& director )
 	{
 		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
 
