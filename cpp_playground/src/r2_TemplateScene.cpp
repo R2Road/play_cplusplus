@@ -17,7 +17,7 @@ namespace r2
 		{
 			ret->AddChild(
 				'1'
-				, []()->const char* { return "Template Meta Programming"; }
+				, []()->const char* { return r2::TemplateMetaProgrammingScene::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
 					director.Setup( r2::TemplateMetaProgrammingScene::Create( director ) );

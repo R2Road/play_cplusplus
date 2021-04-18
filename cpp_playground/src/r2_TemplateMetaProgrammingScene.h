@@ -14,6 +14,7 @@ namespace r2
 		TemplateMetaProgrammingScene() = delete;
 
 	public:
+		static const char* GetTitle() { return "Template Meta Programming"; }
 		static SceneUp Create( Director& director );
 	};
 }
