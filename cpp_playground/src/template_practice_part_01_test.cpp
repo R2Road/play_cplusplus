@@ -1,8 +1,6 @@
 #include "pch.h"
 #include "template_practice_part_01_test.h"
 
-#include <cassert>
-
 #include "r2_eTestResult.h"
 
 namespace template_practice_part_01_test
@@ -33,7 +31,7 @@ namespace template_practice_part_01_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Template : Pracitce Part 01 #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed << r2::linefeed;
 
 			std::cout << r2::split;
 
