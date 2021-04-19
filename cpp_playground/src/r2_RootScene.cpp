@@ -45,7 +45,7 @@ namespace r2
 
 			ret->AddChild(
 				'3'
-				, []()->const char* { return "Pointer"; }
+				, []()->const char* { return r2::PointerTestScene::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
 					director.Setup( r2::PointerTestScene::Create( director ) );
