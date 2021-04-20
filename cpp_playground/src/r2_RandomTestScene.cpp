@@ -11,7 +11,7 @@ namespace r2
 {
 	SceneUp RandomTestScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, "Random" ) );
+		SceneUp ret( new ( std::nothrow ) Scene( director, RandomTestScene::GetTitle() ) );
 
 		{
 			ret->AddChild( '1', random_test::Basic::GetInstance() );

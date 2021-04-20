@@ -55,7 +55,7 @@ namespace r2
 
 			ret->AddChild(
 				'4'
-				, []()->const char* { return "Random"; }
+				, []()->const char* { return r2::RandomTestScene::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
 					director.Setup( r2::RandomTestScene::Create( director ) );

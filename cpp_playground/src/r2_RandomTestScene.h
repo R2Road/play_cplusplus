@@ -14,6 +14,7 @@ namespace r2
 		RandomTestScene() = delete;
 
 	public:
+		static const char* GetTitle() { return "Random"; }
 		static SceneUp Create( Director& director );
 	};
 }
