@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_RandomTestScene.h"
+#include "r2_RandomScene.h"
 
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
@@ -9,9 +9,9 @@
 
 namespace r2
 {
-	SceneUp RandomTestScene::Create( Director& director )
+	SceneUp RandomScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, RandomTestScene::GetTitle() ) );
+		SceneUp ret( new ( std::nothrow ) Scene( director, RandomScene::GetTitle() ) );
 
 		{
 			ret->AddChild( '1', random_test::Basic::GetInstance() );

@@ -57,9 +57,6 @@
     <ClCompile Include="src\r2_Director.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_RandomTestScene.cpp">
-      <Filter>scene</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2_RootScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
@@ -129,6 +126,9 @@
     <ClCompile Include="src\r2_TemplatePracticeScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_RandomScene.cpp">
+      <Filter>scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -166,9 +166,6 @@
     </ClInclude>
     <ClInclude Include="src\r2_Director.h">
       <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2_RandomTestScene.h">
-      <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_RootScene.h">
       <Filter>scene</Filter>
@@ -246,6 +243,9 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_TemplatePracticeScene.h">
+      <Filter>scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_RandomScene.h">
       <Filter>scene</Filter>
     </ClInclude>
   </ItemGroup>

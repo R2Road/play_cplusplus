@@ -5,7 +5,7 @@
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
 #include "r2_PointerTestScene.h"
-#include "r2_RandomTestScene.h"
+#include "r2_RandomScene.h"
 #include "r2_TemplateScene.h"
 #include "r2_VariadicTemplateScene.h"
 #include "r2_AlignScene.h"
@@ -55,10 +55,10 @@ namespace r2
 
 			ret->AddChild(
 				'4'
-				, []()->const char* { return r2::RandomTestScene::GetTitle(); }
+				, []()->const char* { return r2::RandomScene::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
-					director.Setup( r2::RandomTestScene::Create( director ) );
+					director.Setup( r2::RandomScene::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);
