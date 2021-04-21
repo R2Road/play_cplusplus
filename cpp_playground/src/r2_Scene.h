@@ -16,9 +16,10 @@ namespace r2
 	using SceneUp = std::unique_ptr<class Scene>;
 	class Scene
 	{
-	public:
+	private:
 		using TestContainerT = std::vector<std::tuple<char, std::function<const char*( )>, std::function<const r2::eTestResult()>>>;
 
+	public:
 		Scene( Director& director, const char* title_string );
 		virtual ~Scene() {}
 
