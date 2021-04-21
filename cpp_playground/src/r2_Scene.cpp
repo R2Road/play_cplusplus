@@ -28,17 +28,17 @@ namespace r2
 			//
 			// Key
 			//
-			if( 27 == std::get<0>( t ) ) // ESC
+			if( 27 == t.KeyCode ) // ESC
 			{
 				std::cout << "\nESC";
 			}
-			else if( 32 == std::get<0>( t ) ) // SPACE_BAR
+			else if( 32 == t.KeyCode ) // SPACE_BAR
 			{
 				std::cout << "\nSPACE";
 			}
 			else
 			{
-				std::cout << static_cast<char>( std::toupper( std::get<0>( t ) ) );
+				std::cout << static_cast<char>( std::toupper( t.KeyCode ) );
 			}
 
 			std::cout << " : ";
@@ -46,7 +46,7 @@ namespace r2
 			//
 			// Name
 			//
-			std::cout << std::get<1>( t )( ) << r2::linefeed;
+			std::cout << t.NameFunction() << r2::linefeed;
 		}
 
 		std::cout << r2::linefeed << "Select Menu";
@@ -56,9 +56,9 @@ namespace r2
 	{
 		for( const auto t : mTests )
 		{
-			if( key_code == std::get<0>( t ) )
+			if( key_code == t.KeyCode )
 			{
-				return std::get<2>( t )( );
+				return t.TestFunction();
 			}
 		}
 
@@ -67,10 +67,10 @@ namespace r2
 
 	void Scene::AddChild( const char key_code, const iNode& node )
 	{
-		mTests.push_back( std::make_tuple( key_code, node.GetTitleFunction(), node.GetDoFunction() ) );
+		mTests.emplace_back( key_code, node.GetTitleFunction(), node.GetDoFunction() );
 	}
 	void Scene::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestResult()> func_test )
 	{
-		mTests.push_back( std::make_tuple( key_code, func_title, func_test ) );
+		mTests.emplace_back( key_code, func_title, func_test );
 	}
 }

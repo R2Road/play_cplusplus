@@ -3,7 +3,6 @@
 #include <functional>
 #include <memory>
 #include <string_view>
-#include <tuple>
 #include <vector>
 
 namespace r2
@@ -17,7 +16,24 @@ namespace r2
 	class Scene
 	{
 	private:
-		using TestContainerT = std::vector<std::tuple<char, std::function<const char*( )>, std::function<const r2::eTestResult()>>>;
+		struct TestInfo
+		{
+			TestInfo(
+				const char key_code
+				, const std::function<const char*( )> name_function
+				, const std::function<const r2::eTestResult()> test_function
+			) :
+				KeyCode( key_code )
+				, NameFunction( name_function )
+				, TestFunction( test_function )
+			{}
+
+			char KeyCode;
+			std::function<const char*()> NameFunction;
+			std::function<const r2::eTestResult()> TestFunction;
+		};
+
+		using TestContainerT = std::vector<TestInfo>;
 
 	public:
 		Scene( Director& director, const char* title_string );
