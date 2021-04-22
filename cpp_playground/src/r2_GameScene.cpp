@@ -5,6 +5,8 @@
 #include "r2_eTestResult.h"
 #include "r2_RootScene.h"
 
+#include "r2_game_PathFinder.h"
+
 namespace r2
 {
 	SceneUp GameScene::Create( Director& director )
@@ -12,7 +14,7 @@ namespace r2
 		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
 
 		{
-			//ret->AddChild( '1', alignof_test::Basic::GetInstance() );
+			ret->AddChild( '1', r2_game::PathFinder::GetInstance() );
 			
 			ret->AddChild(
 				27

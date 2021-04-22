@@ -16,6 +16,9 @@
     <Filter Include="base">
       <UniqueIdentifier>{8ee2966b-cc60-4aee-b5fa-533d7ec8b9fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\shared_pointer_test.cpp">
@@ -128,6 +131,9 @@
     </ClCompile>
     <ClCompile Include="src\r2_RandomScene.cpp">
       <Filter>scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_game_PathFinder.cpp">
+      <Filter>game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -247,6 +253,9 @@
     </ClInclude>
     <ClInclude Include="src\r2_RandomScene.h">
       <Filter>scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_game_PathFinder.h">
+      <Filter>game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
