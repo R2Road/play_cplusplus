@@ -12,7 +12,7 @@ namespace r2_game
 	{
 		return []()->const char*
 		{
-			return "Path Finder";
+			return "Path Finder( In Progress )";
 		};
 	}
 	const r2::iNode::DoFunc PathFinder::GetDoFunction() const
