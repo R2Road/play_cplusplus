@@ -8,6 +8,8 @@
 
 namespace r2_game
 {
+	PathFinder::PathFinder() : mFrameBuffer( 10, 10 ) {}
+
 	const r2::iNode::TitleFunc PathFinder::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -17,9 +19,13 @@ namespace r2_game
 	}
 	const r2::iNode::DoFunc PathFinder::GetDoFunction() const
 	{
-		return []()->r2::eTestResult
+		const auto& fb = GetInstance().mFrameBuffer;
+
+		return [fb]()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+
+			fb.Flip();
 
 			return r2::eTestResult::RunTest;
 		};
