@@ -13,7 +13,7 @@
     <Filter Include="r2">
       <UniqueIdentifier>{411d5d4b-fad6-4a62-8f7a-1cdb2fa1ce82}</UniqueIdentifier>
     </Filter>
-    <Filter Include="game">
+    <Filter Include="base">
       <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -124,13 +124,13 @@
       <Filter>scene</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_game_PathFinder.cpp">
-      <Filter>game</Filter>
+      <Filter>base</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_Director.cpp">
-      <Filter>game</Filter>
+      <Filter>base</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_Scene.cpp">
-      <Filter>game</Filter>
+      <Filter>base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -240,19 +240,19 @@
       <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_game_PathFinder.h">
-      <Filter>game</Filter>
+      <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_Director.h">
-      <Filter>game</Filter>
+      <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_eTestResult.h">
-      <Filter>game</Filter>
+      <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_iNode.h">
-      <Filter>game</Filter>
+      <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_Scene.h">
-      <Filter>game</Filter>
+      <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
