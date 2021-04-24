@@ -13,9 +13,6 @@
     <Filter Include="r2">
       <UniqueIdentifier>{411d5d4b-fad6-4a62-8f7a-1cdb2fa1ce82}</UniqueIdentifier>
     </Filter>
-    <Filter Include="base">
-      <UniqueIdentifier>{8ee2966b-cc60-4aee-b5fa-533d7ec8b9fa}</UniqueIdentifier>
-    </Filter>
     <Filter Include="game">
       <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
     </Filter>
@@ -57,14 +54,8 @@
     <ClCompile Include="src\string_view_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_Director.cpp">
-      <Filter>base</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2_RootScene.cpp">
       <Filter>scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_Scene.cpp">
-      <Filter>base</Filter>
     </ClCompile>
     <ClCompile Include="src\enum_test.cpp">
       <Filter>test</Filter>
@@ -135,6 +126,12 @@
     <ClCompile Include="src\r2_game_PathFinder.cpp">
       <Filter>game</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_Director.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_Scene.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -170,23 +167,11 @@
     <ClInclude Include="src\string_view_test.h">
       <Filter>test</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_Director.h">
-      <Filter>base</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2_RootScene.h">
       <Filter>scene</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_iNode.h">
-      <Filter>base</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2_Singleton.h">
       <Filter>r2</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2_eTestResult.h">
-      <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2_Scene.h">
-      <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\enum_test.h">
       <Filter>test</Filter>
@@ -255,6 +240,18 @@
       <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_game_PathFinder.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_Director.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_eTestResult.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_iNode.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_Scene.h">
       <Filter>game</Filter>
     </ClInclude>
   </ItemGroup>
