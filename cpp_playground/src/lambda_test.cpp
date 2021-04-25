@@ -100,23 +100,13 @@ namespace lambda_test
 			{
 				std::cout << "\t + " << "Unique_Ptr Capture With Move 1" << r2::linefeed << r2::linefeed;
 
-				struct TestStruct
-				{
-					TestStruct()
-					{
-						std::cout << "\t\t" << "Constructor" << r2::linefeed;
-					}
-					~TestStruct()
-					{
-						std::cout << "\t\t" << "Destructor" << r2::linefeed;
-					}
-				};
+				struct TestStruct {};
 				std::cout << "\t\t" << "struct TestStruct;" << r2::linefeed << r2::linefeed;
 
 				auto test_struct_up = std::unique_ptr<TestStruct>( new TestStruct() );
 				std::cout << "\t\t" << "auto test_struct_up = std::unique_ptr<TestStruct>( new TestStruct() );" << r2::linefeed;
 				std::cout << "\t\t\t" << "test_struct_up Validation : " << ( nullptr != test_struct_up.get() ? "O" : "X" ) << r2::linefeed;
-				std::cout << r2::linefeed;
+				std::cout << r2::linefeed << r2::linefeed;
 
 				auto test_func = [copied_up = std::move( test_struct_up )]() {};
 				std::cout << "\t\t" << "auto test_func = [copied_up = std::move( test_struct_up )]() {}" << r2::linefeed;
@@ -129,13 +119,21 @@ namespace lambda_test
 			{
 				std::cout << "\t + " << "Unique_Ptr Capture With Move 2" << r2::linefeed << r2::linefeed;
 
+				struct TestStruct {};
+				std::cout << "\t\t" << "struct TestStruct;" << r2::linefeed << r2::linefeed;
+
+				auto test_struct_up = std::unique_ptr<TestStruct>( new TestStruct() );
+				std::cout << "\t\t" << "auto test_struct_up = std::unique_ptr<TestStruct>( new TestStruct() );" << r2::linefeed;
+				std::cout << "\t\t\t" << "test_struct_up Validation : " << ( nullptr != test_struct_up.get() ? "O" : "X" ) << r2::linefeed;
+				std::cout << r2::linefeed << r2::linefeed;
+
 				//
 				// Not Working
 				// - Not Same : std::function<void()> != auto
 				//
-				//const std::function<void()> test_func = [copied_up = std::move( test_struct_up )]() {};
+				//std::function<void()> test_func = [copied_up = std::move( test_struct_up )]() {};
 
-				std::cout << "\t\t" << "const std::function<void()> test_func = [copied_up = std::move( test_struct_up )]() {}" << r2::linefeed;
+				std::cout << "\t\t" << "std::function<void()> test_func = [copied_up = std::move( test_struct_up )]() {}" << r2::linefeed;
 				std::cout << "\t\t\t" << "- Not Working" << r2::linefeed;
 				std::cout << "\t\t\t" << "- Not Same : std::function<void()> != auto" << r2::linefeed;
 			}
