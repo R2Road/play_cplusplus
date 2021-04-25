@@ -138,6 +138,9 @@
     <ClCompile Include="src\r2_game_FrameBuffer.cpp">
       <Filter>game</Filter>
     </ClCompile>
+    <ClCompile Include="src\lambda_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -262,6 +265,9 @@
     </ClInclude>
     <ClInclude Include="src\r2_game_FrameBuffer.h">
       <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lambda_test.h">
+      <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

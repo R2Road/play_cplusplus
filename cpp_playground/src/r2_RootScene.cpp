@@ -23,6 +23,7 @@
 #include "enum_test.h"
 #include "new_test.h"
 #include "korean_test.h"
+#include "lambda_test.h"
 
 namespace r2
 {
@@ -103,6 +104,7 @@ namespace r2
 				}
 			);
 
+			ret->AddChild( 'q', lambda_test::Capture::GetInstance() );
 			ret->AddChild( 'w', optional_test::Basic::GetInstance() );
 			ret->AddChild( 'e', variant_test::Basic::GetInstance() );
 			ret->AddChild( 't', tuple_test::Basic::GetInstance() );
