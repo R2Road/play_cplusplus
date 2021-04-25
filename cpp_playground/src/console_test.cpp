@@ -273,7 +273,7 @@ namespace console_test
 		{
 			{
 				HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-				DWORD current_color = 0;
+				WORD current_color = 0;
 
 				bool process = true;
 				while( process )
