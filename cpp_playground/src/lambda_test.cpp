@@ -26,17 +26,47 @@ namespace lambda_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t + " << "REF Capture" << r2::linefeed << r2::linefeed;
+				std::cout << "\t + " << "REF Capture 1" << r2::linefeed << r2::linefeed;
+
+				int i = 0;
+				int& ref_i = i;
+				std::cout << "\t\t" << "int i = 0;" << r2::linefeed;
+				std::cout << "\t\t" << "int& ref_i = i;" << r2::linefeed << r2::linefeed;
+
+				auto test_func = [&ref_i]()
+				{
+					++ref_i;
+				};
+				std::cout << "\t\t" << "auto test_func = [&ref_i]()" << r2::linefeed;
+				std::cout << "\t\t" << "{" << r2::linefeed;
+				std::cout << "\t\t\t" << "++ref_i;" << r2::linefeed;
+				std::cout << "\t\t" << "};" << r2::linefeed;
+				std::cout << r2::linefeed << r2::linefeed;
+
+				std::cout << "\t\t" << "- Call Lambda" << r2::linefeed;
+				test_func();
+				std::cout << r2::linefeed;
+
+				std::cout << "\t\t" << "- Print : i" << r2::linefeed;
+				std::cout << "\t\t\t" << i << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "\t + " << "REF Capture 2" << r2::linefeed << r2::linefeed;
 
 				int i = 0;
 				std::cout << "\t\t" << "int i = 0;" << r2::linefeed << r2::linefeed;
 
-				auto test_func = [ &temp_int = i]()
+				auto test_func = [&ref_i = i]()
 				{
-					++temp_int;
+					++ref_i;
 				};
-				std::cout << "\t\t" << "auto test_func = [&temp_int = i]()" << r2::linefeed;
-				std::cout << "\t\t\t" << "++temp_int;" << r2::linefeed;
+				std::cout << "\t\t" << "auto test_func = [&ref_i = i]()" << r2::linefeed;
+				std::cout << "\t\t" << "{" << r2::linefeed;
+				std::cout << "\t\t\t" << "++ref_i;" << r2::linefeed;
+				std::cout << "\t\t" << "};" << r2::linefeed;
 				std::cout << r2::linefeed << r2::linefeed;
 
 				std::cout << "\t\t" << "- Call Lambda" << r2::linefeed;
