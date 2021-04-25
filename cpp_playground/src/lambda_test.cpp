@@ -48,6 +48,33 @@ namespace lambda_test
 
 			std::cout << r2::split;
 
+			{
+				std::cout << "\t + " << "Pointer Capture" << r2::linefeed << r2::linefeed;
+
+				int i = 0;
+				int* pI = &i;
+				std::cout << "\t\t" << "int i = 0;" << r2::linefeed;
+				std::cout << "\t\t" << "int* pI = &i;" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				const std::function<void()> test_func = [&temp_int = pI]()
+				{
+					++( *temp_int );
+				};
+				std::cout << "\t\t" << "const std::function<void()> test_func = [&temp_int = i]()" << r2::linefeed;
+				std::cout << "\t\t\t" << "++( *temp_int );" << r2::linefeed;
+				std::cout << r2::linefeed << r2::linefeed;
+
+				std::cout << "\t\t" << "- Call Lambda" << r2::linefeed;
+				test_func();
+				std::cout << r2::linefeed;
+
+				std::cout << "\t\t" << "- Print : i" << r2::linefeed;
+				std::cout << "\t\t\t" << i << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
