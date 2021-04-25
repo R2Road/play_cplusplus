@@ -50,6 +50,12 @@ namespace console_test
 
 
 
+	class TextColor1 : public r2::iNode, public r2::SingleTon<TextColor1>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
 	class TextColor2 : public r2::iNode, public r2::SingleTon<TextColor2>
 	{
 	public:
