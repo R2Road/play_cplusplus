@@ -99,9 +99,23 @@ namespace lambda_test
 				std::cout << r2::linefeed;
 
 				auto test_func = [copied_up = std::move( test_struct_up )]() {};
-				std::cout << "\t\t" << "const std::function<void()> test_func = [copied_up = std::move( test_struct_up )]() {}" << r2::linefeed;
+				std::cout << "\t\t" << "auto test_func = [copied_up = std::move( test_struct_up )]() {}" << r2::linefeed;
 				std::cout << "\t\t\t" << "test_struct_up Validation : " << ( nullptr != test_struct_up.get() ? "O" : "X" ) << r2::linefeed;
 				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				//
+				// Not Working
+				// - Not Same : std::function<void()> != auto
+				//
+				//const std::function<void()> test_func = [copied_up = std::move( test_struct_up )]() {};
+
+				std::cout << "\t\t" << "const std::function<void()> test_func = [copied_up = std::move( test_struct_up )]() {}" << r2::linefeed;
+				std::cout << "\t\t\t" << "- Not Working" << r2::linefeed;
+				std::cout << "\t\t\t" << "- Not Same : std::function<void()> != auto" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
