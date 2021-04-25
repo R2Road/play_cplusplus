@@ -260,6 +260,49 @@ namespace console_test
 
 
 
+	const r2::iNode::TitleFunc ColorTable::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Console : Color Table";
+		};
+	}
+	const r2::iNode::DoFunc ColorTable::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "\t" << "+ Color Table" << r2::linefeed;
+				std::cout << "\t\t" << "Black" << "\t\t\t" << "0" << r2::linefeed;
+				std::cout << "\t\t" << "Blue" << "\t\t\t" << "1" << r2::linefeed;
+				std::cout << "\t\t" << "Green" << "\t\t\t" << "2" << r2::linefeed;
+				std::cout << "\t\t" << "Aqua" << "\t\t\t" << "3" << r2::linefeed;
+				std::cout << "\t\t" << "Red" << "\t\t\t" << "4" << r2::linefeed;
+				std::cout << "\t\t" << "Purple" << "\t\t\t" << "5" << r2::linefeed;
+				std::cout << "\t\t" << "Yellow" << "\t\t\t" << "6" << r2::linefeed;
+				std::cout << "\t\t" << "White" << "\t\t\t" << "7" << r2::linefeed;
+				std::cout << "\t\t" << "Gray" << "\t\t\t" << "8" << r2::linefeed;
+				std::cout << "\t\t" << "Light Blue" << "\t\t" << "9" << r2::linefeed;
+				std::cout << "\t\t" << "Light Green" << "\t\t" << "A" << r2::linefeed;
+				std::cout << "\t\t" << "Light Aqua" << "\t\t" << "B" << r2::linefeed;
+				std::cout << "\t\t" << "Light Led" << "\t\t" << "C" << r2::linefeed;
+				std::cout << "\t\t" << "Light Purple" << "\t\t" << "D" << r2::linefeed;
+				std::cout << "\t\t" << "Light Yellow" << "\t\t" << "E" << r2::linefeed;
+				std::cout << "\t\t" << "Bright White" << "\t\t" << "F" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	const r2::iNode::TitleFunc TextColor1::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -276,25 +319,6 @@ namespace console_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Color Table" << r2::linefeed;
-				std::cout << "\t\t" << "Black"		<< "\t\t\t" << "0" << r2::linefeed;
-				std::cout << "\t\t" << "Blue"		<< "\t\t\t" << "1" << r2::linefeed;
-				std::cout << "\t\t" << "Green"		<< "\t\t\t" << "2" << r2::linefeed;
-				std::cout << "\t\t" << "Aqua"		<< "\t\t\t" << "3" << r2::linefeed;
-				std::cout << "\t\t" << "Red"		<< "\t\t\t" << "4" << r2::linefeed;
-				std::cout << "\t\t" << "Purple"		<< "\t\t\t" << "5" << r2::linefeed;
-				std::cout << "\t\t" << "Yellow"		<< "\t\t\t" << "6" << r2::linefeed;
-				std::cout << "\t\t" << "White"		<< "\t\t\t" << "7" << r2::linefeed;
-				std::cout << "\t\t" << "Gray"		<< "\t\t\t" << "8" << r2::linefeed;
-				std::cout << "\t\t" << "Light Blue" << "\t\t" << "9" << r2::linefeed;
-				std::cout << "\t\t" << "Light Green" << "\t\t" << "A" << r2::linefeed;
-				std::cout << "\t\t" << "Light Aqua" << "\t\t" << "B" << r2::linefeed;
-				std::cout << "\t\t" << "Light Led" << "\t\t" << "C" << r2::linefeed;
-				std::cout << "\t\t" << "Light Purple" << "\t\t" << "D" << r2::linefeed;
-				std::cout << "\t\t" << "Light Yellow" << "\t\t" << "E" << r2::linefeed;
-				std::cout << "\t\t" << "Bright White" << "\t\t" << "F" << r2::linefeed;
-				std::cout << r2::linefeed << r2::linefeed;
-
 				//
 				// 0 for background Color(Black)
 				// A for text color(Green)
@@ -303,7 +327,6 @@ namespace console_test
 				std::cout << "\t" << "system( \"Color 0A\" );" << r2::linefeed;
 				std::cout << "\t\t" << "- 0 : background Color( Black )" << r2::linefeed;
 				std::cout << "\t\t" << "- A : text color( Green )" << r2::linefeed;
-				std::cout << r2::linefeed;
 			}
 
 			std::cout << r2::split;

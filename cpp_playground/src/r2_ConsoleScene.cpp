@@ -19,8 +19,10 @@ namespace r2
 			ret->AddChild( '3', console_test::ChangeWindowPosition::GetInstance() );
 			ret->AddChild( '4', console_test::ChangeWindowName::GetInstance() );
 			ret->AddChild( '5', console_test::MoveCursor::GetInstance() );
-			ret->AddChild( '6', console_test::TextColor1::GetInstance() );
-			ret->AddChild( '7', console_test::TextColor2::GetInstance() );
+
+			ret->AddChild( 'q', console_test::ColorTable::GetInstance() );
+			ret->AddChild( 'w', console_test::TextColor1::GetInstance() );
+			ret->AddChild( 'e', console_test::TextColor2::GetInstance() );
 			
 			ret->AddChild(
 				27
