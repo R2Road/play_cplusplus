@@ -14,7 +14,7 @@ namespace r2_game
 		assert( 0u < width && 0u < height );
 	}
 
-	void FrameBuffer::Flip() const
+	void FrameBuffer::Draw() const
 	{
 		for( std::size_t y = 0u; mHeight > y; ++y )
 		{

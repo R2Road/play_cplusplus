@@ -10,7 +10,7 @@ namespace r2_game
 		FrameBuffer( const std::size_t width, const std::size_t height );
 
 	public:
-		void Flip() const;
+		void Draw() const;
 
 	private:
 		const std::size_t mWidth;

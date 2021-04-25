@@ -25,7 +25,7 @@ namespace r2_game
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
-			fb.Flip();
+			fb.Draw();
 
 			return r2::eTestResult::RunTest;
 		};
