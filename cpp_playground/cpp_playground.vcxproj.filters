@@ -141,6 +141,9 @@
     <ClCompile Include="src\lambda_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="src\print_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -267,6 +270,9 @@
       <Filter>game</Filter>
     </ClInclude>
     <ClInclude Include="src\lambda_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\print_test.h">
       <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>

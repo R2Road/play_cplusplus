@@ -24,6 +24,7 @@
 #include "new_test.h"
 #include "korean_test.h"
 #include "lambda_test.h"
+#include "print_test.h"
 
 namespace r2
 {
@@ -117,6 +118,7 @@ namespace r2
 			ret->AddChild( 'd', enum_test::Convert::GetInstance() );
 			ret->AddChild( 'f', new_test::Basic::GetInstance() );
 			ret->AddChild( 'g', new_test::PlacementNew::GetInstance() );
+			ret->AddChild( 'h', print_test::Basic::GetInstance() );
 
 			ret->AddChild( 'z', korean_test::Basic::GetInstance() );
 
