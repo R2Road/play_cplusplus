@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "r2_game_FrameBuffer.h"
 
+#include <cassert>
 #include <iostream>
 
 namespace r2_game
@@ -9,7 +10,9 @@ namespace r2_game
 		mWidth( width )
 		, mHeight( height )
 		, mChars( width * height, '@' )
-	{}
+	{
+		assert( 0u < width && 0u < height );
+	}
 
 	void FrameBuffer::Flip() const
 	{
