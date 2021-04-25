@@ -257,4 +257,64 @@ namespace console_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	const r2::iNode::TitleFunc TextColor2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Console : Text Color 2";
+		};
+	}
+	const r2::iNode::DoFunc TextColor2::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			{
+				HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+				DWORD current_color = 0;
+
+				bool process = true;
+				while( process )
+				{
+					system( "cls" );
+
+					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+					std::cout << "\t" << " + Key : A( Next Page )" << r2::linefeed;
+
+
+					for( int i = 1; i < 10 && 255 >= current_color; ++i )
+					{
+						// pick the colorattribute k you want
+						SetConsoleTextAttribute( stdHandle, current_color );
+						std::cout << current_color << " I want to be nice today!" << r2::linefeed;
+
+						++current_color;
+					}
+
+					if( current_color >= 255 )
+					{
+						process = false;
+					}
+					else
+					{
+						switch( _getch() )
+						{
+						case 'a': // next
+							break;
+
+						case 27: // ESC
+							process = false;
+							break;
+						}
+					}
+				}
+
+				SetConsoleTextAttribute( stdHandle, 7 );
+			}
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
