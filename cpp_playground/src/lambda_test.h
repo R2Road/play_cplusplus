@@ -11,4 +11,11 @@ namespace lambda_test
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 	};
+
+	class CaptureUniquePtr : public r2::iNode, public r2::SingleTon<CaptureUniquePtr>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
 }

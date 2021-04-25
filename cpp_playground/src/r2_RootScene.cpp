@@ -105,11 +105,12 @@ namespace r2
 			);
 
 			ret->AddChild( 'q', lambda_test::Capture::GetInstance() );
-			ret->AddChild( 'w', optional_test::Basic::GetInstance() );
-			ret->AddChild( 'e', variant_test::Basic::GetInstance() );
+			ret->AddChild( 'w', lambda_test::CaptureUniquePtr::GetInstance() );
+			ret->AddChild( 'e', optional_test::Basic::GetInstance() );
+			ret->AddChild( 'r', variant_test::Basic::GetInstance() );
 			ret->AddChild( 't', tuple_test::Basic::GetInstance() );
 			ret->AddChild( 'y', structured_binding_test::Basic::GetInstance() );			
-			ret->AddChild( 'o', assert_test::Basic::GetInstance() );
+			ret->AddChild( 'u', assert_test::Basic::GetInstance() );
 
 			ret->AddChild( 'a', stringview_test::Basic::GetInstance() );
 			ret->AddChild( 's', enum_test::Basic::GetInstance() );

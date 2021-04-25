@@ -17,7 +17,6 @@ namespace lambda_test
 			return "Lamabda : Basic";
 		};
 	}
-
 	const r2::iNode::DoFunc Capture::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
@@ -77,8 +76,29 @@ namespace lambda_test
 
 			std::cout << r2::split;
 
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	const r2::iNode::TitleFunc CaptureUniquePtr::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Lamabda : Capture Unique Ptr";
+		};
+	}
+	const r2::iNode::DoFunc CaptureUniquePtr::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
 			{
-				std::cout << "\t + " << "Unique_Ptr Capture With Move" << r2::linefeed << r2::linefeed;
+				std::cout << "\t + " << "Unique_Ptr Capture With Move 1" << r2::linefeed << r2::linefeed;
 
 				struct TestStruct
 				{
@@ -107,6 +127,8 @@ namespace lambda_test
 			std::cout << r2::split;
 
 			{
+				std::cout << "\t + " << "Unique_Ptr Capture With Move 2" << r2::linefeed << r2::linefeed;
+
 				//
 				// Not Working
 				// - Not Same : std::function<void()> != auto
