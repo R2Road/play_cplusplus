@@ -31,11 +31,11 @@ namespace lambda_test
 				int i = 0;
 				std::cout << "\t\t" << "int i = 0;" << r2::linefeed << r2::linefeed;
 
-				const std::function<void()> test_func = [ &temp_int = i]()
+				auto test_func = [ &temp_int = i]()
 				{
 					++temp_int;
 				};
-				std::cout << "\t\t" << "const std::function<void()> test_func = [&temp_int = i]()" << r2::linefeed;
+				std::cout << "\t\t" << "auto test_func = [&temp_int = i]()" << r2::linefeed;
 				std::cout << "\t\t\t" << "++temp_int;" << r2::linefeed;
 				std::cout << r2::linefeed << r2::linefeed;
 
@@ -58,11 +58,11 @@ namespace lambda_test
 				std::cout << "\t\t" << "int* pI = &i;" << r2::linefeed;
 				std::cout << r2::linefeed;
 
-				const std::function<void()> test_func = [&temp_int = pI]()
+				auto test_func = [&temp_int = pI]()
 				{
 					++( *temp_int );
 				};
-				std::cout << "\t\t" << "const std::function<void()> test_func = [&temp_int = i]()" << r2::linefeed;
+				std::cout << "\t\t" << "auto test_func = [&temp_int = i]()" << r2::linefeed;
 				std::cout << "\t\t\t" << "++( *temp_int );" << r2::linefeed;
 				std::cout << r2::linefeed << r2::linefeed;
 
