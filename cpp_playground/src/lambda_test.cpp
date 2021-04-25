@@ -83,17 +83,19 @@ namespace lambda_test
 				std::cout << "\t + " << "Pointer Capture" << r2::linefeed << r2::linefeed;
 
 				int i = 0;
-				int* pI = &i;
+				int* ptr_i = &i;
 				std::cout << "\t\t" << "int i = 0;" << r2::linefeed;
-				std::cout << "\t\t" << "int* pI = &i;" << r2::linefeed;
+				std::cout << "\t\t" << "int* ptr_i = &i;" << r2::linefeed;
 				std::cout << r2::linefeed;
 
-				auto test_func = [&temp_int = pI]()
+				auto test_func = [&temp_ptr_i = ptr_i]()
 				{
-					++( *temp_int );
+					++( *temp_ptr_i );
 				};
-				std::cout << "\t\t" << "auto test_func = [&temp_int = i]()" << r2::linefeed;
-				std::cout << "\t\t\t" << "++( *temp_int );" << r2::linefeed;
+				std::cout << "\t\t" << "auto test_func = [&temp_ptr_i = ptr_i]()" << r2::linefeed;
+				std::cout << "\t\t" << "{" << r2::linefeed;
+				std::cout << "\t\t\t" << "++( *temp_ptr_i );" << r2::linefeed;
+				std::cout << "\t\t" << "};" << r2::linefeed;
 				std::cout << r2::linefeed << r2::linefeed;
 
 				std::cout << "\t\t" << "- Call Lambda" << r2::linefeed;
