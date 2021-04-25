@@ -3,6 +3,7 @@
 
 #include <conio.h>
 #include <Windows.h>
+#include <wincon.h> // BACKGROUND_RED
 
 #include "r2_eTestResult.h"
 
@@ -351,48 +352,47 @@ namespace console_test
 	{
 		return []()->r2::eTestResult
 		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+
 			{
-				HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+				char background_color = 8;
+				char text_color = 6;
+
 				WORD current_color = 0;
+				current_color = background_color << 4;
+				current_color |= text_color;
 
-				bool process = true;
-				while( process )
-				{
-					system( "cls" );
+				std::cout << "\t" << " SetConsoleTextAttribute( stdHandle, current_color );" << r2::linefeed;
+				SetConsoleTextAttribute( stdHandle, current_color );
 
-					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-					std::cout << "\t" << " + Key : A( Next Page )" << r2::linefeed;
-
-
-					for( int i = 1; i < 10 && 255 >= current_color; ++i )
-					{
-						// pick the colorattribute k you want
-						SetConsoleTextAttribute( stdHandle, current_color );
-						std::cout << current_color << " I want to be nice today!" << r2::linefeed;
-
-						++current_color;
-					}
-
-					if( current_color >= 255 )
-					{
-						process = false;
-					}
-					else
-					{
-						switch( _getch() )
-						{
-						case 'a': // next
-							break;
-
-						case 27: // ESC
-							process = false;
-							break;
-						}
-					}
-				}
-
-				SetConsoleTextAttribute( stdHandle, 7 );
+				std::cout << "\t\t" << "- " << std::hex << (int)background_color << " : background Color" << r2::linefeed;
+				std::cout << "\t\t" << "- " << std::hex << (int)text_color << " : text Color" << r2::linefeed;
 			}
+
+			SetConsoleTextAttribute( stdHandle, 7 ); // bg - black( 0 ), text - white( 7 )
+
+			std::cout << r2::split;
+
+			{
+				const char background_color = BACKGROUND_RED;
+				const char text_color = FOREGROUND_GREEN;
+
+				const WORD current_color = background_color | text_color | COMMON_LVB_GRID_HORIZONTAL;
+
+				std::cout << "\t" << " SetConsoleTextAttribute( stdHandle, current_color );" << r2::linefeed;
+				SetConsoleTextAttribute( stdHandle, current_color );
+
+				std::cout << "\t\t" << "- " << std::hex << (int)background_color << " : background Color" << r2::linefeed;
+				std::cout << "\t\t" << "- " << std::hex << (int)text_color << " : text Color" << r2::linefeed;
+			}
+
+			SetConsoleTextAttribute( stdHandle, 7 ); // bg - black( 0 ), text - white( 7 )
+
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
