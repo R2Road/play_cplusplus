@@ -3,6 +3,8 @@
 
 #include <cassert>
 #include <functional>
+#include <memory>
+#include <utility>
 
 #include "r2_eTestResult.h"
 
@@ -71,6 +73,35 @@ namespace lambda_test
 
 				std::cout << "\t\t" << "- Print : i" << r2::linefeed;
 				std::cout << "\t\t\t" << i << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "\t + " << "Unique_Ptr Capture With Move" << r2::linefeed << r2::linefeed;
+
+				struct TestStruct
+				{
+					TestStruct()
+					{
+						std::cout << "\t\t" << "Constructor" << r2::linefeed;
+					}
+					~TestStruct()
+					{
+						std::cout << "\t\t" << "Destructor" << r2::linefeed;
+					}
+				};
+				std::cout << "\t\t" << "struct TestStruct;" << r2::linefeed << r2::linefeed;
+
+				auto test_struct_up = std::unique_ptr<TestStruct>( new TestStruct() );
+				std::cout << "\t\t" << "auto test_struct_up = std::unique_ptr<TestStruct>( new TestStruct() );" << r2::linefeed;
+				std::cout << "\t\t\t" << "test_struct_up Validation : " << ( nullptr != test_struct_up.get() ? "O" : "X" ) << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				auto test_func = [copied_up = std::move( test_struct_up )]() {};
+				std::cout << "\t\t" << "const std::function<void()> test_func = [copied_up = std::move( test_struct_up )]() {}" << r2::linefeed;
+				std::cout << "\t\t\t" << "test_struct_up Validation : " << ( nullptr != test_struct_up.get() ? "O" : "X" ) << r2::linefeed;
+				std::cout << r2::linefeed;
 			}
 
 			std::cout << r2::split;
