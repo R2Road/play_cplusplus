@@ -394,6 +394,26 @@ namespace console_test
 
 			std::cout << r2::split;
 
+			{
+				const char background_color = BACKGROUND_RED;
+				const char text_color = FOREGROUND_GREEN;
+
+				const WORD current_color = background_color | text_color | COMMON_LVB_GRID_HORIZONTAL;
+
+				std::cout << "\t";
+				SetConsoleTextAttribute( stdHandle, FOREGROUND_GREEN );
+				std::cout << "SetConsoleTextAttribute( ";
+				SetConsoleTextAttribute( stdHandle, FOREGROUND_RED );
+				std::cout << "stdHandle";
+				std::cout << ", current_color";
+				SetConsoleTextAttribute( stdHandle, FOREGROUND_GREEN );
+				std::cout << " );" << r2::linefeed;
+			}
+
+			SetConsoleTextAttribute( stdHandle, 7 ); // bg - black( 0 ), text - white( 7 )
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
