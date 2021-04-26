@@ -421,6 +421,70 @@ namespace console_test
 
 
 
+	const r2::iNode::TitleFunc AdjustColorTable::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Console : Adjust Color Table";
+		};
+	}
+	const r2::iNode::DoFunc AdjustColorTable::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+
+			{
+				CONSOLE_SCREEN_BUFFER_INFOEX info;
+				info.cbSize = sizeof( CONSOLE_SCREEN_BUFFER_INFOEX );
+				std::cout << "\t" << "CONSOLE_SCREEN_BUFFER_INFOEX info;" << r2::linefeed;
+				std::cout << "\t" << "info.cbSize = sizeof( CONSOLE_SCREEN_BUFFER_INFOEX );" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				GetConsoleScreenBufferInfoEx( stdHandle, &info );
+				std::cout << "\t" << "GetConsoleScreenBufferInfoEx( stdHandle, &info );" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				info.ColorTable[1] = RGB( 255, 100, 100 );
+				std::cout << "\t" << "info.ColorTable[1] = RGB( 255, 100, 100 );" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				SetConsoleScreenBufferInfoEx( stdHandle, &info );
+				std::cout << "\t" << "SetConsoleScreenBufferInfoEx( stdHandle, &info );" << r2::linefeed;
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				char background_color = 8;
+				char text_color = 1;
+
+				WORD current_color = 0;
+				current_color = background_color << 4;
+				current_color |= text_color;
+
+				std::cout << "\t" << "SetConsoleTextAttribute( stdHandle, current_color );" << r2::linefeed;
+				SetConsoleTextAttribute( stdHandle, current_color );
+
+				std::cout << "\t\t" << "- " << std::hex << (int)background_color << " : background Color" << r2::linefeed;
+				std::cout << "\t\t" << "- " << std::hex << (int)text_color << " : text Color" << r2::linefeed;
+			}
+
+			SetConsoleTextAttribute( stdHandle, 7 ); // bg - black( 0 ), text - white( 7 )
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	const r2::iNode::TitleFunc ColorTable2::GetTitleFunction() const
 	{
 		return []()->const char*
