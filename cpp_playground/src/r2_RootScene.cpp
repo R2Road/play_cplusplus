@@ -25,6 +25,7 @@
 #include "korean_test.h"
 #include "lambda_test.h"
 #include "print_test.h"
+#include "char_test.h"
 
 namespace r2
 {
@@ -119,6 +120,7 @@ namespace r2
 			ret->AddChild( 'f', new_test::Basic::GetInstance() );
 			ret->AddChild( 'g', new_test::PlacementNew::GetInstance() );
 			ret->AddChild( 'h', print_test::Basic::GetInstance() );
+			ret->AddChild( 'j', char_test::Basic::GetInstance() );
 
 			ret->AddChild( 'z', korean_test::Basic::GetInstance() );
 

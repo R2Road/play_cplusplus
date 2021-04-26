@@ -144,6 +144,9 @@
     <ClCompile Include="src\print_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="src\char_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -273,6 +276,9 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\print_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\char_test.h">
       <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
