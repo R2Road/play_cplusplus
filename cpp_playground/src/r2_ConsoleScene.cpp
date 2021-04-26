@@ -20,10 +20,14 @@ namespace r2
 			ret->AddChild( '4', console_test::ChangeWindowName::GetInstance() );
 			ret->AddChild( '5', console_test::MoveCursor::GetInstance() );
 
+			ret->AddSplit();
+
 			ret->AddChild( 'q', console_test::ColorTable::GetInstance() );
 			ret->AddChild( 'w', console_test::TextColor1::GetInstance() );
 			ret->AddChild( 'e', console_test::TextColor2::GetInstance() );
 			ret->AddChild( 'r', console_test::AdjustColorTable::GetInstance() );
+
+			ret->AddSplit();
 
 			ret->AddChild( 't', console_test::ColorTable2::GetInstance() );
 			ret->AddChild( 'y', console_test::TextColor3::GetInstance() );

@@ -36,6 +36,11 @@ namespace r2
 			{
 				std::cout << "\nSPACE";
 			}
+			else if( 64 == t.KeyCode ) // @
+			{
+				std::cout << r2::linefeed;
+				continue;
+			}
 			else
 			{
 				std::cout << static_cast<char>( std::toupper( t.KeyCode ) );
@@ -72,5 +77,9 @@ namespace r2
 	void Scene::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestResult()> func_test )
 	{
 		mTests.emplace_back( key_code, func_title, func_test );
+	}
+	void Scene::AddSplit()
+	{
+		mTests.emplace_back( 64, []()->const char* { return ""; }, []()->const r2::eTestResult { return r2::eTestResult::RunTest; } );
 	}
 }

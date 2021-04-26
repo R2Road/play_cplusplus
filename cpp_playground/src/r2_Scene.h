@@ -46,6 +46,7 @@ namespace r2
 
 		void AddChild( const char key_code, const iNode& node );
 		void AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestResult()> func_test );
+		void AddSplit();
 
 	protected:
 		Director& mDirector;
