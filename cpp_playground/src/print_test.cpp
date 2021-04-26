@@ -25,6 +25,17 @@ namespace print_test
 			{
 				std::cout << "\t" << "+ Show Number : Use std::cout" << r2::linefeed << r2::linefeed;
 
+				std::cout << "\t" << "printf( \"1111111\" \"2222222\" \"3333333\" \"   %d\", 456789 );" << r2::linefeed;
+				std::cout << "\t\t";
+				printf( "1111111" "2222222" "3333333" "   %d", 456789 );
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "\t" << "+ Show Number : Use std::cout" << r2::linefeed << r2::linefeed;
+
 				int i = 0xde81;
 
 				std::cout << "\t" << "int i = 0xde81;" << r2::linefeed;
