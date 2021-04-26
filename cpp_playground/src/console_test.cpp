@@ -564,6 +564,21 @@ namespace console_test
 
 			std::cout << r2::split;
 
+			{
+				const int background_color = 47;
+				const int foreground_color = 31;
+
+				for( int i = 0; 9 >= i; ++i )
+				{
+					std::cout << "\t\t";
+					printf( "\033[%d;%d;%dm" "Text" "\033[0m", i, background_color, foreground_color );
+					printf( ": 1st - %d, 2nd - %d, 3rd - %d ", i, background_color, foreground_color );
+					std::cout << r2::linefeed << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
