@@ -475,31 +475,61 @@ namespace console_test
 					printf( "\x1B[%dm" "Color" "\033[0m : %d", i, i );
 					std::cout << r2::linefeed;
 				}
+			}
 
-				//printf( "\n" );
-				//printf( "\x1B[%dmTexting\033[0m\t\t", 31 );
-				//printf( "\x1B[32mTexting\033[0m\t\t" );
-				//printf( "\x1B[33mTexting\033[0m\t\t" );
-				//printf( "\x1B[34mTexting\033[0m\t\t" );
-				//printf( "\x1B[35mTexting\033[0m\n" );
+			std::cout << r2::split;
 
-				//printf( "\x1B[36mTexting\033[0m\t\t" );
-				//printf( "\x1B[36mTexting\033[0m\t\t" );
-				//printf( "\x1B[36mTexting\033[0m\t\t" );
-				//printf( "\x1B[37mTexting\033[0m\t\t" );
-				//printf( "\x1B[93mTexting\033[0m\n" );
+			return r2::eTestResult::RunTest;
+		};
+	}
 
-				//printf( "\033[3;42;30mTexting\033[0m\t\t" );
-				//printf( "\033[3;43;30mTexting\033[0m\t\t" );
-				//printf( "\033[3;44;30mTexting\033[0m\t\t" );
-				//printf( "\033[3;104;30mTexting\033[0m\t\t" );
-				//printf( "\033[3;100;30mTexting\033[0m\n" );
 
-				//printf( "\033[3;47;35mTexting\033[0m\t\t" );
-				//printf( "\033[2;47;35mTexting\033[0m\t\t" );
-				//printf( "\033[1;47;35mTexting\033[0m\t\t" );
-				//printf( "\t\t" );
-				//printf( "\n" );
+
+	const r2::iNode::TitleFunc TextColor4::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Console : Text Color 4";
+		};
+	}
+	const r2::iNode::DoFunc TextColor4::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				//
+				// Link : https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
+				// > \033 : reset the console
+				//
+
+				printf( "\n" );
+				printf( "\x1B[%dmTexting\033[0m\t\t", 31 );
+				printf( "\x1B[32mTexting\033[0m\t\t" );
+				printf( "\x1B[33mTexting\033[0m\t\t" );
+				printf( "\x1B[34mTexting\033[0m\t\t" );
+				printf( "\x1B[35mTexting\033[0m\n" );
+
+				printf( "\x1B[36mTexting\033[0m\t\t" );
+				printf( "\x1B[36mTexting\033[0m\t\t" );
+				printf( "\x1B[36mTexting\033[0m\t\t" );
+				printf( "\x1B[37mTexting\033[0m\t\t" );
+				printf( "\x1B[93mTexting\033[0m\n" );
+
+				printf( "\033[3;42;30mTexting\033[0m\t\t" );
+				printf( "\033[3;43;30mTexting\033[0m\t\t" );
+				printf( "\033[3;44;30mTexting\033[0m\t\t" );
+				printf( "\033[3;104;30mTexting\033[0m\t\t" );
+				printf( "\033[3;100;30mTexting\033[0m\n" );
+
+				printf( "\033[3;47;35mTexting\033[0m\t\t" );
+				printf( "\033[2;47;35mTexting\033[0m\t\t" );
+				printf( "\033[1;47;35mTexting\033[0m\t\t" );
+				printf( "\t\t" );
+				printf( "\n" );
 			}
 
 			std::cout << r2::split;
