@@ -582,41 +582,4 @@ namespace console_test
 			return r2::eTestResult::RunTest;
 		};
 	}
-
-
-
-	const r2::iNode::TitleFunc TextColor4::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Console : Text Color 4";
-		};
-	}
-	const r2::iNode::DoFunc TextColor4::GetDoFunction() const
-	{
-		return []()->r2::eTestResult
-		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-
-			std::cout << r2::split;
-
-			//
-			// Link : https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
-			// > \033 : reset the console
-			//
-
-			{
-				for( int i = 0; 9 >= i; ++i )
-				{
-					std::cout << "\t\t";
-					printf( "\033[%d;47;31m" "Text" "\033[0m" " : %d", i, i );
-					std::cout << r2::linefeed << r2::linefeed;
-				}
-			}
-
-			std::cout << r2::split;
-
-			return r2::eTestResult::RunTest;
-		};
-	}
 }

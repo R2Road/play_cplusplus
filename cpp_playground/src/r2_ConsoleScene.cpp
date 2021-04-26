@@ -25,7 +25,6 @@ namespace r2
 			ret->AddChild( 'e', console_test::TextColor2::GetInstance() );
 			ret->AddChild( 'r', console_test::ColorTable2::GetInstance() );
 			ret->AddChild( 't', console_test::TextColor3::GetInstance() );
-			ret->AddChild( 'y', console_test::TextColor4::GetInstance() );
 			
 			ret->AddChild(
 				27
