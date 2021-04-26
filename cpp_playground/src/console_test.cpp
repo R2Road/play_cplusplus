@@ -463,6 +463,46 @@ namespace console_test
 
 			std::cout << r2::split;
 
+			{
+				for( int i = 30; 37 >= i; ++i )
+				{
+					std::cout << "\t\t";
+					printf( "\x1B[%dm" "Foreground Color" "\033[0m : %d", i, i );
+					std::cout << r2::linefeed;
+				}
+
+				std::cout << r2::linefeed;
+
+				for( int i = 90; 97 >= i; ++i )
+				{
+					std::cout << "\t\t";
+					printf( "\x1B[%dm" "Foreground Color" "\033[0m : %d", i, i );
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::linefeed;
+
+			{
+				for( int i = 40; 47 >= i; ++i )
+				{
+					std::cout << "\t\t";
+					printf( "\x1B[%dm" "Background Color" "\033[0m : %d", i, i );
+					std::cout << r2::linefeed;
+				}
+
+				std::cout << r2::linefeed;
+
+				for( int i = 100; 107 >= i; ++i )
+				{
+					std::cout << "\t\t";
+					printf( "\x1B[%dm" "Background Color" "\033[0m : %d", i, i );
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
@@ -488,46 +528,6 @@ namespace console_test
 			// Link : https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
 			// > \033 : reset the console
 			//
-
-			{
-				for( int i = 30; 37 >= i; ++i )
-				{
-					std::cout << "\t\t";
-					printf( "\x1B[%dm" "Foreground Color" "\033[0m : %d", i, i );
-					std::cout << r2::linefeed;
-				}
-
-				std::cout << r2::linefeed;
-
-				for( int i = 90; 97 >= i; ++i )
-				{
-					std::cout << "\t\t";
-					printf( "\x1B[%dm" "Foreground Color" "\033[0m : %d", i, i );
-					std::cout << r2::linefeed;
-				}
-			}
-
-			std::cout << r2::split;
-
-			{
-				for( int i = 40; 47 >= i; ++i )
-				{
-					std::cout << "\t\t";
-					printf( "\x1B[%dm" "Background Color" "\033[0m : %d", i, i );
-					std::cout << r2::linefeed;
-				}
-
-				std::cout << r2::linefeed;
-
-				for( int i = 100; 107 >= i; ++i )
-				{
-					std::cout << "\t\t";
-					printf( "\x1B[%dm" "Background Color" "\033[0m : %d", i, i );
-					std::cout << r2::linefeed;
-				}
-			}
-
-			std::cout << r2::split;
 
 			{
 				const int background_color = 31;
