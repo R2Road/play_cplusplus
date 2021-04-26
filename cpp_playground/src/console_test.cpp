@@ -2,6 +2,7 @@
 #include "console_test.h"
 
 #include <conio.h>
+#include <stdio.h>
 #include <Windows.h>
 #include <wincon.h> // BACKGROUND_RED
 
@@ -411,6 +412,95 @@ namespace console_test
 			}
 
 			SetConsoleTextAttribute( stdHandle, 7 ); // bg - black( 0 ), text - white( 7 )
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	const r2::iNode::TitleFunc TextColor3::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Console : Text Color 3";
+		};
+	}
+	const r2::iNode::DoFunc TextColor3::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				//
+				// Link : https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
+				// > \033 : reset the console
+				//
+
+				for( int i = 30; 37 >= i; ++i )
+				{
+					std::cout << "\t\t";
+					printf( "\x1B[%dm" "Color" "\033[0m : %d", i, i );
+					std::cout << r2::linefeed;
+				}
+
+				std::cout << r2::linefeed;
+
+				for( int i = 40; 47 >= i; ++i )
+				{
+					std::cout << "\t\t";
+					printf( "\x1B[%dm" "Color" "\033[0m : %d", i, i );
+					std::cout << r2::linefeed;
+				}
+
+				std::cout << r2::linefeed;
+
+				for( int i = 90; 97 >= i; ++i )
+				{
+					std::cout << "\t\t";
+					printf( "\x1B[%dm" "Color" "\033[0m : %d", i, i );
+					std::cout << r2::linefeed;
+				}
+
+				std::cout << r2::linefeed;
+
+				for( int i = 100; 107 >= i; ++i )
+				{
+					std::cout << "\t\t";
+					printf( "\x1B[%dm" "Color" "\033[0m : %d", i, i );
+					std::cout << r2::linefeed;
+				}
+
+				//printf( "\n" );
+				//printf( "\x1B[%dmTexting\033[0m\t\t", 31 );
+				//printf( "\x1B[32mTexting\033[0m\t\t" );
+				//printf( "\x1B[33mTexting\033[0m\t\t" );
+				//printf( "\x1B[34mTexting\033[0m\t\t" );
+				//printf( "\x1B[35mTexting\033[0m\n" );
+
+				//printf( "\x1B[36mTexting\033[0m\t\t" );
+				//printf( "\x1B[36mTexting\033[0m\t\t" );
+				//printf( "\x1B[36mTexting\033[0m\t\t" );
+				//printf( "\x1B[37mTexting\033[0m\t\t" );
+				//printf( "\x1B[93mTexting\033[0m\n" );
+
+				//printf( "\033[3;42;30mTexting\033[0m\t\t" );
+				//printf( "\033[3;43;30mTexting\033[0m\t\t" );
+				//printf( "\033[3;44;30mTexting\033[0m\t\t" );
+				//printf( "\033[3;104;30mTexting\033[0m\t\t" );
+				//printf( "\033[3;100;30mTexting\033[0m\n" );
+
+				//printf( "\033[3;47;35mTexting\033[0m\t\t" );
+				//printf( "\033[2;47;35mTexting\033[0m\t\t" );
+				//printf( "\033[1;47;35mTexting\033[0m\t\t" );
+				//printf( "\t\t" );
+				//printf( "\n" );
+			}
 
 			std::cout << r2::split;
 

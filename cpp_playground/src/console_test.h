@@ -68,4 +68,10 @@ namespace console_test
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 	};
+	class TextColor3 : public r2::iNode, public r2::SingleTon<TextColor3>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
 }
