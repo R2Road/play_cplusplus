@@ -31,6 +31,10 @@ namespace r2
 
 			ret->AddChild( 't', console_test::ColorTable2::GetInstance() );
 			ret->AddChild( 'y', console_test::TextColor3::GetInstance() );
+
+			ret->AddSplit();
+
+			ret->AddChild( 'a', console_test::Pixel::GetInstance() );
 			
 			ret->AddChild(
 				27
