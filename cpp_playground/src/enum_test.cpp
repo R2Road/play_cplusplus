@@ -19,7 +19,7 @@ namespace enum_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Enum #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			{
 				std::cout << "\t + " << "enum eTestOldEnum {};" << r2::linefeed << r2::linefeed;
@@ -80,7 +80,7 @@ namespace enum_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Convert #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			std::cout << "\t" << "template<typename EnumT>" << r2::linefeed;
 			std::cout << "\t" << "constexpr auto Enum2Value( EnumT e )" << r2::linefeed;

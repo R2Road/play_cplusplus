@@ -38,7 +38,7 @@ namespace memory_pool_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Step 01 #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			std::cout << r2::split;
 

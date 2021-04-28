@@ -16,7 +16,7 @@ namespace align_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Align 0 #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -134,7 +134,7 @@ namespace align_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Align 1 #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -251,7 +251,7 @@ namespace align_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Align 2 #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			std::cout << r2::split;
 

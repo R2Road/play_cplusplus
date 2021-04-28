@@ -16,7 +16,7 @@ namespace align_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Align As #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed << r2::linefeed;
 
 			{
 				std::cout << "\t" << "struct alignas( 32 ) EmptyStruct {};" << r2::linefeed << r2::linefeed;

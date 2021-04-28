@@ -21,7 +21,7 @@ namespace alignof_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Basic #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			{
 				std::cout << "\t" << "+ align of char : " << alignof( char ) << r2::linefeed;
@@ -132,7 +132,7 @@ namespace alignof_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Mixed Struct #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			struct EmptyStruct {};
 
