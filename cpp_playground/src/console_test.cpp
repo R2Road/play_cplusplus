@@ -26,28 +26,6 @@ namespace console_test
 			std::cout << r2::split;
 
 			{
-				CONSOLE_SCREEN_BUFFER_INFO csbi;
-				GetConsoleScreenBufferInfo( GetStdHandle( STD_OUTPUT_HANDLE ), &csbi );
-				std::cout << "\t" << "CONSOLE_SCREEN_BUFFER_INFO csbi;" << r2::linefeed;
-				std::cout << "\t" << "GetConsoleScreenBufferInfo( GetStdHandle( STD_OUTPUT_HANDLE ), &csbi );" << r2::linefeed;
-
-				std::cout << r2::linefeed;
-
-				const auto width = static_cast<int>( csbi.srWindow.Right - csbi.srWindow.Left + 1 );
-				const auto height = static_cast<int>( csbi.srWindow.Bottom - csbi.srWindow.Top + 1 );
-				std::cout << "\t\t - Width : " << width << r2::linefeed;
-				std::cout << "\t\t - Height : " << width << r2::linefeed;
-
-				std::cout << r2::linefeed;
-				std::cout << "\t\t - Left : " << csbi.srWindow.Left << r2::linefeed;
-				std::cout << "\t\t - Top : " << csbi.srWindow.Top << r2::linefeed;
-				std::cout << "\t\t - Right : " << csbi.srWindow.Right << r2::linefeed;
-				std::cout << "\t\t - Bottom : " << csbi.srWindow.Bottom << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
-			{
 				HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
 				CONSOLE_SCREEN_BUFFER_INFO csbi;
 				GetConsoleScreenBufferInfo( hStdout, &csbi );
