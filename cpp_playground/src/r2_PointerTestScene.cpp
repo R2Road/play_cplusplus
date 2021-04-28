@@ -17,6 +17,10 @@ namespace r2
 			ret->AddChild( '1', pointer_test::Basic::GetInstance() );
 			ret->AddChild( '2', pointer_test::ConstPointer::GetInstance() );
 
+
+			ret->AddSplit();
+
+
 			ret->AddChild(
 				27
 				, []()->const char* { return "Return To Root"; }

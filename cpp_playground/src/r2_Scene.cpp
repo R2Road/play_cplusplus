@@ -30,11 +30,11 @@ namespace r2
 			//
 			if( 27 == t.KeyCode ) // ESC
 			{
-				std::cout << "\nESC";
+				std::cout << "ESC";
 			}
 			else if( 32 == t.KeyCode ) // SPACE_BAR
 			{
-				std::cout << "\nSPACE";
+				std::cout << "SPACE";
 			}
 			else if( 64 == t.KeyCode ) // @
 			{

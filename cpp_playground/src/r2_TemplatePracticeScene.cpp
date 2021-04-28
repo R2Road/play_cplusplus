@@ -17,7 +17,15 @@ namespace r2
 		{
 			ret->AddChild( '1', template_practice_part_01_test::Practice01::GetInstance() );
 
+
+			ret->AddSplit();
+
+
 			ret->AddChild( 'q', template_practice_part_02_test::GreatestCommonDivisor::GetInstance() );
+
+
+			ret->AddSplit();
+
 
 			ret->AddChild(
 				27

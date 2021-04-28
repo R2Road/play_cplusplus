@@ -15,7 +15,11 @@ namespace r2
 
 		{
 			ret->AddChild( '1', r2_game::PathFinder::GetInstance() );
-			
+
+
+			ret->AddSplit();
+
+
 			ret->AddChild(
 				27
 				, []()->const char* { return "Return To Root"; }

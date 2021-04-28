@@ -17,6 +17,10 @@ namespace r2
 			ret->AddChild( '1', random_test::Basic::GetInstance() );
 			ret->AddChild( '2', random_test::StatusSaveAndLoad::GetInstance() );
 
+
+			ret->AddSplit();
+
+
 			ret->AddChild(
 				27
 				, []()->const char* { return "Return To Root"; }

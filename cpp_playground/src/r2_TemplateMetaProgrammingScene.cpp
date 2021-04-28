@@ -21,6 +21,10 @@ namespace r2
 			ret->AddChild( '5', template_meta_programming_test::Integer2String_II::GetInstance() );
 			ret->AddChild( '6', template_meta_programming_test::MultiTypePackage::GetInstance() );
 
+
+			ret->AddSplit();
+
+
 			ret->AddChild(
 				27
 				, []()->const char* { return "Return To Root"; }

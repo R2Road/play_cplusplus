@@ -106,6 +106,8 @@ namespace r2
 				}
 			);
 
+			ret->AddSplit();
+
 			ret->AddChild( 'q', lambda_test::Capture::GetInstance() );
 			ret->AddChild( 'w', lambda_test::CaptureUniquePtr::GetInstance() );
 			ret->AddChild( 'e', optional_test::Basic::GetInstance() );
@@ -113,6 +115,8 @@ namespace r2
 			ret->AddChild( 't', tuple_test::Basic::GetInstance() );
 			ret->AddChild( 'y', structured_binding_test::Basic::GetInstance() );			
 			ret->AddChild( 'u', assert_test::Basic::GetInstance() );
+
+			ret->AddSplit();
 
 			ret->AddChild( 'a', stringview_test::Basic::GetInstance() );
 			ret->AddChild( 's', enum_test::Basic::GetInstance() );
@@ -122,7 +126,11 @@ namespace r2
 			ret->AddChild( 'h', print_test::Basic::GetInstance() );
 			ret->AddChild( 'j', char_test::Basic::GetInstance() );
 
+			ret->AddSplit();
+
 			ret->AddChild( 'z', korean_test::Basic::GetInstance() );
+
+			ret->AddSplit();
 
 			ret->AddChild(
 				32
@@ -133,6 +141,8 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
+
+			ret->AddSplit();
 
 			ret->AddChild(
 				27

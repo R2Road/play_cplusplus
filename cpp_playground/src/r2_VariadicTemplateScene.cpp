@@ -19,6 +19,10 @@ namespace r2
 			ret->AddChild( '3', variadic_template_test::SubtractValues::GetInstance() );
 			ret->AddChild( '4', variadic_template_test::SizeOfArgs::GetInstance() );
 
+
+			ret->AddSplit();
+
+
 			ret->AddChild(
 				27
 				, []()->const char* { return "Return To Root"; }

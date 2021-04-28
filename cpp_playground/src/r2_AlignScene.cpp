@@ -19,11 +19,23 @@ namespace r2
 			ret->AddChild( '1', alignof_test::Basic::GetInstance() );
 			ret->AddChild( '2', alignof_test::MixedStruct::GetInstance() );
 
+
+			ret->AddSplit();
+
+
 			ret->AddChild( 'q', align_test::AlignAs::GetInstance() );
+
+
+			ret->AddSplit();
+
 
 			ret->AddChild( 'z', align_test::Align_0::GetInstance() );
 			ret->AddChild( 'x', align_test::Align_1::GetInstance() );
 			ret->AddChild( 'c', align_test::Align_2::GetInstance() );
+
+
+			ret->AddSplit();
+
 
 			ret->AddChild(
 				27
