@@ -10,7 +10,7 @@
 #include "r2_VariadicTemplateScene.h"
 #include "r2_AlignScene.h"
 #include "r2_MemoryScene.h"
-#include "r2_GameScene.h"
+#include "r2_RendererScene.h"
 
 #include "filesystem_test.h"
 #include "optional_test.h"
@@ -134,10 +134,10 @@ namespace r2
 
 			ret->AddChild(
 				32
-				, []()->const char* { return r2::GameScene::GetTitle(); }
+				, []()->const char* { return r2::RendererScene::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
-					director.Setup( r2::GameScene::Create( director ) );
+					director.Setup( r2::RendererScene::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

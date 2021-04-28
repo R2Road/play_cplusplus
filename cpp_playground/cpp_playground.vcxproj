@@ -38,7 +38,7 @@
     <ClCompile Include="src\r2_AlignScene.cpp" />
     <ClCompile Include="src\r2_ConsoleScene.cpp" />
     <ClCompile Include="src\r2_Director.cpp" />
-    <ClCompile Include="src\r2_GameScene.cpp" />
+    <ClCompile Include="src\r2_RendererScene.cpp" />
     <ClCompile Include="src\r2_game_FrameBuffer.cpp" />
     <ClCompile Include="src\r2_game_PathFinder.cpp" />
     <ClCompile Include="src\r2_game_test_TestFrameBuffer.cpp" />
@@ -83,7 +83,7 @@
     <ClInclude Include="src\r2_ConsoleScene.h" />
     <ClInclude Include="src\r2_Director.h" />
     <ClInclude Include="src\r2_eTestResult.h" />
-    <ClInclude Include="src\r2_GameScene.h" />
+    <ClInclude Include="src\r2_RendererScene.h" />
     <ClInclude Include="src\r2_game_FrameBuffer.h" />
     <ClInclude Include="src\r2_game_PathFinder.h" />
     <ClInclude Include="src\r2_game_test_TestFrameBuffer.h" />

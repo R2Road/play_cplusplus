@@ -114,9 +114,6 @@
     <ClCompile Include="src\console_test.cpp">
       <Filter>cpp_test</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_GameScene.cpp">
-      <Filter>scene</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2_ConsoleScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
@@ -152,6 +149,9 @@
     </ClCompile>
     <ClCompile Include="src\r2_game_test_TestFrameBuffer.cpp">
       <Filter>game_test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_RendererScene.cpp">
+      <Filter>scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -245,9 +245,6 @@
     <ClInclude Include="src\console_test.h">
       <Filter>cpp_test</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_GameScene.h">
-      <Filter>scene</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2_ConsoleScene.h">
       <Filter>scene</Filter>
     </ClInclude>
@@ -289,6 +286,9 @@
     </ClInclude>
     <ClInclude Include="src\r2_game_test_TestFrameBuffer.h">
       <Filter>game_test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_RendererScene.h">
+      <Filter>scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

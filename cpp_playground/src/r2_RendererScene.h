@@ -8,13 +8,13 @@ namespace r2
 
 	class Director;
 
-	class GameScene
+	class RendererScene
 	{
 	private:
-		GameScene() = delete;
+		RendererScene() = delete;
 
 	public:
-		static const char* GetTitle() { return "Game"; }
+		static const char* GetTitle() { return "Renderer"; }
 		static SceneUp Create( Director& director );
 	};
 }

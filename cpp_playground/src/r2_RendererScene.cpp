@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_GameScene.h"
+#include "r2_RendererScene.h"
 
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
@@ -10,7 +10,7 @@
 
 namespace r2
 {
-	SceneUp GameScene::Create( Director& director )
+	SceneUp RendererScene::Create( Director& director )
 	{
 		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
 
