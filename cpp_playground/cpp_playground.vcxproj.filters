@@ -7,9 +7,6 @@
     <Filter Include="scene">
       <UniqueIdentifier>{b9566801-30ec-4d55-bd6d-040901fc06e3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="r2">
-      <UniqueIdentifier>{411d5d4b-fad6-4a62-8f7a-1cdb2fa1ce82}</UniqueIdentifier>
-    </Filter>
     <Filter Include="base">
       <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
     </Filter>
@@ -188,9 +185,6 @@
     <ClInclude Include="src\r2_RootScene.h">
       <Filter>scene</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_Singleton.h">
-      <Filter>r2</Filter>
-    </ClInclude>
     <ClInclude Include="src\enum_test.h">
       <Filter>test</Filter>
     </ClInclude>
@@ -286,6 +280,9 @@
     </ClInclude>
     <ClInclude Include="src\r2_FrameBuffer.h">
       <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_Singleton.h">
+      <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
