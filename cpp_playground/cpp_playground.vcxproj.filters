@@ -19,6 +19,9 @@
     <Filter Include="cpp_test">
       <UniqueIdentifier>{77a45f2c-1f22-46b3-9c35-5ee34c38a7b9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="game_test">
+      <UniqueIdentifier>{980d2e77-6fbd-41d1-be0b-721ba69c4584}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\shared_pointer_test.cpp">
@@ -146,6 +149,9 @@
     </ClCompile>
     <ClCompile Include="src\char_test.cpp">
       <Filter>cpp_test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_game_test_TestFrameBuffer.cpp">
+      <Filter>game_test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -280,6 +286,9 @@
     </ClInclude>
     <ClInclude Include="src\char_test.h">
       <Filter>cpp_test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_game_test_TestFrameBuffer.h">
+      <Filter>game_test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
