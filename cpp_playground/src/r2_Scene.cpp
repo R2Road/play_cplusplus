@@ -83,6 +83,9 @@ namespace r2
 	}
 	void Scene::AddSplit()
 	{
-		mTests.emplace_back( 64, []()->const char* { return ""; }, []()->const r2::eTestResult { return r2::eTestResult::RunTest; } );
+		static const std::function<const char*()> func_title = []()->const char* { return ""; };
+		static const std::function<const r2::eTestResult()> func_test = []()->const r2::eTestResult { return r2::eTestResult::RunTest; };
+
+		mTests.push_back( { 64, func_title, func_test } );
 	}
 }
