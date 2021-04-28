@@ -1,12 +1,12 @@
 #include "pch.h"
-#include "r2_game_test_TestFrameBuffer.h"
+#include "renderer_test.h"
 
 #include <functional>
 #include <optional>
 
 #include "r2_eTestResult.h"
 
-namespace r2_game_test
+namespace renderer_test
 {
 	TestFrameBuffer::TestFrameBuffer() : mFrameBuffer( 10, 10 ) {}
 
@@ -14,7 +14,7 @@ namespace r2_game_test
 	{
 		return []()->const char*
 		{
-			return "Game Test : Frame Buffer";
+			return "Renderer : Frame Buffer";
 		};
 	}
 	const r2::iNode::DoFunc TestFrameBuffer::GetDoFunction() const

@@ -6,7 +6,7 @@
 #include "r2_RootScene.h"
 
 #include "r2_game_PathFinder.h"
-#include "r2_game_test_TestFrameBuffer.h"
+#include "renderer_test.h"
 
 namespace r2
 {
@@ -15,7 +15,7 @@ namespace r2
 		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', r2_game_test::TestFrameBuffer::GetInstance() );
+			ret->AddChild( '1', renderer_test::TestFrameBuffer::GetInstance() );
 
 
 			ret->AddSplit();

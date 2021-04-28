@@ -5,7 +5,7 @@
 
 #include "r2_FrameBuffer.h"
 
-namespace r2_game_test
+namespace renderer_test
 {
 	class TestFrameBuffer : public r2::iNode, public r2::SingleTon<TestFrameBuffer>
 	{
