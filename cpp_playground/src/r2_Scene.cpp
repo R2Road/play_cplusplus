@@ -28,6 +28,14 @@ namespace r2
 			//
 			// Key
 			//
+			if( 64 == t.KeyCode ) // @
+			{
+				std::cout << r2::linefeed;
+				continue;
+			}
+
+			std::cout << "[";
+
 			if( 27 == t.KeyCode ) // ESC
 			{
 				std::cout << "ESC";
@@ -36,17 +44,12 @@ namespace r2
 			{
 				std::cout << "SPACE";
 			}
-			else if( 64 == t.KeyCode ) // @
-			{
-				std::cout << r2::linefeed;
-				continue;
-			}
 			else
 			{
 				std::cout << static_cast<char>( std::toupper( t.KeyCode ) );
 			}
 
-			std::cout << " : ";
+			std::cout << "] : ";
 			
 			//
 			// Name
