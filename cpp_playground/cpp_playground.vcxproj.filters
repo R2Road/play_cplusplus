@@ -4,9 +4,6 @@
     <Filter Include="win32">
       <UniqueIdentifier>{d5e79e51-a985-40c0-9fd4-70428e34f847}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test">
-      <UniqueIdentifier>{77a45f2c-1f22-46b3-9c35-5ee34c38a7b9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="scene">
       <UniqueIdentifier>{b9566801-30ec-4d55-bd6d-040901fc06e3}</UniqueIdentifier>
     </Filter>
@@ -19,67 +16,70 @@
     <Filter Include="game">
       <UniqueIdentifier>{be80c73b-e527-4390-b97a-375d1ec30d49}</UniqueIdentifier>
     </Filter>
+    <Filter Include="cpp_test">
+      <UniqueIdentifier>{77a45f2c-1f22-46b3-9c35-5ee34c38a7b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\shared_pointer_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\filesystem_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\random_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
     <ClCompile Include="src\variadic_template_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\template_meta_programming_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\optional_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\variant_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\tuple_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\structured_binding_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\assert_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\string_view_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_RootScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
     <ClCompile Include="src\enum_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\new_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_TemplateMetaProgrammingScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
     <ClCompile Include="src\pointer_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_PointerTestScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
     <ClCompile Include="src\align_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\korean_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\pch.cpp">
       <Filter>win32</Filter>
@@ -91,25 +91,25 @@
       <Filter>scene</Filter>
     </ClCompile>
     <ClCompile Include="src\alignof_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_TemplateScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
     <ClCompile Include="src\template_practice_part_01_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\alignas_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_MemoryScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
     <ClCompile Include="src\memory_pool_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\console_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_GameScene.cpp">
       <Filter>scene</Filter>
@@ -118,7 +118,7 @@
       <Filter>scene</Filter>
     </ClCompile>
     <ClCompile Include="src\template_practice_part_02_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_TemplatePracticeScene.cpp">
       <Filter>scene</Filter>
@@ -139,48 +139,48 @@
       <Filter>game</Filter>
     </ClCompile>
     <ClCompile Include="src\lambda_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\print_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
     <ClCompile Include="src\char_test.cpp">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\filesystem_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\random_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\variadic_template_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\template_meta_programming_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\optional_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\variant_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\tuple_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\structured_binding_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\assert_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\string_view_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_RootScene.h">
       <Filter>scene</Filter>
@@ -189,25 +189,25 @@
       <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\enum_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\new_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_TemplateMetaProgrammingScene.h">
       <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="src\pointer_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_PointerTestScene.h">
       <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="src\align_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\korean_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\pch.h">
       <Filter>win32</Filter>
@@ -219,25 +219,25 @@
       <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="src\alignof_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_TemplateScene.h">
       <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="src\template_practice_part_01_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\alignas_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_MemoryScene.h">
       <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="src\memory_pool_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\console_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_GameScene.h">
       <Filter>scene</Filter>
@@ -246,7 +246,7 @@
       <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="src\template_practice_part_02_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_TemplatePracticeScene.h">
       <Filter>scene</Filter>
@@ -273,13 +273,13 @@
       <Filter>game</Filter>
     </ClInclude>
     <ClInclude Include="src\lambda_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\print_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
     <ClInclude Include="src\char_test.h">
-      <Filter>test</Filter>
+      <Filter>cpp_test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
