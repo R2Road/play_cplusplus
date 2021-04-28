@@ -1,11 +1,11 @@
 #pragma once
 
-#include "r2_iNode.h"
+#include "r2_iTest.h"
 #include "r2_Singleton.h"
 
 namespace console_test
 {
-	class GetWindowSize : public r2::iNode, public r2::SingleTon<GetWindowSize>
+	class GetWindowSize : public r2::iTest, public r2::SingleTon<GetWindowSize>
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
@@ -14,7 +14,7 @@ namespace console_test
 
 
 
-	class ChangeWindowSize : public r2::iNode, public r2::SingleTon<ChangeWindowSize>
+	class ChangeWindowSize : public r2::iTest, public r2::SingleTon<ChangeWindowSize>
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
@@ -23,7 +23,7 @@ namespace console_test
 
 
 
-	class ChangeWindowPosition : public r2::iNode, public r2::SingleTon<ChangeWindowPosition>
+	class ChangeWindowPosition : public r2::iTest, public r2::SingleTon<ChangeWindowPosition>
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
@@ -32,7 +32,7 @@ namespace console_test
 
 
 
-	class ChangeWindowName : public r2::iNode, public r2::SingleTon<ChangeWindowName>
+	class ChangeWindowName : public r2::iTest, public r2::SingleTon<ChangeWindowName>
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
@@ -41,7 +41,7 @@ namespace console_test
 
 
 
-	class MoveCursor : public r2::iNode, public r2::SingleTon<MoveCursor>
+	class MoveCursor : public r2::iTest, public r2::SingleTon<MoveCursor>
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
@@ -50,45 +50,45 @@ namespace console_test
 
 
 
-	class ColorTable : public r2::iNode, public r2::SingleTon<ColorTable>
+	class ColorTable : public r2::iTest, public r2::SingleTon<ColorTable>
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 	};
-	class TextColor1 : public r2::iNode, public r2::SingleTon<TextColor1>
+	class TextColor1 : public r2::iTest, public r2::SingleTon<TextColor1>
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 	};
-	class TextColor2 : public r2::iNode, public r2::SingleTon<TextColor2>
+	class TextColor2 : public r2::iTest, public r2::SingleTon<TextColor2>
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 	};
-	class AdjustColorTable : public r2::iNode, public r2::SingleTon<AdjustColorTable>
-	{
-	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
-	};
-
-	class ColorTable2 : public r2::iNode, public r2::SingleTon<ColorTable2>
-	{
-	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
-	};
-	class TextColor3 : public r2::iNode, public r2::SingleTon<TextColor3>
+	class AdjustColorTable : public r2::iTest, public r2::SingleTon<AdjustColorTable>
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 	};
 
-	class Pixel : public r2::iNode, public r2::SingleTon<Pixel>
+	class ColorTable2 : public r2::iTest, public r2::SingleTon<ColorTable2>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
+	class TextColor3 : public r2::iTest, public r2::SingleTon<TextColor3>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
+
+	class Pixel : public r2::iTest, public r2::SingleTon<Pixel>
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;

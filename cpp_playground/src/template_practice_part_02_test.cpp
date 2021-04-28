@@ -17,14 +17,14 @@ namespace template_practice_part_02_test
 		static const int value = A;
 	};
 
-	const r2::iNode::TitleFunc GreatestCommonDivisor::GetTitleFunction() const
+	const r2::iTest::TitleFunc GreatestCommonDivisor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Template : Greatest Common Divisor";
 		};
 	}
-	const r2::iNode::DoFunc GreatestCommonDivisor::GetDoFunction() const
+	const r2::iTest::DoFunc GreatestCommonDivisor::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

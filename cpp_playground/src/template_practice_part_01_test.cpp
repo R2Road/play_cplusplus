@@ -19,7 +19,7 @@ namespace template_practice_part_01_test
 		std::size_t size;
 	};
 
-	const r2::iNode::TitleFunc Practice01::GetTitleFunction() const
+	const r2::iTest::TitleFunc Practice01::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -27,7 +27,7 @@ namespace template_practice_part_01_test
 		};
 	}
 
-	const r2::iNode::DoFunc Practice01::GetDoFunction() const
+	const r2::iTest::DoFunc Practice01::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

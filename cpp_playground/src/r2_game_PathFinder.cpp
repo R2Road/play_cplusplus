@@ -10,14 +10,14 @@ namespace r2_game
 {
 	PathFinder::PathFinder() : mFrameBuffer( 10, 10 ) {}
 
-	const r2::iNode::TitleFunc PathFinder::GetTitleFunction() const
+	const r2::iTest::TitleFunc PathFinder::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Path Finder( In Progress )";
 		};
 	}
-	const r2::iNode::DoFunc PathFinder::GetDoFunction() const
+	const r2::iTest::DoFunc PathFinder::GetDoFunction() const
 	{
 		const auto& fb = GetInstance().mFrameBuffer;
 

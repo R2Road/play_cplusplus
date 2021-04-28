@@ -10,14 +10,14 @@
 
 namespace alignof_test
 {
-	const r2::iNode::TitleFunc Basic::GetTitleFunction() const
+	const r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align : Basic";
 		};
 	}
-	const r2::iNode::DoFunc Basic::GetDoFunction() const
+	const r2::iTest::DoFunc Basic::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -121,14 +121,14 @@ namespace alignof_test
 
 
 
-	const r2::iNode::TitleFunc MixedStruct::GetTitleFunction() const
+	const r2::iTest::TitleFunc MixedStruct::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align : Mixed Struct";
 		};
 	}
-	const r2::iNode::DoFunc MixedStruct::GetDoFunction() const
+	const r2::iTest::DoFunc MixedStruct::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

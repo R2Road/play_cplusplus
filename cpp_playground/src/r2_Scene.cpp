@@ -4,7 +4,7 @@
 #include <cctype> // std::toupper
 
 #include "r2_eTestResult.h"
-#include "r2_iNode.h"
+#include "r2_iTest.h"
 
 namespace r2
 {
@@ -73,9 +73,9 @@ namespace r2
 		return eTestResult::RunTest;
 	}
 
-	void Scene::AddChild( const char key_code, const iNode& node )
+	void Scene::AddChild( const char key_code, const iTest& test_obj )
 	{
-		mTests.emplace_back( key_code, node.GetTitleFunction(), node.GetDoFunction() );
+		mTests.emplace_back( key_code, test_obj.GetTitleFunction(), test_obj.GetDoFunction() );
 	}
 	void Scene::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestResult()> func_test )
 	{

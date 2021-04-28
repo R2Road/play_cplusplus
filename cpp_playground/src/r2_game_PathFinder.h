@@ -1,13 +1,13 @@
 #pragma once
 
-#include "r2_iNode.h"
+#include "r2_iTest.h"
 #include "r2_Singleton.h"
 
 #include "r2_FrameBuffer.h"
 
 namespace r2_game
 {
-	class PathFinder : public r2::iNode, public r2::SingleTon<PathFinder>
+	class PathFinder : public r2::iTest, public r2::SingleTon<PathFinder>
 	{
 	public:
 		PathFinder();

@@ -9,7 +9,7 @@ namespace r2
 {
 	enum class eTestResult; 
 
-	class iNode;
+	class iTest;
 	class Director;
 
 	using SceneUp = std::unique_ptr<class Scene>;
@@ -44,7 +44,7 @@ namespace r2
 
 		eTestResult Do( const int key_code );
 
-		void AddChild( const char key_code, const iNode& node );
+		void AddChild( const char key_code, const iTest& test_obj );
 		void AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestResult()> func_test );
 		void AddSplit();
 

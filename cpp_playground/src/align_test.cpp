@@ -5,14 +5,14 @@
 
 namespace align_test
 {
-	const r2::iNode::TitleFunc Align_0::GetTitleFunction() const
+	const r2::iTest::TitleFunc Align_0::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align : Align 0";
 		};
 	}
-	const r2::iNode::DoFunc Align_0::GetDoFunction() const
+	const r2::iTest::DoFunc Align_0::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -123,14 +123,14 @@ namespace align_test
 	}
 
 
-	const r2::iNode::TitleFunc Align_1::GetTitleFunction() const
+	const r2::iTest::TitleFunc Align_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align : Align 1";
 		};
 	}
-	const r2::iNode::DoFunc Align_1::GetDoFunction() const
+	const r2::iTest::DoFunc Align_1::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -240,14 +240,14 @@ namespace align_test
 
 
 	
-	const r2::iNode::TitleFunc Align_2::GetTitleFunction() const
+	const r2::iTest::TitleFunc Align_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align : Align 2";
 		};
 	}
-	const r2::iNode::DoFunc Align_2::GetDoFunction() const
+	const r2::iTest::DoFunc Align_2::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

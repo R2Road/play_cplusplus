@@ -5,14 +5,14 @@
 
 namespace align_test
 {
-	const r2::iNode::TitleFunc AlignAs::GetTitleFunction() const
+	const r2::iTest::TitleFunc AlignAs::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align : Align As";
 		};
 	}
-	const r2::iNode::DoFunc AlignAs::GetDoFunction() const
+	const r2::iTest::DoFunc AlignAs::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

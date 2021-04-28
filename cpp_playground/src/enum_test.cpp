@@ -8,14 +8,14 @@
 
 namespace enum_test
 {
-	const r2::iNode::TitleFunc Basic::GetTitleFunction() const
+	const r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Enum : Basic";
 		};
 	}
-	const r2::iNode::DoFunc Basic::GetDoFunction() const
+	const r2::iTest::DoFunc Basic::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -69,14 +69,14 @@ namespace enum_test
 		return static_cast<std::underlying_type_t<EnumT>>( e );
 	}
 
-	const r2::iNode::TitleFunc Convert::GetTitleFunction() const
+	const r2::iTest::TitleFunc Convert::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Enum : Convert";
 		};
 	}
-	const r2::iNode::DoFunc Convert::GetDoFunction() const
+	const r2::iTest::DoFunc Convert::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

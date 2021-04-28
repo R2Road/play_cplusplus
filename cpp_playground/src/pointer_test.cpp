@@ -5,14 +5,14 @@
 
 namespace pointer_test
 {
-	const r2::iNode::TitleFunc Basic::GetTitleFunction() const
+	const r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Pointer";
 		};
 	}
-	const r2::iNode::DoFunc Basic::GetDoFunction() const
+	const r2::iTest::DoFunc Basic::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -65,14 +65,14 @@ namespace pointer_test
 
 namespace pointer_test
 {
-	const r2::iNode::TitleFunc ConstPointer::GetTitleFunction() const
+	const r2::iTest::TitleFunc ConstPointer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Const Pointer";
 		};
 	}
-	const r2::iNode::DoFunc ConstPointer::GetDoFunction() const
+	const r2::iTest::DoFunc ConstPointer::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

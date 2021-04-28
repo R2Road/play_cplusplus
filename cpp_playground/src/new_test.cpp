@@ -7,14 +7,14 @@
 
 namespace new_test
 {
-	const r2::iNode::TitleFunc Basic::GetTitleFunction() const
+	const r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "New : Basic";
 		};
 	}
-	const r2::iNode::DoFunc Basic::GetDoFunction() const
+	const r2::iTest::DoFunc Basic::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -62,14 +62,14 @@ namespace new_test
 
 
 
-	const r2::iNode::TitleFunc PlacementNew::GetTitleFunction() const
+	const r2::iTest::TitleFunc PlacementNew::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Placement New : Basic";
 		};
 	}
-	const r2::iNode::DoFunc PlacementNew::GetDoFunction() const
+	const r2::iTest::DoFunc PlacementNew::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

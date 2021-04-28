@@ -35,14 +35,14 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	const r2::iNode::TitleFunc CalculateFactorial::GetTitleFunction() const
+	const r2::iTest::TitleFunc CalculateFactorial::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TMP : Factorial";
 		};
 	}
-	const r2::iNode::DoFunc CalculateFactorial::GetDoFunction() const
+	const r2::iTest::DoFunc CalculateFactorial::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -96,14 +96,14 @@ namespace template_meta_programming_test
 		static constexpr const char c[size + 1] = { chars..., '\0' };
 	};
 
-	const r2::iNode::TitleFunc Character2String::GetTitleFunction() const
+	const r2::iTest::TitleFunc Character2String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TMP : Character 2 String";
 		};
 	}
-	const r2::iNode::DoFunc Character2String::GetDoFunction() const
+	const r2::iTest::DoFunc Character2String::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -141,14 +141,14 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	const r2::iNode::TitleFunc Integer2String::GetTitleFunction() const
+	const r2::iTest::TitleFunc Integer2String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TMP : Integer 2 String";
 		};
 	}
-	const r2::iNode::DoFunc Integer2String::GetDoFunction() const
+	const r2::iTest::DoFunc Integer2String::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -184,14 +184,14 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	const r2::iNode::TitleFunc CalculatePlaceValue::GetTitleFunction() const
+	const r2::iTest::TitleFunc CalculatePlaceValue::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TMP : Place Value 4 Integer";
 		};
 	}
-	const r2::iNode::DoFunc CalculatePlaceValue::GetDoFunction() const
+	const r2::iTest::DoFunc CalculatePlaceValue::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -248,14 +248,14 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	const r2::iNode::TitleFunc Integer2String_II::GetTitleFunction() const
+	const r2::iTest::TitleFunc Integer2String_II::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TMP : Integer 2 String II";
 		};
 	}
-	const r2::iNode::DoFunc Integer2String_II::GetDoFunction() const
+	const r2::iTest::DoFunc Integer2String_II::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -319,14 +319,14 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	const r2::iNode::TitleFunc MultiTypePackage::GetTitleFunction() const
+	const r2::iTest::TitleFunc MultiTypePackage::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TMP : Multi Type Package";
 		};
 	}
-	const r2::iNode::DoFunc MultiTypePackage::GetDoFunction() const
+	const r2::iTest::DoFunc MultiTypePackage::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

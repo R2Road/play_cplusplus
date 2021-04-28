@@ -90,14 +90,14 @@ namespace
 namespace filesystem_test
 {
 
-	const r2::iNode::TitleFunc CurrentDirectory::GetTitleFunction() const
+	const r2::iTest::TitleFunc CurrentDirectory::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "File System : Current Directory";
 		};
 	}
-	const r2::iNode::DoFunc CurrentDirectory::GetDoFunction() const
+	const r2::iTest::DoFunc CurrentDirectory::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

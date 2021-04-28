@@ -10,14 +10,14 @@
 
 namespace lambda_test
 {
-	const r2::iNode::TitleFunc Capture::GetTitleFunction() const
+	const r2::iTest::TitleFunc Capture::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Lamabda : Basic";
 		};
 	}
-	const r2::iNode::DoFunc Capture::GetDoFunction() const
+	const r2::iTest::DoFunc Capture::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -85,14 +85,14 @@ namespace lambda_test
 
 
 
-	const r2::iNode::TitleFunc CaptureUniquePtr::GetTitleFunction() const
+	const r2::iTest::TitleFunc CaptureUniquePtr::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Lamabda : Capture Unique Ptr";
 		};
 	}
-	const r2::iNode::DoFunc CaptureUniquePtr::GetDoFunction() const
+	const r2::iTest::DoFunc CaptureUniquePtr::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

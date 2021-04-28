@@ -26,7 +26,7 @@ namespace
 
 namespace memory_pool_test
 {
-	const r2::iNode::TitleFunc Step01::GetTitleFunction() const
+	const r2::iTest::TitleFunc Step01::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -34,7 +34,7 @@ namespace memory_pool_test
 		};
 	}
 
-	const r2::iNode::DoFunc Step01::GetDoFunction() const
+	const r2::iTest::DoFunc Step01::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
