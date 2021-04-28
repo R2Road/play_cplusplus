@@ -22,7 +22,7 @@ namespace random_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Basic #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			{
 				std::cout << "\t+ Range Check" << r2::linefeed;

@@ -21,7 +21,9 @@ namespace stringview_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# StringView #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "+ std::string_view view = \"String View Test_1\";" << r2::linefeed << r2::linefeed;
@@ -30,7 +32,7 @@ namespace stringview_test
 				std::cout << "\t\t - Print : " << view << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "+ std::string str = \"String View Test_2\";" << r2::linefeed;
@@ -41,7 +43,7 @@ namespace stringview_test
 				std::cout << "\t\t - Print : " << view << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "+ std::string_view view = \"test 3\";" << r2::linefeed;
@@ -55,7 +57,7 @@ namespace stringview_test
 				}
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "+ auto view = \"String View Test_4\"sv;" << r2::linefeed << r2::linefeed;
@@ -66,7 +68,7 @@ namespace stringview_test
 				std::cout << "\t\t\t - Print : " << view << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "+ auto view = \"String View Test_5\"sv;" << r2::linefeed << r2::linefeed;
@@ -78,7 +80,7 @@ namespace stringview_test
 				std::cout << "\t\t\t - Print : " << view << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "+ auto view = \"String View Test_6\"sv;" << r2::linefeed << r2::linefeed;
@@ -90,7 +92,7 @@ namespace stringview_test
 				std::cout << "\t\t\t - Print : " << view << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "+ auto view = \"String View Test_7\"sv;" << r2::linefeed;
@@ -102,7 +104,7 @@ namespace stringview_test
 				std::cout << "\t\t - Print : " << view_2 << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};

@@ -9,14 +9,14 @@ namespace pointer_test
 	{
 		return []()->const char*
 		{
-			return "Basic";
+			return "Pointer";
 		};
 	}
 	const r2::iNode::DoFunc Basic::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Basic #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -76,7 +76,7 @@ namespace pointer_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Const Pointer #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			std::cout << r2::split;
 

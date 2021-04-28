@@ -46,7 +46,7 @@ namespace template_meta_programming_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# TMP : Calculate Factorial #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			{
 				std::cout << "\t" << "+ Factorial<2>::f" << r2::linefeed;
@@ -107,7 +107,7 @@ namespace template_meta_programming_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# TMP : Character 2 String #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			{
 				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::size" << r2::linefeed;
@@ -152,7 +152,7 @@ namespace template_meta_programming_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# TMP : Integer 2 String #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			{
 				std::cout << "\t" << "+ ConvertInteger2String_1<2468>::c.c_str()" << r2::linefeed;
@@ -188,14 +188,14 @@ namespace template_meta_programming_test
 	{
 		return []()->const char*
 		{
-			return "TMP : Place Value";
+			return "TMP : Place Value 4 Integer";
 		};
 	}
 	const r2::iNode::DoFunc CalculatePlaceValue::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# TMP : Calculate Place Value 4 Integer #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			{
 				std::cout << "\t" << "+ CalculatePlaceValue<1>::c" << r2::linefeed;

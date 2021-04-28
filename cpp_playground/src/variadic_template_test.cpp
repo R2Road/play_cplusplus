@@ -24,7 +24,7 @@ namespace variadic_template_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Size Of Args #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			std::cout << "\t" << "+ ArgsCount<int, float, int, int, bool>::size" << r2::linefeed;
 			std::cout << "\t\t" << ArgsCount<int, float, int, int, bool>::size << r2::linefeed;
@@ -79,7 +79,7 @@ namespace variadic_template_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# PrintValues #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			{
 				std::cout << "\t" << "+ print_args_1( 1, 2, 3, 4, \"variadic_template_test\", 3.141592 )" << r2::linefeed;
@@ -144,7 +144,7 @@ namespace variadic_template_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Sum Values #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			{
 				std::cout << "\t" << "+ sum_args_with_fold_1( 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << r2::linefeed;
@@ -231,7 +231,7 @@ namespace variadic_template_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Subtract Values #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
 			{
 				std::cout << "\t" << "+ int subtract_args_with_fold_1(IntegerList... integer_list )" << r2::linefeed;
