@@ -1,10 +1,10 @@
 #include "pch.h"
-#include "r2_game_FrameBuffer.h"
+#include "r2_FrameBuffer.h"
 
 #include <cassert>
 #include <iostream>
 
-namespace r2_game
+namespace r2
 {
 	FrameBuffer::FrameBuffer( const std::size_t width, const std::size_t height ) :
 		mWidth( width )

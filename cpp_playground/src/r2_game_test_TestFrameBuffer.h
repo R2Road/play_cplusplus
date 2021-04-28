@@ -3,7 +3,7 @@
 #include "r2_iNode.h"
 #include "r2_Singleton.h"
 
-#include "r2_game_FrameBuffer.h"
+#include "r2_FrameBuffer.h"
 
 namespace r2_game_test
 {
@@ -17,6 +17,6 @@ namespace r2_game_test
 		const DoFunc GetDoFunction() const override;
 
 	private:
-		r2_game::FrameBuffer mFrameBuffer;
+		r2::FrameBuffer mFrameBuffer;
 	};
 }

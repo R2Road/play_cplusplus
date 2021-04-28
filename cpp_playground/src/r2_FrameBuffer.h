@@ -2,7 +2,7 @@
 
 #include <vector>
 
-namespace r2_game
+namespace r2
 {
 	class FrameBuffer
 	{
