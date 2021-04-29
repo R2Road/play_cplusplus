@@ -342,6 +342,62 @@ namespace template_meta_programming_test
 
 namespace template_meta_programming_test
 {
+	const r2::iTest::TitleFunc SumRatioAndOperator1::GetTitleFunction() const
+	{
+		return []()->const char* { return "Sum Ratio and Operator 1"; };
+	}
+	const r2::iTest::DoFunc SumRatioAndOperator1::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				using ratio1 = Ratio_VER1<7, 4>;
+				using ratio2 = Ratio_VER1<3, 2>;
+				using ratio_operator_sum = Ratio_VER1_Operator_Sum<ratio1, ratio2>;
+
+				std::cout << "\t" << "using ratio1 = Ratio_VER1<7, 4>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio2 = Ratio_VER1<3, 2>;" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum<ratio1, ratio2>;" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << "\t\t - Original : " << ratio_operator_sum::orig::Numerator << " / " << ratio_operator_sum::orig::Denominator << r2::linefeed;
+				std::cout << "\t\t - GCD : " << ratio_operator_sum::gcd::value << r2::linefeed;
+				std::cout << "\t\t - Result : " << ratio_operator_sum::Numerator << " / " << ratio_operator_sum::Denominator << r2::linefeed;
+
+
+				std::cout << r2::linefeed << r2::linefeed;
+
+
+				using ratio_operator_sum_2 = Ratio_VER1_Operator_Sum<ratio1, ratio_operator_sum>;
+
+				std::cout << "\t" << "using ratio_operator_sum_2 = Ratio_VER1_Operator_Sum<ratio1, ratio_operator_sum>;" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << "\t\t - Original : " << ratio_operator_sum_2::orig::Numerator << " / " << ratio_operator_sum_2::orig::Denominator << r2::linefeed;
+				std::cout << "\t\t - GCD : " << ratio_operator_sum_2::gcd::value << r2::linefeed;
+				std::cout << "\t\t - Result : " << ratio_operator_sum_2::Numerator << " / " << ratio_operator_sum_2::Denominator << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
+
+
+
+namespace template_meta_programming_test
+{
 	template<class Ratio1, class Ratio2>
 	struct Ratio_VER1_Operator_Sum2
 	{
@@ -356,11 +412,11 @@ namespace template_meta_programming_test
 	template<class Ratio1, class Ratio2>
 	struct Ratio_VER1_Operator_Sum2_Result : Ratio_VER1_Operator_Sum2<Ratio1, Ratio2>::ratio {};
 
-	const r2::iTest::TitleFunc SumRatioAndOperator::GetTitleFunction() const
+	const r2::iTest::TitleFunc SumRatioAndOperator2::GetTitleFunction() const
 	{
-		return []()->const char* { return "Sum Ratio and Operator"; };
+		return []()->const char* { return "Sum Ratio and Operator 2"; };
 	}
-	const r2::iTest::DoFunc SumRatioAndOperator::GetDoFunction() const
+	const r2::iTest::DoFunc SumRatioAndOperator2::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

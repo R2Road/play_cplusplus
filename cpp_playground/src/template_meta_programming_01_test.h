@@ -47,7 +47,13 @@ namespace template_meta_programming_test
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 	};
-	class SumRatioAndOperator : public r2::iTest, public r2::SingleTon<SumRatioAndOperator>
+	class SumRatioAndOperator1 : public r2::iTest, public r2::SingleTon<SumRatioAndOperator1>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
+	class SumRatioAndOperator2 : public r2::iTest, public r2::SingleTon<SumRatioAndOperator2>
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
