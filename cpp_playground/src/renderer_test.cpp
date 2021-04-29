@@ -39,7 +39,7 @@ namespace renderer_test
 	{
 		return []()->const char*
 		{
-			return "Renderer";
+			return "Renderer( In Progress )";
 		};
 	}
 	const r2::iTest::DoFunc TestRenderer::GetDoFunction() const
