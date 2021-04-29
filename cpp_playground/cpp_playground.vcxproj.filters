@@ -147,6 +147,9 @@
     <ClCompile Include="src\renderer_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="src\template_meta_programming_02_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -283,6 +286,9 @@
     </ClInclude>
     <ClInclude Include="src\r2_iTest.h">
       <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\template_meta_programming_02_test.h">
+      <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
