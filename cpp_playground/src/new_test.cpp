@@ -85,8 +85,8 @@ namespace new_test
 
 				std::cout << r2::linefeed;
 
-				*fp = 3.14;
-				std::cout << "\t" << "+ *fp = 3.14;" << r2::linefeed;
+				*fp = 3.14f;
+				std::cout << "\t" << "+ *fp = 3.14f;" << r2::linefeed;
 				std::cout << "\t\t" << "- Print fp : " << *fp << r2::linefeed;
 			}
 
