@@ -147,14 +147,14 @@ namespace template_meta_programming_test
 	};
 
 
-	const r2::iTest::TitleFunc RatioBasic::GetTitleFunction() const
+	const r2::iTest::TitleFunc BasicRatio::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Ratio Basic";
+			return "Basic Ratio";
 		};
 	}
-	const r2::iTest::DoFunc RatioBasic::GetDoFunction() const
+	const r2::iTest::DoFunc BasicRatio::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

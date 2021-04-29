@@ -23,7 +23,7 @@ namespace template_meta_programming_test
 
 
 
-	class RatioBasic : public r2::iTest, public r2::SingleTon<RatioBasic>
+	class BasicRatio : public r2::iTest, public r2::SingleTon<BasicRatio>
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
