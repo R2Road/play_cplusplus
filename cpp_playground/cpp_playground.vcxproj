@@ -56,6 +56,7 @@
     <ClCompile Include="src\string_view_test.cpp" />
     <ClCompile Include="src\structured_binding_test.cpp" />
     <ClCompile Include="src\template_meta_programming_02_test.cpp" />
+    <ClCompile Include="src\template_meta_programming_03_test.cpp" />
     <ClCompile Include="src\template_meta_programming_test.cpp" />
     <ClCompile Include="src\optional_test.cpp" />
     <ClCompile Include="src\template_practice_part_01_test.cpp" />
@@ -104,6 +105,7 @@
     <ClInclude Include="src\string_view_test.h" />
     <ClInclude Include="src\structured_binding_test.h" />
     <ClInclude Include="src\template_meta_programming_02_test.h" />
+    <ClInclude Include="src\template_meta_programming_03_test.h" />
     <ClInclude Include="src\template_meta_programming_test.h" />
     <ClInclude Include="src\optional_test.h" />
     <ClInclude Include="src\template_practice_part_01_test.h" />

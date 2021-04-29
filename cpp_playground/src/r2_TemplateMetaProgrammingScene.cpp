@@ -7,6 +7,7 @@
 
 #include "template_meta_programming_test.h"
 #include "template_meta_programming_02_test.h"
+#include "template_meta_programming_03_test.h"
 
 namespace r2
 {
@@ -17,10 +18,18 @@ namespace r2
 		{
 			ret->AddChild( '1', template_meta_programming_test::CalculateFactorial::GetInstance() );
 
+
+			ret->AddSplit();
+
+
 			ret->AddChild( 'q', template_meta_programming_test::Character2String::GetInstance() );
 			ret->AddChild( 'w', template_meta_programming_test::Integer2String::GetInstance() );
 			ret->AddChild( 'e', template_meta_programming_test::CalculatePlaceValue::GetInstance() );
 			ret->AddChild( 'r', template_meta_programming_test::Integer2String_II::GetInstance() );
+
+
+			ret->AddSplit();
+
 
 			ret->AddChild( 'a', template_meta_programming_test::MultiTypePackage::GetInstance() );
 

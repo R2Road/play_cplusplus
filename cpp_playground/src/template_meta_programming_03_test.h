@@ -5,7 +5,7 @@
 
 namespace template_meta_programming_test
 {
-	class CalculateFactorial : public r2::iTest, public r2::SingleTon<CalculateFactorial>
+	class MultiTypePackage : public r2::iTest, public r2::SingleTon<MultiTypePackage>
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;

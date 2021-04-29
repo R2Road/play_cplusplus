@@ -150,6 +150,9 @@
     <ClCompile Include="src\template_meta_programming_02_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="src\template_meta_programming_03_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -288,6 +291,9 @@
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\template_meta_programming_02_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\template_meta_programming_03_test.h">
       <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
