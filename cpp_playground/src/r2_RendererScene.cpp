@@ -21,7 +21,13 @@ namespace r2
 			ret->AddSplit();
 
 
-			ret->AddChild( 'q', r2_game::PathFinder::GetInstance() );
+			ret->AddChild( 'q', renderer_test::TestRenderer::GetInstance() );
+
+
+			ret->AddSplit();
+
+
+			ret->AddChild( 'z', r2_game::PathFinder::GetInstance() );
 
 
 			ret->AddSplit();
