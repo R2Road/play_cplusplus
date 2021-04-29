@@ -259,8 +259,12 @@ namespace template_meta_programming_test
 	{
 		return []()->r2::eTestResult
 		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
 			{
-				std::cout << "# TMP : Units 2 Character #" << r2::linefeed << r2::linefeed;
+				std::cout << "+ Units 2 Character" << r2::linefeed << r2::linefeed;
 
 				std::cout << "\t" << "+ ConvertUnits2Character<1>::c" << r2::linefeed;
 				std::cout << "\t\t" << "result : " << ConvertUnits2Character<1>::c << r2::linefeed << r2::linefeed;
@@ -274,10 +278,10 @@ namespace template_meta_programming_test
 				std::cout << "\t\t" << "result : " << ConvertUnits2Character<10>::c << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
-				std::cout << "# TMP : Integer 2 String II #" << r2::linefeed << r2::linefeed;
+				std::cout << "+ Integer 2 String II" << r2::linefeed << r2::linefeed;
 
 				std::cout << "\t" << "+ ConvertInteger2String_2<101010>" << r2::linefeed;
 				std::cout << "\t\t" << "size : " << ConvertInteger2String_2<101010>::size << r2::linefeed;
@@ -323,24 +327,26 @@ namespace template_meta_programming_test
 	{
 		return []()->const char*
 		{
-			return "TMP : Multi Type Package";
+			return "TMP : Multi Type Package( In Progress )";
 		};
 	}
 	const r2::iTest::DoFunc MultiTypePackage::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
-			{
-				std::cout << "# TMP : Multi Type Package #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-				std::cout << "\t" << "+ MTPackage<int, float, char> mtp;" << r2::linefeed;
+			std::cout << r2::split;
+
+			{
+				std::cout << "\t" << "+ MTPackage<int, float, char> mtp{ 1, 2.f, '3' };" << r2::linefeed;
 
 				MTPackage<int, float, char> mtp{ 1, 2.f, '3' };
 
 				std::cout << "\t\t" << "result : " << mtp.val << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
