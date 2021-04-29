@@ -33,9 +33,6 @@
     <ClCompile Include="src\variadic_template_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\template_meta_programming_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="src\optional_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -153,6 +150,9 @@
     <ClCompile Include="src\template_meta_programming_03_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="src\template_meta_programming_01_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -165,9 +165,6 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\variadic_template_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\template_meta_programming_test.h">
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\optional_test.h">
@@ -294,6 +291,9 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\template_meta_programming_03_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\template_meta_programming_01_test.h">
       <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
