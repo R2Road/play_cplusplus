@@ -337,3 +337,89 @@ namespace template_meta_programming_test
 		};
 	}
 }
+
+
+
+namespace template_meta_programming_test
+{
+	template<class Ratio1, class Ratio2>
+	struct Ratio_VER1_Operator_Sum2
+	{
+		using orig = Ratio_VER0<
+			Ratio1::Numerator * Ratio2::Denominator + Ratio2::Numerator * Ratio1::Denominator
+			, Ratio1::Denominator * Ratio2::Denominator
+		>;
+
+		using ratio = Ratio_VER1<orig::Numerator, orig::Denominator>;
+	};
+
+	template<class Ratio1, class Ratio2>
+	struct Ratio_VER1_Operator_Sum2_Result : Ratio_VER1_Operator_Sum2<Ratio1, Ratio2>::ratio {};
+
+	const r2::iTest::TitleFunc SumRatioAndOperator::GetTitleFunction() const
+	{
+		return []()->const char* { return "Sum Ratio and Operator"; };
+	}
+	const r2::iTest::DoFunc SumRatioAndOperator::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				using ratio1 = Ratio_VER1<7, 4>;
+				using ratio2 = Ratio_VER1<3, 2>;
+				using ratio_operator_sum = Ratio_VER1_Operator_Sum2<ratio1, ratio2>;
+
+				std::cout << "\t" << "using ratio1 = Ratio_VER1<7, 4>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio2 = Ratio_VER1<3, 2>;" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum2_Result<ratio1, ratio2>;" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << "\t\t - Original : " << ratio_operator_sum::orig::Numerator << " / " << ratio_operator_sum::orig::Denominator << r2::linefeed;
+				std::cout << "\t\t - Result : " << ratio_operator_sum::ratio::Numerator << " / " << ratio_operator_sum::ratio::Denominator << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				using ratio1 = Ratio_VER1<7, 4>;
+				using ratio2 = Ratio_VER1<3, 2>;
+				using ratio_operator_sum = Ratio_VER1_Operator_Sum2_Result<ratio1, ratio2>;
+
+				std::cout << "\t" << "using ratio1 = Ratio_VER1<7, 4>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio2 = Ratio_VER1<3, 2>;" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum2_Result<ratio1, ratio2>;" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << "\t\t - Result : " << ratio_operator_sum::Numerator << " / " << ratio_operator_sum::Denominator << r2::linefeed;
+
+
+				std::cout << r2::linefeed << r2::linefeed;
+
+
+				using ratio_operator_sum_2 = Ratio_VER1_Operator_Sum2_Result<ratio1, ratio_operator_sum>;
+
+				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum2_Result<ratio1, ratio_operator_sum>;" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << "\t\t - Result : " << ratio_operator_sum_2::Numerator << " / " << ratio_operator_sum_2::Denominator << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
