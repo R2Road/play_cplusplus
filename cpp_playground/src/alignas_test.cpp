@@ -3,6 +3,8 @@
 
 #include "r2_eTestResult.h"
 
+#pragma warning( disable : 4324 )
+
 namespace align_test
 {
 	const r2::iTest::TitleFunc AlignAs::GetTitleFunction() const
