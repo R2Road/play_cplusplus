@@ -140,7 +140,7 @@ namespace template_meta_programming_test
 namespace template_meta_programming_test
 {
 	template<int N, int D>
-	struct Ratio_Step_0
+	struct Ratio_VER0
 	{
 		static const int Numerator = N;
 		static const int Denominator = D;
@@ -163,9 +163,9 @@ namespace template_meta_programming_test
 			std::cout << r2::split;
 
 			{
-				Ratio_Step_0<7, 4> ratio;
+				Ratio_VER0<7, 4> ratio;
 
-				std::cout << "\t + " << "RatioBasic<7, 4> ratio;" << r2::linefeed;
+				std::cout << "\t + " << "Ratio_VER0<7, 4> ratio;" << r2::linefeed;
 				std::cout << "\t\t - " << ratio.Numerator << " / " << ratio.Denominator << r2::linefeed;
 			}
 
@@ -181,9 +181,9 @@ namespace template_meta_programming_test
 namespace template_meta_programming_test
 {
 	template<class Ratio1, class Ratio2>
-	struct RatioOperator_Sum
+	struct Ratio_VER0_Operator_Sum
 	{
-		static const Ratio_Step_0<
+		static const Ratio_VER0<
 			Ratio1::Numerator * Ratio2::Denominator + Ratio2::Numerator * Ratio1::Denominator
 			, Ratio1::Denominator * Ratio2::Denominator
 		> ratio;
@@ -203,16 +203,16 @@ namespace template_meta_programming_test
 			std::cout << r2::split;
 
 			{
-				using ratio1 = Ratio_Step_0<7, 4>;
-				using ratio2 = Ratio_Step_0<3, 2>;
-				using ratio_operator_sum = RatioOperator_Sum<ratio1, ratio2>;
+				using ratio1 = Ratio_VER0<7, 4>;
+				using ratio2 = Ratio_VER0<3, 2>;
+				using ratio_operator_sum = Ratio_VER0_Operator_Sum<ratio1, ratio2>;
 
-				std::cout << "\t" << "using ratio1 = Ratio_Step_0<7, 4>;" << r2::linefeed;
-				std::cout << "\t" << "using ratio2 = Ratio_Step_0<3, 2>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio1 = Ratio_VER0<7, 4>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio2 = Ratio_VER0<3, 2>;" << r2::linefeed;
 
 				std::cout << r2::linefeed;
 
-				std::cout << "\t" << "using ratio_operator_sum = RatioOperator_Sum<ratio1, ratio2>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER0_Operator_Sum<ratio1, ratio2>;" << r2::linefeed;
 
 				std::cout << r2::linefeed;
 
