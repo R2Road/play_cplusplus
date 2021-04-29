@@ -35,4 +35,10 @@ namespace template_meta_programming_test
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 	};
+	class RatioWithGCD : public r2::iTest, public r2::SingleTon<RatioWithGCD>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
 }

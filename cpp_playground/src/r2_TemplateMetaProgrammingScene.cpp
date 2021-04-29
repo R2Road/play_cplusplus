@@ -20,6 +20,7 @@ namespace r2
 			ret->AddChild( '2', template_meta_programming_test::GreatestCommonDivisor::GetInstance() );
 			ret->AddChild( '3', template_meta_programming_test::RatioBasic::GetInstance() );
 			ret->AddChild( '4', template_meta_programming_test::RatioSum::GetInstance() );
+			ret->AddChild( '5', template_meta_programming_test::RatioWithGCD::GetInstance() );
 
 
 			ret->AddSplit();

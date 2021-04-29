@@ -225,3 +225,46 @@ namespace template_meta_programming_test
 		};
 	}
 }
+
+
+
+namespace template_meta_programming_test
+{
+	template<int N, int D>
+	struct Ratio_VER1
+	{
+		using gcd = GCDCalculator<N, D>;
+
+		static const int Numerator = N / gcd::value;
+		static const int Denominator = D / gcd::value;
+	};
+
+
+	const r2::iTest::TitleFunc RatioWithGCD::GetTitleFunction() const
+	{
+		return []()->const char* { return "Ratio with GCD"; };
+	}
+	const r2::iTest::DoFunc RatioWithGCD::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				using ratio = Ratio_VER1<12, 3>;
+
+				std::cout << "\t" << "using ratio1 = Ratio_VER1<12, 3>;" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << "\t\t - Result : " << ratio::Numerator << " / " << ratio::Denominator << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
