@@ -259,6 +259,20 @@ namespace template_meta_programming_test
 
 				std::cout << r2::linefeed;
 
+				std::cout << "\t\t - GCD : " << ratio::gcd::value << r2::linefeed;
+				std::cout << "\t\t - Result : " << ratio::Numerator << " / " << ratio::Denominator << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				using ratio = Ratio_VER1<36, 20>;
+
+				std::cout << "\t" << "using ratio1 = Ratio_VER1<36, 20>;" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << "\t\t - GCD : " << ratio::gcd::value << r2::linefeed;
 				std::cout << "\t\t - Result : " << ratio::Numerator << " / " << ratio::Denominator << r2::linefeed;
 			}
 
