@@ -19,4 +19,16 @@ namespace renderer_test
 	private:
 		r2::FrameBuffer mFrameBuffer;
 	};
+
+
+
+	class TestRenderer : public r2::iTest, public r2::SingleTon<TestRenderer>
+	{
+	public:
+		TestRenderer();
+
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
 }

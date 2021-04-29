@@ -30,4 +30,25 @@ namespace renderer_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	TestRenderer::TestRenderer() {}
+
+	const r2::iTest::TitleFunc TestRenderer::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Renderer";
+		};
+	}
+	const r2::iTest::DoFunc TestRenderer::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
