@@ -18,7 +18,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char*
 		{
-			return "TMP : Character 2 String";
+			return "Character 2 String";
 		};
 	}
 	const r2::iTest::DoFunc Character2String::GetDoFunction() const
@@ -65,7 +65,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char*
 		{
-			return "TMP : Integer 2 String";
+			return "Integer 2 String";
 		};
 	}
 	const r2::iTest::DoFunc Integer2String::GetDoFunction() const
@@ -110,7 +110,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char*
 		{
-			return "TMP : Place Value 4 Integer";
+			return "Place Value 4 Integer";
 		};
 	}
 	const r2::iTest::DoFunc CalculatePlaceValue::GetDoFunction() const
@@ -176,7 +176,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char*
 		{
-			return "TMP : Integer 2 String II";
+			return "Integer 2 String II";
 		};
 	}
 	const r2::iTest::DoFunc Integer2String_II::GetDoFunction() const

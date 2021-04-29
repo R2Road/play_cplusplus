@@ -39,7 +39,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char*
 		{
-			return "TMP : Factorial";
+			return "Factorial";
 		};
 	}
 	const r2::iTest::DoFunc CalculateFactorial::GetDoFunction() const
@@ -105,7 +105,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char*
 		{
-			return "Template : Greatest Common Divisor";
+			return "Greatest Common Divisor";
 		};
 	}
 	const r2::iTest::DoFunc GreatestCommonDivisor::GetDoFunction() const

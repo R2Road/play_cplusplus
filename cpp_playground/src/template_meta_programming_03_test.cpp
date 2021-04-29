@@ -35,7 +35,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char*
 		{
-			return "TMP : Multi Type Package( In Progress )";
+			return "Multi Type Package( In Progress )";
 		};
 	}
 	const r2::iTest::DoFunc MultiTypePackage::GetDoFunction() const
