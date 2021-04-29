@@ -21,6 +21,7 @@ namespace r2
 			ret->AddChild( '3', template_meta_programming_test::BasicRatio::GetInstance() );
 			ret->AddChild( '4', template_meta_programming_test::SumBasicRatio::GetInstance() );
 			ret->AddChild( '5', template_meta_programming_test::RatioWithGCD::GetInstance() );
+			ret->AddChild( '6', template_meta_programming_test::SumRatioWithGCD::GetInstance() );
 
 
 			ret->AddSplit();
