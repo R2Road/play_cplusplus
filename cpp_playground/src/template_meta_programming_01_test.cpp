@@ -190,11 +190,11 @@ namespace template_meta_programming_test
 	};
 
 
-	const r2::iTest::TitleFunc RatioSum::GetTitleFunction() const
+	const r2::iTest::TitleFunc SumBasicRatio::GetTitleFunction() const
 	{
-		return []()->const char* { return "Ratio Sum"; };
+		return []()->const char* { return "Sum Basic Ratio"; };
 	}
-	const r2::iTest::DoFunc RatioSum::GetDoFunction() const
+	const r2::iTest::DoFunc SumBasicRatio::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
