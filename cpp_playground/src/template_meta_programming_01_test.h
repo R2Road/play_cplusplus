@@ -20,4 +20,13 @@ namespace template_meta_programming_test
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 	};
+
+
+
+	class RatioBasic : public r2::iTest, public r2::SingleTon<RatioBasic>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
 }

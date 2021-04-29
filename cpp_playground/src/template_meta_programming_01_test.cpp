@@ -134,3 +134,44 @@ namespace template_meta_programming_test
 		};
 	}
 }
+
+
+
+namespace template_meta_programming_test
+{
+	template<int N, int D>
+	struct Ratio_Step_0
+	{
+		static const int Numerator = N;
+		static const int Denominator = D;
+	};
+
+
+	const r2::iTest::TitleFunc RatioBasic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Ratio Basic";
+		};
+	}
+	const r2::iTest::DoFunc RatioBasic::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				Ratio_Step_0<7, 4> ratio;
+
+				std::cout << "\t + " << "RatioBasic<7, 4> ratio;" << r2::linefeed;
+				std::cout << "\t\t - " << ratio.Numerator << " / " << ratio.Denominator << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
