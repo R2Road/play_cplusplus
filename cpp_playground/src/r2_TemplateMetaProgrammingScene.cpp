@@ -17,6 +17,7 @@ namespace r2
 
 		{
 			ret->AddChild( '1', template_meta_programming_test::CalculateFactorial::GetInstance() );
+			ret->AddChild( '2', template_meta_programming_test::GreatestCommonDivisor::GetInstance() );
 
 
 			ret->AddSplit();

@@ -6,7 +6,6 @@
 #include "r2_TemplateScene.h"
 
 #include "template_practice_part_01_test.h"
-#include "template_practice_part_02_test.h"
 
 namespace r2
 {
@@ -16,12 +15,6 @@ namespace r2
 
 		{
 			ret->AddChild( '1', template_practice_part_01_test::Practice01::GetInstance() );
-
-
-			ret->AddSplit();
-
-
-			ret->AddChild( 'q', template_practice_part_02_test::GreatestCommonDivisor::GetInstance() );
 
 
 			ret->AddSplit();
