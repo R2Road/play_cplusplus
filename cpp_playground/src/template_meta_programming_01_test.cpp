@@ -175,3 +175,53 @@ namespace template_meta_programming_test
 		};
 	}
 }
+
+
+
+namespace template_meta_programming_test
+{
+	template<class Ratio1, class Ratio2>
+	struct RatioOperator_Sum
+	{
+		static const Ratio_Step_0<
+			Ratio1::Numerator * Ratio2::Denominator + Ratio2::Numerator * Ratio1::Denominator
+			, Ratio1::Denominator * Ratio2::Denominator
+		> ratio;
+	};
+
+
+	const r2::iTest::TitleFunc RatioSum::GetTitleFunction() const
+	{
+		return []()->const char* { return "Ratio Sum"; };
+	}
+	const r2::iTest::DoFunc RatioSum::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				using ratio1 = Ratio_Step_0<7, 4>;
+				using ratio2 = Ratio_Step_0<3, 2>;
+				using ratio_operator_sum = RatioOperator_Sum<ratio1, ratio2>;
+
+				std::cout << "\t" << "using ratio1 = Ratio_Step_0<7, 4>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio2 = Ratio_Step_0<3, 2>;" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << "\t" << "using ratio_operator_sum = RatioOperator_Sum<ratio1, ratio2>;" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << "\t\t - Result : " << ratio_operator_sum::ratio.Numerator << " / " << ratio_operator_sum::ratio.Denominator << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
