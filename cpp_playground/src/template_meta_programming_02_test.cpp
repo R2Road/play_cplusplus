@@ -169,6 +169,9 @@ namespace
 		static constexpr size_t size = ConvertInteger2String_2<N / 10, ConvertUnits2Character<N % 10>::c, Chars...>::size;
 		static constexpr const char* str = ConvertInteger2String_2<N / 10, ConvertUnits2Character<N % 10>::c, Chars...>::str;
 	};
+
+	// 위의 ConvertInteger2String_2 의 전방 선언 코드를 지우고 가장 아래의 템플릿 코드를 가장 위로 올려도 정상 작동 한다.
+	// 전방 선언은 템플릿 코드의 번역 순서에 따라 발생하는 문제를 해결해준다.
 }
 namespace template_meta_programming_test
 {
@@ -210,6 +213,13 @@ namespace template_meta_programming_test
 				std::cout << "\t" << "+ ConvertInteger2String_2<101010>" << r2::linefeed;
 				std::cout << "\t\t" << "size : " << ConvertInteger2String_2<101010>::size << r2::linefeed;
 				std::cout << "\t\t" << "string : " << ConvertInteger2String_2<101010>::str << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "ConvertInteger2String_2 의 전방 선언 코드를 지우고 가장 아래의 템플릿 코드를 가장 위로 올려도 정상 작동 한다." << r2::linefeed;
+				std::cout << "전방 선언은 템플릿 코드의 번역 순서에 따라 발생하는 문제를 해결해준다." << r2::linefeed;
 			}
 
 			std::cout << r2::split;
