@@ -1,8 +1,6 @@
 #include "pch.h"
 #include "template_meta_programming_03_test.h"
 
-#include <string>
-
 #include "r2_eTestResult.h"
 
 namespace
