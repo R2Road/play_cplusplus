@@ -45,12 +45,16 @@ namespace pointer_test
 				std::cout << "\t + " << "offset : ( ( ip + 1 ) - ip )" << r2::linefeed;
 				std::cout << "\t\t - " << ( ( ip + 1 ) - ip ) << r2::linefeed << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "int t1 = ( int )ip" << r2::linefeed;
-				std::cout << "\t" << "int t2 = ( int )( ip + 1 );" << r2::linefeed;
-				std::cout << "\t + " << "offset : ( t2 - t1 )" << r2::linefeed;
+				
+
+				std::cout << "\t" << "auto t1 = reinterpret_cast<std::size_t>( ip );" << r2::linefeed;
+				std::cout << "\t" << "auto t2 = reinterpret_cast<std::size_t>( ip + 1 );;" << r2::linefeed;
 				auto t1 = reinterpret_cast<std::size_t>( ip );
 				auto t2 = reinterpret_cast<std::size_t>( ip + 1 );
-				std::cout << "\t\t - " << ( t2 - t1 ) << r2::linefeed;
+
+				std::cout << "\t\t - t1 : " << t1 << r2::linefeed;
+				std::cout << "\t\t - t2 : " << t2 << r2::linefeed;
+				std::cout << "\t\t - offset ( t2 - t1 ) : " << ( t2 - t1 ) << r2::linefeed;
 			}
 
 			std::cout << r2::split;
