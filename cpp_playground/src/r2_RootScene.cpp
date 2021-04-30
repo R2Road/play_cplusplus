@@ -4,6 +4,7 @@
 #include "r2_ConsoleScene.h"
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
+#include "r2_FileSystemScene.h"
 #include "r2_PointerTestScene.h"
 #include "r2_RandomScene.h"
 #include "r2_TemplateScene.h"
@@ -12,7 +13,6 @@
 #include "r2_MemoryScene.h"
 #include "r2_RendererScene.h"
 
-#include "filesystem_test.h"
 #include "optional_test.h"
 #include "variant_test.h"
 #include "tuple_test.h"
@@ -43,8 +43,16 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
-
-			ret->AddChild( '2', filesystem_test::CurrentDirectory::GetInstance() );
+			
+			ret->AddChild(
+				'2'
+				, []()->const char* { return r2::FileSystemScene::GetTitle(); }
+				, [&director]()->const eTestResult
+				{
+					director.Setup( r2::FileSystemScene::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
 
 			ret->AddChild(
 				'3'
