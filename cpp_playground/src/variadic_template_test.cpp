@@ -17,7 +17,7 @@ namespace variadic_template_test
 	{
 		return []()->const char*
 		{
-			return "Variadic Template : Size Of Args";
+			return "Size Of Args";
 		};
 	}
 	const r2::iTest::DoFunc SizeOfArgs::GetDoFunction() const
@@ -72,7 +72,7 @@ namespace variadic_template_test
 	{
 		return []()->const char*
 		{
-			return "Variadic Template : Print Types";
+			return "Print Values";
 		};
 	}
 	const r2::iTest::DoFunc PrintValues::GetDoFunction() const
@@ -137,7 +137,7 @@ namespace variadic_template_test
 	{
 		return []()->const char*
 		{
-			return "Variadic Template : Sum Values";
+			return "Sum Values";
 		};
 	}
 	const r2::iTest::DoFunc SumValues::GetDoFunction() const
@@ -224,7 +224,7 @@ namespace variadic_template_test
 	{
 		return []()->const char*
 		{
-			return "Variadic Template : Subtract Values";
+			return "Subtract Values";
 		};
 	}
 	const r2::iTest::DoFunc SubtractValues::GetDoFunction() const
