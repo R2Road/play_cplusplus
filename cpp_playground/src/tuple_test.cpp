@@ -40,7 +40,7 @@ namespace tuple_test
 			}
 
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 
 			{
@@ -58,7 +58,7 @@ namespace tuple_test
 			}
 
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 
 			{
