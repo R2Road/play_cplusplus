@@ -29,4 +29,13 @@ namespace filesystem_test
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 	};
+
+
+
+	class PathOperation : public r2::iTest, public r2::SingleTon<PathOperation>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
 }

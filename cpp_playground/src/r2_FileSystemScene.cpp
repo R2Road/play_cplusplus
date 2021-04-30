@@ -17,6 +17,7 @@ namespace r2
 			ret->AddChild( '1', filesystem_test::DirectoryPath::GetInstance() );
 			ret->AddChild( '2', filesystem_test::DirectoryIterator::GetInstance() );
 			ret->AddChild( '3', filesystem_test::CurrentDirectory::GetInstance() );
+			ret->AddChild( '4', filesystem_test::PathOperation::GetInstance() );
 
 
 			ret->AddSplit();

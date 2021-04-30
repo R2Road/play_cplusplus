@@ -19,34 +19,6 @@ namespace
 
 		std::cout << r2::linefeed;
 	}
-
-	void TestPathOperation()
-	{
-		std::cout << "# Path Operation #" << r2::linefeed;
-
-		std::filesystem::path p = std::filesystem::current_path();
-		std::cout << "\t" << "+ Directory : " << r2::linefeed;
-		std::cout << "\t\t" << p << r2::linefeed;
-		std::cout << r2::linefeed;
-
-
-
-		std::cout << "\t" << "+ Append, Operator /" << r2::linefeed;
-
-		p /= "test.txt";
-
-		std::cout << "\t\t" << p << r2::linefeed;
-		std::cout << r2::linefeed;
-
-
-
-		std::cout << "\t" << "+ Remove File Name" << r2::linefeed;
-
-		p.remove_filename();
-
-		std::cout << "\t\t" << p << r2::linefeed;
-		std::cout << r2::linefeed;
-	}
 }
 
 
@@ -153,9 +125,59 @@ namespace filesystem_test
 		{
 			TestRecursiveDirectoryIterator();
 
-			std::cout << r2::linefeed << r2::linefeed;
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
 
-			TestPathOperation();
+
+
+namespace filesystem_test
+{
+
+	const r2::iTest::TitleFunc PathOperation::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Path Operation";
+		};
+	}
+	const r2::iTest::DoFunc PathOperation::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::filesystem::path p = std::filesystem::current_path();
+				std::cout << "\t" << "+ Directory : " << r2::linefeed;
+				std::cout << "\t\t" << p << r2::linefeed;
+				std::cout << r2::linefeed;
+
+
+
+				std::cout << "\t" << "+ Append with Operator /" << r2::linefeed;
+
+				p /= "test.txt";
+				std::cout << "\t\t" << "p /= \"test.txt\"" << r2::linefeed;
+
+				std::cout << "\t\t\t" << p << r2::linefeed;
+				std::cout << r2::linefeed;
+
+
+
+				std::cout << "\t" << "+ Remove File Name" << r2::linefeed;
+
+				p.remove_filename();
+				std::cout << "\t\t" << "p.remove_filename();" << r2::linefeed;
+
+				std::cout << "\t\t\t" << p << r2::linefeed;
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
