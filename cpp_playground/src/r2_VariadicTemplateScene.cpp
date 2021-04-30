@@ -14,10 +14,10 @@ namespace r2
 		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', variadic_template_test::PrintValues::GetInstance() );
-			ret->AddChild( '2', variadic_template_test::SumValues::GetInstance() );
-			ret->AddChild( '3', variadic_template_test::SubtractValues::GetInstance() );
-			ret->AddChild( '4', variadic_template_test::SizeOfArgs::GetInstance() );
+			ret->AddChild( '1', variadic_template_test::SizeOfArgs::GetInstance() );
+			ret->AddChild( '2', variadic_template_test::PrintValues::GetInstance() );
+			ret->AddChild( '3', variadic_template_test::SumValues::GetInstance() );
+			ret->AddChild( '4', variadic_template_test::SubtractValues::GetInstance() );
 
 
 			ret->AddSplit();
