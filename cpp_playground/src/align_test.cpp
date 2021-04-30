@@ -32,7 +32,7 @@ namespace align_test
 				std::cout << r2::linefeed << r2::linefeed;
 
 				{
-					std::cout << "\t" << "std::align( alignof( char ), sizeof( char ), dp, space )" << r2::linefeed;
+					std::cout << "\t" << "std::align( alignof( char ), sizeof( char ), ip, space )" << r2::linefeed;
 					if( std::align( alignof( char ), sizeof( char ), ip, space ) )
 					{
 						std::cout << "\t\t - " << "success" << r2::linefeed;
@@ -64,7 +64,7 @@ namespace align_test
 					std::cout << "\t\t - " << "space : " << space << r2::linefeed;
 					std::cout << r2::linefeed;
 
-					std::cout << "\t" << "std::align( alignof( char ), sizeof( char ), dp, space )" << r2::linefeed;
+					std::cout << "\t" << "std::align( alignof( char ), sizeof( char ), ip, space )" << r2::linefeed;
 					if( std::align( alignof( char ), sizeof( char ), ip, space ) )
 					{
 						std::cout << "\t\t - " << "success" << r2::linefeed;
@@ -96,7 +96,7 @@ namespace align_test
 					std::cout << "\t\t - " << "space : " << space << r2::linefeed;
 					std::cout << r2::linefeed;
 
-					std::cout << "\t" << "std::align( alignof( char ), sizeof( char ), dp, space )" << r2::linefeed;
+					std::cout << "\t" << "std::align( alignof( char ), sizeof( char ), ip, space )" << r2::linefeed;
 					if( std::align( alignof( char ), sizeof( char ), ip, space ) )
 					{
 						std::cout << "\t\t - " << "success" << r2::linefeed;
