@@ -23,7 +23,7 @@ namespace filesystem_test
 
 
 
-	class CurrentDirectory : public r2::iTest, public r2::SingleTon<CurrentDirectory>
+	class RecursiveDirectoryIterator : public r2::iTest, public r2::SingleTon<RecursiveDirectoryIterator>
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;

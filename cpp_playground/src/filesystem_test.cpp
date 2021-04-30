@@ -5,24 +5,6 @@
 
 #include "r2_eTestResult.h"
 
-namespace
-{
-	void TestRecursiveDirectoryIterator()
-	{
-		std::cout << "# Recursive Directory Iterator #" << r2::linefeed;
-
-		std::filesystem::recursive_directory_iterator itr( std::filesystem::current_path() / "src" );
-		for( auto i : itr )
-		{
-			std::cout << "\t" << i.path() << r2::linefeed;
-		}
-
-		std::cout << r2::linefeed;
-	}
-}
-
-
-
 namespace filesystem_test
 {
 
@@ -112,18 +94,30 @@ namespace filesystem_test
 namespace filesystem_test
 {
 
-	const r2::iTest::TitleFunc CurrentDirectory::GetTitleFunction() const
+	const r2::iTest::TitleFunc RecursiveDirectoryIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "File System : Current Directory";
+			return "Recursive Directory Iterator";
 		};
 	}
-	const r2::iTest::DoFunc CurrentDirectory::GetDoFunction() const
+	const r2::iTest::DoFunc RecursiveDirectoryIterator::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
-			TestRecursiveDirectoryIterator();
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::filesystem::recursive_directory_iterator itr( std::filesystem::current_path() / "src" );
+				for( auto i : itr )
+				{
+					std::cout << "\t" << i.path() << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
