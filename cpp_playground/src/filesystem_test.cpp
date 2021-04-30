@@ -77,28 +77,36 @@ namespace filesystem_test
 	{
 		return []()->const char*
 		{
-			return "File System : Directory Path";
+			return "Directory Path";
 		};
 	}
 	const r2::iTest::DoFunc DirectoryPath::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# Current Directory #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			std::filesystem::path p = std::filesystem::current_path();
+			std::cout << r2::split;
 
-			std::cout << "\t" << p << r2::linefeed;
-			std::cout << r2::linefeed;
+			{
+				std::cout << "\t" << "+ Current Directory" << r2::linefeed;
 
+				std::filesystem::path p = std::filesystem::current_path();
 
+				std::cout << "\t\t" << p << r2::linefeed;
+			}
 
-			std::cout << "# Temp Directory #" << r2::linefeed;
+			std::cout << r2::split;
 
-			std::filesystem::path p2 = std::filesystem::temp_directory_path();
+			{
+				std::cout << "\t" << "+ Temp Directory" << r2::linefeed;
 
-			std::cout << "\t" << p2 << r2::linefeed;
-			std::cout << r2::linefeed;
+				std::filesystem::path p2 = std::filesystem::temp_directory_path();
+
+				std::cout << "\t\t" << p2 << r2::linefeed;
+			}
+
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
