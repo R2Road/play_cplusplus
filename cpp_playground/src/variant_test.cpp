@@ -19,8 +19,9 @@ namespace variant_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t+ std::variant<int, float, bool> v;" << r2::linefeed;
@@ -38,7 +39,7 @@ namespace variant_test
 			}
 
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 
 			{
@@ -46,14 +47,14 @@ namespace variant_test
 
 				std::variant<int, int> v;
 				std::cout << "\t\t- Has Problem Using Same Type" << r2::linefeed << r2::linefeed;
-				std::cout << "\t\t- Not Working : v = 1;" << r2::linefeed << r2::linefeed;
+				std::cout << "\t\t- Not Working : v = 1;" << r2::linefeed;
 				//
 				//v = 1;
 				//
 			}
 
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 
 			{
@@ -79,7 +80,7 @@ namespace variant_test
 			}
 
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 
 			{
@@ -110,10 +111,12 @@ namespace variant_test
 				}
 
 				{
-					std::cout << "\t\t- Working : std::variant<char, TestStruct, int, float> v;" << r2::linefeed << r2::linefeed;
+					std::cout << "\t\t- Working : std::variant<char, TestStruct, int, float> v;" << r2::linefeed;
 					std::variant<char, TestStruct, int, float> v;
 				}
 			}
+
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
