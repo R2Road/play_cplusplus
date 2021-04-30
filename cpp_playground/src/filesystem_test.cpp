@@ -7,25 +7,6 @@
 
 namespace
 {
-	void TestDirectoryIterator()
-	{
-		std::cout << "# Directory Iterator #" << r2::linefeed;
-
-		std::cout << "\t" << "+ Directory : " << r2::linefeed;
-		std::cout << "\t\t" << std::filesystem::current_path() << r2::linefeed;
-		std::cout << r2::linefeed;
-
-		std::cout << "\t" << "+ View" << r2::linefeed;
-		std::filesystem::directory_iterator itr( std::filesystem::current_path() );
-		for( auto i : itr )
-		{
-			std::cout << "\t\t" << i.path() << r2::linefeed;
-			std::cout << "\t\t\t" << ( std::filesystem::is_regular_file( i.path() ) ? "file" : "directory" ) << r2::linefeed;
-		}
-
-		std::cout << r2::linefeed;
-	}
-
 	void TestRecursiveDirectoryIterator()
 	{
 		std::cout << "# Recursive Directory Iterator #" << r2::linefeed;
@@ -118,6 +99,47 @@ namespace filesystem_test
 namespace filesystem_test
 {
 
+	const r2::iTest::TitleFunc DirectoryIterator::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Directory Iterator";
+		};
+	}
+	const r2::iTest::DoFunc DirectoryIterator::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "\t" << "+ Directory : " << r2::linefeed;
+				std::cout << "\t\t" << std::filesystem::current_path() << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << "\t" << "+ View" << r2::linefeed;
+				std::filesystem::directory_iterator itr( std::filesystem::current_path() );
+				for( auto i : itr )
+				{
+					std::cout << "\t\t" << i.path() << r2::linefeed;
+					std::cout << "\t\t\t" << ( std::filesystem::is_regular_file( i.path() ) ? "file" : "directory" ) << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
+
+
+
+namespace filesystem_test
+{
+
 	const r2::iTest::TitleFunc CurrentDirectory::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -129,10 +151,6 @@ namespace filesystem_test
 	{
 		return []()->r2::eTestResult
 		{
-			TestDirectoryIterator();
-
-			std::cout << r2::linefeed << r2::linefeed;
-
 			TestRecursiveDirectoryIterator();
 
 			std::cout << r2::linefeed << r2::linefeed;

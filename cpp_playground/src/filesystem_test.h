@@ -12,6 +12,17 @@ namespace filesystem_test
 		const DoFunc GetDoFunction() const override;
 	};
 
+
+
+	class DirectoryIterator : public r2::iTest, public r2::SingleTon<DirectoryIterator>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
+
+
+
 	class CurrentDirectory : public r2::iTest, public r2::SingleTon<CurrentDirectory>
 	{
 	public:
