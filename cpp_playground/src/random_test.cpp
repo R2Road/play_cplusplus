@@ -15,7 +15,7 @@ namespace random_test
 	{
 		return []()->const char*
 		{
-			return "Random : Basic";
+			return "Basic";
 		};
 	}
 	const r2::iTest::DoFunc Basic::GetDoFunction() const
@@ -156,7 +156,7 @@ namespace random_test
 	{
 		return []()->const char*
 		{
-			return "Random : Status Save And Load";
+			return "Status Save And Load";
 		};
 	}
 	const r2::iTest::DoFunc StatusSaveAndLoad::GetDoFunction() const
