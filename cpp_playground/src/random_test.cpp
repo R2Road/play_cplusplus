@@ -22,7 +22,9 @@ namespace random_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t+ Range Check" << r2::linefeed;
@@ -44,7 +46,7 @@ namespace random_test
 				std::cout << "\t\t" << "Contained Min and Max;" << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t+ Range Check" << r2::linefeed;
@@ -65,6 +67,8 @@ namespace random_test
 
 				std::cout << "\t\t" << "Contained Min;" << r2::linefeed;
 			}
+
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
@@ -111,7 +115,8 @@ namespace
 	void Status_Load()
 	{
 		std::cout << "# Status Load #" << r2::linefeed;
-		std::cout << r2::linefeed;
+
+		std::cout << r2::split;
 
 		{
 			std::cout << "\t+ Test Step 1" << r2::linefeed;
@@ -130,8 +135,9 @@ namespace
 			std::cout << "\t\t" << dist( random_engine ) << r2::linefeed;
 			std::cout << "\t\t" << dist( random_engine ) << r2::linefeed;
 			std::cout << "\t\t" << dist( random_engine ) << r2::linefeed;
-			std::cout << r2::linefeed;
 		}
+
+		std::cout << r2::split;
 
 		{
 			std::cout << "\t+ Test Step 2" << r2::linefeed;
@@ -144,10 +150,9 @@ namespace
 			std::cout << "\t\t" << dist( random_engine ) << r2::linefeed;
 			std::cout << "\t\t" << dist( random_engine ) << r2::linefeed;
 			std::cout << "\t\t" << dist( random_engine ) << r2::linefeed;
-			std::cout << r2::linefeed;
 		}
 
-		std::cout << r2::linefeed;
+		std::cout << r2::split;
 	}
 }
 namespace random_test
