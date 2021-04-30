@@ -2,6 +2,7 @@
 #include "filesystem_test.h"
 
 #include <filesystem>
+#include <stdlib.h>
 
 #include "r2_eTestResult.h"
 
@@ -110,10 +111,19 @@ namespace filesystem_test
 			std::cout << r2::split;
 
 			{
+				int i = 0;
+
 				std::filesystem::recursive_directory_iterator itr( std::filesystem::current_path() / "src" );
-				for( auto i : itr )
+				for( auto p : itr )
 				{
-					std::cout << "\t" << i.path() << r2::linefeed;
+					std::cout << "\t" << p.path() << r2::linefeed;
+
+					++i;
+					if( i > 40 )
+					{
+						i = 0;
+						system( "pause" );
+					}
 				}
 			}
 
