@@ -19,7 +19,9 @@ namespace korean_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "+ const char* korean = \"한글 출력\";" << r2::linefeed;
@@ -27,10 +29,10 @@ namespace korean_test
 
 				std::cout << "\t\t" << "- " << korean << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ use std::cout" << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ use std::cout" << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "+ const wchar_t* korean = L\"한글 출력\";" << r2::linefeed;
@@ -41,10 +43,10 @@ namespace korean_test
 
 				std::wcout << "\t\t" << "- " << korean << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ use std::wcout" << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ use std::wcout" << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
