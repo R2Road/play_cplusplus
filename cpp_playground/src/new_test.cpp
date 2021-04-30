@@ -18,7 +18,9 @@ namespace new_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+
+			std::cout << r2::split;
 
 			{
 				int* i = new int( 1 );
@@ -30,7 +32,7 @@ namespace new_test
 				std::cout << "\t" << "+ delete i;" << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				int* i = new ( std::nothrow ) int( 2 );
@@ -42,7 +44,7 @@ namespace new_test
 				std::cout << "\t" << "+ delete i;" << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				char* str = new char[7];
@@ -54,7 +56,7 @@ namespace new_test
 				std::cout << "\t" << "+ delete[] str;" << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
@@ -73,7 +75,9 @@ namespace new_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+
+			std::cout << r2::split;
 
 			{
 				int i = 123;
@@ -90,7 +94,7 @@ namespace new_test
 				std::cout << "\t\t" << "- Print fp : " << *fp << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				int i = 65;
@@ -104,7 +108,7 @@ namespace new_test
 				std::cout << "\t\t" << "- Print cp : " << *cp << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
