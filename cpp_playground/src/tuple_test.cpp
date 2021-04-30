@@ -19,10 +19,10 @@ namespace tuple_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 
 			{
@@ -76,7 +76,7 @@ namespace tuple_test
 			}
 
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
