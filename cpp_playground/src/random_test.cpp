@@ -93,7 +93,8 @@ namespace
 	void Status_Save()
 	{
 		std::cout << "# Status Save #" << r2::linefeed;
-		std::cout << r2::linefeed;
+		
+		std::cout << r2::split;
 
 		std::random_device rd;
 		std::mt19937 random_engine( rd() );
@@ -114,7 +115,7 @@ namespace
 			fs << random_engine;
 		}
 
-		std::cout << r2::linefeed;
+		std::cout << r2::split;
 	}
 
 	void Status_Load()
