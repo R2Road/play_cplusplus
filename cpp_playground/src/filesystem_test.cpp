@@ -7,25 +7,6 @@
 
 namespace
 {
-	void TestGetDirectoryPath()
-	{
-		std::cout << "# Current Directory #" << r2::linefeed;
-
-		std::filesystem::path p = std::filesystem::current_path();
-
-		std::cout << "\t" << p << r2::linefeed;
-		std::cout << r2::linefeed;
-
-
-
-		std::cout << "# Temp Directory #" << r2::linefeed;
-
-		std::filesystem::path p2 = std::filesystem::temp_directory_path();
-
-		std::cout << "\t" << p2 << r2::linefeed;
-		std::cout << r2::linefeed;	
-	}
-
 	void TestDirectoryIterator()
 	{
 		std::cout << "# Directory Iterator #" << r2::linefeed;
@@ -87,6 +68,45 @@ namespace
 	}
 }
 
+
+
+namespace filesystem_test
+{
+
+	const r2::iTest::TitleFunc DirectoryPath::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "File System : Directory Path";
+		};
+	}
+	const r2::iTest::DoFunc DirectoryPath::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# Current Directory #" << r2::linefeed;
+
+			std::filesystem::path p = std::filesystem::current_path();
+
+			std::cout << "\t" << p << r2::linefeed;
+			std::cout << r2::linefeed;
+
+
+
+			std::cout << "# Temp Directory #" << r2::linefeed;
+
+			std::filesystem::path p2 = std::filesystem::temp_directory_path();
+
+			std::cout << "\t" << p2 << r2::linefeed;
+			std::cout << r2::linefeed;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
+
+
+
 namespace filesystem_test
 {
 
@@ -101,10 +121,6 @@ namespace filesystem_test
 	{
 		return []()->r2::eTestResult
 		{
-			TestGetDirectoryPath();
-
-			std::cout << r2::linefeed << r2::linefeed;
-
 			TestDirectoryIterator();
 
 			std::cout << r2::linefeed << r2::linefeed;

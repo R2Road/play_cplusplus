@@ -14,7 +14,8 @@ namespace r2
 		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', filesystem_test::CurrentDirectory::GetInstance() );
+			ret->AddChild( '1', filesystem_test::DirectoryPath::GetInstance() );
+			ret->AddChild( '2', filesystem_test::CurrentDirectory::GetInstance() );
 
 
 			ret->AddSplit();

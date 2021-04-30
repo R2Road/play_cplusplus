@@ -5,6 +5,13 @@
 
 namespace filesystem_test
 {
+	class DirectoryPath : public r2::iTest, public r2::SingleTon<DirectoryPath>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
+
 	class CurrentDirectory : public r2::iTest, public r2::SingleTon<CurrentDirectory>
 	{
 	public:
