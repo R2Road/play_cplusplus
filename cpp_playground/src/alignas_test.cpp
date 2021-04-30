@@ -11,7 +11,7 @@ namespace align_test
 	{
 		return []()->const char*
 		{
-			return "Align : Align As";
+			return "Align As";
 		};
 	}
 	const r2::iTest::DoFunc AlignAs::GetDoFunction() const

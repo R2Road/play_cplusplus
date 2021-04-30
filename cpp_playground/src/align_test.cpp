@@ -9,7 +9,7 @@ namespace align_test
 	{
 		return []()->const char*
 		{
-			return "Align : Align 0";
+			return "Align 0";
 		};
 	}
 	const r2::iTest::DoFunc Align_0::GetDoFunction() const
@@ -127,7 +127,7 @@ namespace align_test
 	{
 		return []()->const char*
 		{
-			return "Align : Align 1";
+			return "Align 1";
 		};
 	}
 	const r2::iTest::DoFunc Align_1::GetDoFunction() const
@@ -244,7 +244,7 @@ namespace align_test
 	{
 		return []()->const char*
 		{
-			return "Align : Align 2";
+			return "Align 2";
 		};
 	}
 	const r2::iTest::DoFunc Align_2::GetDoFunction() const

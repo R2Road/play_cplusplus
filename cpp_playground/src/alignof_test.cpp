@@ -14,7 +14,7 @@ namespace alignof_test
 	{
 		return []()->const char*
 		{
-			return "Align : Basic";
+			return "Basic";
 		};
 	}
 	const r2::iTest::DoFunc Basic::GetDoFunction() const
@@ -125,7 +125,7 @@ namespace alignof_test
 	{
 		return []()->const char*
 		{
-			return "Align : Mixed Struct";
+			return "Mixed Struct";
 		};
 	}
 	const r2::iTest::DoFunc MixedStruct::GetDoFunction() const
