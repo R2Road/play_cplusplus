@@ -14,7 +14,7 @@ namespace console_test
 	{
 		return []()->const char*
 		{
-			return "Console : Get Window Size";
+			return "Get Window Size";
 		};
 	}
 	const r2::iTest::DoFunc GetWindowSize::GetDoFunction() const
@@ -59,7 +59,7 @@ namespace console_test
 	{
 		return []()->const char*
 		{
-			return "Console : Change Window Size";
+			return "Change Window Size";
 		};
 	}
 	const r2::iTest::DoFunc ChangeWindowSize::GetDoFunction() const
@@ -104,7 +104,7 @@ namespace console_test
 	{
 		return []()->const char*
 		{
-			return "Console : Change Window Position";
+			return "Change Window Position";
 		};
 	}
 	const r2::iTest::DoFunc ChangeWindowPosition::GetDoFunction() const
@@ -141,7 +141,7 @@ namespace console_test
 	{
 		return []()->const char*
 		{
-			return "Console : Change Window Name";
+			return "Change Window Name";
 		};
 	}
 	const r2::iTest::DoFunc ChangeWindowName::GetDoFunction() const
@@ -190,7 +190,7 @@ namespace console_test
 	{
 		return []()->const char*
 		{
-			return "Console : Move Cursor";
+			return "Move Cursor";
 		};
 	}
 	const r2::iTest::DoFunc MoveCursor::GetDoFunction() const
@@ -244,7 +244,7 @@ namespace console_test
 	{
 		return []()->const char*
 		{
-			return "Console : Color Table";
+			return "Color Table";
 		};
 	}
 	const r2::iTest::DoFunc ColorTable::GetDoFunction() const
@@ -287,7 +287,7 @@ namespace console_test
 	{
 		return []()->const char*
 		{
-			return "Console : Text Color 1";
+			return "Text Color 1";
 		};
 	}
 	const r2::iTest::DoFunc TextColor1::GetDoFunction() const
@@ -324,7 +324,7 @@ namespace console_test
 	{
 		return []()->const char*
 		{
-			return "Console : Text Color 2";
+			return "Text Color 2";
 		};
 	}
 	const r2::iTest::DoFunc TextColor2::GetDoFunction() const
@@ -403,7 +403,7 @@ namespace console_test
 	{
 		return []()->const char*
 		{
-			return "Console : Adjust Color Table";
+			return "Adjust Color Table";
 		};
 	}
 	const r2::iTest::DoFunc AdjustColorTable::GetDoFunction() const
@@ -467,7 +467,7 @@ namespace console_test
 	{
 		return []()->const char*
 		{
-			return "Console : Color Table 2";
+			return "Color Table 2";
 		};
 	}
 	const r2::iTest::DoFunc ColorTable2::GetDoFunction() const
@@ -555,7 +555,7 @@ namespace console_test
 	{
 		return []()->const char*
 		{
-			return "Console : Text Color 3";
+			return "Text Color 3";
 		};
 	}
 	const r2::iTest::DoFunc TextColor3::GetDoFunction() const
@@ -631,7 +631,7 @@ namespace console_test
 	{
 		return []()->const char*
 		{
-			return "Console : Set Pixel";
+			return "Set Pixel";
 		};
 	}
 	const r2::iTest::DoFunc Pixel::GetDoFunction() const
