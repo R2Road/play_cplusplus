@@ -19,7 +19,9 @@ namespace enum_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t + " << "enum eTestOldEnum {};" << r2::linefeed << r2::linefeed;
@@ -32,7 +34,7 @@ namespace enum_test
 				std::cout << "\t\t\t - " << typeid( std::underlying_type<eTestOldEnum>::type ).name() << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t + " << "enum class eTestNewEnum {};" << r2::linefeed << r2::linefeed;
@@ -45,7 +47,7 @@ namespace enum_test
 				std::cout << "\t\t\t - " << typeid( std::underlying_type<eTestNewEnum>::type ).name() << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t + " << "enum class eTestNewEnum : char {};" << r2::linefeed << r2::linefeed;
@@ -54,6 +56,8 @@ namespace enum_test
 				std::cout << "\t\t - " << "typeid( std::underlying_type<eTestNewEnum>::type ).name()" << r2::linefeed;
 				std::cout << "\t\t\t - " << typeid( std::underlying_type<eTestNewEnum>::type ).name() << r2::linefeed;
 			}
+
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
@@ -82,13 +86,14 @@ namespace enum_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
+
 			std::cout << "\t" << "template<typename EnumT>" << r2::linefeed;
 			std::cout << "\t" << "constexpr auto Enum2Value( EnumT e )" << r2::linefeed;
 			std::cout << "\t" << "{" << r2::linefeed;
 			std::cout << "\t\t" << "return static_cast<std::underlying_type_t<EnumT>>( e );" << r2::linefeed;
 			std::cout << "\t" << "}" << r2::linefeed;
 
-			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "enum eOldEnum" << r2::linefeed;
@@ -110,7 +115,7 @@ namespace enum_test
 				std::cout << "\t\t" << "- " << typeid( Enum2Value( eOldEnum::three ) ).name() << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "enum class eNewEnum : short" << r2::linefeed;
@@ -131,6 +136,8 @@ namespace enum_test
 				std::cout << "\t\t" << "- " << Enum2Value( eNewEnum::dul ) << r2::linefeed;
 				std::cout << "\t\t" << "- " << typeid( Enum2Value( eNewEnum::dul ) ).name() << r2::linefeed;
 			}
+
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
