@@ -197,19 +197,17 @@ namespace console_test
 	{
 		return []()->r2::eTestResult
 		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "\t" << " + Key : Move - W, A, S, D" << r2::linefeed;
+			std::cout << "\t" << " + Key : Print - SPACE BAR" << r2::linefeed;
+
 			{
 				HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-				COORD pos = { 0, 0 };
+				COORD pos = { 0, 3 };
 
 				bool process = true;
 				while( process )
 				{
-					system( "cls" );
-
-					std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
-					std::cout << "\t" << " + Key : W, A, S, D" << r2::linefeed;
-
-
 					SetConsoleCursorPosition( stdHandle, pos );
 
 					switch( _getch() )
@@ -229,6 +227,10 @@ namespace console_test
 
 					case 27: // ESC
 						process = false;
+						break;
+
+					case 32: // space
+						std::cout << "test string";
 						break;
 					}
 				}
