@@ -20,7 +20,7 @@
 #include "pointer_test.h"
 #include "assert_test.h"
 #include "string_view_test.h"
-#include "enum_test.h"
+#include "r2_EnumScene.h"
 #include "new_test.h"
 #include "korean_test.h"
 #include "lambda_test.h"
@@ -114,6 +114,16 @@ namespace r2
 				}
 			);
 
+			ret->AddChild(
+				'9'
+				, []()->const char* { return r2::EnumScene::GetTitle(); }
+				, [&director]()->const eTestResult
+				{
+					director.Setup( r2::EnumScene::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+
 			ret->AddSplit();
 
 			ret->AddChild( 'q', lambda_test::Capture::GetInstance() );
@@ -127,12 +137,10 @@ namespace r2
 			ret->AddSplit();
 
 			ret->AddChild( 'a', stringview_test::Basic::GetInstance() );
-			ret->AddChild( 's', enum_test::Basic::GetInstance() );
-			ret->AddChild( 'd', enum_test::Convert::GetInstance() );
-			ret->AddChild( 'f', new_test::Basic::GetInstance() );
-			ret->AddChild( 'g', new_test::PlacementNew::GetInstance() );
-			ret->AddChild( 'h', print_test::Basic::GetInstance() );
-			ret->AddChild( 'j', char_test::Basic::GetInstance() );
+			ret->AddChild( 's', new_test::Basic::GetInstance() );
+			ret->AddChild( 'd', new_test::PlacementNew::GetInstance() );
+			ret->AddChild( 'f', print_test::Basic::GetInstance() );
+			ret->AddChild( 'g', char_test::Basic::GetInstance() );
 
 			ret->AddSplit();
 

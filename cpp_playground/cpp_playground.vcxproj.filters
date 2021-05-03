@@ -156,6 +156,9 @@
     <ClCompile Include="src\r2_FileSystemScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_EnumScene.cpp">
+      <Filter>scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -300,6 +303,9 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_FileSystemScene.h">
+      <Filter>scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_EnumScene.h">
       <Filter>scene</Filter>
     </ClInclude>
   </ItemGroup>

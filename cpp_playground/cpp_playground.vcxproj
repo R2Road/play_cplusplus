@@ -38,6 +38,7 @@
     <ClCompile Include="src\r2_AlignScene.cpp" />
     <ClCompile Include="src\r2_ConsoleScene.cpp" />
     <ClCompile Include="src\r2_Director.cpp" />
+    <ClCompile Include="src\r2_EnumScene.cpp" />
     <ClCompile Include="src\r2_FileSystemScene.cpp" />
     <ClCompile Include="src\r2_RendererScene.cpp" />
     <ClCompile Include="src\r2_FrameBuffer.cpp" />
@@ -85,6 +86,7 @@
     <ClInclude Include="src\r2_AlignScene.h" />
     <ClInclude Include="src\r2_ConsoleScene.h" />
     <ClInclude Include="src\r2_Director.h" />
+    <ClInclude Include="src\r2_EnumScene.h" />
     <ClInclude Include="src\r2_eTestResult.h" />
     <ClInclude Include="src\r2_FileSystemScene.h" />
     <ClInclude Include="src\r2_RendererScene.h" />
