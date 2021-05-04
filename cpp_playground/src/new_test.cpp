@@ -11,7 +11,7 @@ namespace new_test
 	{
 		return []()->const char*
 		{
-			return "New : Basic";
+			return "Basic";
 		};
 	}
 	const r2::iTest::DoFunc Basic::GetDoFunction() const
@@ -68,7 +68,7 @@ namespace new_test
 	{
 		return []()->const char*
 		{
-			return "Placement New : Basic";
+			return "Placement New";
 		};
 	}
 	const r2::iTest::DoFunc PlacementNew::GetDoFunction() const
