@@ -12,6 +12,8 @@
 #include "r2_AlignScene.h"
 #include "r2_MemoryScene.h"
 #include "r2_RendererScene.h"
+#include "r2_EnumScene.h"
+#include "r2_NewScene.h"
 
 #include "optional_test.h"
 #include "variant_test.h"
@@ -20,8 +22,6 @@
 #include "pointer_test.h"
 #include "assert_test.h"
 #include "string_view_test.h"
-#include "r2_EnumScene.h"
-#include "new_test.h"
 #include "korean_test.h"
 #include "lambda_test.h"
 #include "print_test.h"
@@ -137,10 +137,19 @@ namespace r2
 			ret->AddSplit();
 
 			ret->AddChild( 'a', stringview_test::Basic::GetInstance() );
-			ret->AddChild( 's', new_test::Basic::GetInstance() );
-			ret->AddChild( 'd', new_test::PlacementNew::GetInstance() );
-			ret->AddChild( 'f', print_test::Basic::GetInstance() );
-			ret->AddChild( 'g', char_test::Basic::GetInstance() );
+
+			ret->AddChild(
+				's'
+				, []()->const char* { return r2::NewScene::GetTitle(); }
+				, [&director]()->const eTestResult
+				{
+					director.Setup( r2::NewScene::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+
+			ret->AddChild( 'd', print_test::Basic::GetInstance() );
+			ret->AddChild( 'f', char_test::Basic::GetInstance() );
 
 			ret->AddSplit();
 
