@@ -21,7 +21,10 @@ namespace r2
 	}
 	void Scene::ShowDescription() const
 	{
-		std::cout << mDescriptionString << r2::linefeed;
+		if( !mDescriptionString.empty() )
+		{
+			std::cout << mDescriptionString << r2::linefeed;
+		}
 	}
 
 	void Scene::ShowMenu() const
