@@ -23,7 +23,7 @@ namespace r2
 	{
 		if( !mDescriptionString.empty() )
 		{
-			std::cout << mDescriptionString << r2::linefeed;
+			std::cout << mDescriptionString << r2::linefeed << r2::linefeed;
 		}
 	}
 

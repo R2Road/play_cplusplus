@@ -35,7 +35,7 @@ namespace r2
 		SceneUp ret( new ( std::nothrow ) Scene(
 			director
 			, GetTitle()
-			, "> Inprogress : Renderer" "\n" "> To do : Memory Pool" "\n"
+			, "> Inprogress : Renderer" "\n" "> To do : Memory Pool"
 		) );
 
 		{
