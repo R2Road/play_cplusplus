@@ -162,6 +162,9 @@
     <ClCompile Include="src\r2_NewScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_LambdaMenu.cpp">
+      <Filter>scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -312,6 +315,9 @@
       <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_NewScene.h">
+      <Filter>scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_LambdaMenu.h">
       <Filter>scene</Filter>
     </ClInclude>
   </ItemGroup>

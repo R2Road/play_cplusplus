@@ -13,6 +13,7 @@
 #include "r2_MemoryScene.h"
 #include "r2_RendererScene.h"
 #include "r2_EnumScene.h"
+#include "r2_LambdaMenu.h"
 #include "r2_NewScene.h"
 
 #include "optional_test.h"
@@ -126,13 +127,20 @@ namespace r2
 
 			ret->AddSplit();
 
-			ret->AddChild( 'q', lambda_test::Capture::GetInstance() );
-			ret->AddChild( 'w', lambda_test::CaptureUniquePtr::GetInstance() );
-			ret->AddChild( 'e', optional_test::Basic::GetInstance() );
-			ret->AddChild( 'r', variant_test::Basic::GetInstance() );
-			ret->AddChild( 't', tuple_test::Basic::GetInstance() );
-			ret->AddChild( 'y', structured_binding_test::Basic::GetInstance() );			
-			ret->AddChild( 'u', assert_test::Basic::GetInstance() );
+			ret->AddChild(
+				'q'
+				, []()->const char* { return r2::LambdaMenu::GetTitle(); }
+				, [&director]()->const eTestResult
+				{
+					director.Setup( r2::LambdaMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+			ret->AddChild( 'w', optional_test::Basic::GetInstance() );
+			ret->AddChild( 'e', variant_test::Basic::GetInstance() );
+			ret->AddChild( 'r', tuple_test::Basic::GetInstance() );
+			ret->AddChild( 't', structured_binding_test::Basic::GetInstance() );			
+			ret->AddChild( 'y', assert_test::Basic::GetInstance() );
 
 			ret->AddSplit();
 
