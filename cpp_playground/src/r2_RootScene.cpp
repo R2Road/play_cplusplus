@@ -32,7 +32,11 @@ namespace r2
 {
 	SceneUp RootScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
+		SceneUp ret( new ( std::nothrow ) Scene(
+			director
+			, GetTitle()
+			, "> Inprogress : Renderer" "\n" "> To do : Memory Pool" "\n"
+		) );
 
 		{
 			ret->AddChild(

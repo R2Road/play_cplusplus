@@ -8,15 +8,20 @@
 
 namespace r2
 {
-	Scene::Scene( Director& director, const char* title_string ) :
+	Scene::Scene( Director& director, const char* title_string, const char* description_string ) :
 		mDirector( director )
 		, mTitleString( title_string )
+		, mDescriptionString( description_string )
 		, mTests()
 	{}
 
 	void Scene::ShowTitle() const
 	{
 		std::cout << "# " << mTitleString << " #" << r2::linefeed << r2::linefeed;
+	}
+	void Scene::ShowDescription() const
+	{
+		std::cout << mDescriptionString << r2::linefeed;
 	}
 
 	void Scene::ShowMenu() const

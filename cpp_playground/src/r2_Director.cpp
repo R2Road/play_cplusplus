@@ -22,6 +22,7 @@ namespace r2
 		while( true )
 		{
 			mScene->ShowTitle();
+			mScene->ShowDescription();
 			mScene->ShowMenu();
 			input = _getch();
 

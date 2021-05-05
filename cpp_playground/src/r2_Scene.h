@@ -36,10 +36,11 @@ namespace r2
 		using TestContainerT = std::vector<TestInfo>;
 
 	public:
-		Scene( Director& director, const char* title_string );
+		Scene( Director& director, const char* title_string, const char* description_string = "" );
 		virtual ~Scene() {}
 
 		void ShowTitle() const;
+		void ShowDescription() const;
 		void ShowMenu() const;
 
 		eTestResult Do( const int key_code );
@@ -51,6 +52,7 @@ namespace r2
 	protected:
 		Director& mDirector;
 		std::string_view mTitleString;
+		std::string_view mDescriptionString;
 
 		TestContainerT mTests;
 	};
