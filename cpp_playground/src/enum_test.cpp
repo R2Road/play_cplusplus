@@ -12,7 +12,7 @@ namespace enum_test
 	{
 		return []()->const char*
 		{
-			return "Enum : Basic";
+			return "Basic";
 		};
 	}
 	const r2::iTest::DoFunc Basic::GetDoFunction() const
@@ -77,7 +77,7 @@ namespace enum_test
 	{
 		return []()->const char*
 		{
-			return "Enum : Convert";
+			return "Convert";
 		};
 	}
 	const r2::iTest::DoFunc Convert::GetDoFunction() const
