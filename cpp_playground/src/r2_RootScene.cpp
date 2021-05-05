@@ -32,7 +32,7 @@ namespace r2
 {
 	SceneUp RootScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, "Root" ) );
+		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
 
 		{
 			ret->AddChild(
