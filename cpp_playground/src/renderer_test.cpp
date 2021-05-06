@@ -8,7 +8,7 @@
 
 namespace renderer_test
 {
-	TestFrameBuffer::TestFrameBuffer() : mFrameBuffer( 10, 10 ) {}
+	TestFrameBuffer::TestFrameBuffer() : mFrameBuffer( 30, 20 ) {}
 
 	const r2::iTest::TitleFunc TestFrameBuffer::GetTitleFunction() const
 	{
