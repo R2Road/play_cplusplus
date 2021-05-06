@@ -42,6 +42,7 @@
     <ClCompile Include="src\r2_FileSystemScene.cpp" />
     <ClCompile Include="src\r2_LambdaMenu.cpp" />
     <ClCompile Include="src\r2_NewScene.cpp" />
+    <ClCompile Include="src\r2_Renderer.cpp" />
     <ClCompile Include="src\r2_RendererScene.cpp" />
     <ClCompile Include="src\r2_FrameBuffer.cpp" />
     <ClCompile Include="src\renderer_test.cpp" />
@@ -92,6 +93,7 @@
     <ClInclude Include="src\r2_FileSystemScene.h" />
     <ClInclude Include="src\r2_LambdaMenu.h" />
     <ClInclude Include="src\r2_NewScene.h" />
+    <ClInclude Include="src\r2_Renderer.h" />
     <ClInclude Include="src\r2_RendererScene.h" />
     <ClInclude Include="src\r2_FrameBuffer.h" />
     <ClInclude Include="src\renderer_test.h" />
