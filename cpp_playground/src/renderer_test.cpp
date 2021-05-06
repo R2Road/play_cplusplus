@@ -44,11 +44,13 @@ namespace renderer_test
 	}
 	const r2::iTest::DoFunc TestRenderer::GetDoFunction() const
 	{
-		const auto& rd = GetInstance().mRenderer;
+		auto& rd = GetInstance().mRenderer;
 
-		return [rd]()->r2::eTestResult
+		return [&rd]()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			rd.Draw();
 
 			return r2::eTestResult::RunTest;
 		};
