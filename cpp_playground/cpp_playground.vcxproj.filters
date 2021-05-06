@@ -117,9 +117,6 @@
     <ClCompile Include="src\r2_RandomScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_game_PathFinder.cpp">
-      <Filter>base</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2_Director.cpp">
       <Filter>base</Filter>
     </ClCompile>
@@ -262,9 +259,6 @@
     </ClInclude>
     <ClInclude Include="src\r2_RandomScene.h">
       <Filter>scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2_game_PathFinder.h">
-      <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_Director.h">
       <Filter>base</Filter>

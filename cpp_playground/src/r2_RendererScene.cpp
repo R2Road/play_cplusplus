@@ -5,7 +5,6 @@
 #include "r2_eTestResult.h"
 #include "r2_RootScene.h"
 
-#include "r2_game_PathFinder.h"
 #include "renderer_test.h"
 
 namespace r2
@@ -22,12 +21,6 @@ namespace r2
 
 
 			ret->AddChild( 'q', renderer_test::TestRenderer::GetInstance() );
-
-
-			ret->AddSplit();
-
-
-			ret->AddChild( 'z', r2_game::PathFinder::GetInstance() );
 
 
 			ret->AddSplit();

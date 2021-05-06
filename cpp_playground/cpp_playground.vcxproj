@@ -44,7 +44,6 @@
     <ClCompile Include="src\r2_NewScene.cpp" />
     <ClCompile Include="src\r2_RendererScene.cpp" />
     <ClCompile Include="src\r2_FrameBuffer.cpp" />
-    <ClCompile Include="src\r2_game_PathFinder.cpp" />
     <ClCompile Include="src\renderer_test.cpp" />
     <ClCompile Include="src\r2_MemoryScene.cpp" />
     <ClCompile Include="src\r2_PointerTestScene.cpp" />
@@ -95,7 +94,6 @@
     <ClInclude Include="src\r2_NewScene.h" />
     <ClInclude Include="src\r2_RendererScene.h" />
     <ClInclude Include="src\r2_FrameBuffer.h" />
-    <ClInclude Include="src\r2_game_PathFinder.h" />
     <ClInclude Include="src\renderer_test.h" />
     <ClInclude Include="src\r2_iTest.h" />
     <ClInclude Include="src\r2_MemoryScene.h" />
