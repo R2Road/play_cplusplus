@@ -33,7 +33,7 @@ namespace renderer_test
 
 
 
-	TestRenderer::TestRenderer() {}
+	TestRenderer::TestRenderer() : mRenderer() {}
 
 	const r2::iTest::TitleFunc TestRenderer::GetTitleFunction() const
 	{
@@ -44,7 +44,9 @@ namespace renderer_test
 	}
 	const r2::iTest::DoFunc TestRenderer::GetDoFunction() const
 	{
-		return []()->r2::eTestResult
+		const auto& rd = GetInstance().mRenderer;
+
+		return [rd]()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 

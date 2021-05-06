@@ -4,6 +4,7 @@
 #include "r2_Singleton.h"
 
 #include "r2_FrameBuffer.h"
+#include "r2_Renderer.h"
 
 namespace renderer_test
 {
@@ -30,5 +31,8 @@ namespace renderer_test
 	public:
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
+
+	private:
+		r2::Renderer mRenderer;
 	};
 }

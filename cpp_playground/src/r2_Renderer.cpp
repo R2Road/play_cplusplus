@@ -3,7 +3,11 @@
 
 namespace r2
 {
-	Renderer::Renderer()
+	Renderer::Renderer() : mFrameBuffer( 30, 20 )
+	{}
+
+	void Renderer::Draw()
 	{
+
 	}
 }
