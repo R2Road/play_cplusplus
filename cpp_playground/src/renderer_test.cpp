@@ -14,7 +14,7 @@ namespace renderer_test
 	{
 		return []()->const char*
 		{
-			return "Renderer : Frame Buffer";
+			return "Frame Buffer";
 		};
 	}
 	const r2::iTest::DoFunc TestFrameBuffer::GetDoFunction() const
