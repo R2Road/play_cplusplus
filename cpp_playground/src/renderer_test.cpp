@@ -30,7 +30,11 @@ namespace renderer_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
+			std::cout << r2::split;
+
 			fb.Draw();
+
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
