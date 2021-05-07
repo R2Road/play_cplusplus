@@ -1,6 +1,9 @@
 #pragma once
 
+#include <string_view>
 #include <vector>
+
+#include "r2_GridIndexConverter.h"
 
 namespace r2
 {
@@ -13,8 +16,7 @@ namespace r2
 		void Draw() const;
 
 	private:
-		const std::size_t mWidth;
-		const std::size_t mHeight;
+		const GridIndexConverter mGridIndexConverter;
 		std::vector<char> mChars;
 	};
 }
