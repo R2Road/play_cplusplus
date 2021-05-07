@@ -165,6 +165,9 @@
     <ClCompile Include="src\r2_Renderer.cpp">
       <Filter>renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_GridIndexConverter.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -321,6 +324,12 @@
       <Filter>renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_Renderable.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_GridIndexConverter.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_Point.h">
       <Filter>renderer</Filter>
     </ClInclude>
   </ItemGroup>
