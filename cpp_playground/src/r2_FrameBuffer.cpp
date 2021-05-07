@@ -13,6 +13,14 @@ namespace r2
 		assert( 0u < width && 0u < height );
 	}
 
+	void FrameBuffer::FillAll( const char c )
+	{
+		for( char& element : mChars )
+		{
+			element = c;
+		}
+	}
+
 	void FrameBuffer::Fill( std::size_t x, std::size_t y, const char c )
 	{
 		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );

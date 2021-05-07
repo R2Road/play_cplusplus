@@ -8,6 +8,21 @@
 
 namespace renderer_test
 {
+	class TestFrameBuffer1 : public r2::iTest, public r2::SingleTon<TestFrameBuffer1>
+	{
+	public:
+		TestFrameBuffer1();
+
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+
+	private:
+		r2::FrameBuffer mFrameBuffer;
+	};
+
+
+
 	class TestFrameBuffer : public r2::iTest, public r2::SingleTon<TestFrameBuffer>
 	{
 	public:

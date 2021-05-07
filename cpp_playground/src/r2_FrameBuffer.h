@@ -16,6 +16,7 @@ namespace r2
 		int GetWidth() const { return mGridIndexConverter.GetWidth(); }
 		int GetHeight() const { return mGridIndexConverter.GetHeight(); }
 
+		void FillAll( const char c );
 		void Fill( std::size_t x, std::size_t y, const char c );
 		void Draw() const;
 

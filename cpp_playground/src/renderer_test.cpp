@@ -8,6 +8,37 @@
 
 namespace renderer_test
 {
+	TestFrameBuffer1::TestFrameBuffer1() : mFrameBuffer( 30, 20 ) {}
+
+	const r2::iTest::TitleFunc TestFrameBuffer1::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Frame Buffer 1";
+		};
+	}
+	const r2::iTest::DoFunc TestFrameBuffer1::GetDoFunction() const
+	{
+		GetInstance().mFrameBuffer.FillAll( '0' );
+
+		const auto& fb = GetInstance().mFrameBuffer;
+
+		return [fb]()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			fb.Draw();
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	TestFrameBuffer::TestFrameBuffer() : mFrameBuffer( 30, 20 ) {}
 
 	const r2::iTest::TitleFunc TestFrameBuffer::GetTitleFunction() const
