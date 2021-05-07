@@ -23,10 +23,10 @@ namespace renderer_test
 
 
 
-	class TestFrameBuffer : public r2::iTest, public r2::SingleTon<TestFrameBuffer>
+	class TestFrameBuffer2 : public r2::iTest, public r2::SingleTon<TestFrameBuffer2>
 	{
 	public:
-		TestFrameBuffer();
+		TestFrameBuffer2();
 
 	public:
 		const TitleFunc GetTitleFunction() const override;

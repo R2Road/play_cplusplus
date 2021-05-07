@@ -39,16 +39,16 @@ namespace renderer_test
 
 
 
-	TestFrameBuffer::TestFrameBuffer() : mFrameBuffer( 30, 20 ) {}
+	TestFrameBuffer2::TestFrameBuffer2() : mFrameBuffer( 30, 20 ) {}
 
-	const r2::iTest::TitleFunc TestFrameBuffer::GetTitleFunction() const
+	const r2::iTest::TitleFunc TestFrameBuffer2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Frame Buffer";
+			return "Frame Buffer 2";
 		};
 	}
-	const r2::iTest::DoFunc TestFrameBuffer::GetDoFunction() const
+	const r2::iTest::DoFunc TestFrameBuffer2::GetDoFunction() const
 	{
 		GetInstance().mFrameBuffer.Fill( 0, 0, '0' );
 		GetInstance().mFrameBuffer.Fill( GetInstance().mFrameBuffer.GetWidth() - 1u, 0, '0' );
