@@ -19,6 +19,11 @@ namespace renderer_test
 	}
 	const r2::iTest::DoFunc TestFrameBuffer::GetDoFunction() const
 	{
+		GetInstance().mFrameBuffer.Fill( 0, 0, '0' );
+		GetInstance().mFrameBuffer.Fill( GetInstance().mFrameBuffer.GetWidth() - 1u, 0, '0' );
+		GetInstance().mFrameBuffer.Fill( GetInstance().mFrameBuffer.GetWidth() - 1u, GetInstance().mFrameBuffer.GetHeight() - 1u, '0' );
+		GetInstance().mFrameBuffer.Fill( 0, GetInstance().mFrameBuffer.GetHeight() - 1u, '0' );
+
 		const auto& fb = GetInstance().mFrameBuffer;
 
 		return [fb]()->r2::eTestResult
