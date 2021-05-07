@@ -33,6 +33,10 @@ namespace renderer_test
 
 
 
+	void TestRenderer::TestRenderable::Draw()
+	{
+
+	}
 	TestRenderer::TestRenderer() : mRenderer() {}
 
 	const r2::iTest::TitleFunc TestRenderer::GetTitleFunction() const

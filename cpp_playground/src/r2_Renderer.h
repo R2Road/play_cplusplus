@@ -1,6 +1,7 @@
 #pragma once
 
 #include "r2_FrameBuffer.h"
+#include "r2_Renderable.h"
 
 namespace r2
 {
@@ -9,9 +10,12 @@ namespace r2
 	public:
 		Renderer();
 
+		void Add( Renderable* const renderable );
+
 		void Draw();
 
 	private:
 		r2::FrameBuffer mFrameBuffer;
+		Renderable* mRenderable;
 	};
 }

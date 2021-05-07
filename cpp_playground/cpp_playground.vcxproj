@@ -93,6 +93,7 @@
     <ClInclude Include="src\r2_FileSystemScene.h" />
     <ClInclude Include="src\r2_LambdaMenu.h" />
     <ClInclude Include="src\r2_NewScene.h" />
+    <ClInclude Include="src\r2_Renderable.h" />
     <ClInclude Include="src\r2_Renderer.h" />
     <ClInclude Include="src\r2_RendererScene.h" />
     <ClInclude Include="src\r2_FrameBuffer.h" />

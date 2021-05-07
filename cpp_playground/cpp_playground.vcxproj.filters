@@ -320,5 +320,8 @@
     <ClInclude Include="src\r2_Renderer.h">
       <Filter>renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\r2_Renderable.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
