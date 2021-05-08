@@ -30,14 +30,17 @@ namespace r2
 
 	void FrameBuffer::Draw() const
 	{
-		for( std::size_t y = 0u; mGridIndexConverter.GetHeight() > y; ++y )
+		std::size_t x = 0;
+		for( const char element : mChars )
 		{
-			for( std::size_t x = 0u; mGridIndexConverter.GetWidth() > x; ++x )
-			{
-				std::cout << mChars[ mGridIndexConverter.To_Linear( x, y ) ];
-			}
+			std::cout << element;
 
-			std::cout << r2::linefeed;
+			++x;
+			if( mGridIndexConverter.GetWidth() <= x )
+			{
+				x = 0u;
+				std::cout << r2::linefeed;
+			}
 		}
 	}
 }
