@@ -29,7 +29,18 @@ namespace renderer_test
 
 			std::cout << r2::split;
 
-			fb.Draw();
+			std::size_t x = 0;
+			for( const char element : fb )
+			{
+				std::cout << element;
+
+				++x;
+				if( fb.GetWidth() <= x )
+				{
+					x = 0u;
+					std::cout << r2::linefeed;
+				}
+			}
 
 			std::cout << r2::split;
 
@@ -63,7 +74,18 @@ namespace renderer_test
 
 			std::cout << r2::split;
 
-			fb.Draw();
+			std::size_t x = 0;
+			for( const char element : fb )
+			{
+				std::cout << element;
+
+				++x;
+				if( fb.GetWidth() <= x )
+				{
+					x = 0u;
+					std::cout << r2::linefeed;
+				}
+			}
 
 			std::cout << r2::split;
 

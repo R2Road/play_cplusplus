@@ -17,6 +17,17 @@ namespace r2
 	{
 		system( "cls" );
 
-		mFrameBuffer.Draw();
+		std::size_t x = 0;
+		for( const char element : mFrameBuffer )
+		{
+			std::cout << element;
+
+			++x;
+			if( mFrameBuffer.GetWidth() <= x )
+			{
+				x = 0u;
+				std::cout << r2::linefeed;
+			}
+		}
 	}
 }

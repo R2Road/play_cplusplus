@@ -11,16 +11,29 @@ namespace r2
 	{
 	public:
 		using ContainerT = std::vector<char>;
+		using ConstIteratorT = typename ContainerT::const_iterator;
 
 		FrameBuffer( const std::size_t width, const std::size_t height );
 
 	public:
+		//
+		// Iteration
+		//
+		ConstIteratorT begin() const { return mChars.begin(); }
+		ConstIteratorT end() const { return mChars.end(); }
+
+		//
+		// Getter
+		//
 		int GetWidth() const { return mGridIndexConverter.GetWidth(); }
 		int GetHeight() const { return mGridIndexConverter.GetHeight(); }
+		const ContainerT GetContainer() const { return mChars; }
 
+		//
+		//
+		//
 		void FillAll( const char c );
 		void Fill( std::size_t x, std::size_t y, const char c );
-		void Draw() const;
 
 	private:
 		const GridIndexConverter mGridIndexConverter;

@@ -27,20 +27,4 @@ namespace r2
 
 		mChars[target_linear_index] = c;
 	}
-
-	void FrameBuffer::Draw() const
-	{
-		std::size_t x = 0;
-		for( const char element : mChars )
-		{
-			std::cout << element;
-
-			++x;
-			if( mGridIndexConverter.GetWidth() <= x )
-			{
-				x = 0u;
-				std::cout << r2::linefeed;
-			}
-		}
-	}
 }
