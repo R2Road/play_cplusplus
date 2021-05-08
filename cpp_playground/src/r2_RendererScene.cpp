@@ -14,7 +14,7 @@ namespace r2
 		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', renderer_test::TestFrameBuffer1::GetInstance() );
+			ret->AddChild( '1', renderer_test::FrameBuffer_FillAll::GetInstance() );
 			ret->AddChild( '2', renderer_test::TestFrameBuffer2::GetInstance() );
 
 
