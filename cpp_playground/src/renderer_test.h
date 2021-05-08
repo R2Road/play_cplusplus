@@ -20,13 +20,22 @@ namespace renderer_test
 	private:
 		r2::FrameBuffer mFrameBuffer;
 	};
-
-
-
 	class FrameBuffer_Fill : public r2::iTest, public r2::SingleTon<FrameBuffer_Fill>
 	{
 	public:
 		FrameBuffer_Fill();
+
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+
+	private:
+		r2::FrameBuffer mFrameBuffer;
+	};
+	class FrameBuffer_DrawWithPosition : public r2::iTest, public r2::SingleTon<FrameBuffer_DrawWithPosition>
+	{
+	public:
+		FrameBuffer_DrawWithPosition();
 
 	public:
 		const TitleFunc GetTitleFunction() const override;

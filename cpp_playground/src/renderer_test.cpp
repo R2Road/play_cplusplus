@@ -2,7 +2,7 @@
 #include "renderer_test.h"
 
 #include <functional>
-#include <optional>
+#include <Windows.h>
 
 #include "r2_eTestResult.h"
 
@@ -84,6 +84,53 @@ namespace renderer_test
 				{
 					x = 0u;
 					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	FrameBuffer_DrawWithPosition::FrameBuffer_DrawWithPosition() : mFrameBuffer( 10, 10 ) {}
+
+	const r2::iTest::TitleFunc FrameBuffer_DrawWithPosition::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Frame Buffer - Draw With Position";
+		};
+	}
+	const r2::iTest::DoFunc FrameBuffer_DrawWithPosition::GetDoFunction() const
+	{
+		GetInstance().mFrameBuffer.FillAll( '0' );
+
+		const auto& fb = GetInstance().mFrameBuffer;
+
+		return [fb]()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+			COORD pos = { 10, 5 };
+			SetConsoleCursorPosition( stdHandle, pos );
+
+			int count = 0;
+			for( const char element : fb )
+			{
+				std::cout << element;
+
+				++count;
+				if( fb.GetWidth() <= count )
+				{
+					count = 0;
+					pos.Y += 1;
+					SetConsoleCursorPosition( stdHandle, pos );
 				}
 			}
 
