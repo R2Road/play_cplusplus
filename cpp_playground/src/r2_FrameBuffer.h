@@ -10,6 +10,8 @@ namespace r2
 	class FrameBuffer
 	{
 	public:
+		using ContainerT = std::vector<char>;
+
 		FrameBuffer( const std::size_t width, const std::size_t height );
 
 	public:
@@ -22,6 +24,6 @@ namespace r2
 
 	private:
 		const GridIndexConverter mGridIndexConverter;
-		std::vector<char> mChars;
+		ContainerT mChars;
 	};
 }
