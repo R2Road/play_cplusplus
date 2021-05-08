@@ -1,11 +1,20 @@
 #include "pch.h"
 #include "r2_FrameBuffer.h"
 
+#include <algorithm>
 #include <cassert>
 #include <iostream>
 
 namespace r2
 {
+	FrameBuffer::FrameBuffer( const std::string_view str ) :
+		mGridIndexConverter( str.length(), 1u )
+		, mChars( str.length(), 32 )
+	{
+		assert( 0u < mGridIndexConverter.GetWidth() && 0u < mGridIndexConverter.GetHeight() );
+
+		std::copy( str.begin(), str.end(), mChars.begin() );
+	}
 	FrameBuffer::FrameBuffer( const std::size_t width, const std::size_t height ) :
 		mGridIndexConverter( width, height )
 		, mChars( width * height, 32 )

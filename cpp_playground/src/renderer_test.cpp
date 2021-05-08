@@ -142,6 +142,46 @@ namespace renderer_test
 
 
 
+	FrameBuffer_InitWithChars::FrameBuffer_InitWithChars() : mFrameBuffer( "Init With Chars" ) {}
+
+	const r2::iTest::TitleFunc FrameBuffer_InitWithChars::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Frame Buffer - Init With Chars";
+		};
+	}
+	const r2::iTest::DoFunc FrameBuffer_InitWithChars::GetDoFunction() const
+	{
+		const auto& fb = GetInstance().mFrameBuffer;
+
+		return [fb]()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::size_t x = 0;
+			for( const char element : fb )
+			{
+				std::cout << element;
+
+				++x;
+				if( fb.GetWidth() <= x )
+				{
+					x = 0u;
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	void TestRenderer::TestRenderable::Draw()
 	{
 

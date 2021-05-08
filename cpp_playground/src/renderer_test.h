@@ -44,6 +44,18 @@ namespace renderer_test
 	private:
 		r2::FrameBuffer mFrameBuffer;
 	};
+	class FrameBuffer_InitWithChars : public r2::iTest, public r2::SingleTon<FrameBuffer_InitWithChars>
+	{
+	public:
+		FrameBuffer_InitWithChars();
+
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+
+	private:
+		r2::FrameBuffer mFrameBuffer;
+	};
 
 
 
