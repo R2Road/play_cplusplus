@@ -5,7 +5,7 @@
 
 namespace r2
 {
-	Renderer::Renderer() : mFrameBuffer( 30, 20 ), mRenderable( nullptr )
+	Renderer::Renderer() : mRenderable( nullptr )
 	{}
 
 	void Renderer::Add( Renderable* const renderable )
@@ -17,17 +17,9 @@ namespace r2
 	{
 		system( "cls" );
 
-		std::size_t x = 0;
-		for( const char element : mFrameBuffer )
+		if( mRenderable )
 		{
-			std::cout << element;
-
-			++x;
-			if( mFrameBuffer.GetWidth() <= x )
-			{
-				x = 0u;
-				std::cout << r2::linefeed;
-			}
+			mRenderable->Draw();
 		}
 	}
 }

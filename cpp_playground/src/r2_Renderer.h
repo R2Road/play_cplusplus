@@ -15,7 +15,6 @@ namespace r2
 		void Draw();
 
 	private:
-		r2::FrameBuffer mFrameBuffer;
 		Renderable* mRenderable;
 	};
 }
