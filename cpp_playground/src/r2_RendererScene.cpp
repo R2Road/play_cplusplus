@@ -15,7 +15,7 @@ namespace r2
 
 		{
 			ret->AddChild( '1', renderer_test::FrameBuffer_FillAll::GetInstance() );
-			ret->AddChild( '2', renderer_test::TestFrameBuffer2::GetInstance() );
+			ret->AddChild( '2', renderer_test::FrameBuffer_Fill::GetInstance() );
 
 
 			ret->AddSplit();
