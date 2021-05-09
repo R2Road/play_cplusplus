@@ -62,11 +62,6 @@ namespace renderer_test
 	class TestRenderer : public r2::iTest, public r2::SingleTon<TestRenderer>
 	{
 	public:
-		class TestRenderable : r2::Renderable
-		{
-			void Draw() override;
-		};
-
 		TestRenderer();
 
 	public:

@@ -182,10 +182,13 @@ namespace renderer_test
 
 
 
-	void TestRenderer::TestRenderable::Draw()
+	class TestRenderable : r2::Renderable
 	{
+		void Draw() override
+		{
 
-	}
+		}
+	};
 	TestRenderer::TestRenderer() : mRenderer() {}
 
 	const r2::iTest::TitleFunc TestRenderer::GetTitleFunction() const
