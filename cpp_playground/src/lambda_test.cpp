@@ -89,7 +89,7 @@ namespace lambda_test
 	{
 		return []()->const char*
 		{
-			return "Lamabda : Capture Unique Ptr";
+			return "Capture Unique Ptr";
 		};
 	}
 	const r2::iTest::DoFunc CaptureUniquePtr::GetDoFunction() const
@@ -153,7 +153,7 @@ namespace lambda_test
 	{
 		return []()->const char*
 		{
-			return "Lamabda : ETC";
+			return "ETC";
 		};
 	}
 	const r2::iTest::DoFunc TestETC::GetDoFunction() const
