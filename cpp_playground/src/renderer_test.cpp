@@ -6,6 +6,8 @@
 
 #include "r2_eTestResult.h"
 
+#include "r2_Point.h"
+
 namespace renderer_test
 {
 	VisibleResource_FillAll::VisibleResource_FillAll() : mVisibleResource( 30, 20 ) {}
@@ -210,12 +212,36 @@ namespace renderer_test
 
 
 
-	class TestRenderable : r2::Renderable
+	class TestRenderable : public r2::Renderable
 	{
+	public:
+		TestRenderable() : mPoint( { 8, 5 } ), mVisibleResource( 6u, "######" "#    #" "#    #" "#    #" "#    #" "######" )
+		{}
+
 		void Draw() override
 		{
+			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+			COORD pos = { mPoint.x, mPoint.y };
+			SetConsoleCursorPosition( stdHandle, pos );
 
+			int count = 0;
+			for( const char element : mVisibleResource )
+			{
+				std::cout << element;
+
+				++count;
+				if( mVisibleResource.GetWidth() <= count )
+				{
+					count = 0;
+					pos.Y += 1;
+					SetConsoleCursorPosition( stdHandle, pos );
+				}
+			}
 		}
+
+	private:
+		r2::Point mPoint;
+		r2::VisibleResource mVisibleResource;
 	};
 	TestRenderer::TestRenderer() : mRenderer() {}
 
@@ -229,6 +255,9 @@ namespace renderer_test
 	const r2::iTest::DoFunc TestRenderer::GetDoFunction() const
 	{
 		auto& rd = GetInstance().mRenderer;
+
+		static TestRenderable tr;
+		rd.Add( &tr );
 
 		return [&rd]()->r2::eTestResult
 		{
