@@ -212,10 +212,10 @@ namespace renderer_test
 
 
 
-	class TestRenderable : public r2::Renderable
+	class TempRenderable : public r2::Renderable
 	{
 	public:
-		TestRenderable() : mPoint( { 8, 5 } ), mVisibleResource( 6u, "######" "#    #" "#    #" "#    #" "#    #" "######" )
+		TempRenderable() : mPoint( { 8, 5 } ), mVisibleResource( 6u, "######" "#    #" "#    #" "#    #" "#    #" "######" )
 		{}
 
 		void Draw() override
@@ -243,6 +243,31 @@ namespace renderer_test
 		r2::Point mPoint;
 		r2::VisibleResource mVisibleResource;
 	};
+
+	const r2::iTest::TitleFunc TestRenderable::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Renderable";
+		};
+	}
+	const r2::iTest::DoFunc TestRenderable::GetDoFunction() const
+	{
+		static TempRenderable tr;
+		auto& tr2 = tr; // for lambda capture... o_o;;; wtf....
+
+		return [&tr2]()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			tr2.Draw();
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	TestRenderer::TestRenderer() : mRenderer() {}
 
 	const r2::iTest::TitleFunc TestRenderer::GetTitleFunction() const
@@ -256,7 +281,7 @@ namespace renderer_test
 	{
 		auto& rd = GetInstance().mRenderer;
 
-		static TestRenderable tr;
+		static TempRenderable tr;
 		rd.Add( &tr );
 
 		return [&rd]()->r2::eTestResult

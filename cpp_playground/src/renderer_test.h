@@ -63,6 +63,15 @@ namespace renderer_test
 
 
 
+	class TestRenderable : public r2::iTest, public r2::SingleTon<TestRenderable>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
+
+
+
 	class TestRenderer : public r2::iTest, public r2::SingleTon<TestRenderer>
 	{
 	public:

@@ -23,7 +23,8 @@ namespace r2
 			ret->AddSplit();
 
 
-			ret->AddChild( 'q', renderer_test::TestRenderer::GetInstance() );
+			ret->AddChild( 'q', renderer_test::TestRenderable::GetInstance() );
+			ret->AddChild( 'w', renderer_test::TestRenderer::GetInstance() );
 
 
 			ret->AddSplit();
