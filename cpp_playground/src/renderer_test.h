@@ -8,54 +8,57 @@
 
 namespace renderer_test
 {
-	class FrameBuffer_FillAll : public r2::iTest, public r2::SingleTon<FrameBuffer_FillAll>
+	class VisibleResource_FillAll : public r2::iTest, public r2::SingleTon<VisibleResource_FillAll>
 	{
 	public:
-		FrameBuffer_FillAll();
+		VisibleResource_FillAll();
 
 	public:
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 
 	private:
-		r2::FrameBuffer mFrameBuffer;
+		r2::VisibleResource mVisibleResource;
 	};
-	class FrameBuffer_Fill : public r2::iTest, public r2::SingleTon<FrameBuffer_Fill>
+
+	class VisibleResource_Fill : public r2::iTest, public r2::SingleTon<VisibleResource_Fill>
 	{
 	public:
-		FrameBuffer_Fill();
+		VisibleResource_Fill();
 
 	public:
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 
 	private:
-		r2::FrameBuffer mFrameBuffer;
+		r2::VisibleResource mVisibleResource;
 	};
-	class FrameBuffer_DrawWithPosition : public r2::iTest, public r2::SingleTon<FrameBuffer_DrawWithPosition>
+
+	class VisibleResource_DrawWithPosition : public r2::iTest, public r2::SingleTon<VisibleResource_DrawWithPosition>
 	{
 	public:
-		FrameBuffer_DrawWithPosition();
+		VisibleResource_DrawWithPosition();
 
 	public:
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 
 	private:
-		r2::FrameBuffer mFrameBuffer;
+		r2::VisibleResource mVisibleResource;
 	};
-	class FrameBuffer_InitWithChars : public r2::iTest, public r2::SingleTon<FrameBuffer_InitWithChars>
+
+	class VisibleResource_InitWithChars : public r2::iTest, public r2::SingleTon<VisibleResource_InitWithChars>
 	{
 	public:
-		FrameBuffer_InitWithChars();
+		VisibleResource_InitWithChars();
 
 	public:
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 
 	private:
-		r2::FrameBuffer mFrameBuffer1;
-		r2::FrameBuffer mFrameBuffer2;
+		r2::VisibleResource mVisibleResource1;
+		r2::VisibleResource mVisibleResource2;
 	};
 
 

@@ -7,15 +7,15 @@
 
 namespace r2
 {
-	class FrameBuffer
+	class VisibleResource
 	{
 	public:
 		using ContainerT = std::vector<char>;
 		using ConstIteratorT = typename ContainerT::const_iterator;
 
-		FrameBuffer( const std::string_view str );
-		FrameBuffer( const std::size_t width, const std::string_view str );
-		FrameBuffer( const std::size_t width, const std::size_t height );
+		VisibleResource( const std::string_view str );
+		VisibleResource( const std::size_t width, const std::string_view str );
+		VisibleResource( const std::size_t width, const std::size_t height );
 
 	public:
 		//

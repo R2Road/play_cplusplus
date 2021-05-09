@@ -14,10 +14,10 @@ namespace r2
 		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', renderer_test::FrameBuffer_FillAll::GetInstance() );
-			ret->AddChild( '2', renderer_test::FrameBuffer_Fill::GetInstance() );
-			ret->AddChild( '3', renderer_test::FrameBuffer_DrawWithPosition::GetInstance() );
-			ret->AddChild( '4', renderer_test::FrameBuffer_InitWithChars::GetInstance() );
+			ret->AddChild( '1', renderer_test::VisibleResource_FillAll::GetInstance() );
+			ret->AddChild( '2', renderer_test::VisibleResource_Fill::GetInstance() );
+			ret->AddChild( '3', renderer_test::VisibleResource_DrawWithPosition::GetInstance() );
+			ret->AddChild( '4', renderer_test::VisibleResource_InitWithChars::GetInstance() );
 
 
 			ret->AddSplit();

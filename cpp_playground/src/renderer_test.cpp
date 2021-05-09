@@ -8,20 +8,20 @@
 
 namespace renderer_test
 {
-	FrameBuffer_FillAll::FrameBuffer_FillAll() : mFrameBuffer( 30, 20 ) {}
+	VisibleResource_FillAll::VisibleResource_FillAll() : mVisibleResource( 30, 20 ) {}
 
-	const r2::iTest::TitleFunc FrameBuffer_FillAll::GetTitleFunction() const
+	const r2::iTest::TitleFunc VisibleResource_FillAll::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Frame Buffer - Fill All";
+			return "Visible Resource - Fill All";
 		};
 	}
-	const r2::iTest::DoFunc FrameBuffer_FillAll::GetDoFunction() const
+	const r2::iTest::DoFunc VisibleResource_FillAll::GetDoFunction() const
 	{
-		GetInstance().mFrameBuffer.FillAll( '0' );
+		GetInstance().mVisibleResource.FillAll( '0' );
 
-		const auto& fb = GetInstance().mFrameBuffer;
+		const auto& fb = GetInstance().mVisibleResource;
 
 		return [fb]()->r2::eTestResult
 		{
@@ -50,23 +50,23 @@ namespace renderer_test
 
 
 
-	FrameBuffer_Fill::FrameBuffer_Fill() : mFrameBuffer( 30, 20 ) {}
+	VisibleResource_Fill::VisibleResource_Fill() : mVisibleResource( 30, 20 ) {}
 
-	const r2::iTest::TitleFunc FrameBuffer_Fill::GetTitleFunction() const
+	const r2::iTest::TitleFunc VisibleResource_Fill::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Frame Buffer - Fill";
+			return "Visible Resource - Fill";
 		};
 	}
-	const r2::iTest::DoFunc FrameBuffer_Fill::GetDoFunction() const
+	const r2::iTest::DoFunc VisibleResource_Fill::GetDoFunction() const
 	{
-		GetInstance().mFrameBuffer.Fill( 0, 0, '0' );
-		GetInstance().mFrameBuffer.Fill( GetInstance().mFrameBuffer.GetWidth() - 1u, 0, '0' );
-		GetInstance().mFrameBuffer.Fill( GetInstance().mFrameBuffer.GetWidth() - 1u, GetInstance().mFrameBuffer.GetHeight() - 1u, '0' );
-		GetInstance().mFrameBuffer.Fill( 0, GetInstance().mFrameBuffer.GetHeight() - 1u, '0' );
+		GetInstance().mVisibleResource.Fill( 0, 0, '0' );
+		GetInstance().mVisibleResource.Fill( GetInstance().mVisibleResource.GetWidth() - 1u, 0, '0' );
+		GetInstance().mVisibleResource.Fill( GetInstance().mVisibleResource.GetWidth() - 1u, GetInstance().mVisibleResource.GetHeight() - 1u, '0' );
+		GetInstance().mVisibleResource.Fill( 0, GetInstance().mVisibleResource.GetHeight() - 1u, '0' );
 
-		const auto& fb = GetInstance().mFrameBuffer;
+		const auto& fb = GetInstance().mVisibleResource;
 
 		return [fb]()->r2::eTestResult
 		{
@@ -95,20 +95,20 @@ namespace renderer_test
 
 
 
-	FrameBuffer_DrawWithPosition::FrameBuffer_DrawWithPosition() : mFrameBuffer( 10, 10 ) {}
+	VisibleResource_DrawWithPosition::VisibleResource_DrawWithPosition() : mVisibleResource( 10, 10 ) {}
 
-	const r2::iTest::TitleFunc FrameBuffer_DrawWithPosition::GetTitleFunction() const
+	const r2::iTest::TitleFunc VisibleResource_DrawWithPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Frame Buffer - Draw With Position";
+			return "Visible Resource - Draw With Position";
 		};
 	}
-	const r2::iTest::DoFunc FrameBuffer_DrawWithPosition::GetDoFunction() const
+	const r2::iTest::DoFunc VisibleResource_DrawWithPosition::GetDoFunction() const
 	{
-		GetInstance().mFrameBuffer.FillAll( '0' );
+		GetInstance().mVisibleResource.FillAll( '0' );
 
-		const auto& fb = GetInstance().mFrameBuffer;
+		const auto& fb = GetInstance().mVisibleResource;
 
 		return [fb]()->r2::eTestResult
 		{
@@ -142,22 +142,22 @@ namespace renderer_test
 
 
 
-	FrameBuffer_InitWithChars::FrameBuffer_InitWithChars() :
-		mFrameBuffer1( "Init With Chars" )
-		, mFrameBuffer2( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" )
+	VisibleResource_InitWithChars::VisibleResource_InitWithChars() :
+		mVisibleResource1( "Init With Chars" )
+		, mVisibleResource2( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" )
 	{}
 
-	const r2::iTest::TitleFunc FrameBuffer_InitWithChars::GetTitleFunction() const
+	const r2::iTest::TitleFunc VisibleResource_InitWithChars::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Frame Buffer - Init With Chars";
+			return "Visible Resource - Init With Chars";
 		};
 	}
-	const r2::iTest::DoFunc FrameBuffer_InitWithChars::GetDoFunction() const
+	const r2::iTest::DoFunc VisibleResource_InitWithChars::GetDoFunction() const
 	{
-		const auto& fb1 = GetInstance().mFrameBuffer1;
-		const auto& fb2 = GetInstance().mFrameBuffer2;
+		const auto& fb1 = GetInstance().mVisibleResource1;
+		const auto& fb2 = GetInstance().mVisibleResource2;
 
 		return [fb1, fb2]()->r2::eTestResult
 		{
