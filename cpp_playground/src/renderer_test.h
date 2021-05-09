@@ -3,7 +3,7 @@
 #include "r2_iTest.h"
 #include "r2_Singleton.h"
 
-#include "r2_FrameBuffer.h"
+#include "r2_VisibleResource.h"
 #include "r2_Renderer.h"
 
 namespace renderer_test

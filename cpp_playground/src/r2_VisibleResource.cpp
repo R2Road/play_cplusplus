@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_FrameBuffer.h"
+#include "r2_VisibleResource.h"
 
 #include <algorithm>
 #include <cassert>
