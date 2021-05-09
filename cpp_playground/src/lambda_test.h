@@ -5,7 +5,7 @@
 
 namespace lambda_test
 {
-	class Capture : public r2::iTest, public r2::SingleTon<Capture>
+	class CaptureReference : public r2::iTest, public r2::SingleTon<CaptureReference>
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;

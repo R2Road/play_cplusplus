@@ -10,14 +10,14 @@
 
 namespace lambda_test
 {
-	const r2::iTest::TitleFunc Capture::GetTitleFunction() const
+	const r2::iTest::TitleFunc CaptureReference::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Lamabda : Basic";
+			return "Capture Reference";
 		};
 	}
-	const r2::iTest::DoFunc Capture::GetDoFunction() const
+	const r2::iTest::DoFunc CaptureReference::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
