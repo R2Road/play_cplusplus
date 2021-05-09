@@ -187,6 +187,34 @@ namespace lambda_test
 
 			std::cout << r2::split;
 
+			{
+				std::cout << "\t + " << "Mutable Capture by Value" << r2::linefeed << r2::linefeed;
+
+				int i = 0;
+				auto lambda_1 = [i]() mutable
+				{
+					++i;
+
+					std::cout << "\t\t" << "i : " << i << r2::linefeed;
+				};
+
+				std::cout << "\t + " << "Working this" << r2::linefeed << r2::linefeed;
+
+				std::cout << "\t\t" << "int i = 0;" << r2::linefeed;
+				std::cout << "\t\t" << "auto lambda_1 = [i]() mutable" << r2::linefeed;
+				std::cout << "\t\t" << "{" << r2::linefeed;
+				std::cout << "\t\t\t" << "++i;" << r2::linefeed;
+				std::cout << "\t\t" << "};" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << "\t + " << "Call Lambda" << r2::linefeed;
+				lambda_1();
+				lambda_1();
+				lambda_1();
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
