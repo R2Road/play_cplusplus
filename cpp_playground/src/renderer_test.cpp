@@ -142,7 +142,10 @@ namespace renderer_test
 
 
 
-	FrameBuffer_InitWithChars::FrameBuffer_InitWithChars() : mFrameBuffer( "Init With Chars" ) {}
+	FrameBuffer_InitWithChars::FrameBuffer_InitWithChars() :
+		mFrameBuffer1( "Init With Chars" )
+		, mFrameBuffer2( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" )
+	{}
 
 	const r2::iTest::TitleFunc FrameBuffer_InitWithChars::GetTitleFunction() const
 	{
@@ -153,23 +156,48 @@ namespace renderer_test
 	}
 	const r2::iTest::DoFunc FrameBuffer_InitWithChars::GetDoFunction() const
 	{
-		const auto& fb = GetInstance().mFrameBuffer;
+		const auto& fb1 = GetInstance().mFrameBuffer1;
+		const auto& fb2 = GetInstance().mFrameBuffer2;
 
-		return [fb]()->r2::eTestResult
+		return [fb1, fb2]()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
 			std::size_t x = 0;
-			for( const char element : fb )
-			{
-				std::cout << element;
 
-				++x;
-				if( fb.GetWidth() <= x )
+			{
+				for( const char element : fb1 )
 				{
-					x = 0u;
+					std::cout << element;
+
+					++x;
+					if( fb1.GetWidth() <= x )
+					{
+						x = 0u;
+						std::cout << r2::linefeed;
+					}
+				}
+			}
+
+			std::cout << r2::split;
+
+			{
+				x = 0;
+				for( const char element : fb2 )
+				{
+					std::cout << element;
+
+					++x;
+					if( fb2.GetWidth() <= x )
+					{
+						x = 0u;
+						std::cout << r2::linefeed;
+					}
+				}
+				if( 0u != x )
+				{
 					std::cout << r2::linefeed;
 				}
 			}

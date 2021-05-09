@@ -14,6 +14,7 @@ namespace r2
 		using ConstIteratorT = typename ContainerT::const_iterator;
 
 		FrameBuffer( const std::string_view str );
+		FrameBuffer( const std::size_t width, const std::string_view str );
 		FrameBuffer( const std::size_t width, const std::size_t height );
 
 	public:

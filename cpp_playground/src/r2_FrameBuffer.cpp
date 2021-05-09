@@ -17,6 +17,14 @@ namespace r2
 
 		memcpy( &mChars[0], str.data(), mChars.size() );
 	}
+	FrameBuffer::FrameBuffer( const std::size_t width, const std::string_view str ) :
+		mGridIndexConverter( width, ( str.length() < 0 ? 1 : ( str.length() / width ) + ( str.length() % width < 1 ? 0 : 1 ) ) )
+		, mChars( str.length(), 32 )
+	{
+		assert( 0u < mGridIndexConverter.GetWidth() && 0u < mGridIndexConverter.GetHeight() );
+
+		memcpy( &mChars[0], str.data(), mChars.size() );
+	}
 	FrameBuffer::FrameBuffer( const std::size_t width, const std::size_t height ) :
 		mGridIndexConverter( width, height )
 		, mChars( width * height, 32 )

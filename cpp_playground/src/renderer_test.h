@@ -54,7 +54,8 @@ namespace renderer_test
 		const DoFunc GetDoFunction() const override;
 
 	private:
-		r2::FrameBuffer mFrameBuffer;
+		r2::FrameBuffer mFrameBuffer1;
+		r2::FrameBuffer mFrameBuffer2;
 	};
 
 
