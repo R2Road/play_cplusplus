@@ -13,7 +13,9 @@ namespace r2
 	{
 		assert( 0u < mGridIndexConverter.GetWidth() && 0u < mGridIndexConverter.GetHeight() );
 
-		std::copy( str.begin(), str.end(), mChars.begin() );
+		//std::copy( str.begin(), str.end(), mChars.begin() );
+
+		memcpy( &mChars[0], str.data(), mChars.size() );
 	}
 	FrameBuffer::FrameBuffer( const std::size_t width, const std::size_t height ) :
 		mGridIndexConverter( width, height )
