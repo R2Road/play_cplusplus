@@ -18,4 +18,11 @@ namespace lambda_test
 		const TitleFunc GetTitleFunction() const override;
 		const DoFunc GetDoFunction() const override;
 	};
+
+	class TestETC : public r2::iTest, public r2::SingleTon<TestETC>
+	{
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+	};
 }
