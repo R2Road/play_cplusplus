@@ -231,30 +231,7 @@ namespace lambda_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t + " << "Captures Default to Const Value" << r2::linefeed << r2::linefeed;
-				std::cout << "\t\t - " << "https://www.learncpp.com/cpp-tutorial/lambda-captures/" << r2::linefeed << r2::linefeed;
-				std::cout << r2::linefeed;
-
-
-				//int i = 0;
-				//auto lambda_1 = [i]()
-				//{
-				//	++i;
-				//};
-
-				std::cout << "\t + " << "Not working this" << r2::linefeed << r2::linefeed;
-
-				std::cout << "\t\t" << "int i = 0;" << r2::linefeed;
-				std::cout << "\t\t" << "auto lambda_1 = [i]()" << r2::linefeed;
-				std::cout << "\t\t" << "{" << r2::linefeed;
-				std::cout << "\t\t\t" << "++i; // X - i is const" << r2::linefeed;
-				std::cout << "\t\t" << "};" << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
-			{
-				std::cout << "\t + " << "Mutable Capture by Value" << r2::linefeed << r2::linefeed;
+				std::cout << "\t + " << "Mutable" << r2::linefeed << r2::linefeed;
 
 				int i = 0;
 				auto lambda_1 = [i]() mutable
@@ -263,8 +240,6 @@ namespace lambda_test
 
 					std::cout << "\t\t" << "i : " << i << r2::linefeed;
 				};
-
-				std::cout << "\t + " << "Working this" << r2::linefeed << r2::linefeed;
 
 				std::cout << "\t\t" << "int i = 0;" << r2::linefeed;
 				std::cout << "\t\t" << "auto lambda_1 = [i]() mutable" << r2::linefeed;
