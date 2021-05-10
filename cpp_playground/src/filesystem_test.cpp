@@ -157,8 +157,8 @@ namespace filesystem_test
 			std::filesystem::path p = std::filesystem::current_path();
 
 			{
-				std::cout << "\t" << "+ Directory : " << r2::linefeed;
-				std::cout << "\t\t" << p << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ Directory : " << r2::linefeed << r2::linefeed;
+				std::cout << "\t\t" << p << r2::linefeed;
 				std::cout << r2::linefeed;
 			}
 
