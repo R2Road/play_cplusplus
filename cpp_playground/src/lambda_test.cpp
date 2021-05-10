@@ -76,6 +76,53 @@ namespace lambda_test
 
 
 
+	const r2::iTest::TitleFunc CaptureValueWithMutable::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Capture Value with Mutable";
+		};
+	}
+	const r2::iTest::DoFunc CaptureValueWithMutable::GetDoFunction() const
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "\t + " << "Mutable" << r2::linefeed << r2::linefeed;
+
+				int i = 0;
+				auto lambda_1 = [i]() mutable
+				{
+					++i;
+
+					std::cout << "\t\t" << "i : " << i << r2::linefeed;
+				};
+
+				std::cout << "\t\t" << "int i = 0;" << r2::linefeed;
+				std::cout << "\t\t" << "auto lambda_1 = [i]() mutable" << r2::linefeed;
+				std::cout << "\t\t" << "{" << r2::linefeed;
+				std::cout << "\t\t\t" << "++i;" << r2::linefeed;
+				std::cout << "\t\t" << "};" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << "\t + " << "Call Lambda" << r2::linefeed;
+				lambda_1();
+				lambda_1();
+				lambda_1();
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	const r2::iTest::TitleFunc CaptureReference::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -205,53 +252,6 @@ namespace lambda_test
 				std::cout << "\t\t" << "std::function<void()> test_func = [copied_up = std::move( test_struct_up )]() {}" << r2::linefeed;
 				std::cout << "\t\t\t" << "- Not Working" << r2::linefeed;
 				std::cout << "\t\t\t" << "- Not Same : std::function<void()> != auto" << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
-			return r2::eTestResult::RunTest;
-		};
-	}
-
-
-
-	const r2::iTest::TitleFunc CaptureValueWithMutable::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Capture Value with Mutable";
-		};
-	}
-	const r2::iTest::DoFunc CaptureValueWithMutable::GetDoFunction() const
-	{
-		return []()->r2::eTestResult
-		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-
-			std::cout << r2::split;
-
-			{
-				std::cout << "\t + " << "Mutable" << r2::linefeed << r2::linefeed;
-
-				int i = 0;
-				auto lambda_1 = [i]() mutable
-				{
-					++i;
-
-					std::cout << "\t\t" << "i : " << i << r2::linefeed;
-				};
-
-				std::cout << "\t\t" << "int i = 0;" << r2::linefeed;
-				std::cout << "\t\t" << "auto lambda_1 = [i]() mutable" << r2::linefeed;
-				std::cout << "\t\t" << "{" << r2::linefeed;
-				std::cout << "\t\t\t" << "++i;" << r2::linefeed;
-				std::cout << "\t\t" << "};" << r2::linefeed;
-				std::cout << r2::linefeed;
-
-				std::cout << "\t + " << "Call Lambda" << r2::linefeed;
-				lambda_1();
-				lambda_1();
-				lambda_1();
 			}
 
 			std::cout << r2::split;
