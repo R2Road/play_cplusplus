@@ -215,14 +215,14 @@ namespace lambda_test
 
 
 
-	const r2::iTest::TitleFunc TestETC::GetTitleFunction() const
+	const r2::iTest::TitleFunc CaptureValueWithMutable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "ETC";
+			return "Capture Value with Mutable";
 		};
 	}
-	const r2::iTest::DoFunc TestETC::GetDoFunction() const
+	const r2::iTest::DoFunc CaptureValueWithMutable::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

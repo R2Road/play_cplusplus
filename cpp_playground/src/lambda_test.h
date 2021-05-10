@@ -26,7 +26,7 @@ namespace lambda_test
 		const DoFunc GetDoFunction() const override;
 	};
 
-	class TestETC : public r2::iTest, public r2::SingleTon<TestETC>
+	class CaptureValueWithMutable : public r2::iTest, public r2::SingleTon<CaptureValueWithMutable>
 	{
 	public:
 		const TitleFunc GetTitleFunction() const override;
