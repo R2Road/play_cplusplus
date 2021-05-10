@@ -206,6 +206,27 @@ namespace filesystem_test
 
 			std::cout << r2::split;
 
+			{
+				std::cout << "\t" << "+ Append with Operator /" << r2::linefeed;
+
+				p /= "test.txt";
+				std::cout << "\t\t" << "p /= \"test.txt\"" << r2::linefeed << r2::linefeed;
+
+				std::cout << "\t\t\t" << p << r2::linefeed << r2::linefeed;
+				std::cout << r2::linefeed;
+
+
+				std::cout << "\t" << "+ Replace Extension" << r2::linefeed;
+
+				p.replace_extension( "json" );
+				std::cout << "\t\t" << "p.replace_extension( \"json\" );" << r2::linefeed << r2::linefeed;
+
+				std::cout << "\t\t\t" << p << r2::linefeed << r2::linefeed;
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
