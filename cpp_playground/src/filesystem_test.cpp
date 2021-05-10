@@ -184,6 +184,27 @@ namespace filesystem_test
 
 			std::cout << r2::split;
 
+			{
+				std::cout << "\t" << "+ Append with Operator /" << r2::linefeed;
+
+				p /= "test.txt";
+				std::cout << "\t\t" << "p /= \"test.txt\"" << r2::linefeed;
+
+				std::cout << "\t\t\t" << p << r2::linefeed;
+				std::cout << r2::linefeed;
+
+
+				std::cout << "\t" << "+ Remove File Name And Separator" << r2::linefeed;
+
+				p._Remove_filename_and_separator();
+				std::cout << "\t\t" << "p._Remove_filename_and_separator();" << r2::linefeed;
+
+				std::cout << "\t\t\t" << p << r2::linefeed;
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
