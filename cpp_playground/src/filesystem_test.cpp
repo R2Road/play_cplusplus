@@ -154,14 +154,15 @@ namespace filesystem_test
 
 			std::cout << r2::split;
 
+			std::filesystem::path p = std::filesystem::current_path();
+
 			{
-				std::filesystem::path p = std::filesystem::current_path();
 				std::cout << "\t" << "+ Directory : " << r2::linefeed;
 				std::cout << "\t\t" << p << r2::linefeed;
 				std::cout << r2::linefeed;
+			}
 
-
-
+			{
 				std::cout << "\t" << "+ Append with Operator /" << r2::linefeed;
 
 				p /= "test.txt";
@@ -169,9 +170,9 @@ namespace filesystem_test
 
 				std::cout << "\t\t\t" << p << r2::linefeed;
 				std::cout << r2::linefeed;
+			}
 
-
-
+			{
 				std::cout << "\t" << "+ Remove File Name" << r2::linefeed;
 
 				p.remove_filename();
