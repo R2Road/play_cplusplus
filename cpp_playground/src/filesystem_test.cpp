@@ -209,6 +209,18 @@ namespace filesystem_test
 
 			std::cout << r2::split;
 
+			{
+				std::cout << "\t" << "+ Replace File Name" << r2::linefeed;
+
+				std::cout << "\t\t\t" << "orig : " << p << r2::linefeed << r2::linefeed;
+
+				p.replace_filename( "new_filename" );
+				std::cout << "\t\t" << "p.replace_filename( \"new_filename\" );" << r2::linefeed;
+				std::cout << "\t\t\t" << "result : " << p << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
