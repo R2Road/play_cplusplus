@@ -168,7 +168,7 @@ namespace filesystem_test
 				std::cout << "\t" << "+ Append with Operator /" << r2::linefeed;
 
 				p /= "test.txt";
-				std::cout << "\t\t" << "p /= \"test.txt\"" << r2::linefeed << r2::linefeed;
+				std::cout << "\t\t" << "p /= \"test.txt\"" << r2::linefeed;
 
 				std::cout << "\t\t\t" << p << r2::linefeed;
 				std::cout << r2::linefeed;
@@ -177,52 +177,34 @@ namespace filesystem_test
 				std::cout << "\t" << "+ Remove File Name" << r2::linefeed;
 
 				p.remove_filename();
-				std::cout << "\t\t" << "p.remove_filename();" << r2::linefeed << r2::linefeed;
-
-				std::cout << "\t\t\t" << p << r2::linefeed << r2::linefeed;
-				std::cout << r2::linefeed;
+				std::cout << "\t\t" << "p.remove_filename();" << r2::linefeed;
+				std::cout << "\t\t\t" << "result : " << p << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Append with Operator /" << r2::linefeed;
-
-				p /= "test.txt";
-				std::cout << "\t\t" << "p /= \"test.txt\"" << r2::linefeed << r2::linefeed;
-
-				std::cout << "\t\t\t" << p << r2::linefeed << r2::linefeed;
-				std::cout << r2::linefeed;
-
-
 				std::cout << "\t" << "+ Remove File Name And Separator" << r2::linefeed;
 
-				p._Remove_filename_and_separator();
-				std::cout << "\t\t" << "p._Remove_filename_and_separator();" << r2::linefeed << r2::linefeed;
+				p /= "test.txt";
+				std::cout << "\t\t\t" << "orig : " << p << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t\t\t" << p << r2::linefeed << r2::linefeed;
-				std::cout << r2::linefeed;
+				p._Remove_filename_and_separator();
+				std::cout << "\t\t" << "p._Remove_filename_and_separator();" << r2::linefeed;
+				std::cout << "\t\t\t" << "result : " << p << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Append with Operator /" << r2::linefeed;
-
-				p /= "test.txt";
-				std::cout << "\t\t" << "p /= \"test.txt\"" << r2::linefeed << r2::linefeed;
-
-				std::cout << "\t\t\t" << p << r2::linefeed << r2::linefeed;
-				std::cout << r2::linefeed;
-
-
 				std::cout << "\t" << "+ Replace Extension" << r2::linefeed;
 
-				p.replace_extension( "json" );
-				std::cout << "\t\t" << "p.replace_extension( \"json\" );" << r2::linefeed << r2::linefeed;
+				p /= "test.txt";
+				std::cout << "\t\t\t" << "orig : " << p << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t\t\t" << p << r2::linefeed << r2::linefeed;
-				std::cout << r2::linefeed;
+				p.replace_extension( "json" );
+				std::cout << "\t\t" << "p.replace_extension( \"json\" );" << r2::linefeed;
+				std::cout << "\t\t\t" << "result : " << p << r2::linefeed;
 			}
 
 			std::cout << r2::split;
