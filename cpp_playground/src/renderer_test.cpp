@@ -283,6 +283,12 @@ namespace renderer_test
 	{
 		auto& rd = GetInstance().mRenderer;
 
+		std::string str( "# " );
+		str += GetInstance().GetTitleFunction()();
+		str += " #";
+		static TempRenderable tr0( 0, 0, str.length(), str.c_str() );
+		rd.Add( &tr0 );
+
 		static TempRenderable tr1( 2, 2, 3u, "###" "# #" "###" );
 		rd.Add( &tr1 );
 
@@ -294,8 +300,6 @@ namespace renderer_test
 
 		return [&rd]()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-
 			rd.Draw();
 
 			return r2::eTestResult::RunTest;
