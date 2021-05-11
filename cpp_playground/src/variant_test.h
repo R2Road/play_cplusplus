@@ -9,6 +9,6 @@ namespace variant_test
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() const override;
+		DoFunc GetDoFunction() override;
 	};
 }

@@ -20,7 +20,7 @@ namespace variadic_template_test
 			return "Size Of Args";
 		};
 	}
-	r2::iTest::DoFunc SizeOfArgs::GetDoFunction() const
+	r2::iTest::DoFunc SizeOfArgs::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -80,7 +80,7 @@ namespace variadic_template_test
 			return "Print Values";
 		};
 	}
-	r2::iTest::DoFunc PrintValues::GetDoFunction() const
+	r2::iTest::DoFunc PrintValues::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -149,7 +149,7 @@ namespace variadic_template_test
 			return "Sum Values";
 		};
 	}
-	r2::iTest::DoFunc SumValues::GetDoFunction() const
+	r2::iTest::DoFunc SumValues::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -238,7 +238,7 @@ namespace variadic_template_test
 			return "Subtract Values";
 		};
 	}
-	r2::iTest::DoFunc SubtractValues::GetDoFunction() const
+	r2::iTest::DoFunc SubtractValues::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

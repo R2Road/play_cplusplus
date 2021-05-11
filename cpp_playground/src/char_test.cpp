@@ -15,7 +15,7 @@ namespace char_test
 			return "Char : Basic";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction() const
+	r2::iTest::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

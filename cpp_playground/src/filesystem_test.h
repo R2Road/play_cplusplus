@@ -9,7 +9,7 @@ namespace filesystem_test
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() const override;
+		DoFunc GetDoFunction() override;
 	};
 
 
@@ -18,7 +18,7 @@ namespace filesystem_test
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() const override;
+		DoFunc GetDoFunction() override;
 	};
 
 
@@ -27,7 +27,7 @@ namespace filesystem_test
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() const override;
+		DoFunc GetDoFunction() override;
 	};
 
 
@@ -36,6 +36,6 @@ namespace filesystem_test
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() const override;
+		DoFunc GetDoFunction() override;
 	};
 }

@@ -9,13 +9,13 @@ namespace enum_test
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() const override;
+		DoFunc GetDoFunction() override;
 	};
 
 	class Convert : public r2::iTest, public r2::SingleTon<Convert>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() const override;
+		DoFunc GetDoFunction() override;
 	};
 }

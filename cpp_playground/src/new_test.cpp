@@ -14,7 +14,7 @@ namespace new_test
 			return "Basic";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction() const
+	r2::iTest::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -71,7 +71,7 @@ namespace new_test
 			return "Placement New";
 		};
 	}
-	r2::iTest::DoFunc PlacementNew::GetDoFunction() const
+	r2::iTest::DoFunc PlacementNew::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

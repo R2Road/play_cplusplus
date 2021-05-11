@@ -81,7 +81,7 @@ namespace r2
 		return eTestResult::RunTest;
 	}
 
-	void Scene::AddChild( const char key_code, const iTest& test_obj )
+	void Scene::AddChild( const char key_code, iTest& test_obj )
 	{
 		mTests.emplace_back( key_code, test_obj.GetTitleFunction(), test_obj.GetDoFunction() );
 	}

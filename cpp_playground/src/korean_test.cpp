@@ -15,7 +15,7 @@ namespace korean_test
 		};
 	}
 
-	r2::iTest::DoFunc Basic::GetDoFunction() const
+	r2::iTest::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

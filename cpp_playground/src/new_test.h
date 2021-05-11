@@ -9,13 +9,13 @@ namespace new_test
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() const override;
+		DoFunc GetDoFunction() override;
 	};
 
 	class PlacementNew : public r2::iTest, public r2::SingleTon<PlacementNew>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() const override;
+		DoFunc GetDoFunction() override;
 	};
 }

@@ -17,7 +17,7 @@ namespace console_test
 			return "Get Window Size";
 		};
 	}
-	r2::iTest::DoFunc GetWindowSize::GetDoFunction() const
+	r2::iTest::DoFunc GetWindowSize::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -62,7 +62,7 @@ namespace console_test
 			return "Change Window Size";
 		};
 	}
-	r2::iTest::DoFunc ChangeWindowSize::GetDoFunction() const
+	r2::iTest::DoFunc ChangeWindowSize::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -107,7 +107,7 @@ namespace console_test
 			return "Change Window Position";
 		};
 	}
-	r2::iTest::DoFunc ChangeWindowPosition::GetDoFunction() const
+	r2::iTest::DoFunc ChangeWindowPosition::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -144,7 +144,7 @@ namespace console_test
 			return "Change Window Name";
 		};
 	}
-	r2::iTest::DoFunc ChangeWindowName::GetDoFunction() const
+	r2::iTest::DoFunc ChangeWindowName::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -193,7 +193,7 @@ namespace console_test
 			return "Move Cursor";
 		};
 	}
-	r2::iTest::DoFunc MoveCursor::GetDoFunction() const
+	r2::iTest::DoFunc MoveCursor::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -249,7 +249,7 @@ namespace console_test
 			return "Color Table";
 		};
 	}
-	r2::iTest::DoFunc ColorTable::GetDoFunction() const
+	r2::iTest::DoFunc ColorTable::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -292,7 +292,7 @@ namespace console_test
 			return "Text Color 1";
 		};
 	}
-	r2::iTest::DoFunc TextColor1::GetDoFunction() const
+	r2::iTest::DoFunc TextColor1::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -329,7 +329,7 @@ namespace console_test
 			return "Text Color 2";
 		};
 	}
-	r2::iTest::DoFunc TextColor2::GetDoFunction() const
+	r2::iTest::DoFunc TextColor2::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -408,7 +408,7 @@ namespace console_test
 			return "Adjust Color Table";
 		};
 	}
-	r2::iTest::DoFunc AdjustColorTable::GetDoFunction() const
+	r2::iTest::DoFunc AdjustColorTable::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -472,7 +472,7 @@ namespace console_test
 			return "Color Table 2";
 		};
 	}
-	r2::iTest::DoFunc ColorTable2::GetDoFunction() const
+	r2::iTest::DoFunc ColorTable2::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -560,7 +560,7 @@ namespace console_test
 			return "Text Color 3";
 		};
 	}
-	r2::iTest::DoFunc TextColor3::GetDoFunction() const
+	r2::iTest::DoFunc TextColor3::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -636,7 +636,7 @@ namespace console_test
 			return "Set Pixel";
 		};
 	}
-	r2::iTest::DoFunc Pixel::GetDoFunction() const
+	r2::iTest::DoFunc Pixel::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

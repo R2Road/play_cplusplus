@@ -18,7 +18,7 @@ namespace random_test
 			return "Basic";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction() const
+	r2::iTest::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -170,7 +170,7 @@ namespace random_test
 			return "Status Save And Load";
 		};
 	}
-	r2::iTest::DoFunc StatusSaveAndLoad::GetDoFunction() const
+	r2::iTest::DoFunc StatusSaveAndLoad::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

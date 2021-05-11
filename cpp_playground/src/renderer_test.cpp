@@ -19,7 +19,7 @@ namespace renderer_test
 			return "Visible Resource - Fill All";
 		};
 	}
-	r2::iTest::DoFunc VisibleResource_FillAll::GetDoFunction() const
+	r2::iTest::DoFunc VisibleResource_FillAll::GetDoFunction()
 	{
 		GetInstance().mVisibleResource.FillAll( '0' );
 
@@ -61,7 +61,7 @@ namespace renderer_test
 			return "Visible Resource - Fill";
 		};
 	}
-	r2::iTest::DoFunc VisibleResource_Fill::GetDoFunction() const
+	r2::iTest::DoFunc VisibleResource_Fill::GetDoFunction()
 	{
 		GetInstance().mVisibleResource.Fill( 0, 0, '0' );
 		GetInstance().mVisibleResource.Fill( GetInstance().mVisibleResource.GetWidth() - 1u, 0, '0' );
@@ -106,7 +106,7 @@ namespace renderer_test
 			return "Visible Resource - Draw With Position";
 		};
 	}
-	r2::iTest::DoFunc VisibleResource_DrawWithPosition::GetDoFunction() const
+	r2::iTest::DoFunc VisibleResource_DrawWithPosition::GetDoFunction()
 	{
 		GetInstance().mVisibleResource.FillAll( '0' );
 
@@ -156,7 +156,7 @@ namespace renderer_test
 			return "Visible Resource - Init With Chars";
 		};
 	}
-	r2::iTest::DoFunc VisibleResource_InitWithChars::GetDoFunction() const
+	r2::iTest::DoFunc VisibleResource_InitWithChars::GetDoFunction()
 	{
 		const auto& fb1 = GetInstance().mVisibleResource1;
 		const auto& fb2 = GetInstance().mVisibleResource2;
@@ -253,7 +253,7 @@ namespace renderer_test
 			return "Renderable";
 		};
 	}
-	r2::iTest::DoFunc TestRenderable::GetDoFunction() const
+	r2::iTest::DoFunc TestRenderable::GetDoFunction()
 	{
 		static TempRenderable tr( 8, 5, 6u, "######" "#    #" "#    #" "#    #" "#    #" "######" );
 		auto& tr2 = tr;
@@ -279,7 +279,7 @@ namespace renderer_test
 			return "Renderer";
 		};
 	}
-	r2::iTest::DoFunc TestRenderer::GetDoFunction() const
+	r2::iTest::DoFunc TestRenderer::GetDoFunction()
 	{
 		auto& rd = GetInstance().mRenderer;
 
@@ -317,7 +317,7 @@ namespace renderer_test
 			return "Camera( In Progress )";
 		};
 	}
-	r2::iTest::DoFunc TestCamera::GetDoFunction() const
+	r2::iTest::DoFunc TestCamera::GetDoFunction()
 	{
 		auto& rd = GetInstance().mRenderer;
 

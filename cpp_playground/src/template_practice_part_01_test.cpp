@@ -27,7 +27,7 @@ namespace template_practice_part_01_test
 		};
 	}
 
-	r2::iTest::DoFunc Practice01::GetDoFunction() const
+	r2::iTest::DoFunc Practice01::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

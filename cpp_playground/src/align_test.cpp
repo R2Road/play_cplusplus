@@ -12,7 +12,7 @@ namespace align_test
 			return "Align 0";
 		};
 	}
-	r2::iTest::DoFunc Align_0::GetDoFunction() const
+	r2::iTest::DoFunc Align_0::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -130,7 +130,7 @@ namespace align_test
 			return "Align 1";
 		};
 	}
-	r2::iTest::DoFunc Align_1::GetDoFunction() const
+	r2::iTest::DoFunc Align_1::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -247,7 +247,7 @@ namespace align_test
 			return "Align 2";
 		};
 	}
-	r2::iTest::DoFunc Align_2::GetDoFunction() const
+	r2::iTest::DoFunc Align_2::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

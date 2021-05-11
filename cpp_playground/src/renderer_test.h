@@ -15,7 +15,7 @@ namespace renderer_test
 
 	public:
 		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() const override;
+		DoFunc GetDoFunction() override;
 
 	private:
 		r2::VisibleResource mVisibleResource;
@@ -28,7 +28,7 @@ namespace renderer_test
 
 	public:
 		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() const override;
+		DoFunc GetDoFunction() override;
 
 	private:
 		r2::VisibleResource mVisibleResource;
@@ -41,7 +41,7 @@ namespace renderer_test
 
 	public:
 		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() const override;
+		DoFunc GetDoFunction() override;
 
 	private:
 		r2::VisibleResource mVisibleResource;
@@ -54,7 +54,7 @@ namespace renderer_test
 
 	public:
 		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() const override;
+		DoFunc GetDoFunction() override;
 
 	private:
 		r2::VisibleResource mVisibleResource1;
@@ -67,7 +67,7 @@ namespace renderer_test
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() const override;
+		DoFunc GetDoFunction() override;
 	};
 
 
@@ -79,7 +79,7 @@ namespace renderer_test
 
 	public:
 		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() const override;
+		DoFunc GetDoFunction() override;
 
 	private:
 		r2::Renderer mRenderer;
@@ -94,7 +94,7 @@ namespace renderer_test
 
 	public:
 		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() const override;
+		DoFunc GetDoFunction() override;
 
 	private:
 		r2::Renderer mRenderer;

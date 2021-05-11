@@ -73,7 +73,7 @@ namespace shared_pointer_test
 			return "Memory : Shared Pointer";
 		};
 	}
-	r2::iTest::DoFunc SharedPtr::GetDoFunction() const
+	r2::iTest::DoFunc SharedPtr::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

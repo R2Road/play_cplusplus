@@ -27,7 +27,7 @@ namespace structured_binding_test
 			return "Structured Binding : Basic";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction() const
+	r2::iTest::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

@@ -34,7 +34,7 @@ namespace memory_pool_test
 		};
 	}
 
-	r2::iTest::DoFunc Step01::GetDoFunction() const
+	r2::iTest::DoFunc Step01::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

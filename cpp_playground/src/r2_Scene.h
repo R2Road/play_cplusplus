@@ -45,7 +45,7 @@ namespace r2
 
 		eTestResult Do( const int key_code );
 
-		void AddChild( const char key_code, const iTest& test_obj );
+		void AddChild( const char key_code, iTest& test_obj );
 		void AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestResult()> func_test );
 		void AddSplit();
 
