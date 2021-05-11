@@ -12,14 +12,14 @@ namespace renderer_test
 {
 	VisibleResource_FillAll::VisibleResource_FillAll() : mVisibleResource( 30, 20 ) {}
 
-	const r2::iTest::TitleFunc VisibleResource_FillAll::GetTitleFunction() const
+	r2::iTest::TitleFunc VisibleResource_FillAll::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Visible Resource - Fill All";
 		};
 	}
-	const r2::iTest::DoFunc VisibleResource_FillAll::GetDoFunction() const
+	r2::iTest::DoFunc VisibleResource_FillAll::GetDoFunction() const
 	{
 		GetInstance().mVisibleResource.FillAll( '0' );
 
@@ -54,14 +54,14 @@ namespace renderer_test
 
 	VisibleResource_Fill::VisibleResource_Fill() : mVisibleResource( 30, 20 ) {}
 
-	const r2::iTest::TitleFunc VisibleResource_Fill::GetTitleFunction() const
+	r2::iTest::TitleFunc VisibleResource_Fill::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Visible Resource - Fill";
 		};
 	}
-	const r2::iTest::DoFunc VisibleResource_Fill::GetDoFunction() const
+	r2::iTest::DoFunc VisibleResource_Fill::GetDoFunction() const
 	{
 		GetInstance().mVisibleResource.Fill( 0, 0, '0' );
 		GetInstance().mVisibleResource.Fill( GetInstance().mVisibleResource.GetWidth() - 1u, 0, '0' );
@@ -99,14 +99,14 @@ namespace renderer_test
 
 	VisibleResource_DrawWithPosition::VisibleResource_DrawWithPosition() : mVisibleResource( 10, 10 ) {}
 
-	const r2::iTest::TitleFunc VisibleResource_DrawWithPosition::GetTitleFunction() const
+	r2::iTest::TitleFunc VisibleResource_DrawWithPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Visible Resource - Draw With Position";
 		};
 	}
-	const r2::iTest::DoFunc VisibleResource_DrawWithPosition::GetDoFunction() const
+	r2::iTest::DoFunc VisibleResource_DrawWithPosition::GetDoFunction() const
 	{
 		GetInstance().mVisibleResource.FillAll( '0' );
 
@@ -149,14 +149,14 @@ namespace renderer_test
 		, mVisibleResource2( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" )
 	{}
 
-	const r2::iTest::TitleFunc VisibleResource_InitWithChars::GetTitleFunction() const
+	r2::iTest::TitleFunc VisibleResource_InitWithChars::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Visible Resource - Init With Chars";
 		};
 	}
-	const r2::iTest::DoFunc VisibleResource_InitWithChars::GetDoFunction() const
+	r2::iTest::DoFunc VisibleResource_InitWithChars::GetDoFunction() const
 	{
 		const auto& fb1 = GetInstance().mVisibleResource1;
 		const auto& fb2 = GetInstance().mVisibleResource2;
@@ -246,14 +246,14 @@ namespace renderer_test
 		r2::VisibleResource mVisibleResource;
 	};
 
-	const r2::iTest::TitleFunc TestRenderable::GetTitleFunction() const
+	r2::iTest::TitleFunc TestRenderable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Renderable";
 		};
 	}
-	const r2::iTest::DoFunc TestRenderable::GetDoFunction() const
+	r2::iTest::DoFunc TestRenderable::GetDoFunction() const
 	{
 		static TempRenderable tr( 8, 5, 6u, "######" "#    #" "#    #" "#    #" "#    #" "######" );
 		auto& tr2 = tr;
@@ -272,14 +272,14 @@ namespace renderer_test
 
 	TestRenderer::TestRenderer() : mRenderer() {}
 
-	const r2::iTest::TitleFunc TestRenderer::GetTitleFunction() const
+	r2::iTest::TitleFunc TestRenderer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Renderer";
 		};
 	}
-	const r2::iTest::DoFunc TestRenderer::GetDoFunction() const
+	r2::iTest::DoFunc TestRenderer::GetDoFunction() const
 	{
 		auto& rd = GetInstance().mRenderer;
 
@@ -310,14 +310,14 @@ namespace renderer_test
 
 	TestCamera::TestCamera() : mRenderer() {}
 
-	const r2::iTest::TitleFunc TestCamera::GetTitleFunction() const
+	r2::iTest::TitleFunc TestCamera::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera( In Progress )";
 		};
 	}
-	const r2::iTest::DoFunc TestCamera::GetDoFunction() const
+	r2::iTest::DoFunc TestCamera::GetDoFunction() const
 	{
 		auto& rd = GetInstance().mRenderer;
 

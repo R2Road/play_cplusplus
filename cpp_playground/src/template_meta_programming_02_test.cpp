@@ -14,14 +14,14 @@ namespace template_meta_programming_test
 		static constexpr const char c[size + 1] = { chars..., '\0' };
 	};
 
-	const r2::iTest::TitleFunc Character2String::GetTitleFunction() const
+	r2::iTest::TitleFunc Character2String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Character 2 String";
 		};
 	}
-	const r2::iTest::DoFunc Character2String::GetDoFunction() const
+	r2::iTest::DoFunc Character2String::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -61,14 +61,14 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	const r2::iTest::TitleFunc Integer2String::GetTitleFunction() const
+	r2::iTest::TitleFunc Integer2String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Integer 2 String";
 		};
 	}
-	const r2::iTest::DoFunc Integer2String::GetDoFunction() const
+	r2::iTest::DoFunc Integer2String::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -106,14 +106,14 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	const r2::iTest::TitleFunc CalculatePlaceValue::GetTitleFunction() const
+	r2::iTest::TitleFunc CalculatePlaceValue::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Place Value 4 Integer";
 		};
 	}
-	const r2::iTest::DoFunc CalculatePlaceValue::GetDoFunction() const
+	r2::iTest::DoFunc CalculatePlaceValue::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -175,14 +175,14 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	const r2::iTest::TitleFunc Integer2String_II::GetTitleFunction() const
+	r2::iTest::TitleFunc Integer2String_II::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Integer 2 String II";
 		};
 	}
-	const r2::iTest::DoFunc Integer2String_II::GetDoFunction() const
+	r2::iTest::DoFunc Integer2String_II::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

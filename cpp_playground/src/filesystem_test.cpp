@@ -9,14 +9,14 @@
 namespace filesystem_test
 {
 
-	const r2::iTest::TitleFunc DirectoryPath::GetTitleFunction() const
+	r2::iTest::TitleFunc DirectoryPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Directory Path";
 		};
 	}
-	const r2::iTest::DoFunc DirectoryPath::GetDoFunction() const
+	r2::iTest::DoFunc DirectoryPath::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -54,14 +54,14 @@ namespace filesystem_test
 namespace filesystem_test
 {
 
-	const r2::iTest::TitleFunc DirectoryIterator::GetTitleFunction() const
+	r2::iTest::TitleFunc DirectoryIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Directory Iterator";
 		};
 	}
-	const r2::iTest::DoFunc DirectoryIterator::GetDoFunction() const
+	r2::iTest::DoFunc DirectoryIterator::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -95,14 +95,14 @@ namespace filesystem_test
 namespace filesystem_test
 {
 
-	const r2::iTest::TitleFunc RecursiveDirectoryIterator::GetTitleFunction() const
+	r2::iTest::TitleFunc RecursiveDirectoryIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Recursive Directory Iterator";
 		};
 	}
-	const r2::iTest::DoFunc RecursiveDirectoryIterator::GetDoFunction() const
+	r2::iTest::DoFunc RecursiveDirectoryIterator::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -139,14 +139,14 @@ namespace filesystem_test
 namespace filesystem_test
 {
 
-	const r2::iTest::TitleFunc PathOperation::GetTitleFunction() const
+	r2::iTest::TitleFunc PathOperation::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Path Operation";
 		};
 	}
-	const r2::iTest::DoFunc PathOperation::GetDoFunction() const
+	r2::iTest::DoFunc PathOperation::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

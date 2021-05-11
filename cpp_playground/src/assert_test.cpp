@@ -7,7 +7,7 @@
 
 namespace assert_test
 {
-	const r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -15,7 +15,7 @@ namespace assert_test
 		};
 	}
 
-	const r2::iTest::DoFunc Basic::GetDoFunction() const
+	r2::iTest::DoFunc Basic::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

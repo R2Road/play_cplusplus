@@ -10,14 +10,14 @@
 
 namespace console_test
 {
-	const r2::iTest::TitleFunc GetWindowSize::GetTitleFunction() const
+	r2::iTest::TitleFunc GetWindowSize::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Get Window Size";
 		};
 	}
-	const r2::iTest::DoFunc GetWindowSize::GetDoFunction() const
+	r2::iTest::DoFunc GetWindowSize::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -55,14 +55,14 @@ namespace console_test
 
 
 
-	const r2::iTest::TitleFunc ChangeWindowSize::GetTitleFunction() const
+	r2::iTest::TitleFunc ChangeWindowSize::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Change Window Size";
 		};
 	}
-	const r2::iTest::DoFunc ChangeWindowSize::GetDoFunction() const
+	r2::iTest::DoFunc ChangeWindowSize::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -100,14 +100,14 @@ namespace console_test
 
 
 
-	const r2::iTest::TitleFunc ChangeWindowPosition::GetTitleFunction() const
+	r2::iTest::TitleFunc ChangeWindowPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Change Window Position";
 		};
 	}
-	const r2::iTest::DoFunc ChangeWindowPosition::GetDoFunction() const
+	r2::iTest::DoFunc ChangeWindowPosition::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -137,14 +137,14 @@ namespace console_test
 
 
 
-	const r2::iTest::TitleFunc ChangeWindowName::GetTitleFunction() const
+	r2::iTest::TitleFunc ChangeWindowName::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Change Window Name";
 		};
 	}
-	const r2::iTest::DoFunc ChangeWindowName::GetDoFunction() const
+	r2::iTest::DoFunc ChangeWindowName::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -186,14 +186,14 @@ namespace console_test
 
 
 
-	const r2::iTest::TitleFunc MoveCursor::GetTitleFunction() const
+	r2::iTest::TitleFunc MoveCursor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Move Cursor";
 		};
 	}
-	const r2::iTest::DoFunc MoveCursor::GetDoFunction() const
+	r2::iTest::DoFunc MoveCursor::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -242,14 +242,14 @@ namespace console_test
 
 
 
-	const r2::iTest::TitleFunc ColorTable::GetTitleFunction() const
+	r2::iTest::TitleFunc ColorTable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Color Table";
 		};
 	}
-	const r2::iTest::DoFunc ColorTable::GetDoFunction() const
+	r2::iTest::DoFunc ColorTable::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -285,14 +285,14 @@ namespace console_test
 
 
 
-	const r2::iTest::TitleFunc TextColor1::GetTitleFunction() const
+	r2::iTest::TitleFunc TextColor1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Text Color 1";
 		};
 	}
-	const r2::iTest::DoFunc TextColor1::GetDoFunction() const
+	r2::iTest::DoFunc TextColor1::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -322,14 +322,14 @@ namespace console_test
 
 
 
-	const r2::iTest::TitleFunc TextColor2::GetTitleFunction() const
+	r2::iTest::TitleFunc TextColor2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Text Color 2";
 		};
 	}
-	const r2::iTest::DoFunc TextColor2::GetDoFunction() const
+	r2::iTest::DoFunc TextColor2::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -401,14 +401,14 @@ namespace console_test
 
 
 
-	const r2::iTest::TitleFunc AdjustColorTable::GetTitleFunction() const
+	r2::iTest::TitleFunc AdjustColorTable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Adjust Color Table";
 		};
 	}
-	const r2::iTest::DoFunc AdjustColorTable::GetDoFunction() const
+	r2::iTest::DoFunc AdjustColorTable::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -465,14 +465,14 @@ namespace console_test
 
 
 
-	const r2::iTest::TitleFunc ColorTable2::GetTitleFunction() const
+	r2::iTest::TitleFunc ColorTable2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Color Table 2";
 		};
 	}
-	const r2::iTest::DoFunc ColorTable2::GetDoFunction() const
+	r2::iTest::DoFunc ColorTable2::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -553,14 +553,14 @@ namespace console_test
 
 
 
-	const r2::iTest::TitleFunc TextColor3::GetTitleFunction() const
+	r2::iTest::TitleFunc TextColor3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Text Color 3";
 		};
 	}
-	const r2::iTest::DoFunc TextColor3::GetDoFunction() const
+	r2::iTest::DoFunc TextColor3::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -629,14 +629,14 @@ namespace console_test
 
 
 
-	const r2::iTest::TitleFunc Pixel::GetTitleFunction() const
+	r2::iTest::TitleFunc Pixel::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Set Pixel";
 		};
 	}
-	const r2::iTest::DoFunc Pixel::GetDoFunction() const
+	r2::iTest::DoFunc Pixel::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

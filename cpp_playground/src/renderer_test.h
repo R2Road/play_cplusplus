@@ -14,8 +14,8 @@ namespace renderer_test
 		VisibleResource_FillAll();
 
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 
 	private:
 		r2::VisibleResource mVisibleResource;
@@ -27,8 +27,8 @@ namespace renderer_test
 		VisibleResource_Fill();
 
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 
 	private:
 		r2::VisibleResource mVisibleResource;
@@ -40,8 +40,8 @@ namespace renderer_test
 		VisibleResource_DrawWithPosition();
 
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 
 	private:
 		r2::VisibleResource mVisibleResource;
@@ -53,8 +53,8 @@ namespace renderer_test
 		VisibleResource_InitWithChars();
 
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 
 	private:
 		r2::VisibleResource mVisibleResource1;
@@ -66,8 +66,8 @@ namespace renderer_test
 	class TestRenderable : public r2::iTest, public r2::SingleTon<TestRenderable>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 
 
@@ -78,8 +78,8 @@ namespace renderer_test
 		TestRenderer();
 
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 
 	private:
 		r2::Renderer mRenderer;
@@ -93,8 +93,8 @@ namespace renderer_test
 		TestCamera();
 
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 
 	private:
 		r2::Renderer mRenderer;

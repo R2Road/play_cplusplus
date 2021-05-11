@@ -8,7 +8,7 @@ namespace template_practice_part_01_test
 	class Practice01 : public r2::iTest, public r2::SingleTon<Practice01>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 }

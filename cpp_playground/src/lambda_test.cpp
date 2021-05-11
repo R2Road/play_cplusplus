@@ -10,14 +10,14 @@
 
 namespace lambda_test
 {
-	const r2::iTest::TitleFunc CaptureValue::GetTitleFunction() const
+	r2::iTest::TitleFunc CaptureValue::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Value";
 		};
 	}
-	const r2::iTest::DoFunc CaptureValue::GetDoFunction() const
+	r2::iTest::DoFunc CaptureValue::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -76,14 +76,14 @@ namespace lambda_test
 
 
 
-	const r2::iTest::TitleFunc CaptureValueWithMutable::GetTitleFunction() const
+	r2::iTest::TitleFunc CaptureValueWithMutable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Value with Mutable";
 		};
 	}
-	const r2::iTest::DoFunc CaptureValueWithMutable::GetDoFunction() const
+	r2::iTest::DoFunc CaptureValueWithMutable::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -123,14 +123,14 @@ namespace lambda_test
 
 
 
-	const r2::iTest::TitleFunc CaptureReference::GetTitleFunction() const
+	r2::iTest::TitleFunc CaptureReference::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Reference";
 		};
 	}
-	const r2::iTest::DoFunc CaptureReference::GetDoFunction() const
+	r2::iTest::DoFunc CaptureReference::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -198,14 +198,14 @@ namespace lambda_test
 
 
 
-	const r2::iTest::TitleFunc CaptureUniquePtr::GetTitleFunction() const
+	r2::iTest::TitleFunc CaptureUniquePtr::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Unique Ptr";
 		};
 	}
-	const r2::iTest::DoFunc CaptureUniquePtr::GetDoFunction() const
+	r2::iTest::DoFunc CaptureUniquePtr::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

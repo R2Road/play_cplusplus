@@ -8,8 +8,8 @@ namespace filesystem_test
 	class DirectoryPath : public r2::iTest, public r2::SingleTon<DirectoryPath>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 
 
@@ -17,8 +17,8 @@ namespace filesystem_test
 	class DirectoryIterator : public r2::iTest, public r2::SingleTon<DirectoryIterator>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 
 
@@ -26,8 +26,8 @@ namespace filesystem_test
 	class RecursiveDirectoryIterator : public r2::iTest, public r2::SingleTon<RecursiveDirectoryIterator>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 
 
@@ -35,7 +35,7 @@ namespace filesystem_test
 	class PathOperation : public r2::iTest, public r2::SingleTon<PathOperation>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 }

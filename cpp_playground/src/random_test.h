@@ -8,8 +8,8 @@ namespace random_test
 	class Basic : public r2::iTest, public r2::SingleTon<Basic>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 
 
@@ -17,7 +17,7 @@ namespace random_test
 	class StatusSaveAndLoad : public r2::iTest, public r2::SingleTon<StatusSaveAndLoad>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 }

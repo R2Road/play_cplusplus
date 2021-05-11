@@ -8,14 +8,14 @@ namespace pointer_test
 	class Basic : public r2::iTest, public r2::SingleTon<Basic>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 
 	class ConstPointer : public r2::iTest, public r2::SingleTon<ConstPointer>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 }

@@ -8,7 +8,7 @@ namespace shared_pointer_test
 	class SharedPtr : public r2::iTest, public r2::SingleTon<SharedPtr>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 }

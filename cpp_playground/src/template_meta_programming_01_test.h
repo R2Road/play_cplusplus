@@ -8,8 +8,8 @@ namespace template_meta_programming_test
 	class CalculateFactorial : public r2::iTest, public r2::SingleTon<CalculateFactorial>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 
 
@@ -17,8 +17,8 @@ namespace template_meta_programming_test
 	class GreatestCommonDivisor : public r2::iTest, public r2::SingleTon<GreatestCommonDivisor>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 
 
@@ -26,37 +26,37 @@ namespace template_meta_programming_test
 	class BasicRatio : public r2::iTest, public r2::SingleTon<BasicRatio>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 	class SumBasicRatio : public r2::iTest, public r2::SingleTon<SumBasicRatio>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 	class RatioWithGCD : public r2::iTest, public r2::SingleTon<RatioWithGCD>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 	class SumRatioWithGCD : public r2::iTest, public r2::SingleTon<SumRatioWithGCD>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 	class SumRatioAndOperator1 : public r2::iTest, public r2::SingleTon<SumRatioAndOperator1>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 	class SumRatioAndOperator2 : public r2::iTest, public r2::SingleTon<SumRatioAndOperator2>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 }

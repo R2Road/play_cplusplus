@@ -8,7 +8,7 @@ namespace memory_pool_test
 	class Step01 : public r2::iTest, public r2::SingleTon<Step01>
 	{
 	public:
-		const TitleFunc GetTitleFunction() const override;
-		const DoFunc GetDoFunction() const override;
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() const override;
 	};
 }

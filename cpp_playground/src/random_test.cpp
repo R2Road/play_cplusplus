@@ -11,14 +11,14 @@
 
 namespace random_test
 {
-	const r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Basic";
 		};
 	}
-	const r2::iTest::DoFunc Basic::GetDoFunction() const
+	r2::iTest::DoFunc Basic::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{
@@ -163,14 +163,14 @@ namespace
 }
 namespace random_test
 {
-	const r2::iTest::TitleFunc StatusSaveAndLoad::GetTitleFunction() const
+	r2::iTest::TitleFunc StatusSaveAndLoad::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Status Save And Load";
 		};
 	}
-	const r2::iTest::DoFunc StatusSaveAndLoad::GetDoFunction() const
+	r2::iTest::DoFunc StatusSaveAndLoad::GetDoFunction() const
 	{
 		return []()->r2::eTestResult
 		{

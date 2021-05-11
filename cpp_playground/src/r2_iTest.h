@@ -14,7 +14,7 @@ namespace r2
 
 		virtual ~iTest() {}
 
-		virtual const TitleFunc GetTitleFunction() const = 0;
-		virtual const DoFunc GetDoFunction() const = 0;
+		virtual TitleFunc GetTitleFunction() const = 0;
+		virtual DoFunc GetDoFunction() const = 0;
 	};
 }
