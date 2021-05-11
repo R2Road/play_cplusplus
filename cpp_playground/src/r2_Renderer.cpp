@@ -8,6 +8,11 @@ namespace r2
 	Renderer::Renderer() : mCamera( nullptr ), mContainer()
 	{}
 
+	void Renderer::Clear()
+	{
+		mCamera = nullptr;
+		mContainer.clear();
+	}
 	void Renderer::Add( Renderable* const renderable )
 	{
 		mContainer.push_back( renderable );

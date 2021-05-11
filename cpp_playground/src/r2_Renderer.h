@@ -20,6 +20,7 @@ namespace r2
 			mCamera = camera;
 		}
 
+		void Clear();
 		void Add( Renderable* const renderable );
 
 		void Draw();

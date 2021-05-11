@@ -282,6 +282,8 @@ namespace renderer_test
 	r2::iTest::DoFunc TestRenderer::GetDoFunction()
 	{
 		auto& rd = GetInstance().mRenderer;
+		rd.Clear();
+
 
 		std::string str( "# " );
 		str += GetInstance().GetTitleFunction()();
@@ -320,6 +322,7 @@ namespace renderer_test
 	r2::iTest::DoFunc TestCamera::GetDoFunction()
 	{
 		auto& rd = GetInstance().mRenderer;
+		rd.Clear();
 
 
 		rd.SetCamera( &mCamera );
