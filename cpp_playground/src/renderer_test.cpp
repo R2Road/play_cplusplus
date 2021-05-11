@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "renderer_test.h"
 
+#include <conio.h>
 #include <functional>
 #include <Windows.h>
 
@@ -340,9 +341,36 @@ namespace renderer_test
 		static TempRenderable tr2( 11, 5, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
 		rd.Add( &tr2 );
 
-		return [&rd]()->r2::eTestResult
+		return [&rd, &cam = mCamera]()->r2::eTestResult
 		{
-			rd.Draw();
+			r2::Point pos;
+			bool process = true;
+			while( process )
+			{
+				rd.Draw();
+
+				switch( _getch() )
+				{
+				case 'w': // up
+					pos.y -= 1;
+					break;
+				case 's': // down
+					pos.y += 1;
+					break;
+				case 'a': // left
+					pos.x -= 1;
+					break;
+				case 'd': // right
+					pos.x += 1;
+					break;
+
+				case 27: // ESC
+					process = false;
+					break;
+				}
+
+				cam.SetPoint( pos );
+			}
 
 			return r2::eTestResult::RunTest;
 		};
