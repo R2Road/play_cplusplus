@@ -224,7 +224,7 @@ namespace renderer_test
 		void Draw() override
 		{
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-			COORD pos = { mPoint.x, mPoint.y };
+			COORD pos = { mPoint.GetX(), mPoint.GetY() };
 			SetConsoleCursorPosition( stdHandle, pos );
 
 			int count = 0;
@@ -243,7 +243,7 @@ namespace renderer_test
 		}
 
 	private:
-		r2::Point mPoint;
+		r2::PointInt mPoint;
 		r2::VisibleResource mVisibleResource;
 	};
 
@@ -343,7 +343,8 @@ namespace renderer_test
 
 		return [&rd = GetInstance().mRenderer, &cam = mCamera]()->r2::eTestResult
 		{
-			r2::Point pos;
+			int x = 0;
+			int y = 0;
 			bool process = true;
 			while( process )
 			{
@@ -352,16 +353,16 @@ namespace renderer_test
 				switch( _getch() )
 				{
 				case 'w': // up
-					pos.y -= 1;
+					y -= 1;
 					break;
 				case 's': // down
-					pos.y += 1;
+					y += 1;
 					break;
 				case 'a': // left
-					pos.x -= 1;
+					x -= 1;
 					break;
 				case 'd': // right
-					pos.x += 1;
+					x += 1;
 					break;
 
 				case 27: // ESC
@@ -369,7 +370,7 @@ namespace renderer_test
 					break;
 				}
 
-				cam.SetPoint( pos );
+				cam.SetPoint( x, y );
 			}
 
 			return r2::eTestResult::RunTest;

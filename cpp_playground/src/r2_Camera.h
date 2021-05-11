@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2_Point.h"
+#include "r2_PointInt.h"
 
 namespace r2
 {
@@ -9,12 +9,16 @@ namespace r2
 	public:
 		Camera();
 
-		void SetPoint( const r2::Point& point )
+		void SetPoint( const r2::PointInt& point )
 		{
 			mPoint = point;
 		}
+		void SetPoint( const int x, const int y )
+		{
+			mPoint.Set( x, y );
+		}
 
 	private:
-		r2::Point mPoint;
+		r2::PointInt mPoint;
 	};
 }
