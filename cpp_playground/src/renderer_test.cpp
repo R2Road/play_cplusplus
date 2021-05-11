@@ -308,7 +308,7 @@ namespace renderer_test
 
 
 
-	TestCamera::TestCamera() : mRenderer() {}
+	TestCamera::TestCamera() : mCamera(), mRenderer() {}
 
 	r2::iTest::TitleFunc TestCamera::GetTitleFunction() const
 	{
@@ -320,6 +320,10 @@ namespace renderer_test
 	r2::iTest::DoFunc TestCamera::GetDoFunction()
 	{
 		auto& rd = GetInstance().mRenderer;
+
+
+		rd.SetCamera( &mCamera );
+
 
 		std::string str( "# " );
 		str += GetInstance().GetTitleFunction()( );

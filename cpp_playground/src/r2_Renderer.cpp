@@ -5,7 +5,7 @@
 
 namespace r2
 {
-	Renderer::Renderer() : mContainer()
+	Renderer::Renderer() : mCamera( nullptr ), mContainer()
 	{}
 
 	void Renderer::Add( Renderable* const renderable )

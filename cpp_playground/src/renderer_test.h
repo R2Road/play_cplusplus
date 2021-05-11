@@ -3,8 +3,9 @@
 #include "r2_iTest.h"
 #include "r2_Singleton.h"
 
-#include "r2_VisibleResource.h"
+#include "r2_Camera.h"
 #include "r2_Renderer.h"
+#include "r2_VisibleResource.h"
 
 namespace renderer_test
 {
@@ -97,6 +98,7 @@ namespace renderer_test
 		DoFunc GetDoFunction() override;
 
 	private:
+		r2::Camera mCamera;
 		r2::Renderer mRenderer;
 	};
 }
