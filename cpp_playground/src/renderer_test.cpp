@@ -322,26 +322,26 @@ namespace renderer_test
 	}
 	r2::iTest::DoFunc TestCamera::GetDoFunction()
 	{
-		auto& rd = GetInstance().mRenderer;
-		rd.Clear();
+		GetInstance().mRenderer.Clear();
 
 
-		rd.SetCamera( &mCamera );
+		GetInstance().mRenderer.SetCamera( &mCamera );
 
 
 		std::string str( "# " );
 		str += GetInstance().GetTitleFunction()( );
 		str += " #";
 		static TempRenderable tr0( 0, 0, str.length(), str.c_str() );
-		rd.Add( &tr0 );
+		GetInstance().mRenderer.Add( &tr0 );
 
 		static TempRenderable tr1( 2, 2, 3u, "###" "# #" "###" );
-		rd.Add( &tr1 );
+		GetInstance().mRenderer.Add( &tr1 );
 
 		static TempRenderable tr2( 11, 5, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
-		rd.Add( &tr2 );
+		GetInstance().mRenderer.Add( &tr2 );
 
-		return [&rd, &cam = mCamera]()->r2::eTestResult
+
+		return [&rd = GetInstance().mRenderer, &cam = mCamera]()->r2::eTestResult
 		{
 			r2::Point pos;
 			bool process = true;
