@@ -5,21 +5,21 @@
 
 namespace r2
 {
-	Renderer::Renderer() : mRenderable( nullptr )
+	Renderer::Renderer() : mContainer()
 	{}
 
 	void Renderer::Add( Renderable* const renderable )
 	{
-		mRenderable = renderable;
+		mContainer.push_back( renderable );
 	}
 
 	void Renderer::Draw()
 	{
 		system( "cls" );
 
-		if( mRenderable )
+		for( auto r : mContainer )
 		{
-			mRenderable->Draw();
+			r->Draw();
 		}
 	}
 }

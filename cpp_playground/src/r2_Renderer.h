@@ -1,5 +1,7 @@
 #pragma once
 
+#include <list>
+
 #include "r2_Renderable.h"
 
 namespace r2
@@ -7,6 +9,8 @@ namespace r2
 	class Renderer
 	{
 	public:
+		using ContainerT = std::list<Renderable*>;
+
 		Renderer();
 
 		void Add( Renderable* const renderable );
@@ -14,6 +18,6 @@ namespace r2
 		void Draw();
 
 	private:
-		Renderable* mRenderable;
+		ContainerT mContainer;
 	};
 }
