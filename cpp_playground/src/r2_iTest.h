@@ -10,7 +10,7 @@ namespace r2
 	{
 	public:
 		using TitleFunc = std::function<const char*()>;
-		using DoFunc = std::function<const eTestResult()>;
+		using DoFunc = std::function<eTestResult()>;
 
 		virtual ~iTest() {}
 
