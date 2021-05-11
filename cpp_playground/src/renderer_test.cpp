@@ -276,7 +276,7 @@ namespace renderer_test
 	{
 		return []()->const char*
 		{
-			return "Renderer( In Progress )";
+			return "Renderer";
 		};
 	}
 	const r2::iTest::DoFunc TestRenderer::GetDoFunction() const
@@ -297,6 +297,41 @@ namespace renderer_test
 
 		static TempRenderable tr3( 11, 5, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
 		rd.Add( &tr3 );
+
+		return [&rd]()->r2::eTestResult
+		{
+			rd.Draw();
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	TestCamera::TestCamera() : mRenderer() {}
+
+	const r2::iTest::TitleFunc TestCamera::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Camera( In Progress )";
+		};
+	}
+	const r2::iTest::DoFunc TestCamera::GetDoFunction() const
+	{
+		auto& rd = GetInstance().mRenderer;
+
+		std::string str( "# " );
+		str += GetInstance().GetTitleFunction()( );
+		str += " #";
+		static TempRenderable tr0( 0, 0, str.length(), str.c_str() );
+		rd.Add( &tr0 );
+
+		static TempRenderable tr1( 2, 2, 3u, "###" "# #" "###" );
+		rd.Add( &tr1 );
+
+		static TempRenderable tr2( 11, 5, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
+		rd.Add( &tr2 );
 
 		return [&rd]()->r2::eTestResult
 		{

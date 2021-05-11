@@ -84,4 +84,19 @@ namespace renderer_test
 	private:
 		r2::Renderer mRenderer;
 	};
+
+
+
+	class TestCamera : public r2::iTest, public r2::SingleTon<TestCamera>
+	{
+	public:
+		TestCamera();
+
+	public:
+		const TitleFunc GetTitleFunction() const override;
+		const DoFunc GetDoFunction() const override;
+
+	private:
+		r2::Renderer mRenderer;
+	};
 }
