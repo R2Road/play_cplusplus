@@ -37,6 +37,10 @@ namespace r2
 				system( "cls" );
 				break;
 
+			case eTestResult::RunTest_Without_Pause:
+				system( "cls" );
+				break;
+
 			//case eTestResult::ChangeScene:
 				//break;
 

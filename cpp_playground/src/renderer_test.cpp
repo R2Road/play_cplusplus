@@ -334,10 +334,10 @@ namespace renderer_test
 		static TempRenderable tr0( 0, 0, str.length(), str.c_str() );
 		GetInstance().mRenderer.Add( &tr0 );
 
-		static TempRenderable tr1( 2, 2, 3u, "###" "# #" "###" );
+		static TempRenderable tr1( 2, 3, 3u, "###" "# #" "###" );
 		GetInstance().mRenderer.Add( &tr1 );
 
-		static TempRenderable tr2( 11, 5, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
+		static TempRenderable tr2( 11, 6, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
 		GetInstance().mRenderer.Add( &tr2 );
 
 
@@ -373,7 +373,7 @@ namespace renderer_test
 				cam.SetPoint( x, y );
 			}
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestResult::RunTest_Without_Pause;
 		};
 	}
 }
