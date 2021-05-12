@@ -23,10 +23,12 @@
 #include "pointer_test.h"
 #include "assert_test.h"
 #include "string_view_test.h"
-#include "korean_test.h"
 #include "lambda_test.h"
 #include "print_test.h"
 #include "char_test.h"
+
+#include "korean_test.h"
+#include "key_test.h"
 
 namespace r2
 {
@@ -166,6 +168,7 @@ namespace r2
 			ret->AddSplit();
 
 			ret->AddChild( 'z', korean_test::Basic::GetInstance() );
+			ret->AddChild( 'x', key_test::Basic::GetInstance() );
 
 			ret->AddSplit();
 

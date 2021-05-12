@@ -25,6 +25,7 @@
     <ClCompile Include="src\assert_test.cpp" />
     <ClCompile Include="src\char_test.cpp" />
     <ClCompile Include="src\console_test.cpp" />
+    <ClCompile Include="src\key_test.cpp" />
     <ClCompile Include="src\korean_test.cpp" />
     <ClCompile Include="src\lambda_test.cpp" />
     <ClCompile Include="src\memory_pool_test.cpp" />
@@ -81,6 +82,7 @@
     <ClInclude Include="src\assert_test.h" />
     <ClInclude Include="src\char_test.h" />
     <ClInclude Include="src\console_test.h" />
+    <ClInclude Include="src\key_test.h" />
     <ClInclude Include="src\korean_test.h" />
     <ClInclude Include="src\lambda_test.h" />
     <ClInclude Include="src\memory_pool_test.h" />
