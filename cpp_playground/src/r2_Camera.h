@@ -9,6 +9,7 @@ namespace r2
 	public:
 		Camera();
 
+		r2::PointInt GetPoint() const { return mPoint; }
 		void SetPoint( const r2::PointInt& point )
 		{
 			mPoint = point;

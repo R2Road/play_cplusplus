@@ -221,10 +221,10 @@ namespace renderer_test
 			, mVisibleResource( width, chars )
 		{}
 
-		void Draw() override
+		void Draw( const r2::Camera* const camera ) override
 		{
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-			COORD pos = { mPoint.GetX(), mPoint.GetY() };
+			COORD pos = { mPoint.GetX() - camera->GetPoint().GetX() , mPoint.GetY() - camera->GetPoint().GetY() };
 			SetConsoleCursorPosition( stdHandle, pos );
 
 			int count = 0;
@@ -263,7 +263,8 @@ namespace renderer_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			tr2.Draw();
+			r2::Camera camera;
+			tr2.Draw( &camera);
 
 			return r2::eTestResult::RunTest;
 		};
@@ -284,6 +285,10 @@ namespace renderer_test
 	{
 		auto& rd = GetInstance().mRenderer;
 		rd.Clear();
+
+
+		static r2::Camera dummy_camera;
+		rd.SetCamera( &dummy_camera );
 
 
 		std::string str( "# " );
