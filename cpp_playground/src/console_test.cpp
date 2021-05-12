@@ -574,6 +574,8 @@ namespace console_test
 			//
 
 			{
+				std::cout << "\t" << "+ Sequence Not Required" << r2::linefeed << r2::linefeed;
+
 				const int background_color = 31;
 				const int foreground_color = 44;
 
@@ -592,17 +594,19 @@ namespace console_test
 
 
 			{
-				const int background_color = 41;
-				const int foreground_color = 44;
+				std::cout << "\t" << "+ 같은 속성의 값이 입력되면 뒤의 값이 적용된다." << r2::linefeed << r2::linefeed;
+
+				const int background_color_1 = 41;
+				const int background_color_2 = 44;
 
 				std::cout << "\t\t";
-				printf( "\x1B[%d;%dm" "Color" "\033[0m", foreground_color, background_color );
-				printf( ": First - %d, Second - %d", foreground_color, background_color );
+				printf( "\x1B[%d;%dm" "Color" "\033[0m", background_color_2, background_color_1 );
+				printf( ": First - %d, Second - %d", background_color_2, background_color_1 );
 				std::cout << r2::linefeed;
 
 				std::cout << "\t\t";
-				printf( "\x1B[%d;%dm" "Color" "\033[0m", background_color, foreground_color );
-				printf( ": First - %d, Second - %d", background_color, foreground_color );
+				printf( "\x1B[%d;%dm" "Color" "\033[0m", background_color_1, background_color_2 );
+				printf( ": First - %d, Second - %d", background_color_1, background_color_2 );
 				std::cout << r2::linefeed;
 			}
 
