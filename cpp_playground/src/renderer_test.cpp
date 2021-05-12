@@ -334,11 +334,15 @@ namespace renderer_test
 		static TempRenderable tr0( 0, 0, str.length(), str.c_str() );
 		GetInstance().mRenderer.Add( &tr0 );
 
-		static TempRenderable tr1( 2, 3, 3u, "###" "# #" "###" );
+		std::string_view str1( "[ESC] Return to Root" );
+		static TempRenderable tr1( 0, 1, str1.length(), str1.data() );
 		GetInstance().mRenderer.Add( &tr1 );
 
-		static TempRenderable tr2( 11, 6, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
+		static TempRenderable tr2( 2, 3, 3u, "###" "# #" "###" );
 		GetInstance().mRenderer.Add( &tr2 );
+
+		static TempRenderable tr3( 11, 6, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
+		GetInstance().mRenderer.Add( &tr3 );
 
 
 		return [&rd = GetInstance().mRenderer, &cam = mCamera]()->r2::eTestResult
