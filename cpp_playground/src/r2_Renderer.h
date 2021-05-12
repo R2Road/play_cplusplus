@@ -2,11 +2,10 @@
 
 #include <list>
 
-#include "r2_iRenderable.h"
-
 namespace r2
 {
 	class Camera;
+	class iRenderable;
 
 	class Renderer
 	{

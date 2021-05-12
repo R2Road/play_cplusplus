@@ -3,6 +3,8 @@
 
 #include <stdlib.h>
 
+#include "r2_iRenderable.h"
+
 namespace r2
 {
 	Renderer::Renderer() : mCamera( nullptr ), mContainer()

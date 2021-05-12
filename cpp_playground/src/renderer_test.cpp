@@ -7,6 +7,7 @@
 
 #include "r2_eTestResult.h"
 
+#include "r2_iRenderable.h"
 #include "r2_Point.h"
 
 namespace renderer_test
