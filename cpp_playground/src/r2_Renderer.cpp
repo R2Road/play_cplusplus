@@ -13,7 +13,7 @@ namespace r2
 		mCamera = nullptr;
 		mContainer.clear();
 	}
-	void Renderer::Add( Renderable* const renderable )
+	void Renderer::Add( iRenderable* const renderable )
 	{
 		mContainer.push_back( renderable );
 	}

@@ -2,7 +2,7 @@
 
 #include <list>
 
-#include "r2_Renderable.h"
+#include "r2_iRenderable.h"
 
 namespace r2
 {
@@ -11,7 +11,7 @@ namespace r2
 	class Renderer
 	{
 	public:
-		using ContainerT = std::list<Renderable*>;
+		using ContainerT = std::list<iRenderable*>;
 
 		Renderer();
 
@@ -21,7 +21,7 @@ namespace r2
 		}
 
 		void Clear();
-		void Add( Renderable* const renderable );
+		void Add( iRenderable* const renderable );
 
 		void Draw();
 

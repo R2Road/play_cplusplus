@@ -104,7 +104,7 @@
     <ClInclude Include="src\r2_PointInt.h" />
     <ClInclude Include="src\r2_Rect.h" />
     <ClInclude Include="src\r2_RectInt.h" />
-    <ClInclude Include="src\r2_Renderable.h" />
+    <ClInclude Include="src\r2_iRenderable.h" />
     <ClInclude Include="src\r2_Renderer.h" />
     <ClInclude Include="src\r2_RendererScene.h" />
     <ClInclude Include="src\r2_Size.h" />

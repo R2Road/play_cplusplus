@@ -213,7 +213,7 @@ namespace renderer_test
 
 
 
-	class TempRenderable : public r2::Renderable
+	class TempRenderable : public r2::iRenderable
 	{
 	public:
 		TempRenderable( const int x, const int y, const std::size_t width, const char* chars) :
