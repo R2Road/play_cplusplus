@@ -25,7 +25,12 @@ namespace r2
 
 			ret->AddChild( 'q', renderer_test::TestRenderable::GetInstance() );
 			ret->AddChild( 'w', renderer_test::TestRenderer::GetInstance() );
-			ret->AddChild( 'e', renderer_test::TestCamera::GetInstance() );
+
+
+			ret->AddSplit();
+
+
+			ret->AddChild( 'a', renderer_test::TestCamera::GetInstance() );
 
 
 			ret->AddSplit();
