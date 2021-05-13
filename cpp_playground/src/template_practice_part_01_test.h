@@ -11,4 +11,11 @@ namespace template_practice_part_01_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class VaridicMax : public r2::iTest, public r2::SingleTon<VaridicMax>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

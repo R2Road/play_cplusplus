@@ -15,6 +15,7 @@ namespace r2
 
 		{
 			ret->AddChild( '1', template_practice_part_01_test::Practice01::GetInstance() );
+			ret->AddChild( '2', template_practice_part_01_test::VaridicMax::GetInstance() );
 
 
 			ret->AddSplit();
