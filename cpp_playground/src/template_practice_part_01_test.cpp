@@ -117,6 +117,19 @@ namespace template_practice_part_01_test
 
 			std::cout << r2::split;
 
+			{
+				std::cout << "\t + " << "std::max( { 1, 2, 30, 4, 5, 60, 7 } )" << r2::linefeed;
+				std::cout << "\t\t" "Result : " << std::max( { 1, 2, 30, 4, 5, 60, 7 } );
+				std::cout << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << "\t + " << "std::max( { 1, 2, 30 } )" << r2::linefeed;
+				std::cout << "\t\t" "Result : " << std::max( { 1, 2, 30 } );
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
