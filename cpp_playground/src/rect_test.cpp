@@ -54,7 +54,7 @@ namespace rect_test
 
 				SetConsoleCursorPosition(
 					stdHandle
-					, { 0, static_cast<short>( std::max( rect_1.GetMaxY(), rect_2.GetMaxY() ) ) }
+					, { 0, static_cast<short>( std::max( { rect_1.GetMaxY(), rect_2.GetMaxY(), rect_3.GetMaxY() } ) ) }
 				);
 			}
 
