@@ -6,6 +6,13 @@
 #include "r2_Point.h"
 #include "r2_Size.h"
 
+//
+// for Windows.h
+// - wtf... o_o;;;
+//
+#undef min
+#undef max
+
 namespace r2
 {
 	template<typename T>
