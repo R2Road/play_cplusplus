@@ -5,6 +5,7 @@
 #include "r2_eTestResult.h"
 #include "r2_RootScene.h"
 
+#include "rect_test.h"
 #include "renderer_test.h"
 
 namespace r2
@@ -30,7 +31,8 @@ namespace r2
 			ret->AddSplit();
 
 
-			ret->AddChild( 'a', renderer_test::TestCamera::GetInstance() );
+			ret->AddChild( 'a', rect_test::Basic::GetInstance() );
+			ret->AddChild( 's', renderer_test::TestCamera::GetInstance() );
 
 
 			ret->AddSplit();
