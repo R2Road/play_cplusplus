@@ -33,7 +33,7 @@ namespace template_practice_part_01_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -90,7 +90,7 @@ namespace template_practice_part_01_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
