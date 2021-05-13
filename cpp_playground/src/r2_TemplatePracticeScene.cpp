@@ -14,7 +14,7 @@ namespace r2
 		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', template_practice_part_01_test::Practice01::GetInstance() );
+			ret->AddChild( '1', template_practice_part_01_test::BufferWithTemplate::GetInstance() );
 			ret->AddChild( '2', template_practice_part_01_test::VaridicMax::GetInstance() );
 
 

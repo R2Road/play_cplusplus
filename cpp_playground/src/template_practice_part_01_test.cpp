@@ -21,15 +21,15 @@ namespace template_practice_part_01_test
 		std::size_t size;
 	};
 
-	r2::iTest::TitleFunc Practice01::GetTitleFunction() const
+	r2::iTest::TitleFunc BufferWithTemplate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Template : Pracitce Part 01";
+			return "Buffer With Template";
 		};
 	}
 
-	r2::iTest::DoFunc Practice01::GetDoFunction()
+	r2::iTest::DoFunc BufferWithTemplate::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

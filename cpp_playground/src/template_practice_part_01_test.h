@@ -5,7 +5,7 @@
 
 namespace template_practice_part_01_test
 {
-	class Practice01 : public r2::iTest, public r2::SingleTon<Practice01>
+	class BufferWithTemplate : public r2::iTest, public r2::SingleTon<BufferWithTemplate>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
