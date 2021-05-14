@@ -186,6 +186,9 @@
     <ClCompile Include="src\rect_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_ETCMenu.cpp">
+      <Filter>scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -370,6 +373,9 @@
     </ClInclude>
     <ClInclude Include="src\rect_test.h">
       <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_ETCMenu.h">
+      <Filter>scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

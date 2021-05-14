@@ -29,6 +29,7 @@
 
 #include "korean_test.h"
 #include "key_test.h"
+#include "r2_ETCMenu.h"
 
 namespace r2
 {
@@ -169,6 +170,15 @@ namespace r2
 
 			ret->AddChild( 'z', korean_test::Basic::GetInstance() );
 			ret->AddChild( 'x', key_test::Basic::GetInstance() );
+			ret->AddChild(
+				'c'
+				, []()->const char* { return r2::ETCMenu::GetTitle(); }
+				, [&director]()->const eTestResult
+				{
+					director.Setup( r2::ETCMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
 
 			ret->AddSplit();
 
