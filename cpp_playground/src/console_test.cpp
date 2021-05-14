@@ -627,6 +627,15 @@ namespace console_test
 
 			std::cout << r2::split;
 
+			{
+				const char* target_color = "\033[31;44m";
+				const char* reset_color = "\033[0m";
+
+				std::cout << "\t\t" << target_color << "Change Color with std::cout" << reset_color << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
