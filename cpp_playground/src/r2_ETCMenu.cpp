@@ -5,6 +5,8 @@
 #include "r2_eTestResult.h"
 #include "r2_RootScene.h"
 
+#include "etc_0_test.h"
+
 namespace r2
 {
 	SceneUp ETCMenu::Create( Director& director )
@@ -12,7 +14,7 @@ namespace r2
 		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
 
 		{
-			//ret->AddChild( '1', alignof_test::Basic::GetInstance() );
+			ret->AddChild( '1', etc_test::XOR_Swap::GetInstance() );
 
 
 			ret->AddSplit();
