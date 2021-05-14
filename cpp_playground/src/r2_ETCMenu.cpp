@@ -15,6 +15,7 @@ namespace r2
 
 		{
 			ret->AddChild( '1', etc_test::XOR_Swap::GetInstance() );
+			ret->AddChild( '2', etc_test::InitArray::GetInstance() );
 
 
 			ret->AddSplit();

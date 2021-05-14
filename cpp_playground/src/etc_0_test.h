@@ -11,4 +11,11 @@ namespace etc_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class InitArray : public r2::iTest, public r2::SingleTon<InitArray>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
