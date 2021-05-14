@@ -83,9 +83,17 @@ namespace
 	{
 		static std::string temp_string =
 #if defined( _WIN64 )
-			( std::filesystem::current_path() / "x64" / "Debug" / "random_test_Status.dat" ).string();
+		#if defined( DEBUG ) || defined( _DEBUG )
+				( std::filesystem::current_path() / "x64" / "Debug" / "random_test_Status.dat" ).string();
+		#else
+				( std::filesystem::current_path() / "x64" / "Release" / "random_test_Status.dat" ).string();
+		#endif
 #else
-			( std::filesystem::current_path() / "Debug" / "random_test_Status.dat" ).string();
+		#if defined( DEBUG ) || defined( _DEBUG )
+				( std::filesystem::current_path() / "Debug" / "random_test_Status.dat" ).string();
+		#else
+				( std::filesystem::current_path() / "Release" / "random_test_Status.dat" ).string();
+		#endif
 #endif
 		return temp_string.c_str();
 	}
