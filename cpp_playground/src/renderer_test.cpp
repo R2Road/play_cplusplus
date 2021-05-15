@@ -348,12 +348,18 @@ namespace renderer_test
 		}
 
 		{
-			static TempRenderable tr( 2, 3, 3u, "###" "# #" "###" );
+			std::string_view str( "[W,A,S,D] Move Camera" );
+			static TempRenderable tr( 0, 2, str.length(), str.data() );
 			GetInstance().mRenderer.Add( &tr );
 		}
 
 		{
-			static TempRenderable tr( 11, 6, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
+			static TempRenderable tr( 2, 4, 3u, "###" "# #" "###" );
+			GetInstance().mRenderer.Add( &tr );
+		}
+
+		{
+			static TempRenderable tr( 11, 7, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
 			GetInstance().mRenderer.Add( &tr );
 		}
 
