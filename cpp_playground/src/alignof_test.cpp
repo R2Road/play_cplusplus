@@ -21,7 +21,9 @@ namespace alignof_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "+ align of char : " << alignof( char ) << r2::linefeed;
@@ -34,10 +36,10 @@ namespace alignof_test
 				std::cout << "\t\t" << "- size of bool : " << sizeof( bool ) << r2::linefeed << r2::linefeed;
 
 				std::cout << "\t" << "+ align of double : " << alignof( double ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of double : " << sizeof( double ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t\t" << "- size of double : " << sizeof( double ) << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				struct EmptyStruct {};
@@ -91,10 +93,10 @@ namespace alignof_test
 				std::cout << "\t\t" << "- size of CharBoolStruct : " << sizeof( CharBoolStruct ) << r2::linefeed << r2::linefeed;
 
 				std::cout << "\t" << "+ align of CharIntDoubleStruct : " << alignof( CharIntDoubleStruct ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of CharIntDoubleStruct : " << sizeof( CharIntDoubleStruct ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t\t" << "- size of CharIntDoubleStruct : " << sizeof( CharIntDoubleStruct ) << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "+ align of std::list<char> : " << alignof( std::list<char> ) << r2::linefeed;
@@ -110,10 +112,10 @@ namespace alignof_test
 				std::cout << "\t\t" << "- size of std::unordered_map<int, int> : " << sizeof( std::unordered_map<int, int> ) << r2::linefeed << r2::linefeed;
 
 				std::cout << "\t" << "+ align of std::alignof( std::deque<int> ) : " << alignof( std::deque<int> ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of std::deque<int> : " << sizeof( std::deque<int> ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t\t" << "- size of std::deque<int> : " << sizeof( std::deque<int> ) << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
@@ -132,7 +134,9 @@ namespace alignof_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+
+			std::cout << r2::split;
 
 			struct EmptyStruct {};
 
@@ -176,10 +180,10 @@ namespace alignof_test
 				std::cout << "\t\t" << "- size of CharIntFloatStruct : " << sizeof( CharIntFloatStruct ) << r2::linefeed << r2::linefeed;
 
 				std::cout << "\t" << "+ align of DoubleStruct : " << alignof( DoubleStruct ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of DoubleStruct : " << sizeof( DoubleStruct ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t\t" << "- size of DoubleStruct : " << sizeof( DoubleStruct ) << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "+ align of Mixed_1_Empty_N_CIF_Struct : " << alignof( Mixed_1_Empty_N_CIF_Struct ) << r2::linefeed;
@@ -189,10 +193,10 @@ namespace alignof_test
 				std::cout << "\t\t" << "- size of Mixed_2_Empty_N_D_Struct : " << sizeof( Mixed_2_Empty_N_D_Struct ) << r2::linefeed << r2::linefeed;
 
 				std::cout << "\t" << "+ align of Mixed_3_Empty_N_CIF_D_Struct : " << alignof( Mixed_3_Empty_N_CIF_D_Struct ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of Mixed_3_Empty_N_CIF_D_Struct : " << sizeof( Mixed_3_Empty_N_CIF_D_Struct ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t\t" << "- size of Mixed_3_Empty_N_CIF_D_Struct : " << sizeof( Mixed_3_Empty_N_CIF_D_Struct ) << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};

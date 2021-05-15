@@ -18,7 +18,9 @@ namespace align_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "struct alignas( 32 ) EmptyStruct {};" << r2::linefeed << r2::linefeed;
@@ -28,7 +30,7 @@ namespace align_test
 				std::cout << "\t\t" << "- size of EmptyStruct : " << sizeof( EmptyStruct ) << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "struct alignas( 8 ) CharIntFloatStruct" << r2::linefeed;
@@ -48,7 +50,7 @@ namespace align_test
 				std::cout << "\t\t" << "- size of CharIntFloatStruct : " << sizeof( CharIntFloatStruct ) << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "struct alignas( 0 ) IntStruct" << r2::linefeed;
@@ -66,7 +68,7 @@ namespace align_test
 				std::cout << "\t" << "+ Ignore 0" << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "\t" << "struct alignas( 1 ) IntStruct" << r2::linefeed;
@@ -81,7 +83,7 @@ namespace align_test
 				std::cout << "\t" << "+ 1 is Error : At Least A Default Size Is Required" << r2::linefeed << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
