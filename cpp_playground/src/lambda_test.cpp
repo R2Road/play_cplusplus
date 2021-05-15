@@ -2,7 +2,6 @@
 #include "lambda_test.h"
 
 #include <cassert>
-#include <functional>
 #include <memory>
 #include <utility>
 
