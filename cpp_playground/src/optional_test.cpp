@@ -43,8 +43,9 @@ namespace optional_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
+			std::cout << r2::split;
 
 			std::cout << "\t+ Make Test Struct" << r2::linefeed;
 			std::cout << "\t\t- TestStruct ts;" << r2::linefeed;
@@ -136,8 +137,7 @@ namespace optional_test
 				std::cout << "\t\t- Working : maybe_test_struct_ref = t_2;" << r2::linefeed << r2::linefeed;
 			}
 
-
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
