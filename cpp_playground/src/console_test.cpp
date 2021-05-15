@@ -21,7 +21,7 @@ namespace console_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -70,7 +70,7 @@ namespace console_test
 				system( "mode con lines=30 cols=120" );
 			}
 
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -111,7 +111,7 @@ namespace console_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -148,7 +148,7 @@ namespace console_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
