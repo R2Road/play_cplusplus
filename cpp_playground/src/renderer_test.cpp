@@ -333,22 +333,29 @@ namespace renderer_test
 
 		GetInstance().mRenderer.SetCamera( &mCamera );
 
+		{
+			std::string str( "# " );
+			str += GetInstance().GetTitleFunction()( );
+			str += " #";
+			static TempRenderable tr( 0, 0, str.length(), str.c_str() );
+			GetInstance().mRenderer.Add( &tr );
+		}
 
-		std::string str( "# " );
-		str += GetInstance().GetTitleFunction()( );
-		str += " #";
-		static TempRenderable tr0( 0, 0, str.length(), str.c_str() );
-		GetInstance().mRenderer.Add( &tr0 );
+		{
+			std::string_view str( "[ESC] Return to Root" );
+			static TempRenderable tr( 0, 1, str.length(), str.data() );
+			GetInstance().mRenderer.Add( &tr );
+		}
 
-		std::string_view str1( "[ESC] Return to Root" );
-		static TempRenderable tr1( 0, 1, str1.length(), str1.data() );
-		GetInstance().mRenderer.Add( &tr1 );
+		{
+			static TempRenderable tr( 2, 3, 3u, "###" "# #" "###" );
+			GetInstance().mRenderer.Add( &tr );
+		}
 
-		static TempRenderable tr2( 2, 3, 3u, "###" "# #" "###" );
-		GetInstance().mRenderer.Add( &tr2 );
-
-		static TempRenderable tr3( 11, 6, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
-		GetInstance().mRenderer.Add( &tr3 );
+		{
+			static TempRenderable tr( 11, 6, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
+			GetInstance().mRenderer.Add( &tr );
+		}
 
 
 		return [&rd = GetInstance().mRenderer, &cam = mCamera]()->r2::eTestResult
