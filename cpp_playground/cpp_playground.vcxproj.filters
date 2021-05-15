@@ -192,6 +192,9 @@
     <ClCompile Include="src\etc_0_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="src\camera_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -381,6 +384,9 @@
       <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="src\etc_0_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\camera_test.h">
       <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>

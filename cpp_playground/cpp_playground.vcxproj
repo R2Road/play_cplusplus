@@ -23,6 +23,7 @@
     <ClCompile Include="src\alignof_test.cpp" />
     <ClCompile Include="src\align_test.cpp" />
     <ClCompile Include="src\assert_test.cpp" />
+    <ClCompile Include="src\camera_test.cpp" />
     <ClCompile Include="src\char_test.cpp" />
     <ClCompile Include="src\console_test.cpp" />
     <ClCompile Include="src\etc_0_test.cpp" />
@@ -88,6 +89,7 @@
     <ClInclude Include="src\alignof_test.h" />
     <ClInclude Include="src\align_test.h" />
     <ClInclude Include="src\assert_test.h" />
+    <ClInclude Include="src\camera_test.h" />
     <ClInclude Include="src\char_test.h" />
     <ClInclude Include="src\console_test.h" />
     <ClInclude Include="src\etc_0_test.h" />

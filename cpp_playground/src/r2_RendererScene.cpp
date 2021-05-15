@@ -7,6 +7,7 @@
 
 #include "rect_test.h"
 #include "renderer_test.h"
+#include "camera_test.h"
 
 namespace r2
 {

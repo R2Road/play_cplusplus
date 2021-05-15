@@ -1,14 +1,12 @@
 #include "pch.h"
 #include "renderer_test.h"
 
-#include <conio.h>
-#include <functional>
 #include <Windows.h>
 
 #include "r2_eTestResult.h"
 
+#include "r2_Camera.h"
 #include "r2_iRenderable.h"
-#include "r2_Point.h"
 
 namespace renderer_test
 {
@@ -312,126 +310,6 @@ namespace renderer_test
 			rd.Draw();
 
 			return r2::eTestResult::RunTest;
-		};
-	}
-
-
-
-	CameraRect::CameraRect() : mCamera()
-	{}
-	r2::iTest::TitleFunc CameraRect::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Camera Rect";
-		};
-	}
-	r2::iTest::DoFunc CameraRect::GetDoFunction()
-	{
-		GetInstance().mCamera.SetPoint( { 2, 2 } );
-
-		return[rect = GetInstance().mCamera.GetRect()]()->r2::eTestResult
-		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-
-			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-
-			for( int y = rect.GetMinY(); rect.GetMaxY() > y; ++y )
-			{
-				for( int x = rect.GetMinX(); rect.GetMaxX() > x; ++x )
-				{
-					SetConsoleCursorPosition( stdHandle, { static_cast<short>( x ), static_cast<short>( y ) } );
-
-					std::cout << '#';
-				}
-			}
-
-			std::cout << r2::linefeed;
-
-			return r2::eTestResult::RunTest;
-		};
-	}
-
-	TestCamera::TestCamera() : mCamera(), mRenderer()
-	{}
-	r2::iTest::TitleFunc TestCamera::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Camera( In Progress )";
-		};
-	}
-	r2::iTest::DoFunc TestCamera::GetDoFunction()
-	{
-		GetInstance().mRenderer.Clear();
-
-
-		GetInstance().mRenderer.SetCamera( &mCamera );
-
-		{
-			std::string str( "# " );
-			str += GetInstance().GetTitleFunction()( );
-			str += " #";
-			static TempRenderable tr( 0, 0, str.length(), str.c_str() );
-			GetInstance().mRenderer.Add( &tr );
-		}
-
-		{
-			std::string_view str( "[ESC] Return to Root" );
-			static TempRenderable tr( 0, 1, str.length(), str.data() );
-			GetInstance().mRenderer.Add( &tr );
-		}
-
-		{
-			std::string_view str( "[W,A,S,D] Move Camera" );
-			static TempRenderable tr( 0, 2, str.length(), str.data() );
-			GetInstance().mRenderer.Add( &tr );
-		}
-
-		{
-			static TempRenderable tr( 2, 4, 3u, "###" "# #" "###" );
-			GetInstance().mRenderer.Add( &tr );
-		}
-
-		{
-			static TempRenderable tr( 11, 7, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
-			GetInstance().mRenderer.Add( &tr );
-		}
-
-
-		return [&rd = GetInstance().mRenderer, &cam = mCamera]()->r2::eTestResult
-		{
-			int x = 0;
-			int y = 0;
-			bool process = true;
-			while( process )
-			{
-				rd.Draw();
-
-				switch( _getch() )
-				{
-				case 'w': // up
-					y -= 1;
-					break;
-				case 's': // down
-					y += 1;
-					break;
-				case 'a': // left
-					x -= 1;
-					break;
-				case 'd': // right
-					x += 1;
-					break;
-
-				case 27: // ESC
-					process = false;
-					break;
-				}
-
-				cam.SetPoint( x, y );
-			}
-
-			return r2::eTestResult::RunTest_Without_Pause;
 		};
 	}
 }
