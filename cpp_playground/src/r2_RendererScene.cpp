@@ -32,7 +32,8 @@ namespace r2
 
 
 			ret->AddChild( 'a', rect_test::Basic::GetInstance() );
-			ret->AddChild( 's', renderer_test::TestCamera::GetInstance() );
+			ret->AddChild( 's', renderer_test::CameraRect::GetInstance() );
+			ret->AddChild( 'd', renderer_test::TestCamera::GetInstance() );
 
 
 			ret->AddSplit();

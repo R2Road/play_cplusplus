@@ -88,6 +88,19 @@ namespace renderer_test
 
 
 
+	class CameraRect : public r2::iTest, public r2::SingleTon<CameraRect>
+	{
+	public:
+		CameraRect();
+
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+
+	private:
+		r2::Camera mCamera;
+	};
+
 	class TestCamera : public r2::iTest, public r2::SingleTon<TestCamera>
 	{
 	public:

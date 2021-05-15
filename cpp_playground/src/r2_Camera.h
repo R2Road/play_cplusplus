@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2_PointInt.h"
+#include "r2_RectInt.h"
 
 namespace r2
 {
@@ -9,17 +9,25 @@ namespace r2
 	public:
 		Camera();
 
-		r2::PointInt GetPoint() const { return mPoint; }
-		void SetPoint( const r2::PointInt& point )
+		r2::RectInt::MyPointT GetPoint() const
 		{
-			mPoint = point;
+			return mRect.GetOrigin();
+		}
+		r2::RectInt GetRect() const
+		{
+			return mRect;
+		}
+
+		void SetPoint( const r2::RectInt::MyPointT& point )
+		{
+			mRect.SetOrigin( point );
 		}
 		void SetPoint( const int x, const int y )
 		{
-			mPoint.Set( x, y );
+			mRect.SetOrigin( x, y );
 		}
 
 	private:
-		r2::PointInt mPoint;
+		r2::RectInt mRect;
 	};
 }

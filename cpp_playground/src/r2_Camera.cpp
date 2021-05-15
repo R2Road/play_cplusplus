@@ -3,6 +3,6 @@
 
 namespace r2
 {
-	Camera::Camera() : mPoint( { 0, 0 }  )
+	Camera::Camera() : mRect( 0, 0, 60, 30 )
 	{}
 }

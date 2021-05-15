@@ -56,6 +56,15 @@ namespace r2
 			return ( mOrigin.Equals( rect.mOrigin ) && mSize.equals( rect.mSize ) );
 		}
 
+		inline void SetOrigin( const ElementT x, const ElementT y )
+		{
+			mOrigin.Set( x, y );
+		}
+		inline void SetOrigin( const MyPointT point )
+		{
+			mOrigin = ( point );
+		}
+
 		inline void Set( const ElementT x, const ElementT y, const ElementT width, const ElementT height )
 		{
 			mOrigin.Set( x, y );

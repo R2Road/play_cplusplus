@@ -317,8 +317,43 @@ namespace renderer_test
 
 
 
-	TestCamera::TestCamera() : mCamera(), mRenderer() {}
+	CameraRect::CameraRect() : mCamera()
+	{}
+	r2::iTest::TitleFunc CameraRect::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Camera Rect";
+		};
+	}
+	r2::iTest::DoFunc CameraRect::GetDoFunction()
+	{
+		GetInstance().mCamera.SetPoint( { 2, 2 } );
 
+		return[rect = GetInstance().mCamera.GetRect()]()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+
+			for( int y = rect.GetMinY(); rect.GetMaxY() > y; ++y )
+			{
+				for( int x = rect.GetMinX(); rect.GetMaxX() > x; ++x )
+				{
+					SetConsoleCursorPosition( stdHandle, { static_cast<short>( x ), static_cast<short>( y ) } );
+
+					std::cout << '#';
+				}
+			}
+
+			std::cout << r2::linefeed;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+	TestCamera::TestCamera() : mCamera(), mRenderer()
+	{}
 	r2::iTest::TitleFunc TestCamera::GetTitleFunction() const
 	{
 		return []()->const char*
