@@ -94,7 +94,7 @@ namespace console_test
 				system( "mode con lines=60 cols=120" );
 			}
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestResult::RunTest_Without_Pause;
 		};
 	}
 
@@ -180,7 +180,7 @@ namespace console_test
 				SetConsoleTitle( TEXT( "cpp_playground" ) );
 			}
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestResult::RunTest_Without_Pause;
 		};
 	}
 
@@ -198,8 +198,9 @@ namespace console_test
 		return []()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-			std::cout << "\t" << " + Key : Move - W, A, S, D" << r2::linefeed;
-			std::cout << "\t" << " + Key : Print - SPACE BAR" << r2::linefeed;
+			std::cout << "\t" << " + [W, A, S, D] : Move" << r2::linefeed;
+			std::cout << "\t" << " + [SPACE BAR] Foot Print" << r2::linefeed;
+			std::cout << "\t" << " + [ESC] Exit" << r2::linefeed;
 
 			{
 				HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
@@ -236,7 +237,7 @@ namespace console_test
 				}
 			}
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestResult::RunTest_Without_Pause;
 		};
 	}
 
