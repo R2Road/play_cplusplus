@@ -317,7 +317,7 @@ namespace console_test
 			system( "pause" );
 			system( "Color 07" );
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestResult::RunTest_Without_Pause;
 		};
 	}
 
@@ -656,7 +656,7 @@ namespace console_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
-			std::cout << "\t" << " + Key : ESC( End )" << r2::linefeed;
+			std::cout << "[ESC] Exit" << r2::linefeed;
 
 			{
 				HWND console_window = GetConsoleWindow();
@@ -685,7 +685,7 @@ namespace console_test
 				ReleaseDC( console_window, dc );
 			}
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestResult::RunTest_Without_Pause;
 		};
 	}
 }
