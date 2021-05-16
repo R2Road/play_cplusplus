@@ -5,6 +5,7 @@
 #include "r2_eTestResult.h"
 #include "r2_RootScene.h"
 
+#include "r2_VariadicTemplateScene.h"
 #include "r2_TemplateMetaProgrammingScene.h"
 #include "r2_TemplatePracticeScene.h"
 
@@ -17,6 +18,16 @@ namespace r2
 		{
 			ret->AddChild(
 				'1'
+				, []()->const char* { return r2::VariadicTemplateScene::GetTitle(); }
+				, [&director]()->const eTestResult
+				{
+					director.Setup( r2::VariadicTemplateScene::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+
+			ret->AddChild(
+				'2'
 				, []()->const char* { return r2::TemplateMetaProgrammingScene::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
@@ -26,7 +37,7 @@ namespace r2
 			);
 
 			ret->AddChild(
-				'2'
+				'3'
 				, []()->const char* { return r2::TemplatePracticeScene::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
