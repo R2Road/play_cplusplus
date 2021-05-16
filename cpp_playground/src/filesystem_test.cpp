@@ -70,7 +70,7 @@ namespace filesystem_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Directory : " << r2::linefeed;
+				std::cout << "\t" << "+ Pivot Directory : " << r2::linefeed;
 				std::cout << "\t\t" << std::filesystem::current_path() << r2::linefeed;
 				std::cout << r2::linefeed;
 
