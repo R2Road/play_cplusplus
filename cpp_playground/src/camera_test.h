@@ -21,10 +21,10 @@ namespace renderer_test
 		r2::Camera mCamera;
 	};
 
-	class TestCamera : public r2::iTest, public r2::SingleTon<TestCamera>
+	class CameraMove : public r2::iTest, public r2::SingleTon<CameraMove>
 	{
 	public:
-		TestCamera();
+		CameraMove();
 
 	public:
 		TitleFunc GetTitleFunction() const override;
