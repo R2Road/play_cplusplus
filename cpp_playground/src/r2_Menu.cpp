@@ -17,13 +17,17 @@ namespace r2
 
 	void Menu::ShowTitle() const
 	{
-		std::cout << "# " << mTitleString << " #" << r2::linefeed << r2::linefeed;
+		std::cout << "# " << mTitleString << " #" << r2::linefeed;
 	}
 	void Menu::ShowDescription() const
 	{
+		std::cout << r2::split;
+
 		if( !mDescriptionString.empty() )
 		{
-			std::cout << mDescriptionString << r2::linefeed << r2::linefeed;
+			std::cout << mDescriptionString << r2::linefeed;
+
+			std::cout << r2::split;
 		}
 	}
 
@@ -36,6 +40,11 @@ namespace r2
 			//
 			// Key
 			//
+			if( 42 == t.KeyCode ) // *
+			{
+				std::cout << r2::split;
+				continue;
+			}
 			if( 64 == t.KeyCode ) // @
 			{
 				std::cout << r2::linefeed;
@@ -95,5 +104,12 @@ namespace r2
 		static const std::function<const r2::eTestResult()> func_test = []()->const r2::eTestResult { return r2::eTestResult::RunTest; };
 
 		mTests.push_back( { 64, func_title, func_test } );
+	}
+	void Menu::AddSplit()
+	{
+		static const std::function<const char*( )> func_title = []()->const char* { return ""; };
+		static const std::function<const r2::eTestResult()> func_test = []()->const r2::eTestResult { return r2::eTestResult::RunTest; };
+
+		mTests.push_back( { 42, func_title, func_test } );
 	}
 }

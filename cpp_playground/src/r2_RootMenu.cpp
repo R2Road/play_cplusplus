@@ -169,7 +169,7 @@ namespace r2
 				}
 			);
 
-			ret->AddLineFeed();
+			ret->AddSplit();
 
 			ret->AddChild(
 				32
@@ -181,13 +181,15 @@ namespace r2
 				}
 			);
 
-			ret->AddLineFeed();
+			ret->AddSplit();
 
 			ret->AddChild(
 				27
 				, []()->const char* { return "Exit"; }
 				, []()->const eTestResult { return eTestResult::Exit; }
 			);
+
+			ret->AddSplit();
 		}
 
 		return ret;
