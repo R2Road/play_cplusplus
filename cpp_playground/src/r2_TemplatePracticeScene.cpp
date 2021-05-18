@@ -9,9 +9,9 @@
 
 namespace r2
 {
-	SceneUp TemplatePracticeScene::Create( Director& director )
+	MenuUp TemplatePracticeScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
+		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
 			ret->AddChild( '1', template_practice_part_01_test::BufferWithTemplate::GetInstance() );

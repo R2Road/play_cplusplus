@@ -11,9 +11,9 @@
 
 namespace r2
 {
-	SceneUp TemplateMetaProgrammingScene::Create( Director& director )
+	MenuUp TemplateMetaProgrammingScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, "Template Meta Programming" ) );
+		MenuUp ret( new ( std::nothrow ) Menu( director, "Template Meta Programming" ) );
 
 		{
 			ret->AddChild( '1', template_meta_programming_test::CalculateFactorial::GetInstance() );

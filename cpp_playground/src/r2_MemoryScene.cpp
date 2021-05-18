@@ -10,9 +10,9 @@
 
 namespace r2
 {
-	SceneUp MemoryScene::Create( Director& director )
+	MenuUp MemoryScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
+		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
 			ret->AddChild( '1', shared_pointer_test::SharedPtr::GetInstance() );

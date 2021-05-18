@@ -9,9 +9,9 @@
 
 namespace r2
 {
-	SceneUp PointerTestScene::Create( Director& director )
+	MenuUp PointerTestScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, "Pointer" ) );
+		MenuUp ret( new ( std::nothrow ) Menu( director, "Pointer" ) );
 
 		{
 			ret->AddChild( '1', pointer_test::Basic::GetInstance() );

@@ -9,9 +9,9 @@
 
 namespace r2
 {
-	SceneUp FileSystemScene::Create( Director& director )
+	MenuUp FileSystemScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
+		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
 			ret->AddChild( '1', filesystem_test::DirectoryPath::GetInstance() );

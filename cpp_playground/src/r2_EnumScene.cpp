@@ -9,9 +9,9 @@
 
 namespace r2
 {
-	SceneUp EnumScene::Create( Director& director )
+	MenuUp EnumScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
+		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
 			ret->AddChild( '1', enum_test::Basic::GetInstance() );

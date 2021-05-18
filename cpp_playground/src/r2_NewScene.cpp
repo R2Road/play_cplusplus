@@ -9,9 +9,9 @@
 
 namespace r2
 {
-	SceneUp NewScene::Create( Director& director )
+	MenuUp NewScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
+		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
 			ret->AddChild( '1', new_test::Basic::GetInstance() );

@@ -9,9 +9,9 @@
 
 namespace r2
 {
-	SceneUp VariadicTemplateScene::Create( Director& director )
+	MenuUp VariadicTemplateScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
+		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
 			ret->AddChild( '1', variadic_template_test::SizeOfArgs::GetInstance() );

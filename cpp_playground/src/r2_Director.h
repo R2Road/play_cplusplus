@@ -9,11 +9,11 @@ namespace r2
 	public:
 		Director();
 
-		void Setup( SceneUp scene );
+		void Setup( MenuUp menu );
 
 		void Update();
 
 	private:
-		SceneUp mScene;
+		MenuUp mMenu;
 	};
 }

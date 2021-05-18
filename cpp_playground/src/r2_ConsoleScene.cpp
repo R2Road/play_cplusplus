@@ -9,9 +9,9 @@
 
 namespace r2
 {
-	SceneUp ConsoleScene::Create( Director& director )
+	MenuUp ConsoleScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
+		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
 			ret->AddChild( '1', console_test::GetWindowSize::GetInstance() );

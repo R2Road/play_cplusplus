@@ -9,9 +9,9 @@
 
 namespace r2
 {
-	SceneUp RandomScene::Create( Director& director )
+	MenuUp RandomScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, RandomScene::GetTitle() ) );
+		MenuUp ret( new ( std::nothrow ) Menu( director, RandomScene::GetTitle() ) );
 
 		{
 			ret->AddChild( '1', random_test::Basic::GetInstance() );

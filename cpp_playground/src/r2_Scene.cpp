@@ -8,18 +8,18 @@
 
 namespace r2
 {
-	Scene::Scene( Director& director, const char* title_string, const char* description_string ) :
+	Menu::Menu( Director& director, const char* title_string, const char* description_string ) :
 		mDirector( director )
 		, mTitleString( title_string )
 		, mDescriptionString( description_string )
 		, mTests()
 	{}
 
-	void Scene::ShowTitle() const
+	void Menu::ShowTitle() const
 	{
 		std::cout << "# " << mTitleString << " #" << r2::linefeed << r2::linefeed;
 	}
-	void Scene::ShowDescription() const
+	void Menu::ShowDescription() const
 	{
 		if( !mDescriptionString.empty() )
 		{
@@ -27,7 +27,7 @@ namespace r2
 		}
 	}
 
-	void Scene::ShowMenu() const
+	void Menu::ShowMenu() const
 	{
 		std::cout << "+ Menu" << r2::linefeed;
 
@@ -68,7 +68,7 @@ namespace r2
 		std::cout << r2::linefeed << "Select Menu";
 	}
 
-	eTestResult Scene::Do( const int key_code )
+	eTestResult Menu::Do( const int key_code )
 	{
 		for( const auto t : mTests )
 		{
@@ -81,15 +81,15 @@ namespace r2
 		return eTestResult::RunTest;
 	}
 
-	void Scene::AddChild( const char key_code, iTest& test_obj )
+	void Menu::AddChild( const char key_code, iTest& test_obj )
 	{
 		mTests.emplace_back( key_code, test_obj.GetTitleFunction(), test_obj.GetDoFunction() );
 	}
-	void Scene::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestResult()> func_test )
+	void Menu::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestResult()> func_test )
 	{
 		mTests.emplace_back( key_code, func_title, func_test );
 	}
-	void Scene::AddSplit()
+	void Menu::AddSplit()
 	{
 		static const std::function<const char*()> func_title = []()->const char* { return ""; };
 		static const std::function<const r2::eTestResult()> func_test = []()->const r2::eTestResult { return r2::eTestResult::RunTest; };

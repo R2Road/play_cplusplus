@@ -8,12 +8,12 @@
 
 namespace r2
 {
-	Director::Director() : mScene()
+	Director::Director() : mMenu()
 	{}
 
-	void Director::Setup( SceneUp scene )
+	void Director::Setup( MenuUp menu )
 	{
-		mScene = std::move( scene );
+		mMenu = std::move( menu );
 	}
 
 	void Director::Update()
@@ -21,14 +21,14 @@ namespace r2
 		int input = 0;
 		while( true )
 		{
-			mScene->ShowTitle();
-			mScene->ShowDescription();
-			mScene->ShowMenu();
+			mMenu->ShowTitle();
+			mMenu->ShowDescription();
+			mMenu->ShowMenu();
 			input = _getch();
 
 			system( "cls" );
 
-			switch( mScene->Do( input ) )
+			switch( mMenu->Do( input ) )
 			{
 			case eTestResult::RunTest:
 				std::cout << r2::linefeed;

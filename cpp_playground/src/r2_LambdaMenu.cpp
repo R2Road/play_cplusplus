@@ -9,9 +9,9 @@
 
 namespace r2
 {
-	SceneUp LambdaMenu::Create( Director& director )
+	MenuUp LambdaMenu::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
+		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
 			ret->AddChild( '1', lambda_test::CaptureValue::GetInstance() );

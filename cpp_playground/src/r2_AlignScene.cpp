@@ -11,9 +11,9 @@
 
 namespace r2
 {
-	SceneUp AlignScene::Create( Director& director )
+	MenuUp AlignScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
+		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
 			ret->AddChild( '1', alignof_test::Basic::GetInstance() );

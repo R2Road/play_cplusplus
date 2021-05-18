@@ -12,8 +12,8 @@ namespace r2
 	class iTest;
 	class Director;
 
-	using SceneUp = std::unique_ptr<class Scene>;
-	class Scene
+	using MenuUp = std::unique_ptr<class Menu>;
+	class Menu
 	{
 	private:
 		struct TestInfo
@@ -36,8 +36,8 @@ namespace r2
 		using TestContainerT = std::vector<TestInfo>;
 
 	public:
-		Scene( Director& director, const char* title_string, const char* description_string = "" );
-		virtual ~Scene() {}
+		Menu( Director& director, const char* title_string, const char* description_string = "" );
+		virtual ~Menu() {}
 
 		void ShowTitle() const;
 		void ShowDescription() const;

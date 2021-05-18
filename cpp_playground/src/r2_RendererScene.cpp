@@ -11,9 +11,9 @@
 
 namespace r2
 {
-	SceneUp RendererScene::Create( Director& director )
+	MenuUp RendererScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
+		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
 			ret->AddChild( '1', renderer_test::VisibleResource_FillAll::GetInstance() );

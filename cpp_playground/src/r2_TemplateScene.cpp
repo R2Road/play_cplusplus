@@ -11,9 +11,9 @@
 
 namespace r2
 {
-	SceneUp TemplateScene::Create( Director& director )
+	MenuUp TemplateScene::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
+		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
 			ret->AddChild(

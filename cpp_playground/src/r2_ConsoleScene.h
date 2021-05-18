@@ -4,7 +4,7 @@
 
 namespace r2
 {
-	using SceneUp = std::unique_ptr<class Scene>;
+	using MenuUp = std::unique_ptr<class Menu>;
 
 	class Director;
 
@@ -15,6 +15,6 @@ namespace r2
 
 	public:
 		static const char* GetTitle() { return "Console"; }
-		static SceneUp Create( Director& director );
+		static MenuUp Create( Director& director );
 	};
 }

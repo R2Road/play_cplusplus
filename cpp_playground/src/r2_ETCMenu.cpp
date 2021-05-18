@@ -9,9 +9,9 @@
 
 namespace r2
 {
-	SceneUp ETCMenu::Create( Director& director )
+	MenuUp ETCMenu::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene( director, GetTitle() ) );
+		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
 			ret->AddChild( '1', etc_test::XOR_Swap::GetInstance() );

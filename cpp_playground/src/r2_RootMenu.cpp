@@ -32,9 +32,9 @@
 
 namespace r2
 {
-	SceneUp RootMenu::Create( Director& director )
+	MenuUp RootMenu::Create( Director& director )
 	{
-		SceneUp ret( new ( std::nothrow ) Scene(
+		MenuUp ret( new ( std::nothrow ) Menu(
 			director
 			, GetTitle()
 			, "> Inprogress : Renderer" "\n" "> To do : Memory Pool"
