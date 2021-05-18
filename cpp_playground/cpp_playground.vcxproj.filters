@@ -51,9 +51,6 @@
     <ClCompile Include="src\string_view_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_RootScene.cpp">
-      <Filter>scene</Filter>
-    </ClCompile>
     <ClCompile Include="src\enum_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -195,6 +192,9 @@
     <ClCompile Include="src\camera_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_RootMenu.cpp">
+      <Filter>scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -226,9 +226,6 @@
     </ClInclude>
     <ClInclude Include="src\string_view_test.h">
       <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2_RootScene.h">
-      <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="src\enum_test.h">
       <Filter>test</Filter>
@@ -388,6 +385,9 @@
     </ClInclude>
     <ClInclude Include="src\camera_test.h">
       <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_RootMenu.h">
+      <Filter>scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

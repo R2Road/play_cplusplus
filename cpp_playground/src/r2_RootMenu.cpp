@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_RootScene.h"
+#include "r2_RootMenu.h"
 
 #include "r2_ConsoleScene.h"
 #include "r2_Director.h"
@@ -32,7 +32,7 @@
 
 namespace r2
 {
-	SceneUp RootScene::Create( Director& director )
+	SceneUp RootMenu::Create( Director& director )
 	{
 		SceneUp ret( new ( std::nothrow ) Scene(
 			director

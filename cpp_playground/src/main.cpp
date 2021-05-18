@@ -6,7 +6,7 @@
 #endif
 
 #include "r2_Director.h"
-#include "r2_RootScene.h"
+#include "r2_RootMenu.h"
 
 int main()
 {
@@ -34,7 +34,7 @@ int main()
 	// Setup
 	//
 	r2::Director director;
-	director.Setup( r2::RootScene::Create( director ) );
+	director.Setup( r2::RootMenu::Create( director ) );
 
 	//
 	// Process

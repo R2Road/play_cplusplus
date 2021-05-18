@@ -8,10 +8,10 @@ namespace r2
 
 	class Director;
 
-	class RootScene
+	class RootMenu
 	{
 	private:
-		RootScene() = delete;
+		RootMenu() = delete;
 
 	public:
 		static const char* GetTitle() { return "Root"; }

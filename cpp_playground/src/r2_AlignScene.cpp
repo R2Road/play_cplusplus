@@ -3,7 +3,7 @@
 
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
-#include "r2_RootScene.h"
+#include "r2_RootMenu.h"
 
 #include "alignof_test.h"
 #include "alignas_test.h"
@@ -42,7 +42,7 @@ namespace r2
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->const eTestResult
 				{
-					director.Setup( r2::RootScene::Create( director ) );
+					director.Setup( r2::RootMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);
