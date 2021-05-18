@@ -24,7 +24,7 @@ namespace r2
 			ret->AddChild( 'q', memory_pool_test::Step01::GetInstance() );
 
 
-			ret->AddLineFeed();
+			ret->AddSplit();
 
 
 			ret->AddChild(
@@ -36,6 +36,9 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
+
+
+			ret->AddSplit();
 		}
 
 		return ret;

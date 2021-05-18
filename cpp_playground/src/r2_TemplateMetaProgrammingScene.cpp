@@ -41,7 +41,7 @@ namespace r2
 			ret->AddChild( 'a', template_meta_programming_test::MultiTypePackage::GetInstance() );
 
 
-			ret->AddLineFeed();
+			ret->AddSplit();
 
 
 			ret->AddChild(
@@ -53,6 +53,9 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
+
+
+			ret->AddSplit();
 		}
 
 		return ret;

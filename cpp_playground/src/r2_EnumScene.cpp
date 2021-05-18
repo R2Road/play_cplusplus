@@ -18,7 +18,7 @@ namespace r2
 			ret->AddChild( '2', enum_test::Convert::GetInstance() );
 
 
-			ret->AddLineFeed();
+			ret->AddSplit();
 
 
 			ret->AddChild(
@@ -30,6 +30,9 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
+
+
+			ret->AddSplit();
 		}
 
 		return ret;

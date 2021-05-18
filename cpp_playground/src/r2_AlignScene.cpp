@@ -34,7 +34,7 @@ namespace r2
 			ret->AddChild( 'c', align_test::Align_2::GetInstance() );
 
 
-			ret->AddLineFeed();
+			ret->AddSplit();
 
 
 			ret->AddChild(
@@ -46,6 +46,9 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
+
+
+			ret->AddSplit();
 		}
 
 		return ret;

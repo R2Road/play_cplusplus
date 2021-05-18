@@ -37,7 +37,7 @@ namespace r2
 			ret->AddChild( 'd', renderer_test::CameraMove::GetInstance() );
 
 
-			ret->AddLineFeed();
+			ret->AddSplit();
 
 
 			ret->AddChild(
@@ -49,6 +49,9 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
+
+
+			ret->AddSplit();
 		}
 
 		return ret;
