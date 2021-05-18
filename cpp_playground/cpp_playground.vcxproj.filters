@@ -4,9 +4,6 @@
     <Filter Include="win32">
       <UniqueIdentifier>{d5e79e51-a985-40c0-9fd4-70428e34f847}</UniqueIdentifier>
     </Filter>
-    <Filter Include="scene">
-      <UniqueIdentifier>{b9566801-30ec-4d55-bd6d-040901fc06e3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="base">
       <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
     </Filter>
@@ -15,6 +12,9 @@
     </Filter>
     <Filter Include="renderer">
       <UniqueIdentifier>{be80c73b-e527-4390-b97a-375d1ec30d49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="menu">
+      <UniqueIdentifier>{b9566801-30ec-4d55-bd6d-040901fc06e3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -58,13 +58,13 @@
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_TemplateMetaProgrammingScene.cpp">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\pointer_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_PointerTestScene.cpp">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\align_test.cpp">
       <Filter>test</Filter>
@@ -76,16 +76,16 @@
       <Filter>win32</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_VariadicTemplateScene.cpp">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_AlignScene.cpp">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\alignof_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_TemplateScene.cpp">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\template_practice_part_01_test.cpp">
       <Filter>test</Filter>
@@ -94,7 +94,7 @@
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_MemoryScene.cpp">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\memory_pool_test.cpp">
       <Filter>test</Filter>
@@ -103,16 +103,16 @@
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_ConsoleScene.cpp">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\template_practice_part_02_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_TemplatePracticeScene.cpp">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_RandomScene.cpp">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_Director.cpp">
       <Filter>base</Filter>
@@ -130,7 +130,7 @@
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_RendererScene.cpp">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\renderer_test.cpp">
       <Filter>test</Filter>
@@ -145,16 +145,16 @@
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_FileSystemScene.cpp">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_EnumScene.cpp">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_NewScene.cpp">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_LambdaMenu.cpp">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_Renderer.cpp">
       <Filter>renderer</Filter>
@@ -184,7 +184,7 @@
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_ETCMenu.cpp">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\etc_0_test.cpp">
       <Filter>test</Filter>
@@ -193,7 +193,7 @@
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_RootMenu.cpp">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -234,13 +234,13 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_TemplateMetaProgrammingScene.h">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\pointer_test.h">
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_PointerTestScene.h">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\align_test.h">
       <Filter>test</Filter>
@@ -252,16 +252,16 @@
       <Filter>win32</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_VariadicTemplateScene.h">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_AlignScene.h">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\alignof_test.h">
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_TemplateScene.h">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\template_practice_part_01_test.h">
       <Filter>test</Filter>
@@ -270,7 +270,7 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_MemoryScene.h">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\memory_pool_test.h">
       <Filter>test</Filter>
@@ -279,16 +279,16 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_ConsoleScene.h">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\template_practice_part_02_test.h">
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_TemplatePracticeScene.h">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_RandomScene.h">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_Director.h">
       <Filter>base</Filter>
@@ -309,7 +309,7 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_RendererScene.h">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_Singleton.h">
       <Filter>base</Filter>
@@ -330,16 +330,16 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_FileSystemScene.h">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_EnumScene.h">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_NewScene.h">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_LambdaMenu.h">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_Renderer.h">
       <Filter>renderer</Filter>
@@ -378,7 +378,7 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_ETCMenu.h">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\etc_0_test.h">
       <Filter>test</Filter>
@@ -387,7 +387,7 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_RootMenu.h">
-      <Filter>scene</Filter>
+      <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
