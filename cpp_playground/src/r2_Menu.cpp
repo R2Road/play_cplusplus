@@ -89,7 +89,7 @@ namespace r2
 	{
 		mTests.emplace_back( key_code, func_title, func_test );
 	}
-	void Menu::AddSplit()
+	void Menu::AddLineFeed()
 	{
 		static const std::function<const char*()> func_title = []()->const char* { return ""; };
 		static const std::function<const r2::eTestResult()> func_test = []()->const r2::eTestResult { return r2::eTestResult::RunTest; };

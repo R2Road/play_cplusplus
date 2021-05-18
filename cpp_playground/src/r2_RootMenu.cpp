@@ -121,7 +121,7 @@ namespace r2
 				}
 			);
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 			ret->AddChild(
 				'q'
@@ -138,7 +138,7 @@ namespace r2
 			ret->AddChild( 't', structured_binding_test::Basic::GetInstance() );			
 			ret->AddChild( 'y', assert_test::Basic::GetInstance() );
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 			ret->AddChild( 'a', stringview_test::Basic::GetInstance() );
 
@@ -155,7 +155,7 @@ namespace r2
 			ret->AddChild( 'd', print_test::Basic::GetInstance() );
 			ret->AddChild( 'f', char_test::Basic::GetInstance() );
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 			ret->AddChild( 'z', korean_test::Basic::GetInstance() );
 			ret->AddChild( 'x', key_test::Basic::GetInstance() );
@@ -169,7 +169,7 @@ namespace r2
 				}
 			);
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 			ret->AddChild(
 				32
@@ -181,7 +181,7 @@ namespace r2
 				}
 			);
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 			ret->AddChild(
 				27

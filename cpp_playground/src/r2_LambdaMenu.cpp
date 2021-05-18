@@ -20,7 +20,7 @@ namespace r2
 			ret->AddChild( '4', lambda_test::CaptureUniquePtr::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild(

@@ -26,7 +26,7 @@ namespace r2
 			ret->AddChild( '8', template_meta_programming_test::SumRatioAndOperator2::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild( 'q', template_meta_programming_test::Character2String::GetInstance() );
@@ -35,13 +35,13 @@ namespace r2
 			ret->AddChild( 'r', template_meta_programming_test::Integer2String_II::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild( 'a', template_meta_programming_test::MultiTypePackage::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild(

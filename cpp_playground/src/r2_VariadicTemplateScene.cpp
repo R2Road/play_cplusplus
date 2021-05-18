@@ -20,7 +20,7 @@ namespace r2
 			ret->AddChild( '4', variadic_template_test::SubtractValues::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild(

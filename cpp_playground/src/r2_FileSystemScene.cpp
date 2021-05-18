@@ -20,7 +20,7 @@ namespace r2
 			ret->AddChild( '4', filesystem_test::PathOperation::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild(

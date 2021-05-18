@@ -20,13 +20,13 @@ namespace r2
 			ret->AddChild( '2', alignof_test::MixedStruct::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild( 'q', align_test::AlignAs::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild( 'z', align_test::Align_0::GetInstance() );
@@ -34,7 +34,7 @@ namespace r2
 			ret->AddChild( 'c', align_test::Align_2::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild(

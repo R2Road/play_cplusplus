@@ -18,7 +18,7 @@ namespace r2
 			ret->AddChild( '2', etc_test::InitArray::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild(

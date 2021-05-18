@@ -18,7 +18,7 @@ namespace r2
 			ret->AddChild( '2', template_practice_part_01_test::VaridicMax::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild(

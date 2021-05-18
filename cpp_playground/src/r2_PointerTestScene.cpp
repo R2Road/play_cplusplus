@@ -18,7 +18,7 @@ namespace r2
 			ret->AddChild( '2', pointer_test::ConstPointer::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild(

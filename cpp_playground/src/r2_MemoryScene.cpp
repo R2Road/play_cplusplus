@@ -18,13 +18,13 @@ namespace r2
 			ret->AddChild( '1', shared_pointer_test::SharedPtr::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild( 'q', memory_pool_test::Step01::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild(

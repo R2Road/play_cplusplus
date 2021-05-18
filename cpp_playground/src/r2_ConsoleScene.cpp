@@ -21,7 +21,7 @@ namespace r2
 			ret->AddChild( '5', console_test::MoveCursor::GetInstance() );
 
 			
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild( 'q', console_test::ColorTable::GetInstance() );
@@ -30,20 +30,20 @@ namespace r2
 			ret->AddChild( 'r', console_test::AdjustColorTable::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild( 't', console_test::ColorTable2::GetInstance() );
 			ret->AddChild( 'y', console_test::TextColor3::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild( 'a', console_test::Pixel::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild(

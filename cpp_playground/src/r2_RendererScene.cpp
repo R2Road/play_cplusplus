@@ -22,14 +22,14 @@ namespace r2
 			ret->AddChild( '4', renderer_test::VisibleResource_InitWithChars::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild( 'q', renderer_test::TestRenderable::GetInstance() );
 			ret->AddChild( 'w', renderer_test::TestRenderer::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild( 'a', rect_test::Basic::GetInstance() );
@@ -37,7 +37,7 @@ namespace r2
 			ret->AddChild( 'd', renderer_test::CameraMove::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild(

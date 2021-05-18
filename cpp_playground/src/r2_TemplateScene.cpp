@@ -47,7 +47,7 @@ namespace r2
 			);
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild(

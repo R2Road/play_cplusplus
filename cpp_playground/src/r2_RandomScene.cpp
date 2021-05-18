@@ -18,7 +18,7 @@ namespace r2
 			ret->AddChild( '2', random_test::StatusSaveAndLoad::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild(

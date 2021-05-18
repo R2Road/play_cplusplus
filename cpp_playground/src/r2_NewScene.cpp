@@ -18,7 +18,7 @@ namespace r2
 			ret->AddChild( '2', new_test::PlacementNew::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild(

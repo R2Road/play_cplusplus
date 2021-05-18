@@ -18,7 +18,7 @@ namespace r2
 			ret->AddChild( '2', enum_test::Convert::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild(
