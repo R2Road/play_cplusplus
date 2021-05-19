@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "r2_RootMenu.h"
 
-#include "r2_ConsoleScene.h"
+#include "r2_ConsoleMenu.h"
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
 #include "r2_FileSystemScene.h"
@@ -43,10 +43,10 @@ namespace r2
 		{
 			ret->AddChild(
 				'1'
-				, []()->const char* { return ConsoleScene::GetTitle(); }
+				, []()->const char* { return ConsoleMenu::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
-					director.Setup( ConsoleScene::Create( director ) );
+					director.Setup( ConsoleMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

@@ -102,9 +102,6 @@
     <ClCompile Include="src\console_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_ConsoleScene.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\template_practice_part_02_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -195,6 +192,9 @@
     <ClCompile Include="src\r2_Menu.cpp">
       <Filter>base</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_ConsoleMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -277,9 +277,6 @@
     </ClInclude>
     <ClInclude Include="src\console_test.h">
       <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2_ConsoleScene.h">
-      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\template_practice_part_02_test.h">
       <Filter>test</Filter>
@@ -388,6 +385,9 @@
     </ClInclude>
     <ClInclude Include="src\r2_Menu.h">
       <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_ConsoleMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

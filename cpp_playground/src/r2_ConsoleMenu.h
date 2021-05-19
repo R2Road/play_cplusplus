@@ -8,10 +8,10 @@ namespace r2
 
 	class Director;
 
-	class ConsoleScene
+	class ConsoleMenu
 	{
 	private:
-		ConsoleScene() = delete;
+		ConsoleMenu() = delete;
 
 	public:
 		static const char* GetTitle() { return "Console"; }

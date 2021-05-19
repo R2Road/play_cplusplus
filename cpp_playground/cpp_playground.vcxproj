@@ -45,7 +45,7 @@
     <ClCompile Include="src\print_test.cpp" />
     <ClCompile Include="src\r2_AlignScene.cpp" />
     <ClCompile Include="src\r2_Camera.cpp" />
-    <ClCompile Include="src\r2_ConsoleScene.cpp" />
+    <ClCompile Include="src\r2_ConsoleMenu.cpp" />
     <ClCompile Include="src\r2_Director.cpp" />
     <ClCompile Include="src\r2_EnumScene.cpp" />
     <ClCompile Include="src\r2_ETCMenu.cpp" />
@@ -105,7 +105,7 @@
     <ClInclude Include="src\print_test.h" />
     <ClInclude Include="src\r2_AlignScene.h" />
     <ClInclude Include="src\r2_Camera.h" />
-    <ClInclude Include="src\r2_ConsoleScene.h" />
+    <ClInclude Include="src\r2_ConsoleMenu.h" />
     <ClInclude Include="src\r2_Director.h" />
     <ClInclude Include="src\r2_EnumScene.h" />
     <ClInclude Include="src\r2_ETCMenu.h" />
