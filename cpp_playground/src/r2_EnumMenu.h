@@ -8,10 +8,10 @@ namespace r2
 
 	class Director;
 
-	class EnumScene
+	class EnumMenu
 	{
 	private:
-		EnumScene() = delete;
+		EnumMenu() = delete;
 
 	public:
 		static const char* GetTitle() { return "Enum"; }

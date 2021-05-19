@@ -11,7 +11,7 @@
 #include "r2_AlignScene.h"
 #include "r2_MemoryScene.h"
 #include "r2_RendererScene.h"
-#include "r2_EnumScene.h"
+#include "r2_EnumMenu.h"
 #include "r2_LambdaMenu.h"
 #include "r2_NewScene.h"
 
@@ -113,10 +113,10 @@ namespace r2
 
 			ret->AddChild(
 				'8'
-				, []()->const char* { return r2::EnumScene::GetTitle(); }
+				, []()->const char* { return r2::EnumMenu::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
-					director.Setup( r2::EnumScene::Create( director ) );
+					director.Setup( r2::EnumMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

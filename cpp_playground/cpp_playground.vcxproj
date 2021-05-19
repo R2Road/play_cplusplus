@@ -47,7 +47,7 @@
     <ClCompile Include="src\r2_Camera.cpp" />
     <ClCompile Include="src\r2_ConsoleMenu.cpp" />
     <ClCompile Include="src\r2_Director.cpp" />
-    <ClCompile Include="src\r2_EnumScene.cpp" />
+    <ClCompile Include="src\r2_EnumMenu.cpp" />
     <ClCompile Include="src\r2_ETCMenu.cpp" />
     <ClCompile Include="src\r2_FileSystemScene.cpp" />
     <ClCompile Include="src\r2_GridIndexConverter.cpp" />
@@ -107,7 +107,7 @@
     <ClInclude Include="src\r2_Camera.h" />
     <ClInclude Include="src\r2_ConsoleMenu.h" />
     <ClInclude Include="src\r2_Director.h" />
-    <ClInclude Include="src\r2_EnumScene.h" />
+    <ClInclude Include="src\r2_EnumMenu.h" />
     <ClInclude Include="src\r2_ETCMenu.h" />
     <ClInclude Include="src\r2_eTestResult.h" />
     <ClInclude Include="src\r2_FileSystemScene.h" />
