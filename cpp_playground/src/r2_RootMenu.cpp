@@ -9,7 +9,7 @@
 #include "r2_RandomScene.h"
 #include "r2_TemplateScene.h"
 #include "r2_AlignScene.h"
-#include "r2_MemoryScene.h"
+#include "r2_MemoryMenu.h"
 #include "r2_RendererScene.h"
 #include "r2_EnumMenu.h"
 #include "r2_LambdaMenu.h"
@@ -103,10 +103,10 @@ namespace r2
 
 			ret->AddChild(
 				'7'
-				, []()->const char* { return r2::MemoryScene::GetTitle(); }
+				, []()->const char* { return r2::MemoryMenu::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
-					director.Setup( r2::MemoryScene::Create( director ) );
+					director.Setup( r2::MemoryMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

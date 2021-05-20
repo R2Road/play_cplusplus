@@ -8,10 +8,10 @@ namespace r2
 
 	class Director;
 
-	class MemoryScene
+	class MemoryMenu
 	{
 	private:
-		MemoryScene() = delete;
+		MemoryMenu() = delete;
 
 	public:
 		static const char* GetTitle() { return "Memory"; }

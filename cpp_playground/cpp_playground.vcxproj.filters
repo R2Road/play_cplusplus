@@ -93,9 +93,6 @@
     <ClCompile Include="src\alignas_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_MemoryScene.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\memory_pool_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -195,6 +192,9 @@
     <ClCompile Include="src\r2_FileSystemMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_MemoryMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -268,9 +268,6 @@
     </ClInclude>
     <ClInclude Include="src\alignas_test.h">
       <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2_MemoryScene.h">
-      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\memory_pool_test.h">
       <Filter>test</Filter>
@@ -387,6 +384,9 @@
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_FileSystemMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_MemoryMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
