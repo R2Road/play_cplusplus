@@ -8,10 +8,10 @@ namespace r2
 
 	class Director;
 
-	class FileSystemScene
+	class FileSystemMenu
 	{
 	private:
-		FileSystemScene() = delete;
+		FileSystemMenu() = delete;
 
 	public:
 		static const char* GetTitle() { return "File System"; }

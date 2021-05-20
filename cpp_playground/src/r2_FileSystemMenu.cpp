@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_FileSystemScene.h"
+#include "r2_FileSystemMenu.h"
 
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
@@ -9,7 +9,7 @@
 
 namespace r2
 {
-	MenuUp FileSystemScene::Create( Director& director )
+	MenuUp FileSystemMenu::Create( Director& director )
 	{
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 

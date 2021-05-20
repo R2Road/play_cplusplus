@@ -138,9 +138,6 @@
     <ClCompile Include="src\template_meta_programming_01_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_FileSystemScene.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2_NewScene.cpp">
       <Filter>menu</Filter>
     </ClCompile>
@@ -193,6 +190,9 @@
       <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_EnumMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_FileSystemMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
   </ItemGroup>
@@ -323,9 +323,6 @@
     <ClInclude Include="src\template_meta_programming_01_test.h">
       <Filter>test</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_FileSystemScene.h">
-      <Filter>menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2_NewScene.h">
       <Filter>menu</Filter>
     </ClInclude>
@@ -387,6 +384,9 @@
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_EnumMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_FileSystemMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
