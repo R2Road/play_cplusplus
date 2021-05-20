@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_AlignScene.h"
+#include "r2_AlignMenu.h"
 
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
@@ -11,7 +11,7 @@
 
 namespace r2
 {
-	MenuUp AlignScene::Create( Director& director )
+	MenuUp AlignMenu::Create( Director& director )
 	{
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 

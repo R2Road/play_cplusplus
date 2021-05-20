@@ -8,7 +8,7 @@
 #include "r2_PointerTestScene.h"
 #include "r2_RandomScene.h"
 #include "r2_TemplateScene.h"
-#include "r2_AlignScene.h"
+#include "r2_AlignMenu.h"
 #include "r2_MemoryMenu.h"
 #include "r2_RendererScene.h"
 #include "r2_EnumMenu.h"
@@ -93,10 +93,10 @@ namespace r2
 
 			ret->AddChild(
 				'6'
-				, []()->const char* { return r2::AlignScene::GetTitle(); }
+				, []()->const char* { return r2::AlignMenu::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
-					director.Setup( r2::AlignScene::Create( director ) );
+					director.Setup( r2::AlignMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

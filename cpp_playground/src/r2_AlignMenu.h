@@ -8,10 +8,10 @@ namespace r2
 
 	class Director;
 
-	class AlignScene
+	class AlignMenu
 	{
 	private:
-		AlignScene() = delete;
+		AlignMenu() = delete;
 
 	public:
 		static const char* GetTitle() { return "Align"; }

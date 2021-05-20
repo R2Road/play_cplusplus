@@ -43,7 +43,7 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\new_test.cpp" />
     <ClCompile Include="src\print_test.cpp" />
-    <ClCompile Include="src\r2_AlignScene.cpp" />
+    <ClCompile Include="src\r2_AlignMenu.cpp" />
     <ClCompile Include="src\r2_Camera.cpp" />
     <ClCompile Include="src\r2_ConsoleMenu.cpp" />
     <ClCompile Include="src\r2_Director.cpp" />
@@ -103,7 +103,7 @@
     <ClInclude Include="src\filesystem_test.h" />
     <ClInclude Include="src\new_test.h" />
     <ClInclude Include="src\print_test.h" />
-    <ClInclude Include="src\r2_AlignScene.h" />
+    <ClInclude Include="src\r2_AlignMenu.h" />
     <ClInclude Include="src\r2_Camera.h" />
     <ClInclude Include="src\r2_ConsoleMenu.h" />
     <ClInclude Include="src\r2_Director.h" />
