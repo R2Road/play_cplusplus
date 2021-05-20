@@ -11,7 +11,7 @@
 
 namespace r2
 {
-	MenuUp RendererScene::Create( Director& director )
+	MenuUp RendererMenu::Create( Director& director )
 	{
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 

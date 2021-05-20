@@ -173,10 +173,10 @@ namespace r2
 
 			ret->AddChild(
 				32
-				, []()->const char* { return r2::RendererScene::GetTitle(); }
+				, []()->const char* { return r2::RendererMenu::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
-					director.Setup( r2::RendererScene::Create( director ) );
+					director.Setup( r2::RendererMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);
