@@ -56,7 +56,7 @@
     <ClCompile Include="src\r2_PointInt.cpp" />
     <ClCompile Include="src\r2_RectInt.cpp" />
     <ClCompile Include="src\r2_Renderer.cpp" />
-    <ClCompile Include="src\r2_RendererScene.cpp" />
+    <ClCompile Include="src\r2_RendererMenu.cpp" />
     <ClCompile Include="src\r2_Size.cpp" />
     <ClCompile Include="src\r2_VisibleResource.cpp" />
     <ClCompile Include="src\rect_test.cpp" />
@@ -120,7 +120,7 @@
     <ClInclude Include="src\r2_RectInt.h" />
     <ClInclude Include="src\r2_iRenderable.h" />
     <ClInclude Include="src\r2_Renderer.h" />
-    <ClInclude Include="src\r2_RendererScene.h" />
+    <ClInclude Include="src\r2_RendererMenu.h" />
     <ClInclude Include="src\r2_Size.h" />
     <ClInclude Include="src\r2_VisibleResource.h" />
     <ClInclude Include="src\rect_test.h" />

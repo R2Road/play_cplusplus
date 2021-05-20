@@ -8,10 +8,10 @@ namespace r2
 
 	class Director;
 
-	class RendererScene
+	class RendererMenu
 	{
 	private:
-		RendererScene() = delete;
+		RendererMenu() = delete;
 
 	public:
 		static const char* GetTitle() { return "Renderer"; }

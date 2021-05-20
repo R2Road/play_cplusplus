@@ -10,7 +10,7 @@
 #include "r2_TemplateScene.h"
 #include "r2_AlignMenu.h"
 #include "r2_MemoryMenu.h"
-#include "r2_RendererScene.h"
+#include "r2_RendererMenu.h"
 #include "r2_EnumMenu.h"
 #include "r2_LambdaMenu.h"
 #include "r2_NewMenu.h"

@@ -114,9 +114,6 @@
     <ClCompile Include="src\char_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_RendererScene.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\renderer_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -193,6 +190,9 @@
       <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_RandomMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_RendererMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
   </ItemGroup>
@@ -290,9 +290,6 @@
     <ClInclude Include="src\char_test.h">
       <Filter>test</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_RendererScene.h">
-      <Filter>menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2_Singleton.h">
       <Filter>base</Filter>
     </ClInclude>
@@ -387,6 +384,9 @@
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_RandomMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_RendererMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
