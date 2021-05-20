@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_RandomScene.h"
+#include "r2_RandomMenu.h"
 
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
@@ -9,9 +9,9 @@
 
 namespace r2
 {
-	MenuUp RandomScene::Create( Director& director )
+	MenuUp RandomMenu::Create( Director& director )
 	{
-		MenuUp ret( new ( std::nothrow ) Menu( director, RandomScene::GetTitle() ) );
+		MenuUp ret( new ( std::nothrow ) Menu( director, RandomMenu::GetTitle() ) );
 
 		{
 			ret->AddChild( '1', random_test::Basic::GetInstance() );

@@ -6,7 +6,7 @@
 #include "r2_eTestResult.h"
 #include "r2_FileSystemMenu.h"
 #include "r2_PointerTestScene.h"
-#include "r2_RandomScene.h"
+#include "r2_RandomMenu.h"
 #include "r2_TemplateScene.h"
 #include "r2_AlignMenu.h"
 #include "r2_MemoryMenu.h"
@@ -73,10 +73,10 @@ namespace r2
 
 			ret->AddChild(
 				'4'
-				, []()->const char* { return r2::RandomScene::GetTitle(); }
+				, []()->const char* { return r2::RandomMenu::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
-					director.Setup( r2::RandomScene::Create( director ) );
+					director.Setup( r2::RandomMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

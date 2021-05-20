@@ -102,9 +102,6 @@
     <ClCompile Include="src\r2_TemplatePracticeScene.cpp">
       <Filter>menu</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_RandomScene.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2_Director.cpp">
       <Filter>base</Filter>
     </ClCompile>
@@ -195,6 +192,9 @@
     <ClCompile Include="src\r2_AlignMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_RandomMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -273,9 +273,6 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_TemplatePracticeScene.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2_RandomScene.h">
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_Director.h">
@@ -387,6 +384,9 @@
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_AlignMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_RandomMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>

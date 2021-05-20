@@ -63,7 +63,7 @@
     <ClCompile Include="src\renderer_test.cpp" />
     <ClCompile Include="src\r2_MemoryMenu.cpp" />
     <ClCompile Include="src\r2_PointerTestScene.cpp" />
-    <ClCompile Include="src\r2_RandomScene.cpp" />
+    <ClCompile Include="src\r2_RandomMenu.cpp" />
     <ClCompile Include="src\r2_RootMenu.cpp" />
     <ClCompile Include="src\r2_Menu.cpp" />
     <ClCompile Include="src\r2_TemplateMetaProgrammingScene.cpp" />
@@ -129,7 +129,7 @@
     <ClInclude Include="src\r2_MemoryMenu.h" />
     <ClInclude Include="src\r2_PointerTestScene.h" />
     <ClInclude Include="src\r2_Menu.h" />
-    <ClInclude Include="src\r2_RandomScene.h" />
+    <ClInclude Include="src\r2_RandomMenu.h" />
     <ClInclude Include="src\r2_RootMenu.h" />
     <ClInclude Include="src\r2_Singleton.h" />
     <ClInclude Include="src\r2_TemplateMetaProgrammingScene.h" />

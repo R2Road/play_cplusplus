@@ -8,10 +8,10 @@ namespace r2
 
 	class Director;
 
-	class RandomScene
+	class RandomMenu
 	{
 	private:
-		RandomScene() = delete;
+		RandomMenu() = delete;
 
 	public:
 		static const char* GetTitle() { return "Random"; }
