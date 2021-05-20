@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_NewScene.h"
+#include "r2_NewMenu.h"
 
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
@@ -9,7 +9,7 @@
 
 namespace r2
 {
-	MenuUp NewScene::Create( Director& director )
+	MenuUp NewMenu::Create( Director& director )
 	{
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 

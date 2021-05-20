@@ -52,7 +52,7 @@
     <ClCompile Include="src\r2_FileSystemMenu.cpp" />
     <ClCompile Include="src\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\r2_LambdaMenu.cpp" />
-    <ClCompile Include="src\r2_NewScene.cpp" />
+    <ClCompile Include="src\r2_NewMenu.cpp" />
     <ClCompile Include="src\r2_PointInt.cpp" />
     <ClCompile Include="src\r2_RectInt.cpp" />
     <ClCompile Include="src\r2_Renderer.cpp" />
@@ -113,7 +113,7 @@
     <ClInclude Include="src\r2_FileSystemMenu.h" />
     <ClInclude Include="src\r2_GridIndexConverter.h" />
     <ClInclude Include="src\r2_LambdaMenu.h" />
-    <ClInclude Include="src\r2_NewScene.h" />
+    <ClInclude Include="src\r2_NewMenu.h" />
     <ClInclude Include="src\r2_Point.h" />
     <ClInclude Include="src\r2_PointInt.h" />
     <ClInclude Include="src\r2_Rect.h" />

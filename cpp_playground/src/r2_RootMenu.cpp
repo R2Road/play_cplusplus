@@ -13,7 +13,7 @@
 #include "r2_RendererScene.h"
 #include "r2_EnumMenu.h"
 #include "r2_LambdaMenu.h"
-#include "r2_NewScene.h"
+#include "r2_NewMenu.h"
 
 #include "optional_test.h"
 #include "variant_test.h"
@@ -144,10 +144,10 @@ namespace r2
 
 			ret->AddChild(
 				's'
-				, []()->const char* { return r2::NewScene::GetTitle(); }
+				, []()->const char* { return r2::NewMenu::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
-					director.Setup( r2::NewScene::Create( director ) );
+					director.Setup( r2::NewMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);
