@@ -71,7 +71,7 @@
     <ClCompile Include="src\r2_TemplateMenu.cpp" />
     <ClCompile Include="src\r2_VariadicTemplateMenu.cpp" />
     <ClCompile Include="src\random_test.cpp" />
-    <ClCompile Include="src\renderer_visibleresource_test.cpp" />
+    <ClCompile Include="src\visibleresource_test.cpp" />
     <ClCompile Include="src\shared_pointer_test.cpp" />
     <ClCompile Include="src\string_view_test.cpp" />
     <ClCompile Include="src\structured_binding_test.cpp" />
@@ -138,7 +138,7 @@
     <ClInclude Include="src\r2_TemplateMenu.h" />
     <ClInclude Include="src\r2_VariadicTemplateMenu.h" />
     <ClInclude Include="src\random_test.h" />
-    <ClInclude Include="src\renderer_visibleresource_test.h" />
+    <ClInclude Include="src\visibleresource_test.h" />
     <ClInclude Include="src\shared_pointer_test.h" />
     <ClInclude Include="src\string_view_test.h" />
     <ClInclude Include="src\structured_binding_test.h" />

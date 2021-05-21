@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "renderer_visibleresource_test.h"
+#include "visibleresource_test.h"
 
 #include <Windows.h>
 
@@ -8,7 +8,7 @@
 #include "r2_Camera.h"
 #include "r2_iRenderable.h"
 
-namespace renderer_visibleresource_test
+namespace visibleresource_test
 {
 	FillAll::FillAll() : mVisibleResource( 30, 20 ) {}
 

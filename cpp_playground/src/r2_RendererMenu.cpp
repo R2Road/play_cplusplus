@@ -6,7 +6,7 @@
 #include "r2_RootMenu.h"
 
 #include "rect_test.h"
-#include "renderer_visibleresource_test.h"
+#include "visibleresource_test.h"
 #include "renderer_test.h"
 #include "camera_test.h"
 
@@ -17,10 +17,10 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', renderer_visibleresource_test::FillAll::GetInstance() );
-			ret->AddChild( '2', renderer_visibleresource_test::Fill::GetInstance() );
-			ret->AddChild( '3', renderer_visibleresource_test::DrawWithPosition::GetInstance() );
-			ret->AddChild( '4', renderer_visibleresource_test::InitWithChars::GetInstance() );
+			ret->AddChild( '1', visibleresource_test::FillAll::GetInstance() );
+			ret->AddChild( '2', visibleresource_test::Fill::GetInstance() );
+			ret->AddChild( '3', visibleresource_test::DrawWithPosition::GetInstance() );
+			ret->AddChild( '4', visibleresource_test::InitWithChars::GetInstance() );
 
 
 			ret->AddLineFeed();
