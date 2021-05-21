@@ -3,7 +3,7 @@
 
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
-#include "r2_TemplateScene.h"
+#include "r2_TemplateMenu.h"
 
 #include "template_practice_part_01_test.h"
 
@@ -26,7 +26,7 @@ namespace r2
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->const eTestResult
 				{
-					director.Setup( r2::TemplateScene::Create( director ) );
+					director.Setup( r2::TemplateMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);
