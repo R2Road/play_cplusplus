@@ -9,6 +9,14 @@ namespace r2
 	public:
 		Camera();
 
+		int GetX() const
+		{
+			return mRect.GetOrigin().GetX();
+		}
+		int GetY() const
+		{
+			return mRect.GetOrigin().GetY();
+		}
 		r2::RectInt::MyPointT GetPoint() const
 		{
 			return mRect.GetOrigin();

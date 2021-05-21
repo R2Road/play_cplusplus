@@ -32,6 +32,13 @@ namespace r2
 		assert( 0u < width && 0u < height );
 	}
 
+	VisibleResource::ValueT VisibleResource::Get( std::size_t x, std::size_t y ) const
+	{
+		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
+
+		return mChars[target_linear_index];
+	}
+
 	void VisibleResource::FillAll( const char c )
 	{
 		for( char& element : mChars )

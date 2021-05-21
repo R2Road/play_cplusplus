@@ -10,7 +10,8 @@ namespace r2
 	class VisibleResource
 	{
 	public:
-		using ContainerT = std::vector<char>;
+		using ValueT = char;
+		using ContainerT = std::vector<ValueT>;
 		using ConstIteratorT = typename ContainerT::const_iterator;
 
 		VisibleResource( const std::string_view str );
@@ -30,6 +31,7 @@ namespace r2
 		int GetWidth() const { return mGridIndexConverter.GetWidth(); }
 		int GetHeight() const { return mGridIndexConverter.GetHeight(); }
 		const ContainerT GetContainer() const { return mChars; }
+		ValueT Get( const std::size_t x, const std::size_t y ) const;
 
 		//
 		//
