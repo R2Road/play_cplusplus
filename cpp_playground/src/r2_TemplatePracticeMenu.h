@@ -8,10 +8,10 @@ namespace r2
 
 	class Director;
 
-	class TemplatePracticeScene
+	class TemplatePracticeMenu
 	{
 	private:
-		TemplatePracticeScene() = delete;
+		TemplatePracticeMenu() = delete;
 
 	public:
 		static const char* GetTitle() { return "Template Practice"; }

@@ -7,7 +7,7 @@
 
 #include "r2_VariadicTemplateMenu.h"
 #include "r2_TemplateMetaProgrammingScene.h"
-#include "r2_TemplatePracticeScene.h"
+#include "r2_TemplatePracticeMenu.h"
 
 namespace r2
 {
@@ -38,10 +38,10 @@ namespace r2
 
 			ret->AddChild(
 				'3'
-				, []()->const char* { return r2::TemplatePracticeScene::GetTitle(); }
+				, []()->const char* { return r2::TemplatePracticeMenu::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
-					director.Setup( r2::TemplatePracticeScene::Create( director ) );
+					director.Setup( r2::TemplatePracticeMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

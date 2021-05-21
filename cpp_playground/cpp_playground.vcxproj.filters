@@ -93,9 +93,6 @@
     <ClCompile Include="src\template_practice_part_02_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_TemplatePracticeScene.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2_Director.cpp">
       <Filter>base</Filter>
     </ClCompile>
@@ -195,6 +192,9 @@
     <ClCompile Include="src\r2_TemplateMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_TemplatePracticeMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -265,9 +265,6 @@
     </ClInclude>
     <ClInclude Include="src\template_practice_part_02_test.h">
       <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2_TemplatePracticeScene.h">
-      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_Director.h">
       <Filter>base</Filter>
@@ -387,6 +384,9 @@
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_TemplateMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_TemplatePracticeMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
