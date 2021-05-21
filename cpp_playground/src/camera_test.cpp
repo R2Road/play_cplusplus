@@ -85,16 +85,16 @@ namespace camera_test
 
 
 
-	CameraMove::CameraMove() : mCamera(), mRenderer()
+	CameraMove1::CameraMove1() : mCamera(), mRenderer()
 	{}
-	r2::iTest::TitleFunc CameraMove::GetTitleFunction() const
+	r2::iTest::TitleFunc CameraMove1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Camera Move( In Progress )";
+			return "Camera Move 1";
 		};
 	}
-	r2::iTest::DoFunc CameraMove::GetDoFunction()
+	r2::iTest::DoFunc CameraMove1::GetDoFunction()
 	{
 		GetInstance().mRenderer.Clear();
 

@@ -35,7 +35,7 @@ namespace r2
 
 			ret->AddChild( 'a', rect_test::Basic::GetInstance() );
 			ret->AddChild( 's', camera_test::CameraRect::GetInstance() );
-			ret->AddChild( 'd', camera_test::CameraMove::GetInstance() );
+			ret->AddChild( 'd', camera_test::CameraMove1::GetInstance() );
 
 
 			ret->AddSplit();
