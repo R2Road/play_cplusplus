@@ -100,7 +100,9 @@ namespace
 
 	void Status_Save()
 	{
-		std::cout << "# Status Save #" << r2::linefeed;
+		std::cout << "# Status Save #" << r2::linefeed << r2::linefeed;
+
+		std::cout << "File Path : " << GetFilePath() << r2::linefeed;
 		
 		std::cout << r2::split;
 
