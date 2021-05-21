@@ -12,42 +12,6 @@
 
 namespace camera_test
 {
-	class TempRenderable : public r2::iRenderable
-	{
-	public:
-		TempRenderable( const int x, const int y, const std::size_t width, const char* chars) :
-			mPoint( { x, y } )
-			, mVisibleResource( width, chars )
-		{}
-
-		void Draw( const r2::Camera* const camera ) override
-		{
-			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-			COORD pos = { mPoint.GetX() - camera->GetPoint().GetX() , mPoint.GetY() - camera->GetPoint().GetY() };
-			SetConsoleCursorPosition( stdHandle, pos );
-
-			int count = 0;
-			for( const char element : mVisibleResource )
-			{
-				std::cout << element;
-
-				++count;
-				if( mVisibleResource.GetWidth() <= count )
-				{
-					count = 0;
-					pos.Y += 1;
-					SetConsoleCursorPosition( stdHandle, pos );
-				}
-			}
-		}
-
-	private:
-		r2::PointInt mPoint;
-		r2::VisibleResource mVisibleResource;
-	};
-
-
-
 	CameraRect::CameraRect() : mCamera()
 	{}
 	r2::iTest::TitleFunc CameraRect::GetTitleFunction() const
@@ -82,8 +46,44 @@ namespace camera_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+}
 
 
+namespace camera_test
+{
+	class TempRenderable : public r2::iRenderable
+	{
+	public:
+		TempRenderable( const int x, const int y, const std::size_t width, const char* chars ) :
+			mPoint( { x, y } )
+			, mVisibleResource( width, chars )
+		{}
+
+		void Draw( const r2::Camera* const camera ) override
+		{
+			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+			COORD pos = { mPoint.GetX() - camera->GetPoint().GetX() , mPoint.GetY() - camera->GetPoint().GetY() };
+			SetConsoleCursorPosition( stdHandle, pos );
+
+			int count = 0;
+			for( const char element : mVisibleResource )
+			{
+				std::cout << element;
+
+				++count;
+				if( mVisibleResource.GetWidth() <= count )
+				{
+					count = 0;
+					pos.Y += 1;
+					SetConsoleCursorPosition( stdHandle, pos );
+				}
+			}
+		}
+
+	private:
+		r2::PointInt mPoint;
+		r2::VisibleResource mVisibleResource;
+	};
 
 	CameraMove1::CameraMove1() : mCamera(), mRenderer()
 	{}
