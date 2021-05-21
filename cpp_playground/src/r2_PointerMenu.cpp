@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_PointerTestScene.h"
+#include "r2_PointerMenu.h"
 
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
@@ -9,7 +9,7 @@
 
 namespace r2
 {
-	MenuUp PointerTestScene::Create( Director& director )
+	MenuUp PointerMenu::Create( Director& director )
 	{
 		MenuUp ret( new ( std::nothrow ) Menu( director, "Pointer" ) );
 

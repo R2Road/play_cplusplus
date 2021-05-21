@@ -8,10 +8,10 @@ namespace r2
 
 	class Director;
 
-	class PointerTestScene
+	class PointerMenu
 	{
 	private:
-		PointerTestScene() = delete;
+		PointerMenu() = delete;
 
 	public:
 		static const char* GetTitle() { return "Pointer"; }

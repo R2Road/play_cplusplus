@@ -60,9 +60,6 @@
     <ClCompile Include="src\pointer_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_PointerTestScene.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\align_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -193,6 +190,9 @@
       <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\r2_TemplateMetaProgrammingMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_PointerMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
   </ItemGroup>
@@ -365,9 +365,6 @@
     <ClInclude Include="src\r2_NewMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_PointerTestScene.h">
-      <Filter>menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2_AlignMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
@@ -387,6 +384,9 @@
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_TemplateMetaProgrammingMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_PointerMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>

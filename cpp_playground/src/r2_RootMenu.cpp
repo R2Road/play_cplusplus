@@ -5,7 +5,7 @@
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
 #include "r2_FileSystemMenu.h"
-#include "r2_PointerTestScene.h"
+#include "r2_PointerMenu.h"
 #include "r2_RandomMenu.h"
 #include "r2_TemplateMenu.h"
 #include "r2_AlignMenu.h"
@@ -63,10 +63,10 @@ namespace r2
 
 			ret->AddChild(
 				'3'
-				, []()->const char* { return r2::PointerTestScene::GetTitle(); }
+				, []()->const char* { return r2::PointerMenu::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
-					director.Setup( r2::PointerTestScene::Create( director ) );
+					director.Setup( r2::PointerMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

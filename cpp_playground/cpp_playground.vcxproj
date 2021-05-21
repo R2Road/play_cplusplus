@@ -62,7 +62,7 @@
     <ClCompile Include="src\rect_test.cpp" />
     <ClCompile Include="src\renderer_test.cpp" />
     <ClCompile Include="src\r2_MemoryMenu.cpp" />
-    <ClCompile Include="src\r2_PointerTestScene.cpp" />
+    <ClCompile Include="src\r2_PointerMenu.cpp" />
     <ClCompile Include="src\r2_RandomMenu.cpp" />
     <ClCompile Include="src\r2_RootMenu.cpp" />
     <ClCompile Include="src\r2_Menu.cpp" />
@@ -127,7 +127,7 @@
     <ClInclude Include="src\renderer_test.h" />
     <ClInclude Include="src\r2_iTest.h" />
     <ClInclude Include="src\r2_MemoryMenu.h" />
-    <ClInclude Include="src\r2_PointerTestScene.h" />
+    <ClInclude Include="src\r2_PointerMenu.h" />
     <ClInclude Include="src\r2_Menu.h" />
     <ClInclude Include="src\r2_RandomMenu.h" />
     <ClInclude Include="src\r2_RootMenu.h" />
