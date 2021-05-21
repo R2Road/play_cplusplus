@@ -44,7 +44,7 @@ namespace r2
 			ret->AddChild(
 				'1'
 				, []()->const char* { return ConsoleMenu::GetTitle(); }
-				, [&director]()->const eTestResult
+				, [&director]()->eTestResult
 				{
 					director.Setup( ConsoleMenu::Create( director ) );
 					return eTestResult::ChangeScene;
@@ -54,7 +54,7 @@ namespace r2
 			ret->AddChild(
 				'2'
 				, []()->const char* { return r2::FileSystemMenu::GetTitle(); }
-				, [&director]()->const eTestResult
+				, [&director]()->eTestResult
 				{
 					director.Setup( r2::FileSystemMenu::Create( director ) );
 					return eTestResult::ChangeScene;
@@ -64,7 +64,7 @@ namespace r2
 			ret->AddChild(
 				'3'
 				, []()->const char* { return r2::PointerMenu::GetTitle(); }
-				, [&director]()->const eTestResult
+				, [&director]()->eTestResult
 				{
 					director.Setup( r2::PointerMenu::Create( director ) );
 					return eTestResult::ChangeScene;
@@ -74,7 +74,7 @@ namespace r2
 			ret->AddChild(
 				'4'
 				, []()->const char* { return r2::RandomMenu::GetTitle(); }
-				, [&director]()->const eTestResult
+				, [&director]()->eTestResult
 				{
 					director.Setup( r2::RandomMenu::Create( director ) );
 					return eTestResult::ChangeScene;
@@ -84,7 +84,7 @@ namespace r2
 			ret->AddChild(
 				'5'
 				, []()->const char* { return r2::TemplateMenu::GetTitle(); }
-				, [&director]()->const eTestResult
+				, [&director]()->eTestResult
 				{
 					director.Setup( r2::TemplateMenu::Create( director ) );
 					return eTestResult::ChangeScene;
@@ -94,7 +94,7 @@ namespace r2
 			ret->AddChild(
 				'6'
 				, []()->const char* { return r2::AlignMenu::GetTitle(); }
-				, [&director]()->const eTestResult
+				, [&director]()->eTestResult
 				{
 					director.Setup( r2::AlignMenu::Create( director ) );
 					return eTestResult::ChangeScene;
@@ -104,7 +104,7 @@ namespace r2
 			ret->AddChild(
 				'7'
 				, []()->const char* { return r2::MemoryMenu::GetTitle(); }
-				, [&director]()->const eTestResult
+				, [&director]()->eTestResult
 				{
 					director.Setup( r2::MemoryMenu::Create( director ) );
 					return eTestResult::ChangeScene;
@@ -114,7 +114,7 @@ namespace r2
 			ret->AddChild(
 				'8'
 				, []()->const char* { return r2::EnumMenu::GetTitle(); }
-				, [&director]()->const eTestResult
+				, [&director]()->eTestResult
 				{
 					director.Setup( r2::EnumMenu::Create( director ) );
 					return eTestResult::ChangeScene;
@@ -126,7 +126,7 @@ namespace r2
 			ret->AddChild(
 				'q'
 				, []()->const char* { return r2::LambdaMenu::GetTitle(); }
-				, [&director]()->const eTestResult
+				, [&director]()->eTestResult
 				{
 					director.Setup( r2::LambdaMenu::Create( director ) );
 					return eTestResult::ChangeScene;
@@ -145,7 +145,7 @@ namespace r2
 			ret->AddChild(
 				's'
 				, []()->const char* { return r2::NewMenu::GetTitle(); }
-				, [&director]()->const eTestResult
+				, [&director]()->eTestResult
 				{
 					director.Setup( r2::NewMenu::Create( director ) );
 					return eTestResult::ChangeScene;
@@ -162,7 +162,7 @@ namespace r2
 			ret->AddChild(
 				'c'
 				, []()->const char* { return r2::ETCMenu::GetTitle(); }
-				, [&director]()->const eTestResult
+				, [&director]()->eTestResult
 				{
 					director.Setup( r2::ETCMenu::Create( director ) );
 					return eTestResult::ChangeScene;
@@ -174,7 +174,7 @@ namespace r2
 			ret->AddChild(
 				32
 				, []()->const char* { return r2::RendererMenu::GetTitle(); }
-				, [&director]()->const eTestResult
+				, [&director]()->eTestResult
 				{
 					director.Setup( r2::RendererMenu::Create( director ) );
 					return eTestResult::ChangeScene;
@@ -186,7 +186,7 @@ namespace r2
 			ret->AddChild(
 				27
 				, []()->const char* { return "Exit"; }
-				, []()->const eTestResult { return eTestResult::Exit; }
+				, []()->eTestResult { return eTestResult::Exit; }
 			);
 
 			ret->AddSplit();

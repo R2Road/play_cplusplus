@@ -19,7 +19,7 @@ namespace r2
 			ret->AddChild(
 				'1'
 				, []()->const char* { return r2::VariadicTemplateMenu::GetTitle(); }
-				, [&director]()->const eTestResult
+				, [&director]()->eTestResult
 				{
 					director.Setup( r2::VariadicTemplateMenu::Create( director ) );
 					return eTestResult::ChangeScene;
@@ -29,7 +29,7 @@ namespace r2
 			ret->AddChild(
 				'2'
 				, []()->const char* { return r2::TemplateMetaProgrammingMenu::GetTitle(); }
-				, [&director]()->const eTestResult
+				, [&director]()->eTestResult
 				{
 					director.Setup( r2::TemplateMetaProgrammingMenu::Create( director ) );
 					return eTestResult::ChangeScene;
@@ -39,7 +39,7 @@ namespace r2
 			ret->AddChild(
 				'3'
 				, []()->const char* { return r2::TemplatePracticeMenu::GetTitle(); }
-				, [&director]()->const eTestResult
+				, [&director]()->eTestResult
 				{
 					director.Setup( r2::TemplatePracticeMenu::Create( director ) );
 					return eTestResult::ChangeScene;
@@ -53,7 +53,7 @@ namespace r2
 			ret->AddChild(
 				27
 				, []()->const char* { return "Return To Root"; }
-				, [&director]()->const eTestResult
+				, [&director]()->eTestResult
 				{
 					director.Setup( r2::RootMenu::Create( director ) );
 					return eTestResult::ChangeScene;
