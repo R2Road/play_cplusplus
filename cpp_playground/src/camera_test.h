@@ -6,7 +6,7 @@
 #include "r2_Camera.h"
 #include "r2_Renderer.h"
 
-namespace renderer_test
+namespace camera_test
 {
 	class CameraRect : public r2::iTest, public r2::SingleTon<CameraRect>
 	{

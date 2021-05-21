@@ -10,7 +10,7 @@
 #include "r2_PointInt.h"
 #include "r2_VisibleResource.h"
 
-namespace renderer_test
+namespace camera_test
 {
 	class TempRenderable : public r2::iRenderable
 	{
