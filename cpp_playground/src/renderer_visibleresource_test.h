@@ -8,10 +8,10 @@
 
 namespace renderer_visibleresource_test
 {
-	class VisibleResource_FillAll : public r2::iTest, public r2::SingleTon<VisibleResource_FillAll>
+	class FillAll : public r2::iTest, public r2::SingleTon<FillAll>
 	{
 	public:
-		VisibleResource_FillAll();
+		FillAll();
 
 	public:
 		TitleFunc GetTitleFunction() const override;
@@ -21,10 +21,10 @@ namespace renderer_visibleresource_test
 		r2::VisibleResource mVisibleResource;
 	};
 
-	class VisibleResource_Fill : public r2::iTest, public r2::SingleTon<VisibleResource_Fill>
+	class Fill : public r2::iTest, public r2::SingleTon<Fill>
 	{
 	public:
-		VisibleResource_Fill();
+		Fill();
 
 	public:
 		TitleFunc GetTitleFunction() const override;
@@ -34,10 +34,10 @@ namespace renderer_visibleresource_test
 		r2::VisibleResource mVisibleResource;
 	};
 
-	class VisibleResource_DrawWithPosition : public r2::iTest, public r2::SingleTon<VisibleResource_DrawWithPosition>
+	class DrawWithPosition : public r2::iTest, public r2::SingleTon<DrawWithPosition>
 	{
 	public:
-		VisibleResource_DrawWithPosition();
+		DrawWithPosition();
 
 	public:
 		TitleFunc GetTitleFunction() const override;
@@ -47,10 +47,10 @@ namespace renderer_visibleresource_test
 		r2::VisibleResource mVisibleResource;
 	};
 
-	class VisibleResource_InitWithChars : public r2::iTest, public r2::SingleTon<VisibleResource_InitWithChars>
+	class InitWithChars : public r2::iTest, public r2::SingleTon<InitWithChars>
 	{
 	public:
-		VisibleResource_InitWithChars();
+		InitWithChars();
 
 	public:
 		TitleFunc GetTitleFunction() const override;

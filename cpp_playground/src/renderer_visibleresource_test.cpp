@@ -10,16 +10,16 @@
 
 namespace renderer_visibleresource_test
 {
-	VisibleResource_FillAll::VisibleResource_FillAll() : mVisibleResource( 30, 20 ) {}
+	FillAll::FillAll() : mVisibleResource( 30, 20 ) {}
 
-	r2::iTest::TitleFunc VisibleResource_FillAll::GetTitleFunction() const
+	r2::iTest::TitleFunc FillAll::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Visible Resource - Fill All";
 		};
 	}
-	r2::iTest::DoFunc VisibleResource_FillAll::GetDoFunction()
+	r2::iTest::DoFunc FillAll::GetDoFunction()
 	{
 		GetInstance().mVisibleResource.FillAll( '0' );
 
@@ -52,16 +52,16 @@ namespace renderer_visibleresource_test
 
 
 
-	VisibleResource_Fill::VisibleResource_Fill() : mVisibleResource( 30, 20 ) {}
+	Fill::Fill() : mVisibleResource( 30, 20 ) {}
 
-	r2::iTest::TitleFunc VisibleResource_Fill::GetTitleFunction() const
+	r2::iTest::TitleFunc Fill::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Visible Resource - Fill";
 		};
 	}
-	r2::iTest::DoFunc VisibleResource_Fill::GetDoFunction()
+	r2::iTest::DoFunc Fill::GetDoFunction()
 	{
 		GetInstance().mVisibleResource.Fill( 0, 0, '0' );
 		GetInstance().mVisibleResource.Fill( GetInstance().mVisibleResource.GetWidth() - 1u, 0, '0' );
@@ -97,16 +97,16 @@ namespace renderer_visibleresource_test
 
 
 
-	VisibleResource_DrawWithPosition::VisibleResource_DrawWithPosition() : mVisibleResource( 10, 10 ) {}
+	DrawWithPosition::DrawWithPosition() : mVisibleResource( 10, 10 ) {}
 
-	r2::iTest::TitleFunc VisibleResource_DrawWithPosition::GetTitleFunction() const
+	r2::iTest::TitleFunc DrawWithPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Visible Resource - Draw With Position";
 		};
 	}
-	r2::iTest::DoFunc VisibleResource_DrawWithPosition::GetDoFunction()
+	r2::iTest::DoFunc DrawWithPosition::GetDoFunction()
 	{
 		GetInstance().mVisibleResource.FillAll( '0' );
 
@@ -144,19 +144,19 @@ namespace renderer_visibleresource_test
 
 
 
-	VisibleResource_InitWithChars::VisibleResource_InitWithChars() :
+	InitWithChars::InitWithChars() :
 		mVisibleResource1( "Init With Chars" )
 		, mVisibleResource2( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" )
 	{}
 
-	r2::iTest::TitleFunc VisibleResource_InitWithChars::GetTitleFunction() const
+	r2::iTest::TitleFunc InitWithChars::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Visible Resource - Init With Chars";
 		};
 	}
-	r2::iTest::DoFunc VisibleResource_InitWithChars::GetDoFunction()
+	r2::iTest::DoFunc InitWithChars::GetDoFunction()
 	{
 		const auto& fb1 = GetInstance().mVisibleResource1;
 		const auto& fb2 = GetInstance().mVisibleResource2;
