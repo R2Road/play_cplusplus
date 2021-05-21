@@ -195,6 +195,9 @@
     <ClCompile Include="src\r2_PointerMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\renderer_visibleresource_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -388,6 +391,9 @@
     </ClInclude>
     <ClInclude Include="src\r2_PointerMenu.h">
       <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer_visibleresource_test.h">
+      <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
