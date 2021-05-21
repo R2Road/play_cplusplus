@@ -8,10 +8,10 @@ namespace r2
 
 	class Director;
 
-	class TemplateMetaProgrammingScene
+	class TemplateMetaProgrammingMenu
 	{
 	private:
-		TemplateMetaProgrammingScene() = delete;
+		TemplateMetaProgrammingMenu() = delete;
 
 	public:
 		static const char* GetTitle() { return "Template Meta Programming"; }

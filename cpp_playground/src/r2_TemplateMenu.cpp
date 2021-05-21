@@ -6,7 +6,7 @@
 #include "r2_RootMenu.h"
 
 #include "r2_VariadicTemplateMenu.h"
-#include "r2_TemplateMetaProgrammingScene.h"
+#include "r2_TemplateMetaProgrammingMenu.h"
 #include "r2_TemplatePracticeMenu.h"
 
 namespace r2
@@ -28,10 +28,10 @@ namespace r2
 
 			ret->AddChild(
 				'2'
-				, []()->const char* { return r2::TemplateMetaProgrammingScene::GetTitle(); }
+				, []()->const char* { return r2::TemplateMetaProgrammingMenu::GetTitle(); }
 				, [&director]()->const eTestResult
 				{
-					director.Setup( r2::TemplateMetaProgrammingScene::Create( director ) );
+					director.Setup( r2::TemplateMetaProgrammingMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

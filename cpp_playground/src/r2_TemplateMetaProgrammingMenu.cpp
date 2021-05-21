@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_TemplateMetaProgrammingScene.h"
+#include "r2_TemplateMetaProgrammingMenu.h"
 
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
@@ -11,7 +11,7 @@
 
 namespace r2
 {
-	MenuUp TemplateMetaProgrammingScene::Create( Director& director )
+	MenuUp TemplateMetaProgrammingMenu::Create( Director& director )
 	{
 		MenuUp ret( new ( std::nothrow ) Menu( director, "Template Meta Programming" ) );
 

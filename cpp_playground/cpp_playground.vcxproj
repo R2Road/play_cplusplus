@@ -66,7 +66,7 @@
     <ClCompile Include="src\r2_RandomMenu.cpp" />
     <ClCompile Include="src\r2_RootMenu.cpp" />
     <ClCompile Include="src\r2_Menu.cpp" />
-    <ClCompile Include="src\r2_TemplateMetaProgrammingScene.cpp" />
+    <ClCompile Include="src\r2_TemplateMetaProgrammingMenu.cpp" />
     <ClCompile Include="src\r2_TemplatePracticeMenu.cpp" />
     <ClCompile Include="src\r2_TemplateMenu.cpp" />
     <ClCompile Include="src\r2_VariadicTemplateMenu.cpp" />
@@ -132,7 +132,7 @@
     <ClInclude Include="src\r2_RandomMenu.h" />
     <ClInclude Include="src\r2_RootMenu.h" />
     <ClInclude Include="src\r2_Singleton.h" />
-    <ClInclude Include="src\r2_TemplateMetaProgrammingScene.h" />
+    <ClInclude Include="src\r2_TemplateMetaProgrammingMenu.h" />
     <ClInclude Include="src\r2_TemplatePracticeMenu.h" />
     <ClInclude Include="src\r2_TemplateMenu.h" />
     <ClInclude Include="src\r2_VariadicTemplateMenu.h" />
