@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_VariadicTemplateScene.h"
+#include "r2_VariadicTemplateMenu.h"
 
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
@@ -9,7 +9,7 @@
 
 namespace r2
 {
-	MenuUp VariadicTemplateScene::Create( Director& director )
+	MenuUp VariadicTemplateMenu::Create( Director& director )
 	{
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 

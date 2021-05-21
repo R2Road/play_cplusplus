@@ -8,10 +8,10 @@ namespace r2
 
 	class Director;
 
-	class VariadicTemplateScene
+	class VariadicTemplateMenu
 	{
 	private:
-		VariadicTemplateScene() = delete;
+		VariadicTemplateMenu() = delete;
 
 	public:
 		static const char* GetTitle() { return "Variadic Template"; }

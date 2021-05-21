@@ -75,9 +75,6 @@
     <ClCompile Include="src\pch.cpp">
       <Filter>win32</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_VariadicTemplateScene.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\alignof_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -195,6 +192,9 @@
     <ClCompile Include="src\r2_RendererMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2_VariadicTemplateMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -247,9 +247,6 @@
     </ClInclude>
     <ClInclude Include="src\pch.h">
       <Filter>win32</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2_VariadicTemplateScene.h">
-      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\alignof_test.h">
       <Filter>test</Filter>
@@ -387,6 +384,9 @@
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\r2_RendererMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_VariadicTemplateMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
