@@ -186,14 +186,14 @@ namespace console_test
 
 
 
-	r2::iTest::TitleFunc MoveCursor::GetTitleFunction() const
+	r2::iTest::TitleFunc CursorMove::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Move Cursor";
+			return "Cursor Move";
 		};
 	}
-	r2::iTest::DoFunc MoveCursor::GetDoFunction()
+	r2::iTest::DoFunc CursorMove::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

@@ -41,7 +41,7 @@ namespace console_test
 
 
 
-	class MoveCursor : public r2::iTest, public r2::SingleTon<MoveCursor>
+	class CursorMove : public r2::iTest, public r2::SingleTon<CursorMove>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
