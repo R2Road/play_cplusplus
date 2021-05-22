@@ -100,18 +100,36 @@ namespace console_test
 
 
 
-	r2::iTest::TitleFunc ChangeWindowPosition::GetTitleFunction() const
+	r2::iTest::TitleFunc WindowPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Change Window Position";
+			return "Window Position";
 		};
 	}
-	r2::iTest::DoFunc ChangeWindowPosition::GetDoFunction()
+	r2::iTest::DoFunc WindowPosition::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			RECT last_window_rect;
+
+			{
+				HWND hWnd = GetConsoleWindow();
+				GetWindowRect( hWnd, &last_window_rect );
+				std::cout << "\t" << "HWND hWnd = GetConsoleWindow();" << r2::linefeed;
+				std::cout << "\t" << "RECT last_window_rect;" << r2::linefeed;
+				std::cout << "\t" << "GetWindowRect( hWnd, &last_window_rect );" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << "\t" << "Current Window Position" << r2::linefeed;
+				std::cout << "\t\t - X : " << last_window_rect.left << r2::linefeed;
+				std::cout << "\t\t - Y : " << last_window_rect.top << r2::linefeed;
+			}
 
 			std::cout << r2::split;
 
@@ -131,7 +149,39 @@ namespace console_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			{
+				RECT rectClient, rectWindow;
+				HWND hWnd = GetConsoleWindow();
+				GetWindowRect( hWnd, &rectWindow );
+
+				std::cout << r2::linefeed;
+
+				std::cout << "\t" << "Current Window Position" << r2::linefeed;
+				std::cout << "\t\t - X : " << rectWindow.left << r2::linefeed;
+				std::cout << "\t\t - Y : " << rectWindow.top << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+			system( "pause" );
+
+			{
+				//
+				// Rollback
+				//
+
+				HWND hWnd = GetConsoleWindow();
+
+				MoveWindow(
+					hWnd
+					, last_window_rect.left, last_window_rect.top
+					, last_window_rect.right - last_window_rect.left, last_window_rect.bottom - last_window_rect.top
+					, TRUE
+				);
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest_Without_Pause;
 		};
 	}
 

@@ -23,7 +23,7 @@ namespace console_test
 
 
 
-	class ChangeWindowPosition : public r2::iTest, public r2::SingleTon<ChangeWindowPosition>
+	class WindowPosition : public r2::iTest, public r2::SingleTon<WindowPosition>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
