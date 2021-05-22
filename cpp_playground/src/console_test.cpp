@@ -241,6 +241,49 @@ namespace console_test
 		};
 	}
 
+	r2::iTest::TitleFunc CursorVisibility::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Cursor Visibility";
+		};
+	}
+	r2::iTest::DoFunc CursorVisibility::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+
+			{
+				CONSOLE_CURSOR_INFO     cursorInfo;
+
+				GetConsoleCursorInfo( stdHandle, &cursorInfo );
+				cursorInfo.bVisible = false;
+				SetConsoleCursorInfo( stdHandle, &cursorInfo );
+			}
+
+			system( "pause" );
+
+			{
+				CONSOLE_CURSOR_INFO     cursorInfo;
+
+				GetConsoleCursorInfo( stdHandle, &cursorInfo );
+				cursorInfo.bVisible = true;
+				SetConsoleCursorInfo( stdHandle, &cursorInfo );
+			}
+
+			system( "pause" );
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest_Without_Pause;
+		};
+	}
+
 
 
 	r2::iTest::TitleFunc ColorTable::GetTitleFunction() const
