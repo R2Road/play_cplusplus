@@ -2,7 +2,7 @@
 #include "time_test.h"
 
 #include <conio.h>
-#include <ctime> // time.h : c
+#include <ctime> // time.h : c // time(), clock()
 
 #include "r2_eTestResult.h"
 
