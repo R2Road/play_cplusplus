@@ -70,18 +70,20 @@ namespace time_test
 		return []()->r2::eTestResult
 		{
 			clock_t current_clock = 0;
+			clock_t current_sec = 0;
 
 			bool process = true;
 			while( process )
 			{
 				current_clock = clock();
+				current_sec = current_clock / CLOCKS_PER_SEC;
 
 				system( "cls" );
 
 				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 				std::cout << "[ESC] Exit" << r2::linefeed;
 				std::cout << r2::split;
-				std::cout << current_clock << r2::linefeed;
+				std::cout << "\t" << "clock : " << current_clock << "\t\t" "sec : " << current_sec << r2::linefeed;
 				std::cout << r2::split;
 
 				if( _kbhit() )
