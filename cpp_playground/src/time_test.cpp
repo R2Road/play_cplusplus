@@ -31,6 +31,7 @@ namespace time_test
 					system( "cls" );
 
 					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+					std::cout << "[ESC] Exit" << r2::linefeed;
 					std::cout << r2::split;
 					std::cout << current_time << r2::linefeed;
 					std::cout << r2::split;
@@ -51,7 +52,7 @@ namespace time_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestResult::RunTest_Without_Pause;
 		};
 	}
 
@@ -78,6 +79,7 @@ namespace time_test
 				system( "cls" );
 
 				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+				std::cout << "[ESC] Exit" << r2::linefeed;
 				std::cout << r2::split;
 				std::cout << current_clock << r2::linefeed;
 				std::cout << r2::split;
