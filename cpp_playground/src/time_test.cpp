@@ -33,7 +33,8 @@ namespace time_test
 					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 					std::cout << "[ESC] Exit" << r2::linefeed;
 					std::cout << r2::split;
-					std::cout << current_time << r2::linefeed;
+					std::cout << "\t" << "time( &current_time );" << r2::linefeed;
+					std::cout << "\t\t" << current_time << r2::linefeed;
 					std::cout << r2::split;
 
 					last_time = current_time;
@@ -83,7 +84,8 @@ namespace time_test
 				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 				std::cout << "[ESC] Exit" << r2::linefeed;
 				std::cout << r2::split;
-				std::cout << "\t" << "clock : " << current_clock << "\t\t" "sec : " << current_sec << r2::linefeed;
+				std::cout << "\t" << "current_clock = clock();" << r2::linefeed;
+				std::cout << "\t\t" << "clock : " << current_clock << "\t\t" "sec : " << current_sec << r2::linefeed;
 				std::cout << r2::split;
 
 				if( _kbhit() )
