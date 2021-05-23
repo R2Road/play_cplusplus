@@ -30,7 +30,7 @@ namespace r2
 		//
 		int GetWidth() const { return mGridIndexConverter.GetWidth(); }
 		int GetHeight() const { return mGridIndexConverter.GetHeight(); }
-		const ContainerT GetContainer() const { return mChars; }
+		const ContainerT& GetContainer() const { return mChars; }
 		ValueT Get( const std::size_t x, const std::size_t y ) const;
 
 		//
