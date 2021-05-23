@@ -63,7 +63,10 @@ namespace camera_test
 		void Draw( const r2::Camera* const camera ) override
 		{
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-			COORD pos = { mPoint.GetX() - camera->GetPoint().GetX() , mPoint.GetY() - camera->GetPoint().GetY() };
+			COORD pos = {
+				static_cast<short>( mPoint.GetX() - camera->GetPoint().GetX() )
+				, static_cast<short>( mPoint.GetY() - camera->GetPoint().GetY() )
+			};
 			SetConsoleCursorPosition( stdHandle, pos );
 
 			int count = 0;
@@ -190,7 +193,10 @@ namespace camera_test
 
 			const auto visible_rect = camera->GetRect().IntersectsWithRect( mRect );
 
-			const COORD pivot_pos = { visible_rect.GetMinX() - camera->GetX() , visible_rect.GetMinY() - camera->GetY() };
+			const COORD pivot_pos = {
+				static_cast<short>( visible_rect.GetMinX() - camera->GetX() )
+				, static_cast<short>( visible_rect.GetMinY() - camera->GetY() )
+			};
 
 			const int resource_offset_y = visible_rect.GetMinY() - mRect.GetMinY();
 			const int resource_offset_x = visible_rect.GetMinX() - mRect.GetMinX();

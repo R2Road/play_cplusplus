@@ -150,7 +150,7 @@ namespace console_test
 			std::cout << r2::split;
 
 			{
-				RECT rectClient, rectWindow;
+				RECT rectWindow;
 				HWND hWnd = GetConsoleWindow();
 				GetWindowRect( hWnd, &rectWindow );
 
