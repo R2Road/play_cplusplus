@@ -5,7 +5,7 @@
 #include "r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
-#include "time_test.h"
+#include "time_1_test.h"
 
 namespace r2
 {
