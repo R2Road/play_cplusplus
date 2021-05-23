@@ -1,16 +1,16 @@
 #include "pch.h"
 #include "r2_RootMenu.h"
 
-#include "r2_ConsoleMenu.h"
 #include "r2_Director.h"
 #include "r2_eTestResult.h"
+
+#include "r2_ConsoleMenu.h"
 #include "r2_FileSystemMenu.h"
 #include "r2_PointerMenu.h"
 #include "r2_RandomMenu.h"
 #include "r2_TemplateMenu.h"
 #include "r2_AlignMenu.h"
 #include "r2_MemoryMenu.h"
-#include "r2_RenderMenu.h"
 #include "r2_EnumMenu.h"
 #include "r2_TimeMenu.h"
 
@@ -31,6 +31,8 @@
 #include "korean_test.h"
 #include "key_test.h"
 #include "r2_ETCMenu.h"
+
+#include "r2_RenderMenu.h"
 
 namespace r2
 {
