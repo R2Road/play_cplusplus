@@ -31,7 +31,7 @@ namespace time_test
 				GetSystemTime( &system_time );
 				current_tick = GetTickCount();
 
-				if( last_tick + 17 < current_tick )
+				if( last_tick + 16 < current_tick ) // 60fps
 				{
 
 					system( "cls" );
