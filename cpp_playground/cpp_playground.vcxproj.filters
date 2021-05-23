@@ -213,6 +213,9 @@
     <ClCompile Include="src\time_2_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="src\time_3_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -420,6 +423,9 @@
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\time_2_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\time_3_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>

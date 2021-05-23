@@ -75,6 +75,7 @@
     <ClCompile Include="src\random_test.cpp" />
     <ClCompile Include="src\time_1_test.cpp" />
     <ClCompile Include="src\time_2_test.cpp" />
+    <ClCompile Include="src\time_3_test.cpp" />
     <ClCompile Include="src\visibleresource_test.cpp" />
     <ClCompile Include="src\shared_pointer_test.cpp" />
     <ClCompile Include="src\string_view_test.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="src\random_test.h" />
     <ClInclude Include="src\time_1_test.h" />
     <ClInclude Include="src\time_2_test.h" />
+    <ClInclude Include="src\time_3_test.h" />
     <ClInclude Include="src\visibleresource_test.h" />
     <ClInclude Include="src\shared_pointer_test.h" />
     <ClInclude Include="src\string_view_test.h" />

@@ -7,6 +7,7 @@
 
 #include "time_1_test.h"
 #include "time_2_test.h"
+#include "time_3_test.h"
 
 namespace r2
 {
@@ -17,6 +18,7 @@ namespace r2
 		{
 			ret->AddChild( '1', time_test::CTime::GetInstance() );
 			ret->AddChild( '2', time_test::WindowTime::GetInstance() );
+			ret->AddChild( '3', time_test::Chrono::GetInstance() );
 
 
 			ret->AddSplit();
