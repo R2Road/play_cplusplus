@@ -78,6 +78,16 @@ namespace animation_test
 			GetInstance().mRenderer.Add( &tr );
 		}
 
+		{
+			static Renderable4AnimationTest tr( 8, 5, 6u, " #### " " #  # " " #  # " " #  # " " #  # " " #### " );
+			GetInstance().mRenderer.Add( &tr );
+		}
+
+		{
+			static Renderable4AnimationTest tr( 8, 5, 6u, "  ##  " "  ##  " "  ##  " "  ##  " "  ##  " "  ##  " );
+			GetInstance().mRenderer.Add( &tr );
+		}
+
 		return [&rd = GetInstance().mRenderer, &cam = mCamera]()->r2::eTestResult
 		{
 			int x = 0;
