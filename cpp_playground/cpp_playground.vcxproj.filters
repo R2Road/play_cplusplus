@@ -204,6 +204,9 @@
     <ClCompile Include="src\animation_test.cpp">
       <Filter>test_render</Filter>
     </ClCompile>
+    <ClCompile Include="src\time_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -403,6 +406,9 @@
     </ClInclude>
     <ClInclude Include="src\animation_test.h">
       <Filter>test_render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\time_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

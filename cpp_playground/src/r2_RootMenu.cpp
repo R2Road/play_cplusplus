@@ -28,6 +28,7 @@
 
 #include "korean_test.h"
 #include "key_test.h"
+#include "time_test.h"
 #include "r2_ETCMenu.h"
 
 namespace r2
@@ -159,8 +160,9 @@ namespace r2
 
 			ret->AddChild( 'z', korean_test::Basic::GetInstance() );
 			ret->AddChild( 'x', key_test::Basic::GetInstance() );
+			ret->AddChild( 'c', time_test::Basic::GetInstance() );
 			ret->AddChild(
-				'c'
+				'v'
 				, []()->const char* { return r2::ETCMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
