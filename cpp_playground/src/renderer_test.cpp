@@ -21,7 +21,10 @@ namespace renderer_test
 		void Draw( const r2::Camera* const camera ) override
 		{
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-			COORD pos = { mPoint.GetX() - camera->GetPoint().GetX() , mPoint.GetY() - camera->GetPoint().GetY() };
+			COORD pos = {
+				static_cast<short>( mPoint.GetX() - camera->GetPoint().GetX() )
+				, static_cast<short>( mPoint.GetY() - camera->GetPoint().GetY() )
+			};
 			SetConsoleCursorPosition( stdHandle, pos );
 
 			int count = 0;
