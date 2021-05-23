@@ -8,13 +8,13 @@ namespace r2
 
 	class Director;
 
-	class RendererMenu
+	class RenderMenu
 	{
 	private:
-		RendererMenu() = delete;
+		RenderMenu() = delete;
 
 	public:
-		static const char* GetTitle() { return "Renderer"; }
+		static const char* GetTitle() { return "Render"; }
 		static MenuUp Create( Director& director );
 	};
 }
