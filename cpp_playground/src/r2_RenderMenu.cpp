@@ -9,6 +9,7 @@
 #include "visibleresource_test.h"
 #include "renderer_test.h"
 #include "camera_test.h"
+#include "animation_test.h"
 
 namespace r2
 {
@@ -37,6 +38,12 @@ namespace r2
 			ret->AddChild( 's', camera_test::CameraRect::GetInstance() );
 			ret->AddChild( 'd', camera_test::CameraMove1::GetInstance() );
 			ret->AddChild( 'f', camera_test::CameraMove2::GetInstance() );
+
+
+			ret->AddSplit();
+
+
+			ret->AddChild( 'z', animation_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();

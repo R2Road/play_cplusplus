@@ -201,6 +201,9 @@
     <ClCompile Include="src\r2_RenderMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\animation_test.cpp">
+      <Filter>test_render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shared_pointer_test.h">
@@ -397,6 +400,9 @@
     </ClInclude>
     <ClInclude Include="src\r2_RenderMenu.h">
       <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\animation_test.h">
+      <Filter>test_render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
