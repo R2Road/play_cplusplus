@@ -15,7 +15,7 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', time_test::Basic::GetInstance() );
+			ret->AddChild( '1', time_test::CTime::GetInstance() );
 			ret->AddChild( '2', time_test::WindowTime::GetInstance() );
 
 

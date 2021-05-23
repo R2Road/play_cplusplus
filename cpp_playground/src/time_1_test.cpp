@@ -8,14 +8,14 @@
 
 namespace time_test
 {
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iTest::TitleFunc CTime::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Time";
+			return "C Time";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2::iTest::DoFunc CTime::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
