@@ -6,6 +6,7 @@
 
 #include "r2_eTestResult.h"
 
+#include "r2_FrameManager.h"
 #include "r2_iRenderable.h"
 #include "r2_VisibleResource.h"
 
@@ -90,12 +91,18 @@ namespace animation_test
 
 		return [&rd = GetInstance().mRenderer, &cam = mCamera]()->r2::eTestResult
 		{
+			r2::FrameManager frame_manager;
+			frame_manager.Reset();
+
 			int x = 0;
 			int y = 0;
 			bool process = true;
 			while( process )
 			{
-				rd.Draw();
+				if( frame_manager.Update() )
+				{
+					rd.Draw();
+				}
 
 				if( _kbhit() )
 				{

@@ -51,6 +51,7 @@
     <ClCompile Include="src\r2_EnumMenu.cpp" />
     <ClCompile Include="src\r2_ETCMenu.cpp" />
     <ClCompile Include="src\r2_FileSystemMenu.cpp" />
+    <ClCompile Include="src\r2_FrameManager.cpp" />
     <ClCompile Include="src\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\r2_LambdaMenu.cpp" />
     <ClCompile Include="src\r2_NewMenu.cpp" />
@@ -118,6 +119,7 @@
     <ClInclude Include="src\r2_ETCMenu.h" />
     <ClInclude Include="src\r2_eTestResult.h" />
     <ClInclude Include="src\r2_FileSystemMenu.h" />
+    <ClInclude Include="src\r2_FrameManager.h" />
     <ClInclude Include="src\r2_GridIndexConverter.h" />
     <ClInclude Include="src\r2_LambdaMenu.h" />
     <ClInclude Include="src\r2_NewMenu.h" />
