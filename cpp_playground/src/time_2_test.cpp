@@ -69,6 +69,13 @@ namespace time_test
 					}
 
 					std::cout << r2::split;
+
+					{
+						std::cout << "\t" << "GetTickCount64();" << r2::linefeed;
+						std::cout << "\t\t" << GetTickCount64() << r2::linefeed;
+					}
+
+					std::cout << r2::split;
 				}
 
 				if( _kbhit() )
