@@ -54,4 +54,48 @@ namespace time_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc Clock::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Clock";
+		};
+	}
+	r2::iTest::DoFunc Clock::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			clock_t current_clock = 0;
+
+			bool process = true;
+			while( process )
+			{
+				current_clock = clock();
+
+				system( "cls" );
+
+				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+				std::cout << r2::split;
+				std::cout << current_clock << r2::linefeed;
+				std::cout << r2::split;
+
+				if( _kbhit() )
+				{
+					switch( _getch() )
+					{
+					case 27: // ESC
+						process = false;
+						break;
+					}
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest_Without_Pause;
+		};
+	}
 }

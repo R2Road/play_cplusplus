@@ -161,8 +161,9 @@ namespace r2
 			ret->AddChild( 'z', korean_test::Basic::GetInstance() );
 			ret->AddChild( 'x', key_test::Basic::GetInstance() );
 			ret->AddChild( 'c', time_test::Basic::GetInstance() );
+			ret->AddChild( 'v', time_test::Clock::GetInstance() );
 			ret->AddChild(
-				'v'
+				'b'
 				, []()->const char* { return r2::ETCMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{

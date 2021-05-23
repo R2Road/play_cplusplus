@@ -11,4 +11,11 @@ namespace time_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class Clock : public r2::iTest, public r2::SingleTon<Clock>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
