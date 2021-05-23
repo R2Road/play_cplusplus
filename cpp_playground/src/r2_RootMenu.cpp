@@ -12,6 +12,8 @@
 #include "r2_MemoryMenu.h"
 #include "r2_RenderMenu.h"
 #include "r2_EnumMenu.h"
+#include "r2_TimeMenu.h"
+
 #include "r2_LambdaMenu.h"
 #include "r2_NewMenu.h"
 
@@ -28,7 +30,6 @@
 
 #include "korean_test.h"
 #include "key_test.h"
-#include "time_test.h"
 #include "r2_ETCMenu.h"
 
 namespace r2
@@ -122,6 +123,16 @@ namespace r2
 				}
 			);
 
+			ret->AddChild(
+				'9'
+				, []()->const char* { return r2::TimeMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::TimeMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+
 			ret->AddLineFeed();
 
 			ret->AddChild(
@@ -160,10 +171,8 @@ namespace r2
 
 			ret->AddChild( 'z', korean_test::Basic::GetInstance() );
 			ret->AddChild( 'x', key_test::Basic::GetInstance() );
-			ret->AddChild( 'c', time_test::Basic::GetInstance() );
-			ret->AddChild( 'v', time_test::Clock::GetInstance() );
 			ret->AddChild(
-				'b'
+				'c'
 				, []()->const char* { return r2::ETCMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{

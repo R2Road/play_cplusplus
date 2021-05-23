@@ -59,6 +59,7 @@
     <ClCompile Include="src\r2_Renderer.cpp" />
     <ClCompile Include="src\r2_RenderMenu.cpp" />
     <ClCompile Include="src\r2_Size.cpp" />
+    <ClCompile Include="src\r2_TimeMenu.cpp" />
     <ClCompile Include="src\r2_VisibleResource.cpp" />
     <ClCompile Include="src\rect_test.cpp" />
     <ClCompile Include="src\renderer_test.cpp" />
@@ -126,6 +127,7 @@
     <ClInclude Include="src\r2_Renderer.h" />
     <ClInclude Include="src\r2_RenderMenu.h" />
     <ClInclude Include="src\r2_Size.h" />
+    <ClInclude Include="src\r2_TimeMenu.h" />
     <ClInclude Include="src\r2_VisibleResource.h" />
     <ClInclude Include="src\rect_test.h" />
     <ClInclude Include="src\renderer_test.h" />
