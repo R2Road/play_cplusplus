@@ -3,6 +3,7 @@
 
 #include <conio.h>
 #include <windows.h>
+#pragma comment(lib, "winmm.lib") // for timeGetTime()
 
 #include "r2_eTestResult.h"
 
@@ -73,6 +74,13 @@ namespace time_test
 					{
 						std::cout << "\t" << "GetTickCount64();" << r2::linefeed;
 						std::cout << "\t\t" << GetTickCount64() << r2::linefeed;
+					}
+
+					std::cout << r2::split;
+
+					{
+						std::cout << "\t" << "timeGetTime();" << r2::linefeed;
+						std::cout << "\t\t" << timeGetTime() << r2::linefeed;
 					}
 
 					std::cout << r2::split;
