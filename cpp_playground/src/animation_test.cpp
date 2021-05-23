@@ -65,7 +65,7 @@ namespace animation_test
 	{
 		return []()->const char*
 		{
-			return "Renderable";
+			return "Animation - Basic";
 		};
 	}
 	r2::iTest::DoFunc Basic::GetDoFunction()
