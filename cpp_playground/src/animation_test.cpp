@@ -92,6 +92,7 @@ namespace animation_test
 		return [&rd = GetInstance().mRenderer, &cam = mCamera]()->r2::eTestResult
 		{
 			r2::FrameManager frame_manager;
+			frame_manager.SetFPS( 30 );
 			frame_manager.Reset();
 
 			int x = 0;
