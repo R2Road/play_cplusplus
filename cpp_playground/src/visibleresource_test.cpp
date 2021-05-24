@@ -23,21 +23,21 @@ namespace visibleresource_test
 	{
 		GetInstance().mVisibleResource.FillAll( '0' );
 
-		const auto& fb = GetInstance().mVisibleResource;
+		const auto& vr = GetInstance().mVisibleResource;
 
-		return [fb]()->r2::eTestResult
+		return [vr]()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
 			std::size_t x = 0;
-			for( const char element : fb )
+			for( const char element : vr )
 			{
 				std::cout << element;
 
 				++x;
-				if( fb.GetWidth() <= x )
+				if( vr.GetWidth() <= x )
 				{
 					x = 0u;
 					std::cout << r2::linefeed;
@@ -68,21 +68,21 @@ namespace visibleresource_test
 		GetInstance().mVisibleResource.Fill( GetInstance().mVisibleResource.GetWidth() - 1u, GetInstance().mVisibleResource.GetHeight() - 1u, '0' );
 		GetInstance().mVisibleResource.Fill( 0, GetInstance().mVisibleResource.GetHeight() - 1u, '0' );
 
-		const auto& fb = GetInstance().mVisibleResource;
+		const auto& vr = GetInstance().mVisibleResource;
 
-		return [fb]()->r2::eTestResult
+		return [vr]()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
 			std::size_t x = 0;
-			for( const char element : fb )
+			for( const char element : vr )
 			{
 				std::cout << element;
 
 				++x;
-				if( fb.GetWidth() <= x )
+				if( vr.GetWidth() <= x )
 				{
 					x = 0u;
 					std::cout << r2::linefeed;
@@ -110,9 +110,9 @@ namespace visibleresource_test
 	{
 		GetInstance().mVisibleResource.FillAll( '0' );
 
-		const auto& fb = GetInstance().mVisibleResource;
+		const auto& vr = GetInstance().mVisibleResource;
 
-		return [fb]()->r2::eTestResult
+		return [vr]()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -123,12 +123,12 @@ namespace visibleresource_test
 			SetConsoleCursorPosition( stdHandle, pos );
 
 			int count = 0;
-			for( const char element : fb )
+			for( const char element : vr )
 			{
 				std::cout << element;
 
 				++count;
-				if( fb.GetWidth() <= count )
+				if( vr.GetWidth() <= count )
 				{
 					count = 0;
 					pos.Y += 1;
@@ -158,10 +158,10 @@ namespace visibleresource_test
 	}
 	r2::iTest::DoFunc InitWithChars::GetDoFunction()
 	{
-		const auto& fb1 = GetInstance().mVisibleResource1;
-		const auto& fb2 = GetInstance().mVisibleResource2;
+		const auto& vr1 = GetInstance().mVisibleResource1;
+		const auto& vr2 = GetInstance().mVisibleResource2;
 
-		return [fb1, fb2]()->r2::eTestResult
+		return [vr1, vr2]()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -170,12 +170,12 @@ namespace visibleresource_test
 			std::size_t x = 0;
 
 			{
-				for( const char element : fb1 )
+				for( const char element : vr1 )
 				{
 					std::cout << element;
 
 					++x;
-					if( fb1.GetWidth() <= x )
+					if( vr1.GetWidth() <= x )
 					{
 						x = 0u;
 						std::cout << r2::linefeed;
@@ -187,12 +187,12 @@ namespace visibleresource_test
 
 			{
 				x = 0;
-				for( const char element : fb2 )
+				for( const char element : vr2 )
 				{
 					std::cout << element;
 
 					++x;
-					if( fb2.GetWidth() <= x )
+					if( vr2.GetWidth() <= x )
 					{
 						x = 0u;
 						std::cout << r2::linefeed;
