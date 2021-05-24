@@ -209,4 +209,70 @@ namespace visibleresource_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	VisibleRect::VisibleRect() :
+		mVisibleResource( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" )
+	{}
+
+	r2::iTest::TitleFunc VisibleRect::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Visible Resource - Visible Rect";
+		};
+	}
+	r2::iTest::DoFunc VisibleRect::GetDoFunction()
+	{
+		auto visible_rect = GetInstance().mVisibleResource.GetVisibleRect();
+		visible_rect.SetOrigin( visible_rect.GetOrigin().GetX() + 2, visible_rect.GetOrigin().GetY() + 1 );
+		visible_rect.SetSize( visible_rect.GetSize().GetWidth() - 2, visible_rect.GetSize().GetHeight() - 1 );
+		GetInstance().mVisibleResource.SetVisibleRect( visible_rect );
+
+
+		return [&vr = GetInstance().mVisibleResource]()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::size_t x = 0;
+				for( const char element : vr )
+				{
+					std::cout << element;
+
+					++x;
+					if( vr.GetWidth() <= x )
+					{
+						x = 0u;
+						std::cout << r2::linefeed;
+					}
+				}
+				if( 0u != x )
+				{
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			{
+				for( int y = vr.GetVisibleRect().GetMinY(); y < vr.GetVisibleRect().GetMaxY(); ++y )
+				{
+					for( int x = vr.GetVisibleRect().GetMinX(); x < vr.GetVisibleRect().GetMaxX(); ++x )
+					{
+						std::cout << vr.Get( x, y );
+					}
+
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }

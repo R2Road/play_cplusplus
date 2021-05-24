@@ -60,4 +60,17 @@ namespace visibleresource_test
 		r2::VisibleResource mVisibleResource1;
 		r2::VisibleResource mVisibleResource2;
 	};
+
+	class VisibleRect : public r2::iTest, public r2::SingleTon<VisibleRect>
+	{
+	public:
+		VisibleRect();
+
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+
+	private:
+		r2::VisibleResource mVisibleResource;
+	};
 }

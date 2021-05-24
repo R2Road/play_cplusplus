@@ -22,6 +22,7 @@ namespace r2
 			ret->AddChild( '2', visibleresource_test::Fill::GetInstance() );
 			ret->AddChild( '3', visibleresource_test::DrawWithPosition::GetInstance() );
 			ret->AddChild( '4', visibleresource_test::InitWithChars::GetInstance() );
+			ret->AddChild( '5', visibleresource_test::VisibleRect::GetInstance() );
 
 
 			ret->AddLineFeed();

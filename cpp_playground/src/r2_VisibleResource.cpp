@@ -9,7 +9,8 @@ namespace r2
 {
 	VisibleResource::VisibleResource( const std::string_view str ) :
 		mGridIndexConverter( str.length(), 1u )
-		, mChars( str.length(), 32 )
+		, mChars( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), 32 )
+		, mVisibleRect( 0, 0, mGridIndexConverter.GetWidth(), mGridIndexConverter.GetHeight() )
 	{
 		assert( 0u < mGridIndexConverter.GetWidth() && 0u < mGridIndexConverter.GetHeight() );
 
@@ -19,7 +20,8 @@ namespace r2
 	}
 	VisibleResource::VisibleResource( const std::size_t width, const std::string_view str ) :
 		mGridIndexConverter( width, ( str.length() < 0 ? 1 : ( str.length() / width ) + ( str.length() % width < 1 ? 0 : 1 ) ) )
-		, mChars( str.length(), 32 )
+		, mChars( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), 32 )
+		, mVisibleRect( 0, 0, mGridIndexConverter.GetWidth(), mGridIndexConverter.GetHeight() )
 	{
 		assert( 0u < mGridIndexConverter.GetWidth() && 0u < mGridIndexConverter.GetHeight() );
 
@@ -28,6 +30,7 @@ namespace r2
 	VisibleResource::VisibleResource( const std::size_t width, const std::size_t height ) :
 		mGridIndexConverter( width, height )
 		, mChars( width * height, 32 )
+		, mVisibleRect( 0, 0, mGridIndexConverter.GetWidth(), mGridIndexConverter.GetHeight() )
 	{
 		assert( 0u < width && 0u < height );
 	}

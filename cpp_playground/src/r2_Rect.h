@@ -64,6 +64,14 @@ namespace r2
 		{
 			mOrigin = ( point );
 		}
+		inline void SetSize( const ElementT width, const ElementT height )
+		{
+			mSize.Set( width, height );
+		}
+		inline void SetSize( const MySizeT size )
+		{
+			mSize = ( size );
+		}
 
 		inline void Set( const ElementT x, const ElementT y, const ElementT width, const ElementT height )
 		{
