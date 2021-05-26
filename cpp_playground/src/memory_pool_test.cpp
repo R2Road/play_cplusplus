@@ -44,9 +44,9 @@ namespace memory_pool_test
 
 			{
 				MemoryBlock memory_block;
-				std::cout << "\t + " << "MemoryBlock memory_block;" << r2::linefeed;
+				std::cout << r2::tab << "+ MemoryBlock memory_block;" << r2::linefeed;
 
-				std::cout << "\t\t - Print : ";
+				std::cout << r2::tab2 << "- Print : ";
 				for( const auto c : memory_block.b )
 				{
 					std::cout << static_cast<int>( c );

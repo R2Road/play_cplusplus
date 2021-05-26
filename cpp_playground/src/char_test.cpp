@@ -24,7 +24,7 @@ namespace char_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Print Chars" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Print Chars" << r2::linefeed << r2::linefeed;
 
 				for( char c = 0; 126 >= c; ++c )
 				{
@@ -37,10 +37,10 @@ namespace char_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Sound" << r2::linefeed;
+				std::cout << r2::tab << "+ Sound" << r2::linefeed;
 
 				std::cout << (char)7;
-				std::cout << "\t\t" << "- std::cout << (char)7;" << r2::linefeed;
+				std::cout << r2::tab2 << "- std::cout << (char)7;" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
