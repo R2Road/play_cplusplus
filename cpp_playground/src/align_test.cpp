@@ -25,26 +25,26 @@ namespace align_test
 				void* ip = &i;
 				std::size_t space = sizeof( i );
 
-				std::cout << "\t" << "int i = 1;" << r2::linefeed;
-				std::cout << "\t" << "void* ip = &i;" << r2::linefeed;
-				std::cout << "\t\t - " << "adress of ip : " << ip << r2::linefeed;
-				std::cout << "\t\t - " << "space : " << space << r2::linefeed;
+				std::cout << r2::tab << "int i = 1;" << r2::linefeed;
+				std::cout << r2::tab << "void* ip = &i;" << r2::linefeed;
+				std::cout << r2::tab2 << "- adress of ip : " << ip << r2::linefeed;
+				std::cout << r2::tab2 << "- space : " << space << r2::linefeed;
 				std::cout << r2::linefeed << r2::linefeed;
 
 				{
-					std::cout << "\t" << "std::align( alignof( char ), sizeof( char ), ip, space )" << r2::linefeed;
+					std::cout << r2::tab << "std::align( alignof( char ), sizeof( char ), ip, space )" << r2::linefeed;
 					if( std::align( alignof( char ), sizeof( char ), ip, space ) )
 					{
-						std::cout << "\t\t - " << "success" << r2::linefeed;
+						std::cout << r2::tab2 << "- success" << r2::linefeed;
 					}
 					else
 					{
-						std::cout << "\t\t - " << "failed" << r2::linefeed;
+						std::cout << r2::tab2 << "- failed" << r2::linefeed;
 					}
 
 					{
-						std::cout << "\t\t - " << "adress of ip : " << ip << r2::linefeed;
-						std::cout << "\t\t - " << "space : " << space << r2::linefeed;
+						std::cout << r2::tab2 << "- adress of ip : " << ip << r2::linefeed;
+						std::cout << r2::tab2 << "- space : " << space << r2::linefeed;
 					}
 				}
 
@@ -59,24 +59,24 @@ namespace align_test
 					ip = cp;
 					space -= sizeof( char ) * move_amount;
 
-					std::cout << "\t" << "move " << move_amount << r2::linefeed;
-					std::cout << "\t\t - " << "adress of ip : " << ip << r2::linefeed;
-					std::cout << "\t\t - " << "space : " << space << r2::linefeed;
+					std::cout << r2::tab << "move " << move_amount << r2::linefeed;
+					std::cout << r2::tab2 << "- adress of ip : " << ip << r2::linefeed;
+					std::cout << r2::tab2 << "- space : " << space << r2::linefeed;
 					std::cout << r2::linefeed;
 
-					std::cout << "\t" << "std::align( alignof( char ), sizeof( char ), ip, space )" << r2::linefeed;
+					std::cout << r2::tab << "std::align( alignof( char ), sizeof( char ), ip, space )" << r2::linefeed;
 					if( std::align( alignof( char ), sizeof( char ), ip, space ) )
 					{
-						std::cout << "\t\t - " << "success" << r2::linefeed;
+						std::cout << r2::tab2 << "- success" << r2::linefeed;
 					}
 					else
 					{
-						std::cout << "\t\t - " << "failed" << r2::linefeed;
+						std::cout << r2::tab2 << "- failed" << r2::linefeed;
 					}
 
 					{
-						std::cout << "\t\t - " << "adress of ip : " << ip << r2::linefeed;
-						std::cout << "\t\t - " << "space : " << space << r2::linefeed;
+						std::cout << r2::tab2 << "- adress of ip : " << ip << r2::linefeed;
+						std::cout << r2::tab2 << "- space : " << space << r2::linefeed;
 					}
 				}
 
@@ -91,24 +91,24 @@ namespace align_test
 					ip = cp;
 					space -= sizeof( char ) * move_amount;
 
-					std::cout << "\t" << "move " << move_amount << r2::linefeed;
-					std::cout << "\t\t - " << "adress of ip : " << ip << r2::linefeed;
-					std::cout << "\t\t - " << "space : " << space << r2::linefeed;
+					std::cout << r2::tab << "move " << move_amount << r2::linefeed;
+					std::cout << r2::tab2 << "- adress of ip : " << ip << r2::linefeed;
+					std::cout << r2::tab2 << "- space : " << space << r2::linefeed;
 					std::cout << r2::linefeed;
 
-					std::cout << "\t" << "std::align( alignof( char ), sizeof( char ), ip, space )" << r2::linefeed;
+					std::cout << r2::tab << "std::align( alignof( char ), sizeof( char ), ip, space )" << r2::linefeed;
 					if( std::align( alignof( char ), sizeof( char ), ip, space ) )
 					{
-						std::cout << "\t\t - " << "success" << r2::linefeed;
+						std::cout << r2::tab2 << "- success" << r2::linefeed;
 					}
 					else
 					{
-						std::cout << "\t\t - " << "failed" << r2::linefeed;
+						std::cout << r2::tab2 << "- failed" << r2::linefeed;
 					}
 
 					{
-						std::cout << "\t\t - " << "adress of ip : " << ip << r2::linefeed;
-						std::cout << "\t\t - " << "space : " << space << r2::linefeed;
+						std::cout << r2::tab2 << "- adress of ip : " << ip << r2::linefeed;
+						std::cout << r2::tab2 << "- space : " << space << r2::linefeed;
 						std::cout << r2::linefeed;
 					}
 				}
@@ -143,26 +143,26 @@ namespace align_test
 				void* dp = &d;
 				std::size_t space = sizeof( double );
 
-				std::cout << "\t" << "double d;" << r2::linefeed;
-				std::cout << "\t" << "void* dp = &d;" << r2::linefeed;
-				std::cout << "\t\t - " << "adress of dp : " << dp << r2::linefeed;
-				std::cout << "\t\t - " << "space size : " << space << r2::linefeed;
+				std::cout << r2::tab << "double d;" << r2::linefeed;
+				std::cout << r2::tab << "void* dp = &d;" << r2::linefeed;
+				std::cout << r2::tab2 << "- adress of dp : " << dp << r2::linefeed;
+				std::cout << r2::tab2 << "- space size : " << space << r2::linefeed;
 				std::cout << r2::linefeed << r2::linefeed;
 
 				{
-					std::cout << "\t" << "std::align( alignof( int ), sizeof( int ), dp, space )" << r2::linefeed;
+					std::cout << r2::tab << "std::align( alignof( int ), sizeof( int ), dp, space )" << r2::linefeed;
 					if( std::align( alignof( int ), sizeof( int ), dp, space ) )
 					{
-						std::cout << "\t\t - " << "success" << r2::linefeed;
+						std::cout << r2::tab2 << "- success" << r2::linefeed;
 					}
 					else
 					{
-						std::cout << "\t\t - " << "failed" << r2::linefeed;
+						std::cout << r2::tab2 << "- failed" << r2::linefeed;
 					}
 
 					{
-						std::cout << "\t\t - " << "adress of dp : " << dp << r2::linefeed;
-						std::cout << "\t\t - " << "space size : " << space << r2::linefeed;
+						std::cout << r2::tab2 << "- adress of dp : " << dp << r2::linefeed;
+						std::cout << r2::tab2 << "- space size : " << space << r2::linefeed;
 					}
 				}
 
@@ -177,24 +177,24 @@ namespace align_test
 					dp = cp;
 					space -= sizeof( char );
 
-					std::cout << "\t" << "move " << move_amount << r2::linefeed;
-					std::cout << "\t\t - " << "adress of dp : " << dp << r2::linefeed;
-					std::cout << "\t\t - " << "space size : " << space << r2::linefeed;
+					std::cout << r2::tab << "move " << move_amount << r2::linefeed;
+					std::cout << r2::tab2 << "- adress of dp : " << dp << r2::linefeed;
+					std::cout << r2::tab2 << "- space size : " << space << r2::linefeed;
 					std::cout << r2::linefeed;
 
-					std::cout << "\t" << "std::align( alignof( int ), sizeof( int ), dp, space )" << r2::linefeed;
+					std::cout << r2::tab << "std::align( alignof( int ), sizeof( int ), dp, space )" << r2::linefeed;
 					if( std::align( alignof( int ), sizeof( int ), dp, space ) )
 					{
-						std::cout << "\t\t - " << "success" << r2::linefeed;
+						std::cout << r2::tab2 << "- success" << r2::linefeed;
 					}
 					else
 					{
-						std::cout << "\t\t - " << "failed" << r2::linefeed;
+						std::cout << r2::tab2 << "- failed" << r2::linefeed;
 					}
 
 					{
-						std::cout << "\t\t - " << "adress of dp : " << dp << r2::linefeed;
-						std::cout << "\t\t - " << "space size : " << space << r2::linefeed;
+						std::cout << r2::tab2 << "- adress of dp : " << dp << r2::linefeed;
+						std::cout << r2::tab2 << "- space size : " << space << r2::linefeed;
 					}
 				}
 
@@ -209,24 +209,24 @@ namespace align_test
 					dp = cp;
 					space -= sizeof( char );
 
-					std::cout << "\t" << "move " << move_amount << r2::linefeed;
-					std::cout << "\t\t - " << "adress of dp : " << dp << r2::linefeed;
-					std::cout << "\t\t - " << "space size : " << space << r2::linefeed;
+					std::cout << r2::tab << "move " << move_amount << r2::linefeed;
+					std::cout << r2::tab2 << "- adress of dp : " << dp << r2::linefeed;
+					std::cout << r2::tab2 << "- space size : " << space << r2::linefeed;
 					std::cout << r2::linefeed;
 
-					std::cout << "\t" << "std::align( alignof( int ), sizeof( int ), dp, space )" << r2::linefeed;
+					std::cout << r2::tab << "std::align( alignof( int ), sizeof( int ), dp, space )" << r2::linefeed;
 					if( std::align( alignof( int ), sizeof( int ), dp, space ) )
 					{
-						std::cout << "\t\t - " << "success" << r2::linefeed;
+						std::cout << r2::tab2 << "- success" << r2::linefeed;
 					}
 					else
 					{
-						std::cout << "\t\t - " << "failed" << r2::linefeed;
+						std::cout << r2::tab2 << "- failed" << r2::linefeed;
 					}
 
 					{
-						std::cout << "\t\t - " << "adress of dp : " << dp << r2::linefeed;
-						std::cout << "\t\t - " << "space size : " << space << r2::linefeed;
+						std::cout << r2::tab2 << "- adress of dp : " << dp << r2::linefeed;
+						std::cout << r2::tab2 << "- space size : " << space << r2::linefeed;
 						std::cout << r2::linefeed;
 					}
 				}
@@ -259,15 +259,15 @@ namespace align_test
 				char buffer[] = "------------------------";
 				void * pt = buffer;
 
-				std::cout << "\t + " << "orig : " << buffer << r2::linefeed;
-				std::cout << "\t + " << "adress of pt : " << pt << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ orig : " << buffer << r2::linefeed;
+				std::cout << r2::tab << "+ adress of pt : " << pt << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t + " << "Process" << r2::linefeed;
+				std::cout << r2::tab << "+ Process" << r2::linefeed;
 
 				std::size_t space = sizeof( buffer ) - 1;
 				while( std::align( alignof( int ), sizeof( char ), pt, space ) )
 				{
-					std::cout << "\t\t - " << "old adress of pt : " << pt << r2::linefeed;
+					std::cout << r2::tab2 << "- old adress of pt : " << pt << r2::linefeed;
 
 					if( !std::align( alignof( int ), sizeof( char ), pt, space ) )
 					{
@@ -281,12 +281,12 @@ namespace align_test
 
 					pt = temp;
 
-					std::cout << "\t\t - " << "convert : " << buffer << r2::linefeed;
-					std::cout << "\t\t - " << "new adress of pt : " << pt << r2::linefeed;
+					std::cout << r2::tab2 << "- convert : " << buffer << r2::linefeed;
+					std::cout << r2::tab2 << "- new adress of pt : " << pt << r2::linefeed;
 					std::cout << r2::linefeed;
 				}
 
-				std::cout << "\t" << "result : " << buffer << r2::linefeed;
+				std::cout << r2::tab << "result : " << buffer << r2::linefeed;
 			}
 
 			std::cout << r2::split;
