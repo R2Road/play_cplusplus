@@ -19,6 +19,27 @@ namespace r2
 		_Ostr << r2::linefeed << "====================================================================" << r2::linefeed << r2::linefeed;
 		return ( _Ostr );
 	}
+
+	template<class _Elem, class _Traits>
+	inline std::basic_ostream<_Elem, _Traits>& tab( std::basic_ostream<_Elem, _Traits>& _Ostr )
+	{
+		_Ostr << "\t";
+		return ( _Ostr );
+	}
+
+	template<class _Elem, class _Traits>
+	inline std::basic_ostream<_Elem, _Traits>& tab2( std::basic_ostream<_Elem, _Traits>& _Ostr )
+	{
+		_Ostr << r2::tab << r2::tab;
+		return ( _Ostr );
+	}
+
+	template<class _Elem, class _Traits>
+	inline std::basic_ostream<_Elem, _Traits>& tab3( std::basic_ostream<_Elem, _Traits>& _Ostr )
+	{
+		_Ostr << r2::tab << r2::tab << r2::tab;
+		return ( _Ostr );
+	}
 }
 
 #endif //PCH_H
