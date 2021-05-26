@@ -5,12 +5,14 @@
 
 namespace r2
 {
-	FrameManager::FrameManager() :
+	FrameManager::FrameManager( const std::size_t frame_count ) :
 		mFPS( 0ll )
 		, mPivotTimePoint()
 		, mCurrentTime()
 		, mLastTime()
-	{}
+	{
+		SetFPS( frame_count );
+	}
 
 	void FrameManager::SetFPS( const std::size_t frame_count )
 	{

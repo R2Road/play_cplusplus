@@ -7,7 +7,7 @@ namespace r2
 	class FrameManager
 	{
 	public:
-		FrameManager();
+		FrameManager( const std::size_t frame_count = 30u );
 
 		void SetFPS( const std::size_t frame_count );
 
