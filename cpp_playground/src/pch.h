@@ -23,7 +23,7 @@ namespace r2
 	template<class _Elem, class _Traits>
 	inline std::basic_ostream<_Elem, _Traits>& tab( std::basic_ostream<_Elem, _Traits>& _Ostr )
 	{
-		_Ostr << "\t";
+		_Ostr.put( _Ostr.widen( '\t' ) );
 		return ( _Ostr );
 	}
 
