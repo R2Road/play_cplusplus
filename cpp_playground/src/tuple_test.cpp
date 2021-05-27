@@ -26,17 +26,17 @@ namespace tuple_test
 
 
 			{
-				std::cout << "\t+ std::tuple<int, std::string, char> v;" << r2::linefeed;
+				std::cout << r2::tab << "+ std::tuple<int, std::string, char> v;" << r2::linefeed;
 				std::tuple<int, std::string, char> v;
 
-				std::cout << "\t\t- Call : std::get<0>( v );" << r2::linefeed;
-				std::cout << "\t\t\t" << std::get<0>( v ) << r2::linefeed;
+				std::cout << r2::tab2 << "- Call : std::get<0>( v );" << r2::linefeed;
+				std::cout << r2::tab3 << std::get<0>( v ) << r2::linefeed;
 
-				std::cout << "\t\t- Call : std::get<1>( v );" << r2::linefeed;
-				std::cout << "\t\t\t" << std::get<1>( v ) << r2::linefeed;
+				std::cout << r2::tab2 << "- Call : std::get<1>( v );" << r2::linefeed;
+				std::cout << r2::tab3 << std::get<1>( v ) << r2::linefeed;
 
-				std::cout << "\t\t- Call : std::get<2>( v );" << r2::linefeed;
-				std::cout << "\t\t\t" << std::get<2>( v ) << r2::linefeed;
+				std::cout << r2::tab2 << "- Call : std::get<2>( v );" << r2::linefeed;
+				std::cout << r2::tab3 << std::get<2>( v ) << r2::linefeed;
 			}
 
 
@@ -44,17 +44,17 @@ namespace tuple_test
 
 
 			{
-				std::cout << "\t+ std::tuple<int, std::string, bool> v{ 2, \"park\", 'b' };" << r2::linefeed;
+				std::cout << r2::tab << "+ std::tuple<int, std::string, bool> v{ 2, \"park\", 'b' };" << r2::linefeed;
 				std::tuple<int, std::string, char> v{ 2, "park", 'b' };
 
-				std::cout << "\t\t- Call : std::get<0>( v );" << r2::linefeed;
-				std::cout << "\t\t\t" << std::get<0>( v ) << r2::linefeed;
+				std::cout << r2::tab2  << "- Call : std::get<0>( v );" << r2::linefeed;
+				std::cout << r2::tab3 << std::get<0>( v ) << r2::linefeed;
 
-				std::cout << "\t\t- Call : std::get<1>( v );" << r2::linefeed;
-				std::cout << "\t\t\t" << std::get<1>( v ) << r2::linefeed;
+				std::cout << r2::tab2 << "- Call : std::get<1>( v );" << r2::linefeed;
+				std::cout << r2::tab3 << std::get<1>( v ) << r2::linefeed;
 
-				std::cout << "\t\t- Call : std::get<2>( v );" << r2::linefeed;
-				std::cout << "\t\t\t" << std::get<2>( v ) << r2::linefeed;
+				std::cout << r2::tab2 << "- Call : std::get<2>( v );" << r2::linefeed;
+				std::cout << r2::tab3 << std::get<2>( v ) << r2::linefeed;
 			}
 
 
@@ -62,17 +62,17 @@ namespace tuple_test
 
 
 			{
-				std::cout << "\t+ auto v = std::make_tuple( 10, \"Kim\", 'c' );" << r2::linefeed;
+				std::cout << r2::tab << "+ auto v = std::make_tuple( 10, \"Kim\", 'c' );" << r2::linefeed;
 				auto v = std::make_tuple( 10, "Kim", 'c' );
 
-				std::cout << "\t\t- Call : std::get<0>( v );" << r2::linefeed;
-				std::cout << "\t\t\t" << std::get<0>( v ) << r2::linefeed;
+				std::cout << r2::tab2 << "- Call : std::get<0>( v );" << r2::linefeed;
+				std::cout << r2::tab3 << std::get<0>( v ) << r2::linefeed;
 
-				std::cout << "\t\t- Call : std::get<1>( v );" << r2::linefeed;
-				std::cout << "\t\t\t" << std::get<1>( v ) << r2::linefeed;
+				std::cout << r2::tab2 << "- Call : std::get<1>( v );" << r2::linefeed;
+				std::cout << r2::tab3 << std::get<1>( v ) << r2::linefeed;
 
-				std::cout << "\t\t- Call : std::get<2>( v );" << r2::linefeed;
-				std::cout << "\t\t\t" << std::get<2>( v ) << r2::linefeed;
+				std::cout << r2::tab2 << "- Call : std::get<2>( v );" << r2::linefeed;
+				std::cout << r2::tab3 << std::get<2>( v ) << r2::linefeed;
 			}
 
 
