@@ -25,11 +25,11 @@ namespace new_test
 			{
 				int* i = new int( 1 );
 
-				std::cout << "\t" << "+ int* i = new int( 1 );" <<  r2::linefeed;
-				std::cout << "\t\t" << "- " << *i << r2::linefeed;
+				std::cout << r2::tab << "+ int* i = new int( 1 );" <<  r2::linefeed;
+				std::cout << r2::tab2 << "- " << *i << r2::linefeed;
 
 				delete i;
-				std::cout << "\t" << "+ delete i;" << r2::linefeed;
+				std::cout << r2::tab << "+ delete i;" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -37,11 +37,11 @@ namespace new_test
 			{
 				int* i = new ( std::nothrow ) int( 2 );
 
-				std::cout << "\t" << "+ int* i = new ( std::nothrow ) int( 2 );" << r2::linefeed;
-				std::cout << "\t\t" << "- " << *i << r2::linefeed;
+				std::cout << r2::tab << "+ int* i = new ( std::nothrow ) int( 2 );" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << *i << r2::linefeed;
 
 				delete i;
-				std::cout << "\t" << "+ delete i;" << r2::linefeed;
+				std::cout << r2::tab << "+ delete i;" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -49,11 +49,11 @@ namespace new_test
 			{
 				char* str = new char[7];
 
-				std::cout << "\t" << "+ char* str = new char[7];" << r2::linefeed;
-				std::cout << "\t\t" << "- " << str << r2::linefeed;
+				std::cout << r2::tab << "+ char* str = new char[7];" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << str << r2::linefeed;
 
 				delete[] str;
-				std::cout << "\t" << "+ delete[] str;" << r2::linefeed;
+				std::cout << r2::tab << "+ delete[] str;" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -83,29 +83,29 @@ namespace new_test
 				int i = 123;
 				float* fp = new (&i) float;
 
-				std::cout << "\t" << "+ int i = 123;" << r2::linefeed;
-				std::cout << "\t" << "+ float* fp = new (&i) float;" << r2::linefeed;
-				std::cout << "\t\t" << "- Print fp : " << *fp << r2::linefeed;
+				std::cout << r2::tab << "+ int i = 123;" << r2::linefeed;
+				std::cout << r2::tab << "+ float* fp = new (&i) float;" << r2::linefeed;
+				std::cout << r2::tab2 << "- Print fp : " << *fp << r2::linefeed;
 
 				std::cout << r2::linefeed;
 
 				*fp = 3.14f;
-				std::cout << "\t" << "+ *fp = 3.14f;" << r2::linefeed;
-				std::cout << "\t\t" << "- Print fp : " << *fp << r2::linefeed;
+				std::cout << r2::tab << "+ *fp = 3.14f;" << r2::linefeed;
+				std::cout << r2::tab2 << "- Print fp : " << *fp << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
 				int i = 65;
-				std::cout << "\t" << "+ int i = 65;" << r2::linefeed;
-				std::cout << "\t\t" << "- Print i : " << i << r2::linefeed;
+				std::cout << r2::tab << "+ int i = 65;" << r2::linefeed;
+				std::cout << r2::tab2 << "- Print i : " << i << r2::linefeed;
 
 				std::cout << r2::linefeed;
 
 				char* cp = new ( &i ) char;
-				std::cout << "\t" << "+ char* cp = new ( &i ) char;" << r2::linefeed;
-				std::cout << "\t\t" << "- Print cp : " << *cp << r2::linefeed;
+				std::cout << r2::tab << "+ char* cp = new ( &i ) char;" << r2::linefeed;
+				std::cout << r2::tab2 << "- Print cp : " << *cp << r2::linefeed;
 			}
 
 			std::cout << r2::split;

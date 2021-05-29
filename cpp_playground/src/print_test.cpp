@@ -21,10 +21,10 @@ namespace print_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Show Number : Use std::cout" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Show Number : Use std::cout" << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "printf( \"1111111\" \"2222222\" \"3333333\" \"   %d\", 456789 );" << r2::linefeed;
-				std::cout << "\t\t";
+				std::cout << r2::tab << "printf( \"1111111\" \"2222222\" \"3333333\" \"   %d\", 456789 );" << r2::linefeed;
+				std::cout << r2::tab2;
 				printf( "1111111" "2222222" "3333333" "   %d", 456789 );
 				std::cout << r2::linefeed;
 			}
@@ -32,25 +32,25 @@ namespace print_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Show Number : Use std::cout" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Show Number : Use std::cout" << r2::linefeed << r2::linefeed;
 
 				int i = 0xde81;
 
-				std::cout << "\t" << "int i = 0xde81;" << r2::linefeed;
+				std::cout << r2::tab << "int i = 0xde81;" << r2::linefeed;
 
-				std::cout << "\t\t" << "Print( 8 : oct ) : " << std::oct << i << r2::linefeed;
-				std::cout << "\t\t" << "Print( 10 : dec ) : " << std::dec << i << r2::linefeed;
-				std::cout << "\t\t" << "Print( 16 : hex ) : " << std::hex << i << r2::linefeed;
+				std::cout << r2::tab2 << "Print( 8 : oct ) : " << std::oct << i << r2::linefeed;
+				std::cout << r2::tab2 << "Print( 10 : dec ) : " << std::dec << i << r2::linefeed;
+				std::cout << r2::tab2 << "Print( 16 : hex ) : " << std::hex << i << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Show Number : Use printf" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Show Number : Use printf" << r2::linefeed << r2::linefeed;
 
 				int i = 0xde81;
 
-				std::cout << "\t" << "int i = 0xde81;" << r2::linefeed;
+				std::cout << r2::tab << "int i = 0xde81;" << r2::linefeed;
 
 				printf( "\t\tPrint( 8 : oct ) : %o\n", i );
 				printf( "\t\tPrint( 10 : dec ) : %d\n", i );
