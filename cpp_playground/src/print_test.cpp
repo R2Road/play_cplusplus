@@ -38,14 +38,14 @@ namespace print_test
 			{
 				std::cout << r2::tab << "+ Show Number : Use std::cout" << r2::linefeed << r2::linefeed;
 
-				int i = 0xde81;
+				int num = 0xde81;
 
-				std::cout << r2::tab << "int i = 0xde81;" << r2::linefeed;
+				std::cout << r2::tab << "int num = 0xde81;" << r2::linefeed;
 				std::cout << r2::linefeed;
 
-				std::cout << r2::tab2 << "Print( 8 : oct ) : " << std::oct << i << r2::linefeed;
-				std::cout << r2::tab2 << "Print( 10 : dec ) : " << std::dec << i << r2::linefeed;
-				std::cout << r2::tab2 << "Print( 16 : hex ) : " << std::hex << i << r2::linefeed;
+				std::cout << r2::tab2 << "Print( 8 : oct ) : " << std::oct << num << r2::linefeed;
+				std::cout << r2::tab2 << "Print( 10 : dec ) : " << std::dec << num << r2::linefeed;
+				std::cout << r2::tab2 << "Print( 16 : hex ) : " << std::hex << num << r2::linefeed;
 
 				// rollback
 				std::cout << std::dec;
@@ -56,14 +56,14 @@ namespace print_test
 			{
 				std::cout << r2::tab << "+ Show Number : Use printf" << r2::linefeed << r2::linefeed;
 
-				int i = 0xde81;
+				int num = 0xde81;
 
-				std::cout << r2::tab << "int i = 0xde81;" << r2::linefeed;
+				std::cout << r2::tab << "int num = 0xde81;" << r2::linefeed;
 				std::cout << r2::linefeed;
 
-				printf( "\t\tPrint( 8 : oct ) : %o\n", i );
-				printf( "\t\tPrint( 10 : dec ) : %d\n", i );
-				printf( "\t\tPrint( 16 : hex ) : %x\n", i );
+				printf( "\t\tPrint( 8 : oct ) : %o\n", num );
+				printf( "\t\tPrint( 10 : dec ) : %d\n", num );
+				printf( "\t\tPrint( 16 : hex ) : %x\n", num );
 			}
 
 			std::cout << r2::split;
@@ -92,11 +92,11 @@ namespace print_test
 			{
 				std::cout << r2::tab << "+ Show Binary : Use Bitset" << r2::linefeed << r2::linefeed;
 
-				int i = 0b0011001;
-				std::bitset<16u> b( i );
+				int num = 0b0011001;
+				std::bitset<16u> b( num );
 
-				std::cout << r2::tab << "int i = 0b0011001;" << r2::linefeed;
-				std::cout << r2::tab << "std::bitset<32u> b( i );" << r2::linefeed;
+				std::cout << r2::tab << "int num = 0b0011001;" << r2::linefeed;
+				std::cout << r2::tab << "std::bitset<32u> b( num );" << r2::linefeed;
 				std::cout << r2::linefeed;
 
 				std::cout << r2::tab2 << "Print : " << b << r2::linefeed;
