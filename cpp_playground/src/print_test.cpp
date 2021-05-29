@@ -38,9 +38,9 @@ namespace print_test
 			{
 				std::cout << r2::tab << "+ Show Number : Use std::cout" << r2::linefeed << r2::linefeed;
 
-				int num = 0xde81;
+				int num = 01743; // oct
 
-				std::cout << r2::tab << "int num = 0xde81;" << r2::linefeed;
+				std::cout << r2::tab << "int num = 01743;" << r2::linefeed;
 				std::cout << r2::linefeed;
 
 				std::cout << r2::tab2 << "Print( 8 : oct ) : " << std::oct << num << r2::linefeed;
@@ -56,7 +56,7 @@ namespace print_test
 			{
 				std::cout << r2::tab << "+ Show Number : Use printf" << r2::linefeed << r2::linefeed;
 
-				int num = 0xde81;
+				int num = 0xde81; // hex
 
 				std::cout << r2::tab << "int num = 0xde81;" << r2::linefeed;
 				std::cout << r2::linefeed;
@@ -71,7 +71,7 @@ namespace print_test
 			{
 				std::cout << r2::tab << "+ Show Binary : Use For" << r2::linefeed << r2::linefeed;
 
-				int num = 0b10110010101;
+				int num = 0b10110010101; // binary
 
 				std::cout << r2::tab << "int num = 0b10110010101;" << r2::linefeed;
 				std::cout << r2::linefeed;
@@ -92,7 +92,7 @@ namespace print_test
 			{
 				std::cout << r2::tab << "+ Show Binary : Use Bitset" << r2::linefeed << r2::linefeed;
 
-				int num = 0b0011001;
+				int num = 0b0011001; // binary
 				std::bitset<16u> b( num );
 
 				std::cout << r2::tab << "int num = 0b0011001;" << r2::linefeed;
