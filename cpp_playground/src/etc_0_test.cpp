@@ -24,23 +24,23 @@ namespace etc_test
 				int a = 123;
 				int b = 456;
 
-				std::cout << "\t" << "int a = 123;" << r2::linefeed;
-				std::cout << "\t" << "int b = 456;" << r2::linefeed;
+				std::cout << r2::tab << "int a = 123;" << r2::linefeed;
+				std::cout << r2::tab << "int b = 456;" << r2::linefeed;
 				std::cout << r2::linefeed << r2::linefeed;
 
 				a = a ^ b;
-				std::cout << "\t" << "a = a ^ b;" << r2::linefeed;
-				std::cout << "\t\t" << "a : " << a << r2::linefeed;
+				std::cout << r2::tab << "a = a ^ b;" << r2::linefeed;
+				std::cout << r2::tab2 << "a : " << a << r2::linefeed;
 				std::cout << r2::linefeed;
 
 				b = b ^ a;
-				std::cout << "\t" << "b = b ^ a;" << r2::linefeed;
-				std::cout << "\t\t" << "b : " << b << r2::linefeed;
+				std::cout << r2::tab << "b = b ^ a;" << r2::linefeed;
+				std::cout << r2::tab2 << "b : " << b << r2::linefeed;
 				std::cout << r2::linefeed;
 
 				a = a ^ b;
-				std::cout << "\t" << "a = a ^ b;" << r2::linefeed;
-				std::cout << "\t\t" << "a : " << a << r2::linefeed;
+				std::cout << r2::tab << "a = a ^ b;" << r2::linefeed;
+				std::cout << r2::tab2 << "a : " << a << r2::linefeed;
 				std::cout << r2::linefeed;
 			}
 
@@ -70,9 +70,9 @@ namespace etc_test
 
 			{
 				int array[10];
-				std::cout << "\t\t" << "int array[10];" << r2::linefeed;
+				std::cout << r2::tab2 << "int array[10];" << r2::linefeed;
 
-				std::cout << "\t\t" << "Print : ";
+				std::cout << r2::tab2 << "Print : ";
 				for( auto i : array )
 				{
 					std::cout << i;
@@ -84,9 +84,9 @@ namespace etc_test
 
 			{
 				int array[10] = { 0, };
-				std::cout << "\t\t" << "int array[10] = { 0, };" << r2::linefeed;
+				std::cout << r2::tab2 << "int array[10] = { 0, };" << r2::linefeed;
 
-				std::cout << "\t\t" << "Print : ";
+				std::cout << r2::tab2 << "Print : ";
 				for( auto i : array )
 				{
 					std::cout << i;
@@ -98,9 +98,9 @@ namespace etc_test
 
 			{
 				int array[10] = { '\0', };
-				std::cout << "\t\t" << "int array[10] = { \'\\0\', };" << r2::linefeed;
+				std::cout << r2::tab2 << "int array[10] = { \'\\0\', };" << r2::linefeed;
 
-				std::cout << "\t\t" << "Print : ";
+				std::cout << r2::tab2 << "Print : ";
 				for( auto i : array )
 				{
 					std::cout << i;
@@ -112,9 +112,9 @@ namespace etc_test
 
 			{
 				int array[10] = {};
-				std::cout << "\t\t" << "int array[10] = {};" << r2::linefeed;
+				std::cout << r2::tab2 << "int array[10] = {};" << r2::linefeed;
 
-				std::cout << "\t\t" << "Print : ";
+				std::cout << r2::tab2 << "Print : ";
 				for( auto i : array )
 				{
 					std::cout << i;
