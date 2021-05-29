@@ -2,7 +2,6 @@
 #include "char_test.h"
 
 #include <conio.h>
-#include <iostream>
 
 #include "r2_eTestResult.h"
 

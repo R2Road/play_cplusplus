@@ -1,8 +1,6 @@
 #include "pch.h"
 #include "print_test.h"
 
-#include <iostream>
-
 #include "r2_eTestResult.h"
 
 namespace print_test
