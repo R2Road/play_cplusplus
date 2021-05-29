@@ -24,17 +24,21 @@ namespace korean_test
 			std::cout << r2::split;
 
 			{
+				std::cout << r2::tab << "+ use std::cout" << r2::linefeed;
+				std::cout << r2::linefeed;
+
 				std::cout << r2::tab << "+ const char* korean = \"한글 출력\";" << r2::linefeed;
 				const char* korean = "한글 출력";
 
-				std::cout << r2::tab2 << "- " << korean << r2::linefeed << r2::linefeed;
-
-				std::cout << r2::tab << "+ use std::cout" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << korean << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
+				std::cout << r2::tab << "+ use std::wcout" << r2::linefeed;
+				std::cout << r2::linefeed;
+
 				std::cout << r2::tab << "+ const wchar_t* korean = L\"한글 출력\";" << r2::linefeed;
 				const wchar_t* korean = L"한글 출력";
 
@@ -42,8 +46,6 @@ namespace korean_test
 				std::wcout.imbue( std::locale( "kor" ) );
 
 				std::wcout << r2::tab2 << "- " << korean << r2::linefeed << r2::linefeed;
-
-				std::cout << r2::tab << "+ use std::wcout" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
