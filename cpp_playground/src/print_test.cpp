@@ -59,6 +59,21 @@ namespace print_test
 
 			std::cout << r2::split;
 
+			{
+				std::cout << r2::tab << "+ Binary" << r2::linefeed << r2::linefeed;
+
+				int i = 0b0011001;
+				std::bitset<16u> b( i );
+
+				std::cout << r2::tab << "int i = 0b0011001;" << r2::linefeed;
+				std::cout << r2::tab << "std::bitset<32u> b( i );" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab2 << "Print : " << b << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
