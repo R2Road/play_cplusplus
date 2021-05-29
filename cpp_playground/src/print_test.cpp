@@ -46,6 +46,9 @@ namespace print_test
 				std::cout << r2::tab2 << "Print( 8 : oct ) : " << std::oct << i << r2::linefeed;
 				std::cout << r2::tab2 << "Print( 10 : dec ) : " << std::dec << i << r2::linefeed;
 				std::cout << r2::tab2 << "Print( 16 : hex ) : " << std::hex << i << r2::linefeed;
+
+				// rollback
+				std::cout << std::dec;
 			}
 
 			std::cout << r2::split;
@@ -66,7 +69,28 @@ namespace print_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Binary" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Show Binary : Use For" << r2::linefeed << r2::linefeed;
+
+				int num = 0b10110010101;
+
+				std::cout << r2::tab << "int num = 0b10110010101;" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab2;
+				for( int i = 31; 0 <= i; --i )
+				{
+					const int temp_1 = ( num >> i );
+					const int temp_2 = temp_1 & 1;
+
+					std::cout << temp_2;
+				}
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Show Binary : Use Bitset" << r2::linefeed << r2::linefeed;
 
 				int i = 0b0011001;
 				std::bitset<16u> b( i );
