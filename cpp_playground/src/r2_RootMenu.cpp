@@ -27,6 +27,7 @@
 #include "lambda_test.h"
 #include "print_test.h"
 #include "char_test.h"
+#include "locale_test.h"
 
 #include "korean_test.h"
 #include "key_test.h"
@@ -168,6 +169,7 @@ namespace r2
 
 			ret->AddChild( 'd', print_test::Basic::GetInstance() );
 			ret->AddChild( 'f', char_test::Basic::GetInstance() );
+			ret->AddChild( 'g', locale_test::Basic::GetInstance() );
 
 			ret->AddLineFeed();
 
