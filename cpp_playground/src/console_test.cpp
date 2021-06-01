@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "console_test.h"
 
+#include <bitset>
 #include <conio.h>
 #include <stdio.h>
 #include <Windows.h>
@@ -228,6 +229,55 @@ namespace console_test
 
 			{
 				SetConsoleTitle( TEXT( "cpp_playground" ) );
+			}
+
+			return r2::eTestResult::RunTest_Without_Pause;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc HideTitleBar::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Hide Title Bar";
+		};
+	}
+	r2::iTest::DoFunc HideTitleBar::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			LONG last_window_style = 0;
+
+			{
+				HWND hwnd = GetConsoleWindow();
+				last_window_style = GetWindowLong( hwnd, GWL_STYLE );
+
+				std::cout << r2::tab << "Last Window Stype : " << r2::tab << std::bitset<32>( last_window_style ) << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				HWND hwnd = GetConsoleWindow();
+				LONG style = last_window_style;
+				style &= ~( WS_BORDER | WS_CAPTION | WS_THICKFRAME );
+				SetWindowLong( hwnd, GWL_STYLE, style );
+
+				std::cout << r2::tab << "New Window Stype : " << r2::tab << std::bitset<32>( style ) << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			system( "pause" );
+			{
+				HWND hwnd = GetConsoleWindow();
+				SetWindowLong( hwnd, GWL_STYLE, last_window_style );
 			}
 
 			return r2::eTestResult::RunTest_Without_Pause;

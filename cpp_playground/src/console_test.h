@@ -38,6 +38,12 @@ namespace console_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+	class HideTitleBar : public r2::iTest, public r2::SingleTon<HideTitleBar>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 
 
 

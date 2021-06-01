@@ -18,8 +18,9 @@ namespace r2
 			ret->AddChild( '2', console_test::ChangeWindowSize::GetInstance() );
 			ret->AddChild( '3', console_test::WindowPosition::GetInstance() );
 			ret->AddChild( '4', console_test::ChangeWindowName::GetInstance() );
-			ret->AddChild( '5', console_test::CursorMove::GetInstance() );
-			ret->AddChild( '6', console_test::CursorVisibility::GetInstance() );
+			ret->AddChild( '5', console_test::HideTitleBar::GetInstance() );
+			ret->AddChild( '6', console_test::CursorMove::GetInstance() );
+			ret->AddChild( '7', console_test::CursorVisibility::GetInstance() );
 
 			
 			ret->AddLineFeed();
