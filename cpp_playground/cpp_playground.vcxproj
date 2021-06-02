@@ -19,152 +19,148 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\alignas_test.cpp" />
-    <ClCompile Include="src\alignof_test.cpp" />
-    <ClCompile Include="src\align_test.cpp" />
-    <ClCompile Include="src\animation_test.cpp" />
-    <ClCompile Include="src\assert_test.cpp" />
-    <ClCompile Include="src\camera_test.cpp" />
-    <ClCompile Include="src\char_test.cpp" />
-    <ClCompile Include="src\console_test.cpp" />
-    <ClCompile Include="src\etc_0_test.cpp" />
-    <ClCompile Include="src\key_test.cpp" />
-    <ClCompile Include="src\korean_test.cpp" />
-    <ClCompile Include="src\lambda_test.cpp" />
-    <ClCompile Include="src\locale_test.cpp" />
-    <ClCompile Include="src\memory_pool_test.cpp" />
-    <ClCompile Include="src\pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="src\pointer_test.cpp" />
-    <ClCompile Include="src\enum_test.cpp" />
-    <ClCompile Include="src\filesystem_test.cpp" />
+    <ClCompile Include="src\base\r2_Director.cpp" />
+    <ClCompile Include="src\base\r2_Menu.cpp" />
+    <ClCompile Include="src\menu\r2_AlignMenu.cpp" />
+    <ClCompile Include="src\menu\r2_ConsoleMenu.cpp" />
+    <ClCompile Include="src\menu\r2_EnumMenu.cpp" />
+    <ClCompile Include="src\menu\r2_ETCMenu.cpp" />
+    <ClCompile Include="src\menu\r2_FileSystemMenu.cpp" />
+    <ClCompile Include="src\menu\r2_LambdaMenu.cpp" />
+    <ClCompile Include="src\menu\r2_MemoryMenu.cpp" />
+    <ClCompile Include="src\menu\r2_NewMenu.cpp" />
+    <ClCompile Include="src\menu\r2_PointerMenu.cpp" />
+    <ClCompile Include="src\menu\r2_RandomMenu.cpp" />
+    <ClCompile Include="src\menu\r2_RenderMenu.cpp" />
+    <ClCompile Include="src\menu\r2_RootMenu.cpp" />
+    <ClCompile Include="src\menu\r2_TemplateMenu.cpp" />
+    <ClCompile Include="src\menu\r2_TemplateMetaProgrammingMenu.cpp" />
+    <ClCompile Include="src\menu\r2_TemplatePracticeMenu.cpp" />
+    <ClCompile Include="src\menu\r2_TimeMenu.cpp" />
+    <ClCompile Include="src\menu\r2_VariadicTemplateMenu.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\new_test.cpp" />
-    <ClCompile Include="src\print_test.cpp" />
-    <ClCompile Include="src\r2_AlignMenu.cpp" />
-    <ClCompile Include="src\r2_Camera.cpp" />
-    <ClCompile Include="src\r2_ConsoleMenu.cpp" />
-    <ClCompile Include="src\r2_Director.cpp" />
-    <ClCompile Include="src\r2_EnumMenu.cpp" />
-    <ClCompile Include="src\r2_ETCMenu.cpp" />
-    <ClCompile Include="src\r2_FileSystemMenu.cpp" />
-    <ClCompile Include="src\r2_FrameManager.cpp" />
-    <ClCompile Include="src\r2_GridIndexConverter.cpp" />
-    <ClCompile Include="src\r2_LambdaMenu.cpp" />
-    <ClCompile Include="src\r2_NewMenu.cpp" />
-    <ClCompile Include="src\r2_PointInt.cpp" />
-    <ClCompile Include="src\r2_RectInt.cpp" />
-    <ClCompile Include="src\r2_Renderer.cpp" />
-    <ClCompile Include="src\r2_RenderMenu.cpp" />
-    <ClCompile Include="src\r2_Size.cpp" />
-    <ClCompile Include="src\r2_TimeMenu.cpp" />
-    <ClCompile Include="src\r2_VisibleResource.cpp" />
-    <ClCompile Include="src\rect_test.cpp" />
-    <ClCompile Include="src\renderer_test.cpp" />
-    <ClCompile Include="src\r2_MemoryMenu.cpp" />
-    <ClCompile Include="src\r2_PointerMenu.cpp" />
-    <ClCompile Include="src\r2_RandomMenu.cpp" />
-    <ClCompile Include="src\r2_RootMenu.cpp" />
-    <ClCompile Include="src\r2_Menu.cpp" />
-    <ClCompile Include="src\r2_TemplateMetaProgrammingMenu.cpp" />
-    <ClCompile Include="src\r2_TemplatePracticeMenu.cpp" />
-    <ClCompile Include="src\r2_TemplateMenu.cpp" />
-    <ClCompile Include="src\r2_VariadicTemplateMenu.cpp" />
-    <ClCompile Include="src\random_test.cpp" />
-    <ClCompile Include="src\time_1_test.cpp" />
-    <ClCompile Include="src\time_2_test.cpp" />
-    <ClCompile Include="src\time_3_test.cpp" />
-    <ClCompile Include="src\visibleresource_test.cpp" />
-    <ClCompile Include="src\shared_pointer_test.cpp" />
-    <ClCompile Include="src\string_view_test.cpp" />
-    <ClCompile Include="src\structured_binding_test.cpp" />
-    <ClCompile Include="src\template_meta_programming_02_test.cpp" />
-    <ClCompile Include="src\template_meta_programming_03_test.cpp" />
-    <ClCompile Include="src\template_meta_programming_01_test.cpp" />
-    <ClCompile Include="src\optional_test.cpp" />
-    <ClCompile Include="src\template_practice_part_01_test.cpp" />
-    <ClCompile Include="src\template_practice_part_02_test.cpp" />
-    <ClCompile Include="src\tuple_test.cpp" />
-    <ClCompile Include="src\variadic_template_test.cpp" />
-    <ClCompile Include="src\variant_test.cpp" />
+    <ClCompile Include="src\pch.cpp" />
+    <ClCompile Include="src\renderer\r2_Camera.cpp" />
+    <ClCompile Include="src\renderer\r2_FrameManager.cpp" />
+    <ClCompile Include="src\renderer\r2_GridIndexConverter.cpp" />
+    <ClCompile Include="src\renderer\r2_PointInt.cpp" />
+    <ClCompile Include="src\renderer\r2_RectInt.cpp" />
+    <ClCompile Include="src\renderer\r2_Renderer.cpp" />
+    <ClCompile Include="src\renderer\r2_Size.cpp" />
+    <ClCompile Include="src\renderer\r2_Timer_Float.cpp" />
+    <ClCompile Include="src\renderer\r2_VisibleResource.cpp" />
+    <ClCompile Include="src\test_cpp\alignas_test.cpp" />
+    <ClCompile Include="src\test_cpp\alignof_test.cpp" />
+    <ClCompile Include="src\test_cpp\align_test.cpp" />
+    <ClCompile Include="src\test_cpp\assert_test.cpp" />
+    <ClCompile Include="src\test_cpp\char_test.cpp" />
+    <ClCompile Include="src\test_cpp\console_test.cpp" />
+    <ClCompile Include="src\test_cpp\enum_test.cpp" />
+    <ClCompile Include="src\test_cpp\etc_0_test.cpp" />
+    <ClCompile Include="src\test_cpp\filesystem_test.cpp" />
+    <ClCompile Include="src\test_cpp\key_test.cpp" />
+    <ClCompile Include="src\test_cpp\korean_test.cpp" />
+    <ClCompile Include="src\test_cpp\lambda_test.cpp" />
+    <ClCompile Include="src\test_cpp\locale_test.cpp" />
+    <ClCompile Include="src\test_cpp\memory_pool_test.cpp" />
+    <ClCompile Include="src\test_cpp\new_test.cpp" />
+    <ClCompile Include="src\test_cpp\optional_test.cpp" />
+    <ClCompile Include="src\test_cpp\pointer_test.cpp" />
+    <ClCompile Include="src\test_cpp\print_test.cpp" />
+    <ClCompile Include="src\test_cpp\random_test.cpp" />
+    <ClCompile Include="src\test_cpp\shared_pointer_test.cpp" />
+    <ClCompile Include="src\test_cpp\string_view_test.cpp" />
+    <ClCompile Include="src\test_cpp\structured_binding_test.cpp" />
+    <ClCompile Include="src\test_cpp\template_meta_programming_01_test.cpp" />
+    <ClCompile Include="src\test_cpp\template_meta_programming_02_test.cpp" />
+    <ClCompile Include="src\test_cpp\template_meta_programming_03_test.cpp" />
+    <ClCompile Include="src\test_cpp\template_practice_part_01_test.cpp" />
+    <ClCompile Include="src\test_cpp\time_1_test.cpp" />
+    <ClCompile Include="src\test_cpp\time_2_test.cpp" />
+    <ClCompile Include="src\test_cpp\time_3_test.cpp" />
+    <ClCompile Include="src\test_cpp\tuple_test.cpp" />
+    <ClCompile Include="src\test_cpp\variadic_template_test.cpp" />
+    <ClCompile Include="src\test_cpp\variant_test.cpp" />
+    <ClCompile Include="src\test_render\animation_test.cpp" />
+    <ClCompile Include="src\test_render\camera_test.cpp" />
+    <ClCompile Include="src\test_render\rect_test.cpp" />
+    <ClCompile Include="src\test_render\renderer_test.cpp" />
+    <ClCompile Include="src\test_render\visibleresource_test.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\alignas_test.h" />
-    <ClInclude Include="src\alignof_test.h" />
-    <ClInclude Include="src\align_test.h" />
-    <ClInclude Include="src\animation_test.h" />
-    <ClInclude Include="src\assert_test.h" />
-    <ClInclude Include="src\camera_test.h" />
-    <ClInclude Include="src\char_test.h" />
-    <ClInclude Include="src\console_test.h" />
-    <ClInclude Include="src\etc_0_test.h" />
-    <ClInclude Include="src\key_test.h" />
-    <ClInclude Include="src\korean_test.h" />
-    <ClInclude Include="src\lambda_test.h" />
-    <ClInclude Include="src\locale_test.h" />
-    <ClInclude Include="src\memory_pool_test.h" />
+    <ClInclude Include="src\base\r2_Director.h" />
+    <ClInclude Include="src\base\r2_eTestResult.h" />
+    <ClInclude Include="src\base\r2_iTest.h" />
+    <ClInclude Include="src\base\r2_Menu.h" />
+    <ClInclude Include="src\base\r2_Singleton.h" />
+    <ClInclude Include="src\menu\r2_AlignMenu.h" />
+    <ClInclude Include="src\menu\r2_ConsoleMenu.h" />
+    <ClInclude Include="src\menu\r2_EnumMenu.h" />
+    <ClInclude Include="src\menu\r2_ETCMenu.h" />
+    <ClInclude Include="src\menu\r2_FileSystemMenu.h" />
+    <ClInclude Include="src\menu\r2_LambdaMenu.h" />
+    <ClInclude Include="src\menu\r2_MemoryMenu.h" />
+    <ClInclude Include="src\menu\r2_NewMenu.h" />
+    <ClInclude Include="src\menu\r2_PointerMenu.h" />
+    <ClInclude Include="src\menu\r2_RandomMenu.h" />
+    <ClInclude Include="src\menu\r2_RenderMenu.h" />
+    <ClInclude Include="src\menu\r2_RootMenu.h" />
+    <ClInclude Include="src\menu\r2_TemplateMenu.h" />
+    <ClInclude Include="src\menu\r2_TemplateMetaProgrammingMenu.h" />
+    <ClInclude Include="src\menu\r2_TemplatePracticeMenu.h" />
+    <ClInclude Include="src\menu\r2_TimeMenu.h" />
+    <ClInclude Include="src\menu\r2_VariadicTemplateMenu.h" />
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\pointer_test.h" />
-    <ClInclude Include="src\enum_test.h" />
-    <ClInclude Include="src\filesystem_test.h" />
-    <ClInclude Include="src\new_test.h" />
-    <ClInclude Include="src\print_test.h" />
-    <ClInclude Include="src\r2_AlignMenu.h" />
-    <ClInclude Include="src\r2_Camera.h" />
-    <ClInclude Include="src\r2_ConsoleMenu.h" />
-    <ClInclude Include="src\r2_Director.h" />
-    <ClInclude Include="src\r2_EnumMenu.h" />
-    <ClInclude Include="src\r2_ETCMenu.h" />
-    <ClInclude Include="src\r2_eTestResult.h" />
-    <ClInclude Include="src\r2_FileSystemMenu.h" />
-    <ClInclude Include="src\r2_FrameManager.h" />
-    <ClInclude Include="src\r2_GridIndexConverter.h" />
-    <ClInclude Include="src\r2_LambdaMenu.h" />
-    <ClInclude Include="src\r2_NewMenu.h" />
-    <ClInclude Include="src\r2_Point.h" />
-    <ClInclude Include="src\r2_PointInt.h" />
-    <ClInclude Include="src\r2_Rect.h" />
-    <ClInclude Include="src\r2_RectInt.h" />
-    <ClInclude Include="src\r2_iRenderable.h" />
-    <ClInclude Include="src\r2_Renderer.h" />
-    <ClInclude Include="src\r2_RenderMenu.h" />
-    <ClInclude Include="src\r2_Size.h" />
-    <ClInclude Include="src\r2_TimeMenu.h" />
-    <ClInclude Include="src\r2_VisibleResource.h" />
-    <ClInclude Include="src\rect_test.h" />
-    <ClInclude Include="src\renderer_test.h" />
-    <ClInclude Include="src\r2_iTest.h" />
-    <ClInclude Include="src\r2_MemoryMenu.h" />
-    <ClInclude Include="src\r2_PointerMenu.h" />
-    <ClInclude Include="src\r2_Menu.h" />
-    <ClInclude Include="src\r2_RandomMenu.h" />
-    <ClInclude Include="src\r2_RootMenu.h" />
-    <ClInclude Include="src\r2_Singleton.h" />
-    <ClInclude Include="src\r2_TemplateMetaProgrammingMenu.h" />
-    <ClInclude Include="src\r2_TemplatePracticeMenu.h" />
-    <ClInclude Include="src\r2_TemplateMenu.h" />
-    <ClInclude Include="src\r2_VariadicTemplateMenu.h" />
-    <ClInclude Include="src\random_test.h" />
-    <ClInclude Include="src\time_1_test.h" />
-    <ClInclude Include="src\time_2_test.h" />
-    <ClInclude Include="src\time_3_test.h" />
-    <ClInclude Include="src\visibleresource_test.h" />
-    <ClInclude Include="src\shared_pointer_test.h" />
-    <ClInclude Include="src\string_view_test.h" />
-    <ClInclude Include="src\structured_binding_test.h" />
-    <ClInclude Include="src\template_meta_programming_02_test.h" />
-    <ClInclude Include="src\template_meta_programming_03_test.h" />
-    <ClInclude Include="src\template_meta_programming_01_test.h" />
-    <ClInclude Include="src\optional_test.h" />
-    <ClInclude Include="src\template_practice_part_01_test.h" />
-    <ClInclude Include="src\template_practice_part_02_test.h" />
-    <ClInclude Include="src\tuple_test.h" />
-    <ClInclude Include="src\variadic_template_test.h" />
-    <ClInclude Include="src\variant_test.h" />
+    <ClInclude Include="src\renderer\r2_Camera.h" />
+    <ClInclude Include="src\renderer\r2_FrameManager.h" />
+    <ClInclude Include="src\renderer\r2_GridIndexConverter.h" />
+    <ClInclude Include="src\renderer\r2_iRenderable.h" />
+    <ClInclude Include="src\renderer\r2_Point.h" />
+    <ClInclude Include="src\renderer\r2_PointInt.h" />
+    <ClInclude Include="src\renderer\r2_Rect.h" />
+    <ClInclude Include="src\renderer\r2_RectInt.h" />
+    <ClInclude Include="src\renderer\r2_Renderer.h" />
+    <ClInclude Include="src\renderer\r2_Size.h" />
+    <ClInclude Include="src\renderer\r2_Timer.h" />
+    <ClInclude Include="src\renderer\r2_Timer_Float.h" />
+    <ClInclude Include="src\renderer\r2_VisibleResource.h" />
+    <ClInclude Include="src\test_cpp\alignas_test.h" />
+    <ClInclude Include="src\test_cpp\alignof_test.h" />
+    <ClInclude Include="src\test_cpp\align_test.h" />
+    <ClInclude Include="src\test_cpp\assert_test.h" />
+    <ClInclude Include="src\test_cpp\char_test.h" />
+    <ClInclude Include="src\test_cpp\console_test.h" />
+    <ClInclude Include="src\test_cpp\enum_test.h" />
+    <ClInclude Include="src\test_cpp\etc_0_test.h" />
+    <ClInclude Include="src\test_cpp\filesystem_test.h" />
+    <ClInclude Include="src\test_cpp\key_test.h" />
+    <ClInclude Include="src\test_cpp\korean_test.h" />
+    <ClInclude Include="src\test_cpp\lambda_test.h" />
+    <ClInclude Include="src\test_cpp\locale_test.h" />
+    <ClInclude Include="src\test_cpp\memory_pool_test.h" />
+    <ClInclude Include="src\test_cpp\new_test.h" />
+    <ClInclude Include="src\test_cpp\optional_test.h" />
+    <ClInclude Include="src\test_cpp\pointer_test.h" />
+    <ClInclude Include="src\test_cpp\print_test.h" />
+    <ClInclude Include="src\test_cpp\random_test.h" />
+    <ClInclude Include="src\test_cpp\shared_pointer_test.h" />
+    <ClInclude Include="src\test_cpp\string_view_test.h" />
+    <ClInclude Include="src\test_cpp\structured_binding_test.h" />
+    <ClInclude Include="src\test_cpp\template_meta_programming_01_test.h" />
+    <ClInclude Include="src\test_cpp\template_meta_programming_02_test.h" />
+    <ClInclude Include="src\test_cpp\template_meta_programming_03_test.h" />
+    <ClInclude Include="src\test_cpp\template_practice_part_01_test.h" />
+    <ClInclude Include="src\test_cpp\time_1_test.h" />
+    <ClInclude Include="src\test_cpp\time_2_test.h" />
+    <ClInclude Include="src\test_cpp\time_3_test.h" />
+    <ClInclude Include="src\test_cpp\tuple_test.h" />
+    <ClInclude Include="src\test_cpp\variadic_template_test.h" />
+    <ClInclude Include="src\test_cpp\variant_test.h" />
+    <ClInclude Include="src\test_render\animation_test.h" />
+    <ClInclude Include="src\test_render\camera_test.h" />
+    <ClInclude Include="src\test_render\rect_test.h" />
+    <ClInclude Include="src\test_render\renderer_test.h" />
+    <ClInclude Include="src\test_render\visibleresource_test.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -239,7 +235,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>vld\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vld\include;$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -266,7 +262,7 @@ xcopy "$(ProjectDir)vld\bin\Win32\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>vld\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vld\include;$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -293,6 +289,7 @@ xcopy "$(ProjectDir)vld\bin\Win64\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -314,6 +311,7 @@ xcopy "$(ProjectDir)vld\bin\Win64\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

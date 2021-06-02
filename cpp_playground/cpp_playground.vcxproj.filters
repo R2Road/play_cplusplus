@@ -18,418 +18,421 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\shared_pointer_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\filesystem_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\random_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\variadic_template_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\optional_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\variant_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tuple_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\structured_binding_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\assert_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\string_view_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\enum_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\new_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pointer_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\align_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\korean_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\alignof_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\template_practice_part_01_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\alignas_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\memory_pool_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\console_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\template_practice_part_02_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_Director.cpp">
-      <Filter>base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lambda_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\print_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\char_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\template_meta_programming_02_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\template_meta_programming_03_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\template_meta_programming_01_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_LambdaMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_Renderer.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_GridIndexConverter.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_VisibleResource.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_Camera.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_RectInt.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_Size.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_PointInt.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\key_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_ETCMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\etc_0_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_RootMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_Menu.cpp">
-      <Filter>base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_ConsoleMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_EnumMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_FileSystemMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_MemoryMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_NewMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_AlignMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_RandomMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_VariadicTemplateMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_TemplateMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_TemplatePracticeMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_TemplateMetaProgrammingMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_PointerMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\camera_test.cpp">
-      <Filter>test_render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\rect_test.cpp">
-      <Filter>test_render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\visibleresource_test.cpp">
-      <Filter>test_render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\renderer_test.cpp">
-      <Filter>test_render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_RenderMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\animation_test.cpp">
-      <Filter>test_render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_TimeMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\time_1_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\time_2_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\time_3_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2_FrameManager.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\locale_test.cpp">
+    <ClCompile Include="src\menu\r2_AlignMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_ConsoleMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_EnumMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_ETCMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_FileSystemMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_LambdaMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_MemoryMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_NewMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_PointerMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_RandomMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_RenderMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_RootMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_TemplateMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_TemplateMetaProgrammingMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_TemplatePracticeMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_TimeMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_VariadicTemplateMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\align_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\alignas_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\alignof_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\assert_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\char_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\console_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\enum_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\etc_0_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\filesystem_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\key_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\korean_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\lambda_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\locale_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\memory_pool_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\new_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\optional_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\pointer_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\print_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\random_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\shared_pointer_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\string_view_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\structured_binding_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\template_meta_programming_01_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\template_meta_programming_02_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\template_meta_programming_03_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\template_practice_part_01_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\time_1_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\time_2_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\time_3_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\tuple_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\variadic_template_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\variant_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_render\animation_test.cpp">
+      <Filter>test_render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_render\camera_test.cpp">
+      <Filter>test_render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_render\rect_test.cpp">
+      <Filter>test_render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_render\renderer_test.cpp">
+      <Filter>test_render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_render\visibleresource_test.cpp">
+      <Filter>test_render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\r2_Director.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\r2_Menu.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\r2_Camera.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\r2_FrameManager.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\r2_GridIndexConverter.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\r2_PointInt.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\r2_RectInt.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\r2_Renderer.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\r2_Size.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\r2_Timer_Float.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\r2_VisibleResource.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pch.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\shared_pointer_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\filesystem_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\random_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\variadic_template_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\optional_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\variant_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tuple_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\structured_binding_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\assert_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\string_view_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\enum_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\new_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\pointer_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\align_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\korean_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\alignof_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\template_practice_part_01_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\alignas_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\memory_pool_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\console_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\template_practice_part_02_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2_Director.h">
-      <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2_eTestResult.h">
-      <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\lambda_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\print_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\char_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2_Singleton.h">
-      <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2_iTest.h">
-      <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\template_meta_programming_02_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\template_meta_programming_03_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\template_meta_programming_01_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2_LambdaMenu.h">
+    <ClInclude Include="src\menu\r2_AlignMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_Renderer.h">
-      <Filter>renderer</Filter>
+    <ClInclude Include="src\menu\r2_ConsoleMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_GridIndexConverter.h">
-      <Filter>renderer</Filter>
+    <ClInclude Include="src\menu\r2_EnumMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_VisibleResource.h">
-      <Filter>renderer</Filter>
+    <ClInclude Include="src\menu\r2_ETCMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_Camera.h">
-      <Filter>renderer</Filter>
+    <ClInclude Include="src\menu\r2_FileSystemMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_Rect.h">
-      <Filter>renderer</Filter>
+    <ClInclude Include="src\menu\r2_LambdaMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_RectInt.h">
-      <Filter>renderer</Filter>
+    <ClInclude Include="src\menu\r2_MemoryMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_Size.h">
-      <Filter>renderer</Filter>
+    <ClInclude Include="src\menu\r2_NewMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_Point.h">
-      <Filter>renderer</Filter>
+    <ClInclude Include="src\menu\r2_PointerMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_PointInt.h">
-      <Filter>renderer</Filter>
+    <ClInclude Include="src\menu\r2_RandomMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_iRenderable.h">
-      <Filter>renderer</Filter>
+    <ClInclude Include="src\menu\r2_RenderMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\key_test.h">
+    <ClInclude Include="src\menu\r2_RootMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_TemplateMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_TemplateMetaProgrammingMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_TemplatePracticeMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_TimeMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_VariadicTemplateMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\align_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_ETCMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\etc_0_test.h">
+    <ClInclude Include="src\test_cpp\alignas_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_RootMenu.h">
-      <Filter>menu</Filter>
+    <ClInclude Include="src\test_cpp\alignof_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_Menu.h">
-      <Filter>base</Filter>
+    <ClInclude Include="src\test_cpp\assert_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_ConsoleMenu.h">
-      <Filter>menu</Filter>
+    <ClInclude Include="src\test_cpp\char_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_EnumMenu.h">
-      <Filter>menu</Filter>
+    <ClInclude Include="src\test_cpp\console_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_FileSystemMenu.h">
-      <Filter>menu</Filter>
+    <ClInclude Include="src\test_cpp\enum_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_MemoryMenu.h">
-      <Filter>menu</Filter>
+    <ClInclude Include="src\test_cpp\etc_0_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_NewMenu.h">
-      <Filter>menu</Filter>
+    <ClInclude Include="src\test_cpp\filesystem_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_AlignMenu.h">
-      <Filter>menu</Filter>
+    <ClInclude Include="src\test_cpp\key_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_RandomMenu.h">
-      <Filter>menu</Filter>
+    <ClInclude Include="src\test_cpp\korean_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_VariadicTemplateMenu.h">
-      <Filter>menu</Filter>
+    <ClInclude Include="src\test_cpp\lambda_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_TemplateMenu.h">
-      <Filter>menu</Filter>
+    <ClInclude Include="src\test_cpp\locale_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_TemplatePracticeMenu.h">
-      <Filter>menu</Filter>
+    <ClInclude Include="src\test_cpp\memory_pool_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_TemplateMetaProgrammingMenu.h">
-      <Filter>menu</Filter>
+    <ClInclude Include="src\test_cpp\new_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_PointerMenu.h">
-      <Filter>menu</Filter>
+    <ClInclude Include="src\test_cpp\optional_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\camera_test.h">
+    <ClInclude Include="src\test_cpp\pointer_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\print_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\random_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\shared_pointer_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\string_view_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\structured_binding_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\template_meta_programming_01_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\template_meta_programming_02_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\template_meta_programming_03_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\template_practice_part_01_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\time_1_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\time_2_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\time_3_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\tuple_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\variadic_template_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\variant_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_render\animation_test.h">
       <Filter>test_render</Filter>
     </ClInclude>
-    <ClInclude Include="src\rect_test.h">
+    <ClInclude Include="src\test_render\camera_test.h">
       <Filter>test_render</Filter>
     </ClInclude>
-    <ClInclude Include="src\visibleresource_test.h">
+    <ClInclude Include="src\test_render\rect_test.h">
       <Filter>test_render</Filter>
     </ClInclude>
-    <ClInclude Include="src\renderer_test.h">
+    <ClInclude Include="src\test_render\renderer_test.h">
       <Filter>test_render</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_RenderMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\animation_test.h">
+    <ClInclude Include="src\test_render\visibleresource_test.h">
       <Filter>test_render</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_TimeMenu.h">
-      <Filter>menu</Filter>
+    <ClInclude Include="src\base\r2_Director.h">
+      <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\time_1_test.h">
-      <Filter>test_cpp</Filter>
+    <ClInclude Include="src\base\r2_eTestResult.h">
+      <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\time_2_test.h">
-      <Filter>test_cpp</Filter>
+    <ClInclude Include="src\base\r2_iTest.h">
+      <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\time_3_test.h">
-      <Filter>test_cpp</Filter>
+    <ClInclude Include="src\base\r2_Menu.h">
+      <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_FrameManager.h">
+    <ClInclude Include="src\base\r2_Singleton.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\r2_Camera.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\r2_FrameManager.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\r2_GridIndexConverter.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\r2_iRenderable.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\r2_Point.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\r2_PointInt.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\r2_Rect.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\r2_RectInt.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\r2_Renderer.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\r2_Size.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\r2_Timer.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\r2_Timer_Float.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\r2_VisibleResource.h">
       <Filter>renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\locale_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
