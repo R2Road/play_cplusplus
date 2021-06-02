@@ -18,11 +18,10 @@ namespace r2
 	void Menu::ShowTitle() const
 	{
 		std::cout << "# " << mTitleString << " #" << r2::linefeed;
+		std::cout << r2::split;
 	}
 	void Menu::ShowDescription() const
 	{
-		std::cout << r2::split;
-
 		if( !mDescriptionString.empty() )
 		{
 			std::cout << "+ Message" << r2::linefeed << r2::linefeed;
@@ -76,7 +75,7 @@ namespace r2
 			std::cout << t.NameFunction() << r2::linefeed;
 		}
 
-		std::cout << r2::linefeed << "Select Menu";
+		std::cout << r2::split << "Select Menu";
 	}
 
 	eTestResult Menu::Do( const int key_code )

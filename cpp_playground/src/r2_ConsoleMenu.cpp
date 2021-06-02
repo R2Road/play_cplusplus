@@ -57,9 +57,6 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
-
-
-			ret->AddSplit();
 		}
 
 		return ret;
