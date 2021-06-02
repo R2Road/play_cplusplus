@@ -215,6 +215,9 @@
       <Filter>renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\pch.cpp" />
+    <ClCompile Include="src\test_cpp\vector_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -434,5 +437,8 @@
       <Filter>renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\test_cpp\vector_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

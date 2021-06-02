@@ -28,6 +28,7 @@
 #include "test_cpp/print_test.h"
 #include "test_cpp/char_test.h"
 #include "test_cpp/locale_test.h"
+#include "test_cpp/vector_test.h"
 
 #include "test_cpp/korean_test.h"
 #include "test_cpp/key_test.h"
@@ -170,6 +171,7 @@ namespace r2
 			ret->AddChild( 'd', print_test::Basic::GetInstance() );
 			ret->AddChild( 'f', char_test::Basic::GetInstance() );
 			ret->AddChild( 'g', locale_test::Basic::GetInstance() );
+			ret->AddChild( 'h', vector_test::Basic::GetInstance() );
 
 			ret->AddLineFeed();
 
