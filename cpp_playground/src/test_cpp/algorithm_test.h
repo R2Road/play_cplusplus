@@ -5,7 +5,7 @@
 
 namespace algorithm_test
 {
-	class Accumulate : public r2::iTest, public r2::SingleTon<Accumulate>
+	class Accumulate_Number : public r2::iTest, public r2::SingleTon<Accumulate_Number>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

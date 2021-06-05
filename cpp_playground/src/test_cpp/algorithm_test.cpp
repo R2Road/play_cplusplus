@@ -7,14 +7,14 @@
 
 namespace algorithm_test
 {
-	r2::iTest::TitleFunc Accumulate::GetTitleFunction() const
+	r2::iTest::TitleFunc Accumulate_Number::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Accumulate";
+			return "Accumulate : Number";
 		};
 	}
-	r2::iTest::DoFunc Accumulate::GetDoFunction()
+	r2::iTest::DoFunc Accumulate_Number::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

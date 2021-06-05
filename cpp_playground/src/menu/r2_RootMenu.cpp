@@ -173,7 +173,7 @@ namespace r2
 			ret->AddChild( 'f', char_test::Basic::GetInstance() );
 			ret->AddChild( 'g', locale_test::Basic::GetInstance() );
 			ret->AddChild( 'h', vector_test::Basic::GetInstance() );
-			ret->AddChild( 'j', algorithm_test::Accumulate::GetInstance() );
+			ret->AddChild( 'j', algorithm_test::Accumulate_Number::GetInstance() );
 
 			ret->AddLineFeed();
 
