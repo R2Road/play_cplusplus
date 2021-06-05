@@ -49,6 +49,7 @@
     <ClCompile Include="src\renderer\r2_Size.cpp" />
     <ClCompile Include="src\renderer\r2_Timer_Float.cpp" />
     <ClCompile Include="src\renderer\r2_VisibleResource.cpp" />
+    <ClCompile Include="src\test_cpp\algorithm_test.cpp" />
     <ClCompile Include="src\test_cpp\alignas_test.cpp" />
     <ClCompile Include="src\test_cpp\alignof_test.cpp" />
     <ClCompile Include="src\test_cpp\align_test.cpp" />
@@ -125,6 +126,7 @@
     <ClInclude Include="src\renderer\r2_Timer.h" />
     <ClInclude Include="src\renderer\r2_Timer_Float.h" />
     <ClInclude Include="src\renderer\r2_VisibleResource.h" />
+    <ClInclude Include="src\test_cpp\algorithm_test.h" />
     <ClInclude Include="src\test_cpp\alignas_test.h" />
     <ClInclude Include="src\test_cpp\alignof_test.h" />
     <ClInclude Include="src\test_cpp\align_test.h" />

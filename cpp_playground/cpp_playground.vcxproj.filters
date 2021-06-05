@@ -218,6 +218,9 @@
     <ClCompile Include="src\test_cpp\vector_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\algorithm_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -438,6 +441,9 @@
     </ClInclude>
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\test_cpp\vector_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\algorithm_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>
