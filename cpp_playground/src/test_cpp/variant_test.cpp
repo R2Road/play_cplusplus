@@ -24,18 +24,18 @@ namespace variant_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t+ std::variant<int, float, bool> v;" << r2::linefeed;
+				std::cout << r2::tab << "+ std::variant<int, float, bool> v;" << r2::linefeed;
 				std::variant<int, float, bool> v;
 
-				std::cout << "\t\t- Default Type is First T : int : index 0" << r2::linefeed;
+				std::cout << r2::tab2 << "- Default Type is First T : int : index 0" << r2::linefeed;
 
-				std::cout << "\t\t- Check T Index" << r2::linefeed;
-				std::cout << "\t\t\t- Call : v.index();" << r2::linefeed;
-				std::cout << "\t\t\t\t" << v.index() << r2::linefeed;
+				std::cout << r2::tab2 << "- Check T Index" << r2::linefeed;
+				std::cout << r2::tab3 << "- Call : v.index();" << r2::linefeed;
+				std::cout << r2::tab4 << v.index() << r2::linefeed;
 
-				std::cout << "\t\t- Get Value" << r2::linefeed;
-				std::cout << "\t\t\t- Call : std::get<0>( v );" << r2::linefeed;
-				std::cout << "\t\t\t\t" << std::get<0>( v ) << r2::linefeed;
+				std::cout << r2::tab2 << "- Get Value" << r2::linefeed;
+				std::cout << r2::tab3 << "- Call : std::get<0>( v );" << r2::linefeed;
+				std::cout << r2::tab4 << std::get<0>( v ) << r2::linefeed;
 			}
 
 
@@ -43,11 +43,11 @@ namespace variant_test
 
 
 			{
-				std::cout << "\t+ std::variant<int, int> v;" << r2::linefeed;
+				std::cout << r2::tab << "+ std::variant<int, int> v;" << r2::linefeed;
 
 				std::variant<int, int> v;
-				std::cout << "\t\t- Has Problem Using Same Type" << r2::linefeed << r2::linefeed;
-				std::cout << "\t\t- Not Working : v = 1;" << r2::linefeed;
+				std::cout << r2::tab2 << "- Has Problem Using Same Type" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab2 << "- Not Working : v = 1;" << r2::linefeed;
 				//
 				//v = 1;
 				//
@@ -58,25 +58,25 @@ namespace variant_test
 
 
 			{
-				std::cout << "\t+ std::variant<int, float> v;" << r2::linefeed;
+				std::cout << r2::tab << "+ std::variant<int, float> v;" << r2::linefeed;
 
 				std::variant<int, float> v;
 
 
 				v = 1;
-				std::cout << "\t\t- v = 1;" << r2::linefeed;
-				std::cout << "\t\t\t- Call : v.index();" << r2::linefeed;
-				std::cout << "\t\t\t\t" << v.index() << r2::linefeed;
-				std::cout << "\t\t\t- Call : std::get<0>( v );" << r2::linefeed;
-				std::cout << "\t\t\t\t" << std::get<0>( v ) << r2::linefeed;
+				std::cout << r2::tab2 << "- v = 1;" << r2::linefeed;
+				std::cout << r2::tab3 << "- Call : v.index();" << r2::linefeed;
+				std::cout << r2::tab4 << v.index() << r2::linefeed;
+				std::cout << r2::tab3 << "- Call : std::get<0>( v );" << r2::linefeed;
+				std::cout << r2::tab4 << std::get<0>( v ) << r2::linefeed;
 
 
 				v = 2.1f;
-				std::cout << "\t\t- v = 2.1f;" << r2::linefeed;
-				std::cout << "\t\t\t- Call : v.index();" << r2::linefeed;
-				std::cout << "\t\t\t\t" << v.index() << r2::linefeed;
-				std::cout << "\t\t\t- Call : std::get<1>( v );" << r2::linefeed;
-				std::cout << "\t\t\t\t" << std::get<1>( v ) << r2::linefeed;
+				std::cout << r2::tab2 << "- v = 2.1f;" << r2::linefeed;
+				std::cout << r2::tab3 << "- Call : v.index();" << r2::linefeed;
+				std::cout << r2::tab4 << v.index() << r2::linefeed;
+				std::cout << r2::tab3 << "- Call : std::get<1>( v );" << r2::linefeed;
+				std::cout << r2::tab4 << std::get<1>( v ) << r2::linefeed;
 			}
 
 
@@ -90,28 +90,28 @@ namespace variant_test
 					int mI;
 				};
 
-				std::cout << "\t+ std::monostate" << r2::linefeed;
-				std::cout << "\t\t- std::monostate is Empty Struct" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ std::monostate" << r2::linefeed;
+				std::cout << r2::tab2 << "- std::monostate is Empty Struct" << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t\t struct TestStruct" << r2::linefeed;
-				std::cout << "\t\t {" << r2::linefeed;
-				std::cout << "\t\t\t TestStruct( int i ) : mI( i ) {}" << r2::linefeed;
-				std::cout << "\t\t\t int mI;" << r2::linefeed;
-				std::cout << "\t\t }" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab2 << "struct TestStruct" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab3 << "TestStruct( int i ) : mI( i ) {}" << r2::linefeed;
+				std::cout << r2::tab3 << "int mI;" << r2::linefeed;
+				std::cout << r2::tab2 << "}" << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t\t- Not Working : std::variant<TestStruct, int, float> v;" << r2::linefeed;
-				std::cout << "\t\t\tFirst Type Need Default Constructor" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab2 << "- Not Working : std::variant<TestStruct, int, float> v;" << r2::linefeed;
+				std::cout << r2::tab3 << "First Type Need Default Constructor" << r2::linefeed << r2::linefeed;
 				//
 				//std::variant<TestStruct, int, float> v;
 				//
 
 				{
-					std::cout << "\t\t- Working : std::variant<std::monostate, TestStruct, int, float> v;" << r2::linefeed << r2::linefeed;
+					std::cout << r2::tab2 << "- Working : std::variant<std::monostate, TestStruct, int, float> v;" << r2::linefeed << r2::linefeed;
 					std::variant<std::monostate, TestStruct, int, float> v;
 				}
 
 				{
-					std::cout << "\t\t- Working : std::variant<char, TestStruct, int, float> v;" << r2::linefeed;
+					std::cout << r2::tab2 << "- Working : std::variant<char, TestStruct, int, float> v;" << r2::linefeed;
 					std::variant<char, TestStruct, int, float> v;
 				}
 			}
