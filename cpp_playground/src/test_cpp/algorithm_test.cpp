@@ -134,7 +134,7 @@ namespace algorithm_test
 				std::cout << r2::tab2 << "auto modifier = []( std::string a, int b )" << r2::linefeed;
 				std::cout << r2::tab2 << "{" << r2::linefeed;
 				std::cout << r2::tab3 << "return std::move( a ) + '-' + std::to_string( b );" << r2::linefeed;
-				std::cout << r2::tab2 << "}" << r2::linefeed;
+				std::cout << r2::tab2 << "};" << r2::linefeed;
 				std::cout << r2::linefeed;
 
 				std::cout << r2::tab << "+ Process" << r2::linefeed;
@@ -142,11 +142,32 @@ namespace algorithm_test
 				std::cout << r2::tab3 << "std::next( v.begin() ), v.end()" << r2::linefeed;
 				std::cout << r2::tab3 << ", std::to_string( v[0] )" << r2::linefeed;
 				std::cout << r2::tab3 << ", modifier" << r2::linefeed;
-				std::cout << r2::tab2 << ")" << r2::linefeed;
+				std::cout << r2::tab2 << ");" << r2::linefeed;
 				std::cout << r2::linefeed;
 
 				std::cout << r2::tab << "+ Result" << r2::linefeed;
 				std::cout << r2::tab2 << s << r2::linefeed;
+
+
+				std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
+
+
+				const std::string rs = std::accumulate(
+					std::next( v.rbegin() ), v.rend()
+					, std::to_string( v.back() )
+					, modifier
+				);
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed;
+				std::cout << r2::tab2 << "const std::string rs = std::accumulate(" << r2::linefeed;
+				std::cout << r2::tab3 << "std::next( v.rbegin() ), v.rend()" << r2::linefeed;
+				std::cout << r2::tab3 << ", , std::to_string( v.back() )" << r2::linefeed;
+				std::cout << r2::tab3 << ", modifier" << r2::linefeed;
+				std::cout << r2::tab2 << ");" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "+ Result" << r2::linefeed;
+				std::cout << r2::tab2 << rs << r2::linefeed;
 			}
 
 			std::cout << r2::split;
