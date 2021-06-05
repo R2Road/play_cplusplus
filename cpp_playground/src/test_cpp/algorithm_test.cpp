@@ -11,7 +11,7 @@ namespace algorithm_test
 	{
 		return []()->const char*
 		{
-			return "Accumulate : Sum";
+			return "Accumulate";
 		};
 	}
 	r2::iTest::DoFunc Accumulate::GetDoFunction()
@@ -40,6 +40,50 @@ namespace algorithm_test
 
 				std::cout << r2::tab << "+ Result" << r2::linefeed;
 				std::cout << r2::tab2 << sum << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "# Minus" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::vector<int> v{ 5, 10, 25 };
+
+				const int result = std::accumulate( v.begin(), v.end(), 100, std::minus<int>() );
+
+				std::cout << r2::tab << "+ Variable" << r2::linefeed;
+				std::cout << r2::tab2 << "std::vector<int> v{ 5, 10, 25 };" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed;
+				std::cout << r2::tab2 << "const int product = std::accumulate( v.begin(), v.end(), 100, std::minus<int>() );" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "+ Result" << r2::linefeed;
+				std::cout << r2::tab2 << result << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "# Multiply" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::vector<int> v{ 2, 10, 4 };
+
+				const int result = std::accumulate( v.begin(), v.end(), 2, std::multiplies<int>() );
+
+				std::cout << r2::tab << "+ Variable" << r2::linefeed;
+				std::cout << r2::tab2 << "std::vector<int> v{ 2, 10, 4 };" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed;
+				std::cout << r2::tab2 << "const int product = std::accumulate( v.begin(), v.end(), 2, std::multiplies<int>() );" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "+ Result" << r2::linefeed;
+				std::cout << r2::tab2 << result << r2::linefeed;
 			}
 
 			std::cout << r2::split;
