@@ -110,32 +110,31 @@ namespace algorithm_test
 
 			std::cout << r2::split;
 
+			// Copy from https://en.cppreference.com/w/cpp/algorithm/accumulate
+
+			std::vector<int> v{ 1, 2, 3, 4, 5 };
+
+			auto modifier = []( std::string a, int b )
 			{
-				// Copy from https://en.cppreference.com/w/cpp/algorithm/accumulate
+				return std::move( a ) + '-' + std::to_string( b );
+			};
 
-				std::cout << "# Number 2 String" << r2::linefeed;
-				std::cout << r2::linefeed;
+			std::cout << r2::tab << "+ Variable" << r2::linefeed;
+			std::cout << r2::tab2 << "std::vector<int> v{ 1, 2, 3, 4, 5 };" << r2::linefeed;
+			std::cout << r2::tab2 << "auto modifier = []( std::string a, int b )" << r2::linefeed;
+			std::cout << r2::tab2 << "{" << r2::linefeed;
+			std::cout << r2::tab3 << "return std::move( a ) + '-' + std::to_string( b );" << r2::linefeed;
+			std::cout << r2::tab2 << "};" << r2::linefeed;
+			std::cout << r2::linefeed;
 
-				std::vector<int> v{ 1, 2, 3, 4, 5 };
+			std::cout << r2::split;
 
-				auto modifier = []( std::string a, int b )
-				{
-					return std::move( a ) + '-' + std::to_string( b );
-				};
-
-				std::string s = std::accumulate(
+			{
+				const std::string s = std::accumulate(
 					std::next( v.begin() ), v.end()
 					, std::to_string( v[0] ) // start with first element
 					, modifier
 				);
-
-				std::cout << r2::tab << "+ Variable" << r2::linefeed;
-				std::cout << r2::tab2 << "std::vector<int> v{ 1, 2, 3, 4, 5 };" << r2::linefeed;
-				std::cout << r2::tab2 << "auto modifier = []( std::string a, int b )" << r2::linefeed;
-				std::cout << r2::tab2 << "{" << r2::linefeed;
-				std::cout << r2::tab3 << "return std::move( a ) + '-' + std::to_string( b );" << r2::linefeed;
-				std::cout << r2::tab2 << "};" << r2::linefeed;
-				std::cout << r2::linefeed;
 
 				std::cout << r2::tab << "+ Process" << r2::linefeed;
 				std::cout << r2::tab2 << "const std::string s = std::accumulate(" << r2::linefeed;
@@ -147,11 +146,11 @@ namespace algorithm_test
 
 				std::cout << r2::tab << "+ Result" << r2::linefeed;
 				std::cout << r2::tab2 << s << r2::linefeed;
+			}
 
+			std::cout << r2::split;
 
-				std::cout << r2::linefeed << r2::linefeed << r2::linefeed;
-
-
+			{
 				const std::string rs = std::accumulate(
 					std::next( v.rbegin() ), v.rend()
 					, std::to_string( v.back() )
