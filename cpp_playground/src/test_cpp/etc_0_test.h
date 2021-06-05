@@ -18,4 +18,11 @@ namespace etc_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class FillSequenceNumber : public r2::iTest, public r2::SingleTon<FillSequenceNumber>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
