@@ -24,6 +24,7 @@
     <ClCompile Include="src\menu\r2_AlgorithmMenu.cpp" />
     <ClCompile Include="src\menu\r2_AlignMenu.cpp" />
     <ClCompile Include="src\menu\r2_ConsoleMenu.cpp" />
+    <ClCompile Include="src\menu\r2_ContainerMenu.cpp" />
     <ClCompile Include="src\menu\r2_EnumMenu.cpp" />
     <ClCompile Include="src\menu\r2_ETCMenu.cpp" />
     <ClCompile Include="src\menu\r2_FileSystemMenu.cpp" />
@@ -99,6 +100,7 @@
     <ClInclude Include="src\menu\r2_AlgorithmMenu.h" />
     <ClInclude Include="src\menu\r2_AlignMenu.h" />
     <ClInclude Include="src\menu\r2_ConsoleMenu.h" />
+    <ClInclude Include="src\menu\r2_ContainerMenu.h" />
     <ClInclude Include="src\menu\r2_EnumMenu.h" />
     <ClInclude Include="src\menu\r2_ETCMenu.h" />
     <ClInclude Include="src\menu\r2_FileSystemMenu.h" />
