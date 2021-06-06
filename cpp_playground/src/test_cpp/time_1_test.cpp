@@ -43,15 +43,15 @@ namespace time_test
 					std::cout << r2::split;
 
 					{
-						std::cout << "\t" << "time( &current_time );" << r2::linefeed;
-						std::cout << "\t\t" << current_time << r2::linefeed;
+						std::cout << r2::tab << "time( &current_time );" << r2::linefeed;
+						std::cout << r2::tab2 << current_time << r2::linefeed;
 					}
 
 					std::cout << r2::split;
 
 					{
-						std::cout << "\t" << "current_clock = clock();" << r2::linefeed;
-						std::cout << "\t\t" << "clock : " << current_clock << "\t\t" "sec : " << current_sec << r2::linefeed;
+						std::cout << r2::tab << "current_clock = clock();" << r2::linefeed;
+						std::cout << r2::tab2 << "clock : " << current_clock << r2::tab2 << "sec : " << current_sec << r2::linefeed;
 
 						last_clock = current_clock;
 					}
