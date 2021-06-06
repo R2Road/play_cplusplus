@@ -29,7 +29,7 @@
 #include "test_cpp/char_test.h"
 #include "test_cpp/locale_test.h"
 #include "test_cpp/vector_test.h"
-#include "test_cpp/algorithm_test.h"
+#include "r2_AlgorithmMenu.h"
 
 #include "test_cpp/korean_test.h"
 #include "test_cpp/key_test.h"
@@ -173,8 +173,15 @@ namespace r2
 			ret->AddChild( 'f', char_test::Basic::GetInstance() );
 			ret->AddChild( 'g', locale_test::Basic::GetInstance() );
 			ret->AddChild( 'h', vector_test::Basic::GetInstance() );
-			ret->AddChild( 'j', algorithm_test::Accumulate_Number::GetInstance() );
-			ret->AddChild( 'k', algorithm_test::Accumulate_String::GetInstance() );
+			ret->AddChild(
+				'j'
+				, []()->const char* { return r2::AlgorithmMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::AlgorithmMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
 
 			ret->AddLineFeed();
 
