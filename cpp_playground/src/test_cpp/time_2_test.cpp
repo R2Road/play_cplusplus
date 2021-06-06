@@ -43,28 +43,28 @@ namespace time_test
 					std::cout << r2::split;
 
 					{
-						std::cout << "\t" << "GetLocalTime( &local_time );" << r2::linefeed;
-						std::cout << "\t\t" << local_time.wYear << local_time.wMonth << local_time.wDay << r2::linefeed;
-						std::cout << "\t\t" << local_time.wDayOfWeek << r2::linefeed;
-						std::cout << "\t\t" << local_time.wHour << local_time.wMinute << local_time.wSecond << r2::linefeed;
-						std::cout << "\t\t" << local_time.wMilliseconds << r2::linefeed;
+						std::cout << r2::tab << "GetLocalTime( &local_time );" << r2::linefeed;
+						std::cout << r2::tab2 << local_time.wYear << local_time.wMonth << local_time.wDay << r2::linefeed;
+						std::cout << r2::tab2 << local_time.wDayOfWeek << r2::linefeed;
+						std::cout << r2::tab2 << local_time.wHour << local_time.wMinute << local_time.wSecond << r2::linefeed;
+						std::cout << r2::tab2 << local_time.wMilliseconds << r2::linefeed;
 					}
 
 					std::cout << r2::split;
 
 					{
-						std::cout << "\t" << "GetSystemTime( &system_time );" << r2::linefeed;
-						std::cout << "\t\t" << system_time.wYear << system_time.wMonth << system_time.wDay << r2::linefeed;
-						std::cout << "\t\t" << system_time.wDayOfWeek << r2::linefeed;
-						std::cout << "\t\t" << system_time.wHour << system_time.wMinute << system_time.wSecond << r2::linefeed;
-						std::cout << "\t\t" << system_time.wMilliseconds << r2::linefeed;
+						std::cout << r2::tab << "GetSystemTime( &system_time );" << r2::linefeed;
+						std::cout << r2::tab2 << system_time.wYear << system_time.wMonth << system_time.wDay << r2::linefeed;
+						std::cout << r2::tab2 << system_time.wDayOfWeek << r2::linefeed;
+						std::cout << r2::tab2 << system_time.wHour << system_time.wMinute << system_time.wSecond << r2::linefeed;
+						std::cout << r2::tab2 << system_time.wMilliseconds << r2::linefeed;
 					}
 
 					std::cout << r2::split;
 
 					{
-						std::cout << "\t" << "tick = GetTickCount();" << r2::linefeed;
-						std::cout << "\t\t" << current_tick << r2::linefeed;
+						std::cout << r2::tab << "tick = GetTickCount();" << r2::linefeed;
+						std::cout << r2::tab2 << current_tick << r2::linefeed;
 
 						last_tick = current_tick;
 					}
@@ -72,15 +72,15 @@ namespace time_test
 					std::cout << r2::split;
 
 					{
-						std::cout << "\t" << "GetTickCount64();" << r2::linefeed;
-						std::cout << "\t\t" << GetTickCount64() << r2::linefeed;
+						std::cout << r2::tab << "GetTickCount64();" << r2::linefeed;
+						std::cout << r2::tab2 << GetTickCount64() << r2::linefeed;
 					}
 
 					std::cout << r2::split;
 
 					{
-						std::cout << "\t" << "timeGetTime();" << r2::linefeed;
-						std::cout << "\t\t" << timeGetTime() << r2::linefeed;
+						std::cout << r2::tab << "timeGetTime();" << r2::linefeed;
+						std::cout << r2::tab2 << timeGetTime() << r2::linefeed;
 					}
 
 					std::cout << r2::split;
