@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "algorithm_test.h"
 
+#include <iterator>
 #include <numeric>
 #include <string>
 
@@ -167,6 +168,82 @@ namespace algorithm_test
 
 				std::cout << r2::tab << "+ Result" << r2::linefeed;
 				std::cout << r2::tab2 << rs << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc Partial_Sum::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Partial_Sum";
+		};
+	}
+	r2::iTest::DoFunc Partial_Sum::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				// Copy from https://en.cppreference.com/w/cpp/algorithm/partial_sum
+
+				std::vector<int> v{ 1, 2, 3, 4, 5 };
+
+				std::partial_sum( v.begin(), v.end(), v.begin(), std::plus<int>() );
+
+				std::cout << r2::tab << "+ Variable" << r2::linefeed;
+				std::cout << r2::tab2 << "std::vector<int> v{ 1, 2, 3, 4, 5 };" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed;
+				std::cout << r2::tab2 << "std::partial_sum( v.begin(), v.end(), v.begin(), std::plus<int>() );" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "+ Result" << r2::linefeed;
+				std::cout << r2::tab2;
+				for( const auto& i : v )
+				{
+					std::cout << i << r2::tab;
+				}
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				// Copy from https://en.cppreference.com/w/cpp/algorithm/partial_sum
+
+				std::vector<int> v{ 1, 2, 3, 4, 5 };
+
+				std::cout << r2::tab << "+ Variable" << r2::linefeed;
+				std::cout << r2::tab2 << "std::vector<int> v{ 1, 2, 3, 4, 5 };" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed;
+				std::cout << r2::tab2 << "std::partial_sum(" << r2::linefeed;
+				std::cout << r2::tab3 << "v.begin(), v.end()" << r2::linefeed;
+				std::cout << r2::tab3 << ", std::ostream_iterator<int>( std::cout, \"-\" ), std::multiplies<int>() );" << r2::linefeed;
+				std::cout << r2::tab3 << ", std::multiplies<int>()" << r2::linefeed;
+				std::cout << r2::tab2 << ");" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+
+				std::cout << r2::tab << "+ Result" << r2::linefeed;
+				std::cout << r2::tab2;
+
+				std::partial_sum( v.begin(), v.end(), std::ostream_iterator<int>( std::cout, "-" ), std::multiplies<int>() );
+
+				std::cout << r2::linefeed;
 			}
 
 			std::cout << r2::split;

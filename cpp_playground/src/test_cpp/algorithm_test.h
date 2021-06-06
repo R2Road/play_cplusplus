@@ -18,4 +18,11 @@ namespace algorithm_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class Partial_Sum: public r2::iTest, public r2::SingleTon<Partial_Sum>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

@@ -16,6 +16,7 @@ namespace r2
 		{
 			ret->AddChild( '1', algorithm_test::Accumulate_Number::GetInstance() );
 			ret->AddChild( '2', algorithm_test::Accumulate_String::GetInstance() );
+			ret->AddChild( '3', algorithm_test::Partial_Sum::GetInstance() );
 
 
 			ret->AddSplit();
