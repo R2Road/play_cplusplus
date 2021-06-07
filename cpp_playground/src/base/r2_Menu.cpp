@@ -32,7 +32,7 @@ namespace r2
 		}
 	}
 
-	void Menu::ShowMenu() const
+	void Menu::ShowItem() const
 	{
 		std::cout << "+ Menu" << r2::linefeed << r2::linefeed;
 

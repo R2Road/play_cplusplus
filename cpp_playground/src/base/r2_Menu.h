@@ -41,7 +41,7 @@ namespace r2
 
 		void ShowTitle() const;
 		void ShowDescription() const;
-		void ShowMenu() const;
+		void ShowItem() const;
 
 		eTestResult Do( const int key_code );
 

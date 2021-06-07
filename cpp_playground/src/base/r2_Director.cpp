@@ -23,7 +23,7 @@ namespace r2
 		{
 			mMenu->ShowTitle();
 			mMenu->ShowDescription();
-			mMenu->ShowMenu();
+			mMenu->ShowItem();
 			input = _getch();
 
 			system( "cls" );
