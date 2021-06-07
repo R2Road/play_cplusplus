@@ -39,10 +39,14 @@ namespace r2
 		Menu( Director& director, const char* title_string, const char* description_string = "" );
 		virtual ~Menu() {}
 
+		void ShowMenu() const;
+
+	private:
 		void ShowTitle() const;
 		void ShowDescription() const;
 		void ShowItem() const;
 
+	public:
 		eTestResult Do( const int key_code );
 
 		void AddChild( const char key_code, iTest& test_obj );
