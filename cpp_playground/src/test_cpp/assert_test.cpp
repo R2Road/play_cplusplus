@@ -24,7 +24,7 @@ namespace assert_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ assert( 1 > 2 && \"What The Fuck\" );" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ assert( 1 > 2 && \"What The Fuck\" );" << r2::linefeed << r2::linefeed;
 				assert( 1 > 2 && "What The Fuck" );
 			}
 
