@@ -25,21 +25,21 @@ namespace filesystem_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Current Directory" << r2::linefeed;
+				std::cout << r2::tab << "+ Current Directory" << r2::linefeed;
 
 				std::filesystem::path p = std::filesystem::current_path();
 
-				std::cout << "\t\t" << p << r2::linefeed;
+				std::cout << r2::tab2 << p << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Temp Directory" << r2::linefeed;
+				std::cout << r2::tab << "+ Temp Directory" << r2::linefeed;
 
 				std::filesystem::path p2 = std::filesystem::temp_directory_path();
 
-				std::cout << "\t\t" << p2 << r2::linefeed;
+				std::cout << r2::tab2 << p2 << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -70,16 +70,16 @@ namespace filesystem_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Pivot Directory : " << r2::linefeed;
-				std::cout << "\t\t" << std::filesystem::current_path() << r2::linefeed;
+				std::cout << r2::tab << "+ Pivot Directory : " << r2::linefeed;
+				std::cout << r2::tab2 << std::filesystem::current_path() << r2::linefeed;
 				std::cout << r2::linefeed;
 
-				std::cout << "\t" << "+ View" << r2::linefeed;
+				std::cout << r2::tab << "+ View" << r2::linefeed;
 				std::filesystem::directory_iterator itr( std::filesystem::current_path() );
 				for( auto i : itr )
 				{
-					std::cout << "\t\t" << i.path() << r2::linefeed;
-					std::cout << "\t\t\t" << ( std::filesystem::is_regular_file( i.path() ) ? "file" : "directory" ) << r2::linefeed;
+					std::cout << r2::tab2 << i.path() << r2::linefeed;
+					std::cout << r2::tab3 << ( std::filesystem::is_regular_file( i.path() ) ? "file" : "directory" ) << r2::linefeed;
 				}
 			}
 
@@ -116,7 +116,7 @@ namespace filesystem_test
 				std::filesystem::recursive_directory_iterator itr( std::filesystem::current_path() / "src" );
 				for( auto p : itr )
 				{
-					std::cout << "\t" << p.path() << r2::linefeed;
+					std::cout << r2::tab << p.path() << r2::linefeed;
 
 					++i;
 					if( i > 40 )
@@ -157,66 +157,66 @@ namespace filesystem_test
 			std::filesystem::path p = std::filesystem::current_path();
 
 			{
-				std::cout << "\t" << "+ Directory : " << r2::linefeed << r2::linefeed;
-				std::cout << "\t\t" << p << r2::linefeed;
+				std::cout << r2::tab << "+ Directory : " << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab2 << p << r2::linefeed;
 				std::cout << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Append with Operator /" << r2::linefeed;
+				std::cout << r2::tab << "+ Append with Operator /" << r2::linefeed;
 
 				p /= "test.txt";
-				std::cout << "\t\t" << "p /= \"test.txt\"" << r2::linefeed;
+				std::cout << r2::tab2 << "p /= \"test.txt\"" << r2::linefeed;
 
-				std::cout << "\t\t\t" << p << r2::linefeed;
+				std::cout << r2::tab3 << p << r2::linefeed;
 				std::cout << r2::linefeed;
 
 
-				std::cout << "\t" << "+ Remove File Name" << r2::linefeed;
+				std::cout << r2::tab << "+ Remove File Name" << r2::linefeed;
 
 				p.remove_filename();
-				std::cout << "\t\t" << "p.remove_filename();" << r2::linefeed;
-				std::cout << "\t\t\t" << "result : " << p << r2::linefeed;
+				std::cout << r2::tab2 << "p.remove_filename();" << r2::linefeed;
+				std::cout << r2::tab3 << "result : " << p << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Remove File Name And Separator" << r2::linefeed;
+				std::cout << r2::tab << "+ Remove File Name And Separator" << r2::linefeed;
 
 				p /= "test.txt";
-				std::cout << "\t\t\t" << "orig : " << p << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab3 << "orig : " << p << r2::linefeed << r2::linefeed;
 
 				p._Remove_filename_and_separator();
-				std::cout << "\t\t" << "p._Remove_filename_and_separator();" << r2::linefeed;
-				std::cout << "\t\t\t" << "result : " << p << r2::linefeed;
+				std::cout << r2::tab2 << "p._Remove_filename_and_separator();" << r2::linefeed;
+				std::cout << r2::tab3 << "result : " << p << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Replace Extension" << r2::linefeed;
+				std::cout << r2::tab << "+ Replace Extension" << r2::linefeed;
 
 				p /= "test.txt";
-				std::cout << "\t\t\t" << "orig : " << p << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab3 << "orig : " << p << r2::linefeed << r2::linefeed;
 
 				p.replace_extension( "json" );
-				std::cout << "\t\t" << "p.replace_extension( \"json\" );" << r2::linefeed;
-				std::cout << "\t\t\t" << "result : " << p << r2::linefeed;
+				std::cout << r2::tab2 << "p.replace_extension( \"json\" );" << r2::linefeed;
+				std::cout << r2::tab3 << "result : " << p << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Replace File Name" << r2::linefeed;
+				std::cout << r2::tab << "+ Replace File Name" << r2::linefeed;
 
-				std::cout << "\t\t\t" << "orig : " << p << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab3 << "orig : " << p << r2::linefeed << r2::linefeed;
 
 				p.replace_filename( "new_filename" );
-				std::cout << "\t\t" << "p.replace_filename( \"new_filename\" );" << r2::linefeed;
-				std::cout << "\t\t\t" << "result : " << p << r2::linefeed;
+				std::cout << r2::tab2 << "p.replace_filename( \"new_filename\" );" << r2::linefeed;
+				std::cout << r2::tab3 << "result : " << p << r2::linefeed;
 			}
 
 			std::cout << r2::split;
