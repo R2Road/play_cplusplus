@@ -5,6 +5,7 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
+#include "test_cpp/class_test.h"
 #include "test_cpp/etc_0_test.h"
 
 namespace r2
@@ -17,6 +18,12 @@ namespace r2
 			ret->AddChild( '1', etc_test::XOR_Swap::GetInstance() );
 			ret->AddChild( '2', etc_test::InitArray::GetInstance() );
 			ret->AddChild( '3', etc_test::FillSequenceNumber::GetInstance() );
+
+
+			ret->AddLineFeed();
+
+
+			ret->AddChild( 'q', class_test::Braces::GetInstance() );
 
 
 			ret->AddSplit();
