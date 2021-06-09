@@ -72,6 +72,15 @@ namespace time_test
 					std::cout << r2::split;
 
 					{
+						const std::chrono::milliseconds micro = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::steady_clock::now() - steady_start_time_point );
+
+						std::cout << r2::tab << "std::chrono::milliseconds" << r2::linefeed;
+						std::cout << r2::tab2 << "milliseconds : " << micro.count() << r2::linefeed;
+					}
+
+					std::cout << r2::split;
+
+					{
 						const std::chrono::seconds sec = std::chrono::duration_cast<std::chrono::seconds>( std::chrono::steady_clock::now() - steady_start_time_point );
 
 						std::cout << r2::tab << "std::chrono::seconds" << r2::linefeed;
