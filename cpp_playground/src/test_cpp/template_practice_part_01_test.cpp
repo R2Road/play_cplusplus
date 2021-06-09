@@ -39,9 +39,9 @@ namespace template_practice_part_01_test
 
 			{
 				Buffer<64> buffer;
-				std::cout << "\t + " << "Buffer<64> buffer" << r2::linefeed;
+				std::cout << r2::tab << "+ Buffer<64> buffer" << r2::linefeed;
 
-				std::cout << "\t\t";
+				std::cout << r2::tab2;
 				for( const auto c : buffer.b )
 				{
 					std::cout << c;
@@ -95,36 +95,36 @@ namespace template_practice_part_01_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t + " << "FindMax( 1, 2, 30, 4, 5, 60, 7 )" << r2::linefeed;
-				std::cout << "\t\t" "Result : " << FindMax( 1, 2, 30, 4, 5, 60, 7 );
+				std::cout << r2::tab << "+ FindMax( 1, 2, 30, 4, 5, 60, 7 )" << r2::linefeed;
+				std::cout << r2::tab2 << "Result : " << FindMax( 1, 2, 30, 4, 5, 60, 7 );
 				std::cout << r2::linefeed;
 				std::cout << r2::linefeed;
 
-				std::cout << "\t + " << "FindMax( 1, 2, 30 )" << r2::linefeed;
-				std::cout << "\t\t" "Result : " << FindMax( 1, 2, 30 );
+				std::cout << r2::tab << "+ FindMax( 1, 2, 30 )" << r2::linefeed;
+				std::cout << r2::tab2 << "Result : " << FindMax( 1, 2, 30 );
 				std::cout << r2::linefeed;
 				std::cout << r2::linefeed;
 
-				std::cout << "\t + " << "FindMax( 1, 2 )" << r2::linefeed;
-				std::cout << "\t\t" "Result : " << FindMax( 1, 2 );
+				std::cout << r2::tab << "+ FindMax( 1, 2 )" << r2::linefeed;
+				std::cout << r2::tab2 << "Result : " << FindMax( 1, 2 );
 				std::cout << r2::linefeed;
 				std::cout << r2::linefeed;
 
-				std::cout << "\t + " << "FindMax( 1 )" << r2::linefeed;
-				std::cout << "\t\t" "Result : " << FindMax( 1 );
+				std::cout << r2::tab << "+ FindMax( 1 )" << r2::linefeed;
+				std::cout << r2::tab2 << "Result : " << FindMax( 1 );
 				std::cout << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t + " << "std::max( { 1, 2, 30, 4, 5, 60, 7 } )" << r2::linefeed;
-				std::cout << "\t\t" "Result : " << std::max( { 1, 2, 30, 4, 5, 60, 7 } );
+				std::cout << r2::tab << "+ std::max( { 1, 2, 30, 4, 5, 60, 7 } )" << r2::linefeed;
+				std::cout << r2::tab2 << "Result : " << std::max( { 1, 2, 30, 4, 5, 60, 7 } );
 				std::cout << r2::linefeed;
 				std::cout << r2::linefeed;
 
-				std::cout << "\t + " << "std::max( { 1, 2, 30 } )" << r2::linefeed;
-				std::cout << "\t\t" "Result : " << std::max( { 1, 2, 30 } );
+				std::cout << r2::tab << "std::max( { 1, 2, 30 } )" << r2::linefeed;
+				std::cout << r2::tab2 << "Result : " << std::max( { 1, 2, 30 } );
 				std::cout << r2::linefeed;
 			}
 
