@@ -40,15 +40,15 @@ namespace time_test
 					std::cout << r2::split;
 
 					{
-						std::cout << "\t" << "std::chrono::system_clock::now();" << r2::linefeed;
-						std::cout << "\t\t" << ( std::chrono::system_clock::now() - system_start_time_point ).count() << r2::linefeed;
+						std::cout << r2::tab << "std::chrono::system_clock::now();" << r2::linefeed;
+						std::cout << r2::tab2 << ( std::chrono::system_clock::now() - system_start_time_point ).count() << r2::linefeed;
 					}
 
 					std::cout << r2::split;
 
 					{
-						std::cout << "\t" << "std::chrono::steady_clock::now();" << r2::linefeed;
-						std::cout << "\t\t" << ( std::chrono::steady_clock::now() - steady_start_time_point ).count() << r2::linefeed;
+						std::cout << r2::tab << "std::chrono::steady_clock::now();" << r2::linefeed;
+						std::cout << r2::tab2 << ( std::chrono::steady_clock::now() - steady_start_time_point ).count() << r2::linefeed;
 					}
 
 					std::cout << r2::split;
@@ -56,8 +56,8 @@ namespace time_test
 					{
 						const std::chrono::nanoseconds nano = std::chrono::duration_cast<std::chrono::nanoseconds>( std::chrono::steady_clock::now() - steady_start_time_point );
 
-						std::cout << "\t" << "std::chrono::nanoseconds" << r2::linefeed;
-						std::cout << "\t\t" << "nanoseconds : " << nano.count() << r2::linefeed;
+						std::cout << r2::tab << "std::chrono::nanoseconds" << r2::linefeed;
+						std::cout << r2::tab2 << "nanoseconds : " << nano.count() << r2::linefeed;
 					}
 
 					std::cout << r2::split;
@@ -65,8 +65,8 @@ namespace time_test
 					{
 						const std::chrono::microseconds micro = std::chrono::duration_cast<std::chrono::microseconds>( std::chrono::steady_clock::now() - steady_start_time_point );
 
-						std::cout << "\t" << "std::chrono::microseconds" << r2::linefeed;
-						std::cout << "\t\t" << "microseconds : " << micro.count() << r2::linefeed;
+						std::cout << r2::tab << "std::chrono::microseconds" << r2::linefeed;
+						std::cout << r2::tab2 << "microseconds : " << micro.count() << r2::linefeed;
 					}
 
 					std::cout << r2::split;
@@ -74,8 +74,8 @@ namespace time_test
 					{
 						const std::chrono::seconds sec = std::chrono::duration_cast<std::chrono::seconds>( std::chrono::steady_clock::now() - steady_start_time_point );
 
-						std::cout << "\t" << "std::chrono::seconds" << r2::linefeed;
-						std::cout << "\t\t" << "seconds : " << sec.count() << r2::linefeed;
+						std::cout << r2::tab << "std::chrono::seconds" << r2::linefeed;
+						std::cout << r2::tab2 << "seconds : " << sec.count() << r2::linefeed;
 					}
 
 					std::cout << r2::split;
@@ -83,8 +83,8 @@ namespace time_test
 					{
 						const std::chrono::minutes min = std::chrono::duration_cast<std::chrono::minutes>( std::chrono::steady_clock::now() - steady_start_time_point );
 
-						std::cout << "\t" << "std::chrono::minutes" << r2::linefeed;
-						std::cout << "\t\t" << "minutes : " << min.count() << r2::linefeed;
+						std::cout << r2::tab << "std::chrono::minutes" << r2::linefeed;
+						std::cout << r2::tab2 << "minutes : " << min.count() << r2::linefeed;
 					}
 
 					std::cout << r2::split;
@@ -92,8 +92,8 @@ namespace time_test
 					{
 						const std::chrono::hours hour = std::chrono::duration_cast<std::chrono::hours>( std::chrono::steady_clock::now() - steady_start_time_point );
 
-						std::cout << "\t" << "std::chrono::hours" << r2::linefeed;
-						std::cout << "\t\t" << "hours : " << hour.count() << r2::linefeed;
+						std::cout << r2::tab << "std::chrono::hours" << r2::linefeed;
+						std::cout << r2::tab2 << "hours : " << hour.count() << r2::linefeed;
 					}
 
 					std::cout << r2::split;
@@ -101,8 +101,8 @@ namespace time_test
 					{
 						std::chrono::duration<double> default_time = std::chrono::system_clock::now() - system_start_time_point;
 
-						std::cout << "\t" << "std::chrono::duration<double> default_time = std::chrono::system_clock::now() - system_start_time_point;" << r2::linefeed;
-						std::cout << "\t\t" << default_time.count() << r2::linefeed;
+						std::cout << r2::tab << "std::chrono::duration<double> default_time = std::chrono::system_clock::now() - system_start_time_point;" << r2::linefeed;
+						std::cout << r2::tab2 << default_time.count() << r2::linefeed;
 					}
 
 					std::cout << r2::split;
