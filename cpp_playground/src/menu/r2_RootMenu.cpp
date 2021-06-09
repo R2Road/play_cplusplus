@@ -57,7 +57,6 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
-			
 			ret->AddChild(
 				'2'
 				, []()->const char* { return r2::FileSystemMenu::GetTitle(); }
@@ -67,7 +66,6 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
-
 			ret->AddChild(
 				'3'
 				, []()->const char* { return r2::PointerMenu::GetTitle(); }
@@ -77,7 +75,6 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
-
 			ret->AddChild(
 				'4'
 				, []()->const char* { return r2::RandomMenu::GetTitle(); }
@@ -87,7 +84,6 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
-
 			ret->AddChild(
 				'5'
 				, []()->const char* { return r2::TemplateMenu::GetTitle(); }
@@ -97,7 +93,6 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
-
 			ret->AddChild(
 				'6'
 				, []()->const char* { return r2::AlignMenu::GetTitle(); }
@@ -107,7 +102,6 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
-
 			ret->AddChild(
 				'7'
 				, []()->const char* { return r2::MemoryMenu::GetTitle(); }
@@ -117,7 +111,6 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
-
 			ret->AddChild(
 				'8'
 				, []()->const char* { return r2::EnumMenu::GetTitle(); }
@@ -127,7 +120,6 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
-
 			ret->AddChild(
 				'9'
 				, []()->const char* { return r2::TimeMenu::GetTitle(); }
@@ -138,7 +130,9 @@ namespace r2
 				}
 			);
 
+
 			ret->AddLineFeed();
+
 
 			ret->AddChild(
 				'q'
@@ -155,10 +149,11 @@ namespace r2
 			ret->AddChild( 't', structured_binding_test::Basic::GetInstance() );			
 			ret->AddChild( 'y', assert_test::Basic::GetInstance() );
 
+
 			ret->AddLineFeed();
 
-			ret->AddChild( 'a', stringview_test::Basic::GetInstance() );
 
+			ret->AddChild( 'a', stringview_test::Basic::GetInstance() );
 			ret->AddChild(
 				's'
 				, []()->const char* { return r2::NewMenu::GetTitle(); }
@@ -168,7 +163,6 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
-
 			ret->AddChild( 'd', print_test::Basic::GetInstance() );
 			ret->AddChild( 'f', char_test::Basic::GetInstance() );
 			ret->AddChild( 'g', locale_test::Basic::GetInstance() );
@@ -191,7 +185,9 @@ namespace r2
 				}
 			);
 
+
 			ret->AddLineFeed();
+
 
 			ret->AddChild( 'z', korean_test::Basic::GetInstance() );
 			ret->AddChild( 'x', key_test::Basic::GetInstance() );
@@ -205,7 +201,9 @@ namespace r2
 				}
 			);
 
+
 			ret->AddSplit();
+
 
 			ret->AddChild(
 				32
@@ -217,7 +215,9 @@ namespace r2
 				}
 			);
 
+
 			ret->AddSplit();
+
 
 			ret->AddChild(
 				27
