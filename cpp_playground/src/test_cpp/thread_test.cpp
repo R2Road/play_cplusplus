@@ -11,7 +11,7 @@ namespace thread_test
 {
 	void thread_func_1()
 	{
-		for( auto i = 0; 20 > i; ++i )
+		for( auto i = 0; 10 > i; ++i )
 		{
 			std::cout << "thread_func_1 : " << i << r2::linefeed;
 		}
@@ -19,7 +19,7 @@ namespace thread_test
 
 	void thread_func_2()
 	{
-		for( auto i = 0; 20 > i; ++i )
+		for( auto i = 0; 10 > i; ++i )
 		{
 			std::cout << "thread_func_2 : " << i << r2::linefeed;
 		}
@@ -37,6 +37,20 @@ namespace thread_test
 		return []()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::thread t1( thread_func_1 );" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::thread t2( thread_func_2 );" << r2::linefeed2;
+
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "+ Wait 4 Thread End" << r2::linefeed2;
+				std::cout << r2::tab2 << "t1.join();" << r2::linefeed2;
+				std::cout << r2::tab2 << "t2.join();" << r2::linefeed;
+			}
 
 			std::cout << r2::split;
 
