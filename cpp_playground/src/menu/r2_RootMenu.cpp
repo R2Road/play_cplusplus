@@ -23,6 +23,8 @@
 #include "test_cpp/structured_binding_test.h"
 #include "test_cpp/pointer_test.h"
 #include "test_cpp/assert_test.h"
+#include "test_cpp/thread_test.h"
+
 #include "test_cpp/string_view_test.h"
 #include "test_cpp/lambda_test.h"
 #include "test_cpp/print_test.h"
@@ -31,6 +33,7 @@
 #include "r2_ContainerMenu.h"
 #include "r2_AlgorithmMenu.h"
 
+#include "test_cpp/thread_test.h"
 #include "test_cpp/korean_test.h"
 #include "test_cpp/key_test.h"
 #include "r2_ETCMenu.h"
@@ -44,7 +47,9 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu(
 			director
 			, GetTitle()
-			, "> Inprogress : Renderer" "\n" "> To do : Memory Pool"
+			, "> Inprogress : Thread"
+			"\n" "> To do : Renderer"
+			"\n" "> To do : Memory Pool"
 		) );
 
 		{
@@ -148,6 +153,7 @@ namespace r2
 			ret->AddChild( 'r', tuple_test::Basic::GetInstance() );
 			ret->AddChild( 't', structured_binding_test::Basic::GetInstance() );			
 			ret->AddChild( 'y', assert_test::Basic::GetInstance() );
+			ret->AddChild( 'u', thread_test::Basic::GetInstance() );
 
 
 			ret->AddLineFeed();
@@ -189,10 +195,11 @@ namespace r2
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'z', korean_test::Basic::GetInstance() );
-			ret->AddChild( 'x', key_test::Basic::GetInstance() );
+			ret->AddChild( 'z', thread_test::Basic::GetInstance() );
+			ret->AddChild( 'x', korean_test::Basic::GetInstance() );
+			ret->AddChild( 'c', key_test::Basic::GetInstance() );
 			ret->AddChild(
-				'c'
+				'v'
 				, []()->const char* { return r2::ETCMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{

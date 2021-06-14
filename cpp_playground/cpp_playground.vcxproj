@@ -79,6 +79,7 @@
     <ClCompile Include="src\test_cpp\template_meta_programming_02_test.cpp" />
     <ClCompile Include="src\test_cpp\template_meta_programming_03_test.cpp" />
     <ClCompile Include="src\test_cpp\template_practice_part_01_test.cpp" />
+    <ClCompile Include="src\test_cpp\thread_test.cpp" />
     <ClCompile Include="src\test_cpp\time_1_test.cpp" />
     <ClCompile Include="src\test_cpp\time_2_test.cpp" />
     <ClCompile Include="src\test_cpp\time_3_test.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="src\test_cpp\template_meta_programming_02_test.h" />
     <ClInclude Include="src\test_cpp\template_meta_programming_03_test.h" />
     <ClInclude Include="src\test_cpp\template_practice_part_01_test.h" />
+    <ClInclude Include="src\test_cpp\thread_test.h" />
     <ClInclude Include="src\test_cpp\time_1_test.h" />
     <ClInclude Include="src\test_cpp\time_2_test.h" />
     <ClInclude Include="src\test_cpp\time_3_test.h" />
