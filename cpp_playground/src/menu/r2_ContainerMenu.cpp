@@ -5,6 +5,7 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
+#include "test_cpp/std_array_test.h"
 #include "test_cpp/vector_test.h"
 
 namespace r2
@@ -14,7 +15,8 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', vector_test::Basic::GetInstance() );
+			ret->AddChild( '1', std_array_test::Basic::GetInstance() );
+			ret->AddChild( '2', vector_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
