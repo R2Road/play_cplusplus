@@ -29,7 +29,7 @@ namespace thread_test
 	{
 		return []()->const char*
 		{
-			return "Thread - Basic";
+			return "Basic";
 		};
 	}
 	r2::iTest::DoFunc Basic::GetDoFunction()
@@ -60,6 +60,104 @@ namespace thread_test
 
 				t1.join();
 				t2.join();
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
+
+
+
+namespace thread_test
+{
+	void empty_thread_func( int ) {}
+
+	r2::iTest::TitleFunc Declaration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Declaration";
+		};
+	}
+	r2::iTest::DoFunc Declaration::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::thread test_thread( empty_thread_func, 3 );
+				test_thread.join();
+
+				std::cout << r2::tab << "+ Declaration With Function" << r2::linefeed2;
+				std::cout << r2::tab2 << "void empty_thread_func( int ) {}" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::thread test_thread( empty_thread_func, 3 );" << r2::linefeed2;
+			}
+
+			std::cout << r2::split;
+
+			{
+				class ThreadTestClass
+				{
+				public:
+					ThreadTestClass( int ) {}
+					void operator()() const {}
+				};
+
+				std::thread test_thread{ ThreadTestClass( 3 ) };
+				test_thread.join();
+
+				std::cout << r2::tab << "+ Declaration With Function Object" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "class ThreadTestClass" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab2 << "public:" << r2::linefeed;
+				std::cout << r2::tab3 << "ThreadTestClass( int ) {}" << r2::linefeed;
+				std::cout << r2::tab3 << "void operator()() const {}" << r2::linefeed;
+				std::cout << r2::tab2 << "}" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "std::thread test_thread{ ThreadTestClass( 3 ) };" << r2::linefeed2;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::thread test_thread( []( int, int ) {}, 3, 4 );
+				test_thread.join();
+
+				std::cout << r2::tab << "+ Declaration With Lambda" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::thread test_thread( []() {}, 3, 4 );" << r2::linefeed2;
+			}
+
+			std::cout << r2::split;
+
+			{
+				class ThreadTestClass
+				{
+				public:
+					void process() const {}
+				};
+
+				ThreadTestClass thread_test_class;
+
+				std::thread test_thread( &ThreadTestClass::process, &thread_test_class );
+				test_thread.join();
+
+				std::cout << r2::tab << "+ Declaration With Class Method" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "class ThreadTestClass" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab2 << "public:" << r2::linefeed;
+				std::cout << r2::tab3 << "void process() const {}" << r2::linefeed;
+				std::cout << r2::tab2 << "}" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "ThreadTestClass thread_test_class;" << r2::linefeed;
+				std::cout << r2::tab2 << "std::thread test_thread( &ThreadTestClass::process, &thread_test_class );" << r2::linefeed2;
 			}
 
 			std::cout << r2::split;
