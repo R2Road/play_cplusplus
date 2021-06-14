@@ -184,3 +184,73 @@ namespace thread_test
 		};
 	}
 }
+
+
+
+namespace thread_test
+{
+	r2::iTest::TitleFunc CopyAssaignment::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Copy Assaignment";
+		};
+	}
+	r2::iTest::DoFunc CopyAssaignment::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::thread t1;
+			std::thread t2(
+				[]( int, int )
+				{
+					std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );
+				}, 3, 4
+			);
+
+			{
+				std::cout << r2::tab << "+ Variable" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "std::thread t1;" << r2::linefeed;
+				std::cout << r2::tab3 << "- ID : " << t1.get_id() << r2::linefeed;
+				std::cout << r2::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2::linefeed2;
+
+				std::cout << r2::tab2 << "std::thread t2(" << r2::linefeed;
+				std::cout << r2::tab3 << "[]( int, int )" << r2::linefeed;
+				std::cout << r2::tab3 << "{" << r2::linefeed;
+				std::cout << r2::tab4 << "std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );" << r2::linefeed;
+				std::cout << r2::tab3 << "}, 3, 4" << r2::linefeed;
+				std::cout << r2::tab2 << ");" << r2::linefeed;
+				std::cout << r2::tab3 << "- ID : " << t2.get_id() << r2::linefeed;
+				std::cout << r2::tab3 << "- Joinable : " << ( t2.joinable() ? "O" : "X" ) << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				t1 = std::move( t2 );
+
+				std::cout << r2::tab << "+ Assignment" << r2::linefeed2;
+				std::cout << r2::tab2 << "t1 = std::move( t2 );" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "t1" << r2::linefeed;
+				std::cout << r2::tab3 << "- ID : " << t1.get_id() << r2::linefeed;
+				std::cout << r2::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2::linefeed2;
+
+				std::cout << r2::tab2 << "t2" << r2::linefeed;
+				std::cout << r2::tab3 << "- ID : " << t2.get_id() << r2::linefeed;
+				std::cout << r2::tab3 << "- Joinable : " << ( t2.joinable() ? "O" : "X" ) << r2::linefeed;
+			}
+
+			t1.join();
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}

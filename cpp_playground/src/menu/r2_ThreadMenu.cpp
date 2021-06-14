@@ -16,6 +16,7 @@ namespace r2
 		{
 			ret->AddChild( '1', thread_test::Basic::GetInstance() );
 			ret->AddChild( '2', thread_test::Declaration::GetInstance() );
+			ret->AddChild( '3', thread_test::CopyAssaignment::GetInstance() );
 
 
 			ret->AddSplit();

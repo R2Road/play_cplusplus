@@ -18,4 +18,11 @@ namespace thread_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class CopyAssaignment : public r2::iTest, public r2::SingleTon<CopyAssaignment>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
