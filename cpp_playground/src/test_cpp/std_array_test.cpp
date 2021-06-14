@@ -50,4 +50,83 @@ namespace std_array_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc Fill::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Array : Fill";
+		};
+	}
+	r2::iTest::DoFunc Fill::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			auto printer = []( const std::array<int, 3u> container )
+			{
+				std::cout << r2::tab3 << "- Print : ";
+				for( const auto i : container )
+				{
+					std::cout << i << r2::tab;
+				}
+				std::cout << r2::linefeed;
+			};
+
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "+ Variable" << r2::linefeed2;
+
+			std::array<int, 3u> test_array{ { 1, 2, 3 } };
+			std::cout << r2::tab2 << "std::array<int, 3u> test_array{ { 1, 2, 3 } };" << r2::linefeed3;
+
+			{
+				test_array.fill( 4 );
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "test_array.fill( 4 );" << r2::linefeed;
+
+				printer( test_array );
+			}
+			
+			std::cout << r2::linefeed2;
+
+			{
+				std::fill( test_array.begin(), test_array.end(), 5 );
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::fill( test_array.begin(), test_array.end(), 5 );" << r2::linefeed;
+
+				printer( test_array );
+			}
+
+			std::cout << r2::linefeed2;
+
+			{
+				std::fill_n( test_array.begin(), 1, 6 );
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::fill_n( test_array.begin(), 1, 6 );" << r2::linefeed2;
+
+				printer( test_array );
+			}
+
+			std::cout << r2::linefeed2;
+
+			{
+				//std::fill_n( test_array.begin(), 5, 7 );
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::fill_n( test_array.begin(), 5, 6 );" << r2::linefeed2;
+				std::cout << r2::tab3 << "- Not Working" << r2::linefeed2;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
