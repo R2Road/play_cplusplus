@@ -213,7 +213,7 @@ namespace thread_test
 			);
 
 			{
-				std::cout << r2::tab << "+ Variable" << r2::linefeed2;
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 
 				std::cout << r2::tab2 << "std::thread t1;" << r2::linefeed;
 				std::cout << r2::tab3 << "- ID : " << t1.get_id() << r2::linefeed;
