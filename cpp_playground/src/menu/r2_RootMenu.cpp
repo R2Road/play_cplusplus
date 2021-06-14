@@ -23,7 +23,7 @@
 #include "test_cpp/structured_binding_test.h"
 #include "test_cpp/pointer_test.h"
 #include "test_cpp/assert_test.h"
-#include "test_cpp/thread_test.h"
+#include "r2_ThreadMenu.h"
 
 #include "test_cpp/string_view_test.h"
 #include "test_cpp/lambda_test.h"
@@ -153,7 +153,15 @@ namespace r2
 			ret->AddChild( 'r', tuple_test::Basic::GetInstance() );
 			ret->AddChild( 't', structured_binding_test::Basic::GetInstance() );			
 			ret->AddChild( 'y', assert_test::Basic::GetInstance() );
-			ret->AddChild( 'u', thread_test::Basic::GetInstance() );
+			ret->AddChild(
+				'u'
+				, []()->const char* { return r2::ThreadMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::ThreadMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
 
 
 			ret->AddLineFeed();
