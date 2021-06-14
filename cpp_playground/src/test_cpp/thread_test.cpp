@@ -2,6 +2,7 @@
 #include "thread_test.h"
 
 #include <conio.h>
+#include <chrono>
 #include <thread>
 
 #include "base/r2_eTestResult.h"
@@ -11,7 +12,9 @@ namespace thread_test
 {
 	void thread_func_1()
 	{
-		for( auto i = 0; 10 > i; ++i )
+		std::this_thread::sleep_for( std::chrono::milliseconds( 10 ) );
+
+		for( auto i = 0; 8 > i; ++i )
 		{
 			std::cout << "thread_func_1 : " << i << r2::linefeed;
 		}
@@ -19,7 +22,9 @@ namespace thread_test
 
 	void thread_func_2()
 	{
-		for( auto i = 0; 10 > i; ++i )
+		std::this_thread::sleep_for( std::chrono::milliseconds( 10 ) );
+
+		for( auto i = 0; 8 > i; ++i )
 		{
 			std::cout << "thread_func_2 : " << i << r2::linefeed;
 		}
@@ -41,15 +46,12 @@ namespace thread_test
 			std::cout << r2::split;
 
 			{
+				std::thread t1;
+
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "std::thread t1( thread_func_1 );" << r2::linefeed2;
-				std::cout << r2::tab2 << "std::thread t2( thread_func_2 );" << r2::linefeed2;
-
-				std::cout << r2::linefeed;
-
-				std::cout << r2::tab << "+ Wait 4 Thread End" << r2::linefeed2;
-				std::cout << r2::tab2 << "t1.join();" << r2::linefeed2;
-				std::cout << r2::tab2 << "t2.join();" << r2::linefeed;
+				std::cout << r2::tab2 << "std::thread t1;" << r2::linefeed;
+				std::cout << r2::tab3 << "- ID : " << t1.get_id() << r2::linefeed;
+				std::cout << r2::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -57,6 +59,22 @@ namespace thread_test
 			{
 				std::thread t1( thread_func_1 );
 				std::thread t2( thread_func_2 );
+
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::thread t1( thread_func_1 );" << r2::linefeed;
+				std::cout << r2::tab3 << "- ID : " << t1.get_id() << r2::linefeed;
+				std::cout << r2::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2::linefeed2;
+				std::cout << r2::tab2 << "std::thread t2( thread_func_2 );" << r2::linefeed;
+				std::cout << r2::tab3 << "- ID : " << t2.get_id() << r2::linefeed;
+				std::cout << r2::tab3 << "- Joinable : " << ( t2.joinable() ? "O" : "X" ) << r2::linefeed2;
+
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "+ Wait 4 Thread End" << r2::linefeed2;
+				std::cout << r2::tab2 << "t1.join();" << r2::linefeed;
+				std::cout << r2::tab2 << "t2.join();" << r2::linefeed;
+
+				std::cout << r2::split;
 
 				t1.join();
 				t2.join();
