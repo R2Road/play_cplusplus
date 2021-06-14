@@ -41,7 +41,8 @@ namespace std_array_test
 
 			{
 				std::array aa{ 1, 2, 3 };
-				std::cout << r2::tab2 << "std::array aa{ 1, 2, 3 };" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::array aa{ 1, 2, 3 };" << r2::linefeed;
+				std::cout << r2::tab2 << "* Note : Since c++17" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
