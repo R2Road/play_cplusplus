@@ -25,4 +25,11 @@ namespace thread_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class WaitProcess_SleepFor : public r2::iTest, public r2::SingleTon<WaitProcess_SleepFor>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

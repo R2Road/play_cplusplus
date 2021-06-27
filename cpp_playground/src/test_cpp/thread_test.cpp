@@ -254,3 +254,52 @@ namespace thread_test
 		};
 	}
 }
+
+
+
+namespace thread_test
+{
+	r2::iTest::TitleFunc WaitProcess_SleepFor::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Wait Process : Sleep For";
+		};
+	}
+	r2::iTest::DoFunc WaitProcess_SleepFor::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab2 << "std::thread test_thread( []()" << r2::linefeed;
+				std::cout << r2::tab3 << "{" << r2::linefeed;
+				std::cout << r2::tab4 << "printf( \"\\t\\tstart thread \\n\" );" << r2::linefeed2;
+				std::cout << r2::tab4 << "std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );" << r2::linefeed2;
+				std::cout << r2::tab4 << "printf( \"\\t\\tend thread \\n\" );" << r2::linefeed;
+				std::cout << r2::tab3 << "}" << r2::linefeed;
+				std::cout << r2::tab2 << ");" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::thread test_thread( []()
+					{
+						printf( "\t\tstart thread \n" );
+
+						std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );
+
+						printf( "\t\tend thread \n" );
+					}
+				);
+				test_thread.join();
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
