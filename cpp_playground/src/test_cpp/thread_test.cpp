@@ -3,10 +3,13 @@
 
 #include <conio.h>
 #include <chrono>
+#include <sstream>
 #include <thread>
 
 #include "base/r2_eTestResult.h"
 #include "renderer/r2_FrameManager.h"
+
+#pragma warning( disable : 4477 ) // for "%x" and std::this_thread::get_id()
 
 namespace thread_test
 {
@@ -295,6 +298,68 @@ namespace thread_test
 					}
 				);
 				test_thread.join();
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
+
+
+
+namespace thread_test
+{
+	r2::iTest::TitleFunc WaitProcess_Yield::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Wait Process : Yield";
+		};
+	}
+	r2::iTest::DoFunc WaitProcess_Yield::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab2 << "auto thread_process = []()" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab3 << "for( int count = 0; 10 > count; ++count )" << r2::linefeed2;
+				std::cout << r2::tab3 << "{" << r2::linefeed;
+				std::cout << r2::tab4 << "printf( \"\\t\\t\" \"thread %x : yield % d\" \"\\n\", std::this_thread::get_id(), count );" << r2::linefeed2;
+				std::cout << r2::tab4 << "std::this_thread::yield();" << r2::linefeed;
+				std::cout << r2::tab3 << "}" << r2::linefeed;
+				std::cout << r2::tab2 << "}" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				auto thread_process = []()
+				{
+					for( int count = 0; 10 > count; ++count )
+					{
+						printf( "\t\t" "thread %x : yield %d" "\n", std::this_thread::get_id(), count );
+						std::this_thread::yield();
+					}
+				};
+
+				std::thread test_thread_1( thread_process );
+				std::thread test_thread_2( thread_process );
+				std::thread test_thread_3( thread_process );
+				std::thread test_thread_4( thread_process );
+
+				test_thread_1.join();
+				test_thread_2.join();
+				test_thread_3.join();
+				test_thread_4.join();
+
+
+				std::cout << r2::linefeed;
+				std::cout << r2::tab2 << "Note : 양보 받을 놈이 없으면 아무 소용 없다." << r2::linefeed;
 			}
 
 			std::cout << r2::split;

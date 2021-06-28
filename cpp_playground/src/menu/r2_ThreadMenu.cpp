@@ -18,6 +18,7 @@ namespace r2
 			ret->AddChild( '2', thread_test::Declaration::GetInstance() );
 			ret->AddChild( '3', thread_test::CopyAssaignment::GetInstance() );
 			ret->AddChild( '4', thread_test::WaitProcess_SleepFor::GetInstance() );
+			ret->AddChild( '5', thread_test::WaitProcess_Yield::GetInstance() );
 
 
 			ret->AddSplit();

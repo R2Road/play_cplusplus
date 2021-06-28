@@ -32,4 +32,11 @@ namespace thread_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class WaitProcess_Yield : public r2::iTest, public r2::SingleTon<WaitProcess_Yield>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
