@@ -11,4 +11,11 @@ namespace class_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class PrintName : public r2::iTest, public r2::SingleTon<PrintName>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

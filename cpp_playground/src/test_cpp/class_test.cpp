@@ -55,3 +55,98 @@ namespace class_test
 		};
 	}
 }
+
+
+
+class TestClass1 {};
+
+namespace
+{
+	class TestClass2 {};
+}
+
+namespace class_test
+{
+	r2::iTest::TitleFunc PrintName::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Print Name";
+		};
+	}
+	r2::iTest::DoFunc PrintName::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "class TestClass1 {};" << r2::linefeed;
+
+
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "+ Print Name" << r2::linefeed2;
+				std::cout << r2::tab2 << "- " << "typeid( TestClass1 ).name()" << r2::linefeed;
+				std::cout << r2::tab3 << "- " << typeid( TestClass1 ).name() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				TestClass1 test_class;
+
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "TestClass1 test_class;" << r2::linefeed;
+
+
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "+ Print Name" << r2::linefeed2;
+				std::cout << r2::tab2 << "- " << "typeid( test_class ).name()" << r2::linefeed;
+				std::cout << r2::tab3 << "- " << typeid( test_class ).name() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "namespace" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab3 << "class TestClass2 {};" << r2::linefeed;
+				std::cout << r2::tab2 << "}" << r2::linefeed;
+
+
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "+ Print Name" << r2::linefeed2;
+				std::cout << r2::tab2 << "- " << "typeid( TestClass2 ).name()" << r2::linefeed;
+				std::cout << r2::tab3 << "- " << typeid( TestClass2 ).name() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+			
+			{
+				class TestClass3 {};
+
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "class TestClass3 {};" << r2::linefeed;
+				std::cout << r2::tab2 << "...In this space" << r2::linefeed;
+
+
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "+ Print Name" << r2::linefeed2;
+				std::cout << r2::tab2 << "- " << "typeid( TestClass3 ).name()" << r2::linefeed;
+				std::cout << r2::tab3 << "- " << typeid( TestClass3 ).name() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
