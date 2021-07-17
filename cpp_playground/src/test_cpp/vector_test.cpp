@@ -26,23 +26,33 @@ namespace vector_test
 				std::cout << r2::tab << "+ Resize" << r2::linefeed;
 				std::cout << r2::linefeed;
 
-				std::vector<int> test_vector;
-				std::cout << r2::tab2 << "std::vector<int> test_vector;" << r2::linefeed;
-				std::cout << r2::linefeed;
+				std::vector<int> test_vector = { 1, 2, 3, 4 };
+				std::cout << r2::tab2 << "std::vector<int> test_vector = { 1, 2, 3, 4 };" << r2::linefeed;
+				std::cout << r2::tab2 << "- Print : ";
+				for( const auto i : test_vector )
+				{
+					std::cout << i;
+				}
+
+				std::cout << r2::linefeed << r2::linefeed;
 
 				test_vector.resize( 10 );
 				std::cout << r2::tab2 << "test_vector.resize( 10 );" << r2::linefeed;
-				std::cout << r2::tab3 << "- Size : " << test_vector.size() << r2::linefeed;
+				std::cout << r2::tab2 << "- Print : ";
+				for( const auto i : test_vector )
+				{
+					std::cout << i;
+				}
 
-				std::cout << r2::linefeed;
+				std::cout << r2::linefeed << r2::linefeed;
 
-				test_vector.resize( 5 );
-				std::cout << r2::tab2 << "test_vector.resize( 5 );" << r2::linefeed;
-				std::cout << r2::tab3 << "- Size : " << test_vector.size() << r2::linefeed;
-
-				std::cout << r2::linefeed;
-
-				std::cout << r2::tab << "Not Need Clear" << r2::linefeed;
+				test_vector.resize( 2 );
+				std::cout << r2::tab2 << "test_vector.resize( 2 );" << r2::linefeed;
+				std::cout << r2::tab2 << "- Print : ";
+				for( const auto i : test_vector )
+				{
+					std::cout << i;
+				}
 			}
 
 			std::cout << r2::split;
