@@ -53,6 +53,16 @@ namespace vector_test
 				{
 					std::cout << i;
 				}
+
+				std::cout << r2::linefeed << r2::linefeed;
+
+				test_vector.resize( 20 );
+				std::cout << r2::tab2 << "test_vector.resize( 10 );" << r2::linefeed;
+				std::cout << r2::tab2 << "- Print : ";
+				for( const auto i : test_vector )
+				{
+					std::cout << i;
+				}
 			}
 
 			std::cout << r2::split;
