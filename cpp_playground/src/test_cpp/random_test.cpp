@@ -5,6 +5,7 @@
 #include <fstream>
 #include <random>
 #include <string>
+#include <map>
 
 #include "base/r2_eTestResult.h"
 
@@ -189,6 +190,58 @@ namespace random_test
 			std::cout << r2::linefeed << r2::linefeed;
 
 			Status_Load();
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
+
+
+
+namespace random_test
+{
+	r2::iTest::TitleFunc DiscreateDistribution::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Discreate Distribution";
+		};
+	}
+	r2::iTest::DoFunc DiscreateDistribution::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::random_device rd;
+			std::mt19937 gen( rd() );
+			std::discrete_distribution<> d( { 5, 10, 30, 50, 5 } );
+
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "std::discrete_distribution<> d( { 5, 10, 30, 50, 5 } );" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::map<int, int> test_map;
+
+			for( int i = 0; 3 > i; ++i )
+			{
+				test_map.clear();
+
+				for( int sample_count = 0; 100 > sample_count; ++sample_count )
+				{
+					++test_map[d( gen )];
+				}
+
+				for( const auto& t : test_map )
+				{
+					std::cout << r2::tab << "key : " << t.first << std::setw( 20 ) << "count : " << t.second << r2::linefeed;
+				}
+
+				std::cout << r2::split;
+			}
 
 			return r2::eTestResult::RunTest;
 		};

@@ -20,4 +20,13 @@ namespace random_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+
+
+	class DiscreateDistribution : public r2::iTest, public r2::SingleTon<DiscreateDistribution>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

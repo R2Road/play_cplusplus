@@ -16,6 +16,7 @@ namespace r2
 		{
 			ret->AddChild( '1', random_test::Basic::GetInstance() );
 			ret->AddChild( '2', random_test::StatusSaveAndLoad::GetInstance() );
+			ret->AddChild( '3', random_test::DiscreateDistribution::GetInstance() );
 
 
 			ret->AddSplit();
