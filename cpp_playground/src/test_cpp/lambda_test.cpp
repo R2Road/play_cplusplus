@@ -27,13 +27,13 @@ namespace lambda_test
 			{
 				std::cout << "\t + " << "Basic" << r2::linefeed << r2::linefeed;
 
-				int i = 0;
+				int i = 888;
 				auto lambda_1 = [i]()
 				{
 					std::cout << "\t\t" << "i : " << i << r2::linefeed;
 				};
 
-				std::cout << "\t\t" << "int i = 0;" << r2::linefeed;
+				std::cout << "\t\t" << "int i = 888;" << r2::linefeed;
 				std::cout << "\t\t" << "auto lambda_1 = [i]()" << r2::linefeed;
 				std::cout << "\t\t" << "{" << r2::linefeed;
 				std::cout << "\t\t\t" << "std::cout << i << r2::linefeed;" << r2::linefeed;
