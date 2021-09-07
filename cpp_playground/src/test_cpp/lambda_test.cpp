@@ -69,6 +69,26 @@ namespace lambda_test
 
 			std::cout << r2::split;
 
+			{
+				std::cout << "\t + " << "Capture with initialization" << r2::linefeed << r2::linefeed;
+
+				auto lambda_1 = [i = int( 999 )]()
+				{
+					std::cout << "\t\t" << "i : " << i << r2::linefeed;
+				};
+
+				std::cout << "\t\t" << "auto lambda_1 = [i = int( 999 )]()" << r2::linefeed;
+				std::cout << "\t\t" << "{" << r2::linefeed;
+				std::cout << "\t\t\t" << "std::cout << i << r2::linefeed;" << r2::linefeed;
+				std::cout << "\t\t" << "};" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << "\t + " << "Call Lambda" << r2::linefeed;
+				lambda_1();
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
