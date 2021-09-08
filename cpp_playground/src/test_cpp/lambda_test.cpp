@@ -279,12 +279,12 @@ namespace lambda_test
 			{
 				std::cout << "\t + " << "Capture with initialization" << r2::linefeed << r2::linefeed;
 
-				auto lambda_1 = [i = int( 999 )]()
+				auto lambda_1 = [i = 999]()
 				{
 					std::cout << "\t\t" << "i : " << i << r2::linefeed;
 				};
 
-				std::cout << "\t\t" << "auto lambda_1 = [i = int( 999 )]()" << r2::linefeed;
+				std::cout << "\t\t" << "auto lambda_1 = [i = 999]()" << r2::linefeed;
 				std::cout << "\t\t" << "{" << r2::linefeed;
 				std::cout << "\t\t\t" << "std::cout << i << r2::linefeed;" << r2::linefeed;
 				std::cout << "\t\t" << "};" << r2::linefeed;
@@ -300,13 +300,13 @@ namespace lambda_test
 				std::cout << "\t + " << "Capture with Change Value" << r2::linefeed << r2::linefeed;
 
 				int i = 111;
-				auto lambda_1 = [&i2 = i = int( 222 )]()
+				auto lambda_1 = [&i2 = i = 222]()
 				{
 					std::cout << "\t\t" << "i2 : " << i2 << r2::linefeed;
 				};
 
 				std::cout << "\t\t" << "int i = 111;" << r2::linefeed;
-				std::cout << "\t\t" << "auto lambda_1 = [&i2 = i = int( 222 )]()" << r2::linefeed;
+				std::cout << "\t\t" << "auto lambda_1 = [&i2 = i = 222]()" << r2::linefeed;
 				std::cout << "\t\t" << "{" << r2::linefeed;
 				std::cout << "\t\t\t" << "std::cout << i2 << r2::linefeed;" << r2::linefeed;
 				std::cout << "\t\t" << "};" << r2::linefeed;
