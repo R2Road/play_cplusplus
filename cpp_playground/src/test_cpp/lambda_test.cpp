@@ -297,6 +297,23 @@ namespace lambda_test
 			std::cout << r2::split;
 
 			{
+				std::cout << "\t + " << "Not working this" << r2::linefeed << r2::linefeed;
+
+				//auto lambda_1 = [&i = 999]()
+				//{
+				//	std::cout << "\t\t" << "i : " << i << r2::linefeed;
+				//};
+
+				std::cout << "\t\t" << "auto lambda_1 = [&i = 999]()  // X - &i required lvalue" << r2::linefeed;
+				std::cout << "\t\t" << "{" << r2::linefeed;
+				std::cout << "\t\t\t" << "std::cout << i << r2::linefeed;" << r2::linefeed;
+				std::cout << "\t\t" << "};" << r2::linefeed;
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
 				std::cout << "\t + " << "Capture with Change Value" << r2::linefeed << r2::linefeed;
 
 				int i = 111;
