@@ -69,58 +69,6 @@ namespace lambda_test
 
 			std::cout << r2::split;
 
-			{
-				std::cout << "\t + " << "Capture with initialization" << r2::linefeed << r2::linefeed;
-
-				auto lambda_1 = [i = int( 999 )]()
-				{
-					std::cout << "\t\t" << "i : " << i << r2::linefeed;
-				};
-
-				std::cout << "\t\t" << "auto lambda_1 = [i = int( 999 )]()" << r2::linefeed;
-				std::cout << "\t\t" << "{" << r2::linefeed;
-				std::cout << "\t\t\t" << "std::cout << i << r2::linefeed;" << r2::linefeed;
-				std::cout << "\t\t" << "};" << r2::linefeed;
-				std::cout << r2::linefeed;
-
-				std::cout << "\t + " << "Call Lambda" << r2::linefeed;
-				lambda_1();
-			}
-
-			std::cout << r2::split;
-
-			{
-				std::cout << "\t + " << "Capture with Change Value" << r2::linefeed << r2::linefeed;
-
-				int i = 111;
-				auto lambda_1 = [&i2 = i = int( 222 )]()
-				{
-					std::cout << "\t\t" << "i2 : " << i2 << r2::linefeed;
-				};
-
-				std::cout << "\t\t" << "int i = 111;" << r2::linefeed;
-				std::cout << "\t\t" << "auto lambda_1 = [&i2 = i = int( 222 )]()" << r2::linefeed;
-				std::cout << "\t\t" << "{" << r2::linefeed;
-				std::cout << "\t\t\t" << "std::cout << i2 << r2::linefeed;" << r2::linefeed;
-				std::cout << "\t\t" << "};" << r2::linefeed;
-				std::cout << r2::linefeed;
-
-				std::cout << "\t + " << "Call Lambda" << r2::linefeed;
-				lambda_1();
-				std::cout << "\t\t" << "i : " << i << r2::linefeed;
-				std::cout << r2::linefeed;
-
-				i = 777;
-				std::cout << "\t\t" << "i = 777;" << r2::linefeed2;
-
-				std::cout << "\t + " << "Call Lambda" << r2::linefeed2;
-				lambda_1();
-
-				std::cout << "\t\t" << "i : " << i << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
 			return r2::eTestResult::RunTest;
 		};
 	}
@@ -303,6 +251,79 @@ namespace lambda_test
 				std::cout << "\t\t" << "std::function<void()> test_func = [copied_up = std::move( test_struct_up )]() {}" << r2::linefeed;
 				std::cout << "\t\t\t" << "- Not Working" << r2::linefeed;
 				std::cout << "\t\t\t" << "- Not Same : std::function<void()> != auto" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc CaptureValueWithAssign::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Capture Value with Assign";
+		};
+	}
+	r2::iTest::DoFunc CaptureValueWithAssign::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "\t + " << "Capture with initialization" << r2::linefeed << r2::linefeed;
+
+				auto lambda_1 = [i = int( 999 )]()
+				{
+					std::cout << "\t\t" << "i : " << i << r2::linefeed;
+				};
+
+				std::cout << "\t\t" << "auto lambda_1 = [i = int( 999 )]()" << r2::linefeed;
+				std::cout << "\t\t" << "{" << r2::linefeed;
+				std::cout << "\t\t\t" << "std::cout << i << r2::linefeed;" << r2::linefeed;
+				std::cout << "\t\t" << "};" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << "\t + " << "Call Lambda" << r2::linefeed;
+				lambda_1();
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "\t + " << "Capture with Change Value" << r2::linefeed << r2::linefeed;
+
+				int i = 111;
+				auto lambda_1 = [&i2 = i = int( 222 )]()
+				{
+					std::cout << "\t\t" << "i2 : " << i2 << r2::linefeed;
+				};
+
+				std::cout << "\t\t" << "int i = 111;" << r2::linefeed;
+				std::cout << "\t\t" << "auto lambda_1 = [&i2 = i = int( 222 )]()" << r2::linefeed;
+				std::cout << "\t\t" << "{" << r2::linefeed;
+				std::cout << "\t\t\t" << "std::cout << i2 << r2::linefeed;" << r2::linefeed;
+				std::cout << "\t\t" << "};" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << "\t + " << "Call Lambda" << r2::linefeed;
+				lambda_1();
+				std::cout << "\t\t" << "i : " << i << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				i = 777;
+				std::cout << "\t\t" << "i = 777;" << r2::linefeed2;
+
+				std::cout << "\t + " << "Call Lambda" << r2::linefeed2;
+				lambda_1();
+
+				std::cout << "\t\t" << "i : " << i << r2::linefeed;
 			}
 
 			std::cout << r2::split;

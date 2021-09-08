@@ -18,6 +18,7 @@ namespace r2
 			ret->AddChild( '2', lambda_test::CaptureValueWithMutable::GetInstance() );
 			ret->AddChild( '3', lambda_test::CaptureReference::GetInstance() );
 			ret->AddChild( '4', lambda_test::CaptureUniquePtr::GetInstance() );
+			ret->AddChild( '5', lambda_test::CaptureValueWithAssign::GetInstance() );
 
 
 			ret->AddSplit();

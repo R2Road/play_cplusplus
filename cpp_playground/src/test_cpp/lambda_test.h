@@ -32,4 +32,11 @@ namespace lambda_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class CaptureValueWithAssign : public r2::iTest, public r2::SingleTon<CaptureValueWithAssign>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
