@@ -89,6 +89,38 @@ namespace lambda_test
 
 			std::cout << r2::split;
 
+			{
+				std::cout << "\t + " << "Capture with Change Value" << r2::linefeed << r2::linefeed;
+
+				int i = 111;
+				auto lambda_1 = [&i2 = i = int( 222 )]()
+				{
+					std::cout << "\t\t" << "i2 : " << i2 << r2::linefeed;
+				};
+
+				std::cout << "\t\t" << "int i = 111;" << r2::linefeed;
+				std::cout << "\t\t" << "auto lambda_1 = [&i2 = i = int( 222 )]()" << r2::linefeed;
+				std::cout << "\t\t" << "{" << r2::linefeed;
+				std::cout << "\t\t\t" << "std::cout << i2 << r2::linefeed;" << r2::linefeed;
+				std::cout << "\t\t" << "};" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				std::cout << "\t + " << "Call Lambda" << r2::linefeed;
+				lambda_1();
+				std::cout << "\t\t" << "i : " << i << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				i = 777;
+				std::cout << "\t\t" << "i = 777;" << r2::linefeed2;
+
+				std::cout << "\t + " << "Call Lambda" << r2::linefeed2;
+				lambda_1();
+
+				std::cout << "\t\t" << "i : " << i << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
