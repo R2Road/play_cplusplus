@@ -8,7 +8,6 @@
 
 namespace filesystem_test
 {
-
 	r2::iTest::TitleFunc DirectoryPath::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -53,7 +52,6 @@ namespace filesystem_test
 
 namespace filesystem_test
 {
-
 	r2::iTest::TitleFunc DirectoryIterator::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -94,7 +92,6 @@ namespace filesystem_test
 
 namespace filesystem_test
 {
-
 	r2::iTest::TitleFunc RecursiveDirectoryIterator::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -138,7 +135,6 @@ namespace filesystem_test
 
 namespace filesystem_test
 {
-
 	r2::iTest::TitleFunc PathOperation::GetTitleFunction() const
 	{
 		return []()->const char*
