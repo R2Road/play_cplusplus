@@ -135,14 +135,14 @@ namespace filesystem_test
 
 namespace filesystem_test
 {
-	r2::iTest::TitleFunc PathOperation::GetTitleFunction() const
+	r2::iTest::TitleFunc PathOperation_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Path Operation";
+			return "Path Operation 1";
 		};
 	}
-	r2::iTest::DoFunc PathOperation::GetDoFunction()
+	r2::iTest::DoFunc PathOperation_1::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

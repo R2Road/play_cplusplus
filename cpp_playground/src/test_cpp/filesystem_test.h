@@ -32,7 +32,7 @@ namespace filesystem_test
 
 
 
-	class PathOperation : public r2::iTest, public r2::SingleTon<PathOperation>
+	class PathOperation_1 : public r2::iTest, public r2::SingleTon<PathOperation_1>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
