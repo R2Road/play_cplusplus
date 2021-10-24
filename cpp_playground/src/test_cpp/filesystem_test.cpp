@@ -220,4 +220,50 @@ namespace filesystem_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+	r2::iTest::TitleFunc PathOperation_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Path Operation 2";
+		};
+	}
+	r2::iTest::DoFunc PathOperation_2::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::filesystem::path p = std::filesystem::current_path();
+
+			{
+				std::cout << r2::tab << "+ Directory : " << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab2 << p << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Has Parent Path" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "p.has_parent_path();" << r2::linefeed;
+				std::cout << r2::tab3 << "result : " << ( p.has_parent_path() ? "True" : "False" ) << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Get Parent Path" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "p.parent_path();" << r2::linefeed;
+				std::cout << r2::tab3 << "result : " << ( p.has_parent_path() ? p.parent_path() : "Nothing" ) << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
