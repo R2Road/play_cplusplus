@@ -28,13 +28,11 @@
 #include "test_cpp/string_view_test.h"
 #include "test_cpp/lambda_test.h"
 #include "test_cpp/print_test.h"
-#include "test_cpp/char_test.h"
-#include "test_cpp/locale_test.h"
+#include "r2_CharMenu.h"
 #include "r2_ContainerMenu.h"
 #include "r2_AlgorithmMenu.h"
 
 #include "test_cpp/thread_test.h"
-#include "test_cpp/korean_test.h"
 #include "test_cpp/key_test.h"
 #include "r2_ETCMenu.h"
 
@@ -178,10 +176,17 @@ namespace r2
 				}
 			);
 			ret->AddChild( 'd', print_test::Basic::GetInstance() );
-			ret->AddChild( 'f', char_test::Basic::GetInstance() );
-			ret->AddChild( 'g', locale_test::Basic::GetInstance() );
 			ret->AddChild(
-				'h'
+				'f'
+				, []()->const char* { return r2::CharMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::CharMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+			ret->AddChild(
+				'g'
 				, []()->const char* { return r2::ContainerMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -190,7 +195,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'j'
+				'h'
 				, []()->const char* { return r2::AlgorithmMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -204,10 +209,9 @@ namespace r2
 
 
 			ret->AddChild( 'z', thread_test::Basic::GetInstance() );
-			ret->AddChild( 'x', korean_test::Basic::GetInstance() );
-			ret->AddChild( 'c', key_test::Basic::GetInstance() );
+			ret->AddChild( 'x', key_test::Basic::GetInstance() );
 			ret->AddChild(
-				'v'
+				'c'
 				, []()->const char* { return r2::ETCMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{

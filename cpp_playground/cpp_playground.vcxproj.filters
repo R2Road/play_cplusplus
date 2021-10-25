@@ -239,6 +239,9 @@
     <ClCompile Include="src\menu\r2_ThreadMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\menu\r2_CharMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -480,6 +483,9 @@
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\menu\r2_ThreadMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_CharMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
