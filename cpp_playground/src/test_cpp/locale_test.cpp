@@ -27,7 +27,7 @@ namespace locale_test
 				std::cout << r2::tab << "+ std::locale l( \"\" );" << r2::linefeed2;
 
 				std::locale l( "" );
-				std::wcout << r2::tab2 << "Locale Name : " << l.name().c_str() << r2::linefeed;
+				std::cout << r2::tab2 << "Locale Name : " << l.name().c_str() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -36,7 +36,7 @@ namespace locale_test
 				std::cout << r2::tab << "+ std::locale l( \"en_US.utf8\" );" << r2::linefeed2;
 
 				std::locale l( "en_US.utf8" );
-				std::wcout << r2::tab2 << "Locale Name : " << l.name().c_str() << r2::linefeed;
+				std::cout << r2::tab2 << "Locale Name : " << l.name().c_str() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
