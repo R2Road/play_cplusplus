@@ -45,8 +45,8 @@ namespace locale_test
 				const std::string current_locale = setlocale( LC_ALL, nullptr );
 
 				std::cout << r2::tab << "+ Current Locale" << r2::linefeed2;
-				std::cout << r2::tab2 << "const std::string current_locale = setlocale( LC_ALL, nullptr );" << r2::linefeed;
-				std::cout << r2::tab2 << "- " << current_locale << r2::linefeed;
+				std::cout << r2::tab2 << "const std::string current_locale = setlocale( LC_ALL, nullptr );" << r2::linefeed2;
+				std::cout << r2::tab2 << "Locale Name : " << current_locale << r2::linefeed;
 
 				std::cout << r2::linefeed;
 
@@ -59,8 +59,8 @@ namespace locale_test
 				const std::string current_locale = setlocale( LC_ALL, "" );
 
 				std::cout << r2::tab << "+ Set OS Default Locale" << r2::linefeed2;
-				std::cout << r2::tab2 << "const std::string current_locale = setlocale( LC_ALL, \"\" );" << r2::linefeed;
-				std::cout << r2::tab2 << "- " << current_locale << r2::linefeed;
+				std::cout << r2::tab2 << "const std::string current_locale = setlocale( LC_ALL, \"\" );" << r2::linefeed2;
+				std::cout << r2::tab2 << "Locale Name : " << current_locale << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -69,8 +69,8 @@ namespace locale_test
 				const std::string current_locale = setlocale( LC_ALL, "C" );
 
 				std::cout << r2::tab << "+ Roll Back Locale" << r2::linefeed2;
-				std::cout << r2::tab2 << "const std::string current_locale = setlocale( LC_ALL, \"C\" );" << r2::linefeed;
-				std::cout << r2::tab2 << "- " << current_locale << r2::linefeed;
+				std::cout << r2::tab2 << "const std::string current_locale = setlocale( LC_ALL, \"C\" );" << r2::linefeed2;
+				std::cout << r2::tab2 << "Locale Name : " << current_locale << r2::linefeed;
 			}
 
 			std::cout << r2::split;
