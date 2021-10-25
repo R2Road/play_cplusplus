@@ -49,6 +49,16 @@ namespace locale_test
 
 			std::cout << r2::split;
 
+			{
+				const std::string old_locale = setlocale( LC_ALL, nullptr );
+
+				std::cout << r2::tab << "+ Current Locale" << r2::linefeed2;
+				std::cout << r2::tab2 << "const std::string old_locale = setlocale( LC_ALL, nullptr );" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << old_locale << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
