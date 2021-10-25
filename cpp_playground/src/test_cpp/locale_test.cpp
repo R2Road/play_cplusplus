@@ -65,6 +65,16 @@ namespace locale_test
 
 			std::cout << r2::split;
 
+			{
+				const std::string current_locale = setlocale( LC_ALL, "C" );
+
+				std::cout << r2::tab << "+ Roll Back Locale" << r2::linefeed2;
+				std::cout << r2::tab2 << "const std::string current_locale = setlocale( LC_ALL, \"C\" );" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << current_locale << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
