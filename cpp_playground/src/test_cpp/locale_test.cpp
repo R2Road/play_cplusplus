@@ -56,9 +56,11 @@ namespace locale_test
 			std::cout << r2::split;
 
 			{
-				setlocale( LC_ALL, "" );
-				std::cout << "LC_ALL: " << setlocale( LC_ALL, NULL ) << r2::linefeed;
-				std::cout << "LC_CTYPE: " << setlocale( LC_CTYPE, NULL ) << r2::linefeed;
+				const std::string current_locale = setlocale( LC_ALL, "" );
+
+				std::cout << r2::tab << "+ Set OS Default Locale" << r2::linefeed2;
+				std::cout << r2::tab2 << "const std::string current_locale = setlocale( LC_ALL, \"\" );" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << current_locale << r2::linefeed;
 			}
 
 			std::cout << r2::split;
