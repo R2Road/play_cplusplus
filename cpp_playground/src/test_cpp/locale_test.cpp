@@ -24,14 +24,6 @@ namespace locale_test
 			std::cout << r2::split;
 
 			{
-				setlocale( LC_ALL, "" );
-				std::cout << "LC_ALL: " << setlocale( LC_ALL, NULL ) << r2::linefeed;
-				std::cout << "LC_CTYPE: " << setlocale( LC_CTYPE, NULL ) << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
-			{
 				std::cout << r2::tab << "+ std::locale l( \"\" );" << r2::linefeed2;
 
 				std::locale l( "" );
@@ -55,6 +47,14 @@ namespace locale_test
 				std::cout << r2::tab << "+ Current Locale" << r2::linefeed2;
 				std::cout << r2::tab2 << "const std::string old_locale = setlocale( LC_ALL, nullptr );" << r2::linefeed;
 				std::cout << r2::tab2 << "- " << old_locale << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				setlocale( LC_ALL, "" );
+				std::cout << "LC_ALL: " << setlocale( LC_ALL, NULL ) << r2::linefeed;
+				std::cout << "LC_CTYPE: " << setlocale( LC_CTYPE, NULL ) << r2::linefeed;
 			}
 
 			std::cout << r2::split;
