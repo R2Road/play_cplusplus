@@ -18,4 +18,11 @@ namespace class_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class PrivateInheritance : public r2::iTest, public r2::SingleTon<PrivateInheritance>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
