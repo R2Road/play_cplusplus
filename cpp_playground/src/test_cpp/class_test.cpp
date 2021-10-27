@@ -93,7 +93,7 @@ namespace class_test
 
 				std::cout << r2::tab << "+ Print Name" << r2::linefeed2;
 				std::cout << r2::tab2 << "- " << "typeid( TestClass1 ).name()" << r2::linefeed;
-				std::cout << r2::tab3 << "- " << typeid( TestClass1 ).name() << r2::linefeed;
+				std::cout << r2::tab3 << "> " << typeid( TestClass1 ).name() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -109,7 +109,7 @@ namespace class_test
 
 				std::cout << r2::tab << "+ Print Name" << r2::linefeed2;
 				std::cout << r2::tab2 << "- " << "typeid( test_class ).name()" << r2::linefeed;
-				std::cout << r2::tab3 << "- " << typeid( test_class ).name() << r2::linefeed;
+				std::cout << r2::tab3 << "> " << typeid( test_class ).name() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -126,7 +126,7 @@ namespace class_test
 
 				std::cout << r2::tab << "+ Print Name" << r2::linefeed2;
 				std::cout << r2::tab2 << "- " << "typeid( TestClass2 ).name()" << r2::linefeed;
-				std::cout << r2::tab3 << "- " << typeid( TestClass2 ).name() << r2::linefeed;
+				std::cout << r2::tab3 << "> " << typeid( TestClass2 ).name() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -143,7 +143,7 @@ namespace class_test
 
 				std::cout << r2::tab << "+ Print Name" << r2::linefeed2;
 				std::cout << r2::tab2 << "- " << "typeid( TestClass3 ).name()" << r2::linefeed;
-				std::cout << r2::tab3 << "- " << typeid( TestClass3 ).name() << r2::linefeed;
+				std::cout << r2::tab3 << "> " << typeid( TestClass3 ).name() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
