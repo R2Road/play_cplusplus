@@ -27,6 +27,7 @@ namespace class_test
 			{
 				class TestClass1
 				{
+				public:
 					int a;
 					int b;
 				};
@@ -35,6 +36,7 @@ namespace class_test
 
 				std::cout << r2::tab2 << "class TestClass1" << r2::linefeed;
 				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab2 << "public:" << r2::linefeed;
 				std::cout << r2::tab3 << "int a;" << r2::linefeed;
 				std::cout << r2::tab3 << "int b;" << r2::linefeed;
 				std::cout << r2::tab2 << "}" << r2::linefeed;
@@ -43,10 +45,10 @@ namespace class_test
 				std::cout << r2::linefeed;
 
 
-				//TestClass1 t1{ 1, 2 };
+				TestClass1 t1{ 1, 2 };
 
 				std::cout << r2::tab << "+ Variable" << r2::linefeed;
-				std::cout << r2::tab2 << "TestClass1 t1{ 1, 2 }; - Not Working" << r2::linefeed;
+				std::cout << r2::tab2 << "TestClass1 t1{ 1, 2 }" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
