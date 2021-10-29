@@ -2,6 +2,7 @@
 #include "shared_pointer_test.h"
 
 #include <memory>
+#include <utility>
 
 #include "base/r2_eTestResult.h"
 
@@ -86,6 +87,57 @@ namespace shared_pointer_test
 			std::cout << r2::linefeed << r2::linefeed;
 
 			Test3();
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
+
+
+
+namespace shared_pointer_test
+{
+	r2::iTest::TitleFunc UniquePointer::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Unique Pointer";
+		};
+	}
+	r2::iTest::DoFunc UniquePointer::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				auto test_up = std::unique_ptr<int>( new int( 3 ) );
+
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "auto test_up = std::unique_ptr<int>( new int( 3 ) );" << r2::linefeed;
+
+
+				std::cout << r2::linefeed;
+
+
+				//auto test_up_2 = test_up;
+
+				std::cout << r2::tab << "+ Move : Failed" << r2::linefeed2;
+				std::cout << r2::tab2 << "auto test_up_2 = test_up;" << r2::linefeed;
+
+
+				std::cout << r2::linefeed;
+
+
+				auto test_up_2 = std::move( test_up );
+
+				std::cout << r2::tab << "+ Move : Success" << r2::linefeed2;
+				std::cout << r2::tab2 << "auto test_up_2 = std::move( test_up );" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
