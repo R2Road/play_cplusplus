@@ -15,7 +15,8 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', shared_pointer_test::SharedPtr::GetInstance() );
+			ret->AddChild( '1', shared_pointer_test::SharedPointer::GetInstance() );
+			ret->AddChild( '2', shared_pointer_test::UniquePointer::GetInstance() );
 
 
 			ret->AddLineFeed();
