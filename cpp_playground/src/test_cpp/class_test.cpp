@@ -157,14 +157,14 @@ namespace class_test
 
 namespace class_test
 {
-	r2::iTest::TitleFunc PrivateInheritance::GetTitleFunction() const
+	r2::iTest::TitleFunc PrivateInheritance_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Private Inheritance";
 		};
 	}
-	r2::iTest::DoFunc PrivateInheritance::GetDoFunction()
+	r2::iTest::DoFunc PrivateInheritance_1::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

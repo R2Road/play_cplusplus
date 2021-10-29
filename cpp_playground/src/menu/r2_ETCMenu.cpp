@@ -25,7 +25,7 @@ namespace r2
 
 			ret->AddChild( 'q', class_test::Braces::GetInstance() );
 			ret->AddChild( 'w', class_test::PrintName::GetInstance() );
-			ret->AddChild( 'e', class_test::PrivateInheritance::GetInstance() );
+			ret->AddChild( 'e', class_test::PrivateInheritance_1::GetInstance() );
 
 
 			ret->AddSplit();
