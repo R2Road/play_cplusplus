@@ -127,9 +127,6 @@
     <ClCompile Include="src\test_cpp\random_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\shared_pointer_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\string_view_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -242,6 +239,9 @@
     <ClCompile Include="src\menu\r2_CharMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\smart_pointer_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -350,9 +350,6 @@
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\random_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\shared_pointer_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\string_view_test.h">
@@ -487,6 +484,9 @@
     </ClInclude>
     <ClInclude Include="src\menu\r2_CharMenu.h">
       <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\smart_pointer_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

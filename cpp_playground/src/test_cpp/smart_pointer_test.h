@@ -3,7 +3,7 @@
 #include "base/r2_iTest.h"
 #include "base/r2_Singleton.h"
 
-namespace shared_pointer_test
+namespace smart_pointer_test
 {
 	class SharedPointer : public r2::iTest, public r2::SingleTon<SharedPointer>
 	{

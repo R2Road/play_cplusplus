@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "shared_pointer_test.h"
+#include "smart_pointer_test.h"
 
 #include <memory>
 #include <utility>
@@ -65,7 +65,7 @@ namespace
 	}
 }
 
-namespace shared_pointer_test
+namespace smart_pointer_test
 {
 	r2::iTest::TitleFunc SharedPointer::GetTitleFunction() const
 	{
@@ -95,7 +95,7 @@ namespace shared_pointer_test
 
 
 
-namespace shared_pointer_test
+namespace smart_pointer_test
 {
 	r2::iTest::TitleFunc UniquePointer::GetTitleFunction() const
 	{
