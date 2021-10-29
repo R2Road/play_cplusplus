@@ -161,7 +161,7 @@ namespace class_test
 	{
 		return []()->const char*
 		{
-			return "Class : Private Inheritance";
+			return "Class : Private Inheritance 1";
 		};
 	}
 	r2::iTest::DoFunc PrivateInheritance_1::GetDoFunction()
@@ -249,6 +249,90 @@ namespace class_test
 
 			std::cout << r2::tab << "mmm.... not good ( '_')y-~" << r2::linefeed;
 
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc PrivateInheritance_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Private Inheritance 2";
+		};
+	}
+	r2::iTest::DoFunc PrivateInheritance_2::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			class iPrivateInheritance
+			{
+			public:
+				virtual void Do()
+				{
+					std::cout << "Call : TestChild::DoProcess()" << r2::linefeed;
+				}
+			};
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "class iPrivateInheritance" << r2::linefeed;
+			std::cout << r2::tab2 << "{" << r2::linefeed;
+			std::cout << r2::tab2 << "public:" << r2::linefeed;
+			std::cout << r2::tab3 << "virtual void Do() = 0;" << r2::linefeed;
+			std::cout << r2::tab2 << "}" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				class TestChild_1 : private iPrivateInheritance
+				{
+				};
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "class TestChild_1 : private iPrivateInheritance" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab2 << "}" << r2::linefeed;
+
+
+				std::cout << r2::linefeed2;
+
+
+				std::cout << r2::tab << "+ Call" << r2::linefeed2;
+				std::cout << r2::tab2 << "- " << "TestChild_1().Do();" << r2::linefeed;
+				std::cout << r2::tab3 << "> " << " Not Working : Do is Private";
+				//TestChild_1.Do();
+			}
+
+			std::cout << r2::split;
+
+			{
+				class TestChild_2 : private iPrivateInheritance
+				{
+				public:
+					using iPrivateInheritance::Do;
+				};
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "class TestChild_2 : private iPrivateInheritance" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab2 << "public:" << r2::linefeed;
+				std::cout << r2::tab3 << "using iPrivateInheritance::Do;" << r2::linefeed;
+				std::cout << r2::tab2 << "}" << r2::linefeed;
+
+
+				std::cout << r2::linefeed2;
+
+
+				std::cout << r2::tab << "+ Call" << r2::linefeed2;
+				std::cout << r2::tab2 << "- " << "TestChild_2().Do();" << r2::linefeed;
+				std::cout << r2::tab3 << "> ";
+				TestChild_2().Do();
+			}
 
 			std::cout << r2::split;
 
