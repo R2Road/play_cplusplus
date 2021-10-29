@@ -5,7 +5,7 @@
 
 namespace shared_pointer_test
 {
-	class SharedPtr : public r2::iTest, public r2::SingleTon<SharedPtr>
+	class SharedPointer : public r2::iTest, public r2::SingleTon<SharedPointer>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
