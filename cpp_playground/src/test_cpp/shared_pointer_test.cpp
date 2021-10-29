@@ -70,7 +70,7 @@ namespace shared_pointer_test
 	{
 		return []()->const char*
 		{
-			return "Memory : Shared Pointer";
+			return "Shared Pointer";
 		};
 	}
 	r2::iTest::DoFunc SharedPointer::GetDoFunction()
