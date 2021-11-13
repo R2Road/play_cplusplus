@@ -16,6 +16,7 @@ namespace r2
 		{
 			ret->AddChild( '1', vector3_test::OperatorPlus::GetInstance() );
 			ret->AddChild( '2', vector3_test::OperatorPlusEqual::GetInstance() );
+			ret->AddChild( '3', vector3_test::OperatorMinus::GetInstance() );
 
 
 			ret->AddLineFeed();

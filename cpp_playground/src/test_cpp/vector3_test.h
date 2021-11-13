@@ -11,8 +11,14 @@ namespace vector3_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
-
 	class OperatorPlusEqual : public r2::iTest, public r2::SingleTon<OperatorPlusEqual>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
+	class OperatorMinus : public r2::iTest, public r2::SingleTon<OperatorMinus>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
