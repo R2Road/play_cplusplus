@@ -1,11 +1,6 @@
 #include "pch.h"
 #include "vector3_test.h"
 
-#include <conio.h>
-
-#include <locale>
-#include <string>
-
 #include "base/r2_eTestResult.h"
 
 namespace r2
