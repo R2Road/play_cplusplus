@@ -18,7 +18,8 @@ namespace r2
 
 		{
 			ret->AddChild( '1', char_test::Basic::GetInstance() );
-			ret->AddChild( '2', locale_test::Basic::GetInstance() );
+			ret->AddChild( '2', char_test::Encoding::GetInstance() );
+			ret->AddChild( '3', locale_test::Basic::GetInstance() );
 
 
 			ret->AddLineFeed();

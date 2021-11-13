@@ -11,4 +11,11 @@ namespace char_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class Encoding : public r2::iTest, public r2::SingleTon<Encoding>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
