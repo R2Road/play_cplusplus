@@ -47,6 +47,8 @@ namespace r2
 			director
 			, GetTitle()
 			, "> Inprogress : Thread"
+			"\n" "> Inprogress : Vector3"
+			"\n" "> Inprogress : Encoding"
 			"\n" "> To do : Renderer"
 			"\n" "> To do : Memory Pool"
 		) );
