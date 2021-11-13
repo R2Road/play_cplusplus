@@ -5,6 +5,8 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
+#include "test_cpp/vector3_test.h"
+
 namespace r2
 {
 	MenuUp MathMenu::Create( Director& director )
@@ -12,7 +14,7 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			//ret->AddChild( '1', etc_test::XOR_Swap::GetInstance() );
+			ret->AddChild( '1', vector3_test::OperatorPlus::GetInstance() );
 
 
 			ret->AddLineFeed();

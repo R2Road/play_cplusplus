@@ -245,6 +245,9 @@
     <ClCompile Include="src\menu\r2_MathMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\vector3_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -493,6 +496,9 @@
     </ClInclude>
     <ClInclude Include="src\menu\r2_MathMenu.h">
       <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\vector3_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

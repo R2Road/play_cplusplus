@@ -1,0 +1,75 @@
+#include "pch.h"
+#include "vector3_test.h"
+
+#include <conio.h>
+
+#include <locale>
+#include <string>
+
+#include "base/r2_eTestResult.h"
+
+namespace r2
+{
+	struct Vector3
+	{
+		float x = 0.f;
+		float y = 0.f;
+		float z = 0.f;
+	};
+
+	Vector3 operator+( const Vector3& v1, const Vector3& v2 )
+	{
+		return Vector3{ v1.x + v2.x, v1.y + v2.y, v1.z + v2.z };
+	}
+}
+
+namespace vector3_test
+{
+	r2::iTest::TitleFunc OperatorPlus::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Vector3 : Operator+";
+		};
+	}
+	r2::iTest::DoFunc OperatorPlus::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				const r2::Vector3 v1{ 1.f, 1.1f, 2.2f };
+				const r2::Vector3 v2{ 2.1f, 0.f, 2.f };
+
+				const auto v3 = v1 + v2;
+
+				std::cout << r2::tab << "+ Variable" << r2::linefeed2;
+				std::cout << r2::tab2 << "r2::Vector3 v1{ 1.f, 1.1f, 2.2f };" << r2::linefeed;
+				std::cout << r2::tab2 << "r2::Vector3 v2{ 2.1f, 0.f, 2.f };" << r2::linefeed;
+
+
+				std::cout << r2::linefeed;
+
+
+				std::cout << r2::tab << "+ Operation" << r2::linefeed2;
+				std::cout << r2::tab2 << "const auto v3 = v1 + v2;" << r2::linefeed;
+
+
+				std::cout << r2::linefeed;
+
+
+				std::cout << r2::tab << "+ Result" << r2::linefeed2;
+				std::cout << r2::tab2 << "v3.x : " << v3.x << r2::linefeed;
+				std::cout << r2::tab2 << "v3.y : " << v3.y << r2::linefeed;
+				std::cout << r2::tab2 << "v3.z : " << v3.z << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}

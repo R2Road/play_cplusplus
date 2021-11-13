@@ -90,6 +90,7 @@
     <ClCompile Include="src\test_cpp\tuple_test.cpp" />
     <ClCompile Include="src\test_cpp\variadic_template_test.cpp" />
     <ClCompile Include="src\test_cpp\variant_test.cpp" />
+    <ClCompile Include="src\test_cpp\vector3_test.cpp" />
     <ClCompile Include="src\test_cpp\vector_test.cpp" />
     <ClCompile Include="src\test_render\animation_test.cpp" />
     <ClCompile Include="src\test_render\camera_test.cpp" />
@@ -175,6 +176,7 @@
     <ClInclude Include="src\test_cpp\tuple_test.h" />
     <ClInclude Include="src\test_cpp\variadic_template_test.h" />
     <ClInclude Include="src\test_cpp\variant_test.h" />
+    <ClInclude Include="src\test_cpp\vector3_test.h" />
     <ClInclude Include="src\test_cpp\vector_test.h" />
     <ClInclude Include="src\test_render\animation_test.h" />
     <ClInclude Include="src\test_render\camera_test.h" />
