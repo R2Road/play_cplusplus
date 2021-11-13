@@ -242,6 +242,9 @@
     <ClCompile Include="src\test_cpp\smart_pointer_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="src\menu\r2_MathMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -487,6 +490,9 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\smart_pointer_test.h">
       <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_MathMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

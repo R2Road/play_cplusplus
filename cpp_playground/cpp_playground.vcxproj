@@ -30,6 +30,7 @@
     <ClCompile Include="src\menu\r2_ETCMenu.cpp" />
     <ClCompile Include="src\menu\r2_FileSystemMenu.cpp" />
     <ClCompile Include="src\menu\r2_LambdaMenu.cpp" />
+    <ClCompile Include="src\menu\r2_MathMenu.cpp" />
     <ClCompile Include="src\menu\r2_MemoryMenu.cpp" />
     <ClCompile Include="src\menu\r2_NewMenu.cpp" />
     <ClCompile Include="src\menu\r2_PointerMenu.cpp" />
@@ -111,6 +112,7 @@
     <ClInclude Include="src\menu\r2_ETCMenu.h" />
     <ClInclude Include="src\menu\r2_FileSystemMenu.h" />
     <ClInclude Include="src\menu\r2_LambdaMenu.h" />
+    <ClInclude Include="src\menu\r2_MathMenu.h" />
     <ClInclude Include="src\menu\r2_MemoryMenu.h" />
     <ClInclude Include="src\menu\r2_NewMenu.h" />
     <ClInclude Include="src\menu\r2_PointerMenu.h" />
