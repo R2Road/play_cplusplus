@@ -286,6 +286,9 @@ namespace class_test
 			std::cout << r2::tab2 << "{" << r2::linefeed;
 			std::cout << r2::tab2 << "public:" << r2::linefeed;
 			std::cout << r2::tab3 << "virtual void Do() = 0;" << r2::linefeed;
+			std::cout << r2::tab3 << "{" << r2::linefeed;
+			std::cout << r2::tab4 << "std::cout << \"Call : TestChild::DoProcess()\" << r2::linefeed;" << r2::linefeed;
+			std::cout << r2::tab3 << "}" << r2::linefeed;
 			std::cout << r2::tab2 << "}" << r2::linefeed;
 
 			std::cout << r2::split;
