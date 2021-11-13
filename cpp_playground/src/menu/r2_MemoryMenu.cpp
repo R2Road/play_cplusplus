@@ -5,7 +5,7 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
-#include "test_cpp/shared_pointer_test.h"
+#include "test_cpp/smart_pointer_test.h"
 #include "test_cpp/memory_pool_test.h"
 
 namespace r2
@@ -15,8 +15,8 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', shared_pointer_test::SharedPointer::GetInstance() );
-			ret->AddChild( '2', shared_pointer_test::UniquePointer::GetInstance() );
+			ret->AddChild( '1', smart_pointer_test::SharedPointer::GetInstance() );
+			ret->AddChild( '2', smart_pointer_test::UniquePointer::GetInstance() );
 
 
 			ret->AddLineFeed();
