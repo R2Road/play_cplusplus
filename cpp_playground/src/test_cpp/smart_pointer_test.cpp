@@ -19,6 +19,8 @@ namespace smart_pointer_test
 	{
 		return []()->r2::eTestResult
 		{
+			std::cout << r2::split;
+
 			{
 				std::cout << "# Shared Pointer #" << r2::linefeed << r2::linefeed;
 
@@ -44,7 +46,7 @@ namespace smart_pointer_test
 				std::cout << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "# Shared Pointer Has Const Value #" << r2::linefeed << r2::linefeed;
@@ -64,7 +66,7 @@ namespace smart_pointer_test
 				//std::cout << "\t\t" << *const_test_sp << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::split;
 
 			{
 				std::cout << "# Make Shared #" << r2::linefeed << r2::linefeed;
@@ -75,6 +77,8 @@ namespace smart_pointer_test
 				std::cout << "\t\t - Print : " << *test_sp << r2::linefeed;
 				std::cout << r2::linefeed;
 			}
+
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
