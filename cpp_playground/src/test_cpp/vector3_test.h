@@ -31,7 +31,7 @@ namespace vector3_test
 		DoFunc GetDoFunction() override;
 	};
 
-	class OperatorMultiplyScalar : public r2::iTest, public r2::SingleTon<OperatorMultiplyScalar>
+	class OperatorMultiply_With_Scalar : public r2::iTest, public r2::SingleTon<OperatorMultiply_With_Scalar>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

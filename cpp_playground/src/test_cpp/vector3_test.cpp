@@ -244,14 +244,14 @@ namespace vector3_test
 
 
 
-	r2::iTest::TitleFunc OperatorMultiplyScalar::GetTitleFunction() const
+	r2::iTest::TitleFunc OperatorMultiply_With_Scalar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator* Scalar";
 		};
 	}
-	r2::iTest::DoFunc OperatorMultiplyScalar::GetDoFunction()
+	r2::iTest::DoFunc OperatorMultiply_With_Scalar::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
