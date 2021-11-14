@@ -248,6 +248,9 @@
     <ClCompile Include="src\test_cpp\vector3_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\infinite_number_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -498,6 +501,9 @@
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\vector3_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\infinite_number_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>

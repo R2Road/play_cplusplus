@@ -7,6 +7,7 @@
 
 #include "test_cpp/class_test.h"
 #include "test_cpp/etc_0_test.h"
+#include "test_cpp/infinite_number_test.h"
 
 namespace r2
 {
@@ -29,6 +30,12 @@ namespace r2
 			ret->AddChild( 'w', class_test::PrintName::GetInstance() );
 			ret->AddChild( 'e', class_test::PrivateInheritance_1::GetInstance() );
 			ret->AddChild( 'r', class_test::PrivateInheritance_2::GetInstance() );
+
+
+			ret->AddLineFeed();
+
+
+			ret->AddChild( 'a', infinite_number_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();

@@ -65,6 +65,7 @@
     <ClCompile Include="src\test_cpp\enum_test.cpp" />
     <ClCompile Include="src\test_cpp\etc_0_test.cpp" />
     <ClCompile Include="src\test_cpp\filesystem_test.cpp" />
+    <ClCompile Include="src\test_cpp\infinite_number_test.cpp" />
     <ClCompile Include="src\test_cpp\key_test.cpp" />
     <ClCompile Include="src\test_cpp\korean_test.cpp" />
     <ClCompile Include="src\test_cpp\lambda_test.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="src\test_cpp\enum_test.h" />
     <ClInclude Include="src\test_cpp\etc_0_test.h" />
     <ClInclude Include="src\test_cpp\filesystem_test.h" />
+    <ClInclude Include="src\test_cpp\infinite_number_test.h" />
     <ClInclude Include="src\test_cpp\key_test.h" />
     <ClInclude Include="src\test_cpp\korean_test.h" />
     <ClInclude Include="src\test_cpp\lambda_test.h" />
