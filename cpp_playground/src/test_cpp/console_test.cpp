@@ -30,22 +30,22 @@ namespace console_test
 				HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
 				CONSOLE_SCREEN_BUFFER_INFO csbi;
 				GetConsoleScreenBufferInfo( hStdout, &csbi );
-				std::cout << "\t" << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2::linefeed;
-				std::cout << "\t" << "CONSOLE_SCREEN_BUFFER_INFO csbi;" << r2::linefeed;
-				std::cout << "\t" << "GetConsoleScreenBufferInfo( hStdout, &csbi );" << r2::linefeed;
+				std::cout << r2::tab << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2::linefeed;
+				std::cout << r2::tab << "CONSOLE_SCREEN_BUFFER_INFO csbi;" << r2::linefeed;
+				std::cout << r2::tab << "GetConsoleScreenBufferInfo( hStdout, &csbi );" << r2::linefeed;
 
 				std::cout << r2::linefeed;
 
 				const auto width = static_cast<int>( csbi.srWindow.Right - csbi.srWindow.Left + 1 );
 				const auto height = static_cast<int>( csbi.srWindow.Bottom - csbi.srWindow.Top + 1 );
-				std::cout << "\t\t - Width : " << width << r2::linefeed;
-				std::cout << "\t\t - Height : " << width << r2::linefeed;
+				std::cout << r2::tab2 << " - Width : " << width << r2::linefeed;
+				std::cout << r2::tab2 << " - Height : " << width << r2::linefeed;
 
 				std::cout << r2::linefeed;
-				std::cout << "\t\t - Left : " << csbi.srWindow.Left << r2::linefeed;
-				std::cout << "\t\t - Top : " << csbi.srWindow.Top << r2::linefeed;
-				std::cout << "\t\t - Right : " << csbi.srWindow.Right << r2::linefeed;
-				std::cout << "\t\t - Bottom : " << csbi.srWindow.Bottom << r2::linefeed;
+				std::cout << r2::tab2 << " - Left : " << csbi.srWindow.Left << r2::linefeed;
+				std::cout << r2::tab2 << " - Top : " << csbi.srWindow.Top << r2::linefeed;
+				std::cout << r2::tab2 << " - Right : " << csbi.srWindow.Right << r2::linefeed;
+				std::cout << r2::tab2 << " - Bottom : " << csbi.srWindow.Bottom << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -81,9 +81,9 @@ namespace console_test
 				const auto width = static_cast<int>( csbi.srWindow.Right - csbi.srWindow.Left + 1 );
 				const auto height = static_cast<int>( csbi.srWindow.Bottom - csbi.srWindow.Top + 1 );
 
-				std::cout << "\t" << "Current Window Size" << r2::linefeed;
-				std::cout << "\t\t - Width : " << width << r2::linefeed;
-				std::cout << "\t\t - Height : " << width << r2::linefeed;
+				std::cout << r2::tab << "Current Window Size" << r2::linefeed;
+				std::cout << r2::tab << " - Width : " << width << r2::linefeed;
+				std::cout << r2::tab << " - Height : " << width << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -121,15 +121,15 @@ namespace console_test
 			{
 				HWND hWnd = GetConsoleWindow();
 				GetWindowRect( hWnd, &last_window_rect );
-				std::cout << "\t" << "HWND hWnd = GetConsoleWindow();" << r2::linefeed;
-				std::cout << "\t" << "RECT last_window_rect;" << r2::linefeed;
-				std::cout << "\t" << "GetWindowRect( hWnd, &last_window_rect );" << r2::linefeed;
+				std::cout << r2::tab << "HWND hWnd = GetConsoleWindow();" << r2::linefeed;
+				std::cout << r2::tab << "RECT last_window_rect;" << r2::linefeed;
+				std::cout << r2::tab << "GetWindowRect( hWnd, &last_window_rect );" << r2::linefeed;
 
 				std::cout << r2::linefeed;
 
-				std::cout << "\t" << "Current Window Position" << r2::linefeed;
-				std::cout << "\t\t - X : " << last_window_rect.left << r2::linefeed;
-				std::cout << "\t\t - Y : " << last_window_rect.top << r2::linefeed;
+				std::cout << r2::tab << "Current Window Position" << r2::linefeed;
+				std::cout << r2::tab2 << " - X : " << last_window_rect.left << r2::linefeed;
+				std::cout << r2::tab2 << " - Y : " << last_window_rect.top << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -145,7 +145,7 @@ namespace console_test
 
 				MoveWindow( hWnd, posx, posy, rectClient.right - rectClient.left, rectClient.bottom - rectClient.top, TRUE );
 
-				std::cout << "\t" << "Move To Center" << r2::linefeed;
+				std::cout << r2::tab << "Move To Center" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -157,9 +157,9 @@ namespace console_test
 
 				std::cout << r2::linefeed;
 
-				std::cout << "\t" << "Current Window Position" << r2::linefeed;
-				std::cout << "\t\t - X : " << rectWindow.left << r2::linefeed;
-				std::cout << "\t\t - Y : " << rectWindow.top << r2::linefeed;
+				std::cout << r2::tab << "Current Window Position" << r2::linefeed;
+				std::cout << r2::tab2 << " - X : " << rectWindow.left << r2::linefeed;
+				std::cout << r2::tab2 << " - Y : " << rectWindow.top << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -207,8 +207,8 @@ namespace console_test
 				TCHAR window_name_string[MAX_PATH];
 				GetConsoleTitle( window_name_string, MAX_PATH );
 
-				std::cout << "\t + " << "Current Window Name" << r2::linefeed;
-				std::wcout << "\t\t - " << window_name_string << r2::linefeed;
+				std::cout << r2::tab << " + " << "Current Window Name" << r2::linefeed;
+				std::wcout << r2::tab2 << " - " << window_name_string << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -218,8 +218,8 @@ namespace console_test
 
 				SetConsoleTitle( window_name_string );
 
-				std::cout << "\t + " << "New Window Name" << r2::linefeed;
-				std::wcout << "\t\t - " << window_name_string << r2::linefeed;
+				std::cout << r2::tab << " + " << "New Window Name" << r2::linefeed;
+				std::wcout << r2::tab2 << " - " << window_name_string << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -230,6 +230,7 @@ namespace console_test
 			{
 				SetConsoleTitle( TEXT( "cpp_playground" ) );
 			}
+			_getch();
 
 			return r2::eTestResult::RunTest_Without_Pause;
 		};
@@ -450,9 +451,9 @@ namespace console_test
 				// A for text color(Green)
 				//
 				system( "Color 0A" );
-				std::cout << "\t" << "system( \"Color 0A\" );" << r2::linefeed;
-				std::cout << "\t\t" << "- 0 : background Color( Black )" << r2::linefeed;
-				std::cout << "\t\t" << "- A : text color( Green )" << r2::linefeed;
+				std::cout << r2::tab << "system( \"Color 0A\" );" << r2::linefeed;
+				std::cout << r2::tab2 << "- 0 : background Color( Black )" << r2::linefeed;
+				std::cout << r2::tab2 << "- A : text color( Green )" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -494,9 +495,9 @@ namespace console_test
 				std::cout << "\t" << " SetConsoleTextAttribute( stdHandle, current_color );" << r2::linefeed;
 				SetConsoleTextAttribute( stdHandle, current_color );
 
-				std::cout << "\t\t" << "- " << std::hex << "hex : " << (int)background_color << " : background Color" << r2::linefeed;
-				std::cout << "\t\t" << "- " << std::hex << "hex : " << (int)text_color << " : text Color" << r2::linefeed;
-				std::cout << "\t\t" << "- " << std::hex << "hex : " << (int)current_color << " : current Color" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << std::hex << "hex : " << (int)background_color << " : background Color" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << std::hex << "hex : " << (int)text_color << " : text Color" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << std::hex << "hex : " << (int)current_color << " : current Color" << r2::linefeed;
 			}
 
 			SetConsoleTextAttribute( stdHandle, 7 ); // bg - black( 0 ), text - white( 7 )
