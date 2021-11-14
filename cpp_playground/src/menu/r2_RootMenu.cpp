@@ -49,6 +49,7 @@ namespace r2
 			, "> Inprogress : Thread"
 			"\n" "> Inprogress : Vector3"
 			"\n" "> Inprogress : Encoding"
+			"\n" "> Inprogress : Infinite Number"
 			"\n" "> To do : Renderer"
 			"\n" "> To do : Memory Pool"
 		) );
