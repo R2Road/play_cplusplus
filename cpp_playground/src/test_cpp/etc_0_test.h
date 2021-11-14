@@ -25,4 +25,11 @@ namespace etc_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class Macro2String : public r2::iTest, public r2::SingleTon<Macro2String>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

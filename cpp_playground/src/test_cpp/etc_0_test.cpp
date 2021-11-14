@@ -177,3 +177,46 @@ namespace etc_test
 		};
 	}
 }
+
+namespace etc_test
+{
+#define MACRO2STRING( x ) #x
+
+	r2::iTest::TitleFunc Macro2String::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Macro 2 String";
+		};
+	}
+	r2::iTest::DoFunc Macro2String::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				int test_int = 3456;
+
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "#define MACRO2STRING( x ) #x" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "+ Variable" << r2::linefeed2;
+				std::cout << r2::tab2 << "int test_int = 3456;" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << MACRO2STRING( test_int ) << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
