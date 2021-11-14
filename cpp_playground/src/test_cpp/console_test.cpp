@@ -504,16 +504,15 @@ namespace console_test
 			std::cout << r2::split;
 
 			{
-				const char background_color = BACKGROUND_RED;
-				const char text_color = FOREGROUND_GREEN;
-
-				const WORD current_color = background_color | text_color | COMMON_LVB_GRID_HORIZONTAL;
+				const WORD current_color = BACKGROUND_BLUE | FOREGROUND_GREEN | COMMON_LVB_GRID_HORIZONTAL;
 
 				std::cout << "\t" << " SetConsoleTextAttribute( stdHandle, current_color );" << r2::linefeed;
 				SetConsoleTextAttribute( stdHandle, current_color );
 
-				std::cout << "\t\t" << "- " << std::hex << (int)background_color << " : background Color" << r2::linefeed;
-				std::cout << "\t\t" << "- " << std::hex << (int)text_color << " : text Color" << r2::linefeed;
+				std::cout << "\t\t" << "- " << std::hex << "hex : " << (int)BACKGROUND_BLUE << " : BACKGROUND_BLUE" << r2::linefeed;
+				std::cout << "\t\t" << "- " << std::hex << "hex : " << (int)FOREGROUND_GREEN << " : FOREGROUND_GREEN" << r2::linefeed;
+				std::cout << "\t\t" << "- " << std::hex << "hex : " << (int)COMMON_LVB_GRID_HORIZONTAL << " : COMMON_LVB_GRID_HORIZONTAL" << r2::linefeed;
+				std::cout << "\t\t" << "- " << std::hex << "hex : " << (int)current_color << " : curren Color" << r2::linefeed;
 			}
 
 			SetConsoleTextAttribute( stdHandle, 7 ); // bg - black( 0 ), text - white( 7 )
