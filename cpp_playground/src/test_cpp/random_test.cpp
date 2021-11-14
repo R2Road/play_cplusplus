@@ -28,45 +28,45 @@ namespace random_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t+ Range Check" << r2::linefeed;
-				std::cout << "\t\t" << "std::uniform_int_distribution<int> dist( 0, 2 );" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Range Check" << r2::linefeed;
+				std::cout << r2::tab2 << "std::uniform_int_distribution<int> dist( 0, 2 );" << r2::linefeed << r2::linefeed;
 
 				std::random_device rd;
 				std::default_random_engine random_engine( rd() );
 				std::uniform_int_distribution<int> dist( 0, 2 );
 
-				std::cout << "\t\t" << "Loop : 10" << r2::linefeed;
+				std::cout << r2::tab2 << "Loop : 10" << r2::linefeed;
 
 				for( int i = 0; 10 > i; ++i )
 				{
-					std::cout << "\t\t\t - " << dist( random_engine ) << r2::linefeed;
+					std::cout << r2::tab3 << "- " << dist( random_engine ) << r2::linefeed;
 				}
 
 				std::cout << r2::linefeed;
 
-				std::cout << "\t\t" << "Contained Min and Max;" << r2::linefeed;
+				std::cout << r2::tab2 << "Contained Min and Max;" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t+ Range Check" << r2::linefeed;
-				std::cout << "\t\t" << "std::uniform_real_distribution<float> dist( 0, 2 );" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Range Check" << r2::linefeed;
+				std::cout << r2::tab2 << "std::uniform_real_distribution<float> dist( 0, 2 );" << r2::linefeed << r2::linefeed;
 
 				std::random_device rd;
 				std::default_random_engine random_engine( rd() );
 				std::uniform_real_distribution<float> dist( 0.f, 0.1f );
 
-				std::cout << "\t\t" << "Loop : 10" << r2::linefeed;
+				std::cout << r2::tab2 << "Loop : 10" << r2::linefeed;
 
 				for( int i = 0; 10 > i; ++i )
 				{
-					std::cout << "\t\t\t - " << dist( random_engine ) << r2::linefeed;
+					std::cout << r2::tab3 << "- " << dist( random_engine ) << r2::linefeed;
 				}
 
 				std::cout << r2::linefeed;
 
-				std::cout << "\t\t" << "Contained Min;" << r2::linefeed;
+				std::cout << r2::tab2 << "Contained Min;" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -111,16 +111,16 @@ namespace
 		std::mt19937 random_engine( rd() );
 		std::uniform_int_distribution<int> dist( 0, 999 );
 
-		std::cout << "\t+ Make Random Engine & Test Output" << r2::linefeed;
-		std::cout << "\t\t" << dist( random_engine ) << r2::linefeed;
-		std::cout << "\t\t" << dist( random_engine ) << r2::linefeed;
-		std::cout << "\t\t" << dist( random_engine ) << r2::linefeed;
+		std::cout << r2::tab << "+ Make Random Engine & Test Output" << r2::linefeed;
+		std::cout << r2::tab2 << dist( random_engine ) << r2::linefeed;
+		std::cout << r2::tab2 << dist( random_engine ) << r2::linefeed;
+		std::cout << r2::tab2 << dist( random_engine ) << r2::linefeed;
 		std::cout << r2::linefeed;
 
 		//
 		// status save
 		//
-		std::cout << "\t+ Save : Current Random Status" << r2::linefeed;
+		std::cout << r2::tab << "+ Save : Current Random Status" << r2::linefeed;
 		{
 			std::ofstream fs( GetFilePath() );
 			fs << random_engine;
@@ -136,12 +136,12 @@ namespace
 		std::cout << r2::split;
 
 		{
-			std::cout << "\t+ Test Step 1" << r2::linefeed;
+			std::cout << r2::tab << "+ Test Step 1" << r2::linefeed;
 
 			std::ifstream ifs( GetFilePath() );
 			if( ifs.fail() )
 			{
-				std::cout << "\t\tFailed : Need - random_test::Status_Save" << r2::linefeed;
+				std::cout << r2::tab2 << "Failed : Need - random_test::Status_Save" << r2::linefeed;
 				return;
 			}
 
@@ -149,24 +149,24 @@ namespace
 			ifs >> random_engine;
 			std::uniform_int_distribution<int> dist( 0, 999 );
 
-			std::cout << "\t\t" << dist( random_engine ) << r2::linefeed;
-			std::cout << "\t\t" << dist( random_engine ) << r2::linefeed;
-			std::cout << "\t\t" << dist( random_engine ) << r2::linefeed;
+			std::cout << r2::tab2 << dist( random_engine ) << r2::linefeed;
+			std::cout << r2::tab2 << dist( random_engine ) << r2::linefeed;
+			std::cout << r2::tab2 << dist( random_engine ) << r2::linefeed;
 		}
 
 		std::cout << r2::split;
 
 		{
-			std::cout << "\t+ Test Step 2" << r2::linefeed;
+			std::cout << r2::tab << "+ Test Step 2" << r2::linefeed;
 
 			std::ifstream ifs( GetFilePath() );
 			std::mt19937 random_engine;
 			ifs >> random_engine;
 			std::uniform_int_distribution<int> dist( 0, 999 );
 
-			std::cout << "\t\t" << dist( random_engine ) << r2::linefeed;
-			std::cout << "\t\t" << dist( random_engine ) << r2::linefeed;
-			std::cout << "\t\t" << dist( random_engine ) << r2::linefeed;
+			std::cout << r2::tab2 << dist( random_engine ) << r2::linefeed;
+			std::cout << r2::tab2 << dist( random_engine ) << r2::linefeed;
+			std::cout << r2::tab2 << dist( random_engine ) << r2::linefeed;
 		}
 
 		std::cout << r2::split;
