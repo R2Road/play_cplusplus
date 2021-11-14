@@ -299,9 +299,9 @@ namespace console_test
 		return []()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-			std::cout << "\t" << " + [W, A, S, D] : Move" << r2::linefeed;
-			std::cout << "\t" << " + [SPACE BAR] Foot Print" << r2::linefeed;
-			std::cout << "\t" << " + [ESC] Exit" << r2::linefeed;
+			std::cout << r2::tab << " + [W, A, S, D] : Move" << r2::linefeed;
+			std::cout << r2::tab << " + [SPACE BAR] Foot Print" << r2::linefeed;
+			std::cout << r2::tab << " + [ESC] Exit" << r2::linefeed;
 
 			{
 				HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
@@ -403,23 +403,23 @@ namespace console_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Color Table" << r2::linefeed;
-				std::cout << "\t\t" << "Black" << "\t\t\t" << "0" << r2::linefeed;
-				std::cout << "\t\t" << "Blue" << "\t\t\t" << "1" << r2::linefeed;
-				std::cout << "\t\t" << "Green" << "\t\t\t" << "2" << r2::linefeed;
-				std::cout << "\t\t" << "Aqua" << "\t\t\t" << "3" << r2::linefeed;
-				std::cout << "\t\t" << "Red" << "\t\t\t" << "4" << r2::linefeed;
-				std::cout << "\t\t" << "Purple" << "\t\t\t" << "5" << r2::linefeed;
-				std::cout << "\t\t" << "Yellow" << "\t\t\t" << "6" << r2::linefeed;
-				std::cout << "\t\t" << "White" << "\t\t\t" << "7" << r2::linefeed;
-				std::cout << "\t\t" << "Gray" << "\t\t\t" << "8" << r2::linefeed;
-				std::cout << "\t\t" << "Light Blue" << "\t\t" << "9" << r2::linefeed;
-				std::cout << "\t\t" << "Light Green" << "\t\t" << "A" << r2::linefeed;
-				std::cout << "\t\t" << "Light Aqua" << "\t\t" << "B" << r2::linefeed;
-				std::cout << "\t\t" << "Light Led" << "\t\t" << "C" << r2::linefeed;
-				std::cout << "\t\t" << "Light Purple" << "\t\t" << "D" << r2::linefeed;
-				std::cout << "\t\t" << "Light Yellow" << "\t\t" << "E" << r2::linefeed;
-				std::cout << "\t\t" << "Bright White" << "\t\t" << "F" << r2::linefeed;
+				std::cout << r2::tab << "+ Color Table" << r2::linefeed;
+				std::cout << r2::tab2 << "Black" << r2::tab3 << "0" << r2::linefeed;
+				std::cout << r2::tab2 << "Blue" << r2::tab3 << "1" << r2::linefeed;
+				std::cout << r2::tab2 << "Green" << r2::tab3 << "2" << r2::linefeed;
+				std::cout << r2::tab2 << "Aqua" << r2::tab3 << "3" << r2::linefeed;
+				std::cout << r2::tab2 << "Red" << r2::tab3 << "4" << r2::linefeed;
+				std::cout << r2::tab2 << "Purple" << r2::tab3 << "5" << r2::linefeed;
+				std::cout << r2::tab2 << "Yellow" << r2::tab3 << "6" << r2::linefeed;
+				std::cout << r2::tab2 << "White" << r2::tab3 << "7" << r2::linefeed;
+				std::cout << r2::tab2 << "Gray" << r2::tab3 << "8" << r2::linefeed;
+				std::cout << r2::tab2 << "Light Blue" << r2::tab2 << "9" << r2::linefeed;
+				std::cout << r2::tab2 << "Light Green" << r2::tab2 << "A" << r2::linefeed;
+				std::cout << r2::tab2 << "Light Aqua" << r2::tab2 << "B" << r2::linefeed;
+				std::cout << r2::tab2 << "Light Led" << r2::tab2 << "C" << r2::linefeed;
+				std::cout << r2::tab2 << "Light Purple" << r2::tab2 << "D" << r2::linefeed;
+				std::cout << r2::tab2 << "Light Yellow" << r2::tab2 << "E" << r2::linefeed;
+				std::cout << r2::tab2 << "Bright White" << r2::tab2 << "F" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -492,7 +492,7 @@ namespace console_test
 				current_color = background_color << 4;
 				current_color |= text_color;
 
-				std::cout << "\t" << " SetConsoleTextAttribute( stdHandle, current_color );" << r2::linefeed;
+				std::cout << r2::tab << " SetConsoleTextAttribute( stdHandle, current_color );" << r2::linefeed;
 				SetConsoleTextAttribute( stdHandle, current_color );
 
 				std::cout << r2::tab2 << "- " << std::hex << "hex : " << (int)background_color << " : background Color" << r2::linefeed;
@@ -507,13 +507,13 @@ namespace console_test
 			{
 				const WORD current_color = BACKGROUND_BLUE | FOREGROUND_GREEN | COMMON_LVB_GRID_HORIZONTAL;
 
-				std::cout << "\t" << " SetConsoleTextAttribute( stdHandle, current_color );" << r2::linefeed;
+				std::cout << r2::tab << " SetConsoleTextAttribute( stdHandle, current_color );" << r2::linefeed;
 				SetConsoleTextAttribute( stdHandle, current_color );
 
-				std::cout << "\t\t" << "- " << std::hex << "hex : " << (int)BACKGROUND_BLUE << " : BACKGROUND_BLUE" << r2::linefeed;
-				std::cout << "\t\t" << "- " << std::hex << "hex : " << (int)FOREGROUND_GREEN << " : FOREGROUND_GREEN" << r2::linefeed;
-				std::cout << "\t\t" << "- " << std::hex << "hex : " << (int)COMMON_LVB_GRID_HORIZONTAL << " : COMMON_LVB_GRID_HORIZONTAL" << r2::linefeed;
-				std::cout << "\t\t" << "- " << std::hex << "hex : " << (int)current_color << " : curren Color" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << std::hex << "hex : " << (int)BACKGROUND_BLUE << " : BACKGROUND_BLUE" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << std::hex << "hex : " << (int)FOREGROUND_GREEN << " : FOREGROUND_GREEN" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << std::hex << "hex : " << (int)COMMON_LVB_GRID_HORIZONTAL << " : COMMON_LVB_GRID_HORIZONTAL" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << std::hex << "hex : " << (int)current_color << " : curren Color" << r2::linefeed;
 			}
 
 			SetConsoleTextAttribute( stdHandle, 7 ); // bg - black( 0 ), text - white( 7 )
@@ -526,7 +526,7 @@ namespace console_test
 
 				const WORD current_color = background_color | text_color | COMMON_LVB_GRID_HORIZONTAL;
 
-				std::cout << "\t";
+				std::cout << r2::tab;
 				SetConsoleTextAttribute( stdHandle, FOREGROUND_GREEN );
 				std::cout << "SetConsoleTextAttribute( ";
 				SetConsoleTextAttribute( stdHandle, FOREGROUND_RED );
@@ -566,20 +566,20 @@ namespace console_test
 			{
 				CONSOLE_SCREEN_BUFFER_INFOEX info;
 				info.cbSize = sizeof( CONSOLE_SCREEN_BUFFER_INFOEX );
-				std::cout << "\t" << "CONSOLE_SCREEN_BUFFER_INFOEX info;" << r2::linefeed;
-				std::cout << "\t" << "info.cbSize = sizeof( CONSOLE_SCREEN_BUFFER_INFOEX );" << r2::linefeed;
+				std::cout << r2::tab << "CONSOLE_SCREEN_BUFFER_INFOEX info;" << r2::linefeed;
+				std::cout << r2::tab << "info.cbSize = sizeof( CONSOLE_SCREEN_BUFFER_INFOEX );" << r2::linefeed;
 				std::cout << r2::linefeed;
 
 				GetConsoleScreenBufferInfoEx( stdHandle, &info );
-				std::cout << "\t" << "GetConsoleScreenBufferInfoEx( stdHandle, &info );" << r2::linefeed;
+				std::cout << r2::tab << "GetConsoleScreenBufferInfoEx( stdHandle, &info );" << r2::linefeed;
 				std::cout << r2::linefeed;
 
 				info.ColorTable[1] = RGB( 255, 100, 100 );
-				std::cout << "\t" << "info.ColorTable[1] = RGB( 255, 100, 100 );" << r2::linefeed;
+				std::cout << r2::tab << "info.ColorTable[1] = RGB( 255, 100, 100 );" << r2::linefeed;
 				std::cout << r2::linefeed;
 
 				SetConsoleScreenBufferInfoEx( stdHandle, &info );
-				std::cout << "\t" << "SetConsoleScreenBufferInfoEx( stdHandle, &info );" << r2::linefeed;
+				std::cout << r2::tab << "SetConsoleScreenBufferInfoEx( stdHandle, &info );" << r2::linefeed;
 				std::cout << r2::linefeed;
 			}
 
@@ -593,11 +593,11 @@ namespace console_test
 				current_color = background_color << 4;
 				current_color |= text_color;
 
-				std::cout << "\t" << "SetConsoleTextAttribute( stdHandle, current_color );" << r2::linefeed;
+				std::cout << r2::tab << "SetConsoleTextAttribute( stdHandle, current_color );" << r2::linefeed;
 				SetConsoleTextAttribute( stdHandle, current_color );
 
-				std::cout << "\t\t" << "- " << std::hex << (int)background_color << " : background Color" << r2::linefeed;
-				std::cout << "\t\t" << "- " << std::hex << (int)text_color << " : text Color" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << std::hex << (int)background_color << " : background Color" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << std::hex << (int)text_color << " : text Color" << r2::linefeed;
 			}
 
 			SetConsoleTextAttribute( stdHandle, 7 ); // bg - black( 0 ), text - white( 7 )
@@ -655,7 +655,7 @@ namespace console_test
 			{
 				for( int i = 30; 37 >= i; ++i )
 				{
-					std::cout << "\t\t";
+					std::cout << r2::tab2;
 					printf( "\x1B[%dm" "Foreground Color" "\033[0m : %d", i, i );
 					std::cout << r2::linefeed;
 				}
@@ -664,7 +664,7 @@ namespace console_test
 
 				for( int i = 90; 97 >= i; ++i )
 				{
-					std::cout << "\t\t";
+					std::cout << r2::tab2;
 					printf( "\x1B[%dm" "Foreground Color" "\033[0m : %d", i, i );
 					std::cout << r2::linefeed;
 				}
@@ -675,7 +675,7 @@ namespace console_test
 			{
 				for( int i = 40; 47 >= i; ++i )
 				{
-					std::cout << "\t\t";
+					std::cout << r2::tab2;
 					printf( "\x1B[%dm" "Background Color" "\033[0m : %d", i, i );
 					std::cout << r2::linefeed;
 				}
@@ -684,7 +684,7 @@ namespace console_test
 
 				for( int i = 100; 107 >= i; ++i )
 				{
-					std::cout << "\t\t";
+					std::cout << r2::tab2;
 					printf( "\x1B[%dm" "Background Color" "\033[0m : %d", i, i );
 					std::cout << r2::linefeed;
 				}
@@ -719,17 +719,17 @@ namespace console_test
 			//
 
 			{
-				std::cout << "\t" << "+ Sequence Not Required" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Sequence Not Required" << r2::linefeed << r2::linefeed;
 
 				const int background_color = 31;
 				const int foreground_color = 44;
 
-				std::cout << "\t\t";
+				std::cout << r2::tab2;
 				printf( "\x1B[%d;%dm" "Color" "\033[0m", foreground_color, background_color );
 				printf( ": First - %d, Second - %d", foreground_color, background_color );
 				std::cout << r2::linefeed;
 
-				std::cout << "\t\t";
+				std::cout << r2::tab2;
 				printf( "\x1B[%d;%dm" "Color" "\033[0m", background_color, foreground_color );
 				printf( ": First - %d, Second - %d", background_color, foreground_color );
 				std::cout << r2::linefeed;
@@ -739,17 +739,17 @@ namespace console_test
 
 
 			{
-				std::cout << "\t" << "+ 같은 속성의 값이 입력되면 뒤의 값이 적용된다." << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ 같은 속성의 값이 입력되면 뒤의 값이 적용된다." << r2::linefeed << r2::linefeed;
 
 				const int background_color_1 = 41;
 				const int background_color_2 = 44;
 
-				std::cout << "\t\t";
+				std::cout << r2::tab2;
 				printf( "\x1B[%d;%dm" "Color" "\033[0m", background_color_2, background_color_1 );
 				printf( ": First - %d, Second - %d", background_color_2, background_color_1 );
 				std::cout << r2::linefeed;
 
-				std::cout << "\t\t";
+				std::cout << r2::tab2;
 				printf( "\x1B[%d;%dm" "Color" "\033[0m", background_color_1, background_color_2 );
 				printf( ": First - %d, Second - %d", background_color_1, background_color_2 );
 				std::cout << r2::linefeed;
@@ -763,7 +763,7 @@ namespace console_test
 
 				for( int i = 0; 9 >= i; ++i )
 				{
-					std::cout << "\t\t";
+					std::cout << r2::tab2;
 					printf( "\033[%d;%d;%dm" "Text" "\033[0m", i, background_color, foreground_color );
 					printf( ": 1st - %d, 2nd - %d, 3rd - %d ", i, background_color, foreground_color );
 					std::cout << r2::linefeed << r2::linefeed;
@@ -776,7 +776,7 @@ namespace console_test
 				const char* target_color = "\033[31;44m";
 				const char* reset_color = "\033[0m";
 
-				std::cout << "\t\t" << target_color << "Change Color with std::cout" << reset_color << r2::linefeed;
+				std::cout << r2::tab2 << target_color << "Change Color with std::cout" << reset_color << r2::linefeed;
 			}
 
 			std::cout << r2::split;
