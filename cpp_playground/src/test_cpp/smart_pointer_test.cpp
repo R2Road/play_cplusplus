@@ -24,23 +24,23 @@ namespace smart_pointer_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "# Shared Pointer #" << r2::linefeed << r2::linefeed;
+				std::cout << "+ Shared Pointer #" << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ Make Sp" << r2::linefeed;
+				std::cout << "\t" << "- Make Sp" << r2::linefeed;
 				std::cout << "\t\t" << "std::shared_ptr<int> test_sp( new int( 10 ) )" << r2::linefeed;
 				std::shared_ptr<int> test_sp( new int( 10 ) );
 
 				std::cout << "\t\t\t - Print : " << *test_sp << r2::linefeed << r2::linefeed;
 
 
-				std::cout << "\t" << "+ Copy To Const Sp" << r2::linefeed;
+				std::cout << "\t" << "- Copy To Const Sp" << r2::linefeed;
 				std::cout << "\t\t" << "const auto test_sp_2 = test_sp;" << r2::linefeed;
 				const auto test_sp_2 = test_sp;
 
 				std::cout << r2::linefeed;
 
 
-				std::cout << "\t" << "+ Change Value with Const Sp" << r2::linefeed;
+				std::cout << "\t" << "- Change Value with Const Sp" << r2::linefeed;
 				std::cout << "\t\t" << "*test_sp_2 = 11;" << r2::linefeed;
 				*test_sp_2 = 11;
 
@@ -51,16 +51,16 @@ namespace smart_pointer_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "# Shared Pointer Has Const Value #" << r2::linefeed << r2::linefeed;
+				std::cout << "+ Shared Pointer Has Const Value #" << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t" << "+ Make Sp Has Const Value" << r2::linefeed;
+				std::cout << "\t" << "- Make Sp Has Const Value" << r2::linefeed;
 				std::cout << "\t\t" << "std::shared_ptr<const int> test_sp( new int( 10 ) )" << r2::linefeed;
 				std::shared_ptr<const int> const_test_sp( new int( 10 ) );
 
 				std::cout << "\t\t\t - Print : " << *const_test_sp << r2::linefeed;
 				std::cout << r2::linefeed;
 
-				std::cout << "\t" << "+ Failed : Change Value" << r2::linefeed;
+				std::cout << "\t" << "- Failed : Change Value" << r2::linefeed;
 				std::cout << r2::linefeed;
 
 				//*const_test_sp = 11;
@@ -71,7 +71,7 @@ namespace smart_pointer_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "# Make Shared #" << r2::linefeed << r2::linefeed;
+				std::cout << "+ Make Shared #" << r2::linefeed << r2::linefeed;
 
 				std::cout << "\t" << "auto test_sp = std::make_shared<int>( 10 );" << r2::linefeed;
 				auto test_sp = std::make_shared<int>( 10 );
