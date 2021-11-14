@@ -30,4 +30,11 @@ namespace vector3_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class OperatorMultiplyScalar : public r2::iTest, public r2::SingleTon<OperatorMultiplyScalar>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
