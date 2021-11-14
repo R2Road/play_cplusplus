@@ -219,4 +219,44 @@ namespace etc_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+#define ShowCodeInfo()	\
+{	\
+	std::cout << "File : " << __FILE__ << r2::linefeed;	\
+	std::cout << "Function : " << __FUNCTION__ << r2::linefeed;	\
+	std::cout << "Line : " << __LINE__ << r2::linefeed;	\
+}
+
+	r2::iTest::TitleFunc MacroShowCodeInfo::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Macro Show Code Info";
+		};
+	}
+	r2::iTest::DoFunc MacroShowCodeInfo::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "#define MACRO2STRING( x ) #x" << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				ShowCodeInfo();
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
