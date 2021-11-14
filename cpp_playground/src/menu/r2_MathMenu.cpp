@@ -19,6 +19,7 @@ namespace r2
 			ret->AddChild( '3', vector3_test::OperatorMinus::GetInstance() );
 			ret->AddChild( '4', vector3_test::OperatorMinusEqual::GetInstance() );
 			ret->AddChild( '5', vector3_test::OperatorMultiplyScalar::GetInstance() );
+			ret->AddChild( '6', vector3_test::OperatorMultiplyEqual_With_Scalar::GetInstance() );
 
 
 			ret->AddLineFeed();

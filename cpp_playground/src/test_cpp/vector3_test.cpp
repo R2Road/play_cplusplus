@@ -38,6 +38,12 @@ namespace r2
 	{
 		return Vector3{ v1.x * scalar, v1.y * scalar, v1.z * scalar };
 	}
+	void operator*=( Vector3& v1, const float scalar )
+	{
+		v1.x *= scalar;
+		v1.y *= scalar;
+		v1.z *= scalar;
+	}
 }
 
 namespace vector3_test
@@ -278,6 +284,54 @@ namespace vector3_test
 				std::cout << r2::tab2 << "v3.x : " << v3.x << r2::linefeed;
 				std::cout << r2::tab2 << "v3.y : " << v3.y << r2::linefeed;
 				std::cout << r2::tab2 << "v3.z : " << v3.z << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+	r2::iTest::TitleFunc OperatorMultiplyEqual_With_Scalar::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Vector3 : Operator*= Scalar";
+		};
+	}
+	r2::iTest::DoFunc OperatorMultiplyEqual_With_Scalar::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				r2::Vector3 v1{ 1.f, 1.1f, 2.2f };
+				const float scalar = 3.f;
+
+				v1 *= scalar;
+
+				std::cout << r2::tab << "+ Variable" << r2::linefeed2;
+				std::cout << r2::tab2 << "r2::Vector3 v1{ 1.f, 1.1f, 2.2f };" << r2::linefeed;
+				std::cout << r2::tab2 << "float scalar = 3.f;" << r2::linefeed;
+
+
+				std::cout << r2::linefeed;
+
+
+				std::cout << r2::tab << "+ Operation" << r2::linefeed2;
+				std::cout << r2::tab2 << "v1 *= scalar;" << r2::linefeed;
+
+
+				std::cout << r2::linefeed;
+
+
+				std::cout << r2::tab << "+ Result" << r2::linefeed2;
+				std::cout << r2::tab2 << "v1.x : " << v1.x << r2::linefeed;
+				std::cout << r2::tab2 << "v1.y : " << v1.y << r2::linefeed;
+				std::cout << r2::tab2 << "v1.z : " << v1.z << r2::linefeed;
 			}
 
 			std::cout << r2::split;
