@@ -494,8 +494,9 @@ namespace console_test
 				std::cout << "\t" << " SetConsoleTextAttribute( stdHandle, current_color );" << r2::linefeed;
 				SetConsoleTextAttribute( stdHandle, current_color );
 
-				std::cout << "\t\t" << "- " << std::hex << (int)background_color << " : background Color" << r2::linefeed;
-				std::cout << "\t\t" << "- " << std::hex << (int)text_color << " : text Color" << r2::linefeed;
+				std::cout << "\t\t" << "- " << std::hex << "hex : " << (int)background_color << " : background Color" << r2::linefeed;
+				std::cout << "\t\t" << "- " << std::hex << "hex : " << (int)text_color << " : text Color" << r2::linefeed;
+				std::cout << "\t\t" << "- " << std::hex << "hex : " << (int)current_color << " : current Color" << r2::linefeed;
 			}
 
 			SetConsoleTextAttribute( stdHandle, 7 ); // bg - black( 0 ), text - white( 7 )
