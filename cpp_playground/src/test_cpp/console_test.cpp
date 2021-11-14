@@ -458,8 +458,14 @@ namespace console_test
 
 			std::cout << r2::split;
 
+			std::cout << "Press Any Key : Roll Back Text Color" << r2::linefeed;
 			system( "pause" );
-			system( "Color 07" );
+
+			{
+				system( "Color 07" );
+			}
+			system( "pause" );
+			
 
 			return r2::eTestResult::RunTest_Without_Pause;
 		};
