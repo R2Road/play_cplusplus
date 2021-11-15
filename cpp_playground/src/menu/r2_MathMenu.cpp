@@ -6,6 +6,7 @@
 #include "r2_RootMenu.h"
 
 #include "test_cpp/vector3_test.h"
+#include "test_cpp/infinite_number_test.h"
 
 namespace r2
 {
@@ -23,6 +24,9 @@ namespace r2
 
 
 			ret->AddLineFeed();
+
+
+			ret->AddChild( 'q', infinite_number_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
