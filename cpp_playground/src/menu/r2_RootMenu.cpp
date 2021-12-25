@@ -181,8 +181,9 @@ namespace r2
 				}
 			);
 			ret->AddChild( 'd', print_test::Basic::GetInstance() );
+			ret->AddChild( 'f', print_test::BoolAlpha::GetInstance() );
 			ret->AddChild(
-				'f'
+				'g'
 				, []()->const char* { return r2::CharMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -191,7 +192,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'g'
+				'h'
 				, []()->const char* { return r2::ContainerMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -200,7 +201,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'h'
+				'j'
 				, []()->const char* { return r2::AlgorithmMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
