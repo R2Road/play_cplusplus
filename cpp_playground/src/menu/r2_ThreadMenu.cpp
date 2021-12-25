@@ -5,6 +5,7 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
+#include "test_cpp/atomic_test.h"
 #include "test_cpp/thread_test.h"
 
 namespace r2
@@ -19,6 +20,12 @@ namespace r2
 			ret->AddChild( '3', thread_test::CopyAssaignment::GetInstance() );
 			ret->AddChild( '4', thread_test::WaitProcess_SleepFor::GetInstance() );
 			ret->AddChild( '5', thread_test::WaitProcess_Yield::GetInstance() );
+
+
+			ret->AddSplit();
+
+
+			ret->AddChild( 'q', atomic_test::IsLockFree::GetInstance() );
 
 
 			ret->AddSplit();

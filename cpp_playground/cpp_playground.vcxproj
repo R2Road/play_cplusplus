@@ -59,6 +59,7 @@
     <ClCompile Include="src\test_cpp\alignof_test.cpp" />
     <ClCompile Include="src\test_cpp\align_test.cpp" />
     <ClCompile Include="src\test_cpp\assert_test.cpp" />
+    <ClCompile Include="src\test_cpp\atomic_test.cpp" />
     <ClCompile Include="src\test_cpp\char_test.cpp" />
     <ClCompile Include="src\test_cpp\class_test.cpp" />
     <ClCompile Include="src\test_cpp\console_test.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="src\test_cpp\alignof_test.h" />
     <ClInclude Include="src\test_cpp\align_test.h" />
     <ClInclude Include="src\test_cpp\assert_test.h" />
+    <ClInclude Include="src\test_cpp\atomic_test.h" />
     <ClInclude Include="src\test_cpp\char_test.h" />
     <ClInclude Include="src\test_cpp\class_test.h" />
     <ClInclude Include="src\test_cpp\console_test.h" />
