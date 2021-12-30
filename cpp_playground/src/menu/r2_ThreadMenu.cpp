@@ -26,6 +26,7 @@ namespace r2
 
 
 			ret->AddChild( 'q', atomic_test::IsLockFree::GetInstance() );
+			ret->AddChild( 'w', atomic_test::LockFreeTest1::GetInstance() );
 
 
 			ret->AddSplit();

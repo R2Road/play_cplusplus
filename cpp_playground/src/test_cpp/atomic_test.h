@@ -11,4 +11,11 @@ namespace atomic_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class LockFreeTest1 : public r2::iTest, public r2::SingleTon<LockFreeTest1>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
