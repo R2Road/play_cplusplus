@@ -32,7 +32,6 @@
 #include "r2_ContainerMenu.h"
 #include "r2_AlgorithmMenu.h"
 
-#include "test_cpp/thread_test.h"
 #include "test_cpp/key_test.h"
 #include "r2_ETCMenu.h"
 #include "r2_MathMenu.h"
@@ -214,10 +213,9 @@ namespace r2
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'z', thread_test::Basic::GetInstance() );
-			ret->AddChild( 'x', key_test::Basic::GetInstance() );
+			ret->AddChild( 'z', key_test::Basic::GetInstance() );
 			ret->AddChild(
-				'c'
+				'x'
 				, []()->const char* { return r2::ETCMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -226,7 +224,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'v'
+				'c'
 				, []()->const char* { return r2::MathMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
