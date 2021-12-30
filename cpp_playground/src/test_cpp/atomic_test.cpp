@@ -144,4 +144,62 @@ namespace atomic_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+	r2::iTest::TitleFunc LockFreeTest2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Lock Free Test 2";
+		};
+	}
+	r2::iTest::DoFunc LockFreeTest2::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::atomic_int32_t n = 0;" << r2::linefeed2;
+
+				std::atomic_int32_t n = 0;
+
+				std::cout << r2::tab2 << "thread x 5 : 100000 time ++n" << r2::linefeed2;
+
+
+				auto thread_process = [&n]( int index, int attmpt )
+				{
+					printf( "\t\tThread Start : %d\n", index );
+
+					for( int i = 0; attmpt > i; ++i )
+					{
+						++n;
+					}
+
+					printf( "\t\tThread End : %d\n", index );
+				};
+
+				std::thread test_thread_1( thread_process, 1, 100000 );
+				std::thread test_thread_2( thread_process, 2, 100000 );
+				std::thread test_thread_3( thread_process, 3, 100000 );
+				std::thread test_thread_4( thread_process, 4, 100000 );
+				std::thread test_thread_5( thread_process, 5, 100000 );
+				test_thread_1.join();
+				test_thread_2.join();
+				test_thread_3.join();
+				test_thread_4.join();
+				test_thread_5.join();
+
+
+				std::cout << r2::linefeed;
+				std::cout << r2::tab2 << "n = " << n << r2::linefeed2;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
