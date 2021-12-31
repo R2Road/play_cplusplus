@@ -35,6 +35,7 @@
 #include "test_cpp/key_test.h"
 #include "r2_ETCMenu.h"
 #include "r2_MathMenu.h"
+#include "r2_PerformanceMenu.h"
 
 #include "r2_RenderMenu.h"
 
@@ -229,6 +230,15 @@ namespace r2
 				, [&director]()->eTestResult
 				{
 					director.Setup( r2::MathMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+			ret->AddChild(
+				'v'
+				, []()->const char* { return r2::PerformanceMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::PerformanceMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

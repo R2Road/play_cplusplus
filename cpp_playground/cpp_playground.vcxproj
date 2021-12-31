@@ -33,6 +33,7 @@
     <ClCompile Include="src\menu\r2_MathMenu.cpp" />
     <ClCompile Include="src\menu\r2_MemoryMenu.cpp" />
     <ClCompile Include="src\menu\r2_NewMenu.cpp" />
+    <ClCompile Include="src\menu\r2_PerformanceMenu.cpp" />
     <ClCompile Include="src\menu\r2_PointerMenu.cpp" />
     <ClCompile Include="src\menu\r2_RandomMenu.cpp" />
     <ClCompile Include="src\menu\r2_RenderMenu.cpp" />
@@ -119,6 +120,7 @@
     <ClInclude Include="src\menu\r2_MathMenu.h" />
     <ClInclude Include="src\menu\r2_MemoryMenu.h" />
     <ClInclude Include="src\menu\r2_NewMenu.h" />
+    <ClInclude Include="src\menu\r2_PerformanceMenu.h" />
     <ClInclude Include="src\menu\r2_PointerMenu.h" />
     <ClInclude Include="src\menu\r2_RandomMenu.h" />
     <ClInclude Include="src\menu\r2_RenderMenu.h" />
