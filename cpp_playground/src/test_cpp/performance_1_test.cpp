@@ -31,19 +31,24 @@ namespace performance_1_test
 				std::cout << r2::tab << "+ Test with Int" << r2::linefeed;
 				std::cout << r2::tab2 << "++ X " << attempt_count << r2::linefeed2;
 
+				int test_int = 0;
 				r2util::StopWatch stop_watch;
-				stop_watch.Start();
-					
-				int i = 0;
-				while( attempt_count > i )
+
+				for( int i = 0; 10 > i; ++i )
 				{
-					++i;
+					test_int = 0;
+
+					stop_watch.Start();
+					while( attempt_count > test_int )
+					{
+						++test_int;
+					}
+					stop_watch.Stop();
+
+					std::cout << r2::tab2;
+					stop_watch.PrintLog();
+					std::cout << r2::linefeed;
 				}
-
-				stop_watch.Stop();
-
-				std::cout << r2::tab2;
-				stop_watch.PrintLog();
 			}
 
 			std::cout << r2::split;
@@ -52,20 +57,25 @@ namespace performance_1_test
 				std::cout << r2::tab << "+ Test with Int*" << r2::linefeed;
 				std::cout << r2::tab2 << "++ X " << attempt_count << r2::linefeed2;
 
+				int test_int = 0;
+				int* test_pointer = &test_int;
 				r2util::StopWatch stop_watch;
-				stop_watch.Start();
 
-				int i = 0;
-				int* pi = &i;
-				while( attempt_count > *pi )
+				for( int i = 0; 10 > i; ++i )
 				{
-					++( *pi );
+					test_int = 0;
+
+					stop_watch.Start();
+					while( attempt_count > *test_pointer )
+					{
+						++( *test_pointer );
+					}
+					stop_watch.Stop();
+
+					std::cout << r2::tab2;
+					stop_watch.PrintLog();
+					std::cout << r2::linefeed;
 				}
-
-				stop_watch.Stop();
-
-				std::cout << r2::tab2;
-				stop_watch.PrintLog();
 			}
 
 			std::cout << r2::split;
