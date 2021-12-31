@@ -5,6 +5,8 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
+#include "test_cpp/performance_1_test.h"
+
 namespace r2
 {
 	MenuUp PerformanceMenu::Create( Director& director )
@@ -12,7 +14,7 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddLineFeed();
+			ret->AddChild( '1', performance_1_test::Assignment_With_Pointer::GetInstance() );
 
 
 			ret->AddSplit();

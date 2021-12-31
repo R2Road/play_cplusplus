@@ -75,6 +75,7 @@
     <ClCompile Include="src\test_cpp\memory_pool_test.cpp" />
     <ClCompile Include="src\test_cpp\new_test.cpp" />
     <ClCompile Include="src\test_cpp\optional_test.cpp" />
+    <ClCompile Include="src\test_cpp\performance_1_test.cpp" />
     <ClCompile Include="src\test_cpp\pointer_test.cpp" />
     <ClCompile Include="src\test_cpp\print_test.cpp" />
     <ClCompile Include="src\test_cpp\random_test.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="src\test_cpp\memory_pool_test.h" />
     <ClInclude Include="src\test_cpp\new_test.h" />
     <ClInclude Include="src\test_cpp\optional_test.h" />
+    <ClInclude Include="src\test_cpp\performance_1_test.h" />
     <ClInclude Include="src\test_cpp\pointer_test.h" />
     <ClInclude Include="src\test_cpp\print_test.h" />
     <ClInclude Include="src\test_cpp\random_test.h" />

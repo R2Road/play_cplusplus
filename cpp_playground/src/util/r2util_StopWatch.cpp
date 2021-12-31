@@ -39,6 +39,6 @@ namespace r2util
 
 	void StopWatch::PrintLog()
 	{
-		std::cout << GetTime();
+		std::cout << GetTime() << "¥ìs";
 	}
 }
