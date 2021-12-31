@@ -99,6 +99,7 @@
     <ClCompile Include="src\test_render\rect_test.cpp" />
     <ClCompile Include="src\test_render\renderer_test.cpp" />
     <ClCompile Include="src\test_render\visibleresource_test.cpp" />
+    <ClCompile Include="src\util\r2util_StopWatch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\base\r2_Director.h" />
@@ -187,6 +188,7 @@
     <ClInclude Include="src\test_render\rect_test.h" />
     <ClInclude Include="src\test_render\renderer_test.h" />
     <ClInclude Include="src\test_render\visibleresource_test.h" />
+    <ClInclude Include="src\util\r2util_StopWatch.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

@@ -16,6 +16,9 @@
     <Filter Include="test_cpp">
       <UniqueIdentifier>{77a45f2c-1f22-46b3-9c35-5ee34c38a7b9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{b470e37a-ab48-4294-91e6-d840afb5ce71}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -253,6 +256,9 @@
     </ClCompile>
     <ClCompile Include="src\test_cpp\atomic_test.cpp">
       <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\r2util_StopWatch.cpp">
+      <Filter>util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -511,6 +517,9 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\atomic_test.h">
       <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\r2util_StopWatch.h">
+      <Filter>util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
