@@ -47,6 +47,32 @@ namespace new_test
 			std::cout << r2::split;
 
 			{
+				int* i = new int[10];
+
+				std::cout << r2::tab << "+ int* i = new int[10];" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << *i << r2::linefeed;
+
+				delete[] i;
+				std::cout << r2::tab << "+ delete[] i;" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				int* i = new int[10]{ 1, 2, 3 };
+
+				std::cout << r2::tab << "+ int* i = new int[10]{ 1, 2, 3 };" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << *i << r2::linefeed;
+				std::cout << r2::tab2 << "- [3] : " << i[3] << r2::linefeed;
+				std::cout << r2::tab2 << "- [4] : " << i[4] << r2::linefeed;
+
+				delete[] i;
+				std::cout << r2::tab << "+ delete[] i;" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
 				char* str = new char[7];
 
 				std::cout << r2::tab << "+ char* str = new char[7];" << r2::linefeed;
