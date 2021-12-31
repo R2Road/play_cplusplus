@@ -58,6 +58,20 @@ namespace new_test
 
 			std::cout << r2::split;
 
+			{
+				char* str = new char[7]{ "abc" };
+
+				std::cout << r2::tab << "+ char* str = new char[7]{ \"abc\" };" << r2::linefeed;
+				std::cout << r2::tab2 << "- " << str << r2::linefeed;
+				std::cout << r2::tab2 << "- [3] : " << str[3] << r2::linefeed;
+				std::cout << r2::tab2 << "- [4] : " << str[4] << r2::linefeed;
+
+				delete[] str;
+				std::cout << r2::tab << "+ delete[] str;" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
