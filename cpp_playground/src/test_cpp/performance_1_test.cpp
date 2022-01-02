@@ -2,6 +2,7 @@
 #include "performance_1_test.h"
 
 #include <conio.h>
+#include <memory>
 #include <numeric>
 
 #include "base/r2_eTestResult.h"
@@ -25,7 +26,7 @@ namespace performance_1_test
 
 			std::cout << r2::split;
 
-			const int attempt_count = std::numeric_limits<int>::max() / 10;
+			const int attempt_count = std::numeric_limits<int>::max() / 1000;
 
 			{
 				std::cout << r2::tab << "+ Test with Int" << r2::linefeed;
@@ -47,6 +48,7 @@ namespace performance_1_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog();
+					std::cout << r2::tab2 << test_int;
 					std::cout << r2::linefeed;
 				}
 			}
@@ -74,6 +76,34 @@ namespace performance_1_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog();
+					std::cout << r2::tab2 << *test_pointer;
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Test with Int Sp" << r2::linefeed;
+				std::cout << r2::tab2 << "++ X " << attempt_count << r2::linefeed2;
+
+				std::shared_ptr<int> test_pointer( new int( 0 ) );
+				r2util::StopWatch stop_watch;
+
+				for( int i = 0; 10 > i; ++i )
+				{
+					*test_pointer = 0;
+
+					stop_watch.Start();
+					while( attempt_count > *test_pointer )
+					{
+						++( *test_pointer );
+					}
+					stop_watch.Stop();
+
+					std::cout << r2::tab2;
+					stop_watch.PrintLog();
+					std::cout << r2::tab2 << *test_pointer;
 					std::cout << r2::linefeed;
 				}
 			}
