@@ -35,7 +35,7 @@ namespace performance_1_test
 				int test_int = 0;
 				r2util::StopWatch stop_watch;
 
-				for( int i = 0; 10 > i; ++i )
+				for( int i = 0; 5 > i; ++i )
 				{
 					test_int = 0;
 
@@ -63,9 +63,37 @@ namespace performance_1_test
 				int* test_pointer = &test_int;
 				r2util::StopWatch stop_watch;
 
-				for( int i = 0; 10 > i; ++i )
+				for( int i = 0; 5 > i; ++i )
 				{
 					test_int = 0;
+
+					stop_watch.Start();
+					while( attempt_count > *test_pointer )
+					{
+						++( *test_pointer );
+					}
+					stop_watch.Stop();
+
+					std::cout << r2::tab2;
+					stop_watch.PrintLog();
+					std::cout << r2::tab2 << *test_pointer;
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Test with new Int*" << r2::linefeed;
+				std::cout << r2::tab2 << "++ X " << attempt_count << r2::linefeed2;
+
+				std::unique_ptr<int> test_unique_pointer( new int( 0 ) );
+				int* test_pointer = test_unique_pointer.get();
+				r2util::StopWatch stop_watch;
+
+				for( int i = 0; 5 > i; ++i )
+				{
+					*test_pointer = 0;
 
 					stop_watch.Start();
 					while( attempt_count > *test_pointer )
@@ -90,7 +118,7 @@ namespace performance_1_test
 				std::shared_ptr<int> test_pointer( new int( 0 ) );
 				r2util::StopWatch stop_watch;
 
-				for( int i = 0; 10 > i; ++i )
+				for( int i = 0; 5 > i; ++i )
 				{
 					*test_pointer = 0;
 
