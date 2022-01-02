@@ -36,9 +36,17 @@ namespace r2util
 	{
 		return std::chrono::duration_cast<std::chrono::microseconds>( mEndTime - mStartTime ).count();
 	}
+	long long StopWatch::GetNanoTime() const
+	{
+		return std::chrono::duration_cast<std::chrono::nanoseconds>( mEndTime - mStartTime ).count();
+	}
 
 	void StopWatch::PrintLog_MicroSeconds()
 	{
 		std::cout << GetMicroTime() << "¥ìs";
+	}
+	void StopWatch::PrintLog_NanoSeconds()
+	{
+		std::cout << GetNanoTime() << "ns";
 	}
 }
