@@ -163,4 +163,79 @@ namespace performance_1_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc Loop::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Loop";
+		};
+	}
+	r2::iTest::DoFunc Loop::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			const int attempt_count = std::numeric_limits<int>::max() / 10;
+
+			{
+				std::cout << r2::tab << "+ For" << " ++ X " << attempt_count << r2::linefeed2;
+
+				int test_int = 0;
+				r2util::StopWatch stop_watch;
+
+				for( int i = 0; 5 > i; ++i )
+				{
+					test_int = 0;
+
+					stop_watch.Start();
+					for( ; attempt_count > test_int; )
+					{
+						++test_int;
+					}
+					stop_watch.Stop();
+
+					std::cout << r2::tab2;
+					stop_watch.PrintLog();
+					std::cout << r2::tab2 << test_int;
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ While" << " ++ X " << attempt_count << r2::linefeed2;
+
+				int test_int = 0;
+				r2util::StopWatch stop_watch;
+
+				for( int i = 0; 5 > i; ++i )
+				{
+					test_int = 0;
+
+					stop_watch.Start();
+					while( attempt_count > test_int )
+					{
+						++test_int;
+					}
+					stop_watch.Stop();
+
+					std::cout << r2::tab2;
+					stop_watch.PrintLog();
+					std::cout << r2::tab2 << test_int;
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }

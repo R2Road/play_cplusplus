@@ -15,6 +15,7 @@ namespace r2
 
 		{
 			ret->AddChild( '1', performance_1_test::IncrementOperator::GetInstance() );
+			ret->AddChild( '2', performance_1_test::Loop::GetInstance() );
 
 
 			ret->AddSplit();
