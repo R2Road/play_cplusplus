@@ -181,12 +181,12 @@ namespace performance_1_test
 
 			std::cout << r2::split;
 
-			const int attempt_count = std::numeric_limits<int>::max() / 10;
+			const unsigned int attempt_count = std::numeric_limits<unsigned int>::max() / 10;
 
 			{
 				std::cout << r2::tab << "+ For" << " ++ X " << attempt_count << r2::linefeed2;
 
-				int test_int = 0;
+				unsigned int test_int = 0;
 				r2util::StopWatch stop_watch;
 
 				for( int i = 0; 5 > i; ++i )
@@ -212,7 +212,7 @@ namespace performance_1_test
 			{
 				std::cout << r2::tab << "+ While" << " ++ X " << attempt_count << r2::linefeed2;
 
-				int test_int = 0;
+				unsigned int test_int = 0;
 				r2util::StopWatch stop_watch;
 
 				for( int i = 0; 5 > i; ++i )
