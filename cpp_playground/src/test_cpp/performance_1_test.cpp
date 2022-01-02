@@ -29,8 +29,7 @@ namespace performance_1_test
 			const int attempt_count = std::numeric_limits<int>::max() / 1000;
 
 			{
-				std::cout << r2::tab << "+ Test with Int" << r2::linefeed;
-				std::cout << r2::tab2 << "++ X " << attempt_count << r2::linefeed2;
+				std::cout << r2::tab << "+ Int" << " ++ X " << attempt_count << r2::linefeed2;
 
 				int test_int = 0;
 				r2util::StopWatch stop_watch;
@@ -56,8 +55,7 @@ namespace performance_1_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Test with Int*" << r2::linefeed;
-				std::cout << r2::tab2 << "++ X " << attempt_count << r2::linefeed2;
+				std::cout << r2::tab << "+ Int*" << " ++ X " << attempt_count << r2::linefeed2;
 
 				int test_int = 0;
 				int* test_pointer = &test_int;
@@ -84,8 +82,7 @@ namespace performance_1_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Test with new Int*" << r2::linefeed;
-				std::cout << r2::tab2 << "++ X " << attempt_count << r2::linefeed2;
+				std::cout << r2::tab << "+ new Int*" << " ++ X " << attempt_count << r2::linefeed2;
 
 				std::unique_ptr<int> test_unique_pointer( new int( 0 ) );
 				int* test_pointer = test_unique_pointer.get();
@@ -112,8 +109,7 @@ namespace performance_1_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Test with Int Sp" << r2::linefeed;
-				std::cout << r2::tab2 << "++ X " << attempt_count << r2::linefeed2;
+				std::cout << r2::tab << "+ Int Sp" << " ++ X " << attempt_count << r2::linefeed2;
 
 				std::shared_ptr<int> test_pointer( new int( 0 ) );
 				r2util::StopWatch stop_watch;
