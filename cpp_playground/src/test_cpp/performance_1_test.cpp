@@ -11,14 +11,14 @@
 
 namespace performance_1_test
 {
-	r2::iTest::TitleFunc Assignment_With_Pointer::GetTitleFunction() const
+	r2::iTest::TitleFunc IncrementOperator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Assignment With Pointer";
+			return "++Operator";
 		};
 	}
-	r2::iTest::DoFunc Assignment_With_Pointer::GetDoFunction()
+	r2::iTest::DoFunc IncrementOperator::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

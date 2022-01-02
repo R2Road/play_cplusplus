@@ -5,7 +5,7 @@
 
 namespace performance_1_test
 {
-	class Assignment_With_Pointer : public r2::iTest, public r2::SingleTon<Assignment_With_Pointer>
+	class IncrementOperator : public r2::iTest, public r2::SingleTon<IncrementOperator>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

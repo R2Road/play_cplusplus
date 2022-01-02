@@ -14,7 +14,7 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', performance_1_test::Assignment_With_Pointer::GetInstance() );
+			ret->AddChild( '1', performance_1_test::IncrementOperator::GetInstance() );
 
 
 			ret->AddSplit();
