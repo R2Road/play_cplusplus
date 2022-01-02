@@ -12,11 +12,11 @@ namespace r2util
 		void Start();
 		void Stop();
 
-		long long GetTime() const;
+		long long GetMicroTime() const;
 		long long GetMaxTime() const { return mMaxTime; }
 		long long GetMinTime() const { return mMinTime; }
 
-		void PrintLog();
+		void PrintLog_MicroSeconds();
 
 	private:
 		std::chrono::steady_clock::time_point mStartTime;

@@ -32,13 +32,13 @@ namespace r2util
 		}
 	}
 
-	long long StopWatch::GetTime() const
+	long long StopWatch::GetMicroTime() const
 	{
 		return std::chrono::duration_cast<std::chrono::microseconds>( mEndTime - mStartTime ).count();
 	}
 
-	void StopWatch::PrintLog()
+	void StopWatch::PrintLog_MicroSeconds()
 	{
-		std::cout << GetTime() << "¥ìs";
+		std::cout << GetMicroTime() << "¥ìs";
 	}
 }
