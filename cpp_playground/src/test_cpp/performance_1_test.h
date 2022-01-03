@@ -19,6 +19,12 @@ namespace performance_1_test
 		DoFunc GetDoFunction() override;
 	};
 
+	class LoopWithBuildInArray : public r2::iTest, public r2::SingleTon<LoopWithBuildInArray>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 	class LoopWithArray2 : public r2::iTest, public r2::SingleTon<LoopWithArray2>
 	{
 	public:
