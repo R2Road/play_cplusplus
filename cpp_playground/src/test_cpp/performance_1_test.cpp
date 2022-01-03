@@ -241,14 +241,14 @@ namespace performance_1_test
 
 
 
-	r2::iTest::TitleFunc LoopWithArray::GetTitleFunction() const
+	r2::iTest::TitleFunc LoopWithArray2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Loop With Array";
 		};
 	}
-	r2::iTest::DoFunc LoopWithArray::GetDoFunction()
+	r2::iTest::DoFunc LoopWithArray2::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
