@@ -6,6 +6,7 @@
 #include "r2_RootMenu.h"
 
 #include "r2_AlgorithmMenu.h"
+#include "r2_ContainerMenu.h"
 
 #include "test_cpp/optional_test.h"
 #include "test_cpp/string_view_test.h"
@@ -33,6 +34,15 @@ namespace r2
 				, [&director]()->eTestResult
 				{
 					director.Setup( r2::AlgorithmMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+			ret->AddChild(
+				'w'
+				, []()->const char* { return r2::ContainerMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::ContainerMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

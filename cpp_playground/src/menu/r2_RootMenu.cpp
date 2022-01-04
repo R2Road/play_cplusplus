@@ -25,7 +25,6 @@
 #include "test_cpp/lambda_test.h"
 #include "test_cpp/print_test.h"
 #include "r2_CharMenu.h"
-#include "r2_ContainerMenu.h"
 #include "r2_STDMenu.h"
 
 #include "test_cpp/key_test.h"
@@ -181,15 +180,6 @@ namespace r2
 				, [&director]()->eTestResult
 				{
 					director.Setup( r2::CharMenu::Create( director ) );
-					return eTestResult::ChangeScene;
-				}
-			);
-			ret->AddChild(
-				'h'
-				, []()->const char* { return r2::ContainerMenu::GetTitle(); }
-				, [&director]()->eTestResult
-				{
-					director.Setup( r2::ContainerMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);
