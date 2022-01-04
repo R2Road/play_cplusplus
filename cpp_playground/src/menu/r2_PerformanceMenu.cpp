@@ -28,6 +28,7 @@ namespace r2
 			ret->AddChild( 'r', performance_2_test::ListIteration::GetInstance() );
 			ret->AddChild( 't', performance_2_test::MapIteration::GetInstance() );
 			ret->AddChild( 'y', performance_2_test::UnorderedMapIteration::GetInstance() );
+			ret->AddChild( 'u', performance_2_test::SetIteration::GetInstance() );
 
 
 			ret->AddSplit();

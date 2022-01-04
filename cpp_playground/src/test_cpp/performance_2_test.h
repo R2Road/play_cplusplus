@@ -46,4 +46,11 @@ namespace performance_2_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class SetIteration : public r2::iTest, public r2::SingleTon<SetIteration>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
