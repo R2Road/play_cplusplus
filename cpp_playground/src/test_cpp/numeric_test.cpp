@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "algorithm_test.h"
+#include "numeric_test.h"
 
 #include <iterator>
 #include <numeric>
@@ -7,7 +7,7 @@
 
 #include "base/r2_eTestResult.h"
 
-namespace algorithm_test
+namespace numeric_test
 {
 	r2::iTest::TitleFunc Accumulate_Number::GetTitleFunction() const
 	{

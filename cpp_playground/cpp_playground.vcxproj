@@ -46,7 +46,7 @@
     <ClCompile Include="src\menu\r2_VariadicTemplateMenu.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\test_cpp\algorithm_test.cpp" />
+    <ClCompile Include="src\test_cpp\numeric_test.cpp" />
     <ClCompile Include="src\test_cpp\alignas_test.cpp" />
     <ClCompile Include="src\test_cpp\alignof_test.cpp" />
     <ClCompile Include="src\test_cpp\align_test.cpp" />
@@ -120,7 +120,7 @@
     <ClInclude Include="src\menu\r2_TimeMenu.h" />
     <ClInclude Include="src\menu\r2_VariadicTemplateMenu.h" />
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\test_cpp\algorithm_test.h" />
+    <ClInclude Include="src\test_cpp\numeric_test.h" />
     <ClInclude Include="src\test_cpp\alignas_test.h" />
     <ClInclude Include="src\test_cpp\alignof_test.h" />
     <ClInclude Include="src\test_cpp\align_test.h" />

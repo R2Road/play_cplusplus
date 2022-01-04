@@ -167,9 +167,6 @@
     <ClCompile Include="src\test_cpp\vector_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\algorithm_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\menu\r2_AlgorithmMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
@@ -219,6 +216,9 @@
       <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\test_cpp\performance_container_iteration_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\numeric_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
   </ItemGroup>
@@ -383,9 +383,6 @@
     <ClInclude Include="src\test_cpp\vector_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\algorithm_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
     <ClInclude Include="src\menu\r2_AlgorithmMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
@@ -435,6 +432,9 @@
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\performance_container_iteration_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\numeric_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>
