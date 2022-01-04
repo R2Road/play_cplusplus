@@ -256,6 +256,29 @@ namespace performance_2_test
 
 			std::cout << r2::split;
 
+			{
+				std::cout << r2::tab << "+ Iterator" << r2::linefeed2;
+
+				for( int test_index = 0; 5 > test_index; ++test_index )
+				{
+					sum_result = 0;
+
+					stop_watch.Start();
+					for( auto cur = test_container.begin(), end = test_container.end(); end != cur; ++cur )
+					{
+						sum_result += ( *cur );
+					}
+					stop_watch.Stop();
+
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2 << "sum_result : " << sum_result;
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
