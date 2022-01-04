@@ -38,6 +38,7 @@
     <ClCompile Include="src\menu\r2_RandomMenu.cpp" />
     <ClCompile Include="src\menu\r2_RenderMenu.cpp" />
     <ClCompile Include="src\menu\r2_RootMenu.cpp" />
+    <ClCompile Include="src\menu\r2_STDMenu.cpp" />
     <ClCompile Include="src\menu\r2_TemplateMenu.cpp" />
     <ClCompile Include="src\menu\r2_TemplateMetaProgrammingMenu.cpp" />
     <ClCompile Include="src\menu\r2_TemplatePracticeMenu.cpp" />
@@ -127,6 +128,7 @@
     <ClInclude Include="src\menu\r2_RandomMenu.h" />
     <ClInclude Include="src\menu\r2_RenderMenu.h" />
     <ClInclude Include="src\menu\r2_RootMenu.h" />
+    <ClInclude Include="src\menu\r2_STDMenu.h" />
     <ClInclude Include="src\menu\r2_TemplateMenu.h" />
     <ClInclude Include="src\menu\r2_TemplateMetaProgrammingMenu.h" />
     <ClInclude Include="src\menu\r2_TemplatePracticeMenu.h" />

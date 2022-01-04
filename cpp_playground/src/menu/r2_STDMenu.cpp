@@ -1,28 +1,22 @@
 #include "pch.h"
-#include "r2_AlgorithmMenu.h"
+#include "r2_STDMenu.h"
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
-#include "r2_AlgorithmMenu.h"
+#include "test_cpp/algorithm_test.h"
 
 namespace r2
 {
-	MenuUp AlgorithmMenu::Create( Director& director )
+	MenuUp STDMenu::Create( Director& director )
 	{
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild(
-				'1'
-				, []()->const char* { return r2::AlgorithmMenu::GetTitle(); }
-				, [&director]()->eTestResult
-				{
-					director.Setup( r2::AlgorithmMenu::Create( director ) );
-					return eTestResult::ChangeScene;
-				}
-			);
+			ret->AddChild( '1', algorithm_test::Accumulate_Number::GetInstance() );
+			ret->AddChild( '2', algorithm_test::Accumulate_String::GetInstance() );
+			ret->AddChild( '3', algorithm_test::Partial_Sum::GetInstance() );
 
 
 			ret->AddSplit();

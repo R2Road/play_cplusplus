@@ -30,7 +30,7 @@
 #include "test_cpp/print_test.h"
 #include "r2_CharMenu.h"
 #include "r2_ContainerMenu.h"
-#include "r2_AlgorithmMenu.h"
+#include "r2_STDMenu.h"
 
 #include "test_cpp/key_test.h"
 #include "r2_ETCMenu.h"
@@ -202,10 +202,10 @@ namespace r2
 			);
 			ret->AddChild(
 				'j'
-				, []()->const char* { return r2::AlgorithmMenu::GetTitle(); }
+				, []()->const char* { return r2::STDMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
-					director.Setup( r2::AlgorithmMenu::Create( director ) );
+					director.Setup( r2::STDMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);
