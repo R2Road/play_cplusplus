@@ -44,7 +44,7 @@ namespace performance_2_test
 				unsigned int test_int = 0;
 				r2util::StopWatch stop_watch;
 
-				for( int i = 0; 5 > i; ++i )
+				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
 					test_int = 0;
 
@@ -70,7 +70,7 @@ namespace performance_2_test
 				unsigned int test_int = 0;
 				r2util::StopWatch stop_watch;
 
-				for( int i = 0; 5 > i; ++i )
+				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
 					test_int = 0;
 
@@ -132,7 +132,7 @@ namespace performance_2_test
 				unsigned int test_int = 0;
 				r2util::StopWatch stop_watch;
 
-				for( int i = 0; 5 > i; ++i )
+				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
 					test_int = 0;
 
@@ -158,7 +158,7 @@ namespace performance_2_test
 				unsigned int test_int = 0;
 				r2util::StopWatch stop_watch;
 
-				for( int i = 0; 5 > i; ++i )
+				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
 					test_int = 0;
 
