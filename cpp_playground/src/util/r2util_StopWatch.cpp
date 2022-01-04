@@ -32,6 +32,10 @@ namespace r2util
 		}
 	}
 
+	long long StopWatch::GetMilliTime() const
+	{
+		return std::chrono::duration_cast<std::chrono::milliseconds>( mEndTime - mStartTime ).count();
+	}
 	long long StopWatch::GetMicroTime() const
 	{
 		return std::chrono::duration_cast<std::chrono::microseconds>( mEndTime - mStartTime ).count();
@@ -41,6 +45,10 @@ namespace r2util
 		return std::chrono::duration_cast<std::chrono::nanoseconds>( mEndTime - mStartTime ).count();
 	}
 
+	void StopWatch::PrintLog_MilliSeconds()
+	{
+		std::cout << GetMilliTime() << "ms";
+	}
 	void StopWatch::PrintLog_MicroSeconds()
 	{
 		std::cout << GetMicroTime() << "¥ìs";

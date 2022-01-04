@@ -12,11 +12,13 @@ namespace r2util
 		void Start();
 		void Stop();
 
+		long long GetMilliTime() const;
 		long long GetMicroTime() const;
 		long long GetNanoTime() const;
 		long long GetMaxTime() const { return mMaxTime; }
 		long long GetMinTime() const { return mMinTime; }
 
+		void PrintLog_MilliSeconds();
 		void PrintLog_MicroSeconds();
 		void PrintLog_NanoSeconds();
 
