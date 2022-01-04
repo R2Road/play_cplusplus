@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_AlgorithmMenu.h"
+#include "r2_NumericMenu.h"
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestResult.h"
@@ -9,7 +9,7 @@
 
 namespace r2
 {
-	MenuUp AlgorithmMenu::Create( Director& director )
+	MenuUp NumericMenu::Create( Director& director )
 	{
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 

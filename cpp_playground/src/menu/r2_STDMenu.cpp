@@ -5,7 +5,7 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
-#include "r2_AlgorithmMenu.h"
+#include "r2_NumericMenu.h"
 #include "r2_ContainerMenu.h"
 
 #include "test_cpp/optional_test.h"
@@ -30,10 +30,10 @@ namespace r2
 
 			ret->AddChild(
 				'q'
-				, []()->const char* { return r2::AlgorithmMenu::GetTitle(); }
+				, []()->const char* { return r2::NumericMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
-					director.Setup( r2::AlgorithmMenu::Create( director ) );
+					director.Setup( r2::NumericMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);
