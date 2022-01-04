@@ -18,7 +18,7 @@ namespace performance_2_test
 		DoFunc GetDoFunction() override;
 	};
 
-	class ArrayIteration : public r2::iTest, public r2::SingleTon<ArrayIteration>
+	class STDArrayIteration : public r2::iTest, public r2::SingleTon<STDArrayIteration>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

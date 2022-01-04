@@ -181,14 +181,14 @@ namespace performance_2_test
 
 
 
-	r2::iTest::TitleFunc ArrayIteration::GetTitleFunction() const
+	r2::iTest::TitleFunc STDArrayIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Array Iteration";
+			return "STD Array Iteration";
 		};
 	}
-	r2::iTest::DoFunc ArrayIteration::GetDoFunction()
+	r2::iTest::DoFunc STDArrayIteration::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
