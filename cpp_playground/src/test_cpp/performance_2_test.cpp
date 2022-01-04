@@ -3,6 +3,7 @@
 
 #include <array>
 #include <list>
+#include <map>
 #include <vector>
 
 #include "base/r2_eTestResult.h"
@@ -39,7 +40,7 @@ namespace performance_2_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ For" << r2::linefeed2;
+				std::cout << r2::tab << "+ For with Index" << r2::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -117,7 +118,7 @@ namespace performance_2_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ For" << r2::linefeed2;
+				std::cout << r2::tab << "+ For with Index" << r2::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -216,7 +217,7 @@ namespace performance_2_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ For" << r2::linefeed2;
+				std::cout << r2::tab << "+ For with Index" << r2::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -348,6 +349,108 @@ namespace performance_2_test
 					for( auto cur = test_container.begin(), end = test_container.end(); end != cur; ++cur )
 					{
 						sum_result += ( *cur );
+					}
+					stop_watch.Stop();
+
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2 << "sum_result : " << sum_result;
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc MapIteration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Map Iteration";
+		};
+	}
+	r2::iTest::DoFunc MapIteration::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::map<std::size_t, int> test_container;
+			for( int n = 0; 100000 > n; ++n ) test_container.emplace( n, 1 );
+
+			unsigned int sum_result = 0;
+			r2util::StopWatch stop_watch;
+
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "std::map<int, int> test_container;" << r2::linefeed;
+			std::cout << r2::tab2 << "for( int n = 0; n > 100000; ++n ) test_container.emplace( n, 1 );" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ For with Index" << r2::linefeed2;
+
+				for( int test_index = 0; 5 > test_index; ++test_index )
+				{
+					sum_result = 0;
+
+					stop_watch.Start();
+					for( std::size_t cur = 0, end = test_container.size(); end > cur; ++cur )
+					{
+						sum_result += test_container[cur];
+					}
+					stop_watch.Stop();
+
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2 << "sum_result : " << sum_result;
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Range-Based For" << r2::linefeed2;
+
+				for( int test_index = 0; 5 > test_index; ++test_index )
+				{
+					sum_result = 0;
+
+					stop_watch.Start();
+					for( const auto& cur : test_container )
+					{
+						sum_result += cur.second;
+					}
+					stop_watch.Stop();
+
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2 << "sum_result : " << sum_result;
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Iterator" << r2::linefeed2;
+
+				for( int test_index = 0; 5 > test_index; ++test_index )
+				{
+					sum_result = 0;
+
+					stop_watch.Start();
+					for( auto cur = test_container.begin(), end = test_container.end(); end != cur; ++cur )
+					{
+						sum_result += ( cur->second );
 					}
 					stop_watch.Stop();
 

@@ -29,4 +29,10 @@ namespace performance_2_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+	class MapIteration : public r2::iTest, public r2::SingleTon<MapIteration>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
