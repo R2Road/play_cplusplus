@@ -41,23 +41,23 @@ namespace performance_2_test
 			{
 				std::cout << r2::tab << "+ For" << r2::linefeed2;
 
-				unsigned int test_int = 0;
+				unsigned int sum_result = 0;
 				r2util::StopWatch stop_watch;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
-					test_int = 0;
+					sum_result = 0;
 
 					stop_watch.Start();
 					for( unsigned int a = 0; attempt_count > a; ++a )
 					{
-						test_int += test_container[a];
+						sum_result += test_container[a];
 					}
 					stop_watch.Stop();
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
-					std::cout << r2::tab2 << test_int;
+					std::cout << r2::tab2 << sum_result;
 					std::cout << r2::linefeed;
 				}
 			}
@@ -67,18 +67,18 @@ namespace performance_2_test
 			{
 				std::cout << r2::tab << "+ While" << r2::linefeed2;
 
-				unsigned int test_int = 0;
+				unsigned int sum_result = 0;
 				r2util::StopWatch stop_watch;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
-					test_int = 0;
+					sum_result = 0;
 
 					stop_watch.Start();
 					unsigned int a = 0;
 					while( attempt_count > a )
 					{
-						test_int += test_container[a];
+						sum_result += test_container[a];
 
 						++a;
 					}
@@ -86,7 +86,7 @@ namespace performance_2_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
-					std::cout << r2::tab2 << test_int;
+					std::cout << r2::tab2 << sum_result;
 					std::cout << r2::linefeed;
 				}
 			}
@@ -129,23 +129,23 @@ namespace performance_2_test
 			{
 				std::cout << r2::tab << "+ For"<< r2::linefeed2;
 
-				unsigned int test_int = 0;
+				unsigned int sum_result = 0;
 				r2util::StopWatch stop_watch;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
-					test_int = 0;
+					sum_result = 0;
 
 					stop_watch.Start();
 					for( unsigned int a = 0; attempt_count > a; ++a )
 					{
-						test_int += test_container[a];
+						sum_result += test_container[a];
 					}
 					stop_watch.Stop();
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
-					std::cout << r2::tab2 << test_int;
+					std::cout << r2::tab2 << sum_result;
 					std::cout << r2::linefeed;
 				}
 			}
@@ -155,18 +155,18 @@ namespace performance_2_test
 			{
 				std::cout << r2::tab << "+ While" << r2::linefeed2;
 
-				unsigned int test_int = 0;
+				unsigned int sum_result = 0;
 				r2util::StopWatch stop_watch;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
-					test_int = 0;
+					sum_result = 0;
 
 					stop_watch.Start();
 					unsigned int a = 0;
 					while( attempt_count > a )
 					{
-						test_int += test_container[a];
+						sum_result += test_container[a];
 
 						++a;
 					}
@@ -174,7 +174,7 @@ namespace performance_2_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
-					std::cout << r2::tab2 << test_int;
+					std::cout << r2::tab2 << sum_result;
 					std::cout << r2::linefeed;
 				}
 			}
