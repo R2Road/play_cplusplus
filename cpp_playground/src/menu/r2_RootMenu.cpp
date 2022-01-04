@@ -17,9 +17,6 @@
 #include "r2_LambdaMenu.h"
 #include "r2_NewMenu.h"
 
-#include "test_cpp/optional_test.h"
-#include "test_cpp/variant_test.h"
-#include "test_cpp/tuple_test.h"
 #include "test_cpp/structured_binding_test.h"
 #include "test_cpp/pointer_test.h"
 #include "test_cpp/assert_test.h"
@@ -152,9 +149,6 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
-			ret->AddChild( 'w', optional_test::Basic::GetInstance() );
-			ret->AddChild( 'e', variant_test::Basic::GetInstance() );
-			ret->AddChild( 'r', tuple_test::Basic::GetInstance() );
 			ret->AddChild( 't', structured_binding_test::Basic::GetInstance() );			
 			ret->AddChild( 'y', assert_test::Basic::GetInstance() );
 			ret->AddChild(

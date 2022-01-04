@@ -7,6 +7,10 @@
 
 #include "r2_AlgorithmMenu.h"
 
+#include "test_cpp/optional_test.h"
+#include "test_cpp/variant_test.h"
+#include "test_cpp/tuple_test.h"
+
 namespace r2
 {
 	MenuUp STDMenu::Create( Director& director )
@@ -14,8 +18,16 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
+			ret->AddChild( '1', optional_test::Basic::GetInstance() );
+			ret->AddChild( '2', variant_test::Basic::GetInstance() );
+			ret->AddChild( '3', tuple_test::Basic::GetInstance() );
+
+
+			ret->AddLineFeed();
+
+
 			ret->AddChild(
-				'1'
+				'q'
 				, []()->const char* { return r2::AlgorithmMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
