@@ -58,6 +58,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -81,6 +83,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -136,6 +140,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -159,6 +165,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -182,6 +190,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -235,6 +245,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -258,6 +270,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -281,6 +295,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -334,6 +350,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -357,6 +375,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -413,6 +433,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -436,6 +458,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -459,6 +483,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -515,6 +541,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -538,6 +566,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -561,6 +591,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -617,6 +649,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -640,6 +674,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -696,6 +732,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -719,6 +757,8 @@ namespace performance_container_iteration_test
 
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_MicroSeconds();
 					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
