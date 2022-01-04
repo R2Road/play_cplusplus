@@ -221,7 +221,7 @@ namespace performance_2_test
 					sum_result = 0;
 
 					stop_watch.Start();
-					for( unsigned int cur = 0, end = test_container.size(); end > cur; ++cur )
+					for( std::size_t cur = 0u, end = test_container.size(); end > cur; ++cur )
 					{
 						sum_result += test_container[cur];
 					}
@@ -320,7 +320,7 @@ namespace performance_2_test
 					sum_result = 0;
 
 					stop_watch.Start();
-					for( unsigned int cur = 0, end = test_container.size(); end > cur; ++cur )
+					for( std::size_t cur = 0, end = test_container.size(); end > cur; ++cur )
 					{
 						sum_result += test_container[cur];
 					}
