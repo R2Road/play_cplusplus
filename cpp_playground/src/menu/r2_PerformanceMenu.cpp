@@ -17,8 +17,8 @@ namespace r2
 		{
 			ret->AddChild( '1', performance_1_test::IncrementOperator::GetInstance() );
 			ret->AddChild( '2', performance_1_test::Loop::GetInstance() );
-			ret->AddChild( '3', performance_2_test::LoopWithBuildInArray::GetInstance() );
-			ret->AddChild( '4', performance_2_test::LoopWithSTDArray::GetInstance() );
+			ret->AddChild( '3', performance_1_test::LoopWithBuildInArray::GetInstance() );
+			ret->AddChild( '4', performance_1_test::LoopWithSTDArray::GetInstance() );
 
 			ret->AddLineFeed();
 
