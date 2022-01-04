@@ -31,6 +31,9 @@ namespace performance_2_test
 			int test_container[attempt_count];
 			std::fill_n( test_container, attempt_count, 1 );
 
+			unsigned int sum_result = 0;
+			r2util::StopWatch stop_watch;
+
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 			std::cout << r2::tab2 << "const unsigned int attempt_count = " << attempt_count << ";" << r2::linefeed2;
 			std::cout << r2::tab2 << "int test_container[attempt_count];" << r2::linefeed;
@@ -40,9 +43,6 @@ namespace performance_2_test
 
 			{
 				std::cout << r2::tab << "+ For" << r2::linefeed2;
-
-				unsigned int sum_result = 0;
-				r2util::StopWatch stop_watch;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -66,9 +66,6 @@ namespace performance_2_test
 
 			{
 				std::cout << r2::tab << "+ While" << r2::linefeed2;
-
-				unsigned int sum_result = 0;
-				r2util::StopWatch stop_watch;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -119,6 +116,9 @@ namespace performance_2_test
 			std::array<int, attempt_count> test_container;
 			test_container.fill( 1 );
 
+			unsigned int sum_result = 0;
+			r2util::StopWatch stop_watch;
+
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 			std::cout << r2::tab2 << "const unsigned int attempt_count = " << attempt_count << ";" << r2::linefeed2;
 			std::cout << r2::tab2 << "std::array<int, attempt_count> test_container;" << r2::linefeed;
@@ -128,9 +128,6 @@ namespace performance_2_test
 
 			{
 				std::cout << r2::tab << "+ For"<< r2::linefeed2;
-
-				unsigned int sum_result = 0;
-				r2util::StopWatch stop_watch;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -154,9 +151,6 @@ namespace performance_2_test
 
 			{
 				std::cout << r2::tab << "+ While" << r2::linefeed2;
-
-				unsigned int sum_result = 0;
-				r2util::StopWatch stop_watch;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
