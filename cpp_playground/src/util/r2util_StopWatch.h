@@ -21,6 +21,7 @@ namespace r2util
 		void PrintLog_MilliSeconds();
 		void PrintLog_MicroSeconds();
 		void PrintLog_NanoSeconds();
+		void PrintLog_All();
 
 	private:
 		std::chrono::steady_clock::time_point mStartTime;

@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "r2util_StopWatch.h"
 
 #include <iostream>
@@ -56,5 +57,13 @@ namespace r2util
 	void StopWatch::PrintLog_NanoSeconds()
 	{
 		std::cout << GetNanoTime() << "ns";
+	}
+	void StopWatch::PrintLog_All()
+	{
+		PrintLog_MilliSeconds();
+		std::cout << r2::tab;
+		PrintLog_MicroSeconds();
+		std::cout << r2::tab;
+		PrintLog_NanoSeconds();
 	}
 }
