@@ -164,6 +164,15 @@ namespace r2
 
 
 			ret->AddChild(
+				'a'
+				, []()->const char* { return r2::STDMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::STDMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+			ret->AddChild(
 				's'
 				, []()->const char* { return r2::NewMenu::GetTitle(); }
 				, [&director]()->eTestResult
@@ -180,15 +189,6 @@ namespace r2
 				, [&director]()->eTestResult
 				{
 					director.Setup( r2::CharMenu::Create( director ) );
-					return eTestResult::ChangeScene;
-				}
-			);
-			ret->AddChild(
-				'j'
-				, []()->const char* { return r2::STDMenu::GetTitle(); }
-				, [&director]()->eTestResult
-				{
-					director.Setup( r2::STDMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);
