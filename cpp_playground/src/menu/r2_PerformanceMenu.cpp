@@ -30,6 +30,7 @@ namespace r2
 			ret->AddChild( 'y', performance_container_iteration_test::UnorderedMapIteration::GetInstance() );
 			ret->AddChild( 'u', performance_container_iteration_test::SetIteration::GetInstance() );
 			ret->AddChild( 'i', performance_container_iteration_test::UnorderedSetIteration::GetInstance() );
+			ret->AddChild( 'o', performance_container_iteration_test::STDArrayIteration_WithPointer::GetInstance() );
 
 
 			ret->AddSplit();

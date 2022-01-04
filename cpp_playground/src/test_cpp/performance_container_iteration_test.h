@@ -53,7 +53,16 @@ namespace performance_container_iteration_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
 	class UnorderedSetIteration : public r2::iTest, public r2::SingleTon<UnorderedSetIteration>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
+
+	class STDArrayIteration_WithPointer : public r2::iTest, public r2::SingleTon<STDArrayIteration_WithPointer>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
