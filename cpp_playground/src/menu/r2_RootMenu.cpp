@@ -51,6 +51,7 @@ namespace r2
 			"\n" "> Inprogress : Encoding"
 			"\n" "> Inprogress : Infinite Number"
 			"\n" "> Inprogress : Command - Double Buffering"
+			"\n" "> Inprogress : STDMenu"
 			"\n" "> To do : Renderer"
 			"\n" "> To do : Memory Pool"
 		) );
