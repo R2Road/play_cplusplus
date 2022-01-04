@@ -206,7 +206,7 @@ namespace etc_test
 				std::cout << r2::linefeed;
 
 				std::cout << r2::tab << "+ Variable" << r2::linefeed2;
-				std::cout << r2::tab2 << "int test_int = 3456;" << r2::linefeed;
+				std::cout << r2::tab2 << "int test_int = " << test_int << ";" << r2::linefeed;
 
 				std::cout << r2::linefeed;
 
