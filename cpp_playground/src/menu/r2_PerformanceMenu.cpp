@@ -6,7 +6,7 @@
 #include "r2_RootMenu.h"
 
 #include "test_cpp/performance_1_test.h"
-#include "test_cpp/performance_2_test.h"
+#include "test_cpp/performance_container_iteration_test.h"
 
 namespace r2
 {
@@ -22,14 +22,14 @@ namespace r2
 
 			ret->AddLineFeed();
 
-			ret->AddChild( 'q', performance_2_test::BuiltInArrayIteration::GetInstance() );
-			ret->AddChild( 'w', performance_2_test::STDArrayIteration::GetInstance() );
-			ret->AddChild( 'e', performance_2_test::VectorIteration::GetInstance() );
-			ret->AddChild( 'r', performance_2_test::ListIteration::GetInstance() );
-			ret->AddChild( 't', performance_2_test::MapIteration::GetInstance() );
-			ret->AddChild( 'y', performance_2_test::UnorderedMapIteration::GetInstance() );
-			ret->AddChild( 'u', performance_2_test::SetIteration::GetInstance() );
-			ret->AddChild( 'i', performance_2_test::UnorderedSetIteration::GetInstance() );
+			ret->AddChild( 'q', performance_container_iteration_test::BuiltInArrayIteration::GetInstance() );
+			ret->AddChild( 'w', performance_container_iteration_test::STDArrayIteration::GetInstance() );
+			ret->AddChild( 'e', performance_container_iteration_test::VectorIteration::GetInstance() );
+			ret->AddChild( 'r', performance_container_iteration_test::ListIteration::GetInstance() );
+			ret->AddChild( 't', performance_container_iteration_test::MapIteration::GetInstance() );
+			ret->AddChild( 'y', performance_container_iteration_test::UnorderedMapIteration::GetInstance() );
+			ret->AddChild( 'u', performance_container_iteration_test::SetIteration::GetInstance() );
+			ret->AddChild( 'i', performance_container_iteration_test::UnorderedSetIteration::GetInstance() );
 
 
 			ret->AddSplit();

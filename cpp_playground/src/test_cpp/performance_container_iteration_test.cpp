@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "performance_2_test.h"
+#include "performance_container_iteration_test.h"
 
 #include <array>
 #include <list>
@@ -13,7 +13,7 @@
 
 #include "util/r2util_StopWatch.h"
 
-namespace performance_2_test
+namespace performance_container_iteration_test
 {
 	r2::iTest::TitleFunc BuiltInArrayIteration::GetTitleFunction() const
 	{

@@ -266,11 +266,11 @@
     <ClCompile Include="src\test_cpp\performance_1_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\performance_2_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\menu\r2_STDMenu.cpp">
       <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\performance_container_iteration_test.cpp">
+      <Filter>test_cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -539,11 +539,11 @@
     <ClInclude Include="src\test_cpp\performance_1_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\performance_2_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
     <ClInclude Include="src\menu\r2_STDMenu.h">
       <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\performance_container_iteration_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
