@@ -2,8 +2,7 @@
 #include "performance_2_test.h"
 
 #include <array>
-#include <memory>
-#include <numeric>
+#include <vector>
 
 #include "base/r2_eTestResult.h"
 
@@ -175,6 +174,60 @@ namespace performance_2_test
 					std::cout << r2::tab2;
 					stop_watch.PrintLog_NanoSeconds();
 					std::cout << r2::tab2 << test_int;
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc VectorIteration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "VectorIteration";
+		};
+	}
+	r2::iTest::DoFunc VectorIteration::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::vector<int> test_container( 100000, 1 );
+
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "std::vector<int> test_container( 100000, 1 );" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ For" << r2::linefeed2;
+
+				unsigned int sum_result = 0;
+				r2util::StopWatch stop_watch;
+
+				for( int test_index = 0; 5 > test_index; ++test_index )
+				{
+					sum_result = 0;
+
+					stop_watch.Start();
+					for( unsigned int cur = 0, end = test_container.size(); end > cur; ++cur )
+					{
+						sum_result += test_container[cur];
+					}
+					stop_watch.Stop();
+
+					std::cout << r2::tab2;
+					stop_watch.PrintLog_NanoSeconds();
+					std::cout << r2::tab2 << "sum_result : " << sum_result;
 					std::cout << r2::linefeed;
 				}
 			}
