@@ -8,8 +8,9 @@
 #include "r2_AlgorithmMenu.h"
 
 #include "test_cpp/optional_test.h"
-#include "test_cpp/variant_test.h"
+#include "test_cpp/string_view_test.h"
 #include "test_cpp/tuple_test.h"
+#include "test_cpp/variant_test.h"
 
 namespace r2
 {
@@ -19,9 +20,9 @@ namespace r2
 
 		{
 			ret->AddChild( '1', optional_test::Basic::GetInstance() );
-			ret->AddChild( '2', variant_test::Basic::GetInstance() );
+			ret->AddChild( '2', stringview_test::Basic::GetInstance() );
 			ret->AddChild( '3', tuple_test::Basic::GetInstance() );
-
+			ret->AddChild( '4', variant_test::Basic::GetInstance() );
 
 			ret->AddLineFeed();
 

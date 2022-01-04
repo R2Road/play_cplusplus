@@ -22,7 +22,6 @@
 #include "test_cpp/assert_test.h"
 #include "r2_ThreadMenu.h"
 
-#include "test_cpp/string_view_test.h"
 #include "test_cpp/lambda_test.h"
 #include "test_cpp/print_test.h"
 #include "r2_CharMenu.h"
@@ -165,7 +164,6 @@ namespace r2
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'a', stringview_test::Basic::GetInstance() );
 			ret->AddChild(
 				's'
 				, []()->const char* { return r2::NewMenu::GetTitle(); }
