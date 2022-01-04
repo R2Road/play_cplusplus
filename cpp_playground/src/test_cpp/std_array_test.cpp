@@ -5,6 +5,8 @@
 
 #include "base/r2_eTestResult.h"
 
+#pragma warning( disable : 4101 )
+
 namespace std_array_test
 {
 	r2::iTest::TitleFunc Basic::GetTitleFunction() const
