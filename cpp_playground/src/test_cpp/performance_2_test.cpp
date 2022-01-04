@@ -306,7 +306,7 @@ namespace performance_2_test
 			r2util::StopWatch stop_watch;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "std::vector<int> test_container( 100000, 1 );" << r2::linefeed;
+			std::cout << r2::tab2 << "std::list<int> test_container( 100000, 1 );" << r2::linefeed;
 
 			std::cout << r2::split;
 
