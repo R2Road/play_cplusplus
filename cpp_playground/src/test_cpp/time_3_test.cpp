@@ -23,7 +23,7 @@ namespace time_test
 			const auto steady_start_time_point = std::chrono::steady_clock::now();
 
 			std::chrono::milliseconds current_time;
-			std::chrono::milliseconds last_time;
+			std::chrono::milliseconds last_time = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::steady_clock::now() - steady_start_time_point );
 
 			bool process = true;
 			while( process )
