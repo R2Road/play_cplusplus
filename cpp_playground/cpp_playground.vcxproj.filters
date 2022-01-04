@@ -4,14 +4,8 @@
     <Filter Include="base">
       <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
     </Filter>
-    <Filter Include="renderer">
-      <UniqueIdentifier>{be80c73b-e527-4390-b97a-375d1ec30d49}</UniqueIdentifier>
-    </Filter>
     <Filter Include="menu">
       <UniqueIdentifier>{b9566801-30ec-4d55-bd6d-040901fc06e3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test_render">
-      <UniqueIdentifier>{67d9768a-fea8-45b6-946a-ffcda4f541b1}</UniqueIdentifier>
     </Filter>
     <Filter Include="test_cpp">
       <UniqueIdentifier>{77a45f2c-1f22-46b3-9c35-5ee34c38a7b9}</UniqueIdentifier>
@@ -50,9 +44,6 @@
       <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\menu\r2_RandomMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_RenderMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\menu\r2_RootMenu.cpp">
@@ -166,53 +157,11 @@
     <ClCompile Include="src\test_cpp\variant_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_render\animation_test.cpp">
-      <Filter>test_render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_render\camera_test.cpp">
-      <Filter>test_render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_render\rect_test.cpp">
-      <Filter>test_render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_render\renderer_test.cpp">
-      <Filter>test_render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_render\visibleresource_test.cpp">
-      <Filter>test_render</Filter>
-    </ClCompile>
     <ClCompile Include="src\base\r2_Director.cpp">
       <Filter>base</Filter>
     </ClCompile>
     <ClCompile Include="src\base\r2_Menu.cpp">
       <Filter>base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\renderer\r2_Camera.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\renderer\r2_FrameManager.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\renderer\r2_GridIndexConverter.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\renderer\r2_PointInt.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\renderer\r2_RectInt.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\renderer\r2_Renderer.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\renderer\r2_Size.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\renderer\r2_Timer_Float.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\renderer\r2_VisibleResource.cpp">
-      <Filter>renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\test_cpp\vector_test.cpp">
@@ -302,9 +251,6 @@
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\menu\r2_RandomMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_RenderMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\menu\r2_RootMenu.h">
@@ -418,21 +364,6 @@
     <ClInclude Include="src\test_cpp\variant_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_render\animation_test.h">
-      <Filter>test_render</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_render\camera_test.h">
-      <Filter>test_render</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_render\rect_test.h">
-      <Filter>test_render</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_render\renderer_test.h">
-      <Filter>test_render</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_render\visibleresource_test.h">
-      <Filter>test_render</Filter>
-    </ClInclude>
     <ClInclude Include="src\base\r2_Director.h">
       <Filter>base</Filter>
     </ClInclude>
@@ -447,45 +378,6 @@
     </ClInclude>
     <ClInclude Include="src\base\r2_Singleton.h">
       <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_Camera.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_FrameManager.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_GridIndexConverter.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_iRenderable.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_Point.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_PointInt.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_Rect.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_RectInt.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_Renderer.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_Size.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_Timer.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_Timer_Float.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_VisibleResource.h">
-      <Filter>renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\test_cpp\vector_test.h">

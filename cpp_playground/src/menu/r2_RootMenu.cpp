@@ -32,8 +32,6 @@
 #include "r2_MathMenu.h"
 #include "r2_PerformanceMenu.h"
 
-#include "r2_RenderMenu.h"
-
 namespace r2
 {
 	MenuUp RootMenu::Create( Director& director )
@@ -221,20 +219,6 @@ namespace r2
 				, [&director]()->eTestResult
 				{
 					director.Setup( r2::PerformanceMenu::Create( director ) );
-					return eTestResult::ChangeScene;
-				}
-			);
-
-
-			ret->AddSplit();
-
-
-			ret->AddChild(
-				32
-				, []()->const char* { return r2::RenderMenu::GetTitle(); }
-				, [&director]()->eTestResult
-				{
-					director.Setup( r2::RenderMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

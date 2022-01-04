@@ -36,7 +36,6 @@
     <ClCompile Include="src\menu\r2_PerformanceMenu.cpp" />
     <ClCompile Include="src\menu\r2_PointerMenu.cpp" />
     <ClCompile Include="src\menu\r2_RandomMenu.cpp" />
-    <ClCompile Include="src\menu\r2_RenderMenu.cpp" />
     <ClCompile Include="src\menu\r2_RootMenu.cpp" />
     <ClCompile Include="src\menu\r2_STDMenu.cpp" />
     <ClCompile Include="src\menu\r2_TemplateMenu.cpp" />
@@ -47,15 +46,6 @@
     <ClCompile Include="src\menu\r2_VariadicTemplateMenu.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\renderer\r2_Camera.cpp" />
-    <ClCompile Include="src\renderer\r2_FrameManager.cpp" />
-    <ClCompile Include="src\renderer\r2_GridIndexConverter.cpp" />
-    <ClCompile Include="src\renderer\r2_PointInt.cpp" />
-    <ClCompile Include="src\renderer\r2_RectInt.cpp" />
-    <ClCompile Include="src\renderer\r2_Renderer.cpp" />
-    <ClCompile Include="src\renderer\r2_Size.cpp" />
-    <ClCompile Include="src\renderer\r2_Timer_Float.cpp" />
-    <ClCompile Include="src\renderer\r2_VisibleResource.cpp" />
     <ClCompile Include="src\test_cpp\algorithm_test.cpp" />
     <ClCompile Include="src\test_cpp\alignas_test.cpp" />
     <ClCompile Include="src\test_cpp\alignof_test.cpp" />
@@ -98,11 +88,6 @@
     <ClCompile Include="src\test_cpp\variant_test.cpp" />
     <ClCompile Include="src\test_cpp\vector3_test.cpp" />
     <ClCompile Include="src\test_cpp\vector_test.cpp" />
-    <ClCompile Include="src\test_render\animation_test.cpp" />
-    <ClCompile Include="src\test_render\camera_test.cpp" />
-    <ClCompile Include="src\test_render\rect_test.cpp" />
-    <ClCompile Include="src\test_render\renderer_test.cpp" />
-    <ClCompile Include="src\test_render\visibleresource_test.cpp" />
     <ClCompile Include="src\util\r2util_StopWatch.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -126,7 +111,6 @@
     <ClInclude Include="src\menu\r2_PerformanceMenu.h" />
     <ClInclude Include="src\menu\r2_PointerMenu.h" />
     <ClInclude Include="src\menu\r2_RandomMenu.h" />
-    <ClInclude Include="src\menu\r2_RenderMenu.h" />
     <ClInclude Include="src\menu\r2_RootMenu.h" />
     <ClInclude Include="src\menu\r2_STDMenu.h" />
     <ClInclude Include="src\menu\r2_TemplateMenu.h" />
@@ -136,19 +120,6 @@
     <ClInclude Include="src\menu\r2_TimeMenu.h" />
     <ClInclude Include="src\menu\r2_VariadicTemplateMenu.h" />
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\renderer\r2_Camera.h" />
-    <ClInclude Include="src\renderer\r2_FrameManager.h" />
-    <ClInclude Include="src\renderer\r2_GridIndexConverter.h" />
-    <ClInclude Include="src\renderer\r2_iRenderable.h" />
-    <ClInclude Include="src\renderer\r2_Point.h" />
-    <ClInclude Include="src\renderer\r2_PointInt.h" />
-    <ClInclude Include="src\renderer\r2_Rect.h" />
-    <ClInclude Include="src\renderer\r2_RectInt.h" />
-    <ClInclude Include="src\renderer\r2_Renderer.h" />
-    <ClInclude Include="src\renderer\r2_Size.h" />
-    <ClInclude Include="src\renderer\r2_Timer.h" />
-    <ClInclude Include="src\renderer\r2_Timer_Float.h" />
-    <ClInclude Include="src\renderer\r2_VisibleResource.h" />
     <ClInclude Include="src\test_cpp\algorithm_test.h" />
     <ClInclude Include="src\test_cpp\alignas_test.h" />
     <ClInclude Include="src\test_cpp\alignof_test.h" />
@@ -191,11 +162,6 @@
     <ClInclude Include="src\test_cpp\variant_test.h" />
     <ClInclude Include="src\test_cpp\vector3_test.h" />
     <ClInclude Include="src\test_cpp\vector_test.h" />
-    <ClInclude Include="src\test_render\animation_test.h" />
-    <ClInclude Include="src\test_render\camera_test.h" />
-    <ClInclude Include="src\test_render\rect_test.h" />
-    <ClInclude Include="src\test_render\renderer_test.h" />
-    <ClInclude Include="src\test_render\visibleresource_test.h" />
     <ClInclude Include="src\util\r2util_StopWatch.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

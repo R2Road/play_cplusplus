@@ -7,7 +7,6 @@
 #include <thread>
 
 #include "base/r2_eTestResult.h"
-#include "renderer/r2_FrameManager.h"
 
 #pragma warning( disable : 4477 ) // for "%x" and std::this_thread::get_id()
 
