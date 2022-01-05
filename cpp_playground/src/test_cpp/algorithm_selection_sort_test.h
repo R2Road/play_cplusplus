@@ -11,4 +11,11 @@ namespace algorithm_selection_sort_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class Case2 : public r2::iTest, public r2::SingleTon<Case2>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
