@@ -17,6 +17,7 @@ namespace r2
 			ret->AddChild( '1', numeric_test::Accumulate_Number::GetInstance() );
 			ret->AddChild( '2', numeric_test::Accumulate_String::GetInstance() );
 			ret->AddChild( '3', numeric_test::Partial_Sum::GetInstance() );
+			ret->AddChild( '4', numeric_test::FillSequenceNumber::GetInstance() );
 
 
 			ret->AddSplit();

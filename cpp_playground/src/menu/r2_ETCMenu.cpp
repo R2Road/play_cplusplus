@@ -18,7 +18,6 @@ namespace r2
 		{
 			ret->AddChild( '1', etc_test::XOR_Swap::GetInstance() );
 			ret->AddChild( '2', etc_test::InitArray::GetInstance() );
-			ret->AddChild( '3', etc_test::FillSequenceNumber::GetInstance() );
 			ret->AddChild( '4', etc_test::Macro2String::GetInstance() );
 			ret->AddChild( '5', etc_test::MacroShowCodeInfo::GetInstance() );
 
