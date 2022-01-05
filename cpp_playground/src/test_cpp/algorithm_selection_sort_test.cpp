@@ -81,7 +81,8 @@ namespace algorithm_selection_sort_test
 				//
 				std::cout << r2::tab2 << temp_container << r2::linefeed2;
 
-				for( int i = 0, temp = 0; temp_container.size() - 1 > i; ++i )
+				int temp = 0;
+				for( int i = 0; temp_container.size() - 1 > i; ++i )
 				{
 					for( int j = i + 1; temp_container.size() > j; ++j )
 					{
