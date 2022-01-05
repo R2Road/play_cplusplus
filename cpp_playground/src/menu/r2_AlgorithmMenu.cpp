@@ -6,6 +6,7 @@
 #include "r2_RootMenu.h"
 
 #include "test_cpp/algorithm_selection_sort_test.h"
+#include "test_cpp/algorithm_bubble_sort_test.h"
 
 namespace r2
 {
@@ -15,6 +16,7 @@ namespace r2
 
 		{
 			ret->AddChild( '1', algorithm_selection_sort_test::Basic::GetInstance() );
+			ret->AddChild( '2', algorithm_bubble_sort_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
