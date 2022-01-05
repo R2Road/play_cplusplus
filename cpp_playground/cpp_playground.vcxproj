@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\base\r2_Director.cpp" />
     <ClCompile Include="src\base\r2_Menu.cpp" />
+    <ClCompile Include="src\menu\r2_AlgorithmMenu.cpp" />
     <ClCompile Include="src\menu\r2_NumericMenu.cpp" />
     <ClCompile Include="src\menu\r2_AlignMenu.cpp" />
     <ClCompile Include="src\menu\r2_CharMenu.cpp" />
@@ -96,6 +97,7 @@
     <ClInclude Include="src\base\r2_iTest.h" />
     <ClInclude Include="src\base\r2_Menu.h" />
     <ClInclude Include="src\base\r2_Singleton.h" />
+    <ClInclude Include="src\menu\r2_AlgorithmMenu.h" />
     <ClInclude Include="src\menu\r2_NumericMenu.h" />
     <ClInclude Include="src\menu\r2_AlignMenu.h" />
     <ClInclude Include="src\menu\r2_CharMenu.h" />
