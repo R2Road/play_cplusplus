@@ -37,13 +37,14 @@ namespace algorithm_selection_sort_test
 				auto temp_container = test_container;
 
 				stop_watch.Start();
+				int temp = 0;
 				for( int i = 0; temp_container.size() - 1 > i; ++i )
 				{
 					for( int j = i + 1; temp_container.size() > j; ++j )
 					{
 						if( temp_container[i] > temp_container[j] )
 						{
-							const auto temp = temp_container[i];
+							temp = temp_container[i];
 							temp_container[i] = temp_container[j];
 							temp_container[j] = temp;
 						}
@@ -70,6 +71,7 @@ namespace algorithm_selection_sort_test
 				auto temp_container = test_container;
 
 				stop_watch.Start();
+				int temp = 0;
 				for( int i = 0, min_index = 0; temp_container.size() - 1 > i; ++i )
 				{
 					min_index = i;
@@ -82,7 +84,7 @@ namespace algorithm_selection_sort_test
 						}
 					}
 
-					const auto temp = temp_container[i];
+					temp = temp_container[i];
 					temp_container[i] = temp_container[min_index];
 					temp_container[min_index] = temp;
 				}
