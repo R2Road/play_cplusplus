@@ -9,12 +9,10 @@
 template<class _Elem, class _Traits, class ContainerT>
 std::basic_ostream<_Elem, _Traits>& operator << ( std::basic_ostream<_Elem, _Traits>& _Ostr, const ContainerT& container )
 {
-	_Ostr << r2::tab2;
 	for( const auto a : container )
 	{
 		_Ostr << a << r2::tab;
 	}
-	_Ostr << r2::linefeed;
 
 	return ( _Ostr );
 }
@@ -65,7 +63,7 @@ namespace algorithm_selection_sort_test
 				}
 				stop_watch.Stop();
 
-				std::cout << temp_container;
+				std::cout << r2::tab2 << temp_container << r2::linefeed;
 
 				std::cout << r2::tab2;
 				stop_watch.PrintLog_All();
@@ -98,7 +96,7 @@ namespace algorithm_selection_sort_test
 				}
 				stop_watch.Stop();
 
-				std::cout << temp_container;
+				std::cout << r2::tab2 << temp_container << r2::linefeed;
 
 				std::cout << r2::tab2;
 				stop_watch.PrintLog_All();
@@ -114,7 +112,7 @@ namespace algorithm_selection_sort_test
 				//
 				//
 				//
-				std::cout << temp_container;
+				std::cout << r2::tab2 << temp_container << r2::linefeed;
 
 				for( int i = 0, min_index = 0; temp_container.size() - 1 > i; ++i )
 				{
@@ -135,7 +133,7 @@ namespace algorithm_selection_sort_test
 					//
 					//
 					//
-					std::cout << temp_container;
+					std::cout << r2::tab2 << temp_container << r2::linefeed;
 				}
 			}
 
