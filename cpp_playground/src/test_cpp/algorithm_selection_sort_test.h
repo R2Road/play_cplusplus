@@ -5,7 +5,7 @@
 
 namespace algorithm_selection_sort_test
 {
-	class Basic : public r2::iTest, public r2::SingleTon<Basic>
+	class Case1 : public r2::iTest, public r2::SingleTon<Case1>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

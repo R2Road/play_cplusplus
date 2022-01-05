@@ -19,14 +19,14 @@ std::basic_ostream<_Elem, _Traits>& operator << ( std::basic_ostream<_Elem, _Tra
 
 namespace algorithm_selection_sort_test
 {
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iTest::TitleFunc Case1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Selection Sort";
+			return "Selection Sort : Case 1";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2::iTest::DoFunc Case1::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

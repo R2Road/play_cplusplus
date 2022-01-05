@@ -15,7 +15,7 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', algorithm_selection_sort_test::Basic::GetInstance() );
+			ret->AddChild( '1', algorithm_selection_sort_test::Case1::GetInstance() );
 			ret->AddChild( '2', algorithm_selection_sort_test::Case2::GetInstance() );
 
 			ret->AddChild( '3', algorithm_bubble_sort_test::Basic::GetInstance() );
