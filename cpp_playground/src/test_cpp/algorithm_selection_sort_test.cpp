@@ -6,6 +6,19 @@
 #include "base/r2_eTestResult.h"
 #include "util/r2util_StopWatch.h"
 
+template<class _Elem, class _Traits, class ContainerT>
+std::basic_ostream<_Elem, _Traits>& operator << ( std::basic_ostream<_Elem, _Traits>& _Ostr, const ContainerT& container )
+{
+	_Ostr << r2::tab2;
+	for( const auto a : container )
+	{
+		_Ostr << a << r2::tab;
+	}
+	_Ostr << r2::linefeed;
+
+	return ( _Ostr );
+}
+
 namespace algorithm_selection_sort_test
 {
 	r2::iTest::TitleFunc Basic::GetTitleFunction() const
@@ -52,12 +65,7 @@ namespace algorithm_selection_sort_test
 				}
 				stop_watch.Stop();
 
-				std::cout << r2::tab2;
-				for( const auto a : temp_container )
-				{
-					std::cout << a << r2::tab;
-				}
-				std::cout << r2::linefeed;
+				std::cout << temp_container;
 
 				std::cout << r2::tab2;
 				stop_watch.PrintLog_All();
@@ -90,12 +98,7 @@ namespace algorithm_selection_sort_test
 				}
 				stop_watch.Stop();
 
-				std::cout << r2::tab2;
-				for( const auto a : temp_container )
-				{
-					std::cout << a << r2::tab;
-				}
-				std::cout << r2::linefeed;
+				std::cout << temp_container;
 
 				std::cout << r2::tab2;
 				stop_watch.PrintLog_All();
@@ -111,12 +114,7 @@ namespace algorithm_selection_sort_test
 				//
 				//
 				//
-				std::cout << r2::tab2;
-				for( const auto a : temp_container )
-				{
-					std::cout << a << r2::tab;
-				}
-				std::cout << r2::linefeed2;
+				std::cout << temp_container;
 
 				for( int i = 0, min_index = 0; temp_container.size() - 1 > i; ++i )
 				{
@@ -137,12 +135,7 @@ namespace algorithm_selection_sort_test
 					//
 					//
 					//
-					std::cout << r2::tab2;
-					for( const auto a : temp_container )
-					{
-						std::cout << a << r2::tab;
-					}
-					std::cout << r2::linefeed;
+					std::cout << temp_container;
 				}
 			}
 
