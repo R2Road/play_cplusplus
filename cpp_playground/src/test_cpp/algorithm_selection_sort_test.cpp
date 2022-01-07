@@ -125,10 +125,10 @@ namespace algorithm_selection_sort_test
 			std::cout << r2::split;
 
 			r2util::StopWatch stop_watch;
-			const std::array<int, 10> test_container{ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+			const std::array<int, 5u> test_container{ 5, 4, 3, 2, 1 };
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "std::array<int, 10> test_container{ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };" << r2::linefeed;
+			std::cout << r2::tab2 << "std::array<int, 5u> test_container{ 5, 4, 3, 2, 1 };" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -179,11 +179,16 @@ namespace algorithm_selection_sort_test
 				{
 					min_index = i;
 
+					std::cout << r2::tab2 << "start" << r2::linefeed;
+					std::cout << r2::tab2 << "min index : " << min_index << r2::linefeed2;
+
 					for( int j = i + 1; temp_container.size() > j; ++j )
 					{
 						if( temp_container[min_index] > temp_container[j] )
 						{
 							min_index = j;
+
+							std::cout << r2::tab2 << "min index : " << min_index << r2::linefeed;
 						}
 					}
 
@@ -194,7 +199,8 @@ namespace algorithm_selection_sort_test
 					//
 					//
 					//
-					std::cout << r2::tab2 << temp_container << r2::linefeed;
+					std::cout << r2::tab2 << temp_container << r2::tab2 << " swap : " << temp_container[i] << " <> " << temp_container[min_index];
+					std::cout << r2::linefeed3;
 				}
 			}
 
