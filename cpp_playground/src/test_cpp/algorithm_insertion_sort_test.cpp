@@ -106,7 +106,7 @@ namespace algorithm_insertion_sort_test
 						{
 							std::cout << a << r2::tab;
 						}
-						std::cout << "shift : index - " << compare_index << " > " << ( compare_index + 1 ) << r2::linefeed;
+						std::cout << "shift index : " << compare_index << " > " << ( compare_index + 1 ) << r2::linefeed;
 
 						--compare_index;
 					}
