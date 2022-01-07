@@ -35,10 +35,10 @@ namespace algorithm_selection_sort_test
 			std::cout << r2::split;
 
 			r2util::StopWatch stop_watch;
-			const std::array<int, 10> test_container{ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+			const std::array<int, 5u> test_container{ 5, 4, 3, 2, 1 };
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "std::array<int, 10> test_container{ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };" << r2::linefeed;
+			std::cout << r2::tab2 << "std::array<int, 5u> test_container{ 5, 4, 3, 2, 1 };" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -91,10 +91,13 @@ namespace algorithm_selection_sort_test
 							temp = temp_container[i];
 							temp_container[i] = temp_container[j];
 							temp_container[j] = temp;
+
+							std::cout << r2::tab2 << temp_container << r2::tab2 << " swap : " << temp_container[i] << " <> " << temp_container[j];
+							std::cout << r2::linefeed;
 						}
 					}
 
-					std::cout << r2::tab2 << temp_container << r2::linefeed;
+					std::cout << r2::linefeed2;
 				}
 			}
 
