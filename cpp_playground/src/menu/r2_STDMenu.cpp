@@ -9,6 +9,7 @@
 #include "r2_ContainerMenu.h"
 
 #include "test_cpp/optional_test.h"
+#include "test_cpp/std_function_test.h"
 #include "test_cpp/string_view_test.h"
 #include "test_cpp/tuple_test.h"
 #include "test_cpp/variant_test.h"
@@ -24,6 +25,8 @@ namespace r2
 			ret->AddChild( '2', stringview_test::Basic::GetInstance() );
 			ret->AddChild( '3', tuple_test::Basic::GetInstance() );
 			ret->AddChild( '4', variant_test::Basic::GetInstance() );
+
+			ret->AddChild( '5', std_function_test::Equality::GetInstance() );
 
 			ret->AddLineFeed();
 
