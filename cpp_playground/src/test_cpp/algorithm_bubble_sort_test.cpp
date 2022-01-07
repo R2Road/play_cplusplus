@@ -24,10 +24,10 @@ namespace algorithm_bubble_sort_test
 			std::cout << r2::split;
 
 			r2util::StopWatch stop_watch;
-			const std::array<int, 10> test_container{ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+			const std::array<int, 5u> test_container{ 5, 4, 3, 2, 1 };
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "std::array<int, 10> test_container{ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };" << r2::linefeed;
+			std::cout << r2::tab2 << "std::array<int, 5u> test_container{ 5, 4, 3, 2, 1 };" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -81,6 +81,8 @@ namespace algorithm_bubble_sort_test
 
 				for( int i = 0, temp = 0; temp_container.size() - 1 > i; ++i )
 				{
+					std::cout << r2::tab2 << "range : 0 ~ " << ( temp_container.size() - i - 1 ) << r2::linefeed;
+
 					for( int j = 0; temp_container.size() - i - 1 > j; ++j )
 					{
 						if( temp_container[j] > temp_container[j + 1] )
@@ -88,18 +90,23 @@ namespace algorithm_bubble_sort_test
 							temp = temp_container[j];
 							temp_container[j] = temp_container[j + 1];
 							temp_container[j + 1] = temp;
+
+							//
+							//
+							//
+							std::cout << r2::tab2;
+							for( const auto a : temp_container )
+							{
+								std::cout << a << r2::tab;
+							}
+							std::cout << r2::tab2 << " swap : " << temp_container[j] << " <> " << temp_container[j + 1] << r2::linefeed;
 						}
 					}
 
 					//
 					//
 					//
-					std::cout << r2::tab2;
-					for( const auto a : temp_container )
-					{
-						std::cout << a << r2::tab;
-					}
-					std::cout << r2::linefeed;
+					std::cout << r2::linefeed3;
 				}
 			}
 
