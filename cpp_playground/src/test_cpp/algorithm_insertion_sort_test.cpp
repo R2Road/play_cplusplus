@@ -82,21 +82,21 @@ namespace algorithm_insertion_sort_test
 				{
 					std::cout << a << r2::tab;
 				}
-				std::cout << r2::linefeed3;
+				std::cout << r2::linefeed2;
 
 				int key = 0;
 				int compare_index = 0;
 				for( int key_index = 1; temp_container.size() > key_index; ++key_index )
 				{
 					key = temp_container[key_index];
-
 					compare_index = key_index - 1;
+
+					std::cout << r2::tab2 << "start" << r2::linefeed;
+					std::cout << r2::tab2 << "key : " << key << r2::tab2 << "key index : " << key_index << r2::tab << "compare index : " << compare_index << r2::linefeed;
 
 					while( 0 <= compare_index && temp_container[compare_index] > key )
 					{
 						temp_container[compare_index + 1] = temp_container[compare_index]; // shift
-
-						--compare_index;
 
 						//
 						//
@@ -106,7 +106,9 @@ namespace algorithm_insertion_sort_test
 						{
 							std::cout << a << r2::tab;
 						}
-						std::cout << "key : " << key << r2::linefeed;
+						std::cout << "shift : index - " << compare_index << " > " << ( compare_index + 1 ) << r2::linefeed;
+
+						--compare_index;
 					}
 
 					temp_container[compare_index + 1] = key;
@@ -120,7 +122,7 @@ namespace algorithm_insertion_sort_test
 					{
 						std::cout << a << r2::tab;
 					}
-					std::cout << "result" << r2::linefeed3;
+					std::cout << "insert : target index - " << ( compare_index + 1 ) << r2::linefeed2;
 				}
 
 				
