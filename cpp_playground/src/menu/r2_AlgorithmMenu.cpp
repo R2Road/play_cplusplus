@@ -9,6 +9,8 @@
 #include "test_cpp/algorithm_selection_sort_test.h"
 #include "test_cpp/algorithm_insertion_sort_test.h"
 
+#include "test_cpp/algorithm_maze_test.h"
+
 namespace r2
 {
 	MenuUp AlgorithmMenu::Create( Director& director )
@@ -22,6 +24,12 @@ namespace r2
 			ret->AddChild( '3', algorithm_bubble_sort_test::Basic::GetInstance() );
 
 			ret->AddChild( '4', algorithm_insertion_sort_test::Basic::GetInstance() );
+
+
+			ret->AddSplit();
+
+
+			ret->AddChild( 'q', algorithm_maze_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();

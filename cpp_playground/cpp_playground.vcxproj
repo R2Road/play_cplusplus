@@ -49,6 +49,7 @@
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\test_cpp\algorithm_bubble_sort_test.cpp" />
     <ClCompile Include="src\test_cpp\algorithm_insertion_sort_test.cpp" />
+    <ClCompile Include="src\test_cpp\algorithm_maze_test.cpp" />
     <ClCompile Include="src\test_cpp\algorithm_selection_sort_test.cpp" />
     <ClCompile Include="src\test_cpp\numeric_test.cpp" />
     <ClCompile Include="src\test_cpp\alignas_test.cpp" />
@@ -128,6 +129,7 @@
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\test_cpp\algorithm_bubble_sort_test.h" />
     <ClInclude Include="src\test_cpp\algorithm_insertion_sort_test.h" />
+    <ClInclude Include="src\test_cpp\algorithm_maze_test.h" />
     <ClInclude Include="src\test_cpp\algorithm_selection_sort_test.h" />
     <ClInclude Include="src\test_cpp\numeric_test.h" />
     <ClInclude Include="src\test_cpp\alignas_test.h" />
