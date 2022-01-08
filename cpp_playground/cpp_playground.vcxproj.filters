@@ -13,6 +13,9 @@
     <Filter Include="util">
       <UniqueIdentifier>{b470e37a-ab48-4294-91e6-d840afb5ce71}</UniqueIdentifier>
     </Filter>
+    <Filter Include="r2">
+      <UniqueIdentifier>{2163bc18-fed6-4ce9-bd92-6934666924f5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -238,6 +241,9 @@
     </ClCompile>
     <ClCompile Include="src\test_cpp\algorithm_maze_test.cpp">
       <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2\r2_GridIndexConverter.cpp">
+      <Filter>r2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -472,6 +478,15 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\algorithm_maze_test.h">
       <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_Point.h">
+      <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_Grid.h">
+      <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_GridIndexConverter.h">
+      <Filter>r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
