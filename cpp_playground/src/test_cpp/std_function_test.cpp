@@ -19,14 +19,14 @@ namespace
 
 namespace std_function_test
 {
-	r2::iTest::TitleFunc Equality::GetTitleFunction() const
+	r2::iTest::TitleFunc Equality_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "std::function : Equality";
+			return "std::function : Equality 1";
 		};
 	}
-	r2::iTest::DoFunc Equality::GetDoFunction()
+	r2::iTest::DoFunc Equality_1::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

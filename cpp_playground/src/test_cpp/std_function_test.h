@@ -5,7 +5,7 @@
 
 namespace std_function_test
 {
-	class Equality : public r2::iTest, public r2::SingleTon<Equality>
+	class Equality_1 : public r2::iTest, public r2::SingleTon<Equality_1>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
