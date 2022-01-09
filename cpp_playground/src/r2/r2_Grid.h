@@ -46,7 +46,7 @@ namespace r2
 			mContainer.clear();
 			mContainer.resize( mWidth *  mHeight );
 
-			mIndexConverter = cpg::GridIndexConverter( mWidth, mHeight );
+			mIndexConverter = r2::GridIndexConverter( mWidth, mHeight );
 		}
 
 		//
