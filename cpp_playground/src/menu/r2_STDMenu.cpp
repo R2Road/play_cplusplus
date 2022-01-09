@@ -27,6 +27,7 @@ namespace r2
 			ret->AddChild( '4', variant_test::Basic::GetInstance() );
 
 			ret->AddChild( '5', std_function_test::Equality_1::GetInstance() );
+			ret->AddChild( '6', std_function_test::Equality_2::GetInstance() );
 
 			ret->AddLineFeed();
 

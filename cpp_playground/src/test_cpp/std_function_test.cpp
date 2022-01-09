@@ -155,3 +155,84 @@ namespace std_function_test
 		};
 	}
 }
+
+
+
+namespace std_function_test
+{
+	r2::iTest::TitleFunc Equality_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::function : Equality 2";
+		};
+	}
+	r2::iTest::DoFunc Equality_2::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			using FunctionPointerT = void(*)( );
+			using STDFunctionT = std::function<void()>;
+
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "using FunctionPointerT = void(*)();" << r2::linefeed;
+			std::cout << r2::tab2 << "using STDFunctionT = std::function<void()>;" << r2::linefeed;
+
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ 람다로 초기화된 std::function 에서 람다의 함수 포인터를 꺼내오는 방법은 모르겠다." << r2::linefeed;
+				std::cout << r2::tab << "+ 꺼내오지 못하니 비교도 할 수 없다." << r2::linefeed2;
+
+				STDFunctionT tf1 = []() {};
+				STDFunctionT tf2 = tf1;
+
+				std::cout << r2::tab2 << "STDFunctionT tf1 = []() {};" << r2::linefeed;
+				std::cout << r2::tab2 << "STDFunctionT tf2 = tf1" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "nullptr == tf1.target<FunctionPointerT>()" << r2::linefeed;
+				if( nullptr == tf1.target<FunctionPointerT>() )
+				{
+					std::cout << r2::tab3 << "- Is Equal" << r2::linefeed;
+				}
+				else
+				{
+					std::cout << r2::tab3 << "- Is Not Equal" << r2::linefeed;
+				}
+
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab2 << "tf1.target<FunctionPointerT>() == tf1.target<FunctionPointerT>()" << r2::linefeed;
+				if( tf1.target<FunctionPointerT>() == tf1.target<FunctionPointerT>() )
+				{
+					std::cout << r2::tab3 << "- Is Equal" << r2::linefeed;
+				}
+				else
+				{
+					std::cout << r2::tab3 << "- Is Not Equal" << r2::linefeed;
+				}
+
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab2 << "tf1.target<FunctionPointerT>() == tf2.target<FunctionPointerT>()" << r2::linefeed;
+				if( tf1.target<FunctionPointerT>() == tf2.target<FunctionPointerT>() )
+				{
+					std::cout << r2::tab3 << "- Is Equal" << r2::linefeed;
+				}
+				else
+				{
+					std::cout << r2::tab3 << "- Is Not Equal" << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
