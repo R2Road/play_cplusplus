@@ -16,6 +16,9 @@
     <Filter Include="r2">
       <UniqueIdentifier>{2163bc18-fed6-4ce9-bd92-6934666924f5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test_algorithm">
+      <UniqueIdentifier>{c256e4fc-5074-43ac-9a3c-e7ac60bb99b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -227,19 +230,7 @@
     <ClCompile Include="src\menu\r2_AlgorithmMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\algorithm_selection_sort_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\algorithm_bubble_sort_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\algorithm_insertion_sort_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\std_function_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\algorithm_maze_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
     <ClCompile Include="src\r2\r2_GridIndexConverter.cpp">
@@ -247,6 +238,18 @@
     </ClCompile>
     <ClCompile Include="src\test_cpp\std_function_2_test.cpp">
       <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_algorithm\algorithm_bubble_sort_test.cpp">
+      <Filter>test_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_algorithm\algorithm_insertion_sort_test.cpp">
+      <Filter>test_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_algorithm\algorithm_maze_test.cpp">
+      <Filter>test_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_algorithm\algorithm_selection_sort_test.cpp">
+      <Filter>test_algorithm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -467,19 +470,7 @@
     <ClInclude Include="src\menu\r2_AlgorithmMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\algorithm_selection_sort_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\algorithm_bubble_sort_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\algorithm_insertion_sort_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\std_function_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\algorithm_maze_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_Point.h">
@@ -493,6 +484,18 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\std_function_2_test.h">
       <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_algorithm\algorithm_bubble_sort_test.h">
+      <Filter>test_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_algorithm\algorithm_insertion_sort_test.h">
+      <Filter>test_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_algorithm\algorithm_maze_test.h">
+      <Filter>test_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_algorithm\algorithm_selection_sort_test.h">
+      <Filter>test_algorithm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

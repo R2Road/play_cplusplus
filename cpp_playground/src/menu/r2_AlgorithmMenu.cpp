@@ -5,11 +5,11 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
-#include "test_cpp/algorithm_bubble_sort_test.h"
-#include "test_cpp/algorithm_selection_sort_test.h"
-#include "test_cpp/algorithm_insertion_sort_test.h"
+#include "test_algorithm/algorithm_bubble_sort_test.h"
+#include "test_algorithm/algorithm_selection_sort_test.h"
+#include "test_algorithm/algorithm_insertion_sort_test.h"
 
-#include "test_cpp/algorithm_maze_test.h"
+#include "test_algorithm/algorithm_maze_test.h"
 
 namespace r2
 {
