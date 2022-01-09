@@ -365,12 +365,26 @@ namespace class_test
 				public:
 					int a;
 					int b;
+
+					void Func1() {}
+					void Func2() {}
+
+					int c;
 				};
 
 				TestClass1 tc1;
 				auto pTc1 = &tc1;
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "class TestClass1" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab2 << "public:" << r2::linefeed;
+				std::cout << r2::tab3 << "int a;" << r2::linefeed;
+				std::cout << r2::tab3 << "int b;" << r2::linefeed2;
+				std::cout << r2::tab3 << "void Func1() {}" << r2::linefeed;
+				std::cout << r2::tab3 << "void Func2() {}" << r2::linefeed2;
+				std::cout << r2::tab3 << "int c;" << r2::linefeed;
+				std::cout << r2::tab2 << "}" << r2::linefeed2;
 				std::cout << r2::tab2 << "TestClass1 tc1;" << r2::linefeed;
 				std::cout << r2::tab2 << "auto pTc1 = &tc1;" << r2::linefeed;
 				std::cout << r2::linefeed2;
@@ -384,7 +398,21 @@ namespace class_test
 				std::cout << r2::tab << "+ Member Adress" << r2::linefeed2;
 				std::cout << r2::tab2 << "&tc1.a : " << &tc1.a << r2::linefeed;
 				std::cout << r2::tab2 << "&tc1.b : " << &tc1.b << r2::linefeed;
+				std::cout << r2::tab2 << "&tc1.c : " << &tc1.c << r2::linefeed;
 				std::cout << r2::linefeed2;
+
+				std::cout << r2::tab << "+ Method Adress 1" << r2::linefeed2;
+				std::cout << r2::tab2 << "&TestClass1::Func1 : " << &TestClass1::Func1 << r2::linefeed;
+				std::cout << r2::tab2 << "&TestClass1::Func2 : " << &TestClass1::Func2 << r2::linefeed;
+
+				std::cout << r2::linefeed2;
+
+				std::cout << r2::tab << "+ Method Adress 2" << r2::linefeed2;
+				void ( TestClass1::*f1_ptr )( ) = &TestClass1::Func1;
+				auto f1_void = (void*&)f1_ptr;
+				std::cout << r2::tab2 << "void ( TestClass1::*f1_ptr )() = &TestClass1::Func1;" << r2::linefeed;
+				std::cout << r2::tab2 << "auto f1_void = (void*&)f1_ptr;" << r2::linefeed;
+				std::cout << r2::tab2 << "f1_void : " << f1_void << r2::linefeed;
 			}
 
 			std::cout << r2::split;
