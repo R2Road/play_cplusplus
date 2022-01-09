@@ -47,6 +47,7 @@
     <ClCompile Include="src\menu\r2_VariadicTemplateMenu.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp" />
+    <ClCompile Include="src\r2\r2_Direction4.cpp" />
     <ClCompile Include="src\r2\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\test_algorithm\algorithm_bubble_sort_test.cpp" />
     <ClCompile Include="src\test_algorithm\algorithm_insertion_sort_test.cpp" />
@@ -129,6 +130,7 @@
     <ClInclude Include="src\menu\r2_TimeMenu.h" />
     <ClInclude Include="src\menu\r2_VariadicTemplateMenu.h" />
     <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\r2\r2_Direction4.h" />
     <ClInclude Include="src\r2\r2_Grid.h" />
     <ClInclude Include="src\r2\r2_GridIndexConverter.h" />
     <ClInclude Include="src\r2\r2_Point.h" />
