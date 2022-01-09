@@ -26,9 +26,9 @@ namespace r2
 			ret->AddChild( '3', tuple_test::Basic::GetInstance() );
 			ret->AddChild( '4', variant_test::Basic::GetInstance() );
 
-			ret->AddChild( '5', std_function_test::Equality_0::GetInstance() );
-			ret->AddChild( '6', std_function_test::Equality_1::GetInstance() );
-			ret->AddChild( '7', std_function_test::Equality_2::GetInstance() );
+			ret->AddChild( '5', std_function_test::Equality_FunctionPointer_1::GetInstance() );
+			ret->AddChild( '6', std_function_test::Equality_FunctionPointer_2::GetInstance() );
+			ret->AddChild( '7', std_function_test::Equality_Lambda_1::GetInstance() );
 
 			ret->AddLineFeed();
 

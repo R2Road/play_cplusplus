@@ -19,14 +19,14 @@ namespace
 
 namespace std_function_test
 {
-	r2::iTest::TitleFunc Equality_0::GetTitleFunction() const
+	r2::iTest::TitleFunc Equality_FunctionPointer_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "std::function : Equality 0";
+			return "std::function : Equality : Function Pointer 1";
 		};
 	}
-	r2::iTest::DoFunc Equality_0::GetDoFunction()
+	r2::iTest::DoFunc Equality_FunctionPointer_1::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -111,14 +111,14 @@ namespace std_function_test
 
 
 
-	r2::iTest::TitleFunc Equality_1::GetTitleFunction() const
+	r2::iTest::TitleFunc Equality_FunctionPointer_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "std::function : Equality 1";
+			return "std::function : Equality : Function Pointer 2";
 		};
 	}
-	r2::iTest::DoFunc Equality_1::GetDoFunction()
+	r2::iTest::DoFunc Equality_FunctionPointer_2::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -224,14 +224,14 @@ namespace std_function_test
 
 namespace std_function_test
 {
-	r2::iTest::TitleFunc Equality_2::GetTitleFunction() const
+	r2::iTest::TitleFunc Equality_Lambda_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "std::function : Equality 2";
+			return "std::function : Equality : Lambda 1";
 		};
 	}
-	r2::iTest::DoFunc Equality_2::GetDoFunction()
+	r2::iTest::DoFunc Equality_Lambda_1::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
