@@ -342,4 +342,35 @@ namespace class_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+	r2::iTest::TitleFunc MemberAdress::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Member Adress";
+		};
+	}
+	r2::iTest::DoFunc MemberAdress::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				class MATestClass1
+				{
+				public:
+					int a;
+					int b;
+				};
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }

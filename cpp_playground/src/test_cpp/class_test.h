@@ -31,4 +31,11 @@ namespace class_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class MemberAdress : public r2::iTest, public r2::SingleTon<MemberAdress>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
