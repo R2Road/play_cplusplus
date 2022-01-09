@@ -148,7 +148,7 @@ namespace std_function_test
 				std::cout << r2::tab2 << "STDFunctionT sf2 = TestFunction_1;" << r2::linefeed;
 				std::cout << r2::tab2 << "STDFunctionT sf3 = TestFunction_2;" << r2::linefeed2;
 
-				std::cout << r2::tab2 << "sf1.target<FunctionT>() == sf1.target<FunctionT>()" << r2::linefeed;
+				std::cout << r2::tab2 << "sf1.target<FunctionPointerT>() == sf1.target<FunctionPointerT>()" << r2::linefeed;
 				if( sf1.target<FunctionPointerT>() == sf1.target<FunctionPointerT>() )
 				{
 					std::cout << r2::tab3 << "- Is Equal" << r2::linefeed;
@@ -160,7 +160,7 @@ namespace std_function_test
 
 				std::cout << r2::linefeed;
 
-				std::cout << r2::tab2 << "sf1.target<FunctionT>() == sf2.target<FunctionT>()" << r2::linefeed;
+				std::cout << r2::tab2 << "sf1.target<FunctionPointerT>() == sf2.target<FunctionPointerT>()" << r2::linefeed;
 				if( sf1.target<FunctionPointerT>() == sf2.target<FunctionPointerT>() )
 				{
 					std::cout << r2::tab3 << "- Is Equal" << r2::linefeed;
@@ -172,7 +172,7 @@ namespace std_function_test
 
 				std::cout << r2::linefeed;
 
-				std::cout << r2::tab2 << "sf1.target<FunctionT>() == sf3.target<FunctionT>()" << r2::linefeed;
+				std::cout << r2::tab2 << "sf1.target<FunctionPointerT>() == sf3.target<FunctionPointerT>()" << r2::linefeed;
 				if( sf1.target<FunctionPointerT>() == sf3.target<FunctionPointerT>() )
 				{
 					std::cout << r2::tab3 << "- Is Equal" << r2::linefeed;
