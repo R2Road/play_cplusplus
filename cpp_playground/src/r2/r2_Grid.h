@@ -46,7 +46,7 @@ namespace r2
 			mContainer.clear();
 			mContainer.resize( mWidth *  mHeight );
 
-			mIndexConverter = r2::GridIndexConverter( mWidth, mHeight );
+			mIndexConverter = r2::GridIndexConverter( static_cast<int>( mWidth ), static_cast<int>( mHeight ) );
 		}
 
 		//
