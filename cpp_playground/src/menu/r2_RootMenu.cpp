@@ -45,7 +45,6 @@ namespace r2
 			"\n" "> Inprogress : Vector3"
 			"\n" "> Inprogress : Encoding"
 			"\n" "> Inprogress : Infinite Number"
-			"\n" "> Inprogress : Command - Double Buffering"
 			"\n" "> To do : Renderer"
 			"\n" "> To do : Memory Pool"
 		) );
