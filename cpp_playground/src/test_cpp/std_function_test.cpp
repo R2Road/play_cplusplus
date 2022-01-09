@@ -19,6 +19,98 @@ namespace
 
 namespace std_function_test
 {
+	r2::iTest::TitleFunc Equality_0::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::function : Equality 0";
+		};
+	}
+	r2::iTest::DoFunc Equality_0::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+
+			using FunctionPointerT = void(*)();
+			using STDFunctionT = std::function<void()>;
+
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "using FunctionPointerT = void(*)();" << r2::linefeed;
+			std::cout << r2::tab2 << "using STDFunctionT = std::function<void()>;" << r2::linefeed;
+
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ std::function::target<T>()" << r2::linefeed2;
+
+				STDFunctionT tf1 = TestFunction_1;
+				auto fn_1 = tf1.target<void()>();
+				auto fn_2 = tf1.target<void(*)( )>();
+
+				std::cout << r2::tab2 << "STDFunctionT tf1 = TestFunction_1;" << r2::linefeed2;
+				std::cout << r2::tab2 << "auto fn_1 = tf1.target<void()>();" << r2::linefeed;
+				std::cout << r2::tab2 << "auto fn_2 = tf1.target<void(*)()>();" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "nullptr == fn_1" << r2::linefeed;
+				if( nullptr == fn_1 )
+				{
+					std::cout << r2::tab3 << "- Is Null" << r2::linefeed;
+					std::cout << r2::tab3 << "- Convert Failed" << r2::linefeed;
+				}
+				else
+				{
+					std::cout << r2::tab3 << "- Is Not Null" << r2::linefeed;
+				}
+
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab2 << "nullptr == fn_2" << r2::linefeed;
+				if( nullptr == fn_2 )
+				{
+					std::cout << r2::tab3 << "- Is Null" << r2::linefeed;
+					std::cout << r2::tab3 << "- Convert Failed" << r2::linefeed;
+				}
+				else
+				{
+					std::cout << r2::tab3 << "- Is Not Null" << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Empty" << r2::linefeed2;
+
+				STDFunctionT tf1;
+				STDFunctionT tf2;
+
+				std::cout << r2::tab2 << "STDFunctionT tf1;" << r2::linefeed;
+				std::cout << r2::tab2 << "STDFunctionT tf2;" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "tf1.target<FunctionPointerT>() == tf2.target<FunctionPointerT>()" << r2::linefeed;
+				if( tf1.target<FunctionPointerT>() == tf2.target<FunctionPointerT>() )
+				{
+					std::cout << r2::tab3 << "- Is Equal" << r2::linefeed;
+				}
+				else
+				{
+					std::cout << r2::tab3 << "- Is Not Equal" << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc Equality_1::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -42,64 +134,6 @@ namespace std_function_test
 			std::cout << r2::tab2 << "using FunctionT = void(*)();" << r2::linefeed;
 			std::cout << r2::tab2 << "using TestFunctionT = std::function<void()>;" << r2::linefeed;
 
-
-			std::cout << r2::split;
-
-			{
-				std::cout << r2::tab << "+ std::function::target<T>()" << r2::linefeed2;
-
-				TestFunctionT tf1 = TestFunction_1;
-				auto fn_1 = tf1.target<void()>();
-				auto fn_2 = tf1.target<void( *)( )>();
-
-				std::cout << r2::tab2 << "TestFunctionT tf1 = TestFunction_1;" << r2::linefeed;
-				std::cout << r2::tab2 << "auto fn_1 = tf1.target<void()>();" << r2::linefeed;
-				std::cout << r2::tab2 << "auto fn_2 = tf1.target<void(*)()>();" << r2::linefeed2;
-
-				std::cout << r2::tab2 << "nullptr == fn_1" << r2::linefeed;
-				if( nullptr == fn_1 )
-				{
-					std::cout << r2::tab3 << "- Is Null" << r2::linefeed;
-				}
-				else
-				{
-					std::cout << r2::tab3 << "- Is Not Null" << r2::linefeed;
-				}
-
-				std::cout << r2::linefeed;
-
-				std::cout << r2::tab2 << "nullptr == fn_2" << r2::linefeed;
-				if( nullptr == fn_2 )
-				{
-					std::cout << r2::tab3 << "- Is Null" << r2::linefeed;
-				}
-				else
-				{
-					std::cout << r2::tab3 << "- Is Not Null" << r2::linefeed;
-				}
-			}
-
-			std::cout << r2::split;
-
-			{
-				std::cout << r2::tab << "+ Empty" << r2::linefeed2;
-
-				TestFunctionT tf1;
-				TestFunctionT tf2;
-
-				std::cout << r2::tab2 << "TestFunctionT tf1;" << r2::linefeed;
-				std::cout << r2::tab2 << "TestFunctionT tf2;" << r2::linefeed2;
-
-				std::cout << r2::tab2 << "tf1.target<FunctionT>() == tf2.target<FunctionT>()" << r2::linefeed;
-				if( tf1.target<TestFunctionT::result_type()>() == tf2.target<TestFunctionT::result_type()>() )
-				{
-					std::cout << r2::tab3 << "- Is Equal" << r2::linefeed;
-				}
-				else
-				{
-					std::cout << r2::tab3 << "- Is Not Equal" << r2::linefeed;
-				}
-			}
 
 			std::cout << r2::split;
 
