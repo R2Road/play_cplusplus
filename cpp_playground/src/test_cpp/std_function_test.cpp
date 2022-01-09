@@ -48,13 +48,13 @@ namespace std_function_test
 			{
 				std::cout << r2::tab << "+ std::function::target<T>()" << r2::linefeed2;
 
-				STDFunctionT tf1 = TestFunction_1;
-				auto fn_1 = tf1.target<void()>();
-				auto fn_2 = tf1.target<void(*)( )>();
+				STDFunctionT sf1 = TestFunction_1;
+				auto fn_1 = sf1.target<void()>();
+				auto fn_2 = sf1.target<void(*)()>();
 
-				std::cout << r2::tab2 << "STDFunctionT tf1 = TestFunction_1;" << r2::linefeed2;
-				std::cout << r2::tab2 << "auto fn_1 = tf1.target<void()>();" << r2::linefeed;
-				std::cout << r2::tab2 << "auto fn_2 = tf1.target<void(*)()>();" << r2::linefeed2;
+				std::cout << r2::tab2 << "STDFunctionT sf1 = TestFunction_1;" << r2::linefeed2;
+				std::cout << r2::tab2 << "auto fn_1 = sf1.target<void()>();" << r2::linefeed;
+				std::cout << r2::tab2 << "auto fn_2 = sf1.target<void(*)()>();" << r2::linefeed2;
 
 				std::cout << r2::tab2 << "nullptr == fn_1" << r2::linefeed;
 				if( nullptr == fn_1 )
