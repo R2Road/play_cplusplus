@@ -245,6 +245,9 @@
     <ClCompile Include="src\r2\r2_GridIndexConverter.cpp">
       <Filter>r2</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\std_function_2_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -487,6 +490,9 @@
     </ClInclude>
     <ClInclude Include="src\r2\r2_GridIndexConverter.h">
       <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\std_function_2_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

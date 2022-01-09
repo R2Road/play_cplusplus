@@ -10,6 +10,7 @@
 
 #include "test_cpp/optional_test.h"
 #include "test_cpp/std_function_test.h"
+#include "test_cpp/std_function_2_test.h"
 #include "test_cpp/string_view_test.h"
 #include "test_cpp/tuple_test.h"
 #include "test_cpp/variant_test.h"
@@ -31,6 +32,7 @@ namespace r2
 			ret->AddChild( '5', std_function_test::Equality_FunctionPointer_1::GetInstance() );
 			ret->AddChild( '6', std_function_test::Equality_FunctionPointer_2::GetInstance() );
 			ret->AddChild( '7', std_function_test::Equality_FunctionPointer_3::GetInstance() );
+			ret->AddChild( '8', std_function_2_test::Equality_STDBind_1::GetInstance() );
 			ret->AddChild( '9', std_function_test::Equality_Lambda_1::GetInstance() );
 
 			ret->AddLineFeed();
