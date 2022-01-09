@@ -210,6 +210,109 @@ namespace std_function_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc Equality_FunctionPointer_3::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::function : Equality : Function Pointer 3";
+		};
+	}
+	r2::iTest::DoFunc Equality_FunctionPointer_3::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+
+			using FunctionPointerT = void(*)();
+			using STDFunctionT = std::function<void()>;
+
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "using FunctionPointerT = void(*)();" << r2::linefeed;
+			std::cout << r2::tab2 << "using STDFunctionT = std::function<void()>;" << r2::linefeed;
+
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Hash" << r2::linefeed2;
+
+				STDFunctionT sf1 = TestFunction_1;
+				STDFunctionT sf2 = sf1;
+				STDFunctionT sf3 = TestFunction_1;
+				STDFunctionT sf4 = TestFunction_2;
+
+				std::cout << r2::tab2 << "STDFunctionT sf1 = TestFunction_1;" << r2::linefeed;
+				std::cout << r2::tab3 << "- sf1.target_type().hash_code() : " << sf1.target_type().hash_code() << r2::linefeed2;
+
+				std::cout << r2::tab2 << "STDFunctionT sf2 = sf1;" << r2::linefeed;
+				std::cout << r2::tab3 << "- sf2.target_type().hash_code() : " << sf2.target_type().hash_code() << r2::linefeed2;
+
+				std::cout << r2::tab2 << "STDFunctionT sf3 = TestFunction_1;" << r2::linefeed;
+				std::cout << r2::tab3 << "- sf3.target_type().hash_code() : " << sf3.target_type().hash_code() << r2::linefeed2;
+
+				std::cout << r2::tab2 << "STDFunctionT sf4 = TestFunction_2;" << r2::linefeed;
+				std::cout << r2::tab3 << "- sf4.target_type().hash_code() : " << sf4.target_type().hash_code() << r2::linefeed2;
+
+				std::cout << r2::linefeed3;
+
+				std::cout << r2::tab2 << "sf1.target_type() == sf1.target_type()" << r2::linefeed;
+				if( sf1.target_type() == sf1.target_type() )
+				{
+					std::cout << r2::tab3 << "- Is Equal" << r2::linefeed;
+				}
+				else
+				{
+					std::cout << r2::tab3 << "- Is Not Equal" << r2::linefeed2;
+				}
+
+				std::cout << r2::linefeed3;
+
+				std::cout << r2::tab2 << "sf1.target_type() == sf2.target_type()" << r2::linefeed;
+				if( sf1.target_type() == sf2.target_type() )
+				{
+					std::cout << r2::tab3 << "- Is Equal" << r2::linefeed;
+				}
+				else
+				{
+					std::cout << r2::tab3 << "- Is Not Equal" << r2::linefeed2;
+				}
+
+				std::cout << r2::linefeed3;
+
+				std::cout << r2::tab2 << "sf1.target_type() == sf3.target_type()" << r2::linefeed;
+				if( sf1.target_type() == sf3.target_type() )
+				{
+					std::cout << r2::tab3 << "- Is Equal" << r2::linefeed;
+				}
+				else
+				{
+					std::cout << r2::tab3 << "- Is Not Equal" << r2::linefeed2;
+				}
+
+				std::cout << r2::linefeed3;
+
+				std::cout << r2::tab2 << "sf1.target_type() == sf4.target_type()" << r2::linefeed;
+				if( sf1.target_type() == sf4.target_type() )
+				{
+					std::cout << r2::tab3 << "- Is Equal" << r2::linefeed;
+				}
+				else
+				{
+					std::cout << r2::tab3 << "- Is Not Equal" << r2::linefeed2;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
 
 
