@@ -360,12 +360,24 @@ namespace class_test
 			std::cout << r2::split;
 
 			{
-				class MATestClass1
+				class TestClass1
 				{
 				public:
 					int a;
 					int b;
 				};
+
+				TestClass1 tc1;
+				auto pTc1 = &tc1;
+
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "TestClass1 tc1;" << r2::linefeed;
+				std::cout << r2::tab2 << "auto pTc1 = &tc1;" << r2::linefeed2;
+
+				std::cout << r2::tab << "+ Body Adress" << r2::linefeed2;
+				std::cout << r2::tab2 << "&tc1 : " << &tc1 << r2::linefeed;
+				std::cout << r2::tab2 << "pTc1 : " << pTc1 << r2::linefeed;
+				std::cout << r2::tab2 << "&( *pTc1 ) : " << &( *pTc1 ) << r2::linefeed2;
 			}
 
 			std::cout << r2::split;
