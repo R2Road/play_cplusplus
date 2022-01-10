@@ -217,6 +217,9 @@ namespace etc_test
 
 
 
+#pragma warning( disable : 4311 )
+#pragma warning( disable : 4302 )
+
 	r2::iTest::TitleFunc Pointer2Index::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -235,16 +238,24 @@ namespace etc_test
 			{
 				int i = 0;
 				int* pi = &i;
-				int64_t i64 = (int64_t)( static_cast<void*>( &i ) );
+				int32_t i32 = (int32_t)( &i );
+				int64_t i64 = (int64_t)( &i );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab2 << "int i = 0;" << r2::linefeed;
-				std::cout << r2::tab2 << "int* pi = &i;" << r2::linefeed2;
+				std::cout << r2::tab2 << "int* pi = &i;" << r2::linefeed;
+				std::cout << r2::tab2 << "int32_t i32 = (int32_t)( &i );" << r2::linefeed;
+				std::cout << r2::tab2 << "int64_t i64 = (int64_t)( &i );" << r2::linefeed;
+				std::cout << r2::linefeed2;
 
-				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "pi : " << pi << r2::linefeed2;
-				std::cout << r2::tab2 << "i64 : " << i64 << r2::linefeed2;
-				std::cout << r2::linefeed;
+				std::cout << r2::tab << "+ ...." << r2::linefeed2;
+				std::cout << r2::tab2 << "pi : " << pi << r2::linefeed;
+				std::cout << r2::tab2 << "i32 : " << i32 << " ...Àß¸²" << r2::linefeed;
+				std::cout << r2::tab2 << "i64 dec : " << std::dec << i64 << r2::linefeed;
+				std::cout << r2::tab2 << "i64 hex : " << std::hex << i64 << r2::linefeed;
+
+				// rollback
+				std::cout << std::dec;
 			}
 
 			std::cout << r2::split;
