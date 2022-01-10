@@ -31,4 +31,11 @@ namespace etc_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class Pointer2Index : public r2::iTest, public r2::SingleTon<Pointer2Index>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

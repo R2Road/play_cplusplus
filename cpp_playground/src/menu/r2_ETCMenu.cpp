@@ -20,6 +20,7 @@ namespace r2
 			ret->AddChild( '2', etc_test::InitArray::GetInstance() );
 			ret->AddChild( '4', etc_test::Macro2String::GetInstance() );
 			ret->AddChild( '5', etc_test::MacroShowCodeInfo::GetInstance() );
+			ret->AddChild( '6', etc_test::Pointer2Index::GetInstance() );
 
 
 			ret->AddLineFeed();

@@ -3,6 +3,7 @@
 
 #include <list>
 #include <numeric> // std::iota
+#include <stdint.h>
 
 #include "base/r2_eTestResult.h"
 
@@ -205,6 +206,44 @@ namespace etc_test
 
 				std::cout << r2::tab << "+ Process" << r2::linefeed2;
 				ShowCodeInfo();
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc Pointer2Index::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Pointer 2 Index";
+		};
+	}
+	r2::iTest::DoFunc Pointer2Index::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				int i = 0;
+				int* pi = &i;
+				int64_t i64 = (int64_t)( static_cast<void*>( &i ) );
+
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "int i = 0;" << r2::linefeed;
+				std::cout << r2::tab2 << "int* pi = &i;" << r2::linefeed2;
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "pi : " << pi << r2::linefeed2;
+				std::cout << r2::tab2 << "i64 : " << i64 << r2::linefeed2;
 				std::cout << r2::linefeed;
 			}
 
