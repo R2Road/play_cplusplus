@@ -239,20 +239,23 @@ namespace etc_test
 				int i = 0;
 				int* pi = &i;
 				int32_t i32 = (int32_t)( &i );
-				int64_t i64 = (int64_t)( &i );
+				int64_t i64_1 = (int64_t)( &i );
+				int64_t i64_2 = reinterpret_cast<int64_t>( &i );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab2 << "int i = 0;" << r2::linefeed;
 				std::cout << r2::tab2 << "int* pi = &i;" << r2::linefeed;
 				std::cout << r2::tab2 << "int32_t i32 = (int32_t)( &i );" << r2::linefeed;
-				std::cout << r2::tab2 << "int64_t i64 = (int64_t)( &i );" << r2::linefeed;
+				std::cout << r2::tab2 << "int64_t i64_1 = (int64_t)( &i );" << r2::linefeed;
+				std::cout << r2::tab2 << "int64_t i64_2 = reinterpret_cast<int64_t>( &i );" << r2::linefeed;
 				std::cout << r2::linefeed2;
 
 				std::cout << r2::tab << "+ ...." << r2::linefeed2;
 				std::cout << r2::tab2 << "pi : " << pi << r2::linefeed;
-				std::cout << r2::tab2 << "i32 : " << i32 << r2::tab2 << " ...64bit 에서 잘림" << r2::linefeed;
-				std::cout << r2::tab2 << "i64 dec : " << std::dec << i64 << r2::linefeed;
-				std::cout << r2::tab2 << "i64 hex : " << std::hex << i64 << r2::linefeed;
+				std::cout << r2::tab2 << "i32 : " << i32 << r2::tab2 << " ...64bit 에서 잘림 Platform 신경써." << r2::linefeed;
+				std::cout << r2::tab2 << "i64_1 dec : " << std::dec << i64_1 << r2::linefeed;
+				std::cout << r2::tab2 << "i64_1 hex : " << std::hex << i64_1 << r2::linefeed;
+				std::cout << r2::tab2 << "i64_2 hex : " << i64_2 << r2::linefeed;
 
 				// rollback
 				std::cout << std::dec;
