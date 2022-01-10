@@ -250,7 +250,7 @@ namespace etc_test
 
 				std::cout << r2::tab << "+ ...." << r2::linefeed2;
 				std::cout << r2::tab2 << "pi : " << pi << r2::linefeed;
-				std::cout << r2::tab2 << "i32 : " << i32 << r2::tab2 << " ...잘림" << r2::linefeed;
+				std::cout << r2::tab2 << "i32 : " << i32 << r2::tab2 << " ...64bit 에서 잘림" << r2::linefeed;
 				std::cout << r2::tab2 << "i64 dec : " << std::dec << i64 << r2::linefeed;
 				std::cout << r2::tab2 << "i64 hex : " << std::hex << i64 << r2::linefeed;
 
