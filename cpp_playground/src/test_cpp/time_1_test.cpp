@@ -1,4 +1,4 @@
-#include "../pch.h"
+#include "pch.h"
 #include "time_1_test.h"
 
 #include <conio.h>

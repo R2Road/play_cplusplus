@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "r2_GridIndexConverter.h"
 
 #include <algorithm>
