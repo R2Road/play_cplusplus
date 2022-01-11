@@ -8,6 +8,7 @@
 #include "test_cpp/alignof_test.h"
 #include "test_cpp/alignas_test.h"
 #include "test_cpp/align_test.h"
+#include "test_cpp/struct_member_alignment_test.h"
 
 namespace r2
 {
@@ -16,8 +17,14 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', alignof_test::Basic::GetInstance() );
-			ret->AddChild( '2', alignof_test::MixedStruct::GetInstance() );
+			ret->AddChild( '1', struct_member_alignment_test::Basic::GetInstance() );
+
+
+			ret->AddLineFeed();
+
+
+			ret->AddChild( '2', alignof_test::Basic::GetInstance() );
+			ret->AddChild( '3', alignof_test::MixedStruct::GetInstance() );
 
 
 			ret->AddLineFeed();
