@@ -24,6 +24,7 @@ namespace struct_member_alignment_test
 
 			std::cout << r2::split;
 
+// #pragma pack( 4 )
 #pragma pack( push, 4 )
 			{
 				struct
