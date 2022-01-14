@@ -379,7 +379,8 @@ namespace console_window_test
 
 				std::cout << r2::tab << "+ Lock" << r2::linefeed2;
 				std::cout << r2::tab2 << "new_window_style &= ~( WS_SIZEBOX );" << r2::linefeed;
-				std::cout << r2::tab3 << std::bitset<32>( new_window_style ) << r2::linefeed;
+				std::cout << r2::tab3 << std::bitset<32>( new_window_style ) << r2::linefeed2;
+				std::cout << r2::tab2 << "SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
