@@ -46,4 +46,11 @@ namespace console_window_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class LockWindowResizingByDragging : public r2::iTest, public r2::SingleTon<LockWindowResizingByDragging>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

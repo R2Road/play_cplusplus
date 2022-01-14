@@ -325,4 +325,59 @@ namespace console_window_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc LockWindowResizingByDragging::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Lock Window Resizing By Dragging";
+		};
+	}
+	r2::iTest::DoFunc LockWindowResizingByDragging::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			LONG last_window_style = 0;
+
+			{
+				last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE );
+
+				std::cout << r2::tab << "+ Backup" << r2::linefeed2;
+				std::cout << r2::tab2 << "last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE );" << r2::linefeed;
+				std::cout << r2::tab3 << std::bitset<32>( last_window_style ) << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				LONG new_window_style = last_window_style;
+				new_window_style &= ~( WS_SIZEBOX );
+				SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style );
+
+				std::cout << r2::tab << "+ Lock" << r2::linefeed2;
+				std::cout << r2::tab2 << "new_window_style &= ~( WS_SIZEBOX );" << r2::linefeed;
+				std::cout << r2::tab3 << std::bitset<32>( new_window_style ) << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "Press Any Key : Rollback" << r2::linefeed2;
+			_getch();
+
+			//
+			// Rollback
+			//
+			{
+				SetWindowLong( GetConsoleWindow(), GWL_STYLE, last_window_style );
+			}
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
