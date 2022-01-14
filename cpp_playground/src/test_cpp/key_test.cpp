@@ -18,8 +18,8 @@ namespace key_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
-			std::cout << "[ESC] Return to Root" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed2;
+			std::cout << "[ESC] End" << r2::linefeed;
 
 			std::cout << r2::split;
 
