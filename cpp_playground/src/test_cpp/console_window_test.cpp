@@ -256,21 +256,24 @@ namespace console_window_test
 			LONG last_window_style = 0;
 
 			{
-				HWND hwnd = GetConsoleWindow();
-				last_window_style = GetWindowLong( hwnd, GWL_STYLE );
+				last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE );
 
-				std::cout << r2::tab << "Last Window Style : " << r2::tab << std::bitset<32>( last_window_style ) << r2::linefeed;
+				std::cout << r2::tab << "+ Backup" << r2::linefeed2;
+				std::cout << r2::tab2 << "last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE );" << r2::linefeed;
+				std::cout << r2::tab3 << std::bitset<32>( last_window_style ) << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				HWND hwnd = GetConsoleWindow();
-				LONG style = last_window_style;
-				style &= ~( WS_BORDER | WS_CAPTION | WS_THICKFRAME );
-				SetWindowLong( hwnd, GWL_STYLE, style );
+				LONG new_window_style = last_window_style;
+				new_window_style &= ~( WS_BORDER | WS_CAPTION | WS_THICKFRAME );
+				SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style );
 
-				std::cout << r2::tab << "New Window Style : " << r2::tab << std::bitset<32>( style ) << r2::linefeed;
+				std::cout << r2::tab << "+ Lock" << r2::linefeed2;
+				std::cout << r2::tab2 << "new_window_style &= ~( WS_BORDER | WS_CAPTION | WS_THICKFRAME );" << r2::linefeed;
+				std::cout << r2::tab3 << std::bitset<32>( new_window_style ) << r2::linefeed2;
+				std::cout << r2::tab2 << "SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
