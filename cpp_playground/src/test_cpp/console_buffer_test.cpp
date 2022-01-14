@@ -1,11 +1,8 @@
 #include "pch.h"
 #include "console_buffer_test.h"
 
-#include <bitset>
-#include <conio.h>
-#include <stdio.h>
+#include <conio.h> // _kbhit(), _getch()
 #include <Windows.h>
-#include <wincon.h> // BACKGROUND_RED
 
 #include "base/r2_eTestResult.h"
 
