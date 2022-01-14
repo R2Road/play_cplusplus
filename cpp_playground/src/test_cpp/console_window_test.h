@@ -12,16 +12,12 @@ namespace console_window_test
 		DoFunc GetDoFunction() override;
 	};
 
-
-
 	class ChangeWindowSize : public r2::iTest, public r2::SingleTon<ChangeWindowSize>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
-
-
 
 	class WindowPosition : public r2::iTest, public r2::SingleTon<WindowPosition>
 	{
@@ -30,14 +26,13 @@ namespace console_window_test
 		DoFunc GetDoFunction() override;
 	};
 
-
-
 	class ChangeWindowName : public r2::iTest, public r2::SingleTon<ChangeWindowName>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
 	class HideTitleBar : public r2::iTest, public r2::SingleTon<HideTitleBar>
 	{
 	public:
