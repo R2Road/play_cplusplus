@@ -275,13 +275,20 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
-			system( "pause" );
+			std::cout << r2::tab << "Press Any Key : Rollback" << r2::linefeed;
+			_getch();
+
+			std::cout << r2::split;
+
+			//
+			// Rollback
+			//
 			{
 				HWND hwnd = GetConsoleWindow();
 				SetWindowLong( hwnd, GWL_STYLE, last_window_style );
 			}
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestResult::RunTest;
 		};
 	}
 
@@ -320,7 +327,6 @@ namespace console_window_test
 			//
 			// Rollback
 			//
-
 			{
 				ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 );
 
