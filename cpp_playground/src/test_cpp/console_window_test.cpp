@@ -259,7 +259,7 @@ namespace console_window_test
 				HWND hwnd = GetConsoleWindow();
 				last_window_style = GetWindowLong( hwnd, GWL_STYLE );
 
-				std::cout << r2::tab << "Last Window Stype : " << r2::tab << std::bitset<32>( last_window_style ) << r2::linefeed;
+				std::cout << r2::tab << "Last Window Style : " << r2::tab << std::bitset<32>( last_window_style ) << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -270,7 +270,7 @@ namespace console_window_test
 				style &= ~( WS_BORDER | WS_CAPTION | WS_THICKFRAME );
 				SetWindowLong( hwnd, GWL_STYLE, style );
 
-				std::cout << r2::tab << "New Window Stype : " << r2::tab << std::bitset<32>( style ) << r2::linefeed;
+				std::cout << r2::tab << "New Window Style : " << r2::tab << std::bitset<32>( style ) << r2::linefeed;
 			}
 
 			std::cout << r2::split;
