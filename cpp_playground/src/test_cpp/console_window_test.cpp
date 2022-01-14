@@ -311,7 +311,15 @@ namespace console_window_test
 			}
 
 			std::cout << r2::split;
+			
+			std::cout << r2::tab << "Press Any Key : Rollback" << r2::linefeed;
 			_getch();
+
+			std::cout << r2::split;
+
+			//
+			// Rollback
+			//
 
 			{
 				ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 );
@@ -367,8 +375,10 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
-			std::cout << r2::tab << "Press Any Key : Rollback" << r2::linefeed2;
+			std::cout << r2::tab << "Press Any Key : Rollback" << r2::linefeed;
 			_getch();
+
+			std::cout << r2::split;
 
 			//
 			// Rollback
