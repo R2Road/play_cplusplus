@@ -83,7 +83,7 @@ namespace console_window_test
 
 				std::cout << r2::tab << "Current Window Size" << r2::linefeed;
 				std::cout << r2::tab << " - Width : " << width << r2::linefeed;
-				std::cout << r2::tab << " - Height : " << width << r2::linefeed;
+				std::cout << r2::tab << " - Height : " << height << r2::linefeed;
 			}
 
 			std::cout << r2::split;
