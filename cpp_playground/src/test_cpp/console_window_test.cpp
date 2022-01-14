@@ -39,7 +39,7 @@ namespace console_window_test
 				const auto width = static_cast<int>( csbi.srWindow.Right - csbi.srWindow.Left + 1 );
 				const auto height = static_cast<int>( csbi.srWindow.Bottom - csbi.srWindow.Top + 1 );
 				std::cout << r2::tab2 << " - Width : " << width << r2::linefeed;
-				std::cout << r2::tab2 << " - Height : " << width << r2::linefeed;
+				std::cout << r2::tab2 << " - Height : " << height << r2::linefeed;
 
 				std::cout << r2::linefeed;
 				std::cout << r2::tab2 << " - Left : " << csbi.srWindow.Left << r2::linefeed;
