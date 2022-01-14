@@ -6,6 +6,7 @@
 #include "r2_RootMenu.h"
 
 #include "test_cpp/console_test.h"
+#include "test_cpp/console_window_test.h"
 
 namespace r2
 {
@@ -14,11 +15,16 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', console_test::GetWindowSize::GetInstance() );
-			ret->AddChild( '2', console_test::ChangeWindowSize::GetInstance() );
-			ret->AddChild( '3', console_test::WindowPosition::GetInstance() );
-			ret->AddChild( '4', console_test::ChangeWindowName::GetInstance() );
-			ret->AddChild( '5', console_test::HideTitleBar::GetInstance() );
+			ret->AddChild( '1', console_window_test::GetWindowSize::GetInstance() );
+			ret->AddChild( '2', console_window_test::ChangeWindowSize::GetInstance() );
+			ret->AddChild( '3', console_window_test::WindowPosition::GetInstance() );
+			ret->AddChild( '4', console_window_test::ChangeWindowName::GetInstance() );
+			ret->AddChild( '5', console_window_test::HideTitleBar::GetInstance() );
+
+
+			ret->AddLineFeed();
+
+
 			ret->AddChild( '6', console_test::CursorMove::GetInstance() );
 			ret->AddChild( '7', console_test::CursorVisibility::GetInstance() );
 

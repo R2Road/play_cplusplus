@@ -257,6 +257,9 @@
     <ClCompile Include="src\test_cpp\struct_member_alignment_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\console_window_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -507,6 +510,9 @@
       <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\struct_member_alignment_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\console_window_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>
