@@ -58,6 +58,7 @@
     <ClCompile Include="src\test_algorithm\algorithm_insertion_sort_test.cpp" />
     <ClCompile Include="src\test_algorithm\algorithm_maze_test.cpp" />
     <ClCompile Include="src\test_algorithm\algorithm_selection_sort_test.cpp" />
+    <ClCompile Include="src\test_cpp\console_buffer_test.cpp" />
     <ClCompile Include="src\test_cpp\console_window_test.cpp" />
     <ClCompile Include="src\test_cpp\numeric_test.cpp" />
     <ClCompile Include="src\test_cpp\alignas_test.cpp" />
@@ -145,6 +146,7 @@
     <ClInclude Include="src\test_algorithm\algorithm_insertion_sort_test.h" />
     <ClInclude Include="src\test_algorithm\algorithm_maze_test.h" />
     <ClInclude Include="src\test_algorithm\algorithm_selection_sort_test.h" />
+    <ClInclude Include="src\test_cpp\console_buffer_test.h" />
     <ClInclude Include="src\test_cpp\console_window_test.h" />
     <ClInclude Include="src\test_cpp\numeric_test.h" />
     <ClInclude Include="src\test_cpp\alignas_test.h" />

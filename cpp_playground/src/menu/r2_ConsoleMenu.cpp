@@ -5,6 +5,7 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
+#include "test_cpp/console_buffer_test.h"
 #include "test_cpp/console_test.h"
 #include "test_cpp/console_window_test.h"
 
@@ -49,7 +50,7 @@ namespace r2
 
 
 			ret->AddChild( 'a', console_test::Pixel::GetInstance() );
-			ret->AddChild( 's', console_test::DoubleBuffering::GetInstance() );
+			ret->AddChild( 's', console_buffer_test::DoubleBuffering::GetInstance() );
 
 
 			ret->AddSplit();
