@@ -298,7 +298,8 @@ namespace console_window_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+			std::cout << r2::tab << "WinUser.h" << r2::linefeed;
 
 			std::cout << r2::split;
 
