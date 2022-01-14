@@ -284,4 +284,44 @@ namespace console_window_test
 			return r2::eTestResult::RunTest_Without_Pause;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc HideScrollBar::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Hide Scroll Bar";
+		};
+	}
+	r2::iTest::DoFunc HideScrollBar::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				ShowScrollBar( GetConsoleWindow(), SB_VERT, 0 );
+
+				std::cout << r2::tab << "+ Hide" << r2::linefeed2;
+				std::cout << r2::tab2 << "ShowScrollBar( GetConsoleWindow(), SB_VERT, 0 );" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+			_getch();
+
+			{
+				ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 );
+
+				std::cout << r2::tab << "+ Show" << r2::linefeed2;
+				std::cout << r2::tab2 << "ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 );" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
