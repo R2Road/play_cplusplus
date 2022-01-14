@@ -43,6 +43,7 @@ namespace r2
 
 
 			ret->AddChild( 'a', console_test::Pixel::GetInstance() );
+			ret->AddChild( 's', console_test::DoubleBuffering::GetInstance() );
 
 
 			ret->AddSplit();

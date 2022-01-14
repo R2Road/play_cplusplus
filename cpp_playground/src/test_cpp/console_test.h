@@ -106,4 +106,11 @@ namespace console_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class DoubleBuffering : public r2::iTest, public r2::SingleTon<DoubleBuffering>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

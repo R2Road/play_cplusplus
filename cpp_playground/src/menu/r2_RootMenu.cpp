@@ -41,11 +41,11 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu(
 			director
 			, GetTitle()
-			, "> Inprogress : Thread"
-			"\n" "> Inprogress : Vector3"
-			"\n" "> Inprogress : Encoding"
-			"\n" "> Inprogress : Infinite Number"
-			"\n" "> To do : Renderer"
+			, "> Inprogress : Double Buffering"
+			"\n" "> To do : Vector3"
+			"\n" "> To do : Encoding"
+			"\n" "> To do : Infinite Number"
+			"\n" "> To do : Thread"
 			"\n" "> To do : Memory Pool"
 		) );
 
