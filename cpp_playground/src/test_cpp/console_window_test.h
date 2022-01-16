@@ -53,4 +53,20 @@ namespace console_window_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+
+
+	class CursorMove : public r2::iTest, public r2::SingleTon<CursorMove>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
+	class CursorVisibility : public r2::iTest, public r2::SingleTon<CursorVisibility>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

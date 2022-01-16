@@ -5,21 +5,6 @@
 
 namespace console_test
 {
-	class CursorMove : public r2::iTest, public r2::SingleTon<CursorMove>
-	{
-	public:
-		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
-	};
-	class CursorVisibility : public r2::iTest, public r2::SingleTon<CursorVisibility>
-	{
-	public:
-		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
-	};
-
-
-
 	class ColorTable : public r2::iTest, public r2::SingleTon<ColorTable>
 	{
 	public:

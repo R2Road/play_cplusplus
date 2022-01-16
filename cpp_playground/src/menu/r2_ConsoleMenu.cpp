@@ -24,12 +24,10 @@ namespace r2
 			ret->AddChild( '6', console_window_test::HideScrollBar::GetInstance() );
 			ret->AddChild( '7', console_window_test::LockWindowResizingByDragging::GetInstance() );
 
-
 			ret->AddLineFeed();
 
-
-			ret->AddChild( '8', console_test::CursorMove::GetInstance() );
-			ret->AddChild( '9', console_test::CursorVisibility::GetInstance() );
+			ret->AddChild( '8', console_window_test::CursorMove::GetInstance() );
+			ret->AddChild( '9', console_window_test::CursorVisibility::GetInstance() );
 
 			
 			ret->AddLineFeed();

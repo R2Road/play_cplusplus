@@ -422,4 +422,103 @@ namespace console_window_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+	r2::iTest::TitleFunc CursorMove::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Cursor Move";
+		};
+	}
+	r2::iTest::DoFunc CursorMove::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << r2::tab << " + [W, A, S, D] : Move" << r2::linefeed;
+			std::cout << r2::tab << " + [SPACE BAR] Foot Print" << r2::linefeed;
+			std::cout << r2::tab << " + [ESC] Exit" << r2::linefeed;
+
+			{
+				HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+				COORD pos = { 0, 3 };
+
+				bool process = true;
+				while( process )
+				{
+					SetConsoleCursorPosition( stdHandle, pos );
+
+					switch( _getch() )
+					{
+					case 'w': // up
+						pos.Y -= 1;
+						break;
+					case 's': // down
+						pos.Y += 1;
+						break;
+					case 'a': // left
+						pos.X -= 1;
+						break;
+					case 'd': // right
+						pos.X += 1;
+						break;
+
+					case 27: // ESC
+						process = false;
+						break;
+
+					case 32: // space
+						std::cout << "test string";
+						break;
+					}
+				}
+			}
+
+			return r2::eTestResult::RunTest_Without_Pause;
+		};
+	}
+
+	r2::iTest::TitleFunc CursorVisibility::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Cursor Visibility";
+		};
+	}
+	r2::iTest::DoFunc CursorVisibility::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+
+			{
+				CONSOLE_CURSOR_INFO     cursorInfo;
+
+				GetConsoleCursorInfo( stdHandle, &cursorInfo );
+				cursorInfo.bVisible = false;
+				SetConsoleCursorInfo( stdHandle, &cursorInfo );
+			}
+
+			system( "pause" );
+
+			{
+				CONSOLE_CURSOR_INFO     cursorInfo;
+
+				GetConsoleCursorInfo( stdHandle, &cursorInfo );
+				cursorInfo.bVisible = true;
+				SetConsoleCursorInfo( stdHandle, &cursorInfo );
+			}
+
+			system( "pause" );
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest_Without_Pause;
+		};
+	}
 }
