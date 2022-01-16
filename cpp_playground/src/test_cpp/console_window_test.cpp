@@ -97,6 +97,11 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
+			std::cout << r2::tab << "+ Process" << r2::linefeed2;
+			std::cout << r2::tab2 << "system( \"mode con lines = 30 cols = 120\" );" << r2::linefeed;
+
+			std::cout << r2::split;
+
 			{
 				CONSOLE_SCREEN_BUFFER_INFO csbi;
 				GetConsoleScreenBufferInfo( GetStdHandle( STD_OUTPUT_HANDLE ), &csbi );
