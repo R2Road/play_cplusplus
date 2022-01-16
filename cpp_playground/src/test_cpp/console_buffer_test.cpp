@@ -3,6 +3,7 @@
 
 #include <assert.h>
 #include <conio.h> // _kbhit(), _getch()
+#include <cstring>
 #include <Windows.h>
 
 #include "base/r2_eTestResult.h"
@@ -59,6 +60,49 @@ namespace console_buffer_test
 				// This clears all background colour formatting, if any.
 				FillConsoleOutputAttribute( hStdout, cs_buffer_info.wAttributes, length, topLeft, &out_result );
 			}
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc Write2Buffer::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Write 2 Buffer";
+		};
+	}
+	r2::iTest::DoFunc Write2Buffer::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
+				const char* str = "*************WriteConsole Test*************";
+
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2::linefeed;
+				std::cout << r2::tab2 << "const char* str = \"*************WriteConsole Test*************\";" << r2::linefeed;
+
+				std::cout << r2::split;
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "WriteConsoleA( hStdout, str, sizeof( str ), nullptr, nullptr );" << r2::linefeed;
+
+				std::cout << r2::split;
+
+				WriteConsoleA( hStdout, str, strlen( str ), nullptr, nullptr );
+
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
