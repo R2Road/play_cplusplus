@@ -58,8 +58,13 @@ namespace console_buffer_test
 
 				// Reset the attributes of every character to the default.
 				// This clears all background colour formatting, if any.
-				FillConsoleOutputAttribute( hStdout, cs_buffer_info.wAttributes, length, topLeft, &out_result );
+				FillConsoleOutputAttribute( hStdout, FOREGROUND_BLUE, length / 2, topLeft, &out_result );
 			}
+
+			std::cout << r2::tab << "Press Key : Rollback" << r2::linefeed;
+			_getch();
+
+			FillConsoleOutputAttribute( hStdout, cs_buffer_info.wAttributes, length, topLeft, &out_result );
 
 			return r2::eTestResult::RunTest;
 		};
