@@ -435,14 +435,15 @@ namespace console_window_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-			std::cout << r2::tab << " + [W, A, S, D] : Move" << r2::linefeed;
-			std::cout << r2::tab << " + [SPACE BAR] Foot Print" << r2::linefeed;
-			std::cout << r2::tab << " + [ESC] Exit" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+
+			std::cout << "[W, A, S, D] : Move" << r2::linefeed;
+			std::cout << "[SPACE BAR] Foot Print" << r2::linefeed;
+			std::cout << "[ESC] Exit" << r2::linefeed;
 
 			{
 				HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-				COORD pos = { 0, 3 };
+				COORD pos = { 0, 7 };
 
 				bool process = true;
 				while( process )
