@@ -19,7 +19,7 @@ namespace performance_container_iteration_test
 	{
 		return []()->const char*
 		{
-			return "Build-In Array Iteration";
+			return "Built-In Array Iteration";
 		};
 	}
 	r2::iTest::DoFunc BuiltInArrayIteration::GetDoFunction()
