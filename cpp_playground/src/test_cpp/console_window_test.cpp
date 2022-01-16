@@ -143,62 +143,58 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
+			HWND hWnd = GetConsoleWindow();
 			RECT last_window_rect;
 
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "HWND hWnd = GetConsoleWindow();" << r2::linefeed;
+			std::cout << r2::tab2 << "RECT last_window_rect;" << r2::linefeed;
+
+			std::cout << r2::split;
+
 			{
-				HWND hWnd = GetConsoleWindow();
 				GetWindowRect( hWnd, &last_window_rect );
-				std::cout << r2::tab << "HWND hWnd = GetConsoleWindow();" << r2::linefeed;
-				std::cout << r2::tab << "RECT last_window_rect;" << r2::linefeed;
-				std::cout << r2::tab << "GetWindowRect( hWnd, &last_window_rect );" << r2::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2::tab << "+ Backup Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "GetWindowRect( hWnd, &last_window_rect );" << r2::linefeed2;
 
-				std::cout << r2::tab << "Current Window Position" << r2::linefeed;
-				std::cout << r2::tab2 << " - X : " << last_window_rect.left << r2::linefeed;
-				std::cout << r2::tab2 << " - Y : " << last_window_rect.top << r2::linefeed;
+				std::cout << r2::tab2 << "Last Window Position" << r2::linefeed2;
+				std::cout << r2::tab3 << " - X : " << last_window_rect.left << r2::linefeed;
+				std::cout << r2::tab3 << " - Y : " << last_window_rect.top << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				RECT rectClient, rectWindow;
-				HWND hWnd = GetConsoleWindow();
-				GetClientRect( hWnd, &rectClient );
-				GetWindowRect( hWnd, &rectWindow );
-				
-				int posx = GetSystemMetrics( SM_CXSCREEN ) / 2 - ( rectWindow.right - rectWindow.left ) / 2;
-				int posy = GetSystemMetrics( SM_CYSCREEN ) / 2 - ( rectWindow.bottom - rectWindow.top ) / 2;
+				int posx = GetSystemMetrics( SM_CXSCREEN ) / 2 - ( last_window_rect.right - last_window_rect.left ) / 2;
+				int posy = GetSystemMetrics( SM_CYSCREEN ) / 2 - ( last_window_rect.bottom - last_window_rect.top ) / 2;
 
-				MoveWindow( hWnd, posx, posy, rectClient.right - rectClient.left, rectClient.bottom - rectClient.top, TRUE );
+				MoveWindow( hWnd, posx, posy, last_window_rect.right - last_window_rect.left, last_window_rect.bottom - last_window_rect.top, TRUE );
 
-				std::cout << r2::tab << "Move To Center" << r2::linefeed;
+				std::cout << r2::tab << "+ Move To Center Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "int posx = GetSystemMetrics( SM_CXSCREEN ) / 2 - ( last_window_rect.right - last_window_rect.left ) / 2;" << r2::linefeed;
+				std::cout << r2::tab2 << "int posy = GetSystemMetrics( SM_CYSCREEN ) / 2 - ( last_window_rect.bottom - last_window_rect.top ) / 2;" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "MoveWindow( hWnd, posx, posy, last_window_rect.right - last_window_rect.left, last_window_rect.bottom - last_window_rect.top, TRUE );" << r2::linefeed2;
+
+
+				RECT current_window_rect;
+				GetWindowRect( hWnd, &current_window_rect );
+
+				std::cout << r2::tab2 << "Current Window Position" << r2::linefeed;
+				std::cout << r2::tab3 << " - X : " << current_window_rect.left << r2::linefeed;
+				std::cout << r2::tab3 << " - Y : " << current_window_rect.top << r2::linefeed;
 			}
 
 			std::cout << r2::split;
-
-			{
-				RECT rectWindow;
-				HWND hWnd = GetConsoleWindow();
-				GetWindowRect( hWnd, &rectWindow );
-
-				std::cout << r2::linefeed;
-
-				std::cout << r2::tab << "Current Window Position" << r2::linefeed;
-				std::cout << r2::tab2 << " - X : " << rectWindow.left << r2::linefeed;
-				std::cout << r2::tab2 << " - Y : " << rectWindow.top << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-			system( "pause" );
+			
+			std::cout << "Press Any Key : Roll Back Window Position" << r2::linefeed;
+			_getch();
 
 			{
 				//
 				// Rollback
 				//
-
-				HWND hWnd = GetConsoleWindow();
-
 				MoveWindow(
 					hWnd
 					, last_window_rect.left, last_window_rect.top
@@ -209,7 +205,7 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestResult::RunTest;
 		};
 	}
 
