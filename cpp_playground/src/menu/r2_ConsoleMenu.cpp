@@ -32,6 +32,7 @@ namespace r2
 
 			
 			ret->AddLineFeed();
+			ret->AddLineFeed();
 
 
 			ret->AddChild( 'q', console_text_color_test::ColorTable::GetInstance() );
@@ -47,6 +48,7 @@ namespace r2
 			ret->AddChild( 'y', console_text_color_test::TextColor3::GetInstance() );
 
 
+			ret->AddLineFeed();
 			ret->AddLineFeed();
 
 
