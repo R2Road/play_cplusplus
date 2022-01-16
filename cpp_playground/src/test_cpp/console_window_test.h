@@ -5,7 +5,7 @@
 
 namespace console_window_test
 {
-	class GetWindowSize : public r2::iTest, public r2::SingleTon<GetWindowSize>
+	class BufferInfo : public r2::iTest, public r2::SingleTon<BufferInfo>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

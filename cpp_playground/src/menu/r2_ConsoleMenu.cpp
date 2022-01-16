@@ -16,7 +16,7 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', console_window_test::GetWindowSize::GetInstance() );
+			ret->AddChild( '1', console_window_test::BufferInfo::GetInstance() );
 			ret->AddChild( '2', console_window_test::ChangeWindowSize::GetInstance() );
 			ret->AddChild( '3', console_window_test::WindowPosition::GetInstance() );
 			ret->AddChild( '4', console_window_test::ChangeWindowName::GetInstance() );
@@ -52,8 +52,7 @@ namespace r2
 
 
 			ret->AddChild( 'a', console_test::Pixel::GetInstance() );
-			ret->AddChild( 's', console_buffer_test::BufferInfo::GetInstance() );
-			ret->AddChild( 'd', console_buffer_test::DoubleBuffering::GetInstance() );
+			ret->AddChild( 's', console_buffer_test::DoubleBuffering::GetInstance() );
 
 
 			ret->AddSplit();
