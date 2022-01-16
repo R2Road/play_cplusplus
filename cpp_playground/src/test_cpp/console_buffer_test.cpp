@@ -13,7 +13,7 @@ namespace console_buffer_test
 	{
 		return []()->const char*
 		{
-			return "Buffer Info";
+			return "Fill Buffer";
 		};
 	}
 	r2::iTest::DoFunc FillBuffer::GetDoFunction()
