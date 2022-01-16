@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "console_buffer_test.h"
 
+#include <assert.h>
 #include <conio.h> // _kbhit(), _getch()
 #include <Windows.h>
 
@@ -8,6 +9,68 @@
 
 namespace console_buffer_test
 {
+	r2::iTest::TitleFunc FillBuffer::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Buffer Info";
+		};
+	}
+	r2::iTest::DoFunc FillBuffer::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
+			COORD topLeft = { 0, 0 };
+			CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info;
+			assert( GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info ) && "Failed : GetConsoleScreenBufferInfo" );
+			const DWORD length = cs_buffer_info.dwSize.X * cs_buffer_info.dwSize.Y;
+			DWORD out_result;
+
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2::linefeed;
+			std::cout << r2::tab2 << "COORD topLeft = { 0, 0 };" << r2::linefeed;
+			std::cout << r2::tab2 << "CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info;" << r2::linefeed;
+			std::cout << r2::tab2 << "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2::linefeed2;
+			std::cout << r2::tab2 << "const DWORD length = cs_buffer_info.dwSize.X * cs_buffer_info.dwSize.Y;" << r2::linefeed;
+			std::cout << r2::tab2 << "DWORD out_result;" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "+ Process Ready" << r2::linefeed2;
+			std::cout << r2::tab2 << "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "+ Process" << r2::linefeed2;
+			std::cout << r2::tab2 << "FillConsoleOutputCharacter( hStdout, TEXT( '#' ), length, topLeft, &out_result );" << r2::linefeed;
+			std::cout << r2::tab2 << "FillConsoleOutputAttribute( hStdout, cs_buffer_info.wAttributes, length, topLeft, &out_result );" << r2::linefeed2;
+
+			std::cout << r2::tab << "Press Key : Fill All Buffer" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			if( _getch() )
+			{
+
+				// Flood-fill the console with spaces to clear it
+				FillConsoleOutputCharacter( hStdout, TEXT( '#' ), length, topLeft, &out_result );
+
+				// Reset the attributes of every character to the default.
+				// This clears all background colour formatting, if any.
+				FillConsoleOutputAttribute( hStdout, cs_buffer_info.wAttributes, length, topLeft, &out_result );
+			}
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc DoubleBuffering::GetTitleFunction() const
 	{
 		return []()->const char*
