@@ -232,7 +232,7 @@ namespace numeric_test
 				std::cout << r2::tab << "+ Process" << r2::linefeed;
 				std::cout << r2::tab2 << "std::partial_sum(" << r2::linefeed;
 				std::cout << r2::tab3 << "v.begin(), v.end()" << r2::linefeed;
-				std::cout << r2::tab3 << ", std::ostream_iterator<int>( std::cout, \"-\" ), std::multiplies<int>() );" << r2::linefeed;
+				std::cout << r2::tab3 << ", std::ostream_iterator<int>( std::cout, \"-\" )" << r2::linefeed;
 				std::cout << r2::tab3 << ", std::multiplies<int>()" << r2::linefeed;
 				std::cout << r2::tab2 << ");" << r2::linefeed;
 				std::cout << r2::linefeed;
@@ -241,7 +241,11 @@ namespace numeric_test
 				std::cout << r2::tab << "+ Result" << r2::linefeed;
 				std::cout << r2::tab2;
 
-				std::partial_sum( v.begin(), v.end(), std::ostream_iterator<int>( std::cout, "-" ), std::multiplies<int>() );
+				std::partial_sum(
+					v.begin(), v.end()
+					, std::ostream_iterator<int>( std::cout, "-" )
+					, std::multiplies<int>()
+				);
 
 				std::cout << r2::linefeed;
 			}
