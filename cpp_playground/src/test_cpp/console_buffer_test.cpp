@@ -41,18 +41,13 @@ namespace console_buffer_test
 
 			std::cout << r2::split;
 
-			std::cout << r2::tab << "+ Process Ready" << r2::linefeed2;
-			std::cout << r2::tab2 << "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2::linefeed;
-
-			std::cout << r2::split;
-
-			std::cout << r2::tab << "+ Process" << r2::linefeed2;
+			std::cout << r2::tab << "+ Upcoming Process : Fill All Buffer" << r2::linefeed2;
 			std::cout << r2::tab2 << "FillConsoleOutputCharacter( hStdout, TEXT( '#' ), length, topLeft, &out_result );" << r2::linefeed;
-			std::cout << r2::tab2 << "FillConsoleOutputAttribute( hStdout, cs_buffer_info.wAttributes, length, topLeft, &out_result );" << r2::linefeed2;
-
-			std::cout << r2::tab << "Press Key : Fill All Buffer" << r2::linefeed;
+			std::cout << r2::tab2 << "FillConsoleOutputAttribute( hStdout, cs_buffer_info.wAttributes, length, topLeft, &out_result );" << r2::linefeed;
 
 			std::cout << r2::split;
+
+			std::cout << r2::tab << "Press Key : Do" << r2::linefeed;
 
 			if( _getch() )
 			{
