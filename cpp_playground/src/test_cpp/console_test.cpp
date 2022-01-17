@@ -159,14 +159,15 @@ namespace console_test
 				HWND console_window = GetConsoleWindow();
 				HDC dc = GetDC( console_window );
 
+				COORD pos{ 0, 100 };
 				COLORREF COLOR = RGB( 255, 100, 100 );
 				while( true )
 				{
-					int pixel = 0;
+					int pixel = pos.X;
 
 					for( double i = 0; i < 3.141592 * 4; i += 0.05 )
 					{
-						SetPixel( dc, pixel, (int)( 100 + 35 * sin( i ) ), COLOR );
+						SetPixel( dc, pixel, (int)( pos.Y + ( 35 * sin( i ) ) ), COLOR );
 						pixel += 1;
 					}
 
