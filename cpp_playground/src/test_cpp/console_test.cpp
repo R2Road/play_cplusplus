@@ -151,7 +151,7 @@ namespace console_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed2;
 
 			std::cout << "[ESC] Exit" << r2::linefeed;
 
@@ -166,7 +166,7 @@ namespace console_test
 
 					for( double i = 0; i < 3.141592 * 4; i += 0.05 )
 					{
-						SetPixel( dc, pixel, (int)( 70 + 25 * sin( i ) ), COLOR );
+						SetPixel( dc, pixel, (int)( 100 + 35 * sin( i ) ), COLOR );
 						pixel += 1;
 					}
 
