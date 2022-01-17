@@ -104,7 +104,7 @@ namespace console_buffer_test
 
 				std::cout << r2::split;
 
-				WriteConsoleA( hStdout, str, strlen( str ), nullptr, nullptr );
+				WriteConsoleA( hStdout, str, static_cast<DWORD>( strlen( str ) ), nullptr, nullptr );
 
 				std::cout << r2::linefeed;
 			}
