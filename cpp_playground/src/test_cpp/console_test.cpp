@@ -7,6 +7,18 @@
 
 #include "base/r2_eTestResult.h"
 
+void ShowFontInfo( const CONSOLE_FONT_INFOEX & cfie )
+{
+	std::cout << r2::tab2 << "dwFontSize.X : " << cfie.dwFontSize.X << r2::linefeed;
+	std::cout << r2::tab2 << "dwFontSize.Y : " << cfie.dwFontSize.Y << r2::linefeed;
+	std::cout << r2::tab2 << "FontFamily : " << cfie.FontFamily << r2::linefeed;
+	std::cout << r2::tab2 << "FontWeight : " << cfie.FontWeight << r2::linefeed;
+	std::cout << r2::tab2 << "nFont : " << cfie.nFont << r2::linefeed; // 시스템의 콘솔 글꼴 테이블에 있는 글꼴의 인덱스입니다.
+
+	std::wcout.imbue( std::locale( "kor" ) );
+	std::wcout << r2::tab2 << "FaceName : " << cfie.FaceName << r2::linefeed;
+}
+
 namespace console_test
 {
 	r2::iTest::TitleFunc FontInfo::GetTitleFunction() const
@@ -42,14 +54,7 @@ namespace console_test
 
 			{
 				std::cout << r2::tab << "+ Font Info" << r2::linefeed2;
-				std::cout << r2::tab2 << "cfie.dwFontSize.X : " << cfie.dwFontSize.X << r2::linefeed;
-				std::cout << r2::tab2 << "cfie.dwFontSize.Y : " << cfie.dwFontSize.Y << r2::linefeed;
-				std::cout << r2::tab2 << "cfie.FontFamily : " << cfie.FontFamily << r2::linefeed;
-				std::cout << r2::tab2 << "cfie.FontWeight : " << cfie.FontWeight << r2::linefeed;
-				std::cout << r2::tab2 << "cfie.nFont : " << cfie.nFont << r2::linefeed; // 시스템의 콘솔 글꼴 테이블에 있는 글꼴의 인덱스입니다.
-
-				std::wcout.imbue( std::locale( "kor" ) );
-				std::wcout << r2::tab2 << "cfie.FaceName : " << cfie.FaceName << r2::linefeed;
+				ShowFontInfo( cfie );
 			}
 
 			std::cout << r2::split;
@@ -79,17 +84,9 @@ namespace console_test
 			backup_cfie.cbSize = sizeof( CONSOLE_FONT_INFOEX );
 			GetCurrentConsoleFontEx( GetStdHandle( STD_OUTPUT_HANDLE ), 0, &backup_cfie );
 
-			std::cout << r2::tab << "+ Backup : Font Info" << r2::linefeed2;
-			
 			{
-				std::cout << r2::tab2 << "cfie.dwFontSize.X : " << backup_cfie.dwFontSize.X << r2::linefeed;
-				std::cout << r2::tab2 << "cfie.dwFontSize.Y : " << backup_cfie.dwFontSize.Y << r2::linefeed;
-				std::cout << r2::tab2 << "cfie.FontFamily : " << backup_cfie.FontFamily << r2::linefeed;
-				std::cout << r2::tab2 << "cfie.FontWeight : " << backup_cfie.FontWeight << r2::linefeed;
-				std::cout << r2::tab2 << "cfie.nFont : " << backup_cfie.nFont << r2::linefeed; // 시스템의 콘솔 글꼴 테이블에 있는 글꼴의 인덱스입니다.
-
-				std::wcout.imbue( std::locale( "kor" ) );
-				std::wcout << r2::tab2 << "cfie.FaceName : " << backup_cfie.FaceName << r2::linefeed;
+				std::cout << r2::tab << "+ Backup : Font Info" << r2::linefeed2;
+				ShowFontInfo( backup_cfie );
 			}
 
 			std::cout << r2::split;
@@ -115,22 +112,16 @@ namespace console_test
 
 				std::cout << r2::split;
 
-				std::cout << r2::tab << "Press Key : Change Font" << r2::linefeed2;
+				std::cout << r2::tab << "Press Key : Change Font" << r2::linefeed;
 				_getch();
+
+				std::cout << r2::split;
 				
 				SetCurrentConsoleFontEx( GetStdHandle( STD_OUTPUT_HANDLE ), FALSE, &cfie );
 
-				std::cout << r2::tab << "+ Current : Font Info" << r2::linefeed2;
-
 				{
-					std::cout << r2::tab2 << "cfie.dwFontSize.X : " << cfie.dwFontSize.X << r2::linefeed;
-					std::cout << r2::tab2 << "cfie.dwFontSize.Y : " << cfie.dwFontSize.Y << r2::linefeed;
-					std::cout << r2::tab2 << "cfie.FontFamily : " << cfie.FontFamily << r2::linefeed;
-					std::cout << r2::tab2 << "cfie.FontWeight : " << cfie.FontWeight << r2::linefeed;
-					std::cout << r2::tab2 << "cfie.nFont : " << cfie.nFont << r2::linefeed; // 시스템의 콘솔 글꼴 테이블에 있는 글꼴의 인덱스입니다.
-
-					std::wcout.imbue( std::locale( "kor" ) );
-					std::wcout << r2::tab2 << "cfie.FaceName : " << cfie.FaceName << r2::linefeed;
+					std::cout << r2::tab << "+ Current : Font Info" << r2::linefeed2;
+					ShowFontInfo( cfie );
 				}
 			}
 
