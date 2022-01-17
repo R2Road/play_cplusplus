@@ -35,6 +35,24 @@ namespace print_test
 
 			std::cout << r2::split;
 
+			{
+				std::cout << r2::tab << "+ Show String : Use std::cout.write" << r2::linefeed << r2::linefeed;
+
+				const char* str = "111111122222223333333";
+
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "const char* str = \"111111122222223333333\";" << r2::linefeed2;
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::cout.write( str, 10ll );" << r2::linefeed2;
+
+				std::cout << r2::tab2;
+				std::cout.write( str, 10ll );
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
