@@ -2,6 +2,7 @@
 #include "console_test.h"
 
 #include <conio.h> // _kbhit(), _getch()
+#include <cwchar>
 #include <Windows.h> // HDC
 
 #include "base/r2_eTestResult.h"
@@ -56,6 +57,69 @@ namespace console_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc FontChange::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Font Change";
+		};
+	}
+	r2::iTest::DoFunc FontChange::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			CONSOLE_FONT_INFOEX backup_cfie;
+			backup_cfie.cbSize = sizeof( CONSOLE_FONT_INFOEX );
+			GetCurrentConsoleFontEx( GetStdHandle( STD_OUTPUT_HANDLE ), 0, &backup_cfie );
+
+			{
+				CONSOLE_FONT_INFOEX cfi;
+				cfi.cbSize = sizeof( CONSOLE_FONT_INFOEX );
+				cfi.nFont = 0;
+				cfi.dwFontSize.X = backup_cfie.dwFontSize.X;
+				cfi.dwFontSize.Y = backup_cfie.dwFontSize.Y;
+				cfi.FontFamily = FF_DONTCARE;
+				cfi.FontWeight = FW_NORMAL;
+				wcscpy_s( cfi.FaceName, L"NSimSun" );
+
+				std::cout << r2::tab << "+ Declartion" << r2::linefeed2;
+				std::cout << r2::tab2 << "CONSOLE_FONT_INFOEX cfi;" << r2::linefeed;
+				std::cout << r2::tab2 << "cfi.cbSize = sizeof( CONSOLE_FONT_INFOEX );" << r2::linefeed;
+				std::cout << r2::tab2 << "cfi.dwFontSize.X = backup_cfie.dwFontSize.X;" << r2::linefeed;
+				std::cout << r2::tab2 << "cfi.dwFontSize.Y = backup_cfie.dwFontSize.Y;" << r2::linefeed;
+				std::cout << r2::tab2 << "cfi.FontFamily = FF_DONTCARE;" << r2::linefeed;
+				std::cout << r2::tab2 << "cfi.FontWeight = FW_NORMAL;" << r2::linefeed;
+				std::cout << r2::tab2 << "wcscpy_s( cfi.FaceName, L\"NSimSun\" );" << r2::linefeed;
+
+				std::cout << r2::split;
+
+				std::cout << r2::tab << "Press Key : Change Font" << r2::linefeed;
+				_getch();
+				
+				SetCurrentConsoleFontEx( GetStdHandle( STD_OUTPUT_HANDLE ), FALSE, &cfi );
+			}
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "Press Key : Rollback" << r2::linefeed;
+			_getch();
+
+			SetCurrentConsoleFontEx( GetStdHandle( STD_OUTPUT_HANDLE ), FALSE, &backup_cfie );
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
 
 	r2::iTest::TitleFunc Pixel::GetTitleFunction() const
 	{

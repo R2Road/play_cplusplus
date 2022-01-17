@@ -47,17 +47,18 @@ namespace r2
 
 			ret->AddLineFeed();
 
-			ret->AddChild( 'u', console_test::FontInfo::GetInstance() );
+			ret->AddChild( 'a', console_test::FontInfo::GetInstance() );
+			ret->AddChild( 's', console_test::FontChange::GetInstance() );
 
 
 			ret->AddLineFeed();
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'a', console_test::Pixel::GetInstance() );
-			ret->AddChild( 's', console_buffer_test::FillBuffer::GetInstance() );
-			ret->AddChild( 'd', console_buffer_test::Write2Buffer::GetInstance() );
-			ret->AddChild( 'f', console_buffer_test::DoubleBuffering::GetInstance() );
+			ret->AddChild( 'z', console_test::Pixel::GetInstance() );
+			ret->AddChild( 'x', console_buffer_test::FillBuffer::GetInstance() );
+			ret->AddChild( 'c', console_buffer_test::Write2Buffer::GetInstance() );
+			ret->AddChild( 'v', console_buffer_test::DoubleBuffering::GetInstance() );
 
 
 			ret->AddSplit();

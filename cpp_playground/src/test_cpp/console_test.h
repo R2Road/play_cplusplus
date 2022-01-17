@@ -12,6 +12,13 @@ namespace console_test
 		DoFunc GetDoFunction() override;
 	};
 
+	class FontChange : public r2::iTest, public r2::SingleTon<FontChange>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
 	class Pixel : public r2::iTest, public r2::SingleTon<Pixel>
 	{
 	public:
