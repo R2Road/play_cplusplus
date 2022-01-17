@@ -132,32 +132,57 @@ namespace console_buffer_test
 
 			std::cout << "[ESC] Exit" << r2::linefeed;
 
+			std::cout << r2::split;
+
 			{
-				HWND console_window = GetConsoleWindow();
-				HDC dc = GetDC( console_window );
+				DWORD out_result;
 
-				COLORREF COLOR = RGB( 255, 100, 100 );
-				while( true )
+				auto hFirstBuffer = GetStdHandle( STD_OUTPUT_HANDLE );
+				CONSOLE_SCREEN_BUFFER_INFO first_csbi;
+				assert( GetConsoleScreenBufferInfo( hFirstBuffer, &first_csbi ) && "Failed : GetConsoleScreenBufferInfo" );
+				const DWORD length = first_csbi.dwSize.X * first_csbi.dwSize.Y;
+				FillConsoleOutputCharacter( hFirstBuffer, TEXT( '1' ), length, { 0, 0 }, &out_result );
+
+				auto hSecondBuffer = CreateConsoleScreenBuffer(
+					GENERIC_READ | GENERIC_WRITE
+					, FILE_SHARE_WRITE | FILE_SHARE_READ
+					, nullptr
+					, CONSOLE_TEXTMODE_BUFFER
+					, nullptr
+				);
+				SetConsoleScreenBufferSize( hSecondBuffer, first_csbi.dwSize );
+				CONSOLE_SCREEN_BUFFER_INFO second_csbi;
+				assert( GetConsoleScreenBufferInfo( hSecondBuffer, &second_csbi ) && "Failed : GetConsoleScreenBufferInfo" );
+				FillConsoleOutputCharacter( hSecondBuffer, TEXT( '2' ), length, { 0, 0 }, &out_result );
+
+				bool bUseFirst = true;
+				bool process = true;
+				do
 				{
-					int pixel = 0;
-
-					for( double i = 0; i < 3.141592 * 4; i += 0.05 )
-					{
-						SetPixel( dc, pixel, (int)( 70 + 25 * sin( i ) ), COLOR );
-						pixel += 1;
-					}
-
 					if( _kbhit() )
 					{
-						if( 27 == _getch() )
+						switch( _getch() )
 						{
+						case 27: // ESC
+							process = false;
 							break;
 						}
 					}
-				}
 
-				ReleaseDC( console_window, dc );
+					if( bUseFirst )
+					{
+						SetConsoleActiveScreenBuffer( hFirstBuffer );
+					}
+					else
+					{
+						SetConsoleActiveScreenBuffer( hSecondBuffer );
+					}
+
+					bUseFirst = !bUseFirst;
+				} while( process );
 			}
+
+			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest_Without_Pause;
 		};
