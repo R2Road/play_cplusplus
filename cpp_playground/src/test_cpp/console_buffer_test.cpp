@@ -43,8 +43,11 @@ namespace console_buffer_test
 			std::cout << r2::split;
 
 			std::cout << r2::tab << "+ Upcoming Process : Fill All Buffer" << r2::linefeed2;
-			std::cout << r2::tab2 << "FillConsoleOutputCharacter( hStdout, TEXT( '#' ), length, topLeft, &out_result );" << r2::linefeed;
-			std::cout << r2::tab2 << "FillConsoleOutputAttribute( hStdout, cs_buffer_info.wAttributes, length, topLeft, &out_result );" << r2::linefeed;
+			std::cout << r2::tab2 << "FillConsoleOutputCharacter( hStdout, TEXT( '#' ), length, topLeft, &out_result );" << r2::linefeed2;
+			std::cout << r2::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_BLUE, length, topLeft, &out_result );" << r2::linefeed;
+			std::cout << r2::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_GREEN, length / 2, topLeft, &out_result );" << r2::linefeed;
+			std::cout << r2::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_RED, length / 3, topLeft, &out_result );" << r2::linefeed;
+			std::cout << r2::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_INTENSITY, length / 4, topLeft, &out_result );" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -58,7 +61,10 @@ namespace console_buffer_test
 
 				// Reset the attributes of every character to the default.
 				// This clears all background colour formatting, if any.
-				FillConsoleOutputAttribute( hStdout, FOREGROUND_BLUE, length / 2, topLeft, &out_result );
+				FillConsoleOutputAttribute( hStdout, FOREGROUND_BLUE, length, topLeft, &out_result );
+				FillConsoleOutputAttribute( hStdout, FOREGROUND_GREEN, length / 2, topLeft, &out_result );
+				FillConsoleOutputAttribute( hStdout, FOREGROUND_RED, length / 3, topLeft, &out_result );
+				FillConsoleOutputAttribute( hStdout, FOREGROUND_INTENSITY, length / 4, topLeft, &out_result );
 			}
 
 			std::cout << r2::tab << "Press Key : Rollback" << r2::linefeed;
