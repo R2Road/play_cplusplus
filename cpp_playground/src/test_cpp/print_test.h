@@ -12,6 +12,13 @@ namespace print_test
 		DoFunc GetDoFunction() override;
 	};
 
+	class ShowNumbers : public r2::iTest, public r2::SingleTon<ShowNumbers>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
 	class BoolAlpha : public r2::iTest, public r2::SingleTon<BoolAlpha>
 	{
 	public:

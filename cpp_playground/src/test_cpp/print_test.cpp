@@ -35,6 +35,27 @@ namespace print_test
 
 			std::cout << r2::split;
 
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc ShowNumbers::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Print : Number";
+		};
+	}
+	r2::iTest::DoFunc ShowNumbers::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
 			{
 				std::cout << r2::tab << "+ Show Number : Use std::cout" << r2::linefeed << r2::linefeed;
 
@@ -107,6 +128,7 @@ namespace print_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
 
 
 	r2::iTest::TitleFunc BoolAlpha::GetTitleFunction() const

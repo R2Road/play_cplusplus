@@ -179,9 +179,10 @@ namespace r2
 				}
 			);
 			ret->AddChild( 'd', print_test::Basic::GetInstance() );
-			ret->AddChild( 'f', print_test::BoolAlpha::GetInstance() );
+			ret->AddChild( 'f', print_test::ShowNumbers::GetInstance() );
+			ret->AddChild( 'g', print_test::BoolAlpha::GetInstance() );
 			ret->AddChild(
-				'g'
+				'h'
 				, []()->const char* { return r2::CharMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
