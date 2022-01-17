@@ -41,8 +41,7 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu(
 			director
 			, GetTitle()
-			, "> Inprogress : Double Buffering"
-			"\n" "> To do : Vector3"
+			, "\n" "> To do : Vector3"
 			"\n" "> To do : Encoding"
 			"\n" "> To do : Infinite Number"
 			"\n" "> To do : Thread"
