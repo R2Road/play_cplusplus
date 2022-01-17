@@ -46,6 +46,7 @@ namespace r2
 			ret->AddChild( 'y', console_text_color_test::TextColor3::GetInstance() );
 
 			ret->AddLineFeed();
+			ret->AddLineFeed();
 
 			ret->AddChild( 'a', console_test::FontInfo::GetInstance() );
 			ret->AddChild( 's', console_test::FontChange::GetInstance() );
