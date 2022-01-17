@@ -8,6 +8,55 @@
 
 namespace console_test
 {
+	r2::iTest::TitleFunc FontInfo::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Font Info";
+		};
+	}
+	r2::iTest::DoFunc FontInfo::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			CONSOLE_FONT_INFOEX cfie;
+			cfie.cbSize = sizeof( CONSOLE_FONT_INFOEX );
+			GetCurrentConsoleFontEx( GetStdHandle( STD_OUTPUT_HANDLE ), 0, &cfie );
+
+			std::cout << r2::tab << "+ Declartion" << r2::linefeed2;
+			std::cout << r2::tab2 << "CONSOLE_FONT_INFOEX cfie;" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			// https://docs.microsoft.com/ko-kr/windows/console/console-font-infoex
+			std::cout << r2::tab << "+ Process" << r2::linefeed2;
+			std::cout << r2::tab2 << "cfie.cbSize = sizeof( CONSOLE_FONT_INFOEX );" << r2::tab << "<===== Need This" << r2::linefeed;
+			std::cout << r2::tab2 << "GetCurrentConsoleFontEx( GetStdHandle( STD_OUTPUT_HANDLE ), 0, &cfie );" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Font Info" << r2::linefeed2;
+				std::cout << r2::tab2 << "cfie.dwFontSize.X : " << cfie.dwFontSize.X << r2::linefeed;
+				std::cout << r2::tab2 << "cfie.dwFontSize.Y : " << cfie.dwFontSize.Y << r2::linefeed;
+				std::cout << r2::tab2 << "cfie.FontFamily : " << cfie.FontFamily << r2::linefeed;
+				std::cout << r2::tab2 << "cfie.FontWeight : " << cfie.FontWeight << r2::linefeed;
+				std::cout << r2::tab2 << "cfie.nFont : " << cfie.nFont << r2::linefeed; // 시스템의 콘솔 글꼴 테이블에 있는 글꼴의 인덱스입니다.
+
+				std::wcout.imbue( std::locale( "kor" ) );
+				std::wcout << r2::tab2 << "cfie.FaceName : " << cfie.FaceName << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
 	r2::iTest::TitleFunc Pixel::GetTitleFunction() const
 	{
 		return []()->const char*

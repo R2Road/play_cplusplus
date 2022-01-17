@@ -40,12 +40,14 @@ namespace r2
 			ret->AddChild( 'e', console_text_color_test::TextColor2::GetInstance() );
 			ret->AddChild( 'r', console_text_color_test::AdjustColorTable::GetInstance() );
 
-
 			ret->AddLineFeed();
-
 
 			ret->AddChild( 't', console_text_color_test::ColorTable2::GetInstance() );
 			ret->AddChild( 'y', console_text_color_test::TextColor3::GetInstance() );
+
+			ret->AddLineFeed();
+
+			ret->AddChild( 'u', console_test::FontInfo::GetInstance() );
 
 
 			ret->AddLineFeed();
