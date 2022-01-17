@@ -38,16 +38,16 @@ namespace print_test
 			{
 				std::cout << r2::tab << "+ Show String : Use std::cout.write" << r2::linefeed << r2::linefeed;
 
-				const char* str = "111111122222223333333";
+				const char* str = "1111111222222233333334";
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const char* str = \"111111122222223333333\";" << r2::linefeed2;
+				std::cout << r2::tab2 << "const char* str = \"1111111222222233333334\";" << r2::linefeed2;
 
 				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "std::cout.write( str, 10ll );" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::cout.write( str, strlen( str ) / 2 );" << r2::linefeed2;
 
 				std::cout << r2::tab2;
-				std::cout.write( str, 10ll );
+				std::cout.write( str, strlen( str ) / 2 );
 				std::cout << r2::linefeed;
 			}
 
