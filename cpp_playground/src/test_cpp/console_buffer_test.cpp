@@ -55,12 +55,8 @@ namespace console_buffer_test
 
 			if( _getch() )
 			{
-
-				// Flood-fill the console with spaces to clear it
 				FillConsoleOutputCharacter( hStdout, TEXT( '#' ), length, topLeft, &out_result );
 
-				// Reset the attributes of every character to the default.
-				// This clears all background colour formatting, if any.
 				FillConsoleOutputAttribute( hStdout, FOREGROUND_BLUE, length, topLeft, &out_result );
 				FillConsoleOutputAttribute( hStdout, FOREGROUND_GREEN, length / 2, topLeft, &out_result );
 				FillConsoleOutputAttribute( hStdout, FOREGROUND_RED, length / 3, topLeft, &out_result );
