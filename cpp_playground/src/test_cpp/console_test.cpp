@@ -160,7 +160,7 @@ namespace console_test
 				HDC dc = GetDC( console_window );
 
 				COORD pivot_pos{ 0, 100 };
-				COLORREF COLOR = RGB( 255, 100, 100 );
+				COLORREF pixel_color = RGB( 255, 100, 100 );
 				int current_x = 0;
 				while( true )
 				{
@@ -168,7 +168,7 @@ namespace console_test
 
 					for( double i = 0; i < 3.141592 * 4; i += 0.05 )
 					{
-						SetPixel( dc, current_x, (int)( pivot_pos.Y + ( 35 * sin( i ) ) ), COLOR );
+						SetPixel( dc, current_x, (int)( pivot_pos.Y + ( 35 * sin( i ) ) ), pixel_color );
 						current_x += 1;
 					}
 
