@@ -161,14 +161,15 @@ namespace console_test
 
 				COORD pos{ 0, 100 };
 				COLORREF COLOR = RGB( 255, 100, 100 );
+				int current_x = 0;
 				while( true )
 				{
-					int pixel = pos.X;
+					current_x = pos.X;
 
 					for( double i = 0; i < 3.141592 * 4; i += 0.05 )
 					{
-						SetPixel( dc, pixel, (int)( pos.Y + ( 35 * sin( i ) ) ), COLOR );
-						pixel += 1;
+						SetPixel( dc, current_x, (int)( pos.Y + ( 35 * sin( i ) ) ), COLOR );
+						current_x += 1;
 					}
 
 					if( _kbhit() )
