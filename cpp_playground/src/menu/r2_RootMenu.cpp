@@ -27,7 +27,7 @@
 #include "r2_CharMenu.h"
 #include "r2_STDMenu.h"
 
-#include "test_cpp/key_test.h"
+#include "test_cpp/console_input_test.h"
 #include "r2_ETCMenu.h"
 #include "r2_MathMenu.h"
 #include "r2_PerformanceMenu.h"
@@ -195,7 +195,7 @@ namespace r2
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'z', key_test::Basic::GetInstance() );
+			ret->AddChild( 'z', console_input_test::Basic::GetInstance() );
 			ret->AddChild(
 				'x'
 				, []()->const char* { return r2::ETCMenu::GetTitle(); }

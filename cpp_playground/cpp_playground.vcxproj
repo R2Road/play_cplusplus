@@ -59,6 +59,7 @@
     <ClCompile Include="src\test_algorithm\algorithm_maze_test.cpp" />
     <ClCompile Include="src\test_algorithm\algorithm_selection_sort_test.cpp" />
     <ClCompile Include="src\test_cpp\console_buffer_test.cpp" />
+    <ClCompile Include="src\test_cpp\console_input_test.cpp" />
     <ClCompile Include="src\test_cpp\console_text_color_test.cpp" />
     <ClCompile Include="src\test_cpp\console_window_test.cpp" />
     <ClCompile Include="src\test_cpp\numeric_test.cpp" />
@@ -74,7 +75,6 @@
     <ClCompile Include="src\test_cpp\etc_0_test.cpp" />
     <ClCompile Include="src\test_cpp\filesystem_test.cpp" />
     <ClCompile Include="src\test_cpp\infinite_number_test.cpp" />
-    <ClCompile Include="src\test_cpp\key_test.cpp" />
     <ClCompile Include="src\test_cpp\korean_test.cpp" />
     <ClCompile Include="src\test_cpp\lambda_test.cpp" />
     <ClCompile Include="src\test_cpp\locale_test.cpp" />
@@ -148,6 +148,7 @@
     <ClInclude Include="src\test_algorithm\algorithm_maze_test.h" />
     <ClInclude Include="src\test_algorithm\algorithm_selection_sort_test.h" />
     <ClInclude Include="src\test_cpp\console_buffer_test.h" />
+    <ClInclude Include="src\test_cpp\console_input_test.h" />
     <ClInclude Include="src\test_cpp\console_text_color_test.h" />
     <ClInclude Include="src\test_cpp\console_window_test.h" />
     <ClInclude Include="src\test_cpp\numeric_test.h" />
@@ -163,7 +164,6 @@
     <ClInclude Include="src\test_cpp\etc_0_test.h" />
     <ClInclude Include="src\test_cpp\filesystem_test.h" />
     <ClInclude Include="src\test_cpp\infinite_number_test.h" />
-    <ClInclude Include="src\test_cpp\key_test.h" />
     <ClInclude Include="src\test_cpp\korean_test.h" />
     <ClInclude Include="src\test_cpp\lambda_test.h" />
     <ClInclude Include="src\test_cpp\locale_test.h" />

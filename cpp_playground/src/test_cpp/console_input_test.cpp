@@ -1,11 +1,11 @@
 #include "pch.h"
-#include "key_test.h"
+#include "console_input_test.h"
 
 #include <conio.h>
 
 #include "base/r2_eTestResult.h"
 
-namespace key_test
+namespace console_input_test
 {
 	r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
