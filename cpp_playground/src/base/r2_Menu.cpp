@@ -6,6 +6,11 @@
 #include "r2_eTestResult.h"
 #include "r2_iTest.h"
 
+namespace
+{
+	const char KeyCode4LineFeed = 64;
+}
+
 namespace r2
 {
 	Menu::Menu( Director& director, const char* title_string, const char* description_string ) :
@@ -53,7 +58,7 @@ namespace r2
 				std::cout << r2::split;
 				continue;
 			}
-			if( 64 == t.KeyCode ) // @
+			if( KeyCode4LineFeed == t.KeyCode ) // @
 			{
 				std::cout << r2::linefeed;
 				continue;
@@ -111,7 +116,7 @@ namespace r2
 		static const std::function<const char*()> func_title = []()->const char* { return ""; };
 		static const std::function<const r2::eTestResult()> func_test = []()->const r2::eTestResult { return r2::eTestResult::RunTest; };
 
-		mTests.push_back( { 64, func_title, func_test } );
+		mTests.push_back( { KeyCode4LineFeed, func_title, func_test } );
 	}
 	void Menu::AddSplit()
 	{
