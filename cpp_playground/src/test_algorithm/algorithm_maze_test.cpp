@@ -15,6 +15,8 @@ namespace
 
 		std::cout << "# " << algorithm_maze_test::Basic::GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
+		std::cout << r2::split;
+
 		int x = 0;
 		for( const auto i : grid )
 		{
@@ -29,6 +31,7 @@ namespace
 			++x;
 		}
 
+		std::cout << r2::linefeed;
 		std::cout << r2::split;
 	}
 }
@@ -46,10 +49,6 @@ namespace algorithm_maze_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2::linefeed;
-
-			std::cout << r2::split;
-
 			struct Cell
 			{
 				r2::Direction4 direction;
@@ -87,8 +86,6 @@ namespace algorithm_maze_test
 					ShowGrid( grid );
 				}
 			}
-
-			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
