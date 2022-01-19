@@ -145,10 +145,10 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
-			ret->AddChild( 't', structured_binding_test::Basic::GetInstance() );			
-			ret->AddChild( 'y', assert_test::Basic::GetInstance() );
+			ret->AddChild( 'w', structured_binding_test::Basic::GetInstance() );			
+			ret->AddChild( 'e', assert_test::Basic::GetInstance() );
 			ret->AddChild(
-				'u'
+				'r'
 				, []()->const char* { return r2::ThreadMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
