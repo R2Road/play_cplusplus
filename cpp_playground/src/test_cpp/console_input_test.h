@@ -11,4 +11,11 @@ namespace console_input_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class EnableWindowInput : public r2::iTest, public r2::SingleTon<EnableWindowInput>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

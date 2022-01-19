@@ -42,4 +42,29 @@ namespace console_input_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc EnableWindowInput::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Enable Window Input";
+		};
+	}
+	r2::iTest::DoFunc EnableWindowInput::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+
+			std::cout << r2::split;
+
+			{}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
