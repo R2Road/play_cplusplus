@@ -180,6 +180,13 @@ namespace console_buffer_test
 
 					bUseFirst = !bUseFirst;
 				} while( process );
+
+				//
+				// Rollback
+				//
+				{
+					SetConsoleActiveScreenBuffer( hFirstBuffer );
+				}
 			}
 
 			std::cout << r2::split;
