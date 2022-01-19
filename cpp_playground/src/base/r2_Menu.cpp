@@ -8,7 +8,8 @@
 
 namespace
 {
-	const char KeyCode4LineFeed = 64;
+	const char KeyCode4LineFeed = 64; // @
+	const char KeyCode4Split = 42; // *
 }
 
 namespace r2
@@ -53,7 +54,7 @@ namespace r2
 			//
 			// Key
 			//
-			if( 42 == t.KeyCode ) // *
+			if( KeyCode4Split == t.KeyCode ) // *
 			{
 				std::cout << r2::split;
 				continue;
@@ -123,6 +124,6 @@ namespace r2
 		static const std::function<const char*( )> func_title = []()->const char* { return ""; };
 		static const std::function<const r2::eTestResult()> func_test = []()->const r2::eTestResult { return r2::eTestResult::RunTest; };
 
-		mTests.push_back( { 42, func_title, func_test } );
+		mTests.push_back( { KeyCode4Split, func_title, func_test } );
 	}
 }
