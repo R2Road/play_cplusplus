@@ -450,8 +450,12 @@ namespace console_window_test
 
 			{
 				std::cout << r2::tab << "+ Process : Close Button Grayed" << r2::linefeed2;
-				std::cout << r2::tab2 << "EnableMenuItem( hmenu, SC_CLOSE, MF_GRAYED );" << r2::linefeed2;
+				std::cout << r2::tab2 << "EnableMenuItem( hmenu, SC_CLOSE, MF_GRAYED );" << r2::linefeed;
+			}
 
+			std::cout << r2::split;
+
+			{
 				std::cout << r2::tab << "Press Any Key : Do" << r2::linefeed;
 				_getch();
 
@@ -460,17 +464,19 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
-			std::cout << r2::tab << "Press Any Key : Rollback" << r2::linefeed;
-			_getch();
+			{
+				std::cout << r2::tab << "Press Any Key : Rollback" << r2::linefeed;
+				_getch();
+
+				//
+				// Rollback
+				//
+				{
+					EnableMenuItem( hmenu, SC_CLOSE, MF_ENABLED );
+				}
+			}
 
 			std::cout << r2::split;
-
-			//
-			// Rollback
-			//
-			{
-				EnableMenuItem( hmenu, SC_CLOSE, MF_ENABLED );
-			}
 
 			return r2::eTestResult::RunTest;
 		};
