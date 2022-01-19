@@ -54,6 +54,13 @@ namespace console_window_test
 		DoFunc GetDoFunction() override;
 	};
 
+	class MenuItem : public r2::iTest, public r2::SingleTon<MenuItem>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
 
 
 	class CursorMove : public r2::iTest, public r2::SingleTon<CursorMove>

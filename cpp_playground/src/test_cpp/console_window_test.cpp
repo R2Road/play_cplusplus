@@ -425,6 +425,59 @@ namespace console_window_test
 	}
 
 
+
+	r2::iTest::TitleFunc MenuItem::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Menu Item";
+		};
+	}
+	r2::iTest::DoFunc MenuItem::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			HMENU hmenu = GetSystemMenu( GetConsoleWindow(), FALSE );
+
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "HMENU hmenu = GetSystemMenu( GetConsoleWindow(), FALSE );" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Process : Close Button Grayed" << r2::linefeed2;
+				std::cout << r2::tab2 << "EnableMenuItem( hmenu, SC_CLOSE, MF_GRAYED );" << r2::linefeed2;
+
+				std::cout << r2::tab << "Press Any Key : Do" << r2::linefeed;
+				_getch();
+
+				EnableMenuItem( hmenu, SC_CLOSE, MF_GRAYED );
+			}
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "Press Any Key : Rollback" << r2::linefeed;
+			_getch();
+
+			std::cout << r2::split;
+
+			//
+			// Rollback
+			//
+			{
+				EnableMenuItem( hmenu, SC_CLOSE, MF_ENABLED );
+			}
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc CursorMove::GetTitleFunction() const
 	{
 		return []()->const char*
