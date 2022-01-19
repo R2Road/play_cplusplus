@@ -49,8 +49,9 @@ namespace r2
 		) );
 
 		{
+			ret->AddChild( '1', console_input_test::Basic::GetInstance() );
 			ret->AddChild(
-				'1'
+				'2'
 				, []()->const char* { return ConsoleMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -59,7 +60,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'2'
+				'3'
 				, []()->const char* { return r2::FileSystemMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -68,7 +69,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'3'
+				'4'
 				, []()->const char* { return r2::PointerMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -77,7 +78,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'4'
+				'5'
 				, []()->const char* { return r2::RandomMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -86,7 +87,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'5'
+				'6'
 				, []()->const char* { return r2::TemplateMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -95,7 +96,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'6'
+				'7'
 				, []()->const char* { return r2::AlignMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -104,7 +105,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'7'
+				'8'
 				, []()->const char* { return r2::MemoryMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -113,7 +114,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'8'
+				'9'
 				, []()->const char* { return r2::EnumMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -122,7 +123,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'9'
+				'0'
 				, []()->const char* { return r2::TimeMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -195,9 +196,8 @@ namespace r2
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'z', console_input_test::Basic::GetInstance() );
 			ret->AddChild(
-				'x'
+				'z'
 				, []()->const char* { return r2::ETCMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -206,7 +206,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'c'
+				'x'
 				, []()->const char* { return r2::MathMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -215,7 +215,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'v'
+				'c'
 				, []()->const char* { return r2::PerformanceMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
