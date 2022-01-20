@@ -137,7 +137,7 @@ namespace console_input_test
 						switch( input_records[i].EventType )
 						{
 						case KEY_EVENT: // keyboard input
-							std::cout << "KEY_EVENT" << r2::linefeed;
+							std::cout << "================== KEY_EVENT ==================" << r2::linefeed;
 							std::cout << "input_records[i].EventType : " << input_records[i].EventType << r2::linefeed;
 							std::cout << "input_records[i].Event.KeyEvent.wVirtualKeyCode : " << input_records[i].Event.KeyEvent.wVirtualKeyCode << r2::linefeed;
 							std::cout << "input_records[i].Event.KeyEvent.wVirtualScanCode : " << input_records[i].Event.KeyEvent.wVirtualScanCode << r2::linefeed;
@@ -145,6 +145,7 @@ namespace console_input_test
 							std::cout << "input_records[i].Event.KeyEvent.wRepeatCount : " << input_records[i].Event.KeyEvent.wRepeatCount << r2::linefeed;
 							std::cout << "input_records[i].Event.KeyEvent.dwControlKeyState : " << input_records[i].Event.KeyEvent.dwControlKeyState << r2::linefeed;
 							std::cout << "input_records[i].Event.KeyEvent.bKeyDown : " << input_records[i].Event.KeyEvent.bKeyDown << r2::linefeed;
+							std::cout << "===============================================" << r2::linefeed;
 
 							if( 27 == input_records[i].Event.KeyEvent.wVirtualKeyCode )
 							{
