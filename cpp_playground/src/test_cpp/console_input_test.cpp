@@ -132,7 +132,7 @@ namespace console_input_test
 						assert( false && "ReadConsoleInput" );
 					}
 
-					for( int i = 0; current_record_count > i; ++i )
+					for( DWORD i = 0; current_record_count > i; ++i )
 					{
 						switch( input_records[i].EventType )
 						{
