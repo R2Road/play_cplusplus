@@ -111,6 +111,71 @@ namespace console_input_test
 			std::cout << r2::split;
 
 			{
+				//
+				// # REF
+				// https://docs.microsoft.com/en-us/windows/console/reading-input-buffer-events?redirectedfrom=MSDN
+				//
+
+				INPUT_RECORD input_records[128];
+				DWORD current_record_count;
+				bool process = true;
+
+				do
+				{
+					if( !ReadConsoleInput(
+						hStdInputHandle				// input buffer handle
+						, input_records				// buffer to read into
+						, 128						// size of read buffer
+						, &current_record_count		// number of records read
+					) )
+					{
+						assert( false && "ReadConsoleInput" );
+					}
+
+					for( int i = 0; current_record_count > i; ++i )
+					{
+						switch( input_records[i].EventType )
+						{
+						case KEY_EVENT: // keyboard input
+							std::cout << "KEY_EVENT" << r2::linefeed;
+							std::cout << "input_records[i].Event.KeyEvent.wVirtualKeyCode : " << input_records[i].Event.KeyEvent.wVirtualKeyCode << r2::linefeed;
+							std::cout << "input_records[i].Event.KeyEvent.wVirtualScanCode : " << input_records[i].Event.KeyEvent.wVirtualScanCode << r2::linefeed;
+							std::cout << "input_records[i].Event.KeyEvent.uChar.AsciiChar : " << input_records[i].Event.KeyEvent.uChar.AsciiChar << r2::linefeed;
+
+							if( 27 == input_records[i].Event.KeyEvent.wVirtualKeyCode )
+							{
+								process = false;
+							}
+
+							break;
+
+						case MOUSE_EVENT: // mouse input
+							std::cout << "MOUSE_EVENT" << r2::linefeed;
+							break;
+
+						case WINDOW_BUFFER_SIZE_EVENT: // scrn buf. resizing
+							std::cout << "WINDOW_BUFFER_SIZE_EVENT" << r2::linefeed;
+							break;
+
+						case FOCUS_EVENT:  // disregard focus events
+							std::cout << "FOCUS_EVENT" << r2::linefeed;
+							break;
+
+						case MENU_EVENT:   // disregard menu events
+							std::cout << "MENU_EVENT" << r2::linefeed;
+							break;
+
+						default:
+							std::cout << "Unknown event type" << r2::linefeed;
+							break;
+						}
+					}
+				} while( process );
+			}
+
+			std::cout << r2::split;
+
+			{
 				std::cout << r2::tab << "Press Any Key : Rollback" << r2::linefeed;
 				_getch();
 
