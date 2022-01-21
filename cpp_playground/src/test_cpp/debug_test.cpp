@@ -1,11 +1,11 @@
 #include "pch.h"
-#include "assert_test.h"
+#include "debug_test.h"
 
 #include <cassert>
 
 #include "base/r2_eTestResult.h"
 
-namespace assert_test
+namespace debug_test
 {
 	r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{

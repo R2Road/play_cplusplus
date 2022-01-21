@@ -5,7 +5,7 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
-#include "test_cpp/assert_test.h"
+#include "test_cpp/debug_test.h"
 
 namespace r2
 {
@@ -14,8 +14,8 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', assert_test::Basic::GetInstance() );
-			ret->AddChild( '2', assert_test::DebugBreak::GetInstance() );
+			ret->AddChild( '1', debug_test::Basic::GetInstance() );
+			ret->AddChild( '2', debug_test::DebugBreak::GetInstance() );
 
 
 			ret->AddSplit();
