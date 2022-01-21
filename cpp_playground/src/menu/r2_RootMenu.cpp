@@ -5,6 +5,7 @@
 #include "base/r2_eTestResult.h"
 
 #include "r2_ConsoleMenu.h"
+#include "r2_DebugMenu.h"
 #include "r2_FileSystemMenu.h"
 #include "r2_PointerMenu.h"
 #include "r2_RandomMenu.h"
@@ -19,7 +20,6 @@
 
 #include "test_cpp/structured_binding_test.h"
 #include "test_cpp/pointer_test.h"
-#include "test_cpp/assert_test.h"
 #include "r2_ThreadMenu.h"
 
 #include "test_cpp/lambda_test.h"
@@ -146,7 +146,15 @@ namespace r2
 				}
 			);
 			ret->AddChild( 'w', structured_binding_test::Basic::GetInstance() );			
-			ret->AddChild( 'e', assert_test::Basic::GetInstance() );
+			ret->AddChild(
+				'e'
+				, []()->const char* { return r2::DebugMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::DebugMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
 			ret->AddChild(
 				'r'
 				, []()->const char* { return r2::ThreadMenu::GetTitle(); }
