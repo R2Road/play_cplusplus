@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "algorithm_maze_test.h"
 
+#include <Windows.h>
+
 #include "base/r2_eTestResult.h"
 
 #include "r2/r2_Direction4.h"
@@ -11,7 +13,7 @@ namespace
 {
 	void ShowGrid( const r2::Grid<int> grid )
 	{
-		system( "cls" );
+		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
 		std::cout << "# " << algorithm_maze_test::Basic::GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
