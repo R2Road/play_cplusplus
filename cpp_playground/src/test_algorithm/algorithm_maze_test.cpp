@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "algorithm_maze_test.h"
 
+#include <conio.h> // _kbhit(), _getch()
 #include <Windows.h>
 
 #include "base/r2_eTestResult.h"
@@ -15,7 +16,9 @@ namespace
 	{
 		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
-		std::cout << "# " << algorithm_maze_test::Basic::GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+		std::cout << "# " << algorithm_maze_test::Basic::GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+
+		std::cout << "[ANY KEY] Exit" << r2::linefeed;
 
 		std::cout << r2::split;
 
@@ -66,8 +69,9 @@ namespace algorithm_maze_test
 			{
 				grid.Set( current_point.x, current_point.y, true );
 
+				bool process = true;
 				int stay_count = 0;
-				while( 4 >= stay_count )
+				while( process && 4 >= stay_count )
 				{
 					temp_point.x = current_point.x + current_direction.GetPoint().x;
 					temp_point.y = current_point.y + current_direction.GetPoint().y;
@@ -86,6 +90,14 @@ namespace algorithm_maze_test
 					stay_count = 0;
 
 					ShowGrid( grid );
+
+					//
+					// Key
+					//
+					if( _kbhit() )
+					{
+						process = false;
+					}
 				}
 			}
 
