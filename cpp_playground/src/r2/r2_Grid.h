@@ -64,7 +64,7 @@ namespace r2
 		}
 		CellT& Get( const std::size_t x, const std::size_t y )
 		{
-			return Get( mIndexConverter.To_Linear( x, y ) );
+			return Get( mIndexConverter.To_Linear( static_cast<int>( x ), static_cast<int>( y ) ) );
 		}
 		const CellT& Get( const std::size_t linear_idx ) const
 		{
@@ -96,7 +96,7 @@ namespace r2
 		void Set( const std::size_t x, const std::size_t y, const CellT& new_value )
 		{
 			Set(
-				mIndexConverter.To_Linear( x, y )
+				mIndexConverter.To_Linear( static_cast<int>( x ), static_cast<int>( y ) )
 				, new_value
 			);
 		}
