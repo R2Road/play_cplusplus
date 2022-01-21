@@ -14,7 +14,6 @@ namespace debug_test
 			return "Assert : Basic";
 		};
 	}
-
 	r2::iTest::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestResult
