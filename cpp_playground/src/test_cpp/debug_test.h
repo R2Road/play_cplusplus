@@ -18,4 +18,11 @@ namespace debug_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class MyAssertion : public r2::iTest, public r2::SingleTon<MyAssertion>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

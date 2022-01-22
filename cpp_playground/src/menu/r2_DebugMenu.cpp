@@ -16,6 +16,7 @@ namespace r2
 		{
 			ret->AddChild( '1', debug_test::Assertion::GetInstance() );
 			ret->AddChild( '2', debug_test::DebugBreak::GetInstance() );
+			ret->AddChild( '3', debug_test::MyAssertion::GetInstance() );
 
 
 			ret->AddSplit();
