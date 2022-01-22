@@ -63,7 +63,7 @@ namespace debug_test
 
 			{
 				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "+ assert( 1 > 2 && \"What The Fuck\" );" << r2::linefeed;
+				std::cout << r2::tab2 << "assert( 1 > 2 && \"What The Fuck\" );" << r2::linefeed;
 
 				std::cout << r2::split;
 			}
@@ -92,7 +92,8 @@ namespace debug_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ __debugbreak();" << r2::linefeed;
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "__debugbreak();" << r2::linefeed;
 
 				__debugbreak();
 			}
