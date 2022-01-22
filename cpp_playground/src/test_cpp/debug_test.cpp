@@ -8,11 +8,11 @@
 
 namespace debug_test
 {
-#define ShowCodeInfo()	\
-{	\
-	std::cout << "File : " << __FILE__ << r2::linefeed;	\
+#define ShowCodeInfo()											\
+{																\
+	std::cout << "File : " << __FILE__ << r2::linefeed;			\
 	std::cout << "Function : " << __FUNCTION__ << r2::linefeed;	\
-	std::cout << "Line : " << __LINE__ << r2::linefeed;	\
+	std::cout << "Line : " << __LINE__ << r2::linefeed;			\
 }
 
 	r2::iTest::TitleFunc PredefinedMacro::GetTitleFunction() const
@@ -30,15 +30,21 @@ namespace debug_test
 
 			std::cout << r2::split;
 
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "#define ShowCodeInfo()" << r2::linefeed;
+			std::cout << r2::tab2 << "{" << r2::linefeed;
+			std::cout << r2::tab3 << "std::cout << \"File : \" << __FILE__ << r2::linefeed;" << r2::linefeed;
+			std::cout << r2::tab3 << "std::cout << \"Function : \" << __FUNCTION__ << r2::linefeed;" << r2::linefeed;
+			std::cout << r2::tab3 << "std::cout << \"Line : \" << __LINE__ << r2::linefeed;" << r2::linefeed;
+			std::cout << r2::tab2 << "}" << r2::linefeed;
+
+			std::cout << r2::split;
+
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "#define MACRO2STRING( x ) #x" << r2::linefeed;
-
-				std::cout << r2::linefeed;
-
 				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "ShowCodeInfo();" << r2::linefeed2;
+
 				ShowCodeInfo();
-				std::cout << r2::linefeed;
 			}
 
 			std::cout << r2::split;
