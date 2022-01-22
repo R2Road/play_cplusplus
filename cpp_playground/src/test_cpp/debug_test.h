@@ -5,7 +5,7 @@
 
 namespace debug_test
 {
-	class MacroShowCodeInfo : public r2::iTest, public r2::SingleTon<MacroShowCodeInfo>
+	class PredefinedMacro : public r2::iTest, public r2::SingleTon<PredefinedMacro>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

@@ -15,14 +15,14 @@ namespace debug_test
 	std::cout << "Line : " << __LINE__ << r2::linefeed;	\
 }
 
-	r2::iTest::TitleFunc MacroShowCodeInfo::GetTitleFunction() const
+	r2::iTest::TitleFunc PredefinedMacro::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Macro Show Code Info";
+			return "Predefined Macro";
 		};
 	}
-	r2::iTest::DoFunc MacroShowCodeInfo::GetDoFunction()
+	r2::iTest::DoFunc PredefinedMacro::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
