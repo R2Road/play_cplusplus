@@ -9,6 +9,7 @@
 #include "test_algorithm/algorithm_selection_sort_test.h"
 #include "test_algorithm/algorithm_insertion_sort_test.h"
 
+#include "test_algorithm/algorithm_astar_test.h"
 #include "test_algorithm/algorithm_maze_test.h"
 
 namespace r2
@@ -30,6 +31,7 @@ namespace r2
 
 
 			ret->AddChild( 'q', algorithm_maze_test::Basic::GetInstance() );
+			ret->AddChild( 'w', algorithm_astar_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();

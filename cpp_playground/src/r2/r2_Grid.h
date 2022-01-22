@@ -1,5 +1,6 @@
 #pragma once
 
+#include <algorithm>
 #include <vector>
 
 #include "r2_GridIndexConverter.h"
@@ -47,6 +48,14 @@ namespace r2
 			mContainer.resize( mWidth *  mHeight );
 
 			mIndexConverter = r2::GridIndexConverter( static_cast<int>( mWidth ), static_cast<int>( mHeight ) );
+		}
+		void Reset( const std::size_t new_width, const std::size_t new_height, const std::initializer_list<CellT> data )
+		{
+			Reset( new_width, new_height );
+			memcpy_s(
+				&mContainer[0], mContainer.size() * sizeof( CellT )
+				, &( *data.begin() ), min( data.size() * sizeof( CellT ), mContainer.size() * sizeof( CellT ) )
+			);
 		}
 
 		//
