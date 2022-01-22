@@ -2,11 +2,50 @@
 #include "debug_test.h"
 
 #include <cassert>
+#include <Windows.h>
 
 #include "base/r2_eTestResult.h"
 
 namespace debug_test
 {
+	r2::iTest::TitleFunc OutPutDebugString::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "OutPutDebugString";
+		};
+	}
+	r2::iTest::DoFunc OutPutDebugString::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "OutputDebugStringW( L\"What The Fuck\" );" << r2::linefeed;
+
+				OutputDebugStringW( L"What The Fuck" );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Has Some Problem" << r2::linefeed2;
+				std::cout << r2::tab2 << "C1189 : #include <debugapi.h>" << r2::linefeed;
+				std::cout << r2::tab2 << "use <Windows.h> instead <debugapi.h>" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc Assertion::GetTitleFunction() const
 	{
 		return []()->const char*

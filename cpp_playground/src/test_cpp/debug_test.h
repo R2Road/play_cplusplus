@@ -5,6 +5,13 @@
 
 namespace debug_test
 {
+	class OutPutDebugString : public r2::iTest, public r2::SingleTon<OutPutDebugString>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
 	class Assertion : public r2::iTest, public r2::SingleTon<Assertion>
 	{
 	public:
