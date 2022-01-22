@@ -14,10 +14,11 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', debug_test::OutPutDebugString::GetInstance() );
-			ret->AddChild( '2', debug_test::Assertion::GetInstance() );
-			ret->AddChild( '3', debug_test::DebugBreak::GetInstance() );
-			ret->AddChild( '4', debug_test::MyAssertion::GetInstance() );
+			ret->AddChild( '1', debug_test::MacroShowCodeInfo::GetInstance() );
+			ret->AddChild( '2', debug_test::OutPutDebugString::GetInstance() );
+			ret->AddChild( '3', debug_test::Assertion::GetInstance() );
+			ret->AddChild( '4', debug_test::DebugBreak::GetInstance() );
+			ret->AddChild( '5', debug_test::MyAssertion::GetInstance() );
 
 
 			ret->AddSplit();

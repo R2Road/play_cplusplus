@@ -5,6 +5,13 @@
 
 namespace debug_test
 {
+	class MacroShowCodeInfo : public r2::iTest, public r2::SingleTon<MacroShowCodeInfo>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
 	class OutPutDebugString : public r2::iTest, public r2::SingleTon<OutPutDebugString>
 	{
 	public:

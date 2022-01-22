@@ -25,12 +25,6 @@ namespace etc_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
-	class MacroShowCodeInfo : public r2::iTest, public r2::SingleTon<MacroShowCodeInfo>
-	{
-	public:
-		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
-	};
 
 	class Pointer2Index : public r2::iTest, public r2::SingleTon<Pointer2Index>
 	{
