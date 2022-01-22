@@ -62,11 +62,13 @@ namespace debug_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ assert( 1 > 2 && \"What The Fuck\" );" << r2::linefeed << r2::linefeed;
-				assert( 1 > 2 && "What The Fuck" );
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "+ assert( 1 > 2 && \"What The Fuck\" );" << r2::linefeed;
+
+				std::cout << r2::split;
 			}
 
-			std::cout << r2::split;
+			assert( 1 > 2 && "What The Fuck" );
 
 			return r2::eTestResult::RunTest;
 		};
