@@ -7,14 +7,14 @@
 
 namespace debug_test
 {
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iTest::TitleFunc Assertion::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Assert : Basic";
+			return "Assert";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2::iTest::DoFunc Assertion::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

@@ -5,7 +5,7 @@
 
 namespace debug_test
 {
-	class Basic : public r2::iTest, public r2::SingleTon<Basic>
+	class Assertion : public r2::iTest, public r2::SingleTon<Assertion>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

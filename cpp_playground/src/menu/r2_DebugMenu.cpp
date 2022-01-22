@@ -14,7 +14,7 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', debug_test::Basic::GetInstance() );
+			ret->AddChild( '1', debug_test::Assertion::GetInstance() );
 			ret->AddChild( '2', debug_test::DebugBreak::GetInstance() );
 
 
