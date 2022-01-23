@@ -11,7 +11,7 @@
 
 namespace
 {
-	void ShowGrid( const r2::Grid<int> grid )
+	void ShowGrid( const r2::Grid<int>& grid )
 	{
 		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
