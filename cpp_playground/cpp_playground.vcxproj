@@ -94,6 +94,7 @@
     <ClCompile Include="src\test_cpp\std_function_2_test.cpp" />
     <ClCompile Include="src\test_cpp\std_function_test.cpp" />
     <ClCompile Include="src\test_cpp\std_array_test.cpp" />
+    <ClCompile Include="src\test_cpp\std_list_test.cpp" />
     <ClCompile Include="src\test_cpp\string_view_test.cpp" />
     <ClCompile Include="src\test_cpp\structured_binding_test.cpp" />
     <ClCompile Include="src\test_cpp\struct_member_alignment_test.cpp" />
@@ -187,6 +188,7 @@
     <ClInclude Include="src\test_cpp\std_function_2_test.h" />
     <ClInclude Include="src\test_cpp\std_function_test.h" />
     <ClInclude Include="src\test_cpp\std_array_test.h" />
+    <ClInclude Include="src\test_cpp\std_list_test.h" />
     <ClInclude Include="src\test_cpp\string_view_test.h" />
     <ClInclude Include="src\test_cpp\structured_binding_test.h" />
     <ClInclude Include="src\test_cpp\struct_member_alignment_test.h" />

@@ -6,6 +6,7 @@
 #include "r2_RootMenu.h"
 
 #include "test_cpp/std_array_test.h"
+#include "test_cpp/std_list_test.h"
 #include "test_cpp/std_vector_test.h"
 
 namespace r2
@@ -17,7 +18,8 @@ namespace r2
 		{
 			ret->AddChild( '1', std_array_test::Basic::GetInstance() );
 			ret->AddChild( '2', std_array_test::Fill::GetInstance() );
-			ret->AddChild( '3', std_vector_test::Basic::GetInstance() );
+			ret->AddChild( '3', std_list_test::Splice::GetInstance() );
+			ret->AddChild( '4', std_vector_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
