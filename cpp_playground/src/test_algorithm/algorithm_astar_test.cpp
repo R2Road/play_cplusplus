@@ -31,7 +31,14 @@ namespace
 				std::cout << r2::linefeed;
 			}
 
-			std::cout << i;
+			if( 0 == i )
+			{
+				std::cout << "  ";
+			}
+			else
+			{
+				std::cout << "@ ";
+			}
 
 			++x;
 		}
