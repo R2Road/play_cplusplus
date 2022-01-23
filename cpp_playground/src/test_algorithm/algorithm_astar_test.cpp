@@ -8,6 +8,7 @@
 #include "algorithm/r2algorithm_AStarPathBuilder.h"
 #include "r2/r2_Grid.h"
 #include "r2/r2_Point.h"
+#include "util/r2util_StopWatch.h"
 
 namespace
 {
@@ -113,18 +114,24 @@ namespace algorithm_astar_test
 
 			ShowGrid( grid );
 
+			r2util::StopWatch stop_watch;
 			{
 				//
 				// Build
 				//
 				std::list<r2::Point> result_path;
+
+				stop_watch.Start();
 				r2algorithm::AStarPathBuilder::Build( entry_point, exit_point, grid, &result_path );
+				stop_watch.Stop();
 
 				//
 				// Show Path
 				//
 				ShowPath( entry_point, exit_point, result_path );
 			}
+			stop_watch.PrintLog_All();
+			std::cout << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
 		};
