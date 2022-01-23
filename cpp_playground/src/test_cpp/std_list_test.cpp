@@ -112,6 +112,31 @@ namespace std_list_test
 
 			std::cout << r2::split;
 
+			{
+				//container_2.splice( container_2.begin(), container_1, container_1.end() );
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed;
+				std::cout << r2::tab2 << "container_2.splice( container_2.begin(), container_1, container_1.end() );" << r2::linefeed2;
+
+				//std::cout << r2::tab << "+ Result" << r2::linefeed;
+				//std::cout << r2::tab2 << "- container_1 : ";
+				//for( const auto i : container_1 )
+				//{
+				//	std::cout << i << " ";
+				//}
+				//std::cout << r2::linefeed;
+				//std::cout << r2::tab2 << "- container_2 : ";
+				//for( const auto i : container_2 )
+				//{
+				//	std::cout << i << " ";
+				//}
+				//std::cout << r2::linefeed2;
+
+				std::cout << r2::tab << "Message : Debug Mode Not Working, Release Mode Working" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
