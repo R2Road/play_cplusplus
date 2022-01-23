@@ -139,14 +139,14 @@ namespace algorithm_astar_test
 
 
 
-	r2::iTest::TitleFunc Basic2::GetTitleFunction() const
+	r2::iTest::TitleFunc UseSTDListSplice::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "A Star : Basic 2 : use std::list::splice";
+			return "A Star : use std::list::splice";
 		};
 	}
-	r2::iTest::DoFunc Basic2::GetDoFunction()
+	r2::iTest::DoFunc UseSTDListSplice::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

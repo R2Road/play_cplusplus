@@ -12,7 +12,7 @@ namespace algorithm_astar_test
 		DoFunc GetDoFunction() override;
 	};
 
-	class Basic2 : public r2::iTest, public r2::SingleTon<Basic2>
+	class UseSTDListSplice : public r2::iTest, public r2::SingleTon<UseSTDListSplice>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
