@@ -401,7 +401,7 @@ namespace r2algorithm
 
 	void AStarPathBuilder_UseCostMap::Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::vector<r2::Point>* out_result_path )
 	{
-		r2::Grid<Node4AStar> cost_map( grid.GetWidth(), grid.GetHeight(), Node4AStar( {}, {}, {}, {} ) );
+		r2::Grid<Node4AStar> cost_map( grid.GetWidth(), grid.GetHeight(), Node4AStar() );
 		using TargetContainerT = std::list<r2::Point>;
 		TargetContainerT open_list;
 		TargetContainerT close_list;
@@ -463,16 +463,7 @@ namespace r2algorithm
 					continue;
 				}
 
-				if( open_list.end() != std::find_if( open_list.begin(), open_list.end(), [temp_point]( const r2::Point& other_point )->bool {
-					return other_point == temp_point;
-				} ) )
-				{
-					continue;
-				}
-
-				if( close_list.end() != std::find_if( close_list.begin(), close_list.end(), [temp_point]( const r2::Point& other_point )->bool {
-					return other_point == temp_point;
-				} ) )
+				if( Node4AStar::eStatus::None != cost_map.Get( temp_point.x, temp_point.y ).GetStatus() )
 				{
 					continue;
 				}
