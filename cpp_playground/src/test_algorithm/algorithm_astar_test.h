@@ -25,4 +25,11 @@ namespace algorithm_astar_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class UseCostMap : public r2::iTest, public r2::SingleTon<UseCostMap>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

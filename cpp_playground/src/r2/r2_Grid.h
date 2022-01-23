@@ -23,6 +23,13 @@ namespace r2
 			, mIndexConverter( 1, 1 )
 		{}
 
+		Grid( const std::size_t new_width, const std::size_t new_height, const CellT value ) :
+			mWidth( new_width )
+			, mHeight( new_height )
+			, mContainer( new_width * new_height, value )
+			, mIndexConverter( static_cast<int>( new_width ), static_cast<int>( new_height ) )
+		{}
+
 		Grid( const std::size_t new_width, const std::size_t new_height, const std::initializer_list<CellT> data ) :
 			mWidth( new_width )
 			, mHeight( new_height )
