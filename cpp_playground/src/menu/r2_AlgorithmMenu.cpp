@@ -33,6 +33,7 @@ namespace r2
 			ret->AddChild( 'q', algorithm_maze_test::Basic::GetInstance() );
 			ret->AddChild( 'w', algorithm_astar_test::Basic::GetInstance() );
 			ret->AddChild( 'e', algorithm_astar_test::UseSTDListSplice::GetInstance() );
+			ret->AddChild( 'r', algorithm_astar_test::UseSTDListSplice_And_STDVectorResultPath::GetInstance() );
 
 
 			ret->AddSplit();
