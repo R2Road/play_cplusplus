@@ -23,8 +23,7 @@ namespace std_vector_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Resize" << r2::linefeed;
-				std::cout << r2::linefeed;
+				std::cout << r2::tab << "+ Resize" << r2::linefeed2;
 
 				std::vector<int> test_vector = { 1, 2, 3, 4 };
 				std::cout << r2::tab2 << "std::vector<int> test_vector = { 1, 2, 3, 4 };" << r2::linefeed;
@@ -34,7 +33,7 @@ namespace std_vector_test
 					std::cout << i;
 				}
 
-				std::cout << r2::linefeed << r2::linefeed;
+				std::cout << r2::linefeed2;
 
 				test_vector.resize( 10 );
 				std::cout << r2::tab2 << "test_vector.resize( 10 );" << r2::linefeed;
@@ -44,7 +43,7 @@ namespace std_vector_test
 					std::cout << i;
 				}
 
-				std::cout << r2::linefeed << r2::linefeed;
+				std::cout << r2::linefeed2;
 
 				test_vector.resize( 2 );
 				std::cout << r2::tab2 << "test_vector.resize( 2 );" << r2::linefeed;
@@ -54,7 +53,7 @@ namespace std_vector_test
 					std::cout << i;
 				}
 
-				std::cout << r2::linefeed << r2::linefeed;
+				std::cout << r2::linefeed2;
 
 				test_vector.resize( 20 );
 				std::cout << r2::tab2 << "test_vector.resize( 10 );" << r2::linefeed;
@@ -63,6 +62,8 @@ namespace std_vector_test
 				{
 					std::cout << i;
 				}
+
+				std::cout << r2::linefeed;
 			}
 
 			std::cout << r2::split;
