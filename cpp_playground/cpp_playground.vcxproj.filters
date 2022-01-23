@@ -272,6 +272,9 @@
     <ClCompile Include="src\test_algorithm\algorithm_astar_test.cpp">
       <Filter>test_algorithm</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2\r2_Direction8.cpp">
+      <Filter>r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -538,6 +541,9 @@
     </ClInclude>
     <ClInclude Include="src\test_algorithm\algorithm_astar_test.h">
       <Filter>test_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_Direction8.h">
+      <Filter>r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
