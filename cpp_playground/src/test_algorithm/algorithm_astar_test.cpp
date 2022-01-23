@@ -100,7 +100,7 @@ namespace algorithm_astar_test
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
-			std::cout << "# " << algorithm_astar_test::Basic::GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -143,7 +143,7 @@ namespace algorithm_astar_test
 	{
 		return []()->const char*
 		{
-			return "A Star : Basic 2";
+			return "A Star : Basic 2 : use std::list::splice";
 		};
 	}
 	r2::iTest::DoFunc Basic2::GetDoFunction()
@@ -152,7 +152,7 @@ namespace algorithm_astar_test
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
-			std::cout << "# " << algorithm_astar_test::Basic::GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
