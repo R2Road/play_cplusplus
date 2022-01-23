@@ -139,14 +139,14 @@ namespace algorithm_astar_test
 
 
 
-	r2::iTest::TitleFunc WithVector::GetTitleFunction() const
+	r2::iTest::TitleFunc Basic2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "A Star : with Vector";
+			return "A Star : Basic 2";
 		};
 	}
-	r2::iTest::DoFunc WithVector::GetDoFunction()
+	r2::iTest::DoFunc Basic2::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

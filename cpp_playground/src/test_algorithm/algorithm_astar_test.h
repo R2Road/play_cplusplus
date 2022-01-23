@@ -12,7 +12,7 @@ namespace algorithm_astar_test
 		DoFunc GetDoFunction() override;
 	};
 
-	class WithVector : public r2::iTest, public r2::SingleTon<WithVector>
+	class Basic2 : public r2::iTest, public r2::SingleTon<Basic2>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
