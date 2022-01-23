@@ -36,12 +36,6 @@ namespace
 
 	void ShowGrid( const r2::Grid<int>& grid )
 	{
-		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
-
-		std::cout << "# " << algorithm_astar_test::Basic::GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-
-		std::cout << r2::split;
-
 		int x = 0;
 		for( const auto i : grid )
 		{
@@ -62,9 +56,6 @@ namespace
 
 			++x;
 		}
-
-		std::cout << r2::linefeed;
-		std::cout << r2::split;
 	}
 
 	void ShowPath( const r2::Point entry_point, const r2::Point exit_point, const std::list<r2::Point>& path )
@@ -91,8 +82,6 @@ namespace
 				, pivot_point.Y + static_cast<short>( exit_point.y )
 		} );
 		std::cout << '2';
-
-		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 27 } );
 	}
 }
 
@@ -109,13 +98,22 @@ namespace algorithm_astar_test
 	{
 		return []()->r2::eTestResult
 		{
-			const r2::Point entry_point{ 2, 1 };
-			const r2::Point exit_point{ 16, 17 };
+			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
+
+			std::cout << "# " << algorithm_astar_test::Basic::GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
 
 			ShowGrid( WORLD_MAP );
 
+			std::cout << r2::linefeed;
+			std::cout << r2::split;
+
 			r2util::StopWatch stop_watch;
 			{
+				const r2::Point entry_point{ 2, 1 };
+				const r2::Point exit_point{ 16, 17 };
+
 				//
 				// Build
 				//
@@ -130,6 +128,8 @@ namespace algorithm_astar_test
 				//
 				ShowPath( entry_point, exit_point, result_path );
 			}
+
+			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
 			stop_watch.PrintLog_All();
 			std::cout << r2::linefeed;
 
@@ -150,13 +150,22 @@ namespace algorithm_astar_test
 	{
 		return []()->r2::eTestResult
 		{
-			const r2::Point entry_point{ 2, 1 };
-			const r2::Point exit_point{ 16, 17 };
+			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
+
+			std::cout << "# " << algorithm_astar_test::Basic::GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
 
 			ShowGrid( WORLD_MAP );
 
+			std::cout << r2::linefeed;
+			std::cout << r2::split;
+
 			r2util::StopWatch stop_watch;
 			{
+				const r2::Point entry_point{ 2, 1 };
+				const r2::Point exit_point{ 16, 17 };
+
 				//
 				// Build
 				//
@@ -171,6 +180,8 @@ namespace algorithm_astar_test
 				//
 				ShowPath( entry_point, exit_point, result_path );
 			}
+
+			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
 			stop_watch.PrintLog_All();
 			std::cout << r2::linefeed;
 
