@@ -27,7 +27,7 @@ namespace r2
 			mWidth( new_width )
 			, mHeight( new_height )
 			, mContainer( new_width * new_height )
-			, mIndexConverter( new_width, new_height )
+			, mIndexConverter( static_cast<int>( new_width ), static_cast<int>( new_height ) )
 		{
 			memcpy_s(
 				&mContainer[0], mContainer.size() * sizeof( CellT )
