@@ -167,9 +167,6 @@
       <Filter>base</Filter>
     </ClCompile>
     <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\test_cpp\vector_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\menu\r2_ContainerMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
@@ -280,6 +277,9 @@
     </ClCompile>
     <ClCompile Include="src\algorithm\r2algorithm_AStarPathBuilder.cpp">
       <Filter>algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\std_vector_test.cpp">
+      <Filter>test_cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -434,9 +434,6 @@
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\test_cpp\vector_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
     <ClInclude Include="src\menu\r2_ContainerMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
@@ -553,6 +550,9 @@
     </ClInclude>
     <ClInclude Include="src\algorithm\r2algorithm_AStarPathBuilder.h">
       <Filter>algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\std_vector_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

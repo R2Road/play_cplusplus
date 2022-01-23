@@ -1,11 +1,11 @@
 #include "pch.h"
-#include "vector_test.h"
+#include "std_vector_test.h"
 
 #include <vector>
 
 #include "base/r2_eTestResult.h"
 
-namespace vector_test
+namespace std_vector_test
 {
 	r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
