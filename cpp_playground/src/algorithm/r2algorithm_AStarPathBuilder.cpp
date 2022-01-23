@@ -96,7 +96,6 @@ namespace r2algorithm
 		using Node4AStarContainerT = std::list<Node4AStar>;
 		Node4AStarContainerT open_list;
 		Node4AStarContainerT close_list;
-		r2::Point current_point;
 
 		//
 		// Ready
@@ -133,7 +132,7 @@ namespace r2algorithm
 			open_list.erase( min_itr );
 
 			// Found Exit
-			if( exit_point == current_point )
+			if( exit_point == current_node.GetPoint() )
 			{
 				break;
 			}
@@ -199,7 +198,6 @@ namespace r2algorithm
 		using Node4AStarContainerT = std::list<Node4AStar>;
 		Node4AStarContainerT open_list;
 		Node4AStarContainerT close_list;
-		r2::Point current_point;
 
 		//
 		// Ready
@@ -235,7 +233,7 @@ namespace r2algorithm
 			const Node4AStar current_node = *min_itr;
 
 			// Found Exit
-			if( exit_point == current_point )
+			if( exit_point == current_node.GetPoint() )
 			{
 				break;
 			}
@@ -303,7 +301,6 @@ namespace r2algorithm
 		using Node4AStarContainerT = std::list<Node4AStar>;
 		Node4AStarContainerT open_list;
 		Node4AStarContainerT close_list;
-		r2::Point current_point;
 
 		//
 		// Ready
@@ -339,7 +336,7 @@ namespace r2algorithm
 			const Node4AStar current_node = *min_itr;
 
 			// Found Exit
-			if( exit_point == current_point )
+			if( exit_point == current_node.GetPoint() )
 			{
 				break;
 			}
