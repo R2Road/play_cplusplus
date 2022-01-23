@@ -87,7 +87,7 @@ namespace r2
 		}
 		const CellT& Get( const std::size_t x, const std::size_t y ) const
 		{
-			return Get( mIndexConverter.To_Linear( x, y ) );
+			return Get( mIndexConverter.To_Linear( static_cast<int>( x ), static_cast<int>( y ) ) );
 		}
 
 		//
