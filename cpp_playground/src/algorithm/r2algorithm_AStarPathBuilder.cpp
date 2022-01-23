@@ -83,9 +83,6 @@ namespace
 
 namespace r2algorithm
 {
-	AStarPathBuilder::AStarPathBuilder()
-	{}
-
 	void AStarPathBuilder::Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::list<r2::Point>* out_result_path )
 	{
 		using Node4AStarContainerT = std::list<Node4AStar>;

@@ -118,8 +118,7 @@ namespace algorithm_astar_test
 				// Build
 				//
 				std::list<r2::Point> result_path;
-				r2algorithm::AStarPathBuilder path_builder;
-				path_builder.Build( entry_point, exit_point, grid, &result_path );
+				r2algorithm::AStarPathBuilder::Build( entry_point, exit_point, grid, &result_path );
 
 				//
 				// Show Path
