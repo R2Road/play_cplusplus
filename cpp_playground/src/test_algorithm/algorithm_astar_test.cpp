@@ -87,8 +87,7 @@ namespace algorithm_astar_test
 	{
 		return []()->r2::eTestResult
 		{
-			r2::Grid<int> grid;
-			grid.Reset( 19, 19, {
+			r2::Grid<int> grid( 19, 19, {
 				1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 				1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
 				1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1,
@@ -150,8 +149,7 @@ namespace algorithm_astar_test
 	{
 		return []()->r2::eTestResult
 		{
-			r2::Grid<int> grid;
-			grid.Reset( 19, 19, {
+			r2::Grid<int> grid( 19, 19, {
 				1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 				1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
 				1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1,
@@ -171,7 +169,7 @@ namespace algorithm_astar_test
 				1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1,
 				1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1,
 				1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-				} );
+			} );
 			const r2::Point entry_point{ 2, 1 };
 			const r2::Point exit_point{ 16, 17 };
 

@@ -23,6 +23,18 @@ namespace r2
 			, mIndexConverter( 1, 1 )
 		{}
 
+		Grid( const std::size_t new_width, const std::size_t new_height, const std::initializer_list<CellT> data ) :
+			mWidth( new_width )
+			, mHeight( new_height )
+			, mContainer( new_width * new_height )
+			, mIndexConverter( new_width, new_height )
+		{
+			memcpy_s(
+				&mContainer[0], mContainer.size() * sizeof( CellT )
+				, &( *data.begin() ), min( data.size() * sizeof( CellT ), mContainer.size() * sizeof( CellT ) )
+			);
+		}
+
 	public:
 		std::size_t GetWidth() const { return mWidth; }
 		std::size_t GetHeight() const { return mHeight; }
