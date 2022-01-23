@@ -123,7 +123,7 @@ namespace std_array_test
 
 				std::cout << r2::tab << "+ Process" << r2::linefeed2;
 				std::cout << r2::tab2 << "std::fill_n( test_array.begin(), 5, 6 );" << r2::linefeed2;
-				std::cout << r2::tab3 << "- Not Working" << r2::linefeed2;
+				std::cout << r2::tab3 << "- Not Working" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
