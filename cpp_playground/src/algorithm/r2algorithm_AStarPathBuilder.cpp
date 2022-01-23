@@ -2,7 +2,6 @@
 #include "r2algorithm_AStarPathBuilder.h"
 
 #include <algorithm>
-#include <list>
 
 #include "r2/r2_Direction8.h"
 
