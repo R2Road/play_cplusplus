@@ -136,4 +136,67 @@ namespace algorithm_astar_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc WithVector::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "A Star : with Vector";
+		};
+	}
+	r2::iTest::DoFunc WithVector::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			r2::Grid<int> grid;
+			grid.Reset( 19, 19, {
+				1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+				1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
+				1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1,
+				1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1,
+				1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1,
+				1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1,
+				1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1,
+				1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1,
+				1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1,
+				1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1,
+				1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1,
+				1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1,
+				1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1,
+				1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1,
+				1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1,
+				1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1,
+				1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1,
+				1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1,
+				1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+				} );
+			const r2::Point entry_point{ 2, 1 };
+			const r2::Point exit_point{ 16, 17 };
+
+			ShowGrid( grid );
+
+			r2util::StopWatch stop_watch;
+			{
+				//
+				// Build
+				//
+				std::list<r2::Point> result_path;
+
+				stop_watch.Start();
+				r2algorithm::AStarPathBuilder::Build( entry_point, exit_point, grid, &result_path );
+				stop_watch.Stop();
+
+				//
+				// Show Path
+				//
+				ShowPath( entry_point, exit_point, result_path );
+			}
+			stop_watch.PrintLog_All();
+			std::cout << r2::linefeed;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
