@@ -19,6 +19,9 @@
     <Filter Include="test_algorithm">
       <UniqueIdentifier>{c256e4fc-5074-43ac-9a3c-e7ac60bb99b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="algorithm">
+      <UniqueIdentifier>{bb464bee-2936-45c5-9434-19d5decd9078}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -274,6 +277,9 @@
     </ClCompile>
     <ClCompile Include="src\r2\r2_Direction8.cpp">
       <Filter>r2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\algorithm\r2algorithm_AStarPathBuilder.cpp">
+      <Filter>algorithm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -544,6 +550,9 @@
     </ClInclude>
     <ClInclude Include="src\r2\r2_Direction8.h">
       <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\algorithm\r2algorithm_AStarPathBuilder.h">
+      <Filter>algorithm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
