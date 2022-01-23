@@ -172,7 +172,7 @@ namespace algorithm_astar_test
 				std::list<r2::Point> result_path;
 
 				stop_watch.Start();
-				r2algorithm::AStarPathBuilder::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+				r2algorithm::AStarPathBuilder2::Build( entry_point, exit_point, WORLD_MAP, &result_path );
 				stop_watch.Stop();
 
 				//

@@ -14,4 +14,12 @@ namespace r2algorithm
 
 		static void Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::list<r2::Point>* out_result_path );
 	};
+
+	class AStarPathBuilder2
+	{
+	public:
+		AStarPathBuilder2() = delete;
+
+		static void Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::list<r2::Point>* out_result_path );
+	};
 }
