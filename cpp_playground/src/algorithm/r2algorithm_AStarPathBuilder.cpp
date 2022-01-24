@@ -406,6 +406,7 @@ namespace r2algorithm
 		TargetContainerT open_list;
 		TargetContainerT close_list;
 		r2::Point current_point;
+		bool bSuccess = false;
 
 		//
 		// Ready
@@ -443,6 +444,7 @@ namespace r2algorithm
 			// Found Exit
 			if( exit_point == current_point )
 			{
+				bSuccess = true;
 				break;
 			}
 
@@ -476,13 +478,11 @@ namespace r2algorithm
 		//
 		// Save Path
 		//
+		if( bSuccess )
 		{
-			auto current_itr = std::find_if( close_list.begin(), close_list.end(), [target_point = exit_point]( const r2::Point& other_point )->bool {
-				return other_point == target_point;
-			} );
-			out_result_path->push_back( *current_itr );
+			out_result_path->push_back( exit_point );
 
-			auto path_point = *current_itr;
+			auto path_point = exit_point;
 			while( -1 != path_point.x )
 			{
 				path_point = cost_map.Get( path_point.x, path_point.y ).GetPreviousPoint();
