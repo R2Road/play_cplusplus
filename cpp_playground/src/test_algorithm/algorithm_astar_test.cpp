@@ -428,4 +428,186 @@ namespace algorithm_astar_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc PerformanceTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "A Star : Performance Test";
+		};
+	}
+	r2::iTest::DoFunc PerformanceTest::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			const int attempt_limit = 100;
+			const r2::Point entry_point{ 2, 1 };
+			const r2::Point exit_point{ 16, 17 };
+
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "const int attempt_limit = " << attempt_limit << ";" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ AStarPathBuilder" << r2::linefeed2;
+
+				r2util::StopWatch stop_watch;
+
+				//
+				// Build
+				//
+				for( int i = 0; attempt_limit > i; ++i )
+				{
+					std::list<r2::Point> result_path;
+
+					stop_watch.Start();
+					r2algorithm::AStarPathBuilder::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+					stop_watch.Stop();
+				}
+
+				//
+				// Show Time
+				//
+				stop_watch.PrintLog_All();
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ AStarPathBuilder2" << r2::linefeed2;
+
+				r2util::StopWatch stop_watch;
+
+				//
+				// Build
+				//
+				for( int i = 0; attempt_limit > i; ++i )
+				{
+					std::list<r2::Point> result_path;
+
+					stop_watch.Start();
+					r2algorithm::AStarPathBuilder2::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+					stop_watch.Stop();
+				}
+
+				//
+				// Show Time
+				//
+				stop_watch.PrintLog_All();
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ AStarPathBuilder2_UseSTDVectorResultPath" << r2::linefeed2;
+
+				r2util::StopWatch stop_watch;
+
+				//
+				// Build
+				//
+				for( int i = 0; attempt_limit > i; ++i )
+				{
+					std::vector<r2::Point> result_path;
+					result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
+
+					stop_watch.Start();
+					r2algorithm::AStarPathBuilder2_UseSTDVectorResultPath::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+					stop_watch.Stop();
+				}
+
+				//
+				// Show Time
+				//
+				stop_watch.PrintLog_All();
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ AStarPathBuilder2_UseSTDVectorResultPath_DecreaseCloseList" << r2::linefeed2;
+
+				r2util::StopWatch stop_watch;
+
+				//
+				// Build
+				//
+				for( int i = 0; attempt_limit > i; ++i )
+				{
+					std::vector<r2::Point> result_path;
+					result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
+
+					stop_watch.Start();
+					r2algorithm::AStarPathBuilder2_UseSTDVectorResultPath_DecreaseCloseList::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+					stop_watch.Stop();
+				}
+
+				//
+				// Show Time
+				//
+				stop_watch.PrintLog_All();
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ AStarPathBuilder_UseCostMap" << r2::linefeed2;
+
+				r2util::StopWatch stop_watch;
+
+				//
+				// Build
+				//
+				for( int i = 0; attempt_limit > i; ++i )
+				{
+					std::vector<r2::Point> result_path;
+					result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
+
+					stop_watch.Start();
+					r2algorithm::AStarPathBuilder_UseCostMap::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+					stop_watch.Stop();
+				}
+
+				//
+				// Show Time
+				//
+				stop_watch.PrintLog_All();
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ AStarPathBuilder_UseCostMap_TinyData" << r2::linefeed2;
+
+				r2util::StopWatch stop_watch;
+
+				//
+				// Build
+				//
+				for( int i = 0; attempt_limit > i; ++i )
+				{
+					std::vector<r2::Point> result_path;
+					result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
+
+					stop_watch.Start();
+					r2algorithm::AStarPathBuilder_UseCostMap_TinyData::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+					stop_watch.Stop();
+				}
+
+				//
+				// Show Time
+				//
+				stop_watch.PrintLog_All();
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
