@@ -561,6 +561,8 @@ namespace r2algorithm
 		//
 		if( bSuccess )
 		{
+			out_result_path->clear();
+
 			auto current_itr = std::find_if( close_list.begin(), close_list.end(), [target_point = exit_point]( const Node4AStar& other_node )->bool {
 				return other_node.GetPoint() == target_point;
 			} );
@@ -661,6 +663,8 @@ namespace r2algorithm
 		//
 		if( bSuccess )
 		{
+			out_result_path->clear();
+
 			auto path_point = exit_point;
 			while( -1 != path_point.x )
 			{
@@ -754,6 +758,8 @@ namespace r2algorithm
 		//
 		if( bSuccess )
 		{
+			out_result_path->clear();
+
 			auto path_point = exit_point;
 			while( -1 != path_point.x )
 			{

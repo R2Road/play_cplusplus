@@ -496,11 +496,11 @@ namespace algorithm_astar_test
 				//
 				// Build
 				//
+				std::vector<r2::Point> result_path;
+				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
+
 				for( int i = 0; attempt_limit > i; ++i )
 				{
-					std::vector<r2::Point> result_path;
-					result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
-
 					stop_watch.Start();
 					r2algorithm::AStarPathBuilder_UseSTDListSplice_UseSTDVectorResultPath::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 					stop_watch.Stop();
@@ -523,11 +523,11 @@ namespace algorithm_astar_test
 				//
 				// Build
 				//
+				std::vector<r2::Point> result_path;
+				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
+
 				for( int i = 0; attempt_limit > i; ++i )
 				{
-					std::vector<r2::Point> result_path;
-					result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
-
 					stop_watch.Start();
 					r2algorithm::AStarPathBuilder_UseSTDListSplice_UseSTDVectorResultPath_DecreaseCloseList::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 					stop_watch.Stop();
@@ -550,11 +550,11 @@ namespace algorithm_astar_test
 				//
 				// Build
 				//
+				std::vector<r2::Point> result_path;
+				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
+
 				for( int i = 0; attempt_limit > i; ++i )
 				{
-					std::vector<r2::Point> result_path;
-					result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
-
 					stop_watch.Start();
 					r2algorithm::AStarPathBuilder_UseCostMap::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 					stop_watch.Stop();
@@ -577,11 +577,11 @@ namespace algorithm_astar_test
 				//
 				// Build
 				//
+				std::vector<r2::Point> result_path;
+				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
+
 				for( int i = 0; attempt_limit > i; ++i )
 				{
-					std::vector<r2::Point> result_path;
-					result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
-
 					stop_watch.Start();
 					r2algorithm::AStarPathBuilder_UseCostMap_TinyData::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 					stop_watch.Stop();
