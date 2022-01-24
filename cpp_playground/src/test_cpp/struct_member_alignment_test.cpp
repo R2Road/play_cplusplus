@@ -77,12 +77,15 @@ namespace struct_member_alignment_test
 			std::cout << r2::split;
 
 			{
+#pragma warning( push )
+#pragma warning( disable : 4121 )
 				struct
 				{
 					char c;
-					long long ll;
+					long long ll; // warning 4121
 					char c2;
 				} test_struct;
+#pragma warning( pop )
 
 				std::cout << r2::tab << "struct" << r2::linefeed;
 				std::cout << r2::tab << "{" << r2::linefeed;
