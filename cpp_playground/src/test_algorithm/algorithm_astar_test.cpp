@@ -12,8 +12,8 @@
 
 namespace
 {
-	const r2::Point entry_point{ 2, 1 };
-	const r2::Point exit_point{ 16, 17 };
+	const r2::Point ENTRY_POINT{ 2, 1 };
+	const r2::Point EXIT_POINT{ 16, 17 };
 
 	const r2::Grid<int> WORLD_MAP( 19, 19, {
 		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -146,13 +146,13 @@ namespace algorithm_astar_test
 				std::list<r2::Point> result_path;
 
 				stop_watch.Start();
-				r2algorithm::AStarPathBuilder::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+				r2algorithm::AStarPathBuilder::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 				stop_watch.Stop();
 
 				//
 				// Show Path
 				//
-				ShowPath( entry_point, exit_point, result_path );
+				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
@@ -195,13 +195,13 @@ namespace algorithm_astar_test
 				std::list<r2::Point> result_path;
 
 				stop_watch.Start();
-				r2algorithm::AStarPathBuilder2::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+				r2algorithm::AStarPathBuilder2::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 				stop_watch.Stop();
 
 				//
 				// Show Path
 				//
-				ShowPath( entry_point, exit_point, result_path );
+				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
@@ -245,13 +245,13 @@ namespace algorithm_astar_test
 				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
 				stop_watch.Start();
-				r2algorithm::AStarPathBuilder2_UseSTDVectorResultPath::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+				r2algorithm::AStarPathBuilder2_UseSTDVectorResultPath::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 				stop_watch.Stop();
 
 				//
 				// Show Path
 				//
-				ShowPath( entry_point, exit_point, result_path );
+				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
@@ -295,13 +295,13 @@ namespace algorithm_astar_test
 				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
 				stop_watch.Start();
-				r2algorithm::AStarPathBuilder2_UseSTDVectorResultPath_DecreaseCloseList::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+				r2algorithm::AStarPathBuilder2_UseSTDVectorResultPath_DecreaseCloseList::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 				stop_watch.Stop();
 
 				//
 				// Show Path
 				//
-				ShowPath( entry_point, exit_point, result_path );
+				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
@@ -347,13 +347,13 @@ namespace algorithm_astar_test
 				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
 				stop_watch.Start();
-				r2algorithm::AStarPathBuilder_UseCostMap::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+				r2algorithm::AStarPathBuilder_UseCostMap::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 				stop_watch.Stop();
 
 				//
 				// Show Path
 				//
-				ShowPath( entry_point, exit_point, result_path );
+				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
@@ -397,13 +397,13 @@ namespace algorithm_astar_test
 				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
 				stop_watch.Start();
-				r2algorithm::AStarPathBuilder_UseCostMap_TinyData::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+				r2algorithm::AStarPathBuilder_UseCostMap_TinyData::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 				stop_watch.Stop();
 
 				//
 				// Show Path
 				//
-				ShowPath( entry_point, exit_point, result_path );
+				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
@@ -449,7 +449,7 @@ namespace algorithm_astar_test
 					std::list<r2::Point> result_path;
 
 					stop_watch.Start();
-					r2algorithm::AStarPathBuilder::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+					r2algorithm::AStarPathBuilder::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 					stop_watch.Stop();
 				}
 
@@ -475,7 +475,7 @@ namespace algorithm_astar_test
 					std::list<r2::Point> result_path;
 
 					stop_watch.Start();
-					r2algorithm::AStarPathBuilder2::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+					r2algorithm::AStarPathBuilder2::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 					stop_watch.Stop();
 				}
 
@@ -502,7 +502,7 @@ namespace algorithm_astar_test
 					result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
 					stop_watch.Start();
-					r2algorithm::AStarPathBuilder2_UseSTDVectorResultPath::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+					r2algorithm::AStarPathBuilder2_UseSTDVectorResultPath::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 					stop_watch.Stop();
 				}
 
@@ -529,7 +529,7 @@ namespace algorithm_astar_test
 					result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
 					stop_watch.Start();
-					r2algorithm::AStarPathBuilder2_UseSTDVectorResultPath_DecreaseCloseList::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+					r2algorithm::AStarPathBuilder2_UseSTDVectorResultPath_DecreaseCloseList::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 					stop_watch.Stop();
 				}
 
@@ -556,7 +556,7 @@ namespace algorithm_astar_test
 					result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
 					stop_watch.Start();
-					r2algorithm::AStarPathBuilder_UseCostMap::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+					r2algorithm::AStarPathBuilder_UseCostMap::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 					stop_watch.Stop();
 				}
 
@@ -583,7 +583,7 @@ namespace algorithm_astar_test
 					result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
 					stop_watch.Start();
-					r2algorithm::AStarPathBuilder_UseCostMap_TinyData::Build( entry_point, exit_point, WORLD_MAP, &result_path );
+					r2algorithm::AStarPathBuilder_UseCostMap_TinyData::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 					stop_watch.Stop();
 				}
 
