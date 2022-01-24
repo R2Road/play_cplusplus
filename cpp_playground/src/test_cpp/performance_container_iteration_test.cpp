@@ -392,7 +392,7 @@ namespace performance_container_iteration_test
 			r2util::StopWatch stop_watch;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "std::map<int, int> test_container;" << r2::linefeed;
+			std::cout << r2::tab2 << "std::map<std::size_t, int> test_container;" << r2::linefeed;
 			std::cout << r2::tab2 << "for( int n = 0; n > 100000; ++n ) test_container.emplace( n, 1 );" << r2::linefeed;
 
 			std::cout << r2::split;
@@ -494,7 +494,7 @@ namespace performance_container_iteration_test
 			r2util::StopWatch stop_watch;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "std::map<int, int> test_container;" << r2::linefeed;
+			std::cout << r2::tab2 << "std::unordered_map<std::size_t, int> test_container( 100000 );" << r2::linefeed;
 			std::cout << r2::tab2 << "for( int n = 0; n > 100000; ++n ) test_container.emplace( n, 1 );" << r2::linefeed;
 
 			std::cout << r2::split;
@@ -596,7 +596,7 @@ namespace performance_container_iteration_test
 			r2util::StopWatch stop_watch;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "std::map<int, int> test_container;" << r2::linefeed;
+			std::cout << r2::tab2 << "std::set<int> test_container;" << r2::linefeed;
 			std::cout << r2::tab2 << "for( int n = 0; 100000 > n; ++n ) test_container.emplace( n );" << r2::linefeed;
 
 			std::cout << r2::split;
