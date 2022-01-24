@@ -23,6 +23,8 @@ namespace r2util
 		void PrintElapsedTime_NanoSeconds();
 		void PrintElapsedTime_All();
 
+		void PrintMinAndMaxTime();
+
 	private:
 		std::chrono::steady_clock::time_point mStartTime;
 		std::chrono::steady_clock::time_point mEndTime;

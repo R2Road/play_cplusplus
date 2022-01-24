@@ -66,4 +66,11 @@ namespace r2util
 		std::cout << r2::tab;
 		PrintElapsedTime_NanoSeconds();
 	}
+
+	void StopWatch::PrintMinAndMaxTime()
+	{
+		std::cout << "Min : " << mMinTime << "¥ìs";
+		std::cout << r2::tab;
+		std::cout << "Max : " << mMaxTime << "¥ìs";
+	}
 }
