@@ -195,7 +195,7 @@ namespace algorithm_astar_test
 				std::list<r2::Point> result_path;
 
 				stop_watch.Start();
-				r2algorithm::AStarPathBuilder2::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
+				r2algorithm::AStarPathBuilder_UseSTDListSplice::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 				stop_watch.Stop();
 
 				//
@@ -463,7 +463,7 @@ namespace algorithm_astar_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ AStarPathBuilder2" << r2::linefeed2;
+				std::cout << r2::tab << "+ AStarPathBuilder_UseSTDListSplice" << r2::linefeed2;
 
 				r2util::StopWatch stop_watch;
 
@@ -475,7 +475,7 @@ namespace algorithm_astar_test
 					std::list<r2::Point> result_path;
 
 					stop_watch.Start();
-					r2algorithm::AStarPathBuilder2::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
+					r2algorithm::AStarPathBuilder_UseSTDListSplice::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 					stop_watch.Stop();
 				}
 
