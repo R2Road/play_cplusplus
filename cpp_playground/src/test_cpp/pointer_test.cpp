@@ -119,12 +119,12 @@ namespace pointer_test
 
 			{
 				std::cout << r2::tab << "const int temp_const_int_1 = 0;" << r2::linefeed;
-				const int temp_const_int_1 = 0;
+				//const int temp_const_int_1 = 0;
 
 				std::cout << r2::linefeed;
 
 				std::cout << r2::tab << "OK : const int* temp_pointer_const = &temp_const_int_1;" << r2::linefeed;
-				const int* temp_pointer_const = &temp_const_int_1;
+				//const int* temp_pointer_const = &temp_const_int_1;
 
 				std::cout << r2::linefeed;
 
