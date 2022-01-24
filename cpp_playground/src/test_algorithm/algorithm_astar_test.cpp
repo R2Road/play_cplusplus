@@ -12,6 +12,9 @@
 
 namespace
 {
+	const r2::Point entry_point{ 2, 1 };
+	const r2::Point exit_point{ 16, 17 };
+
 	const r2::Grid<int> WORLD_MAP( 19, 19, {
 		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 		1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
@@ -137,9 +140,6 @@ namespace algorithm_astar_test
 
 			r2util::StopWatch stop_watch;
 			{
-				const r2::Point entry_point{ 2, 1 };
-				const r2::Point exit_point{ 16, 17 };
-
 				//
 				// Build
 				//
@@ -189,9 +189,6 @@ namespace algorithm_astar_test
 
 			r2util::StopWatch stop_watch;
 			{
-				const r2::Point entry_point{ 2, 1 };
-				const r2::Point exit_point{ 16, 17 };
-
 				//
 				// Build
 				//
@@ -241,9 +238,6 @@ namespace algorithm_astar_test
 
 			r2util::StopWatch stop_watch;
 			{
-				const r2::Point entry_point{ 2, 1 };
-				const r2::Point exit_point{ 16, 17 };
-
 				//
 				// Build
 				//
@@ -294,9 +288,6 @@ namespace algorithm_astar_test
 
 			r2util::StopWatch stop_watch;
 			{
-				const r2::Point entry_point{ 2, 1 };
-				const r2::Point exit_point{ 16, 17 };
-
 				//
 				// Build
 				//
@@ -349,9 +340,6 @@ namespace algorithm_astar_test
 
 			r2util::StopWatch stop_watch;
 			{
-				const r2::Point entry_point{ 2, 1 };
-				const r2::Point exit_point{ 16, 17 };
-
 				//
 				// Build
 				//
@@ -402,9 +390,6 @@ namespace algorithm_astar_test
 
 			r2util::StopWatch stop_watch;
 			{
-				const r2::Point entry_point{ 2, 1 };
-				const r2::Point exit_point{ 16, 17 };
-
 				//
 				// Build
 				//
@@ -445,8 +430,6 @@ namespace algorithm_astar_test
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			const int attempt_limit = 100;
-			const r2::Point entry_point{ 2, 1 };
-			const r2::Point exit_point{ 16, 17 };
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 			std::cout << r2::tab2 << "const int attempt_limit = " << attempt_limit << ";" << r2::linefeed;
