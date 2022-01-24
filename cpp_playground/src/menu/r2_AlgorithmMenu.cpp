@@ -36,6 +36,7 @@ namespace r2
 			ret->AddChild( 'r', algorithm_astar_test::UseSTDListSplice_And_STDVectorResultPath::GetInstance() );
 			ret->AddChild( 't', algorithm_astar_test::UseSTDListSplice_And_STDVectorResultPath_DecreaseCloseList::GetInstance() );
 			ret->AddChild( 'y', algorithm_astar_test::UseCostMap::GetInstance() );
+			ret->AddChild( 'u', algorithm_astar_test::UseCostMap_And_TinyData::GetInstance() );
 
 
 			ret->AddSplit();

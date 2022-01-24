@@ -46,4 +46,11 @@ namespace r2algorithm
 
 		static void Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::vector<r2::Point>* out_result_path );
 	};
+	class AStarPathBuilder_UseCostMap_TinyData
+	{
+	public:
+		AStarPathBuilder_UseCostMap_TinyData() = delete;
+
+		static void Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::vector<r2::Point>* out_result_path );
+	};
 }
