@@ -96,6 +96,7 @@ namespace r2algorithm
 		using Node4AStarContainerT = std::list<Node4AStar>;
 		Node4AStarContainerT open_list;
 		Node4AStarContainerT close_list;
+		bool bSuccess = false;
 
 		//
 		// Ready
@@ -134,6 +135,7 @@ namespace r2algorithm
 			// Found Exit
 			if( exit_point == current_node.GetPoint() )
 			{
+				bSuccess = true;
 				break;
 			}
 
@@ -176,6 +178,7 @@ namespace r2algorithm
 		//
 		// Save Path
 		//
+		if( bSuccess )
 		{
 			auto current_itr = std::find_if( close_list.begin(), close_list.end(), [target_point = exit_point]( const Node4AStar& other_node )->bool {
 				return other_node.GetPoint() == target_point;
@@ -198,6 +201,7 @@ namespace r2algorithm
 		using Node4AStarContainerT = std::list<Node4AStar>;
 		Node4AStarContainerT open_list;
 		Node4AStarContainerT close_list;
+		bool bSuccess = false;
 
 		//
 		// Ready
@@ -235,6 +239,7 @@ namespace r2algorithm
 			// Found Exit
 			if( exit_point == current_node.GetPoint() )
 			{
+				bSuccess = true;
 				break;
 			}
 
@@ -277,6 +282,7 @@ namespace r2algorithm
 		//
 		// Save Path
 		//
+		if( bSuccess )
 		{
 			auto current_itr = std::find_if( close_list.begin(), close_list.end(), [target_point = exit_point]( const Node4AStar& other_node )->bool {
 				return other_node.GetPoint() == target_point;
@@ -301,6 +307,7 @@ namespace r2algorithm
 		using Node4AStarContainerT = std::list<Node4AStar>;
 		Node4AStarContainerT open_list;
 		Node4AStarContainerT close_list;
+		bool bSuccess = false;
 
 		//
 		// Ready
@@ -338,6 +345,7 @@ namespace r2algorithm
 			// Found Exit
 			if( exit_point == current_node.GetPoint() )
 			{
+				bSuccess = true;
 				break;
 			}
 
@@ -380,6 +388,7 @@ namespace r2algorithm
 		//
 		// Save Path
 		//
+		if( bSuccess )
 		{
 			auto current_itr = std::find_if( close_list.begin(), close_list.end(), [target_point = exit_point]( const Node4AStar& other_node )->bool {
 				return other_node.GetPoint() == target_point;
