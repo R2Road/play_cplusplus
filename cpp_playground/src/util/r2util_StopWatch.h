@@ -18,10 +18,10 @@ namespace r2util
 		long long GetMaxTime() const { return mMaxTime; }
 		long long GetMinTime() const { return mMinTime; }
 
-		void PrintLog_MilliSeconds();
-		void PrintLog_MicroSeconds();
-		void PrintLog_NanoSeconds();
-		void PrintLog_All();
+		void PrintElapsedTime_MilliSeconds();
+		void PrintElapsedTime_MicroSeconds();
+		void PrintElapsedTime_NanoSeconds();
+		void PrintElapsedTime_All();
 
 	private:
 		std::chrono::steady_clock::time_point mStartTime;

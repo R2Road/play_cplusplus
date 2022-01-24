@@ -46,7 +46,7 @@ namespace performance_1_test
 					stop_watch.Stop();
 
 					std::cout << r2::tab2;
-					stop_watch.PrintLog_All();
+					stop_watch.PrintElapsedTime_All();
 					std::cout << r2::tab2 << test_int;
 					std::cout << r2::linefeed;
 				}
@@ -73,7 +73,7 @@ namespace performance_1_test
 					stop_watch.Stop();
 
 					std::cout << r2::tab2;
-					stop_watch.PrintLog_All();
+					stop_watch.PrintElapsedTime_All();
 					std::cout << r2::tab2 << *test_pointer;
 					std::cout << r2::linefeed;
 				}
@@ -100,7 +100,7 @@ namespace performance_1_test
 					stop_watch.Stop();
 
 					std::cout << r2::tab2;
-					stop_watch.PrintLog_All();
+					stop_watch.PrintElapsedTime_All();
 					std::cout << r2::tab2 << *test_pointer;
 					std::cout << r2::linefeed;
 				}
@@ -126,7 +126,7 @@ namespace performance_1_test
 					stop_watch.Stop();
 
 					std::cout << r2::tab2;
-					stop_watch.PrintLog_All();
+					stop_watch.PrintElapsedTime_All();
 					std::cout << r2::tab2 << *test_pointer;
 					std::cout << r2::linefeed;
 				}
@@ -152,7 +152,7 @@ namespace performance_1_test
 					stop_watch.Stop();
 
 					std::cout << r2::tab2;
-					stop_watch.PrintLog_All();
+					stop_watch.PrintElapsedTime_All();
 					std::cout << r2::tab2 << *test_pointer;
 					std::cout << r2::linefeed;
 				}
@@ -201,7 +201,7 @@ namespace performance_1_test
 					stop_watch.Stop();
 
 					std::cout << r2::tab2;
-					stop_watch.PrintLog_All();
+					stop_watch.PrintElapsedTime_All();
 					std::cout << r2::tab2 << test_int;
 					std::cout << r2::linefeed;
 				}
@@ -227,7 +227,7 @@ namespace performance_1_test
 					stop_watch.Stop();
 
 					std::cout << r2::tab2;
-					stop_watch.PrintLog_All();
+					stop_watch.PrintElapsedTime_All();
 					std::cout << r2::tab2 << test_int;
 					std::cout << r2::linefeed;
 				}
@@ -286,7 +286,7 @@ namespace performance_1_test
 					stop_watch.Stop();
 
 					std::cout << r2::tab2;
-					stop_watch.PrintLog_All();
+					stop_watch.PrintElapsedTime_All();
 					std::cout << r2::tab2 << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -312,7 +312,7 @@ namespace performance_1_test
 					stop_watch.Stop();
 
 					std::cout << r2::tab2;
-					stop_watch.PrintLog_All();
+					stop_watch.PrintElapsedTime_All();
 					std::cout << r2::tab2 << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -371,7 +371,7 @@ namespace performance_1_test
 					stop_watch.Stop();
 
 					std::cout << r2::tab2;
-					stop_watch.PrintLog_All();
+					stop_watch.PrintElapsedTime_All();
 					std::cout << r2::tab2 << sum_result;
 					std::cout << r2::linefeed;
 				}
@@ -397,7 +397,7 @@ namespace performance_1_test
 					stop_watch.Stop();
 
 					std::cout << r2::tab2;
-					stop_watch.PrintLog_All();
+					stop_watch.PrintElapsedTime_All();
 					std::cout << r2::tab2 << sum_result;
 					std::cout << r2::linefeed;
 				}

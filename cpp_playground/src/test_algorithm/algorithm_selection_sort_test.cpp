@@ -66,7 +66,7 @@ namespace algorithm_selection_sort_test
 				std::cout << r2::tab2 << temp_container << r2::linefeed;
 
 				std::cout << r2::tab2;
-				stop_watch.PrintLog_All();
+				stop_watch.PrintElapsedTime_All();
 			}
 
 			std::cout << r2::split;
@@ -160,7 +160,7 @@ namespace algorithm_selection_sort_test
 				std::cout << r2::tab2 << temp_container << r2::linefeed;
 
 				std::cout << r2::tab2;
-				stop_watch.PrintLog_All();
+				stop_watch.PrintElapsedTime_All();
 			}
 
 			std::cout << r2::split;

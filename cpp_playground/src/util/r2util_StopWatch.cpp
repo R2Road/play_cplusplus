@@ -46,24 +46,24 @@ namespace r2util
 		return std::chrono::duration_cast<std::chrono::nanoseconds>( mEndTime - mStartTime ).count();
 	}
 
-	void StopWatch::PrintLog_MilliSeconds()
+	void StopWatch::PrintElapsedTime_MilliSeconds()
 	{
 		std::cout << GetMilliTime() << "ms";
 	}
-	void StopWatch::PrintLog_MicroSeconds()
+	void StopWatch::PrintElapsedTime_MicroSeconds()
 	{
 		std::cout << GetMicroTime() << "¥ìs";
 	}
-	void StopWatch::PrintLog_NanoSeconds()
+	void StopWatch::PrintElapsedTime_NanoSeconds()
 	{
 		std::cout << GetNanoTime() << "ns";
 	}
-	void StopWatch::PrintLog_All()
+	void StopWatch::PrintElapsedTime_All()
 	{
-		PrintLog_MilliSeconds();
+		PrintElapsedTime_MilliSeconds();
 		std::cout << r2::tab;
-		PrintLog_MicroSeconds();
+		PrintElapsedTime_MicroSeconds();
 		std::cout << r2::tab;
-		PrintLog_NanoSeconds();
+		PrintElapsedTime_NanoSeconds();
 	}
 }

@@ -156,7 +156,7 @@ namespace algorithm_astar_test
 			}
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
-			stop_watch.PrintLog_All();
+			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
@@ -208,7 +208,7 @@ namespace algorithm_astar_test
 			}
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
-			stop_watch.PrintLog_All();
+			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
@@ -261,7 +261,7 @@ namespace algorithm_astar_test
 			}
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
-			stop_watch.PrintLog_All();
+			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
@@ -314,7 +314,7 @@ namespace algorithm_astar_test
 			}
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
-			stop_watch.PrintLog_All();
+			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed2;
 
 			std::cout << "## Not Have Changed" << r2::linefeed2;
@@ -369,7 +369,7 @@ namespace algorithm_astar_test
 			}
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
-			stop_watch.PrintLog_All();
+			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
@@ -422,7 +422,7 @@ namespace algorithm_astar_test
 			}
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
-			stop_watch.PrintLog_All();
+			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
 			return r2::eTestResult::RunTest;
@@ -473,7 +473,7 @@ namespace algorithm_astar_test
 				//
 				// Show Time
 				//
-				stop_watch.PrintLog_All();
+				stop_watch.PrintElapsedTime_All();
 			}
 
 			std::cout << r2::split;
@@ -498,7 +498,7 @@ namespace algorithm_astar_test
 				//
 				// Show Time
 				//
-				stop_watch.PrintLog_All();
+				stop_watch.PrintElapsedTime_All();
 			}
 
 			std::cout << r2::split;
@@ -524,7 +524,7 @@ namespace algorithm_astar_test
 				//
 				// Show Time
 				//
-				stop_watch.PrintLog_All();
+				stop_watch.PrintElapsedTime_All();
 			}
 
 			std::cout << r2::split;
@@ -550,7 +550,7 @@ namespace algorithm_astar_test
 				//
 				// Show Time
 				//
-				stop_watch.PrintLog_All();
+				stop_watch.PrintElapsedTime_All();
 			}
 
 			std::cout << r2::split;
@@ -576,7 +576,7 @@ namespace algorithm_astar_test
 				//
 				// Show Time
 				//
-				stop_watch.PrintLog_All();
+				stop_watch.PrintElapsedTime_All();
 			}
 
 			std::cout << r2::split;
@@ -602,7 +602,7 @@ namespace algorithm_astar_test
 				//
 				// Show Time
 				//
-				stop_watch.PrintLog_All();
+				stop_watch.PrintElapsedTime_All();
 			}
 
 			std::cout << r2::split;
