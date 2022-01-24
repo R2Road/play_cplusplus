@@ -489,14 +489,12 @@ namespace r2algorithm
 		//
 		if( bSuccess )
 		{
-			out_result_path->push_back( exit_point );
-
 			auto path_point = exit_point;
 			while( -1 != path_point.x )
 			{
-				path_point = cost_map.Get( path_point.x, path_point.y ).GetPreviousPoint();
-
 				out_result_path->push_back( path_point );
+
+				path_point = cost_map.Get( path_point.x, path_point.y ).GetPreviousPoint();
 			}
 		}
 	}
