@@ -22,7 +22,7 @@ namespace r2util
 	{
 		mEndTime = std::chrono::high_resolution_clock::now();
 
-		const auto current_time = std::chrono::duration_cast<std::chrono::microseconds>( mEndTime - mStartTime ).count();
+		const auto current_time = std::chrono::duration_cast<std::chrono::nanoseconds>( mEndTime - mStartTime ).count();
 		if( current_time > mMaxTime )
 		{
 			mMaxTime = current_time;
@@ -69,8 +69,8 @@ namespace r2util
 
 	void StopWatch::PrintMinAndMaxTime()
 	{
-		std::cout << "Min : " << mMinTime << "¥ìs";
+		std::cout << "Min : " << mMinTime << "ns";
 		std::cout << r2::tab;
-		std::cout << "Max : " << mMaxTime << "¥ìs";
+		std::cout << "Max : " << mMaxTime << "ns";
 	}
 }
