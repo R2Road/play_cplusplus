@@ -184,6 +184,17 @@ namespace std_optional_test
 
 			std::cout << r2::split;
 
+			{
+				std::cout << r2::tab << "+ Process 4" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::optional<TestOptional> temp_op = op_ts_1;" << r2::linefeed;
+				std::cout << r2::tab3;
+				std::optional<TestOptional> temp_op = op_ts_1;
+				std::cout << "> Nothing";
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
