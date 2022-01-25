@@ -112,6 +112,10 @@ namespace std_optional_test
 
 			std::cout << r2::split;
 
+			std::cout << r2::tab << "+ Message : " "Optional Use Placement New" << r2::linefeed;
+
+			std::cout << r2::split;
+
 			struct TestOptional
 			{
 				TestOptional()
