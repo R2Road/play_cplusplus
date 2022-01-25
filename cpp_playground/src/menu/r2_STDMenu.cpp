@@ -8,9 +8,9 @@
 #include "r2_NumericMenu.h"
 #include "r2_ContainerMenu.h"
 
-#include "test_cpp/optional_test.h"
 #include "test_cpp/std_function_test.h"
 #include "test_cpp/std_function_2_test.h"
+#include "test_cpp/std_optional_test.h"
 #include "test_cpp/string_view_test.h"
 #include "test_cpp/tuple_test.h"
 #include "test_cpp/variant_test.h"
@@ -22,8 +22,8 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', optional_test::Basic::GetInstance() );
-			ret->AddChild( '2', optional_test::Basic_discard::GetInstance() );
+			ret->AddChild( '1', std_optional_test::Basic::GetInstance() );
+			ret->AddChild( '2', std_optional_test::Basic_discard::GetInstance() );
 			ret->AddChild( '3', stringview_test::Basic::GetInstance() );
 			ret->AddChild( '4', tuple_test::Basic::GetInstance() );
 			ret->AddChild( '5', variant_test::Basic::GetInstance() );

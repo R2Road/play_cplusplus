@@ -84,7 +84,7 @@
     <ClCompile Include="src\test_cpp\locale_test.cpp" />
     <ClCompile Include="src\test_cpp\memory_pool_test.cpp" />
     <ClCompile Include="src\test_cpp\new_test.cpp" />
-    <ClCompile Include="src\test_cpp\optional_test.cpp" />
+    <ClCompile Include="src\test_cpp\std_optional_test.cpp" />
     <ClCompile Include="src\test_cpp\performance_1_test.cpp" />
     <ClCompile Include="src\test_cpp\performance_container_iteration_test.cpp" />
     <ClCompile Include="src\test_cpp\pointer_test.cpp" />
@@ -178,7 +178,7 @@
     <ClInclude Include="src\test_cpp\locale_test.h" />
     <ClInclude Include="src\test_cpp\memory_pool_test.h" />
     <ClInclude Include="src\test_cpp\new_test.h" />
-    <ClInclude Include="src\test_cpp\optional_test.h" />
+    <ClInclude Include="src\test_cpp\std_optional_test.h" />
     <ClInclude Include="src\test_cpp\performance_1_test.h" />
     <ClInclude Include="src\test_cpp\performance_container_iteration_test.h" />
     <ClInclude Include="src\test_cpp\pointer_test.h" />

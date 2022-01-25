@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "optional_test.h"
+#include "std_optional_test.h"
 
 #include <optional>
 
@@ -30,7 +30,7 @@ namespace
 		}
 	}
 }
-namespace optional_test
+namespace std_optional_test
 {
 	r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
