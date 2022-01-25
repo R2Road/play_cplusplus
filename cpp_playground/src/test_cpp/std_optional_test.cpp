@@ -76,24 +76,24 @@ namespace std_optional_test
 	{
 		TestOptional()
 		{
-			std::cout << "> Call : TestOptional()";
+			std::cout << "> Call : TestOptional()\t";
 		}
 		TestOptional( const int )
 		{
-			std::cout << "> Call : TestOptional( const int i )";
+			std::cout << "> Call : TestOptional( const int i )\t";
 		}
 		TestOptional( const TestOptional& )
 		{
-			std::cout << "> Call : TestOptional( const TestStruct& )";
+			std::cout << "> Call : TestOptional( const TestStruct& )\t";
 		}
 		TestOptional( TestOptional&& )
 		{
-			std::cout << "> Call : TestOptional( TestStruct&& )";
+			std::cout << "> Call : TestOptional( TestStruct&& )\t";
 		}
 
 		TestOptional& operator=( const TestOptional& )
 		{
-			std::cout << "> Call : TestOptional& operator=( const TestOptional& )";
+			std::cout << "> Call : TestOptional& operator=( const TestOptional& )\t";
 			return *this;
 		}
 
@@ -159,7 +159,6 @@ namespace std_optional_test
 				std::cout << r2::tab2 << "op_2 = op_1;" << r2::linefeed;
 				std::cout << r2::tab3;
 				op_2 = op_1;
-				std::cout << "> Nothing???";
 				std::cout << r2::linefeed;
 			}
 
@@ -170,7 +169,6 @@ namespace std_optional_test
 				std::cout << r2::tab2 << "std::optional<TestOptional> temp_op = op_1;" << r2::linefeed;
 				std::cout << r2::tab3;
 				std::optional<TestOptional> temp_op = op_1;
-				std::cout << "> Nothing";
 				std::cout << r2::linefeed;
 			}
 
