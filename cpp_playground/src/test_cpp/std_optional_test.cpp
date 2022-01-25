@@ -217,6 +217,59 @@ namespace std_optional_test
 
 
 
+	r2::iTest::TitleFunc Reference::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Optional : Reference";
+		};
+	}
+	r2::iTest::DoFunc Reference::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			struct EmptyStruct {};
+			EmptyStruct t_1;
+			EmptyStruct t_2;
+
+			std::cout << r2::tab << "+ Declaration " << r2::linefeed2;
+			std::cout << r2::tab2 << "- EmptyStruct t_1;" << r2::linefeed;
+			std::cout << r2::tab2 << "- EmptyStruct t_2;" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				//
+				//std::optional<EmptyStruct&> maybe_test_struct_ref = t_1;
+				//
+				std::cout << r2::tab << "std::optional<EmptyStruct&> maybe_test_struct_ref = t_1;" << r2::linefeed;
+				std::cout << r2::tab2 << "> Not Working" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::optional<std::reference_wrapper<EmptyStruct>> maybe_test_struct_ref = t_1;
+				std::cout << r2::tab << "std::optional<std::reference_wrapper<EmptyStruct>> maybe_test_struct_ref = t_1;" << r2::linefeed;
+				std::cout << r2::tab2 << "> Working" << r2::linefeed2;
+
+				maybe_test_struct_ref = t_2;
+				std::cout << r2::tab << "maybe_test_struct_ref = t_2;" << r2::linefeed;
+				std::cout << r2::tab2 << "> Working" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc Basic_discard::GetTitleFunction() const
 	{
 		return []()->const char*

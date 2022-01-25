@@ -24,24 +24,25 @@ namespace r2
 		{
 			ret->AddChild( '1', std_optional_test::Basic::GetInstance() );
 			ret->AddChild( '2', std_optional_test::Constructor::GetInstance() );
-			ret->AddChild( '3', std_optional_test::Basic_discard::GetInstance() );
-			ret->AddChild( '4', stringview_test::Basic::GetInstance() );
-			ret->AddChild( '5', tuple_test::Basic::GetInstance() );
-			ret->AddChild( '6', variant_test::Basic::GetInstance() );
+			ret->AddChild( '3', std_optional_test::Reference::GetInstance() );
+			ret->AddChild( '4', std_optional_test::Basic_discard::GetInstance() );
+			ret->AddChild( '5', stringview_test::Basic::GetInstance() );
+			ret->AddChild( '6', tuple_test::Basic::GetInstance() );
+			ret->AddChild( '7', variant_test::Basic::GetInstance() );
 
 			ret->AddLineFeed();
 
-			ret->AddChild( '5', std_function_test::Equality_FunctionPointer_1::GetInstance() );
-			ret->AddChild( '6', std_function_test::Equality_FunctionPointer_2::GetInstance() );
-			ret->AddChild( '7', std_function_test::Equality_FunctionPointer_3::GetInstance() );
-			ret->AddChild( '8', std_function_2_test::Equality_STDBind_1::GetInstance() );
-			ret->AddChild( '9', std_function_test::Equality_Lambda_1::GetInstance() );
+			ret->AddChild( 'q', std_function_test::Equality_FunctionPointer_1::GetInstance() );
+			ret->AddChild( 'w', std_function_test::Equality_FunctionPointer_2::GetInstance() );
+			ret->AddChild( 'e', std_function_test::Equality_FunctionPointer_3::GetInstance() );
+			ret->AddChild( 'r', std_function_2_test::Equality_STDBind_1::GetInstance() );
+			ret->AddChild( 't', std_function_test::Equality_Lambda_1::GetInstance() );
 
 			ret->AddLineFeed();
 
 
 			ret->AddChild(
-				'q'
+				'a'
 				, []()->const char* { return r2::NumericMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -50,7 +51,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'w'
+				's'
 				, []()->const char* { return r2::ContainerMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
