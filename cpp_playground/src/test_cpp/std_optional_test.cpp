@@ -101,8 +101,7 @@ namespace std_optional_test
 	};
 	std::optional<TestOptional> GetTestOptional()
 	{
-		static std::optional<TestOptional> temp = TestOptional{};
-		return temp;
+		return std::optional<TestOptional>( TestOptional{} );
 	}
 	r2::iTest::TitleFunc Constructor::GetTitleFunction() const
 	{
