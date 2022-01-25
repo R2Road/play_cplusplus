@@ -346,8 +346,10 @@ namespace algorithm_astar_test
 				std::vector<r2::Point> result_path;
 				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
+				r2algorithm::AStarPathBuilder_UseCostMap_TinyData builder( WORLD_MAP.GetWidth(), WORLD_MAP.GetHeight() );
+
 				stop_watch.Start();
-				r2algorithm::AStarPathBuilder_UseCostMap::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
+				builder.Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 				stop_watch.Stop();
 
 				//
@@ -396,8 +398,10 @@ namespace algorithm_astar_test
 				std::vector<r2::Point> result_path;
 				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
+				r2algorithm::AStarPathBuilder_UseCostMap_TinyData builder( WORLD_MAP.GetWidth(), WORLD_MAP.GetHeight() );
+
 				stop_watch.Start();
-				r2algorithm::AStarPathBuilder_UseCostMap_TinyData::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
+				builder.Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 				stop_watch.Stop();
 
 				//
@@ -553,10 +557,13 @@ namespace algorithm_astar_test
 				std::vector<r2::Point> result_path;
 				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
+				r2algorithm::AStarPathBuilder_UseCostMap builder( WORLD_MAP.GetWidth(), WORLD_MAP.GetHeight() );
+
 				for( int i = 0; attempt_limit > i; ++i )
 				{
 					stop_watch.Start();
-					r2algorithm::AStarPathBuilder_UseCostMap::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
+					builder.Clear();
+					builder.Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 					stop_watch.Stop();
 				}
 
@@ -580,10 +587,13 @@ namespace algorithm_astar_test
 				std::vector<r2::Point> result_path;
 				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
+				r2algorithm::AStarPathBuilder_UseCostMap_TinyData builder( WORLD_MAP.GetWidth(), WORLD_MAP.GetHeight() );
+
 				for( int i = 0; attempt_limit > i; ++i )
 				{
 					stop_watch.Start();
-					r2algorithm::AStarPathBuilder_UseCostMap_TinyData::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
+					builder.Clear();
+					builder.Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 					stop_watch.Stop();
 				}
 

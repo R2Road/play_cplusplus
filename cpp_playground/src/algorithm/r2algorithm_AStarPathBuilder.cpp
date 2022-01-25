@@ -1,156 +1,12 @@
 #include "pch.h"
 #include "r2algorithm_AStarPathBuilder.h"
 
-#include <algorithm>
-
 #include "r2/r2_Direction8.h"
 
 namespace
 {
 	const int CELL_TYPE_ROAD = 0;
 	const int CELL_TYPE_WALL = 1;
-
-	class Node4AStar
-	{
-	public:
-		enum class eStatus
-		{
-			None,
-			Open,
-			Close,
-		};
-
-		Node4AStar() :
-			mStatus( eStatus::None )
-			, mCurrentPoint()
-			, mPreviousPoint()
-			, mCost2Start( calculateCost( {}, {} ) )
-			, mCost2End( calculateCost( {}, {} ) )
-			, mTotalCost( mCost2Start + mCost2End )
-		{}
-
-		Node4AStar( const r2::Point current_point, const r2::Point previous_point, const r2::Point start_point, const r2::Point end_point ) :
-			mStatus( eStatus::Open )
-			, mCurrentPoint( current_point )
-			, mPreviousPoint( previous_point )
-			, mCost2Start( calculateCost( current_point, start_point ) )
-			, mCost2End( calculateCost( current_point, end_point ) )
-			, mTotalCost( mCost2Start + mCost2End )
-		{}
-
-		//
-		// Getter
-		//
-		eStatus GetStatus() const { return mStatus; }
-		r2::Point GetPoint() const { return mCurrentPoint; }
-		r2::Point GetPreviousPoint() const { return mPreviousPoint; }
-		int GetCost2Start() const { return mCost2Start; }
-		int GetCost2End() const { return mCost2End; }
-		int GetTotalCost() const { return mTotalCost; }
-
-		void Clear()
-		{
-			mStatus = eStatus::None;
-			mCost2Start = 0;
-			mCost2End = 0;
-			mTotalCost = 0;
-		};
-		bool IsValid() const
-		{
-			return eStatus::None != mStatus;
-		}
-
-		void Close()
-		{
-			mStatus = eStatus::Close;
-		}
-
-	private:
-		int calculateCost( const r2::Point point_1, const r2::Point point_2 )
-		{
-			const auto distance_x = std::abs( point_1.x - point_2.x );
-			const auto distance_y = std::abs( point_1.y - point_2.y );
-
-			const auto gap = std::abs( distance_x - distance_y );
-
-			const auto max_value = std::max( distance_x, distance_y );
-			const auto diagonal = max_value - gap;
-
-			return ( gap * 10 ) + ( diagonal * 14 );
-		}
-
-	private:
-		eStatus mStatus;
-		r2::Point mCurrentPoint;
-		r2::Point mPreviousPoint;
-		int mCost2Start;
-		int mCost2End;
-		int mTotalCost;
-	};
-
-	class TinyNode4AStar
-	{
-	public:
-		enum class eStatus : char16_t
-		{
-			None,
-			Open,
-			Close,
-		};
-
-		TinyNode4AStar() :
-			mStatus( eStatus::None )
-			, mCost2End( calculateCost( {}, {} ) )
-			, mPreviousPoint()
-		{}
-
-		TinyNode4AStar( const r2::Point current_point, const r2::Point previous_point, const r2::Point end_point ) :
-			mStatus( eStatus::Open )
-			, mCost2End( calculateCost( current_point, end_point ) )
-			, mPreviousPoint( previous_point )
-		{}
-
-		//
-		// Getter
-		//
-		eStatus GetStatus() const { return mStatus; }
-		r2::Point GetPreviousPoint() const { return mPreviousPoint; }
-		int GetCost2End() const { return mCost2End; }
-
-		void Clear()
-		{
-			mStatus = eStatus::None;
-			mCost2End = 0;
-		};
-		bool IsValid() const
-		{
-			return eStatus::None != mStatus;
-		}
-
-		void Close()
-		{
-			mStatus = eStatus::Close;
-		}
-
-	private:
-		int16_t calculateCost( const r2::Point point_1, const r2::Point point_2 )
-		{
-			const auto distance_x = std::abs( point_1.x - point_2.x );
-			const auto distance_y = std::abs( point_1.y - point_2.y );
-
-			const auto gap = std::abs( distance_x - distance_y );
-
-			const auto max_value = std::max( distance_x, distance_y );
-			const auto diagonal = max_value - gap;
-
-			return static_cast<int16_t>( ( gap * 10 ) + ( diagonal * 14 ) );
-		}
-
-	private:
-		eStatus mStatus;
-		int16_t mCost2End;
-		r2::Point mPreviousPoint;
-	};
 }
 
 namespace r2algorithm
@@ -582,9 +438,15 @@ namespace r2algorithm
 
 
 
+	void AStarPathBuilder_UseCostMap::Clear()
+	{
+		for( auto& c : cost_map )
+		{
+			c.Clear();
+		}
+	}
 	void AStarPathBuilder_UseCostMap::Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::vector<r2::Point>* out_result_path )
 	{
-		r2::Grid<Node4AStar> cost_map( grid.GetWidth(), grid.GetHeight(), Node4AStar() );
 		using TargetContainerT = std::list<r2::Point>;
 		TargetContainerT open_list;
 		TargetContainerT close_list;
@@ -677,9 +539,15 @@ namespace r2algorithm
 
 
 
+	void AStarPathBuilder_UseCostMap_TinyData::Clear()
+	{
+		for( auto& c : cost_map )
+		{
+			c.Clear();
+		}
+	}
 	void AStarPathBuilder_UseCostMap_TinyData::Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::vector<r2::Point>* out_result_path )
 	{
-		r2::Grid<TinyNode4AStar> cost_map( grid.GetWidth(), grid.GetHeight(), TinyNode4AStar() );
 		using TargetContainerT = std::list<r2::Point>;
 		TargetContainerT open_list;
 		TargetContainerT close_list;
