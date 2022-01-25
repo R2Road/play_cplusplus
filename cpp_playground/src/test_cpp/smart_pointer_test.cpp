@@ -64,8 +64,8 @@ namespace smart_pointer_test
 				std::cout << r2::linefeed;
 
 				//*const_test_sp = 11;
-				//std::cout << "\t" << "+ Change Value with Sp Has Const Value" << r2::linefeed;
-				//std::cout << "\t\t" << *const_test_sp << r2::linefeed;
+				//std::cout << r2::tab << "+ Change Value with Sp Has Const Value" << r2::linefeed;
+				//std::cout << r2::tab2 << *const_test_sp << r2::linefeed;
 			}
 
 			std::cout << r2::split;
