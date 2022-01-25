@@ -47,15 +47,16 @@ namespace std_optional_test
 
 			std::cout << r2::split;
 
+			struct TestOptional { int i = 8; };
+			std::optional<TestOptional> op_ts;
+
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "struct TestOptional { int i = 8; };" << r2::linefeed;
+			std::cout << r2::tab2 << "std::optional<TestOptional> op_ts;" << r2::linefeed;
+
+			std::cout << r2::split;
+
 			{
-				struct TestOptional { int i = 8; };
-
-				std::optional<TestOptional> op_ts;
-
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "struct TestOptional { int i = 8; };" << r2::linefeed2;
-				std::cout << r2::tab2 << "std::optional<TestOptional> op_ts;" << r2::linefeed2;
-
 				std::cout << r2::tab << "+ Process 1" << r2::linefeed2;
 				std::cout << r2::tab2 << "op_ts.has_value();" << r2::linefeed;
 				std::cout << r2::tab3 << "> " << op_ts.has_value() << r2::linefeed2;
