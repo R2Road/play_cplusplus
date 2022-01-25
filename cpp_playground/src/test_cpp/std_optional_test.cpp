@@ -237,8 +237,9 @@ namespace std_optional_test
 			EmptyStruct t_2;
 
 			std::cout << r2::tab << "+ Declaration " << r2::linefeed2;
-			std::cout << r2::tab2 << "- EmptyStruct t_1;" << r2::linefeed;
-			std::cout << r2::tab2 << "- EmptyStruct t_2;" << r2::linefeed;
+			std::cout << r2::tab2 << "struct EmptyStruct {};" << r2::linefeed;
+			std::cout << r2::tab2 << "EmptyStruct t_1;" << r2::linefeed;
+			std::cout << r2::tab2 << "EmptyStruct t_2;" << r2::linefeed;
 
 			std::cout << r2::split;
 
