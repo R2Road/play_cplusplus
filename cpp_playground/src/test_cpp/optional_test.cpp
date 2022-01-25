@@ -32,6 +32,60 @@ namespace
 }
 namespace optional_test
 {
+	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Optional : Basic";
+		};
+	}
+	r2::iTest::DoFunc Basic::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				struct TestOptional { int i = 8; };
+
+				std::optional<TestOptional> op_ts;
+
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "struct TestOptional { int i = 8; };" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::optional<TestOptional> op_ts;" << r2::linefeed2;
+
+				std::cout << r2::tab << "+ Process 1" << r2::linefeed2;
+				std::cout << r2::tab2 << "op_ts.has_value();" << r2::linefeed;
+				std::cout << r2::tab3 << "> " << op_ts.has_value() << r2::linefeed2;
+				//std::cout << r2::tab3 << op_ts.value().i << r2::linefeed; // throw exception : op_ts is nullopt
+
+				op_ts = TestOptional{};
+
+				std::cout << r2::tab << "+ Process 2" << r2::linefeed2;
+				std::cout << r2::tab2 << "op_ts = TestOptional{};" << r2::linefeed;
+				std::cout << r2::tab2 << "op_ts.has_value();" << r2::linefeed;
+				std::cout << r2::tab3 << "> " << op_ts.has_value() << r2::linefeed;
+				std::cout << r2::tab2 << "op_ts.value().i;" << r2::linefeed;
+				std::cout << r2::tab3 << "> " << op_ts.value().i << r2::linefeed;
+
+				op_ts.reset();
+
+				std::cout << r2::tab << "+ Process 3" << r2::linefeed2;
+				std::cout << r2::tab2 << "op_ts.reset();" << r2::linefeed;
+				std::cout << r2::tab2 << "op_ts.has_value();" << r2::linefeed;
+				std::cout << r2::tab3 << "> " << op_ts.has_value() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc Basic_discard::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -59,28 +113,6 @@ namespace optional_test
 			std::cout << r2::tab << "+ Make Optional" << r2::linefeed;
 			std::cout << r2::tab2 << "- std::optional<TestStruct> op_ts;" << r2::linefeed;
 			std::optional<TestStruct> op_ts;
-			std::cout << r2::tab2 << "- Call : has_value()" << r2::linefeed;
-			std::cout << r2::tab3 << op_ts.has_value() << r2::linefeed;
-			//std::cout << r2::tab3 << op_ts.value().i << r2::linefeed; // throw exception : op_ts is nullopt
-
-
-			std::cout << r2::linefeed << r2::linefeed;
-
-
-			std::cout << r2::tab << "+ Assign 2 Optional " << r2::linefeed;
-			std::cout << r2::tab2 << "- op_ts = ts" << r2::linefeed;
-			std::cout << r2::tab3;
-			op_ts = ts;
-			std::cout << r2::tab2 << "- Call : has_value()" << r2::linefeed;
-			std::cout << r2::tab3 << op_ts.has_value() << r2::linefeed;
-
-
-			std::cout << r2::linefeed << r2::linefeed;
-
-
-			std::cout << r2::tab << "+ Value() " << r2::linefeed;
-			std::cout << r2::tab2 << "- op_ts.value().I;" << r2::linefeed;
-			std::cout << r2::tab3 << op_ts.value().I << r2::linefeed;
 
 
 			std::cout << r2::linefeed << r2::linefeed;

@@ -5,6 +5,13 @@
 
 namespace optional_test
 {
+	class Basic : public r2::iTest, public r2::SingleTon<Basic>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
 	class Basic_discard : public r2::iTest, public r2::SingleTon<Basic_discard>
 	{
 	public:
