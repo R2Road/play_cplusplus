@@ -25,7 +25,9 @@ namespace r2
 			ret->AddChild( '1', std_optional_test::Basic::GetInstance() );
 			ret->AddChild( '2', std_optional_test::Constructor::GetInstance() );
 			ret->AddChild( '3', std_optional_test::Reference::GetInstance() );
-			ret->AddChild( '4', std_optional_test::Basic_discard::GetInstance() );
+
+			ret->AddLineFeed();
+
 			ret->AddChild( '5', stringview_test::Basic::GetInstance() );
 			ret->AddChild( '6', tuple_test::Basic::GetInstance() );
 			ret->AddChild( '7', variant_test::Basic::GetInstance() );

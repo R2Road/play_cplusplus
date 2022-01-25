@@ -25,11 +25,4 @@ namespace std_optional_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
-
-	class Basic_discard : public r2::iTest, public r2::SingleTon<Basic_discard>
-	{
-	public:
-		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
-	};
 }
