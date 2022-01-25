@@ -97,6 +97,38 @@ namespace std_optional_test
 
 
 
+	struct TestOptional
+	{
+		TestOptional()
+		{
+			std::cout << "> Call : TestOptional()";
+		}
+		TestOptional( const int )
+		{
+			std::cout << "> Call : TestOptional( const int i )";
+		}
+		TestOptional( const TestStruct& )
+		{
+			std::cout << "> Call : TestOptional( const TestStruct& )";
+		}
+		TestOptional( TestStruct&& )
+		{
+			std::cout << "> Call : TestOptional( TestStruct&& )";
+		}
+
+		TestOptional& operator=( const TestOptional& )
+		{
+			std::cout << "> Call : TestOptional& operator=( const TestOptional& )";
+			return *this;
+		}
+
+		int i = 8;
+	};
+	std::optional<TestOptional> GetTestOptional()
+	{
+		static std::optional<TestOptional> temp = TestOptional{};
+		return temp;
+	}
 	r2::iTest::TitleFunc Constructor::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -116,32 +148,6 @@ namespace std_optional_test
 
 			std::cout << r2::split;
 
-			struct TestOptional
-			{
-				TestOptional()
-				{
-					std::cout << "> Call : TestOptional()";
-				}
-				TestOptional( const int )
-				{
-					std::cout << "> Call : TestOptional( const int i )";
-				}
-				TestOptional( const TestStruct& )
-				{
-					std::cout << "> Call : TestOptional( const TestStruct& )";
-				}
-				TestOptional( TestStruct&& )
-				{
-					std::cout << "> Call : TestOptional( TestStruct&& )";
-				}
-
-				TestStruct& operator=( const TestStruct& )
-				{
-					std::cout << "> Call : TestStruct& operator=( const TestStruct& )";
-				}
-
-				int i = 8;
-			};
 			std::optional<TestOptional> op_1;
 			std::optional<TestOptional> op_2;
 
@@ -190,6 +196,16 @@ namespace std_optional_test
 				std::cout << r2::tab3;
 				std::optional<TestOptional> temp_op = op_1;
 				std::cout << "> Nothing";
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Process 5" << r2::linefeed2;
+				std::cout << r2::tab2 << "op_1 = GetTestOptional();" << r2::linefeed;
+				std::cout << r2::tab3;
+				op_1 = GetTestOptional();
 				std::cout << r2::linefeed;
 			}
 
