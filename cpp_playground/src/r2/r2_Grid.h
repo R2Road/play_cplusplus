@@ -82,11 +82,13 @@ namespace r2
 		//
 		CellT& Get( const std::size_t linear_idx )
 		{
+#if defined( DEBUG ) || defined( _DEBUG )
 			if( linear_idx >= static_cast<int>( mContainer.size() ) )
 			{
 				static CellT dummy;
 				return dummy;
 			}
+#endif
 
 			return mContainer[linear_idx];
 		}
@@ -96,11 +98,13 @@ namespace r2
 		}
 		const CellT& Get( const std::size_t linear_idx ) const
 		{
+#if defined( DEBUG ) || defined( _DEBUG )
 			if( linear_idx >= static_cast<int>( mContainer.size() ) )
 			{
 				static CellT dummy;
 				return dummy;
 			}
+#endif
 
 			return mContainer[linear_idx];
 		}
@@ -114,10 +118,12 @@ namespace r2
 		//
 		void Set( const std::size_t linear_idx, const CellT& new_value )
 		{
+#if defined( DEBUG ) || defined( _DEBUG )
 			if( linear_idx >= static_cast<int>( mContainer.size() ) )
 			{
 				return;
 			}
+#endif
 
 			mContainer[linear_idx] = new_value;
 		}
