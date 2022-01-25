@@ -97,6 +97,95 @@ namespace std_optional_test
 
 
 
+	r2::iTest::TitleFunc Constructor::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Optional : Constructor";
+		};
+	}
+	r2::iTest::DoFunc Constructor::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			struct TestOptional
+			{
+				TestOptional()
+				{
+					std::cout << "> Call : TestOptional()";
+				}
+				TestOptional( const int )
+				{
+					std::cout << "> Call : TestOptional( const int i )";
+				}
+				TestOptional( const TestStruct& )
+				{
+					std::cout << "> Call : TestOptional( const TestStruct& )";
+				}
+				TestOptional( TestStruct&& )
+				{
+					std::cout << "> Call : TestOptional( TestStruct&& )";
+				}
+
+				TestStruct& operator=( const TestStruct& )
+				{
+					std::cout << "> Call : TestStruct& operator=( const TestStruct& )";
+				}
+
+				int i = 8;
+			};
+			std::optional<TestOptional> op_ts_1;
+			std::optional<TestOptional> op_ts_2;
+
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "struct TestOptional;" << r2::linefeed;
+			std::cout << r2::tab2 << "std::optional<TestOptional> op_ts_1;" << r2::linefeed;
+			std::cout << r2::tab2 << "std::optional<TestOptional> op_ts_2;" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Process 1" << r2::linefeed2;
+				std::cout << r2::tab2 << "op_ts_1 = op_ts_2;" << r2::linefeed;
+				std::cout << r2::tab3;
+				op_ts_1 = op_ts_2;
+				std::cout << "> Nothing";
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Process 2" << r2::linefeed2;
+				std::cout << r2::tab2 << "op_ts_1 = TestOptional{};" << r2::linefeed;
+				std::cout << r2::tab3;
+				op_ts_1 = TestOptional{};
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Process 3" << r2::linefeed2;
+				std::cout << r2::tab2 << "op_ts_2 = op_ts_1;" << r2::linefeed;
+				std::cout << r2::tab3;
+				op_ts_2 = op_ts_1;
+				std::cout << "> Nothing???";
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc Basic_discard::GetTitleFunction() const
 	{
 		return []()->const char*

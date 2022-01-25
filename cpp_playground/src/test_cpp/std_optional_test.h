@@ -12,6 +12,13 @@ namespace std_optional_test
 		DoFunc GetDoFunction() override;
 	};
 
+	class Constructor : public r2::iTest, public r2::SingleTon<Constructor>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
 	class Basic_discard : public r2::iTest, public r2::SingleTon<Basic_discard>
 	{
 	public:

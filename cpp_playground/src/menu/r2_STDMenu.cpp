@@ -23,10 +23,11 @@ namespace r2
 
 		{
 			ret->AddChild( '1', std_optional_test::Basic::GetInstance() );
-			ret->AddChild( '2', std_optional_test::Basic_discard::GetInstance() );
-			ret->AddChild( '3', stringview_test::Basic::GetInstance() );
-			ret->AddChild( '4', tuple_test::Basic::GetInstance() );
-			ret->AddChild( '5', variant_test::Basic::GetInstance() );
+			ret->AddChild( '2', std_optional_test::Constructor::GetInstance() );
+			ret->AddChild( '3', std_optional_test::Basic_discard::GetInstance() );
+			ret->AddChild( '4', stringview_test::Basic::GetInstance() );
+			ret->AddChild( '5', tuple_test::Basic::GetInstance() );
+			ret->AddChild( '6', variant_test::Basic::GetInstance() );
 
 			ret->AddLineFeed();
 
