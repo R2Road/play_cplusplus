@@ -25,30 +25,30 @@ namespace lambda_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Basic" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Basic" << r2::linefeed << r2::linefeed;
 
 				int i = 888;
 				auto lambda_1 = [i]()
 				{
-					std::cout << "\t\t" << "i : " << i << r2::linefeed;
+					std::cout << r2::tab2 << "i : " << i << r2::linefeed;
 				};
 
-				std::cout << "\t\t" << "int i = 888;" << r2::linefeed;
-				std::cout << "\t\t" << "auto lambda_1 = [i]()" << r2::linefeed;
-				std::cout << "\t\t" << "{" << r2::linefeed;
-				std::cout << "\t\t\t" << "std::cout << i << r2::linefeed;" << r2::linefeed;
-				std::cout << "\t\t" << "};" << r2::linefeed;
+				std::cout << r2::tab2 << "int i = 888;" << r2::linefeed;
+				std::cout << r2::tab2 << "auto lambda_1 = [i]()" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab3 << "std::cout << i << r2::linefeed;" << r2::linefeed;
+				std::cout << r2::tab2 << "};" << r2::linefeed;
 				std::cout << r2::linefeed;
 
-				std::cout << "\t" << "+ Call Lambda" << r2::linefeed;
+				std::cout << r2::tab << "+ Call Lambda" << r2::linefeed;
 				lambda_1();
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Captures Default to Const Value" << r2::linefeed << r2::linefeed;
-				std::cout << "\t\t" << "- https://www.learncpp.com/cpp-tutorial/lambda-captures/" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Captures Default to Const Value" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab2 << "- https://www.learncpp.com/cpp-tutorial/lambda-captures/" << r2::linefeed << r2::linefeed;
 				std::cout << r2::linefeed;
 
 
@@ -58,13 +58,13 @@ namespace lambda_test
 				//	++i;
 				//};
 
-				std::cout << "\t" << "+ Not working this" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Not working this" << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t\t" << "int i = 0;" << r2::linefeed;
-				std::cout << "\t\t" << "auto lambda_1 = [i]()" << r2::linefeed;
-				std::cout << "\t\t" << "{" << r2::linefeed;
-				std::cout << "\t\t\t" << "++i; // X - i is const" << r2::linefeed;
-				std::cout << "\t\t" << "};" << r2::linefeed;
+				std::cout << r2::tab2 << "int i = 0;" << r2::linefeed;
+				std::cout << r2::tab2 << "auto lambda_1 = [i]()" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab3 << "++i; // X - i is const" << r2::linefeed;
+				std::cout << r2::tab2 << "};" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -91,24 +91,24 @@ namespace lambda_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Mutable" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Mutable" << r2::linefeed << r2::linefeed;
 
 				int i = 0;
 				auto lambda_1 = [i]() mutable
 				{
 					++i;
 
-					std::cout << "\t\t" << "i : " << i << r2::linefeed;
+					std::cout << r2::tab2 << "i : " << i << r2::linefeed;
 				};
 
-				std::cout << "\t\t" << "int i = 0;" << r2::linefeed;
-				std::cout << "\t\t" << "auto lambda_1 = [i]() mutable" << r2::linefeed;
-				std::cout << "\t\t" << "{" << r2::linefeed;
-				std::cout << "\t\t\t" << "++i;" << r2::linefeed;
-				std::cout << "\t\t" << "};" << r2::linefeed;
+				std::cout << r2::tab2 << "int i = 0;" << r2::linefeed;
+				std::cout << r2::tab2 << "auto lambda_1 = [i]() mutable" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab3 << "++i;" << r2::linefeed;
+				std::cout << r2::tab2 << "};" << r2::linefeed;
 				std::cout << r2::linefeed;
 
-				std::cout << "\t" << "+ Call Lambda" << r2::linefeed;
+				std::cout << r2::tab << "+ Call Lambda" << r2::linefeed;
 				lambda_1();
 				lambda_1();
 				lambda_1();
@@ -138,55 +138,55 @@ namespace lambda_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ REF Capture 1" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ REF Capture 1" << r2::linefeed << r2::linefeed;
 
 				int i = 0;
 				int& ref_i = i;
-				std::cout << "\t\t" << "int i = 0;" << r2::linefeed;
-				std::cout << "\t\t" << "int& ref_i = i;" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab2 << "int i = 0;" << r2::linefeed;
+				std::cout << r2::tab2 << "int& ref_i = i;" << r2::linefeed << r2::linefeed;
 
 				auto test_func = [&ref_i]()
 				{
 					++ref_i;
 				};
-				std::cout << "\t\t" << "auto test_func = [&ref_i]()" << r2::linefeed;
-				std::cout << "\t\t" << "{" << r2::linefeed;
-				std::cout << "\t\t\t" << "++ref_i;" << r2::linefeed;
-				std::cout << "\t\t" << "};" << r2::linefeed;
+				std::cout << r2::tab2 << "auto test_func = [&ref_i]()" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab3 << "++ref_i;" << r2::linefeed;
+				std::cout << r2::tab2 << "};" << r2::linefeed;
 				std::cout << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t\t" << "- Call Lambda" << r2::linefeed;
+				std::cout << r2::tab2 << "- Call Lambda" << r2::linefeed;
 				test_func();
 				std::cout << r2::linefeed;
 
-				std::cout << "\t\t" << "- Print : i" << r2::linefeed;
-				std::cout << "\t\t\t" << i << r2::linefeed;
+				std::cout << r2::tab2 << "- Print : i" << r2::linefeed;
+				std::cout << r2::tab3 << i << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ REF Capture 2" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ REF Capture 2" << r2::linefeed << r2::linefeed;
 
 				int i = 0;
-				std::cout << "\t\t" << "int i = 0;" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab2 << "int i = 0;" << r2::linefeed << r2::linefeed;
 
 				auto test_func = [&ref_i = i]()
 				{
 					++ref_i;
 				};
-				std::cout << "\t\t" << "auto test_func = [&ref_i = i]()" << r2::linefeed;
-				std::cout << "\t\t" << "{" << r2::linefeed;
-				std::cout << "\t\t\t" << "++ref_i;" << r2::linefeed;
-				std::cout << "\t\t" << "};" << r2::linefeed;
+				std::cout << r2::tab2 << "auto test_func = [&ref_i = i]()" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab3 << "++ref_i;" << r2::linefeed;
+				std::cout << r2::tab2 << "};" << r2::linefeed;
 				std::cout << r2::linefeed << r2::linefeed;
 
-				std::cout << "\t\t" << "- Call Lambda" << r2::linefeed;
+				std::cout << r2::tab2 << "- Call Lambda" << r2::linefeed;
 				test_func();
 				std::cout << r2::linefeed;
 
-				std::cout << "\t\t" << "- Print : i" << r2::linefeed;
-				std::cout << "\t\t\t" << i << r2::linefeed;
+				std::cout << r2::tab2 << "- Print : i" << r2::linefeed;
+				std::cout << r2::tab3 << i << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -213,30 +213,30 @@ namespace lambda_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Unique_Ptr Capture With Move 1" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Unique_Ptr Capture With Move 1" << r2::linefeed << r2::linefeed;
 
 				auto test_up = std::unique_ptr<int>( new int() );
-				std::cout << "\t\t" << "auto test_up = std::unique_ptr<TestStruct>( new TestStruct() );" << r2::linefeed;
-				std::cout << "\t\t\t" << "test_up Validation : " << ( nullptr != test_up.get() ? "O" : "X" ) << r2::linefeed;
+				std::cout << r2::tab2 << "auto test_up = std::unique_ptr<TestStruct>( new TestStruct() );" << r2::linefeed;
+				std::cout << r2::tab3 << "test_up Validation : " << ( nullptr != test_up.get() ? "O" : "X" ) << r2::linefeed;
 				std::cout << r2::linefeed << r2::linefeed;
 
 				auto test_func = [moved_up = std::move( test_up )]() {};
-				std::cout << "\t\t" << "auto test_func = [moved_up = std::move( test_up )]() {}" << r2::linefeed;
-				std::cout << "\t\t\t" << "test_up Validation : " << ( nullptr != test_up.get() ? "O" : "X" ) << r2::linefeed;
+				std::cout << r2::tab2 << "auto test_func = [moved_up = std::move( test_up )]() {}" << r2::linefeed;
+				std::cout << r2::tab3 << "test_up Validation : " << ( nullptr != test_up.get() ? "O" : "X" ) << r2::linefeed;
 				std::cout << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Unique_Ptr Capture With Move 2" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Unique_Ptr Capture With Move 2" << r2::linefeed << r2::linefeed;
 
 				struct TestStruct {};
-				std::cout << "\t\t" << "struct TestStruct;" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab2 << "struct TestStruct;" << r2::linefeed << r2::linefeed;
 
 				auto test_up = std::unique_ptr<TestStruct>( new TestStruct() );
-				std::cout << "\t\t" << "auto test_up = std::unique_ptr<TestStruct>( new TestStruct() );" << r2::linefeed;
-				std::cout << "\t\t\t" << "test_up Validation : " << ( nullptr != test_up.get() ? "O" : "X" ) << r2::linefeed;
+				std::cout << r2::tab2 << "auto test_up = std::unique_ptr<TestStruct>( new TestStruct() );" << r2::linefeed;
+				std::cout << r2::tab3 << "test_up Validation : " << ( nullptr != test_up.get() ? "O" : "X" ) << r2::linefeed;
 				std::cout << r2::linefeed << r2::linefeed;
 
 				//
@@ -245,9 +245,9 @@ namespace lambda_test
 				//
 				//std::function<void()> test_func = [moved_up = std::move( test_up )]() {};
 
-				std::cout << "\t\t" << "std::function<void()> test_func = [moved_up = std::move( test_up )]() {}" << r2::linefeed;
-				std::cout << "\t\t\t" << "- Not Working" << r2::linefeed;
-				std::cout << "\t\t\t" << "- Not Same : std::function<void()> != auto" << r2::linefeed;
+				std::cout << r2::tab2 << "std::function<void()> test_func = [moved_up = std::move( test_up )]() {}" << r2::linefeed;
+				std::cout << r2::tab3 << "- Not Working" << r2::linefeed;
+				std::cout << r2::tab3 << "- Not Same : std::function<void()> != auto" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -274,70 +274,70 @@ namespace lambda_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Capture with initialization" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Capture with initialization" << r2::linefeed << r2::linefeed;
 
 				auto lambda_1 = [i = 999]()
 				{
-					std::cout << "\t\t" << "i : " << i << r2::linefeed;
+					std::cout << r2::tab2 << "i : " << i << r2::linefeed;
 				};
 
-				std::cout << "\t\t" << "auto lambda_1 = [i = 999]()" << r2::linefeed;
-				std::cout << "\t\t" << "{" << r2::linefeed;
-				std::cout << "\t\t\t" << "std::cout << i << r2::linefeed;" << r2::linefeed;
-				std::cout << "\t\t" << "};" << r2::linefeed;
+				std::cout << r2::tab2 << "auto lambda_1 = [i = 999]()" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab3 << "std::cout << i << r2::linefeed;" << r2::linefeed;
+				std::cout << r2::tab2 << "};" << r2::linefeed;
 				std::cout << r2::linefeed;
 
-				std::cout << "\t" << "+ Call Lambda" << r2::linefeed;
+				std::cout << r2::tab << "+ Call Lambda" << r2::linefeed;
 				lambda_1();
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Not working this" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Not working this" << r2::linefeed << r2::linefeed;
 
 				//auto lambda_1 = [&i = 999]()
 				//{
-				//	std::cout << "\t\t" << "i : " << i << r2::linefeed;
+				//	std::cout << r2::tab2 << "i : " << i << r2::linefeed;
 				//};
 
-				std::cout << "\t\t" << "auto lambda_1 = [&i = 999]()  // X - &i required lvalue" << r2::linefeed;
-				std::cout << "\t\t" << "{" << r2::linefeed;
-				std::cout << "\t\t\t" << "std::cout << i << r2::linefeed;" << r2::linefeed;
-				std::cout << "\t\t" << "};" << r2::linefeed;
+				std::cout << r2::tab2 << "auto lambda_1 = [&i = 999]()  // X - &i required lvalue" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab3 << "std::cout << i << r2::linefeed;" << r2::linefeed;
+				std::cout << r2::tab2 << "};" << r2::linefeed;
 				std::cout << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "\t" << "+ Capture with Change Value" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Capture with Change Value" << r2::linefeed << r2::linefeed;
 
 				int i = 111;
 				auto lambda_1 = [&i2 = i = 222]()
 				{
-					std::cout << "\t\t" << "i2 : " << i2 << r2::linefeed;
+					std::cout << r2::tab2 << "i2 : " << i2 << r2::linefeed;
 				};
 
-				std::cout << "\t\t" << "int i = 111;" << r2::linefeed;
-				std::cout << "\t\t" << "auto lambda_1 = [&i2 = i = 222]()" << r2::linefeed;
-				std::cout << "\t\t" << "{" << r2::linefeed;
-				std::cout << "\t\t\t" << "std::cout << i2 << r2::linefeed;" << r2::linefeed;
-				std::cout << "\t\t" << "};" << r2::linefeed;
+				std::cout << r2::tab2 << "int i = 111;" << r2::linefeed;
+				std::cout << r2::tab2 << "auto lambda_1 = [&i2 = i = 222]()" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab3 << "std::cout << i2 << r2::linefeed;" << r2::linefeed;
+				std::cout << r2::tab2 << "};" << r2::linefeed;
 				std::cout << r2::linefeed;
 
-				std::cout << "\t" << "+ Call Lambda" << r2::linefeed;
+				std::cout << r2::tab << "+ Call Lambda" << r2::linefeed;
 				lambda_1();
-				std::cout << "\t\t" << "i : " << i << r2::linefeed;
+				std::cout << r2::tab2 << "i : " << i << r2::linefeed;
 				std::cout << r2::linefeed;
 
 				i = 777;
-				std::cout << "\t\t" << "i = 777;" << r2::linefeed2;
+				std::cout << r2::tab2 << "i = 777;" << r2::linefeed2;
 
-				std::cout << "\t" << "+ Call Lambda" << r2::linefeed2;
+				std::cout << r2::tab << "+ Call Lambda" << r2::linefeed2;
 				lambda_1();
 
-				std::cout << "\t\t" << "i : " << i << r2::linefeed;
+				std::cout << r2::tab2 << "i : " << i << r2::linefeed;
 			}
 
 			std::cout << r2::split;
