@@ -32,14 +32,14 @@ namespace
 }
 namespace optional_test
 {
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iTest::TitleFunc Basic_discard::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Optional : Basic";
+			return "Optional : Basic( discard )";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2::iTest::DoFunc Basic_discard::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

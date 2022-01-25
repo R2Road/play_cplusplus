@@ -22,7 +22,7 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', optional_test::Basic::GetInstance() );
+			ret->AddChild( '1', optional_test::Basic_discard::GetInstance() );
 			ret->AddChild( '2', stringview_test::Basic::GetInstance() );
 			ret->AddChild( '3', tuple_test::Basic::GetInstance() );
 			ret->AddChild( '4', variant_test::Basic::GetInstance() );
