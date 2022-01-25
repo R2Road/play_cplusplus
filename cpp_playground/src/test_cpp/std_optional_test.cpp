@@ -59,7 +59,8 @@ namespace std_optional_test
 				std::cout << r2::tab << "+ Process 1" << r2::linefeed2;
 				std::cout << r2::tab2 << "op_ts.has_value();" << r2::linefeed;
 				std::cout << r2::tab3 << "> " << op_ts.has_value() << r2::linefeed2;
-				//std::cout << r2::tab3 << op_ts.value().i << r2::linefeed; // throw exception : op_ts is nullopt
+
+				std::cout << r2::tab2 << "Message : " << "op_ts.value()" " > throw exception : op_ts is nullopt" << r2::linefeed2;
 
 				op_ts = TestOptional{};
 
@@ -68,12 +69,21 @@ namespace std_optional_test
 				std::cout << r2::tab2 << "op_ts.has_value();" << r2::linefeed;
 				std::cout << r2::tab3 << "> " << op_ts.has_value() << r2::linefeed;
 				std::cout << r2::tab2 << "op_ts.value().i;" << r2::linefeed;
-				std::cout << r2::tab3 << "> " << op_ts.value().i << r2::linefeed;
+				std::cout << r2::tab3 << "> " << op_ts.value().i << r2::linefeed2;
 
 				op_ts.reset();
 
 				std::cout << r2::tab << "+ Process 3" << r2::linefeed2;
 				std::cout << r2::tab2 << "op_ts.reset();" << r2::linefeed;
+				std::cout << r2::tab2 << "op_ts.has_value();" << r2::linefeed;
+				std::cout << r2::tab3 << "> " << op_ts.has_value() << r2::linefeed2;
+
+				op_ts = TestOptional{};
+				op_ts = std::nullopt;
+
+				std::cout << r2::tab << "+ Process 4" << r2::linefeed2;
+				std::cout << r2::tab2 << "op_ts = TestOptional{};" << r2::linefeed;
+				std::cout << r2::tab2 << "op_ts = std::nullopt;" << r2::linefeed;
 				std::cout << r2::tab2 << "op_ts.has_value();" << r2::linefeed;
 				std::cout << r2::tab3 << "> " << op_ts.has_value() << r2::linefeed;
 			}
