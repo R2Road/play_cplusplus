@@ -142,21 +142,21 @@ namespace std_optional_test
 
 				int i = 8;
 			};
-			std::optional<TestOptional> op_ts_1;
-			std::optional<TestOptional> op_ts_2;
+			std::optional<TestOptional> op_1;
+			std::optional<TestOptional> op_2;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 			std::cout << r2::tab2 << "struct TestOptional;" << r2::linefeed;
-			std::cout << r2::tab2 << "std::optional<TestOptional> op_ts_1;" << r2::linefeed;
-			std::cout << r2::tab2 << "std::optional<TestOptional> op_ts_2;" << r2::linefeed;
+			std::cout << r2::tab2 << "std::optional<TestOptional> op_1;" << r2::linefeed;
+			std::cout << r2::tab2 << "std::optional<TestOptional> op_2;" << r2::linefeed;
 
 			std::cout << r2::split;
 
 			{
 				std::cout << r2::tab << "+ Process 1" << r2::linefeed2;
-				std::cout << r2::tab2 << "op_ts_1 = op_ts_2;" << r2::linefeed;
+				std::cout << r2::tab2 << "op_1 = op_2;" << r2::linefeed;
 				std::cout << r2::tab3;
-				op_ts_1 = op_ts_2;
+				op_1 = op_2;
 				std::cout << "> Nothing";
 				std::cout << r2::linefeed;
 			}
@@ -165,9 +165,9 @@ namespace std_optional_test
 
 			{
 				std::cout << r2::tab << "+ Process 2" << r2::linefeed2;
-				std::cout << r2::tab2 << "op_ts_1 = TestOptional{};" << r2::linefeed;
+				std::cout << r2::tab2 << "op_1 = TestOptional{};" << r2::linefeed;
 				std::cout << r2::tab3;
-				op_ts_1 = TestOptional{};
+				op_1 = TestOptional{};
 				std::cout << r2::linefeed;
 			}
 
@@ -175,9 +175,9 @@ namespace std_optional_test
 
 			{
 				std::cout << r2::tab << "+ Process 3" << r2::linefeed2;
-				std::cout << r2::tab2 << "op_ts_2 = op_ts_1;" << r2::linefeed;
+				std::cout << r2::tab2 << "op_2 = op_1;" << r2::linefeed;
 				std::cout << r2::tab3;
-				op_ts_2 = op_ts_1;
+				op_2 = op_1;
 				std::cout << "> Nothing???";
 				std::cout << r2::linefeed;
 			}
@@ -186,9 +186,9 @@ namespace std_optional_test
 
 			{
 				std::cout << r2::tab << "+ Process 4" << r2::linefeed2;
-				std::cout << r2::tab2 << "std::optional<TestOptional> temp_op = op_ts_1;" << r2::linefeed;
+				std::cout << r2::tab2 << "std::optional<TestOptional> temp_op = op_1;" << r2::linefeed;
 				std::cout << r2::tab3;
-				std::optional<TestOptional> temp_op = op_ts_1;
+				std::optional<TestOptional> temp_op = op_1;
 				std::cout << "> Nothing";
 				std::cout << r2::linefeed;
 			}
