@@ -79,6 +79,15 @@ namespace r2
 			);
 			ret->AddChild(
 				'5'
+				, []()->const char* { return r2::TimeMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::TimeMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+			ret->AddChild(
+				'6'
 				, []()->const char* { return r2::RandomMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -87,7 +96,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'6'
+				'7'
 				, []()->const char* { return r2::TemplateMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -96,7 +105,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'7'
+				'8'
 				, []()->const char* { return r2::AlignMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -105,7 +114,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'8'
+				'9'
 				, []()->const char* { return r2::MemoryMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -114,20 +123,11 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'9'
+				'0'
 				, []()->const char* { return r2::EnumMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
 					director.Setup( r2::EnumMenu::Create( director ) );
-					return eTestResult::ChangeScene;
-				}
-			);
-			ret->AddChild(
-				'0'
-				, []()->const char* { return r2::TimeMenu::GetTitle(); }
-				, [&director]()->eTestResult
-				{
-					director.Setup( r2::TimeMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);
