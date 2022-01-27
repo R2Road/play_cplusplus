@@ -12,6 +12,13 @@ namespace c_time_test
 		DoFunc GetDoFunction() override;
 	};
 
+	class Y_M_D_H_S : public r2::iTest, public r2::SingleTon<Y_M_D_H_S>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
 	class CTime : public r2::iTest, public r2::SingleTon<CTime>
 	{
 	public:

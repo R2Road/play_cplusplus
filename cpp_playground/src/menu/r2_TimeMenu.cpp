@@ -17,9 +17,10 @@ namespace r2
 
 		{
 			ret->AddChild( '1', c_time_test::Basic::GetInstance() );
-			ret->AddChild( '2', c_time_test::CTime::GetInstance() );
-			ret->AddChild( '3', time_test::WindowTime::GetInstance() );
-			ret->AddChild( '4', time_test::Chrono::GetInstance() );
+			ret->AddChild( '2', c_time_test::Y_M_D_H_S::GetInstance() );
+			ret->AddChild( '3', c_time_test::CTime::GetInstance() );
+			ret->AddChild( '4', time_test::WindowTime::GetInstance() );
+			ret->AddChild( '5', time_test::Chrono::GetInstance() );
 
 
 			ret->AddSplit();

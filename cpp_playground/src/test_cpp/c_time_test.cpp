@@ -43,6 +43,27 @@ namespace c_time_test
 
 			std::cout << r2::split;
 
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc Y_M_D_H_S::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "C Time : Y_M_D_H_S";
+		};
+	}
+	r2::iTest::DoFunc Y_M_D_H_S::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
 			{
 				time_t tt;
 				time( &tt );
