@@ -3,7 +3,7 @@
 #include "base/r2_iTest.h"
 #include "base/r2_Singleton.h"
 
-namespace random_test
+namespace std_random_test
 {
 	class Basic : public r2::iTest, public r2::SingleTon<Basic>
 	{

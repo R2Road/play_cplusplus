@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "random_test.h"
+#include "std_random_test.h"
 
 #include <filesystem>
 #include <fstream>
@@ -10,7 +10,7 @@
 #include "base/r2_eTestResult.h"
 
 
-namespace random_test
+namespace std_random_test
 {
 	r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
@@ -172,7 +172,7 @@ namespace
 		std::cout << r2::split;
 	}
 }
-namespace random_test
+namespace std_random_test
 {
 	r2::iTest::TitleFunc StatusSaveAndLoad::GetTitleFunction() const
 	{
@@ -198,7 +198,7 @@ namespace random_test
 
 
 
-namespace random_test
+namespace std_random_test
 {
 	r2::iTest::TitleFunc DiscreateDistribution::GetTitleFunction() const
 	{

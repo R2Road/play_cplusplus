@@ -89,7 +89,7 @@
     <ClCompile Include="src\test_cpp\performance_container_iteration_test.cpp" />
     <ClCompile Include="src\test_cpp\pointer_test.cpp" />
     <ClCompile Include="src\test_cpp\print_test.cpp" />
-    <ClCompile Include="src\test_cpp\random_test.cpp" />
+    <ClCompile Include="src\test_cpp\std_random_test.cpp" />
     <ClCompile Include="src\test_cpp\smart_pointer_test.cpp" />
     <ClCompile Include="src\test_cpp\std_function_2_test.cpp" />
     <ClCompile Include="src\test_cpp\std_function_test.cpp" />
@@ -183,7 +183,7 @@
     <ClInclude Include="src\test_cpp\performance_container_iteration_test.h" />
     <ClInclude Include="src\test_cpp\pointer_test.h" />
     <ClInclude Include="src\test_cpp\print_test.h" />
-    <ClInclude Include="src\test_cpp\random_test.h" />
+    <ClInclude Include="src\test_cpp\std_random_test.h" />
     <ClInclude Include="src\test_cpp\smart_pointer_test.h" />
     <ClInclude Include="src\test_cpp\std_function_2_test.h" />
     <ClInclude Include="src\test_cpp\std_function_test.h" />

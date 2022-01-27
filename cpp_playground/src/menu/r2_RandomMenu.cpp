@@ -5,7 +5,7 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
-#include "test_cpp/random_test.h"
+#include "test_cpp/std_random_test.h"
 
 namespace r2
 {
@@ -14,9 +14,9 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, RandomMenu::GetTitle() ) );
 
 		{
-			ret->AddChild( '1', random_test::Basic::GetInstance() );
-			ret->AddChild( '2', random_test::StatusSaveAndLoad::GetInstance() );
-			ret->AddChild( '3', random_test::DiscreateDistribution::GetInstance() );
+			ret->AddChild( '1', std_random_test::Basic::GetInstance() );
+			ret->AddChild( '2', std_random_test::StatusSaveAndLoad::GetInstance() );
+			ret->AddChild( '3', std_random_test::DiscreateDistribution::GetInstance() );
 
 
 			ret->AddSplit();
