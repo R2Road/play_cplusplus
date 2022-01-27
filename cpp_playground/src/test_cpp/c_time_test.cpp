@@ -135,14 +135,14 @@ namespace c_time_test
 
 
 
-	r2::iTest::TitleFunc CTime::GetTitleFunction() const
+	r2::iTest::TitleFunc Clock::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "C Time";
+			return "C Time : Clock";
 		};
 	}
-	r2::iTest::DoFunc CTime::GetDoFunction()
+	r2::iTest::DoFunc Clock::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -165,14 +165,7 @@ namespace c_time_test
 					system( "cls" );
 
 					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-					std::cout << "[ESC] Exit" << r2::linefeed;
-
-					std::cout << r2::split;
-
-					{
-						std::cout << r2::tab << "time( &current_time );" << r2::linefeed;
-						std::cout << r2::tab2 << current_time << r2::linefeed;
-					}
+					std::cout << "[ANY KEY] Exit" << r2::linefeed;
 
 					std::cout << r2::split;
 

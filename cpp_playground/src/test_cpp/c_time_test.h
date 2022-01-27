@@ -19,7 +19,7 @@ namespace c_time_test
 		DoFunc GetDoFunction() override;
 	};
 
-	class CTime : public r2::iTest, public r2::SingleTon<CTime>
+	class Clock : public r2::iTest, public r2::SingleTon<Clock>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
