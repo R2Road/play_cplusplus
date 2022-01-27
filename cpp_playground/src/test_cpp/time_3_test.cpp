@@ -25,8 +25,7 @@ namespace time_test
 			std::chrono::milliseconds current_time;
 			std::chrono::milliseconds last_time = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::steady_clock::now() - steady_start_time_point );
 
-			bool process = true;
-			while( process )
+			while( true )
 			{
 				current_time = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::steady_clock::now() - steady_start_time_point );
 
@@ -34,8 +33,8 @@ namespace time_test
 				{
 					system( "cls" );
 
-					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-					std::cout << "[ESC] Exit" << r2::linefeed;
+					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+					std::cout << "[ANY KEY] Exit" << r2::linefeed;
 
 					std::cout << r2::split;
 
@@ -121,12 +120,8 @@ namespace time_test
 
 				if( _kbhit() )
 				{
-					switch( _getch() )
-					{
-					case 27: // ESC
-						process = false;
-						break;
-					}
+					_getch();
+					break;
 				}
 			}
 

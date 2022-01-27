@@ -87,6 +87,7 @@ namespace time_test
 
 				if( _kbhit() )
 				{
+					_getch();
 					break;
 				}
 			}
