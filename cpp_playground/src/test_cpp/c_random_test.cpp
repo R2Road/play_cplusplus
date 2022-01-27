@@ -135,7 +135,7 @@ namespace c_random_test
 				std::cout << r2::tab2 << "char str[128];" << r2::linefeed;
 				std::cout << r2::tab2 << "time_t tt;" << r2::linefeed;
 				std::cout << r2::tab2 << "time( &tt );" << r2::linefeed2;
-				std::cout << r2::tab2 << "ctime_s( str, sizeof( str ), &tt ); : " << str << r2::linefeed;
+				std::cout << r2::tab2 << "ctime_s( str, sizeof( str ), &tt ); : " << str;
 			}
 
 			std::cout << r2::split;
