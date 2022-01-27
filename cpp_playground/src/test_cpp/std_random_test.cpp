@@ -16,7 +16,7 @@ namespace std_random_test
 	{
 		return []()->const char*
 		{
-			return "Basic";
+			return "STD Random : Basic";
 		};
 	}
 	r2::iTest::DoFunc Basic::GetDoFunction()
@@ -178,7 +178,7 @@ namespace std_random_test
 	{
 		return []()->const char*
 		{
-			return "Status Save And Load";
+			return "STD Random : Status Save And Load";
 		};
 	}
 	r2::iTest::DoFunc StatusSaveAndLoad::GetDoFunction()
@@ -204,7 +204,7 @@ namespace std_random_test
 	{
 		return []()->const char*
 		{
-			return "Discreate Distribution";
+			return "STD Random : Discreate Distribution";
 		};
 	}
 	r2::iTest::DoFunc DiscreateDistribution::GetDoFunction()
