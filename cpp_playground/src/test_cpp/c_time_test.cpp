@@ -171,6 +171,8 @@ namespace c_time_test
 			std::cout << r2::linefeed;
 			std::cout << r2::split;
 
+			std::cout << r2::tab << "Message : clock() Gives Processing Time" << r2::linefeed;
+
 			while( true )
 			{
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 18 } );
