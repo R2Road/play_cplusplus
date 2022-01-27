@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "time_1_test.h"
+#include "c_time_test.h"
 
 #include <conio.h>
 #include <ctime> // time.h : c // time(), clock()
@@ -8,7 +8,7 @@
 
 #include "base/r2_eTestResult.h"
 
-namespace time_test
+namespace c_time_test
 {
 	r2::iTest::TitleFunc C_Time::GetTitleFunction() const
 	{

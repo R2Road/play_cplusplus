@@ -5,7 +5,7 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
-#include "test_cpp/time_1_test.h"
+#include "test_cpp/c_time_test.h"
 #include "test_cpp/time_2_test.h"
 #include "test_cpp/time_3_test.h"
 
@@ -16,8 +16,8 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', time_test::C_Time::GetInstance() );
-			ret->AddChild( '2', time_test::CTime::GetInstance() );
+			ret->AddChild( '1', c_time_test::C_Time::GetInstance() );
+			ret->AddChild( '2', c_time_test::CTime::GetInstance() );
 			ret->AddChild( '3', time_test::WindowTime::GetInstance() );
 			ret->AddChild( '4', time_test::Chrono::GetInstance() );
 
