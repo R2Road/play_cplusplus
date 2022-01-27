@@ -69,9 +69,8 @@ namespace algorithm_maze_test
 			{
 				grid.Set( current_point.x, current_point.y, true );
 
-				bool process = true;
 				int stay_count = 0;
-				while( process && 4 >= stay_count )
+				while( 4 >= stay_count )
 				{
 					temp_point.x = current_point.x + current_direction.GetPoint().x;
 					temp_point.y = current_point.y + current_direction.GetPoint().y;
@@ -96,7 +95,7 @@ namespace algorithm_maze_test
 					//
 					if( _kbhit() )
 					{
-						process = false;
+						break;
 					}
 				}
 			}
