@@ -11,4 +11,11 @@ namespace c_random_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class C_Time : public r2::iTest, public r2::SingleTon<C_Time>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
