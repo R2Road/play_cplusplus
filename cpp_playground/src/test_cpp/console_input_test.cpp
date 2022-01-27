@@ -25,9 +25,8 @@ namespace console_input_test
 
 			std::cout << r2::split;
 
-			bool process = true;
 			int input = 0;
-			while( process )
+			while( true )
 			{
 				input = _getch();
 
@@ -35,7 +34,7 @@ namespace console_input_test
 
 				if( 27 == input )
 				{
-					process = false;
+					break;
 				}
 			}
 
