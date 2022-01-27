@@ -29,7 +29,7 @@ namespace std_random_test
 
 			{
 				std::cout << r2::tab << "+ Range Check" << r2::linefeed;
-				std::cout << r2::tab2 << "std::uniform_int_distribution<int> dist( 0, 2 );" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab2 << "std::uniform_int_distribution<int> dist( 0, 2 );" << r2::linefeed2;
 
 				std::random_device rd;
 				std::default_random_engine random_engine( rd() );
@@ -51,7 +51,7 @@ namespace std_random_test
 
 			{
 				std::cout << r2::tab << "+ Range Check" << r2::linefeed;
-				std::cout << r2::tab2 << "std::uniform_real_distribution<float> dist( 0, 2 );" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab2 << "std::uniform_real_distribution<float> dist( 0, 2 );" << r2::linefeed2;
 
 				std::random_device rd;
 				std::default_random_engine random_engine( rd() );
@@ -101,7 +101,7 @@ namespace
 
 	void Status_Save()
 	{
-		std::cout << "# Status Save #" << r2::linefeed << r2::linefeed;
+		std::cout << "# Status Save #" << r2::linefeed2;
 
 		std::cout << "File Path : " << GetFilePath() << r2::linefeed;
 		
@@ -187,7 +187,7 @@ namespace std_random_test
 		{
 			Status_Save();
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2::linefeed2;
 
 			Status_Load();
 
