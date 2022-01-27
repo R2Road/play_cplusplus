@@ -6,6 +6,8 @@
 #include <errno.h>
 #include <time.h>
 
+#include <Windows.h>
+
 #include "base/r2_eTestResult.h"
 
 namespace c_time_test
@@ -146,45 +148,42 @@ namespace c_time_test
 	{
 		return []()->r2::eTestResult
 		{
-			time_t current_time = 0;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+			std::cout << "[ANY KEY] Exit" << r2::linefeed;
+
+			std::cout << r2::split;
 
 			clock_t current_clock = 0;
-			clock_t last_clock = 0;
 			clock_t current_sec = 0;
 
-			bool process = true;
-			while( process )
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed;
+			std::cout << r2::tab2 << "clock_t current_clock = 0;" << r2::linefeed;
+			std::cout << r2::tab2 << "clock_t current_sec = 0;" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "+ Process" << r2::linefeed;
+			std::cout << r2::tab2 << "current_clock = clock();" << r2::linefeed;
+			std::cout << r2::tab2 << "current_sec = current_clock / CLOCKS_PER_SEC;" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::cout << r2::linefeed;
+			std::cout << r2::split;
+
+			while( true )
 			{
-				time( &current_time );  /* get current time; same as: timer = time(NULL)  */
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 18 } );
 
 				current_clock = clock();
 				current_sec = current_clock / CLOCKS_PER_SEC;
 
-				if( last_clock + 16 < current_clock ) // 60fps
-				{
-					system( "cls" );
-
-					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-					std::cout << "[ANY KEY] Exit" << r2::linefeed;
-
-					std::cout << r2::split;
-
-					{
-						std::cout << r2::tab << "current_clock = clock();" << r2::linefeed;
-						std::cout << r2::tab2 << "clock : " << current_clock << r2::tab2 << "sec : " << current_sec << r2::linefeed;
-
-						last_clock = current_clock;
-					}
-
-					std::cout << r2::split;
-				}
+				std::cout << r2::tab << "current_clock : " << current_clock << r2::tab2 << "current_sec : " << current_sec;
 
 				if( _kbhit() )
 				{
-					switch( _getch() )
+					if( _getch() )
 					{
-					case 27: // ESC
-						process = false;
 						break;
 					}
 				}
