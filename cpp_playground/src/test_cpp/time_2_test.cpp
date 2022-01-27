@@ -25,8 +25,7 @@ namespace time_test
 			DWORD current_tick = 0;
 			DWORD last_tick = 0;
 
-			bool process = true;
-			while( process )
+			while( true )
 			{
 				GetLocalTime( &local_time );
 				GetSystemTime( &system_time );
@@ -37,8 +36,8 @@ namespace time_test
 
 					system( "cls" );
 
-					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-					std::cout << "[ESC] Exit" << r2::linefeed;
+					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+					std::cout << "[ANY KEY] Exit" << r2::linefeed;
 
 					std::cout << r2::split;
 
@@ -88,12 +87,7 @@ namespace time_test
 
 				if( _kbhit() )
 				{
-					switch( _getch() )
-					{
-					case 27: // ESC
-						process = false;
-						break;
-					}
+					break;
 				}
 			}
 
