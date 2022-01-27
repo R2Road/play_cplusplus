@@ -28,7 +28,7 @@ namespace std_random_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Range Check" << r2::linefeed;
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab2 << "std::uniform_int_distribution<int> dist( 0, 2 );" << r2::linefeed2;
 
 				std::random_device rd;
@@ -44,13 +44,13 @@ namespace std_random_test
 
 				std::cout << r2::linefeed;
 
-				std::cout << r2::tab2 << "Contained Min and Max;" << r2::linefeed;
+				std::cout << r2::tab << "Message : Contained Min and Max" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Range Check" << r2::linefeed;
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab2 << "std::uniform_real_distribution<float> dist( 0, 2 );" << r2::linefeed2;
 
 				std::random_device rd;
@@ -66,7 +66,7 @@ namespace std_random_test
 
 				std::cout << r2::linefeed;
 
-				std::cout << r2::tab2 << "Contained Min;" << r2::linefeed;
+				std::cout << r2::tab << "Message : Contained Min" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
