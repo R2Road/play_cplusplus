@@ -5,7 +5,7 @@
 
 namespace c_time_test
 {
-	class C_Time : public r2::iTest, public r2::SingleTon<C_Time>
+	class Basic : public r2::iTest, public r2::SingleTon<Basic>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
