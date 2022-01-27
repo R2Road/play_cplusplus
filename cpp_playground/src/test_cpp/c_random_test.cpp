@@ -99,7 +99,7 @@ namespace c_random_test
 			std::cout << r2::split;
 
 			{
-				__time64_t tt;
+				time_t tt;
 				time( &tt );
 
 				struct tm time_infos;
