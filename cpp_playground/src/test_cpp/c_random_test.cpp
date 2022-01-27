@@ -140,6 +140,29 @@ namespace c_random_test
 
 			std::cout << r2::split;
 
+			{
+				char str[128];
+
+				time_t tt;
+				time( &tt );
+
+				struct tm time_infos;
+				localtime_s( &time_infos, &tt );
+
+				asctime_s( str, sizeof( str ), &time_infos );
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "char str[128];" << r2::linefeed;
+				std::cout << r2::tab2 << "time_t tt;" << r2::linefeed;
+				std::cout << r2::tab2 << "time( &tt );" << r2::linefeed;
+				std::cout << r2::tab2 << "struct tm time_infos;" << r2::linefeed;
+				std::cout << r2::tab2 << "localtime_s( &time_infos, &tt );" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "asctime_s( str, sizeof( str ), &time_infos ); : " << str;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
