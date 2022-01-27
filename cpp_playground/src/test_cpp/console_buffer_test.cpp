@@ -156,15 +156,12 @@ namespace console_buffer_test
 				FillConsoleOutputCharacter( hSecondBuffer, TEXT( '2' ), length, { 0, 0 }, &out_result );
 
 				bool bUseFirst = true;
-				bool process = true;
 				do
 				{
 					if( _kbhit() )
 					{
-						switch( _getch() )
+						if( _getch() )
 						{
-						case 27: // ESC
-							process = false;
 							break;
 						}
 					}
@@ -179,7 +176,7 @@ namespace console_buffer_test
 					}
 
 					bUseFirst = !bUseFirst;
-				} while( process );
+				} while( true );
 
 				//
 				// Rollback
