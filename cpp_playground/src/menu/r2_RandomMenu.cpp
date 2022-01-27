@@ -16,7 +16,6 @@ namespace r2
 
 		{
 			ret->AddChild( '1', c_random_test::Rand::GetInstance() );
-			ret->AddChild( '2', c_random_test::C_Time::GetInstance() );
 
 
 			ret->AddLineFeed();
