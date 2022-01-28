@@ -3,6 +3,19 @@
 
 #include "base/r2_eTestResult.h"
 
+namespace
+{
+	template<typename T, std::size_t N>
+	class ArrayBasedList
+	{
+	public:
+		using ValueT = T;
+		using SizeT = std::size_t;
+
+		std::array<T, N> mContainer;
+	};
+}
+
 namespace array_based_list_test
 {
 	r2::iTest::TitleFunc Basic::GetTitleFunction() const
@@ -21,6 +34,10 @@ namespace array_based_list_test
 			std::cout << r2::split;
 
 			{
+				ArrayBasedList<int, 10> list;
+
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "ArrayBasedList<int, 10> list" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
