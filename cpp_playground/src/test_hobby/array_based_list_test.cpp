@@ -23,7 +23,7 @@ namespace
 
 		using ContainerT = std::array<Node, N>;
 
-		ArrayBasedList() : mContainer(), mHead4Rest( nullptr ), mHead( nullptr )
+		ArrayBasedList() : mContainer(), mHead4Rest( nullptr ), mHead4Live( nullptr )
 		{
 			mHead4Rest = &( *mContainer.begin() );
 
@@ -59,8 +59,7 @@ namespace
 
 		ContainerT mContainer;
 		Node* mHead4Rest;
-
-		Node* mHead;
+		Node* mHead4Live;
 	};
 }
 
