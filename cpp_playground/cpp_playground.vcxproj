@@ -80,7 +80,6 @@
     <ClCompile Include="src\test_cpp\enum_test.cpp" />
     <ClCompile Include="src\test_cpp\etc_0_test.cpp" />
     <ClCompile Include="src\test_cpp\filesystem_test.cpp" />
-    <ClCompile Include="src\test_cpp\infinite_number_test.cpp" />
     <ClCompile Include="src\test_cpp\korean_test.cpp" />
     <ClCompile Include="src\test_cpp\lambda_test.cpp" />
     <ClCompile Include="src\test_cpp\locale_test.cpp" />
@@ -113,6 +112,7 @@
     <ClCompile Include="src\test_cpp\variant_test.cpp" />
     <ClCompile Include="src\test_cpp\vector3_test.cpp" />
     <ClCompile Include="src\test_cpp\std_vector_test.cpp" />
+    <ClCompile Include="src\test_hobby\infinite_number_test.cpp" />
     <ClCompile Include="src\util\r2util_StopWatch.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -176,7 +176,6 @@
     <ClInclude Include="src\test_cpp\enum_test.h" />
     <ClInclude Include="src\test_cpp\etc_0_test.h" />
     <ClInclude Include="src\test_cpp\filesystem_test.h" />
-    <ClInclude Include="src\test_cpp\infinite_number_test.h" />
     <ClInclude Include="src\test_cpp\korean_test.h" />
     <ClInclude Include="src\test_cpp\lambda_test.h" />
     <ClInclude Include="src\test_cpp\locale_test.h" />
@@ -209,6 +208,7 @@
     <ClInclude Include="src\test_cpp\variant_test.h" />
     <ClInclude Include="src\test_cpp\vector3_test.h" />
     <ClInclude Include="src\test_cpp\std_vector_test.h" />
+    <ClInclude Include="src\test_hobby\infinite_number_test.h" />
     <ClInclude Include="src\util\r2util_StopWatch.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

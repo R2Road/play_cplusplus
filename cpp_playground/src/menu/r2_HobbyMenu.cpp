@@ -5,7 +5,7 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
-#include "test_cpp/infinite_number_test.h"
+#include "test_hobby/infinite_number_test.h"
 
 namespace r2
 {

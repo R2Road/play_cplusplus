@@ -6,7 +6,6 @@
 #include "r2_RootMenu.h"
 
 #include "test_cpp/vector3_test.h"
-#include "test_cpp/infinite_number_test.h"
 
 namespace r2
 {
@@ -21,12 +20,6 @@ namespace r2
 			ret->AddChild( '4', vector3_test::OperatorMinusEqual::GetInstance() );
 			ret->AddChild( '5', vector3_test::OperatorMultiply_With_Scalar::GetInstance() );
 			ret->AddChild( '6', vector3_test::OperatorMultiplyEqual_With_Scalar::GetInstance() );
-
-
-			ret->AddLineFeed();
-
-
-			ret->AddChild( 'q', infinite_number_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
