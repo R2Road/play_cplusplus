@@ -5,6 +5,8 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
+#include "test_cpp/infinite_number_test.h"
+
 namespace r2
 {
 	MenuUp HobbyMenu::Create( Director& director )
@@ -12,7 +14,7 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			//ret->AddChild( '1', algorithm_selection_sort_test::Case1::GetInstance() );
+			ret->AddChild( '1', infinite_number_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
