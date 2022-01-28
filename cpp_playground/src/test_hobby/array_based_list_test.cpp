@@ -14,8 +14,8 @@ namespace
 
 		struct Node
 		{
-			Node* pPrev;
-			Node* pNext;
+			Node* pPrev = nullptr;
+			Node* pNext = nullptr;
 			ValueT MyValue;
 		};
 
