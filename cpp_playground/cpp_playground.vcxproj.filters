@@ -293,6 +293,9 @@
     <ClCompile Include="src\test_hobby\infinite_number_test.cpp">
       <Filter>test_hobby</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_hobby\array_based_list_test.cpp">
+      <Filter>test_hobby</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -573,6 +576,9 @@
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test_hobby\infinite_number_test.h">
+      <Filter>test_hobby</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\array_based_list_test.h">
       <Filter>test_hobby</Filter>
     </ClInclude>
   </ItemGroup>
