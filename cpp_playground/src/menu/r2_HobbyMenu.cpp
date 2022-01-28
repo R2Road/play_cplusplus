@@ -6,6 +6,7 @@
 #include "r2_RootMenu.h"
 
 #include "test_hobby/infinite_number_test.h"
+#include "test_hobby/array_based_list_test.h"
 
 namespace r2
 {
@@ -15,6 +16,7 @@ namespace r2
 
 		{
 			ret->AddChild( '1', infinite_number_test::Basic::GetInstance() );
+			ret->AddChild( '2', array_based_list_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
