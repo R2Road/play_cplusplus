@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "time_2_test.h"
+#include "window_time_test.h"
 
 #include <conio.h>
 #include <windows.h>
@@ -7,7 +7,7 @@
 
 #include "base/r2_eTestResult.h"
 
-namespace time_test
+namespace window_time_test
 {
 	r2::iTest::TitleFunc WindowTime::GetTitleFunction() const
 	{

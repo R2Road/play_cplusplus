@@ -6,8 +6,8 @@
 #include "r2_RootMenu.h"
 
 #include "test_cpp/c_time_test.h"
-#include "test_cpp/time_2_test.h"
 #include "test_cpp/std_chrono_test.h"
+#include "test_cpp/window_time_test.h"
 
 namespace r2
 {
@@ -24,7 +24,7 @@ namespace r2
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'q', time_test::WindowTime::GetInstance() );
+			ret->AddChild( 'q', window_time_test::WindowTime::GetInstance() );
 
 
 			ret->AddLineFeed();
