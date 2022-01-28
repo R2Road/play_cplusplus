@@ -287,6 +287,9 @@
     <ClCompile Include="src\test_cpp\window_time_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="src\menu\r2_HobbyMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -565,6 +568,9 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\window_time_test.h">
       <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_HobbyMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -7,6 +7,7 @@
 #include "r2_ConsoleMenu.h"
 #include "r2_DebugMenu.h"
 #include "r2_FileSystemMenu.h"
+#include "r2_HobbyMenu.h"
 #include "r2_PointerMenu.h"
 #include "r2_RandomMenu.h"
 #include "r2_TemplateMenu.h"
@@ -243,6 +244,15 @@ namespace r2
 				, [&director]()->eTestResult
 				{
 					director.Setup( r2::AlgorithmMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+			ret->AddChild(
+				'`'
+				, []()->const char* { return r2::HobbyMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::HobbyMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);
