@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "array_based_list_test.h"
 
+#include <array>
+
 #include "base/r2_eTestResult.h"
 
 namespace
@@ -21,10 +23,43 @@ namespace
 
 		using ContainerT = std::array<Node, N>;
 
-		ArrayBasedList() : mContainer(), mHead( nullptr )
-		{}
+		ArrayBasedList() : mContainer(), mHead4Rest( nullptr ), mHead( nullptr )
+		{
+			mHead4Rest = &( *mContainer.begin() );
+
+			//
+			// Test Code
+			//
+			{
+				mHead4Rest->MyValue = 0;
+			}
+
+			if( 1 < mContainer.size() )
+			{
+				auto current_node = mHead4Rest;
+
+				auto cur = mContainer.begin();
+				++cur;
+				for( auto end = mContainer.end(); end != cur; ++cur )
+				{
+					cur->pPrev = current_node;
+					current_node->pNext = &( *cur );
+
+					//
+					// Test Code
+					//
+					{
+						current_node->pNext->MyValue = current_node->MyValue + 1;
+					}
+
+					current_node = current_node->pNext;
+				}
+			}
+		}
 
 		ContainerT mContainer;
+		Node* mHead4Rest;
+
 		Node* mHead;
 	};
 }
