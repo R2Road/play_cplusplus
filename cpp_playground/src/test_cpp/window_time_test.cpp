@@ -9,14 +9,14 @@
 
 namespace window_time_test
 {
-	r2::iTest::TitleFunc WindowTime::GetTitleFunction() const
+	r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Time";
 		};
 	}
-	r2::iTest::DoFunc WindowTime::GetDoFunction()
+	r2::iTest::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

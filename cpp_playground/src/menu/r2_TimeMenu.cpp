@@ -24,7 +24,7 @@ namespace r2
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'q', window_time_test::WindowTime::GetInstance() );
+			ret->AddChild( 'q', window_time_test::Basic::GetInstance() );
 
 
 			ret->AddLineFeed();
