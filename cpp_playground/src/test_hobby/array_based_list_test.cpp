@@ -19,6 +19,9 @@ namespace
 			ValueT MyValue;
 		};
 
+		ArrayBasedList() : mContainer()
+		{}
+
 		std::array<Node, N> mContainer;
 	};
 }
