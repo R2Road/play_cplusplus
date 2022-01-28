@@ -19,10 +19,12 @@ namespace
 			ValueT MyValue;
 		};
 
+		using ContainerT = std::array<Node, N>;
+
 		ArrayBasedList() : mContainer(), mHead( nullptr )
 		{}
 
-		std::array<Node, N> mContainer;
+		ContainerT mContainer;
 		Node* mHead;
 	};
 }
