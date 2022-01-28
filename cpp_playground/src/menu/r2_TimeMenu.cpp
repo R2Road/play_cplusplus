@@ -7,7 +7,7 @@
 
 #include "test_cpp/c_time_test.h"
 #include "test_cpp/time_2_test.h"
-#include "test_cpp/time_3_test.h"
+#include "test_cpp/std_chrono_test.h"
 
 namespace r2
 {
@@ -30,7 +30,7 @@ namespace r2
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'w', time_test::Chrono::GetInstance() );
+			ret->AddChild( 'w', std_chrono_test::Chrono::GetInstance() );
 
 
 			ret->AddSplit();

@@ -1,12 +1,12 @@
 #include "pch.h"
-#include "time_3_test.h"
+#include "std_chrono_test.h"
 
 #include <conio.h>
 #include <chrono>
 
 #include "base/r2_eTestResult.h"
 
-namespace time_test
+namespace std_chrono_test
 {
 	r2::iTest::TitleFunc Chrono::GetTitleFunction() const
 	{
