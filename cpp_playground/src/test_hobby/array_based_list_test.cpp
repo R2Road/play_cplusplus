@@ -12,7 +12,14 @@ namespace
 		using ValueT = T;
 		using SizeT = std::size_t;
 
-		std::array<T, N> mContainer;
+		struct Node
+		{
+			Node* pPrev;
+			Node* pNext;
+			ValueT MyValue;
+		};
+
+		std::array<Node, N> mContainer;
 	};
 }
 
