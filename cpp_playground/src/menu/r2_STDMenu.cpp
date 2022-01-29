@@ -15,6 +15,8 @@
 #include "test_cpp/tuple_test.h"
 #include "test_cpp/variant_test.h"
 
+#include "r2_ThreadMenu.h"
+
 namespace r2
 {
 	MenuUp STDMenu::Create( Director& director )
@@ -58,6 +60,15 @@ namespace r2
 				, [&director]()->eTestResult
 				{
 					director.Setup( r2::ContainerMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+			ret->AddChild(
+				'd'
+				, []()->const char* { return r2::ThreadMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::ThreadMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

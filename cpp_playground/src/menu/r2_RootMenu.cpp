@@ -21,7 +21,6 @@
 
 #include "test_cpp/structured_binding_test.h"
 #include "test_cpp/pointer_test.h"
-#include "r2_ThreadMenu.h"
 
 #include "test_cpp/lambda_test.h"
 #include "test_cpp/print_test.h"
@@ -154,15 +153,6 @@ namespace r2
 				, [&director]()->eTestResult
 				{
 					director.Setup( r2::DebugMenu::Create( director ) );
-					return eTestResult::ChangeScene;
-				}
-			);
-			ret->AddChild(
-				'r'
-				, []()->const char* { return r2::ThreadMenu::GetTitle(); }
-				, [&director]()->eTestResult
-				{
-					director.Setup( r2::ThreadMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

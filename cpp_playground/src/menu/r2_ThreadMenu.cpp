@@ -3,7 +3,7 @@
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestResult.h"
-#include "r2_RootMenu.h"
+#include "r2_STDMenu.h"
 
 #include "test_cpp/atomic_test.h"
 #include "test_cpp/std_thread_test.h"
@@ -38,7 +38,7 @@ namespace r2
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->eTestResult
 				{
-					director.Setup( r2::RootMenu::Create( director ) );
+					director.Setup( r2::STDMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);
