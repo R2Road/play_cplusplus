@@ -223,9 +223,9 @@ namespace array_based_list_test
 				std::cout << r2::tab2 << "list.PushFront( 44 );" << r2::linefeed2;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
-				for( auto cur = list.begin(), end = list.end(); end != cur; ++cur )
+				for( const auto& cur : list )
 				{
-					std::cout << r2::tab2 << "> " << ( *cur ) << r2::linefeed;
+					std::cout << r2::tab2 << "> " << cur << r2::linefeed;
 				}
 				std::cout << r2::linefeed;
 				std::cout << r2::tab2 << "list.GetRestNodeCount();" << r2::tab << ">" << r2::tab << list.GetRestNodeCount() << r2::linefeed;
