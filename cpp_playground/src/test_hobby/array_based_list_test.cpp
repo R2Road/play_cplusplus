@@ -207,7 +207,7 @@ namespace array_based_list_test
 	{
 		return []()->const char*
 		{
-			return "ARRAY BASED LIST( In Progress )";
+			return "Array Based List( In Progress )";
 		};
 	}
 	r2::iTest::DoFunc Basic::GetDoFunction()
@@ -284,7 +284,7 @@ namespace array_based_list_test
 	{
 		return []()->const char*
 		{
-			return "ARRAY BASED LIST( In Progress ) 2";
+			return "Array Based List( In Progress ) 2";
 		};
 	}
 	r2::iTest::DoFunc Basic_2::GetDoFunction()
