@@ -48,7 +48,6 @@ namespace
 			return mTargetNode->MyValue;
 		}
 
-	private:
 		NodeT* mTargetNode;
 	};
 
@@ -186,6 +185,31 @@ namespace
 				mTail4Live = node;
 			}
 		}
+		IteratorT Erase( IteratorT target )
+		{
+			auto pPrev = target.mTargetNode->pPrev;
+			auto pNext = target.mTargetNode->pNext;
+
+			if( nullptr != pPrev )
+			{
+				pPrev->pNext = pNext;
+			}
+			if( nullptr != pNext )
+			{
+				pNext->pPrev = pPrev;
+			}
+
+			if( mHead4Live == target.mTargetNode )
+			{
+				mHead4Live = pNext;
+			}
+			if( mTail4Live == target.mTargetNode )
+			{
+				mTail4Live = pPrev;
+			}
+
+			return IteratorT( pNext );
+		}
 
 	private:
 		ContainerT mContainer;
@@ -308,6 +332,28 @@ namespace array_based_list_test
 				std::cout << r2::tab2 << "ablist.PushBack( 22 );" << r2::linefeed;
 				std::cout << r2::tab2 << "ablist.PushBack( 33 );" << r2::linefeed;
 				std::cout << r2::tab2 << "ablist.PushBack( 44 );" << r2::linefeed2;
+
+				std::cout << r2::tab << "+ View" << r2::linefeed2;
+				for( const auto& cur : ablist )
+				{
+					std::cout << r2::tab2 << "> " << cur << r2::linefeed;
+				}
+				std::cout << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				auto target_itr = ablist.begin();
+				++target_itr;
+				target_itr = ablist.Erase( target_itr );
+
+				std::cout << r2::tab << "+ Method : Erase" << r2::linefeed2;
+				std::cout << r2::tab2 << "auto target_itr = ablist.begin();" << r2::linefeed;
+				std::cout << r2::tab2 << "++target_itr;" << r2::linefeed;
+				std::cout << r2::tab2 << "target_itr = ablist.Erase( target_itr );" << r2::linefeed2;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 				for( const auto& cur : ablist )
