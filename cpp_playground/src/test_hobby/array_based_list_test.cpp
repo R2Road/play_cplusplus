@@ -157,7 +157,7 @@ namespace array_based_list_test
 
 			{
 				std::cout << r2::tab << "+ Method : GetRestNodeCount" << r2::linefeed2;
-				std::cout << r2::tab2 << "Rest Node Count : " << list.GetRestNodeCount() << r2::linefeed;
+				std::cout << r2::tab2 << "list.GetRestNodeCount();" << r2::tab << ">" << r2::tab << list.GetRestNodeCount() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -189,7 +189,7 @@ namespace array_based_list_test
 				}
 
 				std::cout << r2::linefeed;
-				std::cout << r2::tab2 << "Rest Node Count : " << list.GetRestNodeCount() << r2::linefeed;
+				std::cout << r2::tab2 << "list.GetRestNodeCount();" << r2::tab << ">" << r2::tab << list.GetRestNodeCount() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -207,7 +207,7 @@ namespace array_based_list_test
 				std::cout << r2::tab << "+ Method : Clear" << r2::linefeed2;
 				std::cout << r2::tab2 << "list.Clear();" << r2::linefeed2;
 				
-				std::cout << r2::tab2 << "Rest Node Count : " << list.GetRestNodeCount() << r2::linefeed;
+				std::cout << r2::tab2 << "list.GetRestNodeCount();" << r2::tab << ">" << r2::tab << list.GetRestNodeCount() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
