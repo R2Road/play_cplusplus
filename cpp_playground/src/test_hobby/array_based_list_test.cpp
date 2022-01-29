@@ -65,7 +65,7 @@ namespace
 		using IteratorT = ListIterator<ValueT>;
 		//using iterator = ListIterator<ValueT>; // ...dev rule?
 
-		ArrayBasedList() : mContainer(), mHead4Rest( nullptr ), mHead4Live( nullptr )
+		ArrayBasedList() : mContainer(), mHead4Rest( nullptr ), mHead4Live( nullptr ), mTail4Live( nullptr )
 		{
 			Clear();
 		}
@@ -101,6 +101,7 @@ namespace
 			// 4 Live
 			//
 			mHead4Live = nullptr;
+			mTail4Live = nullptr;
 		}
 
 	private:
@@ -157,6 +158,7 @@ namespace
 			if( nullptr == mHead4Live )
 			{
 				mHead4Live = node;
+				mTail4Live = node;
 			}
 			else
 			{
@@ -175,7 +177,9 @@ namespace
 	private:
 		ContainerT mContainer;
 		NodeT* mHead4Rest;
+
 		NodeT* mHead4Live;
+		NodeT* mTail4Live;
 	};
 }
 
