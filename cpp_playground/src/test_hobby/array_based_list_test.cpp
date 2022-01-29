@@ -94,12 +94,14 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
+			ArrayBasedList<int, 10> list;
+
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "ArrayBasedList<int, 10> list" << r2::linefeed;
+
+			std::cout << r2::split;
+
 			{
-				ArrayBasedList<int, 10> list;
-
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "ArrayBasedList<int, 10> list" << r2::linefeed;
-
 				std::cout << r2::tab << "+ Rest Nodes" << r2::linefeed2;
 				while( 1 )
 				{
