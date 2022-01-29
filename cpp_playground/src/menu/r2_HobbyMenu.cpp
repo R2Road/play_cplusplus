@@ -17,6 +17,7 @@ namespace r2
 		{
 			ret->AddChild( '1', infinite_number_test::Basic::GetInstance() );
 			ret->AddChild( '2', array_based_list_test::Basic::GetInstance() );
+			ret->AddChild( '3', array_based_list_test::Basic_2::GetInstance() );
 
 
 			ret->AddSplit();
