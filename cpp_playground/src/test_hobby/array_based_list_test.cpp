@@ -78,6 +78,9 @@ namespace
 				mHead4Rest = ret->pNext;
 			}
 
+			ret->pPrev = nullptr;
+			ret->pNext = nullptr;
+
 			return ret;
 		}
 
@@ -97,6 +100,11 @@ namespace
 
 				mHead4Live = node;
 			}
+		}
+
+		Node* GetHead_discard()
+		{
+			return mHead4Live;
 		}
 
 	private:
@@ -180,6 +188,31 @@ namespace array_based_list_test
 					}
 				}
 				std::cout << r2::tab2 << "rest node count : " << rest_node_count << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Method : Push Front" << r2::linefeed2;
+
+				list.Clear();
+				list.PushFront( 11 );
+				list.PushFront( 22 );
+				list.PushFront( 33 );
+				list.PushFront( 44 );
+
+				auto current_node = list.GetHead_discard();
+				while( 1 )
+				{
+					if( nullptr == current_node )
+					{
+						break;
+					}
+
+					std::cout << r2::tab2 << "> " << current_node->MyValue << r2::linefeed;
+
+					current_node = current_node->pNext;
+				}
 			}
 
 			std::cout << r2::split;
