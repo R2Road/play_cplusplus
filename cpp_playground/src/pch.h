@@ -2,6 +2,21 @@
 #define PCH_H
 
 #include <iostream>
+#include <stdio.h>
+
+
+
+#define	R2ASSERT( cond, message )					\
+do {												\
+	if( !( cond ) )									\
+	{												\
+		__debugbreak();								\
+		printf( "+ R2ASSERT" "\nMessage : %s" "\nFile : %s" "\nLine : %d" "\nFunction : %s", message, __FILE__, __LINE__, __FUNCTION__ ); \
+		throw std::runtime_error( message );		\
+	}												\
+} while( false )
+
+
 
 namespace r2
 {
