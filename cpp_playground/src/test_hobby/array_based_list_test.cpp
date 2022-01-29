@@ -25,6 +25,11 @@ namespace
 
 		ArrayBasedList() : mContainer(), mHead4Rest( nullptr ), mHead4Live( nullptr )
 		{
+			Clear();
+		}
+
+		void Clear()
+		{
 			mHead4Rest = &( *mContainer.begin() );
 
 			//
@@ -55,6 +60,11 @@ namespace
 					current_node = current_node->pNext;
 				}
 			}
+
+			//
+			//
+			//
+			mHead4Live = nullptr;
 		}
 
 		Node* GetRestNode()
@@ -69,6 +79,24 @@ namespace
 			}
 
 			return ret;
+		}
+
+		void PushFront( const ValueT new_value )
+		{
+			auto node = GetRestNode();
+			node->MyValue = new_value;
+
+			if( nullptr == mHead4Live )
+			{
+				mHead4Live = node;
+			}
+			else
+			{
+				node->pNext = mHead4Live;
+				mHead4Live->pPrev = node;
+
+				mHead4Live = node;
+			}
 		}
 
 		ContainerT mContainer;
@@ -121,6 +149,36 @@ namespace array_based_list_test
 						break;
 					}
 				}
+			}
+
+			std::cout << r2::split;
+
+			{
+				list.Clear();
+
+				std::cout << r2::tab << "+ Method : Clear" << r2::linefeed2;
+				std::cout << r2::tab2 << "list.Clear();" << r2::linefeed2;
+				
+				int rest_node_count = 0;
+				while( 1 )
+				{
+					auto rest_node = list.GetRestNode();
+					if( nullptr == rest_node )
+					{
+						break;
+					}
+
+					++rest_node_count;
+
+					//
+					// Block Assert
+					//
+					if( nullptr == rest_node->pNext )
+					{
+						break;
+					}
+				}
+				std::cout << r2::tab2 << "rest node count : " << rest_node_count << r2::linefeed;
 			}
 
 			std::cout << r2::split;
