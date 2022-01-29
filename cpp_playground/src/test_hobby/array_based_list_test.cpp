@@ -223,7 +223,7 @@ namespace
 				mTail4Live = pPrev;
 			}
 
-			Rest( target.mTargetNode )
+			Rest( target.mTargetNode );
 
 			return IteratorT( pNext );
 		}
@@ -371,6 +371,30 @@ namespace array_based_list_test
 				std::cout << r2::tab2 << "auto target_itr = ablist.begin();" << r2::linefeed;
 				std::cout << r2::tab2 << "++target_itr;" << r2::linefeed;
 				std::cout << r2::tab2 << "target_itr = ablist.Erase( target_itr );" << r2::linefeed2;
+
+				std::cout << r2::tab << "+ View" << r2::linefeed2;
+				for( const auto& cur : ablist )
+				{
+					std::cout << r2::tab2 << "> " << cur << r2::linefeed;
+				}
+				std::cout << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				for( int i = 0, end = ablist.GetRestNodeCount(); end > i; ++i )
+				{
+					ablist.PushBack( i );
+				}
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "for( int i = 0, end = ablist.GetRestNodeCount(); end > i; ++i )" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab3 << "ablist.PushBack( i );" << r2::linefeed;
+				std::cout << r2::tab2 << "}" << r2::linefeed;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 				for( const auto& cur : ablist )
