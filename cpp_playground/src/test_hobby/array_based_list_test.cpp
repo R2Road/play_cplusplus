@@ -203,14 +203,14 @@ namespace
 
 namespace array_based_list_test
 {
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iTest::TitleFunc Basic_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Array Based List( In Progress )";
+			return "Array Based List( In Progress ) 1";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2::iTest::DoFunc Basic_1::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
