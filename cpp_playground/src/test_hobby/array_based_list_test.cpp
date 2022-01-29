@@ -120,6 +120,21 @@ namespace
 
 			return ret;
 		}
+		void Rest( NodeT* rest_node )
+		{
+			rest_node->pPrev = nullptr;
+			rest_node->pNext = nullptr;
+
+			if( nullptr == mHead4Rest )
+			{
+				mHead4Rest = rest_node;
+			}
+			else
+			{
+				rest_node->pNext = mHead4Rest;
+				mHead4Rest = rest_node;
+			}
+		}
 		uint32_t CalculateSize( const NodeT* const target_node ) const
 		{
 			if( nullptr == target_node )
@@ -207,6 +222,8 @@ namespace
 			{
 				mTail4Live = pPrev;
 			}
+
+			Rest( target.mTargetNode )
 
 			return IteratorT( pNext );
 		}
