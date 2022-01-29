@@ -112,6 +112,14 @@ namespace array_based_list_test
 					}
 
 					std::cout << r2::tab2 << "> " << rest_node->MyValue << r2::linefeed;
+
+					//
+					// Block Assert
+					//
+					if( nullptr == rest_node->pNext )
+					{
+						break;
+					}
 				}
 			}
 
