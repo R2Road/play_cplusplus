@@ -59,7 +59,7 @@ namespace
 
 		Node* GetRestNode()
 		{
-			R2ASSERT( nullptr != mHead4Rest, "Failed : ArrayBasedList::GetRestNode()" );
+			R2ASSERT( nullptr != mHead4Rest, "Empty : ArrayBasedList::GetRestNode()" );
 
 			Node* ret = mHead4Rest;
 
