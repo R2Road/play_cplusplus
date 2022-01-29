@@ -6,7 +6,7 @@
 #include "r2_RootMenu.h"
 
 #include "test_cpp/atomic_test.h"
-#include "test_cpp/thread_test.h"
+#include "test_cpp/std_thread_test.h"
 
 namespace r2
 {
@@ -15,11 +15,11 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', thread_test::Basic::GetInstance() );
-			ret->AddChild( '2', thread_test::Declaration::GetInstance() );
-			ret->AddChild( '3', thread_test::CopyAssaignment::GetInstance() );
-			ret->AddChild( '4', thread_test::WaitProcess_SleepFor::GetInstance() );
-			ret->AddChild( '5', thread_test::WaitProcess_Yield::GetInstance() );
+			ret->AddChild( '1', std_thread_test::Basic::GetInstance() );
+			ret->AddChild( '2', std_thread_test::Declaration::GetInstance() );
+			ret->AddChild( '3', std_thread_test::CopyAssaignment::GetInstance() );
+			ret->AddChild( '4', std_thread_test::WaitProcess_SleepFor::GetInstance() );
+			ret->AddChild( '5', std_thread_test::WaitProcess_Yield::GetInstance() );
 
 
 			ret->AddSplit();

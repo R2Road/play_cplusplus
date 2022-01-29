@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "thread_test.h"
+#include "std_thread_test.h"
 
 #include <conio.h>
 #include <chrono>
@@ -10,7 +10,7 @@
 
 #pragma warning( disable : 4477 ) // for "%x" and std::this_thread::get_id()
 
-namespace thread_test
+namespace std_thread_test
 {
 	void thread_func_1()
 	{
@@ -91,7 +91,7 @@ namespace thread_test
 
 
 
-namespace thread_test
+namespace std_thread_test
 {
 	void empty_thread_func( int ) {}
 
@@ -189,7 +189,7 @@ namespace thread_test
 
 
 
-namespace thread_test
+namespace std_thread_test
 {
 	r2::iTest::TitleFunc CopyAssaignment::GetTitleFunction() const
 	{
@@ -259,7 +259,7 @@ namespace thread_test
 
 
 
-namespace thread_test
+namespace std_thread_test
 {
 	r2::iTest::TitleFunc WaitProcess_SleepFor::GetTitleFunction() const
 	{
@@ -308,7 +308,7 @@ namespace thread_test
 
 
 
-namespace thread_test
+namespace std_thread_test
 {
 	r2::iTest::TitleFunc WaitProcess_Yield::GetTitleFunction() const
 	{
