@@ -99,6 +99,7 @@ namespace
 			}
 		}
 
+	private:
 		ContainerT mContainer;
 		Node* mHead4Rest;
 		Node* mHead4Live;
