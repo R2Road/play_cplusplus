@@ -140,4 +140,67 @@ namespace std_list_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc OthersIterator::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "List : Others Iterator";
+		};
+	}
+	r2::iTest::DoFunc OthersIterator::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::list<int> container_1 = { 1, 2, 3 };
+			std::list<int> container_2 = { 10, 20, 30 };
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::list<int> container_1 = { 1, 2, 3 };" << r2::linefeed;
+				std::cout << r2::tab2 << "std::list<int> container_2 = { 10, 20, 30 };" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "auto itr_from_container_1 = container_1.begin();" << r2::linefeed;
+				std::cout << r2::tab2 << "container_2.erase( itr_from_container_1 );" << r2::linefeed2;
+
+				std::cout << r2::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2::linefeed;
+
+#if !defined( DEBUG ) && !defined( _DEBUG )
+				std::cout << r2::linefeed2;
+
+				auto itr_from_container_1 = container_1.begin();
+				container_2.erase( itr_from_container_1 );
+
+				std::cout << r2::tab << "+ Result" << r2::linefeed2;
+				std::cout << r2::tab2 << "- container_1 : ";
+				for( const auto i : container_1 )
+				{
+					std::cout << i << " ";
+				}
+				std::cout << r2::linefeed;
+				std::cout << r2::tab2 << "- container_2 : ";
+				for( const auto i : container_2 )
+				{
+					std::cout << i << " ";
+				}
+				std::cout << r2::linefeed;
+#endif
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }

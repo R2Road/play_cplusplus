@@ -11,4 +11,11 @@ namespace std_list_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class OthersIterator : public r2::iTest, public r2::SingleTon<OthersIterator>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

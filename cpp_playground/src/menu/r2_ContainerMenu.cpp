@@ -19,7 +19,8 @@ namespace r2
 			ret->AddChild( '1', std_array_test::Basic::GetInstance() );
 			ret->AddChild( '2', std_array_test::Fill::GetInstance() );
 			ret->AddChild( '3', std_list_test::Splice::GetInstance() );
-			ret->AddChild( '4', std_vector_test::Basic::GetInstance() );
+			ret->AddChild( '4', std_list_test::OthersIterator::GetInstance() );
+			ret->AddChild( '5', std_vector_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
