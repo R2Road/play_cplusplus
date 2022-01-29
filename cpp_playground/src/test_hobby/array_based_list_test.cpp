@@ -7,6 +7,17 @@
 
 namespace
 {
+	template<typename T>
+	struct ListNode
+	{
+		using ValueT = T;
+		using MyT = ListNode<ValueT>;
+
+		MyT* pPrev = nullptr;
+		MyT* pNext = nullptr;
+		ValueT MyValue;
+	};
+
 	template<typename T, std::size_t N>
 	class ArrayBasedList
 	{
@@ -14,14 +25,8 @@ namespace
 		using ValueT = T;
 		using SizeT = std::size_t;
 
-		struct Node
-		{
-			Node* pPrev = nullptr;
-			Node* pNext = nullptr;
-			ValueT MyValue;
-		};
-
-		using ContainerT = std::array<Node, N>;
+		using NodeT = ListNode<ValueT>;
+		using ContainerT = std::array<NodeT, N>;
 
 		ArrayBasedList() : mContainer(), mHead4Rest( nullptr ), mHead4Live( nullptr )
 		{
@@ -56,11 +61,11 @@ namespace
 		}
 
 	private:
-		Node* GetRestNode()
+		NodeT* GetRestNode()
 		{
 			R2ASSERT( nullptr != mHead4Rest, "Empty : ArrayBasedList::GetRestNode()" );
 
-			Node* ret = mHead4Rest;
+			NodeT* ret = mHead4Rest;
 
 			if( nullptr != ret )
 			{
@@ -72,7 +77,7 @@ namespace
 
 			return ret;
 		}
-		uint32_t CalculateSize( const Node* const target_node ) const
+		uint32_t CalculateSize( const NodeT* const target_node ) const
 		{
 			if( nullptr == target_node )
 			{
@@ -119,15 +124,15 @@ namespace
 			}
 		}
 
-		Node* GetHead_discard()
+		NodeT* GetHead_discard()
 		{
 			return mHead4Live;
 		}
 
 	private:
 		ContainerT mContainer;
-		Node* mHead4Rest;
-		Node* mHead4Live;
+		NodeT* mHead4Rest;
+		NodeT* mHead4Live;
 	};
 }
 
