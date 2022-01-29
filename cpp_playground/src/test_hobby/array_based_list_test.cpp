@@ -18,6 +18,40 @@ namespace
 		ValueT MyValue;
 	};
 
+	template<typename T>
+	class ListIterator
+	{
+	public:
+		using ValueT = T;
+		using NodeT = ListNode<ValueT>;
+
+		ListIterator( NodeT* target_node ) : mTargetNode( target_node )
+		{}
+
+		ListIterator& operator++()
+		{
+			mTargetNode = mTargetNode->pNext;
+			return ( *this );
+		}
+
+		bool operator==( const ListIterator& other ) const
+		{
+			return mTargetNode == other.mTargetNode;
+		}
+		bool operator!=( const ListIterator& other ) const
+		{
+			return !operator==( other );
+		}
+
+		T& operator*()
+		{
+			return mTargetNode->MyValue;
+		}
+
+	private:
+		NodeT* mTargetNode;
+	};
+
 	template<typename T, std::size_t N>
 	class ArrayBasedList
 	{
@@ -28,10 +62,19 @@ namespace
 		using NodeT = ListNode<ValueT>;
 		using ContainerT = std::array<NodeT, N>;
 
+		using IteratorT = ListIterator<ValueT>;
+		//using iterator = ListIterator<ValueT>; // ...dev rule?
+
 		ArrayBasedList() : mContainer(), mHead4Rest( nullptr ), mHead4Live( nullptr )
 		{
 			Clear();
 		}
+
+		//
+		// Iteration
+		//
+		IteratorT begin() { return IteratorT( mHead4Live ); }
+		IteratorT end() { return IteratorT( nullptr ); }
 
 		void Clear()
 		{
@@ -180,19 +223,10 @@ namespace array_based_list_test
 				std::cout << r2::tab2 << "list.PushFront( 44 );" << r2::linefeed2;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
-				auto current_node = list.GetHead_discard();
-				while( 1 )
+				for( auto cur = list.begin(), end = list.end(); end != cur; ++cur )
 				{
-					if( nullptr == current_node )
-					{
-						break;
-					}
-
-					std::cout << r2::tab2 << "> " << current_node->MyValue << r2::linefeed;
-
-					current_node = current_node->pNext;
+					std::cout << r2::tab2 << "> " << ( *cur ) << r2::linefeed;
 				}
-
 				std::cout << r2::linefeed;
 				std::cout << r2::tab2 << "list.GetRestNodeCount();" << r2::tab << ">" << r2::tab << list.GetRestNodeCount() << r2::linefeed;
 			}
