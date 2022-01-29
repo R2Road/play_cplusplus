@@ -92,6 +92,24 @@ namespace
 
 			return node_count;
 		}
+		uint32_t Size() const
+		{
+			if( nullptr == mHead4Live )
+			{
+				return 0u;
+			}
+
+			auto current_node = mHead4Live;
+			int node_count = 0;
+
+			while( nullptr != current_node )
+			{
+				++node_count;
+				current_node = current_node->pNext;
+			}
+
+			return node_count;
+		}
 
 		void PushFront( const ValueT new_value )
 		{
@@ -182,6 +200,13 @@ namespace array_based_list_test
 
 				std::cout << r2::linefeed;
 				std::cout << r2::tab2 << "Rest Node Count : " << list.GetRestNodeCount() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Method : Size" << r2::linefeed2;
+				std::cout << r2::tab2 << "list.Size();" << r2::tab << ">" << r2::tab << list.Size() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
