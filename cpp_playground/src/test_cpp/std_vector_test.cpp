@@ -71,4 +71,49 @@ namespace std_vector_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc OthersIterator::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "List : Others Iterator";
+		};
+	}
+	r2::iTest::DoFunc OthersIterator::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::vector<int> container_1 = { 1, 2, 3 };
+			std::vector<int> container_2 = { 10, 20, 30 };
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::vector<int> container_1 = { 1, 2, 3 };" << r2::linefeed;
+				std::cout << r2::tab2 << "std::vector<int> container_2 = { 10, 20, 30 };" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				//auto itr_from_container_1 = container_1.begin();
+				//container_2.erase( itr_from_container_1 );
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "auto itr_from_container_1 = container_1.begin();" << r2::linefeed;
+				std::cout << r2::tab2 << "container_2.erase( itr_from_container_1 );" << r2::linefeed2;
+
+				std::cout << r2::tab << "## Not Working" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
