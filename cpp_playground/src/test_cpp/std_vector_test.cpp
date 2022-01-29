@@ -78,7 +78,7 @@ namespace std_vector_test
 	{
 		return []()->const char*
 		{
-			return "List : Others Iterator";
+			return "Vector : Others Iterator";
 		};
 	}
 	r2::iTest::DoFunc OthersIterator::GetDoFunction()
