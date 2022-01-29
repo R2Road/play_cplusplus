@@ -218,58 +218,58 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			ArrayBasedList<int, 10> list;
+			ArrayBasedList<int, 10> ablist;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "ArrayBasedList<int, 10> list" << r2::linefeed;
+			std::cout << r2::tab2 << "ArrayBasedList<int, 10> ablist" << r2::linefeed;
 
 			std::cout << r2::split;
 
 			{
 				std::cout << r2::tab << "+ Method : GetRestNodeCount" << r2::linefeed2;
-				std::cout << r2::tab2 << "list.GetRestNodeCount();" << r2::tab << ">" << r2::tab << list.GetRestNodeCount() << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				list.PushFront( 11 );
-				list.PushFront( 22 );
-				list.PushFront( 33 );
-				list.PushFront( 44 );
+				ablist.PushFront( 11 );
+				ablist.PushFront( 22 );
+				ablist.PushFront( 33 );
+				ablist.PushFront( 44 );
 
 				std::cout << r2::tab << "+ Method : PushFront" << r2::linefeed2;
-				std::cout << r2::tab2 << "list.PushFront( 11 );" << r2::linefeed;
-				std::cout << r2::tab2 << "list.PushFront( 22 );" << r2::linefeed;
-				std::cout << r2::tab2 << "list.PushFront( 33 );" << r2::linefeed;
-				std::cout << r2::tab2 << "list.PushFront( 44 );" << r2::linefeed2;
+				std::cout << r2::tab2 << "ablist.PushFront( 11 );" << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.PushFront( 22 );" << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.PushFront( 33 );" << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.PushFront( 44 );" << r2::linefeed2;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
-				for( const auto& cur : list )
+				for( const auto& cur : ablist )
 				{
 					std::cout << r2::tab2 << "> " << cur << r2::linefeed;
 				}
 				std::cout << r2::linefeed;
-				std::cout << r2::tab2 << "list.GetRestNodeCount();" << r2::tab << ">" << r2::tab << list.GetRestNodeCount() << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
 				std::cout << r2::tab << "+ Method : Size" << r2::linefeed2;
-				std::cout << r2::tab2 << "list.Size();" << r2::tab << ">" << r2::tab << list.Size() << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				list.Clear();
+				ablist.Clear();
 
 				std::cout << r2::tab << "+ Method : Clear" << r2::linefeed2;
-				std::cout << r2::tab2 << "list.Clear();" << r2::linefeed2;
+				std::cout << r2::tab2 << "ablist.Clear();" << r2::linefeed2;
 				
-				std::cout << r2::tab2 << "list.GetRestNodeCount();" << r2::tab << ">" << r2::tab << list.GetRestNodeCount() << r2::linefeed;
-				std::cout << r2::tab2 << "list.Size();" << r2::tab << ">" << r2::tab << list.Size() << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
