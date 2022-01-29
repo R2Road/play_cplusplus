@@ -55,6 +55,7 @@ namespace
 			mHead4Live = nullptr;
 		}
 
+	private:
 		Node* GetRestNode()
 		{
 			R2ASSERT( nullptr != mHead4Rest, "Empty : ArrayBasedList::GetRestNode()" );
@@ -70,6 +71,26 @@ namespace
 			ret->pNext = nullptr;
 
 			return ret;
+		}
+
+	public:
+		uint32_t GetRestNodeCount() const
+		{
+			if( nullptr == mHead4Rest )
+			{
+				return 0u;
+			}
+
+			auto current_node = mHead4Rest;
+			int node_count = 0;
+
+			while( nullptr != current_node )
+			{
+				++node_count;
+				current_node = current_node->pNext;
+			}
+
+			return node_count;
 		}
 
 		void PushFront( const ValueT new_value )
@@ -127,68 +148,25 @@ namespace array_based_list_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Rest Nodes" << r2::linefeed2;
-				while( 1 )
-				{
-					auto rest_node = list.GetRestNode();
-					if( nullptr == rest_node )
-					{
-						break;
-					}
-
-					std::cout << r2::tab2 << "> " << rest_node->MyValue << r2::linefeed;
-
-					//
-					// Block Assert
-					//
-					if( nullptr == rest_node->pNext )
-					{
-						break;
-					}
-				}
+				std::cout << r2::tab << "+ Method : GetRestNodeCount" << r2::linefeed2;
+				std::cout << r2::tab2 << "Rest Node Count : " << list.GetRestNodeCount() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				list.Clear();
-
-				std::cout << r2::tab << "+ Method : Clear" << r2::linefeed2;
-				std::cout << r2::tab2 << "list.Clear();" << r2::linefeed2;
-				
-				int rest_node_count = 0;
-				while( 1 )
-				{
-					auto rest_node = list.GetRestNode();
-					if( nullptr == rest_node )
-					{
-						break;
-					}
-
-					++rest_node_count;
-
-					//
-					// Block Assert
-					//
-					if( nullptr == rest_node->pNext )
-					{
-						break;
-					}
-				}
-				std::cout << r2::tab2 << "rest node count : " << rest_node_count << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
-			{
-				std::cout << r2::tab << "+ Method : Push Front" << r2::linefeed2;
-
-				list.Clear();
 				list.PushFront( 11 );
 				list.PushFront( 22 );
 				list.PushFront( 33 );
 				list.PushFront( 44 );
 
+				std::cout << r2::tab << "+ Method : Push Front" << r2::linefeed2;
+				std::cout << r2::tab2 << "list.PushFront( 11 );" << r2::linefeed;
+				std::cout << r2::tab2 << "list.PushFront( 22 );" << r2::linefeed;
+				std::cout << r2::tab2 << "list.PushFront( 33 );" << r2::linefeed;
+				std::cout << r2::tab2 << "list.PushFront( 44 );" << r2::linefeed2;
+
+				std::cout << r2::tab << "+ View" << r2::linefeed2;
 				auto current_node = list.GetHead_discard();
 				while( 1 )
 				{
@@ -201,6 +179,20 @@ namespace array_based_list_test
 
 					current_node = current_node->pNext;
 				}
+
+				std::cout << r2::linefeed;
+				std::cout << r2::tab2 << "Rest Node Count : " << list.GetRestNodeCount() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				list.Clear();
+
+				std::cout << r2::tab << "+ Method : Clear" << r2::linefeed2;
+				std::cout << r2::tab2 << "list.Clear();" << r2::linefeed2;
+				
+				std::cout << r2::tab2 << "Rest Node Count : " << list.GetRestNodeCount() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
