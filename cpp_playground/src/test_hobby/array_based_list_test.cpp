@@ -30,15 +30,10 @@ namespace
 
 		void Clear()
 		{
+			//
+			// 4 Rest
+			//
 			mHead4Rest = &( *mContainer.begin() );
-
-			//
-			// Test Code
-			//
-			{
-				mHead4Rest->MyValue = 0;
-			}
-
 			if( 1 < mContainer.size() )
 			{
 				auto current_node = mHead4Rest;
@@ -50,19 +45,12 @@ namespace
 					cur->pPrev = current_node;
 					current_node->pNext = &( *cur );
 
-					//
-					// Test Code
-					//
-					{
-						current_node->pNext->MyValue = current_node->MyValue + 1;
-					}
-
 					current_node = current_node->pNext;
 				}
 			}
 
 			//
-			//
+			// 4 Live
 			//
 			mHead4Live = nullptr;
 		}
