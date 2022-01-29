@@ -57,6 +57,20 @@ namespace
 			}
 		}
 
+		Node* GetRestNode()
+		{
+			R2ASSERT( nullptr != mHead4Rest, "Failed : ArrayBasedList::GetRestNode()" );
+
+			Node* ret = mHead4Rest;
+
+			if( nullptr != ret )
+			{
+				mHead4Rest = ret->pNext;
+			}
+
+			return ret;
+		}
+
 		ContainerT mContainer;
 		Node* mHead4Rest;
 		Node* mHead4Live;
@@ -85,6 +99,18 @@ namespace array_based_list_test
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab2 << "ArrayBasedList<int, 10> list" << r2::linefeed;
+
+				std::cout << r2::tab << "+ Rest Nodes" << r2::linefeed2;
+				while( 1 )
+				{
+					auto rest_node = list.GetRestNode();
+					if( nullptr == rest_node )
+					{
+						break;
+					}
+
+					std::cout << r2::tab2 << "> " << rest_node->MyValue << r2::linefeed;
+				}
 			}
 
 			std::cout << r2::split;
