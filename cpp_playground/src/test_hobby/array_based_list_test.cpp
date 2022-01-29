@@ -187,11 +187,6 @@ namespace
 			}
 		}
 
-		NodeT* GetHead_discard()
-		{
-			return mHead4Live;
-		}
-
 	private:
 		ContainerT mContainer;
 		NodeT* mHead4Rest;
