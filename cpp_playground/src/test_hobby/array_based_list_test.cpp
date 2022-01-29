@@ -72,16 +72,14 @@ namespace
 
 			return ret;
 		}
-
-	public:
-		uint32_t GetRestNodeCount() const
+		uint32_t CalculateSize( const Node* const target_node ) const
 		{
-			if( nullptr == mHead4Rest )
+			if( nullptr == target_node )
 			{
 				return 0u;
 			}
 
-			auto current_node = mHead4Rest;
+			auto current_node = target_node;
 			int node_count = 0;
 
 			while( nullptr != current_node )
@@ -92,23 +90,15 @@ namespace
 
 			return node_count;
 		}
+
+	public:
+		uint32_t GetRestNodeCount() const
+		{
+			return CalculateSize( mHead4Rest );
+		}
 		uint32_t Size() const
 		{
-			if( nullptr == mHead4Live )
-			{
-				return 0u;
-			}
-
-			auto current_node = mHead4Live;
-			int node_count = 0;
-
-			while( nullptr != current_node )
-			{
-				++node_count;
-				current_node = current_node->pNext;
-			}
-
-			return node_count;
+			return CalculateSize( mHead4Live );
 		}
 
 		void PushFront( const ValueT new_value )
