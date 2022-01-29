@@ -238,7 +238,7 @@ namespace array_based_list_test
 				list.PushFront( 33 );
 				list.PushFront( 44 );
 
-				std::cout << r2::tab << "+ Method : Push Front" << r2::linefeed2;
+				std::cout << r2::tab << "+ Method : PushFront" << r2::linefeed2;
 				std::cout << r2::tab2 << "list.PushFront( 11 );" << r2::linefeed;
 				std::cout << r2::tab2 << "list.PushFront( 22 );" << r2::linefeed;
 				std::cout << r2::tab2 << "list.PushFront( 33 );" << r2::linefeed;
