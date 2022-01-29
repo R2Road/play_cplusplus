@@ -362,6 +362,43 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc Basic_3::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Array Based List( In Progress ) 3";
+		};
+	}
+	r2::iTest::DoFunc Basic_3::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			ArrayBasedList<int, 5> ablist;
+			ablist.PushBack( 11 );
+			ablist.PushBack( 22 );
+			ablist.PushBack( 33 );
+
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "ArrayBasedList<int, 5> ablist" << r2::linefeed;
+			std::cout << r2::tab2 << "ablist.PushBack( 11 );" << r2::linefeed;
+			std::cout << r2::tab2 << "ablist.PushBack( 22 );" << r2::linefeed;
+			std::cout << r2::tab2 << "ablist.PushBack( 33 );" << r2::linefeed2;
+
+			std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
+			std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
+
+			std::cout << r2::split;
+
 			{
 				auto target_itr = ablist.begin();
 				++target_itr;
@@ -394,14 +431,15 @@ namespace array_based_list_test
 				std::cout << r2::tab2 << "for( int i = 0, end = ablist.GetRestNodeCount(); end > i; ++i )" << r2::linefeed;
 				std::cout << r2::tab2 << "{" << r2::linefeed;
 				std::cout << r2::tab3 << "ablist.PushBack( i );" << r2::linefeed;
-				std::cout << r2::tab2 << "}" << r2::linefeed;
+				std::cout << r2::tab2 << "}" << r2::linefeed2;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
+				std::cout << r2::tab2;
 				for( const auto& cur : ablist )
 				{
-					std::cout << r2::tab2 << "> " << cur << r2::linefeed;
+					std::cout << "> " << cur << r2::tab;
 				}
-				std::cout << r2::linefeed;
+				std::cout << r2::linefeed2;
 				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
 				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
 			}

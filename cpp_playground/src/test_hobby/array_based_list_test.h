@@ -18,4 +18,11 @@ namespace array_based_list_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class Basic_3 : public r2::iTest, public r2::SingleTon<Basic_3>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
