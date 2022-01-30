@@ -264,14 +264,14 @@ namespace algorithm_astar_test
 
 
 
-	r2::iTest::TitleFunc UseSTDListSplice_And_STDVectorResultPath_DecreaseCloseList::GetTitleFunction() const
+	r2::iTest::TitleFunc Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "A Star : use std::list::splice and std::vector Result Path and Decrease Close List";
+			return "A Star : use std::list::splice, Decrease Close List, std::vector Result Path";
 		};
 	}
-	r2::iTest::DoFunc UseSTDListSplice_And_STDVectorResultPath_DecreaseCloseList::GetDoFunction()
+	r2::iTest::DoFunc Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -295,7 +295,7 @@ namespace algorithm_astar_test
 				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
 				stop_watch.Start();
-				r2algorithm::AStarPathBuilder_UseSTDListSplice_UseSTDVectorResultPath_DecreaseCloseList::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
+				r2algorithm::AStarPathBuilder_Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 				stop_watch.Stop();
 
 				//
@@ -572,7 +572,7 @@ namespace algorithm_astar_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ AStarPathBuilder_UseSTDListSplice_UseSTDVectorResultPath_DecreaseCloseList" << r2::linefeed2;
+				std::cout << r2::tab << "+ AStarPathBuilder_Use_STDListSplice_DecreaseCloseList_STDVectorResultPath" << r2::linefeed2;
 
 				r2util::StopWatch stop_watch;
 
@@ -585,7 +585,7 @@ namespace algorithm_astar_test
 				for( int i = 0; attempt_limit > i; ++i )
 				{
 					stop_watch.Start();
-					r2algorithm::AStarPathBuilder_UseSTDListSplice_UseSTDVectorResultPath_DecreaseCloseList::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
+					r2algorithm::AStarPathBuilder_Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
 					stop_watch.Stop();
 				}
 

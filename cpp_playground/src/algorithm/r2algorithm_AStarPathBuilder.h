@@ -174,10 +174,10 @@ namespace r2algorithm
 
 		static void Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::vector<r2::Point>* out_result_path );
 	};
-	class AStarPathBuilder_UseSTDListSplice_UseSTDVectorResultPath_DecreaseCloseList
+	class AStarPathBuilder_Use_STDListSplice_DecreaseCloseList_STDVectorResultPath
 	{
 	public:
-		AStarPathBuilder_UseSTDListSplice_UseSTDVectorResultPath_DecreaseCloseList() = delete;
+		AStarPathBuilder_Use_STDListSplice_DecreaseCloseList_STDVectorResultPath() = delete;
 
 		static void Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::vector<r2::Point>* out_result_path );
 	};
