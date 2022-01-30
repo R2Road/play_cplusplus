@@ -581,5 +581,8 @@
     <ClInclude Include="src\test_cpp\std_thread_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
+    <ClInclude Include="src\r2\r2_ArrayBasedList.h">
+      <Filter>r2</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
