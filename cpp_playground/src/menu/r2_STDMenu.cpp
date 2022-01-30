@@ -5,8 +5,10 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
-#include "r2_STDNumericMenu.h"
 #include "r2_STDContainerMenu.h"
+#include "r2_STDMemoryMenu.h"
+#include "r2_STDNumericMenu.h"
+#include "r2_STDThreadMenu.h"
 
 #include "test_cpp/std_function_test.h"
 #include "test_cpp/std_function_2_test.h"
@@ -14,9 +16,6 @@
 #include "test_cpp/std_stringview_test.h"
 #include "test_cpp/std_tuple_test.h"
 #include "test_cpp/std_variant_test.h"
-
-#include "r2_STDMemoryMenu.h"
-#include "r2_STDThreadMenu.h"
 
 namespace r2
 {
