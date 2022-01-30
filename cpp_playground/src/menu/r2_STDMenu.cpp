@@ -11,7 +11,7 @@
 #include "test_cpp/std_function_test.h"
 #include "test_cpp/std_function_2_test.h"
 #include "test_cpp/std_optional_test.h"
-#include "test_cpp/string_view_test.h"
+#include "test_cpp/std_stringview_test.h"
 #include "test_cpp/tuple_test.h"
 #include "test_cpp/variant_test.h"
 
@@ -30,7 +30,7 @@ namespace r2
 
 			ret->AddLineFeed();
 
-			ret->AddChild( '5', stringview_test::Basic::GetInstance() );
+			ret->AddChild( '5', std_stringview_test::Basic::GetInstance() );
 			ret->AddChild( '6', tuple_test::Basic::GetInstance() );
 			ret->AddChild( '7', variant_test::Basic::GetInstance() );
 

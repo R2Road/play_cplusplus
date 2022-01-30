@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "string_view_test.h"
+#include "std_stringview_test.h"
 
 #include <string>
 #include <string_view>
@@ -8,7 +8,7 @@
 
 using namespace std::string_view_literals; // for sv
 
-namespace stringview_test
+namespace std_stringview_test
 {
 	r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{

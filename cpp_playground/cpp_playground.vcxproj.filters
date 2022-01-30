@@ -121,9 +121,6 @@
     <ClCompile Include="src\test_cpp\print_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\string_view_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\structured_binding_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -296,6 +293,9 @@
     <ClCompile Include="src\test_cpp\std_thread_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\std_stringview_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -389,9 +389,6 @@
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\print_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\string_view_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\structured_binding_test.h">
@@ -583,6 +580,9 @@
     </ClInclude>
     <ClInclude Include="src\r2\r2_ArrayBasedList.h">
       <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\std_stringview_test.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
