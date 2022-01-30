@@ -674,7 +674,7 @@ namespace r2algorithm
 		//
 		while( true )
 		{
-			if( 0 >= open_list.Size() )
+			if( open_list.Empty() )
 			{
 				break;
 			}

@@ -163,6 +163,10 @@ namespace r2
 		{
 			return CalculateSize( mHead4Live );
 		}
+		bool Empty() const
+		{
+			return ( nullptr == mHead4Live );
+		}
 
 		void PushFront( const ValueT new_value )
 		{
