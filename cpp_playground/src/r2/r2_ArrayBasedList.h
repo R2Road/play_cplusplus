@@ -183,11 +183,11 @@ namespace r2
 		}
 
 	public:
-		uint32_t GetRestNodeCount() const
+		SizeT GetRestNodeCount() const
 		{
 			return mSize4Rest;
 		}
-		uint32_t Size() const
+		SizeT Size() const
 		{
 			return mSize;
 		}
@@ -269,10 +269,10 @@ namespace r2
 	private:
 		ContainerT mContainer;
 		NodeT* mHead4Rest;
-		uint32_t mSize4Rest;
+		SizeT mSize4Rest;
 
 		NodeT* mHead4Live;
 		NodeT* mTail4Live;
-		uint32_t mSize;
+		SizeT mSize;
 	};
 }
