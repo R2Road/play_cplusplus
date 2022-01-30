@@ -2,7 +2,6 @@
 #include "r2algorithm_AStarPathBuilder.h"
 
 #include "r2/r2_Direction8.h"
-#include "r2/r2_ArrayBasedList.h"
 
 namespace
 {
@@ -647,18 +646,18 @@ namespace r2algorithm
 
 
 
-	void AStarPathBuilder_UseArrayBasedList::Clear()
+	void AStarPathBuilder_Use_ArrayBasedList_CostMap_STDVectorResultPath::Clear()
 	{
 		for( auto& c : cost_map )
 		{
 			c.Clear();
 		}
+
+		open_list.Clear();
+		close_list.Clear();
 	}
-	void AStarPathBuilder_UseArrayBasedList::Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::vector<r2::Point>* out_result_path )
+	void AStarPathBuilder_Use_ArrayBasedList_CostMap_STDVectorResultPath::Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::vector<r2::Point>* out_result_path )
 	{
-		using TargetContainerT = r2::ArrayBasedList<r2::Point, 19u * 19u >;
-		TargetContainerT open_list;
-		TargetContainerT close_list;
 		r2::Point current_point;
 		bool bSuccess = false;
 
