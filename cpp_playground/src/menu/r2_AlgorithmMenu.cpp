@@ -22,7 +22,11 @@ namespace r2
 			ret->AddChild( '1', algorithm_selection_sort_test::Case1::GetInstance() );
 			ret->AddChild( '2', algorithm_selection_sort_test::Case2::GetInstance() );
 
+			ret->AddLineFeed();
+
 			ret->AddChild( '3', algorithm_bubble_sort_test::Basic::GetInstance() );
+
+			ret->AddLineFeed();
 
 			ret->AddChild( '4', algorithm_insertion_sort_test::Basic::GetInstance() );
 
@@ -38,6 +42,8 @@ namespace r2
 			ret->AddChild( 'y', algorithm_astar_test::Use_CostMap_STDListSplice_STDVectorResultPath::GetInstance() );
 			ret->AddChild( 'u', algorithm_astar_test::Use_CostMap_TinyCostData_STDListSplice_STDVectorResultPath::GetInstance() );
 			ret->AddChild( 'i', algorithm_astar_test::Use_ArrayBasedList_CostMap_STDVectorResultPath::GetInstance() );
+
+			ret->AddLineFeed();
 
 			ret->AddChild( 'o', algorithm_astar_test::PerformanceTest::GetInstance() );
 
