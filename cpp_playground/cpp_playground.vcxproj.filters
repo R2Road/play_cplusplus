@@ -46,9 +46,6 @@
     <ClCompile Include="src\menu\r2_LambdaMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\r2_MemoryMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\menu\r2_NewMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
@@ -296,6 +293,9 @@
     <ClCompile Include="src\test_hobby\memory_pool_test.cpp">
       <Filter>test_hobby</Filter>
     </ClCompile>
+    <ClCompile Include="src\menu\r2_STDMemoryMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -314,9 +314,6 @@
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\menu\r2_LambdaMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_MemoryMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\menu\r2_NewMenu.h">
@@ -583,6 +580,9 @@
     </ClInclude>
     <ClInclude Include="src\test_hobby\memory_pool_test.h">
       <Filter>test_hobby</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_STDMemoryMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_MemoryMenu.h"
+#include "r2_STDMemoryMenu.h"
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestResult.h"
@@ -9,7 +9,7 @@
 
 namespace r2
 {
-	MenuUp MemoryMenu::Create( Director& director )
+	MenuUp STDMemoryMenu::Create( Director& director )
 	{
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 

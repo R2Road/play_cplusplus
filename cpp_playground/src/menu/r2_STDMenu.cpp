@@ -15,7 +15,7 @@
 #include "test_cpp/std_tuple_test.h"
 #include "test_cpp/std_variant_test.h"
 
-#include "r2_MemoryMenu.h"
+#include "r2_STDMemoryMenu.h"
 #include "r2_ThreadMenu.h"
 
 namespace r2
@@ -48,10 +48,10 @@ namespace r2
 
 			ret->AddChild(
 				'a'
-				, []()->const char* { return r2::MemoryMenu::GetTitle(); }
+				, []()->const char* { return r2::STDMemoryMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
-					director.Setup( r2::MemoryMenu::Create( director ) );
+					director.Setup( r2::STDMemoryMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);
