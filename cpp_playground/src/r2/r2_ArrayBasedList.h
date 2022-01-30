@@ -181,24 +181,6 @@ namespace r2
 
 			++mSize4Rest;
 		}
-		uint32_t CalculateSize( const NodeT* const target_node ) const
-		{
-			if( nullptr == target_node )
-			{
-				return 0u;
-			}
-
-			auto current_node = target_node;
-			int node_count = 0;
-
-			while( nullptr != current_node )
-			{
-				++node_count;
-				current_node = current_node->pNext;
-			}
-
-			return node_count;
-		}
 
 	public:
 		uint32_t GetRestNodeCount() const
