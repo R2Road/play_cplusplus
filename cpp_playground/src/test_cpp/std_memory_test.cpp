@@ -1,12 +1,12 @@
 #include "pch.h"
-#include "smart_pointer_test.h"
+#include "std_memory_test.h"
 
 #include <memory>
 #include <utility>
 
 #include "base/r2_eTestResult.h"
 
-namespace smart_pointer_test
+namespace std_memory_test
 {
 	r2::iTest::TitleFunc SharedPointer::GetTitleFunction() const
 	{
@@ -89,7 +89,7 @@ namespace smart_pointer_test
 
 
 
-namespace smart_pointer_test
+namespace std_memory_test
 {
 	r2::iTest::TitleFunc UniquePointer::GetTitleFunction() const
 	{
