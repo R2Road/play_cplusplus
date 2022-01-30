@@ -88,12 +88,12 @@ namespace r2
 		NodeT* mTargetNode;
 	};
 
-	template<typename T, std::size_t N>
+	template<typename T, uint32_t N>
 	class ArrayBasedList
 	{
 	public:
 		using ValueT = T;
-		using SizeT = std::size_t;
+		using SizeT = uint32_t;
 
 		using NodeT = ListNode<ValueT>;
 		using ContainerT = std::array<NodeT, N>;
