@@ -44,7 +44,7 @@ namespace r2
 		}
 		ValueT* operator->() const
 		{
-			return &( **this ); // call : operator*()
+			return &( *( *this ) ); // call : operator*()
 		}
 
 		NodeT* mTargetNode;
