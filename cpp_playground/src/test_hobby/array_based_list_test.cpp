@@ -1,8 +1,6 @@
 #include "pch.h"
 #include "array_based_list_test.h"
 
-#include <array>
-
 #include "base/r2_eTestResult.h"
 #include "r2/r2_ArrayBasedList.h"
 #include "r2/r2_Point.h"
