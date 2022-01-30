@@ -182,10 +182,10 @@ namespace r2algorithm
 		static void Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::vector<r2::Point>* out_result_path );
 	};
 
-	class AStarPathBuilder_UseCostMap
+	class AStarPathBuilder_UseCostMap_STDListSplice_STDVectorResultPath
 	{
 	public:
-		AStarPathBuilder_UseCostMap( const std::size_t width, const std::size_t height ) : cost_map( width, height, Node4AStar() )
+		AStarPathBuilder_UseCostMap_STDListSplice_STDVectorResultPath( const std::size_t width, const std::size_t height ) : cost_map( width, height, Node4AStar() )
 		{}
 
 		void Clear();

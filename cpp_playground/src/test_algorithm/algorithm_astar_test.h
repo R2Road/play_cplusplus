@@ -32,7 +32,7 @@ namespace algorithm_astar_test
 		DoFunc GetDoFunction() override;
 	};
 
-	class UseCostMap : public r2::iTest, public r2::SingleTon<UseCostMap>
+	class Use_CostMap_STDListSplice_STDVectorResultPath : public r2::iTest, public r2::SingleTon<Use_CostMap_STDListSplice_STDVectorResultPath>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
