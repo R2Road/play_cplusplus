@@ -139,9 +139,6 @@
     <ClCompile Include="src\test_cpp\variadic_template_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\variant_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\base\r2_Director.cpp">
       <Filter>base</Filter>
     </ClCompile>
@@ -296,6 +293,9 @@
     <ClCompile Include="src\test_cpp\std_tuple_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\std_variant_test.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -407,9 +407,6 @@
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\variadic_template_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\variant_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\base\r2_Director.h">
@@ -582,6 +579,9 @@
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\std_tuple_test.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\std_variant_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>

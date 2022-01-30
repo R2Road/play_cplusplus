@@ -13,7 +13,7 @@
 #include "test_cpp/std_optional_test.h"
 #include "test_cpp/std_stringview_test.h"
 #include "test_cpp/std_tuple_test.h"
-#include "test_cpp/variant_test.h"
+#include "test_cpp/std_variant_test.h"
 
 #include "r2_ThreadMenu.h"
 
@@ -32,7 +32,7 @@ namespace r2
 
 			ret->AddChild( '5', std_stringview_test::Basic::GetInstance() );
 			ret->AddChild( '6', std_tuple_test::Basic::GetInstance() );
-			ret->AddChild( '7', variant_test::Basic::GetInstance() );
+			ret->AddChild( '7', std_variant_test::Basic::GetInstance() );
 
 			ret->AddLineFeed();
 

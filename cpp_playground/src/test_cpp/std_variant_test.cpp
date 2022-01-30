@@ -1,12 +1,12 @@
 #include "pch.h"
-#include "variant_test.h"
+#include "std_variant_test.h"
 
 #include <variant>
 
 #include "base/r2_eTestResult.h"
 
 
-namespace variant_test
+namespace std_variant_test
 {
 	r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
