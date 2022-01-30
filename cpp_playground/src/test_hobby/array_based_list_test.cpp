@@ -252,6 +252,17 @@ namespace array_based_list_test
 			{
 				auto target_itr = ablist.begin();
 
+				std::cout << r2::tab << "+ Operator : *" << r2::linefeed2;
+				std::cout << r2::tab2 << "auto target_itr = ablist.begin();" << r2::linefeed;
+				std::cout << r2::tab2 << "( *target_itr ).x;" << " > " << ( *target_itr ).x << r2::linefeed;
+				std::cout << r2::tab2 << "( *target_itr ).y;" << " > " << ( *target_itr ).y << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				auto target_itr = ablist.begin();
+
 				std::cout << r2::tab << "+ Operator : ->" << r2::linefeed2;
 				std::cout << r2::tab2 << "auto target_itr = ablist.begin();" << r2::linefeed;
 				std::cout << r2::tab2 << "target_itr->x;" << " > " << target_itr->x << r2::linefeed;
