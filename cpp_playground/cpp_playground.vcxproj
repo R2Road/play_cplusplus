@@ -83,7 +83,6 @@
     <ClCompile Include="src\test_cpp\korean_test.cpp" />
     <ClCompile Include="src\test_cpp\lambda_test.cpp" />
     <ClCompile Include="src\test_cpp\locale_test.cpp" />
-    <ClCompile Include="src\test_cpp\memory_pool_test.cpp" />
     <ClCompile Include="src\test_cpp\new_test.cpp" />
     <ClCompile Include="src\test_cpp\std_optional_test.cpp" />
     <ClCompile Include="src\test_cpp\performance_1_test.cpp" />
@@ -114,6 +113,7 @@
     <ClCompile Include="src\test_cpp\std_vector_test.cpp" />
     <ClCompile Include="src\test_hobby\array_based_list_test.cpp" />
     <ClCompile Include="src\test_hobby\infinite_number_test.cpp" />
+    <ClCompile Include="src\test_hobby\memory_pool_test.cpp" />
     <ClCompile Include="src\util\r2util_StopWatch.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -181,7 +181,6 @@
     <ClInclude Include="src\test_cpp\korean_test.h" />
     <ClInclude Include="src\test_cpp\lambda_test.h" />
     <ClInclude Include="src\test_cpp\locale_test.h" />
-    <ClInclude Include="src\test_cpp\memory_pool_test.h" />
     <ClInclude Include="src\test_cpp\new_test.h" />
     <ClInclude Include="src\test_cpp\std_optional_test.h" />
     <ClInclude Include="src\test_cpp\performance_1_test.h" />
@@ -212,6 +211,7 @@
     <ClInclude Include="src\test_cpp\std_vector_test.h" />
     <ClInclude Include="src\test_hobby\array_based_list_test.h" />
     <ClInclude Include="src\test_hobby\infinite_number_test.h" />
+    <ClInclude Include="src\test_hobby\memory_pool_test.h" />
     <ClInclude Include="src\util\r2util_StopWatch.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

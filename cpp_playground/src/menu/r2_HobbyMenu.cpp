@@ -7,7 +7,7 @@
 
 #include "test_hobby/infinite_number_test.h"
 #include "test_hobby/array_based_list_test.h"
-#include "test_cpp/memory_pool_test.h"
+#include "test_hobby/memory_pool_test.h"
 
 namespace r2
 {

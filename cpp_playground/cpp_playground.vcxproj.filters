@@ -109,9 +109,6 @@
     <ClCompile Include="src\test_cpp\locale_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\memory_pool_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\new_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -296,6 +293,9 @@
     <ClCompile Include="src\test_cpp\std_memory_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_hobby\memory_pool_test.cpp">
+      <Filter>test_hobby</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -377,9 +377,6 @@
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\locale_test.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\memory_pool_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\new_test.h">
@@ -583,6 +580,9 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\std_memory_test.h">
       <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\memory_pool_test.h">
+      <Filter>test_hobby</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
