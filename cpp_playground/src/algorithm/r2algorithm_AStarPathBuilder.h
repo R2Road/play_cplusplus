@@ -205,10 +205,10 @@ namespace r2algorithm
 		r2::Grid<TinyNode4AStar> cost_map;
 	};
 
-	class AStarPathBuilder_Use_ArrayBasedList_CostMap_TinyCostData_STDVectorResultPath
+	class AStarPathBuilder_Use_ArrayBasedList_TinyCostMap_STDVectorResultPath
 	{
 	public:
-		AStarPathBuilder_Use_ArrayBasedList_CostMap_TinyCostData_STDVectorResultPath( const std::size_t width, const std::size_t height ) : cost_map( width, height, TinyNode4AStar() )
+		AStarPathBuilder_Use_ArrayBasedList_TinyCostMap_STDVectorResultPath( const std::size_t width, const std::size_t height ) : cost_map( width, height, TinyNode4AStar() )
 		{}
 
 		void Clear();

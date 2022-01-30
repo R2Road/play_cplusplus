@@ -45,7 +45,7 @@ namespace algorithm_astar_test
 		DoFunc GetDoFunction() override;
 	};
 
-	class Use_ArrayBasedList_CostMap_STDVectorResultPath : public r2::iTest, public r2::SingleTon<Use_ArrayBasedList_CostMap_STDVectorResultPath>
+	class Use_ArrayBasedList_TinyCostMap_STDVectorResultPath : public r2::iTest, public r2::SingleTon<Use_ArrayBasedList_TinyCostMap_STDVectorResultPath>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

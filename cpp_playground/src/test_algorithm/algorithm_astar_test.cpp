@@ -420,14 +420,14 @@ namespace algorithm_astar_test
 
 
 
-	r2::iTest::TitleFunc Use_ArrayBasedList_CostMap_STDVectorResultPath::GetTitleFunction() const
+	r2::iTest::TitleFunc Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "A Star : use Array Based List, CostMap, Tiny Cost Data, std::vector Result Path";
+			return "A Star : use Array Based List, Tiny CostMap, std::vector Result Path";
 		};
 	}
-	r2::iTest::DoFunc Use_ArrayBasedList_CostMap_STDVectorResultPath::GetDoFunction()
+	r2::iTest::DoFunc Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -450,7 +450,7 @@ namespace algorithm_astar_test
 				std::vector<r2::Point> result_path;
 				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
-				r2algorithm::AStarPathBuilder_Use_ArrayBasedList_CostMap_TinyCostData_STDVectorResultPath builder( WORLD_MAP.GetWidth(), WORLD_MAP.GetHeight() );
+				r2algorithm::AStarPathBuilder_Use_ArrayBasedList_TinyCostMap_STDVectorResultPath builder( WORLD_MAP.GetWidth(), WORLD_MAP.GetHeight() );
 
 				stop_watch.Start();
 				builder.Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
@@ -660,7 +660,7 @@ namespace algorithm_astar_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ AStarPathBuilder_Use_ArrayBasedList_CostMap_TinyCostData_STDVectorResultPath" << r2::linefeed2;
+				std::cout << r2::tab << "+ AStarPathBuilder_Use_ArrayBasedList_TinyCostMap_STDVectorResultPath" << r2::linefeed2;
 
 				r2util::StopWatch stop_watch;
 
@@ -670,7 +670,7 @@ namespace algorithm_astar_test
 				std::vector<r2::Point> result_path;
 				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
-				r2algorithm::AStarPathBuilder_Use_ArrayBasedList_CostMap_TinyCostData_STDVectorResultPath builder( WORLD_MAP.GetWidth(), WORLD_MAP.GetHeight() );
+				r2algorithm::AStarPathBuilder_Use_ArrayBasedList_TinyCostMap_STDVectorResultPath builder( WORLD_MAP.GetWidth(), WORLD_MAP.GetHeight() );
 
 				for( int i = 0; attempt_limit > i; ++i )
 				{
