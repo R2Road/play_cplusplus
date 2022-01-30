@@ -118,7 +118,7 @@ namespace r2algorithm
 		}
 	}
 
-	void AStarPathBuilder_UseSTDListSplice::Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::list<r2::Point>* out_result_path )
+	void AStarPathBuilder_Use_STDListSplice::Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::list<r2::Point>* out_result_path )
 	{
 		using Node4AStarContainerT = std::list<Node4AStar>;
 		Node4AStarContainerT open_list;
