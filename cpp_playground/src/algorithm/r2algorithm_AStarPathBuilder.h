@@ -203,4 +203,16 @@ namespace r2algorithm
 
 		r2::Grid<TinyNode4AStar> cost_map;
 	};
+
+	class AStarPathBuilder_UseArrayBasedList
+	{
+	public:
+		AStarPathBuilder_UseArrayBasedList( const std::size_t width, const std::size_t height ) : cost_map( width, height, TinyNode4AStar() )
+		{}
+
+		void Clear();
+		void Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::vector<r2::Point>* out_result_path );
+
+		r2::Grid<TinyNode4AStar> cost_map;
+	};
 }

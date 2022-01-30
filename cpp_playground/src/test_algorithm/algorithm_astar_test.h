@@ -45,6 +45,15 @@ namespace algorithm_astar_test
 		DoFunc GetDoFunction() override;
 	};
 
+	class UseArrayBasedList : public r2::iTest, public r2::SingleTon<UseArrayBasedList>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
+
+
 	class PerformanceTest : public r2::iTest, public r2::SingleTon<PerformanceTest>
 	{
 	public:

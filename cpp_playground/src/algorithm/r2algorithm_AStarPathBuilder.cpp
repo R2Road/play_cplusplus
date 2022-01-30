@@ -2,6 +2,7 @@
 #include "r2algorithm_AStarPathBuilder.h"
 
 #include "r2/r2_Direction8.h"
+#include "r2/r2_ArrayBasedList.h"
 
 namespace
 {
@@ -624,6 +625,108 @@ namespace r2algorithm
 
 				cost_map.Get( temp_point.x, temp_point.y ) = TinyNode4AStar{ temp_point, current_point, exit_point };
 				open_list.push_back( temp_point );
+			}
+		}
+
+		//
+		// Save Path
+		//
+		if( bSuccess )
+		{
+			out_result_path->clear();
+
+			auto path_point = exit_point;
+			while( -1 != path_point.x )
+			{
+				out_result_path->push_back( path_point );
+
+				path_point = cost_map.Get( path_point.x, path_point.y ).GetPreviousPoint();
+			}
+		}
+	}
+
+
+
+	void AStarPathBuilder_UseArrayBasedList::Clear()
+	{
+		for( auto& c : cost_map )
+		{
+			c.Clear();
+		}
+	}
+	void AStarPathBuilder_UseArrayBasedList::Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::vector<r2::Point>* out_result_path )
+	{
+		using TargetContainerT = r2::ArrayBasedList<r2::Point, 19u * 19u >;
+		TargetContainerT open_list;
+		TargetContainerT close_list;
+		r2::Point current_point;
+		bool bSuccess = false;
+
+		//
+		// Ready
+		//
+		{
+			cost_map.Set( entry_point.x, entry_point.y, { entry_point, r2::Point{ -1, -1 }, exit_point } );
+			open_list.PushBack( entry_point );
+		}
+
+		//
+		// Make Cost Map
+		//
+		while( true )
+		{
+			if( 0 >= open_list.Size() )
+			{
+				break;
+			}
+
+			// Select Min
+			TargetContainerT::IteratorT min_itr = open_list.begin();
+			for( auto cur_itr = ( ++open_list.begin() ), end = open_list.end(); end != cur_itr; ++cur_itr )
+			{
+				if( cost_map.Get( ( *min_itr ).x, ( *min_itr ).y ).GetCost2End() > cost_map.Get( ( *cur_itr ).x, ( *cur_itr ).y ).GetCost2End() )
+				{
+					min_itr = cur_itr;
+				}
+			}
+
+			// Move
+			cost_map.Get( ( *min_itr ).x, ( *min_itr ).y ).Close();
+			current_point = *min_itr;
+			open_list.Erase( min_itr );
+			close_list.PushBack( current_point );
+
+			// Found Exit
+			if( exit_point == current_point )
+			{
+				bSuccess = true;
+				break;
+			}
+
+			// Collect Open List
+			r2::Direction8 dir8;
+			r2::Point temp_point;
+			for( int i = 0; 8 > i; ++i, dir8.Rotate( true, 1 ) )
+			{
+				temp_point = current_point + dir8.GetPoint();
+
+				if( !grid.IsIn( temp_point.x, temp_point.y ) )
+				{
+					continue;
+				}
+
+				if( CELL_TYPE_ROAD != grid.Get( temp_point.x, temp_point.y ) )
+				{
+					continue;
+				}
+
+				if( TinyNode4AStar::eStatus::None != cost_map.Get( temp_point.x, temp_point.y ).GetStatus() )
+				{
+					continue;
+				}
+
+				cost_map.Get( temp_point.x, temp_point.y ) = TinyNode4AStar{ temp_point, current_point, exit_point };
+				open_list.PushBack( temp_point );
 			}
 		}
 
