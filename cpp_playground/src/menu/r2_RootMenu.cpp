@@ -12,7 +12,6 @@
 #include "r2_RandomMenu.h"
 #include "r2_TemplateMenu.h"
 #include "r2_AlignMenu.h"
-#include "r2_MemoryMenu.h"
 #include "r2_EnumMenu.h"
 #include "r2_TimeMenu.h"
 
@@ -116,15 +115,6 @@ namespace r2
 			);
 			ret->AddChild(
 				'9'
-				, []()->const char* { return r2::MemoryMenu::GetTitle(); }
-				, [&director]()->eTestResult
-				{
-					director.Setup( r2::MemoryMenu::Create( director ) );
-					return eTestResult::ChangeScene;
-				}
-			);
-			ret->AddChild(
-				'0'
 				, []()->const char* { return r2::EnumMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
