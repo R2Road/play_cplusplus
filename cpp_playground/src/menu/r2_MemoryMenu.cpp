@@ -5,7 +5,6 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
-#include "test_cpp/memory_pool_test.h"
 #include "test_cpp/std_memory_test.h"
 
 namespace r2
@@ -17,12 +16,6 @@ namespace r2
 		{
 			ret->AddChild( '1', std_memory_test::SharedPointer::GetInstance() );
 			ret->AddChild( '2', std_memory_test::UniquePointer::GetInstance() );
-
-
-			ret->AddLineFeed();
-
-
-			ret->AddChild( 'q', memory_pool_test::Step01::GetInstance() );
 
 
 			ret->AddSplit();

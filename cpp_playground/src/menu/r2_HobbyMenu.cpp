@@ -7,6 +7,7 @@
 
 #include "test_hobby/infinite_number_test.h"
 #include "test_hobby/array_based_list_test.h"
+#include "test_cpp/memory_pool_test.h"
 
 namespace r2
 {
@@ -23,6 +24,12 @@ namespace r2
 			ret->AddChild( '3', array_based_list_test::Basic_2::GetInstance() );
 			ret->AddChild( '4', array_based_list_test::Basic_3::GetInstance() );
 			ret->AddChild( '5', array_based_list_test::Basic_4::GetInstance() );
+
+
+			ret->AddSplit();
+
+
+			ret->AddChild( 'q', memory_pool_test::Step01::GetInstance() );
 
 
 			ret->AddSplit();
