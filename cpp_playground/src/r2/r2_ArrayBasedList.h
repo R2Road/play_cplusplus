@@ -102,7 +102,7 @@ namespace r2
 		//using iterator = ListIterator<ValueT>; // ...dev rule?
 		using ReverseIteratorT = ListReverseIterator<ValueT>;
 
-		ArrayBasedList() : mContainer(), mHead4Rest( nullptr ), mSize4Rest( N ), mHead4Live( nullptr ), mTail4Live( nullptr )
+		ArrayBasedList() : mContainer(), mHead4Rest( nullptr ), mSize4Rest( N ), mHead4Live( nullptr ), mTail4Live( nullptr ), mSize( 0u )
 		{
 			Clear();
 		}
@@ -142,6 +142,7 @@ namespace r2
 			//
 			mHead4Live = nullptr;
 			mTail4Live = nullptr;
+			mSize = 0u;
 		}
 
 	private:
@@ -206,7 +207,7 @@ namespace r2
 		}
 		uint32_t Size() const
 		{
-			return CalculateSize( mHead4Live );
+			return mSize;
 		}
 		bool Empty() const
 		{
@@ -230,6 +231,8 @@ namespace r2
 
 				mHead4Live = node;
 			}
+
+			++mSize;
 		}
 		void PushBack( const ValueT new_value )
 		{
@@ -248,6 +251,8 @@ namespace r2
 
 				mTail4Live = node;
 			}
+
+			++mSize;
 		}
 		IteratorT Erase( IteratorT target )
 		{
@@ -272,6 +277,8 @@ namespace r2
 				mTail4Live = pPrev;
 			}
 
+			--mSize;
+
 			Rest( target.mTargetNode );
 
 			return IteratorT( pNext );
@@ -284,5 +291,6 @@ namespace r2
 
 		NodeT* mHead4Live;
 		NodeT* mTail4Live;
+		uint32_t mSize;
 	};
 }
