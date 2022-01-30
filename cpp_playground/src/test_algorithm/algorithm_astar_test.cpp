@@ -658,6 +658,36 @@ namespace algorithm_astar_test
 
 			std::cout << r2::split;
 
+			{
+				std::cout << r2::tab << "+ AStarPathBuilder_UseArrayBasedList" << r2::linefeed2;
+
+				r2util::StopWatch stop_watch;
+
+				//
+				// Build
+				//
+				std::vector<r2::Point> result_path;
+				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
+
+				r2algorithm::AStarPathBuilder_UseArrayBasedList builder( WORLD_MAP.GetWidth(), WORLD_MAP.GetHeight() );
+
+				for( int i = 0; attempt_limit > i; ++i )
+				{
+					stop_watch.Start();
+					builder.Clear();
+					builder.Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
+					stop_watch.Stop();
+				}
+
+				//
+				// Show Time
+				//
+				stop_watch.PrintMinAndMaxTime();
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
