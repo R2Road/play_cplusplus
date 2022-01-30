@@ -5,6 +5,7 @@
 
 #include "base/r2_eTestResult.h"
 #include "r2/r2_ArrayBasedList.h"
+#include "r2/r2_Point.h"
 
 namespace array_based_list_test
 {
@@ -211,6 +212,52 @@ namespace array_based_list_test
 				std::cout << r2::linefeed2;
 				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
 				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc Basic_4::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Array Based List( In Progress ) 4";
+		};
+	}
+	r2::iTest::DoFunc Basic_4::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			r2::ArrayBasedList<r2::Point, 5> ablist;
+			ablist.PushBack( { 11, 12 } );
+
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "r2::ArrayBasedList<r2::Point, 5> ablist;" << r2::linefeed;
+			std::cout << r2::tab2 << "ablist.PushBack( { 11, 12 } );" << r2::linefeed2;
+
+			std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
+			std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				auto target_itr = ablist.begin();
+
+				std::cout << r2::tab << "+ Operator : ->" << r2::linefeed2;
+				std::cout << r2::tab2 << "auto target_itr = ablist.begin();" << r2::linefeed;
+				std::cout << r2::tab2 << "target_itr->x;" << " > " << target_itr->x << r2::linefeed;
+				std::cout << r2::tab2 << "target_itr->y;" << " > " << target_itr->y << r2::linefeed;
+
+				target_itr->x;
 			}
 
 			std::cout << r2::split;
