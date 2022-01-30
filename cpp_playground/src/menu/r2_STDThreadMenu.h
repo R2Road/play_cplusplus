@@ -8,10 +8,10 @@ namespace r2
 
 	class Director;
 
-	class ThreadMenu
+	class STDThreadMenu
 	{
 	private:
-		ThreadMenu() = delete;
+		STDThreadMenu() = delete;
 
 	public:
 		static const char* GetTitle() { return "Thread"; }

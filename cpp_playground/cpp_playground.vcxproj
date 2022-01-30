@@ -45,7 +45,7 @@
     <ClCompile Include="src\menu\r2_TemplateMenu.cpp" />
     <ClCompile Include="src\menu\r2_TemplateMetaProgrammingMenu.cpp" />
     <ClCompile Include="src\menu\r2_TemplatePracticeMenu.cpp" />
-    <ClCompile Include="src\menu\r2_ThreadMenu.cpp" />
+    <ClCompile Include="src\menu\r2_STDThreadMenu.cpp" />
     <ClCompile Include="src\menu\r2_TimeMenu.cpp" />
     <ClCompile Include="src\menu\r2_VariadicTemplateMenu.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -146,7 +146,7 @@
     <ClInclude Include="src\menu\r2_TemplateMenu.h" />
     <ClInclude Include="src\menu\r2_TemplateMetaProgrammingMenu.h" />
     <ClInclude Include="src\menu\r2_TemplatePracticeMenu.h" />
-    <ClInclude Include="src\menu\r2_ThreadMenu.h" />
+    <ClInclude Include="src\menu\r2_STDThreadMenu.h" />
     <ClInclude Include="src\menu\r2_TimeMenu.h" />
     <ClInclude Include="src\menu\r2_VariadicTemplateMenu.h" />
     <ClInclude Include="src\pch.h" />

@@ -16,7 +16,7 @@
 #include "test_cpp/std_variant_test.h"
 
 #include "r2_STDMemoryMenu.h"
-#include "r2_ThreadMenu.h"
+#include "r2_STDThreadMenu.h"
 
 namespace r2
 {
@@ -75,10 +75,10 @@ namespace r2
 			);
 			ret->AddChild(
 				'f'
-				, []()->const char* { return r2::ThreadMenu::GetTitle(); }
+				, []()->const char* { return r2::STDThreadMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
-					director.Setup( r2::ThreadMenu::Create( director ) );
+					director.Setup( r2::STDThreadMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

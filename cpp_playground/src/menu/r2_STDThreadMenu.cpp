@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_ThreadMenu.h"
+#include "r2_STDThreadMenu.h"
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestResult.h"
@@ -10,7 +10,7 @@
 
 namespace r2
 {
-	MenuUp ThreadMenu::Create( Director& director )
+	MenuUp STDThreadMenu::Create( Director& director )
 	{
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
