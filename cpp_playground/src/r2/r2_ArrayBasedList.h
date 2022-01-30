@@ -38,7 +38,7 @@ namespace r2
 			return !operator==( other );
 		}
 
-		T& operator*()
+		T& operator*() const
 		{
 			return mTargetNode->MyValue;
 		}
