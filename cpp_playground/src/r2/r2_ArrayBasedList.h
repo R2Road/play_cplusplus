@@ -193,7 +193,7 @@ namespace r2
 		}
 		bool Empty() const
 		{
-			return ( nullptr == mHead4Live );
+			return ( 0u == mSize );
 		}
 
 		void PushFront( const ValueT new_value )
