@@ -408,4 +408,94 @@ namespace performance_1_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc CompareIteratorOperator::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Iterator Operator";
+		};
+	}
+	r2::iTest::DoFunc CompareIteratorOperator::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			const unsigned int attempt_count = 100000;
+
+			struct TestStruct
+			{
+				int i = 1;
+			};
+			std::array<TestStruct, attempt_count> test_container;
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "const unsigned int attempt_count = 100000;" << r2::linefeed;
+				std::cout << r2::tab2 << "struct TestStruct" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab3 << "int i = 1;" << r2::linefeed;
+				std::cout << r2::tab2 << "}" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::array<TestStruct, attempt_count> test_container;" << r2::linefeed;
+			}
+
+			unsigned int sum_result = 0;
+			r2util::StopWatch stop_watch;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ For And Iterator Operator->" << r2::linefeed2;
+
+				for( int test_index = 0; 5 > test_index; ++test_index )
+				{
+					sum_result = 0;
+
+					stop_watch.Start();
+					for( auto cur = test_container.begin(), end = test_container.end(); end != cur; ++cur )
+					{
+						sum_result += cur->i;
+					}
+					stop_watch.Stop();
+
+					std::cout << r2::tab2;
+					stop_watch.PrintElapsedTime_All();
+					std::cout << r2::tab2 << sum_result;
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ For And Iterator Operator*" << r2::linefeed2;
+
+				for( int test_index = 0; 5 > test_index; ++test_index )
+				{
+					sum_result = 0;
+
+					stop_watch.Start();
+					for( auto cur = test_container.begin(), end = test_container.end(); end != cur; ++cur )
+					{
+						sum_result += ( *cur ).i;
+					}
+					stop_watch.Stop();
+
+					std::cout << r2::tab2;
+					stop_watch.PrintElapsedTime_All();
+					std::cout << r2::tab2 << sum_result;
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }

@@ -19,6 +19,7 @@ namespace r2
 			ret->AddChild( '2', performance_1_test::Loop::GetInstance() );
 			ret->AddChild( '3', performance_1_test::LoopWithBuildInArray::GetInstance() );
 			ret->AddChild( '4', performance_1_test::LoopWithSTDArray::GetInstance() );
+			ret->AddChild( '5', performance_1_test::CompareIteratorOperator::GetInstance() );
 
 			ret->AddLineFeed();
 

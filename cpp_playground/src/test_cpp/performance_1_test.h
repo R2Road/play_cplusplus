@@ -30,4 +30,11 @@ namespace performance_1_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class CompareIteratorOperator : public r2::iTest, public r2::SingleTon<CompareIteratorOperator>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
