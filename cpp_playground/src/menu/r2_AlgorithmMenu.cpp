@@ -40,7 +40,7 @@ namespace r2
 			ret->AddChild( 'r', algorithm_astar_test::Use_STDListSplice_STDVectorResultPath::GetInstance() );
 			ret->AddChild( 't', algorithm_astar_test::Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetInstance() );
 			ret->AddChild( 'y', algorithm_astar_test::Use_CostMap_STDListSplice_STDVectorResultPath::GetInstance() );
-			ret->AddChild( 'u', algorithm_astar_test::Use_CostMap_TinyCostData_STDListSplice_STDVectorResultPath::GetInstance() );
+			ret->AddChild( 'u', algorithm_astar_test::Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetInstance() );
 			ret->AddChild( 'i', algorithm_astar_test::Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetInstance() );
 
 			ret->AddLineFeed();
