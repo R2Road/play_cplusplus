@@ -38,7 +38,7 @@ namespace algorithm_astar_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
-	class UseCostMap_And_TinyData : public r2::iTest, public r2::SingleTon<UseCostMap_And_TinyData>
+	class Use_CostMap_TinyCostData_STDListSplice_STDVectorResultPath : public r2::iTest, public r2::SingleTon<Use_CostMap_TinyCostData_STDListSplice_STDVectorResultPath>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

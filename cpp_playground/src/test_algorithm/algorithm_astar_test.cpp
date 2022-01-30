@@ -346,7 +346,7 @@ namespace algorithm_astar_test
 				std::vector<r2::Point> result_path;
 				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
-				r2algorithm::AStarPathBuilder_UseCostMap_TinyData builder( WORLD_MAP.GetWidth(), WORLD_MAP.GetHeight() );
+				r2algorithm::AStarPathBuilder_UseCostMap_TinyCostData_STDListSplice_STDVectorResultPath builder( WORLD_MAP.GetWidth(), WORLD_MAP.GetHeight() );
 
 				stop_watch.Start();
 				builder.Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
@@ -368,14 +368,14 @@ namespace algorithm_astar_test
 
 
 
-	r2::iTest::TitleFunc UseCostMap_And_TinyData::GetTitleFunction() const
+	r2::iTest::TitleFunc Use_CostMap_TinyCostData_STDListSplice_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "A Star : use Cost Map and Tiny Data";
+			return "A Star : use Cost Map, Tiny Cost Data, std::list::splice, std::vector Result Path";
 		};
 	}
-	r2::iTest::DoFunc UseCostMap_And_TinyData::GetDoFunction()
+	r2::iTest::DoFunc Use_CostMap_TinyCostData_STDListSplice_STDVectorResultPath::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -398,7 +398,7 @@ namespace algorithm_astar_test
 				std::vector<r2::Point> result_path;
 				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
-				r2algorithm::AStarPathBuilder_UseCostMap_TinyData builder( WORLD_MAP.GetWidth(), WORLD_MAP.GetHeight() );
+				r2algorithm::AStarPathBuilder_UseCostMap_TinyCostData_STDListSplice_STDVectorResultPath builder( WORLD_MAP.GetWidth(), WORLD_MAP.GetHeight() );
 
 				stop_watch.Start();
 				builder.Build( ENTRY_POINT, EXIT_POINT, WORLD_MAP, &result_path );
@@ -629,7 +629,7 @@ namespace algorithm_astar_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ AStarPathBuilder_UseCostMap_TinyData" << r2::linefeed2;
+				std::cout << r2::tab << "+ AStarPathBuilder_UseCostMap_TinyCostData_STDListSplice_STDVectorResultPath" << r2::linefeed2;
 
 				r2util::StopWatch stop_watch;
 
@@ -639,7 +639,7 @@ namespace algorithm_astar_test
 				std::vector<r2::Point> result_path;
 				result_path.reserve( WORLD_MAP.GetWidth() * WORLD_MAP.GetHeight() );
 
-				r2algorithm::AStarPathBuilder_UseCostMap_TinyData builder( WORLD_MAP.GetWidth(), WORLD_MAP.GetHeight() );
+				r2algorithm::AStarPathBuilder_UseCostMap_TinyCostData_STDListSplice_STDVectorResultPath builder( WORLD_MAP.GetWidth(), WORLD_MAP.GetHeight() );
 
 				for( int i = 0; attempt_limit > i; ++i )
 				{

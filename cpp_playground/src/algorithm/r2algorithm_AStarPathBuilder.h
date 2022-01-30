@@ -193,10 +193,10 @@ namespace r2algorithm
 
 		r2::Grid<Node4AStar> cost_map;
 	};
-	class AStarPathBuilder_UseCostMap_TinyData
+	class AStarPathBuilder_UseCostMap_TinyCostData_STDListSplice_STDVectorResultPath
 	{
 	public:
-		AStarPathBuilder_UseCostMap_TinyData( const std::size_t width, const std::size_t height ) : cost_map( width, height, TinyNode4AStar() )
+		AStarPathBuilder_UseCostMap_TinyCostData_STDListSplice_STDVectorResultPath( const std::size_t width, const std::size_t height ) : cost_map( width, height, TinyNode4AStar() )
 		{}
 
 		void Clear();
