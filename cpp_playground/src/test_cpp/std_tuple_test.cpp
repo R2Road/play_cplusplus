@@ -1,12 +1,12 @@
 #include "pch.h"
-#include "tuple_test.h"
+#include "std_tuple_test.h"
 
 #include <string>
 #include <tuple>
 
 #include "base/r2_eTestResult.h"
 
-namespace tuple_test
+namespace std_tuple_test
 {
 	r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
