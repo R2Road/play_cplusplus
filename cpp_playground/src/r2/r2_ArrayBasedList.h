@@ -1,4 +1,5 @@
 #include <array>
+#include <memory>
 
 namespace r2
 {
@@ -44,7 +45,7 @@ namespace r2
 		}
 		ValueT* operator->() const
 		{
-			return &( *( *this ) ); // call : operator*()
+			return std::addressof( *( *this ) ); // call : operator*()
 		}
 
 		NodeT* mTargetNode;
