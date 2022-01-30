@@ -424,7 +424,7 @@ namespace algorithm_astar_test
 	{
 		return []()->const char*
 		{
-			return "A Star : use Array Based List, Tiny CostMap, std::vector Result Path";
+			return "A Star : use Array Based List, Tiny Cost Map, std::vector Result Path";
 		};
 	}
 	r2::iTest::DoFunc Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetDoFunction()
