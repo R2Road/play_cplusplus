@@ -267,8 +267,6 @@ namespace array_based_list_test
 				std::cout << r2::tab2 << "auto target_itr = ablist.begin();" << r2::linefeed;
 				std::cout << r2::tab2 << "target_itr->x;" << " > " << target_itr->x << r2::linefeed;
 				std::cout << r2::tab2 << "target_itr->y;" << " > " << target_itr->y << r2::linefeed;
-
-				target_itr->x;
 			}
 
 			std::cout << r2::split;
