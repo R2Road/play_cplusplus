@@ -25,7 +25,7 @@
     <ClCompile Include="src\menu\r2_AlgorithmMenu.cpp" />
     <ClCompile Include="src\menu\r2_DebugMenu.cpp" />
     <ClCompile Include="src\menu\r2_HobbyMenu.cpp" />
-    <ClCompile Include="src\menu\r2_NumericMenu.cpp" />
+    <ClCompile Include="src\menu\r2_STDNumericMenu.cpp" />
     <ClCompile Include="src\menu\r2_AlignMenu.cpp" />
     <ClCompile Include="src\menu\r2_CharMenu.cpp" />
     <ClCompile Include="src\menu\r2_ConsoleMenu.cpp" />
@@ -126,7 +126,7 @@
     <ClInclude Include="src\menu\r2_AlgorithmMenu.h" />
     <ClInclude Include="src\menu\r2_DebugMenu.h" />
     <ClInclude Include="src\menu\r2_HobbyMenu.h" />
-    <ClInclude Include="src\menu\r2_NumericMenu.h" />
+    <ClInclude Include="src\menu\r2_STDNumericMenu.h" />
     <ClInclude Include="src\menu\r2_AlignMenu.h" />
     <ClInclude Include="src\menu\r2_CharMenu.h" />
     <ClInclude Include="src\menu\r2_ConsoleMenu.h" />

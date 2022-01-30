@@ -8,10 +8,10 @@ namespace r2
 
 	class Director;
 
-	class NumericMenu
+	class STDNumericMenu
 	{
 	private:
-		NumericMenu() = delete;
+		STDNumericMenu() = delete;
 
 	public:
 		static const char* GetTitle() { return "Numeric"; }
