@@ -646,7 +646,7 @@ namespace r2algorithm
 
 
 
-	void AStarPathBuilder_Use_ArrayBasedList_CostMap_STDVectorResultPath::Clear()
+	void AStarPathBuilder_Use_ArrayBasedList_CostMap_TinyCostData_STDVectorResultPath::Clear()
 	{
 		for( auto& c : cost_map )
 		{
@@ -656,7 +656,7 @@ namespace r2algorithm
 		open_list.Clear();
 		close_list.Clear();
 	}
-	void AStarPathBuilder_Use_ArrayBasedList_CostMap_STDVectorResultPath::Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::vector<r2::Point>* out_result_path )
+	void AStarPathBuilder_Use_ArrayBasedList_CostMap_TinyCostData_STDVectorResultPath::Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::vector<r2::Point>* out_result_path )
 	{
 		r2::Point current_point;
 		bool bSuccess = false;
