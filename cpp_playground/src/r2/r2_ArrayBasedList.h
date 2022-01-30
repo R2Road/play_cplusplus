@@ -51,6 +51,43 @@ namespace r2
 		NodeT* mTargetNode;
 	};
 
+	template<typename T>
+	class ListReverseIterator
+	{
+	public:
+		using ValueT = T;
+		using NodeT = ListNode<ValueT>;
+
+		ListReverseIterator( NodeT* target_node ) : mTargetNode( target_node )
+		{}
+
+		ListReverseIterator& operator++()
+		{
+			mTargetNode = mTargetNode->pPrev;
+			return ( *this );
+		}
+
+		bool operator==( const ListReverseIterator& other ) const
+		{
+			return mTargetNode == other.mTargetNode;
+		}
+		bool operator!=( const ListReverseIterator& other ) const
+		{
+			return !operator==( other );
+		}
+
+		ValueT& operator*() const
+		{
+			return mTargetNode->MyValue;
+		}
+		ValueT* operator->() const
+		{
+			return std::addressof( *( *this ) ); // call : operator*()
+		}
+
+		NodeT* mTargetNode;
+	};
+
 	template<typename T, std::size_t N>
 	class ArrayBasedList
 	{
@@ -63,6 +100,7 @@ namespace r2
 
 		using IteratorT = ListIterator<ValueT>;
 		//using iterator = ListIterator<ValueT>; // ...dev rule?
+		using ReverseIteratorT = ListReverseIterator<ValueT>;
 
 		ArrayBasedList() : mContainer(), mHead4Rest( nullptr ), mHead4Live( nullptr ), mTail4Live( nullptr )
 		{
@@ -74,6 +112,8 @@ namespace r2
 		//
 		IteratorT begin() { return IteratorT( mHead4Live ); }
 		IteratorT end() { return IteratorT( nullptr ); }
+		ReverseIteratorT rbegin() const { return ReverseIteratorT( mTail4Live ); }
+		ReverseIteratorT rend() const { return ReverseIteratorT( nullptr ); }
 
 		void Clear()
 		{

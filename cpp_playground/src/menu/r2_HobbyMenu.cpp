@@ -24,6 +24,7 @@ namespace r2
 			ret->AddChild( '3', array_based_list_test::Basic_2::GetInstance() );
 			ret->AddChild( '4', array_based_list_test::Basic_3::GetInstance() );
 			ret->AddChild( '5', array_based_list_test::Basic_4::GetInstance() );
+			ret->AddChild( '6', array_based_list_test::Basic_5::GetInstance() );
 
 
 			ret->AddSplit();
