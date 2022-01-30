@@ -444,14 +444,14 @@ namespace r2algorithm
 
 
 
-	void AStarPathBuilder_UseCostMap_STDListSplice_STDVectorResultPath::Clear()
+	void AStarPathBuilder_Use_CostMap_STDListSplice_STDVectorResultPath::Clear()
 	{
 		for( auto& c : cost_map )
 		{
 			c.Clear();
 		}
 	}
-	void AStarPathBuilder_UseCostMap_STDListSplice_STDVectorResultPath::Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::vector<r2::Point>* out_result_path )
+	void AStarPathBuilder_Use_CostMap_STDListSplice_STDVectorResultPath::Build( const r2::Point entry_point, const r2::Point exit_point, const r2::Grid<int>& grid, std::vector<r2::Point>* out_result_path )
 	{
 		using TargetContainerT = std::list<r2::Point>;
 		TargetContainerT open_list;
