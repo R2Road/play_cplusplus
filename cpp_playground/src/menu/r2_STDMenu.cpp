@@ -6,7 +6,7 @@
 #include "r2_RootMenu.h"
 
 #include "r2_NumericMenu.h"
-#include "r2_ContainerMenu.h"
+#include "r2_STDContainerMenu.h"
 
 #include "test_cpp/std_function_test.h"
 #include "test_cpp/std_function_2_test.h"
@@ -66,10 +66,10 @@ namespace r2
 			);
 			ret->AddChild(
 				'd'
-				, []()->const char* { return r2::ContainerMenu::GetTitle(); }
+				, []()->const char* { return r2::STDContainerMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
-					director.Setup( r2::ContainerMenu::Create( director ) );
+					director.Setup( r2::STDContainerMenu::Create( director ) );
 					return eTestResult::ChangeScene;
 				}
 			);

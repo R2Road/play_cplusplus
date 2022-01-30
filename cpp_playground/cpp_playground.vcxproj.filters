@@ -31,9 +31,6 @@
     <ClCompile Include="src\menu\r2_AlignMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\r2_ConsoleMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\menu\r2_EnumMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
@@ -140,9 +137,6 @@
       <Filter>base</Filter>
     </ClCompile>
     <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\menu\r2_ContainerMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\class_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -296,6 +290,12 @@
     <ClCompile Include="src\menu\r2_STDMemoryMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\menu\r2_ConsoleMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_STDContainerMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -419,9 +419,6 @@
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\menu\r2_ContainerMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\class_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -582,6 +579,9 @@
       <Filter>test_hobby</Filter>
     </ClInclude>
     <ClInclude Include="src\menu\r2_STDMemoryMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_STDContainerMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>

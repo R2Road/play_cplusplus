@@ -8,10 +8,10 @@ namespace r2
 
 	class Director;
 
-	class ContainerMenu
+	class STDContainerMenu
 	{
 	private:
-		ContainerMenu() = delete;
+		STDContainerMenu() = delete;
 
 	public:
 		static const char* GetTitle() { return "Container"; }
