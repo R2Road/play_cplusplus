@@ -487,8 +487,9 @@ namespace algorithm_astar_test
 
 			const int attempt_limit = 1000;
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "const int attempt_limit = " << attempt_limit << ";" << r2::linefeed;
+			{
+				std::cout << r2::tab << "+ Attempt Limit : " << attempt_limit << r2::linefeed;
+			}
 
 			std::cout << r2::split;
 
