@@ -5,8 +5,8 @@
 
 namespace r2algorithm_astar
 {
-	const r2::Point ENTRY_POINT{ 2, 1 };
-	const r2::Point EXIT_POINT{ 16, 17 };
+	constexpr r2::Point ENTRY_POINT{ 2, 1 };
+	constexpr r2::Point EXIT_POINT{ 16, 17 };
 
 	using WorldMapT = r2::Grid<int>;
 	const WorldMapT WORLD_MAP( 19, 19, {
