@@ -25,6 +25,7 @@ namespace r2
 
 			ret->AddChild( 'q', std_list_test::Splice::GetInstance() );
 			ret->AddChild( 'w', std_list_test::OthersIterator::GetInstance() );
+			ret->AddChild( 'e', std_list_test::EndIterator::GetInstance() );
 
 
 			ret->AddLineFeed();

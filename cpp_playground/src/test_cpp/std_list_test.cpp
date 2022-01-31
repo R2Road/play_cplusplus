@@ -203,4 +203,64 @@ namespace std_list_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc EndIterator::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "List : End Iterator";
+		};
+	}
+	r2::iTest::DoFunc EndIterator::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::list<int> container_1 = { 1, 2, 3 };
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::list<int> container_1 = { 1, 2, 3 };" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Process : ++" << r2::linefeed2;
+				std::cout << r2::tab2 << "auto cur = container_1.end();" << r2::linefeed;
+				std::cout << r2::tab2 << "++cur;" << r2::linefeed2;
+
+				std::cout << r2::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2::linefeed;
+
+#if !defined( DEBUG ) && !defined( _DEBUG )
+				auto cur = container_1.end();
+				++cur;
+
+				std::cout << r2::tab2 << "( *cur );" << " > " << ( *cur ) << r2::linefeed;
+#endif
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Process : --" << r2::linefeed2;
+				std::cout << r2::tab2 << "auto cur = container_1.end();" << r2::linefeed;
+				std::cout << r2::tab2 << "--cur;" << r2::linefeed2;
+
+				auto cur = container_1.end();
+				--cur;
+
+				std::cout << r2::tab2 << "( *cur );" << " > " << ( *cur ) << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
