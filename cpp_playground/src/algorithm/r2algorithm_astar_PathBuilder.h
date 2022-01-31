@@ -8,7 +8,7 @@
 #include "r2/r2_Grid.h"
 #include "r2/r2_ArrayBasedList.h"
 
-namespace r2algorithm
+namespace r2algorithm_astar
 {
 	class Node4AStar
 	{
@@ -157,7 +157,7 @@ namespace r2algorithm
 	public:
 		AStarPathBuilder() = delete;
 
-		static void Build( const r2::Point entry_point, const r2::Point exit_point, const r2algorithm_astar::WorldMapT& grid, std::list<r2::Point>* out_result_path );
+		static void Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::list<r2::Point>* out_result_path );
 	};
 
 	class AStarPathBuilder_Use_STDListSplice
@@ -165,7 +165,7 @@ namespace r2algorithm
 	public:
 		AStarPathBuilder_Use_STDListSplice() = delete;
 
-		static void Build( const r2::Point entry_point, const r2::Point exit_point, const r2algorithm_astar::WorldMapT& grid, std::list<r2::Point>* out_result_path );
+		static void Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::list<r2::Point>* out_result_path );
 	};
 
 	class AStarPathBuilder_Use_STDListSplice_STDVectorResultPath
@@ -173,14 +173,14 @@ namespace r2algorithm
 	public:
 		AStarPathBuilder_Use_STDListSplice_STDVectorResultPath() = delete;
 
-		static void Build( const r2::Point entry_point, const r2::Point exit_point, const r2algorithm_astar::WorldMapT& grid, std::vector<r2::Point>* out_result_path );
+		static void Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::vector<r2::Point>* out_result_path );
 	};
 	class AStarPathBuilder_Use_STDListSplice_DecreaseCloseList_STDVectorResultPath
 	{
 	public:
 		AStarPathBuilder_Use_STDListSplice_DecreaseCloseList_STDVectorResultPath() = delete;
 
-		static void Build( const r2::Point entry_point, const r2::Point exit_point, const r2algorithm_astar::WorldMapT& grid, std::vector<r2::Point>* out_result_path );
+		static void Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::vector<r2::Point>* out_result_path );
 	};
 
 	class AStarPathBuilder_Use_CostMap_STDListSplice_STDVectorResultPath
@@ -190,7 +190,7 @@ namespace r2algorithm
 		{}
 
 		void Clear();
-		void Build( const r2::Point entry_point, const r2::Point exit_point, const r2algorithm_astar::WorldMapT& grid, std::vector<r2::Point>* out_result_path );
+		void Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::vector<r2::Point>* out_result_path );
 
 		r2::Grid<Node4AStar> cost_map;
 	};
@@ -201,7 +201,7 @@ namespace r2algorithm
 		{}
 
 		void Clear();
-		void Build( const r2::Point entry_point, const r2::Point exit_point, const r2algorithm_astar::WorldMapT& grid, std::vector<r2::Point>* out_result_path );
+		void Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::vector<r2::Point>* out_result_path );
 
 		r2::Grid<TinyNode4AStar> cost_map;
 	};
@@ -213,7 +213,7 @@ namespace r2algorithm
 		{}
 
 		void Clear();
-		void Build( const r2::Point entry_point, const r2::Point exit_point, const r2algorithm_astar::WorldMapT& grid, std::vector<r2::Point>* out_result_path );
+		void Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::vector<r2::Point>* out_result_path );
 
 		r2::Grid<TinyNode4AStar> cost_map;
 

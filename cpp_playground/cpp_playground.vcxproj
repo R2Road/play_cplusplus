@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\algorithm\r2algorithm_AStarPathBuilder.cpp" />
+    <ClCompile Include="src\algorithm\r2algorithm_astar_PathBuilder.cpp" />
     <ClCompile Include="src\base\r2_Director.cpp" />
     <ClCompile Include="src\base\r2_Menu.cpp" />
     <ClCompile Include="src\menu\r2_AlgorithmMenu.cpp" />
@@ -117,7 +117,7 @@
     <ClCompile Include="src\util\r2util_StopWatch.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\algorithm\r2algorithm_AStarPathBuilder.h" />
+    <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h" />
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h" />
     <ClInclude Include="src\base\r2_Director.h" />
     <ClInclude Include="src\base\r2_eTestResult.h" />
