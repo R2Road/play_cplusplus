@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdint.h>
+
 #include "r2/r2_Grid.h"
 #include "r2/r2_Point.h"
 
@@ -11,7 +13,7 @@ namespace r2algorithm_astar
 	constexpr uint32_t WORLD_MAP_WIDTH = 19u;
 	constexpr uint32_t WORLD_MAP_HEIGHT = 19u;
 
-	using WorldMapT = r2::Grid<int>;
+	using WorldMapT = r2::Grid<int8_t>;
 	const WorldMapT WORLD_MAP( WORLD_MAP_WIDTH, WORLD_MAP_HEIGHT, {
 		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 		1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
