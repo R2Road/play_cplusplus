@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_AStarPathBuilder.h" />
+    <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h" />
     <ClInclude Include="src\base\r2_Director.h" />
     <ClInclude Include="src\base\r2_eTestResult.h" />
     <ClInclude Include="src\base\r2_iTest.h" />

@@ -584,5 +584,8 @@
     <ClInclude Include="src\menu\r2_STDNumericMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
+    <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
+      <Filter>algorithm</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
