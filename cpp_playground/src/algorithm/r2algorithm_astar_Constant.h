@@ -1,3 +1,5 @@
+#pragma once
+
 #include "r2/r2_Grid.h"
 #include "r2/r2_Point.h"
 
