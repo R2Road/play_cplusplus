@@ -16,14 +16,14 @@ namespace console_window_input_test
 		GetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), &temp_console_mode );
 		std::cout << r2::tab << "Current Console Mode : " << temp_console_mode << r2::linefeed;
 	}
-	r2::iTest::TitleFunc EnableWindowInput::GetTitleFunction() const
+	r2::iTest::TitleFunc WindowInput_ReadConsoleInput::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Enable Window Input";
+			return "Window Input : ReadConsoleInput";
 		};
 	}
-	r2::iTest::DoFunc EnableWindowInput::GetDoFunction()
+	r2::iTest::DoFunc WindowInput_ReadConsoleInput::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

@@ -56,7 +56,7 @@ namespace r2
 
 			ret->AddChild( 'a', console_test::FontInfo::GetInstance() );
 			ret->AddChild( 's', console_test::FontChange::GetInstance() );
-			ret->AddChild( 'd', console_window_input_test::EnableWindowInput::GetInstance() );
+			ret->AddChild( 'd', console_window_input_test::WindowInput_ReadConsoleInput::GetInstance() );
 			ret->AddChild( 'f', console_window_input_test::WindowInput_GetKeyState::GetInstance() );
 			ret->AddChild( 'g', console_window_input_test::WindowInput_GetKeyboardState::GetInstance() );
 

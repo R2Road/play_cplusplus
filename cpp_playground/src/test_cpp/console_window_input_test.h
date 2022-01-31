@@ -5,7 +5,7 @@
 
 namespace console_window_input_test
 {
-	class EnableWindowInput : public r2::iTest, public r2::SingleTon<EnableWindowInput>
+	class WindowInput_ReadConsoleInput : public r2::iTest, public r2::SingleTon<WindowInput_ReadConsoleInput>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
