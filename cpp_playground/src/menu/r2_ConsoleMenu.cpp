@@ -9,6 +9,7 @@
 #include "test_cpp/console_input_test.h"
 #include "test_cpp/console_test.h"
 #include "test_cpp/console_text_color_test.h"
+#include "test_cpp/console_window_input_test.h"
 #include "test_cpp/console_window_test.h"
 
 // # REF
@@ -55,7 +56,7 @@ namespace r2
 
 			ret->AddChild( 'a', console_test::FontInfo::GetInstance() );
 			ret->AddChild( 's', console_test::FontChange::GetInstance() );
-			ret->AddChild( 'd', console_input_test::EnableWindowInput::GetInstance() );
+			ret->AddChild( 'd', console_window_input_test::EnableWindowInput::GetInstance() );
 
 
 			ret->AddLineFeed();
