@@ -231,6 +231,21 @@ namespace std_list_test
 			std::cout << r2::split;
 
 			{
+				std::cout << r2::tab << "+ Process : *" << r2::linefeed2;
+				std::cout << r2::tab2 << "auto cur = container_1.end();" << r2::linefeed2;
+
+				std::cout << r2::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2::linefeed2;
+
+#if !defined( DEBUG ) && !defined( _DEBUG )
+				auto cur = container_1.end();
+
+				std::cout << r2::tab2 << "( *cur );" << " > " << ( *cur ) << r2::linefeed;
+#endif
+			}
+
+			std::cout << r2::split;
+
+			{
 				std::cout << r2::tab << "+ Process : ++" << r2::linefeed2;
 				std::cout << r2::tab2 << "auto cur = container_1.end();" << r2::linefeed;
 				std::cout << r2::tab2 << "++cur;" << r2::linefeed2;
@@ -256,21 +271,6 @@ namespace std_list_test
 				--cur;
 
 				std::cout << r2::tab2 << "( *cur );" << " > " << ( *cur ) << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
-			{
-				std::cout << r2::tab << "+ Process : *" << r2::linefeed2;
-				std::cout << r2::tab2 << "auto cur = container_1.end();" << r2::linefeed2;
-
-				std::cout << r2::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2::linefeed2;
-
-#if !defined( DEBUG ) && !defined( _DEBUG )
-				auto cur = container_1.end();
-
-				std::cout << r2::tab2 << "( *cur );" << " > " << ( *cur ) << r2::linefeed;
-#endif
 			}
 
 			std::cout << r2::split;
