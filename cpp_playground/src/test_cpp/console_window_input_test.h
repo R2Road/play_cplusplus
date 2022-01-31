@@ -11,4 +11,18 @@ namespace console_window_input_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class WindowInput_GetKeyState : public r2::iTest, public r2::SingleTon<WindowInput_GetKeyState>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
+	class WindowInput_GetKeyboardState : public r2::iTest, public r2::SingleTon<WindowInput_GetKeyboardState>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
