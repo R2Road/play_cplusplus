@@ -1,7 +1,7 @@
 #include "r2/r2_Grid.h"
 #include "r2/r2_Point.h"
 
-namespace algorithm_astar_test
+namespace r2algorithm_astar
 {
 	const r2::Point ENTRY_POINT{ 2, 1 };
 	const r2::Point EXIT_POINT{ 16, 17 };

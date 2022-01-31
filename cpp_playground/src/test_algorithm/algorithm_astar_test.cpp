@@ -11,9 +11,11 @@
 #include "r2/r2_Point.h"
 #include "util/r2util_StopWatch.h"
 
+using namespace r2algorithm_astar;
+
 namespace
 {
-	void ShowGrid( const algorithm_astar_test::WorldMapT& grid )
+	void ShowGrid( const WorldMapT& grid )
 	{
 		int x = 0;
 		for( const auto i : grid )
