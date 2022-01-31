@@ -1,6 +1,5 @@
 #pragma once
 
-#include <algorithm>
 #include <vector>
 
 #include "r2_GridIndexConverter.h"
@@ -38,7 +37,7 @@ namespace r2
 		{
 			memcpy_s(
 				&mContainer[0], mContainer.size() * sizeof( CellT )
-				, &( *data.begin() ), min( data.size() * sizeof( CellT ), mContainer.size() * sizeof( CellT ) )
+				, &( *data.begin() ), ( data.size() > mContainer.size() ? data.size() * sizeof( CellT ) : mContainer.size() * sizeof( CellT ) )
 			);
 		}
 
