@@ -6,7 +6,8 @@ namespace algorithm_astar_test
 	const r2::Point ENTRY_POINT{ 2, 1 };
 	const r2::Point EXIT_POINT{ 16, 17 };
 
-	const r2::Grid<int> WORLD_MAP( 19, 19, {
+	using WorldMapT = r2::Grid<int>;
+	const WorldMapT WORLD_MAP( 19, 19, {
 		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 		1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
 		1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1,

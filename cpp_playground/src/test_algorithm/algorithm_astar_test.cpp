@@ -13,7 +13,7 @@
 
 namespace
 {
-	void ShowGrid( const r2::Grid<int>& grid )
+	void ShowGrid( const algorithm_astar_test::WorldMapT& grid )
 	{
 		int x = 0;
 		for( const auto i : grid )
