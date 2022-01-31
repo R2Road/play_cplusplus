@@ -8,8 +8,11 @@ namespace r2algorithm_astar
 	constexpr r2::Point ENTRY_POINT{ 2, 1 };
 	constexpr r2::Point EXIT_POINT{ 16, 17 };
 
+	constexpr uint32_t WORLD_MAP_WIDTH = 19u;
+	constexpr uint32_t WORLD_MAP_HEIGHT = 19u;
+
 	using WorldMapT = r2::Grid<int>;
-	const WorldMapT WORLD_MAP( 19, 19, {
+	const WorldMapT WORLD_MAP( WORLD_MAP_WIDTH, WORLD_MAP_HEIGHT, {
 		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 		1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
 		1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1,
