@@ -5,7 +5,7 @@
 
 namespace array_based_list_test
 {
-	class Basic_1 : public r2::iTest, public r2::SingleTon<Basic_1>
+	class Basic : public r2::iTest, public r2::SingleTon<Basic>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

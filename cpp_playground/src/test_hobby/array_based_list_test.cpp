@@ -7,14 +7,14 @@
 
 namespace array_based_list_test
 {
-	r2::iTest::TitleFunc Basic_1::GetTitleFunction() const
+	r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Array Based List( In Progress ) 1";
+			return "Array Based List : Basic";
 		};
 	}
-	r2::iTest::DoFunc Basic_1::GetDoFunction()
+	r2::iTest::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
