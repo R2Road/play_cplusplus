@@ -33,7 +33,7 @@ namespace array_based_list_test
 		DoFunc GetDoFunction() override;
 	};
 
-	class Basic_5 : public r2::iTest, public r2::SingleTon<Basic_5>
+	class RBegin_REnd : public r2::iTest, public r2::SingleTon<RBegin_REnd>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

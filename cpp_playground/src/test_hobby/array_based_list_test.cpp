@@ -275,14 +275,14 @@ namespace array_based_list_test
 
 
 
-	r2::iTest::TitleFunc Basic_5::GetTitleFunction() const
+	r2::iTest::TitleFunc RBegin_REnd::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Array Based List( In Progress ) 5";
+			return "Array Based List : rbegin(), rend()";
 		};
 	}
-	r2::iTest::DoFunc Basic_5::GetDoFunction()
+	r2::iTest::DoFunc RBegin_REnd::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
