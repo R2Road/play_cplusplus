@@ -48,13 +48,18 @@ namespace array_based_list_test
 				std::cout << r2::tab2 << "ablist.PushFront( 33 );" << r2::linefeed;
 				std::cout << r2::tab2 << "ablist.PushFront( 44 );" << r2::linefeed2;
 
-				std::cout << r2::tab << "+ View" << r2::linefeed2;
-				for( const auto& cur : ablist )
-				{
-					std::cout << r2::tab2 << "> " << cur << r2::linefeed;
-				}
-				std::cout << r2::linefeed;
 				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ View With ArrayBasedList::begin(), ArrayBasedList::end()" << r2::linefeed2;
+
+				for( auto cur = ablist.begin(), end = ablist.end(); end != cur; ++cur )
+				{
+					std::cout << r2::tab2 << "> " << ( *cur ) << r2::linefeed;
+				}
 			}
 
 			std::cout << r2::split;
