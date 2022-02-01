@@ -10,6 +10,7 @@
 #include "r2_STDNumericMenu.h"
 #include "r2_STDThreadMenu.h"
 
+#include "test_cpp/std_algorithm_test.h"
 #include "test_cpp/std_function_test.h"
 #include "test_cpp/std_function_2_test.h"
 #include "test_cpp/std_optional_test.h"
@@ -81,6 +82,7 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
+			ret->AddChild( 'g', std_algorithm_test::Shuffle::GetInstance() );
 
 
 			ret->AddSplit();
