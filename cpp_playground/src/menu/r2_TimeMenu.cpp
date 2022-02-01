@@ -30,7 +30,8 @@ namespace r2
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'w', std_chrono_test::Chrono::GetInstance() );
+			ret->AddChild( 'w', std_chrono_test::Epoch::GetInstance() );
+			ret->AddChild( 'e', std_chrono_test::Chrono::GetInstance() );
 
 
 			ret->AddSplit();

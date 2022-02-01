@@ -5,6 +5,13 @@
 
 namespace std_chrono_test
 {
+	class Epoch : public r2::iTest, public r2::SingleTon<Epoch>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
 	class Chrono : public r2::iTest, public r2::SingleTon<Chrono>
 	{
 	public:
