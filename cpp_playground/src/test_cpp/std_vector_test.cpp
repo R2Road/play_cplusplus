@@ -74,6 +74,58 @@ namespace std_vector_test
 
 
 
+	r2::iTest::TitleFunc NoneDefaultConstructor::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Vector : None Default Constructor";
+		};
+	}
+	r2::iTest::DoFunc NoneDefaultConstructor::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			class TestClass
+			{
+			public:
+				TestClass( int ) {}
+			};
+			std::vector<TestClass> test_vector;
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "class TestClass" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab2 << "public:" << r2::linefeed;
+				std::cout << r2::tab3 << "TestClass( int ) {}" << r2::linefeed;
+				std::cout << r2::tab2 << "};" << r2::linefeed;
+				std::cout << r2::tab2 << "td::vector<TestClass> test_vector;" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				//test_vector.resize( 10 );
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "test_vector.resize( 10 );" << r2::linefeed2;
+
+
+				std::cout << r2::tab << "## Now Working : Need Default Constructor" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc BoolVector::GetTitleFunction() const
 	{
 		return []()->const char*

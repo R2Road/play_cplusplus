@@ -32,9 +32,10 @@ namespace r2
 
 
 			ret->AddChild( 'a', std_vector_test::Basic::GetInstance() );
-			ret->AddChild( 's', std_vector_test::BoolVector::GetInstance() );
-			ret->AddChild( 'd', std_vector_test::OthersIterator::GetInstance() );
-			ret->AddChild( 'f', std_vector_test::EndIterator::GetInstance() );
+			ret->AddChild( 's', std_vector_test::NoneDefaultConstructor::GetInstance() );
+			ret->AddChild( 'd', std_vector_test::BoolVector::GetInstance() );
+			ret->AddChild( 'f', std_vector_test::OthersIterator::GetInstance() );
+			ret->AddChild( 'g', std_vector_test::EndIterator::GetInstance() );
 
 
 			ret->AddSplit();

@@ -12,6 +12,13 @@ namespace std_vector_test
 		DoFunc GetDoFunction() override;
 	};
 
+	class NoneDefaultConstructor : public r2::iTest, public r2::SingleTon<NoneDefaultConstructor>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
 	class BoolVector : public r2::iTest, public r2::SingleTon<BoolVector>
 	{
 	public:
