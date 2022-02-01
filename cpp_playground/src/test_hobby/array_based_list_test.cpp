@@ -84,14 +84,14 @@ namespace array_based_list_test
 
 
 
-	r2::iTest::TitleFunc Basic_2::GetTitleFunction() const
+	r2::iTest::TitleFunc PushBack::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Array Based List( In Progress ) 2";
+			return "Array Based List : PushBack";
 		};
 	}
-	r2::iTest::DoFunc Basic_2::GetDoFunction()
+	r2::iTest::DoFunc PushBack::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
