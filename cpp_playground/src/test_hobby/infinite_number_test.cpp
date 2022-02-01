@@ -36,7 +36,7 @@ namespace infinite_number_test
 	{
 		return []()->const char*
 		{
-			return "Infinite Number( In Progress )";
+			return "Infinite Number( To do )";
 		};
 	}
 	r2::iTest::DoFunc Basic::GetDoFunction()
