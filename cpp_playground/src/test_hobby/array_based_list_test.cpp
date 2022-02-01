@@ -219,15 +219,15 @@ namespace array_based_list_test
 	}
 
 
-
-	r2::iTest::TitleFunc Basic_4::GetTitleFunction() const
+	// REF : https://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B
+	r2::iTest::TitleFunc IteratorOperator_Indirection_StructureDereference::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Array Based List( In Progress ) 4";
+			return "Array Based List : Iterator : operator*, operator->";
 		};
 	}
-	r2::iTest::DoFunc Basic_4::GetDoFunction()
+	r2::iTest::DoFunc IteratorOperator_Indirection_StructureDereference::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

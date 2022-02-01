@@ -26,7 +26,7 @@ namespace array_based_list_test
 		DoFunc GetDoFunction() override;
 	};
 
-	class Basic_4 : public r2::iTest, public r2::SingleTon<Basic_4>
+	class IteratorOperator_Indirection_StructureDereference : public r2::iTest, public r2::SingleTon<IteratorOperator_Indirection_StructureDereference>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
