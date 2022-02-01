@@ -193,7 +193,7 @@ namespace console_window_input_test
 	{
 		return []()->const char*
 		{
-			return "Window Input : GetKeyboardState( To do )";
+			return "Window Input : GetKeyboardState";
 		};
 	}
 	r2::iTest::DoFunc WindowInput_GetKeyboardState::GetDoFunction()
@@ -201,10 +201,58 @@ namespace console_window_input_test
 		return []()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+			std::cout << "[ESC] Exit" << r2::linefeed;
 
 			std::cout << r2::split;
+			std::cout << r2::linefeed3 << r2::linefeed2;
+			std::cout << r2::split;
 
-			{}
+			{
+				int temp;
+				BYTE states[256];
+				char str[257] = { '\0', };
+
+				while( 1 )
+				{
+					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 6 } );
+
+					memset( states, 0, sizeof( 256 ) );
+
+					GetKeyState( 0 );
+					if( GetKeyboardState( states ) )
+					{
+						//
+						// View
+						//
+						for( int i = 0; i < 256; i++ )
+						{
+							temp = (int)states[i];
+							temp >>= 7; // get 8th bit
+
+							str[i] = temp > 0 ? 'O' : 'X';
+						}
+						std::cout << str << r2::linefeed2;
+
+						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 10 } );
+						std::cout << "                              "; // Clear Line
+						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 10 } );
+						std::cout << "Key State : A : " << (int)states[65] << r2::linefeed;
+
+						//
+						// ESC
+						//
+						if( 0 < ( states[27] >> 7 ) )
+						{
+							break;
+						}
+					}
+				}
+
+				//
+				// 1st 4bit : Toggle Info : 키 누를 때마다 변화 0001 > 0000 > 0001 > 0000 ....
+				// 3nd 4bit : Current Key State : 눌리면 1000
+				//
+			}
 
 			std::cout << r2::split;
 
