@@ -178,10 +178,19 @@ namespace console_window_input_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[ESC] Exit" << r2::linefeed;
+			std::cout << "[SPACE] Do" << r2::linefeed;
 
 			std::cout << r2::split;
+
 			std::cout << r2::tab << "+ Key Info : VK_SPACE" << r2::linefeed;
 			std::cout << r2::linefeed3;
+
+			std::cout << r2::split;
+
+			std::cout << "+ Message" << r2::linefeed2;
+			std::cout << "반환 값을 바꿔서 pause 없이 메뉴를 전환하는 경우 메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." << r2::linefeed;
+			std::cout << "키 반응성이 중요한 프로그램을 만든다면 이 녀석은 쓰지 않는게 좋겠다." << r2::linefeed;
+
 			std::cout << r2::split;
 
 			{
@@ -200,7 +209,7 @@ namespace console_window_input_test
 					//
 					// View
 					//
-					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 8 } );
+					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 9 } );
 					std::cout << str;
 
 					//
@@ -212,8 +221,6 @@ namespace console_window_input_test
 					}
 				}
 			}
-
-			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
