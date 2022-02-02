@@ -261,7 +261,7 @@ namespace console_window_input_test
 			std::cout << r2::split;
 
 			{
-				int temp;
+				int key_value;
 				BYTE states[256];
 				char str[257] = { '\0', };
 
@@ -279,10 +279,10 @@ namespace console_window_input_test
 						//
 						for( int i = 0; i < 256; i++ )
 						{
-							temp = (int)states[i];
-							temp >>= 7; // get 8th bit
+							key_value = (int)states[i];
+							key_value >>= 7; // get 8th bit
 
-							str[i] = temp > 0 ? 'O' : 'X';
+							str[i] = key_value > 0 ? 'O' : 'X';
 						}
 						std::cout << str << r2::linefeed2;
 
