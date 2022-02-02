@@ -309,4 +309,28 @@ namespace console_window_input_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc WindowInput_GetAsyncKeyStates::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Window Input : GetAsyncKeyStates( To do )";
+		};
+	}
+	r2::iTest::DoFunc WindowInput_GetAsyncKeyStates::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+			}
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }

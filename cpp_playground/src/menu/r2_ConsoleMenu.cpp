@@ -59,6 +59,7 @@ namespace r2
 			ret->AddChild( 'd', console_window_input_test::WindowInput_ReadConsoleInput::GetInstance() );
 			ret->AddChild( 'f', console_window_input_test::WindowInput_GetKeyState::GetInstance() );
 			ret->AddChild( 'g', console_window_input_test::WindowInput_GetKeyboardState::GetInstance() );
+			ret->AddChild( 'h', console_window_input_test::WindowInput_GetAsyncKeyStates::GetInstance() );
 
 
 			ret->AddLineFeed();

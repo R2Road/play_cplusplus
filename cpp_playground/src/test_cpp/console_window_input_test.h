@@ -25,4 +25,11 @@ namespace console_window_input_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class WindowInput_GetAsyncKeyStates : public r2::iTest, public r2::SingleTon<WindowInput_GetAsyncKeyStates>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
