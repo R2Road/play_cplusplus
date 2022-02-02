@@ -204,7 +204,13 @@ namespace console_window_input_test
 					//
 					key_value = GetKeyState( VK_SPACE );
 
-					sprintf_s( str, sizeof( str ), "\t\t" "Key State : %4c \n" "\t\t" "Key Value : %4d \n", ( key_value & 0x8000 ? 'O' : 'X' ), key_value );
+					sprintf_s(
+						str, sizeof( str )
+						, "\t\t" "Key State : %4c \n"
+						"\t\t" "Key Value : %4d \n"
+						, ( key_value & 0x8000 ? 'O' : 'X' )
+						, key_value
+					);
 
 					//
 					// View
