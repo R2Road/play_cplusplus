@@ -287,9 +287,7 @@ namespace console_window_input_test
 						std::cout << str_flags << r2::linefeed2;
 
 						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 10 } );
-						std::cout << "                              "; // Clear Line
-						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 10 } );
-						std::cout << "Key State : A : " << (int)states[65] << r2::linefeed;
+						printf_s( "Key Value[A] : %4d \n", (int)states[65] );
 
 						//
 						// ESC
