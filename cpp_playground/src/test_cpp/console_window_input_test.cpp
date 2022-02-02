@@ -242,6 +242,7 @@ namespace console_window_input_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[ESC] Exit" << r2::linefeed;
+			std::cout << "[SPACE] Do" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -278,13 +279,13 @@ namespace console_window_input_test
 							str_flags[i] = key_value > 0 ? 'O' : 'X';
 						}
 						
-						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 13 } );
+						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 14 } );
 						printf_s(
 							"%s"
 							"\n\n"
-							"Key Value[A] : %4d \n"
+							"Key Value[VK_SPACE] : %4d \n"
 							, str_flags
-							, (int)states[65]
+							, (int)states[VK_SPACE]
 						);
 
 						//
