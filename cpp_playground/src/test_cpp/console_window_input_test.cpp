@@ -263,7 +263,7 @@ namespace console_window_input_test
 			{
 				int key_value;
 				BYTE states[256];
-				char str[257] = { '\0', };
+				char str_flags[257] = { '\0', };
 
 				while( 1 )
 				{
@@ -282,9 +282,9 @@ namespace console_window_input_test
 							key_value = (int)states[i];
 							key_value >>= 7; // get 8th bit
 
-							str[i] = key_value > 0 ? 'O' : 'X';
+							str_flags[i] = key_value > 0 ? 'O' : 'X';
 						}
-						std::cout << str << r2::linefeed2;
+						std::cout << str_flags << r2::linefeed2;
 
 						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 10 } );
 						std::cout << "                              "; // Clear Line
