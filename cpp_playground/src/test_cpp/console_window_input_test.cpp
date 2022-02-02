@@ -250,7 +250,7 @@ namespace console_window_input_test
 
 				//
 				// 1st 4bit : Toggle Info : 키 누를 때마다 변화 0001 > 0000 > 0001 > 0000 ....
-				// 3nd 4bit : Current Key State : 눌리면 1000
+				// 2nd 4bit : Current Key State : 눌리면 1000
 				//
 			}
 
