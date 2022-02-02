@@ -183,7 +183,7 @@ namespace console_window_input_test
 			std::cout << r2::split;
 
 			std::cout << "+ Message" << r2::linefeed2;
-			std::cout << "반환 값을 바꿔서 pause 없이 메뉴를 전환하는 경우 메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." << r2::linefeed;
+			std::cout << "pause 없이 메뉴를 전환하는 경우 메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." << r2::linefeed;
 			std::cout << "키 반응성이 중요한 프로그램을 만든다면 이 녀석은 쓰지 않는게 좋겠다." << r2::linefeed;
 
 			std::cout << r2::split;
@@ -246,7 +246,7 @@ namespace console_window_input_test
 			std::cout << r2::split;
 
 			std::cout << "+ Message" << r2::linefeed2;
-			std::cout << "이 녀석 역시 반환 값을 바꿔서 pause 없이 메뉴를 전환하는 경우 메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." << r2::linefeed;
+			std::cout << "이 녀석 역시 pause 없이 메뉴를 전환하는 경우 메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." << r2::linefeed;
 			std::cout << "키 반응성이 중요한 프로그램을 만든다면 이 녀석은 쓰지 않는게 좋겠다." << r2::linefeed;
 
 			std::cout << r2::split;
@@ -262,7 +262,7 @@ namespace console_window_input_test
 
 				while( 1 )
 				{
-					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 14 } );
+					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 13 } );
 
 					memset( states, 0, sizeof( states ) );
 
@@ -281,7 +281,7 @@ namespace console_window_input_test
 						}
 						std::cout << str_flags << r2::linefeed2;
 
-						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 18 } );
+						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 17 } );
 						printf_s( "Key Value[A] : %4d \n", (int)states[65] );
 
 						//
