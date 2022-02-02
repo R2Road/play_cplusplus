@@ -3,6 +3,7 @@
 
 #include <assert.h>
 #include <conio.h> // _kbhit(), _getch()
+#include <stdio.h>
 #include <windows.h>
 
 #include "base/r2_eTestResult.h"
@@ -168,7 +169,7 @@ namespace console_window_input_test
 	{
 		return []()->const char*
 		{
-			return "Window Input : GetKeyState( To do )";
+			return "Window Input : GetKeyState";
 		};
 	}
 	r2::iTest::DoFunc WindowInput_GetKeyState::GetDoFunction()
@@ -176,10 +177,41 @@ namespace console_window_input_test
 		return []()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+			std::cout << "[ESC] Exit" << r2::linefeed;
 
 			std::cout << r2::split;
+			std::cout << r2::tab << "+ Key Info : VK_SPACE" << r2::linefeed;
+			std::cout << r2::linefeed3;
+			std::cout << r2::split;
 
-			{}
+			{
+				int key_value = 0;
+				char str[257] = { '\0', };
+
+				while( 1 )
+				{
+					//
+					// Process
+					//
+					key_value = GetKeyState( VK_SPACE );
+
+					sprintf_s( str, sizeof( str ), "\t\t" "Key State : %4c \n" "\t\t" "Key Value : %4d \n", ( key_value & 0x8000 ? 'O' : 'X' ), key_value );
+
+					//
+					// View
+					//
+					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 8 } );
+					std::cout << str;
+
+					//
+					// ESC
+					//
+					if( GetKeyState( VK_ESCAPE ) & 0x8000 )
+					{
+						break;
+					}
+				}
+			}
 
 			std::cout << r2::split;
 
