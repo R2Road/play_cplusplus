@@ -262,8 +262,6 @@ namespace console_window_input_test
 
 				while( 1 )
 				{
-					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 13 } );
-
 					memset( states, 0, sizeof( states ) );
 
 					GetKeyState( 0 );
@@ -279,10 +277,15 @@ namespace console_window_input_test
 
 							str_flags[i] = key_value > 0 ? 'O' : 'X';
 						}
-						std::cout << str_flags << r2::linefeed2;
-
-						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 17 } );
-						printf_s( "Key Value[A] : %4d \n", (int)states[65] );
+						
+						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 13 } );
+						printf_s(
+							"%s"
+							"\n\n"
+							"Key Value[A] : %4d \n"
+							, str_flags
+							, (int)states[65]
+						);
 
 						//
 						// ESC
