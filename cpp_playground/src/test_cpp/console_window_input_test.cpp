@@ -195,7 +195,6 @@ namespace console_window_input_test
 
 			{
 				int key_value = 0;
-				char str[257] = { '\0', };
 
 				while( 1 )
 				{
@@ -204,19 +203,16 @@ namespace console_window_input_test
 					//
 					key_value = GetKeyState( VK_SPACE );
 
-					sprintf_s(
-						str, sizeof( str )
-						, "\t\t" "Key State : %4c \n"
-						"\t\t" "Key Value : %4d \n"
-						, ( key_value & 0x8000 ? 'O' : 'X' )
-						, key_value
-					);
-
 					//
 					// View
 					//
 					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 9 } );
-					std::cout << str;
+					printf_s(
+						"\t\t" "Key State : %4c \n"
+						"\t\t" "Key Value : %4d \n"
+						, ( key_value & 0x8000 ? 'O' : 'X' )
+						, key_value
+					);
 
 					//
 					// ESC
