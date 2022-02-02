@@ -269,7 +269,7 @@ namespace console_window_input_test
 				{
 					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 6 } );
 
-					memset( states, 0, sizeof( 256 ) );
+					memset( states, 0, sizeof( states ) );
 
 					GetKeyState( 0 );
 					if( GetKeyboardState( states ) )
