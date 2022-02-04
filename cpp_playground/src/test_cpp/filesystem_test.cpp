@@ -46,12 +46,9 @@ namespace filesystem_test
 			return r2::eTestResult::RunTest;
 		};
 	}
-}
 
 
 
-namespace filesystem_test
-{
 	r2::iTest::TitleFunc DirectoryIterator::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -97,12 +94,9 @@ namespace filesystem_test
 			return r2::eTestResult::RunTest;
 		};
 	}
-}
 
 
 
-namespace filesystem_test
-{
 	r2::iTest::TitleFunc RecursiveDirectoryIterator::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -140,12 +134,9 @@ namespace filesystem_test
 			return r2::eTestResult::RunTest;
 		};
 	}
-}
 
 
 
-namespace filesystem_test
-{
 	r2::iTest::TitleFunc PathOperation_1::GetTitleFunction() const
 	{
 		return []()->const char*
