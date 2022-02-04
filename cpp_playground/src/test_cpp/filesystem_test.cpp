@@ -122,7 +122,7 @@ namespace filesystem_test
 					std::cout << p.path() << r2::linefeed;
 
 					++i;
-					if( i > 40 )
+					if( 40 > i )
 					{
 						i = 0;
 						
