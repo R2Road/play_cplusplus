@@ -155,15 +155,14 @@ namespace filesystem_test
 			std::filesystem::path p = std::filesystem::current_path();
 
 			{
-				std::cout << r2::tab << "+ Directory : " << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Target Path" << r2::linefeed << r2::linefeed;
 				std::cout << r2::tab2 << p << r2::linefeed;
-				std::cout << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Append with Operator /" << r2::linefeed;
+				std::cout << r2::tab << "+ Append with Operator /" << r2::linefeed2;
 
 				p /= "test.txt";
 				std::cout << r2::tab2 << "p /= \"test.txt\"" << r2::linefeed;
@@ -172,7 +171,7 @@ namespace filesystem_test
 				std::cout << r2::linefeed;
 
 
-				std::cout << r2::tab << "+ Remove File Name" << r2::linefeed;
+				std::cout << r2::tab << "+ Remove File Name" << r2::linefeed2;
 
 				p.remove_filename();
 				std::cout << r2::tab2 << "p.remove_filename();" << r2::linefeed;
@@ -182,7 +181,7 @@ namespace filesystem_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Remove File Name And Separator" << r2::linefeed;
+				std::cout << r2::tab << "+ Remove File Name And Separator" << r2::linefeed2;
 
 				p /= "test.txt";
 				std::cout << r2::tab3 << "orig : " << p << r2::linefeed << r2::linefeed;
@@ -195,7 +194,7 @@ namespace filesystem_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Replace Extension" << r2::linefeed;
+				std::cout << r2::tab << "+ Replace Extension" << r2::linefeed2;
 
 				p /= "test.txt";
 				std::cout << r2::tab3 << "orig : " << p << r2::linefeed << r2::linefeed;
@@ -208,7 +207,7 @@ namespace filesystem_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Replace File Name" << r2::linefeed;
+				std::cout << r2::tab << "+ Replace File Name" << r2::linefeed2;
 
 				std::cout << r2::tab3 << "orig : " << p << r2::linefeed << r2::linefeed;
 
