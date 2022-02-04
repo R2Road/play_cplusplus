@@ -24,21 +24,21 @@ namespace filesystem_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Current Directory" << r2::linefeed;
-
 				std::filesystem::path p = std::filesystem::current_path();
 
-				std::cout << r2::tab2 << p << r2::linefeed;
+				std::cout << r2::tab << "+ Current Directory" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::filesystem::path p = std::filesystem::current_path();" << r2::linefeed2;
+				std::cout << r2::tab3 << "> " << p << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Temp Directory" << r2::linefeed;
+				std::filesystem::path p = std::filesystem::temp_directory_path();
 
-				std::filesystem::path p2 = std::filesystem::temp_directory_path();
-
-				std::cout << r2::tab2 << p2 << r2::linefeed;
+				std::cout << r2::tab << "+ Temp Directory" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::filesystem::path p = std::filesystem::temp_directory_path();" << r2::linefeed2;
+				std::cout << r2::tab3 << "> " << p << r2::linefeed;
 			}
 
 			std::cout << r2::split;
