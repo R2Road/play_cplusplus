@@ -155,7 +155,7 @@ namespace filesystem_test
 			std::filesystem::path p = std::filesystem::current_path();
 
 			{
-				std::cout << r2::tab << "+ Target Path" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Target Path" << r2::linefeed2;
 				std::cout << r2::tab2 << p << r2::linefeed;
 			}
 
@@ -167,8 +167,7 @@ namespace filesystem_test
 				p /= "test.txt";
 				std::cout << r2::tab2 << "p /= \"test.txt\"" << r2::linefeed;
 
-				std::cout << r2::tab3 << p << r2::linefeed;
-				std::cout << r2::linefeed;
+				std::cout << r2::tab3 << p << r2::linefeed2;
 
 
 				std::cout << r2::tab << "+ Remove File Name" << r2::linefeed2;
@@ -184,7 +183,7 @@ namespace filesystem_test
 				std::cout << r2::tab << "+ Remove File Name And Separator" << r2::linefeed2;
 
 				p /= "test.txt";
-				std::cout << r2::tab3 << "orig : " << p << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab3 << "orig : " << p << r2::linefeed2;
 
 				p._Remove_filename_and_separator();
 				std::cout << r2::tab2 << "p._Remove_filename_and_separator();" << r2::linefeed;
@@ -197,7 +196,7 @@ namespace filesystem_test
 				std::cout << r2::tab << "+ Replace Extension" << r2::linefeed2;
 
 				p /= "test.txt";
-				std::cout << r2::tab3 << "orig : " << p << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab3 << "orig : " << p << r2::linefeed2;
 
 				p.replace_extension( "json" );
 				std::cout << r2::tab2 << "p.replace_extension( \"json\" );" << r2::linefeed;
@@ -209,7 +208,7 @@ namespace filesystem_test
 			{
 				std::cout << r2::tab << "+ Replace File Name" << r2::linefeed2;
 
-				std::cout << r2::tab3 << "orig : " << p << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab3 << "orig : " << p << r2::linefeed2;
 
 				p.replace_filename( "new_filename" );
 				std::cout << r2::tab2 << "p.replace_filename( \"new_filename\" );" << r2::linefeed;
