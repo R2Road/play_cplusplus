@@ -349,7 +349,7 @@ namespace console_window_input_test
 					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 9 } );
 					printf_s(
 						"\t\t" "Key State : %c \n"
-						"\t\t" "Key Value : %-8x \n"
+						"\t\t" "Key Value : hex : %8x \n"
 						, ( key_value & 0x8000 ? 'O' : 'X' )
 						, key_value
 					);
