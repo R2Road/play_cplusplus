@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "filesystem_test.h"
 
+#include <conio.h>
 #include <filesystem>
 #include <stdlib.h>
 
@@ -108,7 +109,7 @@ namespace filesystem_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 
 			std::cout << r2::split;
 
@@ -118,13 +119,19 @@ namespace filesystem_test
 				std::filesystem::recursive_directory_iterator itr( std::filesystem::current_path() / "src" );
 				for( auto p : itr )
 				{
-					std::cout << r2::tab << p.path() << r2::linefeed;
+					std::cout << p.path() << r2::linefeed;
 
 					++i;
 					if( i > 40 )
 					{
 						i = 0;
-						system( "pause" );
+						
+						std::cout << r2::linefeed << r2::tab3 << "[ESC] Exit, [Other Key] Continue" << r2::linefeed2;
+
+						if( 27 == _getch() ) // ESC
+						{
+							break;
+						}
 					}
 				}
 			}
