@@ -156,13 +156,13 @@ namespace c_time_test
 			clock_t current_clock = 0;
 			clock_t current_sec = 0;
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed;
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 			std::cout << r2::tab2 << "clock_t current_clock = 0;" << r2::linefeed;
 			std::cout << r2::tab2 << "clock_t current_sec = 0;" << r2::linefeed;
 
 			std::cout << r2::split;
 
-			std::cout << r2::tab << "+ Process" << r2::linefeed;
+			std::cout << r2::tab << "+ Process" << r2::linefeed2;
 			std::cout << r2::tab2 << "current_clock = clock();" << r2::linefeed;
 			std::cout << r2::tab2 << "current_sec = current_clock / CLOCKS_PER_SEC;" << r2::linefeed;
 
@@ -175,7 +175,7 @@ namespace c_time_test
 
 			while( true )
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 18 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 20 } );
 
 				current_clock = clock();
 				current_sec = current_clock / CLOCKS_PER_SEC;
