@@ -283,7 +283,7 @@ namespace console_window_input_test
 						printf_s(
 							"%s"
 							"\n\n"
-							"Key Value[VK_SPACE] : %4d \n"
+							"Key Value[VK_SPACE] : hex : %-4x \n"
 							, str_flags
 							, (int)states[VK_SPACE]
 						);
