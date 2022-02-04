@@ -39,4 +39,11 @@ namespace array_based_list_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class ImprovedEndIterator : public r2::iTest, public r2::SingleTon<ImprovedEndIterator>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

@@ -345,4 +345,30 @@ namespace array_based_list_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc ImprovedEndIterator::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Array Based List : improved End Iterator( To do )";
+		};
+	}
+	r2::iTest::DoFunc ImprovedEndIterator::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }

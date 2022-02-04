@@ -25,6 +25,7 @@ namespace r2
 			ret->AddChild( '4', array_based_list_test::Erase::GetInstance() );
 			ret->AddChild( '5', array_based_list_test::IteratorOperator_Indirection_StructureDereference::GetInstance() );
 			ret->AddChild( '6', array_based_list_test::RBegin_REnd::GetInstance() );
+			ret->AddChild( '7', array_based_list_test::ImprovedEndIterator::GetInstance() );
 
 
 			ret->AddSplit();
