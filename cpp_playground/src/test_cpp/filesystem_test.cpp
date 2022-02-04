@@ -239,7 +239,7 @@ namespace filesystem_test
 			std::filesystem::path p = std::filesystem::current_path();
 
 			{
-				std::cout << r2::tab << "+ Directory : " << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Directory : " << r2::linefeed2;
 				std::cout << r2::tab2 << p << r2::linefeed;
 			}
 
