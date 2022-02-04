@@ -80,24 +80,24 @@ namespace std_optional_test
 	{
 		TestOptional()
 		{
-			std::cout << "> Call : TestOptional()\t";
+			std::cout << "> Call : TestOptional()" << r2::tab;
 		}
 		TestOptional( const int )
 		{
-			std::cout << "> Call : TestOptional( const int i )\t";
+			std::cout << "> Call : TestOptional( const int i )" << r2::tab;
 		}
 		TestOptional( const TestOptional& )
 		{
-			std::cout << "> Call : TestOptional( const TestStruct& )\t";
+			std::cout << "> Call : TestOptional( const TestStruct& )" << r2::tab;
 		}
 		TestOptional( TestOptional&& )
 		{
-			std::cout << "> Call : TestOptional( TestStruct&& )\t";
+			std::cout << "> Call : TestOptional( TestStruct&& )" << r2::tab;
 		}
 
 		TestOptional& operator=( const TestOptional& )
 		{
-			std::cout << "> Call : TestOptional& operator=( const TestOptional& )\t";
+			std::cout << "> Call : TestOptional& operator=( const TestOptional& )" << r2::tab;
 			return *this;
 		}
 
