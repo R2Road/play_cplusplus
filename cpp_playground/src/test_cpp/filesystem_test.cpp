@@ -68,16 +68,27 @@ namespace filesystem_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Pivot Directory : " << r2::linefeed;
-				std::cout << r2::tab2 << std::filesystem::current_path() << r2::linefeed;
-				std::cout << r2::linefeed;
+				std::filesystem::path p = std::filesystem::current_path();
 
-				std::cout << r2::tab << "+ View" << r2::linefeed;
+				std::cout << r2::tab << "+ Target Path" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::filesystem::path p = std::filesystem::current_path();" << r2::linefeed2;
+				std::cout << r2::tab3 << "> " << p << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ View Directory" << r2::linefeed2;
+				std::cout << r2::tab2 << "std::filesystem::directory_iterator itr( std::filesystem::current_path() );" << r2::linefeed;
+				std::cout << r2::tab2 << "for( auto i : itr ) ..." << r2::linefeed;
+				
+				std::cout << r2::linefeed3;
+
 				std::filesystem::directory_iterator itr( std::filesystem::current_path() );
 				for( auto i : itr )
 				{
 					std::cout << r2::tab2 << i.path() << r2::linefeed;
-					std::cout << r2::tab3 << ( std::filesystem::is_regular_file( i.path() ) ? "file" : "directory" ) << r2::linefeed;
+					std::cout << r2::tab3 << ( std::filesystem::is_regular_file( i.path() ) ? "file" : "directory" ) << r2::linefeed2;
 				}
 			}
 
