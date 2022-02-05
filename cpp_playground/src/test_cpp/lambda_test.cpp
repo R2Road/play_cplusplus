@@ -25,23 +25,25 @@ namespace lambda_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Basic" << r2::linefeed << r2::linefeed;
-
 				int i = 888;
 				auto lambda_1 = [i]()
 				{
-					std::cout << r2::tab2 << "i : " << i << r2::linefeed;
+					std::cout << i;
 				};
 
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab2 << "int i = 888;" << r2::linefeed;
 				std::cout << r2::tab2 << "auto lambda_1 = [i]()" << r2::linefeed;
 				std::cout << r2::tab2 << "{" << r2::linefeed;
-				std::cout << r2::tab3 << "std::cout << i << r2::linefeed;" << r2::linefeed;
-				std::cout << r2::tab2 << "};" << r2::linefeed;
-				std::cout << r2::linefeed;
+				std::cout << r2::tab3 << "std::cout << i;" << r2::linefeed;
+				std::cout << r2::tab2 << "};" << r2::linefeed3;
 
-				std::cout << r2::tab << "+ Call Lambda" << r2::linefeed;
+				std::cout << r2::tab << "+ Call Lambda" << r2::linefeed2;
+				std::cout << r2::tab2 << "lambda_1();" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "> ";
 				lambda_1();
+				std::cout << r2::linefeed;
 			}
 
 			std::cout << r2::split;
