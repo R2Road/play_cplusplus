@@ -71,6 +71,32 @@ namespace lambda_test
 
 			std::cout << r2::split;
 
+
+			{
+				int i = 0;
+				auto lambda_1 = [i]()
+				{
+					std::cout << std::is_const<decltype( i )>::value ? "O" : "X";
+				};
+
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "int i = 0;" << r2::linefeed;
+				std::cout << r2::tab2 << "auto lambda_1 = [i]()" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab3 << "std::cout << std::is_const<decltype( i )>::value ? \"O\" : \"X\";" << r2::linefeed;
+				std::cout << r2::tab2 << "};" << r2::linefeed3;
+
+				std::cout << r2::tab << "+ Call Lambda" << r2::linefeed2;
+				std::cout << r2::tab2 << "lambda_1();" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "> ";
+				lambda_1();
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
