@@ -102,7 +102,7 @@ namespace r2
 		//using iterator = ListIterator<ValueT>; // ...dev rule?
 		using ReverseIteratorT = ListReverseIterator<ValueT>;
 
-		ArrayBasedList() : mContainer(), mHead4Rest( nullptr ), mSize4Rest( N ), mHead4Live( nullptr ), mTail4Live( nullptr ), mSize( 0u )
+		ArrayBasedList() : mContainer(), mHead4Rest( nullptr ), mSize4Rest( 0u ), mHead4Live( nullptr ), mTail4Live( nullptr ), mSize( 0u )
 		{
 			Clear();
 		}
