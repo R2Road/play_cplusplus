@@ -46,7 +46,7 @@ namespace std_variant_test
 				std::cout << r2::tab << "+ std::variant<int, int> v;" << r2::linefeed;
 
 				std::variant<int, int> v;
-				std::cout << r2::tab2 << "- Has Problem Using Same Type" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab2 << "- Has Problem Using Same Type" << r2::linefeed2;
 				std::cout << r2::tab2 << "- Not Working : v = 1;" << r2::linefeed;
 				//
 				//v = 1;
@@ -91,22 +91,22 @@ namespace std_variant_test
 				};
 
 				std::cout << r2::tab << "+ std::monostate" << r2::linefeed;
-				std::cout << r2::tab2 << "- std::monostate is Empty Struct" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab2 << "- std::monostate is Empty Struct" << r2::linefeed2;
 
 				std::cout << r2::tab2 << "struct TestStruct" << r2::linefeed;
 				std::cout << r2::tab2 << "{" << r2::linefeed;
 				std::cout << r2::tab3 << "TestStruct( int i ) : mI( i ) {}" << r2::linefeed;
 				std::cout << r2::tab3 << "int mI;" << r2::linefeed;
-				std::cout << r2::tab2 << "}" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab2 << "}" << r2::linefeed2;
 
 				std::cout << r2::tab2 << "- Not Working : std::variant<TestStruct, int, float> v;" << r2::linefeed;
-				std::cout << r2::tab3 << "First Type Need Default Constructor" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab3 << "First Type Need Default Constructor" << r2::linefeed2;
 				//
 				//std::variant<TestStruct, int, float> v;
 				//
 
 				{
-					std::cout << r2::tab2 << "- Working : std::variant<std::monostate, TestStruct, int, float> v;" << r2::linefeed << r2::linefeed;
+					std::cout << r2::tab2 << "- Working : std::variant<std::monostate, TestStruct, int, float> v;" << r2::linefeed2;
 					std::variant<std::monostate, TestStruct, int, float> v;
 				}
 
