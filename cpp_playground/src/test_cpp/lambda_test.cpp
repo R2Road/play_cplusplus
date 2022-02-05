@@ -49,9 +49,9 @@ namespace lambda_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Captures Default to Const Value" << r2::linefeed << r2::linefeed;
-				std::cout << r2::tab2 << "- https://www.learncpp.com/cpp-tutorial/lambda-captures/" << r2::linefeed << r2::linefeed;
-				std::cout << r2::linefeed;
+				std::cout << r2::tab << "+ Message" << r2::linefeed2;
+				std::cout << r2::tab2 << "Captures Default to Const Value" << r2::linefeed2;
+				std::cout << r2::tab2 << "https://www.learncpp.com/cpp-tutorial/lambda-captures/" << r2::linefeed3;
 
 
 				//int i = 0;
