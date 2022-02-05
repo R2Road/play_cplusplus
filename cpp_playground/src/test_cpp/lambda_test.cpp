@@ -36,7 +36,7 @@ namespace lambda_test
 				std::cout << r2::tab2 << "auto lambda_1 = [i]()" << r2::linefeed;
 				std::cout << r2::tab2 << "{" << r2::linefeed;
 				std::cout << r2::tab3 << "std::cout << i;" << r2::linefeed;
-				std::cout << r2::tab2 << "};" << r2::linefeed3;
+				std::cout << r2::tab2 << "};" << r2::linefeed2;
 
 				std::cout << r2::tab << "+ Call Lambda" << r2::linefeed2;
 				std::cout << r2::tab2 << "lambda_1();" << r2::linefeed2;
@@ -50,8 +50,8 @@ namespace lambda_test
 
 			{
 				std::cout << r2::tab << "+ Message" << r2::linefeed2;
-				std::cout << r2::tab2 << "Captures Default to Const Value" << r2::linefeed2;
-				std::cout << r2::tab2 << "https://www.learncpp.com/cpp-tutorial/lambda-captures/" << r2::linefeed3;
+				std::cout << r2::tab2 << "Captures Default to Const Value" << r2::linefeed;
+				std::cout << r2::tab2 << "https://www.learncpp.com/cpp-tutorial/lambda-captures/" << r2::linefeed2;
 
 
 				//int i = 0;
@@ -60,8 +60,7 @@ namespace lambda_test
 				//	++i;
 				//};
 
-				std::cout << r2::tab << "+ Not working this" << r2::linefeed << r2::linefeed;
-
+				std::cout << r2::tab << "+ Not working this" << r2::linefeed2;
 				std::cout << r2::tab2 << "int i = 0;" << r2::linefeed;
 				std::cout << r2::tab2 << "auto lambda_1 = [i]()" << r2::linefeed;
 				std::cout << r2::tab2 << "{" << r2::linefeed;
@@ -80,12 +79,11 @@ namespace lambda_test
 				};
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-
 				std::cout << r2::tab2 << "int i = 0;" << r2::linefeed;
 				std::cout << r2::tab2 << "auto lambda_1 = [i]()" << r2::linefeed;
 				std::cout << r2::tab2 << "{" << r2::linefeed;
 				std::cout << r2::tab3 << "std::cout << std::is_const<decltype( i )>::value ? \"O\" : \"X\";" << r2::linefeed;
-				std::cout << r2::tab2 << "};" << r2::linefeed3;
+				std::cout << r2::tab2 << "};" << r2::linefeed2;
 
 				std::cout << r2::tab << "+ Call Lambda" << r2::linefeed2;
 				std::cout << r2::tab2 << "lambda_1();" << r2::linefeed2;
