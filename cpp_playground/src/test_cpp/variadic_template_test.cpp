@@ -29,8 +29,19 @@ namespace variadic_template_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ ArgsCount<int, float, int, int, bool>::size" << r2::linefeed;
-				std::cout << r2::tab2 << ArgsCount<int, float, int, int, bool>::size << r2::linefeed;
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "template<typename... Types>" << r2::linefeed;
+				std::cout << r2::tab2 << "struct ArgsCount" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab3 << "static constexpr std::size_t size = sizeof...( Types );" << r2::linefeed;
+				std::cout << r2::tab2 << "}" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ ArgsCount<int, float, int, int, bool>::size" << r2::linefeed2;
+				std::cout << r2::tab2 << "> " << ArgsCount<int, float, int, int, bool>::size << r2::linefeed;
 			}
 
 			std::cout << r2::split;
