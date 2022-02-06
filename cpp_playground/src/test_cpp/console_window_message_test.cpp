@@ -112,6 +112,7 @@ namespace console_window_message_test
 namespace console_window_message_test
 {
 	HHOOK g_hook_keyboard = NULL;
+	HHOOK g_hook_mouse = NULL;
 
 	LRESULT CALLBACK KeyboardProc( int code, WPARAM w, LPARAM l )
 	{
@@ -125,7 +126,20 @@ namespace console_window_message_test
 			info = "sys key dn";
 		else if( w == WM_SYSKEYUP )
 			info = "sys key up";
-		printf( "%s - vkCode [%04x], scanCode [%04x]\n", info, p->vkCode, p->scanCode );
+		printf( "Keyboard : %s - vkCode [%04x], scanCode [%04x]\n", info, p->vkCode, p->scanCode );
+
+		// always call next hook
+		return CallNextHookEx( g_hook_keyboard, code, w, l );
+	};
+	LRESULT CALLBACK MouseProc( int code, WPARAM w, LPARAM l )
+	{
+		PKBDLLHOOKSTRUCT p = (PKBDLLHOOKSTRUCT)l;
+		const char* info = " ";
+		if( w == WM_RBUTTONDOWN )
+			info = "mouse r dn";
+		else if( w == WM_RBUTTONUP )
+			info = "mouse r up";
+		printf( "Mouse : %s - vkCode [%04x], scanCode [%04x]\n", info, p->vkCode, p->scanCode );
 
 		// always call next hook
 		return CallNextHookEx( g_hook_keyboard, code, w, l );
@@ -150,20 +164,29 @@ namespace console_window_message_test
 			std::cout << r2::tab2 << "GetMessage 함수를 쓰지 않으면 키 입력이 화면에 표시가 안된다." << r2::linefeed;
 			std::cout << r2::tab2 << "GetMessage 는 프로그램을 멈춰놓는 역활을 할뿐 들어오는 Message 가 없어서 아무 일도 하지 않는다." << r2::linefeed;
 			std::cout << r2::tab2 << "Test Loop 를 어떤식으로 끝내야 할지 모르겠다." << r2::linefeed;
+			std::cout << r2::tab2 << "마우스 왼 클릭을 하면 엄청나게 느려진다." << r2::linefeed;
+			std::cout << r2::tab2 << "CallNextHookEx 함수를 호출하지 않으면 느려지지 않는 대신 마우스가 움직이지 않는다." << r2::linefeed;
 
 			std::cout << r2::split;
 
 			{
 				g_hook_keyboard = SetWindowsHookEx( WH_KEYBOARD_LL, &KeyboardProc, GetModuleHandle( NULL ), 0 );
-				if( NULL != g_hook_keyboard )
+				g_hook_mouse = SetWindowsHookEx( WH_MOUSE_LL, &MouseProc, GetModuleHandle( NULL ), 0 );
+				if( NULL != g_hook_keyboard && NULL != g_hook_mouse )
 				{
 					MSG msg;
 					while( GetMessage( &msg, NULL, 0, 0 ) )
-					{}
+					{
+						//TranslateMessage( &msg );
+						//DispatchMessage( &msg );
+					}
 				}
 
 				UnhookWindowsHookEx( g_hook_keyboard );
 				g_hook_keyboard = NULL;
+
+				UnhookWindowsHookEx( g_hook_mouse );
+				g_hook_mouse = NULL;
 			}
 
 			std::cout << r2::split;
@@ -172,7 +195,3 @@ namespace console_window_message_test
 		};
 	}
 }
-
-
-DWORD   g_main_tid = 0;
-HHOOK   g_kb_hook = 0;
