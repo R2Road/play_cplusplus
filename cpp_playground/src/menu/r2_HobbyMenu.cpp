@@ -5,9 +5,10 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
-#include "test_hobby/array_based_list_test.h"
 #include "test_hobby/infinite_number_test.h"
 #include "test_hobby/memory_pool_test.h"
+
+#include "menu/r2_ArrayBasedListMenu.h"
 
 namespace r2
 {
@@ -20,12 +21,15 @@ namespace r2
 
 			ret->AddLineFeed();
 
-			ret->AddChild( '2', array_based_list_test::Basic::GetInstance() );
-			ret->AddChild( '3', array_based_list_test::PushBack::GetInstance() );
-			ret->AddChild( '4', array_based_list_test::Erase::GetInstance() );
-			ret->AddChild( '5', array_based_list_test::IteratorOperator_Indirection_StructureDereference::GetInstance() );
-			ret->AddChild( '6', array_based_list_test::RBegin_REnd::GetInstance() );
-			ret->AddChild( '7', array_based_list_test::ImprovedEndIterator::GetInstance() );
+			ret->AddChild(
+				'2'
+				, []()->const char* { return r2::ArrayBasedListMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::ArrayBasedListMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
 
 
 			ret->AddSplit();
