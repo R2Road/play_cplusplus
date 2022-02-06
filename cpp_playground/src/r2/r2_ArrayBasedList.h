@@ -9,9 +9,9 @@ namespace r2
 		using ValueT = T;
 		using MyT = ListNode<ValueT>;
 
+		ValueT MyValue;
 		MyT* pPrev = nullptr;
 		MyT* pNext = nullptr;
-		ValueT MyValue;
 	};
 
 	template<typename T>
