@@ -151,6 +151,7 @@ namespace r2
 			//
 			mEnd4Live = mHead4Rest;
 			mHead4Rest = mHead4Rest->pNext;
+			mEnd4Live->pNext = nullptr;
 			--mSize4Rest;
 
 			mSize = 0u;
