@@ -149,7 +149,10 @@ namespace r2
 			//
 			// 4 Live
 			//
-			mEnd4Live = GetRestNode();
+			mEnd4Live = mHead4Rest;
+			mHead4Rest = mHead4Rest->pNext;
+			--mSize4Rest;
+
 			mSize = 0u;
 		}
 
