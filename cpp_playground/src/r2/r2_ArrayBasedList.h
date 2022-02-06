@@ -111,9 +111,9 @@ namespace r2
 		// Iteration
 		//
 		IteratorT begin() { return IteratorT( mEnd4Live->pNext ); }
-		IteratorT end() { return IteratorT( nullptr ); }
+		IteratorT end() { return IteratorT( mEnd4Live ); }
 		ReverseIteratorT rbegin() const { return ReverseIteratorT( mEnd4Live->pPrev ); }
-		ReverseIteratorT rend() const { return ReverseIteratorT( nullptr ); }
+		ReverseIteratorT rend() const { return ReverseIteratorT( mEnd4Live ); }
 
 		void Clear()
 		{
@@ -207,40 +207,50 @@ namespace r2
 
 		void PushFront( const ValueT new_value )
 		{
-			auto node = GetRestNode();
-			node->MyValue = new_value;
+			auto new_front_node = GetRestNode();
+			new_front_node->MyValue = new_value;
 
 			if( nullptr == mEnd4Live->pNext )
 			{
-				mEnd4Live->pNext = node;
-				mEnd4Live->pPrev = node;
+				mEnd4Live->pPrev = new_front_node;
+				mEnd4Live->pNext = new_front_node;
+
+				new_front_node->pPrev = mEnd4Live;
+				new_front_node->pNext = mEnd4Live;
 			}
 			else
 			{
-				node->pNext = mEnd4Live->pNext;
-				mEnd4Live->pNext->pPrev = node;
+				mEnd4Live->pNext->pPrev = new_front_node;
 
-				mEnd4Live->pNext = node;
+				new_front_node->pPrev = mEnd4Live;
+				new_front_node->pNext = mEnd4Live->pNext;
+
+				mEnd4Live->pNext = new_front_node;
 			}
 
 			++mSize;
 		}
 		void PushBack( const ValueT new_value )
 		{
-			auto node = GetRestNode();
-			node->MyValue = new_value;
+			auto new_back_node = GetRestNode();
+			new_back_node->MyValue = new_value;
 
 			if( nullptr == mEnd4Live->pPrev )
 			{
-				mEnd4Live->pNext = node;
-				mEnd4Live->pPrev = node;
+				mEnd4Live->pNext = new_back_node;
+				mEnd4Live->pPrev = new_back_node;
+
+				new_back_node->pPrev = mEnd4Live;
+				new_back_node->pNext = mEnd4Live;
 			}
 			else
 			{
-				node->pPrev = mEnd4Live->pPrev;
-				mEnd4Live->pPrev->pNext = node;
+				mEnd4Live->pPrev->pNext = new_back_node;
 
-				mEnd4Live->pPrev = node;
+				new_back_node->pPrev = mEnd4Live->pPrev;
+				new_back_node->pNext = mEnd4Live;
+
+				mEnd4Live->pPrev = new_back_node;
 			}
 
 			++mSize;
