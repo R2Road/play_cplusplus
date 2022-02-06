@@ -118,6 +118,15 @@ namespace r2
 		void Clear()
 		{
 			//
+			// Cleanup
+			//
+			for( auto& n : mContainer )
+			{
+				n.pPrev = nullptr;
+				n.pNext = nullptr;
+			}
+
+			//
 			// 4 Rest
 			//
 			mHead4Rest = &( *mContainer.begin() );
