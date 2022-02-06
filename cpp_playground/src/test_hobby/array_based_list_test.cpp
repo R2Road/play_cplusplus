@@ -66,25 +66,6 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			{
-				std::cout << r2::tab << "+ Method : Size" << r2::linefeed2;
-				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
-			{
-				ablist.Clear();
-
-				std::cout << r2::tab << "+ Method : Clear" << r2::linefeed2;
-				std::cout << r2::tab2 << "ablist.Clear();" << r2::linefeed2;
-				
-				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
 			return r2::eTestResult::RunTest;
 		};
 	}
