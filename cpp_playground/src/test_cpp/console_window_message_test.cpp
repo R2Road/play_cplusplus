@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "console_window_message_test.h"
 
+#include <assert.h>
 #include <conio.h>
 #define  STRICT
 #define  WIN32_LEAN_AND_MEAN
@@ -107,3 +108,71 @@ namespace console_window_message_test
 		};
 	}
 }
+
+namespace console_window_message_test
+{
+	HHOOK g_hook_keyboard = NULL;
+
+	LRESULT CALLBACK KeyboardProc( int code, WPARAM w, LPARAM l )
+	{
+		PKBDLLHOOKSTRUCT p = (PKBDLLHOOKSTRUCT)l;
+		const char *info = NULL;
+		if( w == WM_KEYDOWN )
+			info = "key dn";
+		else if( w == WM_KEYUP )
+			info = "key up";
+		else if( w == WM_SYSKEYDOWN )
+			info = "sys key dn";
+		else if( w == WM_SYSKEYUP )
+			info = "sys key up";
+		printf( "%s - vkCode [%04x], scanCode [%04x]\n", info, p->vkCode, p->scanCode );
+
+		// always call next hook
+		return CallNextHookEx( g_hook_keyboard, code, w, l );
+	};
+
+	r2::iTest::TitleFunc MessageHook::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Window Message : Hook";
+		};
+	}
+	r2::iTest::DoFunc MessageHook::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "+ Message" << r2::linefeed2;
+			std::cout << r2::tab2 << "GetMessage 함수를 쓰지 않으면 키 입력이 화면에 표시가 안된다." << r2::linefeed;
+			std::cout << r2::tab2 << "GetMessage 는 프로그램을 멈춰놓는 역활을 할뿐 들어오는 Message 가 없어서 아무 일도 하지 않는다." << r2::linefeed;
+			std::cout << r2::tab2 << "Test Loop 를 어떤식으로 끝내야 할지 모르겠다." << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				g_hook_keyboard = SetWindowsHookEx( WH_KEYBOARD_LL, &KeyboardProc, GetModuleHandle( NULL ), 0 );
+				if( NULL != g_hook_keyboard )
+				{
+					MSG msg;
+					while( GetMessage( &msg, NULL, 0, 0 ) )
+					{}
+				}
+
+				UnhookWindowsHookEx( g_hook_keyboard );
+				g_hook_keyboard = NULL;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+}
+
+
+DWORD   g_main_tid = 0;
+HHOOK   g_kb_hook = 0;
