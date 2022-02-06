@@ -390,7 +390,7 @@ namespace array_based_list_test
 	{
 		return []()->const char*
 		{
-			return "Array Based List : improved End Iterator( To do )";
+			return "Array Based List : improved End Iterator";
 		};
 	}
 	r2::iTest::DoFunc ImprovedEndIterator::GetDoFunction()
@@ -420,12 +420,23 @@ namespace array_based_list_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ View" << r2::linefeed2;
-				for( const auto& cur : ablist )
+				std::cout << r2::tab << "+ View With ArrayBasedList::begin() And For( 10 > i )" << r2::linefeed2;
+				auto cur = ablist.begin();
+				for( int i = 0; 10 > i; ++i, ++cur )
 				{
-					std::cout << r2::tab2 << "> " << cur << r2::linefeed;
+					std::cout << r2::tab2 << "> " << ( *cur ) << r2::linefeed;
 				}
-				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ View With ArrayBasedList::rbegin() And For( 10 > i )" << r2::linefeed2;
+				auto cur = ablist.rbegin();
+				for( int i = 0; 10 > i; ++i, ++cur )
+				{
+					std::cout << r2::tab2 << "> " << ( *cur ) << r2::linefeed;
+				}
 			}
 
 			std::cout << r2::split;
