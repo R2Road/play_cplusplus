@@ -142,7 +142,7 @@ namespace console_window_message_test
 		printf( "Mouse : %s - vkCode [%04x], scanCode [%04x]\n", info, p->vkCode, p->scanCode );
 
 		// always call next hook
-		return CallNextHookEx( g_hook_keyboard, code, w, l );
+		return CallNextHookEx( g_hook_mouse, code, w, l );
 	};
 
 	r2::iTest::TitleFunc MessageHook::GetTitleFunction() const
