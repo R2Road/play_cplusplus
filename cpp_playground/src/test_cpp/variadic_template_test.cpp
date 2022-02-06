@@ -77,9 +77,7 @@ namespace
 
 	template <typename... Types>
 	void print_args_2( Types... args ) {
-		std::cout << r2::tab2 << "call - print_args_2( Types... args )" << r2::linefeed;
-		std::cout << r2::tab3 << "- ";
-		( std::cout << ... << args ) << r2::linefeed;
+		( std::cout << ... << args );
 	}
 }
 namespace variadic_template_test
@@ -108,9 +106,19 @@ namespace variadic_template_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ print_args_2( 1, 2, 3, 4, \"variadic_template_test\", 3.141592 )" << r2::linefeed;
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "template <typename... Types>" << r2::linefeed;
+				std::cout << r2::tab2 << "void print_args_2( Types... args )" << r2::linefeed;
+				std::cout << r2::tab2 << "{" << r2::linefeed;
+				std::cout << r2::tab3 << "( std::cout << ... << args );" << r2::linefeed;
+				std::cout << r2::tab2 << "}" << r2::linefeed2;
 
+				std::cout << r2::tab << "+ Call" << r2::linefeed2;
+				std::cout << r2::tab2 << "print_args_2( 1, 2, 3, 4, \"variadic_template_test\", 3.141592 )" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "> ";
 				print_args_2( 1, 2, 3, 4, "variadic_template_test", 3.141592 );
+				std::cout << r2::linefeed;
 			}
 
 			std::cout << r2::split;
