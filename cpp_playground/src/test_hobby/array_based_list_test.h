@@ -12,6 +12,13 @@ namespace array_based_list_test
 		DoFunc GetDoFunction() override;
 	};
 
+	class SizeAndClear : public r2::iTest, public r2::SingleTon<SizeAndClear>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
 	class PushBack : public r2::iTest, public r2::SingleTon<PushBack>
 	{
 	public:

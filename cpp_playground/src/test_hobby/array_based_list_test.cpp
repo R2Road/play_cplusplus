@@ -91,6 +91,63 @@ namespace array_based_list_test
 
 
 
+	r2::iTest::TitleFunc SizeAndClear::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Array Based List : Size and Clear";
+		};
+	}
+	r2::iTest::DoFunc SizeAndClear::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			r2::ArrayBasedList<int, 10> ablist;
+			ablist.PushFront( 11 );
+			ablist.PushFront( 22 );
+			ablist.PushFront( 33 );
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "r2::ArrayBasedList<int, 10> ablist" << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.PushFront( 11 );" << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.PushFront( 22 );" << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.PushFront( 33 );" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Method : Size" << r2::linefeed2;
+				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				ablist.Clear();
+
+				std::cout << r2::tab << "+ Method : Clear" << r2::linefeed2;
+				std::cout << r2::tab2 << "ablist.Clear();" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc PushBack::GetTitleFunction() const
 	{
 		return []()->const char*
