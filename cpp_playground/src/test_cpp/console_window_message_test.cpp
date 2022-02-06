@@ -33,7 +33,7 @@ namespace console_window_message_test
 		case CTRL_BREAK_EVENT:
 			Beep( 900, 200 );
 			printf( "Ctrl-Break event\n\n" );
-			return FALSE;
+			return TRUE;
 
 		case CTRL_LOGOFF_EVENT:
 			Beep( 1000, 200 );
@@ -76,10 +76,8 @@ namespace console_window_message_test
 			std::cout << r2::tab << "+ Message" << r2::linefeed2;
 			std::cout << r2::tab2 << "Ctrl + C 를 누르면 디버거가 붙어있는 경우 PDB가 없다며 예외가 터진다." << r2::linefeed;
 			std::cout << r2::tab2 << "F5 누르면 계속 실행 된다." << r2::linefeed;
-			std::cout << r2::tab2 << "Ctrl + Break 를 누르면 VLD 에서 릭을 감지하고 터짐" << r2::linefeed;
+			std::cout << r2::tab2 << "Ctrl + Break 는 메세지 받고 TRUE 를 반환하지 않으면 프로그램이 종료된다." << r2::linefeed;
 			std::cout << r2::tab2 << "가급적 Ctrl + F5 로 실행할 것" << r2::linefeed;
-
-			std::cout << r2::split;
 
 			std::cout << r2::split;
 
