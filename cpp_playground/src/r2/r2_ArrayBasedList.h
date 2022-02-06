@@ -168,9 +168,6 @@ namespace r2
 				mHead4Rest = ret->pNext;
 			}
 
-			ret->pPrev = nullptr;
-			ret->pNext = nullptr;
-
 			--mSize4Rest;
 
 			return ret;
