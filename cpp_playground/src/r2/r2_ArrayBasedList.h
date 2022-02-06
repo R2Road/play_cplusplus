@@ -96,13 +96,13 @@ namespace r2
 		using SizeT = uint32_t;
 
 		using NodeT = ListNode<ValueT>;
-		using ContainerT = std::array<NodeT, N>;
+		using ContainerT = std::array<NodeT, N + 1u>; // N + Head
 
 		using IteratorT = ListIterator<ValueT>;
 		//using iterator = ListIterator<ValueT>; // ...dev rule?
 		using ReverseIteratorT = ListReverseIterator<ValueT>;
 
-		ArrayBasedList() : mContainer(), mHead4Rest( nullptr ), mSize4Rest( 0u ), mHead4Live( nullptr ), mTail4Live( nullptr ), mSize( 0u )
+		ArrayBasedList() : mContainer(), mHead4Rest( nullptr ), mSize4Rest( 0u ), mEnd4Live( nullptr ), mSize( 0u )
 		{
 			Clear();
 		}
@@ -110,9 +110,9 @@ namespace r2
 		//
 		// Iteration
 		//
-		IteratorT begin() { return IteratorT( mHead4Live ); }
+		IteratorT begin() { return IteratorT( mEnd4Live->pNext ); }
 		IteratorT end() { return IteratorT( nullptr ); }
-		ReverseIteratorT rbegin() const { return ReverseIteratorT( mTail4Live ); }
+		ReverseIteratorT rbegin() const { return ReverseIteratorT( mEnd4Live->pPrev ); }
 		ReverseIteratorT rend() const { return ReverseIteratorT( nullptr ); }
 
 		void Clear()
@@ -140,8 +140,7 @@ namespace r2
 			//
 			// 4 Live
 			//
-			mHead4Live = nullptr;
-			mTail4Live = nullptr;
+			mEnd4Live = GetRestNode();
 			mSize = 0u;
 		}
 
@@ -201,17 +200,17 @@ namespace r2
 			auto node = GetRestNode();
 			node->MyValue = new_value;
 
-			if( nullptr == mHead4Live )
+			if( nullptr == mEnd4Live->pNext )
 			{
-				mHead4Live = node;
-				mTail4Live = node;
+				mEnd4Live->pNext = node;
+				mEnd4Live->pPrev = node;
 			}
 			else
 			{
-				node->pNext = mHead4Live;
-				mHead4Live->pPrev = node;
+				node->pNext = mEnd4Live->pNext;
+				mEnd4Live->pNext->pPrev = node;
 
-				mHead4Live = node;
+				mEnd4Live->pNext = node;
 			}
 
 			++mSize;
@@ -221,17 +220,17 @@ namespace r2
 			auto node = GetRestNode();
 			node->MyValue = new_value;
 
-			if( nullptr == mTail4Live )
+			if( nullptr == mEnd4Live->pPrev )
 			{
-				mHead4Live = node;
-				mTail4Live = node;
+				mEnd4Live->pNext = node;
+				mEnd4Live->pPrev = node;
 			}
 			else
 			{
-				node->pPrev = mTail4Live;
-				mTail4Live->pNext = node;
+				node->pPrev = mEnd4Live->pPrev;
+				mEnd4Live->pPrev->pNext = node;
 
-				mTail4Live = node;
+				mEnd4Live->pPrev = node;
 			}
 
 			++mSize;
@@ -250,13 +249,13 @@ namespace r2
 				pNext->pPrev = pPrev;
 			}
 
-			if( mHead4Live == target.mTargetNode )
+			if( mEnd4Live->pNext == target.mTargetNode )
 			{
-				mHead4Live = pNext;
+				mEnd4Live->pNext = pNext;
 			}
-			if( mTail4Live == target.mTargetNode )
+			if( mEnd4Live->pPrev == target.mTargetNode )
 			{
-				mTail4Live = pPrev;
+				mEnd4Live->pPrev = pPrev;
 			}
 
 			--mSize;
@@ -271,8 +270,7 @@ namespace r2
 		NodeT* mHead4Rest;
 		SizeT mSize4Rest;
 
-		NodeT* mHead4Live;
-		NodeT* mTail4Live;
+		NodeT* mEnd4Live;
 		SizeT mSize;
 	};
 }
