@@ -149,9 +149,6 @@
     <ClCompile Include="src\menu\r2_MathMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\vector3_test.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\atomic_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -308,6 +305,9 @@
     <ClCompile Include="src\menu\r2_ArrayBasedListMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_hobby\vector3_test.cpp">
+      <Filter>test_hobby</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -442,9 +442,6 @@
     </ClInclude>
     <ClInclude Include="src\menu\r2_MathMenu.h">
       <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\vector3_test.h">
-      <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\atomic_test.h">
       <Filter>test_cpp</Filter>
@@ -610,6 +607,9 @@
     </ClInclude>
     <ClInclude Include="src\menu\r2_ArrayBasedListMenu.h">
       <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\vector3_test.h">
+      <Filter>test_hobby</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

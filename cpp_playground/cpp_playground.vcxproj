@@ -113,11 +113,11 @@
     <ClCompile Include="src\test_cpp\std_tuple_test.cpp" />
     <ClCompile Include="src\test_cpp\variadic_template_test.cpp" />
     <ClCompile Include="src\test_cpp\std_variant_test.cpp" />
-    <ClCompile Include="src\test_cpp\vector3_test.cpp" />
     <ClCompile Include="src\test_cpp\std_vector_test.cpp" />
     <ClCompile Include="src\test_hobby\array_based_list_test.cpp" />
     <ClCompile Include="src\test_hobby\infinite_number_test.cpp" />
     <ClCompile Include="src\test_hobby\memory_pool_test.cpp" />
+    <ClCompile Include="src\test_hobby\vector3_test.cpp" />
     <ClCompile Include="src\util\r2util_StopWatch.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -216,11 +216,11 @@
     <ClInclude Include="src\test_cpp\std_tuple_test.h" />
     <ClInclude Include="src\test_cpp\variadic_template_test.h" />
     <ClInclude Include="src\test_cpp\std_variant_test.h" />
-    <ClInclude Include="src\test_cpp\vector3_test.h" />
     <ClInclude Include="src\test_cpp\std_vector_test.h" />
     <ClInclude Include="src\test_hobby\array_based_list_test.h" />
     <ClInclude Include="src\test_hobby\infinite_number_test.h" />
     <ClInclude Include="src\test_hobby\memory_pool_test.h" />
+    <ClInclude Include="src\test_hobby\vector3_test.h" />
     <ClInclude Include="src\util\r2util_StopWatch.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

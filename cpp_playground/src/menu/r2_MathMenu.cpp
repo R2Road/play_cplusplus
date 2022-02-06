@@ -5,8 +5,6 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
-#include "test_cpp/vector3_test.h"
-
 namespace r2
 {
 	MenuUp MathMenu::Create( Director& director )
@@ -14,14 +12,6 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', vector3_test::OperatorPlus::GetInstance() );
-			ret->AddChild( '2', vector3_test::OperatorPlusEqual::GetInstance() );
-			ret->AddChild( '3', vector3_test::OperatorMinus::GetInstance() );
-			ret->AddChild( '4', vector3_test::OperatorMinusEqual::GetInstance() );
-			ret->AddChild( '5', vector3_test::OperatorMultiply_With_Scalar::GetInstance() );
-			ret->AddChild( '6', vector3_test::OperatorMultiplyEqual_With_Scalar::GetInstance() );
-
-
 			ret->AddSplit();
 
 
