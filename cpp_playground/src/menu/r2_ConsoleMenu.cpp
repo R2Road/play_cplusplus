@@ -10,6 +10,7 @@
 #include "test_cpp/console_test.h"
 #include "test_cpp/console_text_color_test.h"
 #include "test_cpp/console_window_input_test.h"
+#include "test_cpp/console_window_message_test.h"
 #include "test_cpp/console_window_test.h"
 
 // # REF
@@ -60,6 +61,10 @@ namespace r2
 			ret->AddChild( 'f', console_window_input_test::WindowInput_GetKeyState::GetInstance() );
 			ret->AddChild( 'g', console_window_input_test::WindowInput_GetKeyboardState::GetInstance() );
 			ret->AddChild( 'h', console_window_input_test::WindowInput_GetAsyncKeyStates::GetInstance() );
+
+			ret->AddLineFeed();
+
+			ret->AddChild( 'j', console_window_message_test::ConsoleControlHandler::GetInstance() );
 
 
 			ret->AddLineFeed();
