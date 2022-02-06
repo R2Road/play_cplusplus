@@ -21,12 +21,12 @@ namespace std_stringview_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed2;
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ std::string_view view = \"String View Test_1\";" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ std::string_view view = \"String View Test_1\";" << r2::linefeed2;
 				std::string_view view = "String View Test_1";
 
 				std::cout << r2::tab2 << "- Print : " << view << r2::linefeed;
@@ -36,7 +36,7 @@ namespace std_stringview_test
 
 			{
 				std::cout << r2::tab << "+ std::string str = \"String View Test_2\";" << r2::linefeed;
-				std::cout << r2::tab << "+ std::string_view view = str;" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ std::string_view view = str;" << r2::linefeed2;
 				std::string str = "String View Test_2";
 				std::string_view view = str;
 
@@ -60,7 +60,7 @@ namespace std_stringview_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ auto view = \"String View Test_4\"sv;" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ auto view = \"String View Test_4\"sv;" << r2::linefeed2;
 				auto view = "String View Test_4"sv;
 
 				std::cout << r2::tab2 << "- Has Literal \"sv\"" << r2::linefeed;
@@ -71,7 +71,7 @@ namespace std_stringview_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ auto view = \"String View Test_5\"sv;" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ auto view = \"String View Test_5\"sv;" << r2::linefeed2;
 				auto view = "String View Test_5"sv;
 
 				std::cout << r2::tab2 << "- view.remove_prefix( 3u );" << r2::linefeed;
@@ -83,7 +83,7 @@ namespace std_stringview_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ auto view = \"String View Test_6\"sv;" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ auto view = \"String View Test_6\"sv;" << r2::linefeed2;
 				auto view = "String View Test_6"sv;
 
 				std::cout << r2::tab2 << "- view.remove_suffix( 4u );" << r2::linefeed;

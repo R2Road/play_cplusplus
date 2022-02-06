@@ -30,7 +30,7 @@ namespace etc_test
 
 				std::cout << r2::tab << "int a = 123;" << r2::linefeed;
 				std::cout << r2::tab << "int b = 456;" << r2::linefeed;
-				std::cout << r2::linefeed << r2::linefeed;
+				std::cout << r2::linefeed2;
 
 				a = a ^ b;
 				std::cout << r2::tab << "a = a ^ b;" << r2::linefeed;

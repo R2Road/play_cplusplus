@@ -45,7 +45,7 @@ namespace korean_test
 				std::cout << r2::tab << "+ std::wcout.imbue( std::locale( \"kor\" ) );" << r2::linefeed;
 				std::wcout.imbue( std::locale( "kor" ) );
 
-				std::wcout << r2::tab2 << "- " << korean << r2::linefeed << r2::linefeed;
+				std::wcout << r2::tab2 << "- " << korean << r2::linefeed2;
 			}
 
 			std::cout << r2::split;
