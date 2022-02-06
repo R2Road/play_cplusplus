@@ -65,6 +65,7 @@ namespace r2
 			ret->AddLineFeed();
 
 			ret->AddChild( 'j', console_window_message_test::ConsoleControlHandler::GetInstance() );
+			ret->AddChild( 'k', console_window_message_test::MessageHook::GetInstance() );
 
 
 			ret->AddLineFeed();
