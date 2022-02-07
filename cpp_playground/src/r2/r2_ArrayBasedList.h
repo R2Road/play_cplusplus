@@ -260,23 +260,8 @@ namespace r2
 			auto pPrev = target.mTargetNode->pPrev;
 			auto pNext = target.mTargetNode->pNext;
 
-			if( nullptr != pPrev )
-			{
-				pPrev->pNext = pNext;
-			}
-			if( nullptr != pNext )
-			{
-				pNext->pPrev = pPrev;
-			}
-
-			if( mEnd4Live->pNext == target.mTargetNode )
-			{
-				mEnd4Live->pNext = pNext;
-			}
-			if( mEnd4Live->pPrev == target.mTargetNode )
-			{
-				mEnd4Live->pPrev = pPrev;
-			}
+			pPrev->pNext = pNext;
+			pNext->pPrev = pPrev;
 
 			--mSize;
 
