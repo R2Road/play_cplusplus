@@ -278,8 +278,8 @@ namespace performance_1_test
 			unsigned int sum_result = 0;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "int test_container[attempt_count];" << r2::linefeed;
-			std::cout << r2::tab2 << "std::fill_n( test_container, attempt_count, 1 );" << r2::linefeed2;
+			std::cout << r2::tab2 << "int test_container[attempt_limit];" << r2::linefeed;
+			std::cout << r2::tab2 << "std::fill_n( test_container, attempt_limit, 1 );" << r2::linefeed2;
 			std::cout << r2::tab2 << "unsigned int sum_result = 0;" << r2::linefeed;
 
 			std::cout << r2::split;
@@ -287,7 +287,7 @@ namespace performance_1_test
 			{
 				std::cout << r2::tab << "+ For : sum all" << r2::linefeed2;
 
-				for( int test_index = 0; loop_limit > test_index; ++test_index )
+				for( int loop_count = 0; loop_limit > loop_count; ++loop_count )
 				{
 					sum_result = 0;
 
@@ -310,7 +310,7 @@ namespace performance_1_test
 			{
 				std::cout << r2::tab << "+ While : sum all" << r2::linefeed2;
 
-				for( int test_index = 0; loop_limit > test_index; ++test_index )
+				for( int loop_count = 0; loop_limit > loop_count; ++loop_count )
 				{
 					sum_result = 0;
 
