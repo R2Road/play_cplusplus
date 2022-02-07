@@ -277,10 +277,12 @@ namespace performance_1_test
 
 			unsigned int sum_result = 0;
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "int test_container[attempt_limit];" << r2::linefeed;
-			std::cout << r2::tab2 << "std::fill_n( test_container, attempt_limit, 1 );" << r2::linefeed2;
-			std::cout << r2::tab2 << "unsigned int sum_result = 0;" << r2::linefeed;
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "int test_container[attempt_limit];" << r2::linefeed;
+				std::cout << r2::tab2 << "std::fill_n( test_container, attempt_limit, 1 );" << r2::linefeed2;
+				std::cout << r2::tab2 << "unsigned int sum_result = 0;" << r2::linefeed;
+			}
 
 			std::cout << r2::split;
 
