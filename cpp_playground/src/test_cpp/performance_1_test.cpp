@@ -25,7 +25,8 @@ namespace performance_1_test
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed2;
 
 			const int attempt_limit = std::numeric_limits<int>::max() / 1000;
-			const int loop_limit = 5;
+			const int loop_limit = 4;
+			r2util::StopWatch stop_watch;
 
 			{
 				std::cout << r2::tab << "Attempt Limit : " << attempt_limit;
@@ -37,8 +38,7 @@ namespace performance_1_test
 			{
 				std::cout << r2::tab << "+ Int" << " ++ X " << attempt_limit << r2::linefeed2;
 
-				int test_int = 0;
-				r2util::StopWatch stop_watch;
+				int test_int = 0;			
 
 				for( int i = 0; loop_limit > i; ++i )
 				{
@@ -65,7 +65,6 @@ namespace performance_1_test
 
 				int test_int = 0;
 				int* test_pointer = &test_int;
-				r2util::StopWatch stop_watch;
 
 				for( int i = 0; loop_limit > i; ++i )
 				{
@@ -92,7 +91,6 @@ namespace performance_1_test
 
 				std::unique_ptr<int> test_unique_pointer( new int( 0 ) );
 				int* test_pointer = test_unique_pointer.get();
-				r2util::StopWatch stop_watch;
 
 				for( int i = 0; loop_limit > i; ++i )
 				{
@@ -118,7 +116,6 @@ namespace performance_1_test
 				std::cout << r2::tab << "+ Int Up" << " ++ X " << attempt_limit << r2::linefeed2;
 
 				std::unique_ptr<int> test_pointer( new int( 0 ) );
-				r2util::StopWatch stop_watch;
 
 				for( int i = 0; loop_limit > i; ++i )
 				{
@@ -144,7 +141,6 @@ namespace performance_1_test
 				std::cout << r2::tab << "+ Int Sp" << " ++ X " << attempt_limit << r2::linefeed2;
 
 				std::shared_ptr<int> test_pointer( new int( 0 ) );
-				r2util::StopWatch stop_watch;
 
 				for( int i = 0; loop_limit > i; ++i )
 				{
