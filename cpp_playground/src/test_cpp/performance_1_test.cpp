@@ -36,7 +36,7 @@ namespace performance_1_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Int : ++" << r2::linefeed2;
+				std::cout << r2::tab << "+ For : Int : ++" << r2::linefeed2;
 
 				int test_int = 0;			
 
@@ -61,7 +61,7 @@ namespace performance_1_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Int* : ++" << r2::linefeed2;
+				std::cout << r2::tab << "+ For : Int* : ++" << r2::linefeed2;
 
 				int test_int = 0;
 				int* test_pointer = &test_int;
@@ -87,7 +87,7 @@ namespace performance_1_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ new Int* : ++" << r2::linefeed2;
+				std::cout << r2::tab << "+ For : new Int* : ++" << r2::linefeed2;
 
 				std::unique_ptr<int> test_unique_pointer( new int( 0 ) );
 				int* test_pointer = test_unique_pointer.get();
@@ -113,7 +113,7 @@ namespace performance_1_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Int Up : ++" << r2::linefeed2;
+				std::cout << r2::tab << "+ For : Int Up : ++" << r2::linefeed2;
 
 				std::unique_ptr<int> test_pointer( new int( 0 ) );
 
@@ -138,7 +138,7 @@ namespace performance_1_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Int Sp : ++" << attempt_limit << r2::linefeed2;
+				std::cout << r2::tab << "+ For : Int Sp : ++" << attempt_limit << r2::linefeed2;
 
 				std::shared_ptr<int> test_pointer( new int( 0 ) );
 
