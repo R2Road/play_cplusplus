@@ -181,22 +181,28 @@ namespace performance_1_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			std::cout << r2::split;
-
-			const unsigned int attempt_count = std::numeric_limits<unsigned int>::max() / 10;
+			const int attempt_limit = std::numeric_limits<int>::max() / 10;
+			const int loop_limit = 5;
+			r2util::StopWatch stop_watch;
 
 			{
-				std::cout << r2::tab << "+ For" << " ++ X " << attempt_count << r2::linefeed2;
+				std::cout << r2::tab << "Attempt Limit : " << attempt_limit;
+				std::cout << r2::tab2 << "Loop Limit : " << loop_limit << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ For" << " ++ X " << attempt_limit << r2::linefeed2;
 
 				unsigned int test_int = 0;
-				r2util::StopWatch stop_watch;
 
-				for( int i = 0; 5 > i; ++i )
+				for( int i = 0; loop_limit > i; ++i )
 				{
 					test_int = 0;
 
 					stop_watch.Start();
-					for( ; attempt_count > test_int; )
+					for( ; attempt_limit > test_int; )
 					{
 						++test_int;
 					}
@@ -212,17 +218,16 @@ namespace performance_1_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ While" << " ++ X " << attempt_count << r2::linefeed2;
+				std::cout << r2::tab << "+ While" << " ++ X " << attempt_limit << r2::linefeed2;
 
 				unsigned int test_int = 0;
-				r2util::StopWatch stop_watch;
 
-				for( int i = 0; 5 > i; ++i )
+				for( int i = 0; loop_limit > i; ++i )
 				{
 					test_int = 0;
 
 					stop_watch.Start();
-					while( attempt_count > test_int )
+					while( attempt_limit > test_int )
 					{
 						++test_int;
 					}
