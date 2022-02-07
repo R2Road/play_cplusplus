@@ -259,34 +259,40 @@ namespace performance_1_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+
+			const unsigned int attempt_limit = 100000;
+			const int loop_limit = 5;
+			r2util::StopWatch stop_watch;
+
+			{
+				std::cout << r2::tab << "Attempt Limit : " << attempt_limit;
+				std::cout << r2::tab2 << "Loop Limit : " << loop_limit << r2::linefeed;
+			}
 
 			std::cout << r2::split;
 
-			const unsigned int attempt_count = 100000;
-
-			int test_container[attempt_count];
-			std::fill_n( test_container, attempt_count, 1 );
+			int test_container[attempt_limit];
+			std::fill_n( test_container, attempt_limit, 1 );
 
 			unsigned int sum_result = 0;
-			r2util::StopWatch stop_watch;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "const unsigned int attempt_count = " << attempt_count << ";" << r2::linefeed2;
 			std::cout << r2::tab2 << "int test_container[attempt_count];" << r2::linefeed;
-			std::cout << r2::tab2 << "std::fill_n( test_container, attempt_count, 1 );" << r2::linefeed;
+			std::cout << r2::tab2 << "std::fill_n( test_container, attempt_count, 1 );" << r2::linefeed2;
+			std::cout << r2::tab2 << "unsigned int sum_result = 0;" << r2::linefeed;
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ For" << r2::linefeed2;
+				std::cout << r2::tab << "+ For : sum all" << r2::linefeed2;
 
-				for( int test_index = 0; 5 > test_index; ++test_index )
+				for( int test_index = 0; loop_limit > test_index; ++test_index )
 				{
 					sum_result = 0;
 
 					stop_watch.Start();
-					for( unsigned int a = 0; attempt_count > a; ++a )
+					for( unsigned int a = 0; attempt_limit > a; ++a )
 					{
 						sum_result += test_container[a];
 					}
@@ -302,15 +308,15 @@ namespace performance_1_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ While" << r2::linefeed2;
+				std::cout << r2::tab << "+ While : sum all" << r2::linefeed2;
 
-				for( int test_index = 0; 5 > test_index; ++test_index )
+				for( int test_index = 0; loop_limit > test_index; ++test_index )
 				{
 					sum_result = 0;
 
 					stop_watch.Start();
 					unsigned int a = 0;
-					while( attempt_count > a )
+					while( attempt_limit > a )
 					{
 						sum_result += test_container[a];
 
