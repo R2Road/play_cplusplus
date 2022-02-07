@@ -24,12 +24,12 @@ namespace performance_1_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
+			const int attempt_limit = std::numeric_limits<int>::max() / 1000;
+
 			std::cout << r2::split;
 
-			const int attempt_count = std::numeric_limits<int>::max() / 1000;
-
 			{
-				std::cout << r2::tab << "+ Int" << " ++ X " << attempt_count << r2::linefeed2;
+				std::cout << r2::tab << "+ Int" << " ++ X " << attempt_limit << r2::linefeed2;
 
 				int test_int = 0;
 				r2util::StopWatch stop_watch;
@@ -39,7 +39,7 @@ namespace performance_1_test
 					test_int = 0;
 
 					stop_watch.Start();
-					while( attempt_count > test_int )
+					while( attempt_limit > test_int )
 					{
 						++test_int;
 					}
@@ -55,7 +55,7 @@ namespace performance_1_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Int*" << " ++ X " << attempt_count << r2::linefeed2;
+				std::cout << r2::tab << "+ Int*" << " ++ X " << attempt_limit << r2::linefeed2;
 
 				int test_int = 0;
 				int* test_pointer = &test_int;
@@ -66,7 +66,7 @@ namespace performance_1_test
 					test_int = 0;
 
 					stop_watch.Start();
-					while( attempt_count > *test_pointer )
+					while( attempt_limit > *test_pointer )
 					{
 						++( *test_pointer );
 					}
@@ -82,7 +82,7 @@ namespace performance_1_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ new Int*" << " ++ X " << attempt_count << r2::linefeed2;
+				std::cout << r2::tab << "+ new Int*" << " ++ X " << attempt_limit << r2::linefeed2;
 
 				std::unique_ptr<int> test_unique_pointer( new int( 0 ) );
 				int* test_pointer = test_unique_pointer.get();
@@ -93,7 +93,7 @@ namespace performance_1_test
 					*test_pointer = 0;
 
 					stop_watch.Start();
-					while( attempt_count > *test_pointer )
+					while( attempt_limit > *test_pointer )
 					{
 						++( *test_pointer );
 					}
@@ -109,7 +109,7 @@ namespace performance_1_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Int Up" << " ++ X " << attempt_count << r2::linefeed2;
+				std::cout << r2::tab << "+ Int Up" << " ++ X " << attempt_limit << r2::linefeed2;
 
 				std::unique_ptr<int> test_pointer( new int( 0 ) );
 				r2util::StopWatch stop_watch;
@@ -119,7 +119,7 @@ namespace performance_1_test
 					*test_pointer = 0;
 
 					stop_watch.Start();
-					while( attempt_count > *test_pointer )
+					while( attempt_limit > *test_pointer )
 					{
 						++( *test_pointer );
 					}
@@ -135,7 +135,7 @@ namespace performance_1_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Int Sp" << " ++ X " << attempt_count << r2::linefeed2;
+				std::cout << r2::tab << "+ Int Sp" << " ++ X " << attempt_limit << r2::linefeed2;
 
 				std::shared_ptr<int> test_pointer( new int( 0 ) );
 				r2util::StopWatch stop_watch;
@@ -145,7 +145,7 @@ namespace performance_1_test
 					*test_pointer = 0;
 
 					stop_watch.Start();
-					while( attempt_count > *test_pointer )
+					while( attempt_limit > *test_pointer )
 					{
 						++( *test_pointer );
 					}
