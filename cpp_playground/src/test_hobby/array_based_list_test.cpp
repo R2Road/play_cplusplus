@@ -227,11 +227,12 @@ namespace array_based_list_test
 				std::cout << r2::tab2 << "target_itr = ablist.Erase( target_itr );" << r2::linefeed2;
 
 				std::cout << r2::tab << "+ View With Ranged For" << r2::linefeed2;
+				std::cout << r2::tab2;
 				for( const auto& cur : ablist )
 				{
-					std::cout << r2::tab2 << "> " << cur << r2::linefeed;
+					std::cout << "> " << cur << r2::tab;
 				}
-				std::cout << r2::linefeed;
+				std::cout << r2::linefeed2;
 				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
 				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
 			}
