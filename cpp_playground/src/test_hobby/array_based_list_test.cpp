@@ -210,6 +210,13 @@ namespace array_based_list_test
 				std::cout << r2::tab2 << "ablist.PushBack( 22 );" << r2::linefeed;
 				std::cout << r2::tab2 << "ablist.PushBack( 33 );" << r2::linefeed2;
 
+				std::cout << r2::tab2;
+				for( const auto& cur : ablist )
+				{
+					std::cout << "> " << cur << r2::tab;
+				}
+				std::cout << r2::linefeed2;
+
 				std::cout << r2::tab2 << "ablist.Size();" << " > " << ablist.Size();
 				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << " > " << ablist.GetRestNodeCount() << r2::linefeed;
 			}
