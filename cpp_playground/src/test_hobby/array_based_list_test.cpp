@@ -321,10 +321,9 @@ namespace array_based_list_test
 			{
 				target_itr = ablist.Erase( target_itr );
 
-				std::cout << r2::tab << "+ Method : Erase" << r2::linefeed2;				
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
 				std::cout << r2::tab2 << "target_itr = ablist.Erase( target_itr );" << r2::linefeed2;
 
-				std::cout << r2::tab << "+ View With Ranged For" << r2::linefeed2;
 				std::cout << r2::tab2;
 				for( const auto& cur : ablist )
 				{
@@ -341,10 +340,9 @@ namespace array_based_list_test
 			{
 				target_itr = ablist.Erase( target_itr );
 
-				std::cout << r2::tab << "+ Method : Erase" << r2::linefeed2;
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
 				std::cout << r2::tab2 << "target_itr = ablist.Erase( target_itr );" << r2::linefeed2;
 
-				std::cout << r2::tab << "+ View With Ranged For" << r2::linefeed2;
 				std::cout << r2::tab2;
 				for( const auto& cur : ablist )
 				{
@@ -361,10 +359,9 @@ namespace array_based_list_test
 			{
 				target_itr = ablist.Erase( target_itr );
 
-				std::cout << r2::tab << "+ Method : Erase" << r2::linefeed2;
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
 				std::cout << r2::tab2 << "target_itr = ablist.Erase( target_itr );" << r2::linefeed2;
 
-				std::cout << r2::tab << "+ View With Ranged For" << r2::linefeed2;
 				std::cout << r2::tab2;
 				for( const auto& cur : ablist )
 				{
