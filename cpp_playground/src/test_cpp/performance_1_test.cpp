@@ -179,7 +179,7 @@ namespace performance_1_test
 	{
 		return []()->r2::eTestResult
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed2;
 
 			const int attempt_limit = std::numeric_limits<int>::max() / 10;
 			const int loop_limit = 5;
@@ -193,7 +193,7 @@ namespace performance_1_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ For" << " ++ X " << attempt_limit << r2::linefeed2;
+				std::cout << r2::tab << "+ For : unsigned int : ++" << r2::linefeed2;
 
 				unsigned int test_int = 0;
 
@@ -218,7 +218,7 @@ namespace performance_1_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ While" << " ++ X " << attempt_limit << r2::linefeed2;
+				std::cout << r2::tab << "+ While : unsigned int : ++" << r2::linefeed2;
 
 				unsigned int test_int = 0;
 
