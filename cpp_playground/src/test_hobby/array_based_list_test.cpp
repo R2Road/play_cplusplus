@@ -269,6 +269,111 @@ namespace array_based_list_test
 	}
 
 
+
+	r2::iTest::TitleFunc Erase_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Array Based List : Erase 2";
+		};
+	}
+	r2::iTest::DoFunc Erase_2::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			r2::ArrayBasedList<int, 5> ablist;
+			ablist.PushBack( 11 );
+			ablist.PushBack( 22 );
+			ablist.PushBack( 33 );
+
+			auto target_itr = ablist.begin();
+			++target_itr;
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "r2::ArrayBasedList<int, 5> ablist" << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.PushBack( 11 );" << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.PushBack( 22 );" << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.PushBack( 33 );" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "auto target_itr = ablist.begin();" << r2::linefeed;
+				std::cout << r2::tab2 << "++target_itr;" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "ablist.Size();" << " > " << ablist.Size();
+				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << " > " << ablist.GetRestNodeCount() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				target_itr = ablist.Erase( target_itr );
+
+				std::cout << r2::tab << "+ Method : Erase" << r2::linefeed2;				
+				std::cout << r2::tab2 << "target_itr = ablist.Erase( target_itr );" << r2::linefeed2;
+
+				std::cout << r2::tab << "+ View With Ranged For" << r2::linefeed2;
+				std::cout << r2::tab2;
+				for( const auto& cur : ablist )
+				{
+					std::cout << "> " << cur << r2::tab;
+				}
+				std::cout << r2::linefeed2;
+
+				std::cout << r2::tab2 << "ablist.Size();" << " > " << ablist.Size();
+				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << " > " << ablist.GetRestNodeCount() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				target_itr = ablist.Erase( target_itr );
+
+				std::cout << r2::tab << "+ Method : Erase" << r2::linefeed2;
+				std::cout << r2::tab2 << "target_itr = ablist.Erase( target_itr );" << r2::linefeed2;
+
+				std::cout << r2::tab << "+ View With Ranged For" << r2::linefeed2;
+				std::cout << r2::tab2;
+				for( const auto& cur : ablist )
+				{
+					std::cout << "> " << cur << r2::tab;
+				}
+				std::cout << r2::linefeed2;
+
+				std::cout << r2::tab2 << "ablist.Size();" << " > " << ablist.Size();
+				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << " > " << ablist.GetRestNodeCount() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				target_itr = ablist.Erase( target_itr );
+
+				std::cout << r2::tab << "+ Method : Erase" << r2::linefeed2;
+				std::cout << r2::tab2 << "target_itr = ablist.Erase( target_itr );" << r2::linefeed2;
+
+				std::cout << r2::tab << "+ View With Ranged For" << r2::linefeed2;
+				std::cout << r2::tab2;
+				for( const auto& cur : ablist )
+				{
+					std::cout << "> " << cur << r2::tab;
+				}
+				std::cout << r2::linefeed2;
+
+				std::cout << r2::tab2 << "ablist.Size();" << " > " << ablist.Size();
+				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << " > " << ablist.GetRestNodeCount() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
 	// REF : https://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B
 	r2::iTest::TitleFunc IteratorOperator_Indirection_StructureDereference::GetTitleFunction() const
 	{

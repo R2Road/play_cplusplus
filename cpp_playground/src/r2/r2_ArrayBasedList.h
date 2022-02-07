@@ -257,6 +257,11 @@ namespace r2
 		}
 		IteratorT Erase( IteratorT target )
 		{
+			if( mEnd4Live == target.mTargetNode )
+			{
+				return IteratorT( mEnd4Live );
+			}
+
 			auto pPrev = target.mTargetNode->pPrev;
 			auto pNext = target.mTargetNode->pNext;
 
