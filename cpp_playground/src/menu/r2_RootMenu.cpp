@@ -40,7 +40,8 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu(
 			director
 			, GetTitle()
-			, "> To do : Vector3"
+			, "> Inprogress : Inspection"
+			"\n" "> To do : Vector3"
 			"\n" "> To do : Encoding"
 			"\n" "> To do : Infinite Number"
 			"\n" "> To do : Thread"
