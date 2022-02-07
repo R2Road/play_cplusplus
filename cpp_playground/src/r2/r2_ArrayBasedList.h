@@ -151,7 +151,10 @@ namespace r2
 			//
 			mEnd4Live = mHead4Rest;
 			mHead4Rest = mHead4Rest->pNext;
-			mEnd4Live->pNext = nullptr;
+
+			mEnd4Live->pPrev = mEnd4Live;
+			mEnd4Live->pNext = mEnd4Live;
+
 			--mSize4Rest;
 
 			mSize = 0u;
@@ -210,23 +213,15 @@ namespace r2
 			auto new_front_node = GetRestNode();
 			new_front_node->MyValue = new_value;
 
-			if( nullptr == mEnd4Live->pNext )
-			{
-				mEnd4Live->pPrev = new_front_node;
-				mEnd4Live->pNext = new_front_node;
+			// Prev
+			mEnd4Live->pNext->pPrev = new_front_node;
 
-				new_front_node->pPrev = mEnd4Live;
-				new_front_node->pNext = mEnd4Live;
-			}
-			else
-			{
-				mEnd4Live->pNext->pPrev = new_front_node;
+			// New
+			new_front_node->pPrev = mEnd4Live;
+			new_front_node->pNext = mEnd4Live->pNext;
 
-				new_front_node->pPrev = mEnd4Live;
-				new_front_node->pNext = mEnd4Live->pNext;
-
-				mEnd4Live->pNext = new_front_node;
-			}
+			// NExt
+			mEnd4Live->pNext = new_front_node;
 
 			++mSize;
 		}
@@ -235,23 +230,15 @@ namespace r2
 			auto new_back_node = GetRestNode();
 			new_back_node->MyValue = new_value;
 
-			if( nullptr == mEnd4Live->pPrev )
-			{
-				mEnd4Live->pNext = new_back_node;
-				mEnd4Live->pPrev = new_back_node;
+			// Prev
+			mEnd4Live->pPrev->pNext = new_back_node;
 
-				new_back_node->pPrev = mEnd4Live;
-				new_back_node->pNext = mEnd4Live;
-			}
-			else
-			{
-				mEnd4Live->pPrev->pNext = new_back_node;
+			// New
+			new_back_node->pPrev = mEnd4Live->pPrev;
+			new_back_node->pNext = mEnd4Live;
 
-				new_back_node->pPrev = mEnd4Live->pPrev;
-				new_back_node->pNext = mEnd4Live;
-
-				mEnd4Live->pPrev = new_back_node;
-			}
+			// Next
+			mEnd4Live->pPrev = new_back_node;
 
 			++mSize;
 		}
