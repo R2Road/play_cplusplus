@@ -17,7 +17,7 @@ namespace r2
 			ret->AddChild( '1', array_based_list_test::Basic::GetInstance() );
 			ret->AddChild( '2', array_based_list_test::SizeAndClear::GetInstance() );
 			ret->AddChild( '3', array_based_list_test::PushBack::GetInstance() );
-			ret->AddChild( '4', array_based_list_test::Erase::GetInstance() );
+			ret->AddChild( '4', array_based_list_test::Erase_1::GetInstance() );
 			ret->AddChild( '5', array_based_list_test::Erase_2::GetInstance() );
 			ret->AddChild( '6', array_based_list_test::IteratorOperator_Indirection_StructureDereference::GetInstance() );
 			ret->AddChild( '7', array_based_list_test::RBegin_REnd::GetInstance() );

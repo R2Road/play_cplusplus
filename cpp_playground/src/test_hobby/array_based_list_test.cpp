@@ -183,14 +183,14 @@ namespace array_based_list_test
 
 
 
-	r2::iTest::TitleFunc Erase::GetTitleFunction() const
+	r2::iTest::TitleFunc Erase_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Array Based List : Erase";
+			return "Array Based List : Erase 1";
 		};
 	}
-	r2::iTest::DoFunc Erase::GetDoFunction()
+	r2::iTest::DoFunc Erase_1::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
