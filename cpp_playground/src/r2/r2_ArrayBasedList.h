@@ -215,6 +215,11 @@ namespace r2
 
 		void PushFront( const ValueT new_value )
 		{
+			if( 0 == GetRestNodeCount() )
+			{
+				return;
+			}
+
 			auto new_front_node = GetRestNode();
 			new_front_node->MyValue = new_value;
 
@@ -232,6 +237,11 @@ namespace r2
 		}
 		void PushBack( const ValueT new_value )
 		{
+			if( 0 == GetRestNodeCount() )
+			{
+				return;
+			}
+
 			auto new_back_node = GetRestNode();
 			new_back_node->MyValue = new_value;
 
