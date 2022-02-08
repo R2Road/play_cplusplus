@@ -88,20 +88,10 @@ namespace array_based_list_test
 				std::cout << r2::linefeed2;
 
 				list.PushFront( 33 );
-				std::cout << r2::tab << "list.PushFront( 33 );" << r2::linefeed2;
-				EXPECT_EQ( list.GetRestNodeCount(), 2 );
-				EXPECT_EQ( list.Size(), 3 );
-
-				std::cout << r2::linefeed2;
-
 				list.PushFront( 44 );
-				std::cout << r2::tab << "list.PushFront( 44 );" << r2::linefeed2;
-				EXPECT_EQ( list.GetRestNodeCount(), 1 );
-				EXPECT_EQ( list.Size(), 4 );
-
-				std::cout << r2::linefeed2;
-
 				list.PushFront( 55 );
+				std::cout << r2::tab << "list.PushFront( 33 );" << r2::linefeed;
+				std::cout << r2::tab << "list.PushFront( 44 );" << r2::linefeed;
 				std::cout << r2::tab << "list.PushFront( 55 );" << r2::linefeed2;
 				EXPECT_EQ( list.GetRestNodeCount(), 0 );
 				EXPECT_EQ( list.Size(), 5 );
