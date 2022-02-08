@@ -162,23 +162,17 @@ namespace array_based_list_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "+ Operator-- : Test Previous of the End" << r2::linefeed2;
+				std::cout << "+ Iterator : Operator--" << r2::linefeed2;
 
-				auto previous_of_the_end_itr = ( --list.end() );
-				std::cout << r2::tab << "auto previous_of_the_end_itr = ( --list.end() );" << r2::linefeed2;
-
-				EXPECT_EQ( previous_of_the_end_itr, list.end() );
+				EXPECT_EQ( ( --list.end() ), list.end() );
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "+ Operator++ : Test Next of the End" << r2::linefeed2;
+				std::cout << "+ Iterator : Operator++" << r2::linefeed2;
 
-				auto next_of_the_end_itr = ( ++list.end() );
-				std::cout << r2::tab << "auto next_of_the_end_itr = ( ++list.end() );" << r2::linefeed2;
-
-				EXPECT_EQ( next_of_the_end_itr, list.end() );
+				EXPECT_EQ( ( ++list.end() ), list.end() );
 			}
 
 			std::cout << r2::split;
