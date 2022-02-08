@@ -39,16 +39,16 @@ do {																											\
 	}																											\
 } while( false )
 
-#define	EXPECT_NQ( condition_1, condition_2 )																	\
+#define	EXPECT_NE( condition_1, condition_2 )																	\
 do {																											\
 	if( ( condition_1 ) != ( condition_2 ) )																	\
 	{																											\
-		printf( "\x1B[92m" "[PASS]" "\033[0m" " EXPECT_NQ( %s != %s )\n", #condition_1, #condition_2 );			\
+		printf( "\x1B[92m" "[PASS]" "\033[0m" " EXPECT_NE( %s != %s )\n", #condition_1, #condition_2 );			\
 	}																											\
 	else																										\
 	{																											\
 		__debugbreak();																							\
-		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_NQ( %s != %s )\n", #condition_1, #condition_2 );		\
+		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_NE( %s != %s )\n", #condition_1, #condition_2 );		\
 	}																											\
 } while( false )
 

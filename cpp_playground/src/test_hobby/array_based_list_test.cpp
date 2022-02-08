@@ -144,6 +144,24 @@ namespace array_based_list_test
 			std::cout << r2::split;
 
 			{
+				std::cout << "+ r2::ArrayBasedList::End" << r2::linefeed2;
+
+				auto end_itr = list.end();
+				std::cout << "auto end_itr = list.end();" << r2::linefeed2;
+
+				EXPECT_NE( end_itr.mTargetNode, nullptr );
+				EXPECT_NE( end_itr.mTargetNode->pPrev, nullptr );
+				EXPECT_NE( end_itr.mTargetNode->pNext, nullptr );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( end_itr.mTargetNode->pPrev, end_itr.mTargetNode );
+				EXPECT_EQ( end_itr.mTargetNode->pNext, end_itr.mTargetNode );
+			}
+
+			std::cout << r2::split;
+
+			{
 				std::cout << "+ Method : End : Test previous of the End" << r2::linefeed2;
 
 				auto previous_of_the_end_itr = ( --list.end() );
