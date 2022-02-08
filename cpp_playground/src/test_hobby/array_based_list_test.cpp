@@ -5,6 +5,8 @@
 #include "r2/r2_ArrayBasedList.h"
 #include "r2/r2_Point.h"
 
+#include "base/r2_Inspector.h"
+
 namespace array_based_list_test
 {
 	r2::iTest::TitleFunc Basic::GetTitleFunction() const
@@ -654,6 +656,70 @@ namespace array_based_list_test
 				std::cout << r2::tab << "+ View With ArrayBasedList::rbegin() And For( 10 > i )" << r2::linefeed2;
 				auto cur = ablist.rbegin();
 				for( int i = 0; 10 > i; ++i, ++cur )
+				{
+					std::cout << r2::tab2 << "> " << ( *cur ) << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc BasicWithInspector::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Array Based List : Basic With Inspector";
+		};
+	}
+	r2::iTest::DoFunc BasicWithInspector::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			r2::ArrayBasedList<int, 10> ablist;
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "r2::ArrayBasedList<int, 10> ablist" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				EXPECT_EQ( ablist.GetRestNodeCount(), 10 );
+			}
+
+			std::cout << r2::split;
+
+			{
+				ablist.PushFront( 11 );
+				ablist.PushFront( 22 );
+				ablist.PushFront( 33 );
+				ablist.PushFront( 44 );
+
+				std::cout << r2::tab << "+ Method : PushFront" << r2::linefeed2;
+				std::cout << r2::tab2 << "ablist.PushFront( 11 );" << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.PushFront( 22 );" << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.PushFront( 33 );" << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.PushFront( 44 );" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ View With ArrayBasedList::begin(), ArrayBasedList::end()" << r2::linefeed2;
+
+				for( auto cur = ablist.begin(), end = ablist.end(); end != cur; ++cur )
 				{
 					std::cout << r2::tab2 << "> " << ( *cur ) << r2::linefeed;
 				}

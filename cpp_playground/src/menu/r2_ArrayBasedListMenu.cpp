@@ -25,6 +25,13 @@ namespace r2
 			ret->AddChild( '9', array_based_list_test::ImprovedEndIterator::GetInstance() );
 
 
+			ret->AddLineFeed();
+			ret->AddLineFeed();
+
+
+			ret->AddChild( 'q', array_based_list_test::BasicWithInspector::GetInstance() );
+
+
 			ret->AddSplit();
 
 

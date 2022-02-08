@@ -611,5 +611,8 @@
     <ClInclude Include="src\test_hobby\vector3_test.h">
       <Filter>test_hobby</Filter>
     </ClInclude>
+    <ClInclude Include="src\base\r2_Inspector.h">
+      <Filter>base</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
