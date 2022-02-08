@@ -74,6 +74,86 @@ namespace array_based_list_test
 
 
 
+	r2::iTest::TitleFunc PushFront::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Array Based List : PushFront";
+		};
+	}
+	r2::iTest::DoFunc PushFront::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			r2::ArrayBasedList<int, 10> list;
+
+			{
+				std::cout << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab << "r2::ArrayBasedList<int, 10> list" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				EXPECT_EQ( list.GetRestNodeCount(), 10 );
+				EXPECT_EQ( list.Size(), 0 );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "+ Method : PushFront" << r2::linefeed2;
+
+				list.PushFront( 11 );
+				std::cout << "list.PushFront( 11 );" << r2::linefeed;
+				EXPECT_EQ( list.GetRestNodeCount(), 9 );
+				EXPECT_EQ( list.Size(), 1 );
+
+				std::cout << r2::linefeed;
+
+				list.PushFront( 22 );
+				std::cout << "list.PushFront( 22 );" << r2::linefeed;
+				EXPECT_EQ( list.GetRestNodeCount(), 8 );
+				EXPECT_EQ( list.Size(), 2 );
+
+				std::cout << r2::linefeed;
+
+				list.PushFront( 33 );
+				std::cout << "list.PushFront( 33 );" << r2::linefeed;
+				EXPECT_EQ( list.GetRestNodeCount(), 7 );
+				EXPECT_EQ( list.Size(), 3 );
+
+				std::cout << r2::linefeed;
+
+				list.PushFront( 44 );
+				std::cout << "list.PushFront( 44 );" << r2::linefeed;
+				EXPECT_EQ( list.GetRestNodeCount(), 6 );
+				EXPECT_EQ( list.Size(), 4 );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ View With ArrayBasedList::begin(), ArrayBasedList::end()" << r2::linefeed2;
+
+				for( auto cur = list.begin(), end = list.end(); end != cur; ++cur )
+				{
+					std::cout << r2::tab2 << "> " << ( *cur ) << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc SizeAndClear::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -656,86 +736,6 @@ namespace array_based_list_test
 				std::cout << r2::tab << "+ View With ArrayBasedList::rbegin() And For( 10 > i )" << r2::linefeed2;
 				auto cur = ablist.rbegin();
 				for( int i = 0; 10 > i; ++i, ++cur )
-				{
-					std::cout << r2::tab2 << "> " << ( *cur ) << r2::linefeed;
-				}
-			}
-
-			std::cout << r2::split;
-
-			return r2::eTestResult::RunTest;
-		};
-	}
-
-
-
-	r2::iTest::TitleFunc PushFront::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Array Based List : PushFront";
-		};
-	}
-	r2::iTest::DoFunc PushFront::GetDoFunction()
-	{
-		return []()->r2::eTestResult
-		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-
-			std::cout << r2::split;
-
-			r2::ArrayBasedList<int, 10> list;
-
-			{
-				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "r2::ArrayBasedList<int, 10> list" << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
-			{
-				EXPECT_EQ( list.GetRestNodeCount(), 10 );
-				EXPECT_EQ( list.Size(), 0 );
-			}
-
-			std::cout << r2::split;
-
-			{
-				std::cout << "+ Method : PushFront" << r2::linefeed2;
-
-				list.PushFront( 11 );
-				std::cout << "list.PushFront( 11 );" << r2::linefeed;
-				EXPECT_EQ( list.GetRestNodeCount(), 9 );
-				EXPECT_EQ( list.Size(), 1 );
-
-				std::cout << r2::linefeed;
-
-				list.PushFront( 22 );
-				std::cout << "list.PushFront( 22 );" << r2::linefeed;
-				EXPECT_EQ( list.GetRestNodeCount(), 8 );
-				EXPECT_EQ( list.Size(), 2 );
-
-				std::cout << r2::linefeed;
-
-				list.PushFront( 33 );
-				std::cout << "list.PushFront( 33 );" << r2::linefeed;
-				EXPECT_EQ( list.GetRestNodeCount(), 7 );
-				EXPECT_EQ( list.Size(), 3 );
-
-				std::cout << r2::linefeed;
-
-				list.PushFront( 44 );
-				std::cout << "list.PushFront( 44 );" << r2::linefeed;
-				EXPECT_EQ( list.GetRestNodeCount(), 6 );
-				EXPECT_EQ( list.Size(), 4 );
-			}
-
-			std::cout << r2::split;
-
-			{
-				std::cout << r2::tab << "+ View With ArrayBasedList::begin(), ArrayBasedList::end()" << r2::linefeed2;
-
-				for( auto cur = list.begin(), end = list.end(); end != cur; ++cur )
 				{
 					std::cout << r2::tab2 << "> " << ( *cur ) << r2::linefeed;
 				}
