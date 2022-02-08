@@ -119,6 +119,59 @@ namespace array_based_list_test
 
 
 
+
+
+
+	r2::iTest::TitleFunc EndIterator::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Array Based List : End Iterator";
+		};
+	}
+	r2::iTest::DoFunc EndIterator::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			r2::ArrayBasedList<int, 10> list;
+
+			{
+				std::cout << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab << "r2::ArrayBasedList<int, 10> list" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "+ Method : End : Test previous of the End" << r2::linefeed2;
+
+				auto previous_of_the_end_itr = ( --list.end() );
+				std::cout << "auto previous_of_the_end_itr = --( list.end() );" << r2::linefeed2;
+				EXPECT_EQ( previous_of_the_end_itr, list.end() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "+ Method : End : Test next of the End" << r2::linefeed2;
+
+				auto next_of_the_end_itr = ( ++list.end() );
+				std::cout << "auto next_of_the_end_itr = ++( list.end() );" << r2::linefeed2;
+				EXPECT_EQ( next_of_the_end_itr, list.end() );
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc SizeAndClear::GetTitleFunction() const
 	{
 		return []()->const char*

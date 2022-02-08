@@ -19,6 +19,13 @@ namespace array_based_list_test
 		DoFunc GetDoFunction() override;
 	};
 
+	class EndIterator : public r2::iTest, public r2::SingleTon<EndIterator>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
 	class SizeAndClear : public r2::iTest, public r2::SingleTon<SizeAndClear>
 	{
 	public:

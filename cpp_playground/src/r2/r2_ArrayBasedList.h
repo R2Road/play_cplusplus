@@ -29,6 +29,11 @@ namespace r2
 			mTargetNode = mTargetNode->pNext;
 			return ( *this );
 		}
+		ListIterator& operator--()
+		{
+			mTargetNode = mTargetNode->pPrev;
+			return ( *this );
+		}
 
 		bool operator==( const ListIterator& other ) const
 		{
