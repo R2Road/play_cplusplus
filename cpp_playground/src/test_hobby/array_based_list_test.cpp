@@ -71,31 +71,31 @@ namespace array_based_list_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "+ Method : PushFront" << r2::linefeed2;
+				std::cout << "+ r2::ArrayBasedList::PushFront" << r2::linefeed2;
 
 				list.PushFront( 11 );
-				std::cout << "list.PushFront( 11 );" << r2::linefeed;
+				std::cout << r2::tab << "list.PushFront( 11 );" << r2::linefeed2;
 				EXPECT_EQ( list.GetRestNodeCount(), 9 );
 				EXPECT_EQ( list.Size(), 1 );
 
-				std::cout << r2::linefeed;
+				std::cout << r2::linefeed2;
 
 				list.PushFront( 22 );
-				std::cout << "list.PushFront( 22 );" << r2::linefeed;
+				std::cout << r2::tab << "list.PushFront( 22 );" << r2::linefeed2;
 				EXPECT_EQ( list.GetRestNodeCount(), 8 );
 				EXPECT_EQ( list.Size(), 2 );
 
-				std::cout << r2::linefeed;
+				std::cout << r2::linefeed2;
 
 				list.PushFront( 33 );
-				std::cout << "list.PushFront( 33 );" << r2::linefeed;
+				std::cout << r2::tab << "list.PushFront( 33 );" << r2::linefeed2;
 				EXPECT_EQ( list.GetRestNodeCount(), 7 );
 				EXPECT_EQ( list.Size(), 3 );
 
-				std::cout << r2::linefeed;
+				std::cout << r2::linefeed2;
 
 				list.PushFront( 44 );
-				std::cout << "list.PushFront( 44 );" << r2::linefeed;
+				std::cout << r2::tab << "list.PushFront( 44 );" << r2::linefeed2;
 				EXPECT_EQ( list.GetRestNodeCount(), 6 );
 				EXPECT_EQ( list.Size(), 4 );
 			}
