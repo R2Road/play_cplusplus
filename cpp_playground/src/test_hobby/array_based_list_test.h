@@ -12,6 +12,13 @@ namespace array_based_list_test
 		DoFunc GetDoFunction() override;
 	};
 
+	class PushFront : public r2::iTest, public r2::SingleTon<PushFront>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
 	class SizeAndClear : public r2::iTest, public r2::SingleTon<SizeAndClear>
 	{
 	public:
@@ -62,13 +69,6 @@ namespace array_based_list_test
 	};
 
 	class ImprovedEndIterator : public r2::iTest, public r2::SingleTon<ImprovedEndIterator>
-	{
-	public:
-		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
-	};
-
-	class PushFront : public r2::iTest, public r2::SingleTon<PushFront>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
