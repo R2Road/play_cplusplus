@@ -669,14 +669,14 @@ namespace array_based_list_test
 
 
 
-	r2::iTest::TitleFunc BasicWithInspector::GetTitleFunction() const
+	r2::iTest::TitleFunc PushFront::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Array Based List : Basic With Inspector";
+			return "Array Based List : PushFront";
 		};
 	}
-	r2::iTest::DoFunc BasicWithInspector::GetDoFunction()
+	r2::iTest::DoFunc PushFront::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

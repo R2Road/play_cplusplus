@@ -29,7 +29,7 @@ namespace r2
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'q', array_based_list_test::BasicWithInspector::GetInstance() );
+			ret->AddChild( 'q', array_based_list_test::PushFront::GetInstance() );
 
 
 			ret->AddSplit();

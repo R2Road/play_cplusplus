@@ -68,7 +68,7 @@ namespace array_based_list_test
 		DoFunc GetDoFunction() override;
 	};
 
-	class BasicWithInspector : public r2::iTest, public r2::SingleTon<BasicWithInspector>
+	class PushFront : public r2::iTest, public r2::SingleTon<PushFront>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
