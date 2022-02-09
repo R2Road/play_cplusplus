@@ -25,10 +25,10 @@ namespace r2
 			ret->AddLineFeed();
 			ret->AddLineFeed();
 
-			ret->AddChild( 'e', array_based_list_test::Erase_1::GetInstance() );
-			ret->AddChild( 'r', array_based_list_test::Erase_2::GetInstance() );
-			ret->AddChild( 't', array_based_list_test::Erase_3::GetInstance() );
-			ret->AddChild( 'u', array_based_list_test::RBegin_REnd::GetInstance() );
+			ret->AddChild( 'q', array_based_list_test::Erase_1::GetInstance() );
+			ret->AddChild( 'w', array_based_list_test::Erase_2::GetInstance() );
+			ret->AddChild( 'e', array_based_list_test::Erase_3::GetInstance() );
+			ret->AddChild( 'r', array_based_list_test::RBegin_REnd::GetInstance() );
 
 
 			ret->AddSplit();
