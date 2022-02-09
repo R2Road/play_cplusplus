@@ -112,6 +112,57 @@ namespace array_based_list_test
 
 
 
+	// REF : https://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B
+	r2::iTest::TitleFunc IteratorOperator_Indirection_StructureDereference::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Array Based List : Iterator : operator*, operator->";
+		};
+	}
+	r2::iTest::DoFunc IteratorOperator_Indirection_StructureDereference::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			r2::ListNode<r2::Point> node{ { 11, 12 }, nullptr, nullptr };
+			r2::ListIterator<r2::Point> itr( &node );
+
+			{
+				std::cout << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab << "r2::ListNode<r2::Point> node{ { 11, 12 }, nullptr, nullptr };" << r2::linefeed;
+				std::cout << r2::tab << "r2::ListIterator<r2::Point> itr( &node );" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "+ List Iterator Operator : *" << r2::linefeed2;
+
+				EXPECT_EQ( ( *itr ).x, 11 );
+				EXPECT_EQ( ( *itr ).y, 12 );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "+ List Iterator Operator : ->" << r2::linefeed2;
+
+				EXPECT_EQ( itr->x, 11 );
+				EXPECT_EQ( itr->y, 12 );
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc EndIterator::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -250,57 +301,6 @@ namespace array_based_list_test
 				EXPECT_EQ( *( --itr ), 22 );
 				EXPECT_EQ( *( --itr ), 33 );
 				EXPECT_EQ( ( --itr ), list.end() );
-			}
-
-			std::cout << r2::split;
-
-			return r2::eTestResult::RunTest;
-		};
-	}
-
-
-
-	// REF : https://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B
-	r2::iTest::TitleFunc IteratorOperator_Indirection_StructureDereference::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Array Based List : Iterator : operator*, operator->";
-		};
-	}
-	r2::iTest::DoFunc IteratorOperator_Indirection_StructureDereference::GetDoFunction()
-	{
-		return []()->r2::eTestResult
-		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-
-			std::cout << r2::split;
-
-			r2::ListNode<r2::Point> node{ { 11, 12 }, nullptr, nullptr };
-			r2::ListIterator<r2::Point> itr( &node );
-
-			{
-				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "r2::ListNode<r2::Point> node{ { 11, 12 }, nullptr, nullptr };" << r2::linefeed;
-				std::cout << r2::tab << "r2::ListIterator<r2::Point> itr( &node );" << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
-			{
-				std::cout << "+ List Iterator Operator : *" << r2::linefeed2;
-
-				EXPECT_EQ( ( *itr ).x, 11 );
-				EXPECT_EQ( ( *itr ).y, 12 );
-			}
-
-			std::cout << r2::split;
-
-			{
-				std::cout << "+ List Iterator Operator : ->" << r2::linefeed2;
-				
-				EXPECT_EQ( itr->x, 11 );
-				EXPECT_EQ( itr->y, 12 );
 			}
 
 			std::cout << r2::split;

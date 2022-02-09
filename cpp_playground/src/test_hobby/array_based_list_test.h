@@ -19,6 +19,13 @@ namespace array_based_list_test
 		DoFunc GetDoFunction() override;
 	};
 
+	class IteratorOperator_Indirection_StructureDereference : public r2::iTest, public r2::SingleTon<IteratorOperator_Indirection_StructureDereference>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
 	class EndIterator : public r2::iTest, public r2::SingleTon<EndIterator>
 	{
 	public:
@@ -27,13 +34,6 @@ namespace array_based_list_test
 	};
 
 	class BeginIterator : public r2::iTest, public r2::SingleTon<BeginIterator>
-	{
-	public:
-		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
-	};
-
-	class IteratorOperator_Indirection_StructureDereference : public r2::iTest, public r2::SingleTon<IteratorOperator_Indirection_StructureDereference>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
