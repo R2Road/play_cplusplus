@@ -363,35 +363,57 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			r2::ArrayBasedList<int, 10> ablist;
+			r2::ArrayBasedList<int, 3> list;
 
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2::ArrayBasedList<int, 10> ablist" << r2::linefeed;
+				std::cout << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab << "r2::ArrayBasedList<int, 3> list" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				ablist.PushBack( 11 );
-				ablist.PushBack( 22 );
-				ablist.PushBack( 33 );
-				ablist.PushBack( 44 );
+				std::cout << "+ r2::ArrayBasedList::PushBack" << r2::linefeed2;
 
-				std::cout << r2::tab << "+ Method : PushBack" << r2::linefeed2;
-				std::cout << r2::tab2 << "ablist.PushBack( 11 );" << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.PushBack( 22 );" << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.PushBack( 33 );" << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.PushBack( 44 );" << r2::linefeed2;
+				list.PushBack( 11 );
+				std::cout << r2::tab << "list.PushBack( 11 );" << r2::linefeed2;
+				EXPECT_EQ( *list.begin(), 11 );
+				EXPECT_EQ( *( --list.end() ), 11 );
+				EXPECT_EQ( list.GetRestNodeCount(), 2 );
+				EXPECT_EQ( list.Size(), 1 );				
 
-				std::cout << r2::tab << "+ View With Ranged For" << r2::linefeed2;
-				for( const auto& cur : ablist )
-				{
-					std::cout << r2::tab2 << "> " << cur << r2::linefeed;
-				}
-				std::cout << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
+				std::cout << r2::linefeed2;
+
+				list.PushBack( 22 );
+				std::cout << r2::tab << "list.PushBack( 22 );" << r2::linefeed2;
+				EXPECT_EQ( *list.begin(), 11 );
+				EXPECT_EQ( *( ++list.begin() ), 22 );
+				EXPECT_EQ( *( --list.end() ), 22 );
+				EXPECT_EQ( list.GetRestNodeCount(), 1 );
+				EXPECT_EQ( list.Size(), 2 );
+
+				std::cout << r2::linefeed2;
+
+				list.PushBack( 33 );
+				std::cout << r2::tab << "list.PushBack( 33 );" << r2::linefeed2;
+				EXPECT_EQ( *list.begin(), 11 );
+				EXPECT_EQ( *( ++list.begin() ), 22 );
+				EXPECT_EQ( *( ++( ++list.begin() ) ), 33 );
+				EXPECT_EQ( *( --list.end() ), 33 );
+				EXPECT_EQ( list.GetRestNodeCount(), 0 );
+				EXPECT_EQ( list.Size(), 3 );
+
+				std::cout << r2::linefeed2;
+
+				list.PushBack( 44 );
+				std::cout << r2::tab << "list.PushBack( 44 );" << r2::linefeed2;
+				EXPECT_EQ( *list.begin(), 11 );
+				EXPECT_EQ( *( ++list.begin() ), 22 );
+				EXPECT_EQ( *( ++( ++list.begin() ) ), 33 );
+				EXPECT_EQ( ++( ++( ++list.begin() ) ), list.end() );
+				EXPECT_EQ( *( --list.end() ), 33 );
+				EXPECT_EQ( list.GetRestNodeCount(), 0 );
+				EXPECT_EQ( list.Size(), 3 );
 			}
 
 			std::cout << r2::split;
