@@ -506,6 +506,13 @@ namespace array_based_list_test
 			std::cout << r2::split;
 
 			{
+				EXPECT_EQ( list.GetRestNodeCount(), 2 );
+				EXPECT_EQ( list.Size(), 3 );
+			}
+
+			std::cout << r2::split;
+
+			{
 				std::cout << "+ r2::ArrayBasedList::Erase" << r2::linefeed2;
 
 				auto return_itr = list.Erase( ++list.begin() );
@@ -513,6 +520,11 @@ namespace array_based_list_test
 				std::cout << r2::tab << "auto return_itr = list.Erase( ( ++list.begin() ) );" << r2::linefeed;
 				std::cout << r2::tab << "auto copied_itr = return_itr;" << r2::linefeed2;
 				
+				EXPECT_EQ( list.GetRestNodeCount(), 3 );
+				EXPECT_EQ( list.Size(), 2 );
+
+				std::cout << r2::linefeed;
+
 				EXPECT_EQ( *return_itr, 33 );
 
 				std::cout << r2::linefeed;
@@ -525,12 +537,7 @@ namespace array_based_list_test
 
 				EXPECT_EQ( ( ++copied_itr ), list.end() );
 				EXPECT_EQ( *( ++copied_itr ), 11 );
-				EXPECT_EQ( *( ++copied_itr ), 33 );
-
-				std::cout << r2::linefeed;
-
-				EXPECT_EQ( list.GetRestNodeCount(), 3 );
-				EXPECT_EQ( list.Size(), 2 );
+				EXPECT_EQ( *( ++copied_itr ), 33 );				
 			}
 
 			std::cout << r2::split;
