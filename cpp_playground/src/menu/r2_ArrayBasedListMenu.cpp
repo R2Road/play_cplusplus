@@ -26,7 +26,6 @@ namespace r2
 			ret->AddLineFeed();
 
 			ret->AddChild( 'q', array_based_list_test::Erase_1::GetInstance() );
-			ret->AddChild( 'w', array_based_list_test::Erase_2::GetInstance() );
 			ret->AddChild( 'r', array_based_list_test::RBegin_REnd::GetInstance() );
 
 

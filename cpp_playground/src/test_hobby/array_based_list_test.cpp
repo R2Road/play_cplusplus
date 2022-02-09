@@ -542,58 +542,15 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
-		};
-	}
-
-
-
-	r2::iTest::TitleFunc Erase_2::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Array Based List : Erase 2";
-		};
-	}
-	r2::iTest::DoFunc Erase_2::GetDoFunction()
-	{
-		return []()->r2::eTestResult
-		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-
-			std::cout << r2::split;
-
-			r2::ArrayBasedList<int, 5> list;
-			list.PushBack( 11 );
-			list.PushBack( 22 );
-			list.PushBack( 33 );
-
 			{
-				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "r2::ArrayBasedList<int, 5> list" << r2::linefeed;
-				std::cout << r2::tab << "list.PushBack( 11 );" << r2::linefeed;
-				std::cout << r2::tab << "list.PushBack( 22 );" << r2::linefeed;
-				std::cout << r2::tab << "list.PushBack( 33 );" << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
-			{
-				EXPECT_EQ( list.GetRestNodeCount(), 2 );
-				EXPECT_EQ( list.Size(), 3 );
-			}
-
-			std::cout << r2::split;
-
-			{
-				std::cout << "+ r2::ArrayBasedList::Erase" << r2::linefeed2;
+				std::cout << "+ r2::ArrayBasedList::Erase : Erase End" << r2::linefeed2;
 
 				auto return_itr = list.Erase( list.end() );
 				std::cout << r2::tab << "auto return_itr = list.Erase( list.end() );" << r2::linefeed2;
 
 				EXPECT_EQ( return_itr, list.end() );
-				EXPECT_EQ( list.GetRestNodeCount(), 2 );
-				EXPECT_EQ( list.Size(), 3 );
+				EXPECT_EQ( list.GetRestNodeCount(), 3 );
+				EXPECT_EQ( list.Size(), 2 );
 			}
 
 			std::cout << r2::split;
