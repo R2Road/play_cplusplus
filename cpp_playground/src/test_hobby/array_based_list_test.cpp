@@ -258,14 +258,14 @@ namespace array_based_list_test
 
 
 
-	r2::iTest::TitleFunc SizeAndClear::GetTitleFunction() const
+	r2::iTest::TitleFunc Clear::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Array Based List : Size and Clear";
+			return "Array Based List : Clear";
 		};
 	}
-	r2::iTest::DoFunc SizeAndClear::GetDoFunction()
+	r2::iTest::DoFunc Clear::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

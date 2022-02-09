@@ -33,7 +33,7 @@ namespace array_based_list_test
 		DoFunc GetDoFunction() override;
 	};
 
-	class SizeAndClear : public r2::iTest, public r2::SingleTon<SizeAndClear>
+	class Clear : public r2::iTest, public r2::SingleTon<Clear>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

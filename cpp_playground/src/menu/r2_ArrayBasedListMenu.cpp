@@ -22,7 +22,7 @@ namespace r2
 			ret->AddLineFeed();
 			ret->AddLineFeed();
 
-			ret->AddChild( 'q', array_based_list_test::SizeAndClear::GetInstance() );
+			ret->AddChild( 'q', array_based_list_test::Clear::GetInstance() );
 			ret->AddChild( 'w', array_based_list_test::PushBack::GetInstance() );
 			ret->AddChild( 'e', array_based_list_test::Erase_1::GetInstance() );
 			ret->AddChild( 'r', array_based_list_test::Erase_2::GetInstance() );
