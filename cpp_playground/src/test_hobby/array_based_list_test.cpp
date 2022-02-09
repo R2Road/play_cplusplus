@@ -280,34 +280,27 @@ namespace array_based_list_test
 			ablist.PushBack( { 11, 12 } );
 
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2::ArrayBasedList<r2::Point, 5> ablist;" << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.PushBack( { 11, 12 } );" << r2::linefeed2;
-
-				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
+				std::cout << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab << "r2::ArrayBasedList<r2::Point, 5> ablist;" << r2::linefeed;
+				std::cout << r2::tab << "ablist.PushBack( { 11, 12 } );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				auto target_itr = ablist.begin();
+				std::cout << "+ List Iterator Operator : *" << r2::linefeed2;
 
-				std::cout << r2::tab << "+ List Iterator Operator : *" << r2::linefeed2;
-				std::cout << r2::tab2 << "auto target_itr = ablist.begin();" << r2::linefeed;
-				std::cout << r2::tab2 << "( *target_itr ).x;" << " > " << ( *target_itr ).x << r2::linefeed;
-				std::cout << r2::tab2 << "( *target_itr ).y;" << " > " << ( *target_itr ).y << r2::linefeed;
+				EXPECT_EQ( ( *ablist.begin() ).x, 11 );
+				EXPECT_EQ( ( *ablist.begin() ).y, 12 );
 			}
 
 			std::cout << r2::split;
 
 			{
-				auto target_itr = ablist.begin();
-
-				std::cout << r2::tab << "+ List Iterator Operator : ->" << r2::linefeed2;
-				std::cout << r2::tab2 << "auto target_itr = ablist.begin();" << r2::linefeed;
-				std::cout << r2::tab2 << "target_itr->x;" << " > " << target_itr->x << r2::linefeed;
-				std::cout << r2::tab2 << "target_itr->y;" << " > " << target_itr->y << r2::linefeed;
+				std::cout << "+ List Iterator Operator : ->" << r2::linefeed2;
+				
+				EXPECT_EQ( ablist.begin()->x, 11 );
+				EXPECT_EQ( ablist.begin()->y, 12 );
 			}
 
 			std::cout << r2::split;
