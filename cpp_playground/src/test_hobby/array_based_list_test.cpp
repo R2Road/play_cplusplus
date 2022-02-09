@@ -187,6 +187,64 @@ namespace array_based_list_test
 
 
 
+	r2::iTest::TitleFunc BeginIterator::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Array Based List : Begin Iterator( To do )";
+		};
+	}
+	r2::iTest::DoFunc BeginIterator::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			r2::ArrayBasedList<int, 3> list;
+
+			{
+				std::cout << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab << "r2::ArrayBasedList<int, 3> list" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "+ r2::ArrayBasedList::Begin" << r2::linefeed2;
+
+				list.PushFront( 11 );
+				std::cout << r2::tab << "list.PushFront( 11 );" << r2::linefeed2;
+				EXPECT_EQ( ( *list.begin() ), 11 );
+
+				std::cout << r2::linefeed2;
+
+				list.PushFront( 22 );
+				std::cout << r2::tab << "list.PushFront( 22 );" << r2::linefeed2;
+				EXPECT_EQ( ( *list.begin() ), 22 );
+
+				std::cout << r2::linefeed2;
+
+				list.PushFront( 33 );
+				std::cout << r2::tab << "list.PushFront( 33 );" << r2::linefeed2;
+				EXPECT_EQ( ( *list.begin() ), 33 );
+
+				std::cout << r2::linefeed2;
+
+				list.PushFront( 44 );
+				std::cout << r2::tab << "list.PushFront( 44 );" << r2::linefeed2;
+				EXPECT_EQ( ( *list.begin() ), 33 );
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc SizeAndClear::GetTitleFunction() const
 	{
 		return []()->const char*
