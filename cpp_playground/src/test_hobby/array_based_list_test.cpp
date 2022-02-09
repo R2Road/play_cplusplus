@@ -276,13 +276,13 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			r2::ArrayBasedList<r2::Point, 5> ablist;
-			ablist.PushBack( { 11, 12 } );
+			r2::ListNode<r2::Point> node{ { 11, 12 }, nullptr, nullptr };
+			r2::ListIterator<r2::Point> itr( &node );
 
 			{
 				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "r2::ArrayBasedList<r2::Point, 5> ablist;" << r2::linefeed;
-				std::cout << r2::tab << "ablist.PushBack( { 11, 12 } );" << r2::linefeed;
+				std::cout << r2::tab << "r2::ListNode<r2::Point> node{ { 11, 12 }, nullptr, nullptr };" << r2::linefeed;
+				std::cout << r2::tab << "r2::ListIterator<r2::Point> itr( &node );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -290,8 +290,8 @@ namespace array_based_list_test
 			{
 				std::cout << "+ List Iterator Operator : *" << r2::linefeed2;
 
-				EXPECT_EQ( ( *ablist.begin() ).x, 11 );
-				EXPECT_EQ( ( *ablist.begin() ).y, 12 );
+				EXPECT_EQ( ( *itr ).x, 11 );
+				EXPECT_EQ( ( *itr ).y, 12 );
 			}
 
 			std::cout << r2::split;
@@ -299,8 +299,8 @@ namespace array_based_list_test
 			{
 				std::cout << "+ List Iterator Operator : ->" << r2::linefeed2;
 				
-				EXPECT_EQ( ablist.begin()->x, 11 );
-				EXPECT_EQ( ablist.begin()->y, 12 );
+				EXPECT_EQ( itr->x, 11 );
+				EXPECT_EQ( itr->y, 12 );
 			}
 
 			std::cout << r2::split;
