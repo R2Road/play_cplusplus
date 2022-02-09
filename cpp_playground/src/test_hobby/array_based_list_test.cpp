@@ -260,6 +260,64 @@ namespace array_based_list_test
 
 
 
+	// REF : https://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B
+	r2::iTest::TitleFunc IteratorOperator_Indirection_StructureDereference::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Array Based List : Iterator : operator*, operator->";
+		};
+	}
+	r2::iTest::DoFunc IteratorOperator_Indirection_StructureDereference::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			r2::ArrayBasedList<r2::Point, 5> ablist;
+			ablist.PushBack( { 11, 12 } );
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "r2::ArrayBasedList<r2::Point, 5> ablist;" << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.PushBack( { 11, 12 } );" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
+				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				auto target_itr = ablist.begin();
+
+				std::cout << r2::tab << "+ List Iterator Operator : *" << r2::linefeed2;
+				std::cout << r2::tab2 << "auto target_itr = ablist.begin();" << r2::linefeed;
+				std::cout << r2::tab2 << "( *target_itr ).x;" << " > " << ( *target_itr ).x << r2::linefeed;
+				std::cout << r2::tab2 << "( *target_itr ).y;" << " > " << ( *target_itr ).y << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				auto target_itr = ablist.begin();
+
+				std::cout << r2::tab << "+ List Iterator Operator : ->" << r2::linefeed2;
+				std::cout << r2::tab2 << "auto target_itr = ablist.begin();" << r2::linefeed;
+				std::cout << r2::tab2 << "target_itr->x;" << " > " << target_itr->x << r2::linefeed;
+				std::cout << r2::tab2 << "target_itr->y;" << " > " << target_itr->y << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc Clear::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -719,64 +777,6 @@ namespace array_based_list_test
 
 				std::cout << r2::tab2 << "ablist.Size();" << " > " << ablist.Size();
 				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << " > " << ablist.GetRestNodeCount() << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
-			return r2::eTestResult::RunTest;
-		};
-	}
-
-
-
-	// REF : https://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B
-	r2::iTest::TitleFunc IteratorOperator_Indirection_StructureDereference::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Array Based List : Iterator : operator*, operator->";
-		};
-	}
-	r2::iTest::DoFunc IteratorOperator_Indirection_StructureDereference::GetDoFunction()
-	{
-		return []()->r2::eTestResult
-		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-
-			std::cout << r2::split;
-
-			r2::ArrayBasedList<r2::Point, 5> ablist;
-			ablist.PushBack( { 11, 12 } );
-
-			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2::ArrayBasedList<r2::Point, 5> ablist;" << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.PushBack( { 11, 12 } );" << r2::linefeed2;
-
-				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
-			{
-				auto target_itr = ablist.begin();
-
-				std::cout << r2::tab << "+ List Iterator Operator : *" << r2::linefeed2;
-				std::cout << r2::tab2 << "auto target_itr = ablist.begin();" << r2::linefeed;
-				std::cout << r2::tab2 << "( *target_itr ).x;" << " > " << ( *target_itr ).x << r2::linefeed;
-				std::cout << r2::tab2 << "( *target_itr ).y;" << " > " << ( *target_itr ).y << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
-			{
-				auto target_itr = ablist.begin();
-
-				std::cout << r2::tab << "+ List Iterator Operator : ->" << r2::linefeed2;
-				std::cout << r2::tab2 << "auto target_itr = ablist.begin();" << r2::linefeed;
-				std::cout << r2::tab2 << "target_itr->x;" << " > " << target_itr->x << r2::linefeed;
-				std::cout << r2::tab2 << "target_itr->y;" << " > " << target_itr->y << r2::linefeed;
 			}
 
 			std::cout << r2::split;
