@@ -273,38 +273,36 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			r2::ArrayBasedList<int, 10> ablist;
-			ablist.PushFront( 11 );
-			ablist.PushFront( 22 );
-			ablist.PushFront( 33 );
+			r2::ArrayBasedList<int, 10> list;
+			list.PushFront( 11 );
+			list.PushFront( 22 );
+			list.PushFront( 33 );
 
 			{
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2::ArrayBasedList<int, 10> ablist" << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.PushFront( 11 );" << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.PushFront( 22 );" << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.PushFront( 33 );" << r2::linefeed2;
-
-				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
+				std::cout << r2::tab2 << "r2::ArrayBasedList<int, 10> list" << r2::linefeed;
+				std::cout << r2::tab2 << "list.PushFront( 11 );" << r2::linefeed;
+				std::cout << r2::tab2 << "list.PushFront( 22 );" << r2::linefeed;
+				std::cout << r2::tab2 << "list.PushFront( 33 );" << r2::linefeed2;
 			}
 
 			std::cout << r2::split;
 
 			{
 				std::cout << r2::tab << "+ Method : Size" << r2::linefeed2;
-				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
+				std::cout << r2::tab2 << "list.Size();" << r2::tab << ">" << r2::tab << list.Size() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				ablist.Clear();
+				list.Clear();
 
 				std::cout << r2::tab << "+ Method : Clear" << r2::linefeed2;
-				std::cout << r2::tab2 << "ablist.Clear();" << r2::linefeed2;
+				std::cout << r2::tab2 << "list.Clear();" << r2::linefeed2;
 
-				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
+				std::cout << r2::tab2 << "list.GetRestNodeCount();" << r2::tab << ">" << r2::tab << list.GetRestNodeCount() << r2::linefeed;
+				std::cout << r2::tab2 << "list.Size();" << r2::tab << ">" << r2::tab << list.Size() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
