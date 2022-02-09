@@ -236,6 +236,7 @@ namespace array_based_list_test
 				EXPECT_EQ( *( ++itr ), 22 );
 				EXPECT_EQ( *( ++itr ), 11 );
 				EXPECT_EQ( ( ++itr ), list.end() );
+				EXPECT_EQ( ( ++itr ), list.begin() );
 			}
 
 			std::cout << r2::split;
@@ -248,6 +249,7 @@ namespace array_based_list_test
 				EXPECT_EQ( *( --itr ), 11 );
 				EXPECT_EQ( *( --itr ), 22 );
 				EXPECT_EQ( *( --itr ), 33 );
+				EXPECT_EQ( ( --itr ), list.end() );
 			}
 
 			std::cout << r2::split;
