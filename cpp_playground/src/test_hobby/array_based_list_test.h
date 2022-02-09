@@ -54,7 +54,7 @@ namespace array_based_list_test
 		DoFunc GetDoFunction() override;
 	};
 
-	class Erase_1 : public r2::iTest, public r2::SingleTon<Erase_1>
+	class Erase : public r2::iTest, public r2::SingleTon<Erase>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
