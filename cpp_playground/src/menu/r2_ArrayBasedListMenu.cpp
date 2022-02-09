@@ -29,7 +29,6 @@ namespace r2
 			ret->AddChild( 'r', array_based_list_test::Erase_2::GetInstance() );
 			ret->AddChild( 't', array_based_list_test::Erase_3::GetInstance() );
 			ret->AddChild( 'u', array_based_list_test::RBegin_REnd::GetInstance() );
-			ret->AddChild( 'i', array_based_list_test::ImprovedEndIterator::GetInstance() );
 
 
 			ret->AddSplit();
