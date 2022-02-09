@@ -490,77 +490,47 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			r2::ArrayBasedList<int, 5> ablist;
-			ablist.PushBack( 11 );
-			ablist.PushBack( 22 );
-			ablist.PushBack( 33 );
+			r2::ArrayBasedList<int, 5> list;
+			list.PushBack( 11 );
+			list.PushBack( 22 );
+			list.PushBack( 33 );
 
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2::ArrayBasedList<int, 5> ablist" << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.PushBack( 11 );" << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.PushBack( 22 );" << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.PushBack( 33 );" << r2::linefeed2;
-
-				std::cout << r2::tab2;
-				for( const auto& cur : ablist )
-				{
-					std::cout << "> " << cur << r2::tab;
-				}
-				std::cout << r2::linefeed2;
-
-				std::cout << r2::tab2 << "ablist.Size();" << " > " << ablist.Size();
-				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << " > " << ablist.GetRestNodeCount() << r2::linefeed;
+				std::cout << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab << "r2::ArrayBasedList<int, 5> list" << r2::linefeed;
+				std::cout << r2::tab << "list.PushBack( 11 );" << r2::linefeed;
+				std::cout << r2::tab << "list.PushBack( 22 );" << r2::linefeed;
+				std::cout << r2::tab << "list.PushBack( 33 );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				auto target_itr = ablist.begin();
-				++target_itr;
-				target_itr = ablist.Erase( target_itr );
+				std::cout << "+ r2::ArrayBasedList::Erase" << r2::linefeed2;
 
-				std::cout << r2::tab << "+ Method : Erase" << r2::linefeed2;
-				std::cout << r2::tab2 << "auto target_itr = ablist.begin();" << r2::linefeed;
-				std::cout << r2::tab2 << "++target_itr;" << r2::linefeed;
-				std::cout << r2::tab2 << "target_itr = ablist.Erase( target_itr );" << r2::linefeed2;
-
-				std::cout << r2::tab << "+ View With Ranged For" << r2::linefeed2;
-				std::cout << r2::tab2;
-				for( const auto& cur : ablist )
-				{
-					std::cout << "> " << cur << r2::tab;
-				}
-				std::cout << r2::linefeed2;
+				auto return_itr = list.Erase( ++list.begin() );
+				auto copied_itr = return_itr;
+				std::cout << r2::tab << "auto return_itr = list.Erase( ( ++list.begin() ) );" << r2::linefeed;
+				std::cout << r2::tab << "auto copied_itr = return_itr;" << r2::linefeed2;
 				
-				std::cout << r2::tab2 << "ablist.Size();" << " > " << ablist.Size();
-				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << " > " << ablist.GetRestNodeCount() << r2::linefeed;
-			}
+				EXPECT_EQ( *return_itr, 33 );
 
-			std::cout << r2::split;
+				std::cout << r2::linefeed;
 
-			{
-				for( int i = 0, end = ablist.GetRestNodeCount(); end > i; ++i )
-				{
-					ablist.PushBack( i );
-				}
+				EXPECT_EQ( *( --return_itr ), 11 );
+				EXPECT_EQ( ( --return_itr ), list.end() );
+				EXPECT_EQ( *( --return_itr ), 33 );
 
-				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "for( int i = 0, end = ablist.GetRestNodeCount(); end > i; ++i )" << r2::linefeed;
-				std::cout << r2::tab2 << "{" << r2::linefeed;
-				std::cout << r2::tab3 << "ablist.PushBack( i );" << r2::linefeed;
-				std::cout << r2::tab2 << "}" << r2::linefeed2;
+				std::cout << r2::linefeed;
 
-				std::cout << r2::tab << "+ View With Ranged For" << r2::linefeed2;
-				std::cout << r2::tab2;
-				for( const auto& cur : ablist )
-				{
-					std::cout << "> " << cur << r2::tab;
-				}
-				std::cout << r2::linefeed2;
-				
-				std::cout << r2::tab2 << "ablist.Size();" << " > " << ablist.Size();
-				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << " > " << ablist.GetRestNodeCount() << r2::linefeed;
+				EXPECT_EQ( ( ++copied_itr ), list.end() );
+				EXPECT_EQ( *( ++copied_itr ), 11 );
+				EXPECT_EQ( *( ++copied_itr ), 33 );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( list.GetRestNodeCount(), 3 );
+				EXPECT_EQ( list.Size(), 2 );
 			}
 
 			std::cout << r2::split;
