@@ -19,13 +19,13 @@ namespace r2
 			ret->AddChild( '3', array_based_list_test::IteratorOperator_Indirection_StructureDereference::GetInstance() );
 			ret->AddChild( '4', array_based_list_test::EndIterator::GetInstance() );
 			ret->AddChild( '5', array_based_list_test::BeginIterator::GetInstance() );
-			ret->AddChild( '6', array_based_list_test::Clear::GetInstance() );
-			ret->AddChild( '7', array_based_list_test::PushBack::GetInstance() );
 
 			ret->AddLineFeed();
 			ret->AddLineFeed();
 
-			ret->AddChild( 'q', array_based_list_test::Erase::GetInstance() );
+			ret->AddChild( 'q', array_based_list_test::Clear::GetInstance() );
+			ret->AddChild( 'w', array_based_list_test::PushBack::GetInstance() );
+			ret->AddChild( 'e', array_based_list_test::Erase::GetInstance() );
 			ret->AddChild( 'r', array_based_list_test::RBegin_REnd::GetInstance() );
 
 
