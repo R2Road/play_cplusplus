@@ -191,7 +191,7 @@ namespace array_based_list_test
 	{
 		return []()->const char*
 		{
-			return "Array Based List : Begin Iterator( To do )";
+			return "Array Based List : Begin Iterator";
 		};
 	}
 	r2::iTest::DoFunc BeginIterator::GetDoFunction()
@@ -235,6 +235,30 @@ namespace array_based_list_test
 				list.PushFront( 44 );
 				std::cout << r2::tab << "list.PushFront( 44 );" << r2::linefeed2;
 				EXPECT_EQ( ( *list.begin() ), 33 );
+			}
+
+			std::cout << r2::split;
+
+			{
+				auto itr = list.begin();
+				std::cout << r2::tab << "auto itr = list.begin();" << r2::linefeed2;
+
+				EXPECT_EQ( *itr, 33 );
+				EXPECT_EQ( *( ++itr ), 22 );
+				EXPECT_EQ( *( ++itr ), 11 );
+				EXPECT_EQ( ( ++itr ), list.end() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				auto itr = list.begin();
+				std::cout << r2::tab << "auto itr = list.begin();" << r2::linefeed2;
+
+				EXPECT_EQ( ( --itr ), list.end() );
+				EXPECT_EQ( *( --itr ), 11 );
+				EXPECT_EQ( *( --itr ), 22 );
+				EXPECT_EQ( *( --itr ), 33 );
 			}
 
 			std::cout << r2::split;
