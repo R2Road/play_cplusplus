@@ -273,36 +273,69 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			r2::ArrayBasedList<int, 10> list;
+			r2::ArrayBasedList<int, 3> list;
 			list.PushFront( 11 );
 			list.PushFront( 22 );
 			list.PushFront( 33 );
 
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2::ArrayBasedList<int, 10> list" << r2::linefeed;
-				std::cout << r2::tab2 << "list.PushFront( 11 );" << r2::linefeed;
-				std::cout << r2::tab2 << "list.PushFront( 22 );" << r2::linefeed;
-				std::cout << r2::tab2 << "list.PushFront( 33 );" << r2::linefeed2;
+				std::cout << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab << "r2::ArrayBasedList<int, 3> list" << r2::linefeed;
+				std::cout << r2::tab << "list.PushFront( 11 );" << r2::linefeed;
+				std::cout << r2::tab << "list.PushFront( 22 );" << r2::linefeed;
+				std::cout << r2::tab << "list.PushFront( 33 );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Method : Size" << r2::linefeed2;
-				std::cout << r2::tab2 << "list.Size();" << r2::tab << ">" << r2::tab << list.Size() << r2::linefeed;
+				EXPECT_EQ( list.GetRestNodeCount(), 0 );
+				EXPECT_EQ( list.Size(), 3 );
 			}
 
 			std::cout << r2::split;
 
 			{
+				std::cout << "+ r2::ArrayBasedList::Clear" << r2::linefeed2;
+
 				list.Clear();
+				std::cout << r2::tab << "list.Clear();" << r2::linefeed2;
 
-				std::cout << r2::tab << "+ Method : Clear" << r2::linefeed2;
-				std::cout << r2::tab2 << "list.Clear();" << r2::linefeed2;
+				EXPECT_EQ( list.GetRestNodeCount(), 3 );
+				EXPECT_EQ( list.Size(), 0 );
+			}
 
-				std::cout << r2::tab2 << "list.GetRestNodeCount();" << r2::tab << ">" << r2::tab << list.GetRestNodeCount() << r2::linefeed;
-				std::cout << r2::tab2 << "list.Size();" << r2::tab << ">" << r2::tab << list.Size() << r2::linefeed;
+			std::cout << r2::split;
+
+			{
+				list.PushFront( 111 );
+				std::cout << r2::tab << "list.PushFront( 111 );" << r2::linefeed2;
+				EXPECT_EQ( ( *list.begin() ), 111 );
+
+				std::cout << r2::linefeed2;
+
+				list.PushFront( 222 );
+				std::cout << r2::tab << "list.PushFront( 222 );" << r2::linefeed2;
+				EXPECT_EQ( ( *list.begin() ), 222 );
+
+				std::cout << r2::linefeed2;
+
+				list.PushFront( 333 );
+				std::cout << r2::tab << "list.PushFront( 333 );" << r2::linefeed2;
+				EXPECT_EQ( ( *list.begin() ), 333 );
+			}
+
+			std::cout << r2::split;
+
+			{
+				auto itr = list.begin();
+				std::cout << r2::tab << "auto itr = list.begin();" << r2::linefeed2;
+
+				EXPECT_EQ( *itr, 333 );
+				EXPECT_EQ( *( ++itr ), 222 );
+				EXPECT_EQ( *( ++itr ), 111 );
+				EXPECT_EQ( ( ++itr ), list.end() );
+				EXPECT_EQ( ( ++itr ), list.begin() );
 			}
 
 			std::cout << r2::split;
