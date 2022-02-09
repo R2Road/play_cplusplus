@@ -106,17 +106,6 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			{
-				std::cout << r2::tab << "+ View With ArrayBasedList::begin(), ArrayBasedList::end()" << r2::linefeed2;
-
-				for( auto cur = list.begin(), end = list.end(); end != cur; ++cur )
-				{
-					std::cout << r2::tab2 << "> " << ( *cur ) << r2::linefeed;
-				}
-			}
-
-			std::cout << r2::split;
-
 			return r2::eTestResult::RunTest;
 		};
 	}
