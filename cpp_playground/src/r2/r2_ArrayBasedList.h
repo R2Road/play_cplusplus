@@ -71,6 +71,11 @@ namespace r2
 			mTargetNode = mTargetNode->pPrev;
 			return ( *this );
 		}
+		ListReverseIterator& operator--()
+		{
+			mTargetNode = mTargetNode->pNext;
+			return ( *this );
+		}
 
 		bool operator==( const ListReverseIterator& other ) const
 		{

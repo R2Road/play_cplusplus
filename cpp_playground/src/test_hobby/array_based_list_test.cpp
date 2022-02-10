@@ -576,41 +576,46 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			r2::ArrayBasedList<int, 5> ablist;
-			ablist.PushBack( 11 );
-			ablist.PushBack( 22 );
-			ablist.PushBack( 33 );
+			r2::ArrayBasedList<int, 5> list;
+			list.PushBack( 11 );
+			list.PushBack( 22 );
+			list.PushBack( 33 );
 
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2::ArrayBasedList<int, 5> ablist" << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.PushBack( 11 );" << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.PushBack( 22 );" << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.PushBack( 33 );" << r2::linefeed2;
-
-				std::cout << r2::tab2 << "ablist.Size();" << r2::tab << ">" << r2::tab << ablist.Size() << r2::linefeed;
-				std::cout << r2::tab2 << "ablist.GetRestNodeCount();" << r2::tab << ">" << r2::tab << ablist.GetRestNodeCount() << r2::linefeed;
+				std::cout  << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab << "r2::ArrayBasedList<int, 5> list" << r2::linefeed;
+				std::cout << r2::tab << "list.PushBack( 11 );" << r2::linefeed;
+				std::cout << r2::tab << "list.PushBack( 22 );" << r2::linefeed;
+				std::cout << r2::tab << "list.PushBack( 33 );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ View With Ranged For" << r2::linefeed2;
-				for( const auto& cur : ablist )
-				{
-					std::cout << r2::tab2 << "> " << cur << r2::linefeed;
-				}
-			}
+				std::cout << "+ r2::ArrayBasedList::rbegin(), ArrayBasedList::rend()" << r2::linefeed2;
 
-			std::cout << r2::split;
+				EXPECT_NE( list.rend().mTargetNode, nullptr );
+				EXPECT_NE( list.rend().mTargetNode->pPrev, nullptr );
+				EXPECT_NE( list.rend().mTargetNode->pNext, nullptr );
+				EXPECT_EQ( list.rend().mTargetNode, list.end().mTargetNode );
 
-			{
-				std::cout << r2::tab << "+ View With ArrayBasedList::rbegin(), ArrayBasedList::rend()" << r2::linefeed2;
+				std::cout << r2::linefeed;
+				
+				EXPECT_EQ( *list.rbegin(), 33 );
+				EXPECT_EQ( *( ++list.rbegin() ), 22 );
+				EXPECT_EQ( *( ++( ++list.rbegin() ) ), 11 );
+				EXPECT_EQ( ( ++( ++( ++list.rbegin() ) ) ), list.rend() );
+				EXPECT_EQ( ( ++( ++( ++( ++list.rbegin() ) ) ) ), list.rbegin() );
 
-				for( auto cur = ablist.rbegin(), end = ablist.rend(); end != cur; ++cur )
-				{
-					std::cout << r2::tab2 << "> " << ( *cur ) << r2::linefeed;
-				}
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( ( --list.rbegin() ), list.rend() );
+				EXPECT_EQ( *( --( --list.rbegin() ) ), 11 );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( *( ++list.rend() ), 33 );
+				EXPECT_EQ( *( --list.rend() ), 11 );
 			}
 
 			std::cout << r2::split;
