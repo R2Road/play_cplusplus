@@ -18,25 +18,13 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', infinite_number_test::Basic::GetInstance() );
-
-			ret->AddLineFeed();
-
-			ret->AddChild(
-				'2'
-				, []()->const char* { return r2::ArrayBasedListMenu::GetTitle(); }
-				, [&director]()->eTestResult
-				{
-					director.Setup( r2::ArrayBasedListMenu::Create( director ) );
-					return eTestResult::ChangeScene;
-				}
-			);
+			ret->AddChild( '1', memory_pool_test::Step01::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild( 'q', memory_pool_test::Step01::GetInstance() );
+			ret->AddChild( 'q', infinite_number_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
@@ -48,6 +36,20 @@ namespace r2
 			ret->AddChild( 'f', vector3_test::OperatorMinusEqual::GetInstance() );
 			ret->AddChild( 'g', vector3_test::OperatorMultiply_With_Scalar::GetInstance() );
 			ret->AddChild( 'h', vector3_test::OperatorMultiplyEqual_With_Scalar::GetInstance() );
+
+
+			ret->AddSplit();
+
+
+			ret->AddChild(
+				'z'
+				, []()->const char* { return r2::ArrayBasedListMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::ArrayBasedListMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
 
 
 			ret->AddSplit();
