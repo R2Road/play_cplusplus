@@ -6,10 +6,10 @@
 #include "r2_RootMenu.h"
 
 #include "test_hobby/infinite_number_test.h"
-#include "test_hobby/memory_pool_test.h"
 #include "test_hobby/vector3_test.h"
 
 #include "menu/r2_ArrayBasedListMenu.h"
+#include "menu/r2_MemoryPoolMenu.h"
 
 namespace r2
 {
@@ -18,7 +18,15 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', memory_pool_test::Step01::GetInstance() );
+			ret->AddChild(
+				'1'
+				, []()->const char* { return r2::MemoryPoolMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::MemoryPoolMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
 
 
 			ret->AddSplit();

@@ -26,6 +26,7 @@
     <ClCompile Include="src\menu\r2_ArrayBasedListMenu.cpp" />
     <ClCompile Include="src\menu\r2_DebugMenu.cpp" />
     <ClCompile Include="src\menu\r2_HobbyMenu.cpp" />
+    <ClCompile Include="src\menu\r2_MemoryPoolMenu.cpp" />
     <ClCompile Include="src\menu\r2_STDNumericMenu.cpp" />
     <ClCompile Include="src\menu\r2_AlignMenu.cpp" />
     <ClCompile Include="src\menu\r2_CharMenu.cpp" />
@@ -133,6 +134,7 @@
     <ClInclude Include="src\menu\r2_ArrayBasedListMenu.h" />
     <ClInclude Include="src\menu\r2_DebugMenu.h" />
     <ClInclude Include="src\menu\r2_HobbyMenu.h" />
+    <ClInclude Include="src\menu\r2_MemoryPoolMenu.h" />
     <ClInclude Include="src\menu\r2_STDNumericMenu.h" />
     <ClInclude Include="src\menu\r2_AlignMenu.h" />
     <ClInclude Include="src\menu\r2_CharMenu.h" />
