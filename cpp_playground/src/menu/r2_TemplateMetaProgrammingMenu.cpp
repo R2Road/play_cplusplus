@@ -2,7 +2,7 @@
 #include "r2_TemplateMetaProgrammingMenu.h"
 
 #include "base/r2_Director.h"
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 #include "r2_TemplateMenu.h"
 
 #include "test_cpp/template_meta_programming_01_test.h"

@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "pointer_test.h"
 
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 
 namespace pointer_test
 {

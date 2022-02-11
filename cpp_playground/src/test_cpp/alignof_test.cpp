@@ -6,7 +6,7 @@
 #include <unordered_map>
 #include <vector>
 
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 
 namespace alignof_test
 {

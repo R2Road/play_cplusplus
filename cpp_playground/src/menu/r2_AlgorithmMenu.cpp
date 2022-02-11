@@ -2,7 +2,7 @@
 #include "r2_AlgorithmMenu.h"
 
 #include "base/r2_Director.h"
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 #include "r2_RootMenu.h"
 
 #include "test_algorithm/algorithm_bubble_sort_test.h"

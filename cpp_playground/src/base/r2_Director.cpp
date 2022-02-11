@@ -4,7 +4,7 @@
 #include <conio.h>
 #include <utility>
 
-#include "r2_eTestResult.h"
+#include "r2_eTestEndAction.h"
 
 namespace r2
 {

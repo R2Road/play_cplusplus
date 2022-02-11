@@ -2,7 +2,7 @@
 #include "r2_MemoryPoolMenu.h"
 
 #include "base/r2_Director.h"
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 #include "r2_HobbyMenu.h"
 
 #include "test_hobby/memory_pool_test.h"

@@ -3,7 +3,7 @@
 
 #include <conio.h> // _kbhit(), _getch()
 
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 
 namespace console_input_test
 {

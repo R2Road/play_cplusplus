@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <windows.h>
 
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 
 namespace console_window_input_test
 {

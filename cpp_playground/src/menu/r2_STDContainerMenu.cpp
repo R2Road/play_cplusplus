@@ -2,7 +2,7 @@
 #include "r2_STDContainerMenu.h"
 
 #include "base/r2_Director.h"
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 #include "r2_STDMenu.h"
 
 #include "test_cpp/std_array_test.h"

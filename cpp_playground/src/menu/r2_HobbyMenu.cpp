@@ -2,7 +2,7 @@
 #include "r2_HobbyMenu.h"
 
 #include "base/r2_Director.h"
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 #include "r2_RootMenu.h"
 
 #include "test_hobby/infinite_number_test.h"

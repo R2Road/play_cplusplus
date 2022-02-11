@@ -2,7 +2,7 @@
 #include "r2_TemplatePracticeMenu.h"
 
 #include "base/r2_Director.h"
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 #include "r2_TemplateMenu.h"
 
 #include "test_cpp/template_practice_part_01_test.h"

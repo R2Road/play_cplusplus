@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 
 namespace template_meta_programming_test
 {

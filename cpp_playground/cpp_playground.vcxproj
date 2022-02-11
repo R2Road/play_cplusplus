@@ -125,7 +125,7 @@
     <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h" />
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h" />
     <ClInclude Include="src\base\r2_Director.h" />
-    <ClInclude Include="src\base\r2_eTestResult.h" />
+    <ClInclude Include="src\base\r2_eTestEndAction.h" />
     <ClInclude Include="src\base\r2_Inspector.h" />
     <ClInclude Include="src\base\r2_iTest.h" />
     <ClInclude Include="src\base\r2_Menu.h" />

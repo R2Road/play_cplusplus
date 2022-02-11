@@ -5,7 +5,7 @@
 #include <numeric> // std::iota
 #include <stdint.h>
 
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 
 namespace etc_test
 {

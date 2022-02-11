@@ -3,7 +3,7 @@
 
 #include <functional>
 
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 
 namespace
 {

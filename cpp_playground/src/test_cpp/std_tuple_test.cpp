@@ -4,7 +4,7 @@
 #include <string>
 #include <tuple>
 
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 
 namespace std_tuple_test
 {

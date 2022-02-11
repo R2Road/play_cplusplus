@@ -6,7 +6,7 @@
 #include <sstream>
 #include <thread>
 
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 
 #pragma warning( disable : 4477 ) // for "%x" and std::this_thread::get_id()
 

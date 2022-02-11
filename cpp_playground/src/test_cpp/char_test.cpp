@@ -6,7 +6,7 @@
 #include <locale>
 #include <string>
 
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 
 namespace char_test
 {

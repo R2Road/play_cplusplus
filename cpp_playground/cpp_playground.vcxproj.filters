@@ -617,7 +617,7 @@
     <ClInclude Include="src\menu\r2_MemoryPoolMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\r2_eTestResult.h">
+    <ClInclude Include="src\base\r2_eTestEndAction.h">
       <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>

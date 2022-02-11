@@ -3,7 +3,7 @@
 
 #include <list>
 
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 
 namespace std_list_test
 {

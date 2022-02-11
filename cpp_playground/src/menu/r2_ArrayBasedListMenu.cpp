@@ -2,7 +2,7 @@
 #include "r2_ArrayBasedListMenu.h"
 
 #include "base/r2_Director.h"
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 #include "r2_HobbyMenu.h"
 
 #include "test_hobby/array_based_list_test.h"

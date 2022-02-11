@@ -3,7 +3,7 @@
 
 #include <Windows.h>
 
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 
 #include "algorithm/r2algorithm_astar_Constant.h"
 #include "algorithm/r2algorithm_astar_PathBuilder.h"

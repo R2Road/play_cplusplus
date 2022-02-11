@@ -2,7 +2,7 @@
 #include "r2_ConsoleMenu.h"
 
 #include "base/r2_Director.h"
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 #include "r2_RootMenu.h"
 
 #include "test_cpp/console_buffer_test.h"
