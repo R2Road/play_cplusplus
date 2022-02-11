@@ -39,12 +39,13 @@ namespace r2
 	{
 		MenuUp ret( new ( std::nothrow ) Menu(
 			director
-			, GetTitle()
-			, "> To do : Vector3"
-			"\n" "> To do : Encoding"
-			"\n" "> To do : Infinite Number"
-			"\n" "> To do : Thread"
-			"\n" "> To do : Memory Pool"
+			, GetTitle(),
+					"> To do : Regex"
+			"\n"	"> To do : Vector3"
+			"\n"	"> To do : Encoding"
+			"\n"	"> To do : Infinite Number"
+			"\n"	"> To do : Thread"
+			"\n"	"> To do : Memory Pool"
 		) );
 
 		{
