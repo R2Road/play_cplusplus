@@ -14,6 +14,7 @@
 #include "test_cpp/std_function_test.h"
 #include "test_cpp/std_function_2_test.h"
 #include "test_cpp/std_optional_test.h"
+#include "test_cpp/std_regex_test.h"
 #include "test_cpp/std_stringview_test.h"
 #include "test_cpp/std_tuple_test.h"
 #include "test_cpp/std_variant_test.h"
@@ -83,6 +84,10 @@ namespace r2
 				}
 			);
 			ret->AddChild( 'g', std_algorithm_test::Shuffle::GetInstance() );
+
+			ret->AddLineFeed();
+
+			ret->AddChild( 'z', std_regex_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
