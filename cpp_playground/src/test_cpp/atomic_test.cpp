@@ -51,7 +51,7 @@ namespace atomic_test
 	}
 	r2::iTest::DoFunc IsLockFree::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -83,7 +83,7 @@ namespace atomic_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -96,7 +96,7 @@ namespace atomic_test
 	}
 	r2::iTest::DoFunc LockFreeTest1::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -141,7 +141,7 @@ namespace atomic_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -154,7 +154,7 @@ namespace atomic_test
 	}
 	r2::iTest::DoFunc LockFreeTest2::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -199,7 +199,7 @@ namespace atomic_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

@@ -52,73 +52,73 @@ namespace r2
 			ret->AddChild(
 				'2'
 				, []()->const char* { return ConsoleMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( ConsoleMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'3'
 				, []()->const char* { return r2::FileSystemMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::FileSystemMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'4'
 				, []()->const char* { return r2::PointerMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::PointerMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'5'
 				, []()->const char* { return r2::TimeMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::TimeMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'6'
 				, []()->const char* { return r2::RandomMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::RandomMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'7'
 				, []()->const char* { return r2::TemplateMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::TemplateMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'8'
 				, []()->const char* { return r2::AlignMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::AlignMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'9'
 				, []()->const char* { return r2::EnumMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::EnumMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 
@@ -129,20 +129,20 @@ namespace r2
 			ret->AddChild(
 				'q'
 				, []()->const char* { return r2::LambdaMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::LambdaMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild( 'w', structured_binding_test::Basic::GetInstance() );			
 			ret->AddChild(
 				'e'
 				, []()->const char* { return r2::DebugMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::DebugMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 
@@ -153,19 +153,19 @@ namespace r2
 			ret->AddChild(
 				'a'
 				, []()->const char* { return r2::STDMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::STDMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				's'
 				, []()->const char* { return r2::NewMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::NewMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild( 'd', print_test::Basic::GetInstance() );
@@ -174,10 +174,10 @@ namespace r2
 			ret->AddChild(
 				'h'
 				, []()->const char* { return r2::CharMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::CharMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 
@@ -188,28 +188,28 @@ namespace r2
 			ret->AddChild(
 				'z'
 				, []()->const char* { return r2::ETCMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::ETCMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'x'
 				, []()->const char* { return r2::MathMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::MathMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'c'
 				, []()->const char* { return r2::PerformanceMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::PerformanceMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 
@@ -220,19 +220,19 @@ namespace r2
 			ret->AddChild(
 				32
 				, []()->const char* { return r2::AlgorithmMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::AlgorithmMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'`'
 				, []()->const char* { return r2::HobbyMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::HobbyMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 
@@ -243,7 +243,7 @@ namespace r2
 			ret->AddChild(
 				27
 				, []()->const char* { return "Exit"; }
-				, []()->eTestResult { return eTestResult::Exit; }
+				, []()->eTestEndAction { return eTestEndAction::Exit; }
 			);
 		}
 

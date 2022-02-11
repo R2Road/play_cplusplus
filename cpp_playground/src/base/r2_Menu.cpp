@@ -91,7 +91,7 @@ namespace r2
 		std::cout << r2::split << "Select Menu";
 	}
 
-	eTestResult Menu::Do( const int key_code )
+	eTestEndAction Menu::Do( const int key_code )
 	{
 		for( const auto t : mTests )
 		{
@@ -101,28 +101,28 @@ namespace r2
 			}
 		}
 
-		return eTestResult::RunTest;
+		return eTestEndAction::Pause;
 	}
 
 	void Menu::AddChild( const char key_code, iTest& test_obj )
 	{
 		mTests.emplace_back( key_code, test_obj.GetTitleFunction(), test_obj.GetDoFunction() );
 	}
-	void Menu::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestResult()> func_test )
+	void Menu::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestEndAction()> func_test )
 	{
 		mTests.emplace_back( key_code, func_title, func_test );
 	}
 	void Menu::AddLineFeed()
 	{
 		static const std::function<const char*()> func_title = []()->const char* { return ""; };
-		static const std::function<const r2::eTestResult()> func_test = []()->const r2::eTestResult { return r2::eTestResult::RunTest; };
+		static const std::function<const r2::eTestEndAction()> func_test = []()->const r2::eTestEndAction { return r2::eTestEndAction::Pause; };
 
 		mTests.push_back( { KeyCode4LineFeed, func_title, func_test } );
 	}
 	void Menu::AddSplit()
 	{
 		static const std::function<const char*( )> func_title = []()->const char* { return ""; };
-		static const std::function<const r2::eTestResult()> func_test = []()->const r2::eTestResult { return r2::eTestResult::RunTest; };
+		static const std::function<const r2::eTestEndAction()> func_test = []()->const r2::eTestEndAction { return r2::eTestEndAction::Pause; };
 
 		mTests.push_back( { KeyCode4Split, func_title, func_test } );
 	}

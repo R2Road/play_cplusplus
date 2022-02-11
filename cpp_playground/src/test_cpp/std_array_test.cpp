@@ -18,7 +18,7 @@ namespace std_array_test
 	}
 	r2::iTest::DoFunc Basic::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2::linefeed;
 
@@ -49,7 +49,7 @@ namespace std_array_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -64,7 +64,7 @@ namespace std_array_test
 	}
 	r2::iTest::DoFunc Fill::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			auto printer = []( const std::array<int, 3u> container )
 			{
@@ -128,7 +128,7 @@ namespace std_array_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

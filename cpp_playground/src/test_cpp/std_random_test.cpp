@@ -21,7 +21,7 @@ namespace std_random_test
 	}
 	r2::iTest::DoFunc Basic::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -71,7 +71,7 @@ namespace std_random_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }
@@ -183,7 +183,7 @@ namespace std_random_test
 	}
 	r2::iTest::DoFunc StatusSaveAndLoad::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			Status_Save();
 
@@ -191,7 +191,7 @@ namespace std_random_test
 
 			Status_Load();
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }
@@ -209,7 +209,7 @@ namespace std_random_test
 	}
 	r2::iTest::DoFunc DiscreateDistribution::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -243,7 +243,7 @@ namespace std_random_test
 				std::cout << r2::split;
 			}
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

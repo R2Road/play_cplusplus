@@ -16,7 +16,7 @@ namespace std_vector_test
 	}
 	r2::iTest::DoFunc Basic::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2::linefeed;
 
@@ -68,7 +68,7 @@ namespace std_vector_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -83,7 +83,7 @@ namespace std_vector_test
 	}
 	r2::iTest::DoFunc NoneDefaultConstructor::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -120,7 +120,7 @@ namespace std_vector_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -135,7 +135,7 @@ namespace std_vector_test
 	}
 	r2::iTest::DoFunc BoolVector::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -179,7 +179,7 @@ namespace std_vector_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -194,7 +194,7 @@ namespace std_vector_test
 	}
 	r2::iTest::DoFunc OthersIterator::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -224,7 +224,7 @@ namespace std_vector_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -239,7 +239,7 @@ namespace std_vector_test
 	}
 	r2::iTest::DoFunc EndIterator::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -299,7 +299,7 @@ namespace std_vector_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

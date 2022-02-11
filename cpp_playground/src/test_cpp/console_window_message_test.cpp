@@ -59,7 +59,7 @@ namespace console_window_message_test
 	}
 	r2::iTest::DoFunc ConsoleControlHandler::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[ESC] End" << r2::linefeed2;
@@ -104,7 +104,7 @@ namespace console_window_message_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }
@@ -154,7 +154,7 @@ namespace console_window_message_test
 	}
 	r2::iTest::DoFunc MessageHook::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 
@@ -191,7 +191,7 @@ namespace console_window_message_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

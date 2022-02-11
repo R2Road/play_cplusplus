@@ -19,30 +19,30 @@ namespace r2
 			ret->AddChild(
 				'1'
 				, []()->const char* { return r2::VariadicTemplateMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::VariadicTemplateMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 
 			ret->AddChild(
 				'2'
 				, []()->const char* { return r2::TemplateMetaProgrammingMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::TemplateMetaProgrammingMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 
 			ret->AddChild(
 				'3'
 				, []()->const char* { return r2::TemplatePracticeMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::TemplatePracticeMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 
@@ -53,10 +53,10 @@ namespace r2
 			ret->AddChild(
 				27
 				, []()->const char* { return "Return To Root"; }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::RootMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 		}

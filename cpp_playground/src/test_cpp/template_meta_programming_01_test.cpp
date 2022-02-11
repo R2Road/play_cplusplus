@@ -42,7 +42,7 @@ namespace template_meta_programming_test
 	}
 	r2::iTest::DoFunc CalculateFactorial::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -78,7 +78,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }
@@ -108,7 +108,7 @@ namespace template_meta_programming_test
 	}
 	r2::iTest::DoFunc GreatestCommonDivisor::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -128,7 +128,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }
@@ -154,7 +154,7 @@ namespace template_meta_programming_test
 	}
 	r2::iTest::DoFunc BasicRatio::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -169,7 +169,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }
@@ -194,7 +194,7 @@ namespace template_meta_programming_test
 	}
 	r2::iTest::DoFunc SumBasicRatio::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -219,7 +219,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }
@@ -244,7 +244,7 @@ namespace template_meta_programming_test
 	}
 	r2::iTest::DoFunc RatioWithGCD::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -276,7 +276,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }
@@ -306,7 +306,7 @@ namespace template_meta_programming_test
 	}
 	r2::iTest::DoFunc SumRatioWithGCD::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -333,7 +333,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }
@@ -348,7 +348,7 @@ namespace template_meta_programming_test
 	}
 	r2::iTest::DoFunc SumRatioAndOperator1::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -389,7 +389,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }
@@ -418,7 +418,7 @@ namespace template_meta_programming_test
 	}
 	r2::iTest::DoFunc SumRatioAndOperator2::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -475,7 +475,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

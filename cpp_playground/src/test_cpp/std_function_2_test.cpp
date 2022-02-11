@@ -30,7 +30,7 @@ namespace std_function_2_test
 	}
 	r2::iTest::DoFunc Equality_STDBind_1::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -89,7 +89,7 @@ namespace std_function_2_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

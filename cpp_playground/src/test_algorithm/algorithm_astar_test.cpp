@@ -103,7 +103,7 @@ namespace algorithm_astar_test
 	}
 	r2::iTest::DoFunc Basic::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
@@ -137,7 +137,7 @@ namespace algorithm_astar_test
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -152,7 +152,7 @@ namespace algorithm_astar_test
 	}
 	r2::iTest::DoFunc Use_STDListSplice::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
@@ -186,7 +186,7 @@ namespace algorithm_astar_test
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -201,7 +201,7 @@ namespace algorithm_astar_test
 	}
 	r2::iTest::DoFunc Use_STDListSplice_STDVectorResultPath::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
@@ -236,7 +236,7 @@ namespace algorithm_astar_test
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -251,7 +251,7 @@ namespace algorithm_astar_test
 	}
 	r2::iTest::DoFunc Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
@@ -288,7 +288,7 @@ namespace algorithm_astar_test
 
 			std::cout << "## Not Have Changed" << r2::linefeed2;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -303,7 +303,7 @@ namespace algorithm_astar_test
 	}
 	r2::iTest::DoFunc Use_CostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
@@ -340,7 +340,7 @@ namespace algorithm_astar_test
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -355,7 +355,7 @@ namespace algorithm_astar_test
 	}
 	r2::iTest::DoFunc Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
@@ -392,7 +392,7 @@ namespace algorithm_astar_test
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -407,7 +407,7 @@ namespace algorithm_astar_test
 	}
 	r2::iTest::DoFunc Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
@@ -444,7 +444,7 @@ namespace algorithm_astar_test
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -459,7 +459,7 @@ namespace algorithm_astar_test
 	}
 	r2::iTest::DoFunc PerformanceTest::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 
@@ -667,7 +667,7 @@ namespace algorithm_astar_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

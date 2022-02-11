@@ -49,37 +49,37 @@ namespace r2
 			ret->AddChild(
 				'a'
 				, []()->const char* { return r2::STDMemoryMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::STDMemoryMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				's'
 				, []()->const char* { return r2::STDNumericMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::STDNumericMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'd'
 				, []()->const char* { return r2::STDContainerMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::STDContainerMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'f'
 				, []()->const char* { return r2::STDThreadMenu::GetTitle(); }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::STDThreadMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild( 'g', std_algorithm_test::Shuffle::GetInstance() );
@@ -91,10 +91,10 @@ namespace r2
 			ret->AddChild(
 				27
 				, []()->const char* { return "Return To Root"; }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::RootMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 		}

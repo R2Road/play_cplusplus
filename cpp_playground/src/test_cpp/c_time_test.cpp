@@ -21,7 +21,7 @@ namespace c_time_test
 	}
 	r2::iTest::DoFunc Basic::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -45,7 +45,7 @@ namespace c_time_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -60,7 +60,7 @@ namespace c_time_test
 	}
 	r2::iTest::DoFunc Y_M_D_H_S::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -131,7 +131,7 @@ namespace c_time_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -146,7 +146,7 @@ namespace c_time_test
 	}
 	r2::iTest::DoFunc Clock::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[ANY KEY] Exit" << r2::linefeed;
@@ -193,7 +193,7 @@ namespace c_time_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 }

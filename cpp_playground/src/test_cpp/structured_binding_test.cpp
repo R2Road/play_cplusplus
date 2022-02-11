@@ -29,7 +29,7 @@ namespace structured_binding_test
 	}
 	r2::iTest::DoFunc Basic::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
 
@@ -129,7 +129,7 @@ namespace structured_binding_test
 
 			std::cout << r2::linefeed << r2::linefeed;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

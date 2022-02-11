@@ -20,7 +20,7 @@ namespace performance_1_test
 	}
 	r2::iTest::DoFunc IncrementOperator::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed2;
 
@@ -162,7 +162,7 @@ namespace performance_1_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -177,7 +177,7 @@ namespace performance_1_test
 	}
 	r2::iTest::DoFunc Loop::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed2;
 
@@ -242,7 +242,7 @@ namespace performance_1_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -257,7 +257,7 @@ namespace performance_1_test
 	}
 	r2::iTest::DoFunc LoopWithBuildInArray::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 
@@ -335,7 +335,7 @@ namespace performance_1_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -350,7 +350,7 @@ namespace performance_1_test
 	}
 	r2::iTest::DoFunc LoopWithSTDArray::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 
@@ -428,7 +428,7 @@ namespace performance_1_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -443,7 +443,7 @@ namespace performance_1_test
 	}
 	r2::iTest::DoFunc CompareIteratorOperator::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -518,7 +518,7 @@ namespace performance_1_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

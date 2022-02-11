@@ -16,7 +16,7 @@ namespace std_list_test
 	}
 	r2::iTest::DoFunc Splice::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2::linefeed;
 
@@ -137,7 +137,7 @@ namespace std_list_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -152,7 +152,7 @@ namespace std_list_test
 	}
 	r2::iTest::DoFunc OthersIterator::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -200,7 +200,7 @@ namespace std_list_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -215,7 +215,7 @@ namespace std_list_test
 	}
 	r2::iTest::DoFunc EndIterator::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -275,7 +275,7 @@ namespace std_list_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

@@ -52,7 +52,7 @@ namespace algorithm_maze_test
 	}
 	r2::iTest::DoFunc Basic::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			struct Cell
 			{
@@ -100,7 +100,7 @@ namespace algorithm_maze_test
 				}
 			}
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

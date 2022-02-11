@@ -38,7 +38,7 @@ namespace template_meta_programming_test
 	}
 	r2::iTest::DoFunc MultiTypePackage::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -54,7 +54,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

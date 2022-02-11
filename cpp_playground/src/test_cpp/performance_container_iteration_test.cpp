@@ -24,7 +24,7 @@ namespace performance_container_iteration_test
 	}
 	r2::iTest::DoFunc BuiltInArrayIteration::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -88,7 +88,7 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -103,7 +103,7 @@ namespace performance_container_iteration_test
 	}
 	r2::iTest::DoFunc STDArrayIteration::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -189,7 +189,7 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -204,7 +204,7 @@ namespace performance_container_iteration_test
 	}
 	r2::iTest::DoFunc VectorIteration::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -288,7 +288,7 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -303,7 +303,7 @@ namespace performance_container_iteration_test
 	}
 	r2::iTest::DoFunc ListIteration::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -364,7 +364,7 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -379,7 +379,7 @@ namespace performance_container_iteration_test
 	}
 	r2::iTest::DoFunc MapIteration::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -466,7 +466,7 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -481,7 +481,7 @@ namespace performance_container_iteration_test
 	}
 	r2::iTest::DoFunc UnorderedMapIteration::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -568,7 +568,7 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -583,7 +583,7 @@ namespace performance_container_iteration_test
 	}
 	r2::iTest::DoFunc SetIteration::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -647,7 +647,7 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -662,7 +662,7 @@ namespace performance_container_iteration_test
 	}
 	r2::iTest::DoFunc UnorderedSetIteration::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -726,7 +726,7 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -741,7 +741,7 @@ namespace performance_container_iteration_test
 	}
 	r2::iTest::DoFunc STDArrayIteration_WithPointer::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -830,7 +830,7 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

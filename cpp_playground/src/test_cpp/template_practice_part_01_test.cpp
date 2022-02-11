@@ -30,7 +30,7 @@ namespace template_practice_part_01_test
 	}
 	r2::iTest::DoFunc BufferWithTemplate::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -51,7 +51,7 @@ namespace template_practice_part_01_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }
@@ -86,7 +86,7 @@ namespace template_practice_part_01_test
 	}
 	r2::iTest::DoFunc VaridicMax::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -128,7 +128,7 @@ namespace template_practice_part_01_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

@@ -20,7 +20,7 @@ namespace console_text_color_test
 	}
 	r2::iTest::DoFunc ColorTable::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -48,7 +48,7 @@ namespace console_text_color_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -63,7 +63,7 @@ namespace console_text_color_test
 	}
 	r2::iTest::DoFunc TextColor1::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -91,7 +91,7 @@ namespace console_text_color_test
 			system( "pause" );
 			
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 
@@ -106,7 +106,7 @@ namespace console_text_color_test
 	}
 	r2::iTest::DoFunc TextColor2::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -170,7 +170,7 @@ namespace console_text_color_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -185,7 +185,7 @@ namespace console_text_color_test
 	}
 	r2::iTest::DoFunc AdjustColorTable::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -234,7 +234,7 @@ namespace console_text_color_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -249,7 +249,7 @@ namespace console_text_color_test
 	}
 	r2::iTest::DoFunc ColorTable2::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -322,7 +322,7 @@ namespace console_text_color_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -337,7 +337,7 @@ namespace console_text_color_test
 	}
 	r2::iTest::DoFunc TextColor3::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -411,7 +411,7 @@ namespace console_text_color_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

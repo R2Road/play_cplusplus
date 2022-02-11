@@ -18,7 +18,7 @@ namespace window_time_test
 	}
 	r2::iTest::DoFunc Basic::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			SYSTEMTIME local_time;
 			SYSTEMTIME system_time;
@@ -94,7 +94,7 @@ namespace window_time_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 }

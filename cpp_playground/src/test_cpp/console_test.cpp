@@ -30,7 +30,7 @@ namespace console_test
 	}
 	r2::iTest::DoFunc FontInfo::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -59,7 +59,7 @@ namespace console_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -74,7 +74,7 @@ namespace console_test
 	}
 	r2::iTest::DoFunc FontChange::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -134,7 +134,7 @@ namespace console_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -149,7 +149,7 @@ namespace console_test
 	}
 	r2::iTest::DoFunc Pixel::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed2;
 
@@ -187,7 +187,7 @@ namespace console_test
 				ReleaseDC( console_window, dc );
 			}
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 }

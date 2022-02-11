@@ -57,7 +57,7 @@ namespace vector3_test
 	}
 	r2::iTest::DoFunc OperatorPlus::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2::linefeed;
 
@@ -92,7 +92,7 @@ namespace vector3_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -105,7 +105,7 @@ namespace vector3_test
 	}
 	r2::iTest::DoFunc OperatorPlusEqual::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -140,7 +140,7 @@ namespace vector3_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -155,7 +155,7 @@ namespace vector3_test
 	}
 	r2::iTest::DoFunc OperatorMinus::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -190,7 +190,7 @@ namespace vector3_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -203,7 +203,7 @@ namespace vector3_test
 	}
 	r2::iTest::DoFunc OperatorMinusEqual::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -238,7 +238,7 @@ namespace vector3_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -253,7 +253,7 @@ namespace vector3_test
 	}
 	r2::iTest::DoFunc OperatorMultiply_With_Scalar::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -288,7 +288,7 @@ namespace vector3_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -301,7 +301,7 @@ namespace vector3_test
 	}
 	r2::iTest::DoFunc OperatorMultiplyEqual_With_Scalar::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -336,7 +336,7 @@ namespace vector3_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

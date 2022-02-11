@@ -20,7 +20,7 @@ namespace console_window_test
 	}
 	r2::iTest::DoFunc BufferInfo::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -72,7 +72,7 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -87,7 +87,7 @@ namespace console_window_test
 	}
 	r2::iTest::DoFunc ChangeWindowSize::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			{
 				system( "mode con lines=30 cols=120" );
@@ -122,7 +122,7 @@ namespace console_window_test
 				system( "mode con lines=60 cols=120" );
 			}
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 
@@ -137,7 +137,7 @@ namespace console_window_test
 	}
 	r2::iTest::DoFunc WindowPosition::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -205,7 +205,7 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -220,7 +220,7 @@ namespace console_window_test
 	}
 	r2::iTest::DoFunc ChangeWindowName::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -255,7 +255,7 @@ namespace console_window_test
 			}
 			_getch();
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 
@@ -270,7 +270,7 @@ namespace console_window_test
 	}
 	r2::iTest::DoFunc HideTitleBar::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -314,7 +314,7 @@ namespace console_window_test
 				SetWindowLong( hwnd, GWL_STYLE, last_window_style );
 			}
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -329,7 +329,7 @@ namespace console_window_test
 	}
 	r2::iTest::DoFunc HideScrollBar::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << r2::tab << "WinUser.h" << r2::linefeed;
@@ -362,7 +362,7 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -377,7 +377,7 @@ namespace console_window_test
 	}
 	r2::iTest::DoFunc LockWindowResizingByDragging::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -420,7 +420,7 @@ namespace console_window_test
 				SetWindowLong( GetConsoleWindow(), GWL_STYLE, last_window_style );
 			}
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -435,7 +435,7 @@ namespace console_window_test
 	}
 	r2::iTest::DoFunc MenuItem::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -478,7 +478,7 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -493,7 +493,7 @@ namespace console_window_test
 	}
 	r2::iTest::DoFunc CursorMove::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 
@@ -536,7 +536,7 @@ namespace console_window_test
 				}
 			}
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 
@@ -549,7 +549,7 @@ namespace console_window_test
 	}
 	r2::iTest::DoFunc CursorVisibility::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -579,7 +579,7 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 }

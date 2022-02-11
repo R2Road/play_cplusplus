@@ -26,7 +26,7 @@ namespace console_window_input_test
 	}
 	r2::iTest::DoFunc WindowInput_ReadConsoleInput::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 
@@ -159,7 +159,7 @@ namespace console_window_input_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -174,7 +174,7 @@ namespace console_window_input_test
 	}
 	r2::iTest::DoFunc WindowInput_GetKeyState::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[ESC] Exit" << r2::linefeed;
@@ -223,7 +223,7 @@ namespace console_window_input_test
 				}
 			}
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -238,7 +238,7 @@ namespace console_window_input_test
 	}
 	r2::iTest::DoFunc WindowInput_GetKeyboardState::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[ESC] Exit" << r2::linefeed;
@@ -306,7 +306,7 @@ namespace console_window_input_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -321,7 +321,7 @@ namespace console_window_input_test
 	}
 	r2::iTest::DoFunc WindowInput_GetAsyncKeyStates::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[ESC] Exit" << r2::linefeed;
@@ -364,7 +364,7 @@ namespace console_window_input_test
 				}
 			}
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

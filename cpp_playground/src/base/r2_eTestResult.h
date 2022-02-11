@@ -2,10 +2,10 @@
 
 namespace r2
 {
-	enum class eTestResult
+	enum class eTestEndAction
 	{
-		RunTest,
-		RunTest_Without_Pause,
+		Pause,
+		None,
 		ChangeScene,
 		Exit,
 	};

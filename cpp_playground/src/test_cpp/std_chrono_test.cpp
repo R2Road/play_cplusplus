@@ -18,7 +18,7 @@ namespace std_chrono_test
 	}
 	r2::iTest::DoFunc Epoch::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			// REF : https://en.cppreference.com/w/cpp/chrono/time_point/time_since_epoch
 
@@ -68,7 +68,7 @@ namespace std_chrono_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -83,7 +83,7 @@ namespace std_chrono_test
 	}
 	r2::iTest::DoFunc Chrono::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			const auto system_start_time_point = std::chrono::system_clock::now();
 			const auto steady_start_time_point = std::chrono::steady_clock::now();
@@ -193,7 +193,7 @@ namespace std_chrono_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 }

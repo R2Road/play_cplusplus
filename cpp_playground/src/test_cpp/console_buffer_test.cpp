@@ -19,7 +19,7 @@ namespace console_buffer_test
 	}
 	r2::iTest::DoFunc FillBuffer::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -68,7 +68,7 @@ namespace console_buffer_test
 
 			FillConsoleOutputAttribute( hStdout, cs_buffer_info.wAttributes, length, topLeft, &out_result );
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -83,7 +83,7 @@ namespace console_buffer_test
 	}
 	r2::iTest::DoFunc Write2Buffer::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -111,7 +111,7 @@ namespace console_buffer_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -126,7 +126,7 @@ namespace console_buffer_test
 	}
 	r2::iTest::DoFunc DoubleBuffering::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -188,7 +188,7 @@ namespace console_buffer_test
 
 			std::cout << r2::split;
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 }

@@ -24,10 +24,10 @@ namespace r2
 			ret->AddChild(
 				27
 				, []()->const char* { return "Return To Root"; }
-				, [&director]()->eTestResult
+				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::TemplateMenu::Create( director ) );
-					return eTestResult::ChangeScene;
+					return eTestEndAction::ChangeScene;
 				}
 			);
 		}
