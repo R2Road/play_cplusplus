@@ -80,7 +80,7 @@ namespace r2
 				std::cout << static_cast<char>( std::toupper( t.KeyCode ) );
 			}
 
-			std::cout << "] : ";
+			std::cout << "] ";
 			
 			//
 			// Name
