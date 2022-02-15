@@ -74,14 +74,14 @@ namespace console_buffer_test
 
 
 
-	r2::iTest::TitleFunc Write2Buffer::GetTitleFunction() const
+	r2::iTest::TitleFunc Write2Buffer_WriteConsole::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Write 2 Buffer";
+			return "Write 2 Buffer : WriteConsole";
 		};
 	}
-	r2::iTest::DoFunc Write2Buffer::GetDoFunction()
+	r2::iTest::DoFunc Write2Buffer_WriteConsole::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

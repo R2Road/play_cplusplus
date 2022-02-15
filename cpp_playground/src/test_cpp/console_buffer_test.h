@@ -12,7 +12,7 @@ namespace console_buffer_test
 		DoFunc GetDoFunction() override;
 	};
 
-	class Write2Buffer : public r2::iTest, public r2::SingleTon<Write2Buffer>
+	class Write2Buffer_WriteConsole : public r2::iTest, public r2::SingleTon<Write2Buffer_WriteConsole>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
