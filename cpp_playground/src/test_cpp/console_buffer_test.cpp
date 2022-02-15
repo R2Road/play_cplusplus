@@ -117,6 +117,66 @@ namespace console_buffer_test
 
 
 
+	r2::iTest::TitleFunc Write2Buffer_WriteConsoleOutput::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Write 2 Buffer : WriteConsoleOutput";
+		};
+	}
+	r2::iTest::DoFunc Write2Buffer_WriteConsoleOutput::GetDoFunction()
+	{
+		return []()->r2::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
+			COORD topLeft = { 0, 0 };
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2::linefeed;
+				std::cout << r2::tab2 << "COORD topLeft = { 0, 0 };" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "DWORD ret;" << r2::linefeed;
+				std::cout << r2::tab2 << "const char* str = \"*************WriteConsole Test*************\";" << r2::linefeed;
+				std::cout << r2::tab2 << "WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), topLeft, &ret );" << r2::linefeed;
+
+				DWORD ret;
+				const char* str = "*************WriteConsole Test*************";
+				WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), topLeft, &ret );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "DWORD ret;" << r2::linefeed;
+				std::cout << r2::tab2 << "WORD colors[10];" << r2::linefeed;
+				std::cout << r2::tab2 << "std::fill_n( colors, 10, FOREGROUND_GREEN | BACKGROUND_BLUE );" << r2::linefeed;
+				std::cout << r2::tab2 << "WriteConsoleOutputAttribute( hStdout, colors, static_cast<DWORD>( sizeof( colors ) / sizeof( DWORD ) ), topLeft, &ret );" << r2::linefeed;
+
+				DWORD ret;
+				WORD colors[10];
+				std::fill_n( colors, 10, FOREGROUND_GREEN | BACKGROUND_BLUE );
+				WriteConsoleOutputAttribute( hStdout, colors, static_cast<DWORD>( sizeof( colors ) / sizeof( DWORD ) ), topLeft, &ret );
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc DoubleBuffering::GetTitleFunction() const
 	{
 		return []()->const char*

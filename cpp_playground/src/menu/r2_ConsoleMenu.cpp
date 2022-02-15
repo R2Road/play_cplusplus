@@ -75,7 +75,8 @@ namespace r2
 			ret->AddChild( 'z', console_test::Pixel::GetInstance() );
 			ret->AddChild( 'x', console_buffer_test::FillBuffer::GetInstance() );
 			ret->AddChild( 'c', console_buffer_test::Write2Buffer_WriteConsole::GetInstance() );
-			ret->AddChild( 'v', console_buffer_test::DoubleBuffering::GetInstance() );
+			ret->AddChild( 'v', console_buffer_test::Write2Buffer_WriteConsoleOutput::GetInstance() );
+			ret->AddChild( 'b', console_buffer_test::DoubleBuffering::GetInstance() );
 
 
 			ret->AddSplit();
