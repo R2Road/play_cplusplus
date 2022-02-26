@@ -23,6 +23,7 @@ namespace r2
 			ret->AddLineFeed();
 
 			ret->AddChild( '2', console_window_test::ChangeWindowSize::GetInstance() );
+			ret->AddChild( '3', console_window_test::FullScreen::GetInstance() );
 
 			ret->AddLineFeed();
 			ret->AddLineFeed();

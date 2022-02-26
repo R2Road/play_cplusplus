@@ -18,6 +18,12 @@ namespace console_window_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+	class FullScreen : public r2::iTest, public r2::SingleTon<FullScreen>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 
 	class WindowPosition : public r2::iTest, public r2::SingleTon<WindowPosition>
 	{

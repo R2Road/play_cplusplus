@@ -128,6 +128,43 @@ namespace console_window_test
 
 
 
+	r2::iTest::TitleFunc FullScreen::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "FullScreen";
+		};
+	}
+	r2::iTest::DoFunc FullScreen::GetDoFunction()
+	{
+		return []()->r2::eTestEndAction
+		{
+			{
+				SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 );
+			}
+
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "+ Process" << r2::linefeed2;
+			std::cout << r2::tab2 << "SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 );" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::cout << "Press Any Key : Roll Back Window Size" << r2::linefeed;
+			_getch();
+
+			{
+				SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 );
+			}
+
+			return r2::eTestEndAction::None;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc WindowPosition::GetTitleFunction() const
 	{
 		return []()->const char*
