@@ -91,6 +91,7 @@ namespace console_window_test
 		{
 			{
 				system( "mode con lines=30 cols=120" );
+				ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 );
 			}
 
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
@@ -120,6 +121,7 @@ namespace console_window_test
 
 			{
 				system( "mode con lines=60 cols=120" );
+				ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 );
 			}
 
 			return r2::eTestEndAction::None;
