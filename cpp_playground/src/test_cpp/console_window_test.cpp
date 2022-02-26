@@ -29,16 +29,20 @@ namespace console_window_test
 			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
 			CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info;
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2::linefeed;
-			std::cout << r2::tab2 << "CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info;" << r2::linefeed;
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2::linefeed;
+				std::cout << r2::tab2 << "CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info;" << r2::linefeed;
+			}
 
 			std::cout << r2::split;
 
 			const auto result = GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info );
 
-			std::cout << r2::tab << "+ Process" << r2::linefeed2;
-			std::cout << r2::tab2 << "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2::linefeed;
+			{
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2::linefeed;
+			}
 
 			std::cout << r2::split;
 
@@ -57,10 +61,10 @@ namespace console_window_test
 				std::cout << r2::tab2 << "Y : " << cs_buffer_info.dwSize.Y << r2::linefeed2;
 
 				std::cout << r2::tab << "+ CONSOLE_SCREEN_BUFFER_INFO.srWindow" << r2::linefeed;
-				std::cout << r2::tab2 << "T : " << cs_buffer_info.srWindow.Top << r2::linefeed;
-				std::cout << r2::tab2 << "B : " << cs_buffer_info.srWindow.Bottom << r2::linefeed;
-				std::cout << r2::tab2 << "L : " << cs_buffer_info.srWindow.Left << r2::linefeed;
-				std::cout << r2::tab2 << "R : " << cs_buffer_info.srWindow.Right << r2::linefeed2;
+				std::cout << r2::tab2 << "Top : " << cs_buffer_info.srWindow.Top << r2::linefeed;
+				std::cout << r2::tab2 << "Bottom : " << cs_buffer_info.srWindow.Bottom << r2::linefeed;
+				std::cout << r2::tab2 << "Left : " << cs_buffer_info.srWindow.Left << r2::linefeed;
+				std::cout << r2::tab2 << "Right : " << cs_buffer_info.srWindow.Right << r2::linefeed2;
 
 				std::cout << r2::tab << "+ CONSOLE_SCREEN_BUFFER_INFO.wAttributes" << r2::linefeed;
 				std::cout << r2::tab2 << cs_buffer_info.wAttributes << r2::linefeed;
@@ -98,20 +102,33 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
-			std::cout << r2::tab << "+ Process" << r2::linefeed2;
-			std::cout << r2::tab2 << "system( \"mode con lines = 30 cols = 120\" );" << r2::linefeed;
+			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
+			CONSOLE_SCREEN_BUFFER_INFO csbi;
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2::linefeed;
+				std::cout << r2::tab2 << "CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info;" << r2::linefeed;
+			}
 
 			std::cout << r2::split;
 
 			{
-				CONSOLE_SCREEN_BUFFER_INFO csbi;
-				GetConsoleScreenBufferInfo( GetStdHandle( STD_OUTPUT_HANDLE ), &csbi );
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "system( \"mode con lines = 30 cols = 120\" );" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				GetConsoleScreenBufferInfo( hStdout, &csbi );
 				const auto width = static_cast<int>( csbi.srWindow.Right - csbi.srWindow.Left + 1 );
 				const auto height = static_cast<int>( csbi.srWindow.Bottom - csbi.srWindow.Top + 1 );
 
-				std::cout << r2::tab << "Current Window Size" << r2::linefeed;
-				std::cout << r2::tab << " - Width : " << width << r2::linefeed;
-				std::cout << r2::tab << " - Height : " << height << r2::linefeed;
+				std::cout << r2::tab << "+ Current Window Size" << r2::linefeed2;
+				std::cout << r2::tab2 << "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2::linefeed2;
+				std::cout << r2::tab2 << "Width : " << width << r2::linefeed;
+				std::cout << r2::tab2 << "Height : " << height << r2::linefeed;
 			}
 
 			std::cout << r2::split;
