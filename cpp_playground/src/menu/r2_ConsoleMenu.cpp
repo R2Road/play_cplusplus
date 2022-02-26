@@ -4,13 +4,13 @@
 #include "base/r2_Director.h"
 #include "base/r2_eTestEndAction.h"
 
+#include "ConsoleTextColorMenu.h"
 #include "r2_ConsoleWindowMenu.h"
 #include "r2_RootMenu.h"
 
 #include "test_cpp/console_buffer_test.h"
 #include "test_cpp/console_input_test.h"
 #include "test_cpp/console_test.h"
-#include "test_cpp/console_text_color_test.h"
 #include "test_cpp/console_window_input_test.h"
 #include "test_cpp/console_window_message_test.h"
 
@@ -33,21 +33,15 @@ namespace r2
 					return eTestEndAction::ChangeScene;
 				}
 			);
-
-			
-			ret->AddLineFeed();
-			ret->AddLineFeed();
-
-
-			ret->AddChild( 'q', console_text_color_test::ColorTable::GetInstance() );
-			ret->AddChild( 'w', console_text_color_test::TextColor1::GetInstance() );
-			ret->AddChild( 'e', console_text_color_test::TextColor2::GetInstance() );
-			ret->AddChild( 'r', console_text_color_test::AdjustColorTable::GetInstance() );
-
-			ret->AddLineFeed();
-
-			ret->AddChild( 't', console_text_color_test::ColorTable2::GetInstance() );
-			ret->AddChild( 'y', console_text_color_test::TextColor3::GetInstance() );
+			ret->AddChild(
+				'2'
+				, []()->const char* { return ConsoleTextColorMenu::GetTitle(); }
+				, [&director]()->eTestEndAction
+				{
+					director.Setup( ConsoleTextColorMenu::Create( director ) );
+					return eTestEndAction::ChangeScene;
+				}
+			);
 
 			ret->AddLineFeed();
 			ret->AddLineFeed();

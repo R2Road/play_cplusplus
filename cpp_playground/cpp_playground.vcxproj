@@ -24,6 +24,7 @@
     <ClCompile Include="src\base\r2_Menu.cpp" />
     <ClCompile Include="src\menu\r2_AlgorithmMenu.cpp" />
     <ClCompile Include="src\menu\r2_ArrayBasedListMenu.cpp" />
+    <ClCompile Include="src\menu\ConsoleTextColorMenu.cpp" />
     <ClCompile Include="src\menu\r2_ConsoleWindowMenu.cpp" />
     <ClCompile Include="src\menu\r2_DebugMenu.cpp" />
     <ClCompile Include="src\menu\r2_HobbyMenu.cpp" />
@@ -134,6 +135,7 @@
     <ClInclude Include="src\base\r2_Singleton.h" />
     <ClInclude Include="src\menu\r2_AlgorithmMenu.h" />
     <ClInclude Include="src\menu\r2_ArrayBasedListMenu.h" />
+    <ClInclude Include="src\menu\ConsoleTextColorMenu.h" />
     <ClInclude Include="src\menu\r2_ConsoleWindowMenu.h" />
     <ClInclude Include="src\menu\r2_DebugMenu.h" />
     <ClInclude Include="src\menu\r2_HobbyMenu.h" />
