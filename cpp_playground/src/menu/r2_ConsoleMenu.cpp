@@ -3,6 +3,8 @@
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestEndAction.h"
+
+#include "r2_ConsoleWindowMenu.h"
 #include "r2_RootMenu.h"
 
 #include "test_cpp/console_buffer_test.h"
@@ -11,7 +13,6 @@
 #include "test_cpp/console_text_color_test.h"
 #include "test_cpp/console_window_input_test.h"
 #include "test_cpp/console_window_message_test.h"
-#include "test_cpp/console_window_test.h"
 
 // # REF
 // https://docs.microsoft.com/en-us/windows/console/console-reference
@@ -23,19 +24,15 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', console_window_test::BufferInfo::GetInstance() );
-			ret->AddChild( '2', console_window_test::ChangeWindowSize::GetInstance() );
-			ret->AddChild( '3', console_window_test::WindowPosition::GetInstance() );
-			ret->AddChild( '4', console_window_test::ChangeWindowName::GetInstance() );
-			ret->AddChild( '5', console_window_test::HideTitleBar::GetInstance() );
-			ret->AddChild( '6', console_window_test::HideScrollBar::GetInstance() );
-			ret->AddChild( '7', console_window_test::LockWindowResizingByDragging::GetInstance() );
-			ret->AddChild( '8', console_window_test::MenuItem::GetInstance() );
-
-			ret->AddLineFeed();
-
-			ret->AddChild( '9', console_window_test::CursorMove::GetInstance() );
-			ret->AddChild( '0', console_window_test::CursorVisibility::GetInstance() );
+			ret->AddChild(
+				'1'
+				, []()->const char* { return ConsoleWindowMenu::GetTitle(); }
+				, [&director]()->eTestEndAction
+				{
+					director.Setup( ConsoleWindowMenu::Create( director ) );
+					return eTestEndAction::ChangeScene;
+				}
+			);
 
 			
 			ret->AddLineFeed();
