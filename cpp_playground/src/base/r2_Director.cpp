@@ -35,11 +35,12 @@ namespace r2
 				system( "pause" );
 				break;
 
-			case eTestEndAction::None:
-				break;
-
 			case eTestEndAction::Exit:
 				return;
+
+			//case eTestEndAction::None:
+			//default:
+			//	break;
 			}
 		}
 	}
