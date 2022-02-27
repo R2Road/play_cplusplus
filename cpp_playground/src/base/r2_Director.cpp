@@ -21,6 +21,8 @@ namespace r2
 		int input = 0;
 		while( true )
 		{
+			system( "cls" );
+
 			mMenu->ShowMenu();
 
 			input = _getch();
@@ -31,12 +33,9 @@ namespace r2
 			case eTestEndAction::Pause:
 				std::cout << r2::linefeed;
 				system( "pause" );
-
-				system( "cls" );
 				break;
 
 			case eTestEndAction::None:
-				system( "cls" );
 				break;
 
 			case eTestEndAction::Exit:
