@@ -320,6 +320,9 @@
     <ClCompile Include="src\utility\r2utility_StopWatch.cpp">
       <Filter>utility</Filter>
     </ClCompile>
+    <ClCompile Include="src\utility\r2utility_WindowUtil.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -636,6 +639,9 @@
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\utility\r2utility_StopWatch.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\r2utility_WindowUtil.h">
       <Filter>utility</Filter>
     </ClInclude>
   </ItemGroup>

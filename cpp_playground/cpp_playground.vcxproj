@@ -123,6 +123,7 @@
     <ClCompile Include="src\test_hobby\memory_pool_test.cpp" />
     <ClCompile Include="src\test_hobby\vector3_test.cpp" />
     <ClCompile Include="src\utility\r2utility_StopWatch.cpp" />
+    <ClCompile Include="src\utility\r2utility_WindowUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h" />
@@ -231,6 +232,7 @@
     <ClInclude Include="src\test_hobby\memory_pool_test.h" />
     <ClInclude Include="src\test_hobby\vector3_test.h" />
     <ClInclude Include="src\utility\r2utility_StopWatch.h" />
+    <ClInclude Include="src\utility\r2utility_WindowUtil.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
