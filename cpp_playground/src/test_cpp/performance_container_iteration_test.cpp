@@ -11,7 +11,7 @@
 
 #include "base/r2_eTestEndAction.h"
 
-#include "util/r2util_StopWatch.h"
+#include "utility/r2utility_StopWatch.h"
 
 namespace performance_container_iteration_test
 {
@@ -34,7 +34,7 @@ namespace performance_container_iteration_test
 			std::fill_n( test_container, sizeof( test_container ) / sizeof( test_container[0] ), 1 );
 
 			unsigned int sum_result = 0;
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 			std::cout << r2::tab2 << "int test_container[100000];" << r2::linefeed;
@@ -112,7 +112,7 @@ namespace performance_container_iteration_test
 			std::array<int, 100000> test_container;
 			test_container.fill( 1 );
 			unsigned int sum_result = 0;
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 			std::cout << r2::tab2 << "std::array<int, 100000> test_container;" << r2::linefeed;
@@ -212,7 +212,7 @@ namespace performance_container_iteration_test
 
 			std::vector<int> test_container( 100000, 1 );
 			unsigned int sum_result = 0;
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 			std::cout << r2::tab2 << "std::vector<int> test_container( 100000, 1 );" << r2::linefeed;
@@ -311,7 +311,7 @@ namespace performance_container_iteration_test
 
 			std::list<int> test_container( 100000, 1 );
 			unsigned int sum_result = 0;
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 			std::cout << r2::tab2 << "std::list<int> test_container( 100000, 1 );" << r2::linefeed;
@@ -389,7 +389,7 @@ namespace performance_container_iteration_test
 			for( int n = 0; 100000 > n; ++n ) test_container.emplace( n, 1 );
 
 			unsigned int sum_result = 0;
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 			std::cout << r2::tab2 << "std::map<std::size_t, int> test_container;" << r2::linefeed;
@@ -491,7 +491,7 @@ namespace performance_container_iteration_test
 			for( int n = 0; 100000 > n; ++n ) test_container.emplace( n, 1 );
 
 			unsigned int sum_result = 0;
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 			std::cout << r2::tab2 << "std::unordered_map<std::size_t, int> test_container( 100000 );" << r2::linefeed;
@@ -593,7 +593,7 @@ namespace performance_container_iteration_test
 			for( int n = 0; 100000 > n; ++n ) test_container.emplace( n );
 
 			unsigned int sum_result = 0;
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 			std::cout << r2::tab2 << "std::set<int> test_container;" << r2::linefeed;
@@ -672,7 +672,7 @@ namespace performance_container_iteration_test
 			for( int n = 0; 100000 > n; ++n ) test_container.emplace( n );
 
 			unsigned int sum_result = 0;
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 			std::cout << r2::tab2 << "std::map<int, int> test_container;" << r2::linefeed;
@@ -751,7 +751,7 @@ namespace performance_container_iteration_test
 			for( auto& i : test_container ) i = new int( 1 );
 
 			unsigned int sum_result = 0;
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 			std::cout << r2::tab2 << "std::array<int, 100000> test_container;" << r2::linefeed;

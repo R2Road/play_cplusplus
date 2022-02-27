@@ -4,7 +4,7 @@
 #include <array>
 
 #include "base/r2_eTestEndAction.h"
-#include "util/r2util_StopWatch.h"
+#include "utility/r2utility_StopWatch.h"
 
 namespace algorithm_bubble_sort_test
 {
@@ -23,7 +23,7 @@ namespace algorithm_bubble_sort_test
 
 			std::cout << r2::split;
 
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 			const std::array<int, 5u> test_container{ 5, 4, 3, 2, 1 };
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;

@@ -1,10 +1,10 @@
 #include "pch.h"
-#include "r2util_StopWatch.h"
+#include "r2utility_StopWatch.h"
 
 #include <iostream>
 #include <numeric>
 
-namespace r2util
+namespace r2utility
 {
 	StopWatch::StopWatch() :
 		mStartTime( std::chrono::nanoseconds::duration( 0 ) )

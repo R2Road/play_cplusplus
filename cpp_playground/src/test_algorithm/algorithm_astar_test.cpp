@@ -9,7 +9,7 @@
 #include "algorithm/r2algorithm_astar_PathBuilder.h"
 #include "r2/r2_Grid.h"
 #include "r2/r2_Point.h"
-#include "util/r2util_StopWatch.h"
+#include "utility/r2utility_StopWatch.h"
 
 using namespace r2algorithm_astar;
 
@@ -116,7 +116,7 @@ namespace algorithm_astar_test
 			std::cout << r2::linefeed;
 			std::cout << r2::split;
 
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 			{
 				//
 				// Build
@@ -165,7 +165,7 @@ namespace algorithm_astar_test
 			std::cout << r2::linefeed;
 			std::cout << r2::split;
 
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 			{
 				//
 				// Build
@@ -214,7 +214,7 @@ namespace algorithm_astar_test
 			std::cout << r2::linefeed;
 			std::cout << r2::split;
 
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 			{
 				//
 				// Build
@@ -264,7 +264,7 @@ namespace algorithm_astar_test
 			std::cout << r2::linefeed;
 			std::cout << r2::split;
 
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 			{
 				//
 				// Build
@@ -316,7 +316,7 @@ namespace algorithm_astar_test
 			std::cout << r2::linefeed;
 			std::cout << r2::split;
 
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 			{
 				//
 				// Build
@@ -368,7 +368,7 @@ namespace algorithm_astar_test
 			std::cout << r2::linefeed;
 			std::cout << r2::split;
 
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 			{
 				//
 				// Build
@@ -420,7 +420,7 @@ namespace algorithm_astar_test
 			std::cout << r2::linefeed;
 			std::cout << r2::split;
 
-			r2util::StopWatch stop_watch;
+			r2utility::StopWatch stop_watch;
 			{
 				//
 				// Build
@@ -474,7 +474,7 @@ namespace algorithm_astar_test
 			{
 				std::cout << r2::tab << "+ AStarPathBuilder" << r2::linefeed2;
 
-				r2util::StopWatch stop_watch;
+				r2utility::StopWatch stop_watch;
 
 				//
 				// Build
@@ -500,7 +500,7 @@ namespace algorithm_astar_test
 			{
 				std::cout << r2::tab << "+ AStarPathBuilder_Use_STDListSplice" << r2::linefeed2;
 
-				r2util::StopWatch stop_watch;
+				r2utility::StopWatch stop_watch;
 
 				//
 				// Build
@@ -526,7 +526,7 @@ namespace algorithm_astar_test
 			{
 				std::cout << r2::tab << "+ AStarPathBuilder_Use_STDListSplice_STDVectorResultPath" << r2::linefeed2;
 
-				r2util::StopWatch stop_watch;
+				r2utility::StopWatch stop_watch;
 
 				//
 				// Build
@@ -553,7 +553,7 @@ namespace algorithm_astar_test
 			{
 				std::cout << r2::tab << "+ AStarPathBuilder_Use_STDListSplice_DecreaseCloseList_STDVectorResultPath" << r2::linefeed2;
 
-				r2util::StopWatch stop_watch;
+				r2utility::StopWatch stop_watch;
 
 				//
 				// Build
@@ -580,7 +580,7 @@ namespace algorithm_astar_test
 			{
 				std::cout << r2::tab << "+ AStarPathBuilder_Use_CostMap_STDListSplice_STDVectorResultPath" << r2::linefeed2;
 
-				r2util::StopWatch stop_watch;
+				r2utility::StopWatch stop_watch;
 
 				//
 				// Build
@@ -610,7 +610,7 @@ namespace algorithm_astar_test
 			{
 				std::cout << r2::tab << "+ AStarPathBuilder_Use_TinyCostMap_STDListSplice_STDVectorResultPath" << r2::linefeed2;
 
-				r2util::StopWatch stop_watch;
+				r2utility::StopWatch stop_watch;
 
 				//
 				// Build
@@ -640,7 +640,7 @@ namespace algorithm_astar_test
 			{
 				std::cout << r2::tab << "+ AStarPathBuilder_Use_ArrayBasedList_TinyCostMap_STDVectorResultPath" << r2::linefeed2;
 
-				r2util::StopWatch stop_watch;
+				r2utility::StopWatch stop_watch;
 
 				//
 				// Build

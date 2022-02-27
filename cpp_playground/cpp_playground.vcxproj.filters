@@ -10,9 +10,6 @@
     <Filter Include="test_cpp">
       <UniqueIdentifier>{77a45f2c-1f22-46b3-9c35-5ee34c38a7b9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="util">
-      <UniqueIdentifier>{b470e37a-ab48-4294-91e6-d840afb5ce71}</UniqueIdentifier>
-    </Filter>
     <Filter Include="r2">
       <UniqueIdentifier>{2163bc18-fed6-4ce9-bd92-6934666924f5}</UniqueIdentifier>
     </Filter>
@@ -24,6 +21,9 @@
     </Filter>
     <Filter Include="test_hobby">
       <UniqueIdentifier>{3c5e3fee-a097-460f-9772-dbfd7cefa3ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{b470e37a-ab48-4294-91e6-d840afb5ce71}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -151,9 +151,6 @@
     </ClCompile>
     <ClCompile Include="src\test_cpp\atomic_test.cpp">
       <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\util\r2util_StopWatch.cpp">
-      <Filter>util</Filter>
     </ClCompile>
     <ClCompile Include="src\menu\r2_PerformanceMenu.cpp">
       <Filter>menu</Filter>
@@ -320,6 +317,9 @@
     <ClCompile Include="src\menu\ConsoleTextColorMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\utility\r2utility_StopWatch.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -454,9 +454,6 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\atomic_test.h">
       <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\util\r2util_StopWatch.h">
-      <Filter>util</Filter>
     </ClInclude>
     <ClInclude Include="src\menu\r2_PerformanceMenu.h">
       <Filter>menu</Filter>
@@ -637,6 +634,9 @@
     </ClInclude>
     <ClInclude Include="src\menu\ConsoleTextColorMenu.h">
       <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\r2utility_StopWatch.h">
+      <Filter>utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
