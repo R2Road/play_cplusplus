@@ -53,7 +53,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::STDMemoryMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -62,7 +62,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::STDNumericMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -71,7 +71,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::STDContainerMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -80,7 +80,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::STDThreadMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild( 'g', std_algorithm_test::Shuffle::GetInstance() );
@@ -99,7 +99,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::RootMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 		}

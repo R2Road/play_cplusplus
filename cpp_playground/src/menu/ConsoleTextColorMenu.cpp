@@ -37,7 +37,7 @@ r2::MenuUp ConsoleTextColorMenu::Create( r2::Director& director )
 			, [&director]()->r2::eTestEndAction
 			{
 				director.Setup( r2::ConsoleMenu::Create( director ) );
-				return r2::eTestEndAction::ChangeScene;
+				return r2::eTestEndAction::None;
 			}
 		);
 	}

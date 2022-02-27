@@ -36,7 +36,6 @@ namespace r2
 				break;
 
 			case eTestEndAction::None:
-			case eTestEndAction::ChangeScene:
 				system( "cls" );
 				break;
 

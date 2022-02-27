@@ -56,7 +56,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( ConsoleMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -65,7 +65,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::FileSystemMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -74,7 +74,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::PointerMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -83,7 +83,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::TimeMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -92,7 +92,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::RandomMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -101,7 +101,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::TemplateMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -110,7 +110,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::AlignMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -119,7 +119,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::EnumMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 
@@ -133,7 +133,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::LambdaMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild( 'w', structured_binding_test::Basic::GetInstance() );			
@@ -143,7 +143,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::DebugMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 
@@ -157,7 +157,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::STDMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -166,7 +166,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::NewMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild( 'd', print_test::Basic::GetInstance() );
@@ -178,7 +178,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::CharMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 
@@ -192,7 +192,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::ETCMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -201,7 +201,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::MathMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -210,7 +210,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::PerformanceMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 
@@ -224,7 +224,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::AlgorithmMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -233,7 +233,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::HobbyMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 

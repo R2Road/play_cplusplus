@@ -24,7 +24,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::MemoryPoolMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 
@@ -55,7 +55,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::ArrayBasedListMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 
@@ -69,7 +69,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::RootMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 		}

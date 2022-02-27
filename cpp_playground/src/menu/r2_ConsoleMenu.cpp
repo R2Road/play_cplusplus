@@ -30,7 +30,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( ConsoleWindowMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -39,7 +39,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( ConsoleTextColorMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 
@@ -79,7 +79,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::RootMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 		}

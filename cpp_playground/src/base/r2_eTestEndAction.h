@@ -6,7 +6,6 @@ namespace r2
 	{
 		Pause,
 		None,
-		ChangeScene,
 		Exit,
 	};
 }

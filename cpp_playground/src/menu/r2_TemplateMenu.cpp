@@ -22,7 +22,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::VariadicTemplateMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 
@@ -32,7 +32,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::TemplateMetaProgrammingMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 
@@ -42,7 +42,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::TemplatePracticeMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 
@@ -56,7 +56,7 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::RootMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::None;
 				}
 			);
 		}
