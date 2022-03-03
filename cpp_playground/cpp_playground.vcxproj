@@ -62,6 +62,7 @@
     <ClCompile Include="src\r2\r2_Direction4.cpp" />
     <ClCompile Include="src\r2\r2_Direction8.cpp" />
     <ClCompile Include="src\r2\r2_GridIndexConverter.cpp" />
+    <ClCompile Include="src\r2\r2_PointInt.cpp" />
     <ClCompile Include="src\test_algorithm\algorithm_astar_test.cpp" />
     <ClCompile Include="src\test_algorithm\algorithm_bubble_sort_test.cpp" />
     <ClCompile Include="src\test_algorithm\algorithm_insertion_sort_test.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="src\r2\r2_Grid.h" />
     <ClInclude Include="src\r2\r2_GridIndexConverter.h" />
     <ClInclude Include="src\r2\r2_Point.h" />
+    <ClInclude Include="src\r2\r2_PointInt.h" />
     <ClInclude Include="src\test_algorithm\algorithm_astar_test.h" />
     <ClInclude Include="src\test_algorithm\algorithm_bubble_sort_test.h" />
     <ClInclude Include="src\test_algorithm\algorithm_insertion_sort_test.h" />

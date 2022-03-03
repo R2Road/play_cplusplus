@@ -11,7 +11,7 @@ namespace
 
 namespace r2algorithm_astar
 {
-	void AStarPathBuilder::Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::list<r2::Point>* out_result_path )
+	void AStarPathBuilder::Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::list<r2::PointInt>* out_result_path )
 	{
 		using Node4AStarContainerT = std::list<Node4AStar>;
 		Node4AStarContainerT open_list;
@@ -22,7 +22,7 @@ namespace r2algorithm_astar
 		// Ready
 		//
 		{
-			Node4AStar new_node{ entry_point, r2::Point{ -1, -1 }, entry_point, exit_point };
+			Node4AStar new_node{ entry_point, r2::PointInt{ -1, -1 }, entry_point, exit_point };
 			open_list.push_back( new_node );
 		}
 
@@ -61,17 +61,17 @@ namespace r2algorithm_astar
 
 			// Collect Open List
 			r2::Direction8 dir8;
-			r2::Point temp_point;
+			r2::PointInt temp_point;
 			for( int i = 0; 8 > i; ++i, dir8.Rotate( true, 1 ) )
 			{
 				temp_point = current_node.GetPoint() + dir8.GetPoint();
 
-				if( !grid.IsIn( temp_point.x, temp_point.y ) )
+				if( !grid.IsIn( temp_point.GetX(), temp_point.GetY() ) )
 				{
 					continue;
 				}
 
-				if( CELL_TYPE_ROAD != grid.Get( temp_point.x, temp_point.y ) )
+				if( CELL_TYPE_ROAD != grid.Get( temp_point.GetX(), temp_point.GetY() ) )
 				{
 					continue;
 				}
@@ -107,7 +107,7 @@ namespace r2algorithm_astar
 			} );
 			out_result_path->push_back( current_itr->GetPoint() );
 
-			while( -1 != current_itr->GetPreviousPoint().x )
+			while( -1 != current_itr->GetPreviousPoint().GetX() )
 			{
 				out_result_path->push_back( current_itr->GetPreviousPoint() );
 
@@ -118,7 +118,7 @@ namespace r2algorithm_astar
 		}
 	}
 
-	void AStarPathBuilder_Use_STDListSplice::Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::list<r2::Point>* out_result_path )
+	void AStarPathBuilder_Use_STDListSplice::Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::list<r2::PointInt>* out_result_path )
 	{
 		using Node4AStarContainerT = std::list<Node4AStar>;
 		Node4AStarContainerT open_list;
@@ -129,7 +129,7 @@ namespace r2algorithm_astar
 		// Ready
 		//
 		{
-			Node4AStar new_node{ entry_point, r2::Point{ -1, -1 }, entry_point, exit_point };
+			Node4AStar new_node{ entry_point, r2::PointInt{ -1, -1 }, entry_point, exit_point };
 			open_list.push_back( new_node );
 		}
 
@@ -167,17 +167,17 @@ namespace r2algorithm_astar
 
 			// Collect Open List
 			r2::Direction8 dir8;
-			r2::Point temp_point;
+			r2::PointInt temp_point;
 			for( int i = 0; 8 > i; ++i, dir8.Rotate( true, 1 ) )
 			{
 				temp_point = current_node.GetPoint() + dir8.GetPoint();
 
-				if( !grid.IsIn( temp_point.x, temp_point.y ) )
+				if( !grid.IsIn( temp_point.GetX(), temp_point.GetY() ) )
 				{
 					continue;
 				}
 
-				if( CELL_TYPE_ROAD != grid.Get( temp_point.x, temp_point.y ) )
+				if( CELL_TYPE_ROAD != grid.Get( temp_point.GetX(), temp_point.GetY() ) )
 				{
 					continue;
 				}
@@ -213,7 +213,7 @@ namespace r2algorithm_astar
 			} );
 			out_result_path->push_back( current_itr->GetPoint() );
 
-			while( -1 != current_itr->GetPreviousPoint().x )
+			while( -1 != current_itr->GetPreviousPoint().GetX() )
 			{
 				out_result_path->push_back( current_itr->GetPreviousPoint() );
 
@@ -226,7 +226,7 @@ namespace r2algorithm_astar
 
 
 
-	void AStarPathBuilder_Use_STDListSplice_STDVectorResultPath::Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::vector<r2::Point>* out_result_path )
+	void AStarPathBuilder_Use_STDListSplice_STDVectorResultPath::Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::vector<r2::PointInt>* out_result_path )
 	{
 		using Node4AStarContainerT = std::list<Node4AStar>;
 		Node4AStarContainerT open_list;
@@ -237,7 +237,7 @@ namespace r2algorithm_astar
 		// Ready
 		//
 		{
-			Node4AStar new_node{ entry_point, r2::Point{ -1, -1 }, entry_point, exit_point };
+			Node4AStar new_node{ entry_point, r2::PointInt{ -1, -1 }, entry_point, exit_point };
 			open_list.push_back( new_node );
 		}
 
@@ -275,17 +275,17 @@ namespace r2algorithm_astar
 
 			// Collect Open List
 			r2::Direction8 dir8;
-			r2::Point temp_point;
+			r2::PointInt temp_point;
 			for( int i = 0; 8 > i; ++i, dir8.Rotate( true, 1 ) )
 			{
 				temp_point = current_node.GetPoint() + dir8.GetPoint();
 
-				if( !grid.IsIn( temp_point.x, temp_point.y ) )
+				if( !grid.IsIn( temp_point.GetX(), temp_point.GetY() ) )
 				{
 					continue;
 				}
 
-				if( CELL_TYPE_ROAD != grid.Get( temp_point.x, temp_point.y ) )
+				if( CELL_TYPE_ROAD != grid.Get( temp_point.GetX(), temp_point.GetY() ) )
 				{
 					continue;
 				}
@@ -321,7 +321,7 @@ namespace r2algorithm_astar
 			} );
 			out_result_path->push_back( current_itr->GetPoint() );
 
-			while( -1 != current_itr->GetPreviousPoint().x )
+			while( -1 != current_itr->GetPreviousPoint().GetX() )
 			{
 				out_result_path->push_back( current_itr->GetPreviousPoint() );
 
@@ -334,7 +334,7 @@ namespace r2algorithm_astar
 
 
 
-	void AStarPathBuilder_Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::vector<r2::Point>* out_result_path )
+	void AStarPathBuilder_Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::vector<r2::PointInt>* out_result_path )
 	{
 		using Node4AStarContainerT = std::list<Node4AStar>;
 		Node4AStarContainerT open_list;
@@ -346,7 +346,7 @@ namespace r2algorithm_astar
 		// Ready
 		//
 		{
-			Node4AStar new_node{ entry_point, r2::Point{ -1, -1 }, entry_point, exit_point };
+			Node4AStar new_node{ entry_point, r2::PointInt{ -1, -1 }, entry_point, exit_point };
 			open_list.push_back( new_node );
 		}
 
@@ -384,17 +384,17 @@ namespace r2algorithm_astar
 
 			// Collect Open List
 			r2::Direction8 dir8;
-			r2::Point temp_point;
+			r2::PointInt temp_point;
 			for( int i = 0; 8 > i; ++i, dir8.Rotate( true, 1 ) )
 			{
 				temp_point = current_node.GetPoint() + dir8.GetPoint();
 
-				if( !grid.IsIn( temp_point.x, temp_point.y ) )
+				if( !grid.IsIn( temp_point.GetX(), temp_point.GetY() ) )
 				{
 					continue;
 				}
 
-				if( CELL_TYPE_ROAD != grid.Get( temp_point.x, temp_point.y ) )
+				if( CELL_TYPE_ROAD != grid.Get( temp_point.GetX(), temp_point.GetY() ) )
 				{
 					continue;
 				}
@@ -431,7 +431,7 @@ namespace r2algorithm_astar
 			out_result_path->push_back( current_itr->GetPoint() );
 			garbage_list.splice( garbage_list.begin(), close_list, current_itr );
 
-			while( -1 != current_itr->GetPreviousPoint().x )
+			while( -1 != current_itr->GetPreviousPoint().GetX() )
 			{
 				out_result_path->push_back( current_itr->GetPreviousPoint() );
 
@@ -451,19 +451,19 @@ namespace r2algorithm_astar
 			c.Clear();
 		}
 	}
-	void AStarPathBuilder_Use_CostMap_STDListSplice_STDVectorResultPath::Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::vector<r2::Point>* out_result_path )
+	void AStarPathBuilder_Use_CostMap_STDListSplice_STDVectorResultPath::Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::vector<r2::PointInt>* out_result_path )
 	{
-		using TargetContainerT = std::list<r2::Point>;
+		using TargetContainerT = std::list<r2::PointInt>;
 		TargetContainerT open_list;
 		TargetContainerT close_list;
-		r2::Point current_point;
+		r2::PointInt current_point;
 		bool bSuccess = false;
 
 		//
 		// Ready
 		//
 		{
-			cost_map.Set( entry_point.x, entry_point.y, { entry_point, r2::Point{ -1, -1 }, entry_point, exit_point } );
+			cost_map.Set( entry_point.GetX(), entry_point.GetY(), { entry_point, r2::PointInt{ -1, -1 }, entry_point, exit_point } );
 			open_list.push_back( entry_point );
 		}
 
@@ -481,14 +481,14 @@ namespace r2algorithm_astar
 			TargetContainerT::iterator min_itr = open_list.begin();
 			for( auto cur_itr = ( ++open_list.begin() ), end = open_list.end(); end != cur_itr; ++cur_itr )
 			{
-				if( cost_map.Get( min_itr->x, min_itr->y ).GetCost2End() > cost_map.Get( cur_itr->x, cur_itr->y ).GetCost2End() )
+				if( cost_map.Get( min_itr->GetX(), min_itr->GetY() ).GetCost2End() > cost_map.Get( cur_itr->GetX(), cur_itr->GetY() ).GetCost2End() )
 				{
 					min_itr = cur_itr;
 				}
 			}
 
 			// Move
-			cost_map.Get( min_itr->x, min_itr->y ).Close();
+			cost_map.Get( min_itr->GetX(), min_itr->GetY() ).Close();
 			close_list.splice( close_list.begin(), open_list, min_itr );
 			current_point = *min_itr;
 
@@ -501,27 +501,27 @@ namespace r2algorithm_astar
 
 			// Collect Open List
 			r2::Direction8 dir8;
-			r2::Point temp_point;
+			r2::PointInt temp_point;
 			for( int i = 0; 8 > i; ++i, dir8.Rotate( true, 1 ) )
 			{
 				temp_point = current_point + dir8.GetPoint();
 
-				if( !grid.IsIn( temp_point.x, temp_point.y ) )
+				if( !grid.IsIn( temp_point.GetX(), temp_point.GetY() ) )
 				{
 					continue;
 				}
 
-				if( CELL_TYPE_ROAD != grid.Get( temp_point.x, temp_point.y ) )
+				if( CELL_TYPE_ROAD != grid.Get( temp_point.GetX(), temp_point.GetY() ) )
 				{
 					continue;
 				}
 
-				if( Node4AStar::eStatus::None != cost_map.Get( temp_point.x, temp_point.y ).GetStatus() )
+				if( Node4AStar::eStatus::None != cost_map.Get( temp_point.GetX(), temp_point.GetY() ).GetStatus() )
 				{
 					continue;
 				}
 
-				cost_map.Get( temp_point.x, temp_point.y ) = Node4AStar{ temp_point, current_point, entry_point, exit_point };
+				cost_map.Get( temp_point.GetX(), temp_point.GetY() ) = Node4AStar{ temp_point, current_point, entry_point, exit_point };
 				open_list.push_back( temp_point );
 			}
 		}
@@ -534,11 +534,11 @@ namespace r2algorithm_astar
 			out_result_path->clear();
 
 			auto path_point = exit_point;
-			while( -1 != path_point.x )
+			while( -1 != path_point.GetX() )
 			{
 				out_result_path->push_back( path_point );
 
-				path_point = cost_map.Get( path_point.x, path_point.y ).GetPreviousPoint();
+				path_point = cost_map.Get( path_point.GetX(), path_point.GetY() ).GetPreviousPoint();
 			}
 		}
 	}
@@ -552,19 +552,19 @@ namespace r2algorithm_astar
 			c.Clear();
 		}
 	}
-	void AStarPathBuilder_Use_TinyCostMap_STDListSplice_STDVectorResultPath::Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::vector<r2::Point>* out_result_path )
+	void AStarPathBuilder_Use_TinyCostMap_STDListSplice_STDVectorResultPath::Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::vector<r2::PointInt>* out_result_path )
 	{
-		using TargetContainerT = std::list<r2::Point>;
+		using TargetContainerT = std::list<r2::PointInt>;
 		TargetContainerT open_list;
 		TargetContainerT close_list;
-		r2::Point current_point;
+		r2::PointInt current_point;
 		bool bSuccess = false;
 
 		//
 		// Ready
 		//
 		{
-			cost_map.Set( entry_point.x, entry_point.y, { entry_point, r2::Point{ -1, -1 }, exit_point } );
+			cost_map.Set( entry_point.GetX(), entry_point.GetY(), { entry_point, r2::PointInt{ -1, -1 }, exit_point } );
 			open_list.push_back( entry_point );
 		}
 
@@ -582,14 +582,14 @@ namespace r2algorithm_astar
 			TargetContainerT::iterator min_itr = open_list.begin();
 			for( auto cur_itr = ( ++open_list.begin() ), end = open_list.end(); end != cur_itr; ++cur_itr )
 			{
-				if( cost_map.Get( min_itr->x, min_itr->y ).GetCost2End() > cost_map.Get( cur_itr->x, cur_itr->y ).GetCost2End() )
+				if( cost_map.Get( min_itr->GetX(), min_itr->GetY() ).GetCost2End() > cost_map.Get( cur_itr->GetX(), cur_itr->GetY() ).GetCost2End() )
 				{
 					min_itr = cur_itr;
 				}
 			}
 
 			// Move
-			cost_map.Get( min_itr->x, min_itr->y ).Close();
+			cost_map.Get( min_itr->GetX(), min_itr->GetY() ).Close();
 			close_list.splice( close_list.begin(), open_list, min_itr );
 			current_point = *min_itr;
 
@@ -602,27 +602,27 @@ namespace r2algorithm_astar
 
 			// Collect Open List
 			r2::Direction8 dir8;
-			r2::Point temp_point;
+			r2::PointInt temp_point;
 			for( int i = 0; 8 > i; ++i, dir8.Rotate( true, 1 ) )
 			{
 				temp_point = current_point + dir8.GetPoint();
 
-				if( !grid.IsIn( temp_point.x, temp_point.y ) )
+				if( !grid.IsIn( temp_point.GetX(), temp_point.GetY() ) )
 				{
 					continue;
 				}
 
-				if( CELL_TYPE_ROAD != grid.Get( temp_point.x, temp_point.y ) )
+				if( CELL_TYPE_ROAD != grid.Get( temp_point.GetX(), temp_point.GetY() ) )
 				{
 					continue;
 				}
 
-				if( TinyNode4AStar::eStatus::None != cost_map.Get( temp_point.x, temp_point.y ).GetStatus() )
+				if( TinyNode4AStar::eStatus::None != cost_map.Get( temp_point.GetX(), temp_point.GetY() ).GetStatus() )
 				{
 					continue;
 				}
 
-				cost_map.Get( temp_point.x, temp_point.y ) = TinyNode4AStar{ temp_point, current_point, exit_point };
+				cost_map.Get( temp_point.GetX(), temp_point.GetY() ) = TinyNode4AStar{ temp_point, current_point, exit_point };
 				open_list.push_back( temp_point );
 			}
 		}
@@ -635,11 +635,11 @@ namespace r2algorithm_astar
 			out_result_path->clear();
 
 			auto path_point = exit_point;
-			while( -1 != path_point.x )
+			while( -1 != path_point.GetX() )
 			{
 				out_result_path->push_back( path_point );
 
-				path_point = cost_map.Get( path_point.x, path_point.y ).GetPreviousPoint();
+				path_point = cost_map.Get( path_point.GetX(), path_point.GetY() ).GetPreviousPoint();
 			}
 		}
 	}
@@ -656,16 +656,16 @@ namespace r2algorithm_astar
 		open_list.Clear();
 		close_list.Clear();
 	}
-	void AStarPathBuilder_Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::vector<r2::Point>* out_result_path )
+	void AStarPathBuilder_Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::vector<r2::PointInt>* out_result_path )
 	{
-		r2::Point current_point;
+		r2::PointInt current_point;
 		bool bSuccess = false;
 
 		//
 		// Ready
 		//
 		{
-			cost_map.Set( entry_point.x, entry_point.y, { entry_point, r2::Point{ -1, -1 }, exit_point } );
+			cost_map.Set( entry_point.GetX(), entry_point.GetY(), { entry_point, r2::PointInt{ -1, -1 }, exit_point } );
 			open_list.PushBack( entry_point );
 		}
 
@@ -683,14 +683,14 @@ namespace r2algorithm_astar
 			TargetContainerT::IteratorT min_itr = open_list.begin();
 			for( auto cur_itr = ( ++open_list.begin() ), end = open_list.end(); end != cur_itr; ++cur_itr )
 			{
-				if( cost_map.Get( ( *min_itr ).x, ( *min_itr ).y ).GetCost2End() > cost_map.Get( ( *cur_itr ).x, ( *cur_itr ).y ).GetCost2End() )
+				if( cost_map.Get( ( *min_itr ).GetX(), ( *min_itr ).GetY() ).GetCost2End() > cost_map.Get( ( *cur_itr ).GetX(), ( *cur_itr ).GetY() ).GetCost2End() )
 				{
 					min_itr = cur_itr;
 				}
 			}
 
 			// Move
-			cost_map.Get( ( *min_itr ).x, ( *min_itr ).y ).Close();
+			cost_map.Get( ( *min_itr ).GetX(), ( *min_itr ).GetY() ).Close();
 			current_point = *min_itr;
 			open_list.Erase( min_itr );
 			close_list.PushBack( current_point );
@@ -704,27 +704,27 @@ namespace r2algorithm_astar
 
 			// Collect Open List
 			r2::Direction8 dir8;
-			r2::Point temp_point;
+			r2::PointInt temp_point;
 			for( int i = 0; 8 > i; ++i, dir8.Rotate( true, 1 ) )
 			{
 				temp_point = current_point + dir8.GetPoint();
 
-				if( !grid.IsIn( temp_point.x, temp_point.y ) )
+				if( !grid.IsIn( temp_point.GetX(), temp_point.GetY() ) )
 				{
 					continue;
 				}
 
-				if( CELL_TYPE_ROAD != grid.Get( temp_point.x, temp_point.y ) )
+				if( CELL_TYPE_ROAD != grid.Get( temp_point.GetX(), temp_point.GetY() ) )
 				{
 					continue;
 				}
 
-				if( TinyNode4AStar::eStatus::None != cost_map.Get( temp_point.x, temp_point.y ).GetStatus() )
+				if( TinyNode4AStar::eStatus::None != cost_map.Get( temp_point.GetX(), temp_point.GetY() ).GetStatus() )
 				{
 					continue;
 				}
 
-				cost_map.Get( temp_point.x, temp_point.y ) = TinyNode4AStar{ temp_point, current_point, exit_point };
+				cost_map.Get( temp_point.GetX(), temp_point.GetY() ) = TinyNode4AStar{ temp_point, current_point, exit_point };
 				open_list.PushBack( temp_point );
 			}
 		}
@@ -737,11 +737,11 @@ namespace r2algorithm_astar
 			out_result_path->clear();
 
 			auto path_point = exit_point;
-			while( -1 != path_point.x )
+			while( -1 != path_point.GetX() )
 			{
 				out_result_path->push_back( path_point );
 
-				path_point = cost_map.Get( path_point.x, path_point.y ).GetPreviousPoint();
+				path_point = cost_map.Get( path_point.GetX(), path_point.GetY() ).GetPreviousPoint();
 			}
 		}
 	}

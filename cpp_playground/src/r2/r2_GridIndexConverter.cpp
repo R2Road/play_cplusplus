@@ -10,7 +10,7 @@ namespace r2
 		, mLinearEnd( To_Linear( width, height ) )
 	{}
 
-	r2::Point GridIndexConverter::To_Point( const int linear_index ) const
+	r2::PointInt GridIndexConverter::To_Point( const int linear_index ) const
 	{
 		const int fixed_linear_index = std::min( std::max( 0, linear_index ), mLinearEnd );
 
@@ -18,9 +18,9 @@ namespace r2
 		const int x = fixed_linear_index - ( y * mWidth );
 		return r2::Point{ x, y };
 	}
-	int GridIndexConverter::To_Linear( const r2::Point point_index ) const
+	int GridIndexConverter::To_Linear( const r2::PointInt point_index ) const
 	{
-		return To_Linear( point_index.x, point_index.y);
+		return To_Linear( point_index.GetX(), point_index.GetY() );
 	}
 	int GridIndexConverter::To_Linear( const int x, const int y ) const
 	{

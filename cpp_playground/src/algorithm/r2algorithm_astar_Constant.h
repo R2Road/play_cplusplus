@@ -3,12 +3,12 @@
 #include <stdint.h>
 
 #include "r2/r2_Grid.h"
-#include "r2/r2_Point.h"
+#include "r2/r2_PointInt.h"
 
 namespace r2algorithm_astar
 {
-	constexpr r2::Point ENTRY_POINT{ 2, 1 };
-	constexpr r2::Point EXIT_POINT{ 16, 17 };
+	const r2::PointInt ENTRY_POINT( 2, 1 );
+	const r2::PointInt EXIT_POINT( 16, 17 );
 
 	constexpr uint32_t WORLD_MAP_WIDTH = 19u;
 	constexpr uint32_t WORLD_MAP_HEIGHT = 19u;

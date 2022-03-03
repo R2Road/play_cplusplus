@@ -31,9 +31,9 @@ namespace r2
 		mState = static_cast<eState>( new_state );
 	}
 
-	r2::Point Direction4::GetPoint() const
+	r2::PointInt Direction4::GetPoint() const
 	{
-		r2::Point out_point;
+		r2::PointInt out_point;
 
 		switch( mState )
 		{

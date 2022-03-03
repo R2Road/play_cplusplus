@@ -323,6 +323,9 @@
     <ClCompile Include="src\utility\r2utility_WindowUtil.cpp">
       <Filter>utility</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2\r2_PointInt.cpp">
+      <Filter>r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -475,9 +478,6 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\std_function_test.h">
       <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2\r2_Point.h">
-      <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_Grid.h">
       <Filter>r2</Filter>
@@ -643,6 +643,12 @@
     </ClInclude>
     <ClInclude Include="src\utility\r2utility_WindowUtil.h">
       <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_Point.h">
+      <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_PointInt.h">
+      <Filter>r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

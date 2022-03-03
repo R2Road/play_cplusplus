@@ -1,33 +1,134 @@
 #pragma once
 
+#include <algorithm>
+#include <cmath>
+
 namespace r2
 {
-	struct Point
+	template<typename T>
+	class Point
 	{
-		bool operator==( const Point& p ) const
+	public:
+		using ValueT = T;
+		using MyT = Point<T>;
+
+		static const MyT& GetZERO()
 		{
-			return x == p.x && y == p.y;
+			static const MyT ZERO( 0, 0 );
+			return ZERO;
 		}
-		bool operator!=( const Point& p ) const
+		static const MyT& GetMINUS_ONE()
 		{
-			return !( *this == p );
-		}
-		void operator+=( const Point& p )
-		{
-			x += p.x;
-			y += p.y;
+			static const MyT MINUS_ONE( -1, -1 );
+			return MINUS_ONE;
 		}
 
-		Point operator+( const Point& p ) const
+		Point() : mX( 0 ), mY( 0 )
 		{
-			return Point{ x + p.x, y + p.y };
+			static_assert(
+				std::is_same<int, ValueT>::value
+				, "r2r::Point - Not Allowed Type"
+			);
 		}
-		Point operator-( const Point& p ) const
+		Point( const ValueT x, const ValueT y ) : mX( x ), mY( y )
 		{
-			return Point{ x - p.x, y - p.y };
+			static_assert(
+				std::is_same<int, ValueT>::value
+				, "r2r::Point - Not Allowed Type"
+			);
 		}
 
-		int x = 0;
-		int y = 0;
+		bool operator==( const MyT& right ) const
+		{
+			return right.mX == mX && right.mY == mY;
+		}
+		bool operator!=( const MyT& right ) const
+		{
+			return !( *this == right );
+		}
+		bool operator<( const MyT& right ) const
+		{
+			return ( mY < right.mY )
+				? true
+				: ( mY == right.mY ? mX < right.mX : false );
+		}
+		MyT operator-( const MyT& right ) const
+		{
+			return MyT( mX - right.mX, mY - right.mY );
+		}
+		MyT operator+( const MyT& right ) const
+		{
+			return MyT( mX + right.mX, mY + right.mY );
+		}
+		MyT operator+=( const MyT& right )
+		{
+			mX += right.mX;
+			mY += right.mY;
+			return *this;
+		}
+		MyT operator-=( const MyT& right )
+		{
+			mX -= right.mX;
+			mY -= right.mY;
+			return *this;
+		}
+
+		inline void SetZero()
+		{
+			mX = MyT::GetZERO().mX;
+			mY = MyT::GetZERO().mY;
+		}
+		inline void SetMIinusOne()
+		{
+			mX = MyT::GetMINUS_ONE().mX;
+			mY = MyT::GetMINUS_ONE().mY;
+		}
+		inline void Set( const ValueT x, const ValueT y )
+		{
+			mX = x;
+			mY = y;
+		}
+		inline void SetX( const ValueT x ) { mX = x; }
+		inline void SetY( const ValueT y ) { mY = y; }
+		inline void Add( const ValueT add_x, const ValueT add_y )
+		{
+			mX += add_x;
+			mY += add_y;
+		}
+
+		inline ValueT GetX() const { return mX; }
+		inline ValueT GetY() const { return mY; }
+
+		inline bool Equals( const MyT& point ) const
+		{
+			return point.mX == mX && point.mY == mY;
+		}
+		inline ValueT Distance( const MyT& target ) const
+		{
+			return Distance( target.mX, target.mY );
+		}
+		inline ValueT Distance( const ValueT x, const ValueT y ) const
+		{
+			return std::abs( mX - x ) + std::abs( mY - y );
+		}
+		inline ValueT Distance_DiagonalIsOne( const MyT& target ) const
+		{
+			const ValueT tempX = std::abs( mX - target.mX );
+			const ValueT tempY = std::abs( mY - target.mY );
+			return (
+				tempX >= tempY
+				? ( tempX + tempY ) - tempY
+				: ( tempX + tempY ) - tempX
+			);
+		}
+
+		inline ValueT Length() const
+		{
+			return std::abs( mX ) + std::abs( mY );
+		}
+
+	private:
+		ValueT mX;
+		ValueT mY;
 	};
 }

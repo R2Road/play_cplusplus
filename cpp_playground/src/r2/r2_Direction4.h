@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2_Point.h"
+#include "r2_PointInt.h"
 
 namespace r2
 {
@@ -28,7 +28,7 @@ namespace r2
 
 		void Rotate( const bool rotate_right );
 
-		r2::Point GetPoint() const;
+		r2::PointInt GetPoint() const;
 
 	private:
 		eState mState;

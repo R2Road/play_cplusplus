@@ -3,7 +3,7 @@
 
 #include "base/r2_eTestEndAction.h"
 #include "r2/r2_ArrayBasedList.h"
-#include "r2/r2_Point.h"
+#include "r2/r2_PointInt.h"
 
 #include "base/r2_Inspector.h"
 
@@ -128,8 +128,8 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			r2::ListNode<r2::Point> node{ { 11, 12 }, nullptr, nullptr };
-			r2::ListIterator<r2::Point> itr( &node );
+			r2::ListNode<r2::PointInt> node{ { 11, 12 }, nullptr, nullptr };
+			r2::ListIterator<r2::PointInt> itr( &node );
 
 			{
 				std::cout << "+ Declaration" << r2::linefeed2;
@@ -142,8 +142,8 @@ namespace array_based_list_test
 			{
 				std::cout << "+ List Iterator Operator : *" << r2::linefeed2;
 
-				EXPECT_EQ( ( *itr ).x, 11 );
-				EXPECT_EQ( ( *itr ).y, 12 );
+				EXPECT_EQ( ( *itr ).GetX(), 11 );
+				EXPECT_EQ( ( *itr ).GetY(), 12 );
 			}
 
 			std::cout << r2::split;
@@ -151,8 +151,8 @@ namespace array_based_list_test
 			{
 				std::cout << "+ List Iterator Operator : ->" << r2::linefeed2;
 
-				EXPECT_EQ( itr->x, 11 );
-				EXPECT_EQ( itr->y, 12 );
+				EXPECT_EQ( itr->GetX(), 11 );
+				EXPECT_EQ( itr->GetY(), 12 );
 			}
 
 			std::cout << r2::split;

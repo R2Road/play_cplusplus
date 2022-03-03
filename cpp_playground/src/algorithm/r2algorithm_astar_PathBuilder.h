@@ -4,7 +4,7 @@
 #include <vector>
 
 #include "r2algorithm_astar_Constant.h"
-#include "r2/r2_Point.h"
+#include "r2/r2_PointInt.h"
 #include "r2/r2_Grid.h"
 #include "r2/r2_ArrayBasedList.h"
 
@@ -29,7 +29,7 @@ namespace r2algorithm_astar
 			, mTotalCost( mCost2Start + mCost2End )
 		{}
 
-		Node4AStar( const r2::Point current_point, const r2::Point previous_point, const r2::Point start_point, const r2::Point end_point ) :
+		Node4AStar( const r2::PointInt current_point, const r2::PointInt previous_point, const r2::PointInt start_point, const r2::PointInt end_point ) :
 			mStatus( eStatus::Open )
 			, mCurrentPoint( current_point )
 			, mPreviousPoint( previous_point )
@@ -42,8 +42,8 @@ namespace r2algorithm_astar
 		// Getter
 		//
 		eStatus GetStatus() const { return mStatus; }
-		r2::Point GetPoint() const { return mCurrentPoint; }
-		r2::Point GetPreviousPoint() const { return mPreviousPoint; }
+		r2::PointInt GetPoint() const { return mCurrentPoint; }
+		r2::PointInt GetPreviousPoint() const { return mPreviousPoint; }
 		int GetCost2Start() const { return mCost2Start; }
 		int GetCost2End() const { return mCost2End; }
 		int GetTotalCost() const { return mTotalCost; }
@@ -66,10 +66,10 @@ namespace r2algorithm_astar
 		}
 
 	private:
-		int calculateCost( const r2::Point point_1, const r2::Point point_2 )
+		int calculateCost( const r2::PointInt point_1, const r2::PointInt point_2 )
 		{
-			const auto distance_x = std::abs( point_1.x - point_2.x );
-			const auto distance_y = std::abs( point_1.y - point_2.y );
+			const auto distance_x = std::abs( point_1.GetX() - point_2.GetX() );
+			const auto distance_y = std::abs( point_1.GetY() - point_2.GetY() );
 
 			const auto gap = std::abs( distance_x - distance_y );
 
@@ -81,8 +81,8 @@ namespace r2algorithm_astar
 
 	private:
 		eStatus mStatus;
-		r2::Point mCurrentPoint;
-		r2::Point mPreviousPoint;
+		r2::PointInt mCurrentPoint;
+		r2::PointInt mPreviousPoint;
 		int mCost2Start;
 		int mCost2End;
 		int mTotalCost;
@@ -104,7 +104,7 @@ namespace r2algorithm_astar
 			, mPreviousPoint()
 		{}
 
-		TinyNode4AStar( const r2::Point current_point, const r2::Point previous_point, const r2::Point end_point ) :
+		TinyNode4AStar( const r2::PointInt current_point, const r2::PointInt previous_point, const r2::PointInt end_point ) :
 			mStatus( eStatus::Open )
 			, mCost2End( calculateCost( current_point, end_point ) )
 			, mPreviousPoint( previous_point )
@@ -114,7 +114,7 @@ namespace r2algorithm_astar
 		// Getter
 		//
 		eStatus GetStatus() const { return mStatus; }
-		r2::Point GetPreviousPoint() const { return mPreviousPoint; }
+		r2::PointInt GetPreviousPoint() const { return mPreviousPoint; }
 		int GetCost2End() const { return mCost2End; }
 
 		void Clear()
@@ -133,10 +133,10 @@ namespace r2algorithm_astar
 		}
 
 	private:
-		int16_t calculateCost( const r2::Point point_1, const r2::Point point_2 )
+		int16_t calculateCost( const r2::PointInt point_1, const r2::PointInt point_2 )
 		{
-			const auto distance_x = std::abs( point_1.x - point_2.x );
-			const auto distance_y = std::abs( point_1.y - point_2.y );
+			const auto distance_x = std::abs( point_1.GetX() - point_2.GetX() );
+			const auto distance_y = std::abs( point_1.GetY() - point_2.GetY() );
 
 			const auto gap = std::abs( distance_x - distance_y );
 
@@ -149,7 +149,7 @@ namespace r2algorithm_astar
 	private:
 		eStatus mStatus;
 		int16_t mCost2End;
-		r2::Point mPreviousPoint;
+		r2::PointInt mPreviousPoint;
 	};
 
 	class AStarPathBuilder
@@ -157,7 +157,7 @@ namespace r2algorithm_astar
 	public:
 		AStarPathBuilder() = delete;
 
-		static void Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::list<r2::Point>* out_result_path );
+		static void Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::list<r2::PointInt>* out_result_path );
 	};
 
 	class AStarPathBuilder_Use_STDListSplice
@@ -165,7 +165,7 @@ namespace r2algorithm_astar
 	public:
 		AStarPathBuilder_Use_STDListSplice() = delete;
 
-		static void Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::list<r2::Point>* out_result_path );
+		static void Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::list<r2::PointInt>* out_result_path );
 	};
 
 	class AStarPathBuilder_Use_STDListSplice_STDVectorResultPath
@@ -173,14 +173,14 @@ namespace r2algorithm_astar
 	public:
 		AStarPathBuilder_Use_STDListSplice_STDVectorResultPath() = delete;
 
-		static void Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::vector<r2::Point>* out_result_path );
+		static void Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::vector<r2::PointInt>* out_result_path );
 	};
 	class AStarPathBuilder_Use_STDListSplice_DecreaseCloseList_STDVectorResultPath
 	{
 	public:
 		AStarPathBuilder_Use_STDListSplice_DecreaseCloseList_STDVectorResultPath() = delete;
 
-		static void Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::vector<r2::Point>* out_result_path );
+		static void Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::vector<r2::PointInt>* out_result_path );
 	};
 
 	class AStarPathBuilder_Use_CostMap_STDListSplice_STDVectorResultPath
@@ -190,7 +190,7 @@ namespace r2algorithm_astar
 		{}
 
 		void Clear();
-		void Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::vector<r2::Point>* out_result_path );
+		void Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::vector<r2::PointInt>* out_result_path );
 
 		r2::Grid<Node4AStar> cost_map;
 	};
@@ -201,7 +201,7 @@ namespace r2algorithm_astar
 		{}
 
 		void Clear();
-		void Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::vector<r2::Point>* out_result_path );
+		void Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::vector<r2::PointInt>* out_result_path );
 
 		r2::Grid<TinyNode4AStar> cost_map;
 	};
@@ -213,11 +213,11 @@ namespace r2algorithm_astar
 		{}
 
 		void Clear();
-		void Build( const r2::Point entry_point, const r2::Point exit_point, const WorldMapT& grid, std::vector<r2::Point>* out_result_path );
+		void Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::vector<r2::PointInt>* out_result_path );
 
 		r2::Grid<TinyNode4AStar> cost_map;
 
-		using TargetContainerT = r2::ArrayBasedList<r2::Point, WORLD_MAP_WIDTH * WORLD_MAP_HEIGHT >;
+		using TargetContainerT = r2::ArrayBasedList<r2::PointInt, WORLD_MAP_WIDTH * WORLD_MAP_HEIGHT >;
 		TargetContainerT open_list;
 		TargetContainerT close_list;
 	};

@@ -8,7 +8,7 @@
 
 #include "r2/r2_Direction4.h"
 #include "r2/r2_Grid.h"
-#include "r2/r2_Point.h"
+#include "r2/r2_PointInt.h"
 
 namespace
 {
@@ -61,21 +61,21 @@ namespace algorithm_maze_test
 
 
 			r2::Direction4 current_direction;
-			r2::Point current_point{ 0, 0 };
-			r2::Point temp_point{ 0, 0 };
+			r2::PointInt current_point{ 0, 0 };
+			r2::PointInt temp_point{ 0, 0 };
 			r2::Grid<int> grid;
 			grid.Reset( 19, 19 );
 
 			{
-				grid.Set( current_point.x, current_point.y, true );
+				grid.Set( current_point.GetX(), current_point.GetY(), true );
 
 				int stay_count = 0;
 				while( 4 >= stay_count )
 				{
-					temp_point.x = current_point.x + current_direction.GetPoint().x;
-					temp_point.y = current_point.y + current_direction.GetPoint().y;
+					temp_point.SetX( current_point.GetX() + current_direction.GetPoint().GetX() );
+					temp_point.SetY( current_point.GetY() + current_direction.GetPoint().GetY() );
 
-					if( !grid.IsIn( temp_point.x, temp_point.y ) ||  0 < grid.Get( temp_point.x, temp_point.y ) )
+					if( !grid.IsIn( temp_point.GetX(), temp_point.GetY() ) ||  0 < grid.Get( temp_point.GetX(), temp_point.GetY() ) )
 					{
 						current_direction.Rotate( true );
 						++stay_count;
@@ -83,7 +83,7 @@ namespace algorithm_maze_test
 						continue;
 					}
 
-					grid.Set( temp_point.x, temp_point.y, 1 );
+					grid.Set( temp_point.GetX(), temp_point.GetY(), 1 );
 
 					current_point = temp_point;
 					stay_count = 0;

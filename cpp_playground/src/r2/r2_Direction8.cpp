@@ -38,9 +38,9 @@ namespace r2
 		}
 	}
 
-	r2::Point Direction8::GetPoint() const
+	r2::PointInt Direction8::GetPoint() const
 	{
-		r2::Point out_point;
+		r2::PointInt out_point;
 
 		switch( mState )
 		{
