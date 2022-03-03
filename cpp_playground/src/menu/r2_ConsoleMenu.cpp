@@ -46,28 +46,34 @@ namespace r2
 			ret->AddLineFeed();
 			ret->AddLineFeed();
 
-			ret->AddChild( 'a', console_test::FontInfo::GetInstance() );
-			ret->AddChild( 's', console_test::FontChange::GetInstance() );
-			ret->AddChild( 'd', console_window_input_test::WindowInput_ReadConsoleInput::GetInstance() );
-			ret->AddChild( 'f', console_window_input_test::WindowInput_GetKeyState::GetInstance() );
-			ret->AddChild( 'g', console_window_input_test::WindowInput_GetKeyboardState::GetInstance() );
-			ret->AddChild( 'h', console_window_input_test::WindowInput_GetAsyncKeyStates::GetInstance() );
+			ret->AddChild( 'q', console_test::FontInfo::GetInstance() );
+			ret->AddChild( 'w', console_test::FontChange::GetInstance() );
+			ret->AddChild( 'e', console_window_input_test::WindowInput_ReadConsoleInput::GetInstance() );
+			ret->AddChild( 'r', console_window_input_test::WindowInput_GetKeyState::GetInstance() );
+			ret->AddChild( 't', console_window_input_test::WindowInput_GetKeyboardState::GetInstance() );
+			ret->AddChild( 'y', console_window_input_test::WindowInput_GetAsyncKeyStates::GetInstance() );
 
 			ret->AddLineFeed();
 
-			ret->AddChild( 'j', console_window_message_test::ConsoleControlHandler::GetInstance() );
-			ret->AddChild( 'k', console_window_message_test::MessageHook::GetInstance() );
+			ret->AddChild( 'u', console_window_message_test::ConsoleControlHandler::GetInstance() );
+			ret->AddChild( 'i', console_window_message_test::MessageHook::GetInstance() );
 
 
 			ret->AddLineFeed();
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'z', console_test::Pixel::GetInstance() );
-			ret->AddChild( 'x', console_buffer_test::FillBuffer::GetInstance() );
-			ret->AddChild( 'c', console_buffer_test::Write2Buffer_WriteConsole::GetInstance() );
-			ret->AddChild( 'v', console_buffer_test::Write2Buffer_WriteConsoleOutput::GetInstance() );
-			ret->AddChild( 'b', console_buffer_test::DoubleBuffering::GetInstance() );
+			ret->AddChild( 'a', console_test::Pixel::GetInstance() );
+
+
+			ret->AddLineFeed();
+			ret->AddLineFeed();
+
+
+			ret->AddChild( 's', console_buffer_test::FillBuffer::GetInstance() );
+			ret->AddChild( 'd', console_buffer_test::Write2Buffer_WriteConsole::GetInstance() );
+			ret->AddChild( 'f', console_buffer_test::Write2Buffer_WriteConsoleOutput::GetInstance() );
+			ret->AddChild( 'g', console_buffer_test::DoubleBuffering::GetInstance() );
 
 
 			ret->AddSplit();
