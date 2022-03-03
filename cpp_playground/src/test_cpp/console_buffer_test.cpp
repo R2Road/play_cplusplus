@@ -28,7 +28,10 @@ namespace console_buffer_test
 			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
 			COORD topLeft = { 0, 0 };
 			CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info{};
-			assert( GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info ) && "Failed : GetConsoleScreenBufferInfo" );
+			if( !GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info ) )
+			{
+				assert( false && "Failed : GetConsoleScreenBufferInfo" );
+			}
 			const DWORD length = cs_buffer_info.dwSize.X * cs_buffer_info.dwSize.Y;
 			DWORD out_result;
 
@@ -199,7 +202,10 @@ namespace console_buffer_test
 
 				auto hFirstBuffer = GetStdHandle( STD_OUTPUT_HANDLE );
 				CONSOLE_SCREEN_BUFFER_INFO first_csbi{};
-				assert( GetConsoleScreenBufferInfo( hFirstBuffer, &first_csbi ) && "Failed : GetConsoleScreenBufferInfo" );
+				if( !GetConsoleScreenBufferInfo( hFirstBuffer, &first_csbi ) )
+				{
+					assert( false && "Failed : GetConsoleScreenBufferInfo" );
+				}
 				const DWORD length = first_csbi.dwSize.X * first_csbi.dwSize.Y;
 				FillConsoleOutputCharacter( hFirstBuffer, TEXT( '1' ), length, { 0, 0 }, &out_result );
 
@@ -212,7 +218,10 @@ namespace console_buffer_test
 				);
 				SetConsoleScreenBufferSize( hSecondBuffer, first_csbi.dwSize );
 				CONSOLE_SCREEN_BUFFER_INFO second_csbi{};
-				assert( GetConsoleScreenBufferInfo( hSecondBuffer, &second_csbi ) && "Failed : GetConsoleScreenBufferInfo" );
+				if( !GetConsoleScreenBufferInfo( hSecondBuffer, &second_csbi ) )
+				{
+					assert( false && "Failed : GetConsoleScreenBufferInfo" );
+				}
 				FillConsoleOutputCharacter( hSecondBuffer, TEXT( '2' ), length, { 0, 0 }, &out_result );
 
 				bool bUseFirst = true;
