@@ -168,7 +168,7 @@ namespace console_buffer_test
 
 				DWORD ret;
 				WORD colors[10];
-				std::fill_n( colors, 10, FOREGROUND_GREEN | BACKGROUND_BLUE );
+				std::fill_n( colors, 10, static_cast<WORD>( FOREGROUND_GREEN | BACKGROUND_BLUE ) );
 				WriteConsoleOutputAttribute( hStdout, colors, static_cast<DWORD>( sizeof( colors ) / sizeof( DWORD ) ), topLeft, &ret );
 			}
 
