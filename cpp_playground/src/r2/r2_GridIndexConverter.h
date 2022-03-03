@@ -9,6 +9,10 @@ namespace r2
 	public:
 		GridIndexConverter( const int width, const int height );
 
+		int GetWidth() const { return mWidth; }
+		int GetHeight() const { return mHeight; }
+		int GetLinerEnd() const { return mLinearEnd; }
+
 		r2::PointInt To_Point( const int linear_index ) const;
 		int To_Linear( const r2::PointInt point_index ) const;
 		int To_Linear( const int x, const int y ) const;

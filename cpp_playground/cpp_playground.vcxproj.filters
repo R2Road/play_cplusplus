@@ -323,6 +323,18 @@
     <ClCompile Include="src\utility\r2utility_WindowUtil.cpp">
       <Filter>utility</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\flickering_research.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utility\r2utility_CharacterBuffer.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2\r2_RectInt.cpp">
+      <Filter>r2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2\r2_Size.cpp">
+      <Filter>r2</Filter>
+    </ClCompile>
     <ClCompile Include="src\r2\r2_PointInt.cpp">
       <Filter>r2</Filter>
     </ClCompile>
@@ -643,6 +655,21 @@
     </ClInclude>
     <ClInclude Include="src\utility\r2utility_WindowUtil.h">
       <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\flickering_research.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\r2utility_CharacterBuffer.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_Rect.h">
+      <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_RectInt.h">
+      <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_Size.h">
+      <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_Point.h">
       <Filter>r2</Filter>

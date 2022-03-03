@@ -63,6 +63,8 @@
     <ClCompile Include="src\r2\r2_Direction8.cpp" />
     <ClCompile Include="src\r2\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\r2\r2_PointInt.cpp" />
+    <ClCompile Include="src\r2\r2_RectInt.cpp" />
+    <ClCompile Include="src\r2\r2_Size.cpp" />
     <ClCompile Include="src\test_algorithm\algorithm_astar_test.cpp" />
     <ClCompile Include="src\test_algorithm\algorithm_bubble_sort_test.cpp" />
     <ClCompile Include="src\test_algorithm\algorithm_insertion_sort_test.cpp" />
@@ -76,6 +78,7 @@
     <ClCompile Include="src\test_cpp\console_window_test.cpp" />
     <ClCompile Include="src\test_cpp\c_random_test.cpp" />
     <ClCompile Include="src\test_cpp\debug_test.cpp" />
+    <ClCompile Include="src\test_cpp\flickering_research.cpp" />
     <ClCompile Include="src\test_cpp\std_algorithm_test.cpp" />
     <ClCompile Include="src\test_cpp\std_numeric_test.cpp" />
     <ClCompile Include="src\test_cpp\alignas_test.cpp" />
@@ -123,6 +126,7 @@
     <ClCompile Include="src\test_hobby\infinite_number_test.cpp" />
     <ClCompile Include="src\test_hobby\memory_pool_test.cpp" />
     <ClCompile Include="src\test_hobby\vector3_test.cpp" />
+    <ClCompile Include="src\utility\r2utility_CharacterBuffer.cpp" />
     <ClCompile Include="src\utility\r2utility_StopWatch.cpp" />
     <ClCompile Include="src\utility\r2utility_WindowUtil.cpp" />
   </ItemGroup>
@@ -173,6 +177,9 @@
     <ClInclude Include="src\r2\r2_GridIndexConverter.h" />
     <ClInclude Include="src\r2\r2_Point.h" />
     <ClInclude Include="src\r2\r2_PointInt.h" />
+    <ClInclude Include="src\r2\r2_Rect.h" />
+    <ClInclude Include="src\r2\r2_RectInt.h" />
+    <ClInclude Include="src\r2\r2_Size.h" />
     <ClInclude Include="src\test_algorithm\algorithm_astar_test.h" />
     <ClInclude Include="src\test_algorithm\algorithm_bubble_sort_test.h" />
     <ClInclude Include="src\test_algorithm\algorithm_insertion_sort_test.h" />
@@ -186,6 +193,7 @@
     <ClInclude Include="src\test_cpp\console_window_test.h" />
     <ClInclude Include="src\test_cpp\c_random_test.h" />
     <ClInclude Include="src\test_cpp\debug_test.h" />
+    <ClInclude Include="src\test_cpp\flickering_research.h" />
     <ClInclude Include="src\test_cpp\std_algorithm_test.h" />
     <ClInclude Include="src\test_cpp\std_numeric_test.h" />
     <ClInclude Include="src\test_cpp\alignas_test.h" />
@@ -233,6 +241,7 @@
     <ClInclude Include="src\test_hobby\infinite_number_test.h" />
     <ClInclude Include="src\test_hobby\memory_pool_test.h" />
     <ClInclude Include="src\test_hobby\vector3_test.h" />
+    <ClInclude Include="src\utility\r2utility_CharacterBuffer.h" />
     <ClInclude Include="src\utility\r2utility_StopWatch.h" />
     <ClInclude Include="src\utility\r2utility_WindowUtil.h" />
   </ItemGroup>

@@ -16,7 +16,7 @@ namespace r2
 
 		const int y = fixed_linear_index / mWidth;
 		const int x = fixed_linear_index - ( y * mWidth );
-		return r2::Point{ x, y };
+		return r2::PointInt{ x, y };
 	}
 	int GridIndexConverter::To_Linear( const r2::PointInt point_index ) const
 	{

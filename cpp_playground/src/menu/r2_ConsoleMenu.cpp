@@ -9,6 +9,7 @@
 #include "r2_RootMenu.h"
 
 #include "test_cpp/console_buffer_test.h"
+#include "test_cpp/flickering_research.h"
 #include "test_cpp/console_input_test.h"
 #include "test_cpp/console_test.h"
 #include "test_cpp/console_window_input_test.h"
@@ -74,6 +75,18 @@ namespace r2
 			ret->AddChild( 'd', console_buffer_test::Write2Buffer_WriteConsole::GetInstance() );
 			ret->AddChild( 'f', console_buffer_test::Write2Buffer_WriteConsoleOutput::GetInstance() );
 			ret->AddChild( 'g', console_buffer_test::DoubleBuffering::GetInstance() );
+
+
+			ret->AddLineFeed();
+			ret->AddLineFeed();
+
+
+			ret->AddChild( 'z', flickering_research::OneByOne::GetInstance() );
+			ret->AddChild( 'x', flickering_research::OneByOne_WithOut_CLS::GetInstance() );
+			ret->AddChild( 'c', flickering_research::LineByLine::GetInstance() );
+			ret->AddChild( 'v', flickering_research::PageByPage::GetInstance() );
+			ret->AddChild( 'b', flickering_research::PageByPage_WithOut_CLS_1::GetInstance() );
+			ret->AddChild( 'n', flickering_research::PageByPage_WithOut_CLS_2::GetInstance() );
 
 
 			ret->AddSplit();
