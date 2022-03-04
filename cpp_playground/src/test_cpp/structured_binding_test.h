@@ -5,7 +5,7 @@
 
 namespace structured_binding_test
 {
-	class Basic : public r2::iTest, public r2::SingleTon<Basic>
+	class Basic : public r2::iItem, public r2::SingleTon<Basic>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

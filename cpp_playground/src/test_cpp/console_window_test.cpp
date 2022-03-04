@@ -11,14 +11,14 @@
 
 namespace console_window_test
 {
-	r2::iTest::TitleFunc BufferInfo::GetTitleFunction() const
+	r2::iItem::TitleFunc BufferInfo::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Buffer Info";
 		};
 	}
-	r2::iTest::DoFunc BufferInfo::GetDoFunction()
+	r2::iItem::DoFunc BufferInfo::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -82,14 +82,14 @@ namespace console_window_test
 
 
 
-	r2::iTest::TitleFunc ChangeWindowSize::GetTitleFunction() const
+	r2::iItem::TitleFunc ChangeWindowSize::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Change Window Size";
 		};
 	}
-	r2::iTest::DoFunc ChangeWindowSize::GetDoFunction()
+	r2::iItem::DoFunc ChangeWindowSize::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -147,14 +147,14 @@ namespace console_window_test
 
 
 
-	r2::iTest::TitleFunc FullScreen::GetTitleFunction() const
+	r2::iItem::TitleFunc FullScreen::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "FullScreen";
 		};
 	}
-	r2::iTest::DoFunc FullScreen::GetDoFunction()
+	r2::iItem::DoFunc FullScreen::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -184,14 +184,14 @@ namespace console_window_test
 
 
 
-	r2::iTest::TitleFunc WindowPosition::GetTitleFunction() const
+	r2::iItem::TitleFunc WindowPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Position";
 		};
 	}
-	r2::iTest::DoFunc WindowPosition::GetDoFunction()
+	r2::iItem::DoFunc WindowPosition::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -290,14 +290,14 @@ namespace console_window_test
 
 
 
-	r2::iTest::TitleFunc ChangeWindowName::GetTitleFunction() const
+	r2::iItem::TitleFunc ChangeWindowName::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Change Window Name";
 		};
 	}
-	r2::iTest::DoFunc ChangeWindowName::GetDoFunction()
+	r2::iItem::DoFunc ChangeWindowName::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -340,14 +340,14 @@ namespace console_window_test
 
 
 
-	r2::iTest::TitleFunc HideTitleBar::GetTitleFunction() const
+	r2::iItem::TitleFunc HideTitleBar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Hide Title Bar";
 		};
 	}
-	r2::iTest::DoFunc HideTitleBar::GetDoFunction()
+	r2::iItem::DoFunc HideTitleBar::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -399,14 +399,14 @@ namespace console_window_test
 
 
 
-	r2::iTest::TitleFunc HideScrollBar::GetTitleFunction() const
+	r2::iItem::TitleFunc HideScrollBar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Hide Scroll Bar";
 		};
 	}
-	r2::iTest::DoFunc HideScrollBar::GetDoFunction()
+	r2::iItem::DoFunc HideScrollBar::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -447,14 +447,14 @@ namespace console_window_test
 
 
 
-	r2::iTest::TitleFunc LockWindowResizingByDragging::GetTitleFunction() const
+	r2::iItem::TitleFunc LockWindowResizingByDragging::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Lock Window Resizing By Dragging";
 		};
 	}
-	r2::iTest::DoFunc LockWindowResizingByDragging::GetDoFunction()
+	r2::iItem::DoFunc LockWindowResizingByDragging::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -505,14 +505,14 @@ namespace console_window_test
 
 
 
-	r2::iTest::TitleFunc MenuItem::GetTitleFunction() const
+	r2::iItem::TitleFunc MenuItem::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Menu Item";
 		};
 	}
-	r2::iTest::DoFunc MenuItem::GetDoFunction()
+	r2::iItem::DoFunc MenuItem::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -563,14 +563,14 @@ namespace console_window_test
 
 
 
-	r2::iTest::TitleFunc CursorMove::GetTitleFunction() const
+	r2::iItem::TitleFunc CursorMove::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Cursor Move";
 		};
 	}
-	r2::iTest::DoFunc CursorMove::GetDoFunction()
+	r2::iItem::DoFunc CursorMove::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -619,14 +619,14 @@ namespace console_window_test
 		};
 	}
 
-	r2::iTest::TitleFunc CursorVisibility::GetTitleFunction() const
+	r2::iItem::TitleFunc CursorVisibility::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Cursor Visibility";
 		};
 	}
-	r2::iTest::DoFunc CursorVisibility::GetDoFunction()
+	r2::iItem::DoFunc CursorVisibility::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

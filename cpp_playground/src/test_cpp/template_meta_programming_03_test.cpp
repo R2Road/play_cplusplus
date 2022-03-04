@@ -29,14 +29,14 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2::iTest::TitleFunc MultiTypePackage::GetTitleFunction() const
+	r2::iItem::TitleFunc MultiTypePackage::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Multi Type Package( In Progress )";
 		};
 	}
-	r2::iTest::DoFunc MultiTypePackage::GetDoFunction()
+	r2::iItem::DoFunc MultiTypePackage::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

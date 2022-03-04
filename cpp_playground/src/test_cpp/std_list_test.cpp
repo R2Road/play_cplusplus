@@ -7,14 +7,14 @@
 
 namespace std_list_test
 {
-	r2::iTest::TitleFunc Splice::GetTitleFunction() const
+	r2::iItem::TitleFunc Splice::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "List : Splice";
 		};
 	}
-	r2::iTest::DoFunc Splice::GetDoFunction()
+	r2::iItem::DoFunc Splice::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -143,14 +143,14 @@ namespace std_list_test
 
 
 
-	r2::iTest::TitleFunc OthersIterator::GetTitleFunction() const
+	r2::iItem::TitleFunc OthersIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "List : Others Iterator";
 		};
 	}
-	r2::iTest::DoFunc OthersIterator::GetDoFunction()
+	r2::iItem::DoFunc OthersIterator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -206,14 +206,14 @@ namespace std_list_test
 
 
 
-	r2::iTest::TitleFunc EndIterator::GetTitleFunction() const
+	r2::iItem::TitleFunc EndIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "List : End Iterator";
 		};
 	}
-	r2::iTest::DoFunc EndIterator::GetDoFunction()
+	r2::iItem::DoFunc EndIterator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

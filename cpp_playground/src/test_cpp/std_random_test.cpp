@@ -12,14 +12,14 @@
 
 namespace std_random_test
 {
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "STD Random : Basic";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -174,14 +174,14 @@ namespace
 }
 namespace std_random_test
 {
-	r2::iTest::TitleFunc StatusSaveAndLoad::GetTitleFunction() const
+	r2::iItem::TitleFunc StatusSaveAndLoad::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "STD Random : Status Save And Load";
 		};
 	}
-	r2::iTest::DoFunc StatusSaveAndLoad::GetDoFunction()
+	r2::iItem::DoFunc StatusSaveAndLoad::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -200,14 +200,14 @@ namespace std_random_test
 
 namespace std_random_test
 {
-	r2::iTest::TitleFunc DiscreateDistribution::GetTitleFunction() const
+	r2::iItem::TitleFunc DiscreateDistribution::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "STD Random : Discreate Distribution";
 		};
 	}
-	r2::iTest::DoFunc DiscreateDistribution::GetDoFunction()
+	r2::iItem::DoFunc DiscreateDistribution::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

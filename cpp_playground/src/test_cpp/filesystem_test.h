@@ -5,7 +5,7 @@
 
 namespace filesystem_test
 {
-	class DirectoryPath : public r2::iTest, public r2::SingleTon<DirectoryPath>
+	class DirectoryPath : public r2::iItem, public r2::SingleTon<DirectoryPath>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
@@ -14,7 +14,7 @@ namespace filesystem_test
 
 
 
-	class DirectoryIterator : public r2::iTest, public r2::SingleTon<DirectoryIterator>
+	class DirectoryIterator : public r2::iItem, public r2::SingleTon<DirectoryIterator>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
@@ -23,7 +23,7 @@ namespace filesystem_test
 
 
 
-	class RecursiveDirectoryIterator : public r2::iTest, public r2::SingleTon<RecursiveDirectoryIterator>
+	class RecursiveDirectoryIterator : public r2::iItem, public r2::SingleTon<RecursiveDirectoryIterator>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
@@ -32,13 +32,13 @@ namespace filesystem_test
 
 
 
-	class PathOperation_1 : public r2::iTest, public r2::SingleTon<PathOperation_1>
+	class PathOperation_1 : public r2::iItem, public r2::SingleTon<PathOperation_1>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
-	class PathOperation_2 : public r2::iTest, public r2::SingleTon<PathOperation_2>
+	class PathOperation_2 : public r2::iItem, public r2::SingleTon<PathOperation_2>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

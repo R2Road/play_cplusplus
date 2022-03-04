@@ -21,14 +21,14 @@ void ShowFontInfo( const CONSOLE_FONT_INFOEX & cfie )
 
 namespace console_test
 {
-	r2::iTest::TitleFunc FontInfo::GetTitleFunction() const
+	r2::iItem::TitleFunc FontInfo::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Font Info";
 		};
 	}
-	r2::iTest::DoFunc FontInfo::GetDoFunction()
+	r2::iItem::DoFunc FontInfo::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -65,14 +65,14 @@ namespace console_test
 
 
 
-	r2::iTest::TitleFunc FontChange::GetTitleFunction() const
+	r2::iItem::TitleFunc FontChange::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Font Change";
 		};
 	}
-	r2::iTest::DoFunc FontChange::GetDoFunction()
+	r2::iItem::DoFunc FontChange::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -140,14 +140,14 @@ namespace console_test
 
 
 
-	r2::iTest::TitleFunc Pixel::GetTitleFunction() const
+	r2::iItem::TitleFunc Pixel::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Set Pixel";
 		};
 	}
-	r2::iTest::DoFunc Pixel::GetDoFunction()
+	r2::iItem::DoFunc Pixel::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

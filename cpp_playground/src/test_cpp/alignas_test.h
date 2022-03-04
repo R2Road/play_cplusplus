@@ -5,7 +5,7 @@
 
 namespace align_test
 {
-	class AlignAs : public r2::iTest, public r2::SingleTon<AlignAs>
+	class AlignAs : public r2::iItem, public r2::SingleTon<AlignAs>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

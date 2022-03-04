@@ -13,14 +13,14 @@ namespace
 }
 namespace variadic_template_test
 {
-	r2::iTest::TitleFunc SizeOfArgs::GetTitleFunction() const
+	r2::iItem::TitleFunc SizeOfArgs::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Size Of Args";
 		};
 	}
-	r2::iTest::DoFunc SizeOfArgs::GetDoFunction()
+	r2::iItem::DoFunc SizeOfArgs::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -82,14 +82,14 @@ namespace
 }
 namespace variadic_template_test
 {
-	r2::iTest::TitleFunc PrintValues::GetTitleFunction() const
+	r2::iItem::TitleFunc PrintValues::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Print Values";
 		};
 	}
-	r2::iTest::DoFunc PrintValues::GetDoFunction()
+	r2::iItem::DoFunc PrintValues::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -161,14 +161,14 @@ namespace
 }
 namespace variadic_template_test
 {
-	r2::iTest::TitleFunc SumValues::GetTitleFunction() const
+	r2::iItem::TitleFunc SumValues::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Sum Values";
 		};
 	}
-	r2::iTest::DoFunc SumValues::GetDoFunction()
+	r2::iItem::DoFunc SumValues::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -250,14 +250,14 @@ namespace
 }
 namespace variadic_template_test
 {
-	r2::iTest::TitleFunc SubtractValues::GetTitleFunction() const
+	r2::iItem::TitleFunc SubtractValues::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Subtract Values";
 		};
 	}
-	r2::iTest::DoFunc SubtractValues::GetDoFunction()
+	r2::iItem::DoFunc SubtractValues::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

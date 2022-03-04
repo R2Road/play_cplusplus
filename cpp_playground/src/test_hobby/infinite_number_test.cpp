@@ -32,14 +32,14 @@ namespace
 
 namespace infinite_number_test
 {
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Infinite Number( To do )";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

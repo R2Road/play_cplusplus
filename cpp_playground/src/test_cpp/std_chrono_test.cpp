@@ -9,14 +9,14 @@
 
 namespace std_chrono_test
 {
-	r2::iTest::TitleFunc Epoch::GetTitleFunction() const
+	r2::iItem::TitleFunc Epoch::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Epoch";
 		};
 	}
-	r2::iTest::DoFunc Epoch::GetDoFunction()
+	r2::iItem::DoFunc Epoch::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -74,14 +74,14 @@ namespace std_chrono_test
 
 
 
-	r2::iTest::TitleFunc Chrono::GetTitleFunction() const
+	r2::iItem::TitleFunc Chrono::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Chrono";
 		};
 	}
-	r2::iTest::DoFunc Chrono::GetDoFunction()
+	r2::iItem::DoFunc Chrono::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

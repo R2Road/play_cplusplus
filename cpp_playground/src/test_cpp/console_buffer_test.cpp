@@ -10,14 +10,14 @@
 
 namespace console_buffer_test
 {
-	r2::iTest::TitleFunc FillBuffer::GetTitleFunction() const
+	r2::iItem::TitleFunc FillBuffer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Fill Buffer";
 		};
 	}
-	r2::iTest::DoFunc FillBuffer::GetDoFunction()
+	r2::iItem::DoFunc FillBuffer::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -77,14 +77,14 @@ namespace console_buffer_test
 
 
 
-	r2::iTest::TitleFunc Write2Buffer_WriteConsole::GetTitleFunction() const
+	r2::iItem::TitleFunc Write2Buffer_WriteConsole::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Write 2 Buffer : WriteConsole";
 		};
 	}
-	r2::iTest::DoFunc Write2Buffer_WriteConsole::GetDoFunction()
+	r2::iItem::DoFunc Write2Buffer_WriteConsole::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -120,14 +120,14 @@ namespace console_buffer_test
 
 
 
-	r2::iTest::TitleFunc Write2Buffer_WriteConsoleOutput::GetTitleFunction() const
+	r2::iItem::TitleFunc Write2Buffer_WriteConsoleOutput::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Write 2 Buffer : WriteConsoleOutput";
 		};
 	}
-	r2::iTest::DoFunc Write2Buffer_WriteConsoleOutput::GetDoFunction()
+	r2::iItem::DoFunc Write2Buffer_WriteConsoleOutput::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -180,14 +180,14 @@ namespace console_buffer_test
 
 
 
-	r2::iTest::TitleFunc DoubleBuffering::GetTitleFunction() const
+	r2::iItem::TitleFunc DoubleBuffering::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Double Buffering";
 		};
 	}
-	r2::iTest::DoFunc DoubleBuffering::GetDoFunction()
+	r2::iItem::DoFunc DoubleBuffering::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

@@ -10,14 +10,14 @@
 
 namespace std_algorithm_test
 {
-	r2::iTest::TitleFunc Shuffle::GetTitleFunction() const
+	r2::iItem::TitleFunc Shuffle::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Algorithm : Shuffle";
 		};
 	}
-	r2::iTest::DoFunc Shuffle::GetDoFunction()
+	r2::iItem::DoFunc Shuffle::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

@@ -48,14 +48,14 @@ namespace r2
 
 namespace vector3_test
 {
-	r2::iTest::TitleFunc OperatorPlus::GetTitleFunction() const
+	r2::iItem::TitleFunc OperatorPlus::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator+";
 		};
 	}
-	r2::iTest::DoFunc OperatorPlus::GetDoFunction()
+	r2::iItem::DoFunc OperatorPlus::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -96,14 +96,14 @@ namespace vector3_test
 		};
 	}
 
-	r2::iTest::TitleFunc OperatorPlusEqual::GetTitleFunction() const
+	r2::iItem::TitleFunc OperatorPlusEqual::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator+=";
 		};
 	}
-	r2::iTest::DoFunc OperatorPlusEqual::GetDoFunction()
+	r2::iItem::DoFunc OperatorPlusEqual::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -146,14 +146,14 @@ namespace vector3_test
 
 
 
-	r2::iTest::TitleFunc OperatorMinus::GetTitleFunction() const
+	r2::iItem::TitleFunc OperatorMinus::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator-";
 		};
 	}
-	r2::iTest::DoFunc OperatorMinus::GetDoFunction()
+	r2::iItem::DoFunc OperatorMinus::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -194,14 +194,14 @@ namespace vector3_test
 		};
 	}
 
-	r2::iTest::TitleFunc OperatorMinusEqual::GetTitleFunction() const
+	r2::iItem::TitleFunc OperatorMinusEqual::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator-=";
 		};
 	}
-	r2::iTest::DoFunc OperatorMinusEqual::GetDoFunction()
+	r2::iItem::DoFunc OperatorMinusEqual::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -244,14 +244,14 @@ namespace vector3_test
 
 
 
-	r2::iTest::TitleFunc OperatorMultiply_With_Scalar::GetTitleFunction() const
+	r2::iItem::TitleFunc OperatorMultiply_With_Scalar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator* Scalar";
 		};
 	}
-	r2::iTest::DoFunc OperatorMultiply_With_Scalar::GetDoFunction()
+	r2::iItem::DoFunc OperatorMultiply_With_Scalar::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -292,14 +292,14 @@ namespace vector3_test
 		};
 	}
 
-	r2::iTest::TitleFunc OperatorMultiplyEqual_With_Scalar::GetTitleFunction() const
+	r2::iItem::TitleFunc OperatorMultiplyEqual_With_Scalar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator*= Scalar";
 		};
 	}
-	r2::iTest::DoFunc OperatorMultiplyEqual_With_Scalar::GetDoFunction()
+	r2::iItem::DoFunc OperatorMultiplyEqual_With_Scalar::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

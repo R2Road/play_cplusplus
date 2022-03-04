@@ -50,14 +50,14 @@ namespace console_window_message_test
 			return FALSE;
 		}
 	}
-	r2::iTest::TitleFunc ConsoleControlHandler::GetTitleFunction() const
+	r2::iItem::TitleFunc ConsoleControlHandler::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Message : Console Control Handler";
 		};
 	}
-	r2::iTest::DoFunc ConsoleControlHandler::GetDoFunction()
+	r2::iItem::DoFunc ConsoleControlHandler::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -145,14 +145,14 @@ namespace console_window_message_test
 		return CallNextHookEx( g_hook_mouse, code, w, l );
 	};
 
-	r2::iTest::TitleFunc MessageHook::GetTitleFunction() const
+	r2::iItem::TitleFunc MessageHook::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Message : Hook";
 		};
 	}
-	r2::iTest::DoFunc MessageHook::GetDoFunction()
+	r2::iItem::DoFunc MessageHook::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

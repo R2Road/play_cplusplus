@@ -32,14 +32,14 @@ namespace std_thread_test
 		}
 	}
 
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Basic";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -95,14 +95,14 @@ namespace std_thread_test
 {
 	void empty_thread_func( int ) {}
 
-	r2::iTest::TitleFunc Declaration::GetTitleFunction() const
+	r2::iItem::TitleFunc Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Declaration";
 		};
 	}
-	r2::iTest::DoFunc Declaration::GetDoFunction()
+	r2::iItem::DoFunc Declaration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -191,14 +191,14 @@ namespace std_thread_test
 
 namespace std_thread_test
 {
-	r2::iTest::TitleFunc CopyAssaignment::GetTitleFunction() const
+	r2::iItem::TitleFunc CopyAssaignment::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Copy Assaignment";
 		};
 	}
-	r2::iTest::DoFunc CopyAssaignment::GetDoFunction()
+	r2::iItem::DoFunc CopyAssaignment::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -261,14 +261,14 @@ namespace std_thread_test
 
 namespace std_thread_test
 {
-	r2::iTest::TitleFunc WaitProcess_SleepFor::GetTitleFunction() const
+	r2::iItem::TitleFunc WaitProcess_SleepFor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Wait Process : Sleep For";
 		};
 	}
-	r2::iTest::DoFunc WaitProcess_SleepFor::GetDoFunction()
+	r2::iItem::DoFunc WaitProcess_SleepFor::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -310,14 +310,14 @@ namespace std_thread_test
 
 namespace std_thread_test
 {
-	r2::iTest::TitleFunc WaitProcess_Yield::GetTitleFunction() const
+	r2::iItem::TitleFunc WaitProcess_Yield::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Wait Process : Yield";
 		};
 	}
-	r2::iTest::DoFunc WaitProcess_Yield::GetDoFunction()
+	r2::iItem::DoFunc WaitProcess_Yield::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

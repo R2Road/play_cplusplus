@@ -5,56 +5,56 @@
 
 namespace performance_container_iteration_test
 {
-	class BuiltInArrayIteration : public r2::iTest, public r2::SingleTon<BuiltInArrayIteration>
+	class BuiltInArrayIteration : public r2::iItem, public r2::SingleTon<BuiltInArrayIteration>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class STDArrayIteration : public r2::iTest, public r2::SingleTon<STDArrayIteration>
+	class STDArrayIteration : public r2::iItem, public r2::SingleTon<STDArrayIteration>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class VectorIteration: public r2::iTest, public r2::SingleTon<VectorIteration>
+	class VectorIteration: public r2::iItem, public r2::SingleTon<VectorIteration>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class ListIteration : public r2::iTest, public r2::SingleTon<ListIteration>
+	class ListIteration : public r2::iItem, public r2::SingleTon<ListIteration>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class MapIteration : public r2::iTest, public r2::SingleTon<MapIteration>
+	class MapIteration : public r2::iItem, public r2::SingleTon<MapIteration>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class UnorderedMapIteration : public r2::iTest, public r2::SingleTon<UnorderedMapIteration>
+	class UnorderedMapIteration : public r2::iItem, public r2::SingleTon<UnorderedMapIteration>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class SetIteration : public r2::iTest, public r2::SingleTon<SetIteration>
+	class SetIteration : public r2::iItem, public r2::SingleTon<SetIteration>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class UnorderedSetIteration : public r2::iTest, public r2::SingleTon<UnorderedSetIteration>
+	class UnorderedSetIteration : public r2::iItem, public r2::SingleTon<UnorderedSetIteration>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
@@ -62,7 +62,7 @@ namespace performance_container_iteration_test
 	};
 
 
-	class STDArrayIteration_WithPointer : public r2::iTest, public r2::SingleTon<STDArrayIteration_WithPointer>
+	class STDArrayIteration_WithPointer : public r2::iItem, public r2::SingleTon<STDArrayIteration_WithPointer>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

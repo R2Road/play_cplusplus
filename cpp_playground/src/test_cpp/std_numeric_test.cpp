@@ -9,14 +9,14 @@
 
 namespace std_numeric_test
 {
-	r2::iTest::TitleFunc Accumulate_Number::GetTitleFunction() const
+	r2::iItem::TitleFunc Accumulate_Number::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Accumulate : Number";
 		};
 	}
-	r2::iTest::DoFunc Accumulate_Number::GetDoFunction()
+	r2::iItem::DoFunc Accumulate_Number::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -96,14 +96,14 @@ namespace std_numeric_test
 
 
 
-	r2::iTest::TitleFunc Accumulate_String::GetTitleFunction() const
+	r2::iItem::TitleFunc Accumulate_String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Accumulate : String";
 		};
 	}
-	r2::iTest::DoFunc Accumulate_String::GetDoFunction()
+	r2::iItem::DoFunc Accumulate_String::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -178,14 +178,14 @@ namespace std_numeric_test
 
 
 
-	r2::iTest::TitleFunc Partial_Sum::GetTitleFunction() const
+	r2::iItem::TitleFunc Partial_Sum::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Partial_Sum";
 		};
 	}
-	r2::iTest::DoFunc Partial_Sum::GetDoFunction()
+	r2::iItem::DoFunc Partial_Sum::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -258,14 +258,14 @@ namespace std_numeric_test
 
 
 
-	r2::iTest::TitleFunc FillSequenceNumber::GetTitleFunction() const
+	r2::iItem::TitleFunc FillSequenceNumber::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Fill Sequence Number In Container";
 		};
 	}
-	r2::iTest::DoFunc FillSequenceNumber::GetDoFunction()
+	r2::iItem::DoFunc FillSequenceNumber::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

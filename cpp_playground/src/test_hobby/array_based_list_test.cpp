@@ -8,14 +8,14 @@
 
 namespace array_based_list_test
 {
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : Basic";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -45,14 +45,14 @@ namespace array_based_list_test
 
 
 
-	r2::iTest::TitleFunc PushFront::GetTitleFunction() const
+	r2::iItem::TitleFunc PushFront::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : PushFront";
 		};
 	}
-	r2::iTest::DoFunc PushFront::GetDoFunction()
+	r2::iItem::DoFunc PushFront::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -112,14 +112,14 @@ namespace array_based_list_test
 
 
 	// REF : https://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B
-	r2::iTest::TitleFunc IteratorOperator_Indirection_StructureDereference::GetTitleFunction() const
+	r2::iItem::TitleFunc IteratorOperator_Indirection_StructureDereference::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : Iterator : operator*, operator->";
 		};
 	}
-	r2::iTest::DoFunc IteratorOperator_Indirection_StructureDereference::GetDoFunction()
+	r2::iItem::DoFunc IteratorOperator_Indirection_StructureDereference::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -162,14 +162,14 @@ namespace array_based_list_test
 
 
 
-	r2::iTest::TitleFunc EndIterator::GetTitleFunction() const
+	r2::iItem::TitleFunc EndIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : End Iterator";
 		};
 	}
-	r2::iTest::DoFunc EndIterator::GetDoFunction()
+	r2::iItem::DoFunc EndIterator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -226,14 +226,14 @@ namespace array_based_list_test
 
 
 
-	r2::iTest::TitleFunc BeginIterator::GetTitleFunction() const
+	r2::iItem::TitleFunc BeginIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : Begin Iterator";
 		};
 	}
-	r2::iTest::DoFunc BeginIterator::GetDoFunction()
+	r2::iItem::DoFunc BeginIterator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -310,14 +310,14 @@ namespace array_based_list_test
 
 
 
-	r2::iTest::TitleFunc Clear::GetTitleFunction() const
+	r2::iItem::TitleFunc Clear::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : Clear";
 		};
 	}
-	r2::iTest::DoFunc Clear::GetDoFunction()
+	r2::iItem::DoFunc Clear::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -398,14 +398,14 @@ namespace array_based_list_test
 
 
 
-	r2::iTest::TitleFunc PushBack::GetTitleFunction() const
+	r2::iItem::TitleFunc PushBack::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : PushBack";
 		};
 	}
-	r2::iTest::DoFunc PushBack::GetDoFunction()
+	r2::iItem::DoFunc PushBack::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -474,14 +474,14 @@ namespace array_based_list_test
 
 
 
-	r2::iTest::TitleFunc Erase::GetTitleFunction() const
+	r2::iItem::TitleFunc Erase::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : Erase";
 		};
 	}
-	r2::iTest::DoFunc Erase::GetDoFunction()
+	r2::iItem::DoFunc Erase::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -560,14 +560,14 @@ namespace array_based_list_test
 
 
 
-	r2::iTest::TitleFunc RBegin_REnd::GetTitleFunction() const
+	r2::iItem::TitleFunc RBegin_REnd::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : rbegin(), rend()";
 		};
 	}
-	r2::iTest::DoFunc RBegin_REnd::GetDoFunction()
+	r2::iItem::DoFunc RBegin_REnd::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

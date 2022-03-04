@@ -9,14 +9,14 @@
 
 namespace lambda_test
 {
-	r2::iTest::TitleFunc CaptureValue::GetTitleFunction() const
+	r2::iItem::TitleFunc CaptureValue::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Value";
 		};
 	}
-	r2::iTest::DoFunc CaptureValue::GetDoFunction()
+	r2::iItem::DoFunc CaptureValue::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -101,14 +101,14 @@ namespace lambda_test
 
 
 
-	r2::iTest::TitleFunc CaptureValueWithMutable::GetTitleFunction() const
+	r2::iItem::TitleFunc CaptureValueWithMutable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Value with Mutable";
 		};
 	}
-	r2::iTest::DoFunc CaptureValueWithMutable::GetDoFunction()
+	r2::iItem::DoFunc CaptureValueWithMutable::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -148,14 +148,14 @@ namespace lambda_test
 
 
 
-	r2::iTest::TitleFunc CaptureReference::GetTitleFunction() const
+	r2::iItem::TitleFunc CaptureReference::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Reference";
 		};
 	}
-	r2::iTest::DoFunc CaptureReference::GetDoFunction()
+	r2::iItem::DoFunc CaptureReference::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -223,14 +223,14 @@ namespace lambda_test
 
 
 
-	r2::iTest::TitleFunc CaptureUniquePtr::GetTitleFunction() const
+	r2::iItem::TitleFunc CaptureUniquePtr::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Unique Ptr";
 		};
 	}
-	r2::iTest::DoFunc CaptureUniquePtr::GetDoFunction()
+	r2::iItem::DoFunc CaptureUniquePtr::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -284,14 +284,14 @@ namespace lambda_test
 
 
 
-	r2::iTest::TitleFunc CaptureValueWithAssign::GetTitleFunction() const
+	r2::iItem::TitleFunc CaptureValueWithAssign::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Value with Assign";
 		};
 	}
-	r2::iTest::DoFunc CaptureValueWithAssign::GetDoFunction()
+	r2::iItem::DoFunc CaptureValueWithAssign::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

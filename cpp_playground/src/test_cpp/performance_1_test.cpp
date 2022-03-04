@@ -11,14 +11,14 @@
 
 namespace performance_1_test
 {
-	r2::iTest::TitleFunc IncrementOperator::GetTitleFunction() const
+	r2::iItem::TitleFunc IncrementOperator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "++Operator";
 		};
 	}
-	r2::iTest::DoFunc IncrementOperator::GetDoFunction()
+	r2::iItem::DoFunc IncrementOperator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -168,14 +168,14 @@ namespace performance_1_test
 
 
 
-	r2::iTest::TitleFunc Loop::GetTitleFunction() const
+	r2::iItem::TitleFunc Loop::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Loop";
 		};
 	}
-	r2::iTest::DoFunc Loop::GetDoFunction()
+	r2::iItem::DoFunc Loop::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -248,14 +248,14 @@ namespace performance_1_test
 
 
 
-	r2::iTest::TitleFunc LoopWithBuildInArray::GetTitleFunction() const
+	r2::iItem::TitleFunc LoopWithBuildInArray::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Loop With Built-In Array";
 		};
 	}
-	r2::iTest::DoFunc LoopWithBuildInArray::GetDoFunction()
+	r2::iItem::DoFunc LoopWithBuildInArray::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -341,14 +341,14 @@ namespace performance_1_test
 
 
 
-	r2::iTest::TitleFunc LoopWithSTDArray::GetTitleFunction() const
+	r2::iItem::TitleFunc LoopWithSTDArray::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Loop With std::array";
 		};
 	}
-	r2::iTest::DoFunc LoopWithSTDArray::GetDoFunction()
+	r2::iItem::DoFunc LoopWithSTDArray::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -434,14 +434,14 @@ namespace performance_1_test
 
 
 
-	r2::iTest::TitleFunc CompareIteratorOperator::GetTitleFunction() const
+	r2::iItem::TitleFunc CompareIteratorOperator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Iterator Operator";
 		};
 	}
-	r2::iTest::DoFunc CompareIteratorOperator::GetDoFunction()
+	r2::iItem::DoFunc CompareIteratorOperator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

@@ -11,14 +11,14 @@
 
 namespace console_text_color_test
 {
-	r2::iTest::TitleFunc ColorTable::GetTitleFunction() const
+	r2::iItem::TitleFunc ColorTable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Color Table";
 		};
 	}
-	r2::iTest::DoFunc ColorTable::GetDoFunction()
+	r2::iItem::DoFunc ColorTable::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -54,14 +54,14 @@ namespace console_text_color_test
 
 
 
-	r2::iTest::TitleFunc TextColor1::GetTitleFunction() const
+	r2::iItem::TitleFunc TextColor1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Text Color 1";
 		};
 	}
-	r2::iTest::DoFunc TextColor1::GetDoFunction()
+	r2::iItem::DoFunc TextColor1::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -97,14 +97,14 @@ namespace console_text_color_test
 
 
 
-	r2::iTest::TitleFunc TextColor2::GetTitleFunction() const
+	r2::iItem::TitleFunc TextColor2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Text Color 2";
 		};
 	}
-	r2::iTest::DoFunc TextColor2::GetDoFunction()
+	r2::iItem::DoFunc TextColor2::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -176,14 +176,14 @@ namespace console_text_color_test
 
 
 
-	r2::iTest::TitleFunc AdjustColorTable::GetTitleFunction() const
+	r2::iItem::TitleFunc AdjustColorTable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Adjust Color Table";
 		};
 	}
-	r2::iTest::DoFunc AdjustColorTable::GetDoFunction()
+	r2::iItem::DoFunc AdjustColorTable::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -240,14 +240,14 @@ namespace console_text_color_test
 
 
 
-	r2::iTest::TitleFunc ColorTable2::GetTitleFunction() const
+	r2::iItem::TitleFunc ColorTable2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Color Table 2";
 		};
 	}
-	r2::iTest::DoFunc ColorTable2::GetDoFunction()
+	r2::iItem::DoFunc ColorTable2::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -328,14 +328,14 @@ namespace console_text_color_test
 
 
 
-	r2::iTest::TitleFunc TextColor3::GetTitleFunction() const
+	r2::iItem::TitleFunc TextColor3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Text Color 3";
 		};
 	}
-	r2::iTest::DoFunc TextColor3::GetDoFunction()
+	r2::iItem::DoFunc TextColor3::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

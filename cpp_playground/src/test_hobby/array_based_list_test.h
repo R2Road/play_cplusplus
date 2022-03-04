@@ -5,63 +5,63 @@
 
 namespace array_based_list_test
 {
-	class Basic : public r2::iTest, public r2::SingleTon<Basic>
+	class Basic : public r2::iItem, public r2::SingleTon<Basic>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class PushFront : public r2::iTest, public r2::SingleTon<PushFront>
+	class PushFront : public r2::iItem, public r2::SingleTon<PushFront>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class IteratorOperator_Indirection_StructureDereference : public r2::iTest, public r2::SingleTon<IteratorOperator_Indirection_StructureDereference>
+	class IteratorOperator_Indirection_StructureDereference : public r2::iItem, public r2::SingleTon<IteratorOperator_Indirection_StructureDereference>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class EndIterator : public r2::iTest, public r2::SingleTon<EndIterator>
+	class EndIterator : public r2::iItem, public r2::SingleTon<EndIterator>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class BeginIterator : public r2::iTest, public r2::SingleTon<BeginIterator>
+	class BeginIterator : public r2::iItem, public r2::SingleTon<BeginIterator>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class Clear : public r2::iTest, public r2::SingleTon<Clear>
+	class Clear : public r2::iItem, public r2::SingleTon<Clear>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class PushBack : public r2::iTest, public r2::SingleTon<PushBack>
+	class PushBack : public r2::iItem, public r2::SingleTon<PushBack>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class Erase : public r2::iTest, public r2::SingleTon<Erase>
+	class Erase : public r2::iItem, public r2::SingleTon<Erase>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class RBegin_REnd : public r2::iTest, public r2::SingleTon<RBegin_REnd>
+	class RBegin_REnd : public r2::iItem, public r2::SingleTon<RBegin_REnd>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

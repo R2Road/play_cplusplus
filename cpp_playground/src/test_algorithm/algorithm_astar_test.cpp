@@ -94,14 +94,14 @@ namespace
 
 namespace algorithm_astar_test
 {
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : Basic";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -143,14 +143,14 @@ namespace algorithm_astar_test
 
 
 
-	r2::iTest::TitleFunc Use_STDListSplice::GetTitleFunction() const
+	r2::iItem::TitleFunc Use_STDListSplice::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use std::list::splice";
 		};
 	}
-	r2::iTest::DoFunc Use_STDListSplice::GetDoFunction()
+	r2::iItem::DoFunc Use_STDListSplice::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -192,14 +192,14 @@ namespace algorithm_astar_test
 
 
 
-	r2::iTest::TitleFunc Use_STDListSplice_STDVectorResultPath::GetTitleFunction() const
+	r2::iItem::TitleFunc Use_STDListSplice_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use std::list::splice, std::vector Result Path";
 		};
 	}
-	r2::iTest::DoFunc Use_STDListSplice_STDVectorResultPath::GetDoFunction()
+	r2::iItem::DoFunc Use_STDListSplice_STDVectorResultPath::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -242,14 +242,14 @@ namespace algorithm_astar_test
 
 
 
-	r2::iTest::TitleFunc Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetTitleFunction() const
+	r2::iItem::TitleFunc Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use std::list::splice, Decrease Close List, std::vector Result Path";
 		};
 	}
-	r2::iTest::DoFunc Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetDoFunction()
+	r2::iItem::DoFunc Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -294,14 +294,14 @@ namespace algorithm_astar_test
 
 
 
-	r2::iTest::TitleFunc Use_CostMap_STDListSplice_STDVectorResultPath::GetTitleFunction() const
+	r2::iItem::TitleFunc Use_CostMap_STDListSplice_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use Cost Map, std::list::splice, std::vector Result Path";
 		};
 	}
-	r2::iTest::DoFunc Use_CostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
+	r2::iItem::DoFunc Use_CostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -346,14 +346,14 @@ namespace algorithm_astar_test
 
 
 
-	r2::iTest::TitleFunc Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetTitleFunction() const
+	r2::iItem::TitleFunc Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use Tiny Cost Map, std::list::splice, std::vector Result Path";
 		};
 	}
-	r2::iTest::DoFunc Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
+	r2::iItem::DoFunc Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -398,14 +398,14 @@ namespace algorithm_astar_test
 
 
 
-	r2::iTest::TitleFunc Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetTitleFunction() const
+	r2::iItem::TitleFunc Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use Array Based List, Tiny Cost Map, std::vector Result Path";
 		};
 	}
-	r2::iTest::DoFunc Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetDoFunction()
+	r2::iItem::DoFunc Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -450,14 +450,14 @@ namespace algorithm_astar_test
 
 
 
-	r2::iTest::TitleFunc PerformanceTest::GetTitleFunction() const
+	r2::iItem::TitleFunc PerformanceTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : Performance Test";
 		};
 	}
-	r2::iTest::DoFunc PerformanceTest::GetDoFunction()
+	r2::iItem::DoFunc PerformanceTest::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

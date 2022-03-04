@@ -33,14 +33,14 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2::iTest::TitleFunc CalculateFactorial::GetTitleFunction() const
+	r2::iItem::TitleFunc CalculateFactorial::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Factorial";
 		};
 	}
-	r2::iTest::DoFunc CalculateFactorial::GetDoFunction()
+	r2::iItem::DoFunc CalculateFactorial::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -99,14 +99,14 @@ namespace template_meta_programming_test
 		static const int value = A;
 	};
 
-	r2::iTest::TitleFunc GreatestCommonDivisor::GetTitleFunction() const
+	r2::iItem::TitleFunc GreatestCommonDivisor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Greatest Common Divisor";
 		};
 	}
-	r2::iTest::DoFunc GreatestCommonDivisor::GetDoFunction()
+	r2::iItem::DoFunc GreatestCommonDivisor::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -145,14 +145,14 @@ namespace template_meta_programming_test
 	};
 
 
-	r2::iTest::TitleFunc BasicRatio::GetTitleFunction() const
+	r2::iItem::TitleFunc BasicRatio::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Basic Ratio";
 		};
 	}
-	r2::iTest::DoFunc BasicRatio::GetDoFunction()
+	r2::iItem::DoFunc BasicRatio::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -188,11 +188,11 @@ namespace template_meta_programming_test
 	};
 
 
-	r2::iTest::TitleFunc SumBasicRatio::GetTitleFunction() const
+	r2::iItem::TitleFunc SumBasicRatio::GetTitleFunction() const
 	{
 		return []()->const char* { return "Sum Basic Ratio"; };
 	}
-	r2::iTest::DoFunc SumBasicRatio::GetDoFunction()
+	r2::iItem::DoFunc SumBasicRatio::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -238,11 +238,11 @@ namespace template_meta_programming_test
 	};
 
 
-	r2::iTest::TitleFunc RatioWithGCD::GetTitleFunction() const
+	r2::iItem::TitleFunc RatioWithGCD::GetTitleFunction() const
 	{
 		return []()->const char* { return "Ratio with GCD"; };
 	}
-	r2::iTest::DoFunc RatioWithGCD::GetDoFunction()
+	r2::iItem::DoFunc RatioWithGCD::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -300,11 +300,11 @@ namespace template_meta_programming_test
 	};
 
 
-	r2::iTest::TitleFunc SumRatioWithGCD::GetTitleFunction() const
+	r2::iItem::TitleFunc SumRatioWithGCD::GetTitleFunction() const
 	{
 		return []()->const char* { return "Sum Ratio with GCD"; };
 	}
-	r2::iTest::DoFunc SumRatioWithGCD::GetDoFunction()
+	r2::iItem::DoFunc SumRatioWithGCD::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -342,11 +342,11 @@ namespace template_meta_programming_test
 
 namespace template_meta_programming_test
 {
-	r2::iTest::TitleFunc SumRatioAndOperator1::GetTitleFunction() const
+	r2::iItem::TitleFunc SumRatioAndOperator1::GetTitleFunction() const
 	{
 		return []()->const char* { return "Sum Ratio and Operator 1"; };
 	}
-	r2::iTest::DoFunc SumRatioAndOperator1::GetDoFunction()
+	r2::iItem::DoFunc SumRatioAndOperator1::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -412,11 +412,11 @@ namespace template_meta_programming_test
 	template<class Ratio1, class Ratio2>
 	struct Ratio_VER1_Operator_Sum2_Result : Ratio_VER1_Operator_Sum2<Ratio1, Ratio2>::ratio {};
 
-	r2::iTest::TitleFunc SumRatioAndOperator2::GetTitleFunction() const
+	r2::iItem::TitleFunc SumRatioAndOperator2::GetTitleFunction() const
 	{
 		return []()->const char* { return "Sum Ratio and Operator 2"; };
 	}
-	r2::iTest::DoFunc SumRatioAndOperator2::GetDoFunction()
+	r2::iItem::DoFunc SumRatioAndOperator2::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

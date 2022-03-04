@@ -5,38 +5,38 @@
 
 namespace console_text_color_test
 {
-	class ColorTable : public r2::iTest, public r2::SingleTon<ColorTable>
+	class ColorTable : public r2::iItem, public r2::SingleTon<ColorTable>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
-	class TextColor1 : public r2::iTest, public r2::SingleTon<TextColor1>
+	class TextColor1 : public r2::iItem, public r2::SingleTon<TextColor1>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
-	class TextColor2 : public r2::iTest, public r2::SingleTon<TextColor2>
+	class TextColor2 : public r2::iItem, public r2::SingleTon<TextColor2>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
-	class AdjustColorTable : public r2::iTest, public r2::SingleTon<AdjustColorTable>
+	class AdjustColorTable : public r2::iItem, public r2::SingleTon<AdjustColorTable>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class ColorTable2 : public r2::iTest, public r2::SingleTon<ColorTable2>
+	class ColorTable2 : public r2::iItem, public r2::SingleTon<ColorTable2>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
-	class TextColor3 : public r2::iTest, public r2::SingleTon<TextColor3>
+	class TextColor3 : public r2::iItem, public r2::SingleTon<TextColor3>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

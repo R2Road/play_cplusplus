@@ -7,14 +7,14 @@
 
 namespace std_optional_test
 {
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Optional : Basic";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -107,14 +107,14 @@ namespace std_optional_test
 	{
 		return std::optional<TestOptional>( TestOptional{} );
 	}
-	r2::iTest::TitleFunc Constructor::GetTitleFunction() const
+	r2::iItem::TitleFunc Constructor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Optional : Constructor";
 		};
 	}
-	r2::iTest::DoFunc Constructor::GetDoFunction()
+	r2::iItem::DoFunc Constructor::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -199,14 +199,14 @@ namespace std_optional_test
 
 
 
-	r2::iTest::TitleFunc Reference::GetTitleFunction() const
+	r2::iItem::TitleFunc Reference::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Optional : Reference";
 		};
 	}
-	r2::iTest::DoFunc Reference::GetDoFunction()
+	r2::iItem::DoFunc Reference::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

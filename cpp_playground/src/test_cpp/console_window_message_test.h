@@ -5,14 +5,14 @@
 
 namespace console_window_message_test
 {
-	class ConsoleControlHandler : public r2::iTest, public r2::SingleTon<ConsoleControlHandler>
+	class ConsoleControlHandler : public r2::iItem, public r2::SingleTon<ConsoleControlHandler>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class MessageHook : public r2::iTest, public r2::SingleTon<MessageHook>
+	class MessageHook : public r2::iItem, public r2::SingleTon<MessageHook>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

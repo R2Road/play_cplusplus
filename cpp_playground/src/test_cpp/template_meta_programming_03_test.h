@@ -5,7 +5,7 @@
 
 namespace template_meta_programming_test
 {
-	class MultiTypePackage : public r2::iTest, public r2::SingleTon<MultiTypePackage>
+	class MultiTypePackage : public r2::iItem, public r2::SingleTon<MultiTypePackage>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

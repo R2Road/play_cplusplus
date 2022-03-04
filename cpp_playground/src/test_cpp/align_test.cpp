@@ -5,14 +5,14 @@
 
 namespace align_test
 {
-	r2::iTest::TitleFunc Align_0::GetTitleFunction() const
+	r2::iItem::TitleFunc Align_0::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align 0";
 		};
 	}
-	r2::iTest::DoFunc Align_0::GetDoFunction()
+	r2::iItem::DoFunc Align_0::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -123,14 +123,14 @@ namespace align_test
 	}
 
 
-	r2::iTest::TitleFunc Align_1::GetTitleFunction() const
+	r2::iItem::TitleFunc Align_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align 1";
 		};
 	}
-	r2::iTest::DoFunc Align_1::GetDoFunction()
+	r2::iItem::DoFunc Align_1::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -240,14 +240,14 @@ namespace align_test
 
 
 	
-	r2::iTest::TitleFunc Align_2::GetTitleFunction() const
+	r2::iItem::TitleFunc Align_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align 2";
 		};
 	}
-	r2::iTest::DoFunc Align_2::GetDoFunction()
+	r2::iItem::DoFunc Align_2::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

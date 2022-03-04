@@ -42,14 +42,14 @@ namespace atomic_test
 		}		
 	};
 
-	r2::iTest::TitleFunc IsLockFree::GetTitleFunction() const
+	r2::iItem::TitleFunc IsLockFree::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Is Lock Free";
 		};
 	}
-	r2::iTest::DoFunc IsLockFree::GetDoFunction()
+	r2::iItem::DoFunc IsLockFree::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -87,14 +87,14 @@ namespace atomic_test
 		};
 	}
 
-	r2::iTest::TitleFunc LockFreeTest1::GetTitleFunction() const
+	r2::iItem::TitleFunc LockFreeTest1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Lock Free Test 1";
 		};
 	}
-	r2::iTest::DoFunc LockFreeTest1::GetDoFunction()
+	r2::iItem::DoFunc LockFreeTest1::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -145,14 +145,14 @@ namespace atomic_test
 		};
 	}
 
-	r2::iTest::TitleFunc LockFreeTest2::GetTitleFunction() const
+	r2::iItem::TitleFunc LockFreeTest2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Lock Free Test 2";
 		};
 	}
-	r2::iTest::DoFunc LockFreeTest2::GetDoFunction()
+	r2::iItem::DoFunc LockFreeTest2::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

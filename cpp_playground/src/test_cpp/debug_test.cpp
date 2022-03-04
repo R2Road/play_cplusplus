@@ -15,14 +15,14 @@ namespace debug_test
 	std::cout << "Line : " << __LINE__ << r2::linefeed;			\
 }
 
-	r2::iTest::TitleFunc PredefinedMacro::GetTitleFunction() const
+	r2::iItem::TitleFunc PredefinedMacro::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Predefined Macro";
 		};
 	}
-	r2::iTest::DoFunc PredefinedMacro::GetDoFunction()
+	r2::iItem::DoFunc PredefinedMacro::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -55,14 +55,14 @@ namespace debug_test
 
 
 
-	r2::iTest::TitleFunc OutPutDebugString::GetTitleFunction() const
+	r2::iItem::TitleFunc OutPutDebugString::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "OutPutDebugString";
 		};
 	}
-	r2::iTest::DoFunc OutPutDebugString::GetDoFunction()
+	r2::iItem::DoFunc OutPutDebugString::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -93,14 +93,14 @@ namespace debug_test
 
 
 
-	r2::iTest::TitleFunc Assertion::GetTitleFunction() const
+	r2::iItem::TitleFunc Assertion::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Assert";
 		};
 	}
-	r2::iTest::DoFunc Assertion::GetDoFunction()
+	r2::iItem::DoFunc Assertion::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -123,14 +123,14 @@ namespace debug_test
 
 
 
-	r2::iTest::TitleFunc DebugBreak::GetTitleFunction() const
+	r2::iItem::TitleFunc DebugBreak::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Debug Break";
 		};
 	}
-	r2::iTest::DoFunc DebugBreak::GetDoFunction()
+	r2::iItem::DoFunc DebugBreak::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -163,14 +163,14 @@ do {												\
 	}												\
 } while( false )
 
-	r2::iTest::TitleFunc MyAssertion::GetTitleFunction() const
+	r2::iItem::TitleFunc MyAssertion::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "MyAssertion";
 		};
 	}
-	r2::iTest::DoFunc MyAssertion::GetDoFunction()
+	r2::iItem::DoFunc MyAssertion::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

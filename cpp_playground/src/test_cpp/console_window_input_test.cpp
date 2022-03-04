@@ -17,14 +17,14 @@ namespace console_window_input_test
 		GetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), &temp_console_mode );
 		std::cout << r2::tab << "Current Console Mode : " << temp_console_mode << r2::linefeed;
 	}
-	r2::iTest::TitleFunc WindowInput_ReadConsoleInput::GetTitleFunction() const
+	r2::iItem::TitleFunc WindowInput_ReadConsoleInput::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Input : ReadConsoleInput";
 		};
 	}
-	r2::iTest::DoFunc WindowInput_ReadConsoleInput::GetDoFunction()
+	r2::iItem::DoFunc WindowInput_ReadConsoleInput::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -165,14 +165,14 @@ namespace console_window_input_test
 
 
 
-	r2::iTest::TitleFunc WindowInput_GetKeyState::GetTitleFunction() const
+	r2::iItem::TitleFunc WindowInput_GetKeyState::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Input : GetKeyState";
 		};
 	}
-	r2::iTest::DoFunc WindowInput_GetKeyState::GetDoFunction()
+	r2::iItem::DoFunc WindowInput_GetKeyState::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -229,14 +229,14 @@ namespace console_window_input_test
 
 
 
-	r2::iTest::TitleFunc WindowInput_GetKeyboardState::GetTitleFunction() const
+	r2::iItem::TitleFunc WindowInput_GetKeyboardState::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Input : GetKeyboardState";
 		};
 	}
-	r2::iTest::DoFunc WindowInput_GetKeyboardState::GetDoFunction()
+	r2::iItem::DoFunc WindowInput_GetKeyboardState::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -312,14 +312,14 @@ namespace console_window_input_test
 
 
 
-	r2::iTest::TitleFunc WindowInput_GetAsyncKeyStates::GetTitleFunction() const
+	r2::iItem::TitleFunc WindowInput_GetAsyncKeyStates::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Input : GetAsyncKeyStates";
 		};
 	}
-	r2::iTest::DoFunc WindowInput_GetAsyncKeyStates::GetDoFunction()
+	r2::iItem::DoFunc WindowInput_GetAsyncKeyStates::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

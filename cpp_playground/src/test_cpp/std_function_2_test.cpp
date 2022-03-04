@@ -21,14 +21,14 @@ namespace std_function_2_test
 		}
 	};
 
-	r2::iTest::TitleFunc Equality_STDBind_1::GetTitleFunction() const
+	r2::iItem::TitleFunc Equality_STDBind_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::function : Equality : std::bind 1";
 		};
 	}
-	r2::iTest::DoFunc Equality_STDBind_1::GetDoFunction()
+	r2::iItem::DoFunc Equality_STDBind_1::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

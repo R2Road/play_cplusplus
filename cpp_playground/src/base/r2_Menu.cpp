@@ -104,7 +104,7 @@ namespace r2
 		return eTestEndAction::Pause;
 	}
 
-	void Menu::AddChild( const char key_code, iTest& test_obj )
+	void Menu::AddChild( const char key_code, iItem& test_obj )
 	{
 		mTests.emplace_back( key_code, test_obj.GetTitleFunction(), test_obj.GetDoFunction() );
 	}

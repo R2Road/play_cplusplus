@@ -9,14 +9,14 @@
 
 namespace class_test
 {
-	r2::iTest::TitleFunc Braces::GetTitleFunction() const
+	r2::iItem::TitleFunc Braces::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Braces";
 		};
 	}
-	r2::iTest::DoFunc Braces::GetDoFunction()
+	r2::iItem::DoFunc Braces::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -69,14 +69,14 @@ namespace
 
 namespace class_test
 {
-	r2::iTest::TitleFunc PrintName::GetTitleFunction() const
+	r2::iItem::TitleFunc PrintName::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Print Name";
 		};
 	}
-	r2::iTest::DoFunc PrintName::GetDoFunction()
+	r2::iItem::DoFunc PrintName::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -157,14 +157,14 @@ namespace class_test
 
 namespace class_test
 {
-	r2::iTest::TitleFunc PrivateInheritance_1::GetTitleFunction() const
+	r2::iItem::TitleFunc PrivateInheritance_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Private Inheritance 1";
 		};
 	}
-	r2::iTest::DoFunc PrivateInheritance_1::GetDoFunction()
+	r2::iItem::DoFunc PrivateInheritance_1::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -258,14 +258,14 @@ namespace class_test
 
 
 
-	r2::iTest::TitleFunc PrivateInheritance_2::GetTitleFunction() const
+	r2::iItem::TitleFunc PrivateInheritance_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Private Inheritance 2";
 		};
 	}
-	r2::iTest::DoFunc PrivateInheritance_2::GetDoFunction()
+	r2::iItem::DoFunc PrivateInheritance_2::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -344,14 +344,14 @@ namespace class_test
 	}
 
 
-	r2::iTest::TitleFunc MemberAdress::GetTitleFunction() const
+	r2::iItem::TitleFunc MemberAdress::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Member Adress";
 		};
 	}
-	r2::iTest::DoFunc MemberAdress::GetDoFunction()
+	r2::iItem::DoFunc MemberAdress::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

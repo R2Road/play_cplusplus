@@ -7,14 +7,14 @@
 
 namespace align_test
 {
-	r2::iTest::TitleFunc AlignAs::GetTitleFunction() const
+	r2::iItem::TitleFunc AlignAs::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align As";
 		};
 	}
-	r2::iTest::DoFunc AlignAs::GetDoFunction()
+	r2::iItem::DoFunc AlignAs::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

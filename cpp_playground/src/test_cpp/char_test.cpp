@@ -10,14 +10,14 @@
 
 namespace char_test
 {
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Char : Basic";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -60,14 +60,14 @@ namespace char_test
 //
 namespace char_test
 {
-	r2::iTest::TitleFunc Encoding::GetTitleFunction() const
+	r2::iItem::TitleFunc Encoding::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Char : Encoding";
 		};
 	}
-	r2::iTest::DoFunc Encoding::GetDoFunction()
+	r2::iItem::DoFunc Encoding::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

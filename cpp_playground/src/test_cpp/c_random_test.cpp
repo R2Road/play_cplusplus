@@ -8,14 +8,14 @@
 
 namespace c_random_test
 {
-	r2::iTest::TitleFunc Rand::GetTitleFunction() const
+	r2::iItem::TitleFunc Rand::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "C Rand : Basic";
 		};
 	}
-	r2::iTest::DoFunc Rand::GetDoFunction()
+	r2::iItem::DoFunc Rand::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

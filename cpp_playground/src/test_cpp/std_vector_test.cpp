@@ -7,14 +7,14 @@
 
 namespace std_vector_test
 {
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector : Basic";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -74,14 +74,14 @@ namespace std_vector_test
 
 
 
-	r2::iTest::TitleFunc NoneDefaultConstructor::GetTitleFunction() const
+	r2::iItem::TitleFunc NoneDefaultConstructor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector : None Default Constructor";
 		};
 	}
-	r2::iTest::DoFunc NoneDefaultConstructor::GetDoFunction()
+	r2::iItem::DoFunc NoneDefaultConstructor::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -126,14 +126,14 @@ namespace std_vector_test
 
 
 
-	r2::iTest::TitleFunc BoolVector::GetTitleFunction() const
+	r2::iItem::TitleFunc BoolVector::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector : Bool";
 		};
 	}
-	r2::iTest::DoFunc BoolVector::GetDoFunction()
+	r2::iItem::DoFunc BoolVector::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -185,14 +185,14 @@ namespace std_vector_test
 
 
 
-	r2::iTest::TitleFunc OthersIterator::GetTitleFunction() const
+	r2::iItem::TitleFunc OthersIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector : Others Iterator";
 		};
 	}
-	r2::iTest::DoFunc OthersIterator::GetDoFunction()
+	r2::iItem::DoFunc OthersIterator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -230,14 +230,14 @@ namespace std_vector_test
 
 
 
-	r2::iTest::TitleFunc EndIterator::GetTitleFunction() const
+	r2::iItem::TitleFunc EndIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector : End Iterator";
 		};
 	}
-	r2::iTest::DoFunc EndIterator::GetDoFunction()
+	r2::iItem::DoFunc EndIterator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

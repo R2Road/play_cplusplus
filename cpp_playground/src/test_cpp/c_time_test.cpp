@@ -12,14 +12,14 @@
 
 namespace c_time_test
 {
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "C Time : Basic";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -51,14 +51,14 @@ namespace c_time_test
 
 
 
-	r2::iTest::TitleFunc Y_M_D_H_S::GetTitleFunction() const
+	r2::iItem::TitleFunc Y_M_D_H_S::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "C Time : Y_M_D_H_S";
 		};
 	}
-	r2::iTest::DoFunc Y_M_D_H_S::GetDoFunction()
+	r2::iItem::DoFunc Y_M_D_H_S::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -137,14 +137,14 @@ namespace c_time_test
 
 
 
-	r2::iTest::TitleFunc Clock::GetTitleFunction() const
+	r2::iItem::TitleFunc Clock::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "C Time : Clock";
 		};
 	}
-	r2::iTest::DoFunc Clock::GetDoFunction()
+	r2::iItem::DoFunc Clock::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

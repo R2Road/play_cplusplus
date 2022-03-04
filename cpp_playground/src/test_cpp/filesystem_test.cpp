@@ -9,14 +9,14 @@
 
 namespace filesystem_test
 {
-	r2::iTest::TitleFunc DirectoryPath::GetTitleFunction() const
+	r2::iItem::TitleFunc DirectoryPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Directory Path";
 		};
 	}
-	r2::iTest::DoFunc DirectoryPath::GetDoFunction()
+	r2::iItem::DoFunc DirectoryPath::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -50,14 +50,14 @@ namespace filesystem_test
 
 
 
-	r2::iTest::TitleFunc DirectoryIterator::GetTitleFunction() const
+	r2::iItem::TitleFunc DirectoryIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Directory Iterator";
 		};
 	}
-	r2::iTest::DoFunc DirectoryIterator::GetDoFunction()
+	r2::iItem::DoFunc DirectoryIterator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -98,14 +98,14 @@ namespace filesystem_test
 
 
 
-	r2::iTest::TitleFunc RecursiveDirectoryIterator::GetTitleFunction() const
+	r2::iItem::TitleFunc RecursiveDirectoryIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Recursive Directory Iterator";
 		};
 	}
-	r2::iTest::DoFunc RecursiveDirectoryIterator::GetDoFunction()
+	r2::iItem::DoFunc RecursiveDirectoryIterator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -144,14 +144,14 @@ namespace filesystem_test
 
 
 
-	r2::iTest::TitleFunc PathOperation_1::GetTitleFunction() const
+	r2::iItem::TitleFunc PathOperation_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Path Operation 1";
 		};
 	}
-	r2::iTest::DoFunc PathOperation_1::GetDoFunction()
+	r2::iItem::DoFunc PathOperation_1::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -228,14 +228,14 @@ namespace filesystem_test
 		};
 	}
 
-	r2::iTest::TitleFunc PathOperation_2::GetTitleFunction() const
+	r2::iItem::TitleFunc PathOperation_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Path Operation 2";
 		};
 	}
-	r2::iTest::DoFunc PathOperation_2::GetDoFunction()
+	r2::iItem::DoFunc PathOperation_2::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

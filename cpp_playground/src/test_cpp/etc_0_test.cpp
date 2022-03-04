@@ -9,14 +9,14 @@
 
 namespace etc_test
 {
-	r2::iTest::TitleFunc XOR_Swap::GetTitleFunction() const
+	r2::iItem::TitleFunc XOR_Swap::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "XOR Swap";
 		};
 	}
-	r2::iTest::DoFunc XOR_Swap::GetDoFunction()
+	r2::iItem::DoFunc XOR_Swap::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -57,14 +57,14 @@ namespace etc_test
 
 namespace etc_test
 {
-	r2::iTest::TitleFunc InitArray::GetTitleFunction() const
+	r2::iItem::TitleFunc InitArray::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Init Array";
 		};
 	}
-	r2::iTest::DoFunc InitArray::GetDoFunction()
+	r2::iItem::DoFunc InitArray::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -137,14 +137,14 @@ namespace etc_test
 {
 #define MACRO2STRING( x ) #x
 
-	r2::iTest::TitleFunc Macro2String::GetTitleFunction() const
+	r2::iItem::TitleFunc Macro2String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Macro 2 String";
 		};
 	}
-	r2::iTest::DoFunc Macro2String::GetDoFunction()
+	r2::iItem::DoFunc Macro2String::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -180,14 +180,14 @@ namespace etc_test
 #pragma warning( disable : 4311 )
 #pragma warning( disable : 4302 )
 
-	r2::iTest::TitleFunc Pointer2Index::GetTitleFunction() const
+	r2::iItem::TitleFunc Pointer2Index::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Pointer 2 Index";
 		};
 	}
-	r2::iTest::DoFunc Pointer2Index::GetDoFunction()
+	r2::iItem::DoFunc Pointer2Index::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

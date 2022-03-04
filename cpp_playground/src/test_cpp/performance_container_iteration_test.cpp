@@ -15,14 +15,14 @@
 
 namespace performance_container_iteration_test
 {
-	r2::iTest::TitleFunc BuiltInArrayIteration::GetTitleFunction() const
+	r2::iItem::TitleFunc BuiltInArrayIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Built-In Array Iteration";
 		};
 	}
-	r2::iTest::DoFunc BuiltInArrayIteration::GetDoFunction()
+	r2::iItem::DoFunc BuiltInArrayIteration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -94,14 +94,14 @@ namespace performance_container_iteration_test
 
 
 
-	r2::iTest::TitleFunc STDArrayIteration::GetTitleFunction() const
+	r2::iItem::TitleFunc STDArrayIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "STD Array Iteration";
 		};
 	}
-	r2::iTest::DoFunc STDArrayIteration::GetDoFunction()
+	r2::iItem::DoFunc STDArrayIteration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -195,14 +195,14 @@ namespace performance_container_iteration_test
 
 
 
-	r2::iTest::TitleFunc VectorIteration::GetTitleFunction() const
+	r2::iItem::TitleFunc VectorIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector Iteration";
 		};
 	}
-	r2::iTest::DoFunc VectorIteration::GetDoFunction()
+	r2::iItem::DoFunc VectorIteration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -294,14 +294,14 @@ namespace performance_container_iteration_test
 
 
 
-	r2::iTest::TitleFunc ListIteration::GetTitleFunction() const
+	r2::iItem::TitleFunc ListIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "List Iteration";
 		};
 	}
-	r2::iTest::DoFunc ListIteration::GetDoFunction()
+	r2::iItem::DoFunc ListIteration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -370,14 +370,14 @@ namespace performance_container_iteration_test
 
 
 
-	r2::iTest::TitleFunc MapIteration::GetTitleFunction() const
+	r2::iItem::TitleFunc MapIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Map Iteration";
 		};
 	}
-	r2::iTest::DoFunc MapIteration::GetDoFunction()
+	r2::iItem::DoFunc MapIteration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -472,14 +472,14 @@ namespace performance_container_iteration_test
 
 
 
-	r2::iTest::TitleFunc UnorderedMapIteration::GetTitleFunction() const
+	r2::iItem::TitleFunc UnorderedMapIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Unordered-Map Iteration";
 		};
 	}
-	r2::iTest::DoFunc UnorderedMapIteration::GetDoFunction()
+	r2::iItem::DoFunc UnorderedMapIteration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -574,14 +574,14 @@ namespace performance_container_iteration_test
 
 
 
-	r2::iTest::TitleFunc SetIteration::GetTitleFunction() const
+	r2::iItem::TitleFunc SetIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Set Iteration";
 		};
 	}
-	r2::iTest::DoFunc SetIteration::GetDoFunction()
+	r2::iItem::DoFunc SetIteration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -653,14 +653,14 @@ namespace performance_container_iteration_test
 
 
 
-	r2::iTest::TitleFunc UnorderedSetIteration::GetTitleFunction() const
+	r2::iItem::TitleFunc UnorderedSetIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Unordered-Set Iteration";
 		};
 	}
-	r2::iTest::DoFunc UnorderedSetIteration::GetDoFunction()
+	r2::iItem::DoFunc UnorderedSetIteration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -732,14 +732,14 @@ namespace performance_container_iteration_test
 
 
 
-	r2::iTest::TitleFunc STDArrayIteration_WithPointer::GetTitleFunction() const
+	r2::iItem::TitleFunc STDArrayIteration_WithPointer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "STD Array Iteration With Pointer";
 		};
 	}
-	r2::iTest::DoFunc STDArrayIteration_WithPointer::GetDoFunction()
+	r2::iItem::DoFunc STDArrayIteration_WithPointer::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
