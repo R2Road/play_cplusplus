@@ -7,7 +7,7 @@
 #include <string>
 #include <map>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 
 namespace std_random_test

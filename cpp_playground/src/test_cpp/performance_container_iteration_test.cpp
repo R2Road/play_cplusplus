@@ -9,7 +9,7 @@
 #include <unordered_set>
 #include <vector>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 #include "utility/r2utility_StopWatch.h"
 

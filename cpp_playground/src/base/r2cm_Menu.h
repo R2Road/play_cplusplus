@@ -16,49 +16,45 @@ namespace r2cm
 	class Menu
 	{
 	private:
-		struct TestInfo
+		struct ItemInfo
 		{
-			TestInfo(
+			ItemInfo(
 				const char key_code
 				, const std::function<const char*( )> name_function
-				, const std::function<const r2cm::eTestEndAction()> test_function
+				, const std::function<const r2cm::eTestEndAction()> do_function
 			) :
 				KeyCode( key_code )
 				, NameFunction( name_function )
-				, TestFunction( test_function )
+				, DoFunction( do_function )
 			{}
 
 			char KeyCode;
 			std::function<const char*()> NameFunction;
-			std::function<const r2cm::eTestEndAction()> TestFunction;
+			std::function<const r2cm::eTestEndAction()> DoFunction;
 		};
 
-		using TestContainerT = std::vector<TestInfo>;
+		using ItemContainerT = std::vector<ItemInfo>;
 
 	public:
-		Menu( r2cm::Director& director, const char* title_string, const char* description_string = "" );
+		Menu( Director& director, const char* title_string, const char* description_string = "" );
 		virtual ~Menu() {}
 
-		void ShowMenu() const;
-
-	private:
 		void ShowTitle() const;
 		void ShowDescription() const;
-		void ShowItem() const;
+		void ShowMenu() const;
 
-	public:
 		eTestEndAction Do( const int key_code );
 
-		void AddItem( const char key_code, iItem& test_obj );
-		void AddItem( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2cm::eTestEndAction()> func_test );
+		void AddItem( const char key_code, iItem& item_obj );
+		void AddItem( const char key_code, const std::function<const char*()> func_title, const std::function<const r2cm::eTestEndAction()> func_do );
 		void AddLineFeed();
 		void AddSplit();
 
 	protected:
-		r2cm::Director& mDirector;
+		Director& mDirector;
 		std::string_view mTitleString;
 		std::string_view mDescriptionString;
 
-		TestContainerT mTests;
+		ItemContainerT mItemContainer;
 	};
 }

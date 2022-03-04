@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "r2_RandomMenu.h"
 
-#include "base/r2_Director.h"
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_Director.h"
+#include "base/r2cm_eTestEndAction.h"
 #include "r2_RootMenu.h"
 
 #include "test_cpp/c_random_test.h"

@@ -4,7 +4,7 @@
 #include <string>
 #include <string_view>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 using namespace std::string_view_literals; // for sv
 

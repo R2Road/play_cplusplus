@@ -5,7 +5,7 @@
 #include <cwchar>
 #include <Windows.h> // HDC
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 void ShowFontInfo( const CONSOLE_FONT_INFOEX & cfie )
 {

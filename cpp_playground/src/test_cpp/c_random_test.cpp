@@ -3,7 +3,7 @@
 
 #include <cstdlib> // rand, srand
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 
 namespace c_random_test

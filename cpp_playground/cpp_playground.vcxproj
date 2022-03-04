@@ -20,8 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\algorithm\r2algorithm_astar_PathBuilder.cpp" />
-    <ClCompile Include="src\base\r2_Director.cpp" />
-    <ClCompile Include="src\base\r2_Menu.cpp" />
+    <ClCompile Include="src\base\r2cm_Director.cpp" />
+    <ClCompile Include="src\base\r2cm_Menu.cpp" />
     <ClCompile Include="src\menu\r2_AlgorithmMenu.cpp" />
     <ClCompile Include="src\menu\r2_ArrayBasedListMenu.cpp" />
     <ClCompile Include="src\menu\ConsoleTextColorMenu.cpp" />
@@ -133,10 +133,10 @@
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h" />
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h" />
-    <ClInclude Include="src\base\r2_Director.h" />
-    <ClInclude Include="src\base\r2_eTestEndAction.h" />
-    <ClInclude Include="src\base\r2_iTest.h" />
-    <ClInclude Include="src\base\r2_Menu.h" />
+    <ClInclude Include="src\base\r2cm_Director.h" />
+    <ClInclude Include="src\base\r2cm_eTestEndAction.h" />
+    <ClInclude Include="src\base\r2cm_iItem.h" />
+    <ClInclude Include="src\base\r2cm_Menu.h" />
     <ClInclude Include="src\menu\r2_AlgorithmMenu.h" />
     <ClInclude Include="src\menu\r2_ArrayBasedListMenu.h" />
     <ClInclude Include="src\menu\ConsoleTextColorMenu.h" />

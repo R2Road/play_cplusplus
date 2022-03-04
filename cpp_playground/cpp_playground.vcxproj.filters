@@ -130,12 +130,6 @@
     <ClCompile Include="src\test_cpp\variadic_template_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\r2_Director.cpp">
-      <Filter>base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\r2_Menu.cpp">
-      <Filter>base</Filter>
-    </ClCompile>
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\test_cpp\class_test.cpp">
       <Filter>test_cpp</Filter>
@@ -338,6 +332,12 @@
     <ClCompile Include="src\r2\r2_PointInt.cpp">
       <Filter>r2</Filter>
     </ClCompile>
+    <ClCompile Include="src\base\r2cm_Director.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\r2cm_Menu.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -444,15 +444,6 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\variadic_template_test.h">
       <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\base\r2_Director.h">
-      <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\base\r2_iTest.h">
-      <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\base\r2_Menu.h">
-      <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\test_cpp\class_test.h">
@@ -632,9 +623,6 @@
     <ClInclude Include="src\menu\r2_MemoryPoolMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\r2_eTestEndAction.h">
-      <Filter>base</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\std_regex_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -676,6 +664,18 @@
     </ClInclude>
     <ClInclude Include="src\r2\r2_Inspector.h">
       <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\r2cm_Director.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\r2cm_eTestEndAction.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\r2cm_iItem.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\r2cm_Menu.h">
+      <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

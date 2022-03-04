@@ -3,7 +3,7 @@
 
 #include <algorithm>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 namespace template_practice_part_01_test
 {

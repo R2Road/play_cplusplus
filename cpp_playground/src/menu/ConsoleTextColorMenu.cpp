@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "ConsoleTextColorMenu.h"
 
-#include "base/r2_Director.h"
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_Director.h"
+#include "base/r2cm_eTestEndAction.h"
 
 #include "r2_ConsoleMenu.h"
 

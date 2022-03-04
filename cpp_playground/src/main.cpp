@@ -4,7 +4,7 @@
 	#include <vld.h>
 #endif
 
-#include "base/r2_Director.h"
+#include "base/r2cm_Director.h"
 #include "menu/r2_RootMenu.h"
 #include "utility/r2utility_WindowUtil.h"
 
@@ -34,7 +34,7 @@ int main()
 	//
 	// Process
 	//
-	director.Update();
+	director.Run();
 
 	return 0;
 }

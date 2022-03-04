@@ -7,7 +7,7 @@
 #define  WIN32_LEAN_AND_MEAN
 #include <windows.h>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 namespace console_window_message_test
 {

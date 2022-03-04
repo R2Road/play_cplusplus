@@ -7,7 +7,7 @@
 #include <Windows.h>
 #include <wincon.h> // BACKGROUND_RED
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 namespace console_text_color_test
 {

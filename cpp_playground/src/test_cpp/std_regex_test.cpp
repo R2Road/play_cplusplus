@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "std_regex_test.h"
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 namespace std_regex_test
 {

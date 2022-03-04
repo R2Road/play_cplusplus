@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "r2_STDMemoryMenu.h"
 
-#include "base/r2_Director.h"
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_Director.h"
+#include "base/r2cm_eTestEndAction.h"
 #include "r2_STDMenu.h"
 
 #include "test_cpp/std_memory_test.h"

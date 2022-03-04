@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "align_test.h"
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 namespace align_test
 {

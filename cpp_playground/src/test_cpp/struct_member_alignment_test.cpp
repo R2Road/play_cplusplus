@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "struct_member_alignment_test.h"
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 namespace struct_member_alignment_test
 {

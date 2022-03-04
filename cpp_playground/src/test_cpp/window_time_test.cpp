@@ -5,7 +5,7 @@
 #include <windows.h>
 #pragma comment(lib, "winmm.lib") // for timeGetTime()
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 namespace window_time_test
 {

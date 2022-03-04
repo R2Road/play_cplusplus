@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "template_meta_programming_01_test.h"
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 namespace
 {

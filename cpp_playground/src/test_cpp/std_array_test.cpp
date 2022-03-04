@@ -3,7 +3,7 @@
 
 #include <array>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 #pragma warning( disable : 4101 )
 

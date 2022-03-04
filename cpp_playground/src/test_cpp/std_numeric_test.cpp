@@ -5,7 +5,7 @@
 #include <numeric>
 #include <string>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 namespace std_numeric_test
 {

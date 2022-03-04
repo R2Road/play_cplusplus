@@ -5,7 +5,7 @@
 #include <memory>
 #include <utility>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 namespace lambda_test
 {

@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "r2_VariadicTemplateMenu.h"
 
-#include "base/r2_Director.h"
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_Director.h"
+#include "base/r2cm_eTestEndAction.h"
 #include "r2_TemplateMenu.h"
 
 #include "test_cpp/variadic_template_test.h"

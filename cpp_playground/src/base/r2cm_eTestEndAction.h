@@ -4,9 +4,8 @@ namespace r2cm
 {
 	enum class eTestEndAction
 	{
+		None,
 		Pause,
 		Exit,
-
-		None,
 	};
 }

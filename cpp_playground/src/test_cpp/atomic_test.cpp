@@ -6,7 +6,7 @@
 #include <thread>
 #include <type_traits>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 struct TestStruct1
 {

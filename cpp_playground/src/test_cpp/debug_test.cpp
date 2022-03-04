@@ -4,7 +4,7 @@
 #include <cassert>
 #include <Windows.h>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 namespace debug_test
 {

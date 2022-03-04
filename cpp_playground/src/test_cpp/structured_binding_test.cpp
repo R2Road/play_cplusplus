@@ -4,7 +4,7 @@
 #include <tuple>
 #include <utility> // pair
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 
 namespace
 {

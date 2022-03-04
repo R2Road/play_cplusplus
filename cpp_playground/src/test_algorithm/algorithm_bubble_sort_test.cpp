@@ -3,7 +3,7 @@
 
 #include <array>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2cm_eTestEndAction.h"
 #include "utility/r2utility_StopWatch.h"
 
 namespace algorithm_bubble_sort_test
