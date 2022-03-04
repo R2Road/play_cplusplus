@@ -57,7 +57,7 @@ namespace console_window_message_test
 			return "Window Message : Console Control Handler";
 		};
 	}
-	r2::iItem::DoFunc ConsoleControlHandler::GetDoFunction()
+	r2::iItem::DoFuncT ConsoleControlHandler::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -152,7 +152,7 @@ namespace console_window_message_test
 			return "Window Message : Hook";
 		};
 	}
-	r2::iItem::DoFunc MessageHook::GetDoFunction()
+	r2::iItem::DoFuncT MessageHook::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

@@ -16,7 +16,7 @@ namespace std_array_test
 			return "Array : Declaration";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -62,7 +62,7 @@ namespace std_array_test
 			return "Array : Fill";
 		};
 	}
-	r2::iItem::DoFunc Fill::GetDoFunction()
+	r2::iItem::DoFuncT Fill::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

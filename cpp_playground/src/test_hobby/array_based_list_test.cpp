@@ -15,7 +15,7 @@ namespace array_based_list_test
 			return "Array Based List : Basic";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -52,7 +52,7 @@ namespace array_based_list_test
 			return "Array Based List : PushFront";
 		};
 	}
-	r2::iItem::DoFunc PushFront::GetDoFunction()
+	r2::iItem::DoFuncT PushFront::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -119,7 +119,7 @@ namespace array_based_list_test
 			return "Array Based List : Iterator : operator*, operator->";
 		};
 	}
-	r2::iItem::DoFunc IteratorOperator_Indirection_StructureDereference::GetDoFunction()
+	r2::iItem::DoFuncT IteratorOperator_Indirection_StructureDereference::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -169,7 +169,7 @@ namespace array_based_list_test
 			return "Array Based List : End Iterator";
 		};
 	}
-	r2::iItem::DoFunc EndIterator::GetDoFunction()
+	r2::iItem::DoFuncT EndIterator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -233,7 +233,7 @@ namespace array_based_list_test
 			return "Array Based List : Begin Iterator";
 		};
 	}
-	r2::iItem::DoFunc BeginIterator::GetDoFunction()
+	r2::iItem::DoFuncT BeginIterator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -317,7 +317,7 @@ namespace array_based_list_test
 			return "Array Based List : Clear";
 		};
 	}
-	r2::iItem::DoFunc Clear::GetDoFunction()
+	r2::iItem::DoFuncT Clear::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -405,7 +405,7 @@ namespace array_based_list_test
 			return "Array Based List : PushBack";
 		};
 	}
-	r2::iItem::DoFunc PushBack::GetDoFunction()
+	r2::iItem::DoFuncT PushBack::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -481,7 +481,7 @@ namespace array_based_list_test
 			return "Array Based List : Erase";
 		};
 	}
-	r2::iItem::DoFunc Erase::GetDoFunction()
+	r2::iItem::DoFuncT Erase::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -567,7 +567,7 @@ namespace array_based_list_test
 			return "Array Based List : rbegin(), rend()";
 		};
 	}
-	r2::iItem::DoFunc RBegin_REnd::GetDoFunction()
+	r2::iItem::DoFuncT RBegin_REnd::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

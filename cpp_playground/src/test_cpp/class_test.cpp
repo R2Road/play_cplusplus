@@ -16,7 +16,7 @@ namespace class_test
 			return "Class : Braces";
 		};
 	}
-	r2::iItem::DoFunc Braces::GetDoFunction()
+	r2::iItem::DoFuncT Braces::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -76,7 +76,7 @@ namespace class_test
 			return "Class : Print Name";
 		};
 	}
-	r2::iItem::DoFunc PrintName::GetDoFunction()
+	r2::iItem::DoFuncT PrintName::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -164,7 +164,7 @@ namespace class_test
 			return "Class : Private Inheritance 1";
 		};
 	}
-	r2::iItem::DoFunc PrivateInheritance_1::GetDoFunction()
+	r2::iItem::DoFuncT PrivateInheritance_1::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -265,7 +265,7 @@ namespace class_test
 			return "Class : Private Inheritance 2";
 		};
 	}
-	r2::iItem::DoFunc PrivateInheritance_2::GetDoFunction()
+	r2::iItem::DoFuncT PrivateInheritance_2::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -351,7 +351,7 @@ namespace class_test
 			return "Class : Member Adress";
 		};
 	}
-	r2::iItem::DoFunc MemberAdress::GetDoFunction()
+	r2::iItem::DoFuncT MemberAdress::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

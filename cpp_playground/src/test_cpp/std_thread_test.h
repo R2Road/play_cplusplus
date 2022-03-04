@@ -9,34 +9,34 @@ namespace std_thread_test
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class Declaration : public r2::iItem, public r2::SingleTon<Declaration>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class CopyAssaignment : public r2::iItem, public r2::SingleTon<CopyAssaignment>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class WaitProcess_SleepFor : public r2::iItem, public r2::SingleTon<WaitProcess_SleepFor>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class WaitProcess_Yield : public r2::iItem, public r2::SingleTon<WaitProcess_Yield>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 }

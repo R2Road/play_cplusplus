@@ -12,7 +12,7 @@ namespace pointer_test
 			return "Pointer";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -76,7 +76,7 @@ namespace pointer_test
 			return "Const Pointer";
 		};
 	}
-	r2::iItem::DoFunc ConstPointer::GetDoFunction()
+	r2::iItem::DoFuncT ConstPointer::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

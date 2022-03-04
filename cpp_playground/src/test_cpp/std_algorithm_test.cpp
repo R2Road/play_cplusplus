@@ -17,7 +17,7 @@ namespace std_algorithm_test
 			return "Algorithm : Shuffle";
 		};
 	}
-	r2::iItem::DoFunc Shuffle::GetDoFunction()
+	r2::iItem::DoFuncT Shuffle::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

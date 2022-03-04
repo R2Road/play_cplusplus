@@ -16,7 +16,7 @@ namespace lambda_test
 			return "Capture Value";
 		};
 	}
-	r2::iItem::DoFunc CaptureValue::GetDoFunction()
+	r2::iItem::DoFuncT CaptureValue::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -108,7 +108,7 @@ namespace lambda_test
 			return "Capture Value with Mutable";
 		};
 	}
-	r2::iItem::DoFunc CaptureValueWithMutable::GetDoFunction()
+	r2::iItem::DoFuncT CaptureValueWithMutable::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -155,7 +155,7 @@ namespace lambda_test
 			return "Capture Reference";
 		};
 	}
-	r2::iItem::DoFunc CaptureReference::GetDoFunction()
+	r2::iItem::DoFuncT CaptureReference::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -230,7 +230,7 @@ namespace lambda_test
 			return "Capture Unique Ptr";
 		};
 	}
-	r2::iItem::DoFunc CaptureUniquePtr::GetDoFunction()
+	r2::iItem::DoFuncT CaptureUniquePtr::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -291,7 +291,7 @@ namespace lambda_test
 			return "Capture Value with Assign";
 		};
 	}
-	r2::iItem::DoFunc CaptureValueWithAssign::GetDoFunction()
+	r2::iItem::DoFuncT CaptureValueWithAssign::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

@@ -15,7 +15,7 @@ namespace std_memory_test
 			return "Shared Pointer";
 		};
 	}
-	r2::iItem::DoFunc SharedPointer::GetDoFunction()
+	r2::iItem::DoFuncT SharedPointer::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -98,7 +98,7 @@ namespace std_memory_test
 			return "Unique Pointer";
 		};
 	}
-	r2::iItem::DoFunc UniquePointer::GetDoFunction()
+	r2::iItem::DoFuncT UniquePointer::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

@@ -12,7 +12,7 @@ namespace align_test
 			return "Align 0";
 		};
 	}
-	r2::iItem::DoFunc Align_0::GetDoFunction()
+	r2::iItem::DoFuncT Align_0::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -130,7 +130,7 @@ namespace align_test
 			return "Align 1";
 		};
 	}
-	r2::iItem::DoFunc Align_1::GetDoFunction()
+	r2::iItem::DoFuncT Align_1::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -247,7 +247,7 @@ namespace align_test
 			return "Align 2";
 		};
 	}
-	r2::iItem::DoFunc Align_2::GetDoFunction()
+	r2::iItem::DoFuncT Align_2::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

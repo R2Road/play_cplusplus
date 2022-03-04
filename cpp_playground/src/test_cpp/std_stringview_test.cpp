@@ -17,7 +17,7 @@ namespace std_stringview_test
 			return "StringView : Basic";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

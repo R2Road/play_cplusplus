@@ -39,7 +39,7 @@ namespace infinite_number_test
 			return "Infinite Number( To do )";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

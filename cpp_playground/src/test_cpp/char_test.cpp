@@ -17,7 +17,7 @@ namespace char_test
 			return "Char : Basic";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -67,7 +67,7 @@ namespace char_test
 			return "Char : Encoding";
 		};
 	}
-	r2::iItem::DoFunc Encoding::GetDoFunction()
+	r2::iItem::DoFuncT Encoding::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

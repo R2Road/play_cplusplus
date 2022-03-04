@@ -15,7 +15,7 @@ namespace algorithm_bubble_sort_test
 			return "Bubble Sort";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

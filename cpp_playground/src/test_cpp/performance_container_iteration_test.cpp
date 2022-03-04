@@ -22,7 +22,7 @@ namespace performance_container_iteration_test
 			return "Built-In Array Iteration";
 		};
 	}
-	r2::iItem::DoFunc BuiltInArrayIteration::GetDoFunction()
+	r2::iItem::DoFuncT BuiltInArrayIteration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -101,7 +101,7 @@ namespace performance_container_iteration_test
 			return "STD Array Iteration";
 		};
 	}
-	r2::iItem::DoFunc STDArrayIteration::GetDoFunction()
+	r2::iItem::DoFuncT STDArrayIteration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -202,7 +202,7 @@ namespace performance_container_iteration_test
 			return "Vector Iteration";
 		};
 	}
-	r2::iItem::DoFunc VectorIteration::GetDoFunction()
+	r2::iItem::DoFuncT VectorIteration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -301,7 +301,7 @@ namespace performance_container_iteration_test
 			return "List Iteration";
 		};
 	}
-	r2::iItem::DoFunc ListIteration::GetDoFunction()
+	r2::iItem::DoFuncT ListIteration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -377,7 +377,7 @@ namespace performance_container_iteration_test
 			return "Map Iteration";
 		};
 	}
-	r2::iItem::DoFunc MapIteration::GetDoFunction()
+	r2::iItem::DoFuncT MapIteration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -479,7 +479,7 @@ namespace performance_container_iteration_test
 			return "Unordered-Map Iteration";
 		};
 	}
-	r2::iItem::DoFunc UnorderedMapIteration::GetDoFunction()
+	r2::iItem::DoFuncT UnorderedMapIteration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -581,7 +581,7 @@ namespace performance_container_iteration_test
 			return "Set Iteration";
 		};
 	}
-	r2::iItem::DoFunc SetIteration::GetDoFunction()
+	r2::iItem::DoFuncT SetIteration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -660,7 +660,7 @@ namespace performance_container_iteration_test
 			return "Unordered-Set Iteration";
 		};
 	}
-	r2::iItem::DoFunc UnorderedSetIteration::GetDoFunction()
+	r2::iItem::DoFuncT UnorderedSetIteration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -739,7 +739,7 @@ namespace performance_container_iteration_test
 			return "STD Array Iteration With Pointer";
 		};
 	}
-	r2::iItem::DoFunc STDArrayIteration_WithPointer::GetDoFunction()
+	r2::iItem::DoFuncT STDArrayIteration_WithPointer::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

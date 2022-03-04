@@ -14,7 +14,7 @@ namespace std_optional_test
 			return "Optional : Basic";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -114,7 +114,7 @@ namespace std_optional_test
 			return "Optional : Constructor";
 		};
 	}
-	r2::iItem::DoFunc Constructor::GetDoFunction()
+	r2::iItem::DoFuncT Constructor::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -206,7 +206,7 @@ namespace std_optional_test
 			return "Optional : Reference";
 		};
 	}
-	r2::iItem::DoFunc Reference::GetDoFunction()
+	r2::iItem::DoFuncT Reference::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

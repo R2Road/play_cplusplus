@@ -19,7 +19,7 @@ namespace std_random_test
 			return "STD Random : Basic";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -181,7 +181,7 @@ namespace std_random_test
 			return "STD Random : Status Save And Load";
 		};
 	}
-	r2::iItem::DoFunc StatusSaveAndLoad::GetDoFunction()
+	r2::iItem::DoFuncT StatusSaveAndLoad::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -207,7 +207,7 @@ namespace std_random_test
 			return "STD Random : Discreate Distribution";
 		};
 	}
-	r2::iItem::DoFunc DiscreateDistribution::GetDoFunction()
+	r2::iItem::DoFuncT DiscreateDistribution::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

@@ -18,7 +18,7 @@ namespace console_text_color_test
 			return "Color Table";
 		};
 	}
-	r2::iItem::DoFunc ColorTable::GetDoFunction()
+	r2::iItem::DoFuncT ColorTable::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -61,7 +61,7 @@ namespace console_text_color_test
 			return "Text Color 1";
 		};
 	}
-	r2::iItem::DoFunc TextColor1::GetDoFunction()
+	r2::iItem::DoFuncT TextColor1::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -104,7 +104,7 @@ namespace console_text_color_test
 			return "Text Color 2";
 		};
 	}
-	r2::iItem::DoFunc TextColor2::GetDoFunction()
+	r2::iItem::DoFuncT TextColor2::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -183,7 +183,7 @@ namespace console_text_color_test
 			return "Adjust Color Table";
 		};
 	}
-	r2::iItem::DoFunc AdjustColorTable::GetDoFunction()
+	r2::iItem::DoFuncT AdjustColorTable::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -247,7 +247,7 @@ namespace console_text_color_test
 			return "Color Table 2";
 		};
 	}
-	r2::iItem::DoFunc ColorTable2::GetDoFunction()
+	r2::iItem::DoFuncT ColorTable2::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -335,7 +335,7 @@ namespace console_text_color_test
 			return "Text Color 3";
 		};
 	}
-	r2::iItem::DoFunc TextColor3::GetDoFunction()
+	r2::iItem::DoFuncT TextColor3::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

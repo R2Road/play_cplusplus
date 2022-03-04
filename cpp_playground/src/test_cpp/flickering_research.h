@@ -9,40 +9,40 @@ namespace flickering_research
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 	class OneByOne_WithOut_CLS : public r2::iItem, public r2::SingleTon<OneByOne_WithOut_CLS>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class LineByLine : public r2::iItem, public r2::SingleTon<LineByLine>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class PageByPage : public r2::iItem, public r2::SingleTon<PageByPage>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class PageByPage_WithOut_CLS_1 : public r2::iItem, public r2::SingleTon<PageByPage_WithOut_CLS_1>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class PageByPage_WithOut_CLS_2 : public r2::iItem, public r2::SingleTon<PageByPage_WithOut_CLS_2>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 }

@@ -16,7 +16,7 @@ namespace std_numeric_test
 			return "Accumulate : Number";
 		};
 	}
-	r2::iItem::DoFunc Accumulate_Number::GetDoFunction()
+	r2::iItem::DoFuncT Accumulate_Number::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -103,7 +103,7 @@ namespace std_numeric_test
 			return "Accumulate : String";
 		};
 	}
-	r2::iItem::DoFunc Accumulate_String::GetDoFunction()
+	r2::iItem::DoFuncT Accumulate_String::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -185,7 +185,7 @@ namespace std_numeric_test
 			return "Partial_Sum";
 		};
 	}
-	r2::iItem::DoFunc Partial_Sum::GetDoFunction()
+	r2::iItem::DoFuncT Partial_Sum::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -265,7 +265,7 @@ namespace std_numeric_test
 			return "Fill Sequence Number In Container";
 		};
 	}
-	r2::iItem::DoFunc FillSequenceNumber::GetDoFunction()
+	r2::iItem::DoFuncT FillSequenceNumber::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

@@ -28,7 +28,7 @@ namespace template_practice_part_01_test
 			return "Buffer With Template";
 		};
 	}
-	r2::iItem::DoFunc BufferWithTemplate::GetDoFunction()
+	r2::iItem::DoFuncT BufferWithTemplate::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -84,7 +84,7 @@ namespace template_practice_part_01_test
 			return "Varidic Max";
 		};
 	}
-	r2::iItem::DoFunc VaridicMax::GetDoFunction()
+	r2::iItem::DoFuncT VaridicMax::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

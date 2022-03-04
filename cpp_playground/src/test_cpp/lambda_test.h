@@ -9,34 +9,34 @@ namespace lambda_test
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class CaptureValueWithMutable : public r2::iItem, public r2::SingleTon<CaptureValueWithMutable>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class CaptureReference : public r2::iItem, public r2::SingleTon<CaptureReference>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class CaptureUniquePtr : public r2::iItem, public r2::SingleTon<CaptureUniquePtr>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class CaptureValueWithAssign : public r2::iItem, public r2::SingleTon<CaptureValueWithAssign>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 }

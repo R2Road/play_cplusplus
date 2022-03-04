@@ -40,7 +40,7 @@ namespace template_meta_programming_test
 			return "Factorial";
 		};
 	}
-	r2::iItem::DoFunc CalculateFactorial::GetDoFunction()
+	r2::iItem::DoFuncT CalculateFactorial::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -106,7 +106,7 @@ namespace template_meta_programming_test
 			return "Greatest Common Divisor";
 		};
 	}
-	r2::iItem::DoFunc GreatestCommonDivisor::GetDoFunction()
+	r2::iItem::DoFuncT GreatestCommonDivisor::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -152,7 +152,7 @@ namespace template_meta_programming_test
 			return "Basic Ratio";
 		};
 	}
-	r2::iItem::DoFunc BasicRatio::GetDoFunction()
+	r2::iItem::DoFuncT BasicRatio::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -192,7 +192,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char* { return "Sum Basic Ratio"; };
 	}
-	r2::iItem::DoFunc SumBasicRatio::GetDoFunction()
+	r2::iItem::DoFuncT SumBasicRatio::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -242,7 +242,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char* { return "Ratio with GCD"; };
 	}
-	r2::iItem::DoFunc RatioWithGCD::GetDoFunction()
+	r2::iItem::DoFuncT RatioWithGCD::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -304,7 +304,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char* { return "Sum Ratio with GCD"; };
 	}
-	r2::iItem::DoFunc SumRatioWithGCD::GetDoFunction()
+	r2::iItem::DoFuncT SumRatioWithGCD::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -346,7 +346,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char* { return "Sum Ratio and Operator 1"; };
 	}
-	r2::iItem::DoFunc SumRatioAndOperator1::GetDoFunction()
+	r2::iItem::DoFuncT SumRatioAndOperator1::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -416,7 +416,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char* { return "Sum Ratio and Operator 2"; };
 	}
-	r2::iItem::DoFunc SumRatioAndOperator2::GetDoFunction()
+	r2::iItem::DoFuncT SumRatioAndOperator2::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

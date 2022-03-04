@@ -15,7 +15,7 @@ namespace c_random_test
 			return "C Rand : Basic";
 		};
 	}
-	r2::iItem::DoFunc Rand::GetDoFunction()
+	r2::iItem::DoFuncT Rand::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

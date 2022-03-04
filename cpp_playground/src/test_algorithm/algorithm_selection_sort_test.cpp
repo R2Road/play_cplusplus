@@ -26,7 +26,7 @@ namespace algorithm_selection_sort_test
 			return "Selection Sort : Case 1";
 		};
 	}
-	r2::iItem::DoFunc Case1::GetDoFunction()
+	r2::iItem::DoFuncT Case1::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -116,7 +116,7 @@ namespace algorithm_selection_sort_test
 			return "Selection Sort : Case 2";
 		};
 	}
-	r2::iItem::DoFunc Case2::GetDoFunction()
+	r2::iItem::DoFuncT Case2::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

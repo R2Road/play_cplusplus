@@ -9,27 +9,27 @@ namespace console_buffer_test
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class Write2Buffer_WriteConsole : public r2::iItem, public r2::SingleTon<Write2Buffer_WriteConsole>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class Write2Buffer_WriteConsoleOutput : public r2::iItem, public r2::SingleTon<Write2Buffer_WriteConsoleOutput>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class DoubleBuffering : public r2::iItem, public r2::SingleTon<DoubleBuffering>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 }

@@ -49,7 +49,7 @@ namespace atomic_test
 			return "Is Lock Free";
 		};
 	}
-	r2::iItem::DoFunc IsLockFree::GetDoFunction()
+	r2::iItem::DoFuncT IsLockFree::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -94,7 +94,7 @@ namespace atomic_test
 			return "Lock Free Test 1";
 		};
 	}
-	r2::iItem::DoFunc LockFreeTest1::GetDoFunction()
+	r2::iItem::DoFuncT LockFreeTest1::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -152,7 +152,7 @@ namespace atomic_test
 			return "Lock Free Test 2";
 		};
 	}
-	r2::iItem::DoFunc LockFreeTest2::GetDoFunction()
+	r2::iItem::DoFuncT LockFreeTest2::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

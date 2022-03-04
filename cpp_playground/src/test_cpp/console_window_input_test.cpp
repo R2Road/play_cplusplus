@@ -24,7 +24,7 @@ namespace console_window_input_test
 			return "Window Input : ReadConsoleInput";
 		};
 	}
-	r2::iItem::DoFunc WindowInput_ReadConsoleInput::GetDoFunction()
+	r2::iItem::DoFuncT WindowInput_ReadConsoleInput::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -172,7 +172,7 @@ namespace console_window_input_test
 			return "Window Input : GetKeyState";
 		};
 	}
-	r2::iItem::DoFunc WindowInput_GetKeyState::GetDoFunction()
+	r2::iItem::DoFuncT WindowInput_GetKeyState::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -236,7 +236,7 @@ namespace console_window_input_test
 			return "Window Input : GetKeyboardState";
 		};
 	}
-	r2::iItem::DoFunc WindowInput_GetKeyboardState::GetDoFunction()
+	r2::iItem::DoFuncT WindowInput_GetKeyboardState::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -319,7 +319,7 @@ namespace console_window_input_test
 			return "Window Input : GetAsyncKeyStates";
 		};
 	}
-	r2::iItem::DoFunc WindowInput_GetAsyncKeyStates::GetDoFunction()
+	r2::iItem::DoFuncT WindowInput_GetAsyncKeyStates::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

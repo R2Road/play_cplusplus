@@ -28,7 +28,7 @@ namespace std_function_2_test
 			return "std::function : Equality : std::bind 1";
 		};
 	}
-	r2::iItem::DoFunc Equality_STDBind_1::GetDoFunction()
+	r2::iItem::DoFuncT Equality_STDBind_1::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

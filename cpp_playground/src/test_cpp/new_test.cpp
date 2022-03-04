@@ -14,7 +14,7 @@ namespace new_test
 			return "Basic";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -111,7 +111,7 @@ namespace new_test
 			return "Placement New";
 		};
 	}
-	r2::iItem::DoFunc PlacementNew::GetDoFunction()
+	r2::iItem::DoFuncT PlacementNew::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

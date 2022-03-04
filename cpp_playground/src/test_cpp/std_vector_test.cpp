@@ -14,7 +14,7 @@ namespace std_vector_test
 			return "Vector : Basic";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -81,7 +81,7 @@ namespace std_vector_test
 			return "Vector : None Default Constructor";
 		};
 	}
-	r2::iItem::DoFunc NoneDefaultConstructor::GetDoFunction()
+	r2::iItem::DoFuncT NoneDefaultConstructor::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -133,7 +133,7 @@ namespace std_vector_test
 			return "Vector : Bool";
 		};
 	}
-	r2::iItem::DoFunc BoolVector::GetDoFunction()
+	r2::iItem::DoFuncT BoolVector::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -192,7 +192,7 @@ namespace std_vector_test
 			return "Vector : Others Iterator";
 		};
 	}
-	r2::iItem::DoFunc OthersIterator::GetDoFunction()
+	r2::iItem::DoFuncT OthersIterator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -237,7 +237,7 @@ namespace std_vector_test
 			return "Vector : End Iterator";
 		};
 	}
-	r2::iItem::DoFunc EndIterator::GetDoFunction()
+	r2::iItem::DoFuncT EndIterator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

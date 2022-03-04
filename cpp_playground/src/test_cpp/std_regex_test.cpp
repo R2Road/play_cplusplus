@@ -12,7 +12,7 @@ namespace std_regex_test
 			return "Regex : Basic( To do )";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

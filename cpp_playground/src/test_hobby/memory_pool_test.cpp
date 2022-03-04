@@ -34,7 +34,7 @@ namespace memory_pool_test
 		};
 	}
 
-	r2::iItem::DoFunc Step01::GetDoFunction()
+	r2::iItem::DoFuncT Step01::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

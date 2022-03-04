@@ -22,7 +22,7 @@ namespace debug_test
 			return "Predefined Macro";
 		};
 	}
-	r2::iItem::DoFunc PredefinedMacro::GetDoFunction()
+	r2::iItem::DoFuncT PredefinedMacro::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -62,7 +62,7 @@ namespace debug_test
 			return "OutPutDebugString";
 		};
 	}
-	r2::iItem::DoFunc OutPutDebugString::GetDoFunction()
+	r2::iItem::DoFuncT OutPutDebugString::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -100,7 +100,7 @@ namespace debug_test
 			return "Assert";
 		};
 	}
-	r2::iItem::DoFunc Assertion::GetDoFunction()
+	r2::iItem::DoFuncT Assertion::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -130,7 +130,7 @@ namespace debug_test
 			return "Debug Break";
 		};
 	}
-	r2::iItem::DoFunc DebugBreak::GetDoFunction()
+	r2::iItem::DoFuncT DebugBreak::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -170,7 +170,7 @@ do {												\
 			return "MyAssertion";
 		};
 	}
-	r2::iItem::DoFunc MyAssertion::GetDoFunction()
+	r2::iItem::DoFuncT MyAssertion::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

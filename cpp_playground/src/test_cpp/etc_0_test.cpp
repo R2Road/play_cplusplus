@@ -16,7 +16,7 @@ namespace etc_test
 			return "XOR Swap";
 		};
 	}
-	r2::iItem::DoFunc XOR_Swap::GetDoFunction()
+	r2::iItem::DoFuncT XOR_Swap::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -64,7 +64,7 @@ namespace etc_test
 			return "Init Array";
 		};
 	}
-	r2::iItem::DoFunc InitArray::GetDoFunction()
+	r2::iItem::DoFuncT InitArray::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -144,7 +144,7 @@ namespace etc_test
 			return "Macro 2 String";
 		};
 	}
-	r2::iItem::DoFunc Macro2String::GetDoFunction()
+	r2::iItem::DoFuncT Macro2String::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -187,7 +187,7 @@ namespace etc_test
 			return "Pointer 2 Index";
 		};
 	}
-	r2::iItem::DoFunc Pointer2Index::GetDoFunction()
+	r2::iItem::DoFuncT Pointer2Index::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

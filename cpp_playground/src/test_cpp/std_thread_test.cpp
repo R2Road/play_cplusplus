@@ -39,7 +39,7 @@ namespace std_thread_test
 			return "Basic";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -102,7 +102,7 @@ namespace std_thread_test
 			return "Declaration";
 		};
 	}
-	r2::iItem::DoFunc Declaration::GetDoFunction()
+	r2::iItem::DoFuncT Declaration::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -198,7 +198,7 @@ namespace std_thread_test
 			return "Copy Assaignment";
 		};
 	}
-	r2::iItem::DoFunc CopyAssaignment::GetDoFunction()
+	r2::iItem::DoFuncT CopyAssaignment::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -268,7 +268,7 @@ namespace std_thread_test
 			return "Wait Process : Sleep For";
 		};
 	}
-	r2::iItem::DoFunc WaitProcess_SleepFor::GetDoFunction()
+	r2::iItem::DoFuncT WaitProcess_SleepFor::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -317,7 +317,7 @@ namespace std_thread_test
 			return "Wait Process : Yield";
 		};
 	}
-	r2::iItem::DoFunc WaitProcess_Yield::GetDoFunction()
+	r2::iItem::DoFuncT WaitProcess_Yield::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

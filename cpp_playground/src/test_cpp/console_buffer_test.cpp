@@ -17,7 +17,7 @@ namespace console_buffer_test
 			return "Fill Buffer";
 		};
 	}
-	r2::iItem::DoFunc FillBuffer::GetDoFunction()
+	r2::iItem::DoFuncT FillBuffer::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -84,7 +84,7 @@ namespace console_buffer_test
 			return "Write 2 Buffer : WriteConsole";
 		};
 	}
-	r2::iItem::DoFunc Write2Buffer_WriteConsole::GetDoFunction()
+	r2::iItem::DoFuncT Write2Buffer_WriteConsole::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -127,7 +127,7 @@ namespace console_buffer_test
 			return "Write 2 Buffer : WriteConsoleOutput";
 		};
 	}
-	r2::iItem::DoFunc Write2Buffer_WriteConsoleOutput::GetDoFunction()
+	r2::iItem::DoFuncT Write2Buffer_WriteConsoleOutput::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -187,7 +187,7 @@ namespace console_buffer_test
 			return "Double Buffering";
 		};
 	}
-	r2::iItem::DoFunc DoubleBuffering::GetDoFunction()
+	r2::iItem::DoFuncT DoubleBuffering::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

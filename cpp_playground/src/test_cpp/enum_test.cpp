@@ -15,7 +15,7 @@ namespace enum_test
 			return "Basic";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -80,7 +80,7 @@ namespace enum_test
 			return "Convert";
 		};
 	}
-	r2::iItem::DoFunc Convert::GetDoFunction()
+	r2::iItem::DoFuncT Convert::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

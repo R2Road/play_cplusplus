@@ -36,7 +36,7 @@ namespace template_meta_programming_test
 			return "Multi Type Package( In Progress )";
 		};
 	}
-	r2::iItem::DoFunc MultiTypePackage::GetDoFunction()
+	r2::iItem::DoFuncT MultiTypePackage::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

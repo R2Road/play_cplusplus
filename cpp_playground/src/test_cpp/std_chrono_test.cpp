@@ -16,7 +16,7 @@ namespace std_chrono_test
 			return "Epoch";
 		};
 	}
-	r2::iItem::DoFunc Epoch::GetDoFunction()
+	r2::iItem::DoFuncT Epoch::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -81,7 +81,7 @@ namespace std_chrono_test
 			return "Chrono";
 		};
 	}
-	r2::iItem::DoFunc Chrono::GetDoFunction()
+	r2::iItem::DoFuncT Chrono::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

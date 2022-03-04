@@ -9,47 +9,47 @@ namespace algorithm_astar_test
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class Use_STDListSplice : public r2::iItem, public r2::SingleTon<Use_STDListSplice>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class Use_STDListSplice_STDVectorResultPath : public r2::iItem, public r2::SingleTon<Use_STDListSplice_STDVectorResultPath>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 	class Use_STDListSplice_DecreaseCloseList_STDVectorResultPath : public r2::iItem, public r2::SingleTon<Use_STDListSplice_DecreaseCloseList_STDVectorResultPath>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class Use_CostMap_STDListSplice_STDVectorResultPath : public r2::iItem, public r2::SingleTon<Use_CostMap_STDListSplice_STDVectorResultPath>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 	class Use_TinyCostMap_STDListSplice_STDVectorResultPath : public r2::iItem, public r2::SingleTon<Use_TinyCostMap_STDListSplice_STDVectorResultPath>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class Use_ArrayBasedList_TinyCostMap_STDVectorResultPath : public r2::iItem, public r2::SingleTon<Use_ArrayBasedList_TinyCostMap_STDVectorResultPath>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 
@@ -58,6 +58,6 @@ namespace algorithm_astar_test
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 }

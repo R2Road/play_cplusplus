@@ -16,7 +16,7 @@ namespace filesystem_test
 			return "Directory Path";
 		};
 	}
-	r2::iItem::DoFunc DirectoryPath::GetDoFunction()
+	r2::iItem::DoFuncT DirectoryPath::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -57,7 +57,7 @@ namespace filesystem_test
 			return "Directory Iterator";
 		};
 	}
-	r2::iItem::DoFunc DirectoryIterator::GetDoFunction()
+	r2::iItem::DoFuncT DirectoryIterator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -105,7 +105,7 @@ namespace filesystem_test
 			return "Recursive Directory Iterator";
 		};
 	}
-	r2::iItem::DoFunc RecursiveDirectoryIterator::GetDoFunction()
+	r2::iItem::DoFuncT RecursiveDirectoryIterator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -151,7 +151,7 @@ namespace filesystem_test
 			return "Path Operation 1";
 		};
 	}
-	r2::iItem::DoFunc PathOperation_1::GetDoFunction()
+	r2::iItem::DoFuncT PathOperation_1::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -235,7 +235,7 @@ namespace filesystem_test
 			return "Path Operation 2";
 		};
 	}
-	r2::iItem::DoFunc PathOperation_2::GetDoFunction()
+	r2::iItem::DoFuncT PathOperation_2::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

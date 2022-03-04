@@ -15,7 +15,7 @@ namespace algorithm_insertion_sort_test
 			return "Insertion Sort";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

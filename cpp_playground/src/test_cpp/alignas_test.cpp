@@ -14,7 +14,7 @@ namespace align_test
 			return "Align As";
 		};
 	}
-	r2::iItem::DoFunc AlignAs::GetDoFunction()
+	r2::iItem::DoFuncT AlignAs::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

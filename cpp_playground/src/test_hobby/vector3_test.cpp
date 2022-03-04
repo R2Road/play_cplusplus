@@ -55,7 +55,7 @@ namespace vector3_test
 			return "Vector3 : Operator+";
 		};
 	}
-	r2::iItem::DoFunc OperatorPlus::GetDoFunction()
+	r2::iItem::DoFuncT OperatorPlus::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -103,7 +103,7 @@ namespace vector3_test
 			return "Vector3 : Operator+=";
 		};
 	}
-	r2::iItem::DoFunc OperatorPlusEqual::GetDoFunction()
+	r2::iItem::DoFuncT OperatorPlusEqual::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -153,7 +153,7 @@ namespace vector3_test
 			return "Vector3 : Operator-";
 		};
 	}
-	r2::iItem::DoFunc OperatorMinus::GetDoFunction()
+	r2::iItem::DoFuncT OperatorMinus::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -201,7 +201,7 @@ namespace vector3_test
 			return "Vector3 : Operator-=";
 		};
 	}
-	r2::iItem::DoFunc OperatorMinusEqual::GetDoFunction()
+	r2::iItem::DoFuncT OperatorMinusEqual::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -251,7 +251,7 @@ namespace vector3_test
 			return "Vector3 : Operator* Scalar";
 		};
 	}
-	r2::iItem::DoFunc OperatorMultiply_With_Scalar::GetDoFunction()
+	r2::iItem::DoFuncT OperatorMultiply_With_Scalar::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -299,7 +299,7 @@ namespace vector3_test
 			return "Vector3 : Operator*= Scalar";
 		};
 	}
-	r2::iItem::DoFunc OperatorMultiplyEqual_With_Scalar::GetDoFunction()
+	r2::iItem::DoFuncT OperatorMultiplyEqual_With_Scalar::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

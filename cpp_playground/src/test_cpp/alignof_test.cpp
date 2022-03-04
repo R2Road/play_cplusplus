@@ -17,7 +17,7 @@ namespace alignof_test
 			return "Basic";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -130,7 +130,7 @@ namespace alignof_test
 			return "Mixed Struct";
 		};
 	}
-	r2::iItem::DoFunc MixedStruct::GetDoFunction()
+	r2::iItem::DoFuncT MixedStruct::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

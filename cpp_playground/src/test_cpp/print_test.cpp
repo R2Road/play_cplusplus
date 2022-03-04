@@ -14,7 +14,7 @@ namespace print_test
 			return "Print : Basic";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -66,7 +66,7 @@ namespace print_test
 			return "Print : Number";
 		};
 	}
-	r2::iItem::DoFunc ShowNumbers::GetDoFunction()
+	r2::iItem::DoFuncT ShowNumbers::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -156,7 +156,7 @@ namespace print_test
 			return "Print : BoolAlpha";
 		};
 	}
-	r2::iItem::DoFunc BoolAlpha::GetDoFunction()
+	r2::iItem::DoFuncT BoolAlpha::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

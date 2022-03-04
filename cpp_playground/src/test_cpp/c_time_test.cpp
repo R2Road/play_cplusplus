@@ -19,7 +19,7 @@ namespace c_time_test
 			return "C Time : Basic";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -58,7 +58,7 @@ namespace c_time_test
 			return "C Time : Y_M_D_H_S";
 		};
 	}
-	r2::iItem::DoFunc Y_M_D_H_S::GetDoFunction()
+	r2::iItem::DoFuncT Y_M_D_H_S::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -144,7 +144,7 @@ namespace c_time_test
 			return "C Time : Clock";
 		};
 	}
-	r2::iItem::DoFunc Clock::GetDoFunction()
+	r2::iItem::DoFuncT Clock::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

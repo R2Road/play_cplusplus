@@ -9,27 +9,27 @@ namespace std_function_test
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class Equality_FunctionPointer_2 : public r2::iItem, public r2::SingleTon<Equality_FunctionPointer_2>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class Equality_FunctionPointer_3 : public r2::iItem, public r2::SingleTon<Equality_FunctionPointer_3>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class Equality_Lambda_1 : public r2::iItem, public r2::SingleTon<Equality_Lambda_1>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 }

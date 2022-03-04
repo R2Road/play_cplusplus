@@ -14,7 +14,7 @@ namespace std_list_test
 			return "List : Splice";
 		};
 	}
-	r2::iItem::DoFunc Splice::GetDoFunction()
+	r2::iItem::DoFuncT Splice::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -150,7 +150,7 @@ namespace std_list_test
 			return "List : Others Iterator";
 		};
 	}
-	r2::iItem::DoFunc OthersIterator::GetDoFunction()
+	r2::iItem::DoFuncT OthersIterator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -213,7 +213,7 @@ namespace std_list_test
 			return "List : End Iterator";
 		};
 	}
-	r2::iItem::DoFunc EndIterator::GetDoFunction()
+	r2::iItem::DoFuncT EndIterator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

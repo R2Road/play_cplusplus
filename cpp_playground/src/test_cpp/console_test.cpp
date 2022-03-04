@@ -28,7 +28,7 @@ namespace console_test
 			return "Font Info";
 		};
 	}
-	r2::iItem::DoFunc FontInfo::GetDoFunction()
+	r2::iItem::DoFuncT FontInfo::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -72,7 +72,7 @@ namespace console_test
 			return "Font Change";
 		};
 	}
-	r2::iItem::DoFunc FontChange::GetDoFunction()
+	r2::iItem::DoFuncT FontChange::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -147,7 +147,7 @@ namespace console_test
 			return "Set Pixel";
 		};
 	}
-	r2::iItem::DoFunc Pixel::GetDoFunction()
+	r2::iItem::DoFuncT Pixel::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

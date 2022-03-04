@@ -18,7 +18,7 @@ namespace console_window_test
 			return "Buffer Info";
 		};
 	}
-	r2::iItem::DoFunc BufferInfo::GetDoFunction()
+	r2::iItem::DoFuncT BufferInfo::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -89,7 +89,7 @@ namespace console_window_test
 			return "Change Window Size";
 		};
 	}
-	r2::iItem::DoFunc ChangeWindowSize::GetDoFunction()
+	r2::iItem::DoFuncT ChangeWindowSize::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -154,7 +154,7 @@ namespace console_window_test
 			return "FullScreen";
 		};
 	}
-	r2::iItem::DoFunc FullScreen::GetDoFunction()
+	r2::iItem::DoFuncT FullScreen::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -191,7 +191,7 @@ namespace console_window_test
 			return "Window Position";
 		};
 	}
-	r2::iItem::DoFunc WindowPosition::GetDoFunction()
+	r2::iItem::DoFuncT WindowPosition::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -297,7 +297,7 @@ namespace console_window_test
 			return "Change Window Name";
 		};
 	}
-	r2::iItem::DoFunc ChangeWindowName::GetDoFunction()
+	r2::iItem::DoFuncT ChangeWindowName::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -347,7 +347,7 @@ namespace console_window_test
 			return "Hide Title Bar";
 		};
 	}
-	r2::iItem::DoFunc HideTitleBar::GetDoFunction()
+	r2::iItem::DoFuncT HideTitleBar::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -406,7 +406,7 @@ namespace console_window_test
 			return "Hide Scroll Bar";
 		};
 	}
-	r2::iItem::DoFunc HideScrollBar::GetDoFunction()
+	r2::iItem::DoFuncT HideScrollBar::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -454,7 +454,7 @@ namespace console_window_test
 			return "Lock Window Resizing By Dragging";
 		};
 	}
-	r2::iItem::DoFunc LockWindowResizingByDragging::GetDoFunction()
+	r2::iItem::DoFuncT LockWindowResizingByDragging::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -512,7 +512,7 @@ namespace console_window_test
 			return "Menu Item";
 		};
 	}
-	r2::iItem::DoFunc MenuItem::GetDoFunction()
+	r2::iItem::DoFuncT MenuItem::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -570,7 +570,7 @@ namespace console_window_test
 			return "Cursor Move";
 		};
 	}
-	r2::iItem::DoFunc CursorMove::GetDoFunction()
+	r2::iItem::DoFuncT CursorMove::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -626,7 +626,7 @@ namespace console_window_test
 			return "Cursor Visibility";
 		};
 	}
-	r2::iItem::DoFunc CursorVisibility::GetDoFunction()
+	r2::iItem::DoFuncT CursorVisibility::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

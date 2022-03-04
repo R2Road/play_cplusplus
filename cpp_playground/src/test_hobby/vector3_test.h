@@ -9,38 +9,38 @@ namespace vector3_test
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 	class OperatorPlusEqual : public r2::iItem, public r2::SingleTon<OperatorPlusEqual>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class OperatorMinus : public r2::iItem, public r2::SingleTon<OperatorMinus>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 	class OperatorMinusEqual : public r2::iItem, public r2::SingleTon<OperatorMinusEqual>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class OperatorMultiply_With_Scalar : public r2::iItem, public r2::SingleTon<OperatorMultiply_With_Scalar>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 	class OperatorMultiplyEqual_With_Scalar : public r2::iItem, public r2::SingleTon<OperatorMultiplyEqual_With_Scalar>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 }

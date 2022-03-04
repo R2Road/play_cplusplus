@@ -18,7 +18,7 @@ namespace performance_1_test
 			return "++Operator";
 		};
 	}
-	r2::iItem::DoFunc IncrementOperator::GetDoFunction()
+	r2::iItem::DoFuncT IncrementOperator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -175,7 +175,7 @@ namespace performance_1_test
 			return "Loop";
 		};
 	}
-	r2::iItem::DoFunc Loop::GetDoFunction()
+	r2::iItem::DoFuncT Loop::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -255,7 +255,7 @@ namespace performance_1_test
 			return "Loop With Built-In Array";
 		};
 	}
-	r2::iItem::DoFunc LoopWithBuildInArray::GetDoFunction()
+	r2::iItem::DoFuncT LoopWithBuildInArray::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -348,7 +348,7 @@ namespace performance_1_test
 			return "Loop With std::array";
 		};
 	}
-	r2::iItem::DoFunc LoopWithSTDArray::GetDoFunction()
+	r2::iItem::DoFuncT LoopWithSTDArray::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -441,7 +441,7 @@ namespace performance_1_test
 			return "Iterator Operator";
 		};
 	}
-	r2::iItem::DoFunc CompareIteratorOperator::GetDoFunction()
+	r2::iItem::DoFuncT CompareIteratorOperator::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

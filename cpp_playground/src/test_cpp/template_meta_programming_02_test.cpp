@@ -21,7 +21,7 @@ namespace template_meta_programming_test
 			return "Character 2 String";
 		};
 	}
-	r2::iItem::DoFunc Character2String::GetDoFunction()
+	r2::iItem::DoFuncT Character2String::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -68,7 +68,7 @@ namespace template_meta_programming_test
 			return "Integer 2 String";
 		};
 	}
-	r2::iItem::DoFunc Integer2String::GetDoFunction()
+	r2::iItem::DoFuncT Integer2String::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -113,7 +113,7 @@ namespace template_meta_programming_test
 			return "Place Value 4 Integer";
 		};
 	}
-	r2::iItem::DoFunc CalculatePlaceValue::GetDoFunction()
+	r2::iItem::DoFuncT CalculatePlaceValue::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -182,7 +182,7 @@ namespace template_meta_programming_test
 			return "Integer 2 String II";
 		};
 	}
-	r2::iItem::DoFunc Integer2String_II::GetDoFunction()
+	r2::iItem::DoFuncT Integer2String_II::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{

@@ -17,7 +17,7 @@ namespace flickering_research
 			return "Flickering : Print One By One";
 		};
 	}
-	r2::iItem::DoFunc OneByOne::GetDoFunction()
+	r2::iItem::DoFuncT OneByOne::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -71,7 +71,7 @@ namespace flickering_research
 			return "Flickering : Print One By One WithOut CLS";
 		};
 	}
-	r2::iItem::DoFunc OneByOne_WithOut_CLS::GetDoFunction()
+	r2::iItem::DoFuncT OneByOne_WithOut_CLS::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -131,7 +131,7 @@ namespace flickering_research
 			return "Flickering : Print Line By Line";
 		};
 	}
-	r2::iItem::DoFunc LineByLine::GetDoFunction()
+	r2::iItem::DoFuncT LineByLine::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -179,7 +179,7 @@ namespace flickering_research
 			return "Flickering : Print Page By Page";
 		};
 	}
-	r2::iItem::DoFunc PageByPage::GetDoFunction()
+	r2::iItem::DoFuncT PageByPage::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -224,7 +224,7 @@ namespace flickering_research
 			return "Flickering : Print Page By Page Without CLS 1";
 		};
 	}
-	r2::iItem::DoFunc PageByPage_WithOut_CLS_1::GetDoFunction()
+	r2::iItem::DoFuncT PageByPage_WithOut_CLS_1::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
@@ -265,7 +265,7 @@ namespace flickering_research
 			return "Flickering : Print Page By Page Without CLS 2";
 		};
 	}
-	r2::iItem::DoFunc PageByPage_WithOut_CLS_2::GetDoFunction()
+	r2::iItem::DoFuncT PageByPage_WithOut_CLS_2::GetDoFunction()
 	{
 		return []()->r2::eTestEndAction
 		{
