@@ -20,7 +20,7 @@ namespace
 }
 namespace structured_binding_test
 {
-	r2::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

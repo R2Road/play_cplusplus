@@ -10,7 +10,7 @@
 
 namespace flickering_research
 {
-	r2::iItem::TitleFunc OneByOne::GetTitleFunction() const
+	r2::iItem::TitleFuncT OneByOne::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -64,7 +64,7 @@ namespace flickering_research
 			return r2::eTestEndAction::None;
 		};
 	}
-	r2::iItem::TitleFunc OneByOne_WithOut_CLS::GetTitleFunction() const
+	r2::iItem::TitleFuncT OneByOne_WithOut_CLS::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -124,7 +124,7 @@ namespace flickering_research
 
 
 
-	r2::iItem::TitleFunc LineByLine::GetTitleFunction() const
+	r2::iItem::TitleFuncT LineByLine::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -172,7 +172,7 @@ namespace flickering_research
 
 
 
-	r2::iItem::TitleFunc PageByPage::GetTitleFunction() const
+	r2::iItem::TitleFuncT PageByPage::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -217,7 +217,7 @@ namespace flickering_research
 
 
 
-	r2::iItem::TitleFunc PageByPage_WithOut_CLS_1::GetTitleFunction() const
+	r2::iItem::TitleFuncT PageByPage_WithOut_CLS_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -258,7 +258,7 @@ namespace flickering_research
 
 
 
-	r2::iItem::TitleFunc PageByPage_WithOut_CLS_2::GetTitleFunction() const
+	r2::iItem::TitleFuncT PageByPage_WithOut_CLS_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

@@ -8,14 +8,14 @@ namespace std_array_test
 	class Basic : public r2::iItem, public r2::SingleTon<Basic>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
 	class Fill : public r2::iItem, public r2::SingleTon<Fill>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 }

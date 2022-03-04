@@ -8,7 +8,7 @@ namespace c_random_test
 	class Rand : public r2::iItem, public r2::SingleTon<Rand>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 }

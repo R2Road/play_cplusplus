@@ -21,7 +21,7 @@ namespace std_function_2_test
 		}
 	};
 
-	r2::iItem::TitleFunc Equality_STDBind_1::GetTitleFunction() const
+	r2::iItem::TitleFuncT Equality_STDBind_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

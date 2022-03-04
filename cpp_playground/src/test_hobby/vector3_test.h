@@ -8,39 +8,39 @@ namespace vector3_test
 	class OperatorPlus : public r2::iItem, public r2::SingleTon<OperatorPlus>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 	class OperatorPlusEqual : public r2::iItem, public r2::SingleTon<OperatorPlusEqual>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
 	class OperatorMinus : public r2::iItem, public r2::SingleTon<OperatorMinus>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 	class OperatorMinusEqual : public r2::iItem, public r2::SingleTon<OperatorMinusEqual>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
 	class OperatorMultiply_With_Scalar : public r2::iItem, public r2::SingleTon<OperatorMultiply_With_Scalar>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 	class OperatorMultiplyEqual_With_Scalar : public r2::iItem, public r2::SingleTon<OperatorMultiplyEqual_With_Scalar>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 }

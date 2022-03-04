@@ -8,21 +8,21 @@ namespace print_test
 	class Basic : public r2::iItem, public r2::SingleTon<Basic>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
 	class ShowNumbers : public r2::iItem, public r2::SingleTon<ShowNumbers>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
 	class BoolAlpha : public r2::iItem, public r2::SingleTon<BoolAlpha>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 }

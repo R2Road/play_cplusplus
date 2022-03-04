@@ -42,7 +42,7 @@ namespace atomic_test
 		}		
 	};
 
-	r2::iItem::TitleFunc IsLockFree::GetTitleFunction() const
+	r2::iItem::TitleFuncT IsLockFree::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -87,7 +87,7 @@ namespace atomic_test
 		};
 	}
 
-	r2::iItem::TitleFunc LockFreeTest1::GetTitleFunction() const
+	r2::iItem::TitleFuncT LockFreeTest1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -145,7 +145,7 @@ namespace atomic_test
 		};
 	}
 
-	r2::iItem::TitleFunc LockFreeTest2::GetTitleFunction() const
+	r2::iItem::TitleFuncT LockFreeTest2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

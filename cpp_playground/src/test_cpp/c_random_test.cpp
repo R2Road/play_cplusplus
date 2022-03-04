@@ -8,7 +8,7 @@
 
 namespace c_random_test
 {
-	r2::iItem::TitleFunc Rand::GetTitleFunction() const
+	r2::iItem::TitleFuncT Rand::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

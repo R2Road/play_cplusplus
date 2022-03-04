@@ -8,14 +8,14 @@ namespace std_memory_test
 	class SharedPointer : public r2::iItem, public r2::SingleTon<SharedPointer>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
 	class UniquePointer : public r2::iItem, public r2::SingleTon<UniquePointer>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 }

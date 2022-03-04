@@ -7,7 +7,7 @@
 
 namespace print_test
 {
-	r2::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -59,7 +59,7 @@ namespace print_test
 
 
 
-	r2::iItem::TitleFunc ShowNumbers::GetTitleFunction() const
+	r2::iItem::TitleFuncT ShowNumbers::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -149,7 +149,7 @@ namespace print_test
 
 
 
-	r2::iItem::TitleFunc BoolAlpha::GetTitleFunction() const
+	r2::iItem::TitleFuncT BoolAlpha::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

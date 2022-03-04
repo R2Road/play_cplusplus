@@ -94,7 +94,7 @@ namespace
 
 namespace algorithm_astar_test
 {
-	r2::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -143,7 +143,7 @@ namespace algorithm_astar_test
 
 
 
-	r2::iItem::TitleFunc Use_STDListSplice::GetTitleFunction() const
+	r2::iItem::TitleFuncT Use_STDListSplice::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -192,7 +192,7 @@ namespace algorithm_astar_test
 
 
 
-	r2::iItem::TitleFunc Use_STDListSplice_STDVectorResultPath::GetTitleFunction() const
+	r2::iItem::TitleFuncT Use_STDListSplice_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -242,7 +242,7 @@ namespace algorithm_astar_test
 
 
 
-	r2::iItem::TitleFunc Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetTitleFunction() const
+	r2::iItem::TitleFuncT Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -294,7 +294,7 @@ namespace algorithm_astar_test
 
 
 
-	r2::iItem::TitleFunc Use_CostMap_STDListSplice_STDVectorResultPath::GetTitleFunction() const
+	r2::iItem::TitleFuncT Use_CostMap_STDListSplice_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -346,7 +346,7 @@ namespace algorithm_astar_test
 
 
 
-	r2::iItem::TitleFunc Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetTitleFunction() const
+	r2::iItem::TitleFuncT Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -398,7 +398,7 @@ namespace algorithm_astar_test
 
 
 
-	r2::iItem::TitleFunc Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetTitleFunction() const
+	r2::iItem::TitleFuncT Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -450,7 +450,7 @@ namespace algorithm_astar_test
 
 
 
-	r2::iItem::TitleFunc PerformanceTest::GetTitleFunction() const
+	r2::iItem::TitleFuncT PerformanceTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

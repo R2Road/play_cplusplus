@@ -12,7 +12,7 @@
 
 namespace c_time_test
 {
-	r2::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -51,7 +51,7 @@ namespace c_time_test
 
 
 
-	r2::iItem::TitleFunc Y_M_D_H_S::GetTitleFunction() const
+	r2::iItem::TitleFuncT Y_M_D_H_S::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -137,7 +137,7 @@ namespace c_time_test
 
 
 
-	r2::iItem::TitleFunc Clock::GetTitleFunction() const
+	r2::iItem::TitleFuncT Clock::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

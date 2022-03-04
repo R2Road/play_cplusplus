@@ -21,7 +21,7 @@ void ShowFontInfo( const CONSOLE_FONT_INFOEX & cfie )
 
 namespace console_test
 {
-	r2::iItem::TitleFunc FontInfo::GetTitleFunction() const
+	r2::iItem::TitleFuncT FontInfo::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -65,7 +65,7 @@ namespace console_test
 
 
 
-	r2::iItem::TitleFunc FontChange::GetTitleFunction() const
+	r2::iItem::TitleFuncT FontChange::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -140,7 +140,7 @@ namespace console_test
 
 
 
-	r2::iItem::TitleFunc Pixel::GetTitleFunction() const
+	r2::iItem::TitleFuncT Pixel::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

@@ -21,7 +21,7 @@ namespace template_practice_part_01_test
 		std::size_t size;
 	};
 
-	r2::iItem::TitleFunc BufferWithTemplate::GetTitleFunction() const
+	r2::iItem::TitleFuncT BufferWithTemplate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -77,7 +77,7 @@ namespace template_practice_part_01_test
 		return FindMax( FindMax( arg1, arg2 ), args... );
 	};
 
-	r2::iItem::TitleFunc VaridicMax::GetTitleFunction() const
+	r2::iItem::TitleFuncT VaridicMax::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

@@ -9,7 +9,7 @@
 
 namespace lambda_test
 {
-	r2::iItem::TitleFunc CaptureValue::GetTitleFunction() const
+	r2::iItem::TitleFuncT CaptureValue::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -101,7 +101,7 @@ namespace lambda_test
 
 
 
-	r2::iItem::TitleFunc CaptureValueWithMutable::GetTitleFunction() const
+	r2::iItem::TitleFuncT CaptureValueWithMutable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -148,7 +148,7 @@ namespace lambda_test
 
 
 
-	r2::iItem::TitleFunc CaptureReference::GetTitleFunction() const
+	r2::iItem::TitleFuncT CaptureReference::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -223,7 +223,7 @@ namespace lambda_test
 
 
 
-	r2::iItem::TitleFunc CaptureUniquePtr::GetTitleFunction() const
+	r2::iItem::TitleFuncT CaptureUniquePtr::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -284,7 +284,7 @@ namespace lambda_test
 
 
 
-	r2::iItem::TitleFunc CaptureValueWithAssign::GetTitleFunction() const
+	r2::iItem::TitleFuncT CaptureValueWithAssign::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

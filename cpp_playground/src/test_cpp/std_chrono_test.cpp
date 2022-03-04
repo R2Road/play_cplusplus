@@ -9,7 +9,7 @@
 
 namespace std_chrono_test
 {
-	r2::iItem::TitleFunc Epoch::GetTitleFunction() const
+	r2::iItem::TitleFuncT Epoch::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -74,7 +74,7 @@ namespace std_chrono_test
 
 
 
-	r2::iItem::TitleFunc Chrono::GetTitleFunction() const
+	r2::iItem::TitleFuncT Chrono::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

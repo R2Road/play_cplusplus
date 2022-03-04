@@ -7,7 +7,7 @@
 
 namespace align_test
 {
-	r2::iItem::TitleFunc AlignAs::GetTitleFunction() const
+	r2::iItem::TitleFuncT AlignAs::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

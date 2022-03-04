@@ -17,7 +17,7 @@ namespace console_window_input_test
 		GetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), &temp_console_mode );
 		std::cout << r2::tab << "Current Console Mode : " << temp_console_mode << r2::linefeed;
 	}
-	r2::iItem::TitleFunc WindowInput_ReadConsoleInput::GetTitleFunction() const
+	r2::iItem::TitleFuncT WindowInput_ReadConsoleInput::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -165,7 +165,7 @@ namespace console_window_input_test
 
 
 
-	r2::iItem::TitleFunc WindowInput_GetKeyState::GetTitleFunction() const
+	r2::iItem::TitleFuncT WindowInput_GetKeyState::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -229,7 +229,7 @@ namespace console_window_input_test
 
 
 
-	r2::iItem::TitleFunc WindowInput_GetKeyboardState::GetTitleFunction() const
+	r2::iItem::TitleFuncT WindowInput_GetKeyboardState::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -312,7 +312,7 @@ namespace console_window_input_test
 
 
 
-	r2::iItem::TitleFunc WindowInput_GetAsyncKeyStates::GetTitleFunction() const
+	r2::iItem::TitleFuncT WindowInput_GetAsyncKeyStates::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

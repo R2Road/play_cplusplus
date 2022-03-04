@@ -8,21 +8,21 @@ namespace std_list_test
 	class Splice : public r2::iItem, public r2::SingleTon<Splice>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
 	class OthersIterator : public r2::iItem, public r2::SingleTon<OthersIterator>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
 	class EndIterator : public r2::iItem, public r2::SingleTon<EndIterator>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 }

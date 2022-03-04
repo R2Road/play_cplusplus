@@ -15,7 +15,7 @@
 
 namespace performance_container_iteration_test
 {
-	r2::iItem::TitleFunc BuiltInArrayIteration::GetTitleFunction() const
+	r2::iItem::TitleFuncT BuiltInArrayIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -94,7 +94,7 @@ namespace performance_container_iteration_test
 
 
 
-	r2::iItem::TitleFunc STDArrayIteration::GetTitleFunction() const
+	r2::iItem::TitleFuncT STDArrayIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -195,7 +195,7 @@ namespace performance_container_iteration_test
 
 
 
-	r2::iItem::TitleFunc VectorIteration::GetTitleFunction() const
+	r2::iItem::TitleFuncT VectorIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -294,7 +294,7 @@ namespace performance_container_iteration_test
 
 
 
-	r2::iItem::TitleFunc ListIteration::GetTitleFunction() const
+	r2::iItem::TitleFuncT ListIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -370,7 +370,7 @@ namespace performance_container_iteration_test
 
 
 
-	r2::iItem::TitleFunc MapIteration::GetTitleFunction() const
+	r2::iItem::TitleFuncT MapIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -472,7 +472,7 @@ namespace performance_container_iteration_test
 
 
 
-	r2::iItem::TitleFunc UnorderedMapIteration::GetTitleFunction() const
+	r2::iItem::TitleFuncT UnorderedMapIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -574,7 +574,7 @@ namespace performance_container_iteration_test
 
 
 
-	r2::iItem::TitleFunc SetIteration::GetTitleFunction() const
+	r2::iItem::TitleFuncT SetIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -653,7 +653,7 @@ namespace performance_container_iteration_test
 
 
 
-	r2::iItem::TitleFunc UnorderedSetIteration::GetTitleFunction() const
+	r2::iItem::TitleFuncT UnorderedSetIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -732,7 +732,7 @@ namespace performance_container_iteration_test
 
 
 
-	r2::iItem::TitleFunc STDArrayIteration_WithPointer::GetTitleFunction() const
+	r2::iItem::TitleFuncT STDArrayIteration_WithPointer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

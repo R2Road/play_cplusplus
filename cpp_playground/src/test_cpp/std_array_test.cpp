@@ -9,7 +9,7 @@
 
 namespace std_array_test
 {
-	r2::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -55,7 +55,7 @@ namespace std_array_test
 
 
 
-	r2::iItem::TitleFunc Fill::GetTitleFunction() const
+	r2::iItem::TitleFuncT Fill::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

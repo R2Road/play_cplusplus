@@ -9,7 +9,7 @@
 
 namespace etc_test
 {
-	r2::iItem::TitleFunc XOR_Swap::GetTitleFunction() const
+	r2::iItem::TitleFuncT XOR_Swap::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -57,7 +57,7 @@ namespace etc_test
 
 namespace etc_test
 {
-	r2::iItem::TitleFunc InitArray::GetTitleFunction() const
+	r2::iItem::TitleFuncT InitArray::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -137,7 +137,7 @@ namespace etc_test
 {
 #define MACRO2STRING( x ) #x
 
-	r2::iItem::TitleFunc Macro2String::GetTitleFunction() const
+	r2::iItem::TitleFuncT Macro2String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -180,7 +180,7 @@ namespace etc_test
 #pragma warning( disable : 4311 )
 #pragma warning( disable : 4302 )
 
-	r2::iItem::TitleFunc Pointer2Index::GetTitleFunction() const
+	r2::iItem::TitleFuncT Pointer2Index::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

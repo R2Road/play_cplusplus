@@ -9,7 +9,7 @@
 
 namespace std_numeric_test
 {
-	r2::iItem::TitleFunc Accumulate_Number::GetTitleFunction() const
+	r2::iItem::TitleFuncT Accumulate_Number::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -96,7 +96,7 @@ namespace std_numeric_test
 
 
 
-	r2::iItem::TitleFunc Accumulate_String::GetTitleFunction() const
+	r2::iItem::TitleFuncT Accumulate_String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -178,7 +178,7 @@ namespace std_numeric_test
 
 
 
-	r2::iItem::TitleFunc Partial_Sum::GetTitleFunction() const
+	r2::iItem::TitleFuncT Partial_Sum::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -258,7 +258,7 @@ namespace std_numeric_test
 
 
 
-	r2::iItem::TitleFunc FillSequenceNumber::GetTitleFunction() const
+	r2::iItem::TitleFuncT FillSequenceNumber::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

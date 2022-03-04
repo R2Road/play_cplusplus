@@ -8,7 +8,7 @@
 
 namespace enum_test
 {
-	r2::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -73,7 +73,7 @@ namespace enum_test
 		return static_cast<std::underlying_type_t<EnumT>>( e );
 	}
 
-	r2::iItem::TitleFunc Convert::GetTitleFunction() const
+	r2::iItem::TitleFuncT Convert::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

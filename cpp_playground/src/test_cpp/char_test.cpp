@@ -10,7 +10,7 @@
 
 namespace char_test
 {
-	r2::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -60,7 +60,7 @@ namespace char_test
 //
 namespace char_test
 {
-	r2::iItem::TitleFunc Encoding::GetTitleFunction() const
+	r2::iItem::TitleFuncT Encoding::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

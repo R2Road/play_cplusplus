@@ -19,7 +19,7 @@ namespace
 
 namespace std_function_test
 {
-	r2::iItem::TitleFunc Equality_FunctionPointer_1::GetTitleFunction() const
+	r2::iItem::TitleFuncT Equality_FunctionPointer_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -111,7 +111,7 @@ namespace std_function_test
 
 
 
-	r2::iItem::TitleFunc Equality_FunctionPointer_2::GetTitleFunction() const
+	r2::iItem::TitleFuncT Equality_FunctionPointer_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -213,7 +213,7 @@ namespace std_function_test
 
 
 
-	r2::iItem::TitleFunc Equality_FunctionPointer_3::GetTitleFunction() const
+	r2::iItem::TitleFuncT Equality_FunctionPointer_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -319,7 +319,7 @@ namespace std_function_test
 
 namespace std_function_test
 {
-	r2::iItem::TitleFunc Equality_Lambda_1::GetTitleFunction() const
+	r2::iItem::TitleFuncT Equality_Lambda_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

@@ -50,7 +50,7 @@ namespace console_window_message_test
 			return FALSE;
 		}
 	}
-	r2::iItem::TitleFunc ConsoleControlHandler::GetTitleFunction() const
+	r2::iItem::TitleFuncT ConsoleControlHandler::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -145,7 +145,7 @@ namespace console_window_message_test
 		return CallNextHookEx( g_hook_mouse, code, w, l );
 	};
 
-	r2::iItem::TitleFunc MessageHook::GetTitleFunction() const
+	r2::iItem::TitleFuncT MessageHook::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

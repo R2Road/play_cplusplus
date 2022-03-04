@@ -11,7 +11,7 @@
 
 namespace console_text_color_test
 {
-	r2::iItem::TitleFunc ColorTable::GetTitleFunction() const
+	r2::iItem::TitleFuncT ColorTable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -54,7 +54,7 @@ namespace console_text_color_test
 
 
 
-	r2::iItem::TitleFunc TextColor1::GetTitleFunction() const
+	r2::iItem::TitleFuncT TextColor1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -97,7 +97,7 @@ namespace console_text_color_test
 
 
 
-	r2::iItem::TitleFunc TextColor2::GetTitleFunction() const
+	r2::iItem::TitleFuncT TextColor2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -176,7 +176,7 @@ namespace console_text_color_test
 
 
 
-	r2::iItem::TitleFunc AdjustColorTable::GetTitleFunction() const
+	r2::iItem::TitleFuncT AdjustColorTable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -240,7 +240,7 @@ namespace console_text_color_test
 
 
 
-	r2::iItem::TitleFunc ColorTable2::GetTitleFunction() const
+	r2::iItem::TitleFuncT ColorTable2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -328,7 +328,7 @@ namespace console_text_color_test
 
 
 
-	r2::iItem::TitleFunc TextColor3::GetTitleFunction() const
+	r2::iItem::TitleFuncT TextColor3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

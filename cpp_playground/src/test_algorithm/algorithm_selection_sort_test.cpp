@@ -19,7 +19,7 @@ std::basic_ostream<_Elem, _Traits>& operator << ( std::basic_ostream<_Elem, _Tra
 
 namespace algorithm_selection_sort_test
 {
-	r2::iItem::TitleFunc Case1::GetTitleFunction() const
+	r2::iItem::TitleFuncT Case1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -109,7 +109,7 @@ namespace algorithm_selection_sort_test
 
 
 
-	r2::iItem::TitleFunc Case2::GetTitleFunction() const
+	r2::iItem::TitleFuncT Case2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

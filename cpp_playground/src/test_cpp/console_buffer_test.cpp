@@ -10,7 +10,7 @@
 
 namespace console_buffer_test
 {
-	r2::iItem::TitleFunc FillBuffer::GetTitleFunction() const
+	r2::iItem::TitleFuncT FillBuffer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -77,7 +77,7 @@ namespace console_buffer_test
 
 
 
-	r2::iItem::TitleFunc Write2Buffer_WriteConsole::GetTitleFunction() const
+	r2::iItem::TitleFuncT Write2Buffer_WriteConsole::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -120,7 +120,7 @@ namespace console_buffer_test
 
 
 
-	r2::iItem::TitleFunc Write2Buffer_WriteConsoleOutput::GetTitleFunction() const
+	r2::iItem::TitleFuncT Write2Buffer_WriteConsoleOutput::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -180,7 +180,7 @@ namespace console_buffer_test
 
 
 
-	r2::iItem::TitleFunc DoubleBuffering::GetTitleFunction() const
+	r2::iItem::TitleFuncT DoubleBuffering::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

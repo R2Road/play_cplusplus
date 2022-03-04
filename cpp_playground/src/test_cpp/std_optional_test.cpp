@@ -7,7 +7,7 @@
 
 namespace std_optional_test
 {
-	r2::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -107,7 +107,7 @@ namespace std_optional_test
 	{
 		return std::optional<TestOptional>( TestOptional{} );
 	}
-	r2::iItem::TitleFunc Constructor::GetTitleFunction() const
+	r2::iItem::TitleFuncT Constructor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -199,7 +199,7 @@ namespace std_optional_test
 
 
 
-	r2::iItem::TitleFunc Reference::GetTitleFunction() const
+	r2::iItem::TitleFuncT Reference::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

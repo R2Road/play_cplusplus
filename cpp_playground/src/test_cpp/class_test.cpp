@@ -9,7 +9,7 @@
 
 namespace class_test
 {
-	r2::iItem::TitleFunc Braces::GetTitleFunction() const
+	r2::iItem::TitleFuncT Braces::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -69,7 +69,7 @@ namespace
 
 namespace class_test
 {
-	r2::iItem::TitleFunc PrintName::GetTitleFunction() const
+	r2::iItem::TitleFuncT PrintName::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -157,7 +157,7 @@ namespace class_test
 
 namespace class_test
 {
-	r2::iItem::TitleFunc PrivateInheritance_1::GetTitleFunction() const
+	r2::iItem::TitleFuncT PrivateInheritance_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -258,7 +258,7 @@ namespace class_test
 
 
 
-	r2::iItem::TitleFunc PrivateInheritance_2::GetTitleFunction() const
+	r2::iItem::TitleFuncT PrivateInheritance_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -344,7 +344,7 @@ namespace class_test
 	}
 
 
-	r2::iItem::TitleFunc MemberAdress::GetTitleFunction() const
+	r2::iItem::TitleFuncT MemberAdress::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

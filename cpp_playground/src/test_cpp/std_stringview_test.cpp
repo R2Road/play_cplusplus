@@ -10,7 +10,7 @@ using namespace std::string_view_literals; // for sv
 
 namespace std_stringview_test
 {
-	r2::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

@@ -10,7 +10,7 @@
 
 namespace alignof_test
 {
-	r2::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -123,7 +123,7 @@ namespace alignof_test
 
 
 
-	r2::iItem::TitleFunc MixedStruct::GetTitleFunction() const
+	r2::iItem::TitleFuncT MixedStruct::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

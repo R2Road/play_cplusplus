@@ -48,7 +48,7 @@ namespace r2
 
 namespace vector3_test
 {
-	r2::iItem::TitleFunc OperatorPlus::GetTitleFunction() const
+	r2::iItem::TitleFuncT OperatorPlus::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -96,7 +96,7 @@ namespace vector3_test
 		};
 	}
 
-	r2::iItem::TitleFunc OperatorPlusEqual::GetTitleFunction() const
+	r2::iItem::TitleFuncT OperatorPlusEqual::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -146,7 +146,7 @@ namespace vector3_test
 
 
 
-	r2::iItem::TitleFunc OperatorMinus::GetTitleFunction() const
+	r2::iItem::TitleFuncT OperatorMinus::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -194,7 +194,7 @@ namespace vector3_test
 		};
 	}
 
-	r2::iItem::TitleFunc OperatorMinusEqual::GetTitleFunction() const
+	r2::iItem::TitleFuncT OperatorMinusEqual::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -244,7 +244,7 @@ namespace vector3_test
 
 
 
-	r2::iItem::TitleFunc OperatorMultiply_With_Scalar::GetTitleFunction() const
+	r2::iItem::TitleFuncT OperatorMultiply_With_Scalar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -292,7 +292,7 @@ namespace vector3_test
 		};
 	}
 
-	r2::iItem::TitleFunc OperatorMultiplyEqual_With_Scalar::GetTitleFunction() const
+	r2::iItem::TitleFuncT OperatorMultiplyEqual_With_Scalar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

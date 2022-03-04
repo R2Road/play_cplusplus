@@ -7,7 +7,7 @@
 
 namespace new_test
 {
-	r2::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -104,7 +104,7 @@ namespace new_test
 
 
 
-	r2::iItem::TitleFunc PlacementNew::GetTitleFunction() const
+	r2::iItem::TitleFuncT PlacementNew::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

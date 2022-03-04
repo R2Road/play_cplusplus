@@ -8,7 +8,7 @@
 
 namespace std_memory_test
 {
-	r2::iItem::TitleFunc SharedPointer::GetTitleFunction() const
+	r2::iItem::TitleFuncT SharedPointer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -91,7 +91,7 @@ namespace std_memory_test
 
 namespace std_memory_test
 {
-	r2::iItem::TitleFunc UniquePointer::GetTitleFunction() const
+	r2::iItem::TitleFuncT UniquePointer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

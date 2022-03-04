@@ -5,7 +5,7 @@
 
 namespace align_test
 {
-	r2::iItem::TitleFunc Align_0::GetTitleFunction() const
+	r2::iItem::TitleFuncT Align_0::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -123,7 +123,7 @@ namespace align_test
 	}
 
 
-	r2::iItem::TitleFunc Align_1::GetTitleFunction() const
+	r2::iItem::TitleFuncT Align_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -240,7 +240,7 @@ namespace align_test
 
 
 	
-	r2::iItem::TitleFunc Align_2::GetTitleFunction() const
+	r2::iItem::TitleFuncT Align_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

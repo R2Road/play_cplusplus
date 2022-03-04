@@ -32,7 +32,7 @@ namespace std_thread_test
 		}
 	}
 
-	r2::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -95,7 +95,7 @@ namespace std_thread_test
 {
 	void empty_thread_func( int ) {}
 
-	r2::iItem::TitleFunc Declaration::GetTitleFunction() const
+	r2::iItem::TitleFuncT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -191,7 +191,7 @@ namespace std_thread_test
 
 namespace std_thread_test
 {
-	r2::iItem::TitleFunc CopyAssaignment::GetTitleFunction() const
+	r2::iItem::TitleFuncT CopyAssaignment::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -261,7 +261,7 @@ namespace std_thread_test
 
 namespace std_thread_test
 {
-	r2::iItem::TitleFunc WaitProcess_SleepFor::GetTitleFunction() const
+	r2::iItem::TitleFuncT WaitProcess_SleepFor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -310,7 +310,7 @@ namespace std_thread_test
 
 namespace std_thread_test
 {
-	r2::iItem::TitleFunc WaitProcess_Yield::GetTitleFunction() const
+	r2::iItem::TitleFuncT WaitProcess_Yield::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

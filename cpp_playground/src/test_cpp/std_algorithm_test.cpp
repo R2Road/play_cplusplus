@@ -10,7 +10,7 @@
 
 namespace std_algorithm_test
 {
-	r2::iItem::TitleFunc Shuffle::GetTitleFunction() const
+	r2::iItem::TitleFuncT Shuffle::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

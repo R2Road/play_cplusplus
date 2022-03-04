@@ -33,7 +33,7 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2::iItem::TitleFunc CalculateFactorial::GetTitleFunction() const
+	r2::iItem::TitleFuncT CalculateFactorial::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -99,7 +99,7 @@ namespace template_meta_programming_test
 		static const int value = A;
 	};
 
-	r2::iItem::TitleFunc GreatestCommonDivisor::GetTitleFunction() const
+	r2::iItem::TitleFuncT GreatestCommonDivisor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -145,7 +145,7 @@ namespace template_meta_programming_test
 	};
 
 
-	r2::iItem::TitleFunc BasicRatio::GetTitleFunction() const
+	r2::iItem::TitleFuncT BasicRatio::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -188,7 +188,7 @@ namespace template_meta_programming_test
 	};
 
 
-	r2::iItem::TitleFunc SumBasicRatio::GetTitleFunction() const
+	r2::iItem::TitleFuncT SumBasicRatio::GetTitleFunction() const
 	{
 		return []()->const char* { return "Sum Basic Ratio"; };
 	}
@@ -238,7 +238,7 @@ namespace template_meta_programming_test
 	};
 
 
-	r2::iItem::TitleFunc RatioWithGCD::GetTitleFunction() const
+	r2::iItem::TitleFuncT RatioWithGCD::GetTitleFunction() const
 	{
 		return []()->const char* { return "Ratio with GCD"; };
 	}
@@ -300,7 +300,7 @@ namespace template_meta_programming_test
 	};
 
 
-	r2::iItem::TitleFunc SumRatioWithGCD::GetTitleFunction() const
+	r2::iItem::TitleFuncT SumRatioWithGCD::GetTitleFunction() const
 	{
 		return []()->const char* { return "Sum Ratio with GCD"; };
 	}
@@ -342,7 +342,7 @@ namespace template_meta_programming_test
 
 namespace template_meta_programming_test
 {
-	r2::iItem::TitleFunc SumRatioAndOperator1::GetTitleFunction() const
+	r2::iItem::TitleFuncT SumRatioAndOperator1::GetTitleFunction() const
 	{
 		return []()->const char* { return "Sum Ratio and Operator 1"; };
 	}
@@ -412,7 +412,7 @@ namespace template_meta_programming_test
 	template<class Ratio1, class Ratio2>
 	struct Ratio_VER1_Operator_Sum2_Result : Ratio_VER1_Operator_Sum2<Ratio1, Ratio2>::ratio {};
 
-	r2::iItem::TitleFunc SumRatioAndOperator2::GetTitleFunction() const
+	r2::iItem::TitleFuncT SumRatioAndOperator2::GetTitleFunction() const
 	{
 		return []()->const char* { return "Sum Ratio and Operator 2"; };
 	}

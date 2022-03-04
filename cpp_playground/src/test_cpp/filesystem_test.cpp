@@ -9,7 +9,7 @@
 
 namespace filesystem_test
 {
-	r2::iItem::TitleFunc DirectoryPath::GetTitleFunction() const
+	r2::iItem::TitleFuncT DirectoryPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -50,7 +50,7 @@ namespace filesystem_test
 
 
 
-	r2::iItem::TitleFunc DirectoryIterator::GetTitleFunction() const
+	r2::iItem::TitleFuncT DirectoryIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -98,7 +98,7 @@ namespace filesystem_test
 
 
 
-	r2::iItem::TitleFunc RecursiveDirectoryIterator::GetTitleFunction() const
+	r2::iItem::TitleFuncT RecursiveDirectoryIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -144,7 +144,7 @@ namespace filesystem_test
 
 
 
-	r2::iItem::TitleFunc PathOperation_1::GetTitleFunction() const
+	r2::iItem::TitleFuncT PathOperation_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -228,7 +228,7 @@ namespace filesystem_test
 		};
 	}
 
-	r2::iItem::TitleFunc PathOperation_2::GetTitleFunction() const
+	r2::iItem::TitleFuncT PathOperation_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

@@ -11,7 +11,7 @@
 
 namespace console_window_test
 {
-	r2::iItem::TitleFunc BufferInfo::GetTitleFunction() const
+	r2::iItem::TitleFuncT BufferInfo::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -82,7 +82,7 @@ namespace console_window_test
 
 
 
-	r2::iItem::TitleFunc ChangeWindowSize::GetTitleFunction() const
+	r2::iItem::TitleFuncT ChangeWindowSize::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -147,7 +147,7 @@ namespace console_window_test
 
 
 
-	r2::iItem::TitleFunc FullScreen::GetTitleFunction() const
+	r2::iItem::TitleFuncT FullScreen::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -184,7 +184,7 @@ namespace console_window_test
 
 
 
-	r2::iItem::TitleFunc WindowPosition::GetTitleFunction() const
+	r2::iItem::TitleFuncT WindowPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -290,7 +290,7 @@ namespace console_window_test
 
 
 
-	r2::iItem::TitleFunc ChangeWindowName::GetTitleFunction() const
+	r2::iItem::TitleFuncT ChangeWindowName::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -340,7 +340,7 @@ namespace console_window_test
 
 
 
-	r2::iItem::TitleFunc HideTitleBar::GetTitleFunction() const
+	r2::iItem::TitleFuncT HideTitleBar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -399,7 +399,7 @@ namespace console_window_test
 
 
 
-	r2::iItem::TitleFunc HideScrollBar::GetTitleFunction() const
+	r2::iItem::TitleFuncT HideScrollBar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -447,7 +447,7 @@ namespace console_window_test
 
 
 
-	r2::iItem::TitleFunc LockWindowResizingByDragging::GetTitleFunction() const
+	r2::iItem::TitleFuncT LockWindowResizingByDragging::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -505,7 +505,7 @@ namespace console_window_test
 
 
 
-	r2::iItem::TitleFunc MenuItem::GetTitleFunction() const
+	r2::iItem::TitleFuncT MenuItem::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -563,7 +563,7 @@ namespace console_window_test
 
 
 
-	r2::iItem::TitleFunc CursorMove::GetTitleFunction() const
+	r2::iItem::TitleFuncT CursorMove::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -619,7 +619,7 @@ namespace console_window_test
 		};
 	}
 
-	r2::iItem::TitleFunc CursorVisibility::GetTitleFunction() const
+	r2::iItem::TitleFuncT CursorVisibility::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

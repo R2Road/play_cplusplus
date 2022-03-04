@@ -15,7 +15,7 @@ namespace debug_test
 	std::cout << "Line : " << __LINE__ << r2::linefeed;			\
 }
 
-	r2::iItem::TitleFunc PredefinedMacro::GetTitleFunction() const
+	r2::iItem::TitleFuncT PredefinedMacro::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -55,7 +55,7 @@ namespace debug_test
 
 
 
-	r2::iItem::TitleFunc OutPutDebugString::GetTitleFunction() const
+	r2::iItem::TitleFuncT OutPutDebugString::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -93,7 +93,7 @@ namespace debug_test
 
 
 
-	r2::iItem::TitleFunc Assertion::GetTitleFunction() const
+	r2::iItem::TitleFuncT Assertion::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -123,7 +123,7 @@ namespace debug_test
 
 
 
-	r2::iItem::TitleFunc DebugBreak::GetTitleFunction() const
+	r2::iItem::TitleFuncT DebugBreak::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -163,7 +163,7 @@ do {												\
 	}												\
 } while( false )
 
-	r2::iItem::TitleFunc MyAssertion::GetTitleFunction() const
+	r2::iItem::TitleFuncT MyAssertion::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

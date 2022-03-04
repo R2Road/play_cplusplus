@@ -8,7 +8,7 @@ namespace std_algorithm_test
 	class Shuffle : public r2::iItem, public r2::SingleTon<Shuffle>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 }

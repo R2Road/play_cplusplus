@@ -26,7 +26,7 @@ namespace
 
 namespace memory_pool_test
 {
-	r2::iItem::TitleFunc Step01::GetTitleFunction() const
+	r2::iItem::TitleFuncT Step01::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

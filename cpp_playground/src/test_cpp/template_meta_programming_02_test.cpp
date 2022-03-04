@@ -14,7 +14,7 @@ namespace template_meta_programming_test
 		static constexpr const char c[size + 1] = { chars..., '\0' };
 	};
 
-	r2::iItem::TitleFunc Character2String::GetTitleFunction() const
+	r2::iItem::TitleFuncT Character2String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -61,7 +61,7 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2::iItem::TitleFunc Integer2String::GetTitleFunction() const
+	r2::iItem::TitleFuncT Integer2String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -106,7 +106,7 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2::iItem::TitleFunc CalculatePlaceValue::GetTitleFunction() const
+	r2::iItem::TitleFuncT CalculatePlaceValue::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -175,7 +175,7 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2::iItem::TitleFunc Integer2String_II::GetTitleFunction() const
+	r2::iItem::TitleFuncT Integer2String_II::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

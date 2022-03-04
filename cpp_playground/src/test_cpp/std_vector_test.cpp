@@ -7,7 +7,7 @@
 
 namespace std_vector_test
 {
-	r2::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -74,7 +74,7 @@ namespace std_vector_test
 
 
 
-	r2::iItem::TitleFunc NoneDefaultConstructor::GetTitleFunction() const
+	r2::iItem::TitleFuncT NoneDefaultConstructor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -126,7 +126,7 @@ namespace std_vector_test
 
 
 
-	r2::iItem::TitleFunc BoolVector::GetTitleFunction() const
+	r2::iItem::TitleFuncT BoolVector::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -185,7 +185,7 @@ namespace std_vector_test
 
 
 
-	r2::iItem::TitleFunc OthersIterator::GetTitleFunction() const
+	r2::iItem::TitleFuncT OthersIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -230,7 +230,7 @@ namespace std_vector_test
 
 
 
-	r2::iItem::TitleFunc EndIterator::GetTitleFunction() const
+	r2::iItem::TitleFuncT EndIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

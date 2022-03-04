@@ -8,7 +8,7 @@ namespace template_meta_programming_test
 	class MultiTypePackage : public r2::iItem, public r2::SingleTon<MultiTypePackage>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 }

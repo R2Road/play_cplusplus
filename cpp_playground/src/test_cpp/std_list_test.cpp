@@ -7,7 +7,7 @@
 
 namespace std_list_test
 {
-	r2::iItem::TitleFunc Splice::GetTitleFunction() const
+	r2::iItem::TitleFuncT Splice::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -143,7 +143,7 @@ namespace std_list_test
 
 
 
-	r2::iItem::TitleFunc OthersIterator::GetTitleFunction() const
+	r2::iItem::TitleFuncT OthersIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -206,7 +206,7 @@ namespace std_list_test
 
 
 
-	r2::iItem::TitleFunc EndIterator::GetTitleFunction() const
+	r2::iItem::TitleFuncT EndIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

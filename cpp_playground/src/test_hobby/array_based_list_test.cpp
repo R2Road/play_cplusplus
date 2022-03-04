@@ -8,7 +8,7 @@
 
 namespace array_based_list_test
 {
-	r2::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -45,7 +45,7 @@ namespace array_based_list_test
 
 
 
-	r2::iItem::TitleFunc PushFront::GetTitleFunction() const
+	r2::iItem::TitleFuncT PushFront::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -112,7 +112,7 @@ namespace array_based_list_test
 
 
 	// REF : https://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B
-	r2::iItem::TitleFunc IteratorOperator_Indirection_StructureDereference::GetTitleFunction() const
+	r2::iItem::TitleFuncT IteratorOperator_Indirection_StructureDereference::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -162,7 +162,7 @@ namespace array_based_list_test
 
 
 
-	r2::iItem::TitleFunc EndIterator::GetTitleFunction() const
+	r2::iItem::TitleFuncT EndIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -226,7 +226,7 @@ namespace array_based_list_test
 
 
 
-	r2::iItem::TitleFunc BeginIterator::GetTitleFunction() const
+	r2::iItem::TitleFuncT BeginIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -310,7 +310,7 @@ namespace array_based_list_test
 
 
 
-	r2::iItem::TitleFunc Clear::GetTitleFunction() const
+	r2::iItem::TitleFuncT Clear::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -398,7 +398,7 @@ namespace array_based_list_test
 
 
 
-	r2::iItem::TitleFunc PushBack::GetTitleFunction() const
+	r2::iItem::TitleFuncT PushBack::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -474,7 +474,7 @@ namespace array_based_list_test
 
 
 
-	r2::iItem::TitleFunc Erase::GetTitleFunction() const
+	r2::iItem::TitleFuncT Erase::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -560,7 +560,7 @@ namespace array_based_list_test
 
 
 
-	r2::iItem::TitleFunc RBegin_REnd::GetTitleFunction() const
+	r2::iItem::TitleFuncT RBegin_REnd::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

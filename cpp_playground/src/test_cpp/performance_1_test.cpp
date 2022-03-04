@@ -11,7 +11,7 @@
 
 namespace performance_1_test
 {
-	r2::iItem::TitleFunc IncrementOperator::GetTitleFunction() const
+	r2::iItem::TitleFuncT IncrementOperator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -168,7 +168,7 @@ namespace performance_1_test
 
 
 
-	r2::iItem::TitleFunc Loop::GetTitleFunction() const
+	r2::iItem::TitleFuncT Loop::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -248,7 +248,7 @@ namespace performance_1_test
 
 
 
-	r2::iItem::TitleFunc LoopWithBuildInArray::GetTitleFunction() const
+	r2::iItem::TitleFuncT LoopWithBuildInArray::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -341,7 +341,7 @@ namespace performance_1_test
 
 
 
-	r2::iItem::TitleFunc LoopWithSTDArray::GetTitleFunction() const
+	r2::iItem::TitleFuncT LoopWithSTDArray::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -434,7 +434,7 @@ namespace performance_1_test
 
 
 
-	r2::iItem::TitleFunc CompareIteratorOperator::GetTitleFunction() const
+	r2::iItem::TitleFuncT CompareIteratorOperator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

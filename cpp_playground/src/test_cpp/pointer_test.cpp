@@ -5,7 +5,7 @@
 
 namespace pointer_test
 {
-	r2::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -69,7 +69,7 @@ namespace pointer_test
 
 namespace pointer_test
 {
-	r2::iItem::TitleFunc ConstPointer::GetTitleFunction() const
+	r2::iItem::TitleFuncT ConstPointer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
