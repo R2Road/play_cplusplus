@@ -629,9 +629,6 @@
     <ClInclude Include="src\test_hobby\vector3_test.h">
       <Filter>test_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\r2_Inspector.h">
-      <Filter>base</Filter>
-    </ClInclude>
     <ClInclude Include="src\menu\r2_MemoryPoolMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
@@ -675,6 +672,9 @@
       <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_Singleton.h">
+      <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_Inspector.h">
       <Filter>r2</Filter>
     </ClInclude>
   </ItemGroup>

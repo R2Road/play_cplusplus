@@ -3,9 +3,8 @@
 
 #include "base/r2_eTestEndAction.h"
 #include "r2/r2_ArrayBasedList.h"
+#include "r2/r2_Inspector.h"
 #include "r2/r2_PointInt.h"
-
-#include "base/r2_Inspector.h"
 
 namespace array_based_list_test
 {
