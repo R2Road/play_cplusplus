@@ -12,9 +12,9 @@
 // https://docs.microsoft.com/en-us/windows/console/console-reference
 
 
-r2::MenuUp ConsoleTextColorMenu::Create( r2::Director& director )
+r2cm::MenuUp ConsoleTextColorMenu::Create( r2cm::Director& director )
 {
-	r2::MenuUp ret( new ( std::nothrow ) r2::Menu( director, GetTitle() ) );
+	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
 		ret->AddItem( 'q', console_text_color_test::ColorTable::GetInstance() );
@@ -34,10 +34,10 @@ r2::MenuUp ConsoleTextColorMenu::Create( r2::Director& director )
 		ret->AddItem(
 			27
 			, []()->const char* { return "Return To Root"; }
-			, [&director]()->r2::eTestEndAction
+			, [&director]()->r2cm::eTestEndAction
 			{
 				director.Setup( r2::ConsoleMenu::Create( director ) );
-				return r2::eTestEndAction::None;
+				return r2cm::eTestEndAction::None;
 			}
 		);
 	}

@@ -29,16 +29,16 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2::iItem::TitleFuncT MultiTypePackage::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT MultiTypePackage::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Multi Type Package( In Progress )";
 		};
 	}
-	r2::iItem::DoFuncT MultiTypePackage::GetDoFunction()
+	r2cm::iItem::DoFuncT MultiTypePackage::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -54,7 +54,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

@@ -21,9 +21,9 @@
 
 namespace r2
 {
-	MenuUp STDMenu::Create( Director& director )
+	r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 	{
-		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
+		r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 		{
 			ret->AddItem( '1', std_optional_test::Basic::GetInstance() );
@@ -50,37 +50,37 @@ namespace r2
 			ret->AddItem(
 				'a'
 				, []()->const char* { return r2::STDMemoryMenu::GetTitle(); }
-				, [&director]()->eTestEndAction
+				, [&director]()->r2cm::eTestEndAction
 				{
 					director.Setup( r2::STDMemoryMenu::Create( director ) );
-					return r2::eTestEndAction::None;
+					return r2cm::eTestEndAction::None;
 				}
 			);
 			ret->AddItem(
 				's'
 				, []()->const char* { return r2::STDNumericMenu::GetTitle(); }
-				, [&director]()->eTestEndAction
+				, [&director]()->r2cm::eTestEndAction
 				{
 					director.Setup( r2::STDNumericMenu::Create( director ) );
-					return r2::eTestEndAction::None;
+					return r2cm::eTestEndAction::None;
 				}
 			);
 			ret->AddItem(
 				'd'
 				, []()->const char* { return r2::STDContainerMenu::GetTitle(); }
-				, [&director]()->eTestEndAction
+				, [&director]()->r2cm::eTestEndAction
 				{
 					director.Setup( r2::STDContainerMenu::Create( director ) );
-					return r2::eTestEndAction::None;
+					return r2cm::eTestEndAction::None;
 				}
 			);
 			ret->AddItem(
 				'f'
 				, []()->const char* { return r2::STDThreadMenu::GetTitle(); }
-				, [&director]()->eTestEndAction
+				, [&director]()->r2cm::eTestEndAction
 				{
 					director.Setup( r2::STDThreadMenu::Create( director ) );
-					return r2::eTestEndAction::None;
+					return r2cm::eTestEndAction::None;
 				}
 			);
 			ret->AddItem( 'g', std_algorithm_test::Shuffle::GetInstance() );
@@ -96,10 +96,10 @@ namespace r2
 			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
-				, [&director]()->eTestEndAction
+				, [&director]()->r2cm::eTestEndAction
 				{
 					director.Setup( r2::RootMenu::Create( director ) );
-					return r2::eTestEndAction::None;
+					return r2cm::eTestEndAction::None;
 				}
 			);
 		}

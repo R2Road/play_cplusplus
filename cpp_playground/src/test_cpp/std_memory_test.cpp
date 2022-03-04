@@ -8,16 +8,16 @@
 
 namespace std_memory_test
 {
-	r2::iItem::TitleFuncT SharedPointer::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT SharedPointer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Shared Pointer";
 		};
 	}
-	r2::iItem::DoFuncT SharedPointer::GetDoFunction()
+	r2cm::iItem::DoFuncT SharedPointer::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -82,7 +82,7 @@ namespace std_memory_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -91,16 +91,16 @@ namespace std_memory_test
 
 namespace std_memory_test
 {
-	r2::iItem::TitleFuncT UniquePointer::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT UniquePointer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Unique Pointer";
 		};
 	}
-	r2::iItem::DoFuncT UniquePointer::GetDoFunction()
+	r2cm::iItem::DoFuncT UniquePointer::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -133,7 +133,7 @@ namespace std_memory_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

@@ -9,16 +9,16 @@
 
 namespace filesystem_test
 {
-	r2::iItem::TitleFuncT DirectoryPath::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT DirectoryPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Directory Path";
 		};
 	}
-	r2::iItem::DoFuncT DirectoryPath::GetDoFunction()
+	r2cm::iItem::DoFuncT DirectoryPath::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -44,22 +44,22 @@ namespace filesystem_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT DirectoryIterator::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT DirectoryIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Directory Iterator";
 		};
 	}
-	r2::iItem::DoFuncT DirectoryIterator::GetDoFunction()
+	r2cm::iItem::DoFuncT DirectoryIterator::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -92,22 +92,22 @@ namespace filesystem_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT RecursiveDirectoryIterator::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT RecursiveDirectoryIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Recursive Directory Iterator";
 		};
 	}
-	r2::iItem::DoFuncT RecursiveDirectoryIterator::GetDoFunction()
+	r2cm::iItem::DoFuncT RecursiveDirectoryIterator::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 
@@ -138,22 +138,22 @@ namespace filesystem_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT PathOperation_1::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PathOperation_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Path Operation 1";
 		};
 	}
-	r2::iItem::DoFuncT PathOperation_1::GetDoFunction()
+	r2cm::iItem::DoFuncT PathOperation_1::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -224,20 +224,20 @@ namespace filesystem_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
-	r2::iItem::TitleFuncT PathOperation_2::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PathOperation_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Path Operation 2";
 		};
 	}
-	r2::iItem::DoFuncT PathOperation_2::GetDoFunction()
+	r2cm::iItem::DoFuncT PathOperation_2::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -270,7 +270,7 @@ namespace filesystem_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

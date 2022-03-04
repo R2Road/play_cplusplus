@@ -2,7 +2,7 @@
 
 #include "r2_Menu.h"
 
-namespace r2
+namespace r2cm
 {
 	class Director
 	{

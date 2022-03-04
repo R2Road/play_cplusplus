@@ -11,9 +11,9 @@
 
 namespace r2
 {
-	MenuUp TimeMenu::Create( Director& director )
+	r2cm::MenuUp TimeMenu::Create( r2cm::Director& director )
 	{
-		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
+		r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 		{
 			ret->AddItem( '1', c_time_test::Basic::GetInstance() );
@@ -40,10 +40,10 @@ namespace r2
 			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
-				, [&director]()->eTestEndAction
+				, [&director]()->r2cm::eTestEndAction
 				{
 					director.Setup( r2::RootMenu::Create( director ) );
-					return r2::eTestEndAction::None;
+					return r2cm::eTestEndAction::None;
 				}
 			);
 		}

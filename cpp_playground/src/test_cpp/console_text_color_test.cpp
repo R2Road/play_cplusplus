@@ -11,16 +11,16 @@
 
 namespace console_text_color_test
 {
-	r2::iItem::TitleFuncT ColorTable::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT ColorTable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Color Table";
 		};
 	}
-	r2::iItem::DoFuncT ColorTable::GetDoFunction()
+	r2cm::iItem::DoFuncT ColorTable::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -48,22 +48,22 @@ namespace console_text_color_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT TextColor1::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT TextColor1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Text Color 1";
 		};
 	}
-	r2::iItem::DoFuncT TextColor1::GetDoFunction()
+	r2cm::iItem::DoFuncT TextColor1::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -91,22 +91,22 @@ namespace console_text_color_test
 			system( "pause" );
 			
 
-			return r2::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT TextColor2::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT TextColor2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Text Color 2";
 		};
 	}
-	r2::iItem::DoFuncT TextColor2::GetDoFunction()
+	r2cm::iItem::DoFuncT TextColor2::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -170,22 +170,22 @@ namespace console_text_color_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT AdjustColorTable::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT AdjustColorTable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Adjust Color Table";
 		};
 	}
-	r2::iItem::DoFuncT AdjustColorTable::GetDoFunction()
+	r2cm::iItem::DoFuncT AdjustColorTable::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -234,22 +234,22 @@ namespace console_text_color_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT ColorTable2::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT ColorTable2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Color Table 2";
 		};
 	}
-	r2::iItem::DoFuncT ColorTable2::GetDoFunction()
+	r2cm::iItem::DoFuncT ColorTable2::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -322,22 +322,22 @@ namespace console_text_color_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT TextColor3::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT TextColor3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Text Color 3";
 		};
 	}
-	r2::iItem::DoFuncT TextColor3::GetDoFunction()
+	r2cm::iItem::DoFuncT TextColor3::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -411,7 +411,7 @@ namespace console_text_color_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

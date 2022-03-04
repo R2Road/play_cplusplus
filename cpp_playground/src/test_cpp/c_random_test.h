@@ -5,7 +5,7 @@
 
 namespace c_random_test
 {
-	class Rand : public r2::iItem, public r2::SingleTon<Rand>
+	class Rand : public r2cm::iItem, public r2::SingleTon<Rand>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

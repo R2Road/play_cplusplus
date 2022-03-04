@@ -8,16 +8,16 @@
 
 namespace c_random_test
 {
-	r2::iItem::TitleFuncT Rand::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Rand::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "C Rand : Basic";
 		};
 	}
-	r2::iItem::DoFuncT Rand::GetDoFunction()
+	r2cm::iItem::DoFuncT Rand::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -56,7 +56,7 @@ namespace c_random_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

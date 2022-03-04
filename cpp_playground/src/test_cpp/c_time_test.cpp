@@ -12,16 +12,16 @@
 
 namespace c_time_test
 {
-	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "C Time : Basic";
 		};
 	}
-	r2::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -45,22 +45,22 @@ namespace c_time_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Y_M_D_H_S::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Y_M_D_H_S::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "C Time : Y_M_D_H_S";
 		};
 	}
-	r2::iItem::DoFuncT Y_M_D_H_S::GetDoFunction()
+	r2cm::iItem::DoFuncT Y_M_D_H_S::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -131,22 +131,22 @@ namespace c_time_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Clock::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Clock::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "C Time : Clock";
 		};
 	}
-	r2::iItem::DoFuncT Clock::GetDoFunction()
+	r2cm::iItem::DoFuncT Clock::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[ANY KEY] Exit" << r2::linefeed;
@@ -193,7 +193,7 @@ namespace c_time_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 }

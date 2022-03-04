@@ -15,16 +15,16 @@
 
 namespace performance_container_iteration_test
 {
-	r2::iItem::TitleFuncT BuiltInArrayIteration::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT BuiltInArrayIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Built-In Array Iteration";
 		};
 	}
-	r2::iItem::DoFuncT BuiltInArrayIteration::GetDoFunction()
+	r2cm::iItem::DoFuncT BuiltInArrayIteration::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -88,22 +88,22 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT STDArrayIteration::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT STDArrayIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "STD Array Iteration";
 		};
 	}
-	r2::iItem::DoFuncT STDArrayIteration::GetDoFunction()
+	r2cm::iItem::DoFuncT STDArrayIteration::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -189,22 +189,22 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT VectorIteration::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT VectorIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector Iteration";
 		};
 	}
-	r2::iItem::DoFuncT VectorIteration::GetDoFunction()
+	r2cm::iItem::DoFuncT VectorIteration::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -288,22 +288,22 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT ListIteration::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT ListIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "List Iteration";
 		};
 	}
-	r2::iItem::DoFuncT ListIteration::GetDoFunction()
+	r2cm::iItem::DoFuncT ListIteration::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -364,22 +364,22 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT MapIteration::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT MapIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Map Iteration";
 		};
 	}
-	r2::iItem::DoFuncT MapIteration::GetDoFunction()
+	r2cm::iItem::DoFuncT MapIteration::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -466,22 +466,22 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT UnorderedMapIteration::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT UnorderedMapIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Unordered-Map Iteration";
 		};
 	}
-	r2::iItem::DoFuncT UnorderedMapIteration::GetDoFunction()
+	r2cm::iItem::DoFuncT UnorderedMapIteration::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -568,22 +568,22 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT SetIteration::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT SetIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Set Iteration";
 		};
 	}
-	r2::iItem::DoFuncT SetIteration::GetDoFunction()
+	r2cm::iItem::DoFuncT SetIteration::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -647,22 +647,22 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT UnorderedSetIteration::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT UnorderedSetIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Unordered-Set Iteration";
 		};
 	}
-	r2::iItem::DoFuncT UnorderedSetIteration::GetDoFunction()
+	r2cm::iItem::DoFuncT UnorderedSetIteration::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -726,22 +726,22 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT STDArrayIteration_WithPointer::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT STDArrayIteration_WithPointer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "STD Array Iteration With Pointer";
 		};
 	}
-	r2::iItem::DoFuncT STDArrayIteration_WithPointer::GetDoFunction()
+	r2cm::iItem::DoFuncT STDArrayIteration_WithPointer::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -830,7 +830,7 @@ namespace performance_container_iteration_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

@@ -5,14 +5,14 @@
 
 namespace new_test
 {
-	class Basic : public r2::iItem, public r2::SingleTon<Basic>
+	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class PlacementNew : public r2::iItem, public r2::SingleTon<PlacementNew>
+	class PlacementNew : public r2cm::iItem, public r2::SingleTon<PlacementNew>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

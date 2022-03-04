@@ -5,28 +5,28 @@
 
 namespace console_buffer_test
 {
-	class FillBuffer : public r2::iItem, public r2::SingleTon<FillBuffer>
+	class FillBuffer : public r2cm::iItem, public r2::SingleTon<FillBuffer>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class Write2Buffer_WriteConsole : public r2::iItem, public r2::SingleTon<Write2Buffer_WriteConsole>
+	class Write2Buffer_WriteConsole : public r2cm::iItem, public r2::SingleTon<Write2Buffer_WriteConsole>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class Write2Buffer_WriteConsoleOutput : public r2::iItem, public r2::SingleTon<Write2Buffer_WriteConsoleOutput>
+	class Write2Buffer_WriteConsoleOutput : public r2cm::iItem, public r2::SingleTon<Write2Buffer_WriteConsoleOutput>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class DoubleBuffering : public r2::iItem, public r2::SingleTon<DoubleBuffering>
+	class DoubleBuffering : public r2cm::iItem, public r2::SingleTon<DoubleBuffering>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

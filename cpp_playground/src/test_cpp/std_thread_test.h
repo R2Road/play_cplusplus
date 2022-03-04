@@ -5,35 +5,35 @@
 
 namespace std_thread_test
 {
-	class Basic : public r2::iItem, public r2::SingleTon<Basic>
+	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class Declaration : public r2::iItem, public r2::SingleTon<Declaration>
+	class Declaration : public r2cm::iItem, public r2::SingleTon<Declaration>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class CopyAssaignment : public r2::iItem, public r2::SingleTon<CopyAssaignment>
+	class CopyAssaignment : public r2cm::iItem, public r2::SingleTon<CopyAssaignment>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class WaitProcess_SleepFor : public r2::iItem, public r2::SingleTon<WaitProcess_SleepFor>
+	class WaitProcess_SleepFor : public r2cm::iItem, public r2::SingleTon<WaitProcess_SleepFor>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class WaitProcess_Yield : public r2::iItem, public r2::SingleTon<WaitProcess_Yield>
+	class WaitProcess_Yield : public r2cm::iItem, public r2::SingleTon<WaitProcess_Yield>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

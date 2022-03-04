@@ -5,7 +5,7 @@
 
 namespace std_algorithm_test
 {
-	class Shuffle : public r2::iItem, public r2::SingleTon<Shuffle>
+	class Shuffle : public r2cm::iItem, public r2::SingleTon<Shuffle>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

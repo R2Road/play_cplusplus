@@ -5,16 +5,16 @@
 
 namespace pointer_test
 {
-	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Pointer";
 		};
 	}
-	r2::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -59,7 +59,7 @@ namespace pointer_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -69,16 +69,16 @@ namespace pointer_test
 
 namespace pointer_test
 {
-	r2::iItem::TitleFuncT ConstPointer::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT ConstPointer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Const Pointer";
 		};
 	}
-	r2::iItem::DoFuncT ConstPointer::GetDoFunction()
+	r2cm::iItem::DoFuncT ConstPointer::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -134,7 +134,7 @@ namespace pointer_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

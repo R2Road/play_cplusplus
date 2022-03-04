@@ -10,16 +10,16 @@
 
 namespace std_algorithm_test
 {
-	r2::iItem::TitleFuncT Shuffle::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Shuffle::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Algorithm : Shuffle";
 		};
 	}
-	r2::iItem::DoFuncT Shuffle::GetDoFunction()
+	r2cm::iItem::DoFuncT Shuffle::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -71,7 +71,7 @@ namespace std_algorithm_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

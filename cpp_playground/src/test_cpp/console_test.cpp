@@ -21,16 +21,16 @@ void ShowFontInfo( const CONSOLE_FONT_INFOEX & cfie )
 
 namespace console_test
 {
-	r2::iItem::TitleFuncT FontInfo::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT FontInfo::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Font Info";
 		};
 	}
-	r2::iItem::DoFuncT FontInfo::GetDoFunction()
+	r2cm::iItem::DoFuncT FontInfo::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -59,22 +59,22 @@ namespace console_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT FontChange::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT FontChange::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Font Change";
 		};
 	}
-	r2::iItem::DoFuncT FontChange::GetDoFunction()
+	r2cm::iItem::DoFuncT FontChange::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -134,22 +134,22 @@ namespace console_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Pixel::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Pixel::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Set Pixel";
 		};
 	}
-	r2::iItem::DoFuncT Pixel::GetDoFunction()
+	r2cm::iItem::DoFuncT Pixel::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed2;
 
@@ -187,7 +187,7 @@ namespace console_test
 				ReleaseDC( console_window, dc );
 			}
 
-			return r2::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 }

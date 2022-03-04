@@ -5,7 +5,7 @@
 
 namespace std_random_test
 {
-	class Basic : public r2::iItem, public r2::SingleTon<Basic>
+	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
@@ -14,7 +14,7 @@ namespace std_random_test
 
 
 
-	class StatusSaveAndLoad : public r2::iItem, public r2::SingleTon<StatusSaveAndLoad>
+	class StatusSaveAndLoad : public r2cm::iItem, public r2::SingleTon<StatusSaveAndLoad>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
@@ -23,7 +23,7 @@ namespace std_random_test
 
 
 
-	class DiscreateDistribution : public r2::iItem, public r2::SingleTon<DiscreateDistribution>
+	class DiscreateDistribution : public r2cm::iItem, public r2::SingleTon<DiscreateDistribution>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

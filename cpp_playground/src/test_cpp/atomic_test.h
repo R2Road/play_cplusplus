@@ -5,21 +5,21 @@
 
 namespace atomic_test
 {
-	class IsLockFree : public r2::iItem, public r2::SingleTon<IsLockFree>
+	class IsLockFree : public r2cm::iItem, public r2::SingleTon<IsLockFree>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class LockFreeTest1 : public r2::iItem, public r2::SingleTon<LockFreeTest1>
+	class LockFreeTest1 : public r2cm::iItem, public r2::SingleTon<LockFreeTest1>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class LockFreeTest2 : public r2::iItem, public r2::SingleTon<LockFreeTest2>
+	class LockFreeTest2 : public r2cm::iItem, public r2::SingleTon<LockFreeTest2>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

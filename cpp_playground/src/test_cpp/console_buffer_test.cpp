@@ -10,16 +10,16 @@
 
 namespace console_buffer_test
 {
-	r2::iItem::TitleFuncT FillBuffer::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT FillBuffer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Fill Buffer";
 		};
 	}
-	r2::iItem::DoFuncT FillBuffer::GetDoFunction()
+	r2cm::iItem::DoFuncT FillBuffer::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -71,22 +71,22 @@ namespace console_buffer_test
 
 			FillConsoleOutputAttribute( hStdout, cs_buffer_info.wAttributes, length, topLeft, &out_result );
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Write2Buffer_WriteConsole::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Write2Buffer_WriteConsole::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Write 2 Buffer : WriteConsole";
 		};
 	}
-	r2::iItem::DoFuncT Write2Buffer_WriteConsole::GetDoFunction()
+	r2cm::iItem::DoFuncT Write2Buffer_WriteConsole::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -114,22 +114,22 @@ namespace console_buffer_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Write2Buffer_WriteConsoleOutput::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Write2Buffer_WriteConsoleOutput::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Write 2 Buffer : WriteConsoleOutput";
 		};
 	}
-	r2::iItem::DoFuncT Write2Buffer_WriteConsoleOutput::GetDoFunction()
+	r2cm::iItem::DoFuncT Write2Buffer_WriteConsoleOutput::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -174,22 +174,22 @@ namespace console_buffer_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT DoubleBuffering::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT DoubleBuffering::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Double Buffering";
 		};
 	}
-	r2::iItem::DoFuncT DoubleBuffering::GetDoFunction()
+	r2cm::iItem::DoFuncT DoubleBuffering::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -257,7 +257,7 @@ namespace console_buffer_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 }

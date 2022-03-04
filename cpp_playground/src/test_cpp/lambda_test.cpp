@@ -9,16 +9,16 @@
 
 namespace lambda_test
 {
-	r2::iItem::TitleFuncT CaptureValue::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT CaptureValue::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Value";
 		};
 	}
-	r2::iItem::DoFuncT CaptureValue::GetDoFunction()
+	r2cm::iItem::DoFuncT CaptureValue::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -95,22 +95,22 @@ namespace lambda_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT CaptureValueWithMutable::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT CaptureValueWithMutable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Value with Mutable";
 		};
 	}
-	r2::iItem::DoFuncT CaptureValueWithMutable::GetDoFunction()
+	r2cm::iItem::DoFuncT CaptureValueWithMutable::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -142,22 +142,22 @@ namespace lambda_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT CaptureReference::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT CaptureReference::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Reference";
 		};
 	}
-	r2::iItem::DoFuncT CaptureReference::GetDoFunction()
+	r2cm::iItem::DoFuncT CaptureReference::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2::linefeed;
 
@@ -217,22 +217,22 @@ namespace lambda_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT CaptureUniquePtr::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT CaptureUniquePtr::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Unique Ptr";
 		};
 	}
-	r2::iItem::DoFuncT CaptureUniquePtr::GetDoFunction()
+	r2cm::iItem::DoFuncT CaptureUniquePtr::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -278,22 +278,22 @@ namespace lambda_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT CaptureValueWithAssign::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT CaptureValueWithAssign::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Value with Assign";
 		};
 	}
-	r2::iItem::DoFuncT CaptureValueWithAssign::GetDoFunction()
+	r2cm::iItem::DoFuncT CaptureValueWithAssign::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -368,7 +368,7 @@ namespace lambda_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

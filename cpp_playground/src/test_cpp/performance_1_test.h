@@ -5,33 +5,33 @@
 
 namespace performance_1_test
 {
-	class IncrementOperator : public r2::iItem, public r2::SingleTon<IncrementOperator>
+	class IncrementOperator : public r2cm::iItem, public r2::SingleTon<IncrementOperator>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class Loop : public r2::iItem, public r2::SingleTon<Loop>
+	class Loop : public r2cm::iItem, public r2::SingleTon<Loop>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
-	class LoopWithBuildInArray : public r2::iItem, public r2::SingleTon<LoopWithBuildInArray>
+	class LoopWithBuildInArray : public r2cm::iItem, public r2::SingleTon<LoopWithBuildInArray>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
-	class LoopWithSTDArray : public r2::iItem, public r2::SingleTon<LoopWithSTDArray>
+	class LoopWithSTDArray : public r2cm::iItem, public r2::SingleTon<LoopWithSTDArray>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class CompareIteratorOperator : public r2::iItem, public r2::SingleTon<CompareIteratorOperator>
+	class CompareIteratorOperator : public r2cm::iItem, public r2::SingleTon<CompareIteratorOperator>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

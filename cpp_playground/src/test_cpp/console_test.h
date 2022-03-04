@@ -5,21 +5,21 @@
 
 namespace console_test
 {
-	class FontInfo : public r2::iItem, public r2::SingleTon<FontInfo>
+	class FontInfo : public r2cm::iItem, public r2::SingleTon<FontInfo>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class FontChange : public r2::iItem, public r2::SingleTon<FontChange>
+	class FontChange : public r2cm::iItem, public r2::SingleTon<FontChange>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class Pixel : public r2::iItem, public r2::SingleTon<Pixel>
+	class Pixel : public r2cm::iItem, public r2::SingleTon<Pixel>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

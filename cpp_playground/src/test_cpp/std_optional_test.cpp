@@ -7,16 +7,16 @@
 
 namespace std_optional_test
 {
-	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Optional : Basic";
 		};
 	}
-	r2::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -70,7 +70,7 @@ namespace std_optional_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
@@ -107,16 +107,16 @@ namespace std_optional_test
 	{
 		return std::optional<TestOptional>( TestOptional{} );
 	}
-	r2::iItem::TitleFuncT Constructor::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Constructor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Optional : Constructor";
 		};
 	}
-	r2::iItem::DoFuncT Constructor::GetDoFunction()
+	r2cm::iItem::DoFuncT Constructor::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -193,22 +193,22 @@ namespace std_optional_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Reference::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Reference::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Optional : Reference";
 		};
 	}
-	r2::iItem::DoFuncT Reference::GetDoFunction()
+	r2cm::iItem::DoFuncT Reference::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -247,7 +247,7 @@ namespace std_optional_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

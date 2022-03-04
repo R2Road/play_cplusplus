@@ -11,38 +11,38 @@
 
 namespace r2
 {
-	MenuUp TemplateMenu::Create( Director& director )
+	r2cm::MenuUp TemplateMenu::Create( r2cm::Director& director )
 	{
-		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
+		r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 		{
 			ret->AddItem(
 				'1'
 				, []()->const char* { return r2::VariadicTemplateMenu::GetTitle(); }
-				, [&director]()->eTestEndAction
+				, [&director]()->r2cm::eTestEndAction
 				{
 					director.Setup( r2::VariadicTemplateMenu::Create( director ) );
-					return r2::eTestEndAction::None;
+					return r2cm::eTestEndAction::None;
 				}
 			);
 
 			ret->AddItem(
 				'2'
 				, []()->const char* { return r2::TemplateMetaProgrammingMenu::GetTitle(); }
-				, [&director]()->eTestEndAction
+				, [&director]()->r2cm::eTestEndAction
 				{
 					director.Setup( r2::TemplateMetaProgrammingMenu::Create( director ) );
-					return r2::eTestEndAction::None;
+					return r2cm::eTestEndAction::None;
 				}
 			);
 
 			ret->AddItem(
 				'3'
 				, []()->const char* { return r2::TemplatePracticeMenu::GetTitle(); }
-				, [&director]()->eTestEndAction
+				, [&director]()->r2cm::eTestEndAction
 				{
 					director.Setup( r2::TemplatePracticeMenu::Create( director ) );
-					return r2::eTestEndAction::None;
+					return r2cm::eTestEndAction::None;
 				}
 			);
 
@@ -53,10 +53,10 @@ namespace r2
 			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
-				, [&director]()->eTestEndAction
+				, [&director]()->r2cm::eTestEndAction
 				{
 					director.Setup( r2::RootMenu::Create( director ) );
-					return r2::eTestEndAction::None;
+					return r2cm::eTestEndAction::None;
 				}
 			);
 		}

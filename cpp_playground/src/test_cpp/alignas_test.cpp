@@ -7,16 +7,16 @@
 
 namespace align_test
 {
-	r2::iItem::TitleFuncT AlignAs::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT AlignAs::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align As";
 		};
 	}
-	r2::iItem::DoFuncT AlignAs::GetDoFunction()
+	r2cm::iItem::DoFuncT AlignAs::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -85,7 +85,7 @@ namespace align_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

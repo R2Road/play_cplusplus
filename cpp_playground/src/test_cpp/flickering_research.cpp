@@ -10,16 +10,16 @@
 
 namespace flickering_research
 {
-	r2::iItem::TitleFuncT OneByOne::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT OneByOne::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print One By One";
 		};
 	}
-	r2::iItem::DoFuncT OneByOne::GetDoFunction()
+	r2cm::iItem::DoFuncT OneByOne::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			r2utility::CharacterBuffer visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
@@ -61,19 +61,19 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
-	r2::iItem::TitleFuncT OneByOne_WithOut_CLS::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT OneByOne_WithOut_CLS::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print One By One WithOut CLS";
 		};
 	}
-	r2::iItem::DoFuncT OneByOne_WithOut_CLS::GetDoFunction()
+	r2cm::iItem::DoFuncT OneByOne_WithOut_CLS::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[Any Key] End" << r2::linefeed;
@@ -118,22 +118,22 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT LineByLine::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT LineByLine::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print Line By Line";
 		};
 	}
-	r2::iItem::DoFuncT LineByLine::GetDoFunction()
+	r2cm::iItem::DoFuncT LineByLine::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			r2utility::CharacterBuffer visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
@@ -166,22 +166,22 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT PageByPage::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PageByPage::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print Page By Page";
 		};
 	}
-	r2::iItem::DoFuncT PageByPage::GetDoFunction()
+	r2cm::iItem::DoFuncT PageByPage::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			r2utility::CharacterBuffer character_buffer( 100, 40 );
 			character_buffer.FillAll( 'c' );
@@ -211,22 +211,22 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT PageByPage_WithOut_CLS_1::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PageByPage_WithOut_CLS_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print Page By Page Without CLS 1";
 		};
 	}
-	r2::iItem::DoFuncT PageByPage_WithOut_CLS_1::GetDoFunction()
+	r2cm::iItem::DoFuncT PageByPage_WithOut_CLS_1::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			r2utility::CharacterBuffer character_buffer( 100, 40 );
 			character_buffer.FillAll( 'c' );
@@ -252,22 +252,22 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT PageByPage_WithOut_CLS_2::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PageByPage_WithOut_CLS_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print Page By Page Without CLS 2";
 		};
 	}
-	r2::iItem::DoFuncT PageByPage_WithOut_CLS_2::GetDoFunction()
+	r2cm::iItem::DoFuncT PageByPage_WithOut_CLS_2::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			r2utility::CharacterBuffer character_buffer_1( 100, 40 );
 			character_buffer_1.FillAll( 'c' );
@@ -306,7 +306,7 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 }

@@ -9,16 +9,16 @@
 
 namespace class_test
 {
-	r2::iItem::TitleFuncT Braces::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Braces::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Braces";
 		};
 	}
-	r2::iItem::DoFuncT Braces::GetDoFunction()
+	r2cm::iItem::DoFuncT Braces::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -53,7 +53,7 @@ namespace class_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -69,16 +69,16 @@ namespace
 
 namespace class_test
 {
-	r2::iItem::TitleFuncT PrintName::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PrintName::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Print Name";
 		};
 	}
-	r2::iItem::DoFuncT PrintName::GetDoFunction()
+	r2cm::iItem::DoFuncT PrintName::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -148,7 +148,7 @@ namespace class_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -157,16 +157,16 @@ namespace class_test
 
 namespace class_test
 {
-	r2::iItem::TitleFuncT PrivateInheritance_1::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PrivateInheritance_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Private Inheritance 1";
 		};
 	}
-	r2::iItem::DoFuncT PrivateInheritance_1::GetDoFunction()
+	r2cm::iItem::DoFuncT PrivateInheritance_1::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -252,22 +252,22 @@ namespace class_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT PrivateInheritance_2::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PrivateInheritance_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Private Inheritance 2";
 		};
 	}
-	r2::iItem::DoFuncT PrivateInheritance_2::GetDoFunction()
+	r2cm::iItem::DoFuncT PrivateInheritance_2::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -339,21 +339,21 @@ namespace class_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
-	r2::iItem::TitleFuncT MemberAdress::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT MemberAdress::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Member Adress";
 		};
 	}
-	r2::iItem::DoFuncT MemberAdress::GetDoFunction()
+	r2cm::iItem::DoFuncT MemberAdress::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -417,7 +417,7 @@ namespace class_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

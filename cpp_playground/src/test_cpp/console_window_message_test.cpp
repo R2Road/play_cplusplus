@@ -50,16 +50,16 @@ namespace console_window_message_test
 			return FALSE;
 		}
 	}
-	r2::iItem::TitleFuncT ConsoleControlHandler::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT ConsoleControlHandler::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Message : Console Control Handler";
 		};
 	}
-	r2::iItem::DoFuncT ConsoleControlHandler::GetDoFunction()
+	r2cm::iItem::DoFuncT ConsoleControlHandler::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[ESC] End" << r2::linefeed2;
@@ -104,7 +104,7 @@ namespace console_window_message_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -145,16 +145,16 @@ namespace console_window_message_test
 		return CallNextHookEx( g_hook_mouse, code, w, l );
 	};
 
-	r2::iItem::TitleFuncT MessageHook::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT MessageHook::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Message : Hook";
 		};
 	}
-	r2::iItem::DoFuncT MessageHook::GetDoFunction()
+	r2cm::iItem::DoFuncT MessageHook::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 
@@ -191,7 +191,7 @@ namespace console_window_message_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

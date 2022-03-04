@@ -2,12 +2,15 @@
 
 #include <memory>
 
-namespace r2
+namespace r2cm
 {
 	using MenuUp = std::unique_ptr<class Menu>;
 
 	class Director;
+}
 
+namespace r2
+{
 	class RootMenu
 	{
 	private:
@@ -15,6 +18,6 @@ namespace r2
 
 	public:
 		static const char* GetTitle() { return "Root"; }
-		static MenuUp Create( Director& director );
+		static r2cm::MenuUp Create( r2cm::Director& director );
 	};
 }

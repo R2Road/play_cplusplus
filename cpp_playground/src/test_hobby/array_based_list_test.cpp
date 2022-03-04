@@ -8,16 +8,16 @@
 
 namespace array_based_list_test
 {
-	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : Basic";
 		};
 	}
-	r2::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -39,22 +39,22 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT PushFront::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PushFront::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : PushFront";
 		};
 	}
-	r2::iItem::DoFuncT PushFront::GetDoFunction()
+	r2cm::iItem::DoFuncT PushFront::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -105,23 +105,23 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
 	// REF : https://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B
-	r2::iItem::TitleFuncT IteratorOperator_Indirection_StructureDereference::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT IteratorOperator_Indirection_StructureDereference::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : Iterator : operator*, operator->";
 		};
 	}
-	r2::iItem::DoFuncT IteratorOperator_Indirection_StructureDereference::GetDoFunction()
+	r2cm::iItem::DoFuncT IteratorOperator_Indirection_StructureDereference::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -156,22 +156,22 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT EndIterator::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT EndIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : End Iterator";
 		};
 	}
-	r2::iItem::DoFuncT EndIterator::GetDoFunction()
+	r2cm::iItem::DoFuncT EndIterator::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -220,22 +220,22 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT BeginIterator::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT BeginIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : Begin Iterator";
 		};
 	}
-	r2::iItem::DoFuncT BeginIterator::GetDoFunction()
+	r2cm::iItem::DoFuncT BeginIterator::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -304,22 +304,22 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Clear::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Clear::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : Clear";
 		};
 	}
-	r2::iItem::DoFuncT Clear::GetDoFunction()
+	r2cm::iItem::DoFuncT Clear::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -392,22 +392,22 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT PushBack::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PushBack::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : PushBack";
 		};
 	}
-	r2::iItem::DoFuncT PushBack::GetDoFunction()
+	r2cm::iItem::DoFuncT PushBack::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -468,22 +468,22 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Erase::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Erase::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : Erase";
 		};
 	}
-	r2::iItem::DoFuncT Erase::GetDoFunction()
+	r2cm::iItem::DoFuncT Erase::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -554,22 +554,22 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT RBegin_REnd::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT RBegin_REnd::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array Based List : rbegin(), rend()";
 		};
 	}
-	r2::iItem::DoFuncT RBegin_REnd::GetDoFunction()
+	r2cm::iItem::DoFuncT RBegin_REnd::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -619,7 +619,7 @@ namespace array_based_list_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

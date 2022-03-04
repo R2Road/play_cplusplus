@@ -19,16 +19,16 @@ std::basic_ostream<_Elem, _Traits>& operator << ( std::basic_ostream<_Elem, _Tra
 
 namespace algorithm_selection_sort_test
 {
-	r2::iItem::TitleFuncT Case1::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Case1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Selection Sort : Case 1";
 		};
 	}
-	r2::iItem::DoFuncT Case1::GetDoFunction()
+	r2cm::iItem::DoFuncT Case1::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2::linefeed;
 
@@ -103,22 +103,22 @@ namespace algorithm_selection_sort_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Case2::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Case2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Selection Sort : Case 2";
 		};
 	}
-	r2::iItem::DoFuncT Case2::GetDoFunction()
+	r2cm::iItem::DoFuncT Case2::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -206,7 +206,7 @@ namespace algorithm_selection_sort_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

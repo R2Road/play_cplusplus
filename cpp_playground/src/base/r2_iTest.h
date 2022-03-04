@@ -2,7 +2,7 @@
 
 #include <functional>
 
-namespace r2
+namespace r2cm
 {
 	enum class eTestEndAction;
 

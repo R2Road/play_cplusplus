@@ -26,7 +26,7 @@ namespace
 
 namespace memory_pool_test
 {
-	r2::iItem::TitleFuncT Step01::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Step01::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -34,9 +34,9 @@ namespace memory_pool_test
 		};
 	}
 
-	r2::iItem::DoFuncT Step01::GetDoFunction()
+	r2cm::iItem::DoFuncT Step01::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -57,7 +57,7 @@ namespace memory_pool_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

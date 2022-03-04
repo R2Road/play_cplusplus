@@ -7,16 +7,16 @@
 
 namespace print_test
 {
-	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Print : Basic";
 		};
 	}
-	r2::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2::linefeed;
 
@@ -53,22 +53,22 @@ namespace print_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT ShowNumbers::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT ShowNumbers::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Print : Number";
 		};
 	}
-	r2::iItem::DoFuncT ShowNumbers::GetDoFunction()
+	r2cm::iItem::DoFuncT ShowNumbers::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -143,22 +143,22 @@ namespace print_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT BoolAlpha::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT BoolAlpha::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Print : BoolAlpha";
 		};
 	}
-	r2::iItem::DoFuncT BoolAlpha::GetDoFunction()
+	r2cm::iItem::DoFuncT BoolAlpha::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -183,7 +183,7 @@ namespace print_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

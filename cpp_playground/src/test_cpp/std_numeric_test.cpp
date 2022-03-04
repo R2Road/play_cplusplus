@@ -9,16 +9,16 @@
 
 namespace std_numeric_test
 {
-	r2::iItem::TitleFuncT Accumulate_Number::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Accumulate_Number::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Accumulate : Number";
 		};
 	}
-	r2::iItem::DoFuncT Accumulate_Number::GetDoFunction()
+	r2cm::iItem::DoFuncT Accumulate_Number::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -90,22 +90,22 @@ namespace std_numeric_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Accumulate_String::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Accumulate_String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Accumulate : String";
 		};
 	}
-	r2::iItem::DoFuncT Accumulate_String::GetDoFunction()
+	r2cm::iItem::DoFuncT Accumulate_String::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -172,22 +172,22 @@ namespace std_numeric_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Partial_Sum::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Partial_Sum::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Partial_Sum";
 		};
 	}
-	r2::iItem::DoFuncT Partial_Sum::GetDoFunction()
+	r2cm::iItem::DoFuncT Partial_Sum::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -252,22 +252,22 @@ namespace std_numeric_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT FillSequenceNumber::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT FillSequenceNumber::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Fill Sequence Number In Container";
 		};
 	}
-	r2::iItem::DoFuncT FillSequenceNumber::GetDoFunction()
+	r2cm::iItem::DoFuncT FillSequenceNumber::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -297,7 +297,7 @@ namespace std_numeric_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

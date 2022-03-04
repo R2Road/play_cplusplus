@@ -5,14 +5,14 @@
 
 namespace char_test
 {
-	class Basic : public r2::iItem, public r2::SingleTon<Basic>
+	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class Encoding : public r2::iItem, public r2::SingleTon<Encoding>
+	class Encoding : public r2cm::iItem, public r2::SingleTon<Encoding>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

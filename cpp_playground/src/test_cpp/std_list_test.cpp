@@ -7,16 +7,16 @@
 
 namespace std_list_test
 {
-	r2::iItem::TitleFuncT Splice::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Splice::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "List : Splice";
 		};
 	}
-	r2::iItem::DoFuncT Splice::GetDoFunction()
+	r2cm::iItem::DoFuncT Splice::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2::linefeed;
 
@@ -137,22 +137,22 @@ namespace std_list_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT OthersIterator::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT OthersIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "List : Others Iterator";
 		};
 	}
-	r2::iItem::DoFuncT OthersIterator::GetDoFunction()
+	r2cm::iItem::DoFuncT OthersIterator::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -200,22 +200,22 @@ namespace std_list_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT EndIterator::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT EndIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "List : End Iterator";
 		};
 	}
-	r2::iItem::DoFuncT EndIterator::GetDoFunction()
+	r2cm::iItem::DoFuncT EndIterator::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -275,7 +275,7 @@ namespace std_list_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

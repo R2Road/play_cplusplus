@@ -2,7 +2,7 @@
 
 #include <memory>
 
-namespace r2
+namespace r2cm
 {
 	using MenuUp = std::unique_ptr<class Menu>;
 
@@ -16,5 +16,5 @@ private:
 
 public:
 	static const char* GetTitle() { return "Console Text Color"; }
-	static r2::MenuUp Create( r2::Director& director );
+	static r2cm::MenuUp Create( r2cm::Director& director );
 };

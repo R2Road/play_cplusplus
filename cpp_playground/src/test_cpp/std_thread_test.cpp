@@ -32,16 +32,16 @@ namespace std_thread_test
 		}
 	}
 
-	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Basic";
 		};
 	}
-	r2::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -84,7 +84,7 @@ namespace std_thread_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -95,16 +95,16 @@ namespace std_thread_test
 {
 	void empty_thread_func( int ) {}
 
-	r2::iItem::TitleFuncT Declaration::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Declaration";
 		};
 	}
-	r2::iItem::DoFuncT Declaration::GetDoFunction()
+	r2cm::iItem::DoFuncT Declaration::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -182,7 +182,7 @@ namespace std_thread_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -191,16 +191,16 @@ namespace std_thread_test
 
 namespace std_thread_test
 {
-	r2::iItem::TitleFuncT CopyAssaignment::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT CopyAssaignment::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Copy Assaignment";
 		};
 	}
-	r2::iItem::DoFuncT CopyAssaignment::GetDoFunction()
+	r2cm::iItem::DoFuncT CopyAssaignment::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -252,7 +252,7 @@ namespace std_thread_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -261,16 +261,16 @@ namespace std_thread_test
 
 namespace std_thread_test
 {
-	r2::iItem::TitleFuncT WaitProcess_SleepFor::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT WaitProcess_SleepFor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Wait Process : Sleep For";
 		};
 	}
-	r2::iItem::DoFuncT WaitProcess_SleepFor::GetDoFunction()
+	r2cm::iItem::DoFuncT WaitProcess_SleepFor::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -301,7 +301,7 @@ namespace std_thread_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -310,16 +310,16 @@ namespace std_thread_test
 
 namespace std_thread_test
 {
-	r2::iItem::TitleFuncT WaitProcess_Yield::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT WaitProcess_Yield::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Wait Process : Yield";
 		};
 	}
-	r2::iItem::DoFuncT WaitProcess_Yield::GetDoFunction()
+	r2cm::iItem::DoFuncT WaitProcess_Yield::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -363,7 +363,7 @@ namespace std_thread_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

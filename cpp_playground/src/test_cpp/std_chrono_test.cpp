@@ -9,16 +9,16 @@
 
 namespace std_chrono_test
 {
-	r2::iItem::TitleFuncT Epoch::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Epoch::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Epoch";
 		};
 	}
-	r2::iItem::DoFuncT Epoch::GetDoFunction()
+	r2cm::iItem::DoFuncT Epoch::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			// REF : https://en.cppreference.com/w/cpp/chrono/time_point/time_since_epoch
 
@@ -68,22 +68,22 @@ namespace std_chrono_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Chrono::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Chrono::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Chrono";
 		};
 	}
-	r2::iItem::DoFuncT Chrono::GetDoFunction()
+	r2cm::iItem::DoFuncT Chrono::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			const auto system_start_time_point = std::chrono::system_clock::now();
 			const auto steady_start_time_point = std::chrono::steady_clock::now();
@@ -193,7 +193,7 @@ namespace std_chrono_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 }

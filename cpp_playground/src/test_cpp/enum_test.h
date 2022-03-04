@@ -5,14 +5,14 @@
 
 namespace enum_test
 {
-	class Basic : public r2::iItem, public r2::SingleTon<Basic>
+	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class Convert : public r2::iItem, public r2::SingleTon<Convert>
+	class Convert : public r2cm::iItem, public r2::SingleTon<Convert>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

@@ -12,16 +12,16 @@
 
 namespace std_random_test
 {
-	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "STD Random : Basic";
 		};
 	}
-	r2::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -71,7 +71,7 @@ namespace std_random_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -174,16 +174,16 @@ namespace
 }
 namespace std_random_test
 {
-	r2::iItem::TitleFuncT StatusSaveAndLoad::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT StatusSaveAndLoad::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "STD Random : Status Save And Load";
 		};
 	}
-	r2::iItem::DoFuncT StatusSaveAndLoad::GetDoFunction()
+	r2cm::iItem::DoFuncT StatusSaveAndLoad::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			Status_Save();
 
@@ -191,7 +191,7 @@ namespace std_random_test
 
 			Status_Load();
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -200,16 +200,16 @@ namespace std_random_test
 
 namespace std_random_test
 {
-	r2::iItem::TitleFuncT DiscreateDistribution::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT DiscreateDistribution::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "STD Random : Discreate Distribution";
 		};
 	}
-	r2::iItem::DoFuncT DiscreateDistribution::GetDoFunction()
+	r2cm::iItem::DoFuncT DiscreateDistribution::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -243,7 +243,7 @@ namespace std_random_test
 				std::cout << r2::split;
 			}
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

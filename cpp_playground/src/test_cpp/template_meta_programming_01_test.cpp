@@ -33,16 +33,16 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2::iItem::TitleFuncT CalculateFactorial::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT CalculateFactorial::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Factorial";
 		};
 	}
-	r2::iItem::DoFuncT CalculateFactorial::GetDoFunction()
+	r2cm::iItem::DoFuncT CalculateFactorial::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -78,7 +78,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -99,16 +99,16 @@ namespace template_meta_programming_test
 		static const int value = A;
 	};
 
-	r2::iItem::TitleFuncT GreatestCommonDivisor::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT GreatestCommonDivisor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Greatest Common Divisor";
 		};
 	}
-	r2::iItem::DoFuncT GreatestCommonDivisor::GetDoFunction()
+	r2cm::iItem::DoFuncT GreatestCommonDivisor::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -128,7 +128,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -145,16 +145,16 @@ namespace template_meta_programming_test
 	};
 
 
-	r2::iItem::TitleFuncT BasicRatio::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT BasicRatio::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Basic Ratio";
 		};
 	}
-	r2::iItem::DoFuncT BasicRatio::GetDoFunction()
+	r2cm::iItem::DoFuncT BasicRatio::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -169,7 +169,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -188,13 +188,13 @@ namespace template_meta_programming_test
 	};
 
 
-	r2::iItem::TitleFuncT SumBasicRatio::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT SumBasicRatio::GetTitleFunction() const
 	{
 		return []()->const char* { return "Sum Basic Ratio"; };
 	}
-	r2::iItem::DoFuncT SumBasicRatio::GetDoFunction()
+	r2cm::iItem::DoFuncT SumBasicRatio::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -219,7 +219,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -238,13 +238,13 @@ namespace template_meta_programming_test
 	};
 
 
-	r2::iItem::TitleFuncT RatioWithGCD::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT RatioWithGCD::GetTitleFunction() const
 	{
 		return []()->const char* { return "Ratio with GCD"; };
 	}
-	r2::iItem::DoFuncT RatioWithGCD::GetDoFunction()
+	r2cm::iItem::DoFuncT RatioWithGCD::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -276,7 +276,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -300,13 +300,13 @@ namespace template_meta_programming_test
 	};
 
 
-	r2::iItem::TitleFuncT SumRatioWithGCD::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT SumRatioWithGCD::GetTitleFunction() const
 	{
 		return []()->const char* { return "Sum Ratio with GCD"; };
 	}
-	r2::iItem::DoFuncT SumRatioWithGCD::GetDoFunction()
+	r2cm::iItem::DoFuncT SumRatioWithGCD::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -333,7 +333,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -342,13 +342,13 @@ namespace template_meta_programming_test
 
 namespace template_meta_programming_test
 {
-	r2::iItem::TitleFuncT SumRatioAndOperator1::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT SumRatioAndOperator1::GetTitleFunction() const
 	{
 		return []()->const char* { return "Sum Ratio and Operator 1"; };
 	}
-	r2::iItem::DoFuncT SumRatioAndOperator1::GetDoFunction()
+	r2cm::iItem::DoFuncT SumRatioAndOperator1::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -389,7 +389,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -412,13 +412,13 @@ namespace template_meta_programming_test
 	template<class Ratio1, class Ratio2>
 	struct Ratio_VER1_Operator_Sum2_Result : Ratio_VER1_Operator_Sum2<Ratio1, Ratio2>::ratio {};
 
-	r2::iItem::TitleFuncT SumRatioAndOperator2::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT SumRatioAndOperator2::GetTitleFunction() const
 	{
 		return []()->const char* { return "Sum Ratio and Operator 2"; };
 	}
-	r2::iItem::DoFuncT SumRatioAndOperator2::GetDoFunction()
+	r2cm::iItem::DoFuncT SumRatioAndOperator2::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -475,7 +475,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

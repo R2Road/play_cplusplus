@@ -94,16 +94,16 @@ namespace
 
 namespace algorithm_astar_test
 {
-	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : Basic";
 		};
 	}
-	r2::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
@@ -137,22 +137,22 @@ namespace algorithm_astar_test
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Use_STDListSplice::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Use_STDListSplice::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use std::list::splice";
 		};
 	}
-	r2::iItem::DoFuncT Use_STDListSplice::GetDoFunction()
+	r2cm::iItem::DoFuncT Use_STDListSplice::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
@@ -186,22 +186,22 @@ namespace algorithm_astar_test
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Use_STDListSplice_STDVectorResultPath::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Use_STDListSplice_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use std::list::splice, std::vector Result Path";
 		};
 	}
-	r2::iItem::DoFuncT Use_STDListSplice_STDVectorResultPath::GetDoFunction()
+	r2cm::iItem::DoFuncT Use_STDListSplice_STDVectorResultPath::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
@@ -236,22 +236,22 @@ namespace algorithm_astar_test
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use std::list::splice, Decrease Close List, std::vector Result Path";
 		};
 	}
-	r2::iItem::DoFuncT Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetDoFunction()
+	r2cm::iItem::DoFuncT Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
@@ -288,22 +288,22 @@ namespace algorithm_astar_test
 
 			std::cout << "## Not Have Changed" << r2::linefeed2;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Use_CostMap_STDListSplice_STDVectorResultPath::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Use_CostMap_STDListSplice_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use Cost Map, std::list::splice, std::vector Result Path";
 		};
 	}
-	r2::iItem::DoFuncT Use_CostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
+	r2cm::iItem::DoFuncT Use_CostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
@@ -340,22 +340,22 @@ namespace algorithm_astar_test
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use Tiny Cost Map, std::list::splice, std::vector Result Path";
 		};
 	}
-	r2::iItem::DoFuncT Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
+	r2cm::iItem::DoFuncT Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
@@ -392,22 +392,22 @@ namespace algorithm_astar_test
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use Array Based List, Tiny Cost Map, std::vector Result Path";
 		};
 	}
-	r2::iItem::DoFuncT Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetDoFunction()
+	r2cm::iItem::DoFuncT Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
@@ -444,22 +444,22 @@ namespace algorithm_astar_test
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2::linefeed;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT PerformanceTest::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PerformanceTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : Performance Test";
 		};
 	}
-	r2::iItem::DoFuncT PerformanceTest::GetDoFunction()
+	r2cm::iItem::DoFuncT PerformanceTest::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 
@@ -667,7 +667,7 @@ namespace algorithm_astar_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

@@ -13,16 +13,16 @@ namespace
 }
 namespace variadic_template_test
 {
-	r2::iItem::TitleFuncT SizeOfArgs::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT SizeOfArgs::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Size Of Args";
 		};
 	}
-	r2::iItem::DoFuncT SizeOfArgs::GetDoFunction()
+	r2cm::iItem::DoFuncT SizeOfArgs::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -46,7 +46,7 @@ namespace variadic_template_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -82,16 +82,16 @@ namespace
 }
 namespace variadic_template_test
 {
-	r2::iItem::TitleFuncT PrintValues::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PrintValues::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Print Values";
 		};
 	}
-	r2::iItem::DoFuncT PrintValues::GetDoFunction()
+	r2cm::iItem::DoFuncT PrintValues::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -123,7 +123,7 @@ namespace variadic_template_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -161,16 +161,16 @@ namespace
 }
 namespace variadic_template_test
 {
-	r2::iItem::TitleFuncT SumValues::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT SumValues::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Sum Values";
 		};
 	}
-	r2::iItem::DoFuncT SumValues::GetDoFunction()
+	r2cm::iItem::DoFuncT SumValues::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -218,7 +218,7 @@ namespace variadic_template_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -250,16 +250,16 @@ namespace
 }
 namespace variadic_template_test
 {
-	r2::iItem::TitleFuncT SubtractValues::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT SubtractValues::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Subtract Values";
 		};
 	}
-	r2::iItem::DoFuncT SubtractValues::GetDoFunction()
+	r2cm::iItem::DoFuncT SubtractValues::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -349,7 +349,7 @@ namespace variadic_template_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

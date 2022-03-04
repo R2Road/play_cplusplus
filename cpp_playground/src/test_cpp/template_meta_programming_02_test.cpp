@@ -14,16 +14,16 @@ namespace template_meta_programming_test
 		static constexpr const char c[size + 1] = { chars..., '\0' };
 	};
 
-	r2::iItem::TitleFuncT Character2String::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Character2String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Character 2 String";
 		};
 	}
-	r2::iItem::DoFuncT Character2String::GetDoFunction()
+	r2cm::iItem::DoFuncT Character2String::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -41,7 +41,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -61,16 +61,16 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2::iItem::TitleFuncT Integer2String::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Integer2String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Integer 2 String";
 		};
 	}
-	r2::iItem::DoFuncT Integer2String::GetDoFunction()
+	r2cm::iItem::DoFuncT Integer2String::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -83,7 +83,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -106,16 +106,16 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2::iItem::TitleFuncT CalculatePlaceValue::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT CalculatePlaceValue::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Place Value 4 Integer";
 		};
 	}
-	r2::iItem::DoFuncT CalculatePlaceValue::GetDoFunction()
+	r2cm::iItem::DoFuncT CalculatePlaceValue::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -134,7 +134,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -175,16 +175,16 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2::iItem::TitleFuncT Integer2String_II::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Integer2String_II::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Integer 2 String II";
 		};
 	}
-	r2::iItem::DoFuncT Integer2String_II::GetDoFunction()
+	r2cm::iItem::DoFuncT Integer2String_II::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -224,7 +224,7 @@ namespace template_meta_programming_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

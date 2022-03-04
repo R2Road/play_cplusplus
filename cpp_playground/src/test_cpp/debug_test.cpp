@@ -15,16 +15,16 @@ namespace debug_test
 	std::cout << "Line : " << __LINE__ << r2::linefeed;			\
 }
 
-	r2::iItem::TitleFuncT PredefinedMacro::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PredefinedMacro::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Predefined Macro";
 		};
 	}
-	r2::iItem::DoFuncT PredefinedMacro::GetDoFunction()
+	r2cm::iItem::DoFuncT PredefinedMacro::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -49,22 +49,22 @@ namespace debug_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT OutPutDebugString::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT OutPutDebugString::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "OutPutDebugString";
 		};
 	}
-	r2::iItem::DoFuncT OutPutDebugString::GetDoFunction()
+	r2cm::iItem::DoFuncT OutPutDebugString::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -87,22 +87,22 @@ namespace debug_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Assertion::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Assertion::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Assert";
 		};
 	}
-	r2::iItem::DoFuncT Assertion::GetDoFunction()
+	r2cm::iItem::DoFuncT Assertion::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -117,22 +117,22 @@ namespace debug_test
 
 			assert( 1 > 2 && "What The Fuck" );
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT DebugBreak::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT DebugBreak::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Debug Break";
 		};
 	}
-	r2::iItem::DoFuncT DebugBreak::GetDoFunction()
+	r2cm::iItem::DoFuncT DebugBreak::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -147,7 +147,7 @@ namespace debug_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
@@ -163,16 +163,16 @@ do {												\
 	}												\
 } while( false )
 
-	r2::iItem::TitleFuncT MyAssertion::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT MyAssertion::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "MyAssertion";
 		};
 	}
-	r2::iItem::DoFuncT MyAssertion::GetDoFunction()
+	r2cm::iItem::DoFuncT MyAssertion::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -205,7 +205,7 @@ do {												\
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

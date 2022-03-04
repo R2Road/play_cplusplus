@@ -5,28 +5,28 @@
 
 namespace etc_test
 {
-	class XOR_Swap : public r2::iItem, public r2::SingleTon<XOR_Swap>
+	class XOR_Swap : public r2cm::iItem, public r2::SingleTon<XOR_Swap>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class InitArray : public r2::iItem, public r2::SingleTon<InitArray>
+	class InitArray : public r2cm::iItem, public r2::SingleTon<InitArray>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class Macro2String : public r2::iItem, public r2::SingleTon<Macro2String>
+	class Macro2String : public r2cm::iItem, public r2::SingleTon<Macro2String>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class Pointer2Index : public r2::iItem, public r2::SingleTon<Pointer2Index>
+	class Pointer2Index : public r2cm::iItem, public r2::SingleTon<Pointer2Index>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

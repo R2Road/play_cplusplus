@@ -9,16 +9,16 @@
 
 namespace etc_test
 {
-	r2::iItem::TitleFuncT XOR_Swap::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT XOR_Swap::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "XOR Swap";
 		};
 	}
-	r2::iItem::DoFuncT XOR_Swap::GetDoFunction()
+	r2cm::iItem::DoFuncT XOR_Swap::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -50,23 +50,23 @@ namespace etc_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
 
 namespace etc_test
 {
-	r2::iItem::TitleFuncT InitArray::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT InitArray::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Init Array";
 		};
 	}
-	r2::iItem::DoFuncT InitArray::GetDoFunction()
+	r2cm::iItem::DoFuncT InitArray::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -128,7 +128,7 @@ namespace etc_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -137,16 +137,16 @@ namespace etc_test
 {
 #define MACRO2STRING( x ) #x
 
-	r2::iItem::TitleFuncT Macro2String::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Macro2String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Macro 2 String";
 		};
 	}
-	r2::iItem::DoFuncT Macro2String::GetDoFunction()
+	r2cm::iItem::DoFuncT Macro2String::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -171,7 +171,7 @@ namespace etc_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
@@ -180,16 +180,16 @@ namespace etc_test
 #pragma warning( disable : 4311 )
 #pragma warning( disable : 4302 )
 
-	r2::iItem::TitleFuncT Pointer2Index::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Pointer2Index::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Pointer 2 Index";
 		};
 	}
-	r2::iItem::DoFuncT Pointer2Index::GetDoFunction()
+	r2cm::iItem::DoFuncT Pointer2Index::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -223,7 +223,7 @@ namespace etc_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

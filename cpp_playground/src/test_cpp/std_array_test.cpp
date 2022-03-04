@@ -9,16 +9,16 @@
 
 namespace std_array_test
 {
-	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array : Declaration";
 		};
 	}
-	r2::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2::linefeed;
 
@@ -49,22 +49,22 @@ namespace std_array_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT Fill::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Fill::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array : Fill";
 		};
 	}
-	r2::iItem::DoFuncT Fill::GetDoFunction()
+	r2cm::iItem::DoFuncT Fill::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			auto printer = []( const std::array<int, 3u> container )
 			{
@@ -128,7 +128,7 @@ namespace std_array_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

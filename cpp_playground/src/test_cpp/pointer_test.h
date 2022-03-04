@@ -5,14 +5,14 @@
 
 namespace pointer_test
 {
-	class Basic : public r2::iItem, public r2::SingleTon<Basic>
+	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class ConstPointer : public r2::iItem, public r2::SingleTon<ConstPointer>
+	class ConstPointer : public r2cm::iItem, public r2::SingleTon<ConstPointer>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

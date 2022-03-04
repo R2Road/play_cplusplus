@@ -7,16 +7,16 @@
 
 namespace std_vector_test
 {
-	r2::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector : Basic";
 		};
 	}
-	r2::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2::linefeed;
 
@@ -68,22 +68,22 @@ namespace std_vector_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT NoneDefaultConstructor::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT NoneDefaultConstructor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector : None Default Constructor";
 		};
 	}
-	r2::iItem::DoFuncT NoneDefaultConstructor::GetDoFunction()
+	r2cm::iItem::DoFuncT NoneDefaultConstructor::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -120,22 +120,22 @@ namespace std_vector_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT BoolVector::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT BoolVector::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector : Bool";
 		};
 	}
-	r2::iItem::DoFuncT BoolVector::GetDoFunction()
+	r2cm::iItem::DoFuncT BoolVector::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -179,22 +179,22 @@ namespace std_vector_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT OthersIterator::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT OthersIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector : Others Iterator";
 		};
 	}
-	r2::iItem::DoFuncT OthersIterator::GetDoFunction()
+	r2cm::iItem::DoFuncT OthersIterator::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -224,22 +224,22 @@ namespace std_vector_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT EndIterator::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT EndIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector : End Iterator";
 		};
 	}
-	r2::iItem::DoFuncT EndIterator::GetDoFunction()
+	r2cm::iItem::DoFuncT EndIterator::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -299,7 +299,7 @@ namespace std_vector_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

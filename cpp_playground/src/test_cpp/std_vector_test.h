@@ -5,35 +5,35 @@
 
 namespace std_vector_test
 {
-	class Basic : public r2::iItem, public r2::SingleTon<Basic>
+	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class NoneDefaultConstructor : public r2::iItem, public r2::SingleTon<NoneDefaultConstructor>
+	class NoneDefaultConstructor : public r2cm::iItem, public r2::SingleTon<NoneDefaultConstructor>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class BoolVector : public r2::iItem, public r2::SingleTon<BoolVector>
+	class BoolVector : public r2cm::iItem, public r2::SingleTon<BoolVector>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class OthersIterator : public r2::iItem, public r2::SingleTon<OthersIterator>
+	class OthersIterator : public r2cm::iItem, public r2::SingleTon<OthersIterator>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class EndIterator : public r2::iItem, public r2::SingleTon<EndIterator>
+	class EndIterator : public r2cm::iItem, public r2::SingleTon<EndIterator>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

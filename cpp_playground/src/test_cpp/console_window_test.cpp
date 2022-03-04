@@ -11,16 +11,16 @@
 
 namespace console_window_test
 {
-	r2::iItem::TitleFuncT BufferInfo::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT BufferInfo::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Buffer Info";
 		};
 	}
-	r2::iItem::DoFuncT BufferInfo::GetDoFunction()
+	r2cm::iItem::DoFuncT BufferInfo::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -76,22 +76,22 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT ChangeWindowSize::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT ChangeWindowSize::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Change Window Size";
 		};
 	}
-	r2::iItem::DoFuncT ChangeWindowSize::GetDoFunction()
+	r2cm::iItem::DoFuncT ChangeWindowSize::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			{
 				system( "mode con lines=30 cols=120" );
@@ -141,22 +141,22 @@ namespace console_window_test
 				ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 );
 			}
 
-			return r2::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT FullScreen::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT FullScreen::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "FullScreen";
 		};
 	}
-	r2::iItem::DoFuncT FullScreen::GetDoFunction()
+	r2cm::iItem::DoFuncT FullScreen::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			{
 				SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 );
@@ -178,22 +178,22 @@ namespace console_window_test
 				SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 );
 			}
 
-			return r2::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT WindowPosition::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT WindowPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Position";
 		};
 	}
-	r2::iItem::DoFuncT WindowPosition::GetDoFunction()
+	r2cm::iItem::DoFuncT WindowPosition::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -284,22 +284,22 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT ChangeWindowName::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT ChangeWindowName::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Change Window Name";
 		};
 	}
-	r2::iItem::DoFuncT ChangeWindowName::GetDoFunction()
+	r2cm::iItem::DoFuncT ChangeWindowName::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -334,22 +334,22 @@ namespace console_window_test
 			}
 			_getch();
 
-			return r2::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT HideTitleBar::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT HideTitleBar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Hide Title Bar";
 		};
 	}
-	r2::iItem::DoFuncT HideTitleBar::GetDoFunction()
+	r2cm::iItem::DoFuncT HideTitleBar::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -393,22 +393,22 @@ namespace console_window_test
 				SetWindowLong( hwnd, GWL_STYLE, last_window_style );
 			}
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT HideScrollBar::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT HideScrollBar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Hide Scroll Bar";
 		};
 	}
-	r2::iItem::DoFuncT HideScrollBar::GetDoFunction()
+	r2cm::iItem::DoFuncT HideScrollBar::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << r2::tab << "WinUser.h" << r2::linefeed;
@@ -441,22 +441,22 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT LockWindowResizingByDragging::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT LockWindowResizingByDragging::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Lock Window Resizing By Dragging";
 		};
 	}
-	r2::iItem::DoFuncT LockWindowResizingByDragging::GetDoFunction()
+	r2cm::iItem::DoFuncT LockWindowResizingByDragging::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -499,22 +499,22 @@ namespace console_window_test
 				SetWindowLong( GetConsoleWindow(), GWL_STYLE, last_window_style );
 			}
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT MenuItem::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT MenuItem::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Menu Item";
 		};
 	}
-	r2::iItem::DoFuncT MenuItem::GetDoFunction()
+	r2cm::iItem::DoFuncT MenuItem::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -557,22 +557,22 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT CursorMove::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT CursorMove::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Cursor Move";
 		};
 	}
-	r2::iItem::DoFuncT CursorMove::GetDoFunction()
+	r2cm::iItem::DoFuncT CursorMove::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 
@@ -615,20 +615,20 @@ namespace console_window_test
 				}
 			}
 
-			return r2::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 
-	r2::iItem::TitleFuncT CursorVisibility::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT CursorVisibility::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Cursor Visibility";
 		};
 	}
-	r2::iItem::DoFuncT CursorVisibility::GetDoFunction()
+	r2cm::iItem::DoFuncT CursorVisibility::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -658,7 +658,7 @@ namespace console_window_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 }

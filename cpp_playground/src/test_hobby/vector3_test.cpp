@@ -48,16 +48,16 @@ namespace r2
 
 namespace vector3_test
 {
-	r2::iItem::TitleFuncT OperatorPlus::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT OperatorPlus::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator+";
 		};
 	}
-	r2::iItem::DoFuncT OperatorPlus::GetDoFunction()
+	r2cm::iItem::DoFuncT OperatorPlus::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2::linefeed;
 
@@ -92,20 +92,20 @@ namespace vector3_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
-	r2::iItem::TitleFuncT OperatorPlusEqual::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT OperatorPlusEqual::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator+=";
 		};
 	}
-	r2::iItem::DoFuncT OperatorPlusEqual::GetDoFunction()
+	r2cm::iItem::DoFuncT OperatorPlusEqual::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -140,22 +140,22 @@ namespace vector3_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT OperatorMinus::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT OperatorMinus::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator-";
 		};
 	}
-	r2::iItem::DoFuncT OperatorMinus::GetDoFunction()
+	r2cm::iItem::DoFuncT OperatorMinus::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -190,20 +190,20 @@ namespace vector3_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
-	r2::iItem::TitleFuncT OperatorMinusEqual::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT OperatorMinusEqual::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator-=";
 		};
 	}
-	r2::iItem::DoFuncT OperatorMinusEqual::GetDoFunction()
+	r2cm::iItem::DoFuncT OperatorMinusEqual::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -238,22 +238,22 @@ namespace vector3_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iItem::TitleFuncT OperatorMultiply_With_Scalar::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT OperatorMultiply_With_Scalar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator* Scalar";
 		};
 	}
-	r2::iItem::DoFuncT OperatorMultiply_With_Scalar::GetDoFunction()
+	r2cm::iItem::DoFuncT OperatorMultiply_With_Scalar::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -288,20 +288,20 @@ namespace vector3_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
-	r2::iItem::TitleFuncT OperatorMultiplyEqual_With_Scalar::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT OperatorMultiplyEqual_With_Scalar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator*= Scalar";
 		};
 	}
-	r2::iItem::DoFuncT OperatorMultiplyEqual_With_Scalar::GetDoFunction()
+	r2cm::iItem::DoFuncT OperatorMultiplyEqual_With_Scalar::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -336,7 +336,7 @@ namespace vector3_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

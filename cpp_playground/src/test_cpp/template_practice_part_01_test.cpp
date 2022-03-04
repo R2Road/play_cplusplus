@@ -21,16 +21,16 @@ namespace template_practice_part_01_test
 		std::size_t size;
 	};
 
-	r2::iItem::TitleFuncT BufferWithTemplate::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT BufferWithTemplate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Buffer With Template";
 		};
 	}
-	r2::iItem::DoFuncT BufferWithTemplate::GetDoFunction()
+	r2cm::iItem::DoFuncT BufferWithTemplate::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -51,7 +51,7 @@ namespace template_practice_part_01_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
@@ -77,16 +77,16 @@ namespace template_practice_part_01_test
 		return FindMax( FindMax( arg1, arg2 ), args... );
 	};
 
-	r2::iItem::TitleFuncT VaridicMax::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT VaridicMax::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Varidic Max";
 		};
 	}
-	r2::iItem::DoFuncT VaridicMax::GetDoFunction()
+	r2cm::iItem::DoFuncT VaridicMax::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -128,7 +128,7 @@ namespace template_practice_part_01_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }
