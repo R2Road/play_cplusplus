@@ -14,17 +14,17 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', filesystem_test::DirectoryPath::GetInstance() );
-			ret->AddChild( '2', filesystem_test::DirectoryIterator::GetInstance() );
-			ret->AddChild( '3', filesystem_test::RecursiveDirectoryIterator::GetInstance() );
-			ret->AddChild( '4', filesystem_test::PathOperation_1::GetInstance() );
-			ret->AddChild( '5', filesystem_test::PathOperation_2::GetInstance() );
+			ret->AddItem( '1', filesystem_test::DirectoryPath::GetInstance() );
+			ret->AddItem( '2', filesystem_test::DirectoryIterator::GetInstance() );
+			ret->AddItem( '3', filesystem_test::RecursiveDirectoryIterator::GetInstance() );
+			ret->AddItem( '4', filesystem_test::PathOperation_1::GetInstance() );
+			ret->AddItem( '5', filesystem_test::PathOperation_2::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->eTestEndAction

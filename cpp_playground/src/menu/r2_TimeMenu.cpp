@@ -16,28 +16,28 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', c_time_test::Basic::GetInstance() );
-			ret->AddChild( '2', c_time_test::Y_M_D_H_S::GetInstance() );
-			ret->AddChild( '3', c_time_test::Clock::GetInstance() );
+			ret->AddItem( '1', c_time_test::Basic::GetInstance() );
+			ret->AddItem( '2', c_time_test::Y_M_D_H_S::GetInstance() );
+			ret->AddItem( '3', c_time_test::Clock::GetInstance() );
 
 
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'q', window_time_test::Basic::GetInstance() );
+			ret->AddItem( 'q', window_time_test::Basic::GetInstance() );
 
 
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'w', std_chrono_test::Epoch::GetInstance() );
-			ret->AddChild( 'e', std_chrono_test::Chrono::GetInstance() );
+			ret->AddItem( 'w', std_chrono_test::Epoch::GetInstance() );
+			ret->AddItem( 'e', std_chrono_test::Chrono::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->eTestEndAction

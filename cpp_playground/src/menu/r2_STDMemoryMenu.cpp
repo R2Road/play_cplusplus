@@ -14,14 +14,14 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', std_memory_test::SharedPointer::GetInstance() );
-			ret->AddChild( '2', std_memory_test::UniquePointer::GetInstance() );
+			ret->AddItem( '1', std_memory_test::SharedPointer::GetInstance() );
+			ret->AddItem( '2', std_memory_test::UniquePointer::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->eTestEndAction

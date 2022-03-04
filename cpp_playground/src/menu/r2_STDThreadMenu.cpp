@@ -15,25 +15,25 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', std_thread_test::Basic::GetInstance() );
-			ret->AddChild( '2', std_thread_test::Declaration::GetInstance() );
-			ret->AddChild( '3', std_thread_test::CopyAssaignment::GetInstance() );
-			ret->AddChild( '4', std_thread_test::WaitProcess_SleepFor::GetInstance() );
-			ret->AddChild( '5', std_thread_test::WaitProcess_Yield::GetInstance() );
+			ret->AddItem( '1', std_thread_test::Basic::GetInstance() );
+			ret->AddItem( '2', std_thread_test::Declaration::GetInstance() );
+			ret->AddItem( '3', std_thread_test::CopyAssaignment::GetInstance() );
+			ret->AddItem( '4', std_thread_test::WaitProcess_SleepFor::GetInstance() );
+			ret->AddItem( '5', std_thread_test::WaitProcess_Yield::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild( 'q', atomic_test::IsLockFree::GetInstance() );
-			ret->AddChild( 'w', atomic_test::LockFreeTest1::GetInstance() );
-			ret->AddChild( 'e', atomic_test::LockFreeTest2::GetInstance() );
+			ret->AddItem( 'q', atomic_test::IsLockFree::GetInstance() );
+			ret->AddItem( 'w', atomic_test::LockFreeTest1::GetInstance() );
+			ret->AddItem( 'e', atomic_test::LockFreeTest2::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->eTestEndAction

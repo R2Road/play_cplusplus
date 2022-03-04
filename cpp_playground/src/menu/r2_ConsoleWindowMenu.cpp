@@ -17,36 +17,36 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', console_window_test::BufferInfo::GetInstance() );
+			ret->AddItem( '1', console_window_test::BufferInfo::GetInstance() );
 
 			ret->AddLineFeed();
 
-			ret->AddChild( '2', console_window_test::ChangeWindowSize::GetInstance() );
-			ret->AddChild( '3', console_window_test::FullScreen::GetInstance() );
+			ret->AddItem( '2', console_window_test::ChangeWindowSize::GetInstance() );
+			ret->AddItem( '3', console_window_test::FullScreen::GetInstance() );
 
 			ret->AddLineFeed();
 
-			ret->AddChild( 'q', console_window_test::WindowPosition::GetInstance() );
+			ret->AddItem( 'q', console_window_test::WindowPosition::GetInstance() );
 
 			ret->AddLineFeed();
 
-			ret->AddChild( 'a', console_window_test::ChangeWindowName::GetInstance() );
-			ret->AddChild( 's', console_window_test::HideTitleBar::GetInstance() );
-			ret->AddChild( 'd', console_window_test::HideScrollBar::GetInstance() );
-			ret->AddChild( 'f', console_window_test::LockWindowResizingByDragging::GetInstance() );
-			ret->AddChild( 'g', console_window_test::MenuItem::GetInstance() );
+			ret->AddItem( 'a', console_window_test::ChangeWindowName::GetInstance() );
+			ret->AddItem( 's', console_window_test::HideTitleBar::GetInstance() );
+			ret->AddItem( 'd', console_window_test::HideScrollBar::GetInstance() );
+			ret->AddItem( 'f', console_window_test::LockWindowResizingByDragging::GetInstance() );
+			ret->AddItem( 'g', console_window_test::MenuItem::GetInstance() );
 
 			ret->AddLineFeed();
 			ret->AddLineFeed();
 
-			ret->AddChild( 'z', console_window_test::CursorMove::GetInstance() );
-			ret->AddChild( 'x', console_window_test::CursorVisibility::GetInstance() );
+			ret->AddItem( 'z', console_window_test::CursorMove::GetInstance() );
+			ret->AddItem( 'x', console_window_test::CursorVisibility::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->eTestEndAction

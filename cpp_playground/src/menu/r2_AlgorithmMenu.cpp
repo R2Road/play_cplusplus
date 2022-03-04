@@ -19,39 +19,39 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', algorithm_selection_sort_test::Case1::GetInstance() );
-			ret->AddChild( '2', algorithm_selection_sort_test::Case2::GetInstance() );
+			ret->AddItem( '1', algorithm_selection_sort_test::Case1::GetInstance() );
+			ret->AddItem( '2', algorithm_selection_sort_test::Case2::GetInstance() );
 
 			ret->AddLineFeed();
 
-			ret->AddChild( '3', algorithm_bubble_sort_test::Basic::GetInstance() );
+			ret->AddItem( '3', algorithm_bubble_sort_test::Basic::GetInstance() );
 
 			ret->AddLineFeed();
 
-			ret->AddChild( '4', algorithm_insertion_sort_test::Basic::GetInstance() );
+			ret->AddItem( '4', algorithm_insertion_sort_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild( 'q', algorithm_maze_test::Basic::GetInstance() );
-			ret->AddChild( 'w', algorithm_astar_test::Basic::GetInstance() );
-			ret->AddChild( 'e', algorithm_astar_test::Use_STDListSplice::GetInstance() );
-			ret->AddChild( 'r', algorithm_astar_test::Use_STDListSplice_STDVectorResultPath::GetInstance() );
-			ret->AddChild( 't', algorithm_astar_test::Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetInstance() );
-			ret->AddChild( 'y', algorithm_astar_test::Use_CostMap_STDListSplice_STDVectorResultPath::GetInstance() );
-			ret->AddChild( 'u', algorithm_astar_test::Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetInstance() );
-			ret->AddChild( 'i', algorithm_astar_test::Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetInstance() );
+			ret->AddItem( 'q', algorithm_maze_test::Basic::GetInstance() );
+			ret->AddItem( 'w', algorithm_astar_test::Basic::GetInstance() );
+			ret->AddItem( 'e', algorithm_astar_test::Use_STDListSplice::GetInstance() );
+			ret->AddItem( 'r', algorithm_astar_test::Use_STDListSplice_STDVectorResultPath::GetInstance() );
+			ret->AddItem( 't', algorithm_astar_test::Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetInstance() );
+			ret->AddItem( 'y', algorithm_astar_test::Use_CostMap_STDListSplice_STDVectorResultPath::GetInstance() );
+			ret->AddItem( 'u', algorithm_astar_test::Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetInstance() );
+			ret->AddItem( 'i', algorithm_astar_test::Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetInstance() );
 
 			ret->AddLineFeed();
 
-			ret->AddChild( 'o', algorithm_astar_test::PerformanceTest::GetInstance() );
+			ret->AddItem( 'o', algorithm_astar_test::PerformanceTest::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->eTestEndAction

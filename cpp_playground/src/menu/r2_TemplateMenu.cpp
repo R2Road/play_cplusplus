@@ -16,7 +16,7 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild(
+			ret->AddItem(
 				'1'
 				, []()->const char* { return r2::VariadicTemplateMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -26,7 +26,7 @@ namespace r2
 				}
 			);
 
-			ret->AddChild(
+			ret->AddItem(
 				'2'
 				, []()->const char* { return r2::TemplateMetaProgrammingMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -36,7 +36,7 @@ namespace r2
 				}
 			);
 
-			ret->AddChild(
+			ret->AddItem(
 				'3'
 				, []()->const char* { return r2::TemplatePracticeMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -50,7 +50,7 @@ namespace r2
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->eTestEndAction

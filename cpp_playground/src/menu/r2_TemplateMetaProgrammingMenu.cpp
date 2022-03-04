@@ -16,35 +16,35 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, "Template Meta Programming" ) );
 
 		{
-			ret->AddChild( '1', template_meta_programming_test::CalculateFactorial::GetInstance() );
-			ret->AddChild( '2', template_meta_programming_test::GreatestCommonDivisor::GetInstance() );
-			ret->AddChild( '3', template_meta_programming_test::BasicRatio::GetInstance() );
-			ret->AddChild( '4', template_meta_programming_test::SumBasicRatio::GetInstance() );
-			ret->AddChild( '5', template_meta_programming_test::RatioWithGCD::GetInstance() );
-			ret->AddChild( '6', template_meta_programming_test::SumRatioWithGCD::GetInstance() );
-			ret->AddChild( '7', template_meta_programming_test::SumRatioAndOperator1::GetInstance() );
-			ret->AddChild( '8', template_meta_programming_test::SumRatioAndOperator2::GetInstance() );
+			ret->AddItem( '1', template_meta_programming_test::CalculateFactorial::GetInstance() );
+			ret->AddItem( '2', template_meta_programming_test::GreatestCommonDivisor::GetInstance() );
+			ret->AddItem( '3', template_meta_programming_test::BasicRatio::GetInstance() );
+			ret->AddItem( '4', template_meta_programming_test::SumBasicRatio::GetInstance() );
+			ret->AddItem( '5', template_meta_programming_test::RatioWithGCD::GetInstance() );
+			ret->AddItem( '6', template_meta_programming_test::SumRatioWithGCD::GetInstance() );
+			ret->AddItem( '7', template_meta_programming_test::SumRatioAndOperator1::GetInstance() );
+			ret->AddItem( '8', template_meta_programming_test::SumRatioAndOperator2::GetInstance() );
 
 
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'q', template_meta_programming_test::Character2String::GetInstance() );
-			ret->AddChild( 'w', template_meta_programming_test::Integer2String::GetInstance() );
-			ret->AddChild( 'e', template_meta_programming_test::CalculatePlaceValue::GetInstance() );
-			ret->AddChild( 'r', template_meta_programming_test::Integer2String_II::GetInstance() );
+			ret->AddItem( 'q', template_meta_programming_test::Character2String::GetInstance() );
+			ret->AddItem( 'w', template_meta_programming_test::Integer2String::GetInstance() );
+			ret->AddItem( 'e', template_meta_programming_test::CalculatePlaceValue::GetInstance() );
+			ret->AddItem( 'r', template_meta_programming_test::Integer2String_II::GetInstance() );
 
 
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'a', template_meta_programming_test::MultiTypePackage::GetInstance() );
+			ret->AddItem( 'a', template_meta_programming_test::MultiTypePackage::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->eTestEndAction

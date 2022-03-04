@@ -25,7 +25,7 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild(
+			ret->AddItem(
 				'1'
 				, []()->const char* { return ConsoleWindowMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -34,7 +34,7 @@ namespace r2
 					return r2::eTestEndAction::None;
 				}
 			);
-			ret->AddChild(
+			ret->AddItem(
 				'2'
 				, []()->const char* { return ConsoleTextColorMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -47,52 +47,52 @@ namespace r2
 			ret->AddLineFeed();
 			ret->AddLineFeed();
 
-			ret->AddChild( 'q', console_test::FontInfo::GetInstance() );
-			ret->AddChild( 'w', console_test::FontChange::GetInstance() );
-			ret->AddChild( 'e', console_window_input_test::WindowInput_ReadConsoleInput::GetInstance() );
-			ret->AddChild( 'r', console_window_input_test::WindowInput_GetKeyState::GetInstance() );
-			ret->AddChild( 't', console_window_input_test::WindowInput_GetKeyboardState::GetInstance() );
-			ret->AddChild( 'y', console_window_input_test::WindowInput_GetAsyncKeyStates::GetInstance() );
+			ret->AddItem( 'q', console_test::FontInfo::GetInstance() );
+			ret->AddItem( 'w', console_test::FontChange::GetInstance() );
+			ret->AddItem( 'e', console_window_input_test::WindowInput_ReadConsoleInput::GetInstance() );
+			ret->AddItem( 'r', console_window_input_test::WindowInput_GetKeyState::GetInstance() );
+			ret->AddItem( 't', console_window_input_test::WindowInput_GetKeyboardState::GetInstance() );
+			ret->AddItem( 'y', console_window_input_test::WindowInput_GetAsyncKeyStates::GetInstance() );
 
 			ret->AddLineFeed();
 
-			ret->AddChild( 'u', console_window_message_test::ConsoleControlHandler::GetInstance() );
-			ret->AddChild( 'i', console_window_message_test::MessageHook::GetInstance() );
-
-
-			ret->AddLineFeed();
-			ret->AddLineFeed();
-
-
-			ret->AddChild( 'a', console_test::Pixel::GetInstance() );
+			ret->AddItem( 'u', console_window_message_test::ConsoleControlHandler::GetInstance() );
+			ret->AddItem( 'i', console_window_message_test::MessageHook::GetInstance() );
 
 
 			ret->AddLineFeed();
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 's', console_buffer_test::FillBuffer::GetInstance() );
-			ret->AddChild( 'd', console_buffer_test::Write2Buffer_WriteConsole::GetInstance() );
-			ret->AddChild( 'f', console_buffer_test::Write2Buffer_WriteConsoleOutput::GetInstance() );
-			ret->AddChild( 'g', console_buffer_test::DoubleBuffering::GetInstance() );
+			ret->AddItem( 'a', console_test::Pixel::GetInstance() );
 
 
 			ret->AddLineFeed();
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'z', flickering_research::OneByOne::GetInstance() );
-			ret->AddChild( 'x', flickering_research::OneByOne_WithOut_CLS::GetInstance() );
-			ret->AddChild( 'c', flickering_research::LineByLine::GetInstance() );
-			ret->AddChild( 'v', flickering_research::PageByPage::GetInstance() );
-			ret->AddChild( 'b', flickering_research::PageByPage_WithOut_CLS_1::GetInstance() );
-			ret->AddChild( 'n', flickering_research::PageByPage_WithOut_CLS_2::GetInstance() );
+			ret->AddItem( 's', console_buffer_test::FillBuffer::GetInstance() );
+			ret->AddItem( 'd', console_buffer_test::Write2Buffer_WriteConsole::GetInstance() );
+			ret->AddItem( 'f', console_buffer_test::Write2Buffer_WriteConsoleOutput::GetInstance() );
+			ret->AddItem( 'g', console_buffer_test::DoubleBuffering::GetInstance() );
+
+
+			ret->AddLineFeed();
+			ret->AddLineFeed();
+
+
+			ret->AddItem( 'z', flickering_research::OneByOne::GetInstance() );
+			ret->AddItem( 'x', flickering_research::OneByOne_WithOut_CLS::GetInstance() );
+			ret->AddItem( 'c', flickering_research::LineByLine::GetInstance() );
+			ret->AddItem( 'v', flickering_research::PageByPage::GetInstance() );
+			ret->AddItem( 'b', flickering_research::PageByPage_WithOut_CLS_1::GetInstance() );
+			ret->AddItem( 'n', flickering_research::PageByPage_WithOut_CLS_2::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->eTestEndAction

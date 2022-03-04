@@ -15,26 +15,26 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', etc_test::XOR_Swap::GetInstance() );
-			ret->AddChild( '2', etc_test::InitArray::GetInstance() );
-			ret->AddChild( '3', etc_test::Macro2String::GetInstance() );
-			ret->AddChild( '4', etc_test::Pointer2Index::GetInstance() );
+			ret->AddItem( '1', etc_test::XOR_Swap::GetInstance() );
+			ret->AddItem( '2', etc_test::InitArray::GetInstance() );
+			ret->AddItem( '3', etc_test::Macro2String::GetInstance() );
+			ret->AddItem( '4', etc_test::Pointer2Index::GetInstance() );
 
 
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'q', class_test::Braces::GetInstance() );
-			ret->AddChild( 'w', class_test::PrintName::GetInstance() );
-			ret->AddChild( 'e', class_test::PrivateInheritance_1::GetInstance() );
-			ret->AddChild( 'r', class_test::PrivateInheritance_2::GetInstance() );
-			ret->AddChild( 't', class_test::MemberAdress::GetInstance() );
+			ret->AddItem( 'q', class_test::Braces::GetInstance() );
+			ret->AddItem( 'w', class_test::PrintName::GetInstance() );
+			ret->AddItem( 'e', class_test::PrivateInheritance_1::GetInstance() );
+			ret->AddItem( 'r', class_test::PrivateInheritance_2::GetInstance() );
+			ret->AddItem( 't', class_test::MemberAdress::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->eTestEndAction

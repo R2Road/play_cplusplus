@@ -18,7 +18,7 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild(
+			ret->AddItem(
 				'1'
 				, []()->const char* { return r2::MemoryPoolMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -32,24 +32,24 @@ namespace r2
 			ret->AddSplit();
 
 
-			ret->AddChild( 'q', infinite_number_test::Basic::GetInstance() );
+			ret->AddItem( 'q', infinite_number_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild( 'a', vector3_test::OperatorPlus::GetInstance() );
-			ret->AddChild( 's', vector3_test::OperatorPlusEqual::GetInstance() );
-			ret->AddChild( 'd', vector3_test::OperatorMinus::GetInstance() );
-			ret->AddChild( 'f', vector3_test::OperatorMinusEqual::GetInstance() );
-			ret->AddChild( 'g', vector3_test::OperatorMultiply_With_Scalar::GetInstance() );
-			ret->AddChild( 'h', vector3_test::OperatorMultiplyEqual_With_Scalar::GetInstance() );
+			ret->AddItem( 'a', vector3_test::OperatorPlus::GetInstance() );
+			ret->AddItem( 's', vector3_test::OperatorPlusEqual::GetInstance() );
+			ret->AddItem( 'd', vector3_test::OperatorMinus::GetInstance() );
+			ret->AddItem( 'f', vector3_test::OperatorMinusEqual::GetInstance() );
+			ret->AddItem( 'g', vector3_test::OperatorMultiply_With_Scalar::GetInstance() );
+			ret->AddItem( 'h', vector3_test::OperatorMultiplyEqual_With_Scalar::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				'z'
 				, []()->const char* { return r2::ArrayBasedListMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -63,7 +63,7 @@ namespace r2
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->eTestEndAction

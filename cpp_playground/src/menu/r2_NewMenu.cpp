@@ -14,14 +14,14 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', new_test::Basic::GetInstance() );
-			ret->AddChild( '2', new_test::PlacementNew::GetInstance() );
+			ret->AddItem( '1', new_test::Basic::GetInstance() );
+			ret->AddItem( '2', new_test::PlacementNew::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->eTestEndAction

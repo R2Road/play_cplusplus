@@ -17,21 +17,21 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', char_test::Basic::GetInstance() );
-			ret->AddChild( '2', char_test::Encoding::GetInstance() );
-			ret->AddChild( '3', locale_test::Basic::GetInstance() );
+			ret->AddItem( '1', char_test::Basic::GetInstance() );
+			ret->AddItem( '2', char_test::Encoding::GetInstance() );
+			ret->AddItem( '3', locale_test::Basic::GetInstance() );
 
 
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'z', korean_test::Basic::GetInstance() );
+			ret->AddItem( 'z', korean_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->eTestEndAction

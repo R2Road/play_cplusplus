@@ -49,8 +49,8 @@ namespace r2
 		) );
 
 		{
-			ret->AddChild( '1', console_input_test::Basic::GetInstance() );
-			ret->AddChild(
+			ret->AddItem( '1', console_input_test::Basic::GetInstance() );
+			ret->AddItem(
 				'2'
 				, []()->const char* { return ConsoleMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -59,7 +59,7 @@ namespace r2
 					return r2::eTestEndAction::None;
 				}
 			);
-			ret->AddChild(
+			ret->AddItem(
 				'3'
 				, []()->const char* { return r2::FileSystemMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -68,7 +68,7 @@ namespace r2
 					return r2::eTestEndAction::None;
 				}
 			);
-			ret->AddChild(
+			ret->AddItem(
 				'4'
 				, []()->const char* { return r2::PointerMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -77,7 +77,7 @@ namespace r2
 					return r2::eTestEndAction::None;
 				}
 			);
-			ret->AddChild(
+			ret->AddItem(
 				'5'
 				, []()->const char* { return r2::TimeMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -86,7 +86,7 @@ namespace r2
 					return r2::eTestEndAction::None;
 				}
 			);
-			ret->AddChild(
+			ret->AddItem(
 				'6'
 				, []()->const char* { return r2::RandomMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -95,7 +95,7 @@ namespace r2
 					return r2::eTestEndAction::None;
 				}
 			);
-			ret->AddChild(
+			ret->AddItem(
 				'7'
 				, []()->const char* { return r2::TemplateMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -104,7 +104,7 @@ namespace r2
 					return r2::eTestEndAction::None;
 				}
 			);
-			ret->AddChild(
+			ret->AddItem(
 				'8'
 				, []()->const char* { return r2::AlignMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -113,7 +113,7 @@ namespace r2
 					return r2::eTestEndAction::None;
 				}
 			);
-			ret->AddChild(
+			ret->AddItem(
 				'9'
 				, []()->const char* { return r2::EnumMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -127,7 +127,7 @@ namespace r2
 			ret->AddLineFeed();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				'q'
 				, []()->const char* { return r2::LambdaMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -136,8 +136,8 @@ namespace r2
 					return r2::eTestEndAction::None;
 				}
 			);
-			ret->AddChild( 'w', structured_binding_test::Basic::GetInstance() );			
-			ret->AddChild(
+			ret->AddItem( 'w', structured_binding_test::Basic::GetInstance() );			
+			ret->AddItem(
 				'e'
 				, []()->const char* { return r2::DebugMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -151,7 +151,7 @@ namespace r2
 			ret->AddLineFeed();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				'a'
 				, []()->const char* { return r2::STDMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -160,7 +160,7 @@ namespace r2
 					return r2::eTestEndAction::None;
 				}
 			);
-			ret->AddChild(
+			ret->AddItem(
 				's'
 				, []()->const char* { return r2::NewMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -169,10 +169,10 @@ namespace r2
 					return r2::eTestEndAction::None;
 				}
 			);
-			ret->AddChild( 'd', print_test::Basic::GetInstance() );
-			ret->AddChild( 'f', print_test::ShowNumbers::GetInstance() );
-			ret->AddChild( 'g', print_test::BoolAlpha::GetInstance() );
-			ret->AddChild(
+			ret->AddItem( 'd', print_test::Basic::GetInstance() );
+			ret->AddItem( 'f', print_test::ShowNumbers::GetInstance() );
+			ret->AddItem( 'g', print_test::BoolAlpha::GetInstance() );
+			ret->AddItem(
 				'h'
 				, []()->const char* { return r2::CharMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -186,7 +186,7 @@ namespace r2
 			ret->AddLineFeed();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				'z'
 				, []()->const char* { return r2::ETCMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -195,7 +195,7 @@ namespace r2
 					return r2::eTestEndAction::None;
 				}
 			);
-			ret->AddChild(
+			ret->AddItem(
 				'x'
 				, []()->const char* { return r2::MathMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -204,7 +204,7 @@ namespace r2
 					return r2::eTestEndAction::None;
 				}
 			);
-			ret->AddChild(
+			ret->AddItem(
 				'c'
 				, []()->const char* { return r2::PerformanceMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -218,7 +218,7 @@ namespace r2
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				32
 				, []()->const char* { return r2::AlgorithmMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -227,7 +227,7 @@ namespace r2
 					return r2::eTestEndAction::None;
 				}
 			);
-			ret->AddChild(
+			ret->AddItem(
 				'`'
 				, []()->const char* { return r2::HobbyMenu::GetTitle(); }
 				, [&director]()->eTestEndAction
@@ -241,7 +241,7 @@ namespace r2
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Exit"; }
 				, []()->eTestEndAction { return eTestEndAction::Exit; }

@@ -14,25 +14,25 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', array_based_list_test::Basic::GetInstance() );
-			ret->AddChild( '2', array_based_list_test::PushFront::GetInstance() );
-			ret->AddChild( '3', array_based_list_test::IteratorOperator_Indirection_StructureDereference::GetInstance() );
-			ret->AddChild( '4', array_based_list_test::EndIterator::GetInstance() );
-			ret->AddChild( '5', array_based_list_test::BeginIterator::GetInstance() );
+			ret->AddItem( '1', array_based_list_test::Basic::GetInstance() );
+			ret->AddItem( '2', array_based_list_test::PushFront::GetInstance() );
+			ret->AddItem( '3', array_based_list_test::IteratorOperator_Indirection_StructureDereference::GetInstance() );
+			ret->AddItem( '4', array_based_list_test::EndIterator::GetInstance() );
+			ret->AddItem( '5', array_based_list_test::BeginIterator::GetInstance() );
 
 			ret->AddLineFeed();
 			ret->AddLineFeed();
 
-			ret->AddChild( 'q', array_based_list_test::Clear::GetInstance() );
-			ret->AddChild( 'w', array_based_list_test::PushBack::GetInstance() );
-			ret->AddChild( 'e', array_based_list_test::Erase::GetInstance() );
-			ret->AddChild( 'r', array_based_list_test::RBegin_REnd::GetInstance() );
+			ret->AddItem( 'q', array_based_list_test::Clear::GetInstance() );
+			ret->AddItem( 'w', array_based_list_test::PushBack::GetInstance() );
+			ret->AddItem( 'e', array_based_list_test::Erase::GetInstance() );
+			ret->AddItem( 'r', array_based_list_test::RBegin_REnd::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->eTestEndAction

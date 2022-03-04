@@ -14,16 +14,16 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu( director, GetTitle() ) );
 
 		{
-			ret->AddChild( '1', std_numeric_test::Accumulate_Number::GetInstance() );
-			ret->AddChild( '2', std_numeric_test::Accumulate_String::GetInstance() );
-			ret->AddChild( '3', std_numeric_test::Partial_Sum::GetInstance() );
-			ret->AddChild( '4', std_numeric_test::FillSequenceNumber::GetInstance() );
+			ret->AddItem( '1', std_numeric_test::Accumulate_Number::GetInstance() );
+			ret->AddItem( '2', std_numeric_test::Accumulate_String::GetInstance() );
+			ret->AddItem( '3', std_numeric_test::Partial_Sum::GetInstance() );
+			ret->AddItem( '4', std_numeric_test::FillSequenceNumber::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->eTestEndAction
