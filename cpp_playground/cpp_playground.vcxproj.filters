@@ -338,6 +338,9 @@
     <ClCompile Include="src\base\r2cm_Menu.cpp">
       <Filter>base</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_algorithm\algorithm_etc_test.cpp">
+      <Filter>test_algorithm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -676,6 +679,9 @@
     </ClInclude>
     <ClInclude Include="src\base\r2cm_Menu.h">
       <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_algorithm\algorithm_etc_test.h">
+      <Filter>test_algorithm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

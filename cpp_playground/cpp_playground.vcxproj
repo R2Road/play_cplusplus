@@ -67,6 +67,7 @@
     <ClCompile Include="src\r2\r2_Size.cpp" />
     <ClCompile Include="src\test_algorithm\algorithm_astar_test.cpp" />
     <ClCompile Include="src\test_algorithm\algorithm_bubble_sort_test.cpp" />
+    <ClCompile Include="src\test_algorithm\algorithm_etc_test.cpp" />
     <ClCompile Include="src\test_algorithm\algorithm_insertion_sort_test.cpp" />
     <ClCompile Include="src\test_algorithm\algorithm_maze_test.cpp" />
     <ClCompile Include="src\test_algorithm\algorithm_selection_sort_test.cpp" />
@@ -182,6 +183,7 @@
     <ClInclude Include="src\r2\r2_Size.h" />
     <ClInclude Include="src\test_algorithm\algorithm_astar_test.h" />
     <ClInclude Include="src\test_algorithm\algorithm_bubble_sort_test.h" />
+    <ClInclude Include="src\test_algorithm\algorithm_etc_test.h" />
     <ClInclude Include="src\test_algorithm\algorithm_insertion_sort_test.h" />
     <ClInclude Include="src\test_algorithm\algorithm_maze_test.h" />
     <ClInclude Include="src\test_algorithm\algorithm_selection_sort_test.h" />

@@ -10,6 +10,7 @@
 #include "test_algorithm/algorithm_insertion_sort_test.h"
 
 #include "test_algorithm/algorithm_astar_test.h"
+#include "test_algorithm/algorithm_etc_test.h"
 #include "test_algorithm/algorithm_maze_test.h"
 
 namespace r2
@@ -46,6 +47,12 @@ namespace r2
 			ret->AddLineFeed();
 
 			ret->AddItem( 'o', algorithm_astar_test::PerformanceTest::GetInstance() );
+
+
+			ret->AddSplit();
+
+
+			ret->AddItem( 'a', algorithm_etc_test::DJB2::GetInstance() );
 
 
 			ret->AddSplit();
