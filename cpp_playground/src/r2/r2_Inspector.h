@@ -103,3 +103,9 @@ do {																											\
 		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_LE( %s <= %s )\n", #condition_1, #condition_2 );		\
 	}																											\
 } while( false )
+
+#define	DO_CODE( condition )																\
+do {																						\
+	( condition );																			\
+	printf( "\x1B[90m" "[DO]" "\033[0m" " %s\n", #condition );								\
+} while( false )
