@@ -1,0 +1,5 @@
+local i = 0
+
+function test
+	i = 0;
+end

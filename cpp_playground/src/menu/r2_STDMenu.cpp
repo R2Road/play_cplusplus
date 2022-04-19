@@ -13,6 +13,7 @@
 #include "test_cpp/std_algorithm_test.h"
 #include "test_cpp/std_function_test.h"
 #include "test_cpp/std_function_2_test.h"
+#include "test_cpp/std_fstream_test.h"
 #include "test_cpp/std_optional_test.h"
 #include "test_cpp/std_regex_test.h"
 #include "test_cpp/std_stringview_test.h"
@@ -35,6 +36,7 @@ namespace r2
 			ret->AddItem( '5', std_stringview_test::Basic::GetInstance() );
 			ret->AddItem( '6', std_tuple_test::Basic::GetInstance() );
 			ret->AddItem( '7', std_variant_test::Basic::GetInstance() );
+			ret->AddItem( '8', std_fstream_test::Basic::GetInstance() );
 
 			ret->AddLineFeed();
 
