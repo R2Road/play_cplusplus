@@ -212,14 +212,14 @@ namespace debug_test
 			std::cout << r2::tab << "+ File Open" << r2::linefeed2;
 
 			DECLARATION_MAIN( const char* const file_path = "std_cerr_test.txt" );
-			DECLARATION_MAIN( std::ofstream errfile( file_path ) );
+			DECLARATION_MAIN( std::ofstream log_stream( file_path ) );
 
 			std::cout << r2::split;
 
 			std::cout << r2::tab << "+ Redirection" << r2::linefeed2;
 
 			DECLARATION_MAIN( std::streambuf * const orig = std::cerr.rdbuf() );
-			PROCESS_MAIN( std::cerr.rdbuf( errfile.rdbuf() ) );
+			PROCESS_MAIN( std::cerr.rdbuf( log_stream.rdbuf() ) );
 
 			std::cout << r2::split;
 
@@ -238,7 +238,7 @@ namespace debug_test
 				std::cout << r2::tab << "+ End" << r2::linefeed2;
 
 				PROCESS_MAIN( std::cerr.set_rdbuf( orig ) );
-				PROCESS_MAIN( errfile.close() );
+				PROCESS_MAIN( log_stream.close() );
 			}
 
 			std::cout << r2::split;
