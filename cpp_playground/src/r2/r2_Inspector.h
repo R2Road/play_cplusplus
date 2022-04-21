@@ -137,6 +137,11 @@ printf( "\x1B[90m" "[DECLARATION]" " %s" "\033[0m" "\n", #condition );
 //
 //
 //
+void SHOW_FILE( const char* const path );
+
+//
+//
+//
 #define	SHOW_CODE( condition )																\
 do {																						\
 	printf( "[CODE]" " %s" "\n", #condition );												\
