@@ -229,7 +229,6 @@ namespace debug_test
 				PROCESS_MAIN( std::cerr << "std::cerr" );
 				PROCESS_MAIN( std::cerr << std::endl );
 				PROCESS_MAIN( std::cerr << "redirection 2 file" );
-
 			}
 
 			std::cout << r2::split;
