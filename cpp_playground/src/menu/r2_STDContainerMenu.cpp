@@ -18,6 +18,7 @@ namespace r2
 		{
 			ret->AddItem( '1', std_array_test::Basic::GetInstance() );
 			ret->AddItem( '2', std_array_test::Fill::GetInstance() );
+			ret->AddItem( '3', std_array_test::Copy::GetInstance() );
 
 
 			ret->AddLineFeed();

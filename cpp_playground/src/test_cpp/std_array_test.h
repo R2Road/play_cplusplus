@@ -18,4 +18,11 @@ namespace std_array_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class Copy : public r2cm::iItem, public r2::SingleTon<Copy>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }
