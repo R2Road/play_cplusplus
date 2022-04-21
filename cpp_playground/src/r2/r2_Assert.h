@@ -1,6 +1,3 @@
-#ifndef R2ASSERT_H
-#define R2ASSERT_H
-
 #include <stdio.h>
 
 #define	R2ASSERT( condition, message )		\
@@ -12,6 +9,3 @@ do {										\
 		throw std::runtime_error( message );\
 	}										\
 } while( false )
-
-
-#endif //R2ASSERT_H
