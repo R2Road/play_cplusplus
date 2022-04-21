@@ -2,6 +2,7 @@
 #include "debug_test.h"
 
 #include <cassert>
+#include <fstream>
 #include <Windows.h>
 
 #include "base/r2cm_eTestEndAction.h"
@@ -183,6 +184,67 @@ namespace debug_test
 
 				PROCESS_MAIN( R2ASSERT( a > b, "What The Fuck" ) );
 
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT SimpleLog::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Simple Log";
+		};
+	}
+	r2cm::iItem::DoFuncT SimpleLog::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "+ File Open" << r2::linefeed2;
+
+			DECLARATION_MAIN( const char* const file_path = "std_cerr_test.txt" );
+			DECLARATION_MAIN( std::ofstream errfile( file_path ) );
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "+ Redirection" << r2::linefeed2;
+
+			DECLARATION_MAIN( std::streambuf * const orig = std::cerr.rdbuf() );
+			PROCESS_MAIN( std::cerr.rdbuf( errfile.rdbuf() ) );
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( std::cerr << "[Test]" );
+				PROCESS_MAIN( std::cerr << std::endl );
+				PROCESS_MAIN( std::cerr << "std::cerr" );
+				PROCESS_MAIN( std::cerr << std::endl );
+				PROCESS_MAIN( std::cerr << "redirection 2 file" );
+
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ End" << r2::linefeed2;
+
+				PROCESS_MAIN( std::cerr.set_rdbuf( orig ) );
+				PROCESS_MAIN( errfile.close() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				SHOW_FILE( file_path );
 			}
 
 			std::cout << r2::split;

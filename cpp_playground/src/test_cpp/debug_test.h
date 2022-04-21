@@ -39,4 +39,11 @@ namespace debug_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class SimpleLog : public r2cm::iItem, public r2::SingleTon<SimpleLog>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

@@ -19,6 +19,7 @@ namespace r2
 			ret->AddItem( '3', debug_test::Assertion::GetInstance() );
 			ret->AddItem( '4', debug_test::DebugBreak::GetInstance() );
 			ret->AddItem( '5', debug_test::MyAssertion::GetInstance() );
+			ret->AddItem( '6', debug_test::SimpleLog::GetInstance() );
 
 
 			ret->AddSplit();
