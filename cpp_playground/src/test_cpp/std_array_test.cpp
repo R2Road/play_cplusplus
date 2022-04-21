@@ -67,7 +67,7 @@ namespace std_array_test
 	{
 		return []()->r2cm::eTestEndAction
 		{
-			auto printer = []( const std::array<int, 3u> container )
+			auto printer = []( const std::array<int, 3u>& container )
 			{
 				std::cout << r2::tab3 << "- Print : ";
 				for( const auto i : container )
