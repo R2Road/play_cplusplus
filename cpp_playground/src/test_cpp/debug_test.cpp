@@ -5,6 +5,7 @@
 #include <Windows.h>
 
 #include "base/r2cm_eTestEndAction.h"
+#include "r2/r2_Inspector.h"
 
 namespace debug_test
 {
@@ -153,16 +154,6 @@ namespace debug_test
 
 
 
-#define	MyAssert( cond, message )					\
-do {												\
-	if( !( cond ) )									\
-	{												\
-		__debugbreak();								\
-		printf( "+ MyAssert" "\nMessage : %s" "\nFile : %s" "\nLine : %d" "\nFunction : %s", message, __FILE__, __LINE__, __FUNCTION__ ); \
-		throw std::runtime_error( message );		\
-	}												\
-} while( false )
-
 	r2cm::iItem::TitleFuncT MyAssertion::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -178,29 +169,20 @@ do {												\
 
 			std::cout << r2::split;
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "#define	MyAssert( cond, message )" << r2::linefeed;
-			std::cout << r2::tab2 << "do {" << r2::linefeed;
-			std::cout << r2::tab3 << "if( !( cond ) )	" << r2::linefeed;
-			std::cout << r2::tab3 << "{" << r2::linefeed;
-			std::cout << r2::tab4 << "__debugbreak();" << r2::linefeed;
-			std::cout << r2::tab4 << "printf( ... );" << r2::linefeed;
-			std::cout << r2::tab4 << "throw std::runtime_error( message );" << r2::linefeed;
-			std::cout << r2::tab3 << "}" << r2::linefeed;
-			std::cout << r2::tab2 << "} while( false )" << r2::linefeed3;
+			SHOW_FILE( "src/r2/r2_Assert.h" );
+
+			std::cout << r2::split;
 
 			{
 				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "int a = 1;" << r2::linefeed;
-				std::cout << r2::tab2 << "int b = 2;" << r2::linefeed;
-				std::cout << r2::tab2 << "MyAssert( a > b, \"What The Fuck\" );" << r2::linefeed;
-				std::cout << r2::linefeed;
 
-				int a = 1;
-				int b = 2;
-				MyAssert( a > b, "What The Fuck" );
+				DECLARATION_MAIN( int a = 1 );
+				DECLARATION_MAIN( int b = 2 );
 
 				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( R2ASSERT( a > b, "What The Fuck" ) );
+
 			}
 
 			std::cout << r2::split;
