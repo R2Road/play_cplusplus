@@ -692,5 +692,8 @@
     <ClInclude Include="src\test_cpp\std_fstream_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
+    <ClInclude Include="src\r2\r2_Assert.h">
+      <Filter>r2</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
