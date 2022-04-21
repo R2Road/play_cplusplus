@@ -211,7 +211,7 @@ namespace debug_test
 
 			std::cout << r2::tab << "+ File Open" << r2::linefeed2;
 
-			DECLARATION_MAIN( const char* const file_path = "std_cerr_test.txt" );
+			DECLARATION_MAIN( const char* const file_path = "debug_test__simple_log.txt" );
 			DECLARATION_MAIN( std::ofstream log_stream( file_path ) );
 
 			std::cout << r2::split;
