@@ -2,6 +2,7 @@
 #include "debug_test.h"
 
 #include <cassert>
+#include <filesystem>
 #include <fstream>
 #include <Windows.h>
 
@@ -194,6 +195,24 @@ namespace debug_test
 
 
 
+	const char* GetSimpleLogFilePath()
+	{
+		static std::string temp_string =
+#if defined( _WIN64 )
+	#if defined( DEBUG ) || defined( _DEBUG )
+			( std::filesystem::current_path() / "x64" / "Debug" / "debug_test__simple_log.txt" ).string();
+	#else
+			( std::filesystem::current_path() / "x64" / "Release" / "debug_test__simple_log.txt" ).string();
+	#endif
+#else
+	#if defined( DEBUG ) || defined( _DEBUG )
+			( std::filesystem::current_path() / "Debug" / "debug_test__simple_log.txt" ).string();
+	#else
+			( std::filesystem::current_path() / "Release" / "debug_test__simple_log.txt" ).string();
+	#endif
+#endif
+		return temp_string.c_str();
+	}
 	r2cm::iItem::TitleFuncT SimpleLog::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -211,7 +230,7 @@ namespace debug_test
 
 			std::cout << r2::tab << "+ File Open" << r2::linefeed2;
 
-			DECLARATION_MAIN( const char* const file_path = "debug_test__simple_log.txt" );
+			DECLARATION_MAIN( const char* const file_path = GetSimpleLogFilePath() );
 			DECLARATION_MAIN( std::ofstream log_stream( file_path ) );
 
 			std::cout << r2::split;
