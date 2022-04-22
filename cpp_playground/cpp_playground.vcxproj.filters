@@ -347,6 +347,9 @@
     <ClCompile Include="src\r2\r2_Inspector.cpp">
       <Filter>r2</Filter>
     </ClCompile>
+    <ClCompile Include="src\utility\r2utility_FileUtil.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu\r2_AlignMenu.h">
@@ -694,6 +697,9 @@
     </ClInclude>
     <ClInclude Include="src\r2\r2_Assert.h">
       <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\r2utility_FileUtil.h">
+      <Filter>utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

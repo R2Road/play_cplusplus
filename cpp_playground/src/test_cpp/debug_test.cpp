@@ -8,6 +8,7 @@
 
 #include "base/r2cm_eTestEndAction.h"
 #include "r2/r2_Inspector.h"
+#include "utility/r2utility_FileUtil.h"
 
 namespace debug_test
 {
@@ -197,20 +198,7 @@ namespace debug_test
 
 	const char* GetSimpleLogFilePath()
 	{
-		static std::string temp_string =
-#if defined( _WIN64 )
-	#if defined( DEBUG ) || defined( _DEBUG )
-			( std::filesystem::current_path() / "x64" / "Debug" / "debug_test__simple_log.txt" ).string();
-	#else
-			( std::filesystem::current_path() / "x64" / "Release" / "debug_test__simple_log.txt" ).string();
-	#endif
-#else
-	#if defined( DEBUG ) || defined( _DEBUG )
-			( std::filesystem::current_path() / "Debug" / "debug_test__simple_log.txt" ).string();
-	#else
-			( std::filesystem::current_path() / "Release" / "debug_test__simple_log.txt" ).string();
-	#endif
-#endif
+		static std::string temp_string = r2utility::MakeOutPutPath( "debug_test__simple_log.txt" );
 		return temp_string.c_str();
 	}
 	r2cm::iItem::TitleFuncT SimpleLog::GetTitleFunction() const

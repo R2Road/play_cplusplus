@@ -130,6 +130,7 @@
     <ClCompile Include="src\test_hobby\memory_pool_test.cpp" />
     <ClCompile Include="src\test_hobby\vector3_test.cpp" />
     <ClCompile Include="src\utility\r2utility_CharacterBuffer.cpp" />
+    <ClCompile Include="src\utility\r2utility_FileUtil.cpp" />
     <ClCompile Include="src\utility\r2utility_StopWatch.cpp" />
     <ClCompile Include="src\utility\r2utility_WindowUtil.cpp" />
   </ItemGroup>
@@ -248,6 +249,7 @@
     <ClInclude Include="src\test_hobby\memory_pool_test.h" />
     <ClInclude Include="src\test_hobby\vector3_test.h" />
     <ClInclude Include="src\utility\r2utility_CharacterBuffer.h" />
+    <ClInclude Include="src\utility\r2utility_FileUtil.h" />
     <ClInclude Include="src\utility\r2utility_StopWatch.h" />
     <ClInclude Include="src\utility\r2utility_WindowUtil.h" />
   </ItemGroup>

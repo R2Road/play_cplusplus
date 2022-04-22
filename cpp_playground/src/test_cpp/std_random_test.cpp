@@ -8,6 +8,7 @@
 #include <map>
 
 #include "base/r2cm_eTestEndAction.h"
+#include "utility/r2utility_FileUtil.h"
 
 
 namespace std_random_test
@@ -82,20 +83,7 @@ namespace
 {
 	const char* GetFilePath()
 	{
-		static std::string temp_string =
-#if defined( _WIN64 )
-		#if defined( DEBUG ) || defined( _DEBUG )
-				( std::filesystem::current_path() / "x64" / "Debug" / "random_test_Status.dat" ).string();
-		#else
-				( std::filesystem::current_path() / "x64" / "Release" / "random_test_Status.dat" ).string();
-		#endif
-#else
-		#if defined( DEBUG ) || defined( _DEBUG )
-				( std::filesystem::current_path() / "Debug" / "random_test_Status.dat" ).string();
-		#else
-				( std::filesystem::current_path() / "Release" / "random_test_Status.dat" ).string();
-		#endif
-#endif
+		static std::string temp_string = r2utility::MakeOutPutPath( "random_test_Status.dat" );
 		return temp_string.c_str();
 	}
 
