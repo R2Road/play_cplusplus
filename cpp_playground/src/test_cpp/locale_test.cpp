@@ -66,6 +66,35 @@ namespace locale_test
 			std::cout << r2::split;
 
 			{
+				const char* kor = "한글 테스트";
+				const wchar_t* wkor = L"한글 테스트";
+
+				//std::cout << "Locale : " << setlocale( LC_ALL, "C" ) << r2::linefeed;
+				//std::cout << "Print Korean : " << kor << r2::linefeed;
+				//std::wcout << "Print W Korean : " << wkor << r2::linefeed;
+
+				std::cout << std::endl;
+
+				//std::cout << "Locale : " << setlocale( LC_ALL, "ja_JP.utf8" ) << r2::linefeed;
+				//std::cout << "Print Korean : " << kor << r2::linefeed;
+				//std::wcout << "Print W Korean : " << wkor << r2::linefeed;
+
+				std::cout << std::endl;
+
+				//std::cout << "Locale : " << setlocale( LC_ALL, "Korean" ) << r2::linefeed;
+				//std::cout << "Print Korean : " << kor << r2::linefeed;
+				//std::wcout << "Print W Korean : " << wkor << r2::linefeed;
+
+				std::cout << std::endl;
+
+				std::cout << "Locale : " << setlocale( LC_ALL, "ko_KR.utf8" ) << r2::linefeed;
+				std::cout << "Print Korean : " << kor << r2::linefeed;
+				std::wcout << "Print W Korean : " << wkor;// << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
 				const std::string current_locale = setlocale( LC_ALL, "C" );
 
 				std::cout << r2::tab << "+ Roll Back Locale" << r2::linefeed2;
