@@ -82,6 +82,7 @@
     <ClCompile Include="src\test_cpp\debug_test.cpp" />
     <ClCompile Include="src\test_cpp\flickering_research.cpp" />
     <ClCompile Include="src\test_cpp\std_algorithm_test.cpp" />
+    <ClCompile Include="src\test_cpp\std_cout_test.cpp" />
     <ClCompile Include="src\test_cpp\std_fstream_test.cpp" />
     <ClCompile Include="src\test_cpp\std_numeric_test.cpp" />
     <ClCompile Include="src\test_cpp\alignas_test.cpp" />
@@ -201,6 +202,7 @@
     <ClInclude Include="src\test_cpp\debug_test.h" />
     <ClInclude Include="src\test_cpp\flickering_research.h" />
     <ClInclude Include="src\test_cpp\std_algorithm_test.h" />
+    <ClInclude Include="src\test_cpp\std_cout_test.h" />
     <ClInclude Include="src\test_cpp\std_fstream_test.h" />
     <ClInclude Include="src\test_cpp\std_numeric_test.h" />
     <ClInclude Include="src\test_cpp\alignas_test.h" />

@@ -11,6 +11,7 @@
 #include "r2_STDThreadMenu.h"
 
 #include "test_cpp/std_algorithm_test.h"
+#include "test_cpp/std_cout_test.h"
 #include "test_cpp/std_function_test.h"
 #include "test_cpp/std_function_2_test.h"
 #include "test_cpp/std_fstream_test.h"
@@ -90,6 +91,7 @@ namespace r2
 			ret->AddLineFeed();
 
 			ret->AddItem( 'z', std_regex_test::Basic::GetInstance() );
+			ret->AddItem( 'x', std_cout_test::Align::GetInstance() );
 
 
 			ret->AddSplit();
