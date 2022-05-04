@@ -28,6 +28,9 @@
     <Filter Include="test_algorithm\item">
       <UniqueIdentifier>{3f71f778-8bc1-425a-9453-6777ea0b1376}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test_hobby\item">
+      <UniqueIdentifier>{406a41e2-4122-4715-929d-62249886c0d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -224,12 +227,6 @@
     <ClCompile Include="src\menu\r2_HobbyMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_hobby\infinite_number_test.cpp">
-      <Filter>test_hobby</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_hobby\array_based_list_test.cpp">
-      <Filter>test_hobby</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\std_thread_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -247,9 +244,6 @@
     </ClCompile>
     <ClCompile Include="src\test_cpp\std_memory_test.cpp">
       <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_hobby\memory_pool_test.cpp">
-      <Filter>test_hobby</Filter>
     </ClCompile>
     <ClCompile Include="src\menu\r2_STDMemoryMenu.cpp">
       <Filter>menu</Filter>
@@ -280,9 +274,6 @@
     </ClCompile>
     <ClCompile Include="src\menu\r2_ArrayBasedListMenu.cpp">
       <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_hobby\vector3_test.cpp">
-      <Filter>test_hobby</Filter>
     </ClCompile>
     <ClCompile Include="src\menu\r2_MemoryPoolMenu.cpp">
       <Filter>menu</Filter>
@@ -355,6 +346,18 @@
     </ClCompile>
     <ClCompile Include="src\test_algorithm\TestAlgorithmMenu.cpp">
       <Filter>test_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_hobby\item\array_based_list_test.cpp">
+      <Filter>test_hobby\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_hobby\item\infinite_number_test.cpp">
+      <Filter>test_hobby\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_hobby\item\memory_pool_test.cpp">
+      <Filter>test_hobby\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_hobby\item\vector3_test.cpp">
+      <Filter>test_hobby\item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -557,12 +560,6 @@
     <ClInclude Include="src\menu\r2_HobbyMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_hobby\infinite_number_test.h">
-      <Filter>test_hobby</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_hobby\array_based_list_test.h">
-      <Filter>test_hobby</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\std_thread_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -583,9 +580,6 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\std_memory_test.h">
       <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_hobby\memory_pool_test.h">
-      <Filter>test_hobby</Filter>
     </ClInclude>
     <ClInclude Include="src\menu\r2_STDMemoryMenu.h">
       <Filter>menu</Filter>
@@ -616,9 +610,6 @@
     </ClInclude>
     <ClInclude Include="src\menu\r2_ArrayBasedListMenu.h">
       <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_hobby\vector3_test.h">
-      <Filter>test_hobby</Filter>
     </ClInclude>
     <ClInclude Include="src\menu\r2_MemoryPoolMenu.h">
       <Filter>menu</Filter>
@@ -709,6 +700,18 @@
     </ClInclude>
     <ClInclude Include="src\test_algorithm\TestAlgorithmMenu.h">
       <Filter>test_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\item\array_based_list_test.h">
+      <Filter>test_hobby\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\item\infinite_number_test.h">
+      <Filter>test_hobby\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\item\memory_pool_test.h">
+      <Filter>test_hobby\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\item\vector3_test.h">
+      <Filter>test_hobby\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

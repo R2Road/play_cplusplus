@@ -5,7 +5,7 @@
 #include "base/r2cm_eTestEndAction.h"
 #include "r2_HobbyMenu.h"
 
-#include "test_hobby/array_based_list_test.h"
+#include "test_hobby/item/array_based_list_test.h"
 
 namespace r2
 {

@@ -5,8 +5,8 @@
 #include "base/r2cm_eTestEndAction.h"
 #include "r2_RootMenu.h"
 
-#include "test_hobby/infinite_number_test.h"
-#include "test_hobby/vector3_test.h"
+#include "test_hobby/item/infinite_number_test.h"
+#include "test_hobby/item/vector3_test.h"
 
 #include "menu/r2_ArrayBasedListMenu.h"
 #include "menu/r2_MemoryPoolMenu.h"
