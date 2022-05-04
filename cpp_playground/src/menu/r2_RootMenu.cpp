@@ -229,10 +229,10 @@ namespace r2
 			);
 			ret->AddItem(
 				'`'
-				, []()->const char* { return r2::HobbyMenu::GetTitle(); }
+				, []()->const char* { return HobbyMenu::GetTitle(); }
 				, [&director]()->r2cm::eTestEndAction
 				{
-					director.Setup( r2::HobbyMenu::Create( director ) );
+					director.Setup( HobbyMenu::Create( director ) );
 					return r2cm::eTestEndAction::None;
 				}
 			);

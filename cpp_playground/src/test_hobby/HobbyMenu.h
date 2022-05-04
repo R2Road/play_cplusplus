@@ -9,15 +9,12 @@ namespace r2cm
 	class Director;
 }
 
-namespace r2
+class HobbyMenu
 {
-	class HobbyMenu
-	{
-	private:
-		HobbyMenu() = delete;
+private:
+	HobbyMenu() = delete;
 
-	public:
-		static const char* GetTitle() { return "Hobby"; }
-		static r2cm::MenuUp Create( r2cm::Director& director );
-	};
-}
+public:
+	static const char* GetTitle() { return "Hobby Menu"; }
+	static r2cm::MenuUp Create( r2cm::Director& director );
+};
