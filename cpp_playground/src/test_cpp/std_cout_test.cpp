@@ -281,6 +281,65 @@ namespace std_cout_test
 
 
 
+	r2cm::iItem::TitleFuncT NumberFormat_4::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::cout : Number Format 4";
+		};
+	}
+	r2cm::iItem::DoFuncT NumberFormat_4::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
+			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Note : 소수점 이하 4자리 출력으로 고정." << r2::linefeed2;
+
+				std::cout << r2::tab << "+ std::fixed" << r2::linefeed2;
+
+				PROCESS_MAIN( std::cout << std::fixed );
+				PROCESS_MAIN( std::cout << std::setprecision( 4 ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( std::cout << 10.f << r2::linefeed );
+				PROCESS_MAIN( std::cout << 11.2f << r2::linefeed );
+
+
+				std::cout << r2::linefeed2;
+
+
+				PROCESS_MAIN( std::cout << std::defaultfloat );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( std::cout << 10.f << r2::linefeed );
+				PROCESS_MAIN( std::cout << 11.2f << r2::linefeed );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT Align::GetTitleFunction() const
 	{
 		return []()->const char*

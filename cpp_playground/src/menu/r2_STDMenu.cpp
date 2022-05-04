@@ -95,7 +95,8 @@ namespace r2
 			ret->AddItem( 'c', std_cout_test::NumberFormat_1::GetInstance() );
 			ret->AddItem( 'v', std_cout_test::NumberFormat_2::GetInstance() );
 			ret->AddItem( 'b', std_cout_test::NumberFormat_3::GetInstance() );
-			ret->AddItem( 'n', std_cout_test::Align::GetInstance() );
+			ret->AddItem( 'n', std_cout_test::NumberFormat_4::GetInstance() );
+			ret->AddItem( 'm', std_cout_test::Align::GetInstance() );
 
 
 			ret->AddSplit();
