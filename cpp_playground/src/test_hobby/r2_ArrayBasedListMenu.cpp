@@ -3,7 +3,7 @@
 
 #include "base/r2cm_Director.h"
 #include "base/r2cm_eTestEndAction.h"
-#include "r2_HobbyMenu.h"
+#include "HobbyMenu.h"
 
 #include "test_hobby/item/array_based_list_test.h"
 

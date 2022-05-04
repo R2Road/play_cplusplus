@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_HobbyMenu.h"
+#include "HobbyMenu.h"
 
 #include "base/r2cm_Director.h"
 #include "base/r2cm_eTestEndAction.h"
