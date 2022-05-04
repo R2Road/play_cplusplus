@@ -25,6 +25,9 @@
     <Filter Include="utility">
       <UniqueIdentifier>{b470e37a-ab48-4294-91e6-d840afb5ce71}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test_algorithm\item">
+      <UniqueIdentifier>{3f71f778-8bc1-425a-9453-6777ea0b1376}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -157,9 +160,6 @@
     </ClCompile>
     <ClCompile Include="src\test_cpp\performance_container_iteration_test.cpp">
       <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_AlgorithmMenu.cpp">
-      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\test_cpp\std_function_test.cpp">
       <Filter>test_cpp</Filter>
@@ -336,21 +336,24 @@
       <Filter>test_cpp</Filter>
     </ClCompile>
     <ClCompile Include="src\test_algorithm\item\algorithm_astar_test.cpp">
-      <Filter>test_algorithm</Filter>
+      <Filter>test_algorithm\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_algorithm\item\algorithm_bubble_sort_test.cpp">
-      <Filter>test_algorithm</Filter>
+      <Filter>test_algorithm\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_algorithm\item\algorithm_etc_test.cpp">
-      <Filter>test_algorithm</Filter>
+      <Filter>test_algorithm\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_algorithm\item\algorithm_insertion_sort_test.cpp">
-      <Filter>test_algorithm</Filter>
+      <Filter>test_algorithm\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_algorithm\item\algorithm_maze_test.cpp">
-      <Filter>test_algorithm</Filter>
+      <Filter>test_algorithm\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_algorithm\item\algorithm_selection_sort_test.cpp">
+      <Filter>test_algorithm\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_algorithm\r2_AlgorithmMenu.cpp">
       <Filter>test_algorithm</Filter>
     </ClCompile>
   </ItemGroup>
@@ -487,9 +490,6 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\performance_container_iteration_test.h">
       <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_AlgorithmMenu.h">
-      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\std_function_test.h">
       <Filter>test_cpp</Filter>
@@ -690,21 +690,24 @@
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_algorithm\item\algorithm_astar_test.h">
-      <Filter>test_algorithm</Filter>
+      <Filter>test_algorithm\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_algorithm\item\algorithm_bubble_sort_test.h">
-      <Filter>test_algorithm</Filter>
+      <Filter>test_algorithm\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_algorithm\item\algorithm_etc_test.h">
-      <Filter>test_algorithm</Filter>
+      <Filter>test_algorithm\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_algorithm\item\algorithm_insertion_sort_test.h">
-      <Filter>test_algorithm</Filter>
+      <Filter>test_algorithm\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_algorithm\item\algorithm_maze_test.h">
-      <Filter>test_algorithm</Filter>
+      <Filter>test_algorithm\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_algorithm\item\algorithm_selection_sort_test.h">
+      <Filter>test_algorithm\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_algorithm\r2_AlgorithmMenu.h">
       <Filter>test_algorithm</Filter>
     </ClInclude>
   </ItemGroup>

@@ -22,7 +22,6 @@
     <ClCompile Include="src\algorithm\r2algorithm_astar_PathBuilder.cpp" />
     <ClCompile Include="src\base\r2cm_Director.cpp" />
     <ClCompile Include="src\base\r2cm_Menu.cpp" />
-    <ClCompile Include="src\menu\r2_AlgorithmMenu.cpp" />
     <ClCompile Include="src\menu\r2_ArrayBasedListMenu.cpp" />
     <ClCompile Include="src\menu\ConsoleTextColorMenu.cpp" />
     <ClCompile Include="src\menu\r2_ConsoleWindowMenu.cpp" />
@@ -72,6 +71,7 @@
     <ClCompile Include="src\test_algorithm\item\algorithm_insertion_sort_test.cpp" />
     <ClCompile Include="src\test_algorithm\item\algorithm_maze_test.cpp" />
     <ClCompile Include="src\test_algorithm\item\algorithm_selection_sort_test.cpp" />
+    <ClCompile Include="src\test_algorithm\r2_AlgorithmMenu.cpp" />
     <ClCompile Include="src\test_cpp\console_buffer_test.cpp" />
     <ClCompile Include="src\test_cpp\console_input_test.cpp" />
     <ClCompile Include="src\test_cpp\console_text_color_test.cpp" />
@@ -142,7 +142,6 @@
     <ClInclude Include="src\base\r2cm_eTestEndAction.h" />
     <ClInclude Include="src\base\r2cm_iItem.h" />
     <ClInclude Include="src\base\r2cm_Menu.h" />
-    <ClInclude Include="src\menu\r2_AlgorithmMenu.h" />
     <ClInclude Include="src\menu\r2_ArrayBasedListMenu.h" />
     <ClInclude Include="src\menu\ConsoleTextColorMenu.h" />
     <ClInclude Include="src\menu\r2_ConsoleWindowMenu.h" />
@@ -192,6 +191,7 @@
     <ClInclude Include="src\test_algorithm\item\algorithm_insertion_sort_test.h" />
     <ClInclude Include="src\test_algorithm\item\algorithm_maze_test.h" />
     <ClInclude Include="src\test_algorithm\item\algorithm_selection_sort_test.h" />
+    <ClInclude Include="src\test_algorithm\r2_AlgorithmMenu.h" />
     <ClInclude Include="src\test_cpp\console_buffer_test.h" />
     <ClInclude Include="src\test_cpp\console_input_test.h" />
     <ClInclude Include="src\test_cpp\console_text_color_test.h" />
