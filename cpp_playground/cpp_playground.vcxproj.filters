@@ -350,13 +350,13 @@
     <ClCompile Include="src\test_hobby\item\vector3_test.cpp">
       <Filter>test_hobby\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_hobby\r2_ArrayBasedListMenu.cpp">
-      <Filter>test_hobby</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_hobby\r2_MemoryPoolMenu.cpp">
       <Filter>test_hobby</Filter>
     </ClCompile>
     <ClCompile Include="src\test_hobby\HobbyMenu.cpp">
+      <Filter>test_hobby</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_hobby\ArrayBasedListMenu.cpp">
       <Filter>test_hobby</Filter>
     </ClCompile>
   </ItemGroup>
@@ -707,10 +707,10 @@
     <ClInclude Include="src\test_hobby\r2_MemoryPoolMenu.h">
       <Filter>test_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_hobby\r2_ArrayBasedListMenu.h">
+    <ClInclude Include="src\test_hobby\HobbyMenu.h">
       <Filter>test_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_hobby\HobbyMenu.h">
+    <ClInclude Include="src\test_hobby\ArrayBasedListMenu.h">
       <Filter>test_hobby</Filter>
     </ClInclude>
   </ItemGroup>

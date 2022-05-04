@@ -127,7 +127,7 @@
     <ClCompile Include="src\test_hobby\item\infinite_number_test.cpp" />
     <ClCompile Include="src\test_hobby\item\memory_pool_test.cpp" />
     <ClCompile Include="src\test_hobby\item\vector3_test.cpp" />
-    <ClCompile Include="src\test_hobby\r2_ArrayBasedListMenu.cpp" />
+    <ClCompile Include="src\test_hobby\ArrayBasedListMenu.cpp" />
     <ClCompile Include="src\test_hobby\HobbyMenu.cpp" />
     <ClCompile Include="src\test_hobby\r2_MemoryPoolMenu.cpp" />
     <ClCompile Include="src\utility\r2utility_CharacterBuffer.cpp" />
@@ -247,7 +247,7 @@
     <ClInclude Include="src\test_hobby\item\infinite_number_test.h" />
     <ClInclude Include="src\test_hobby\item\memory_pool_test.h" />
     <ClInclude Include="src\test_hobby\item\vector3_test.h" />
-    <ClInclude Include="src\test_hobby\r2_ArrayBasedListMenu.h" />
+    <ClInclude Include="src\test_hobby\ArrayBasedListMenu.h" />
     <ClInclude Include="src\test_hobby\HobbyMenu.h" />
     <ClInclude Include="src\test_hobby\r2_MemoryPoolMenu.h" />
     <ClInclude Include="src\utility\r2utility_CharacterBuffer.h" />

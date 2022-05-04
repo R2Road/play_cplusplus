@@ -8,7 +8,7 @@
 #include "test_hobby/item/infinite_number_test.h"
 #include "test_hobby/item/vector3_test.h"
 
-#include "r2_ArrayBasedListMenu.h"
+#include "ArrayBasedListMenu.h"
 #include "r2_MemoryPoolMenu.h"
 
 r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
