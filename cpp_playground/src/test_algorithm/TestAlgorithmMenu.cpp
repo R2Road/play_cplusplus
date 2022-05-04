@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_AlgorithmMenu.h"
+#include "TestAlgorithmMenu.h"
 
 #include "base/r2cm_Director.h"
 #include "base/r2cm_eTestEndAction.h"

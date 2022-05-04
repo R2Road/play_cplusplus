@@ -353,7 +353,7 @@
     <ClCompile Include="src\test_algorithm\item\algorithm_selection_sort_test.cpp">
       <Filter>test_algorithm\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_algorithm\r2_AlgorithmMenu.cpp">
+    <ClCompile Include="src\test_algorithm\TestAlgorithmMenu.cpp">
       <Filter>test_algorithm</Filter>
     </ClCompile>
   </ItemGroup>
@@ -707,7 +707,7 @@
     <ClInclude Include="src\test_algorithm\item\algorithm_selection_sort_test.h">
       <Filter>test_algorithm\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_algorithm\r2_AlgorithmMenu.h">
+    <ClInclude Include="src\test_algorithm\TestAlgorithmMenu.h">
       <Filter>test_algorithm</Filter>
     </ClInclude>
   </ItemGroup>

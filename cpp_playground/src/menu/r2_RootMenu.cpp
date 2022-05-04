@@ -31,7 +31,7 @@
 #include "r2_MathMenu.h"
 #include "r2_PerformanceMenu.h"
 
-#include "test_algorithm/r2_AlgorithmMenu.h"
+#include "test_algorithm/TestAlgorithmMenu.h"
 
 namespace r2
 {
