@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "std_cout_test.h"
 
-#include <iomanip>
+#include <iomanip> // Manipulator : 조작자, 조정자
 
 #include "base/r2cm_eTestEndAction.h"
 #include "r2/r2_Inspector.h"
