@@ -15,6 +15,6 @@ private:
 	TestAlgorithmMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Test Algorithm"; }
+	static const char* GetTitle() { return "Test Algorithm Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
