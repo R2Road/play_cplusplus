@@ -9,15 +9,12 @@ namespace r2cm
 	class Director;
 }
 
-namespace r2
+class MemoryPoolMenu
 {
-	class MemoryPoolMenu
-	{
-	private:
-		MemoryPoolMenu() = delete;
+private:
+	MemoryPoolMenu() = delete;
 
-	public:
-		static const char* GetTitle() { return "Memory Pool( Inprogress )"; }
-		static r2cm::MenuUp Create( r2cm::Director& director );
-	};
-}
+public:
+	static const char* GetTitle() { return "Memory Pool( Inprogress )"; }
+	static r2cm::MenuUp Create( r2cm::Director& director );
+};

@@ -18,10 +18,10 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem(
 			'1'
-			, []()->const char* { return r2::MemoryPoolMenu::GetTitle(); }
+			, []()->const char* { return MemoryPoolMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
-				director.Setup( r2::MemoryPoolMenu::Create( director ) );
+				director.Setup( MemoryPoolMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);
