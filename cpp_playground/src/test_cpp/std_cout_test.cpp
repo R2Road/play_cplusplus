@@ -149,7 +149,7 @@ namespace std_cout_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ std::showpos : show positive." << r2::linefeed2;
+				std::cout << r2::tab << "+ std::showpos : show positive : 10진수 양수에 + 를 표시 한다." << r2::linefeed2;
 
 				PROCESS_MAIN( std::cout << std::showpos );
 
