@@ -110,4 +110,78 @@ namespace std_cout_test
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
+
+	r2cm::iItem::TitleFuncT NumberFormat::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::cout : Number Format";
+		};
+	}
+	r2cm::iItem::DoFuncT NumberFormat::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
+			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ std::oct, hex, dec" << r2::linefeed2;
+
+				PROCESS_MAIN( std::cout << std::oct << 10 << r2::linefeed );
+				PROCESS_MAIN( std::cout << std::hex << 10 << r2::linefeed );
+				PROCESS_MAIN( std::cout << std::dec << 10 << r2::linefeed );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ std::showbase" << r2::linefeed2;
+
+				PROCESS_MAIN( std::cout << std::showbase );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( std::cout << std::oct << 10 << r2::linefeed );
+				PROCESS_MAIN( std::cout << std::hex << 10 << r2::linefeed );
+				PROCESS_MAIN( std::cout << std::dec << 10 << r2::linefeed );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ std::showpos : show positive" << r2::linefeed2;
+
+				PROCESS_MAIN( std::cout << std::showpos );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( std::cout << 10 << r2::linefeed );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( std::cout << std::noshowpos );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( std::cout << 10 << r2::linefeed );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
 }

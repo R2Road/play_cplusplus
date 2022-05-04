@@ -93,6 +93,7 @@ namespace r2
 			ret->AddItem( 'z', std_regex_test::Basic::GetInstance() );
 			ret->AddItem( 'x', std_cout_test::Align::GetInstance() );
 			ret->AddItem( 'c', std_cout_test::FMTStatus::GetInstance() );
+			ret->AddItem( 'v', std_cout_test::NumberFormat::GetInstance() );
 
 
 			ret->AddSplit();
