@@ -246,6 +246,7 @@ namespace std_cout_test
 
 			{
 				std::cout << r2::tab << "+ Note : std::setw, std::right 등은 한 번 작동한다. 유지되지 않는다." << r2::linefeed;
+				std::cout << r2::tab << "+ Note : std::setfill 은 유지 된다." << r2::linefeed;
 			}
 
 			std::cout << r2::split;
