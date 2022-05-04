@@ -170,18 +170,6 @@
     <ClCompile Include="src\test_cpp\std_function_2_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_algorithm\algorithm_bubble_sort_test.cpp">
-      <Filter>test_algorithm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\algorithm_insertion_sort_test.cpp">
-      <Filter>test_algorithm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\algorithm_maze_test.cpp">
-      <Filter>test_algorithm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\algorithm_selection_sort_test.cpp">
-      <Filter>test_algorithm</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2\r2_Direction4.cpp">
       <Filter>r2</Filter>
     </ClCompile>
@@ -205,9 +193,6 @@
     </ClCompile>
     <ClCompile Include="src\test_cpp\debug_test.cpp">
       <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\algorithm_astar_test.cpp">
-      <Filter>test_algorithm</Filter>
     </ClCompile>
     <ClCompile Include="src\r2\r2_Direction8.cpp">
       <Filter>r2</Filter>
@@ -338,9 +323,6 @@
     <ClCompile Include="src\base\r2cm_Menu.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_algorithm\algorithm_etc_test.cpp">
-      <Filter>test_algorithm</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\std_fstream_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -352,6 +334,24 @@
     </ClCompile>
     <ClCompile Include="src\test_cpp\std_cout_test.cpp">
       <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_algorithm\item\algorithm_astar_test.cpp">
+      <Filter>test_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_algorithm\item\algorithm_bubble_sort_test.cpp">
+      <Filter>test_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_algorithm\item\algorithm_etc_test.cpp">
+      <Filter>test_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_algorithm\item\algorithm_insertion_sort_test.cpp">
+      <Filter>test_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_algorithm\item\algorithm_maze_test.cpp">
+      <Filter>test_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_algorithm\item\algorithm_selection_sort_test.cpp">
+      <Filter>test_algorithm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -503,18 +503,6 @@
     <ClInclude Include="src\test_cpp\std_function_2_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_algorithm\algorithm_bubble_sort_test.h">
-      <Filter>test_algorithm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\algorithm_insertion_sort_test.h">
-      <Filter>test_algorithm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\algorithm_maze_test.h">
-      <Filter>test_algorithm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\algorithm_selection_sort_test.h">
-      <Filter>test_algorithm</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2\r2_Direction4.h">
       <Filter>r2</Filter>
     </ClInclude>
@@ -538,9 +526,6 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\debug_test.h">
       <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\algorithm_astar_test.h">
-      <Filter>test_algorithm</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_Direction8.h">
       <Filter>r2</Filter>
@@ -692,9 +677,6 @@
     <ClInclude Include="src\base\r2cm_Menu.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_algorithm\algorithm_etc_test.h">
-      <Filter>test_algorithm</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\std_fstream_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -706,6 +688,24 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\std_cout_test.h">
       <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_algorithm\item\algorithm_astar_test.h">
+      <Filter>test_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_algorithm\item\algorithm_bubble_sort_test.h">
+      <Filter>test_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_algorithm\item\algorithm_etc_test.h">
+      <Filter>test_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_algorithm\item\algorithm_insertion_sort_test.h">
+      <Filter>test_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_algorithm\item\algorithm_maze_test.h">
+      <Filter>test_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_algorithm\item\algorithm_selection_sort_test.h">
+      <Filter>test_algorithm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

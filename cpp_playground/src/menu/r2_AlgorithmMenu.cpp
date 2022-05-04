@@ -5,13 +5,13 @@
 #include "base/r2cm_eTestEndAction.h"
 #include "r2_RootMenu.h"
 
-#include "test_algorithm/algorithm_bubble_sort_test.h"
-#include "test_algorithm/algorithm_selection_sort_test.h"
-#include "test_algorithm/algorithm_insertion_sort_test.h"
+#include "test_algorithm/item/algorithm_bubble_sort_test.h"
+#include "test_algorithm/item/algorithm_selection_sort_test.h"
+#include "test_algorithm/item/algorithm_insertion_sort_test.h"
 
-#include "test_algorithm/algorithm_astar_test.h"
-#include "test_algorithm/algorithm_etc_test.h"
-#include "test_algorithm/algorithm_maze_test.h"
+#include "test_algorithm/item/algorithm_astar_test.h"
+#include "test_algorithm/item/algorithm_etc_test.h"
+#include "test_algorithm/item/algorithm_maze_test.h"
 
 namespace r2
 {
