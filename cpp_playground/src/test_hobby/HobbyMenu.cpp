@@ -49,10 +49,10 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			'z'
-			, []()->const char* { return r2::ArrayBasedListMenu::GetTitle(); }
+			, []()->const char* { return ArrayBasedListMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
-				director.Setup( r2::ArrayBasedListMenu::Create( director ) );
+				director.Setup( ArrayBasedListMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);

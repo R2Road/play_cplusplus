@@ -9,15 +9,12 @@ namespace r2cm
 	class Director;
 }
 
-namespace r2
+class ArrayBasedListMenu
 {
-	class ArrayBasedListMenu
-	{
-	private:
-		ArrayBasedListMenu() = delete;
+private:
+	ArrayBasedListMenu() = delete;
 
-	public:
-		static const char* GetTitle() { return "Array Based List"; }
-		static r2cm::MenuUp Create( r2cm::Director& director );
-	};
-}
+public:
+	static const char* GetTitle() { return "Array Based List Menu"; }
+	static r2cm::MenuUp Create( r2cm::Director& director );
+};
