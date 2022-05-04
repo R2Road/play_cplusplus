@@ -117,26 +117,6 @@ namespace std_cout_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ std::showpos : show positive" << r2::linefeed2;
-
-				PROCESS_MAIN( std::cout << std::showpos );
-
-				std::cout << r2::linefeed;
-
-				PROCESS_MAIN( std::cout << 10 << r2::linefeed );
-
-				std::cout << r2::linefeed;
-
-				PROCESS_MAIN( std::cout << std::noshowpos );
-
-				std::cout << r2::linefeed;
-
-				PROCESS_MAIN( std::cout << 10 << r2::linefeed );
-			}
-
-			std::cout << r2::split;
-
-			{
 				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
@@ -165,6 +145,26 @@ namespace std_cout_test
 
 			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
 			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ std::showpos : show positive." << r2::linefeed2;
+
+				PROCESS_MAIN( std::cout << std::showpos );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( std::cout << 10 << r2::linefeed );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( std::cout << std::noshowpos );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( std::cout << 10 << r2::linefeed );
+			}
 
 			std::cout << r2::split;
 
