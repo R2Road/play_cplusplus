@@ -9,15 +9,12 @@ namespace r2cm
 	class Director;
 }
 
-namespace r2
+class TestAlgorithmMenu
 {
-	class AlgorithmMenu
-	{
-	private:
-		AlgorithmMenu() = delete;
+private:
+	TestAlgorithmMenu() = delete;
 
-	public:
-		static const char* GetTitle() { return "Algorithm"; }
-		static r2cm::MenuUp Create( r2cm::Director& director );
-	};
-}
+public:
+	static const char* GetTitle() { return "Test Algorithm"; }
+	static r2cm::MenuUp Create( r2cm::Director& director );
+};

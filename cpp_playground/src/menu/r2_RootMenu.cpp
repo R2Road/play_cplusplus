@@ -220,10 +220,10 @@ namespace r2
 
 			ret->AddItem(
 				32
-				, []()->const char* { return r2::AlgorithmMenu::GetTitle(); }
+				, []()->const char* { return TestAlgorithmMenu::GetTitle(); }
 				, [&director]()->r2cm::eTestEndAction
 				{
-					director.Setup( r2::AlgorithmMenu::Create( director ) );
+					director.Setup( TestAlgorithmMenu::Create( director ) );
 					return r2cm::eTestEndAction::None;
 				}
 			);
