@@ -70,6 +70,8 @@ namespace std_cout_test
 		};
 	}
 
+
+
 	r2cm::iItem::TitleFuncT NumberFormat_1::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -144,6 +146,8 @@ namespace std_cout_test
 		};
 	}
 
+
+
 	r2cm::iItem::TitleFuncT NumberFormat_2::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -195,6 +199,8 @@ namespace std_cout_test
 		};
 	}
 
+
+
 	r2cm::iItem::TitleFuncT Align::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -207,6 +213,11 @@ namespace std_cout_test
 		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
+			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
 
 			std::cout << r2::split;
 
@@ -235,6 +246,12 @@ namespace std_cout_test
 
 			{
 				std::cout << r2::tab << "+ Note : std::setw, std::right 등은 한 번 작동한다. 유지되지 않는다." << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
 			std::cout << r2::split;
