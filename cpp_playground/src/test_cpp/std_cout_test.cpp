@@ -64,6 +64,10 @@ namespace std_cout_test
 
 			std::cout << r2::split;
 
+			std::cout << r2::tab << "+ Note : 표기 방식등의 Format은 유지된다." << r2::linefeed;
+
+			std::cout << r2::split;
+
 			std::cout << r2::tab << "+ Status Save" << r2::linefeed2;
 
 			DECLARATION_MAIN( std::ios last_fmt( nullptr ) );
