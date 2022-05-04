@@ -184,4 +184,55 @@ namespace std_cout_test
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
+
+	r2cm::iItem::TitleFuncT NumberFormat_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::cout : Number Format 2";
+		};
+	}
+	r2cm::iItem::DoFuncT NumberFormat_2::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
+			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ std::uppercase : 16진수의 영문자를 대문자 표기로 바꾼다." << r2::linefeed2;
+
+				PROCESS_MAIN( std::cout << std::showbase );
+				PROCESS_MAIN( std::cout << std::uppercase );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( std::cout << std::hex << 10 << r2::linefeed );
+
+				std::cout << r2::linefeed2;
+
+				PROCESS_MAIN( std::cout << std::nouppercase );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( std::cout << std::hex << 10 << r2::linefeed );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
 }

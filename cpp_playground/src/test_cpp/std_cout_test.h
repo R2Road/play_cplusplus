@@ -25,4 +25,11 @@ namespace std_cout_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class NumberFormat_2 : public r2cm::iItem, public r2::SingleTon<NumberFormat_2>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }
