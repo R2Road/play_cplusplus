@@ -18,15 +18,15 @@
 #include "r2_LambdaMenu.h"
 #include "r2_NewMenu.h"
 
-#include "test_cpp/structured_binding_test.h"
-#include "test_cpp/pointer_test.h"
+#include "test_cpp/item/structured_binding_test.h"
+#include "test_cpp/item/pointer_test.h"
 
-#include "test_cpp/lambda_test.h"
-#include "test_cpp/print_test.h"
+#include "test_cpp/item/lambda_test.h"
+#include "test_cpp/item/print_test.h"
 #include "r2_CharMenu.h"
 #include "r2_STDMenu.h"
 
-#include "test_cpp/console_input_test.h"
+#include "test_cpp/item/console_input_test.h"
 #include "r2_ETCMenu.h"
 #include "r2_MathMenu.h"
 #include "r2_PerformanceMenu.h"

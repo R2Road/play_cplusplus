@@ -5,7 +5,7 @@
 #include "base/r2cm_eTestEndAction.h"
 #include "r2_STDMenu.h"
 
-#include "test_cpp/std_memory_test.h"
+#include "test_cpp/item/std_memory_test.h"
 
 namespace r2
 {

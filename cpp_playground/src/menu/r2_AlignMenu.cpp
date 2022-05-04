@@ -5,10 +5,10 @@
 #include "base/r2cm_eTestEndAction.h"
 #include "r2_RootMenu.h"
 
-#include "test_cpp/alignof_test.h"
-#include "test_cpp/alignas_test.h"
-#include "test_cpp/align_test.h"
-#include "test_cpp/struct_member_alignment_test.h"
+#include "test_cpp/item/alignof_test.h"
+#include "test_cpp/item/alignas_test.h"
+#include "test_cpp/item/align_test.h"
+#include "test_cpp/item/struct_member_alignment_test.h"
 
 namespace r2
 {

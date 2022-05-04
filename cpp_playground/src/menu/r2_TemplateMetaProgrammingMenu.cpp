@@ -5,9 +5,9 @@
 #include "base/r2cm_eTestEndAction.h"
 #include "r2_TemplateMenu.h"
 
-#include "test_cpp/template_meta_programming_01_test.h"
-#include "test_cpp/template_meta_programming_02_test.h"
-#include "test_cpp/template_meta_programming_03_test.h"
+#include "test_cpp/item/template_meta_programming_01_test.h"
+#include "test_cpp/item/template_meta_programming_02_test.h"
+#include "test_cpp/item/template_meta_programming_03_test.h"
 
 namespace r2
 {

@@ -5,8 +5,8 @@
 #include "base/r2cm_eTestEndAction.h"
 #include "r2_RootMenu.h"
 
-#include "test_cpp/performance_1_test.h"
-#include "test_cpp/performance_container_iteration_test.h"
+#include "test_cpp/item/performance_1_test.h"
+#include "test_cpp/item/performance_container_iteration_test.h"
 
 namespace r2
 {

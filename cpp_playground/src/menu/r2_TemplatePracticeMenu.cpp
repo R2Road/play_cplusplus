@@ -5,7 +5,7 @@
 #include "base/r2cm_eTestEndAction.h"
 #include "r2_TemplateMenu.h"
 
-#include "test_cpp/template_practice_part_01_test.h"
+#include "test_cpp/item/template_practice_part_01_test.h"
 
 namespace r2
 {

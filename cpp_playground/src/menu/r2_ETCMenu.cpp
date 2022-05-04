@@ -5,8 +5,8 @@
 #include "base/r2cm_eTestEndAction.h"
 #include "r2_RootMenu.h"
 
-#include "test_cpp/class_test.h"
-#include "test_cpp/etc_0_test.h"
+#include "test_cpp/item/class_test.h"
+#include "test_cpp/item/etc_0_test.h"
 
 namespace r2
 {

@@ -10,16 +10,16 @@
 #include "r2_STDNumericMenu.h"
 #include "r2_STDThreadMenu.h"
 
-#include "test_cpp/std_algorithm_test.h"
-#include "test_cpp/std_cout_test.h"
-#include "test_cpp/std_function_test.h"
-#include "test_cpp/std_function_2_test.h"
-#include "test_cpp/std_fstream_test.h"
-#include "test_cpp/std_optional_test.h"
-#include "test_cpp/std_regex_test.h"
-#include "test_cpp/std_stringview_test.h"
-#include "test_cpp/std_tuple_test.h"
-#include "test_cpp/std_variant_test.h"
+#include "test_cpp/item/std_algorithm_test.h"
+#include "test_cpp/item/std_cout_test.h"
+#include "test_cpp/item/std_function_test.h"
+#include "test_cpp/item/std_function_2_test.h"
+#include "test_cpp/item/std_fstream_test.h"
+#include "test_cpp/item/std_optional_test.h"
+#include "test_cpp/item/std_regex_test.h"
+#include "test_cpp/item/std_stringview_test.h"
+#include "test_cpp/item/std_tuple_test.h"
+#include "test_cpp/item/std_variant_test.h"
 
 namespace r2
 {

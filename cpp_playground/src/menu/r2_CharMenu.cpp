@@ -5,10 +5,10 @@
 #include "base/r2cm_eTestEndAction.h"
 #include "r2_RootMenu.h"
 
-#include "test_cpp/char_test.h"
-#include "test_cpp/locale_test.h"
+#include "test_cpp/item/char_test.h"
+#include "test_cpp/item/locale_test.h"
 
-#include "test_cpp/korean_test.h"
+#include "test_cpp/item/korean_test.h"
 
 namespace r2
 {

@@ -5,8 +5,8 @@
 #include "base/r2cm_eTestEndAction.h"
 #include "r2_STDMenu.h"
 
-#include "test_cpp/atomic_test.h"
-#include "test_cpp/std_thread_test.h"
+#include "test_cpp/item/atomic_test.h"
+#include "test_cpp/item/std_thread_test.h"
 
 namespace r2
 {

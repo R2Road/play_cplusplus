@@ -5,7 +5,7 @@
 #include "base/r2cm_eTestEndAction.h"
 #include "r2_RootMenu.h"
 
-#include "test_cpp/lambda_test.h"
+#include "test_cpp/item/lambda_test.h"
 
 namespace r2
 {

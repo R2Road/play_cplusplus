@@ -5,7 +5,7 @@
 #include "base/r2cm_eTestEndAction.h"
 #include "r2_TemplateMenu.h"
 
-#include "test_cpp/variadic_template_test.h"
+#include "test_cpp/item/variadic_template_test.h"
 
 namespace r2
 {

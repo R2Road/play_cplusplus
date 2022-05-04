@@ -8,12 +8,12 @@
 #include "r2_ConsoleWindowMenu.h"
 #include "r2_RootMenu.h"
 
-#include "test_cpp/console_buffer_test.h"
-#include "test_cpp/flickering_research.h"
-#include "test_cpp/console_input_test.h"
-#include "test_cpp/console_test.h"
-#include "test_cpp/console_window_input_test.h"
-#include "test_cpp/console_window_message_test.h"
+#include "test_cpp/item/console_buffer_test.h"
+#include "test_cpp/item/flickering_research.h"
+#include "test_cpp/item/console_input_test.h"
+#include "test_cpp/item/console_test.h"
+#include "test_cpp/item/console_window_input_test.h"
+#include "test_cpp/item/console_window_message_test.h"
 
 // # REF
 // https://docs.microsoft.com/en-us/windows/console/console-reference

@@ -6,7 +6,7 @@
 
 #include "r2_ConsoleMenu.h"
 
-#include "test_cpp/console_text_color_test.h"
+#include "test_cpp/item/console_text_color_test.h"
 
 // # REF
 // https://docs.microsoft.com/en-us/windows/console/console-reference
