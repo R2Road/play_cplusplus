@@ -201,6 +201,86 @@ namespace std_cout_test
 
 
 
+	r2cm::iItem::TitleFuncT NumberFormat_3::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::cout : Number Format 3";
+		};
+	}
+	r2cm::iItem::DoFuncT NumberFormat_3::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
+			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ std::showpoint" << r2::linefeed2;
+
+				PROCESS_MAIN( std::cout << std::showpoint );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( std::cout << 10.f << r2::linefeed );
+				PROCESS_MAIN( std::cout << 11.2f << r2::linefeed );
+
+
+				std::cout << r2::linefeed2;
+
+
+				PROCESS_MAIN( std::cout << std::noshowpoint );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( std::cout << 10.f << r2::linefeed );
+				PROCESS_MAIN( std::cout << 11.2f << r2::linefeed );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ std::setprecision" << r2::linefeed2;
+
+				PROCESS_MAIN( std::cout << std::setprecision( 10 ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( std::cout << 1110.f << r2::linefeed );
+				PROCESS_MAIN( std::cout << 123.45f << r2::linefeed );
+
+
+				std::cout << r2::linefeed2;
+
+
+				PROCESS_MAIN( std::cout << std::setprecision( 5 ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( std::cout << 1110.f << r2::linefeed );
+				PROCESS_MAIN( std::cout << 123.45f << r2::linefeed );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT Align::GetTitleFunction() const
 	{
 		return []()->const char*
