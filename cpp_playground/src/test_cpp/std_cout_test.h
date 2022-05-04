@@ -5,13 +5,6 @@
 
 namespace std_cout_test
 {
-	class Align : public r2cm::iItem, public r2::SingleTon<Align>
-	{
-	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
-	};
-
 	class FMTStatus : public r2cm::iItem, public r2::SingleTon<FMTStatus>
 	{
 	public:
@@ -27,6 +20,13 @@ namespace std_cout_test
 	};
 
 	class NumberFormat_2 : public r2cm::iItem, public r2::SingleTon<NumberFormat_2>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
+	class Align : public r2cm::iItem, public r2::SingleTon<Align>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

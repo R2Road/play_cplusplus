@@ -91,10 +91,10 @@ namespace r2
 			ret->AddLineFeed();
 
 			ret->AddItem( 'z', std_regex_test::Basic::GetInstance() );
-			ret->AddItem( 'x', std_cout_test::Align::GetInstance() );
-			ret->AddItem( 'c', std_cout_test::FMTStatus::GetInstance() );
-			ret->AddItem( 'v', std_cout_test::NumberFormat_1::GetInstance() );
-			ret->AddItem( 'b', std_cout_test::NumberFormat_2::GetInstance() );
+			ret->AddItem( 'x', std_cout_test::FMTStatus::GetInstance() );
+			ret->AddItem( 'c', std_cout_test::NumberFormat_1::GetInstance() );
+			ret->AddItem( 'v', std_cout_test::NumberFormat_2::GetInstance() );
+			ret->AddItem( 'b', std_cout_test::Align::GetInstance() );
 
 
 			ret->AddSplit();
