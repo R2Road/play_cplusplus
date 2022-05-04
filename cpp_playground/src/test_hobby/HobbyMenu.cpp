@@ -9,7 +9,7 @@
 #include "test_hobby/item/vector3_test.h"
 
 #include "ArrayBasedListMenu.h"
-#include "r2_MemoryPoolMenu.h"
+#include "MemoryPoolMenu.h"
 
 r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 {
