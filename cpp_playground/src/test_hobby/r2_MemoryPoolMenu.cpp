@@ -5,7 +5,7 @@
 #include "base/r2cm_eTestEndAction.h"
 #include "r2_HobbyMenu.h"
 
-#include "test_hobby/memory_pool_test.h"
+#include "test_hobby/item/memory_pool_test.h"
 
 namespace r2
 {

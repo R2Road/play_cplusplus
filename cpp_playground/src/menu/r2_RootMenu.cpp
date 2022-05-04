@@ -7,7 +7,7 @@
 #include "r2_ConsoleMenu.h"
 #include "r2_DebugMenu.h"
 #include "r2_FileSystemMenu.h"
-#include "r2_HobbyMenu.h"
+#include "test_hobby/r2_HobbyMenu.h"
 #include "r2_PointerMenu.h"
 #include "r2_RandomMenu.h"
 #include "r2_TemplateMenu.h"

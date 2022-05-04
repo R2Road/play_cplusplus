@@ -224,9 +224,6 @@
     <ClCompile Include="src\test_cpp\window_time_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\r2_HobbyMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\std_thread_test.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -271,12 +268,6 @@
     </ClCompile>
     <ClCompile Include="src\test_cpp\console_window_message_test.cpp">
       <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_ArrayBasedListMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_MemoryPoolMenu.cpp">
-      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\test_cpp\std_regex_test.cpp">
       <Filter>test_cpp</Filter>
@@ -358,6 +349,15 @@
     </ClCompile>
     <ClCompile Include="src\test_hobby\item\vector3_test.cpp">
       <Filter>test_hobby\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_hobby\r2_ArrayBasedListMenu.cpp">
+      <Filter>test_hobby</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_hobby\r2_HobbyMenu.cpp">
+      <Filter>test_hobby</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_hobby\r2_MemoryPoolMenu.cpp">
+      <Filter>test_hobby</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -557,9 +557,6 @@
     <ClInclude Include="src\test_cpp\window_time_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu\r2_HobbyMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\std_thread_test.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -607,12 +604,6 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\console_window_message_test.h">
       <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_ArrayBasedListMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_MemoryPoolMenu.h">
-      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\std_regex_test.h">
       <Filter>test_cpp</Filter>
@@ -712,6 +703,15 @@
     </ClInclude>
     <ClInclude Include="src\test_hobby\item\vector3_test.h">
       <Filter>test_hobby\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\r2_MemoryPoolMenu.h">
+      <Filter>test_hobby</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\r2_ArrayBasedListMenu.h">
+      <Filter>test_hobby</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\r2_HobbyMenu.h">
+      <Filter>test_hobby</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

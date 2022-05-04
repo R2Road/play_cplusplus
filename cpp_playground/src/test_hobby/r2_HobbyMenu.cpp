@@ -3,13 +3,13 @@
 
 #include "base/r2cm_Director.h"
 #include "base/r2cm_eTestEndAction.h"
-#include "r2_RootMenu.h"
+#include "menu/r2_RootMenu.h"
 
 #include "test_hobby/item/infinite_number_test.h"
 #include "test_hobby/item/vector3_test.h"
 
-#include "menu/r2_ArrayBasedListMenu.h"
-#include "menu/r2_MemoryPoolMenu.h"
+#include "r2_ArrayBasedListMenu.h"
+#include "r2_MemoryPoolMenu.h"
 
 namespace r2
 {

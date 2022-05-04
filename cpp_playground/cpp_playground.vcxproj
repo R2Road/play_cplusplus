@@ -22,12 +22,9 @@
     <ClCompile Include="src\algorithm\r2algorithm_astar_PathBuilder.cpp" />
     <ClCompile Include="src\base\r2cm_Director.cpp" />
     <ClCompile Include="src\base\r2cm_Menu.cpp" />
-    <ClCompile Include="src\menu\r2_ArrayBasedListMenu.cpp" />
     <ClCompile Include="src\menu\ConsoleTextColorMenu.cpp" />
     <ClCompile Include="src\menu\r2_ConsoleWindowMenu.cpp" />
     <ClCompile Include="src\menu\r2_DebugMenu.cpp" />
-    <ClCompile Include="src\menu\r2_HobbyMenu.cpp" />
-    <ClCompile Include="src\menu\r2_MemoryPoolMenu.cpp" />
     <ClCompile Include="src\menu\r2_STDNumericMenu.cpp" />
     <ClCompile Include="src\menu\r2_AlignMenu.cpp" />
     <ClCompile Include="src\menu\r2_CharMenu.cpp" />
@@ -130,6 +127,9 @@
     <ClCompile Include="src\test_hobby\item\infinite_number_test.cpp" />
     <ClCompile Include="src\test_hobby\item\memory_pool_test.cpp" />
     <ClCompile Include="src\test_hobby\item\vector3_test.cpp" />
+    <ClCompile Include="src\test_hobby\r2_ArrayBasedListMenu.cpp" />
+    <ClCompile Include="src\test_hobby\r2_HobbyMenu.cpp" />
+    <ClCompile Include="src\test_hobby\r2_MemoryPoolMenu.cpp" />
     <ClCompile Include="src\utility\r2utility_CharacterBuffer.cpp" />
     <ClCompile Include="src\utility\r2utility_FileUtil.cpp" />
     <ClCompile Include="src\utility\r2utility_StopWatch.cpp" />
@@ -142,12 +142,9 @@
     <ClInclude Include="src\base\r2cm_eTestEndAction.h" />
     <ClInclude Include="src\base\r2cm_iItem.h" />
     <ClInclude Include="src\base\r2cm_Menu.h" />
-    <ClInclude Include="src\menu\r2_ArrayBasedListMenu.h" />
     <ClInclude Include="src\menu\ConsoleTextColorMenu.h" />
     <ClInclude Include="src\menu\r2_ConsoleWindowMenu.h" />
     <ClInclude Include="src\menu\r2_DebugMenu.h" />
-    <ClInclude Include="src\menu\r2_HobbyMenu.h" />
-    <ClInclude Include="src\menu\r2_MemoryPoolMenu.h" />
     <ClInclude Include="src\menu\r2_STDNumericMenu.h" />
     <ClInclude Include="src\menu\r2_AlignMenu.h" />
     <ClInclude Include="src\menu\r2_CharMenu.h" />
@@ -250,6 +247,9 @@
     <ClInclude Include="src\test_hobby\item\infinite_number_test.h" />
     <ClInclude Include="src\test_hobby\item\memory_pool_test.h" />
     <ClInclude Include="src\test_hobby\item\vector3_test.h" />
+    <ClInclude Include="src\test_hobby\r2_ArrayBasedListMenu.h" />
+    <ClInclude Include="src\test_hobby\r2_HobbyMenu.h" />
+    <ClInclude Include="src\test_hobby\r2_MemoryPoolMenu.h" />
     <ClInclude Include="src\utility\r2utility_CharacterBuffer.h" />
     <ClInclude Include="src\utility\r2utility_FileUtil.h" />
     <ClInclude Include="src\utility\r2utility_StopWatch.h" />
