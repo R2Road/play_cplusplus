@@ -111,14 +111,14 @@ namespace std_cout_test
 		};
 	}
 
-	r2cm::iItem::TitleFuncT NumberFormat::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT NumberFormat_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "std::cout : Number Format";
+			return "std::cout : Number Format 1";
 		};
 	}
-	r2cm::iItem::DoFuncT NumberFormat::GetDoFunction()
+	r2cm::iItem::DoFuncT NumberFormat_1::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
