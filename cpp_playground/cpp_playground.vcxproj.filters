@@ -31,6 +31,12 @@
     <Filter Include="r2cm">
       <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test_windows">
+      <UniqueIdentifier>{8067c90e-f3a8-481b-9de8-239c1fd0385a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test_windows\item">
+      <UniqueIdentifier>{5a415f0f-d9ca-4c8d-931c-02fee8c5145d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -363,8 +369,8 @@
     <ClCompile Include="src\test_cpp\STDMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\mmsystem_test.cpp">
-      <Filter>test_cpp\item</Filter>
+    <ClCompile Include="src\test_windows\item\mmsystem_test.cpp">
+      <Filter>test_windows\item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -724,8 +730,8 @@
     <ClInclude Include="src\test_cpp\STDMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\mmsystem_test.h">
-      <Filter>test_cpp\item</Filter>
+    <ClInclude Include="src\test_windows\item\mmsystem_test.h">
+      <Filter>test_windows\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

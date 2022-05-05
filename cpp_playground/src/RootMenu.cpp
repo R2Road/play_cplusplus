@@ -16,7 +16,7 @@
 #include "test_cpp/item/pointer_test.h"
 
 #include "test_cpp/item/lambda_test.h"
-#include "test_cpp/item/mmsystem_test.h"
+#include "test_windows/item/mmsystem_test.h"
 #include "test_cpp/item/print_test.h"
 #include "test_cpp/r2_CharMenu.h"
 #include "test_cpp/STDMenu.h"

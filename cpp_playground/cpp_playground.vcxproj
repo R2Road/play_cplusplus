@@ -69,7 +69,6 @@
     <ClCompile Include="src\test_cpp\item\korean_test.cpp" />
     <ClCompile Include="src\test_cpp\item\lambda_test.cpp" />
     <ClCompile Include="src\test_cpp\item\locale_test.cpp" />
-    <ClCompile Include="src\test_cpp\item\mmsystem_test.cpp" />
     <ClCompile Include="src\test_cpp\item\new_test.cpp" />
     <ClCompile Include="src\test_cpp\item\performance_1_test.cpp" />
     <ClCompile Include="src\test_cpp\item\performance_container_iteration_test.cpp" />
@@ -133,6 +132,7 @@
     <ClCompile Include="src\test_hobby\ArrayBasedListMenu.cpp" />
     <ClCompile Include="src\test_hobby\HobbyMenu.cpp" />
     <ClCompile Include="src\test_hobby\MemoryPoolMenu.cpp" />
+    <ClCompile Include="src\test_windows\item\mmsystem_test.cpp" />
     <ClCompile Include="src\utility\r2utility_CharacterBuffer.cpp" />
     <ClCompile Include="src\utility\r2utility_FileUtil.cpp" />
     <ClCompile Include="src\utility\r2utility_StopWatch.cpp" />
@@ -192,7 +192,6 @@
     <ClInclude Include="src\test_cpp\item\korean_test.h" />
     <ClInclude Include="src\test_cpp\item\lambda_test.h" />
     <ClInclude Include="src\test_cpp\item\locale_test.h" />
-    <ClInclude Include="src\test_cpp\item\mmsystem_test.h" />
     <ClInclude Include="src\test_cpp\item\new_test.h" />
     <ClInclude Include="src\test_cpp\item\performance_1_test.h" />
     <ClInclude Include="src\test_cpp\item\performance_container_iteration_test.h" />
@@ -256,6 +255,7 @@
     <ClInclude Include="src\test_hobby\ArrayBasedListMenu.h" />
     <ClInclude Include="src\test_hobby\HobbyMenu.h" />
     <ClInclude Include="src\test_hobby\MemoryPoolMenu.h" />
+    <ClInclude Include="src\test_windows\item\mmsystem_test.h" />
     <ClInclude Include="src\utility\r2utility_CharacterBuffer.h" />
     <ClInclude Include="src\utility\r2utility_FileUtil.h" />
     <ClInclude Include="src\utility\r2utility_StopWatch.h" />
