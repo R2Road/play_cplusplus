@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "mmsystem_test.h"
+#include "windows_sound_test.h"
 
 #include <conio.h>
 #include <Windows.h>
@@ -9,7 +9,7 @@
 
 #include "utility/r2utility_FileUtil.h"
 
-namespace mmsystem_test
+namespace windows_sound_test
 {
 	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
