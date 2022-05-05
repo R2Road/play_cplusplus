@@ -21,6 +21,8 @@
 #include "test_cpp/item/std_tuple_test.h"
 #include "test_cpp/item/std_variant_test.h"
 
+#include "STDCoutMenu.h"
+
 namespace r2
 {
 	r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
@@ -91,14 +93,15 @@ namespace r2
 			ret->AddLineFeed();
 
 			ret->AddItem( 'z', std_regex_test::Basic::GetInstance() );
-			ret->AddItem( 'x', std_cout_test::FMTStatus::GetInstance() );
-			ret->AddItem( 'c', std_cout_test::NumberFormat_1::GetInstance() );
-			ret->AddItem( 'v', std_cout_test::NumberFormat_2::GetInstance() );
-			ret->AddItem( 'b', std_cout_test::NumberFormat_3::GetInstance() );
-			ret->AddItem( 'n', std_cout_test::NumberFormat_4::GetInstance() );
-			ret->AddItem( 'm', std_cout_test::Align::GetInstance() );
-			ret->AddItem( 'l', std_cout_test::Flag::GetInstance() );
-			ret->AddItem( 'k', std_cout_test::BoolAlpha::GetInstance() );
+			ret->AddItem(
+				'x'
+				, []()->const char* { return STDCoutMenu::GetTitle(); }
+				, [&director]()->r2cm::eTestEndAction
+				{
+					director.Setup( STDCoutMenu::Create( director ) );
+					return r2cm::eTestEndAction::None;
+				}
+			);
 
 
 			ret->AddSplit();
