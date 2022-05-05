@@ -6,7 +6,7 @@
 
 #include "test_cpp/item/std_cout_test.h"
 
-#include "r2_STDMenu.h"
+#include "STDMenu.h"
 
 r2cm::MenuUp STDCoutMenu::Create( r2cm::Director& director )
 {

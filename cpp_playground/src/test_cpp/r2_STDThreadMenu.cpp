@@ -7,7 +7,7 @@
 #include "test_cpp/item/atomic_test.h"
 #include "test_cpp/item/std_thread_test.h"
 
-#include "r2_STDMenu.h"
+#include "STDMenu.h"
 
 namespace r2
 {

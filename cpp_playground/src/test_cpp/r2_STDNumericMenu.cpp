@@ -6,7 +6,7 @@
 
 #include "test_cpp/item/std_numeric_test.h"
 
-#include "r2_STDMenu.h"
+#include "STDMenu.h"
 
 namespace r2
 {
