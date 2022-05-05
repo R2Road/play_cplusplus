@@ -8,7 +8,6 @@
 
 #include "test_cpp/r2_ConsoleMenu.h"
 #include "test_cpp/r2_DebugMenu.h"
-#include "test_cpp/r2_FileSystemMenu.h"
 #include "test_hobby/HobbyMenu.h"
 #include "test_cpp/r2_PointerMenu.h"
 #include "test_cpp/r2_RandomMenu.h"
@@ -49,15 +48,6 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 			, [&director]()->r2cm::eTestEndAction
 			{
 				director.Setup( r2::ConsoleMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
-			}
-		);
-		ret->AddItem(
-			'3'
-			, []()->const char* { return r2::FileSystemMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
-			{
-				director.Setup( r2::FileSystemMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);

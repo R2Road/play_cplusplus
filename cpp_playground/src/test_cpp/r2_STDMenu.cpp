@@ -22,6 +22,7 @@
 #include "test_cpp/item/std_variant_test.h"
 
 #include "STDCoutMenu.h"
+#include "test_cpp/r2_FileSystemMenu.h"
 
 namespace r2
 {
@@ -30,7 +31,16 @@ namespace r2
 		r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 		{
-			ret->AddItem( '1', std_optional_test::Basic::GetInstance() );
+			ret->AddItem(
+				'1'
+				, []()->const char* { return r2::FileSystemMenu::GetTitle(); }
+				, [&director]()->r2cm::eTestEndAction
+				{
+					director.Setup( r2::FileSystemMenu::Create( director ) );
+					return r2cm::eTestEndAction::None;
+				}
+			);
+			ret->AddItem( '2', std_optional_test::Basic::GetInstance() );
 			ret->AddItem( '2', std_optional_test::Constructor::GetInstance() );
 			ret->AddItem( '3', std_optional_test::Reference::GetInstance() );
 
