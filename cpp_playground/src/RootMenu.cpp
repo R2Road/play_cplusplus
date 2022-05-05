@@ -91,7 +91,16 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 				director.Setup( C_CPP_Menu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
-		);	
+		);
+		ret->AddItem(
+			'w'
+			, []()->const char* { return STDMenu::GetTitle(); }
+			, [&director]()->r2cm::eTestEndAction
+			{
+				director.Setup( STDMenu::Create( director ) );
+				return r2cm::eTestEndAction::None;
+			}
+		);
 		ret->AddItem(
 			'r'
 			, []()->const char* { return r2::DebugMenu::GetTitle(); }
@@ -106,15 +115,6 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddItem(
-			'a'
-			, []()->const char* { return STDMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
-			{
-				director.Setup( STDMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
-			}
-		);
 		ret->AddItem( 'd', print_test::Basic::GetInstance() );
 		ret->AddItem( 'f', print_test::ShowNumbers::GetInstance() );
 		ret->AddItem(
