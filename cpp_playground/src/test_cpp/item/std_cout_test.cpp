@@ -463,7 +463,7 @@ namespace std_cout_test
 	{
 		return []()->const char*
 		{
-			return "Print : BoolAlpha";
+			return "std::cout : BoolAlpha";
 		};
 	}
 	r2cm::iItem::DoFuncT BoolAlpha::GetDoFunction()
