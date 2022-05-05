@@ -20,7 +20,7 @@ namespace r2
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->r2cm::eTestEndAction
 				{
-					director.Setup( r2::RootMenu::Create( director ) );
+					director.Setup( RootMenu::Create( director ) );
 					return r2cm::eTestEndAction::None;
 				}
 			);
