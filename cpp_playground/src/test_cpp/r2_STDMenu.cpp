@@ -3,7 +3,7 @@
 
 #include "base/r2cm_Director.h"
 #include "base/r2cm_eTestEndAction.h"
-#include "r2_RootMenu.h"
+#include "RootMenu.h"
 
 #include "r2_STDContainerMenu.h"
 #include "r2_STDMemoryMenu.h"
