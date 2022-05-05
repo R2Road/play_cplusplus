@@ -4,6 +4,8 @@
 #include "base/r2cm_Director.h"
 #include "base/r2cm_eTestEndAction.h"
 
+#include "test_cpp/C_CPP_Menu.h"
+
 #include "test_cpp/r2_ConsoleMenu.h"
 #include "test_cpp/r2_DebugMenu.h"
 #include "test_cpp/r2_FileSystemMenu.h"
@@ -127,6 +129,15 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			'q'
+			, []()->const char* { return C_CPP_Menu::GetTitle(); }
+			, [&director]()->r2cm::eTestEndAction
+			{
+				director.Setup( C_CPP_Menu::Create( director ) );
+				return r2cm::eTestEndAction::None;
+			}
+		);
+		ret->AddItem(
+			'w'
 			, []()->const char* { return r2::LambdaMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
@@ -134,9 +145,9 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
-		ret->AddItem( 'w', structured_binding_test::Basic::GetInstance() );			
+		ret->AddItem( 'e', structured_binding_test::Basic::GetInstance() );			
 		ret->AddItem(
-			'e'
+			'r'
 			, []()->const char* { return r2::DebugMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{

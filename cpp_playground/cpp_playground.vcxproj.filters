@@ -357,6 +357,9 @@
       <Filter>test_cpp</Filter>
     </ClCompile>
     <ClCompile Include="src\RootMenu.cpp" />
+    <ClCompile Include="src\test_cpp\C_CPP_Menu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -709,5 +712,8 @@
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\RootMenu.h" />
+    <ClInclude Include="src\test_cpp\C_CPP_Menu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -45,6 +45,7 @@
     <ClCompile Include="src\test_algorithm\item\algorithm_selection_sort_test.cpp" />
     <ClCompile Include="src\test_algorithm\TestAlgorithmMenu.cpp" />
     <ClCompile Include="src\test_cpp\ConsoleTextColorMenu.cpp" />
+    <ClCompile Include="src\test_cpp\C_CPP_Menu.cpp" />
     <ClCompile Include="src\test_cpp\item\alignas_test.cpp" />
     <ClCompile Include="src\test_cpp\item\alignof_test.cpp" />
     <ClCompile Include="src\test_cpp\item\align_test.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="src\test_algorithm\item\algorithm_selection_sort_test.h" />
     <ClInclude Include="src\test_algorithm\TestAlgorithmMenu.h" />
     <ClInclude Include="src\test_cpp\ConsoleTextColorMenu.h" />
+    <ClInclude Include="src\test_cpp\C_CPP_Menu.h" />
     <ClInclude Include="src\test_cpp\item\alignas_test.h" />
     <ClInclude Include="src\test_cpp\item\alignof_test.h" />
     <ClInclude Include="src\test_cpp\item\align_test.h" />
