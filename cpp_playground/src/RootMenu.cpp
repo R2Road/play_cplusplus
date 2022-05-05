@@ -80,6 +80,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem( '7', mmsystem_test::Basic::GetInstance() );
+		ret->AddItem( '8', mmsystem_test::BeepTest::GetInstance() );
 
 
 		ret->AddLineFeed();

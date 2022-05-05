@@ -65,4 +65,52 @@ namespace mmsystem_test
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT BeepTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "utilapiset : Beep";
+		};
+	}
+	r2cm::iItem::DoFuncT BeepTest::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::cout << "[ESC]" " Exit" << r2::linefeed;
+			std::cout << "[1]" " Play Beep" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			bool bPlay = true;
+			do
+			{
+				if( _kbhit() )
+				{
+					switch( _getch() )
+					{
+					case  49: // 1
+					{
+						Beep( 440, 300 );
+					}
+					break;
+
+					case  27: // ESC
+						bPlay = false;
+						break;
+					}
+				}
+			} while( bPlay );
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
 }
