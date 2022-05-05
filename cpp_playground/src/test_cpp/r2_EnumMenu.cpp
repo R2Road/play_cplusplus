@@ -3,9 +3,10 @@
 
 #include "base/r2cm_Director.h"
 #include "base/r2cm_eTestEndAction.h"
-#include "RootMenu.h"
 
 #include "test_cpp/item/enum_test.h"
+
+#include "C_CPP_Menu.h"
 
 namespace r2
 {
@@ -26,7 +27,7 @@ namespace r2
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->r2cm::eTestEndAction
 				{
-					director.Setup( RootMenu::Create( director ) );
+					director.Setup( C_CPP_Menu::Create( director ) );
 					return r2cm::eTestEndAction::None;
 				}
 			);

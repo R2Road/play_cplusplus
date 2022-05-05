@@ -12,13 +12,8 @@
 #include "test_hobby/HobbyMenu.h"
 #include "test_cpp/r2_PointerMenu.h"
 #include "test_cpp/r2_RandomMenu.h"
-#include "test_cpp/r2_TemplateMenu.h"
-#include "test_cpp/r2_AlignMenu.h"
-#include "test_cpp/r2_EnumMenu.h"
 #include "test_cpp/r2_TimeMenu.h"
 
-
-#include "test_cpp/r2_NewMenu.h"
 #include "test_cpp/item/pointer_test.h"
 
 #include "test_cpp/item/lambda_test.h"
@@ -93,33 +88,6 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
-		ret->AddItem(
-			'7'
-			, []()->const char* { return r2::TemplateMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
-			{
-				director.Setup( r2::TemplateMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
-			}
-		);
-		ret->AddItem(
-			'8'
-			, []()->const char* { return r2::AlignMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
-			{
-				director.Setup( r2::AlignMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
-			}
-		);
-		ret->AddItem(
-			'9'
-			, []()->const char* { return r2::EnumMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
-			{
-				director.Setup( r2::EnumMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
-			}
-		);
 
 
 		ret->AddLineFeed();
@@ -154,15 +122,6 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 			, [&director]()->r2cm::eTestEndAction
 			{
 				director.Setup( r2::STDMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
-			}
-		);
-		ret->AddItem(
-			's'
-			, []()->const char* { return r2::NewMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
-			{
-				director.Setup( r2::NewMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);
