@@ -5,13 +5,24 @@
 #include "base/r2cm_eTestEndAction.h"
 
 #include "RootMenu.h"
+#include "test_cpp/item/structured_binding_test.h"
+#include "test_cpp/r2_LambdaMenu.h"
 
 r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, C_CPP_Menu::GetTitle() ) );
 
 	{
-		//ret->AddItem( '1', c_random_test::Rand::GetInstance() );
+		ret->AddItem(
+			'w'
+			, []()->const char* { return r2::LambdaMenu::GetTitle(); }
+			, [&director]()->r2cm::eTestEndAction
+			{
+				director.Setup( r2::LambdaMenu::Create( director ) );
+				return r2cm::eTestEndAction::None;
+			}
+		);
+		ret->AddItem( 'e', structured_binding_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();

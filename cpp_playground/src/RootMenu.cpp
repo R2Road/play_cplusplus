@@ -17,10 +17,8 @@
 #include "test_cpp/r2_EnumMenu.h"
 #include "test_cpp/r2_TimeMenu.h"
 
-#include "test_cpp/r2_LambdaMenu.h"
-#include "test_cpp/r2_NewMenu.h"
 
-#include "test_cpp/item/structured_binding_test.h"
+#include "test_cpp/r2_NewMenu.h"
 #include "test_cpp/item/pointer_test.h"
 
 #include "test_cpp/item/lambda_test.h"
@@ -135,17 +133,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 				director.Setup( C_CPP_Menu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
-		);
-		ret->AddItem(
-			'w'
-			, []()->const char* { return r2::LambdaMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
-			{
-				director.Setup( r2::LambdaMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
-			}
-		);
-		ret->AddItem( 'e', structured_binding_test::Basic::GetInstance() );			
+		);	
 		ret->AddItem(
 			'r'
 			, []()->const char* { return r2::DebugMenu::GetTitle(); }
