@@ -474,21 +474,39 @@ namespace std_cout_test
 
 			std::cout << r2::split;
 
+			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
+			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
+
+			std::cout << r2::split;
+
 			{
-				std::cout << r2::tab << "+ Show Bool : Use std::cout and std::boolalpha" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ std::boolalpha" << r2::linefeed2;
 
-				std::cout << std::noboolalpha;
-				std::cout << r2::tab2 << "true with noboolalpha : " << true << r2::linefeed;
-				std::cout << r2::tab2 << "false with noboolalpha : " << false << r2::linefeed;
+				PROCESS_MAIN( std::cout << std::boolalpha );
 
-				std::cout << r2::linefeed;
+				std::cout << r2::linefeed2;
 
-				std::cout << std::boolalpha;
-				std::cout << r2::tab2 << "true with boolalpha : " << true << r2::linefeed;
-				std::cout << r2::tab2 << "false with boolalpha : " << false << r2::linefeed;
+				PROCESS_MAIN( std::cout << true << r2::linefeed );
+				PROCESS_MAIN( std::cout << false << r2::linefeed );
+			}
 
-				// rollback
-				std::cout << std::noboolalpha;
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ std::noboolalpha" << r2::linefeed2;
+
+				PROCESS_MAIN( std::cout << std::noboolalpha );
+
+				std::cout << r2::linefeed2;
+
+				PROCESS_MAIN( std::cout << true << r2::linefeed );
+				PROCESS_MAIN( std::cout << false << r2::linefeed );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
 			std::cout << r2::split;
