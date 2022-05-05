@@ -23,4 +23,10 @@ namespace r2utility
 #endif
 		return temp_string;
 	}
+
+	std::string MakeSFXPath( const char* file_name )
+	{
+		std::string ret = ( std::filesystem::current_path() / "resources" / "sound" / "sfx" / file_name ).string();
+		return ret;
+	}
 }

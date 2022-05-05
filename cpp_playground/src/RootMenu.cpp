@@ -16,6 +16,7 @@
 #include "test_cpp/item/pointer_test.h"
 
 #include "test_cpp/item/lambda_test.h"
+#include "test_cpp/item/mmsystem_test.h"
 #include "test_cpp/item/print_test.h"
 #include "test_cpp/r2_CharMenu.h"
 #include "test_cpp/STDMenu.h"
@@ -78,6 +79,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
+		ret->AddItem( '7', mmsystem_test::Basic::GetInstance() );
 
 
 		ret->AddLineFeed();
