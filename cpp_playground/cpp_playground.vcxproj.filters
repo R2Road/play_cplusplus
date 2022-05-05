@@ -329,9 +329,6 @@
     <ClCompile Include="src\test_cpp\r2_STDMemoryMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\r2_STDMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\r2_STDNumericMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -362,6 +359,9 @@
     </ClCompile>
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
       <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_STDMenu.cpp">
+      <Filter>test_cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -681,9 +681,6 @@
     <ClInclude Include="src\test_cpp\r2_STDMemoryMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\r2_STDMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\r2_STDNumericMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -720,6 +717,9 @@
     </ClInclude>
     <ClInclude Include="src\r2cm\r2cm_Menu.h">
       <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_STDMenu.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -108,10 +108,10 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			'a'
-			, []()->const char* { return r2::STDMenu::GetTitle(); }
+			, []()->const char* { return STDMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
-				director.Setup( r2::STDMenu::Create( director ) );
+				director.Setup( STDMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);

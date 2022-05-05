@@ -3,10 +3,11 @@
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
-#include "r2_STDMenu.h"
 
 #include "test_cpp/item/atomic_test.h"
 #include "test_cpp/item/std_thread_test.h"
+
+#include "r2_STDMenu.h"
 
 namespace r2
 {
@@ -38,7 +39,7 @@ namespace r2
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->r2cm::eTestEndAction
 				{
-					director.Setup( r2::STDMenu::Create( director ) );
+					director.Setup( STDMenu::Create( director ) );
 					return r2cm::eTestEndAction::None;
 				}
 			);
