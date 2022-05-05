@@ -6,7 +6,7 @@
 #include <random>
 #include <vector>
 
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 
 namespace std_algorithm_test
 {

@@ -3,7 +3,7 @@
 
 #include <iomanip> // Manipulator : 조작자, 조정자
 
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 #include "r2/r2_Inspector.h"
 
 namespace std_cout_test

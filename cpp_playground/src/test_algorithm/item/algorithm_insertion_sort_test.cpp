@@ -3,7 +3,7 @@
 
 #include <array>
 
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 #include "utility/r2utility_StopWatch.h"
 
 namespace algorithm_insertion_sort_test

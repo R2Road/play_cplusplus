@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "MemoryPoolMenu.h"
 
-#include "base/r2cm_Director.h"
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_Director.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 #include "HobbyMenu.h"
 
 #include "test_hobby/item/memory_pool_test.h"

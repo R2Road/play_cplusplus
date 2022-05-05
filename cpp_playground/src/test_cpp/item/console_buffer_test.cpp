@@ -6,7 +6,7 @@
 #include <cstring>
 #include <Windows.h>
 
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 
 namespace console_buffer_test
 {

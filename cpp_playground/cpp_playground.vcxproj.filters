@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="base">
-      <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test_cpp">
       <UniqueIdentifier>{77a45f2c-1f22-46b3-9c35-5ee34c38a7b9}</UniqueIdentifier>
     </Filter>
@@ -30,6 +27,9 @@
     </Filter>
     <Filter Include="test_cpp\item">
       <UniqueIdentifier>{afef003b-bbc9-4b3d-9500-41ffccb176cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="r2cm">
+      <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -64,12 +64,6 @@
     </ClCompile>
     <ClCompile Include="src\r2\r2_PointInt.cpp">
       <Filter>r2</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\r2cm_Director.cpp">
-      <Filter>base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\r2cm_Menu.cpp">
-      <Filter>base</Filter>
     </ClCompile>
     <ClCompile Include="src\r2\r2_Inspector.cpp">
       <Filter>r2</Filter>
@@ -363,6 +357,12 @@
     <ClCompile Include="src\test_cpp\STDCoutMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Director.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -416,18 +416,6 @@
     </ClInclude>
     <ClInclude Include="src\r2\r2_Inspector.h">
       <Filter>r2</Filter>
-    </ClInclude>
-    <ClInclude Include="src\base\r2cm_Director.h">
-      <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\base\r2cm_eTestEndAction.h">
-      <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\base\r2cm_iItem.h">
-      <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\base\r2cm_Menu.h">
-      <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_Assert.h">
       <Filter>r2</Filter>
@@ -720,6 +708,18 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\STDCoutMenu.h">
       <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Director.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_eTestEndAction.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_iItem.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Menu.h">
+      <Filter>r2cm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

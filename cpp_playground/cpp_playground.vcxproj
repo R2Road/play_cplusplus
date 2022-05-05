@@ -20,8 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\algorithm\r2algorithm_astar_PathBuilder.cpp" />
-    <ClCompile Include="src\base\r2cm_Director.cpp" />
-    <ClCompile Include="src\base\r2cm_Menu.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -29,6 +27,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Director.cpp" />
+    <ClCompile Include="src\r2cm\r2cm_Menu.cpp" />
     <ClCompile Include="src\r2\r2_Direction4.cpp" />
     <ClCompile Include="src\r2\r2_Direction8.cpp" />
     <ClCompile Include="src\r2\r2_GridIndexConverter.cpp" />
@@ -140,11 +140,11 @@
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h" />
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h" />
-    <ClInclude Include="src\base\r2cm_Director.h" />
-    <ClInclude Include="src\base\r2cm_eTestEndAction.h" />
-    <ClInclude Include="src\base\r2cm_iItem.h" />
-    <ClInclude Include="src\base\r2cm_Menu.h" />
     <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\r2cm\r2cm_Director.h" />
+    <ClInclude Include="src\r2cm\r2cm_eTestEndAction.h" />
+    <ClInclude Include="src\r2cm\r2cm_iItem.h" />
+    <ClInclude Include="src\r2cm\r2cm_Menu.h" />
     <ClInclude Include="src\r2\r2_ArrayBasedList.h" />
     <ClInclude Include="src\r2\r2_Assert.h" />
     <ClInclude Include="src\r2\r2_Direction4.h" />

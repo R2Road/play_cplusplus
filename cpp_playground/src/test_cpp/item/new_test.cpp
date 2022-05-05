@@ -3,7 +3,7 @@
 
 #include <new>
 
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 
 namespace new_test
 {

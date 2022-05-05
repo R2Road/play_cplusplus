@@ -8,7 +8,7 @@
 
 #include <Windows.h>
 
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 
 namespace c_time_test
 {

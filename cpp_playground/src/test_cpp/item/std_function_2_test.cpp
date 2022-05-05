@@ -3,7 +3,7 @@
 
 #include <functional>
 
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 
 namespace std_function_2_test
 {

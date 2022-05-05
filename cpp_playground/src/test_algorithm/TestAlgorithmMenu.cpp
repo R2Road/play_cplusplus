@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "TestAlgorithmMenu.h"
 
-#include "base/r2cm_Director.h"
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_Director.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 #include "RootMenu.h"
 
 #include "test_algorithm/item/algorithm_bubble_sort_test.h"

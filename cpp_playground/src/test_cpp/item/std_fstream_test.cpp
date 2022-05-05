@@ -5,7 +5,7 @@
 #include <fstream>
 #include <string>
 
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 #include "r2/r2_Inspector.h"
 
 namespace std_fstream_test

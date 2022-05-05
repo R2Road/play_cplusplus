@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "r2_STDMenu.h"
 
-#include "base/r2cm_Director.h"
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_Director.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 #include "RootMenu.h"
 
 #include "r2_STDContainerMenu.h"

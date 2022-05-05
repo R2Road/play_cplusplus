@@ -4,7 +4,7 @@
 #include <memory>
 #include <utility>
 
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 
 namespace std_memory_test
 {

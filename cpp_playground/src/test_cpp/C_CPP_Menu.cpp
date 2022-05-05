@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "C_CPP_Menu.h"
 
-#include "base/r2cm_Director.h"
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_Director.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 
 #include "test_cpp/item/structured_binding_test.h"
 

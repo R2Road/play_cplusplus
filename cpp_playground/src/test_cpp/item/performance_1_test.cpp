@@ -5,7 +5,7 @@
 #include <memory>
 #include <numeric>
 
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 
 #include "utility/r2utility_StopWatch.h"
 

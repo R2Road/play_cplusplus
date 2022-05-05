@@ -7,7 +7,7 @@
 #include <string>
 #include <map>
 
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 #include "utility/r2utility_FileUtil.h"
 
 
