@@ -11,14 +11,14 @@
 
 namespace windows_sound_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PlaySoundTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "mmsystem : Basic";
+			return "mmsystem : PlaySound";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT PlaySoundTest::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{

@@ -5,7 +5,7 @@
 
 namespace windows_sound_test
 {
-	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
+	class PlaySoundTest : public r2cm::iItem, public r2::SingleTon<PlaySoundTest>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

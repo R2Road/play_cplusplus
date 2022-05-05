@@ -79,7 +79,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
-		ret->AddItem( '7', windows_sound_test::Basic::GetInstance() );
+		ret->AddItem( '7', windows_sound_test::PlaySoundTest::GetInstance() );
 		ret->AddItem( '8', windows_sound_test::BeepTest::GetInstance() );
 
 
