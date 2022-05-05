@@ -18,11 +18,4 @@ namespace print_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
-
-	class BoolAlpha : public r2cm::iItem, public r2::SingleTon<BoolAlpha>
-	{
-	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
-	};
 }

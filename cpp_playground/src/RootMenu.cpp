@@ -127,9 +127,8 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem( 'd', print_test::Basic::GetInstance() );
 		ret->AddItem( 'f', print_test::ShowNumbers::GetInstance() );
-		ret->AddItem( 'g', print_test::BoolAlpha::GetInstance() );
 		ret->AddItem(
-			'h'
+			'g'
 			, []()->const char* { return r2::CharMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{

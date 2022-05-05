@@ -456,4 +456,44 @@ namespace std_cout_test
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT BoolAlpha::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Print : BoolAlpha";
+		};
+	}
+	r2cm::iItem::DoFuncT BoolAlpha::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Show Bool : Use std::cout and std::boolalpha" << r2::linefeed << r2::linefeed;
+
+				std::cout << std::noboolalpha;
+				std::cout << r2::tab2 << "true with noboolalpha : " << true << r2::linefeed;
+				std::cout << r2::tab2 << "false with noboolalpha : " << false << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				std::cout << std::boolalpha;
+				std::cout << r2::tab2 << "true with boolalpha : " << true << r2::linefeed;
+				std::cout << r2::tab2 << "false with boolalpha : " << false << r2::linefeed;
+
+				// rollback
+				std::cout << std::noboolalpha;
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
 }
