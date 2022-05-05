@@ -4,9 +4,6 @@
     <Filter Include="base">
       <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
     </Filter>
-    <Filter Include="menu">
-      <UniqueIdentifier>{b9566801-30ec-4d55-bd6d-040901fc06e3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test_cpp">
       <UniqueIdentifier>{77a45f2c-1f22-46b3-9c35-5ee34c38a7b9}</UniqueIdentifier>
     </Filter>
@@ -37,96 +34,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\menu\r2_AlignMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_EnumMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_ETCMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_FileSystemMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_LambdaMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_NewMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_PointerMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_RandomMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_RootMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_TemplateMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_TemplateMetaProgrammingMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_TemplatePracticeMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_TimeMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_VariadicTemplateMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\menu\r2_CharMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_MathMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_PerformanceMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_STDMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2\r2_GridIndexConverter.cpp">
       <Filter>r2</Filter>
     </ClCompile>
     <ClCompile Include="src\r2\r2_Direction4.cpp">
       <Filter>r2</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\r2_DebugMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2\r2_Direction8.cpp">
       <Filter>r2</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\r2_STDMemoryMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_ConsoleMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_STDContainerMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_STDThreadMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_STDNumericMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\algorithm\r2algorithm_astar_PathBuilder.cpp">
       <Filter>algorithm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_ConsoleWindowMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\ConsoleTextColorMenu.cpp">
-      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\utility\r2utility_StopWatch.cpp">
       <Filter>utility</Filter>
@@ -362,66 +281,85 @@
     <ClCompile Include="src\test_cpp\item\window_time_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_VariadicTemplateMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\ConsoleTextColorMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_AlignMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_CharMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_ConsoleMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_ConsoleWindowMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_DebugMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_EnumMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_ETCMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_FileSystemMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_LambdaMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_MathMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_NewMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_PerformanceMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_PointerMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_RandomMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_STDContainerMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_STDMemoryMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_STDMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_STDNumericMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_STDThreadMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_TemplateMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_TemplateMetaProgrammingMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_TemplatePracticeMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\r2_TimeMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_RootMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\menu\r2_AlignMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_ConsoleMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_EnumMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_ETCMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_FileSystemMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_LambdaMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_NewMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_PointerMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_RandomMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_RootMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_TemplateMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_TemplateMetaProgrammingMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_TemplatePracticeMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_TimeMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_VariadicTemplateMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\menu\r2_CharMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_MathMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_PerformanceMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_STDMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2\r2_Grid.h">
       <Filter>r2</Filter>
     </ClInclude>
@@ -431,38 +369,17 @@
     <ClInclude Include="src\r2\r2_Direction4.h">
       <Filter>r2</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu\r2_DebugMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2\r2_Direction8.h">
       <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_ArrayBasedList.h">
       <Filter>r2</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu\r2_STDMemoryMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_STDContainerMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_STDThreadMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_STDNumericMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
       <Filter>algorithm</Filter>
     </ClInclude>
     <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h">
       <Filter>algorithm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_ConsoleWindowMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\ConsoleTextColorMenu.h">
-      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\utility\r2utility_StopWatch.h">
       <Filter>utility</Filter>
@@ -716,5 +633,81 @@
     <ClInclude Include="src\test_cpp\item\window_time_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_VariadicTemplateMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\ConsoleTextColorMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_AlignMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_CharMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_ConsoleMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_ConsoleWindowMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_DebugMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_EnumMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_ETCMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_FileSystemMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_LambdaMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_MathMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_NewMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_PerformanceMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_PointerMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_RandomMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_STDContainerMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_STDMemoryMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_STDMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_STDNumericMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_STDThreadMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_TemplateMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_TemplateMetaProgrammingMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_TemplatePracticeMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\r2_TimeMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_RootMenu.h" />
   </ItemGroup>
 </Project>

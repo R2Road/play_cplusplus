@@ -3,7 +3,7 @@
 
 #include "base/r2cm_Director.h"
 #include "base/r2cm_eTestEndAction.h"
-#include "menu/r2_RootMenu.h"
+#include "r2_RootMenu.h"
 
 #include "test_algorithm/item/algorithm_bubble_sort_test.h"
 #include "test_algorithm/item/algorithm_selection_sort_test.h"

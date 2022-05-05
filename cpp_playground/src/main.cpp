@@ -5,7 +5,7 @@
 #endif
 
 #include "base/r2cm_Director.h"
-#include "menu/r2_RootMenu.h"
+#include "r2_RootMenu.h"
 #include "utility/r2utility_WindowUtil.h"
 
 int main()
