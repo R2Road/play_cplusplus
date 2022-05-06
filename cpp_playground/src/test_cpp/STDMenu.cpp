@@ -8,7 +8,7 @@
 #include "r2_STDContainerMenu.h"
 #include "r2_STDMemoryMenu.h"
 #include "r2_STDNumericMenu.h"
-#include "r2_STDThreadMenu.h"
+#include "STDThreadMenu.h"
 
 #include "test_cpp/item/std_algorithm_test.h"
 #include "test_cpp/item/std_cout_test.h"
