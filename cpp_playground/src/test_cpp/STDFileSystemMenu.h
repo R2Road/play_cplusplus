@@ -9,15 +9,12 @@ namespace r2cm
 	class Director;
 }
 
-namespace r2
+class FileSystemMenu
 {
-	class FileSystemMenu
-	{
-	private:
-		FileSystemMenu() = delete;
+private:
+	FileSystemMenu() = delete;
 
-	public:
-		static const char* GetTitle() { return "File System"; }
-		static r2cm::MenuUp Create( r2cm::Director& director );
-	};
-}
+public:
+	static const char* GetTitle() { return "File System"; }
+	static r2cm::MenuUp Create( r2cm::Director& director );
+};

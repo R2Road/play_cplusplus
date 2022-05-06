@@ -31,10 +31,10 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem(
 			'1'
-			, []()->const char* { return r2::FileSystemMenu::GetTitle(); }
+			, []()->const char* { return FileSystemMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
-				director.Setup( r2::FileSystemMenu::Create( director ) );
+				director.Setup( FileSystemMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);
