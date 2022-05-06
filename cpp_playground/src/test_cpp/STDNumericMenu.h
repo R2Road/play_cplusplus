@@ -9,15 +9,12 @@ namespace r2cm
 	class Director;
 }
 
-namespace r2
+class STDNumericMenu
 {
-	class STDNumericMenu
-	{
-	private:
-		STDNumericMenu() = delete;
+private:
+	STDNumericMenu() = delete;
 
-	public:
-		static const char* GetTitle() { return "Numeric"; }
-		static r2cm::MenuUp Create( r2cm::Director& director );
-	};
-}
+public:
+	static const char* GetTitle() { return "Numeric"; }
+	static r2cm::MenuUp Create( r2cm::Director& director );
+};

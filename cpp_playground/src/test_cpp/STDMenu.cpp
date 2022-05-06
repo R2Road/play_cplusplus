@@ -71,10 +71,10 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			's'
-			, []()->const char* { return r2::STDNumericMenu::GetTitle(); }
+			, []()->const char* { return STDNumericMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
-				director.Setup( r2::STDNumericMenu::Create( director ) );
+				director.Setup( STDNumericMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);
