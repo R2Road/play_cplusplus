@@ -15,11 +15,11 @@
 #include "test_cpp/item/std_tuple_test.h"
 #include "test_cpp/item/std_variant_test.h"
 
-#include "test_cpp/STDFileSystemMenu.h"
 
 #include "RootMenu.h"
 #include "STDContainerMenu.h"
 #include "STDCoutMenu.h"
+#include "STDFileSystemMenu.h"
 #include "STDMemoryMenu.h"
 #include "STDNumericMenu.h"
 #include "STDThreadMenu.h"
