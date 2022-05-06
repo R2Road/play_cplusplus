@@ -7,7 +7,7 @@
 
 #include "r2_STDContainerMenu.h"
 #include "r2_STDMemoryMenu.h"
-#include "r2_STDNumericMenu.h"
+#include "STDNumericMenu.h"
 #include "STDThreadMenu.h"
 
 #include "test_cpp/item/std_algorithm_test.h"
