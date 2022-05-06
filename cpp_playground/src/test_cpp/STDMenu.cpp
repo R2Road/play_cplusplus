@@ -62,10 +62,10 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			'a'
-			, []()->const char* { return r2::STDMemoryMenu::GetTitle(); }
+			, []()->const char* { return STDMemoryMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
-				director.Setup( r2::STDMemoryMenu::Create( director ) );
+				director.Setup( STDMemoryMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);
