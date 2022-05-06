@@ -6,7 +6,7 @@
 #include "RootMenu.h"
 
 #include "r2_STDContainerMenu.h"
-#include "r2_STDMemoryMenu.h"
+#include "STDMemoryMenu.h"
 #include "STDNumericMenu.h"
 #include "STDThreadMenu.h"
 
