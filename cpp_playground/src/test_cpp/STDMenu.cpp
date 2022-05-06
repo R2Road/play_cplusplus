@@ -3,12 +3,6 @@
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
-#include "RootMenu.h"
-
-#include "STDContainerMenu.h"
-#include "STDMemoryMenu.h"
-#include "STDNumericMenu.h"
-#include "STDThreadMenu.h"
 
 #include "test_cpp/item/std_algorithm_test.h"
 #include "test_cpp/item/std_cout_test.h"
@@ -21,8 +15,14 @@
 #include "test_cpp/item/std_tuple_test.h"
 #include "test_cpp/item/std_variant_test.h"
 
-#include "STDCoutMenu.h"
 #include "test_cpp/r2_FileSystemMenu.h"
+
+#include "RootMenu.h"
+#include "STDContainerMenu.h"
+#include "STDCoutMenu.h"
+#include "STDMemoryMenu.h"
+#include "STDNumericMenu.h"
+#include "STDThreadMenu.h"
 
 r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 {
