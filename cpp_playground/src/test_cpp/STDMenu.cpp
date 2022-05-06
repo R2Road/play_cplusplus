@@ -89,10 +89,10 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			'f'
-			, []()->const char* { return r2::STDThreadMenu::GetTitle(); }
+			, []()->const char* { return STDThreadMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
-				director.Setup( r2::STDThreadMenu::Create( director ) );
+				director.Setup( STDThreadMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);
