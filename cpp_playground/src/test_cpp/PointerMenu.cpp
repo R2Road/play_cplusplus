@@ -3,9 +3,10 @@
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
-#include "RootMenu.h"
 
 #include "test_cpp/item/pointer_test.h"
+
+#include "C_CPP_Menu.h"
 
 r2cm::MenuUp PointerMenu::Create( r2cm::Director& director )
 {
@@ -24,7 +25,7 @@ r2cm::MenuUp PointerMenu::Create( r2cm::Director& director )
 			, []()->const char* { return "Return To Root"; }
 			, [&director]()->r2cm::eTestEndAction
 			{
-				director.Setup( RootMenu::Create( director ) );
+				director.Setup( C_CPP_Menu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);

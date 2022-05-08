@@ -9,7 +9,6 @@
 #include "test_cpp/r2_ConsoleMenu.h"
 #include "test_cpp/r2_DebugMenu.h"
 #include "test_hobby/HobbyMenu.h"
-#include "test_cpp/PointerMenu.h"
 #include "test_cpp/r2_RandomMenu.h"
 #include "test_cpp/r2_TimeMenu.h"
 
@@ -48,15 +47,6 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 			, [&director]()->r2cm::eTestEndAction
 			{
 				director.Setup( r2::ConsoleMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
-			}
-		);
-		ret->AddItem(
-			'4'
-			, []()->const char* { return PointerMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
-			{
-				director.Setup( PointerMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);
