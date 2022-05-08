@@ -112,7 +112,7 @@
     <ClCompile Include="src\test_cpp\r2_MathMenu.cpp" />
     <ClCompile Include="src\test_cpp\r2_NewMenu.cpp" />
     <ClCompile Include="src\test_cpp\r2_PerformanceMenu.cpp" />
-    <ClCompile Include="src\test_cpp\r2_PointerMenu.cpp" />
+    <ClCompile Include="src\test_cpp\PointerMenu.cpp" />
     <ClCompile Include="src\test_cpp\r2_RandomMenu.cpp" />
     <ClCompile Include="src\test_cpp\STDContainerMenu.cpp" />
     <ClCompile Include="src\test_cpp\STDMemoryMenu.cpp" />
@@ -235,7 +235,7 @@
     <ClInclude Include="src\test_cpp\r2_MathMenu.h" />
     <ClInclude Include="src\test_cpp\r2_NewMenu.h" />
     <ClInclude Include="src\test_cpp\r2_PerformanceMenu.h" />
-    <ClInclude Include="src\test_cpp\r2_PointerMenu.h" />
+    <ClInclude Include="src\test_cpp\PointerMenu.h" />
     <ClInclude Include="src\test_cpp\r2_RandomMenu.h" />
     <ClInclude Include="src\test_cpp\STDContainerMenu.h" />
     <ClInclude Include="src\test_cpp\STDMemoryMenu.h" />

@@ -317,9 +317,6 @@
     <ClCompile Include="src\test_cpp\r2_PerformanceMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\r2_PointerMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\r2_RandomMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -370,6 +367,9 @@
       <Filter>test_cpp</Filter>
     </ClCompile>
     <ClCompile Include="src\test_cpp\CharMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\PointerMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
   </ItemGroup>
@@ -672,9 +672,6 @@
     <ClInclude Include="src\test_cpp\r2_PerformanceMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\r2_PointerMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\r2_RandomMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -731,6 +728,9 @@
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\CharMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\PointerMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>

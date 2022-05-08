@@ -9,7 +9,7 @@
 #include "test_cpp/r2_ConsoleMenu.h"
 #include "test_cpp/r2_DebugMenu.h"
 #include "test_hobby/HobbyMenu.h"
-#include "test_cpp/r2_PointerMenu.h"
+#include "test_cpp/PointerMenu.h"
 #include "test_cpp/r2_RandomMenu.h"
 #include "test_cpp/r2_TimeMenu.h"
 
