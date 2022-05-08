@@ -13,11 +13,22 @@
 #include "test_cpp/r2_NewMenu.h"
 #include "test_cpp/r2_TemplateMenu.h"
 
+#include "test_cpp/CharMenu.h"
+
 r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, C_CPP_Menu::GetTitle() ) );
 
 	{
+		ret->AddItem(
+			'6'
+			, []()->const char* { return CharMenu::GetTitle(); }
+			, [&director]()->r2cm::eTestEndAction
+			{
+				director.Setup( CharMenu::Create( director ) );
+				return r2cm::eTestEndAction::None;
+			}
+		);
 		ret->AddItem(
 			'7'
 			, []()->const char* { return r2::TemplateMenu::GetTitle(); }

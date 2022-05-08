@@ -18,7 +18,6 @@
 #include "test_cpp/item/lambda_test.h"
 #include "test_windows/item/windows_sound_test.h"
 #include "test_cpp/item/print_test.h"
-#include "test_cpp/CharMenu.h"
 #include "test_cpp/STDMenu.h"
 
 #include "test_cpp/item/console_input_test.h"
@@ -120,15 +119,6 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( 'd', print_test::Basic::GetInstance() );
 		ret->AddItem( 'f', print_test::ShowNumbers::GetInstance() );
-		ret->AddItem(
-			'g'
-			, []()->const char* { return CharMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
-			{
-				director.Setup( CharMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
-			}
-		);
 
 
 		ret->AddLineFeed();
