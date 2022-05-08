@@ -18,7 +18,7 @@
 #include "test_cpp/item/lambda_test.h"
 #include "test_windows/item/windows_sound_test.h"
 #include "test_cpp/item/print_test.h"
-#include "test_cpp/r2_CharMenu.h"
+#include "test_cpp/CharMenu.h"
 #include "test_cpp/STDMenu.h"
 
 #include "test_cpp/item/console_input_test.h"
