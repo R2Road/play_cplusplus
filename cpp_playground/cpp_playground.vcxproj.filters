@@ -278,9 +278,6 @@
     <ClCompile Include="src\test_cpp\item\variadic_template_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\window_time_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\r2_VariadicTemplateMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -371,6 +368,9 @@
     </ClCompile>
     <ClCompile Include="src\test_cpp\PointerMenu.cpp">
       <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_windows\item\window_time_test.cpp">
+      <Filter>test_windows\item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -633,9 +633,6 @@
     <ClInclude Include="src\test_cpp\item\variadic_template_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\window_time_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\r2_VariadicTemplateMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -732,6 +729,9 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\PointerMenu.h">
       <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_windows\item\window_time_test.h">
+      <Filter>test_windows\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
