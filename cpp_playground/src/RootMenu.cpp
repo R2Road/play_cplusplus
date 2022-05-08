@@ -122,10 +122,10 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'f', print_test::ShowNumbers::GetInstance() );
 		ret->AddItem(
 			'g'
-			, []()->const char* { return r2::CharMenu::GetTitle(); }
+			, []()->const char* { return CharMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
-				director.Setup( r2::CharMenu::Create( director ) );
+				director.Setup( CharMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);
