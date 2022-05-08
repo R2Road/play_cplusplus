@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "window_time_test.h"
+#include "windows_time_test.h"
 
 #include <conio.h>
 #include <windows.h>
@@ -13,7 +13,7 @@ namespace window_time_test
 	{
 		return []()->const char*
 		{
-			return "Window Time";
+			return "Windows Time";
 		};
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()

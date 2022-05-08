@@ -7,7 +7,7 @@
 
 #include "test_cpp/item/c_time_test.h"
 #include "test_cpp/item/std_chrono_test.h"
-#include "test_windows/item/window_time_test.h"
+#include "test_windows/item/windows_time_test.h"
 
 namespace r2
 {

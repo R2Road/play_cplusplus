@@ -369,7 +369,7 @@
     <ClCompile Include="src\test_cpp\PointerMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_windows\item\window_time_test.cpp">
+    <ClCompile Include="src\test_windows\item\windows_time_test.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
   </ItemGroup>
@@ -730,7 +730,7 @@
     <ClInclude Include="src\test_cpp\PointerMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_windows\item\window_time_test.h">
+    <ClInclude Include="src\test_windows\item\windows_time_test.h">
       <Filter>test_windows\item</Filter>
     </ClInclude>
   </ItemGroup>
