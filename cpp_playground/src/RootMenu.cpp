@@ -53,10 +53,10 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			'4'
-			, []()->const char* { return r2::PointerMenu::GetTitle(); }
+			, []()->const char* { return PointerMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
-				director.Setup( r2::PointerMenu::Create( director ) );
+				director.Setup( PointerMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);
