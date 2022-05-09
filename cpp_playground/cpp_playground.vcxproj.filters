@@ -254,9 +254,6 @@
     <ClCompile Include="src\test_cpp\r2_VariadicTemplateMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\ConsoleTextColorMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\r2_AlignMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -371,6 +368,9 @@
     </ClCompile>
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
       <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_windows\ConsoleTextColorMenu.cpp">
+      <Filter>test_windows</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -606,9 +606,6 @@
     <ClInclude Include="src\test_cpp\r2_VariadicTemplateMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\ConsoleTextColorMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\r2_AlignMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -732,6 +729,9 @@
     </ClInclude>
     <ClInclude Include="src\r2cm\r2cm_Singleton.h">
       <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_windows\ConsoleTextColorMenu.h">
+      <Filter>test_windows</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

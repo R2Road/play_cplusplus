@@ -4,7 +4,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
 
-#include "test_cpp/ConsoleTextColorMenu.h"
+#include "ConsoleTextColorMenu.h"
 #include "test_cpp/r2_ConsoleWindowMenu.h"
 #include "RootMenu.h"
 
