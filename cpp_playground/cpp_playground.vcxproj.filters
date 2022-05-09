@@ -143,27 +143,6 @@
     <ClCompile Include="src\test_cpp\item\class_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\console_buffer_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\console_input_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\console_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\console_text_color_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\console_window_input_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\console_window_message_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\console_window_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\item\debug_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
@@ -174,9 +153,6 @@
       <Filter>test_cpp\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_cpp\item\filesystem_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\flickering_research.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_cpp\item\korean_test.cpp">
@@ -372,6 +348,30 @@
     <ClCompile Include="src\test_windows\TestWindowsMenu.cpp">
       <Filter>test_windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_windows\item\console_buffer_test.cpp">
+      <Filter>test_windows\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_windows\item\console_test.cpp">
+      <Filter>test_windows\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_windows\item\console_text_color_test.cpp">
+      <Filter>test_windows\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_windows\item\console_window_input_test.cpp">
+      <Filter>test_windows\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_windows\item\console_window_message_test.cpp">
+      <Filter>test_windows\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_windows\item\console_window_test.cpp">
+      <Filter>test_windows\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_windows\item\flickering_research.cpp">
+      <Filter>test_windows\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\item\console_input_test.cpp">
+      <Filter>test_cpp\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -498,27 +498,6 @@
     <ClInclude Include="src\test_cpp\item\class_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\console_buffer_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\console_input_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\console_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\console_text_color_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\console_window_input_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\console_window_message_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\console_window_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\item\debug_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
@@ -529,9 +508,6 @@
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\filesystem_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\flickering_research.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\korean_test.h">
@@ -732,6 +708,30 @@
     </ClInclude>
     <ClInclude Include="src\test_windows\TestWindowsMenu.h">
       <Filter>test_windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_windows\item\flickering_research.h">
+      <Filter>test_windows\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_windows\item\console_buffer_test.h">
+      <Filter>test_windows\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_windows\item\console_test.h">
+      <Filter>test_windows\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_windows\item\console_text_color_test.h">
+      <Filter>test_windows\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_windows\item\console_window_input_test.h">
+      <Filter>test_windows\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_windows\item\console_window_message_test.h">
+      <Filter>test_windows\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_windows\item\console_window_test.h">
+      <Filter>test_windows\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\item\console_input_test.h">
+      <Filter>test_cpp\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
