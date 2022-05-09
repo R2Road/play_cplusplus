@@ -24,10 +24,10 @@ r2cm::MenuUp TestWindowsMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem(
 			'1'
-			, []()->const char* { return r2::ConsoleWindowMenu::GetTitle(); }
+			, []()->const char* { return ConsoleWindowMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( r2::ConsoleWindowMenu::Create( director ) );
+				director.Setup( ConsoleWindowMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);

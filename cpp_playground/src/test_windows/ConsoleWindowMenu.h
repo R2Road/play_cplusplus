@@ -9,15 +9,12 @@ namespace r2cm
 	class Director;
 }
 
-namespace r2
+class ConsoleWindowMenu
 {
-	class ConsoleWindowMenu
-	{
-	private:
-		ConsoleWindowMenu() = delete;
+private:
+	ConsoleWindowMenu() = delete;
 
-	public:
-		static const char* GetTitle() { return "Console Window"; }
-		static r2cm::MenuUp Create( r2cm::Director& director );
-	};
-}
+public:
+	static const char* GetTitle() { return "Console Window"; }
+	static r2cm::MenuUp Create( r2cm::Director& director );
+};
