@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "struct_member_alignment_test.h"
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace struct_member_alignment_test
 {
@@ -14,15 +14,15 @@ namespace struct_member_alignment_test
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << "#pragma pack( push, 4 )" << r2::linefeed;
+			std::cout << "#pragma pack( push, 4 )" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 // #pragma pack( 4 )
 #pragma pack( push, 4 )
@@ -32,15 +32,15 @@ namespace struct_member_alignment_test
 					int i;
 				} test_struct;
 
-				std::cout << r2::tab << "struct" << r2::linefeed;
-				std::cout << r2::tab << "{" << r2::linefeed;
-				std::cout << r2::tab2 << "int i;" << r2::linefeed;
-				std::cout << r2::tab << "} test_struct;" << r2::linefeed2;
+				std::cout << r2cm::tab << "struct" << r2cm::linefeed;
+				std::cout << r2cm::tab << "{" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "int i;" << r2cm::linefeed;
+				std::cout << r2cm::tab << "} test_struct;" << r2cm::linefeed2;
 
-				std::cout << r2::tab2 << "- sizeof : " << sizeof( test_struct ) << r2::linefeed;
+				std::cout << r2cm::tab2 << "- sizeof : " << sizeof( test_struct ) << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				struct
@@ -48,15 +48,15 @@ namespace struct_member_alignment_test
 					long long ll;
 				} test_struct;
 
-				std::cout << r2::tab << "struct" << r2::linefeed;
-				std::cout << r2::tab << "{" << r2::linefeed;
-				std::cout << r2::tab2 << "long long ll;" << r2::linefeed;
-				std::cout << r2::tab << "} test_struct;" << r2::linefeed2;
+				std::cout << r2cm::tab << "struct" << r2cm::linefeed;
+				std::cout << r2cm::tab << "{" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "long long ll;" << r2cm::linefeed;
+				std::cout << r2cm::tab << "} test_struct;" << r2cm::linefeed2;
 
-				std::cout << r2::tab2 << "- sizeof : " << sizeof( test_struct ) << r2::linefeed;
+				std::cout << r2cm::tab2 << "- sizeof : " << sizeof( test_struct ) << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				struct
@@ -65,16 +65,16 @@ namespace struct_member_alignment_test
 					char c;
 				} test_struct;
 
-				std::cout << r2::tab << "struct" << r2::linefeed;
-				std::cout << r2::tab << "{" << r2::linefeed;
-				std::cout << r2::tab2 << "long long ll;" << r2::linefeed;
-				std::cout << r2::tab2 << "char c;" << r2::linefeed;
-				std::cout << r2::tab << "} test_struct;" << r2::linefeed2;
+				std::cout << r2cm::tab << "struct" << r2cm::linefeed;
+				std::cout << r2cm::tab << "{" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "long long ll;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "char c;" << r2cm::linefeed;
+				std::cout << r2cm::tab << "} test_struct;" << r2cm::linefeed2;
 
-				std::cout << r2::tab2 << sizeof( test_struct ) << r2::linefeed;
+				std::cout << r2cm::tab2 << sizeof( test_struct ) << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 #pragma warning( push )
@@ -87,24 +87,24 @@ namespace struct_member_alignment_test
 				} test_struct;
 #pragma warning( pop )
 
-				std::cout << r2::tab << "struct" << r2::linefeed;
-				std::cout << r2::tab << "{" << r2::linefeed;
-				std::cout << r2::tab2 << "char c;" << r2::linefeed;
-				std::cout << r2::tab2 << "long long ll;" << r2::linefeed;
-				std::cout << r2::tab2 << "char c2;" << r2::linefeed;
-				std::cout << r2::tab << "} test_struct;" << r2::linefeed2;
+				std::cout << r2cm::tab << "struct" << r2cm::linefeed;
+				std::cout << r2cm::tab << "{" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "char c;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "long long ll;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "char c2;" << r2cm::linefeed;
+				std::cout << r2cm::tab << "} test_struct;" << r2cm::linefeed2;
 
-				std::cout << r2::tab2 << sizeof( test_struct ) << r2::linefeed;
+				std::cout << r2cm::tab2 << sizeof( test_struct ) << r2cm::linefeed;
 			}
 #pragma pack( pop )
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << "#pragma pack( pop )" << r2::linefeed;
+			std::cout << "#pragma pack( pop )" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

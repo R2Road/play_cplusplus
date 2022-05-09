@@ -4,6 +4,8 @@
 #include <iostream>
 #include <numeric>
 
+#include "r2cm/r2cm_constant.h"
+
 namespace r2utility
 {
 	StopWatch::StopWatch() :
@@ -61,16 +63,16 @@ namespace r2utility
 	void StopWatch::PrintElapsedTime_All()
 	{
 		PrintElapsedTime_MilliSeconds();
-		std::cout << r2::tab;
+		std::cout << r2cm::tab;
 		PrintElapsedTime_MicroSeconds();
-		std::cout << r2::tab;
+		std::cout << r2cm::tab;
 		PrintElapsedTime_NanoSeconds();
 	}
 
 	void StopWatch::PrintMinAndMaxTime()
 	{
 		std::cout << "Min : " << mMinTime << "ns";
-		std::cout << r2::tab;
+		std::cout << r2cm::tab;
 		std::cout << "Max : " << mMaxTime << "ns";
 	}
 }

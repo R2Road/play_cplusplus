@@ -6,7 +6,7 @@
 #include <cstring>
 #include <Windows.h>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace console_buffer_test
 {
@@ -19,11 +19,11 @@ namespace console_buffer_test
 	}
 	r2cm::iItem::DoFuncT FillBuffer::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
 			COORD topLeft = { 0, 0 };
@@ -35,26 +35,26 @@ namespace console_buffer_test
 			const DWORD length = cs_buffer_info.dwSize.X * cs_buffer_info.dwSize.Y;
 			DWORD out_result;
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2::linefeed;
-			std::cout << r2::tab2 << "COORD topLeft = { 0, 0 };" << r2::linefeed;
-			std::cout << r2::tab2 << "CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info;" << r2::linefeed;
-			std::cout << r2::tab2 << "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2::linefeed2;
-			std::cout << r2::tab2 << "const DWORD length = cs_buffer_info.dwSize.X * cs_buffer_info.dwSize.Y;" << r2::linefeed;
-			std::cout << r2::tab2 << "DWORD out_result;" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "COORD topLeft = { 0, 0 };" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info;" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "const DWORD length = cs_buffer_info.dwSize.X * cs_buffer_info.dwSize.Y;" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "DWORD out_result;" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << r2::tab << "+ Upcoming Process : Fill All Buffer" << r2::linefeed2;
-			std::cout << r2::tab2 << "FillConsoleOutputCharacter( hStdout, TEXT( '#' ), length, topLeft, &out_result );" << r2::linefeed2;
-			std::cout << r2::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_BLUE, length, topLeft, &out_result );" << r2::linefeed;
-			std::cout << r2::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_GREEN, length / 2, topLeft, &out_result );" << r2::linefeed;
-			std::cout << r2::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_RED, length / 3, topLeft, &out_result );" << r2::linefeed;
-			std::cout << r2::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_INTENSITY, length / 4, topLeft, &out_result );" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Upcoming Process : Fill All Buffer" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "FillConsoleOutputCharacter( hStdout, TEXT( '#' ), length, topLeft, &out_result );" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_BLUE, length, topLeft, &out_result );" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_GREEN, length / 2, topLeft, &out_result );" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_RED, length / 3, topLeft, &out_result );" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_INTENSITY, length / 4, topLeft, &out_result );" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << r2::tab << "Press Key : Do" << r2::linefeed;
+			std::cout << r2cm::tab << "Press Key : Do" << r2cm::linefeed;
 
 			if( _getch() )
 			{
@@ -66,12 +66,12 @@ namespace console_buffer_test
 				FillConsoleOutputAttribute( hStdout, FOREGROUND_INTENSITY, length / 4, topLeft, &out_result );
 			}
 
-			std::cout << r2::tab << "Press Key : Rollback" << r2::linefeed;
+			std::cout << r2cm::tab << "Press Key : Rollback" << r2cm::linefeed;
 			_getch();
 
 			FillConsoleOutputAttribute( hStdout, cs_buffer_info.wAttributes, length, topLeft, &out_result );
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -86,35 +86,35 @@ namespace console_buffer_test
 	}
 	r2cm::iItem::DoFuncT Write2Buffer_WriteConsole::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
 				const char* str = "*************WriteConsole Test*************";
 
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2::linefeed;
-				std::cout << r2::tab2 << "const char* str = \"*************WriteConsole Test*************\";" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "const char* str = \"*************WriteConsole Test*************\";" << r2cm::linefeed;
 
-				std::cout << r2::split;
+				std::cout << r2cm::split;
 
-				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "WriteConsoleA( hStdout, str, sizeof( str ), nullptr, nullptr );" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "WriteConsoleA( hStdout, str, sizeof( str ), nullptr, nullptr );" << r2cm::linefeed;
 
-				std::cout << r2::split;
+				std::cout << r2cm::split;
 
 				WriteConsoleA( hStdout, str, static_cast<DWORD>( strlen( str ) ), nullptr, nullptr ); // 64bit size_t == typedef unsigned __int64 size_t; 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -129,42 +129,42 @@ namespace console_buffer_test
 	}
 	r2cm::iItem::DoFuncT Write2Buffer_WriteConsoleOutput::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
 			COORD topLeft = { 0, 0 };
 
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2::linefeed;
-				std::cout << r2::tab2 << "COORD topLeft = { 0, 0 };" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "COORD topLeft = { 0, 0 };" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "DWORD ret;" << r2::linefeed;
-				std::cout << r2::tab2 << "const char* str = \"*************WriteConsole Test*************\";" << r2::linefeed;
-				std::cout << r2::tab2 << "WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), topLeft, &ret );" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "DWORD ret;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "const char* str = \"*************WriteConsole Test*************\";" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), topLeft, &ret );" << r2cm::linefeed;
 
 				DWORD ret;
 				const char* str = "*************WriteConsole Test*************";
 				WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), topLeft, &ret );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "DWORD ret;" << r2::linefeed;
-				std::cout << r2::tab2 << "WORD colors[10];" << r2::linefeed;
-				std::cout << r2::tab2 << "std::fill_n( colors, 10, FOREGROUND_GREEN | BACKGROUND_BLUE );" << r2::linefeed;
-				std::cout << r2::tab2 << "WriteConsoleOutputAttribute( hStdout, colors, static_cast<DWORD>( sizeof( colors ) / sizeof( DWORD ) ), topLeft, &ret );" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "DWORD ret;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "WORD colors[10];" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "std::fill_n( colors, 10, FOREGROUND_GREEN | BACKGROUND_BLUE );" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "WriteConsoleOutputAttribute( hStdout, colors, static_cast<DWORD>( sizeof( colors ) / sizeof( DWORD ) ), topLeft, &ret );" << r2cm::linefeed;
 
 				DWORD ret;
 				WORD colors[10];
@@ -172,9 +172,9 @@ namespace console_buffer_test
 				WriteConsoleOutputAttribute( hStdout, colors, static_cast<DWORD>( sizeof( colors ) / sizeof( DWORD ) ), topLeft, &ret );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -189,13 +189,13 @@ namespace console_buffer_test
 	}
 	r2cm::iItem::DoFuncT DoubleBuffering::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << "[ESC] Exit" << r2::linefeed;
+			std::cout << "[ESC] Exit" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				DWORD out_result;
@@ -255,9 +255,9 @@ namespace console_buffer_test
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 }

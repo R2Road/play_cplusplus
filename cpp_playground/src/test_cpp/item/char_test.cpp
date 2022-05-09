@@ -6,7 +6,7 @@
 #include <locale>
 #include <string>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace char_test
 {
@@ -19,35 +19,35 @@ namespace char_test
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Print Chars" << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::tab << "+ Print Chars" << r2cm::linefeed << r2cm::linefeed;
 
 				for( char c = 0; 126 >= c; ++c )
 				{
 					std::cout << c;
 				}
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Sound" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Sound" << r2cm::linefeed;
 
 				std::cout << (char)7;
-				std::cout << r2::tab2 << "- std::cout << (char)7;" << r2::linefeed;
+				std::cout << r2cm::tab2 << "- std::cout << (char)7;" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -69,14 +69,14 @@ namespace char_test
 	}
 	r2cm::iItem::DoFuncT Encoding::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ char 2 wchar_t" << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::tab << "+ char 2 wchar_t" << r2cm::linefeed << r2cm::linefeed;
 
 				const std::wstring internal = L"z\u00df\u6c34\U0001f34c";
 
@@ -100,9 +100,9 @@ namespace char_test
 				std::cout << "The string in narrow multibyte encoding: " << external << '\n';
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "infinite_number_test.h"
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace
 {
@@ -41,37 +41,37 @@ namespace infinite_number_test
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				InfiniteNumber infinite_number;
 				infinite_number = 1999;
 
-				std::cout << r2::tab << "+ Variable" << r2::linefeed2;
-				std::cout << r2::tab2 << "InfiniteNumber infinite_number;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Variable" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "InfiniteNumber infinite_number;" << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
-				std::cout << r2::tab << "+ Operation" << r2::linefeed2;
-				std::cout << r2::tab2 << "infinite_number = 1999;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Operation" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "infinite_number = 1999;" << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
-				std::cout << r2::tab << "+ Result" << r2::linefeed2;
-				std::cout << r2::tab2 << "infinite_number : " << infinite_number.Get() << r2::linefeed;
+				std::cout << r2cm::tab << "+ Result" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "infinite_number : " << infinite_number.Get() << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

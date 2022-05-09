@@ -5,7 +5,7 @@
 #include <windows.h>
 #pragma comment(lib, "winmm.lib") // for timeGetTime()
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace window_time_test
 {
@@ -18,7 +18,7 @@ namespace window_time_test
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			SYSTEMTIME local_time;
 			SYSTEMTIME system_time;
@@ -36,53 +36,53 @@ namespace window_time_test
 
 					system( "cls" );
 
-					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
-					std::cout << "[ANY KEY] Exit" << r2::linefeed;
+					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+					std::cout << "[ANY KEY] Exit" << r2cm::linefeed;
 
-					std::cout << r2::split;
+					std::cout << r2cm::split;
 
 					{
-						std::cout << r2::tab << "GetLocalTime( &local_time );" << r2::linefeed;
-						std::cout << r2::tab2 << local_time.wYear << local_time.wMonth << local_time.wDay << r2::linefeed;
-						std::cout << r2::tab2 << local_time.wDayOfWeek << r2::linefeed;
-						std::cout << r2::tab2 << local_time.wHour << local_time.wMinute << local_time.wSecond << r2::linefeed;
-						std::cout << r2::tab2 << local_time.wMilliseconds << r2::linefeed;
+						std::cout << r2cm::tab << "GetLocalTime( &local_time );" << r2cm::linefeed;
+						std::cout << r2cm::tab2 << local_time.wYear << local_time.wMonth << local_time.wDay << r2cm::linefeed;
+						std::cout << r2cm::tab2 << local_time.wDayOfWeek << r2cm::linefeed;
+						std::cout << r2cm::tab2 << local_time.wHour << local_time.wMinute << local_time.wSecond << r2cm::linefeed;
+						std::cout << r2cm::tab2 << local_time.wMilliseconds << r2cm::linefeed;
 					}
 
-					std::cout << r2::split;
+					std::cout << r2cm::split;
 
 					{
-						std::cout << r2::tab << "GetSystemTime( &system_time );" << r2::linefeed;
-						std::cout << r2::tab2 << system_time.wYear << system_time.wMonth << system_time.wDay << r2::linefeed;
-						std::cout << r2::tab2 << system_time.wDayOfWeek << r2::linefeed;
-						std::cout << r2::tab2 << system_time.wHour << system_time.wMinute << system_time.wSecond << r2::linefeed;
-						std::cout << r2::tab2 << system_time.wMilliseconds << r2::linefeed;
+						std::cout << r2cm::tab << "GetSystemTime( &system_time );" << r2cm::linefeed;
+						std::cout << r2cm::tab2 << system_time.wYear << system_time.wMonth << system_time.wDay << r2cm::linefeed;
+						std::cout << r2cm::tab2 << system_time.wDayOfWeek << r2cm::linefeed;
+						std::cout << r2cm::tab2 << system_time.wHour << system_time.wMinute << system_time.wSecond << r2cm::linefeed;
+						std::cout << r2cm::tab2 << system_time.wMilliseconds << r2cm::linefeed;
 					}
 
-					std::cout << r2::split;
+					std::cout << r2cm::split;
 
 					{
-						std::cout << r2::tab << "tick = GetTickCount();" << r2::linefeed;
-						std::cout << r2::tab2 << current_tick << r2::linefeed;
+						std::cout << r2cm::tab << "tick = GetTickCount();" << r2cm::linefeed;
+						std::cout << r2cm::tab2 << current_tick << r2cm::linefeed;
 
 						last_tick = current_tick;
 					}
 
-					std::cout << r2::split;
+					std::cout << r2cm::split;
 
 					{
-						std::cout << r2::tab << "GetTickCount64();" << r2::linefeed;
-						std::cout << r2::tab2 << GetTickCount64() << r2::linefeed;
+						std::cout << r2cm::tab << "GetTickCount64();" << r2cm::linefeed;
+						std::cout << r2cm::tab2 << GetTickCount64() << r2cm::linefeed;
 					}
 
-					std::cout << r2::split;
+					std::cout << r2cm::split;
 
 					{
-						std::cout << r2::tab << "timeGetTime();" << r2::linefeed;
-						std::cout << r2::tab2 << timeGetTime() << r2::linefeed;
+						std::cout << r2cm::tab << "timeGetTime();" << r2cm::linefeed;
+						std::cout << r2cm::tab2 << timeGetTime() << r2cm::linefeed;
 					}
 
-					std::cout << r2::split;
+					std::cout << r2cm::split;
 				}
 
 				if( _kbhit() )
@@ -92,9 +92,9 @@ namespace window_time_test
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 }

@@ -4,7 +4,7 @@
 #include <memory>
 #include <utility>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace std_memory_test
 {
@@ -17,72 +17,72 @@ namespace std_memory_test
 	}
 	r2cm::iItem::DoFuncT SharedPointer::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Shared Pointer" << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::tab << "+ Shared Pointer" << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << r2::tab2 << "- Make Sp" << r2::linefeed;
-				std::cout << r2::tab3 << "std::shared_ptr<int> test_sp( new int( 10 ) )" << r2::linefeed;
+				std::cout << r2cm::tab2 << "- Make Sp" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "std::shared_ptr<int> test_sp( new int( 10 ) )" << r2cm::linefeed;
 				std::shared_ptr<int> test_sp( new int( 10 ) );
 
-				std::cout << r2::tab4 << "- Print : " << *test_sp << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::tab4 << "- Print : " << *test_sp << r2cm::linefeed << r2cm::linefeed;
 
 
-				std::cout << r2::tab2 << "- Copy To Const Sp" << r2::linefeed;
-				std::cout << r2::tab3 << "const auto test_sp_2 = test_sp;" << r2::linefeed;
+				std::cout << r2cm::tab2 << "- Copy To Const Sp" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "const auto test_sp_2 = test_sp;" << r2cm::linefeed;
 				const auto test_sp_2 = test_sp;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
-				std::cout << r2::tab2 << "- Change Value with Const Sp" << r2::linefeed;
-				std::cout << r2::tab3 << "*test_sp_2 = 11;" << r2::linefeed;
+				std::cout << r2cm::tab2 << "- Change Value with Const Sp" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "*test_sp_2 = 11;" << r2cm::linefeed;
 				*test_sp_2 = 11;
 
-				std::cout << r2::tab4 << "- Print : " << *test_sp_2 << r2::linefeed;
-				std::cout << r2::linefeed;
+				std::cout << r2cm::tab4 << "- Print : " << *test_sp_2 << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Shared Pointer Has Const Value" << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::tab << "+ Shared Pointer Has Const Value" << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << r2::tab2 << "- Make Sp Has Const Value" << r2::linefeed;
-				std::cout << r2::tab3 << "std::shared_ptr<const int> test_sp( new int( 10 ) )" << r2::linefeed;
+				std::cout << r2cm::tab2 << "- Make Sp Has Const Value" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "std::shared_ptr<const int> test_sp( new int( 10 ) )" << r2cm::linefeed;
 				std::shared_ptr<const int> const_test_sp( new int( 10 ) );
 
-				std::cout << r2::tab4 << "- Print : " << *const_test_sp << r2::linefeed;
-				std::cout << r2::linefeed;
+				std::cout << r2cm::tab4 << "- Print : " << *const_test_sp << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2::tab2 << "- Failed : Change Value" << r2::linefeed;
-				std::cout << r2::linefeed;
+				std::cout << r2cm::tab2 << "- Failed : Change Value" << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 
 				//*const_test_sp = 11;
-				//std::cout << r2::tab << "+ Change Value with Sp Has Const Value" << r2::linefeed;
-				//std::cout << r2::tab2 << *const_test_sp << r2::linefeed;
+				//std::cout << r2cm::tab << "+ Change Value with Sp Has Const Value" << r2cm::linefeed;
+				//std::cout << r2cm::tab2 << *const_test_sp << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Make Shared" << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::tab << "+ Make Shared" << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << r2::tab2 << "auto test_sp = std::make_shared<int>( 10 );" << r2::linefeed;
+				std::cout << r2cm::tab2 << "auto test_sp = std::make_shared<int>( 10 );" << r2cm::linefeed;
 				auto test_sp = std::make_shared<int>( 10 );
 
-				std::cout << r2::tab3 << "- Print : " << *test_sp << r2::linefeed;
-				std::cout << r2::linefeed;
+				std::cout << r2cm::tab3 << "- Print : " << *test_sp << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -100,40 +100,40 @@ namespace std_memory_test
 	}
 	r2cm::iItem::DoFuncT UniquePointer::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				auto test_up = std::unique_ptr<int>( new int( 3 ) );
 
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "auto test_up = std::unique_ptr<int>( new int( 3 ) );" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "auto test_up = std::unique_ptr<int>( new int( 3 ) );" << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
 				//auto test_up_2 = test_up;
 
-				std::cout << r2::tab << "+ Move : Failed" << r2::linefeed2;
-				std::cout << r2::tab2 << "auto test_up_2 = test_up;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Move : Failed" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "auto test_up_2 = test_up;" << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
 				auto test_up_2 = std::move( test_up );
 
-				std::cout << r2::tab << "+ Move : Success" << r2::linefeed2;
-				std::cout << r2::tab2 << "auto test_up_2 = std::move( test_up );" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Move : Success" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "auto test_up_2 = std::move( test_up );" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

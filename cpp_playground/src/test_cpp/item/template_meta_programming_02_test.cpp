@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace template_meta_programming_test
 {
@@ -23,25 +23,25 @@ namespace template_meta_programming_test
 	}
 	r2cm::iItem::DoFuncT Character2String::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::size" << r2::linefeed;
-				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::size << r2::linefeed;
+				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::size" << r2cm::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::size << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::c" << r2::linefeed;
-				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::c << r2::linefeed;
+				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::c" << r2cm::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::c << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -70,20 +70,20 @@ namespace template_meta_programming_test
 	}
 	r2cm::iItem::DoFuncT Integer2String::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << "\t" << "+ ConvertInteger2String_1<2468>::c.c_str()" << r2::linefeed;
-				std::cout << "\t\t" << "result : " << ConvertInteger2String_1<2468>::c.c_str() << r2::linefeed;
+				std::cout << "\t" << "+ ConvertInteger2String_1<2468>::c.c_str()" << r2cm::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertInteger2String_1<2468>::c.c_str() << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -115,26 +115,26 @@ namespace template_meta_programming_test
 	}
 	r2cm::iItem::DoFuncT CalculatePlaceValue::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << "\t" << "+ CalculatePlaceValue<1>::c" << r2::linefeed;
-				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<1>::place_value << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ CalculatePlaceValue<1>::c" << r2cm::linefeed;
+				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<1>::place_value << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ CalculatePlaceValue<100>::c" << r2::linefeed;
-				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<100>::place_value << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ CalculatePlaceValue<100>::c" << r2cm::linefeed;
+				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<100>::place_value << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ CalculatePlaceValue<123456>::c" << r2::linefeed;
-				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<123456>::place_value << r2::linefeed;
+				std::cout << "\t" << "+ CalculatePlaceValue<123456>::c" << r2cm::linefeed;
+				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<123456>::place_value << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -184,47 +184,47 @@ namespace template_meta_programming_test
 	}
 	r2cm::iItem::DoFuncT Integer2String_II::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
-
-			{
-				std::cout << "+ Units 2 Character" << r2::linefeed << r2::linefeed;
-
-				std::cout << "\t" << "+ ConvertUnits2Character<1>::c" << r2::linefeed;
-				std::cout << "\t\t" << "result : " << ConvertUnits2Character<1>::c << r2::linefeed << r2::linefeed;
-
-
-				std::cout << "\t" << "+ ConvertUnits2Character<9>::c" << r2::linefeed;
-				std::cout << "\t\t" << "result : " << ConvertUnits2Character<9>::c << r2::linefeed << r2::linefeed;
-
-
-				std::cout << "\t" << "+ ConvertUnits2Character<10>::c" << r2::linefeed;
-				std::cout << "\t\t" << "result : " << ConvertUnits2Character<10>::c << r2::linefeed << r2::linefeed;
-			}
-
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << "+ Integer 2 String II" << r2::linefeed << r2::linefeed;
+				std::cout << "+ Units 2 Character" << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ ConvertInteger2String_2<101010>" << r2::linefeed;
-				std::cout << "\t\t" << "size : " << ConvertInteger2String_2<101010>::size << r2::linefeed;
-				std::cout << "\t\t" << "string : " << ConvertInteger2String_2<101010>::str << r2::linefeed;
+				std::cout << "\t" << "+ ConvertUnits2Character<1>::c" << r2cm::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertUnits2Character<1>::c << r2cm::linefeed << r2cm::linefeed;
+
+
+				std::cout << "\t" << "+ ConvertUnits2Character<9>::c" << r2cm::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertUnits2Character<9>::c << r2cm::linefeed << r2cm::linefeed;
+
+
+				std::cout << "\t" << "+ ConvertUnits2Character<10>::c" << r2cm::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertUnits2Character<10>::c << r2cm::linefeed << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << "ConvertInteger2String_2 의 전방 선언 코드를 지우고 가장 아래의 템플릿 코드를 가장 위로 올려도 정상 작동 한다." << r2::linefeed;
-				std::cout << "전방 선언은 템플릿 코드의 번역 순서에 따라 발생하는 문제를 해결해준다." << r2::linefeed;
+				std::cout << "+ Integer 2 String II" << r2cm::linefeed << r2cm::linefeed;
+
+				std::cout << "\t" << "+ ConvertInteger2String_2<101010>" << r2cm::linefeed;
+				std::cout << "\t\t" << "size : " << ConvertInteger2String_2<101010>::size << r2cm::linefeed;
+				std::cout << "\t\t" << "string : " << ConvertInteger2String_2<101010>::str << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			{
+				std::cout << "ConvertInteger2String_2 의 전방 선언 코드를 지우고 가장 아래의 템플릿 코드를 가장 위로 올려도 정상 작동 한다." << r2cm::linefeed;
+				std::cout << "전방 선언은 템플릿 코드의 번역 순서에 따라 발생하는 문제를 해결해준다." << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

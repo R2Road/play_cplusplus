@@ -6,7 +6,7 @@
 #include <sstream>
 #include <thread>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #pragma warning( disable : 4477 ) // for "%x" and std::this_thread::get_id()
 
@@ -18,7 +18,7 @@ namespace std_thread_test
 
 		for( auto i = 0; 8 > i; ++i )
 		{
-			std::cout << "thread_func_1 : " << i << r2::linefeed;
+			std::cout << "thread_func_1 : " << i << r2cm::linefeed;
 		}
 	}
 
@@ -28,7 +28,7 @@ namespace std_thread_test
 
 		for( auto i = 0; 8 > i; ++i )
 		{
-			std::cout << "thread_func_2 : " << i << r2::linefeed;
+			std::cout << "thread_func_2 : " << i << r2cm::linefeed;
 		}
 	}
 
@@ -41,50 +41,50 @@ namespace std_thread_test
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				std::thread t1;
 
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "std::thread t1;" << r2::linefeed;
-				std::cout << r2::tab3 << "- ID : " << t1.get_id() << r2::linefeed;
-				std::cout << r2::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2::linefeed;
+				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "std::thread t1;" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- ID : " << t1.get_id() << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				std::thread t1( thread_func_1 );
 				std::thread t2( thread_func_2 );
 
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "std::thread t1( thread_func_1 );" << r2::linefeed;
-				std::cout << r2::tab3 << "- ID : " << t1.get_id() << r2::linefeed;
-				std::cout << r2::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2::linefeed2;
-				std::cout << r2::tab2 << "std::thread t2( thread_func_2 );" << r2::linefeed;
-				std::cout << r2::tab3 << "- ID : " << t2.get_id() << r2::linefeed;
-				std::cout << r2::tab3 << "- Joinable : " << ( t2.joinable() ? "O" : "X" ) << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "std::thread t1( thread_func_1 );" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- ID : " << t1.get_id() << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "std::thread t2( thread_func_2 );" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- ID : " << t2.get_id() << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- Joinable : " << ( t2.joinable() ? "O" : "X" ) << r2cm::linefeed2;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2::tab << "+ Wait 4 Thread End" << r2::linefeed2;
-				std::cout << r2::tab2 << "t1.join();" << r2::linefeed;
-				std::cout << r2::tab2 << "t2.join();" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Wait 4 Thread End" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "t1.join();" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "t2.join();" << r2cm::linefeed;
 
-				std::cout << r2::split;
+				std::cout << r2cm::split;
 
 				t1.join();
 				t2.join();
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -104,22 +104,22 @@ namespace std_thread_test
 	}
 	r2cm::iItem::DoFuncT Declaration::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				std::thread test_thread( empty_thread_func, 3 );
 				test_thread.join();
 
-				std::cout << r2::tab << "+ Declaration With Function" << r2::linefeed2;
-				std::cout << r2::tab2 << "void empty_thread_func( int ) {}" << r2::linefeed2;
-				std::cout << r2::tab2 << "std::thread test_thread( empty_thread_func, 3 );" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Declaration With Function" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "void empty_thread_func( int ) {}" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "std::thread test_thread( empty_thread_func, 3 );" << r2cm::linefeed2;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				class ThreadTestClass
@@ -132,29 +132,29 @@ namespace std_thread_test
 				std::thread test_thread{ ThreadTestClass( 3 ) };
 				test_thread.join();
 
-				std::cout << r2::tab << "+ Declaration With Function Object" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Declaration With Function Object" << r2cm::linefeed2;
 
-				std::cout << r2::tab2 << "class ThreadTestClass" << r2::linefeed;
-				std::cout << r2::tab2 << "{" << r2::linefeed;
-				std::cout << r2::tab2 << "public:" << r2::linefeed;
-				std::cout << r2::tab3 << "ThreadTestClass( int ) {}" << r2::linefeed;
-				std::cout << r2::tab3 << "void operator()() const {}" << r2::linefeed;
-				std::cout << r2::tab2 << "}" << r2::linefeed2;
+				std::cout << r2cm::tab2 << "class ThreadTestClass" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "{" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "public:" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "ThreadTestClass( int ) {}" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "void operator()() const {}" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "}" << r2cm::linefeed2;
 
-				std::cout << r2::tab2 << "std::thread test_thread{ ThreadTestClass( 3 ) };" << r2::linefeed2;
+				std::cout << r2cm::tab2 << "std::thread test_thread{ ThreadTestClass( 3 ) };" << r2cm::linefeed2;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				std::thread test_thread( []( int, int ) {}, 3, 4 );
 				test_thread.join();
 
-				std::cout << r2::tab << "+ Declaration With Lambda" << r2::linefeed2;
-				std::cout << r2::tab2 << "std::thread test_thread( []() {}, 3, 4 );" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Declaration With Lambda" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "std::thread test_thread( []() {}, 3, 4 );" << r2cm::linefeed2;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				class ThreadTestClass
@@ -168,21 +168,21 @@ namespace std_thread_test
 				std::thread test_thread( &ThreadTestClass::process, &thread_test_class );
 				test_thread.join();
 
-				std::cout << r2::tab << "+ Declaration With Class Method" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Declaration With Class Method" << r2cm::linefeed2;
 
-				std::cout << r2::tab2 << "class ThreadTestClass" << r2::linefeed;
-				std::cout << r2::tab2 << "{" << r2::linefeed;
-				std::cout << r2::tab2 << "public:" << r2::linefeed;
-				std::cout << r2::tab3 << "void process() const {}" << r2::linefeed;
-				std::cout << r2::tab2 << "}" << r2::linefeed2;
+				std::cout << r2cm::tab2 << "class ThreadTestClass" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "{" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "public:" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "void process() const {}" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "}" << r2cm::linefeed2;
 
-				std::cout << r2::tab2 << "ThreadTestClass thread_test_class;" << r2::linefeed;
-				std::cout << r2::tab2 << "std::thread test_thread( &ThreadTestClass::process, &thread_test_class );" << r2::linefeed2;
+				std::cout << r2cm::tab2 << "ThreadTestClass thread_test_class;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "std::thread test_thread( &ThreadTestClass::process, &thread_test_class );" << r2cm::linefeed2;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -200,11 +200,11 @@ namespace std_thread_test
 	}
 	r2cm::iItem::DoFuncT CopyAssaignment::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			std::thread t1;
 			std::thread t2(
@@ -215,44 +215,44 @@ namespace std_thread_test
 			);
 
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
 
-				std::cout << r2::tab2 << "std::thread t1;" << r2::linefeed;
-				std::cout << r2::tab3 << "- ID : " << t1.get_id() << r2::linefeed;
-				std::cout << r2::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2::linefeed2;
+				std::cout << r2cm::tab2 << "std::thread t1;" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- ID : " << t1.get_id() << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2cm::linefeed2;
 
-				std::cout << r2::tab2 << "std::thread t2(" << r2::linefeed;
-				std::cout << r2::tab3 << "[]( int, int )" << r2::linefeed;
-				std::cout << r2::tab3 << "{" << r2::linefeed;
-				std::cout << r2::tab4 << "std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );" << r2::linefeed;
-				std::cout << r2::tab3 << "}, 3, 4" << r2::linefeed;
-				std::cout << r2::tab2 << ");" << r2::linefeed;
-				std::cout << r2::tab3 << "- ID : " << t2.get_id() << r2::linefeed;
-				std::cout << r2::tab3 << "- Joinable : " << ( t2.joinable() ? "O" : "X" ) << r2::linefeed;
+				std::cout << r2cm::tab2 << "std::thread t2(" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "[]( int, int )" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "{" << r2cm::linefeed;
+				std::cout << r2cm::tab4 << "std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "}, 3, 4" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << ");" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- ID : " << t2.get_id() << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- Joinable : " << ( t2.joinable() ? "O" : "X" ) << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				t1 = std::move( t2 );
 
-				std::cout << r2::tab << "+ Assignment" << r2::linefeed2;
-				std::cout << r2::tab2 << "t1 = std::move( t2 );" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Assignment" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "t1 = std::move( t2 );" << r2cm::linefeed2;
 
-				std::cout << r2::tab2 << "t1" << r2::linefeed;
-				std::cout << r2::tab3 << "- ID : " << t1.get_id() << r2::linefeed;
-				std::cout << r2::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2::linefeed2;
+				std::cout << r2cm::tab2 << "t1" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- ID : " << t1.get_id() << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2cm::linefeed2;
 
-				std::cout << r2::tab2 << "t2" << r2::linefeed;
-				std::cout << r2::tab3 << "- ID : " << t2.get_id() << r2::linefeed;
-				std::cout << r2::tab3 << "- Joinable : " << ( t2.joinable() ? "O" : "X" ) << r2::linefeed;
+				std::cout << r2cm::tab2 << "t2" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- ID : " << t2.get_id() << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- Joinable : " << ( t2.joinable() ? "O" : "X" ) << r2cm::linefeed;
 			}
 
 			t1.join();
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -270,22 +270,22 @@ namespace std_thread_test
 	}
 	r2cm::iItem::DoFuncT WaitProcess_SleepFor::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab2 << "std::thread test_thread( []()" << r2::linefeed;
-				std::cout << r2::tab3 << "{" << r2::linefeed;
-				std::cout << r2::tab4 << "printf( \"\\t\\tstart thread \\n\" );" << r2::linefeed2;
-				std::cout << r2::tab4 << "std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );" << r2::linefeed2;
-				std::cout << r2::tab4 << "printf( \"\\t\\tend thread \\n\" );" << r2::linefeed;
-				std::cout << r2::tab3 << "}" << r2::linefeed;
-				std::cout << r2::tab2 << ");" << r2::linefeed;
+				std::cout << r2cm::tab2 << "std::thread test_thread( []()" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "{" << r2cm::linefeed;
+				std::cout << r2cm::tab4 << "printf( \"\\t\\tstart thread \\n\" );" << r2cm::linefeed2;
+				std::cout << r2cm::tab4 << "std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );" << r2cm::linefeed2;
+				std::cout << r2cm::tab4 << "printf( \"\\t\\tend thread \\n\" );" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "}" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << ");" << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				std::thread test_thread( []()
 					{
@@ -299,9 +299,9 @@ namespace std_thread_test
 				test_thread.join();
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -319,23 +319,23 @@ namespace std_thread_test
 	}
 	r2cm::iItem::DoFuncT WaitProcess_Yield::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab2 << "auto thread_process = []()" << r2::linefeed;
-				std::cout << r2::tab2 << "{" << r2::linefeed;
-				std::cout << r2::tab3 << "for( int count = 0; 10 > count; ++count )" << r2::linefeed2;
-				std::cout << r2::tab3 << "{" << r2::linefeed;
-				std::cout << r2::tab4 << "printf( \"\\t\\t\" \"thread %x : yield % d\" \"\\n\", std::this_thread::get_id(), count );" << r2::linefeed2;
-				std::cout << r2::tab4 << "std::this_thread::yield();" << r2::linefeed;
-				std::cout << r2::tab3 << "}" << r2::linefeed;
-				std::cout << r2::tab2 << "}" << r2::linefeed;
+				std::cout << r2cm::tab2 << "auto thread_process = []()" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "{" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "for( int count = 0; 10 > count; ++count )" << r2cm::linefeed2;
+				std::cout << r2cm::tab3 << "{" << r2cm::linefeed;
+				std::cout << r2cm::tab4 << "printf( \"\\t\\t\" \"thread %x : yield % d\" \"\\n\", std::this_thread::get_id(), count );" << r2cm::linefeed2;
+				std::cout << r2cm::tab4 << "std::this_thread::yield();" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "}" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "}" << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				auto thread_process = []()
 				{
@@ -357,13 +357,13 @@ namespace std_thread_test
 				test_thread_4.join();
 
 
-				std::cout << r2::linefeed;
-				std::cout << r2::tab2 << "Note : 양보 받을 놈이 없으면 아무 소용 없다." << r2::linefeed;
+				std::cout << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "Note : 양보 받을 놈이 없으면 아무 소용 없다." << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

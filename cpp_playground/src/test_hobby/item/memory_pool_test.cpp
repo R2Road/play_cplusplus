@@ -3,7 +3,7 @@
 
 #include <cassert>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace
 {
@@ -36,28 +36,28 @@ namespace memory_pool_test
 
 	r2cm::iItem::DoFuncT Step01::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				MemoryBlock memory_block;
-				std::cout << r2::tab << "+ MemoryBlock memory_block;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ MemoryBlock memory_block;" << r2cm::linefeed;
 
-				std::cout << r2::tab2 << "- Print : ";
+				std::cout << r2cm::tab2 << "- Print : ";
 				for( const auto c : memory_block.b )
 				{
 					std::cout << static_cast<int>( c );
 				}
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

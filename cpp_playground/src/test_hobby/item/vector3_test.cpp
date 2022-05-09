@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "vector3_test.h"
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace r2
 {
@@ -57,11 +57,11 @@ namespace vector3_test
 	}
 	r2cm::iItem::DoFuncT OperatorPlus::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				const r2::Vector3 v1{ 1.f, 1.1f, 2.2f };
@@ -69,30 +69,30 @@ namespace vector3_test
 
 				const auto v3 = v1 + v2;
 
-				std::cout << r2::tab << "+ Variable" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2::Vector3 v1{ 1.f, 1.1f, 2.2f };" << r2::linefeed;
-				std::cout << r2::tab2 << "r2::Vector3 v2{ 2.1f, 0.f, 2.f };" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Variable" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "r2::Vector3 v1{ 1.f, 1.1f, 2.2f };" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "r2::Vector3 v2{ 2.1f, 0.f, 2.f };" << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
-				std::cout << r2::tab << "+ Operation" << r2::linefeed2;
-				std::cout << r2::tab2 << "const auto v3 = v1 + v2;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Operation" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "const auto v3 = v1 + v2;" << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
-				std::cout << r2::tab << "+ Result" << r2::linefeed2;
-				std::cout << r2::tab2 << "v3.x : " << v3.x << r2::linefeed;
-				std::cout << r2::tab2 << "v3.y : " << v3.y << r2::linefeed;
-				std::cout << r2::tab2 << "v3.z : " << v3.z << r2::linefeed;
+				std::cout << r2cm::tab << "+ Result" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "v3.x : " << v3.x << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "v3.y : " << v3.y << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "v3.z : " << v3.z << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -105,11 +105,11 @@ namespace vector3_test
 	}
 	r2cm::iItem::DoFuncT OperatorPlusEqual::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				r2::Vector3 v1{ 3.f, .2f, 1.2f };
@@ -117,30 +117,30 @@ namespace vector3_test
 
 				v1 += v2;
 
-				std::cout << r2::tab << "+ Variable" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2::Vector3 v1{ 3.f, .2f, 1.2f };" << r2::linefeed;
-				std::cout << r2::tab2 << "r2::Vector3 v2{ 1.4f, 1.3f, 1.5f };" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Variable" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "r2::Vector3 v1{ 3.f, .2f, 1.2f };" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "r2::Vector3 v2{ 1.4f, 1.3f, 1.5f };" << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
-				std::cout << r2::tab << "+ Operation" << r2::linefeed2;
-				std::cout << r2::tab2 << "v1 += v2;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Operation" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "v1 += v2;" << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
-				std::cout << r2::tab << "+ Result" << r2::linefeed2;
-				std::cout << r2::tab2 << "v1.x : " << v1.x << r2::linefeed;
-				std::cout << r2::tab2 << "v1.y : " << v1.y << r2::linefeed;
-				std::cout << r2::tab2 << "v1.z : " << v1.z << r2::linefeed;
+				std::cout << r2cm::tab << "+ Result" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "v1.x : " << v1.x << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "v1.y : " << v1.y << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "v1.z : " << v1.z << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -155,11 +155,11 @@ namespace vector3_test
 	}
 	r2cm::iItem::DoFuncT OperatorMinus::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				const r2::Vector3 v1{ 1.f, 1.1f, 2.2f };
@@ -167,30 +167,30 @@ namespace vector3_test
 
 				const auto v3 = v1 - v2;
 
-				std::cout << r2::tab << "+ Variable" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2::Vector3 v1{ 1.f, 1.1f, 2.2f };" << r2::linefeed;
-				std::cout << r2::tab2 << "r2::Vector3 v2{ 2.1f, 0.f, 2.f };" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Variable" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "r2::Vector3 v1{ 1.f, 1.1f, 2.2f };" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "r2::Vector3 v2{ 2.1f, 0.f, 2.f };" << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
-				std::cout << r2::tab << "+ Operation" << r2::linefeed2;
-				std::cout << r2::tab2 << "const auto v3 = v1 - v2;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Operation" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "const auto v3 = v1 - v2;" << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
-				std::cout << r2::tab << "+ Result" << r2::linefeed2;
-				std::cout << r2::tab2 << "v3.x : " << v3.x << r2::linefeed;
-				std::cout << r2::tab2 << "v3.y : " << v3.y << r2::linefeed;
-				std::cout << r2::tab2 << "v3.z : " << v3.z << r2::linefeed;
+				std::cout << r2cm::tab << "+ Result" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "v3.x : " << v3.x << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "v3.y : " << v3.y << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "v3.z : " << v3.z << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -203,11 +203,11 @@ namespace vector3_test
 	}
 	r2cm::iItem::DoFuncT OperatorMinusEqual::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				r2::Vector3 v1{ 3.f, .2f, 1.2f };
@@ -215,30 +215,30 @@ namespace vector3_test
 
 				v1 -= v2;
 
-				std::cout << r2::tab << "+ Variable" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2::Vector3 v1{ 3.f, .2f, 1.2f };" << r2::linefeed;
-				std::cout << r2::tab2 << "r2::Vector3 v2{ 1.4f, 1.3f, 1.5f };" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Variable" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "r2::Vector3 v1{ 3.f, .2f, 1.2f };" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "r2::Vector3 v2{ 1.4f, 1.3f, 1.5f };" << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
-				std::cout << r2::tab << "+ Operation" << r2::linefeed2;
-				std::cout << r2::tab2 << "v1 -= v2;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Operation" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "v1 -= v2;" << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
-				std::cout << r2::tab << "+ Result" << r2::linefeed2;
-				std::cout << r2::tab2 << "v1.x : " << v1.x << r2::linefeed;
-				std::cout << r2::tab2 << "v1.y : " << v1.y << r2::linefeed;
-				std::cout << r2::tab2 << "v1.z : " << v1.z << r2::linefeed;
+				std::cout << r2cm::tab << "+ Result" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "v1.x : " << v1.x << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "v1.y : " << v1.y << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "v1.z : " << v1.z << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -253,11 +253,11 @@ namespace vector3_test
 	}
 	r2cm::iItem::DoFuncT OperatorMultiply_With_Scalar::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				const r2::Vector3 v1{ 1.f, 1.1f, 2.2f };
@@ -265,30 +265,30 @@ namespace vector3_test
 
 				const auto v3 = v1 * scalar;
 
-				std::cout << r2::tab << "+ Variable" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2::Vector3 v1{ 1.f, 1.1f, 2.2f };" << r2::linefeed;
-				std::cout << r2::tab2 << "float scalar = 3.f;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Variable" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "r2::Vector3 v1{ 1.f, 1.1f, 2.2f };" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "float scalar = 3.f;" << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
-				std::cout << r2::tab << "+ Operation" << r2::linefeed2;
-				std::cout << r2::tab2 << "const auto v3 = v1 * scalar;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Operation" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "const auto v3 = v1 * scalar;" << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
-				std::cout << r2::tab << "+ Result" << r2::linefeed2;
-				std::cout << r2::tab2 << "v3.x : " << v3.x << r2::linefeed;
-				std::cout << r2::tab2 << "v3.y : " << v3.y << r2::linefeed;
-				std::cout << r2::tab2 << "v3.z : " << v3.z << r2::linefeed;
+				std::cout << r2cm::tab << "+ Result" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "v3.x : " << v3.x << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "v3.y : " << v3.y << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "v3.z : " << v3.z << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -301,11 +301,11 @@ namespace vector3_test
 	}
 	r2cm::iItem::DoFuncT OperatorMultiplyEqual_With_Scalar::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				r2::Vector3 v1{ 1.f, 1.1f, 2.2f };
@@ -313,30 +313,30 @@ namespace vector3_test
 
 				v1 *= scalar;
 
-				std::cout << r2::tab << "+ Variable" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2::Vector3 v1{ 1.f, 1.1f, 2.2f };" << r2::linefeed;
-				std::cout << r2::tab2 << "float scalar = 3.f;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Variable" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "r2::Vector3 v1{ 1.f, 1.1f, 2.2f };" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "float scalar = 3.f;" << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
-				std::cout << r2::tab << "+ Operation" << r2::linefeed2;
-				std::cout << r2::tab2 << "v1 *= scalar;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Operation" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "v1 *= scalar;" << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 
-				std::cout << r2::tab << "+ Result" << r2::linefeed2;
-				std::cout << r2::tab2 << "v1.x : " << v1.x << r2::linefeed;
-				std::cout << r2::tab2 << "v1.y : " << v1.y << r2::linefeed;
-				std::cout << r2::tab2 << "v1.z : " << v1.z << r2::linefeed;
+				std::cout << r2cm::tab << "+ Result" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "v1.x : " << v1.x << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "v1.y : " << v1.y << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "v1.z : " << v1.z << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

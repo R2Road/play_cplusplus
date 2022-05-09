@@ -2,7 +2,7 @@
 #include "r2_TimeMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 #include "RootMenu.h"
 
 #include "test_cpp/item/c_time_test.h"
@@ -40,10 +40,10 @@ namespace r2
 			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
-				, [&director]()->r2cm::eTestEndAction
+				, [&director]()->r2cm::eItemLeaveAction
 				{
 					director.Setup( RootMenu::Create( director ) );
-					return r2cm::eTestEndAction::None;
+					return r2cm::eItemLeaveAction::None;
 				}
 			);
 		}

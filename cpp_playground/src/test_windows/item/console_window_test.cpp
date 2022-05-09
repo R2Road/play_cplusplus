@@ -7,7 +7,7 @@
 #include <Windows.h>
 #include <wincon.h> // BACKGROUND_RED
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace console_window_test
 {
@@ -20,63 +20,63 @@ namespace console_window_test
 	}
 	r2cm::iItem::DoFuncT BufferInfo::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
 			CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info;
 
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2::linefeed;
-				std::cout << r2::tab2 << "CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info;" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			const auto result = GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info );
 
 			{
-				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			if( result )
 			{
-				std::cout << r2::tab << "+ CONSOLE_SCREEN_BUFFER_INFO.dwCursorPosition" << r2::linefeed;
-				std::cout << r2::tab2 << "X : " << cs_buffer_info.dwCursorPosition.X << r2::linefeed;
-				std::cout << r2::tab2 << "Y : " << cs_buffer_info.dwCursorPosition.Y << r2::linefeed2;
+				std::cout << r2cm::tab << "+ CONSOLE_SCREEN_BUFFER_INFO.dwCursorPosition" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "X : " << cs_buffer_info.dwCursorPosition.X << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "Y : " << cs_buffer_info.dwCursorPosition.Y << r2cm::linefeed2;
 
-				std::cout << r2::tab << "+ CONSOLE_SCREEN_BUFFER_INFO.dwMaximumWindowSize" << r2::linefeed;
-				std::cout << r2::tab2 << "X : " << cs_buffer_info.dwMaximumWindowSize.X << r2::linefeed;
-				std::cout << r2::tab2 << "Y : " << cs_buffer_info.dwMaximumWindowSize.Y << r2::linefeed2;
+				std::cout << r2cm::tab << "+ CONSOLE_SCREEN_BUFFER_INFO.dwMaximumWindowSize" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "X : " << cs_buffer_info.dwMaximumWindowSize.X << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "Y : " << cs_buffer_info.dwMaximumWindowSize.Y << r2cm::linefeed2;
 
-				std::cout << r2::tab << "+ CONSOLE_SCREEN_BUFFER_INFO.dwSize" << r2::linefeed;
-				std::cout << r2::tab2 << "X : " << cs_buffer_info.dwSize.X << r2::linefeed;
-				std::cout << r2::tab2 << "Y : " << cs_buffer_info.dwSize.Y << r2::linefeed2;
+				std::cout << r2cm::tab << "+ CONSOLE_SCREEN_BUFFER_INFO.dwSize" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "X : " << cs_buffer_info.dwSize.X << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "Y : " << cs_buffer_info.dwSize.Y << r2cm::linefeed2;
 
-				std::cout << r2::tab << "+ CONSOLE_SCREEN_BUFFER_INFO.srWindow" << r2::linefeed;
-				std::cout << r2::tab2 << "Top : " << cs_buffer_info.srWindow.Top << r2::linefeed;
-				std::cout << r2::tab2 << "Bottom : " << cs_buffer_info.srWindow.Bottom << r2::linefeed;
-				std::cout << r2::tab2 << "Left : " << cs_buffer_info.srWindow.Left << r2::linefeed;
-				std::cout << r2::tab2 << "Right : " << cs_buffer_info.srWindow.Right << r2::linefeed2;
+				std::cout << r2cm::tab << "+ CONSOLE_SCREEN_BUFFER_INFO.srWindow" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "Top : " << cs_buffer_info.srWindow.Top << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "Bottom : " << cs_buffer_info.srWindow.Bottom << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "Left : " << cs_buffer_info.srWindow.Left << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "Right : " << cs_buffer_info.srWindow.Right << r2cm::linefeed2;
 
-				std::cout << r2::tab << "+ CONSOLE_SCREEN_BUFFER_INFO.wAttributes" << r2::linefeed;
-				std::cout << r2::tab2 << cs_buffer_info.wAttributes << r2::linefeed;
+				std::cout << r2cm::tab << "+ CONSOLE_SCREEN_BUFFER_INFO.wAttributes" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << cs_buffer_info.wAttributes << r2cm::linefeed;
 			}
 			else
 			{
-				std::cout << r2::tab << "Failed : " "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2::linefeed;
+				std::cout << r2cm::tab << "Failed : " "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -91,49 +91,49 @@ namespace console_window_test
 	}
 	r2cm::iItem::DoFuncT ChangeWindowSize::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			{
 				system( "mode con lines=30 cols=120" );
 				ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 );
 			}
 
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
 			CONSOLE_SCREEN_BUFFER_INFO csbi;
 
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2::linefeed;
-				std::cout << r2::tab2 << "CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info;" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "system( \"mode con lines = 30 cols = 120\" );" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "system( \"mode con lines = 30 cols = 120\" );" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				GetConsoleScreenBufferInfo( hStdout, &csbi );
 				const auto width = static_cast<int>( csbi.srWindow.Right - csbi.srWindow.Left + 1 );
 				const auto height = static_cast<int>( csbi.srWindow.Bottom - csbi.srWindow.Top + 1 );
 
-				std::cout << r2::tab << "+ Current Window Size" << r2::linefeed2;
-				std::cout << r2::tab2 << "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2::linefeed2;
-				std::cout << r2::tab2 << "Width : " << width << r2::linefeed;
-				std::cout << r2::tab2 << "Height : " << height << r2::linefeed;
+				std::cout << r2cm::tab << "+ Current Window Size" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "Width : " << width << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "Height : " << height << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << "Press Any Key : Roll Back Window Size" << r2::linefeed;
+			std::cout << "Press Any Key : Roll Back Window Size" << r2cm::linefeed;
 			_getch();
 
 			{
@@ -141,7 +141,7 @@ namespace console_window_test
 				ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 );
 			}
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 
@@ -156,29 +156,29 @@ namespace console_window_test
 	}
 	r2cm::iItem::DoFuncT FullScreen::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			{
 				SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 );
 			}
 
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << r2::tab << "+ Process" << r2::linefeed2;
-			std::cout << r2::tab2 << "SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 );" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 );" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << "Press Any Key : Roll Back Window Size" << r2::linefeed;
+			std::cout << "Press Any Key : Roll Back Window Size" << r2cm::linefeed;
 			_getch();
 
 			{
 				SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 );
 			}
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 
@@ -193,44 +193,44 @@ namespace console_window_test
 	}
 	r2cm::iItem::DoFuncT WindowPosition::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			HWND hWnd = GetConsoleWindow();
 			RECT last_window_rect;
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "HWND hWnd = GetConsoleWindow();" << r2::linefeed;
-			std::cout << r2::tab2 << "RECT last_window_rect;" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "HWND hWnd = GetConsoleWindow();" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "RECT last_window_rect;" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				GetWindowRect( hWnd, &last_window_rect );
 
-				std::cout << r2::tab << "+ Backup" << r2::linefeed2;
-				std::cout << r2::tab2 << "GetWindowRect( hWnd, &last_window_rect );" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Backup" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "GetWindowRect( hWnd, &last_window_rect );" << r2cm::linefeed2;
 
-				std::cout << r2::tab3
+				std::cout << r2cm::tab3
 					<< "X : " << last_window_rect.left << "     "
-					<< "Y : " << last_window_rect.top << r2::linefeed;
-				std::cout << r2::tab3
+					<< "Y : " << last_window_rect.top << r2cm::linefeed;
+				std::cout << r2cm::tab3
 					<< "W : " << ( last_window_rect.right - last_window_rect.left ) << "     "
-					<< "H : " << ( last_window_rect.bottom - last_window_rect.top ) << r2::linefeed;
+					<< "H : " << ( last_window_rect.bottom - last_window_rect.top ) << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ System Display Info" << r2::linefeed2;
-				std::cout << r2::tab2 << "GetSystemMetrics( SM_CXSCREEN );" " > " << GetSystemMetrics( SM_CXSCREEN ) << r2::linefeed;
-				std::cout << r2::tab2 << "GetSystemMetrics( SM_CYSCREEN );" " > " << GetSystemMetrics( SM_CYSCREEN ) << r2::linefeed;
+				std::cout << r2cm::tab << "+ System Display Info" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "GetSystemMetrics( SM_CXSCREEN );" " > " << GetSystemMetrics( SM_CXSCREEN ) << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "GetSystemMetrics( SM_CYSCREEN );" " > " << GetSystemMetrics( SM_CYSCREEN ) << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				const int system_center_x = GetSystemMetrics( SM_CXSCREEN ) / 2;
@@ -244,30 +244,30 @@ namespace console_window_test
 
 				MoveWindow( hWnd, posx, posy, window_width, window_height, TRUE );
 
-				std::cout << r2::tab << "+ Move To Center" << r2::linefeed2;
-				std::cout << r2::tab2 << "const int system_center_x = GetSystemMetrics( SM_CXSCREEN ) / 2;" " > " << system_center_x << r2::linefeed;
-				std::cout << r2::tab2 << "const int system_center_y = GetSystemMetrics( SM_CYSCREEN ) / 2;" " > " << system_center_y << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Move To Center" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "const int system_center_x = GetSystemMetrics( SM_CXSCREEN ) / 2;" " > " << system_center_x << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "const int system_center_y = GetSystemMetrics( SM_CYSCREEN ) / 2;" " > " << system_center_y << r2cm::linefeed2;
 
-				std::cout << r2::tab2 << "const int window_width = ( last_window_rect.right - last_window_rect.left );" " > " << window_width << r2::linefeed;
-				std::cout << r2::tab2 << "const int window_height = ( last_window_rect.bottom - last_window_rect.top );" " > " << window_height << r2::linefeed2;
+				std::cout << r2cm::tab2 << "const int window_width = ( last_window_rect.right - last_window_rect.left );" " > " << window_width << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "const int window_height = ( last_window_rect.bottom - last_window_rect.top );" " > " << window_height << r2cm::linefeed2;
 
-				std::cout << r2::tab2 << "const int posx = system_center_x - ( window_width / 2 );" " > " << posx << r2::linefeed;
-				std::cout << r2::tab2 << "const int posy = system_center_y - ( window_height / 2 );" " > " << posy << r2::linefeed2;
+				std::cout << r2cm::tab2 << "const int posx = system_center_x - ( window_width / 2 );" " > " << posx << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "const int posy = system_center_y - ( window_height / 2 );" " > " << posy << r2cm::linefeed2;
 
-				std::cout << r2::tab2 << "MoveWindow( hWnd, posx, posy, window_width, window_height, TRUE );" << r2::linefeed2;
+				std::cout << r2cm::tab2 << "MoveWindow( hWnd, posx, posy, window_width, window_height, TRUE );" << r2cm::linefeed2;
 
 
 				RECT current_window_rect;
 				GetWindowRect( hWnd, &current_window_rect );
 
-				std::cout << r2::tab2 << "Current Window Position" << r2::linefeed;
-				std::cout << r2::tab3 << " - X : " << current_window_rect.left << r2::linefeed;
-				std::cout << r2::tab3 << " - Y : " << current_window_rect.top << r2::linefeed;
+				std::cout << r2cm::tab2 << "Current Window Position" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << " - X : " << current_window_rect.left << r2cm::linefeed;
+				std::cout << r2cm::tab3 << " - Y : " << current_window_rect.top << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 			
-			std::cout << "Press Any Key : Roll Back Window Position" << r2::linefeed;
+			std::cout << "Press Any Key : Roll Back Window Position" << r2cm::linefeed;
 			_getch();
 
 			{
@@ -282,9 +282,9 @@ namespace console_window_test
 				);
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -299,34 +299,34 @@ namespace console_window_test
 	}
 	r2cm::iItem::DoFuncT ChangeWindowName::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				TCHAR window_name_string[MAX_PATH];
 				GetConsoleTitle( window_name_string, MAX_PATH );
 
-				std::cout << r2::tab << " + " << "Current Window Name" << r2::linefeed;
-				std::wcout << r2::tab2 << " - " << window_name_string << r2::linefeed;
+				std::cout << r2cm::tab << " + " << "Current Window Name" << r2cm::linefeed;
+				std::wcout << r2cm::tab2 << " - " << window_name_string << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				auto* window_name_string = TEXT( "console_test : ChangeWindowName" );
 
 				SetConsoleTitle( window_name_string );
 
-				std::cout << r2::tab << " + " << "New Window Name" << r2::linefeed;
-				std::wcout << r2::tab2 << " - " << window_name_string << r2::linefeed;
+				std::cout << r2cm::tab << " + " << "New Window Name" << r2cm::linefeed;
+				std::wcout << r2cm::tab2 << " - " << window_name_string << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << "Press Any Key : Roll Back Window Name" << r2::linefeed;
+			std::cout << "Press Any Key : Roll Back Window Name" << r2cm::linefeed;
 			_getch();
 
 			{
@@ -334,7 +334,7 @@ namespace console_window_test
 			}
 			_getch();
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 
@@ -349,41 +349,41 @@ namespace console_window_test
 	}
 	r2cm::iItem::DoFuncT HideTitleBar::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			LONG last_window_style = 0;
 
 			{
 				last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE );
 
-				std::cout << r2::tab << "+ Backup" << r2::linefeed2;
-				std::cout << r2::tab2 << "last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE );" << r2::linefeed;
-				std::cout << r2::tab3 << std::bitset<32>( last_window_style ) << r2::linefeed;
+				std::cout << r2cm::tab << "+ Backup" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE );" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << std::bitset<32>( last_window_style ) << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				LONG new_window_style = last_window_style;
 				new_window_style &= ~( WS_BORDER | WS_CAPTION | WS_THICKFRAME );
 				SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style );
 
-				std::cout << r2::tab << "+ Lock" << r2::linefeed2;
-				std::cout << r2::tab2 << "new_window_style &= ~( WS_BORDER | WS_CAPTION | WS_THICKFRAME );" << r2::linefeed;
-				std::cout << r2::tab3 << std::bitset<32>( new_window_style ) << r2::linefeed2;
-				std::cout << r2::tab2 << "SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style );" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Lock" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "new_window_style &= ~( WS_BORDER | WS_CAPTION | WS_THICKFRAME );" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << std::bitset<32>( new_window_style ) << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style );" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << r2::tab << "Press Any Key : Rollback" << r2::linefeed;
+			std::cout << r2cm::tab << "Press Any Key : Rollback" << r2cm::linefeed;
 			_getch();
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			//
 			// Rollback
@@ -393,7 +393,7 @@ namespace console_window_test
 				SetWindowLong( hwnd, GWL_STYLE, last_window_style );
 			}
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -408,26 +408,26 @@ namespace console_window_test
 	}
 	r2cm::iItem::DoFuncT HideScrollBar::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
-			std::cout << r2::tab << "WinUser.h" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << r2cm::tab << "WinUser.h" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				ShowScrollBar( GetConsoleWindow(), SB_VERT, 0 );
 
-				std::cout << r2::tab << "+ Hide" << r2::linefeed2;
-				std::cout << r2::tab2 << "ShowScrollBar( GetConsoleWindow(), SB_VERT, 0 );" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Hide" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "ShowScrollBar( GetConsoleWindow(), SB_VERT, 0 );" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 			
-			std::cout << r2::tab << "Press Any Key : Rollback" << r2::linefeed;
+			std::cout << r2cm::tab << "Press Any Key : Rollback" << r2cm::linefeed;
 			_getch();
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			//
 			// Rollback
@@ -435,13 +435,13 @@ namespace console_window_test
 			{
 				ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 );
 
-				std::cout << r2::tab << "+ Show" << r2::linefeed2;
-				std::cout << r2::tab2 << "ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 );" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Show" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 );" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -456,41 +456,41 @@ namespace console_window_test
 	}
 	r2cm::iItem::DoFuncT LockWindowResizingByDragging::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			LONG last_window_style = 0;
 
 			{
 				last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE );
 
-				std::cout << r2::tab << "+ Backup" << r2::linefeed2;
-				std::cout << r2::tab2 << "last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE );" << r2::linefeed;
-				std::cout << r2::tab3 << std::bitset<32>( last_window_style ) << r2::linefeed;
+				std::cout << r2cm::tab << "+ Backup" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE );" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << std::bitset<32>( last_window_style ) << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				LONG new_window_style = last_window_style;
 				new_window_style &= ~( WS_SIZEBOX );
 				SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style );
 
-				std::cout << r2::tab << "+ Lock" << r2::linefeed2;
-				std::cout << r2::tab2 << "new_window_style &= ~( WS_SIZEBOX );" << r2::linefeed;
-				std::cout << r2::tab3 << std::bitset<32>( new_window_style ) << r2::linefeed2;
-				std::cout << r2::tab2 << "SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style );" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Lock" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "new_window_style &= ~( WS_SIZEBOX );" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << std::bitset<32>( new_window_style ) << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style );" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << r2::tab << "Press Any Key : Rollback" << r2::linefeed;
+			std::cout << r2cm::tab << "Press Any Key : Rollback" << r2cm::linefeed;
 			_getch();
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			//
 			// Rollback
@@ -499,7 +499,7 @@ namespace console_window_test
 				SetWindowLong( GetConsoleWindow(), GWL_STYLE, last_window_style );
 			}
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -514,37 +514,37 @@ namespace console_window_test
 	}
 	r2cm::iItem::DoFuncT MenuItem::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			HMENU hmenu = GetSystemMenu( GetConsoleWindow(), FALSE );
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "HMENU hmenu = GetSystemMenu( GetConsoleWindow(), FALSE );" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "HMENU hmenu = GetSystemMenu( GetConsoleWindow(), FALSE );" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Process : Close Button Grayed" << r2::linefeed2;
-				std::cout << r2::tab2 << "EnableMenuItem( hmenu, SC_CLOSE, MF_GRAYED );" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Process : Close Button Grayed" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "EnableMenuItem( hmenu, SC_CLOSE, MF_GRAYED );" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "Press Any Key : Do" << r2::linefeed;
+				std::cout << r2cm::tab << "Press Any Key : Do" << r2cm::linefeed;
 				_getch();
 
 				EnableMenuItem( hmenu, SC_CLOSE, MF_GRAYED );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "Press Any Key : Rollback" << r2::linefeed;
+				std::cout << r2cm::tab << "Press Any Key : Rollback" << r2cm::linefeed;
 				_getch();
 
 				//
@@ -555,9 +555,9 @@ namespace console_window_test
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -572,13 +572,13 @@ namespace console_window_test
 	}
 	r2cm::iItem::DoFuncT CursorMove::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
 
-			std::cout << "[W, A, S, D] : Move" << r2::linefeed;
-			std::cout << "[SPACE BAR] Foot Print" << r2::linefeed;
-			std::cout << "[ESC] Exit" << r2::linefeed;
+			std::cout << "[W, A, S, D] : Move" << r2cm::linefeed;
+			std::cout << "[SPACE BAR] Foot Print" << r2cm::linefeed;
+			std::cout << "[ESC] Exit" << r2cm::linefeed;
 
 			{
 				HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
@@ -615,7 +615,7 @@ namespace console_window_test
 				}
 			}
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 
@@ -628,11 +628,11 @@ namespace console_window_test
 	}
 	r2cm::iItem::DoFuncT CursorVisibility::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
 
@@ -656,9 +656,9 @@ namespace console_window_test
 
 			system( "pause" );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 }

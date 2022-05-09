@@ -2,7 +2,7 @@
 #include "r2_AlignMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "test_cpp/item/alignof_test.h"
 #include "test_cpp/item/alignas_test.h"
@@ -48,10 +48,10 @@ namespace r2
 			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
-				, [&director]()->r2cm::eTestEndAction
+				, [&director]()->r2cm::eItemLeaveAction
 				{
 					director.Setup( C_CPP_Menu::Create( director ) );
-					return r2cm::eTestEndAction::None;
+					return r2cm::eItemLeaveAction::None;
 				}
 			);
 		}

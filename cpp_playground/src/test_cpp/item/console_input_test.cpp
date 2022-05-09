@@ -3,7 +3,7 @@
 
 #include <conio.h> // _kbhit(), _getch()
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace console_input_test
 {
@@ -16,19 +16,19 @@ namespace console_input_test
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed2;
-			std::cout << "[ESC] End" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed2;
+			std::cout << "[ESC] End" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			int input = 0;
 			while( true )
 			{
 				input = _getch();
 
-				std::cout << "Key : " << input << r2::linefeed;
+				std::cout << "Key : " << input << r2cm::linefeed;
 
 				if( 27 == input )
 				{
@@ -36,9 +36,9 @@ namespace console_input_test
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

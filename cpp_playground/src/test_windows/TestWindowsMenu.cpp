@@ -2,7 +2,7 @@
 #include "TestWindowsMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "test_cpp/ConsoleTextColorMenu.h"
 #include "test_cpp/r2_ConsoleWindowMenu.h"
@@ -25,19 +25,19 @@ r2cm::MenuUp TestWindowsMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			'1'
 			, []()->const char* { return r2::ConsoleWindowMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( r2::ConsoleWindowMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem(
 			'2'
 			, []()->const char* { return ConsoleTextColorMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( ConsoleTextColorMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 
@@ -92,10 +92,10 @@ r2cm::MenuUp TestWindowsMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			27
 			, []()->const char* { return "Return To Root"; }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( RootMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 	}

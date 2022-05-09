@@ -4,7 +4,7 @@
 #include <tuple>
 #include <utility> // pair
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace
 {
@@ -29,20 +29,20 @@ namespace structured_binding_test
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed << r2cm::linefeed;
 
 
 			{
-				std::cout << r2::tab << "+ Basic" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Basic" << r2cm::linefeed;
 
-				std::cout << r2::tab2 << "struct TestStruct" << r2::linefeed;
-				std::cout << r2::tab2 << "{" << r2::linefeed;
-				std::cout << r2::tab3 << "int i = 1;" << r2::linefeed;
-				std::cout << r2::tab3 << "char c = 'a';" << r2::linefeed;
-				std::cout << r2::tab3 << "float f = 3.14f;" << r2::linefeed;
-				std::cout << r2::tab2 << "};" << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::tab2 << "struct TestStruct" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "{" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "int i = 1;" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "char c = 'a';" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "float f = 3.14f;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "};" << r2cm::linefeed << r2cm::linefeed;
 
 				struct TestStruct
 				{
@@ -51,85 +51,85 @@ namespace structured_binding_test
 					float f = 3.14f;
 				};
 
-				std::cout << r2::tab2 << "TestStruct t;" << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::tab2 << "TestStruct t;" << r2cm::linefeed << r2cm::linefeed;
 				TestStruct t;
 
-				std::cout << r2::tab2 << "auto[i, c, f] = t;" << r2::linefeed;
+				std::cout << r2cm::tab2 << "auto[i, c, f] = t;" << r2cm::linefeed;
 				auto[i, c, f] = t;
 
-				std::cout << r2::tab3 << " - i : " << i << r2::linefeed;
-				std::cout << r2::tab3 << " - c : " << c << r2::linefeed;
-				std::cout << r2::tab3 << " - f : " << f << r2::linefeed;
+				std::cout << r2cm::tab3 << " - i : " << i << r2cm::linefeed;
+				std::cout << r2cm::tab3 << " - c : " << c << r2cm::linefeed;
+				std::cout << r2cm::tab3 << " - f : " << f << r2cm::linefeed;
 			}
 
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2cm::linefeed << r2cm::linefeed;
 
 
 			{
-				std::cout << r2::tab << "+ with Pair" << r2::linefeed;
+				std::cout << r2cm::tab << "+ with Pair" << r2cm::linefeed;
 
-				std::cout << r2::tab2 << "auto temp_pair = std::make_pair( 2, 'b' );" << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::tab2 << "auto temp_pair = std::make_pair( 2, 'b' );" << r2cm::linefeed << r2cm::linefeed;
 				auto temp_pair = std::make_pair( 2, 'b' );
 
-				std::cout << r2::tab2 << "auto[first, second] = temp_pair;" << r2::linefeed;
+				std::cout << r2cm::tab2 << "auto[first, second] = temp_pair;" << r2cm::linefeed;
 				auto[first, second] = temp_pair;
 
-				std::cout << r2::tab3 << " - first : " << first << r2::linefeed;
-				std::cout << r2::tab3 << " - second : " << second << r2::linefeed;
+				std::cout << r2cm::tab3 << " - first : " << first << r2cm::linefeed;
+				std::cout << r2cm::tab3 << " - second : " << second << r2cm::linefeed;
 			}
 
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2cm::linefeed << r2cm::linefeed;
 
 
 			{
-				std::cout << r2::tab << "+ with Tuple" << r2::linefeed;
+				std::cout << r2cm::tab << "+ with Tuple" << r2cm::linefeed;
 
-				std::cout << r2::tab2 << "auto temp_tuple = std::make_tuple( 3, 'c', 6.28f );" << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::tab2 << "auto temp_tuple = std::make_tuple( 3, 'c', 6.28f );" << r2cm::linefeed << r2cm::linefeed;
 				auto temp_tuple = std::make_tuple( 3, 'c', 6.28f );
 
-				std::cout << r2::tab2 << "auto[first, second, third] = temp_tuple;" << r2::linefeed;
+				std::cout << r2cm::tab2 << "auto[first, second, third] = temp_tuple;" << r2cm::linefeed;
 				auto[first, second, third] = temp_tuple;
 
-				std::cout << r2::tab3 << " - first : " << first << r2::linefeed;
-				std::cout << r2::tab3 << " - second : " << second << r2::linefeed;
-				std::cout << r2::tab3 << " - third : " << third << r2::linefeed;
+				std::cout << r2cm::tab3 << " - first : " << first << r2cm::linefeed;
+				std::cout << r2cm::tab3 << " - second : " << second << r2cm::linefeed;
+				std::cout << r2cm::tab3 << " - third : " << third << r2cm::linefeed;
 			}
 
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2cm::linefeed << r2cm::linefeed;
 
 
 			{
-				std::cout << r2::tab << "+ with Function x 1" << r2::linefeed;
+				std::cout << r2cm::tab << "+ with Function x 1" << r2cm::linefeed;
 
-				std::cout << r2::tab2 << "auto[first, second] = GetDummyPair();" << r2::linefeed;
+				std::cout << r2cm::tab2 << "auto[first, second] = GetDummyPair();" << r2cm::linefeed;
 				auto[first, second] = GetDummyPair();
 
-				std::cout << r2::tab3 << " - first : " << first << r2::linefeed;
-				std::cout << r2::tab3 << " - second : " << second << r2::linefeed;
+				std::cout << r2cm::tab3 << " - first : " << first << r2cm::linefeed;
+				std::cout << r2cm::tab3 << " - second : " << second << r2cm::linefeed;
 			}
 
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2cm::linefeed << r2cm::linefeed;
 
 
 			{
-				std::cout << r2::tab << "+ with Function x 2" << r2::linefeed;
+				std::cout << r2cm::tab << "+ with Function x 2" << r2cm::linefeed;
 
-				std::cout << r2::tab2 << "auto[first, second, third] = GetDummyTuple();" << r2::linefeed;
+				std::cout << r2cm::tab2 << "auto[first, second, third] = GetDummyTuple();" << r2cm::linefeed;
 				auto[first, second, third] = GetDummyTuple();
 
-				std::cout << r2::tab3 << " - first : " << first << r2::linefeed;
-				std::cout << r2::tab3 << " - second : " << second << r2::linefeed;
-				std::cout << r2::tab3 << " - third : " << third << r2::linefeed;
+				std::cout << r2cm::tab3 << " - first : " << first << r2cm::linefeed;
+				std::cout << r2cm::tab3 << " - second : " << second << r2cm::linefeed;
+				std::cout << r2cm::tab3 << " - third : " << third << r2cm::linefeed;
 			}
 
 
-			std::cout << r2::linefeed << r2::linefeed;
+			std::cout << r2cm::linefeed << r2cm::linefeed;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

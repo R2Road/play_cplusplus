@@ -9,7 +9,7 @@
 #include <unordered_set>
 #include <vector>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "utility/r2utility_StopWatch.h"
 
@@ -24,11 +24,11 @@ namespace performance_container_iteration_test
 	}
 	r2cm::iItem::DoFuncT BuiltInArrayIteration::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			int test_container[100000];
 			std::fill_n( test_container, sizeof( test_container ) / sizeof( test_container[0] ), 1 );
@@ -36,14 +36,14 @@ namespace performance_container_iteration_test
 			unsigned int sum_result = 0;
 			r2utility::StopWatch stop_watch;
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "int test_container[100000];" << r2::linefeed;
-			std::cout << r2::tab2 << "std::fill_n( test_container, sizeof( test_container ) / sizeof( test_container[0] ), 1 );" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "int test_container[100000];" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "std::fill_n( test_container, sizeof( test_container ) / sizeof( test_container[0] ), 1 );" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ For with Index" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ For with Index" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -56,17 +56,17 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Range-Based For" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Range-Based For" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -79,16 +79,16 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -103,25 +103,25 @@ namespace performance_container_iteration_test
 	}
 	r2cm::iItem::DoFuncT STDArrayIteration::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			std::array<int, 100000> test_container;
 			test_container.fill( 1 );
 			unsigned int sum_result = 0;
 			r2utility::StopWatch stop_watch;
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "std::array<int, 100000> test_container;" << r2::linefeed;
-			std::cout << r2::tab2 << "test_container.fill( 1 );" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "std::array<int, 100000> test_container;" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "test_container.fill( 1 );" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ For with Index" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ For with Index" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -134,17 +134,17 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Range-Based For" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Range-Based For" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -157,17 +157,17 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Iterator" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Iterator" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -180,16 +180,16 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -204,23 +204,23 @@ namespace performance_container_iteration_test
 	}
 	r2cm::iItem::DoFuncT VectorIteration::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			std::vector<int> test_container( 100000, 1 );
 			unsigned int sum_result = 0;
 			r2utility::StopWatch stop_watch;
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "std::vector<int> test_container( 100000, 1 );" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "std::vector<int> test_container( 100000, 1 );" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ For with Index" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ For with Index" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -233,17 +233,17 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Range-Based For" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Range-Based For" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -256,17 +256,17 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Iterator" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Iterator" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -279,16 +279,16 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -303,23 +303,23 @@ namespace performance_container_iteration_test
 	}
 	r2cm::iItem::DoFuncT ListIteration::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			std::list<int> test_container( 100000, 1 );
 			unsigned int sum_result = 0;
 			r2utility::StopWatch stop_watch;
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "std::list<int> test_container( 100000, 1 );" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "std::list<int> test_container( 100000, 1 );" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Range-Based For" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Range-Based For" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -332,17 +332,17 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Iterator" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Iterator" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -355,16 +355,16 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -379,11 +379,11 @@ namespace performance_container_iteration_test
 	}
 	r2cm::iItem::DoFuncT MapIteration::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			std::map<std::size_t, int> test_container;
 			for( int n = 0; 100000 > n; ++n ) test_container.emplace( n, 1 );
@@ -391,14 +391,14 @@ namespace performance_container_iteration_test
 			unsigned int sum_result = 0;
 			r2utility::StopWatch stop_watch;
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "std::map<std::size_t, int> test_container;" << r2::linefeed;
-			std::cout << r2::tab2 << "for( int n = 0; n > 100000; ++n ) test_container.emplace( n, 1 );" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "std::map<std::size_t, int> test_container;" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "for( int n = 0; n > 100000; ++n ) test_container.emplace( n, 1 );" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ For with Index" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ For with Index" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -411,17 +411,17 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Range-Based For" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Range-Based For" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -434,17 +434,17 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Iterator" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Iterator" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -457,16 +457,16 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -481,11 +481,11 @@ namespace performance_container_iteration_test
 	}
 	r2cm::iItem::DoFuncT UnorderedMapIteration::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			std::unordered_map<std::size_t, int> test_container( 100000 );
 			for( int n = 0; 100000 > n; ++n ) test_container.emplace( n, 1 );
@@ -493,14 +493,14 @@ namespace performance_container_iteration_test
 			unsigned int sum_result = 0;
 			r2utility::StopWatch stop_watch;
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "std::unordered_map<std::size_t, int> test_container( 100000 );" << r2::linefeed;
-			std::cout << r2::tab2 << "for( int n = 0; n > 100000; ++n ) test_container.emplace( n, 1 );" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "std::unordered_map<std::size_t, int> test_container( 100000 );" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "for( int n = 0; n > 100000; ++n ) test_container.emplace( n, 1 );" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ For with Index" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ For with Index" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -513,17 +513,17 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Range-Based For" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Range-Based For" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -536,17 +536,17 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Iterator" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Iterator" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -559,16 +559,16 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -583,11 +583,11 @@ namespace performance_container_iteration_test
 	}
 	r2cm::iItem::DoFuncT SetIteration::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			std::set<int> test_container;
 			for( int n = 0; 100000 > n; ++n ) test_container.emplace( n );
@@ -595,14 +595,14 @@ namespace performance_container_iteration_test
 			unsigned int sum_result = 0;
 			r2utility::StopWatch stop_watch;
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "std::set<int> test_container;" << r2::linefeed;
-			std::cout << r2::tab2 << "for( int n = 0; 100000 > n; ++n ) test_container.emplace( n );" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "std::set<int> test_container;" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "for( int n = 0; 100000 > n; ++n ) test_container.emplace( n );" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Range-Based For" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Range-Based For" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -615,17 +615,17 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Iterator" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Iterator" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -638,16 +638,16 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -662,11 +662,11 @@ namespace performance_container_iteration_test
 	}
 	r2cm::iItem::DoFuncT UnorderedSetIteration::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			std::unordered_set<int> test_container( 100000 );
 			for( int n = 0; 100000 > n; ++n ) test_container.emplace( n );
@@ -674,14 +674,14 @@ namespace performance_container_iteration_test
 			unsigned int sum_result = 0;
 			r2utility::StopWatch stop_watch;
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "std::map<int, int> test_container;" << r2::linefeed;
-			std::cout << r2::tab2 << "for( int n = 0; 100000 > n; ++n ) test_container.emplace( n );" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "std::map<int, int> test_container;" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "for( int n = 0; 100000 > n; ++n ) test_container.emplace( n );" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Range-Based For" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Range-Based For" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -694,17 +694,17 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Iterator" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Iterator" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -717,16 +717,16 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -741,11 +741,11 @@ namespace performance_container_iteration_test
 	}
 	r2cm::iItem::DoFuncT STDArrayIteration_WithPointer::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			std::array<int*, 100000> test_container;
 			for( auto& i : test_container ) i = new int( 1 );
@@ -753,14 +753,14 @@ namespace performance_container_iteration_test
 			unsigned int sum_result = 0;
 			r2utility::StopWatch stop_watch;
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "std::array<int, 100000> test_container;" << r2::linefeed;
-			std::cout << r2::tab2 << "for( auto& i : test_container ) i = new int( 1 );" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "std::array<int, 100000> test_container;" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "for( auto& i : test_container ) i = new int( 1 );" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ For with Index" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ For with Index" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -773,17 +773,17 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Range-Based For" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Range-Based For" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -796,17 +796,17 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Iterator" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Iterator" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -819,18 +819,18 @@ namespace performance_container_iteration_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << "sum_result : " << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << "sum_result : " << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
 			for( auto& i : test_container ) delete i;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

@@ -1,60 +1,60 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2/r2_Singleton.h"
+#include "r2cm/r2cm_Singleton.h"
 
 namespace std_cout_test
 {
-	class FMTStatus : public r2cm::iItem, public r2::SingleTon<FMTStatus>
+	class FMTStatus : public r2cm::iItem, public r2cm::SingleTon<FMTStatus>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class NumberFormat_1 : public r2cm::iItem, public r2::SingleTon<NumberFormat_1>
+	class NumberFormat_1 : public r2cm::iItem, public r2cm::SingleTon<NumberFormat_1>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class NumberFormat_2 : public r2cm::iItem, public r2::SingleTon<NumberFormat_2>
+	class NumberFormat_2 : public r2cm::iItem, public r2cm::SingleTon<NumberFormat_2>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class NumberFormat_3 : public r2cm::iItem, public r2::SingleTon<NumberFormat_3>
+	class NumberFormat_3 : public r2cm::iItem, public r2cm::SingleTon<NumberFormat_3>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class NumberFormat_4 : public r2cm::iItem, public r2::SingleTon<NumberFormat_4>
+	class NumberFormat_4 : public r2cm::iItem, public r2cm::SingleTon<NumberFormat_4>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class Align : public r2cm::iItem, public r2::SingleTon<Align>
+	class Align : public r2cm::iItem, public r2cm::SingleTon<Align>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class Flag : public r2cm::iItem, public r2::SingleTon<Flag>
+	class Flag : public r2cm::iItem, public r2cm::SingleTon<Flag>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class BoolAlpha : public r2cm::iItem, public r2::SingleTon<BoolAlpha>
+	class BoolAlpha : public r2cm::iItem, public r2cm::SingleTon<BoolAlpha>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

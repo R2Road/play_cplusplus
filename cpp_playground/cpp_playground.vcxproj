@@ -28,11 +28,11 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\r2cm\r2cm_Director.cpp" />
+    <ClCompile Include="src\r2cm\r2cm_Inspector.cpp" />
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp" />
     <ClCompile Include="src\r2\r2_Direction4.cpp" />
     <ClCompile Include="src\r2\r2_Direction8.cpp" />
     <ClCompile Include="src\r2\r2_GridIndexConverter.cpp" />
-    <ClCompile Include="src\r2\r2_Inspector.cpp" />
     <ClCompile Include="src\r2\r2_PointInt.cpp" />
     <ClCompile Include="src\r2\r2_RectInt.cpp" />
     <ClCompile Include="src\r2\r2_Size.cpp" />
@@ -142,22 +142,22 @@
     <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h" />
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h" />
     <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\r2cm\r2cm_constant.h" />
     <ClInclude Include="src\r2cm\r2cm_Director.h" />
-    <ClInclude Include="src\r2cm\r2cm_eTestEndAction.h" />
     <ClInclude Include="src\r2cm\r2cm_iItem.h" />
+    <ClInclude Include="src\r2cm\r2cm_Inspector.h" />
     <ClInclude Include="src\r2cm\r2cm_Menu.h" />
+    <ClInclude Include="src\r2cm\r2cm_Singleton.h" />
     <ClInclude Include="src\r2\r2_ArrayBasedList.h" />
     <ClInclude Include="src\r2\r2_Assert.h" />
     <ClInclude Include="src\r2\r2_Direction4.h" />
     <ClInclude Include="src\r2\r2_Direction8.h" />
     <ClInclude Include="src\r2\r2_Grid.h" />
     <ClInclude Include="src\r2\r2_GridIndexConverter.h" />
-    <ClInclude Include="src\r2\r2_Inspector.h" />
     <ClInclude Include="src\r2\r2_Point.h" />
     <ClInclude Include="src\r2\r2_PointInt.h" />
     <ClInclude Include="src\r2\r2_Rect.h" />
     <ClInclude Include="src\r2\r2_RectInt.h" />
-    <ClInclude Include="src\r2\r2_Singleton.h" />
     <ClInclude Include="src\r2\r2_Size.h" />
     <ClInclude Include="src\RootMenu.h" />
     <ClInclude Include="src\test_algorithm\item\algorithm_astar_test.h" />

@@ -2,7 +2,7 @@
 #include "HobbyMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 #include "RootMenu.h"
 
 #include "test_hobby/item/infinite_number_test.h"
@@ -19,10 +19,10 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			'1'
 			, []()->const char* { return MemoryPoolMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( MemoryPoolMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 
@@ -50,10 +50,10 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			'z'
 			, []()->const char* { return ArrayBasedListMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( ArrayBasedListMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 
@@ -64,10 +64,10 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			27
 			, []()->const char* { return "Return To Root"; }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( RootMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 	}

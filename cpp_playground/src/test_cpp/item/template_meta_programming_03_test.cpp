@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "template_meta_programming_03_test.h"
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace
 {
@@ -38,23 +38,23 @@ namespace template_meta_programming_test
 	}
 	r2cm::iItem::DoFuncT MultiTypePackage::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << "\t" << "+ MTPackage<int, float, char> mtp{ 1, 2.f, '3' };" << r2::linefeed;
+				std::cout << "\t" << "+ MTPackage<int, float, char> mtp{ 1, 2.f, '3' };" << r2cm::linefeed;
 
 				MTPackage<int, float, char> mtp{ 1, 2.f, '3' };
 
-				std::cout << "\t\t" << "result : " << mtp.val << r2::linefeed;
+				std::cout << "\t\t" << "result : " << mtp.val << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

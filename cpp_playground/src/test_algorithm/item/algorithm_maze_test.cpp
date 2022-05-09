@@ -4,7 +4,7 @@
 #include <conio.h> // _kbhit(), _getch()
 #include <Windows.h>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "r2/r2_Direction4.h"
 #include "r2/r2_Grid.h"
@@ -16,11 +16,11 @@ namespace
 	{
 		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
-		std::cout << "# " << algorithm_maze_test::Basic::GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+		std::cout << "# " << algorithm_maze_test::Basic::GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
 
-		std::cout << "[ANY KEY] Exit" << r2::linefeed;
+		std::cout << "[ANY KEY] Exit" << r2cm::linefeed;
 
-		std::cout << r2::split;
+		std::cout << r2cm::split;
 
 		int x = 0;
 		for( const auto i : grid )
@@ -28,7 +28,7 @@ namespace
 			if( grid.GetWidth() <= x )
 			{
 				x = 0;
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 			}
 
 			std::cout << i;
@@ -36,8 +36,8 @@ namespace
 			++x;
 		}
 
-		std::cout << r2::linefeed;
-		std::cout << r2::split;
+		std::cout << r2cm::linefeed;
+		std::cout << r2cm::split;
 	}
 }
 
@@ -52,7 +52,7 @@ namespace algorithm_maze_test
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			struct Cell
 			{
@@ -100,7 +100,7 @@ namespace algorithm_maze_test
 				}
 			}
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

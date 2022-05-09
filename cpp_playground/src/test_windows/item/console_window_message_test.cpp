@@ -7,7 +7,7 @@
 #define  WIN32_LEAN_AND_MEAN
 #include <windows.h>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace console_window_message_test
 {
@@ -59,30 +59,30 @@ namespace console_window_message_test
 	}
 	r2cm::iItem::DoFuncT ConsoleControlHandler::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
-			std::cout << "[ESC] End" << r2::linefeed2;
-			std::cout << "[Ctrl + C] ..." << r2::linefeed;
-			std::cout << "[Ctrl + Break] ..." << r2::linefeed;
-			std::cout << "[Close Window] ..." << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << "[ESC] End" << r2cm::linefeed2;
+			std::cout << "[Ctrl + C] ..." << r2cm::linefeed;
+			std::cout << "[Ctrl + Break] ..." << r2cm::linefeed;
+			std::cout << "[Close Window] ..." << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << r2::tab << "+ Ref" << r2::linefeed2;
-			std::cout << r2::tab2 << "https://docs.microsoft.com/ko-kr/windows/console/registering-a-control-handler-function" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Ref" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "https://docs.microsoft.com/ko-kr/windows/console/registering-a-control-handler-function" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << r2::tab << "+ Message" << r2::linefeed2;
-			std::cout << r2::tab2 << "Ctrl + C 를 누르면 디버거가 붙어있는 경우 PDB가 없다며 예외가 터진다." << r2::linefeed;
-			std::cout << r2::tab2 << "F5 누르면 계속 실행 된다." << r2::linefeed;
-			std::cout << r2::tab2 << "Ctrl + Break 는 메세지 받고 TRUE 를 반환하지 않으면 프로그램이 종료된다." << r2::linefeed;
-			std::cout << r2::tab2 << "가급적 Ctrl + F5 로 실행할 것" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Message" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "Ctrl + C 를 누르면 디버거가 붙어있는 경우 PDB가 없다며 예외가 터진다." << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "F5 누르면 계속 실행 된다." << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "Ctrl + Break 는 메세지 받고 TRUE 를 반환하지 않으면 프로그램이 종료된다." << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "가급적 Ctrl + F5 로 실행할 것" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << "Press Key" << r2::linefeed2;
+			std::cout << "Press Key" << r2cm::linefeed2;
 
 			if( SetConsoleCtrlHandler( CtrlHandler, TRUE ) )
 			{
@@ -102,9 +102,9 @@ namespace console_window_message_test
 				while( 1 );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -154,20 +154,20 @@ namespace console_window_message_test
 	}
 	r2cm::iItem::DoFuncT MessageHook::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << r2::tab << "+ Message" << r2::linefeed2;
-			std::cout << r2::tab2 << "GetMessage 함수를 쓰지 않으면 키 입력이 화면에 표시가 안된다." << r2::linefeed;
-			std::cout << r2::tab2 << "GetMessage 는 프로그램을 멈춰놓는 역활을 할뿐 들어오는 Message 가 없어서 아무 일도 하지 않는다." << r2::linefeed;
-			std::cout << r2::tab2 << "Test Loop 를 어떤식으로 끝내야 할지 모르겠다." << r2::linefeed;
-			std::cout << r2::tab2 << "마우스 왼 클릭을 하면 엄청나게 느려진다." << r2::linefeed;
-			std::cout << r2::tab2 << "CallNextHookEx 함수를 호출하지 않으면 느려지지 않는 대신 마우스가 움직이지 않는다." << r2::linefeed;
+			std::cout << r2cm::tab << "+ Message" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "GetMessage 함수를 쓰지 않으면 키 입력이 화면에 표시가 안된다." << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "GetMessage 는 프로그램을 멈춰놓는 역활을 할뿐 들어오는 Message 가 없어서 아무 일도 하지 않는다." << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "Test Loop 를 어떤식으로 끝내야 할지 모르겠다." << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "마우스 왼 클릭을 하면 엄청나게 느려진다." << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "CallNextHookEx 함수를 호출하지 않으면 느려지지 않는 대신 마우스가 움직이지 않는다." << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				g_hook_keyboard = SetWindowsHookEx( WH_KEYBOARD_LL, &KeyboardProc, GetModuleHandle( NULL ), 0 );
@@ -189,9 +189,9 @@ namespace console_window_message_test
 				g_hook_mouse = NULL;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

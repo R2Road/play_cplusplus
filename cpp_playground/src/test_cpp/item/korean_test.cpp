@@ -3,7 +3,7 @@
 
 #include <locale>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace korean_test
 {
@@ -17,40 +17,40 @@ namespace korean_test
 
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ use std::cout" << r2::linefeed;
-				std::cout << r2::linefeed;
+				std::cout << r2cm::tab << "+ use std::cout" << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2::tab << "+ const char* korean = \"한글 출력\";" << r2::linefeed;
+				std::cout << r2cm::tab << "+ const char* korean = \"한글 출력\";" << r2cm::linefeed;
 				const char* korean = "한글 출력";
 
-				std::cout << r2::tab2 << "- " << korean << r2::linefeed;
+				std::cout << r2cm::tab2 << "- " << korean << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ use std::wcout" << r2::linefeed;
-				std::cout << r2::linefeed;
+				std::cout << r2cm::tab << "+ use std::wcout" << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2::tab << "+ const wchar_t* korean = L\"한글 출력\";" << r2::linefeed;
+				std::cout << r2cm::tab << "+ const wchar_t* korean = L\"한글 출력\";" << r2cm::linefeed;
 				const wchar_t* korean = L"한글 출력";
 
-				std::cout << r2::tab << "+ std::wcout.imbue( std::locale( \"kor\" ) );" << r2::linefeed;
+				std::cout << r2cm::tab << "+ std::wcout.imbue( std::locale( \"kor\" ) );" << r2cm::linefeed;
 				std::wcout.imbue( std::locale( "kor" ) );
 
-				std::wcout << r2::tab2 << "- " << korean << r2::linefeed2;
+				std::wcout << r2cm::tab2 << "- " << korean << r2cm::linefeed2;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

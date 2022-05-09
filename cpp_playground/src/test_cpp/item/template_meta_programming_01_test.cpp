@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "template_meta_programming_01_test.h"
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace
 {
@@ -15,7 +15,7 @@ namespace
 	template<>
 	void FactorialPrinter<1>()
 	{
-		std::cout << 1 << r2::linefeed;
+		std::cout << 1 << r2cm::linefeed;
 	};
 
 
@@ -42,43 +42,43 @@ namespace template_meta_programming_test
 	}
 	r2cm::iItem::DoFuncT CalculateFactorial::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << "\t" << "+ Factorial<2>::f" << r2::linefeed;
+				std::cout << "\t" << "+ Factorial<2>::f" << r2cm::linefeed;
 
 				std::cout << "\t\t" << "calc : ";
 				FactorialPrinter<2>();
-				std::cout << "\t\t" << "result : " << Factorial<2>::f << r2::linefeed;
+				std::cout << "\t\t" << "result : " << Factorial<2>::f << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << "\t" << "+ Factorial<4>::f" << r2::linefeed;
+				std::cout << "\t" << "+ Factorial<4>::f" << r2cm::linefeed;
 
 				std::cout << "\t\t" << "calc : ";
 				FactorialPrinter<4>();
-				std::cout << "\t\t" << "result : " << Factorial<4>::f << r2::linefeed;
+				std::cout << "\t\t" << "result : " << Factorial<4>::f << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << "\t" << "+ Factorial<10>::f" << r2::linefeed;
+				std::cout << "\t" << "+ Factorial<10>::f" << r2cm::linefeed;
 
 				std::cout << "\t\t" << "calc : ";
 				FactorialPrinter<10>();
-				std::cout << "\t\t" << "result : " << Factorial<10>::f << r2::linefeed;
+				std::cout << "\t\t" << "result : " << Factorial<10>::f << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -108,27 +108,27 @@ namespace template_meta_programming_test
 	}
 	r2cm::iItem::DoFuncT GreatestCommonDivisor::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
-
-			{
-				std::cout << "\t + " << "GCDCalculator<9, 3>::value" << r2::linefeed;
-				std::cout << "\t\t - Result : " << GCDCalculator<9, 3>::value << r2::linefeed;
-			}
-
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << "\t + " << "GCDCalculator<5, 2>::value" << r2::linefeed;
-				std::cout << "\t\t - Result : " << GCDCalculator<5, 2>::value << r2::linefeed;
+				std::cout << "\t + " << "GCDCalculator<9, 3>::value" << r2cm::linefeed;
+				std::cout << "\t\t - Result : " << GCDCalculator<9, 3>::value << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			{
+				std::cout << "\t + " << "GCDCalculator<5, 2>::value" << r2cm::linefeed;
+				std::cout << "\t\t - Result : " << GCDCalculator<5, 2>::value << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -154,22 +154,22 @@ namespace template_meta_programming_test
 	}
 	r2cm::iItem::DoFuncT BasicRatio::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				Ratio_VER0<7, 4> ratio;
 
-				std::cout << "\t + " << "Ratio_VER0<7, 4> ratio;" << r2::linefeed;
-				std::cout << "\t\t - " << ratio.Numerator << " / " << ratio.Denominator << r2::linefeed;
+				std::cout << "\t + " << "Ratio_VER0<7, 4> ratio;" << r2cm::linefeed;
+				std::cout << "\t\t - " << ratio.Numerator << " / " << ratio.Denominator << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -194,32 +194,32 @@ namespace template_meta_programming_test
 	}
 	r2cm::iItem::DoFuncT SumBasicRatio::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				using ratio1 = Ratio_VER0<7, 4>;
 				using ratio2 = Ratio_VER0<3, 2>;
 				using ratio_operator_sum = Ratio_VER0_Operator_Sum<ratio1, ratio2>;
 
-				std::cout << "\t" << "using ratio1 = Ratio_VER0<7, 4>;" << r2::linefeed;
-				std::cout << "\t" << "using ratio2 = Ratio_VER0<3, 2>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio1 = Ratio_VER0<7, 4>;" << r2cm::linefeed;
+				std::cout << "\t" << "using ratio2 = Ratio_VER0<3, 2>;" << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER0_Operator_Sum<ratio1, ratio2>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER0_Operator_Sum<ratio1, ratio2>;" << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << "\t\t - Result : " << ratio_operator_sum::ratio.Numerator << " / " << ratio_operator_sum::ratio.Denominator << r2::linefeed;
+				std::cout << "\t\t - Result : " << ratio_operator_sum::ratio.Numerator << " / " << ratio_operator_sum::ratio.Denominator << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -244,39 +244,39 @@ namespace template_meta_programming_test
 	}
 	r2cm::iItem::DoFuncT RatioWithGCD::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				using ratio = Ratio_VER1<12, 3>;
 
-				std::cout << "\t" << "using ratio1 = Ratio_VER1<12, 3>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio1 = Ratio_VER1<12, 3>;" << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << "\t\t - GCD : " << ratio::gcd::value << r2::linefeed;
-				std::cout << "\t\t - Result : " << ratio::Numerator << " / " << ratio::Denominator << r2::linefeed;
+				std::cout << "\t\t - GCD : " << ratio::gcd::value << r2cm::linefeed;
+				std::cout << "\t\t - Result : " << ratio::Numerator << " / " << ratio::Denominator << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				using ratio = Ratio_VER1<36, 20>;
 
-				std::cout << "\t" << "using ratio1 = Ratio_VER1<36, 20>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio1 = Ratio_VER1<36, 20>;" << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << "\t\t - GCD : " << ratio::gcd::value << r2::linefeed;
-				std::cout << "\t\t - Result : " << ratio::Numerator << " / " << ratio::Denominator << r2::linefeed;
+				std::cout << "\t\t - GCD : " << ratio::gcd::value << r2cm::linefeed;
+				std::cout << "\t\t - Result : " << ratio::Numerator << " / " << ratio::Denominator << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -306,34 +306,34 @@ namespace template_meta_programming_test
 	}
 	r2cm::iItem::DoFuncT SumRatioWithGCD::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				using ratio1 = Ratio_VER1<7, 4>;
 				using ratio2 = Ratio_VER1<3, 2>;
 				using ratio_operator_sum = Ratio_VER1_Operator_Sum<ratio1, ratio2>;
 
-				std::cout << "\t" << "using ratio1 = Ratio_VER1<7, 4>;" << r2::linefeed;
-				std::cout << "\t" << "using ratio2 = Ratio_VER1<3, 2>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio1 = Ratio_VER1<7, 4>;" << r2cm::linefeed;
+				std::cout << "\t" << "using ratio2 = Ratio_VER1<3, 2>;" << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum<ratio1, ratio2>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum<ratio1, ratio2>;" << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << "\t\t - Original : " << ratio_operator_sum::orig::Numerator << " / " << ratio_operator_sum::orig::Denominator << r2::linefeed;
-				std::cout << "\t\t - GCD : " << ratio_operator_sum::gcd::value << r2::linefeed;
-				std::cout << "\t\t - Result : " << ratio_operator_sum::Numerator << " / " << ratio_operator_sum::Denominator << r2::linefeed;
+				std::cout << "\t\t - Original : " << ratio_operator_sum::orig::Numerator << " / " << ratio_operator_sum::orig::Denominator << r2cm::linefeed;
+				std::cout << "\t\t - GCD : " << ratio_operator_sum::gcd::value << r2cm::linefeed;
+				std::cout << "\t\t - Result : " << ratio_operator_sum::Numerator << " / " << ratio_operator_sum::Denominator << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -348,48 +348,48 @@ namespace template_meta_programming_test
 	}
 	r2cm::iItem::DoFuncT SumRatioAndOperator1::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				using ratio1 = Ratio_VER1<7, 4>;
 				using ratio2 = Ratio_VER1<3, 2>;
 				using ratio_operator_sum = Ratio_VER1_Operator_Sum<ratio1, ratio2>;
 
-				std::cout << "\t" << "using ratio1 = Ratio_VER1<7, 4>;" << r2::linefeed;
-				std::cout << "\t" << "using ratio2 = Ratio_VER1<3, 2>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio1 = Ratio_VER1<7, 4>;" << r2cm::linefeed;
+				std::cout << "\t" << "using ratio2 = Ratio_VER1<3, 2>;" << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum<ratio1, ratio2>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum<ratio1, ratio2>;" << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << "\t\t - Original : " << ratio_operator_sum::orig::Numerator << " / " << ratio_operator_sum::orig::Denominator << r2::linefeed;
-				std::cout << "\t\t - GCD : " << ratio_operator_sum::gcd::value << r2::linefeed;
-				std::cout << "\t\t - Result : " << ratio_operator_sum::Numerator << " / " << ratio_operator_sum::Denominator << r2::linefeed;
+				std::cout << "\t\t - Original : " << ratio_operator_sum::orig::Numerator << " / " << ratio_operator_sum::orig::Denominator << r2cm::linefeed;
+				std::cout << "\t\t - GCD : " << ratio_operator_sum::gcd::value << r2cm::linefeed;
+				std::cout << "\t\t - Result : " << ratio_operator_sum::Numerator << " / " << ratio_operator_sum::Denominator << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::linefeed << r2cm::linefeed;
 
 
 				using ratio_operator_sum_2 = Ratio_VER1_Operator_Sum<ratio1, ratio_operator_sum>;
 
-				std::cout << "\t" << "using ratio_operator_sum_2 = Ratio_VER1_Operator_Sum<ratio1, ratio_operator_sum>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio_operator_sum_2 = Ratio_VER1_Operator_Sum<ratio1, ratio_operator_sum>;" << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << "\t\t - Original : " << ratio_operator_sum_2::orig::Numerator << " / " << ratio_operator_sum_2::orig::Denominator << r2::linefeed;
-				std::cout << "\t\t - GCD : " << ratio_operator_sum_2::gcd::value << r2::linefeed;
-				std::cout << "\t\t - Result : " << ratio_operator_sum_2::Numerator << " / " << ratio_operator_sum_2::Denominator << r2::linefeed;
+				std::cout << "\t\t - Original : " << ratio_operator_sum_2::orig::Numerator << " / " << ratio_operator_sum_2::orig::Denominator << r2cm::linefeed;
+				std::cout << "\t\t - GCD : " << ratio_operator_sum_2::gcd::value << r2cm::linefeed;
+				std::cout << "\t\t - Result : " << ratio_operator_sum_2::Numerator << " / " << ratio_operator_sum_2::Denominator << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -418,64 +418,64 @@ namespace template_meta_programming_test
 	}
 	r2cm::iItem::DoFuncT SumRatioAndOperator2::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				using ratio1 = Ratio_VER1<7, 4>;
 				using ratio2 = Ratio_VER1<3, 2>;
 				using ratio_operator_sum = Ratio_VER1_Operator_Sum2<ratio1, ratio2>;
 
-				std::cout << "\t" << "using ratio1 = Ratio_VER1<7, 4>;" << r2::linefeed;
-				std::cout << "\t" << "using ratio2 = Ratio_VER1<3, 2>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio1 = Ratio_VER1<7, 4>;" << r2cm::linefeed;
+				std::cout << "\t" << "using ratio2 = Ratio_VER1<3, 2>;" << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum2_Result<ratio1, ratio2>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum2_Result<ratio1, ratio2>;" << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << "\t\t - Original : " << ratio_operator_sum::orig::Numerator << " / " << ratio_operator_sum::orig::Denominator << r2::linefeed;
-				std::cout << "\t\t - Result : " << ratio_operator_sum::ratio::Numerator << " / " << ratio_operator_sum::ratio::Denominator << r2::linefeed;
+				std::cout << "\t\t - Original : " << ratio_operator_sum::orig::Numerator << " / " << ratio_operator_sum::orig::Denominator << r2cm::linefeed;
+				std::cout << "\t\t - Result : " << ratio_operator_sum::ratio::Numerator << " / " << ratio_operator_sum::ratio::Denominator << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				using ratio1 = Ratio_VER1<7, 4>;
 				using ratio2 = Ratio_VER1<3, 2>;
 				using ratio_operator_sum = Ratio_VER1_Operator_Sum2_Result<ratio1, ratio2>;
 
-				std::cout << "\t" << "using ratio1 = Ratio_VER1<7, 4>;" << r2::linefeed;
-				std::cout << "\t" << "using ratio2 = Ratio_VER1<3, 2>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio1 = Ratio_VER1<7, 4>;" << r2cm::linefeed;
+				std::cout << "\t" << "using ratio2 = Ratio_VER1<3, 2>;" << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum2_Result<ratio1, ratio2>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum2_Result<ratio1, ratio2>;" << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << "\t\t - Result : " << ratio_operator_sum::Numerator << " / " << ratio_operator_sum::Denominator << r2::linefeed;
+				std::cout << "\t\t - Result : " << ratio_operator_sum::Numerator << " / " << ratio_operator_sum::Denominator << r2cm::linefeed;
 
 
-				std::cout << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::linefeed << r2cm::linefeed;
 
 
 				using ratio_operator_sum_2 = Ratio_VER1_Operator_Sum2_Result<ratio1, ratio_operator_sum>;
 
-				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum2_Result<ratio1, ratio_operator_sum>;" << r2::linefeed;
+				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum2_Result<ratio1, ratio_operator_sum>;" << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << "\t\t - Result : " << ratio_operator_sum_2::Numerator << " / " << ratio_operator_sum_2::Denominator << r2::linefeed;
+				std::cout << "\t\t - Result : " << ratio_operator_sum_2::Numerator << " / " << ratio_operator_sum_2::Denominator << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

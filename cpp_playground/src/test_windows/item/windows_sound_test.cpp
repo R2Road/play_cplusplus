@@ -5,7 +5,7 @@
 #include <Windows.h>
 #pragma comment( lib, "winmm.lib" )
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "utility/r2utility_FileUtil.h"
 
@@ -20,17 +20,17 @@ namespace windows_sound_test
 	}
 	r2cm::iItem::DoFuncT PlaySoundTest::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << "[ESC]" " Exit" << r2::linefeed;
-			std::cout << "[1]" " Play SFX 1" << r2::linefeed;
-			std::cout << "[2]" " Play SFX 2" << r2::linefeed;
+			std::cout << "[ESC]" " Exit" << r2cm::linefeed;
+			std::cout << "[1]" " Play SFX 1" << r2cm::linefeed;
+			std::cout << "[2]" " Play SFX 2" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			bool bPlay = true;
 			do
@@ -60,9 +60,9 @@ namespace windows_sound_test
 				}
 			} while( bPlay );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -77,16 +77,16 @@ namespace windows_sound_test
 	}
 	r2cm::iItem::DoFuncT BeepTest::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << "[ESC]" " Exit" << r2::linefeed;
-			std::cout << "[1]" " Play Beep" << r2::linefeed;
+			std::cout << "[ESC]" " Exit" << r2cm::linefeed;
+			std::cout << "[1]" " Play Beep" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			bool bPlay = true;
 			do
@@ -108,9 +108,9 @@ namespace windows_sound_test
 				}
 			} while( bPlay );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

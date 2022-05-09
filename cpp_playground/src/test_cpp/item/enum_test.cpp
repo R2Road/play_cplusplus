@@ -4,7 +4,7 @@
 #include <typeinfo> // typeid
 #include <type_traits>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace enum_test
 {
@@ -17,49 +17,49 @@ namespace enum_test
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ " << "enum eTestOldEnum {};" << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::tab << "+ " << "enum eTestOldEnum {};" << r2cm::linefeed << r2cm::linefeed;
 				enum eTestOldEnum {};
 
-				std::cout << r2::tab2 << "- " << "std::is_enum<eTestOldEnum>::value" << r2::linefeed;
-				std::cout << r2::tab3 << "- " << std::is_enum<eTestOldEnum>::value << r2::linefeed;
+				std::cout << r2cm::tab2 << "- " << "std::is_enum<eTestOldEnum>::value" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- " << std::is_enum<eTestOldEnum>::value << r2cm::linefeed;
 
-				std::cout << r2::tab2 << "- " << "typeid( std::underlying_type<eTestEnum_1>::type ).name()" << r2::linefeed;
-				std::cout << r2::tab3 << "- " << typeid( std::underlying_type<eTestOldEnum>::type ).name() << r2::linefeed;
+				std::cout << r2cm::tab2 << "- " << "typeid( std::underlying_type<eTestEnum_1>::type ).name()" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- " << typeid( std::underlying_type<eTestOldEnum>::type ).name() << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ " << "enum class eTestNewEnum {};" << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::tab << "+ " << "enum class eTestNewEnum {};" << r2cm::linefeed << r2cm::linefeed;
 				enum class eTestNewEnum {};
 
-				std::cout << r2::tab2 << "- " << "std::is_enum<eTestNewEnum>::value" << r2::linefeed;
-				std::cout << r2::tab3 << "- " << std::is_enum<eTestNewEnum>::value << r2::linefeed;
+				std::cout << r2cm::tab2 << "- " << "std::is_enum<eTestNewEnum>::value" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- " << std::is_enum<eTestNewEnum>::value << r2cm::linefeed;
 
-				std::cout << r2::tab2 << "- " << "typeid( std::underlying_type<eTestNewEnum>::type ).name()" << r2::linefeed;
-				std::cout << r2::tab3 << "- " << typeid( std::underlying_type<eTestNewEnum>::type ).name() << r2::linefeed;
+				std::cout << r2cm::tab2 << "- " << "typeid( std::underlying_type<eTestNewEnum>::type ).name()" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- " << typeid( std::underlying_type<eTestNewEnum>::type ).name() << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ " << "enum class eTestNewEnum : char {};" << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::tab << "+ " << "enum class eTestNewEnum : char {};" << r2cm::linefeed << r2cm::linefeed;
 				enum class eTestNewEnum : char {};
 
-				std::cout << r2::tab2 << "- " << "typeid( std::underlying_type<eTestNewEnum>::type ).name()" << r2::linefeed;
-				std::cout << r2::tab3 << "- " << typeid( std::underlying_type<eTestNewEnum>::type ).name() << r2::linefeed;
+				std::cout << r2cm::tab2 << "- " << "typeid( std::underlying_type<eTestNewEnum>::type ).name()" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "- " << typeid( std::underlying_type<eTestNewEnum>::type ).name() << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
@@ -82,27 +82,27 @@ namespace enum_test
 	}
 	r2cm::iItem::DoFuncT Convert::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << r2::tab << "template<typename EnumT>" << r2::linefeed;
-			std::cout << r2::tab << "constexpr auto Enum2Value( EnumT e )" << r2::linefeed;
-			std::cout << r2::tab << "{" << r2::linefeed;
-			std::cout << r2::tab2 << "return static_cast<std::underlying_type_t<EnumT>>( e );" << r2::linefeed;
-			std::cout << r2::tab << "}" << r2::linefeed;
+			std::cout << r2cm::tab << "template<typename EnumT>" << r2cm::linefeed;
+			std::cout << r2cm::tab << "constexpr auto Enum2Value( EnumT e )" << r2cm::linefeed;
+			std::cout << r2cm::tab << "{" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "return static_cast<std::underlying_type_t<EnumT>>( e );" << r2cm::linefeed;
+			std::cout << r2cm::tab << "}" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "enum eOldEnum" << r2::linefeed;
-				std::cout << r2::tab << "{" << r2::linefeed;
-				std::cout << r2::tab2 << "one" << r2::linefeed;
-				std::cout << r2::tab2 << ", two" << r2::linefeed;
-				std::cout << r2::tab2 << ", three" << r2::linefeed;
-				std::cout << r2::tab << "}" << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::tab << "enum eOldEnum" << r2cm::linefeed;
+				std::cout << r2cm::tab << "{" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "one" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << ", two" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << ", three" << r2cm::linefeed;
+				std::cout << r2cm::tab << "}" << r2cm::linefeed << r2cm::linefeed;
 
 				enum eOldEnum
 				{
@@ -111,20 +111,20 @@ namespace enum_test
 					, three
 				};
 
-				std::cout << r2::tab << "+ " << "Enum2Value( eOldEnum::three )" << r2::linefeed;
-				std::cout << r2::tab2 << "- " << Enum2Value( eOldEnum::three ) << r2::linefeed;
-				std::cout << r2::tab2 << "- " << typeid( Enum2Value( eOldEnum::three ) ).name() << r2::linefeed;
+				std::cout << r2cm::tab << "+ " << "Enum2Value( eOldEnum::three )" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "- " << Enum2Value( eOldEnum::three ) << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "- " << typeid( Enum2Value( eOldEnum::three ) ).name() << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "enum class eNewEnum : short" << r2::linefeed;
-				std::cout << r2::tab << "{" << r2::linefeed;
-				std::cout << r2::tab2 << "hana" << r2::linefeed;
-				std::cout << r2::tab2 << ", dul" << r2::linefeed;
-				std::cout << r2::tab2 << ", set" << r2::linefeed;
-				std::cout << r2::tab << "}" << r2::linefeed << r2::linefeed;
+				std::cout << r2cm::tab << "enum class eNewEnum : short" << r2cm::linefeed;
+				std::cout << r2cm::tab << "{" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "hana" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << ", dul" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << ", set" << r2cm::linefeed;
+				std::cout << r2cm::tab << "}" << r2cm::linefeed << r2cm::linefeed;
 
 				enum class eNewEnum : short
 				{
@@ -133,14 +133,14 @@ namespace enum_test
 					, set
 				};
 
-				std::cout << r2::tab << "+ " << "Enum2Value( eNewEnum::dul )" << r2::linefeed;
-				std::cout << r2::tab2 << "- " << Enum2Value( eNewEnum::dul ) << r2::linefeed;
-				std::cout << r2::tab2 << "- " << typeid( Enum2Value( eNewEnum::dul ) ).name() << r2::linefeed;
+				std::cout << r2cm::tab << "+ " << "Enum2Value( eNewEnum::dul )" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "- " << Enum2Value( eNewEnum::dul ) << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "- " << typeid( Enum2Value( eNewEnum::dul ) ).name() << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

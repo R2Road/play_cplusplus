@@ -71,9 +71,6 @@
     <ClCompile Include="src\r2\r2_PointInt.cpp">
       <Filter>r2</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2\r2_Inspector.cpp">
-      <Filter>r2</Filter>
-    </ClCompile>
     <ClCompile Include="src\utility\r2utility_FileUtil.cpp">
       <Filter>utility</Filter>
     </ClCompile>
@@ -309,12 +306,6 @@
     <ClCompile Include="src\test_cpp\STDCoutMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_Director.cpp">
-      <Filter>r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
-      <Filter>r2cm</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\STDMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -372,6 +363,15 @@
     <ClCompile Include="src\test_cpp\item\console_input_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Director.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Inspector.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -418,12 +418,6 @@
       <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_PointInt.h">
-      <Filter>r2</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2\r2_Singleton.h">
-      <Filter>r2</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2\r2_Inspector.h">
       <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_Assert.h">
@@ -664,18 +658,6 @@
     <ClInclude Include="src\test_cpp\STDCoutMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Director.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_eTestEndAction.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_iItem.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Menu.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\STDMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -732,6 +714,24 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\console_input_test.h">
       <Filter>test_cpp\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_constant.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Director.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_iItem.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Inspector.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Menu.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Singleton.h">
+      <Filter>r2cm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

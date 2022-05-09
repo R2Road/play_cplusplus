@@ -2,7 +2,7 @@
 #include "RootMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "test_cpp/C_CPP_Menu.h"
 
@@ -44,28 +44,28 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			'2'
 			, []()->const char* { return TestWindowsMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( TestWindowsMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem(
 			'5'
 			, []()->const char* { return r2::TimeMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( r2::TimeMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem(
 			'6'
 			, []()->const char* { return r2::RandomMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( r2::RandomMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem( '7', windows_sound_test::PlaySoundTest::GetInstance() );
@@ -78,28 +78,28 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			'q'
 			, []()->const char* { return C_CPP_Menu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( C_CPP_Menu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem(
 			'w'
 			, []()->const char* { return STDMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( STDMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem(
 			'r'
 			, []()->const char* { return r2::DebugMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( r2::DebugMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 
@@ -117,28 +117,28 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			'z'
 			, []()->const char* { return r2::ETCMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( r2::ETCMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem(
 			'x'
 			, []()->const char* { return r2::MathMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( r2::MathMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem(
 			'c'
 			, []()->const char* { return r2::PerformanceMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( r2::PerformanceMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 
@@ -149,19 +149,19 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			32
 			, []()->const char* { return TestAlgorithmMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( TestAlgorithmMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem(
 			'`'
 			, []()->const char* { return HobbyMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( HobbyMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 
@@ -172,7 +172,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			27
 			, []()->const char* { return "Exit"; }
-			, []()->r2cm::eTestEndAction { return r2cm::eTestEndAction::Exit; }
+			, []()->r2cm::eItemLeaveAction { return r2cm::eItemLeaveAction::Exit; }
 		);
 	}
 

@@ -4,7 +4,7 @@
 #include <conio.h> // _kbhit(), _getch()
 #include <Windows.h>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 //
 // # REF
@@ -35,20 +35,20 @@ namespace algorithm_etc_test
 	}
 	r2cm::iItem::DoFuncT DJB2::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 			
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << "djb2_hash( \"a\" );" << r2::linefeed;
-				std::cout << r2::tab << djb2_hash( "a" ) << r2::linefeed;
+				std::cout << "djb2_hash( \"a\" );" << r2cm::linefeed;
+				std::cout << r2cm::tab << djb2_hash( "a" ) << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

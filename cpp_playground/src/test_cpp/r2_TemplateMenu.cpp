@@ -2,7 +2,7 @@
 #include "r2_TemplateMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "r2_VariadicTemplateMenu.h"
 #include "r2_TemplateMetaProgrammingMenu.h"
@@ -20,30 +20,30 @@ namespace r2
 			ret->AddItem(
 				'1'
 				, []()->const char* { return r2::VariadicTemplateMenu::GetTitle(); }
-				, [&director]()->r2cm::eTestEndAction
+				, [&director]()->r2cm::eItemLeaveAction
 				{
 					director.Setup( r2::VariadicTemplateMenu::Create( director ) );
-					return r2cm::eTestEndAction::None;
+					return r2cm::eItemLeaveAction::None;
 				}
 			);
 
 			ret->AddItem(
 				'2'
 				, []()->const char* { return r2::TemplateMetaProgrammingMenu::GetTitle(); }
-				, [&director]()->r2cm::eTestEndAction
+				, [&director]()->r2cm::eItemLeaveAction
 				{
 					director.Setup( r2::TemplateMetaProgrammingMenu::Create( director ) );
-					return r2cm::eTestEndAction::None;
+					return r2cm::eItemLeaveAction::None;
 				}
 			);
 
 			ret->AddItem(
 				'3'
 				, []()->const char* { return r2::TemplatePracticeMenu::GetTitle(); }
-				, [&director]()->r2cm::eTestEndAction
+				, [&director]()->r2cm::eItemLeaveAction
 				{
 					director.Setup( r2::TemplatePracticeMenu::Create( director ) );
-					return r2cm::eTestEndAction::None;
+					return r2cm::eItemLeaveAction::None;
 				}
 			);
 
@@ -54,10 +54,10 @@ namespace r2
 			ret->AddItem(
 				27
 				, []()->const char* { return "Return To Root"; }
-				, [&director]()->r2cm::eTestEndAction
+				, [&director]()->r2cm::eItemLeaveAction
 				{
 					director.Setup( C_CPP_Menu::Create( director ) );
-					return r2cm::eTestEndAction::None;
+					return r2cm::eItemLeaveAction::None;
 				}
 			);
 		}

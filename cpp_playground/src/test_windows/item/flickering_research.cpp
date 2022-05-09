@@ -4,7 +4,7 @@
 #include <conio.h> // _kbhit(), _getch()
 #include <Windows.h> // HANDLE, COORD, SetConsoleCursorPosition()
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "utility/r2utility_CharacterBuffer.h"
 
@@ -19,7 +19,7 @@ namespace flickering_research
 	}
 	r2cm::iItem::DoFuncT OneByOne::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			r2utility::CharacterBuffer visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
@@ -29,17 +29,17 @@ namespace flickering_research
 			{
 				system( "cls" );
 
-				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
-				std::cout << "[Any Key] End" << r2::linefeed;
+				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+				std::cout << "[Any Key] End" << r2cm::linefeed;
 
-				std::cout << r2::split;
+				std::cout << r2cm::split;
 
 				int current_x = 0;
 				for( const auto v : visible_resource )
 				{
 					if( visible_resource.GetWidth() <= current_x )
 					{
-						std::cout << r2::linefeed;
+						std::cout << r2cm::linefeed;
 						current_x = 0;
 					}
 
@@ -48,7 +48,7 @@ namespace flickering_research
 					++current_x;
 				}
 
-				std::cout << r2::linefeed << r2::split;
+				std::cout << r2cm::linefeed << r2cm::split;
 
 				//
 				// Input
@@ -61,7 +61,7 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 	r2cm::iItem::TitleFuncT OneByOne_WithOut_CLS::GetTitleFunction() const
@@ -73,14 +73,14 @@ namespace flickering_research
 	}
 	r2cm::iItem::DoFuncT OneByOne_WithOut_CLS::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
-			std::cout << "[Any Key] End" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << "[Any Key] End" << r2cm::linefeed;
 
-			std::cout << r2::split;
-			std::cout << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed;
-			std::cout << r2::split;
+			std::cout << r2cm::split;
+			std::cout << r2cm::linefeed3 << r2cm::linefeed3 << r2cm::linefeed3 << r2cm::linefeed3 << r2cm::linefeed3 << r2cm::linefeed3 << r2cm::linefeed;
+			std::cout << r2cm::split;
 
 			r2utility::CharacterBuffer visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
@@ -98,7 +98,7 @@ namespace flickering_research
 				{
 					if( visible_resource.GetWidth() <= current_x )
 					{
-						std::cout << r2::linefeed;
+						std::cout << r2cm::linefeed;
 						current_x = 0;
 					}
 
@@ -118,7 +118,7 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 
@@ -133,7 +133,7 @@ namespace flickering_research
 	}
 	r2cm::iItem::DoFuncT LineByLine::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			r2utility::CharacterBuffer visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
@@ -143,17 +143,17 @@ namespace flickering_research
 			{
 				system( "cls" );
 
-				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
-				std::cout << "[Any Key] End" << r2::linefeed;
+				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+				std::cout << "[Any Key] End" << r2cm::linefeed;
 
-				std::cout << r2::split;
+				std::cout << r2cm::split;
 
 				for( int current_y = 0; visible_resource.GetHeight() > current_y; ++current_y )
 				{
-					std::cout << visible_resource.GetLine( current_y ) << r2::linefeed;
+					std::cout << visible_resource.GetLine( current_y ) << r2cm::linefeed;
 				}
 
-				std::cout << r2::split;
+				std::cout << r2cm::split;
 
 				//
 				// Input
@@ -166,7 +166,7 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 
@@ -181,7 +181,7 @@ namespace flickering_research
 	}
 	r2cm::iItem::DoFuncT PageByPage::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			r2utility::CharacterBuffer character_buffer( 100, 40 );
 			character_buffer.FillAll( 'c' );
@@ -191,14 +191,14 @@ namespace flickering_research
 			{
 				system( "cls" );
 
-				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
-				std::cout << "[Any Key] End" << r2::linefeed;
+				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+				std::cout << "[Any Key] End" << r2cm::linefeed;
 
-				std::cout << r2::split;
+				std::cout << r2cm::split;
 
 				std::cout << &( *character_buffer.begin() );
 
-				std::cout << r2::split;
+				std::cout << r2cm::split;
 
 				//
 				// Input
@@ -211,7 +211,7 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 
@@ -226,7 +226,7 @@ namespace flickering_research
 	}
 	r2cm::iItem::DoFuncT PageByPage_WithOut_CLS_1::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			r2utility::CharacterBuffer character_buffer( 100, 40 );
 			character_buffer.FillAll( 'c' );
@@ -252,7 +252,7 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 
@@ -267,7 +267,7 @@ namespace flickering_research
 	}
 	r2cm::iItem::DoFuncT PageByPage_WithOut_CLS_2::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			r2utility::CharacterBuffer character_buffer_1( 100, 40 );
 			character_buffer_1.FillAll( 'c' );
@@ -306,7 +306,7 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 }

@@ -135,14 +135,22 @@ condition;																					\
 printf( "\x1B[90m" "[DECLARATION]" " %s" "\033[0m" "\n", #condition );
 
 //
+// Output Value
 //
+#define	OUTPUT_VALUE( condition )															\
+do {																						\
+	printf( "[VALUE]" " %s" "\n", #condition );											\
+	std::cout << "\t> " << condition << "\n";												\
+} while( false )
 //
-void SHOW_FILE( const char* const path );
+// Output Code
+//
+#define	OUTPUT_CODE( condition )																\
+do {																						\
+	printf( "[CODE]" " %s" "\n", #condition );												\
+} while( false )
 
 //
 //
 //
-#define	SHOW_CODE( condition )																\
-do {																						\
-	printf( "[CODE]" " %s" "\n", #condition );												\
-} while( false )
+void SHOW_FILE( const char* const path );

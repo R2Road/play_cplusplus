@@ -3,7 +3,7 @@
 
 #include <Windows.h>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "algorithm/r2algorithm_astar_Constant.h"
 #include "algorithm/r2algorithm_astar_PathBuilder.h"
@@ -23,7 +23,7 @@ namespace
 			if( grid.GetWidth() <= x )
 			{
 				x = 0;
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 			}
 
 			if( 0 == i )
@@ -103,18 +103,18 @@ namespace algorithm_astar_test
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			ShowGrid( WORLD_MAP );
 
-			std::cout << r2::linefeed;
-			std::cout << r2::split;
+			std::cout << r2cm::linefeed;
+			std::cout << r2cm::split;
 
 			r2utility::StopWatch stop_watch;
 			{
@@ -135,9 +135,9 @@ namespace algorithm_astar_test
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -152,18 +152,18 @@ namespace algorithm_astar_test
 	}
 	r2cm::iItem::DoFuncT Use_STDListSplice::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			ShowGrid( WORLD_MAP );
 
-			std::cout << r2::linefeed;
-			std::cout << r2::split;
+			std::cout << r2cm::linefeed;
+			std::cout << r2cm::split;
 
 			r2utility::StopWatch stop_watch;
 			{
@@ -184,9 +184,9 @@ namespace algorithm_astar_test
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -201,18 +201,18 @@ namespace algorithm_astar_test
 	}
 	r2cm::iItem::DoFuncT Use_STDListSplice_STDVectorResultPath::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			ShowGrid( WORLD_MAP );
 
-			std::cout << r2::linefeed;
-			std::cout << r2::split;
+			std::cout << r2cm::linefeed;
+			std::cout << r2cm::split;
 
 			r2utility::StopWatch stop_watch;
 			{
@@ -234,9 +234,9 @@ namespace algorithm_astar_test
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -251,18 +251,18 @@ namespace algorithm_astar_test
 	}
 	r2cm::iItem::DoFuncT Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			ShowGrid( WORLD_MAP );
 
-			std::cout << r2::linefeed;
-			std::cout << r2::split;
+			std::cout << r2cm::linefeed;
+			std::cout << r2cm::split;
 
 			r2utility::StopWatch stop_watch;
 			{
@@ -284,11 +284,11 @@ namespace algorithm_astar_test
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
-			std::cout << r2::linefeed2;
+			std::cout << r2cm::linefeed2;
 
-			std::cout << "## Not Have Changed" << r2::linefeed2;
+			std::cout << "## Not Have Changed" << r2cm::linefeed2;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -303,18 +303,18 @@ namespace algorithm_astar_test
 	}
 	r2cm::iItem::DoFuncT Use_CostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			ShowGrid( WORLD_MAP );
 
-			std::cout << r2::linefeed;
-			std::cout << r2::split;
+			std::cout << r2cm::linefeed;
+			std::cout << r2cm::split;
 
 			r2utility::StopWatch stop_watch;
 			{
@@ -338,9 +338,9 @@ namespace algorithm_astar_test
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -355,18 +355,18 @@ namespace algorithm_astar_test
 	}
 	r2cm::iItem::DoFuncT Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			ShowGrid( WORLD_MAP );
 
-			std::cout << r2::linefeed;
-			std::cout << r2::split;
+			std::cout << r2cm::linefeed;
+			std::cout << r2cm::split;
 
 			r2utility::StopWatch stop_watch;
 			{
@@ -390,9 +390,9 @@ namespace algorithm_astar_test
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -407,18 +407,18 @@ namespace algorithm_astar_test
 	}
 	r2cm::iItem::DoFuncT Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
 
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			ShowGrid( WORLD_MAP );
 
-			std::cout << r2::linefeed;
-			std::cout << r2::split;
+			std::cout << r2cm::linefeed;
+			std::cout << r2cm::split;
 
 			r2utility::StopWatch stop_watch;
 			{
@@ -442,9 +442,9 @@ namespace algorithm_astar_test
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -459,20 +459,20 @@ namespace algorithm_astar_test
 	}
 	r2cm::iItem::DoFuncT PerformanceTest::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
 
 			const int attempt_limit = 1000;
 
 			{
-				std::cout << r2::tab << "+ Attempt Limit : " << attempt_limit << r2::linefeed;
+				std::cout << r2cm::tab << "+ Attempt Limit : " << attempt_limit << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ AStarPathBuilder" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ AStarPathBuilder" << r2cm::linefeed2;
 
 				r2utility::StopWatch stop_watch;
 
@@ -492,13 +492,13 @@ namespace algorithm_astar_test
 				// Show Time
 				//
 				stop_watch.PrintMinAndMaxTime();
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ AStarPathBuilder_Use_STDListSplice" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ AStarPathBuilder_Use_STDListSplice" << r2cm::linefeed2;
 
 				r2utility::StopWatch stop_watch;
 
@@ -518,13 +518,13 @@ namespace algorithm_astar_test
 				// Show Time
 				//
 				stop_watch.PrintMinAndMaxTime();
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ AStarPathBuilder_Use_STDListSplice_STDVectorResultPath" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ AStarPathBuilder_Use_STDListSplice_STDVectorResultPath" << r2cm::linefeed2;
 
 				r2utility::StopWatch stop_watch;
 
@@ -545,13 +545,13 @@ namespace algorithm_astar_test
 				// Show Time
 				//
 				stop_watch.PrintMinAndMaxTime();
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ AStarPathBuilder_Use_STDListSplice_DecreaseCloseList_STDVectorResultPath" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ AStarPathBuilder_Use_STDListSplice_DecreaseCloseList_STDVectorResultPath" << r2cm::linefeed2;
 
 				r2utility::StopWatch stop_watch;
 
@@ -572,13 +572,13 @@ namespace algorithm_astar_test
 				// Show Time
 				//
 				stop_watch.PrintMinAndMaxTime();
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ AStarPathBuilder_Use_CostMap_STDListSplice_STDVectorResultPath" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ AStarPathBuilder_Use_CostMap_STDListSplice_STDVectorResultPath" << r2cm::linefeed2;
 
 				r2utility::StopWatch stop_watch;
 
@@ -602,13 +602,13 @@ namespace algorithm_astar_test
 				// Show Time
 				//
 				stop_watch.PrintMinAndMaxTime();
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ AStarPathBuilder_Use_TinyCostMap_STDListSplice_STDVectorResultPath" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ AStarPathBuilder_Use_TinyCostMap_STDListSplice_STDVectorResultPath" << r2cm::linefeed2;
 
 				r2utility::StopWatch stop_watch;
 
@@ -632,13 +632,13 @@ namespace algorithm_astar_test
 				// Show Time
 				//
 				stop_watch.PrintMinAndMaxTime();
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ AStarPathBuilder_Use_ArrayBasedList_TinyCostMap_STDVectorResultPath" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ AStarPathBuilder_Use_ArrayBasedList_TinyCostMap_STDVectorResultPath" << r2cm::linefeed2;
 
 				r2utility::StopWatch stop_watch;
 
@@ -662,12 +662,12 @@ namespace algorithm_astar_test
 				// Show Time
 				//
 				stop_watch.PrintMinAndMaxTime();
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

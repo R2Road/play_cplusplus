@@ -5,7 +5,7 @@
 #include <memory>
 #include <numeric>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "utility/r2utility_StopWatch.h"
 
@@ -20,23 +20,23 @@ namespace performance_1_test
 	}
 	r2cm::iItem::DoFuncT IncrementOperator::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed2;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed2;
 
 			const int attempt_limit = std::numeric_limits<int>::max() / 1000;
 			const int loop_limit = 4;
 			r2utility::StopWatch stop_watch;
 
 			{
-				std::cout << r2::tab << "Attempt Limit : " << attempt_limit;
-				std::cout << r2::tab2 << "Loop Limit : " << loop_limit << r2::linefeed;
+				std::cout << r2cm::tab << "Attempt Limit : " << attempt_limit;
+				std::cout << r2cm::tab2 << "Loop Limit : " << loop_limit << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ For : Int : ++" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ For : Int : ++" << r2cm::linefeed2;
 
 				int test_int = 0;			
 
@@ -51,17 +51,17 @@ namespace performance_1_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << test_int;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << test_int;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ For : Int* : ++" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ For : Int* : ++" << r2cm::linefeed2;
 
 				int test_int = 0;
 				int* test_pointer = &test_int;
@@ -77,17 +77,17 @@ namespace performance_1_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << *test_pointer;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << *test_pointer;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ For : new Int* : ++" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ For : new Int* : ++" << r2cm::linefeed2;
 
 				std::unique_ptr<int> test_unique_pointer( new int( 0 ) );
 				int* test_pointer = test_unique_pointer.get();
@@ -103,17 +103,17 @@ namespace performance_1_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << *test_pointer;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << *test_pointer;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ For : Int Up : ++" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ For : Int Up : ++" << r2cm::linefeed2;
 
 				std::unique_ptr<int> test_pointer( new int( 0 ) );
 
@@ -128,17 +128,17 @@ namespace performance_1_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << *test_pointer;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << *test_pointer;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ For : Int Sp : ++" << attempt_limit << r2::linefeed2;
+				std::cout << r2cm::tab << "+ For : Int Sp : ++" << attempt_limit << r2cm::linefeed2;
 
 				std::shared_ptr<int> test_pointer( new int( 0 ) );
 
@@ -153,16 +153,16 @@ namespace performance_1_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << *test_pointer;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << *test_pointer;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -177,23 +177,23 @@ namespace performance_1_test
 	}
 	r2cm::iItem::DoFuncT Loop::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed2;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed2;
 
 			const int attempt_limit = std::numeric_limits<int>::max() / 10;
 			const int loop_limit = 5;
 			r2utility::StopWatch stop_watch;
 
 			{
-				std::cout << r2::tab << "Attempt Limit : " << attempt_limit;
-				std::cout << r2::tab2 << "Loop Limit : " << loop_limit << r2::linefeed;
+				std::cout << r2cm::tab << "Attempt Limit : " << attempt_limit;
+				std::cout << r2cm::tab2 << "Loop Limit : " << loop_limit << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ For : unsigned int : ++" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ For : unsigned int : ++" << r2cm::linefeed2;
 
 				unsigned int test_int = 0;
 
@@ -208,17 +208,17 @@ namespace performance_1_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << test_int;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << test_int;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ While : unsigned int : ++" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ While : unsigned int : ++" << r2cm::linefeed2;
 
 				unsigned int test_int = 0;
 
@@ -233,16 +233,16 @@ namespace performance_1_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << test_int;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << test_int;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -257,20 +257,20 @@ namespace performance_1_test
 	}
 	r2cm::iItem::DoFuncT LoopWithBuildInArray::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
 
 			const unsigned int attempt_limit = 100000;
 			const int loop_limit = 5;
 			r2utility::StopWatch stop_watch;
 
 			{
-				std::cout << r2::tab << "Attempt Limit : " << attempt_limit;
-				std::cout << r2::tab2 << "Loop Limit : " << loop_limit << r2::linefeed;
+				std::cout << r2cm::tab << "Attempt Limit : " << attempt_limit;
+				std::cout << r2cm::tab2 << "Loop Limit : " << loop_limit << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			int test_container[attempt_limit];
 			std::fill_n( test_container, attempt_limit, 1 );
@@ -278,16 +278,16 @@ namespace performance_1_test
 			unsigned int sum_result = 0;
 
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "int test_container[attempt_limit];" << r2::linefeed;
-				std::cout << r2::tab2 << "std::fill_n( test_container, attempt_limit, 1 );" << r2::linefeed2;
-				std::cout << r2::tab2 << "unsigned int sum_result = 0;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "int test_container[attempt_limit];" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "std::fill_n( test_container, attempt_limit, 1 );" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "unsigned int sum_result = 0;" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ For : sum all" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ For : sum all" << r2cm::linefeed2;
 
 				for( int loop_count = 0; loop_limit > loop_count; ++loop_count )
 				{
@@ -300,17 +300,17 @@ namespace performance_1_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ While : sum all" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ While : sum all" << r2cm::linefeed2;
 
 				for( int loop_count = 0; loop_limit > loop_count; ++loop_count )
 				{
@@ -326,16 +326,16 @@ namespace performance_1_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -350,20 +350,20 @@ namespace performance_1_test
 	}
 	r2cm::iItem::DoFuncT LoopWithSTDArray::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
 
 			const unsigned int attempt_limit = 100000;
 			const int loop_limit = 5;
 			r2utility::StopWatch stop_watch;
 
 			{
-				std::cout << r2::tab << "Attempt Limit : " << attempt_limit;
-				std::cout << r2::tab2 << "Loop Limit : " << loop_limit << r2::linefeed;
+				std::cout << r2cm::tab << "Attempt Limit : " << attempt_limit;
+				std::cout << r2cm::tab2 << "Loop Limit : " << loop_limit << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			std::array<int, attempt_limit> test_container;
 			test_container.fill( 1 );
@@ -371,16 +371,16 @@ namespace performance_1_test
 			unsigned int sum_result = 0;
 
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "std::array<int, attempt_limit> test_container;" << r2::linefeed;
-				std::cout << r2::tab2 << "test_container.fill( 1 );" << r2::linefeed2;
-				std::cout << r2::tab2 << "unsigned int sum_result = 0;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "std::array<int, attempt_limit> test_container;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "test_container.fill( 1 );" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "unsigned int sum_result = 0;" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ For : sum all" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ For : sum all" << r2cm::linefeed2;
 
 				for( int loop_count = 0; loop_limit > loop_count; ++loop_count )
 				{
@@ -393,17 +393,17 @@ namespace performance_1_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ While : sum all" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ While : sum all" << r2cm::linefeed2;
 
 				for( int loop_count = 0; loop_limit > loop_count; ++loop_count )
 				{
@@ -419,16 +419,16 @@ namespace performance_1_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -443,11 +443,11 @@ namespace performance_1_test
 	}
 	r2cm::iItem::DoFuncT CompareIteratorOperator::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			const unsigned int attempt_count = 100000;
 
@@ -458,22 +458,22 @@ namespace performance_1_test
 			std::array<TestStruct, attempt_count> test_container;
 
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const unsigned int attempt_count = 100000;" << r2::linefeed;
-				std::cout << r2::tab2 << "struct TestStruct" << r2::linefeed;
-				std::cout << r2::tab2 << "{" << r2::linefeed;
-				std::cout << r2::tab3 << "int i = 1;" << r2::linefeed;
-				std::cout << r2::tab2 << "}" << r2::linefeed2;
-				std::cout << r2::tab2 << "std::array<TestStruct, attempt_count> test_container;" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "const unsigned int attempt_count = 100000;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "struct TestStruct" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "{" << r2cm::linefeed;
+				std::cout << r2cm::tab3 << "int i = 1;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "}" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "std::array<TestStruct, attempt_count> test_container;" << r2cm::linefeed;
 			}
 
 			unsigned int sum_result = 0;
 			r2utility::StopWatch stop_watch;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ For And Iterator Operator->" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ For And Iterator Operator->" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -486,17 +486,17 @@ namespace performance_1_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ For And Iterator Operator*" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ For And Iterator Operator*" << r2cm::linefeed2;
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -509,16 +509,16 @@ namespace performance_1_test
 					}
 					stop_watch.Stop();
 
-					std::cout << r2::tab2;
+					std::cout << r2cm::tab2;
 					stop_watch.PrintElapsedTime_All();
-					std::cout << r2::tab2 << sum_result;
-					std::cout << r2::linefeed;
+					std::cout << r2cm::tab2 << sum_result;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

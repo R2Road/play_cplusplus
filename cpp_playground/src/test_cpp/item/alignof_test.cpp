@@ -6,7 +6,7 @@
 #include <unordered_map>
 #include <vector>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace alignof_test
 {
@@ -19,27 +19,27 @@ namespace alignof_test
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << "\t" << "+ align of char : " << alignof( char ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of char : " << sizeof( char ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ align of char : " << alignof( char ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of char : " << sizeof( char ) << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of int : " << alignof( int ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of int : " << sizeof( int ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ align of int : " << alignof( int ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of int : " << sizeof( int ) << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of bool : " << alignof( bool ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of bool : " << sizeof( bool ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ align of bool : " << alignof( bool ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of bool : " << sizeof( bool ) << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of double : " << alignof( double ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of double : " << sizeof( double ) << r2::linefeed;
+				std::cout << "\t" << "+ align of double : " << alignof( double ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of double : " << sizeof( double ) << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				struct EmptyStruct {};
@@ -77,47 +77,47 @@ namespace alignof_test
 					double d;
 				};
 
-				std::cout << "\t" << "+ align of EmptyStruct : " << alignof( EmptyStruct ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of EmptyStruct : " << sizeof( EmptyStruct ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ align of EmptyStruct : " << alignof( EmptyStruct ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of EmptyStruct : " << sizeof( EmptyStruct ) << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of IntFloatCharStruct : " << alignof( IntFloatCharStruct ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of IntFloatCharStruct : " << sizeof( IntFloatCharStruct ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ align of IntFloatCharStruct : " << alignof( IntFloatCharStruct ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of IntFloatCharStruct : " << sizeof( IntFloatCharStruct ) << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of CharCharCharStruct : " << alignof( CharCharCharStruct ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of CharCharCharStruct : " << sizeof( CharCharCharStruct ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ align of CharCharCharStruct : " << alignof( CharCharCharStruct ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of CharCharCharStruct : " << sizeof( CharCharCharStruct ) << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of CharDoubleStruct : " << alignof( CharDoubleStruct ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of CharDoubleStruct : " << sizeof( CharDoubleStruct ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ align of CharDoubleStruct : " << alignof( CharDoubleStruct ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of CharDoubleStruct : " << sizeof( CharDoubleStruct ) << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of CharBoolStruct : " << alignof( CharBoolStruct ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of CharBoolStruct : " << sizeof( CharBoolStruct ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ align of CharBoolStruct : " << alignof( CharBoolStruct ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of CharBoolStruct : " << sizeof( CharBoolStruct ) << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of CharIntDoubleStruct : " << alignof( CharIntDoubleStruct ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of CharIntDoubleStruct : " << sizeof( CharIntDoubleStruct ) << r2::linefeed;
+				std::cout << "\t" << "+ align of CharIntDoubleStruct : " << alignof( CharIntDoubleStruct ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of CharIntDoubleStruct : " << sizeof( CharIntDoubleStruct ) << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << "\t" << "+ align of std::list<char> : " << alignof( std::list<char> ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of std::list<char> : " << sizeof( std::list<char> ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ align of std::list<char> : " << alignof( std::list<char> ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of std::list<char> : " << sizeof( std::list<char> ) << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of std::list<int> : " << alignof( std::list<int> ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of std::list<int> : " << sizeof( std::list<int> ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ align of std::list<int> : " << alignof( std::list<int> ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of std::list<int> : " << sizeof( std::list<int> ) << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of std::vector<int> : " << alignof( std::vector<int> ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of std::vector<int> : " << sizeof( std::vector<int> ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ align of std::vector<int> : " << alignof( std::vector<int> ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of std::vector<int> : " << sizeof( std::vector<int> ) << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of std::alignof( std::unordered_map<int, int> ) : " << alignof( std::unordered_map<int, int> ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of std::unordered_map<int, int> : " << sizeof( std::unordered_map<int, int> ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ align of std::alignof( std::unordered_map<int, int> ) : " << alignof( std::unordered_map<int, int> ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of std::unordered_map<int, int> : " << sizeof( std::unordered_map<int, int> ) << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of std::alignof( std::deque<int> ) : " << alignof( std::deque<int> ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of std::deque<int> : " << sizeof( std::deque<int> ) << r2::linefeed;
+				std::cout << "\t" << "+ align of std::alignof( std::deque<int> ) : " << alignof( std::deque<int> ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of std::deque<int> : " << sizeof( std::deque<int> ) << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -132,11 +132,11 @@ namespace alignof_test
 	}
 	r2cm::iItem::DoFuncT MixedStruct::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			struct EmptyStruct {};
 
@@ -173,32 +173,32 @@ namespace alignof_test
 			};
 
 			{
-				std::cout << "\t" << "+ align of EmptyStruct : " << alignof( EmptyStruct ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of EmptyStruct : " << sizeof( EmptyStruct ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ align of EmptyStruct : " << alignof( EmptyStruct ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of EmptyStruct : " << sizeof( EmptyStruct ) << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of CharIntFloatStruct : " << alignof( CharIntFloatStruct ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of CharIntFloatStruct : " << sizeof( CharIntFloatStruct ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ align of CharIntFloatStruct : " << alignof( CharIntFloatStruct ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of CharIntFloatStruct : " << sizeof( CharIntFloatStruct ) << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of DoubleStruct : " << alignof( DoubleStruct ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of DoubleStruct : " << sizeof( DoubleStruct ) << r2::linefeed;
+				std::cout << "\t" << "+ align of DoubleStruct : " << alignof( DoubleStruct ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of DoubleStruct : " << sizeof( DoubleStruct ) << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << "\t" << "+ align of Mixed_1_Empty_N_CIF_Struct : " << alignof( Mixed_1_Empty_N_CIF_Struct ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of Mixed_1_Empty_N_CIF_Struct : " << sizeof( Mixed_1_Empty_N_CIF_Struct ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ align of Mixed_1_Empty_N_CIF_Struct : " << alignof( Mixed_1_Empty_N_CIF_Struct ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of Mixed_1_Empty_N_CIF_Struct : " << sizeof( Mixed_1_Empty_N_CIF_Struct ) << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of Mixed_2_Empty_N_D_Struct : " << alignof( Mixed_2_Empty_N_D_Struct ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of Mixed_2_Empty_N_D_Struct : " << sizeof( Mixed_2_Empty_N_D_Struct ) << r2::linefeed << r2::linefeed;
+				std::cout << "\t" << "+ align of Mixed_2_Empty_N_D_Struct : " << alignof( Mixed_2_Empty_N_D_Struct ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of Mixed_2_Empty_N_D_Struct : " << sizeof( Mixed_2_Empty_N_D_Struct ) << r2cm::linefeed << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of Mixed_3_Empty_N_CIF_D_Struct : " << alignof( Mixed_3_Empty_N_CIF_D_Struct ) << r2::linefeed;
-				std::cout << "\t\t" << "- size of Mixed_3_Empty_N_CIF_D_Struct : " << sizeof( Mixed_3_Empty_N_CIF_D_Struct ) << r2::linefeed;
+				std::cout << "\t" << "+ align of Mixed_3_Empty_N_CIF_D_Struct : " << alignof( Mixed_3_Empty_N_CIF_D_Struct ) << r2cm::linefeed;
+				std::cout << "\t\t" << "- size of Mixed_3_Empty_N_CIF_D_Struct : " << sizeof( Mixed_3_Empty_N_CIF_D_Struct ) << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
