@@ -3,9 +3,10 @@
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
-#include "test_windows/TestWindowsMenu.h"
 
-#include "test_windows/item/console_window_test.h"
+#include "item/console_window_test.h"
+
+#include "TestWindowsMenu.h"
 
 // # REF
 // https://docs.microsoft.com/en-us/windows/console/console-reference
