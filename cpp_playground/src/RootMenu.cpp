@@ -6,7 +6,7 @@
 
 #include "test_cpp/C_CPP_Menu.h"
 
-#include "test_cpp/TestWindowsMenu.h"
+#include "test_windows/TestWindowsMenu.h"
 #include "test_cpp/r2_DebugMenu.h"
 #include "test_hobby/HobbyMenu.h"
 #include "test_cpp/r2_RandomMenu.h"

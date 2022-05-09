@@ -4,8 +4,8 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
-#include "ConsoleTextColorMenu.h"
-#include "r2_ConsoleWindowMenu.h"
+#include "test_cpp/ConsoleTextColorMenu.h"
+#include "test_cpp/r2_ConsoleWindowMenu.h"
 #include "RootMenu.h"
 
 #include "test_cpp/item/console_buffer_test.h"

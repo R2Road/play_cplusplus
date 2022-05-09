@@ -4,7 +4,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
-#include "TestWindowsMenu.h"
+#include "test_windows/TestWindowsMenu.h"
 
 #include "test_cpp/item/console_text_color_test.h"
 
