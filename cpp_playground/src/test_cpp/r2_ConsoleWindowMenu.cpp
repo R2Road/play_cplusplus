@@ -51,7 +51,7 @@ namespace r2
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->r2cm::eTestEndAction
 				{
-					director.Setup( r2::ConsoleMenu::Create( director ) );
+					director.Setup( TestWindowsMenu::Create( director ) );
 					return r2cm::eTestEndAction::None;
 				}
 			);
