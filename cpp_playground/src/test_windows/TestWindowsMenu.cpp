@@ -5,13 +5,13 @@
 #include "r2cm/r2cm_constant.h"
 
 #include "item/console_buffer_test.h"
-#include "item/flickering_research.h"
 #include "item/console_test.h"
 #include "item/console_window_input_test.h"
 #include "item/console_window_message_test.h"
 
 #include "ConsoleTextColorMenu.h"
 #include "ConsoleWindowMenu.h"
+#include "FlickeringResearchMenu.h"
 #include "RootMenu.h"
 
 // # REF
@@ -78,12 +78,15 @@ r2cm::MenuUp TestWindowsMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'z', flickering_research::OneByOne::GetInstance() );
-		ret->AddItem( 'x', flickering_research::OneByOne_WithOut_CLS::GetInstance() );
-		ret->AddItem( 'c', flickering_research::LineByLine::GetInstance() );
-		ret->AddItem( 'v', flickering_research::PageByPage::GetInstance() );
-		ret->AddItem( 'b', flickering_research::PageByPage_WithOut_CLS_1::GetInstance() );
-		ret->AddItem( 'n', flickering_research::PageByPage_WithOut_CLS_2::GetInstance() );
+		ret->AddItem(
+			'z'
+			, []()->const char* { return FlickeringResearchMenu::GetTitle(); }
+			, [&director]()->r2cm::eItemLeaveAction
+			{
+				director.Setup( FlickeringResearchMenu::Create( director ) );
+				return r2cm::eItemLeaveAction::None;
+			}
+		);
 
 
 		ret->AddSplit();

@@ -372,6 +372,9 @@
     <ClCompile Include="src\test_windows\ConsoleWindowMenu.cpp">
       <Filter>test_windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_windows\FlickeringResearchMenu.cpp">
+      <Filter>test_windows</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -731,6 +734,9 @@
       <Filter>test_windows</Filter>
     </ClInclude>
     <ClInclude Include="src\test_windows\ConsoleWindowMenu.h">
+      <Filter>test_windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_windows\FlickeringResearchMenu.h">
       <Filter>test_windows</Filter>
     </ClInclude>
   </ItemGroup>

@@ -123,6 +123,7 @@
     <ClCompile Include="src\test_hobby\MemoryPoolMenu.cpp" />
     <ClCompile Include="src\test_windows\ConsoleTextColorMenu.cpp" />
     <ClCompile Include="src\test_windows\ConsoleWindowMenu.cpp" />
+    <ClCompile Include="src\test_windows\FlickeringResearchMenu.cpp" />
     <ClCompile Include="src\test_windows\item\console_buffer_test.cpp" />
     <ClCompile Include="src\test_windows\item\console_test.cpp" />
     <ClCompile Include="src\test_windows\item\console_text_color_test.cpp" />
@@ -246,6 +247,7 @@
     <ClInclude Include="src\test_hobby\MemoryPoolMenu.h" />
     <ClInclude Include="src\test_windows\ConsoleTextColorMenu.h" />
     <ClInclude Include="src\test_windows\ConsoleWindowMenu.h" />
+    <ClInclude Include="src\test_windows\FlickeringResearchMenu.h" />
     <ClInclude Include="src\test_windows\item\console_buffer_test.h" />
     <ClInclude Include="src\test_windows\item\console_test.h" />
     <ClInclude Include="src\test_windows\item\console_text_color_test.h" />
