@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_ConsoleMenu.h"
+#include "TestWindowsMenu.h"
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"

@@ -101,7 +101,7 @@
     <ClCompile Include="src\test_cpp\item\variadic_template_test.cpp" />
     <ClCompile Include="src\test_cpp\r2_AlignMenu.cpp" />
     <ClCompile Include="src\test_cpp\CharMenu.cpp" />
-    <ClCompile Include="src\test_cpp\r2_ConsoleMenu.cpp" />
+    <ClCompile Include="src\test_cpp\TestWindowsMenu.cpp" />
     <ClCompile Include="src\test_cpp\r2_ConsoleWindowMenu.cpp" />
     <ClCompile Include="src\test_cpp\r2_DebugMenu.cpp" />
     <ClCompile Include="src\test_cpp\r2_EnumMenu.cpp" />
@@ -224,7 +224,7 @@
     <ClInclude Include="src\test_cpp\item\variadic_template_test.h" />
     <ClInclude Include="src\test_cpp\r2_AlignMenu.h" />
     <ClInclude Include="src\test_cpp\CharMenu.h" />
-    <ClInclude Include="src\test_cpp\r2_ConsoleMenu.h" />
+    <ClInclude Include="src\test_cpp\TestWindowsMenu.h" />
     <ClInclude Include="src\test_cpp\r2_ConsoleWindowMenu.h" />
     <ClInclude Include="src\test_cpp\r2_DebugMenu.h" />
     <ClInclude Include="src\test_cpp\r2_EnumMenu.h" />

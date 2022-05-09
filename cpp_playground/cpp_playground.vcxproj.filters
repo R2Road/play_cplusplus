@@ -287,9 +287,6 @@
     <ClCompile Include="src\test_cpp\r2_AlignMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\r2_ConsoleMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\r2_ConsoleWindowMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -371,6 +368,9 @@
     </ClCompile>
     <ClCompile Include="src\test_windows\item\windows_time_test.cpp">
       <Filter>test_windows\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\TestWindowsMenu.cpp">
+      <Filter>test_cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -642,9 +642,6 @@
     <ClInclude Include="src\test_cpp\r2_AlignMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\r2_ConsoleMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\r2_ConsoleWindowMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -732,6 +729,9 @@
     </ClInclude>
     <ClInclude Include="src\test_windows\item\windows_time_test.h">
       <Filter>test_windows\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\TestWindowsMenu.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
