@@ -375,6 +375,9 @@
     <ClCompile Include="src\test_windows\item\console_window_etc_test.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\item\bit_operation_test.cpp">
+      <Filter>test_cpp\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -738,6 +741,9 @@
     </ClInclude>
     <ClInclude Include="src\test_windows\item\console_window_etc_test.h">
       <Filter>test_windows\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\item\bit_operation_test.h">
+      <Filter>test_cpp\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

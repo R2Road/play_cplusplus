@@ -4,6 +4,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
 
+#include "test_cpp/item/bit_operation_test.h"
 #include "test_cpp/item/structured_binding_test.h"
 
 #include "RootMenu.h"
@@ -21,6 +22,8 @@ r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, C_CPP_Menu::GetTitle() ) );
 
 	{
+		ret->AddItem( '1', bit_operation_test::Basic::GetInstance() );
+
 		ret->AddItem(
 			'4'
 			, []()->const char* { return PointerMenu::GetTitle(); }
