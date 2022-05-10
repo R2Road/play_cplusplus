@@ -44,8 +44,6 @@ r2cm::MenuUp TestWindowsMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 		ret->AddLineFeed();
 
-		ret->AddItem( 'q', console_window_etc_test::FontInfo::GetInstance() );
-		ret->AddItem( 'w', console_window_etc_test::FontChange::GetInstance() );
 		ret->AddItem( 'e', console_window_input_test::WindowInput_ReadConsoleInput::GetInstance() );
 		ret->AddItem( 'r', console_window_input_test::WindowInput_GetKeyState::GetInstance() );
 		ret->AddItem( 't', console_window_input_test::WindowInput_GetKeyboardState::GetInstance() );
@@ -61,17 +59,10 @@ r2cm::MenuUp TestWindowsMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'a', console_window_etc_test::Pixel::GetInstance() );
-
-
-		ret->AddLineFeed();
-		ret->AddLineFeed();
-
-
-		ret->AddItem( 's', console_buffer_test::FillBuffer::GetInstance() );
-		ret->AddItem( 'd', console_buffer_test::Write2Buffer_WriteConsole::GetInstance() );
-		ret->AddItem( 'f', console_buffer_test::Write2Buffer_WriteConsoleOutput::GetInstance() );
-		ret->AddItem( 'g', console_buffer_test::DoubleBuffering::GetInstance() );
+		ret->AddItem( 'a', console_buffer_test::FillBuffer::GetInstance() );
+		ret->AddItem( 's', console_buffer_test::Write2Buffer_WriteConsole::GetInstance() );
+		ret->AddItem( 'd', console_buffer_test::Write2Buffer_WriteConsoleOutput::GetInstance() );
+		ret->AddItem( 'f', console_buffer_test::DoubleBuffering::GetInstance() );
 
 
 		ret->AddLineFeed();
@@ -87,6 +78,9 @@ r2cm::MenuUp TestWindowsMenu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
+		ret->AddItem( 'x', console_window_etc_test::FontInfo::GetInstance() );
+		ret->AddItem( 'c', console_window_etc_test::FontChange::GetInstance() );
+		ret->AddItem( 'v', console_window_etc_test::Pixel::GetInstance() );
 
 
 		ret->AddSplit();

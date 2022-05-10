@@ -26,6 +26,13 @@ namespace console_buffer_test
 		DoFuncT GetDoFunction() override;
 	};
 
+	class ReadConsoleOutputTest : public r2cm::iItem, public r2cm::SingleTon<ReadConsoleOutputTest>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class DoubleBuffering : public r2cm::iItem, public r2cm::SingleTon<DoubleBuffering>
 	{
 	public:

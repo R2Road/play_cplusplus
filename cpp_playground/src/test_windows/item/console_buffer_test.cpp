@@ -62,7 +62,7 @@ namespace console_buffer_test
 
 				FillConsoleOutputAttribute( hStdout, FOREGROUND_BLUE, length, topLeft, &out_result );
 				FillConsoleOutputAttribute( hStdout, FOREGROUND_GREEN, length / 2, topLeft, &out_result );
-				FillConsoleOutputAttribute( hStdout, FOREGROUND_RED, length / 3, topLeft, &out_result );
+				FillConsoleOutputAttribute( hStdout, FOREGROUND_BLUE | FOREGROUND_GREEN, length / 3, topLeft, &out_result );
 				FillConsoleOutputAttribute( hStdout, FOREGROUND_INTENSITY, length / 4, topLeft, &out_result );
 			}
 
@@ -137,6 +137,68 @@ namespace console_buffer_test
 
 			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
 			COORD topLeft = { 0, 0 };
+
+			{
+				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "COORD topLeft = { 0, 0 };" << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "DWORD ret;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "const char* str = \"*************WriteConsole Test*************\";" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), topLeft, &ret );" << r2cm::linefeed;
+
+				DWORD ret;
+				const char* str = "*************WriteConsole Test*************";
+				WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), topLeft, &ret );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "DWORD ret;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "WORD colors[10];" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "std::fill_n( colors, 10, FOREGROUND_GREEN | BACKGROUND_BLUE );" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "WriteConsoleOutputAttribute( hStdout, colors, static_cast<DWORD>( sizeof( colors ) / sizeof( DWORD ) ), topLeft, &ret );" << r2cm::linefeed;
+
+				DWORD ret;
+				WORD colors[10];
+				std::fill_n( colors, 10, static_cast<WORD>( FOREGROUND_GREEN | BACKGROUND_BLUE ) );
+				WriteConsoleOutputAttribute( hStdout, colors, static_cast<DWORD>( sizeof( colors ) / sizeof( DWORD ) ), topLeft, &ret );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT ReadConsoleOutputTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Console Buffer : ReadConsoleOutputTest";
+		};
+	}
+	r2cm::iItem::DoFuncT ReadConsoleOutputTest::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
+			COORD topLeft = { 0, 0 };
+
+			//ReadConsoleOutputAttribute( hStdout, )
 
 			{
 				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
