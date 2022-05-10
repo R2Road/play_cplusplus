@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "bit_operation_test.h"
 
+#include <numeric>
+
 #include "r2cm/r2cm_constant.h"
 #include "r2cm/r2cm_Inspector.h"
 
@@ -8,6 +10,8 @@ namespace
 {
 	void PrintBinary( const int value, const int limit = 31 )
 	{
+		std::cout << r2cm::tab << "> ";
+
 		for( int position = limit; 0 <= position; --position )
 		{
 			const int temp_1 = ( value >> position );
@@ -80,6 +84,52 @@ namespace bit_operation_test
 
 				PROCESS_MAIN( num ^= ( 1 << 2 ) );
 				PrintBinary( num, 16 );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT Mask::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Bit Operation : Mask";
+		};
+	}
+	r2cm::iItem::DoFuncT Mask::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const int num = 0b0011011000 );
+			PrintBinary( num, 31 );
+			DECLARATION_MAIN( unsigned int mask = 0 );
+			PrintBinary( mask, 31 );
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Make Mask" << r2cm::linefeed2;
+
+				PROCESS_MAIN( mask = std::numeric_limits<unsigned int>::max() );
+				PrintBinary( mask, 31 );
+				PROCESS_MAIN( mask >>= ( 31 - 5 ) );
+				PrintBinary( mask, 31 );
+				PROCESS_MAIN( mask <<= 3 );
+				PrintBinary( mask, 31 );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const unsigned int result = num & mask );
+				PrintBinary( result, 31 );
 			}
 
 			std::cout << r2cm::split;

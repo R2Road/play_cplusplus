@@ -23,6 +23,7 @@ r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', bit_operation_test::Basic::GetInstance() );
+		ret->AddItem( '2', bit_operation_test::Mask::GetInstance() );
 
 		ret->AddItem(
 			'4'

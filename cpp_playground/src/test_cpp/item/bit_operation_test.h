@@ -11,4 +11,11 @@ namespace bit_operation_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class Mask : public r2cm::iItem, public r2cm::SingleTon<Mask>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }
