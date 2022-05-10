@@ -11,10 +11,6 @@
 #include "test_hobby/HobbyMenu.h"
 #include "test_cpp/r2_RandomMenu.h"
 #include "test_cpp/r2_TimeMenu.h"
-
-#include "test_cpp/item/pointer_test.h"
-
-#include "test_cpp/item/lambda_test.h"
 #include "test_cpp/STDMenu.h"
 
 #include "test_cpp/item/console_input_test.h"
