@@ -35,24 +35,6 @@ namespace print_test
 
 			std::cout << r2cm::split;
 
-			{
-				std::cout << r2cm::tab << "+ Show String : Use std::cout.write" << r2cm::linefeed << r2cm::linefeed;
-
-				const char* str = "1111111222222233333334";
-
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "const char* str = \"1111111222222233333334\";" << r2cm::linefeed2;
-
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::cout.write( str, strlen( str ) / 2 );" << r2cm::linefeed2;
-
-				std::cout << r2cm::tab2;
-				std::cout.write( str, strlen( str ) / 2 );
-				std::cout << r2cm::linefeed;
-			}
-
-			std::cout << r2cm::split;
-
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}

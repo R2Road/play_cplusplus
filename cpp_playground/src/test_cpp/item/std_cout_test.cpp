@@ -8,6 +8,39 @@
 
 namespace std_cout_test
 {
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::cout : Basic";
+		};
+	}
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( std::cout << "1234" "5678" "90" );
+
+				std::cout << r2cm::linefeed2;
+
+				PROCESS_MAIN( std::cout.write( "1234" "5678" "90", 6 ) );
+
+				std::cout << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT FMTStatus::GetTitleFunction() const
 	{
 		return []()->const char*

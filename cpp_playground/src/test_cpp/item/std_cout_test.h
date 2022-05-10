@@ -5,6 +5,13 @@
 
 namespace std_cout_test
 {
+	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class FMTStatus : public r2cm::iItem, public r2cm::SingleTon<FMTStatus>
 	{
 	public:
