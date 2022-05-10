@@ -8,6 +8,7 @@
 #include "item/console_window_etc_test.h"
 #include "item/console_window_input_test.h"
 #include "item/console_window_message_test.h"
+#include "item/windows_sound_test.h"
 
 #include "ConsoleTextColorMenu.h"
 #include "ConsoleWindowMenu.h"
@@ -81,6 +82,8 @@ r2cm::MenuUp TestWindowsMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'x', console_window_etc_test::FontInfo::GetInstance() );
 		ret->AddItem( 'c', console_window_etc_test::FontChange::GetInstance() );
 		ret->AddItem( 'v', console_window_etc_test::Pixel::GetInstance() );
+		ret->AddItem( 'b', windows_sound_test::PlaySoundTest::GetInstance() );
+		ret->AddItem( 'n', windows_sound_test::BeepTest::GetInstance() );
 
 
 		ret->AddSplit();

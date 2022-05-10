@@ -15,7 +15,6 @@
 #include "test_cpp/item/pointer_test.h"
 
 #include "test_cpp/item/lambda_test.h"
-#include "test_windows/item/windows_sound_test.h"
 #include "test_cpp/item/print_test.h"
 #include "test_cpp/STDMenu.h"
 
@@ -68,8 +67,6 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
-		ret->AddItem( '7', windows_sound_test::PlaySoundTest::GetInstance() );
-		ret->AddItem( '8', windows_sound_test::BeepTest::GetInstance() );
 
 
 		ret->AddLineFeed();
