@@ -95,7 +95,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem(
-			'z'
+			'a'
 			, []()->const char* { return r2::ETCMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
@@ -104,7 +104,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem(
-			'x'
+			's'
 			, []()->const char* { return r2::MathMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
@@ -113,7 +113,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem(
-			'c'
+			'd'
 			, []()->const char* { return r2::PerformanceMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
@@ -127,7 +127,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem(
-			32
+			'z'
 			, []()->const char* { return TestAlgorithmMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
@@ -136,7 +136,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem(
-			'`'
+			'x'
 			, []()->const char* { return HobbyMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
