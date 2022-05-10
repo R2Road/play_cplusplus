@@ -8,11 +8,11 @@
 
 namespace
 {
-	void PrintBinary( const int value, const int limit = 31 )
+	void PrintBinary( const int value, const int limit = 32 )
 	{
 		std::cout << r2cm::tab << "> ";
 
-		for( int position = limit; 0 <= position; --position )
+		for( int position = limit - 1; 0 <= position; --position )
 		{
 			const int temp_1 = ( value >> position );
 			const int temp_2 = temp_1 & 1;
@@ -110,9 +110,15 @@ namespace bit_operation_test
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const int num = 0b0011011000 );
-			PrintBinary( num, 31 );
+			PrintBinary( num );
 			DECLARATION_MAIN( unsigned int mask = 0 );
-			PrintBinary( mask, 31 );
+			PrintBinary( mask );
+
+			std::cout << r2cm::linefeed;
+
+			DECLARATION_MAIN( const unsigned int target_pos = 3 );
+			DECLARATION_MAIN( const unsigned int target_range = 5 );
+			DECLARATION_MAIN( const unsigned int bit_length = 32 );
 
 			std::cout << r2cm::split;
 
@@ -120,16 +126,27 @@ namespace bit_operation_test
 				std::cout << r2cm::tab << "+ Make Mask" << r2cm::linefeed2;
 
 				PROCESS_MAIN( mask = std::numeric_limits<unsigned int>::max() );
-				PrintBinary( mask, 31 );
-				PROCESS_MAIN( mask >>= ( 31 - 5 ) );
-				PrintBinary( mask, 31 );
-				PROCESS_MAIN( mask <<= 3 );
-				PrintBinary( mask, 31 );
+				PrintBinary( mask );
+
+				std::cout << r2cm::linefeed2;
+
+				PROCESS_MAIN( mask >>= ( bit_length - target_range ) );
+				PrintBinary( mask );
+
+				std::cout << r2cm::linefeed2;
+
+				PROCESS_MAIN( mask <<= target_pos );
+				PrintBinary( mask );
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( const unsigned int result = num & mask );
-				PrintBinary( result, 31 );
+				DECLARATION_MAIN( unsigned int result = num & mask );
+				PrintBinary( result );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( result >>= target_pos );
+				PrintBinary( result );
 			}
 
 			std::cout << r2cm::split;
