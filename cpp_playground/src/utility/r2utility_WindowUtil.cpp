@@ -40,4 +40,21 @@ namespace r2utility
 		GetClientRect( hWnd, &rectClient );
 		MoveWindow( hWnd, x + offset_x, y, rectClient.right - rectClient.left, rectClient.bottom - rectClient.top, TRUE );
 	}
+
+	CursorPoint GetCursorPoint()
+	{
+		CONSOLE_SCREEN_BUFFER_INFO csbi{};
+		GetConsoleScreenBufferInfo( GetStdHandle( STD_OUTPUT_HANDLE ), &csbi );
+
+		return CursorPoint{ csbi.dwCursorPosition.X, csbi.dwCursorPosition.Y };
+	}
+	void SetCursorPoint( const CursorPoint new_cursor_point )
+	{
+		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ static_cast<SHORT>( new_cursor_point.x ), static_cast<SHORT>( new_cursor_point.y ) } );
+	}
+
+	void RequestSleep( const uint32_t m )
+	{
+		Sleep( m );
+	}
 }
