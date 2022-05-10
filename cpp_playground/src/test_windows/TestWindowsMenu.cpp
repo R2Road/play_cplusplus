@@ -5,7 +5,7 @@
 #include "r2cm/r2cm_constant.h"
 
 #include "item/console_buffer_test.h"
-#include "item/console_test.h"
+#include "item/console_window_etc_test.h"
 #include "item/console_window_input_test.h"
 #include "item/console_window_message_test.h"
 
@@ -44,8 +44,8 @@ r2cm::MenuUp TestWindowsMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 		ret->AddLineFeed();
 
-		ret->AddItem( 'q', console_test::FontInfo::GetInstance() );
-		ret->AddItem( 'w', console_test::FontChange::GetInstance() );
+		ret->AddItem( 'q', console_window_etc_test::FontInfo::GetInstance() );
+		ret->AddItem( 'w', console_window_etc_test::FontChange::GetInstance() );
 		ret->AddItem( 'e', console_window_input_test::WindowInput_ReadConsoleInput::GetInstance() );
 		ret->AddItem( 'r', console_window_input_test::WindowInput_GetKeyState::GetInstance() );
 		ret->AddItem( 't', console_window_input_test::WindowInput_GetKeyboardState::GetInstance() );
@@ -61,7 +61,7 @@ r2cm::MenuUp TestWindowsMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'a', console_test::Pixel::GetInstance() );
+		ret->AddItem( 'a', console_window_etc_test::Pixel::GetInstance() );
 
 
 		ret->AddLineFeed();

@@ -125,7 +125,7 @@
     <ClCompile Include="src\test_windows\ConsoleWindowMenu.cpp" />
     <ClCompile Include="src\test_windows\FlickeringResearchMenu.cpp" />
     <ClCompile Include="src\test_windows\item\console_buffer_test.cpp" />
-    <ClCompile Include="src\test_windows\item\console_test.cpp" />
+    <ClCompile Include="src\test_windows\item\console_window_etc_test.cpp" />
     <ClCompile Include="src\test_windows\item\console_text_color_test.cpp" />
     <ClCompile Include="src\test_windows\item\console_window_input_test.cpp" />
     <ClCompile Include="src\test_windows\item\console_window_message_test.cpp" />
@@ -249,7 +249,7 @@
     <ClInclude Include="src\test_windows\ConsoleWindowMenu.h" />
     <ClInclude Include="src\test_windows\FlickeringResearchMenu.h" />
     <ClInclude Include="src\test_windows\item\console_buffer_test.h" />
-    <ClInclude Include="src\test_windows\item\console_test.h" />
+    <ClInclude Include="src\test_windows\item\console_window_etc_test.h" />
     <ClInclude Include="src\test_windows\item\console_text_color_test.h" />
     <ClInclude Include="src\test_windows\item\console_window_input_test.h" />
     <ClInclude Include="src\test_windows\item\console_window_message_test.h" />

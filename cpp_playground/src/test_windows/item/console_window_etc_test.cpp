@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "console_test.h"
+#include "console_window_etc_test.h"
 
 #include <conio.h> // _kbhit(), _getch()
 #include <cwchar>
@@ -19,7 +19,7 @@ void ShowFontInfo( const CONSOLE_FONT_INFOEX & cfie )
 	std::wcout << r2cm::tab2 << "FaceName : " << cfie.FaceName << r2cm::linefeed;
 }
 
-namespace console_test
+namespace console_window_etc_test
 {
 	r2cm::iItem::TitleFuncT FontInfo::GetTitleFunction() const
 	{
