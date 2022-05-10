@@ -50,6 +50,24 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem(
+			'3'
+			, []()->const char* { return C_CPP_Menu::GetTitle(); }
+			, [&director]()->r2cm::eItemLeaveAction
+			{
+				director.Setup( C_CPP_Menu::Create( director ) );
+				return r2cm::eItemLeaveAction::None;
+			}
+		);
+		ret->AddItem(
+			'4'
+			, []()->const char* { return STDMenu::GetTitle(); }
+			, [&director]()->r2cm::eItemLeaveAction
+			{
+				director.Setup( STDMenu::Create( director ) );
+				return r2cm::eItemLeaveAction::None;
+			}
+		);
+		ret->AddItem(
 			'5'
 			, []()->const char* { return r2::TimeMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
@@ -67,31 +85,8 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
-
-
-		ret->AddLineFeed();
-
-
 		ret->AddItem(
-			'q'
-			, []()->const char* { return C_CPP_Menu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( C_CPP_Menu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			'w'
-			, []()->const char* { return STDMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( STDMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			'r'
+			'7'
 			, []()->const char* { return r2::DebugMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
