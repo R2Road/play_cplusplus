@@ -14,7 +14,8 @@ r2cm::MenuUp PointerMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', pointer_test::Basic::GetInstance() );
-		ret->AddItem( '2', pointer_test::ConstPointer::GetInstance() );
+		ret->AddItem( '2', pointer_test::Pointer2Index::GetInstance() );
+		ret->AddItem( '3', pointer_test::ConstPointer::GetInstance() );
 
 
 		ret->AddSplit();

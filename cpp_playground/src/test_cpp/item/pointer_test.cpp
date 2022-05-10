@@ -62,13 +62,61 @@ namespace pointer_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
-}
 
 
 
+#pragma warning( disable : 4311 )
+#pragma warning( disable : 4302 )
 
-namespace pointer_test
-{
+	r2cm::iItem::TitleFuncT Pointer2Index::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Pointer 2 Index";
+		};
+	}
+	r2cm::iItem::DoFuncT Pointer2Index::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				int i = 0;
+				int* pi = &i;
+				int32_t i32 = (int32_t)( &i );
+				int64_t i64_1 = (int64_t)( &i );
+				int64_t i64_2 = reinterpret_cast<int64_t>( &i );
+
+				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "int i = 0;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "int* pi = &i;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "int32_t i32 = (int32_t)( &i );" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "int64_t i64_1 = (int64_t)( &i );" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "int64_t i64_2 = reinterpret_cast<int64_t>( &i );" << r2cm::linefeed;
+				std::cout << r2cm::linefeed2;
+
+				std::cout << r2cm::tab << "+ ...." << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "pi : " << pi << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "i32 : " << i32 << r2cm::tab2 << " ...64bit 에서 잘림 Platform 신경써." << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "i64_1 dec : " << std::dec << i64_1 << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "i64_1 hex : " << std::hex << i64_1 << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "i64_2 hex : " << i64_2 << r2cm::linefeed;
+
+				// rollback
+				std::cout << std::dec;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT ConstPointer::GetTitleFunction() const
 	{
 		return []()->const char*

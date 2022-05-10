@@ -17,7 +17,6 @@ namespace r2
 		{
 			ret->AddItem( '2', etc_test::InitArray::GetInstance() );
 			ret->AddItem( '3', etc_test::Macro2String::GetInstance() );
-			ret->AddItem( '4', etc_test::Pointer2Index::GetInstance() );
 
 
 			ret->AddLineFeed();
