@@ -4,19 +4,19 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
 
-#include "test_cpp/item/bit_operation_test.h"
-#include "test_cpp/item/print_test.h"
-#include "test_cpp/item/structured_binding_test.h"
+#include "item/bit_operation_test.h"
+#include "item/print_test.h"
+#include "item/structured_binding_test.h"
 
+#include "r2_AlignMenu.h"
+#include "r2_EnumMenu.h"
+#include "r2_LambdaMenu.h"
+#include "r2_NewMenu.h"
+#include "r2_TemplateMenu.h"
+
+#include "CharMenu.h"
+#include "PointerMenu.h"
 #include "RootMenu.h"
-#include "test_cpp/r2_AlignMenu.h"
-#include "test_cpp/r2_EnumMenu.h"
-#include "test_cpp/r2_LambdaMenu.h"
-#include "test_cpp/r2_NewMenu.h"
-#include "test_cpp/r2_TemplateMenu.h"
-
-#include "test_cpp/CharMenu.h"
-#include "test_cpp/PointerMenu.h"
 
 r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
 {
