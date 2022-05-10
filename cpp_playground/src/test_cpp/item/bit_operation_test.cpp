@@ -156,27 +156,34 @@ namespace bit_operation_test
 			std::cout << r2cm::split;
 
 			{
-				int a = 123;
-				int b = 456;
+				DECLARATION_MAIN( int a = 123 );
+				PrintBinary( a, 31 );
+				DECLARATION_MAIN( int b = 456 );
+				PrintBinary( b, 31 );
 
-				std::cout << r2cm::tab << "int a = 123;" << r2cm::linefeed;
-				std::cout << r2cm::tab << "int b = 456;" << r2cm::linefeed;
 				std::cout << r2cm::linefeed2;
 
-				a = a ^ b;
-				std::cout << r2cm::tab << "a = a ^ b;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "a : " << a << r2cm::linefeed;
+				PROCESS_MAIN( a = a ^ b );
+				OUTPUT_VALUE( a );
+				PrintBinary( a, 31 );
+				OUTPUT_VALUE( b );
+				PrintBinary( b, 31 );
+
 				std::cout << r2cm::linefeed;
 
-				b = b ^ a;
-				std::cout << r2cm::tab << "b = b ^ a;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "b : " << b << r2cm::linefeed;
+				PROCESS_MAIN( b = b ^ a );
+				OUTPUT_VALUE( a );
+				PrintBinary( a, 31 );
+				OUTPUT_VALUE( b );
+				PrintBinary( b, 31 );
+
 				std::cout << r2cm::linefeed;
 
-				a = a ^ b;
-				std::cout << r2cm::tab << "a = a ^ b;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "a : " << a << r2cm::linefeed;
-				std::cout << r2cm::linefeed;
+				PROCESS_MAIN( a = a ^ b );
+				OUTPUT_VALUE( a );
+				PrintBinary( a, 31 );
+				OUTPUT_VALUE( b );
+				PrintBinary( b, 31 );
 			}
 
 			std::cout << r2cm::split;
