@@ -57,24 +57,6 @@ namespace print_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Show Number : Use std::cout" << r2cm::linefeed << r2cm::linefeed;
-
-				int num = 01743; // oct
-
-				std::cout << r2cm::tab << "int num = 01743;" << r2cm::linefeed;
-				std::cout << r2cm::linefeed;
-
-				std::cout << r2cm::tab2 << "Print( 8 : oct ) : " << std::oct << num << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "Print( 10 : dec ) : " << std::dec << num << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "Print( 16 : hex ) : " << std::hex << num << r2cm::linefeed;
-
-				// rollback
-				std::cout << std::dec;
-			}
-
-			std::cout << r2cm::split;
-
-			{
 				std::cout << r2cm::tab << "+ Show Number : Use printf" << r2cm::linefeed << r2cm::linefeed;
 
 				int num = 0xde81; // hex
