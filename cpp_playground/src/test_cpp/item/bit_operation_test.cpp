@@ -137,4 +137,51 @@ namespace bit_operation_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT XOR_Swap::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Bit Operation : XOR Swap";
+		};
+	}
+	r2cm::iItem::DoFuncT XOR_Swap::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				int a = 123;
+				int b = 456;
+
+				std::cout << r2cm::tab << "int a = 123;" << r2cm::linefeed;
+				std::cout << r2cm::tab << "int b = 456;" << r2cm::linefeed;
+				std::cout << r2cm::linefeed2;
+
+				a = a ^ b;
+				std::cout << r2cm::tab << "a = a ^ b;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "a : " << a << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
+
+				b = b ^ a;
+				std::cout << r2cm::tab << "b = b ^ a;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "b : " << b << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
+
+				a = a ^ b;
+				std::cout << r2cm::tab << "a = a ^ b;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "a : " << a << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

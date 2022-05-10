@@ -18,4 +18,11 @@ namespace bit_operation_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class XOR_Swap : public r2cm::iItem, public r2cm::SingleTon<XOR_Swap>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }
