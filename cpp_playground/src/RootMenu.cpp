@@ -15,7 +15,6 @@
 #include "test_cpp/item/pointer_test.h"
 
 #include "test_cpp/item/lambda_test.h"
-#include "test_cpp/item/print_test.h"
 #include "test_cpp/STDMenu.h"
 
 #include "test_cpp/item/console_input_test.h"
@@ -94,13 +93,6 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
-
-
-		ret->AddLineFeed();
-
-
-		ret->AddItem( 'd', print_test::Basic::GetInstance() );
-		ret->AddItem( 'f', print_test::ShowNumbers::GetInstance() );
 
 
 		ret->AddLineFeed();

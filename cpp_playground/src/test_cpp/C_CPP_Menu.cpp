@@ -5,6 +5,7 @@
 #include "r2cm/r2cm_constant.h"
 
 #include "test_cpp/item/bit_operation_test.h"
+#include "test_cpp/item/print_test.h"
 #include "test_cpp/item/structured_binding_test.h"
 
 #include "RootMenu.h"
@@ -94,6 +95,8 @@ r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem( 'e', structured_binding_test::Basic::GetInstance() );
+		ret->AddItem( 'r', print_test::Basic::GetInstance() );
+		ret->AddItem( 't', print_test::ShowNumbers::GetInstance() );
 
 
 		ret->AddSplit();
