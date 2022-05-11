@@ -10,7 +10,7 @@
 #include "test_cpp/item/console_input_test.h"
 #include "test_cpp/r2_ETCMenu.h"
 #include "test_cpp/r2_MathMenu.h"
-#include "test_performance/r2_PerformanceMenu.h"
+#include "test_performance/PerformanceMenu.h"
 
 #include "test_algorithm/TestAlgorithmMenu.h"
 #include "test_cpp/C_CPP_Menu.h"

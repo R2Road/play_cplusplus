@@ -375,14 +375,14 @@
     <ClCompile Include="src\test_cpp\DebugMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_performance\r2_PerformanceMenu.cpp">
-      <Filter>test_performancee</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_performance\item\performance_1_test.cpp">
       <Filter>test_performancee\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_performance\item\performance_container_iteration_test.cpp">
       <Filter>test_performancee\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_performance\PerformanceMenu.cpp">
+      <Filter>test_performancee</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -742,14 +742,14 @@
     <ClInclude Include="src\test_cpp\DebugMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_performance\r2_PerformanceMenu.h">
-      <Filter>test_performancee</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_performance\item\performance_1_test.h">
       <Filter>test_performancee\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_performance\item\performance_container_iteration_test.h">
       <Filter>test_performancee\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_performance\PerformanceMenu.h">
+      <Filter>test_performancee</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
