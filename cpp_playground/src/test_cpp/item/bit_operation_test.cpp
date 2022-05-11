@@ -119,7 +119,6 @@ namespace bit_operation_test
 			DECLARATION_MAIN( const unsigned int target_pos = 3 );
 			DECLARATION_MAIN( const unsigned int target_range = 5 );
 			DECLARATION_MAIN( const unsigned int bit_length = sizeof( num ) * 8 );
-			EXPECT_EQ( 32u, bit_length );
 
 			std::cout << r2cm::split;
 
