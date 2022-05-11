@@ -56,9 +56,6 @@
     <ClCompile Include="src\utility\r2utility_StopWatch.cpp">
       <Filter>utility</Filter>
     </ClCompile>
-    <ClCompile Include="src\utility\r2utility_WindowUtil.cpp">
-      <Filter>utility</Filter>
-    </ClCompile>
     <ClCompile Include="src\utility\r2utility_CharacterBuffer.cpp">
       <Filter>utility</Filter>
     </ClCompile>
@@ -378,6 +375,9 @@
     <ClCompile Include="src\test_cpp\item\bit_operation_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2cm\r2utility_WindowUtil.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -403,9 +403,6 @@
       <Filter>algorithm</Filter>
     </ClInclude>
     <ClInclude Include="src\utility\r2utility_StopWatch.h">
-      <Filter>utility</Filter>
-    </ClInclude>
-    <ClInclude Include="src\utility\r2utility_WindowUtil.h">
       <Filter>utility</Filter>
     </ClInclude>
     <ClInclude Include="src\utility\r2utility_CharacterBuffer.h">
@@ -744,6 +741,9 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\bit_operation_test.h">
       <Filter>test_cpp\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2utility_WindowUtil.h">
+      <Filter>r2cm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -8,8 +8,7 @@
 
 #include "r2cm/r2cm_constant.h"
 #include "r2cm/r2cm_Inspector.h"
-
-#include "utility/r2utility_WindowUtil.h"
+#include "r2cm/r2utility_WindowUtil.h"
 
 namespace console_buffer_test
 {
