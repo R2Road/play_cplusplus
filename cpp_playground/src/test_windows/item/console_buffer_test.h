@@ -33,13 +33,6 @@ namespace console_buffer_test
 		DoFuncT GetDoFunction() override;
 	};
 
-	class ClearBufferWithCusorMove : public r2cm::iItem, public r2cm::SingleTon<ClearBufferWithCusorMove>
-	{
-	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
-	};
-
 	class DoubleBuffering : public r2cm::iItem, public r2cm::SingleTon<DoubleBuffering>
 	{
 	public:

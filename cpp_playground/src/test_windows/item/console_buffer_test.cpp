@@ -182,53 +182,6 @@ namespace console_buffer_test
 
 
 
-	r2cm::iItem::TitleFuncT ClearBufferWithCusorMove::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Clear Buffer With Cusor Move";
-		};
-	}
-	r2cm::iItem::DoFuncT ClearBufferWithCusorMove::GetDoFunction()
-	{
-		return []()->r2cm::eItemLeaveAction
-		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
-			std::cout << r2cm::split;
-
-			{
-				std::cout << "ddddddddddddddddduuuuuuuuuuummmmmmmmmmmyyyyyyyyyyyyyyyyyy" << r2cm::linefeed;
-				std::cout << "ddddddddddddddddduuuuuuuuuuummmmmmmmmmmyyyyyyyyyyyyyyyyyy" << r2cm::linefeed;
-			}
-
-			std::cout << r2cm::split;
-
-			DECLARATION_MAIN( const auto last_cursor_point = r2cm::WindowUtility::GetCursorPoint() );
-
-			std::cout << r2cm::split;
-
-			for( int i = 0; 20 > i; ++i )
-			{
-				std::cout << "ddddddddddddddddduuuuuuuuuuummmmmmmmmmmyyyyyyyyyyyyyyyyyy" << r2cm::linefeed;
-			}
-
-			std::cout << r2cm::split;
-
-			std::cout << "[Any Key] Move Cursor with Clear Buffer";
-			_getch();
-
-			PROCESS_MAIN( r2cm::WindowUtility::MoveCursorPointWithClearBuffer( last_cursor_point ) );
-
-			std::cout << "[Any Key] End";
-			_getch();
-
-			return r2cm::eItemLeaveAction::Pause;
-		};
-	}
-
-
-
 	r2cm::iItem::TitleFuncT ReadConsoleOutputTest::GetTitleFunction() const
 	{
 		return []()->const char*
