@@ -63,13 +63,14 @@ namespace r2utility
 		
 		if( last_cursor_point.y >= fixed_new_cursor_point.y )
 		{
+			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
 			CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info{};
-			GetConsoleScreenBufferInfo( GetStdHandle( STD_OUTPUT_HANDLE ), &cs_buffer_info );
+			GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info );
 
 			DWORD out_result;
 			for( short i = 0, end = last_cursor_point.y - fixed_new_cursor_point.y; end > i; ++i )
 			{
-				FillConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), ' ', cs_buffer_info.dwSize.X, COORD{ 0, fixed_new_cursor_point.y + i }, &out_result );
+				FillConsoleOutputCharacterA( hStdout, ' ', cs_buffer_info.dwSize.X, COORD{ 0, fixed_new_cursor_point.y + i }, &out_result );
 			}
 		}
 	}
