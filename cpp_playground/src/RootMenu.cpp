@@ -44,8 +44,13 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
+
+
+		ret->AddLineFeed();
+
+
 		ret->AddItem(
-			'3'
+			'q'
 			, []()->const char* { return C_CPP_Menu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
@@ -54,7 +59,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem(
-			'4'
+			'w'
 			, []()->const char* { return STDMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
@@ -63,7 +68,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem(
-			'5'
+			'e'
 			, []()->const char* { return r2::TimeMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
@@ -72,7 +77,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem(
-			'6'
+			'r'
 			, []()->const char* { return r2::RandomMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
@@ -81,7 +86,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem(
-			'7'
+			't'
 			, []()->const char* { return DebugMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
@@ -112,18 +117,9 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
-		ret->AddItem(
-			'd'
-			, []()->const char* { return PerformanceMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( PerformanceMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
 
 
-		ret->AddSplit();
+		ret->AddLineFeed();
 
 
 		ret->AddItem(
@@ -143,6 +139,15 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 				director.Setup( HobbyMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
+		);
+		ret->AddItem(
+			'c'
+			, []()->const char* { return PerformanceMenu::GetTitle(); }
+			, [&director]()->r2cm::eItemLeaveAction
+				{
+					director.Setup( PerformanceMenu::Create( director ) );
+					return r2cm::eItemLeaveAction::None;
+				}
 		);
 
 
