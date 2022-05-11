@@ -82,10 +82,10 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			'7'
-			, []()->const char* { return r2::DebugMenu::GetTitle(); }
+			, []()->const char* { return DebugMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( r2::DebugMenu::Create( director ) );
+				director.Setup( DebugMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);

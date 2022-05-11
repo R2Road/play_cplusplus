@@ -5,19 +5,15 @@
 namespace r2cm
 {
 	using MenuUp = std::unique_ptr<class Menu>;
-
 	class Director;
 }
 
-namespace r2
+class DebugMenu
 {
-	class DebugMenu
-	{
-	private:
-		DebugMenu() = delete;
+private:
+	DebugMenu() = delete;
 
-	public:
-		static const char* GetTitle() { return "Debug"; }
-		static r2cm::MenuUp Create( r2cm::Director& director );
-	};
-}
+public:
+	static const char* GetTitle() { return "Debug"; }
+	static r2cm::MenuUp Create( r2cm::Director& director );
+};
