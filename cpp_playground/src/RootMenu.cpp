@@ -114,10 +114,10 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			'd'
-			, []()->const char* { return r2::PerformanceMenu::GetTitle(); }
+			, []()->const char* { return PerformanceMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( r2::PerformanceMenu::Create( director ) );
+				director.Setup( PerformanceMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
