@@ -12,7 +12,7 @@ namespace r2utility
 		short y = 0;
 	};
 	CursorPoint GetCursorPoint();
-	void SetCursorPoint( const CursorPoint new_cursor_point );
+	void MoveCursorPoint( const CursorPoint new_cursor_point );
 	void MoveCursorPointWithClearBuffer( const CursorPoint new_cursor_point );
 
 	void RequestSleep( const uint32_t m );

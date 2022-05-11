@@ -48,7 +48,7 @@ namespace r2utility
 
 		return CursorPoint{ csbi.dwCursorPosition.X, csbi.dwCursorPosition.Y };
 	}
-	void SetCursorPoint( const CursorPoint new_cursor_point )
+	void MoveCursorPoint( const CursorPoint new_cursor_point )
 	{
 		const CursorPoint fixed_new_cursor_point{ ( 0 > new_cursor_point.x ? 0 : new_cursor_point.x ), ( 0 > new_cursor_point.y ? 0 : new_cursor_point.y ) };
 		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ fixed_new_cursor_point.x, fixed_new_cursor_point.y } );
