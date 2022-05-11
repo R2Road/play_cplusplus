@@ -9,7 +9,6 @@
 #include "test_windows/TestWindowsMenu.h"
 #include "test_cpp/r2_DebugMenu.h"
 #include "test_hobby/HobbyMenu.h"
-#include "test_cpp/r2_RandomMenu.h"
 #include "test_cpp/r2_TimeMenu.h"
 #include "test_cpp/STDMenu.h"
 
@@ -19,6 +18,7 @@
 #include "test_cpp/r2_PerformanceMenu.h"
 
 #include "test_algorithm/TestAlgorithmMenu.h"
+#include "test_cpp/RandomMenu.h"
 
 r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 {

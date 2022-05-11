@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_RandomMenu.h"
+#include "RandomMenu.h"
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
