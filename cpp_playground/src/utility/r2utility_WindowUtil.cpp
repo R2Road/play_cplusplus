@@ -50,7 +50,7 @@ namespace r2utility
 	}
 	void SetCursorPoint( const CursorPoint new_cursor_point )
 	{
-		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ static_cast<SHORT>( new_cursor_point.x ), static_cast<SHORT>( new_cursor_point.y ) } );
+		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ new_cursor_point.x, new_cursor_point.y } );
 	}
 
 	void RequestSleep( const uint32_t m )

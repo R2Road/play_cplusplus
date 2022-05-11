@@ -8,8 +8,8 @@ namespace r2utility
 
 	struct CursorPoint
 	{
-		int x = 0;
-		int y = 0;
+		short x = 0;
+		short y = 0;
 	};
 	CursorPoint GetCursorPoint();
 	void SetCursorPoint( const CursorPoint new_cursor_point );
