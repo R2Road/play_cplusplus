@@ -50,7 +50,8 @@ namespace r2utility
 	}
 	void SetCursorPoint( const CursorPoint new_cursor_point )
 	{
-		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ new_cursor_point.x, new_cursor_point.y } );
+		const CursorPoint fixed_new_cursor_point{ ( 0 > new_cursor_point.x ? 0 : new_cursor_point.x ), ( 0 > new_cursor_point.y ? 0 : new_cursor_point.y ) };
+		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ fixed_new_cursor_point.x, fixed_new_cursor_point.y } );
 	}
 	void MoveCursorPointWithClearBuffer( const CursorPoint new_cursor_point )
 	{
