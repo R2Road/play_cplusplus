@@ -204,7 +204,7 @@ namespace console_buffer_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const auto last_cursor_point = r2utility::GetCursorPoint() );
+			DECLARATION_MAIN( const auto last_cursor_point = r2cm::WindowUtility::GetCursorPoint() );
 
 			std::cout << r2cm::split;
 
@@ -218,7 +218,7 @@ namespace console_buffer_test
 			std::cout << "[Any Key] Move Cursor with Clear Buffer";
 			_getch();
 
-			PROCESS_MAIN( r2utility::MoveCursorPointWithClearBuffer( last_cursor_point ) );
+			PROCESS_MAIN( r2cm::WindowUtility::MoveCursorPointWithClearBuffer( last_cursor_point ) );
 
 			std::cout << "[Any Key] End";
 			_getch();
