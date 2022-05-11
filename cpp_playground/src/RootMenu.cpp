@@ -4,13 +4,9 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
 
-#include "test_cpp/C_CPP_Menu.h"
 
-#include "test_windows/TestWindowsMenu.h"
 #include "test_cpp/r2_DebugMenu.h"
-#include "test_hobby/HobbyMenu.h"
 #include "test_cpp/r2_TimeMenu.h"
-#include "test_cpp/STDMenu.h"
 
 #include "test_cpp/item/console_input_test.h"
 #include "test_cpp/r2_ETCMenu.h"
@@ -18,7 +14,11 @@
 #include "test_cpp/r2_PerformanceMenu.h"
 
 #include "test_algorithm/TestAlgorithmMenu.h"
+#include "test_cpp/C_CPP_Menu.h"
 #include "test_cpp/RandomMenu.h"
+#include "test_cpp/STDMenu.h"
+#include "test_hobby/HobbyMenu.h"
+#include "test_windows/TestWindowsMenu.h"
 
 r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 {
