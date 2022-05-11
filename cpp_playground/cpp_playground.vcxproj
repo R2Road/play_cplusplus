@@ -64,8 +64,6 @@
     <ClCompile Include="src\test_cpp\item\lambda_test.cpp" />
     <ClCompile Include="src\test_cpp\item\locale_test.cpp" />
     <ClCompile Include="src\test_cpp\item\new_test.cpp" />
-    <ClCompile Include="src\test_cpp\item\performance_1_test.cpp" />
-    <ClCompile Include="src\test_cpp\item\performance_container_iteration_test.cpp" />
     <ClCompile Include="src\test_cpp\item\pointer_test.cpp" />
     <ClCompile Include="src\test_cpp\item\print_test.cpp" />
     <ClCompile Include="src\test_cpp\item\std_algorithm_test.cpp" />
@@ -102,7 +100,6 @@
     <ClCompile Include="src\test_cpp\r2_LambdaMenu.cpp" />
     <ClCompile Include="src\test_cpp\r2_MathMenu.cpp" />
     <ClCompile Include="src\test_cpp\r2_NewMenu.cpp" />
-    <ClCompile Include="src\test_cpp\r2_PerformanceMenu.cpp" />
     <ClCompile Include="src\test_cpp\PointerMenu.cpp" />
     <ClCompile Include="src\test_cpp\RandomMenu.cpp" />
     <ClCompile Include="src\test_cpp\STDContainerMenu.cpp" />
@@ -123,6 +120,9 @@
     <ClCompile Include="src\test_hobby\ArrayBasedListMenu.cpp" />
     <ClCompile Include="src\test_hobby\HobbyMenu.cpp" />
     <ClCompile Include="src\test_hobby\MemoryPoolMenu.cpp" />
+    <ClCompile Include="src\test_performance\item\performance_1_test.cpp" />
+    <ClCompile Include="src\test_performance\item\performance_container_iteration_test.cpp" />
+    <ClCompile Include="src\test_performance\r2_PerformanceMenu.cpp" />
     <ClCompile Include="src\test_windows\ConsoleTextColorMenu.cpp" />
     <ClCompile Include="src\test_windows\ConsoleWindowMenu.cpp" />
     <ClCompile Include="src\test_windows\FlickeringResearchMenu.cpp" />
@@ -189,8 +189,6 @@
     <ClInclude Include="src\test_cpp\item\lambda_test.h" />
     <ClInclude Include="src\test_cpp\item\locale_test.h" />
     <ClInclude Include="src\test_cpp\item\new_test.h" />
-    <ClInclude Include="src\test_cpp\item\performance_1_test.h" />
-    <ClInclude Include="src\test_cpp\item\performance_container_iteration_test.h" />
     <ClInclude Include="src\test_cpp\item\pointer_test.h" />
     <ClInclude Include="src\test_cpp\item\print_test.h" />
     <ClInclude Include="src\test_cpp\item\std_algorithm_test.h" />
@@ -227,7 +225,6 @@
     <ClInclude Include="src\test_cpp\r2_LambdaMenu.h" />
     <ClInclude Include="src\test_cpp\r2_MathMenu.h" />
     <ClInclude Include="src\test_cpp\r2_NewMenu.h" />
-    <ClInclude Include="src\test_cpp\r2_PerformanceMenu.h" />
     <ClInclude Include="src\test_cpp\PointerMenu.h" />
     <ClInclude Include="src\test_cpp\RandomMenu.h" />
     <ClInclude Include="src\test_cpp\STDContainerMenu.h" />
@@ -248,6 +245,9 @@
     <ClInclude Include="src\test_hobby\ArrayBasedListMenu.h" />
     <ClInclude Include="src\test_hobby\HobbyMenu.h" />
     <ClInclude Include="src\test_hobby\MemoryPoolMenu.h" />
+    <ClInclude Include="src\test_performance\item\performance_1_test.h" />
+    <ClInclude Include="src\test_performance\item\performance_container_iteration_test.h" />
+    <ClInclude Include="src\test_performance\r2_PerformanceMenu.h" />
     <ClInclude Include="src\test_windows\ConsoleTextColorMenu.h" />
     <ClInclude Include="src\test_windows\ConsoleWindowMenu.h" />
     <ClInclude Include="src\test_windows\FlickeringResearchMenu.h" />

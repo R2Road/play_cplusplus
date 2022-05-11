@@ -37,6 +37,12 @@
     <Filter Include="test_windows\item">
       <UniqueIdentifier>{5a415f0f-d9ca-4c8d-931c-02fee8c5145d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test_performancee">
+      <UniqueIdentifier>{19c6e25a-79ed-4d96-b56f-dd8f953eeaed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test_performancee\item">
+      <UniqueIdentifier>{06e38cf0-4703-4437-8b43-c4920f4e1e4b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -161,12 +167,6 @@
     <ClCompile Include="src\test_cpp\item\new_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\performance_1_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\performance_container_iteration_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\item\pointer_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
@@ -267,9 +267,6 @@
       <Filter>test_cpp</Filter>
     </ClCompile>
     <ClCompile Include="src\test_cpp\r2_NewMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\r2_PerformanceMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
     <ClCompile Include="src\test_cpp\r2_TemplateMenu.cpp">
@@ -377,6 +374,15 @@
     </ClCompile>
     <ClCompile Include="src\test_cpp\DebugMenu.cpp">
       <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_performance\r2_PerformanceMenu.cpp">
+      <Filter>test_performancee</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_performance\item\performance_1_test.cpp">
+      <Filter>test_performancee\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_performance\item\performance_container_iteration_test.cpp">
+      <Filter>test_performancee\item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -519,12 +525,6 @@
     <ClInclude Include="src\test_cpp\item\new_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\performance_1_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\performance_container_iteration_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\item\pointer_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
@@ -625,9 +625,6 @@
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\r2_NewMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\r2_PerformanceMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\r2_TemplateMenu.h">
@@ -744,6 +741,15 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\DebugMenu.h">
       <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_performance\r2_PerformanceMenu.h">
+      <Filter>test_performancee</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_performance\item\performance_1_test.h">
+      <Filter>test_performancee\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_performance\item\performance_container_iteration_test.h">
+      <Filter>test_performancee\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

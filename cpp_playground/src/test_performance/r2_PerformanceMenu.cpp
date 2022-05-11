@@ -5,8 +5,8 @@
 #include "r2cm/r2cm_constant.h"
 #include "RootMenu.h"
 
-#include "test_cpp/item/performance_1_test.h"
-#include "test_cpp/item/performance_container_iteration_test.h"
+#include "item/performance_1_test.h"
+#include "item/performance_container_iteration_test.h"
 
 namespace r2
 {
