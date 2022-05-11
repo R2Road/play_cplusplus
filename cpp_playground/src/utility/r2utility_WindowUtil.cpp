@@ -52,6 +52,26 @@ namespace r2utility
 	{
 		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ new_cursor_point.x, new_cursor_point.y } );
 	}
+	void MoveCursorPointWithClearBuffer( const CursorPoint new_cursor_point )
+	{
+		const auto last_cursor_point = GetCursorPoint();
+
+		const CursorPoint fixed_new_cursor_point{ ( 0 > new_cursor_point.x ? 0 : new_cursor_point.x ), ( 0 > new_cursor_point.y ? 0 : new_cursor_point.y ) };
+		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ fixed_new_cursor_point.x, fixed_new_cursor_point.y } );
+
+		
+		if( last_cursor_point.y >= fixed_new_cursor_point.y )
+		{
+			CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info{};
+			GetConsoleScreenBufferInfo( GetStdHandle( STD_OUTPUT_HANDLE ), &cs_buffer_info );
+
+			DWORD out_result;
+			for( short i = 0, end = last_cursor_point.y - fixed_new_cursor_point.y; end > i; ++i )
+			{
+				FillConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), ' ', cs_buffer_info.dwSize.X, COORD{ 0, fixed_new_cursor_point.y + i }, &out_result );
+			}
+		}
+	}
 
 	void RequestSleep( const uint32_t m )
 	{

@@ -63,7 +63,8 @@ r2cm::MenuUp TestWindowsMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'a', console_buffer_test::FillBuffer::GetInstance() );
 		ret->AddItem( 's', console_buffer_test::Write2Buffer_WriteConsole::GetInstance() );
 		ret->AddItem( 'd', console_buffer_test::Write2Buffer_WriteConsoleOutput::GetInstance() );
-		ret->AddItem( 'f', console_buffer_test::DoubleBuffering::GetInstance() );
+		ret->AddItem( 'f', console_buffer_test::ClearBufferWithCusorMove::GetInstance() );
+		ret->AddItem( 'g', console_buffer_test::DoubleBuffering::GetInstance() );
 
 
 		ret->AddLineFeed();
