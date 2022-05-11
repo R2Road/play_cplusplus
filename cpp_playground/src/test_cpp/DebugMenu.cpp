@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_DebugMenu.h"
+#include "DebugMenu.h"
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"

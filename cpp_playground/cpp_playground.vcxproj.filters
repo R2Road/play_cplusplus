@@ -254,9 +254,6 @@
     <ClCompile Include="src\test_cpp\r2_AlignMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\r2_DebugMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\r2_EnumMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -376,6 +373,9 @@
       <Filter>r2cm</Filter>
     </ClCompile>
     <ClCompile Include="src\test_cpp\RandomMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\DebugMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
   </ItemGroup>
@@ -612,9 +612,6 @@
     <ClInclude Include="src\test_cpp\r2_AlignMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\r2_DebugMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\r2_EnumMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -743,6 +740,9 @@
       <Filter>r2cm</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\RandomMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\DebugMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>
