@@ -1,12 +1,13 @@
 #include "pch.h"
 #include "PerformanceMenu.h"
 
-#include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
-#include "RootMenu.h"
+#include "r2cm/r2cm_Director.h"
 
 #include "item/performance_1_test.h"
 #include "item/performance_container_iteration_test.h"
+
+#include "RootMenu.h"
 
 r2cm::MenuUp PerformanceMenu::Create( r2cm::Director& director )
 {
