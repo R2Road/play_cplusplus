@@ -9,10 +9,10 @@ namespace r2cm
 	class Director;
 }
 
-class TestAlgorithmMenu
+class AlgorithmMenu
 {
 private:
-	TestAlgorithmMenu() = delete;
+	AlgorithmMenu() = delete;
 
 public:
 	static const char* GetTitle() { return "Algorithm Menu"; }

@@ -13,7 +13,7 @@
 #include "test_algorithm/item/algorithm_etc_test.h"
 #include "test_algorithm/item/algorithm_maze_test.h"
 
-r2cm::MenuUp TestAlgorithmMenu::Create( r2cm::Director& director )
+r2cm::MenuUp AlgorithmMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 

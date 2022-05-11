@@ -124,10 +124,10 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			'z'
-			, []()->const char* { return TestAlgorithmMenu::GetTitle(); }
+			, []()->const char* { return AlgorithmMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( TestAlgorithmMenu::Create( director ) );
+				director.Setup( AlgorithmMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
