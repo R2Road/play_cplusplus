@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "console_window_input_test.h"
 
 #include <assert.h>

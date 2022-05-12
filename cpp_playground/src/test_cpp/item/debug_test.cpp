@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "debug_test.h"
 
 #include <cassert>
@@ -6,6 +5,7 @@
 #include <fstream>
 #include <Windows.h>
 
+#include "r2/r2_Assert.h"
 #include "r2cm/r2cm_constant.h"
 #include "r2cm/r2cm_Inspector.h"
 #include "utility/r2utility_FileUtil.h"

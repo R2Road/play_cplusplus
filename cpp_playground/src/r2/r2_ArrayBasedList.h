@@ -1,6 +1,8 @@
 #include <array>
 #include <memory>
 
+#include "r2/r2_Assert.h"
+
 namespace r2
 {
 	template<typename T>

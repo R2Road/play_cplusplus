@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "std_function_2_test.h"
 
 #include <functional>

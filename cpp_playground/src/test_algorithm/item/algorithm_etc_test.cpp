@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "algorithm_etc_test.h"
 
 #include <conio.h> // _kbhit(), _getch()

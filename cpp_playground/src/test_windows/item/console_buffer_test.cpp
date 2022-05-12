@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "console_buffer_test.h"
 
 #include <assert.h>

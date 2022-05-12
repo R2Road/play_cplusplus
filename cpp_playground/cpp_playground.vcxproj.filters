@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\r2\r2_GridIndexConverter.cpp">
       <Filter>r2</Filter>
     </ClCompile>
@@ -386,7 +385,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\r2\r2_Grid.h">
       <Filter>r2</Filter>
     </ClInclude>

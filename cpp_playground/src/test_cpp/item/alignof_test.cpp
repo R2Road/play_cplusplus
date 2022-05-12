@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "alignof_test.h"
 
 #include <deque>

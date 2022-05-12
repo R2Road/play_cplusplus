@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "template_practice_part_01_test.h"
 
 #include <algorithm>

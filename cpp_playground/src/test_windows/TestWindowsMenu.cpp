@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "TestWindowsMenu.h"
 
 #include "r2cm/r2cm_Director.h"

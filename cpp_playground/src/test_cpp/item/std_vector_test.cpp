@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "std_vector_test.h"
 
 #include <vector>

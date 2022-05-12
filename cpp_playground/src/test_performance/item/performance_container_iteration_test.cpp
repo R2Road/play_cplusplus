@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "performance_container_iteration_test.h"
 
 #include <array>

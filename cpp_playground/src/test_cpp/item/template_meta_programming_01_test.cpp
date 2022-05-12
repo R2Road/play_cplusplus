@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "template_meta_programming_01_test.h"
 
 #include "r2cm/r2cm_constant.h"

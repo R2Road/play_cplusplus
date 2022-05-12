@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "std_cout_test.h"
 
 #include <iomanip> // Manipulator : 조작자, 조정자

@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "std_algorithm_test.h"
 
 #include <algorithm>

@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "lambda_test.h"
 
 #include <cassert>

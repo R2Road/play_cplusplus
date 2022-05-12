@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "filesystem_test.h"
 
 #include <conio.h>

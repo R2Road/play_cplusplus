@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "bit_operation_test.h"
 
 #include <numeric>

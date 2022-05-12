@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "std_memory_test.h"
 
 #include <memory>

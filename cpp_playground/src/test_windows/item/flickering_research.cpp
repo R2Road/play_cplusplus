@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "flickering_research.h"
 
 #include <conio.h> // _kbhit(), _getch()

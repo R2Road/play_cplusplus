@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "std_list_test.h"
 
 #include <list>

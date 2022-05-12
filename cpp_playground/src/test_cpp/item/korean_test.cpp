@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "korean_test.h"
 
 #include <locale>

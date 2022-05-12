@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "c_random_test.h"
 
 #include <cstdlib> // rand, srand

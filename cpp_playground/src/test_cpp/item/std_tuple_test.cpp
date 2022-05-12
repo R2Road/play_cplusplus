@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "std_tuple_test.h"
 
 #include <string>

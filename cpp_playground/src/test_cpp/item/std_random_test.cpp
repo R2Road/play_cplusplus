@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "std_random_test.h"
 
 #include <filesystem>

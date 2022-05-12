@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "performance_1_test.h"
 
 #include <array>

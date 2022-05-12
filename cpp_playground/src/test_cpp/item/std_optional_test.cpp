@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "std_optional_test.h"
 
 #include <optional>

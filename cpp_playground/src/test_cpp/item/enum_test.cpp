@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "enum_test.h"
 
 #include <typeinfo> // typeid

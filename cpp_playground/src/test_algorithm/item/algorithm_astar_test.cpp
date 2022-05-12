@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "algorithm_astar_test.h"
 
 #include <Windows.h>

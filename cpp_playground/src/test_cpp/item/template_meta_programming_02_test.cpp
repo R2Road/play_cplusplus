@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "template_meta_programming_02_test.h"
 
 #include <string>

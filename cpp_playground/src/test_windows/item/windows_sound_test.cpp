@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "windows_sound_test.h"
 
 #include <conio.h>

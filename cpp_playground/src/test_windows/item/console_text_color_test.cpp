@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "console_text_color_test.h"
 
 #include <bitset>

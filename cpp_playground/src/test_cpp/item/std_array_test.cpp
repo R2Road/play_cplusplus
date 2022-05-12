@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "std_array_test.h"
 
 #include <array>

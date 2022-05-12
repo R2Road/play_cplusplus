@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "std_fstream_test.h"
 
 #include <filesystem>

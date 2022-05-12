@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "std_regex_test.h"
 
 #include "r2cm/r2cm_constant.h"

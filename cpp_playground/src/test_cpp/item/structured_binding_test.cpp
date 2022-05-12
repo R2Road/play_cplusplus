@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "structured_binding_test.h"
 
 #include <tuple>

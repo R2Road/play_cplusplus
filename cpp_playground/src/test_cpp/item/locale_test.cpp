@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "locale_test.h"
 
 #include <conio.h>

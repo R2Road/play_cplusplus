@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "r2algorithm_astar_PathBuilder.h"
 
 #include "r2/r2_Direction8.h"

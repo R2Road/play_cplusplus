@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "atomic_test.h"
 
 #include <atomic>

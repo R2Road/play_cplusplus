@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "PerformanceMenu.h"
 
 #include "r2cm/r2cm_constant.h"

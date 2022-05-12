@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "char_test.h"
 
 #include <conio.h>

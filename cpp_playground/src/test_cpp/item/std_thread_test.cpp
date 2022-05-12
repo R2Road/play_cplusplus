@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "std_thread_test.h"
 
 #include <conio.h>

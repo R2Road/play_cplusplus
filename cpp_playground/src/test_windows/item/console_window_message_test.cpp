@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "console_window_message_test.h"
 
 #include <assert.h>

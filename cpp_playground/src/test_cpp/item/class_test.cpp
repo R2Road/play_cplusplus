@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "class_test.h"
 
 #include <iterator>

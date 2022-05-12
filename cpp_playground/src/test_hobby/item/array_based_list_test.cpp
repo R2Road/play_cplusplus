@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "array_based_list_test.h"
 
 #include "r2/r2_ArrayBasedList.h"

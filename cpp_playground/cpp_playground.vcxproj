@@ -21,12 +21,6 @@
   <ItemGroup>
     <ClCompile Include="src\algorithm\r2algorithm_astar_PathBuilder.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="src\r2cm\r2cm_Director.cpp" />
     <ClCompile Include="src\r2cm\r2cm_Inspector.cpp" />
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp" />
@@ -143,7 +137,6 @@
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h" />
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h" />
-    <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\r2cm\r2cm_constant.h" />
     <ClInclude Include="src\r2cm\r2cm_Director.h" />
     <ClInclude Include="src\r2cm\r2cm_iItem.h" />
@@ -331,7 +324,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
@@ -358,7 +351,7 @@ xcopy "$(ProjectDir)vld\bin\Win32\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
@@ -381,7 +374,7 @@ xcopy "$(ProjectDir)vld\bin\Win64\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -403,7 +396,7 @@ xcopy "$(ProjectDir)vld\bin\Win64\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>

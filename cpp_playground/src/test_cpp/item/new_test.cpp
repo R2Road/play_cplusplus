@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "new_test.h"
 
 #include <new>

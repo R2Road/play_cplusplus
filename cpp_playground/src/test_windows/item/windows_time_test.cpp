@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "windows_time_test.h"
 
 #include <conio.h>

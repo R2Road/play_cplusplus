@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "algorithm_bubble_sort_test.h"
 
 #include <array>

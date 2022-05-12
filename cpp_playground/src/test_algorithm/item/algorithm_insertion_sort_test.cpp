@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "algorithm_insertion_sort_test.h"
 
 #include <array>

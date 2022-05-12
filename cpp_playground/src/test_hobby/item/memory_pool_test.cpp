@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "memory_pool_test.h"
 
 #include <cassert>
