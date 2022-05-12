@@ -68,10 +68,10 @@ r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			'9'
-			, []()->const char* { return r2::EnumMenu::GetTitle(); }
+			, []()->const char* { return EnumMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( r2::EnumMenu::Create( director ) );
+				director.Setup( EnumMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
