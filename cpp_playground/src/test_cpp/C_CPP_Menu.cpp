@@ -7,7 +7,7 @@
 #include "item/print_test.h"
 #include "item/structured_binding_test.h"
 
-#include "r2_AlignMenu.h"
+#include "AlignMenu.h"
 #include "r2_EnumMenu.h"
 #include "r2_LambdaMenu.h"
 #include "r2_NewMenu.h"
