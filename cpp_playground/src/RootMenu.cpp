@@ -109,10 +109,10 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			's'
-			, []()->const char* { return r2::MathMenu::GetTitle(); }
+			, []()->const char* { return MathMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( r2::MathMenu::Create( director ) );
+				director.Setup( MathMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
