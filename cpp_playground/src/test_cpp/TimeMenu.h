@@ -5,19 +5,15 @@
 namespace r2cm
 {
 	using MenuUp = std::unique_ptr<class Menu>;
-
 	class Director;
 }
 
-namespace r2
+class TimeMenu
 {
-	class TimeMenu
-	{
-	private:
-		TimeMenu() = delete;
+private:
+	TimeMenu() = delete;
 
-	public:
-		static const char* GetTitle() { return "Time"; }
-		static r2cm::MenuUp Create( r2cm::Director& director );
-	};
-}
+public:
+	static const char* GetTitle() { return "Time"; }
+	static r2cm::MenuUp Create( r2cm::Director& director );
+};
