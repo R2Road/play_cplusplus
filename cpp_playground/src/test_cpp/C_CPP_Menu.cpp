@@ -82,10 +82,10 @@ r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			'q'
-			, []()->const char* { return r2::NewMenu::GetTitle(); }
+			, []()->const char* { return NewMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( r2::NewMenu::Create( director ) );
+				director.Setup( NewMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
