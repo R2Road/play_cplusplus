@@ -68,10 +68,10 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			'e'
-			, []()->const char* { return r2::TimeMenu::GetTitle(); }
+			, []()->const char* { return TimeMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( r2::TimeMenu::Create( director ) );
+				director.Setup( TimeMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
