@@ -93,7 +93,7 @@
     <ClCompile Include="src\test_cpp\STDFileSystemMenu.cpp" />
     <ClCompile Include="src\test_cpp\LambdaMenu.cpp" />
     <ClCompile Include="src\test_cpp\MathMenu.cpp" />
-    <ClCompile Include="src\test_cpp\r2_NewMenu.cpp" />
+    <ClCompile Include="src\test_cpp\NewMenu.cpp" />
     <ClCompile Include="src\test_cpp\PointerMenu.cpp" />
     <ClCompile Include="src\test_cpp\RandomMenu.cpp" />
     <ClCompile Include="src\test_cpp\STDContainerMenu.cpp" />
@@ -217,7 +217,7 @@
     <ClInclude Include="src\test_cpp\STDFileSystemMenu.h" />
     <ClInclude Include="src\test_cpp\LambdaMenu.h" />
     <ClInclude Include="src\test_cpp\MathMenu.h" />
-    <ClInclude Include="src\test_cpp\r2_NewMenu.h" />
+    <ClInclude Include="src\test_cpp\NewMenu.h" />
     <ClInclude Include="src\test_cpp\PointerMenu.h" />
     <ClInclude Include="src\test_cpp\RandomMenu.h" />
     <ClInclude Include="src\test_cpp\STDContainerMenu.h" />

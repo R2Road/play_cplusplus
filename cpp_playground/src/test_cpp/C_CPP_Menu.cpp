@@ -10,7 +10,7 @@
 #include "AlignMenu.h"
 #include "EnumMenu.h"
 #include "LambdaMenu.h"
-#include "r2_NewMenu.h"
+#include "NewMenu.h"
 #include "r2_TemplateMenu.h"
 
 #include "CharMenu.h"
