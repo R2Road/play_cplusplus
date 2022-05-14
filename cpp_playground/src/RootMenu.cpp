@@ -4,7 +4,7 @@
 #include "r2cm/r2cm_constant.h"
 
 
-#include "test_cpp/r2_TimeMenu.h"
+#include "test_cpp/TimeMenu.h"
 
 #include "test_cpp/item/console_input_test.h"
 #include "test_cpp/r2_ETCMenu.h"
