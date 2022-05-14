@@ -250,9 +250,6 @@
     <ClCompile Include="src\test_cpp\r2_ETCMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\r2_LambdaMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\r2_NewMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -381,6 +378,9 @@
       <Filter>test_cpp</Filter>
     </ClCompile>
     <ClCompile Include="src\test_cpp\MathMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\LambdaMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
   </ItemGroup>
@@ -607,9 +607,6 @@
     <ClInclude Include="src\test_cpp\r2_ETCMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\r2_LambdaMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\r2_NewMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -747,6 +744,9 @@
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\MathMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\LambdaMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>
