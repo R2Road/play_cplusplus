@@ -91,10 +91,10 @@ r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			'w'
-			, []()->const char* { return r2::LambdaMenu::GetTitle(); }
+			, []()->const char* { return LambdaMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( r2::LambdaMenu::Create( director ) );
+				director.Setup( LambdaMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
