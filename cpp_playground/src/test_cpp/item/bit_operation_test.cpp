@@ -40,7 +40,7 @@ namespace bit_operation_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( int num = 0b1000000001 ); // binary
+			DECLARATION_MAIN( unsigned int num = 0b1000000001 ); // binary
 			PrintBinary( num, 16 );
 
 			std::cout << r2cm::split;
@@ -108,7 +108,7 @@ namespace bit_operation_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const int num = 0b0011011000 );
+			DECLARATION_MAIN( const unsigned int num = 0b0011011000 );
 			PrintBinary( num );
 			DECLARATION_MAIN( unsigned int mask = 0 );
 			PrintBinary( mask );
