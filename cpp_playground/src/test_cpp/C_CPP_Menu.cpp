@@ -52,10 +52,10 @@ r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			'7'
-			, []()->const char* { return r2::TemplateMenu::GetTitle(); }
+			, []()->const char* { return TemplateMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( r2::TemplateMenu::Create( director ) );
+				director.Setup( TemplateMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);

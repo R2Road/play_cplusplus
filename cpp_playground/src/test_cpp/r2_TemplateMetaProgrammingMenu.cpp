@@ -48,7 +48,7 @@ namespace r2
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->r2cm::eItemLeaveAction
 				{
-					director.Setup( r2::TemplateMenu::Create( director ) );
+					director.Setup( TemplateMenu::Create( director ) );
 					return r2cm::eItemLeaveAction::None;
 				}
 			);
