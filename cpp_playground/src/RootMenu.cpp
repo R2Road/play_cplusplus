@@ -7,7 +7,7 @@
 #include "test_cpp/TimeMenu.h"
 
 #include "test_cpp/item/console_input_test.h"
-#include "test_cpp/r2_ETCMenu.h"
+#include "test_cpp/ETCMenu.h"
 #include "test_cpp/MathMenu.h"
 #include "test_performance/PerformanceMenu.h"
 
