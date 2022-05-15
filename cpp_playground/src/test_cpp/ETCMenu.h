@@ -5,19 +5,15 @@
 namespace r2cm
 {
 	using MenuUp = std::unique_ptr<class Menu>;
-
 	class Director;
 }
 
-namespace r2
+class ETCMenu
 {
-	class ETCMenu
-	{
-	private:
-		ETCMenu() = delete;
+private:
+	ETCMenu() = delete;
 
-	public:
-		static const char* GetTitle() { return "ETC"; }
-		static r2cm::MenuUp Create( r2cm::Director& director );
-	};
-}
+public:
+	static const char* GetTitle() { return "ETC"; }
+	static r2cm::MenuUp Create( r2cm::Director& director );
+};

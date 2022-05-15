@@ -100,10 +100,10 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			'a'
-			, []()->const char* { return r2::ETCMenu::GetTitle(); }
+			, []()->const char* { return ETCMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( r2::ETCMenu::Create( director ) );
+				director.Setup( ETCMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
