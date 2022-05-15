@@ -75,10 +75,10 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			'r'
-			, []()->const char* { return r2::RandomMenu::GetTitle(); }
+			, []()->const char* { return RandomMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( r2::RandomMenu::Create( director ) );
+				director.Setup( RandomMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);

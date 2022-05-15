@@ -5,19 +5,15 @@
 namespace r2cm
 {
 	using MenuUp = std::unique_ptr<class Menu>;
-
 	class Director;
 }
 
-namespace r2
+class RandomMenu
 {
-	class RandomMenu
-	{
-	private:
-		RandomMenu() = delete;
+private:
+	RandomMenu() = delete;
 
-	public:
-		static const char* GetTitle() { return "Random"; }
-		static r2cm::MenuUp Create( r2cm::Director& director );
-	};
-}
+public:
+	static const char* GetTitle() { return "Random"; }
+	static r2cm::MenuUp Create( r2cm::Director& director );
+};
