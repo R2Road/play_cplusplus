@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
-#include "r2_TemplateMenu.h"
+#include "TemplateMenu.h"
 
 #include "test_cpp/item/template_practice_part_01_test.h"
 

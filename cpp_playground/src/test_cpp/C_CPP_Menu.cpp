@@ -12,7 +12,7 @@
 #include "EnumMenu.h"
 #include "LambdaMenu.h"
 #include "NewMenu.h"
-#include "r2_TemplateMenu.h"
+#include "TemplateMenu.h"
 
 #include "CharMenu.h"
 #include "PointerMenu.h"

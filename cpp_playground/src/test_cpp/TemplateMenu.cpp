@@ -1,4 +1,4 @@
-#include "r2_TemplateMenu.h"
+#include "TemplateMenu.h"
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
