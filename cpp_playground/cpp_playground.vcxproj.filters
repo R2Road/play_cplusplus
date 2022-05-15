@@ -383,6 +383,9 @@
     <ClCompile Include="src\test_cpp\ETCMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\item\using_test.cpp">
+      <Filter>test_cpp\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -748,6 +751,9 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\ETCMenu.h">
       <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\item\using_test.h">
+      <Filter>test_cpp\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
