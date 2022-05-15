@@ -1,22 +1,20 @@
 #include "RootMenu.h"
 
-#include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
-
-
-#include "test_cpp/TimeMenu.h"
+#include "r2cm/r2cm_Director.h"
 
 #include "test_cpp/item/console_input_test.h"
-#include "test_cpp/ETCMenu.h"
-#include "test_cpp/MathMenu.h"
-#include "test_performance/PerformanceMenu.h"
 
 #include "test_algorithm/AlgorithmMenu.h"
 #include "test_cpp/C_CPP_Menu.h"
+#include "test_cpp/ETCMenu.h"
 #include "test_cpp/DebugMenu.h"
+#include "test_cpp/MathMenu.h"
 #include "test_cpp/RandomMenu.h"
 #include "test_cpp/STDMenu.h"
+#include "test_cpp/TimeMenu.h"
 #include "test_hobby/HobbyMenu.h"
+#include "test_performance/PerformanceMenu.h"
 #include "test_windows/TestWindowsMenu.h"
 
 r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
