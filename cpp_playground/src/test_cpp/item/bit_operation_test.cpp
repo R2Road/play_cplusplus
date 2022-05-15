@@ -25,14 +25,14 @@ namespace
 
 namespace bit_operation_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Add_Remove_Toggle::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Bit Operation : Basic";
+			return "Bit Operation : Add, Remove, Toggle";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Add_Remove_Toggle::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
