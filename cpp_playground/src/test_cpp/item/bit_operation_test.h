@@ -5,6 +5,13 @@
 
 namespace bit_operation_test
 {
+	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class Add_Remove_Toggle : public r2cm::iItem, public r2cm::SingleTon<Add_Remove_Toggle>
 	{
 	public:

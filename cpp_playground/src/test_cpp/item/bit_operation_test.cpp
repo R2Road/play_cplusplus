@@ -25,6 +25,60 @@ namespace
 
 namespace bit_operation_test
 {
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Bit Operation : Basic";
+		};
+	}
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			std::cout << r2cm::tab << "+ 2의 보수 : 0 과 1을 뒤집고 + 1 해서 음수를 만든다." << r2cm::linefeed;
+			
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const int num = 1 ); // binary
+				PrintBinary( num );
+			}
+
+			std::cout << r2cm::split;
+
+
+			{
+				DECLARATION_MAIN( const int num = -1 ); // binary
+				PrintBinary( num );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const int num = 2 ); // binary
+				PrintBinary( num );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const int num = -2 ); // binary
+				PrintBinary( num );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT Add_Remove_Toggle::GetTitleFunction() const
 	{
 		return []()->const char*
