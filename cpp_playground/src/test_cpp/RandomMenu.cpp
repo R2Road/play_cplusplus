@@ -4,7 +4,7 @@
 #include "r2cm/r2cm_Director.h"
 
 #include "test_cpp/item/c_random_test.h"
-#include "test_cpp/item/std_random_test.h"
+#include "test_std/item/std_random_test.h"
 
 #include "RootMenu.h"
 

@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
 
-#include "test_cpp/item/std_memory_test.h"
+#include "test_std/item/std_memory_test.h"
 
 #include "STDMenu.h"
 
