@@ -12,6 +12,13 @@ namespace bit_operation_test
 		DoFuncT GetDoFunction() override;
 	};
 
+	class Complement : public r2cm::iItem, public r2cm::SingleTon<Complement>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class Add_Remove_Toggle : public r2cm::iItem, public r2cm::SingleTon<Add_Remove_Toggle>
 	{
 	public:

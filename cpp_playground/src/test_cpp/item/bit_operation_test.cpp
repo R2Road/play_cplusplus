@@ -79,6 +79,63 @@ namespace bit_operation_test
 
 
 
+	r2cm::iItem::TitleFuncT Complement::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Bit Operation : Complement";
+		};
+	}
+	r2cm::iItem::DoFuncT Complement::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const int pivot = 0b1000000001 ); // binary
+			std::cout << r2cm::tab << "> " << pivot << r2cm::linefeed;
+			PrintBinary( pivot );
+
+			std::cout << r2cm::linefeed;
+
+			DECLARATION_MAIN( int num = pivot );
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ 1의 보수 만들기." << r2cm::linefeed2;
+
+				PROCESS_MAIN( num = ~num );
+				PrintBinary( num );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ 2의 보수 만들기." << r2cm::linefeed2;
+
+				PROCESS_MAIN( num += 1 );
+				PrintBinary( num );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_EQ( num, -pivot );
+				OUTPUT_VALUE( num );
+				OUTPUT_VALUE( -pivot );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT Add_Remove_Toggle::GetTitleFunction() const
 	{
 		return []()->const char*

@@ -24,16 +24,17 @@ r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', bit_operation_test::Basic::GetInstance() );
-		ret->AddItem( '2', bit_operation_test::Add_Remove_Toggle::GetInstance() );
-		ret->AddItem( '3', bit_operation_test::Mask::GetInstance() );
-		ret->AddItem( '4', bit_operation_test::XOR_Swap::GetInstance() );
+		ret->AddItem( '2', bit_operation_test::Complement::GetInstance() );
+		ret->AddItem( '3', bit_operation_test::Add_Remove_Toggle::GetInstance() );
+		ret->AddItem( '4', bit_operation_test::Mask::GetInstance() );
+		ret->AddItem( '5', bit_operation_test::XOR_Swap::GetInstance() );
 
 
 		ret->AddLineFeed();
 
 
 		ret->AddItem(
-			'4'
+			'5'
 			, []()->const char* { return PointerMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
