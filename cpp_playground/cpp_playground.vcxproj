@@ -79,7 +79,7 @@
     <ClCompile Include="src\test_cpp\PointerMenu.cpp" />
     <ClCompile Include="src\test_cpp\RandomMenu.cpp" />
     <ClCompile Include="src\test_cpp\TemplateMenu.cpp" />
-    <ClCompile Include="src\test_cpp\r2_TemplateMetaProgrammingMenu.cpp" />
+    <ClCompile Include="src\test_cpp\TemplateMetaProgrammingMenu.cpp" />
     <ClCompile Include="src\test_cpp\r2_TemplatePracticeMenu.cpp" />
     <ClCompile Include="src\test_cpp\TimeMenu.cpp" />
     <ClCompile Include="src\test_cpp\r2_VariadicTemplateMenu.cpp" />
@@ -204,7 +204,7 @@
     <ClInclude Include="src\test_cpp\PointerMenu.h" />
     <ClInclude Include="src\test_cpp\RandomMenu.h" />
     <ClInclude Include="src\test_cpp\TemplateMenu.h" />
-    <ClInclude Include="src\test_cpp\r2_TemplateMetaProgrammingMenu.h" />
+    <ClInclude Include="src\test_cpp\TemplateMetaProgrammingMenu.h" />
     <ClInclude Include="src\test_cpp\r2_TemplatePracticeMenu.h" />
     <ClInclude Include="src\test_cpp\TimeMenu.h" />
     <ClInclude Include="src\test_cpp\r2_VariadicTemplateMenu.h" />

@@ -4,7 +4,7 @@
 #include "r2cm/r2cm_Director.h"
 
 #include "r2_VariadicTemplateMenu.h"
-#include "r2_TemplateMetaProgrammingMenu.h"
+#include "TemplateMetaProgrammingMenu.h"
 #include "r2_TemplatePracticeMenu.h"
 
 #include "C_CPP_Menu.h"

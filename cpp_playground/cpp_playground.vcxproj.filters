@@ -199,9 +199,6 @@
     <ClCompile Include="src\test_cpp\r2_VariadicTemplateMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\r2_TemplateMetaProgrammingMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\r2_TemplatePracticeMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -392,6 +389,9 @@
     <ClCompile Include="src\test_std\item\std_vector_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\TemplateMetaProgrammingMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -557,9 +557,6 @@
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\r2_VariadicTemplateMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\r2_TemplateMetaProgrammingMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\r2_TemplatePracticeMenu.h">
@@ -760,6 +757,9 @@
     </ClInclude>
     <ClInclude Include="src\test_std\item\std_vector_test.h">
       <Filter>test_std\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\TemplateMetaProgrammingMenu.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
