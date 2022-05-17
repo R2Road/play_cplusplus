@@ -16,10 +16,10 @@ r2cm::MenuUp TemplateMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem(
 			'1'
-			, []()->const char* { return r2::VariadicTemplateMenu::GetTitle(); }
+			, []()->const char* { return VariadicTemplateMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( r2::VariadicTemplateMenu::Create( director ) );
+				director.Setup( VariadicTemplateMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
