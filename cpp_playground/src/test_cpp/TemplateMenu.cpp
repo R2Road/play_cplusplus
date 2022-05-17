@@ -26,10 +26,10 @@ r2cm::MenuUp TemplateMenu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			'2'
-			, []()->const char* { return r2::TemplateMetaProgrammingMenu::GetTitle(); }
+			, []()->const char* { return TemplateMetaProgrammingMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( r2::TemplateMetaProgrammingMenu::Create( director ) );
+				director.Setup( TemplateMetaProgrammingMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
