@@ -5,7 +5,7 @@
 
 #include "r2_VariadicTemplateMenu.h"
 #include "TemplateMetaProgrammingMenu.h"
-#include "r2_TemplatePracticeMenu.h"
+#include "TemplatePracticeMenu.h"
 
 #include "C_CPP_Menu.h"
 
