@@ -4,6 +4,7 @@
 #include "r2cm/r2cm_constant.h"
 
 #include "item/bit_operation_test.h"
+#include "item/operator_ternary_test.h"
 #include "item/print_test.h"
 #include "item/structured_binding_test.h"
 #include "item/using_test.h"
@@ -105,6 +106,12 @@ r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
 		ret->AddItem( 'r', print_test::Basic::GetInstance() );
 		ret->AddItem( 't', print_test::ShowNumbers::GetInstance() );
 		ret->AddItem( 'y', using_test::Basic::GetInstance() );
+
+
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'a', operator_ternary_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();

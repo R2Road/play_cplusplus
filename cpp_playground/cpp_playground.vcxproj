@@ -58,6 +58,7 @@
     <ClCompile Include="src\test_cpp\item\lambda_test.cpp" />
     <ClCompile Include="src\test_cpp\item\locale_test.cpp" />
     <ClCompile Include="src\test_cpp\item\new_test.cpp" />
+    <ClCompile Include="src\test_cpp\item\operator_ternary_test.cpp" />
     <ClCompile Include="src\test_cpp\item\pointer_test.cpp" />
     <ClCompile Include="src\test_cpp\item\print_test.cpp" />
     <ClCompile Include="src\test_cpp\item\structured_binding_test.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="src\test_cpp\item\lambda_test.h" />
     <ClInclude Include="src\test_cpp\item\locale_test.h" />
     <ClInclude Include="src\test_cpp\item\new_test.h" />
+    <ClInclude Include="src\test_cpp\item\operator_ternary_test.h" />
     <ClInclude Include="src\test_cpp\item\pointer_test.h" />
     <ClInclude Include="src\test_cpp\item\print_test.h" />
     <ClInclude Include="src\test_cpp\item\structured_binding_test.h" />
