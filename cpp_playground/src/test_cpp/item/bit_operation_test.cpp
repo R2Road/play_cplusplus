@@ -29,7 +29,7 @@ namespace bit_operation_test
 	{
 		return []()->const char*
 		{
-			return "Bit Operation : Basic";
+			return "Basic";
 		};
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
@@ -83,7 +83,7 @@ namespace bit_operation_test
 	{
 		return []()->const char*
 		{
-			return "Bit Operation : Complement";
+			return "Complement";
 		};
 	}
 	r2cm::iItem::DoFuncT Complement::GetDoFunction()
@@ -140,7 +140,7 @@ namespace bit_operation_test
 	{
 		return []()->const char*
 		{
-			return "Bit Operation : Add, Remove, Toggle";
+			return "Add, Remove, Toggle";
 		};
 	}
 	r2cm::iItem::DoFuncT Add_Remove_Toggle::GetDoFunction()
@@ -208,7 +208,7 @@ namespace bit_operation_test
 	{
 		return []()->const char*
 		{
-			return "Bit Operation : Mask";
+			return "Mask";
 		};
 	}
 	r2cm::iItem::DoFuncT Mask::GetDoFunction()
@@ -275,7 +275,7 @@ namespace bit_operation_test
 	{
 		return []()->const char*
 		{
-			return "Bit Operation : XOR Swap";
+			return "XOR Swap";
 		};
 	}
 	r2cm::iItem::DoFuncT XOR_Swap::GetDoFunction()
