@@ -12,6 +12,13 @@ namespace bit_operation_test
 		DoFuncT GetDoFunction() override;
 	};
 
+	class Operator : public r2cm::iItem, public r2cm::SingleTon<Operator>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class Complement : public r2cm::iItem, public r2cm::SingleTon<Complement>
 	{
 	public:

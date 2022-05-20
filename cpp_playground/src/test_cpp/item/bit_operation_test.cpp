@@ -79,6 +79,60 @@ namespace bit_operation_test
 
 
 
+	r2cm::iItem::TitleFuncT Operator::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Operator";
+		};
+	}
+	r2cm::iItem::DoFuncT Operator::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const int pivot = 0b1000000001 ); // binary
+			std::cout << r2cm::tab << "> " << pivot << r2cm::linefeed;
+			PrintBinary( pivot );
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Flip" << r2cm::linefeed2;
+
+				OUTPUT_CODE( ~pivot );
+				PrintBinary( ~pivot );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Shift : Left" << r2cm::linefeed2;
+
+				OUTPUT_CODE( pivot << 1 );
+				PrintBinary( pivot << 1 );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Shift : Right" << r2cm::linefeed2;
+
+				OUTPUT_CODE( pivot >> 1 );
+				PrintBinary( pivot >> 1 );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT Complement::GetTitleFunction() const
 	{
 		return []()->const char*
