@@ -84,6 +84,7 @@ namespace windows_sound_test
 
 			std::cout << "[ESC]" " Exit" << r2cm::linefeed;
 			std::cout << "[1]" " Play Beep" << r2cm::linefeed;
+			std::cout << "[2]" " Play Beep" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
 
@@ -97,6 +98,11 @@ namespace windows_sound_test
 					case  49: // 1
 					{
 						Beep( 440, 300 );
+					}
+					break;
+					case  50: // 1
+					{
+						Beep( 110, 30 );
 					}
 					break;
 
