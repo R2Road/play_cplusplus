@@ -35,11 +35,12 @@ namespace algorithm_terrain_test
 				{
 					for( int x = 0; grid.GetWidth() > x; ++x )
 					{
-						grid.Set( x, y, r2::Random::GetInt( 0, 100 ) > 70 );
+						grid.Set( x, y, r2::Random::GetInt( 0, 100 ) < 70 );
 					}
 				}
 
 				AlgorithmHelper::PrintGrid( grid );
+				std::cout << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
