@@ -553,7 +553,7 @@ namespace std_cout_test
 	{
 		friend std::ostream& operator<<( std::ostream& os, const A a )
 		{
-			os << r2cm::tab << "Call - struct A : friend std::ostream& operator<<" << r2cm::linefeed;
+			os << r2cm::tab << "Call - struct A : friend std::ostream& operator<<( std::ostream& os, const A a )" << r2cm::linefeed;
 			return os;
 		}
 	};
