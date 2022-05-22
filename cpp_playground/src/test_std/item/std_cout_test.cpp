@@ -11,7 +11,7 @@ namespace std_cout_test
 	{
 		return []()->const char*
 		{
-			return "std::cout : Basic";
+			return "Basic";
 		};
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
@@ -44,7 +44,7 @@ namespace std_cout_test
 	{
 		return []()->const char*
 		{
-			return "std::cout : FMTStatus";
+			return "FMTStatus";
 		};
 	}
 	r2cm::iItem::DoFuncT FMTStatus::GetDoFunction()
@@ -108,7 +108,7 @@ namespace std_cout_test
 	{
 		return []()->const char*
 		{
-			return "std::cout : Number Format 1";
+			return "Number Format 1";
 		};
 	}
 	r2cm::iItem::DoFuncT NumberFormat_1::GetDoFunction()
@@ -164,7 +164,7 @@ namespace std_cout_test
 	{
 		return []()->const char*
 		{
-			return "std::cout : Number Format 2";
+			return "Number Format 2";
 		};
 	}
 	r2cm::iItem::DoFuncT NumberFormat_2::GetDoFunction()
@@ -237,7 +237,7 @@ namespace std_cout_test
 	{
 		return []()->const char*
 		{
-			return "std::cout : Number Format 3";
+			return "Number Format 3";
 		};
 	}
 	r2cm::iItem::DoFuncT NumberFormat_3::GetDoFunction()
@@ -317,7 +317,7 @@ namespace std_cout_test
 	{
 		return []()->const char*
 		{
-			return "std::cout : Number Format 4";
+			return "Number Format 4";
 		};
 	}
 	r2cm::iItem::DoFuncT NumberFormat_4::GetDoFunction()
@@ -376,7 +376,7 @@ namespace std_cout_test
 	{
 		return []()->const char*
 		{
-			return "std::cout : Align";
+			return "Align";
 		};
 	}
 	r2cm::iItem::DoFuncT Align::GetDoFunction()
@@ -438,7 +438,7 @@ namespace std_cout_test
 	{
 		return []()->const char*
 		{
-			return "std::cout : Flag";
+			return "Flag";
 		};
 	}
 	r2cm::iItem::DoFuncT Flag::GetDoFunction()
@@ -495,7 +495,7 @@ namespace std_cout_test
 	{
 		return []()->const char*
 		{
-			return "std::cout : BoolAlpha";
+			return "BoolAlpha";
 		};
 	}
 	r2cm::iItem::DoFuncT BoolAlpha::GetDoFunction()
