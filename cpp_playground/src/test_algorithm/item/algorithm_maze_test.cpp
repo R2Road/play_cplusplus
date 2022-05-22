@@ -1,7 +1,6 @@
 #include "algorithm_maze_test.h"
 
 #include <conio.h> // _kbhit(), _getch()
-#include <Windows.h>
 
 #include "r2cm/r2cm_constant.h"
 
@@ -9,18 +8,12 @@
 #include "r2/r2_Grid.h"
 #include "r2/r2_PointInt.h"
 
+#include "r2cm/r2cm_WindowUtility.h"
+
 namespace
 {
 	void ShowGrid( const r2::Grid<int>& grid )
 	{
-		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 0 } );
-
-		std::cout << "# " << algorithm_maze_test::Basic::GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
-
-		std::cout << "[ANY KEY] Exit" << r2cm::linefeed;
-
-		std::cout << r2cm::split;
-
 		int x = 0;
 		for( const auto i : grid )
 		{
@@ -34,9 +27,6 @@ namespace
 
 			++x;
 		}
-
-		std::cout << r2cm::linefeed;
-		std::cout << r2cm::split;
 	}
 }
 
@@ -53,11 +43,11 @@ namespace algorithm_maze_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			struct Cell
-			{
-				r2::Direction4 direction;
-			};
+			std::cout << "# " << algorithm_maze_test::Basic::GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
 
+			std::cout << "[ANY KEY] Exit" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
 
 			r2::Direction4 current_direction;
 			r2::PointInt current_point{ 0, 0 };
@@ -68,6 +58,7 @@ namespace algorithm_maze_test
 			{
 				grid.Set( current_point.GetX(), current_point.GetY(), true );
 
+				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 				int stay_count = 0;
 				while( 4 >= stay_count )
 				{
@@ -87,7 +78,9 @@ namespace algorithm_maze_test
 					current_point = temp_point;
 					stay_count = 0;
 
+					r2cm::WindowUtility::MoveCursorPoint( pivot_point );
 					ShowGrid( grid );
+					std::cout << r2cm::linefeed;
 
 					//
 					// Key
@@ -98,6 +91,8 @@ namespace algorithm_maze_test
 					}
 				}
 			}
+
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
