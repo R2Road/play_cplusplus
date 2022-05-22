@@ -28,6 +28,12 @@ r2cm::MenuUp STDCoutMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'e', std_cout_test::BoolAlpha::GetInstance() );
 
 
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'a', std_cout_test::UserDefinedType::GetInstance() );
+
+
 		ret->AddSplit();
 
 

@@ -67,4 +67,11 @@ namespace std_cout_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class UserDefinedType : public r2cm::iItem, public r2cm::SingleTon<UserDefinedType>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

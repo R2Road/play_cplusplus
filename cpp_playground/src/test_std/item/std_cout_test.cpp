@@ -490,7 +490,7 @@ namespace std_cout_test
 	}
 
 
-
+	
 	r2cm::iItem::TitleFuncT BoolAlpha::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -539,6 +539,41 @@ namespace std_cout_test
 
 			{
 				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	struct A
+	{
+		friend std::ostream& operator<<( std::ostream& os, const A a )
+		{
+			os << r2cm::tab << "Call - struct A : friend std::ostream& operator<<" << r2cm::linefeed;
+			return os;
+		}
+	};
+	r2cm::iItem::TitleFuncT UserDefinedType::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "UserDefinedType";
+		};
+	}
+	r2cm::iItem::DoFuncT UserDefinedType::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( std::cout << A() );
 			}
 
 			std::cout << r2cm::split;
