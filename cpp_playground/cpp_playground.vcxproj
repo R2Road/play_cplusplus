@@ -40,7 +40,7 @@
     <ClCompile Include="src\test_algorithm\item\algorithm_maze_test.cpp" />
     <ClCompile Include="src\test_algorithm\item\algorithm_selection_sort_test.cpp" />
     <ClCompile Include="src\test_algorithm\AlgorithmMenu.cpp" />
-    <ClCompile Include="src\test_algorithm\item\algorithm_cave_test.cpp" />
+    <ClCompile Include="src\test_algorithm\item\algorithm_terrain_test.cpp" />
     <ClCompile Include="src\test_cpp\BitOperationMenu.cpp" />
     <ClCompile Include="src\test_cpp\C_CPP_Menu.cpp" />
     <ClCompile Include="src\test_cpp\item\alignas_test.cpp" />
@@ -169,7 +169,7 @@
     <ClInclude Include="src\test_algorithm\item\algorithm_maze_test.h" />
     <ClInclude Include="src\test_algorithm\item\algorithm_selection_sort_test.h" />
     <ClInclude Include="src\test_algorithm\AlgorithmMenu.h" />
-    <ClInclude Include="src\test_algorithm\item\algorithm_cave_test.h" />
+    <ClInclude Include="src\test_algorithm\item\algorithm_terrain_test.h" />
     <ClInclude Include="src\test_cpp\BitOperationMenu.h" />
     <ClInclude Include="src\test_cpp\C_CPP_Menu.h" />
     <ClInclude Include="src\test_cpp\item\alignas_test.h" />

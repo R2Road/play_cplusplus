@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_iItem.h"
 #include "r2cm/r2cm_Singleton.h"
 
-namespace algorithm_cave_test
+namespace algorithm_terrain_test
 {
 	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
 	{

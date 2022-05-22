@@ -1,8 +1,8 @@
-#include "algorithm_cave_test.h"
+#include "algorithm_terrain_test.h"
 
 #include "r2cm/r2cm_constant.h"
 
-namespace algorithm_cave_test
+namespace algorithm_terrain_test
 {
 	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
