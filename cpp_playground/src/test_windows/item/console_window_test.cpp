@@ -188,9 +188,7 @@ namespace console_window_test
 
 			std::cout << r2cm::split;
 
-			std::cout << r2cm::split;
-
-			std::cout << "Press Any Key : Roll Back Window Size" << r2cm::linefeed;
+			std::cout << "[Any Key] End" << r2cm::linefeed2;
 
 			const HWND hwnd = GetConsoleWindow();
 			const auto last_cursor_point = r2cm::WindowUtility::GetCursorPoint();
@@ -200,11 +198,11 @@ namespace console_window_test
 
 				if( hwnd == GetForegroundWindow() )
 				{
-					std::cout << "Focus : " << std::setw( 5 ) << "On" << r2cm::linefeed;
+					std::cout << "Focus : " << std::setw( 5 ) << "On";
 				}
 				else
 				{
-					std::cout << "Focus : " << std::setw( 5 ) << "Off" << r2cm::linefeed;
+					std::cout << "Focus : " << std::setw( 5 ) << "Off";
 				}
 
 				if( _kbhit() )
