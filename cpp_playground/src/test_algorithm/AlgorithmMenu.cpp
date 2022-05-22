@@ -9,6 +9,7 @@
 #include "test_algorithm/item/algorithm_insertion_sort_test.h"
 
 #include "test_algorithm/item/algorithm_astar_test.h"
+#include "test_algorithm/item/algorithm_cave_test.h"
 #include "test_algorithm/item/algorithm_etc_test.h"
 #include "test_algorithm/item/algorithm_maze_test.h"
 
@@ -50,6 +51,12 @@ r2cm::MenuUp AlgorithmMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'a', algorithm_etc_test::DJB2::GetInstance() );
+
+
+		ret->AddSplit();
+
+
+		ret->AddItem( 'z', algorithm_cave_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
