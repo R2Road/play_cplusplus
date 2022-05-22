@@ -22,7 +22,7 @@ public:
 				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << i;
+			std::cout << i << ' ';
 
 			++x;
 		}
