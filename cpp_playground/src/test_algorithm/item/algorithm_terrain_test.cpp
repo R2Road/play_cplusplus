@@ -53,7 +53,7 @@ namespace algorithm_terrain_test
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( r2::Grid<bool> grid );
-			PROCESS_MAIN( grid.Reset( 19, 19 ) );
+			PROCESS_MAIN( grid.Reset( 40, 40 ) );
 
 			std::cout << r2cm::split;
 
@@ -75,7 +75,7 @@ namespace algorithm_terrain_test
 
 			{
 				DECLARATION_MAIN( r2::Grid<int> grid2 );
-				PROCESS_MAIN( grid2.Reset( 19, 19 ) );
+				PROCESS_MAIN( grid2.Reset( 40, 40 ) );
 				for( int y = 0; grid.GetHeight() > y; ++y )
 				{
 					for( int x = 0; grid.GetWidth() > x; ++x )
@@ -93,7 +93,7 @@ namespace algorithm_terrain_test
 
 			{
 				DECLARATION_MAIN( r2::Grid<bool> grid3 );
-				PROCESS_MAIN( grid3.Reset( 19, 19 ) );
+				PROCESS_MAIN( grid3.Reset( 40, 40 ) );
 				for( int y = 0; grid.GetHeight() > y; ++y )
 				{
 					for( int x = 0; grid.GetWidth() > x; ++x )
