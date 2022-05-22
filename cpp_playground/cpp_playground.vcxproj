@@ -32,6 +32,7 @@
     <ClCompile Include="src\r2\r2_RectInt.cpp" />
     <ClCompile Include="src\r2\r2_Size.cpp" />
     <ClCompile Include="src\RootMenu.cpp" />
+    <ClCompile Include="src\test_algorithm\AlgorithmHelper.cpp" />
     <ClCompile Include="src\test_algorithm\item\algorithm_astar_test.cpp" />
     <ClCompile Include="src\test_algorithm\item\algorithm_bubble_sort_test.cpp" />
     <ClCompile Include="src\test_algorithm\item\algorithm_etc_test.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="src\r2\r2_RectInt.h" />
     <ClInclude Include="src\r2\r2_Size.h" />
     <ClInclude Include="src\RootMenu.h" />
+    <ClInclude Include="src\test_algorithm\AlgorithmHelper.h" />
     <ClInclude Include="src\test_algorithm\item\algorithm_astar_test.h" />
     <ClInclude Include="src\test_algorithm\item\algorithm_bubble_sort_test.h" />
     <ClInclude Include="src\test_algorithm\item\algorithm_etc_test.h" />

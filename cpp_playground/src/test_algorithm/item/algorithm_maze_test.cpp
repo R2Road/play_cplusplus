@@ -10,26 +10,7 @@
 #include "r2/r2_PointInt.h"
 
 #include "r2cm/r2cm_WindowUtility.h"
-
-namespace
-{
-	void ShowGrid( const r2::Grid<int>& grid )
-	{
-		int x = 0;
-		for( const auto i : grid )
-		{
-			if( grid.GetWidth() <= x )
-			{
-				x = 0;
-				std::cout << r2cm::linefeed;
-			}
-
-			std::cout << i;
-
-			++x;
-		}
-	}
-}
+#include "test_algorithm/AlgorithmHelper.h"
 
 namespace algorithm_maze_test
 {
@@ -86,7 +67,7 @@ namespace algorithm_maze_test
 					// Output
 					//
 					r2cm::WindowUtility::MoveCursorPoint( pivot_point );
-					ShowGrid( grid );
+					AlgorithmHelper::PrintGrid( grid );
 					std::cout << r2cm::linefeed;
 
 					//

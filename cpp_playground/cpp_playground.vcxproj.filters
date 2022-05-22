@@ -401,6 +401,9 @@
     <ClCompile Include="src\test_algorithm\item\algorithm_cave_test.cpp">
       <Filter>test_algorithm\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_algorithm\AlgorithmHelper.cpp">
+      <Filter>test_algorithm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -778,6 +781,9 @@
     </ClInclude>
     <ClInclude Include="src\test_algorithm\item\algorithm_cave_test.h">
       <Filter>test_algorithm\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_algorithm\AlgorithmHelper.h">
+      <Filter>test_algorithm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
