@@ -404,6 +404,9 @@
     <ClCompile Include="src\test_algorithm\item\algorithm_terrain_test.cpp">
       <Filter>test_algorithm\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2\r2_Random.cpp">
+      <Filter>r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -784,6 +787,9 @@
     </ClInclude>
     <ClInclude Include="src\test_algorithm\item\algorithm_terrain_test.h">
       <Filter>test_algorithm\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_Random.h">
+      <Filter>r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

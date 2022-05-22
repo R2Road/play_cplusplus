@@ -29,6 +29,7 @@
     <ClCompile Include="src\r2\r2_Direction8.cpp" />
     <ClCompile Include="src\r2\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\r2\r2_PointInt.cpp" />
+    <ClCompile Include="src\r2\r2_Random.cpp" />
     <ClCompile Include="src\r2\r2_RectInt.cpp" />
     <ClCompile Include="src\r2\r2_Size.cpp" />
     <ClCompile Include="src\RootMenu.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="src\r2\r2_GridIndexConverter.h" />
     <ClInclude Include="src\r2\r2_Point.h" />
     <ClInclude Include="src\r2\r2_PointInt.h" />
+    <ClInclude Include="src\r2\r2_Random.h" />
     <ClInclude Include="src\r2\r2_Rect.h" />
     <ClInclude Include="src\r2\r2_RectInt.h" />
     <ClInclude Include="src\r2\r2_Size.h" />
