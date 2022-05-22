@@ -21,6 +21,7 @@ r2cm::MenuUp ConsoleWindowMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( '2', console_window_test::ChangeWindowSize::GetInstance() );
 		ret->AddItem( '3', console_window_test::FullScreen::GetInstance() );
+		ret->AddItem( '4', console_window_test::Focus::GetInstance() );
 
 		ret->AddLineFeed();
 

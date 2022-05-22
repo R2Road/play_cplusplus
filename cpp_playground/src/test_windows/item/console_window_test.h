@@ -24,6 +24,12 @@ namespace console_window_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+	class Focus : public r2cm::iItem, public r2cm::SingleTon<Focus>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 
 	class WindowPosition : public r2cm::iItem, public r2cm::SingleTon<WindowPosition>
 	{

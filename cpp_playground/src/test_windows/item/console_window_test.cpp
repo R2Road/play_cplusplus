@@ -2,12 +2,14 @@
 
 #include <bitset>
 #include <conio.h>
+#include <iomanip>
 #include <stdio.h>
 #include <Windows.h>
 #include <wincon.h> // BACKGROUND_RED
 
 #include "r2cm/r2cm_constant.h"
 #include "r2cm/r2cm_Inspector.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 namespace console_window_test
 {
@@ -165,6 +167,54 @@ namespace console_window_test
 				SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 );
 			}
 
+			return r2cm::eItemLeaveAction::None;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT Focus::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Focus";
+		};
+	}
+	r2cm::iItem::DoFuncT Focus::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			std::cout << r2cm::split;
+
+			std::cout << "Press Any Key : Roll Back Window Size" << r2cm::linefeed;
+
+			const HWND hwnd = GetConsoleWindow();
+			const auto last_cursor_point = r2cm::WindowUtility::GetCursorPoint();
+			while( true )
+			{
+				r2cm::WindowUtility::MoveCursorPoint( last_cursor_point );
+
+				if( hwnd == GetForegroundWindow() )
+				{
+					std::cout << "Focus : " << std::setw( 5 ) << "On" << r2cm::linefeed;
+				}
+				else
+				{
+					std::cout << "Focus : " << std::setw( 5 ) << "Off" << r2cm::linefeed;
+				}
+
+				if( _kbhit() )
+				{
+					if( 27 == _getch() )
+					{
+						break;
+					}
+				}
+			}
 			return r2cm::eItemLeaveAction::None;
 		};
 	}
