@@ -7,6 +7,7 @@
 #include <wincon.h> // BACKGROUND_RED
 
 #include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_Inspector.h"
 
 namespace console_text_color_test
 {
@@ -402,10 +403,14 @@ namespace console_text_color_test
 			std::cout << r2cm::split;
 
 			{
-				const char* target_color = "\033[31;44m";
-				const char* reset_color = "\033[0m";
+				DECLARATION_MAIN( const char* header = "\033[" );
+				DECLARATION_MAIN( const char* tail = "m" );
+				DECLARATION_MAIN( const int fg_color = 31 );
+				DECLARATION_MAIN( const int bg_color = 44 );
 
-				std::cout << r2cm::tab2 << target_color << "Change Color with std::cout" << reset_color << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( std::cout << r2cm::tab2 << header << fg_color << ";" << bg_color << tail << "Change Color with std::cout" << header << "0" << tail << r2cm::linefeed );
 			}
 
 			std::cout << r2cm::split;
