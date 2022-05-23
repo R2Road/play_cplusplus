@@ -410,7 +410,11 @@ namespace console_text_color_test
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( std::cout << r2cm::tab2 << header << fg_color << ";" << bg_color << tail << "Change Color with std::cout" << header << "0" << tail << r2cm::linefeed );
+				PROCESS_MAIN( std::cout << header << fg_color << ";" << bg_color << tail << "Change Color with std::cout" << header << "0" << tail << r2cm::linefeed );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( std::cout << header << fg_color << tail << header << bg_color << tail << "Change Color with std::cout" << header << "0" << tail << r2cm::linefeed );
 			}
 
 			std::cout << r2cm::split;
