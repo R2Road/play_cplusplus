@@ -405,8 +405,8 @@ namespace console_text_color_test
 			{
 				DECLARATION_MAIN( const char* header = "\033[" );
 				DECLARATION_MAIN( const char* tail = "m" );
-				DECLARATION_MAIN( const int fg_color = 31 );
-				DECLARATION_MAIN( const int bg_color = 44 );
+				DECLARATION_MAIN( const short fg_color = 31 );
+				DECLARATION_MAIN( const short bg_color = 44 );
 
 				std::cout << r2cm::linefeed;
 
