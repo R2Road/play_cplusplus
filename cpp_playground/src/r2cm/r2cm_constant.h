@@ -68,6 +68,7 @@ namespace r2cm
 	private:
 		eColor mColor;
 	};
+	using clm = ColorModifier;
 
 
 	template<class _Elem, class _Traits>
