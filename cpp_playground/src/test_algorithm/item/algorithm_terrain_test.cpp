@@ -72,7 +72,7 @@ namespace algorithm_terrain_test
 				{
 					for( int x = 0; grid.GetWidth() > x; ++x )
 					{
-						grid.Set( x, y, r2::Random::GetInt( 0, 100 ) > 40 ? eTerrainType::Normal : eTerrainType::Wall );
+						grid.Set( x, y, r2::Random::GetInt( 0, 100 ) > 50 ? eTerrainType::Normal : eTerrainType::Wall );
 					}
 				}
 
