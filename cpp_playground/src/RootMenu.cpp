@@ -28,6 +28,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		"\n"	"> To do : Infinite Number"
 		"\n"	"> To do : Thread"
 		"\n"	"> To do : Memory Pool"
+		"\n"	"> To do : FSM v1"
 	) );
 
 	{

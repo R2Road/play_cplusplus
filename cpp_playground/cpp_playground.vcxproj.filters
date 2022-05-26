@@ -407,6 +407,9 @@
     <ClCompile Include="src\r2\r2_Random.cpp">
       <Filter>r2</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_hobby\item\fsm_v1_test.cpp">
+      <Filter>test_hobby\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -790,6 +793,9 @@
     </ClInclude>
     <ClInclude Include="src\r2\r2_Random.h">
       <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\item\fsm_v1_test.h">
+      <Filter>test_hobby\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

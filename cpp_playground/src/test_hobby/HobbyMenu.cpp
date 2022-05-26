@@ -4,6 +4,7 @@
 #include "r2cm/r2cm_constant.h"
 #include "RootMenu.h"
 
+#include "test_hobby/item/fsm_v1_test.h"
 #include "test_hobby/item/infinite_number_test.h"
 #include "test_hobby/item/vector3_test.h"
 
@@ -24,6 +25,7 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
+		ret->AddItem( '2', fsm_v1_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();

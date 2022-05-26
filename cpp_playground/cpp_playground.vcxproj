@@ -89,6 +89,7 @@
     <ClCompile Include="src\test_cpp\TimeMenu.cpp" />
     <ClCompile Include="src\test_cpp\VariadicTemplateMenu.cpp" />
     <ClCompile Include="src\test_hobby\item\array_based_list_test.cpp" />
+    <ClCompile Include="src\test_hobby\item\fsm_v1_test.cpp" />
     <ClCompile Include="src\test_hobby\item\infinite_number_test.cpp" />
     <ClCompile Include="src\test_hobby\item\memory_pool_test.cpp" />
     <ClCompile Include="src\test_hobby\item\vector3_test.cpp" />
@@ -219,6 +220,7 @@
     <ClInclude Include="src\test_cpp\TimeMenu.h" />
     <ClInclude Include="src\test_cpp\VariadicTemplateMenu.h" />
     <ClInclude Include="src\test_hobby\item\array_based_list_test.h" />
+    <ClInclude Include="src\test_hobby\item\fsm_v1_test.h" />
     <ClInclude Include="src\test_hobby\item\infinite_number_test.h" />
     <ClInclude Include="src\test_hobby\item\memory_pool_test.h" />
     <ClInclude Include="src\test_hobby\item\vector3_test.h" />
