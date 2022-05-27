@@ -84,6 +84,7 @@ namespace procedural_terrain_generation_test
 			}
 
 			std::cout << r2cm::split;
+			std::cout << "> Show : Weights";
 			_getch();
 			r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
@@ -106,6 +107,7 @@ namespace procedural_terrain_generation_test
 			}
 
 			std::cout << r2cm::split;
+			std::cout << "> Show : Apply Weights";
 			_getch();
 			r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
