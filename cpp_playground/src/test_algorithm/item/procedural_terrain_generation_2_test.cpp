@@ -117,10 +117,43 @@ namespace procedural_terrain_generation_2_test
 					{
 						const auto cell = grid_seed.Get( x, y );
 
-						if( 9 <= cell.weight && 80 <= r2::Random::GetInt( 0, 100 ) )
+						if( 8 <= cell.weight && 80 <= r2::Random::GetInt( 0, 100 ) )
 						{
 							grid_seed.Set( x, y, Cell{ eTerrainType::Wall_Immortal, cell.weight } );
 							grid_terrain.Set( x, y, Cell{ eTerrainType::Wall_Immortal, cell.weight } );
+						}
+					}
+				}
+
+				AlgorithmHelper::PrintGrid( grid_terrain, terrain_type_evaluator );
+				std::cout << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::linefeed;
+			std::cout << "> Next Step";
+			_getch();
+			r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+
+			{
+				std::cout << r2cm::tab << "+ Terranin View : If [ Wall_Normal ] : [ 3 < Neighbor Wall : Wall_Normal ] else [ Normal ]" << r2cm::linefeed2;
+
+				int neighbor_count = 0;
+				for( int y = 0; grid_seed.GetHeight() > y; ++y )
+				{
+					for( int x = 0; grid_seed.GetWidth() > x; ++x )
+					{
+						neighbor_count = GetNeighborCount( grid_seed, x, y, 1 );
+
+						if( eTerrainType::Wall_Normal == grid_seed.Get( x, y ).type )
+						{
+							if( 3 < GetNeighborCount( grid_seed, x, y, 1 ) )
+							{
+								grid_terrain.Set( x, y, Cell{ eTerrainType::Wall_Normal } );
+							}
+							else
+							{
+								grid_terrain.Set( x, y, Cell{ eTerrainType::Normal } );
+							}
 						}
 					}
 				}
@@ -143,18 +176,6 @@ namespace procedural_terrain_generation_2_test
 					for( int x = 0; grid_seed.GetWidth() > x; ++x )
 					{
 						neighbor_count = GetNeighborCount( grid_seed, x, y, 1 );
-
-						if( eTerrainType::Wall_Normal == grid_seed.Get( x, y ).type )
-						{
-							if( 3 < GetNeighborCount( grid_seed, x, y, 1 ) )
-							{
-								grid_terrain.Set( x, y, Cell{ eTerrainType::Wall_Normal } );
-							}
-							else
-							{
-								grid_terrain.Set( x, y, Cell{ eTerrainType::Normal } );
-							}
-						}
 
 						if( eTerrainType::Normal == grid_seed.Get( x, y ).type )
 						{
