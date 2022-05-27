@@ -117,18 +117,22 @@ namespace procedural_terrain_generation_test
 
 				std::cout << r2cm::split;
 
+				int neighbor_count = 0;
 				for( int y = 0; grid.GetHeight() > y; ++y )
 				{
 					for( int x = 0; grid.GetWidth() > x; ++x )
 					{
-						if( 4 < GetNeighborCount( grid, x, y, 1 ) )
+						neighbor_count = GetNeighborCount( grid, x, y, 1 );
+
+						if( 4 < neighbor_count )
 						{
 							grid3.Set( x, y, eTerrainType::Wall );
 						}
-						else if( 4 > GetNeighborCount( grid, x, y, 1 ) )
+						else if( 4 > neighbor_count )
 						{
 							grid3.Set( x, y, eTerrainType::Normal );
 						}
+						//else if( 4 == neighbor_count ) {}
 					}
 				}
 
