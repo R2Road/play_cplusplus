@@ -193,13 +193,10 @@ namespace procedural_terrain_generation_test
 			{
 				std::cout << r2cm::tab << "+ Terranin View : If [ Wall ] : [ 3 < Neighbor Wall : Wall ] else [ Normal ]" << r2cm::linefeed2;
 
-				int neighbor_count = 0;
 				for( int y = 0; grid_seed.GetHeight() > y; ++y )
 				{
 					for( int x = 0; grid_seed.GetWidth() > x; ++x )
 					{
-						neighbor_count = GetNeighborCount( grid_seed, x, y, 1 );
-
 						if( eTerrainType::Wall == grid_seed.Get( x, y ) )
 						{
 							if( 3 < GetNeighborCount( grid_seed, x, y, 1 ) )
@@ -226,13 +223,10 @@ namespace procedural_terrain_generation_test
 			{
 				std::cout << r2cm::tab << "+ Terranin View : If [ Normal ] : [ 4 < Neighbor Wall : Wall ] else [ Normal ]" << r2cm::linefeed2;
 
-				int neighbor_count = 0;
 				for( int y = 0; grid_seed.GetHeight() > y; ++y )
 				{
 					for( int x = 0; grid_seed.GetWidth() > x; ++x )
 					{
-						neighbor_count = GetNeighborCount( grid_seed, x, y, 1 );
-
 						if( eTerrainType::Normal == grid_seed.Get( x, y ) )
 						{
 							if( 4 < GetNeighborCount( grid_seed, x, y, 1 ) )
@@ -263,13 +257,10 @@ namespace procedural_terrain_generation_test
 
 				std::cout << r2cm::tab << "+ Repeat x " << i << r2cm::linefeed2;
 
-				int neighbor_count = 0;
 				for( int y = 0; grid_terrain.GetHeight() > y; ++y )
 				{
 					for( int x = 0; grid_terrain.GetWidth() > x; ++x )
 					{
-						neighbor_count = GetNeighborCount( grid_terrain, x, y, 1 );
-
 						if( eTerrainType::Wall == grid_terrain.Get( x, y ) )
 						{
 							if( 3 >= GetNeighborCount( grid_terrain, x, y, 1 ) )
