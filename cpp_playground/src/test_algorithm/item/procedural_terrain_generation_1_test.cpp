@@ -253,6 +253,56 @@ namespace procedural_terrain_generation_test
 
 			std::cout << r2cm::split;
 
+			std::cout << r2cm::linefeed;
+			std::cout << "> Next Step";
+			_getch();
+			
+			for( int i = 0; 5 > i; ++i )
+			{
+				r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+
+				std::cout << r2cm::tab << "+ Repeat x " << i << r2cm::linefeed2;
+
+				int neighbor_count = 0;
+				for( int y = 0; grid_terrain.GetHeight() > y; ++y )
+				{
+					for( int x = 0; grid_terrain.GetWidth() > x; ++x )
+					{
+						neighbor_count = GetNeighborCount( grid_terrain, x, y, 1 );
+
+						if( eTerrainType::Wall == grid_terrain.Get( x, y ) )
+						{
+							if( 3 < GetNeighborCount( grid_terrain, x, y, 1 ) )
+							{
+								grid_terrain.Set( x, y, eTerrainType::Wall );
+							}
+							else
+							{
+								grid_terrain.Set( x, y, eTerrainType::Normal );
+							}
+						}
+						else //if( eTerrainType::Normal == grid_terrain.Get( x, y ) )
+						{
+							if( 4 < GetNeighborCount( grid_terrain, x, y, 1 ) )
+							{
+								grid_terrain.Set( x, y, eTerrainType::Wall );
+							}
+							else
+							{
+								grid_terrain.Set( x, y, eTerrainType::Normal );
+							}
+						}
+					}
+				}
+
+				AlgorithmHelper::PrintGrid( grid_terrain, terrain_type_evaluator );
+				std::cout << r2cm::linefeed;
+
+				_getch();
+			}
+
+			std::cout << r2cm::split;
+
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
