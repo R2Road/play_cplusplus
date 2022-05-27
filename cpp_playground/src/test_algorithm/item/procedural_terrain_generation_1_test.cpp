@@ -145,4 +145,91 @@ namespace procedural_terrain_generation_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT Test_1::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "PROCEDURAL TERRAIN GENERATION : Test 1";
+		};
+	}
+	r2cm::iItem::DoFuncT Test_1::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( r2::Grid<eTerrainType> grid_seed );
+			PROCESS_MAIN( grid_seed.Reset( 40, 40 ) );
+			DECLARATION_MAIN( r2::Grid<eTerrainType> grid_terrain );
+			PROCESS_MAIN( grid_terrain.Reset( 40, 40 ) );
+
+			std::cout << r2cm::split;
+
+			const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+
+			{
+				for( int y = 0; grid_seed.GetHeight() > y; ++y )
+				{
+					for( int x = 0; grid_seed.GetWidth() > x; ++x )
+					{
+						grid_seed.Set( x, y, r2::Random::GetInt( 0, 100 ) > 50 ? eTerrainType::Normal : eTerrainType::Wall );
+					}
+				}
+
+				AlgorithmHelper::PrintGrid( grid_seed, terrain_type_evaluator );
+				std::cout << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+			std::cout << "> Show : Process Step 1";
+			_getch();
+			r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+
+			{
+				int neighbor_count = 0;
+				for( int y = 0; grid_seed.GetHeight() > y; ++y )
+				{
+					for( int x = 0; grid_seed.GetWidth() > x; ++x )
+					{
+						neighbor_count = GetNeighborCount( grid_seed, x, y, 1 );
+
+						if( eTerrainType::Wall == grid_seed.Get( x, y ) )
+						{
+							if( 4 < GetNeighborCount( grid_seed, x, y, 1 ) )
+							{
+								grid_terrain.Set( x, y, eTerrainType::Wall );
+							}
+							else
+							{
+								grid_terrain.Set( x, y, eTerrainType::Normal );
+							}
+						}
+						else
+						{
+							if( 4 > GetNeighborCount( grid_seed, x, y, 1 ) )
+							{
+								grid_terrain.Set( x, y, eTerrainType::Normal );
+							}
+							else
+							{
+								grid_terrain.Set( x, y, eTerrainType::Wall );
+							}
+						}
+					}
+				}
+
+				AlgorithmHelper::PrintGrid( grid_terrain, terrain_type_evaluator );
+				std::cout << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

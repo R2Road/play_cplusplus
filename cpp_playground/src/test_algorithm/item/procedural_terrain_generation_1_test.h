@@ -11,4 +11,11 @@ namespace procedural_terrain_generation_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class Test_1 : public r2cm::iItem, public r2cm::SingleTon<Test_1>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }
