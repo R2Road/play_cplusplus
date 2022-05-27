@@ -161,18 +161,18 @@ namespace procedural_terrain_generation_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2cm::split;
-
-			DECLARATION_MAIN( r2::Grid<eTerrainType> grid_seed );
-			PROCESS_MAIN( grid_seed.Reset( 40, 40 ) );
-			DECLARATION_MAIN( r2::Grid<eTerrainType> grid_terrain );
-			PROCESS_MAIN( grid_terrain.Reset( 40, 40 ) );
+			r2::Grid<eTerrainType> grid_seed;
+			grid_seed.Reset( 40, 40 );
+			r2::Grid<eTerrainType> grid_terrain;
+			grid_terrain.Reset( 40, 40 );
 
 			std::cout << r2cm::split;
 
 			const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 
 			{
+				std::cout << r2cm::tab << "+ Seed View" << r2cm::linefeed2;
+
 				for( int y = 0; grid_seed.GetHeight() > y; ++y )
 				{
 					for( int x = 0; grid_seed.GetWidth() > x; ++x )
@@ -185,12 +185,14 @@ namespace procedural_terrain_generation_test
 				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << r2cm::split;
-			std::cout << "> Show : Process Step 1";
+			std::cout << r2cm::linefeed;
+			std::cout << "> Next Step";
 			_getch();
 			r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 			{
+				std::cout << r2cm::tab << "+ Terranin View : If [ Wall ] : [ 3 < Neighbor Wall : Wall ] else [ Normal ]" << r2cm::linefeed2;
+
 				int neighbor_count = 0;
 				for( int y = 0; grid_seed.GetHeight() > y; ++y )
 				{
@@ -216,12 +218,14 @@ namespace procedural_terrain_generation_test
 				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << r2cm::split;
-			std::cout << "> Show : Process Step 1";
+			std::cout << r2cm::linefeed;
+			std::cout << "> Next Step";
 			_getch();
 			r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 			{
+				std::cout << r2cm::tab << "+ Terranin View : If [ Normal ] : [ 4 < Neighbor Wall : Wall ] else [ Normal ]" << r2cm::linefeed2;
+
 				int neighbor_count = 0;
 				for( int y = 0; grid_seed.GetHeight() > y; ++y )
 				{
@@ -231,13 +235,13 @@ namespace procedural_terrain_generation_test
 
 						if( eTerrainType::Normal == grid_seed.Get( x, y ) )
 						{
-							if( 5 > GetNeighborCount( grid_seed, x, y, 1 ) )
+							if( 4 < GetNeighborCount( grid_seed, x, y, 1 ) )
 							{
-								grid_terrain.Set( x, y, eTerrainType::Normal );
+								grid_terrain.Set( x, y, eTerrainType::Wall );
 							}
 							else
 							{
-								grid_terrain.Set( x, y, eTerrainType::Wall );
+								grid_terrain.Set( x, y, eTerrainType::Normal );
 							}
 						}
 					}
