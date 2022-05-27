@@ -61,16 +61,16 @@ namespace procedural_terrain_generation_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
+			r2::Grid<eTerrainType> grid;
+			grid.Reset( 40, 40 );
+
 			std::cout << r2cm::split;
 
 			const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 
-			DECLARATION_MAIN( r2::Grid<eTerrainType> grid );
-			PROCESS_MAIN( grid.Reset( 40, 40 ) );
-
-			std::cout << r2cm::split;
-
 			{
+				std::cout << r2cm::tab << "+ Seed View" << r2cm::linefeed2;
+
 				for( int y = 0; grid.GetHeight() > y; ++y )
 				{
 					for( int x = 0; grid.GetWidth() > x; ++x )
@@ -83,16 +83,16 @@ namespace procedural_terrain_generation_test
 				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << r2cm::split;
-			std::cout << "> Show : Weights";
+			std::cout << r2cm::linefeed;
+			std::cout << "> Next Step";
 			_getch();
 			r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
-			{
-				DECLARATION_MAIN( r2::Grid<int> grid2 );
-				PROCESS_MAIN( grid2.Reset( 40, 40 ) );
+			r2::Grid<int> grid2;
+			grid2.Reset( 40, 40 );
 
-				std::cout << r2cm::split;
+			{
+				std::cout << r2cm::tab << "+ Weights View" << r2cm::linefeed2;
 
 				for( int y = 0; grid.GetHeight() > y; ++y )
 				{
@@ -106,16 +106,16 @@ namespace procedural_terrain_generation_test
 				std::cout << r2cm::linefeed;
 			}
 
-			std::cout << r2cm::split;
-			std::cout << "> Show : Apply Weights";
+			std::cout << r2cm::linefeed;
+			std::cout << "> Next Step";
 			_getch();
 			r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
-			{
-				DECLARATION_MAIN( r2::Grid<eTerrainType> grid3 );
-				PROCESS_MAIN( grid3.Reset( 40, 40 ) );
+			r2::Grid<eTerrainType> grid3;
+			grid3.Reset( 40, 40 );
 
-				std::cout << r2cm::split;
+			{
+				std::cout << r2cm::tab << "+ Terranin View : If [ 4 < Neighbor Wall ] : [ Wall ] else if [ 4 > Neighbor Wall ] : [ Normal ]" << r2cm::linefeed2;
 
 				int neighbor_count = 0;
 				for( int y = 0; grid.GetHeight() > y; ++y )
