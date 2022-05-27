@@ -272,11 +272,7 @@ namespace procedural_terrain_generation_test
 
 						if( eTerrainType::Wall == grid_terrain.Get( x, y ) )
 						{
-							if( 3 < GetNeighborCount( grid_terrain, x, y, 1 ) )
-							{
-								grid_terrain.Set( x, y, eTerrainType::Wall );
-							}
-							else
+							if( 3 >= GetNeighborCount( grid_terrain, x, y, 1 ) )
 							{
 								grid_terrain.Set( x, y, eTerrainType::Normal );
 							}
@@ -286,10 +282,6 @@ namespace procedural_terrain_generation_test
 							if( 4 < GetNeighborCount( grid_terrain, x, y, 1 ) )
 							{
 								grid_terrain.Set( x, y, eTerrainType::Wall );
-							}
-							else
-							{
-								grid_terrain.Set( x, y, eTerrainType::Normal );
 							}
 						}
 					}
