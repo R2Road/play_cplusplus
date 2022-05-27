@@ -9,6 +9,7 @@
 #include "r2/r2_Random.h"
 
 #include "test_algorithm/AlgorithmHelper.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 namespace algorithm_terrain_test
 {
@@ -62,6 +63,8 @@ namespace algorithm_terrain_test
 
 			std::cout << r2cm::split;
 
+			const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+
 			DECLARATION_MAIN( r2::Grid<eTerrainType> grid );
 			PROCESS_MAIN( grid.Reset( 40, 40 ) );
 
@@ -82,10 +85,14 @@ namespace algorithm_terrain_test
 
 			std::cout << r2cm::split;
 			_getch();
+			r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 			{
 				DECLARATION_MAIN( r2::Grid<int> grid2 );
 				PROCESS_MAIN( grid2.Reset( 40, 40 ) );
+
+				std::cout << r2cm::split;
+
 				for( int y = 0; grid.GetHeight() > y; ++y )
 				{
 					for( int x = 0; grid.GetWidth() > x; ++x )
@@ -100,10 +107,14 @@ namespace algorithm_terrain_test
 
 			std::cout << r2cm::split;
 			_getch();
+			r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 			{
 				DECLARATION_MAIN( r2::Grid<eTerrainType> grid3 );
 				PROCESS_MAIN( grid3.Reset( 40, 40 ) );
+
+				std::cout << r2cm::split;
+
 				for( int y = 0; grid.GetHeight() > y; ++y )
 				{
 					for( int x = 0; grid.GetWidth() > x; ++x )
