@@ -401,14 +401,14 @@
     <ClCompile Include="src\test_algorithm\AlgorithmHelper.cpp">
       <Filter>test_algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_algorithm\item\algorithm_terrain_test.cpp">
-      <Filter>test_algorithm\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2\r2_Random.cpp">
       <Filter>r2</Filter>
     </ClCompile>
     <ClCompile Include="src\test_hobby\item\fsm_v1_test.cpp">
       <Filter>test_hobby\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_algorithm\item\procedural_terrain_generation_1_test.cpp">
+      <Filter>test_algorithm\item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -788,14 +788,14 @@
     <ClInclude Include="src\test_algorithm\AlgorithmHelper.h">
       <Filter>test_algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_algorithm\item\algorithm_terrain_test.h">
-      <Filter>test_algorithm\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2\r2_Random.h">
       <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\test_hobby\item\fsm_v1_test.h">
       <Filter>test_hobby\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_algorithm\item\procedural_terrain_generation_1_test.h">
+      <Filter>test_algorithm\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

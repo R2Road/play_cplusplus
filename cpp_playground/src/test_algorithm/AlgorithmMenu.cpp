@@ -11,7 +11,7 @@
 #include "test_algorithm/item/algorithm_astar_test.h"
 #include "test_algorithm/item/algorithm_etc_test.h"
 #include "test_algorithm/item/algorithm_maze_test.h"
-#include "test_algorithm/item/algorithm_terrain_test.h"
+#include "test_algorithm/item/procedural_terrain_generation_1_test.h"
 
 r2cm::MenuUp AlgorithmMenu::Create( r2cm::Director& director )
 {

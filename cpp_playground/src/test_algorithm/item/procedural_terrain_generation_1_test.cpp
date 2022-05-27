@@ -1,4 +1,4 @@
-#include "algorithm_terrain_test.h"
+#include "procedural_terrain_generation_1_test.h"
 
 #include <conio.h>
 
