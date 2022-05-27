@@ -11,7 +11,7 @@
 #include "test_algorithm/AlgorithmHelper.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
-namespace algorithm_terrain_test
+namespace procedural_terrain_generation_test
 {
 	enum class eTerrainType
 	{
@@ -52,7 +52,7 @@ namespace algorithm_terrain_test
 	{
 		return []()->const char*
 		{
-			return "Terrain : Basic";
+			return "PROCEDURAL TERRAIN GENERATION : Basic";
 		};
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()

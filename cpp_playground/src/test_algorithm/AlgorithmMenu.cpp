@@ -56,7 +56,7 @@ r2cm::MenuUp AlgorithmMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddItem( 'z', algorithm_terrain_test::Basic::GetInstance() );
+		ret->AddItem( 'z', procedural_terrain_generation_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
