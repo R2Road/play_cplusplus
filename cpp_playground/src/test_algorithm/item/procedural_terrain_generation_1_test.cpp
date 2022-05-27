@@ -200,7 +200,7 @@ namespace procedural_terrain_generation_test
 
 						if( eTerrainType::Wall == grid_seed.Get( x, y ) )
 						{
-							if( 4 < GetNeighborCount( grid_seed, x, y, 1 ) )
+							if( 3 < GetNeighborCount( grid_seed, x, y, 1 ) )
 							{
 								grid_terrain.Set( x, y, eTerrainType::Wall );
 							}
@@ -209,9 +209,29 @@ namespace procedural_terrain_generation_test
 								grid_terrain.Set( x, y, eTerrainType::Normal );
 							}
 						}
-						else
+					}
+				}
+
+				AlgorithmHelper::PrintGrid( grid_terrain, terrain_type_evaluator );
+				std::cout << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+			std::cout << "> Show : Process Step 1";
+			_getch();
+			r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+
+			{
+				int neighbor_count = 0;
+				for( int y = 0; grid_seed.GetHeight() > y; ++y )
+				{
+					for( int x = 0; grid_seed.GetWidth() > x; ++x )
+					{
+						neighbor_count = GetNeighborCount( grid_seed, x, y, 1 );
+
+						if( eTerrainType::Normal == grid_seed.Get( x, y ) )
 						{
-							if( 4 > GetNeighborCount( grid_seed, x, y, 1 ) )
+							if( 5 > GetNeighborCount( grid_seed, x, y, 1 ) )
 							{
 								grid_terrain.Set( x, y, eTerrainType::Normal );
 							}
