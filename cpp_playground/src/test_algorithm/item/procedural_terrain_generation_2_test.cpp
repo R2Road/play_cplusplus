@@ -50,13 +50,37 @@ namespace procedural_terrain_generation_2_test
 
 		return count;
 	}
+	int GetNeighborCount( const r2::Grid<eTerrainType>& grid, const int px, const int py, const int allowed_range )
+	{
+		int count = 0;
+
+		for( int y = py - allowed_range, yend = py + allowed_range; yend >= y; ++y )
+		{
+			for( int x = px - allowed_range, xend = px + allowed_range; xend >= x; ++x )
+			{
+				if( px == x && py == y )
+				{
+					continue;
+				}
+
+				if( !grid.IsIn( x, y ) )
+				{
+					continue;
+				}
+
+				count += ( grid.Get( x, y ) != eTerrainType::Normal ? 1 : 0 );
+			}
+		}
+
+		return count;
+	}
 	std::function<char( Cell )> seed_evaluator = []( Cell c )
 	{
 		return ( 0 == c.weight ? '0' : char( 48 + c.weight ) );
 	};
-	std::function<char( Cell )> terrain_type_evaluator = []( Cell c )
+	std::function<char( eTerrainType )> terrain_type_evaluator = []( eTerrainType t )
 	{
-		return eTerrainType::Wall_Immortal == c.type ? '+' : ( eTerrainType::Wall_Normal == c.type ? '=' : ' ' );
+		return eTerrainType::Wall_Immortal == t ? '+' : ( eTerrainType::Wall_Normal == t ? '=' : ' ' );
 	};
 	
 	
@@ -76,7 +100,7 @@ namespace procedural_terrain_generation_2_test
 
 			r2::Grid<Cell> grid_seed;
 			grid_seed.Reset( 40, 40 );
-			r2::Grid<Cell> grid_terrain;
+			r2::Grid<eTerrainType> grid_terrain;
 			grid_terrain.Reset( 40, 40 );
 
 			std::cout << r2cm::split;
@@ -120,7 +144,7 @@ namespace procedural_terrain_generation_2_test
 						if( 8 <= cell.weight && 80 <= r2::Random::GetInt( 0, 100 ) )
 						{
 							grid_seed.Set( x, y, Cell{ eTerrainType::Wall_Immortal, cell.weight } );
-							grid_terrain.Set( x, y, Cell{ eTerrainType::Wall_Immortal, cell.weight } );
+							grid_terrain.Set( x, y, eTerrainType::Wall_Immortal );
 						}
 					}
 				}
@@ -148,11 +172,11 @@ namespace procedural_terrain_generation_2_test
 						{
 							if( 3 < GetNeighborCount( grid_seed, x, y, 1 ) )
 							{
-								grid_terrain.Set( x, y, Cell{ eTerrainType::Wall_Normal } );
+								grid_terrain.Set( x, y, eTerrainType::Wall_Normal );
 							}
 							else
 							{
-								grid_terrain.Set( x, y, Cell{ eTerrainType::Normal } );
+								grid_terrain.Set( x, y, eTerrainType::Normal );
 							}
 						}
 					}
@@ -181,11 +205,11 @@ namespace procedural_terrain_generation_2_test
 						{
 							if( 4 < GetNeighborCount( grid_seed, x, y, 1 ) )
 							{
-								grid_terrain.Set( x, y, Cell{ eTerrainType::Wall_Normal } );
+								grid_terrain.Set( x, y, eTerrainType::Wall_Normal );
 							}
 							else
 							{
-								grid_terrain.Set( x, y, Cell{ eTerrainType::Normal } );
+								grid_terrain.Set( x, y, eTerrainType::Normal );
 							}
 						}
 					}
@@ -212,21 +236,21 @@ namespace procedural_terrain_generation_2_test
 					{
 						neighbor_count = GetNeighborCount( grid_terrain, x, y, 1 );
 
-						if( eTerrainType::Wall_Normal == grid_terrain.Get( x, y ).type )
+						if( eTerrainType::Wall_Normal == grid_terrain.Get( x, y ) )
 						{
 							// Core : Suggest [3], 4
 							if( 3 >= GetNeighborCount( grid_terrain, x, y, 1 ) )
 							{
-								grid_terrain.Set( x, y, Cell{ eTerrainType::Normal } );
+								grid_terrain.Set( x, y, eTerrainType::Normal );
 							}
 						}
 						// 이 코드를 제거 해도 괜찮게 나온다.
-						else if( eTerrainType::Normal == grid_terrain.Get( x, y ).type )
+						else if( eTerrainType::Normal == grid_terrain.Get( x, y ) )
 						{
 							// Core : Suggest 4, [5]
 							if( 5 < GetNeighborCount( grid_terrain, x, y, 1 ) )
 							{
-								grid_terrain.Set( x, y, Cell{ eTerrainType::Wall_Normal } );
+								grid_terrain.Set( x, y, eTerrainType::Wall_Normal );
 							}
 						}
 					}
