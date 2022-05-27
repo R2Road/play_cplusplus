@@ -61,14 +61,14 @@ namespace procedural_terrain_generation_2_test
 	
 	
 	
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Bone::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "PROCEDURAL TERRAIN GENERATION 2 : Basic";
+			return "PROCEDURAL TERRAIN GENERATION 2 : Bone";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Bone::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
