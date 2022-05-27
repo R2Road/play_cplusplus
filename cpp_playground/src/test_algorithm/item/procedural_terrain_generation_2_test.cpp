@@ -214,24 +214,19 @@ namespace procedural_terrain_generation_2_test
 
 						if( eTerrainType::Wall_Normal == grid_terrain.Get( x, y ).type )
 						{
-							if( 3 < GetNeighborCount( grid_terrain, x, y, 1 ) )
-							{
-								grid_terrain.Set( x, y, Cell{ eTerrainType::Wall_Normal } );
-							}
-							else
+							// Core : Suggest [3], 4
+							if( 3 >= GetNeighborCount( grid_terrain, x, y, 1 ) )
 							{
 								grid_terrain.Set( x, y, Cell{ eTerrainType::Normal } );
 							}
 						}
+						// 이 코드를 제거 해도 괜찮게 나온다.
 						else if( eTerrainType::Normal == grid_terrain.Get( x, y ).type )
 						{
-							if( 4 < GetNeighborCount( grid_terrain, x, y, 1 ) )
+							// Core : Suggest 4, [5]
+							if( 5 < GetNeighborCount( grid_terrain, x, y, 1 ) )
 							{
 								grid_terrain.Set( x, y, Cell{ eTerrainType::Wall_Normal } );
-							}
-							else
-							{
-								grid_terrain.Set( x, y, Cell{ eTerrainType::Normal } );
 							}
 						}
 					}
