@@ -38,4 +38,11 @@ namespace class_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class ImplicitTypeConversion : public r2cm::iItem, public r2cm::SingleTon<ImplicitTypeConversion>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

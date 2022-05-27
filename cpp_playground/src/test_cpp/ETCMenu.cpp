@@ -25,6 +25,7 @@ r2cm::MenuUp ETCMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'e', class_test::PrivateInheritance_1::GetInstance() );
 		ret->AddItem( 'r', class_test::PrivateInheritance_2::GetInstance() );
 		ret->AddItem( 't', class_test::MemberAdress::GetInstance() );
+		ret->AddItem( 'y', class_test::ImplicitTypeConversion::GetInstance() );
 
 
 		ret->AddSplit();
