@@ -410,6 +410,9 @@
     <ClCompile Include="src\test_algorithm\item\procedural_terrain_generation_1_test.cpp">
       <Filter>test_algorithm\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_algorithm\item\procedural_terrain_generation_2_test.cpp">
+      <Filter>test_algorithm\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -795,6 +798,9 @@
       <Filter>test_hobby\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_algorithm\item\procedural_terrain_generation_1_test.h">
+      <Filter>test_algorithm\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_algorithm\item\procedural_terrain_generation_2_test.h">
       <Filter>test_algorithm\item</Filter>
     </ClInclude>
   </ItemGroup>
