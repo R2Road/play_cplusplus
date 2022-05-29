@@ -16,6 +16,7 @@
 #include "NewMenu.h"
 #include "TemplateMenu.h"
 
+#include "ClassMenu.h"
 #include "CharMenu.h"
 #include "PointerMenu.h"
 #include "RootMenu.h"
@@ -35,6 +36,15 @@ r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem( '2', array_test::Init::GetInstance() );
+		ret->AddItem(
+			'3'
+			, []()->const char* { return ClassMenu::GetTitle(); }
+			, [&director]()->r2cm::eItemLeaveAction
+			{
+				director.Setup( ClassMenu::Create( director ) );
+				return r2cm::eItemLeaveAction::None;
+			}
+		);
 
 
 		ret->AddLineFeed();
