@@ -416,6 +416,9 @@
     <ClCompile Include="src\test_algorithm\item\procedural_terrain_generation_3_test.cpp">
       <Filter>test_algorithm\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\item\array_test.cpp">
+      <Filter>test_cpp\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -808,6 +811,9 @@
     </ClInclude>
     <ClInclude Include="src\test_algorithm\item\procedural_terrain_generation_3_test.h">
       <Filter>test_algorithm\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\item\array_test.h">
+      <Filter>test_cpp\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,6 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
 
+#include "item/array_test.h"
 #include "item/operator_ternary_test.h"
 #include "item/print_test.h"
 #include "item/structured_binding_test.h"
@@ -33,6 +34,7 @@ r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
+		ret->AddItem( '2', array_test::Init::GetInstance() );
 
 
 		ret->AddLineFeed();

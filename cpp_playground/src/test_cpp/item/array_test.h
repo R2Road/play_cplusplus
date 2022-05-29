@@ -3,9 +3,9 @@
 #include "r2cm/r2cm_iItem.h"
 #include "r2cm/r2cm_Singleton.h"
 
-namespace etc_test
+namespace array_test
 {
-	class Macro2String : public r2cm::iItem, public r2cm::SingleTon<Macro2String>
+	class Init : public r2cm::iItem, public r2cm::SingleTon<Init>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

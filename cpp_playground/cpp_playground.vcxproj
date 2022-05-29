@@ -49,6 +49,7 @@
     <ClCompile Include="src\test_cpp\item\alignas_test.cpp" />
     <ClCompile Include="src\test_cpp\item\alignof_test.cpp" />
     <ClCompile Include="src\test_cpp\item\align_test.cpp" />
+    <ClCompile Include="src\test_cpp\item\array_test.cpp" />
     <ClCompile Include="src\test_cpp\item\atomic_test.cpp" />
     <ClCompile Include="src\test_cpp\item\bit_operation_test.cpp" />
     <ClCompile Include="src\test_cpp\item\char_test.cpp" />
@@ -182,6 +183,7 @@
     <ClInclude Include="src\test_cpp\item\alignas_test.h" />
     <ClInclude Include="src\test_cpp\item\alignof_test.h" />
     <ClInclude Include="src\test_cpp\item\align_test.h" />
+    <ClInclude Include="src\test_cpp\item\array_test.h" />
     <ClInclude Include="src\test_cpp\item\atomic_test.h" />
     <ClInclude Include="src\test_cpp\item\bit_operation_test.h" />
     <ClInclude Include="src\test_cpp\item\char_test.h" />
