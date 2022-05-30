@@ -20,6 +20,10 @@ namespace r2cm
 		static void MoveCursorPoint( const CursorPoint new_cursor_point );
 		static void MoveCursorPointWithClearBuffer( const CursorPoint new_cursor_point );
 
+		static void FillCharacter( const CursorPoint point, const char c );
+		static void FillCharacter( const int x, const int y, const char c );
+
 		static void RequestSleep( const uint32_t m );
+
 	};
 }
