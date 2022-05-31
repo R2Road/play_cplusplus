@@ -9,8 +9,8 @@
 
 #include "test_algorithm/item/algorithm_astar_test.h"
 #include "test_algorithm/item/algorithm_etc_test.h"
-#include "test_algorithm/item/algorithm_maze_test.h"
 
+#include "MazeGenerationMenu.h"
 #include "ProceduralTerrainGenerationMenu.h"
 #include "RootMenu.h"
 
@@ -34,7 +34,6 @@ r2cm::MenuUp AlgorithmMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddItem( 'q', algorithm_maze_test::Basic::GetInstance() );
 		ret->AddItem( 'w', algorithm_astar_test::Basic::GetInstance() );
 		ret->AddItem( 'e', algorithm_astar_test::Use_STDListSplice::GetInstance() );
 		ret->AddItem( 'r', algorithm_astar_test::Use_STDListSplice_STDVectorResultPath::GetInstance() );
@@ -59,6 +58,15 @@ r2cm::MenuUp AlgorithmMenu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			'z'
+			, []()->const char* { return MazeGenerationMenu::GetTitle(); }
+			, [&director]()->r2cm::eItemLeaveAction
+			{
+				director.Setup( MazeGenerationMenu::Create( director ) );
+				return r2cm::eItemLeaveAction::None;
+			}
+		);
+		ret->AddItem(
+			'w'
 			, []()->const char* { return ProceduralTerrainGenerationMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
