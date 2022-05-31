@@ -69,7 +69,7 @@ namespace procedural_terrain_generation_test
 			const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 
 			{
-				std::cout << r2cm::tab << "+ Seed View : r2::Random::GetInt( 0, 100 ) > 50 ? eTerrainType::Normal : eTerrainType::Wall" << r2cm::linefeed2;
+				std::cout << r2cm::tab << "+ Make Seed : r2::Random::GetInt( 0, 100 ) > 50 ? eTerrainType::Normal : eTerrainType::Wall" << r2cm::linefeed2;
 
 				for( int y = 0; grid.GetHeight() > y; ++y )
 				{
@@ -171,7 +171,7 @@ namespace procedural_terrain_generation_test
 			const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 
 			{
-				std::cout << r2cm::tab << "+ Seed View : r2::Random::GetInt( 0, 100 ) > 50 ? eTerrainType::Normal : eTerrainType::Wall" << r2cm::linefeed2;
+				std::cout << r2cm::tab << "+ Make Seed : r2::Random::GetInt( 0, 100 ) > 50 ? eTerrainType::Normal : eTerrainType::Wall" << r2cm::linefeed2;
 
 				for( int y = 0; grid_seed.GetHeight() > y; ++y )
 				{
