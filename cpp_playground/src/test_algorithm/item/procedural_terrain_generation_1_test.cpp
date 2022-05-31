@@ -11,7 +11,7 @@
 #include "test_algorithm/AlgorithmHelper.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
-namespace procedural_terrain_generation_test
+namespace procedural_terrain_generation_1_test
 {
 	enum class eTerrainType
 	{

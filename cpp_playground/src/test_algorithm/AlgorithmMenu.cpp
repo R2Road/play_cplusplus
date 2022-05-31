@@ -58,8 +58,8 @@ r2cm::MenuUp AlgorithmMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddItem( 'z', procedural_terrain_generation_test::Basic::GetInstance() );
-		ret->AddItem( 'x', procedural_terrain_generation_test::Test_1::GetInstance() );
+		ret->AddItem( 'z', procedural_terrain_generation_1_test::Basic::GetInstance() );
+		ret->AddItem( 'x', procedural_terrain_generation_1_test::Test_1::GetInstance() );
 		ret->AddItem( 'c', procedural_terrain_generation_2_test::Bone::GetInstance() );
 		ret->AddItem( 'v', procedural_terrain_generation_3_test::Weights::GetInstance() );
 
