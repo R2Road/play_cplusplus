@@ -44,6 +44,7 @@
     <ClCompile Include="src\test_algorithm\item\procedural_terrain_generation_1_test.cpp" />
     <ClCompile Include="src\test_algorithm\item\procedural_terrain_generation_2_test.cpp" />
     <ClCompile Include="src\test_algorithm\item\procedural_terrain_generation_3_test.cpp" />
+    <ClCompile Include="src\test_algorithm\ProceduralTerrainGenerationMenu.cpp" />
     <ClCompile Include="src\test_cpp\BitOperationMenu.cpp" />
     <ClCompile Include="src\test_cpp\ClassMenu.cpp" />
     <ClCompile Include="src\test_cpp\C_CPP_Menu.cpp" />
@@ -179,6 +180,7 @@
     <ClInclude Include="src\test_algorithm\item\procedural_terrain_generation_1_test.h" />
     <ClInclude Include="src\test_algorithm\item\procedural_terrain_generation_2_test.h" />
     <ClInclude Include="src\test_algorithm\item\procedural_terrain_generation_3_test.h" />
+    <ClInclude Include="src\test_algorithm\ProceduralTerrainGenerationMenu.h" />
     <ClInclude Include="src\test_cpp\BitOperationMenu.h" />
     <ClInclude Include="src\test_cpp\ClassMenu.h" />
     <ClInclude Include="src\test_cpp\C_CPP_Menu.h" />

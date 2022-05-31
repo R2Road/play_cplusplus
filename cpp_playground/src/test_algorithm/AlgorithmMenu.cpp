@@ -2,7 +2,6 @@
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
-#include "RootMenu.h"
 
 #include "test_algorithm/item/algorithm_bubble_sort_test.h"
 #include "test_algorithm/item/algorithm_selection_sort_test.h"
@@ -11,9 +10,9 @@
 #include "test_algorithm/item/algorithm_astar_test.h"
 #include "test_algorithm/item/algorithm_etc_test.h"
 #include "test_algorithm/item/algorithm_maze_test.h"
-#include "test_algorithm/item/procedural_terrain_generation_1_test.h"
-#include "test_algorithm/item/procedural_terrain_generation_2_test.h"
-#include "test_algorithm/item/procedural_terrain_generation_3_test.h"
+
+#include "ProceduralTerrainGenerationMenu.h"
+#include "RootMenu.h"
 
 r2cm::MenuUp AlgorithmMenu::Create( r2cm::Director& director )
 {
@@ -58,10 +57,15 @@ r2cm::MenuUp AlgorithmMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddItem( 'z', procedural_terrain_generation_1_test::Basic::GetInstance() );
-		ret->AddItem( 'x', procedural_terrain_generation_1_test::Test_1::GetInstance() );
-		ret->AddItem( 'c', procedural_terrain_generation_2_test::Bone::GetInstance() );
-		ret->AddItem( 'v', procedural_terrain_generation_3_test::Weights::GetInstance() );
+		ret->AddItem(
+			'z'
+			, []()->const char* { return ProceduralTerrainGenerationMenu::GetTitle(); }
+			, [&director]()->r2cm::eItemLeaveAction
+			{
+				director.Setup( ProceduralTerrainGenerationMenu::Create( director ) );
+				return r2cm::eItemLeaveAction::None;
+			}
+		);
 
 
 		ret->AddSplit();
