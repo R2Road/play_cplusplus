@@ -5,12 +5,12 @@
 
 #include "r2cm/r2cm_constant.h"
 #include "r2cm/r2cm_Inspector.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 #include "r2/r2_Grid.h"
 #include "r2/r2_Random.h"
 
 #include "test_algorithm/AlgorithmHelper.h"
-#include "r2cm/r2cm_WindowUtility.h"
 
 namespace procedural_terrain_generation_3_test
 {
