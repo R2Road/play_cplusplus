@@ -116,7 +116,7 @@ namespace procedural_terrain_generation_2_test
 					{
 						const auto weight = r2::Random::GetInt( 0, 99 );
 
-						grid_seed.Set( x, y, weight > 50
+						grid_seed.Set( x, y, weight >= 50
 							? Cell{ eTerrainType::Normal, weight / 10 }
 							: Cell{ eTerrainType::Wall_Normal, weight / 10 }
 						);
