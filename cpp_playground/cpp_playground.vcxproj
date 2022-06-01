@@ -41,6 +41,7 @@
     <ClCompile Include="src\test_algorithm\item\algorithm_maze_test.cpp" />
     <ClCompile Include="src\test_algorithm\item\algorithm_selection_sort_test.cpp" />
     <ClCompile Include="src\test_algorithm\AlgorithmMenu.cpp" />
+    <ClCompile Include="src\test_algorithm\item\maze_generation_kruskals_test.cpp" />
     <ClCompile Include="src\test_algorithm\item\procedural_terrain_generation_1_test.cpp" />
     <ClCompile Include="src\test_algorithm\item\procedural_terrain_generation_2_test.cpp" />
     <ClCompile Include="src\test_algorithm\item\procedural_terrain_generation_3_test.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="src\test_algorithm\item\algorithm_maze_test.h" />
     <ClInclude Include="src\test_algorithm\item\algorithm_selection_sort_test.h" />
     <ClInclude Include="src\test_algorithm\AlgorithmMenu.h" />
+    <ClInclude Include="src\test_algorithm\item\maze_generation_kruskals_test.h" />
     <ClInclude Include="src\test_algorithm\item\procedural_terrain_generation_1_test.h" />
     <ClInclude Include="src\test_algorithm\item\procedural_terrain_generation_2_test.h" />
     <ClInclude Include="src\test_algorithm\item\procedural_terrain_generation_3_test.h" />
