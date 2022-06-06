@@ -66,7 +66,7 @@ r2cm::MenuUp AlgorithmMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem(
-			'w'
+			'x'
 			, []()->const char* { return ProceduralTerrainGenerationMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
