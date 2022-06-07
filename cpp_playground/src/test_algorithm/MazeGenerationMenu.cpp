@@ -20,6 +20,7 @@ r2cm::MenuUp MazeGenerationMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'q', maze_generation_kruskals_test::ViewTest::GetInstance() );
+		ret->AddItem( 'w', maze_generation_kruskals_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();

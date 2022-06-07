@@ -1,9 +1,14 @@
 #include "maze_generation_kruskals_test.h"
 
+#include <algorithm>
+#include <random>
+#include <vector>
+
 #include "r2cm/r2cm_constant.h"
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
+#include "r2/r2_Assert.h"
 #include "r2/r2_Direction4.h"
 #include "r2/r2_Grid.h"
 
@@ -37,6 +42,8 @@ namespace maze_generation_kruskals_test
 		}
 	}
 
+
+
 	r2cm::iItem::TitleFuncT ViewTest::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -60,6 +67,135 @@ namespace maze_generation_kruskals_test
 			std::cout << r2cm::split;
 
 			{
+				PrintGrid( grid );
+				std::cout << r2cm::linefeed2;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Kruskals : Basic";
+		};
+	}
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( r2::Grid<int> grid( 4, 4, r2::Direction4::eState::None ) );
+
+			class Node
+			{
+			public:
+				Node() : mParentNode( nullptr )
+				{}
+
+				Node* GetRoot()
+				{
+					return mParentNode ? mParentNode->GetRoot() : this;
+				}
+
+				bool Connect( Node* const parent_node )
+				{
+					R2ASSERT( nullptr != parent_node, "Node::Connect : parent_node is nullptr" );
+					mParentNode = parent_node;
+				}
+
+				bool IsConnected( Node* other_node )
+				{
+					return GetRoot() == other_node->GetRoot();
+				}
+
+			private:
+				Node* mParentNode;
+			};
+			DECLARATION_MAIN( r2::Grid<Node> sets( 4, 4, Node{} ) );
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Grid" << r2cm::linefeed2;
+
+				PrintGrid( grid );
+				std::cout << r2cm::linefeed2;
+			}
+
+			struct Edge
+			{
+				r2::PointInt point;
+				r2::Direction4::eState dir;
+			};
+			std::vector<Edge> edges;
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Make Edges" << r2cm::linefeed2;
+
+				edges.reserve( grid.GetSize() * 2u );
+				for( int y = 0; grid.GetHeight() > y; ++y )
+				{
+					for( int x = 0; grid.GetHeight() > x; ++x )
+					{
+						if( x > 0 )
+						{
+							edges.push_back( { { x, y }, r2::Direction4::eState::Left } );
+						}
+						if( y > 0 )
+						{
+							edges.push_back( { { x, y }, r2::Direction4::eState::Down } );
+						}
+					}
+				}
+
+				static std::random_device random_device;
+				static std::mt19937 random_engine( random_device() );
+				std::shuffle( edges.begin(), edges.end(), random_engine );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Connect" << r2cm::linefeed2;
+
+				r2::PointInt next_point;
+				r2::Direction4 current_dir;
+				for( const auto& e : edges )
+				{
+					next_point = e.point + r2::Direction4( e.dir ).GetPoint();
+
+					auto& current_node = sets.Get( e.point.GetX(), e.point.GetY() );
+					auto& next_node = sets.Get( next_point.GetX(), next_point.GetY() );
+					if( current_node.IsConnected( &next_node ) )
+					{
+						continue;
+					}
+
+					grid.Get( e.point.GetX(), e.point.GetY() ) |= e.dir;
+
+					//
+					//  Reverse Direction
+					//
+					current_dir.SetState( e.dir );
+					current_dir.Rotate( true );
+					current_dir.Rotate( true );
+					grid.Get( next_point.GetX(), next_point.GetY() ) |= current_dir.GetState();
+
+					break;
+				}
+
 				PrintGrid( grid );
 				std::cout << r2cm::linefeed2;
 			}

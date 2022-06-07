@@ -11,4 +11,11 @@ namespace maze_generation_kruskals_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

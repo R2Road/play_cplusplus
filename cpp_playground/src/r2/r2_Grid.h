@@ -44,6 +44,7 @@ namespace r2
 	public:
 		std::size_t GetWidth() const { return mWidth; }
 		std::size_t GetHeight() const { return mHeight; }
+		std::size_t GetSize() const { return mContainer.size(); }
 		bool IsIn( const std::size_t x, const std::size_t y ) const
 		{
 			return ( GetWidth() > x && GetHeight() > y );
