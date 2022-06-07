@@ -9,6 +9,34 @@
 
 namespace maze_generation_kruskals_test
 {
+	void PrintGrid( const r2::Grid<int>& grid )
+	{
+		const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+
+		for( int y = 0; grid.GetHeight() > y; ++y )
+		{
+			for( int x = 0; grid.GetHeight() > x; ++x )
+			{
+				const r2cm::WindowUtility::CursorPoint my_pivot_point = {
+					pivot_point.x + static_cast<short>( x * 3 ) + 1
+					, pivot_point.y + static_cast<short>( y * 3 ) + 1
+				};
+				r2cm::WindowUtility::MoveCursorPoint( my_pivot_point );
+				std::cout << '@';
+
+				r2::Direction4 dir4;
+				for( int i = 0; 4 > i; ++i, dir4.Rotate( true ) )
+				{
+					if( grid.Get( x, y ) & dir4.GetState() )
+					{
+						r2cm::WindowUtility::MoveCursorPoint( { my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) } );
+						std::cout << '+';
+					}
+				}
+			}
+		}
+	}
+
 	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -34,30 +62,7 @@ namespace maze_generation_kruskals_test
 			std::cout << r2cm::split;
 
 			{
-				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
-
-				for( int y = 0; grid.GetHeight() > y; ++y )
-				{
-					for( int x = 0; grid.GetHeight() > x; ++x )
-					{
-						const r2cm::WindowUtility::CursorPoint my_pivot_point = {
-							pivot_point.x + static_cast<short>( x * 3 ) + 1
-							, pivot_point.y + static_cast<short>( y * 3 ) + 1
-						};
-						r2cm::WindowUtility::MoveCursorPoint( my_pivot_point );
-						std::cout << '@';
-
-						r2::Direction4 dir4;
-						for( int i = 0; 4 > i; ++i, dir4.Rotate( true ) )
-						{
-							if( grid.Get( x, y ) & dir4.GetState() )
-							{
-								r2cm::WindowUtility::MoveCursorPoint( { my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) } );
-								std::cout << '+';
-							}
-						}
-					}
-				}
+				PrintGrid( grid );
 				std::cout << r2cm::linefeed2;
 			}
 
