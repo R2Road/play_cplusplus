@@ -37,14 +37,14 @@ namespace maze_generation_kruskals_test
 		}
 	}
 
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT ViewTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Kruskals : Basic";
+			return "Kruskals : ViewTest";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT ViewTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

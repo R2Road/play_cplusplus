@@ -5,7 +5,7 @@
 
 namespace maze_generation_kruskals_test
 {
-	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	class ViewTest : public r2cm::iItem, public r2cm::SingleTon<ViewTest>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
