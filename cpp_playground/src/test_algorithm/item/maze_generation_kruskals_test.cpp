@@ -26,6 +26,10 @@ namespace maze_generation_kruskals_test
 
 			r2::Grid<int> grid;
 			grid.Reset( 5, 5, r2::Direction4::eState::ALL );
+			grid.Set( 1, 0, r2::Direction4::eState::Up );
+			grid.Set( 2, 0, r2::Direction4::eState::Up | r2::Direction4::eState::Down );
+			grid.Set( 3, 0, r2::Direction4::eState::Left | r2::Direction4::eState::Down );
+			grid.Set( 4, 0, r2::Direction4::eState::Right | r2::Direction4::eState::Left );
 
 			std::cout << r2cm::split;
 
@@ -46,8 +50,11 @@ namespace maze_generation_kruskals_test
 						r2::Direction4 dir4;
 						for( int i = 0; 4 > i; ++i, dir4.Rotate( true ) )
 						{
-							r2cm::WindowUtility::MoveCursorPoint( { my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) } );
-							std::cout << '+';
+							if( grid.Get( x, y ) & dir4.GetState() )
+							{
+								r2cm::WindowUtility::MoveCursorPoint( { my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) } );
+								std::cout << '+';
+							}
 						}
 					}
 				}
