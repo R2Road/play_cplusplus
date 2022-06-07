@@ -9,7 +9,7 @@ namespace maze_generation_kruskals_test
 	{
 		return []()->const char*
 		{
-			return "Maze : Basic";
+			return "Kruskals : Basic";
 		};
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
