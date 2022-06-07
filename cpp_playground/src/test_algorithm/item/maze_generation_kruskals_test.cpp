@@ -108,10 +108,16 @@ namespace maze_generation_kruskals_test
 					return mParentNode ? mParentNode->GetRoot() : this;
 				}
 
-				void Connect( Node* const parent_node )
+				void SetParentNode( Node* const other_node )
 				{
-					R2ASSERT( nullptr != parent_node, "Node::Connect : parent_node is nullptr" );
-					mParentNode = parent_node;
+					mParentNode = other_node;
+				}
+
+				void Connect( Node* const other_node )
+				{
+					R2ASSERT( nullptr != other_node, "Node::Connect : parent_node is nullptr" );
+
+					other_node->GetRoot()->SetParentNode( this );
 				}
 
 				bool IsConnected( Node* other_node )
