@@ -67,6 +67,16 @@ namespace r2
 
 			mIndexConverter = r2::GridIndexConverter( static_cast<int>( mWidth ), static_cast<int>( mHeight ) );
 		}
+		void Reset( const std::size_t new_width, const std::size_t new_height, const CellT fill_data )
+		{
+			mWidth = new_width;
+			mHeight = new_height;
+
+			mContainer.clear();
+			mContainer.resize( mWidth *  mHeight, fill_data );
+
+			mIndexConverter = r2::GridIndexConverter( static_cast<int>( mWidth ), static_cast<int>( mHeight ) );
+		}
 		void Reset( const std::size_t new_width, const std::size_t new_height, const std::initializer_list<CellT> data )
 		{
 			Reset( new_width, new_height );
