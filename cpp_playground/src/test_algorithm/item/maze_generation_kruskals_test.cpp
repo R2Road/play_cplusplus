@@ -36,11 +36,22 @@ namespace maze_generation_kruskals_test
 				{
 					for( int x = 0; grid.GetHeight() > x; ++x )
 					{
-						r2cm::WindowUtility::MoveCursorPoint( { pivot_point.x + static_cast<short>( x * 3 ), pivot_point.y + static_cast<short>( y * 3 ) } );
-						std::cout << x;
+						const r2cm::WindowUtility::CursorPoint my_pivot_point = {
+							pivot_point.x + static_cast<short>( x * 3 ) + 1
+							, pivot_point.y + static_cast<short>( y * 3 ) + 1
+						};
+						r2cm::WindowUtility::MoveCursorPoint( my_pivot_point );
+						std::cout << '@';
+
+						r2::Direction4 dir4;
+						for( int i = 0; 4 > i; ++i, dir4.Rotate( true ) )
+						{
+							r2cm::WindowUtility::MoveCursorPoint( { my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) } );
+							std::cout << '+';
+						}
 					}
 				}
-				std::cout << r2cm::linefeed;
+				std::cout << r2cm::linefeed2;
 			}
 
 			std::cout << r2cm::split;
