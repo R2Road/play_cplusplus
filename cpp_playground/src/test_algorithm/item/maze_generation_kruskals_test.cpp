@@ -52,10 +52,10 @@ namespace maze_generation_kruskals_test
 
 			std::cout << r2cm::split;
 
-			r2::Grid<int> grid( 2, 2, r2::Direction4::eState::None );
-			grid.Set( 1, 0, r2::Direction4::eState::Up | r2::Direction4::eState::Down );
-			grid.Set( 1, 1, r2::Direction4::eState::Left | r2::Direction4::eState::Down );
-			grid.Set( 0, 1, r2::Direction4::eState::Right | r2::Direction4::eState::Left );
+			DECLARATION_MAIN( r2::Grid<int> grid( 2, 2, r2::Direction4::eState::None ) );
+			PROCESS_MAIN( grid.Set( 1, 0, r2::Direction4::eState::Up | r2::Direction4::eState::Down ) );
+			PROCESS_MAIN( grid.Set( 1, 1, r2::Direction4::eState::Left | r2::Direction4::eState::Right ) );
+			PROCESS_MAIN( grid.Set( 0, 1, r2::Direction4::eState::Left | r2::Direction4::eState::Right | r2::Direction4::eState::Up ) );
 
 			std::cout << r2cm::split;
 
