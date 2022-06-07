@@ -1,6 +1,7 @@
 #include "maze_generation_kruskals_test.h"
 
 #include <algorithm>
+#include <conio.h>
 #include <random>
 #include <vector>
 
@@ -183,6 +184,15 @@ namespace maze_generation_kruskals_test
 						continue;
 					}
 
+					//
+					// Connect
+					//
+					current_node.Connect( &next_node );
+					
+
+					//
+					// Direction
+					//
 					grid.Get( e.point.GetX(), e.point.GetY() ) |= e.dir;
 
 					//
@@ -193,11 +203,10 @@ namespace maze_generation_kruskals_test
 					current_dir.Rotate( true );
 					grid.Get( next_point.GetX(), next_point.GetY() ) |= current_dir.GetState();
 
-					break;
+					PrintGrid( grid );
+					std::cout << r2cm::linefeed2;
+					_getch();
 				}
-
-				PrintGrid( grid );
-				std::cout << r2cm::linefeed2;
 			}
 
 			std::cout << r2cm::split;
