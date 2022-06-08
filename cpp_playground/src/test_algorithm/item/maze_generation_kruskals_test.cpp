@@ -146,6 +146,13 @@ namespace maze_generation_kruskals_test
 			};
 			DECLARATION_MAIN( r2::Grid<Node> sets( width, height, Node{} ) );
 
+			struct Edge
+			{
+				r2::PointInt point;
+				r2::Direction4::eState dir;
+			};
+			DECLARATION_MAIN( std::vector<Edge> edges );
+
 			std::cout << r2cm::split;
 
 			const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
@@ -158,13 +165,6 @@ namespace maze_generation_kruskals_test
 				std::cout << r2cm::linefeed2;
 				_getch();
 			}
-
-			struct Edge
-			{
-				r2::PointInt point;
-				r2::Direction4::eState dir;
-			};
-			std::vector<Edge> edges;
 
 			std::cout << r2cm::split;
 
