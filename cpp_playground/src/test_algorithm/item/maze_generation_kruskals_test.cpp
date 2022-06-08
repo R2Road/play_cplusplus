@@ -39,13 +39,13 @@ namespace maze_generation_kruskals_test
 						if( ( r2::Direction4::eState::Right | r2::Direction4::eState::Left ) & dir4.GetState() )
 						{
 							r2cm::WindowUtility::MoveCursorPoint( { my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() * 2 ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) } );
-							std::cout << '+';
 						}
 						else
 						{
 							r2cm::WindowUtility::MoveCursorPoint( { my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) } );
-							std::cout << '+';
 						}
+
+						std::cout << '+';
 					}
 				}
 			}
