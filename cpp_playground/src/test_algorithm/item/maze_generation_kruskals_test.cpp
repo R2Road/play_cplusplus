@@ -16,7 +16,53 @@
 
 namespace maze_generation_kruskals_test
 {
-	void PrintGrid( const r2::Grid<int>& grid )
+	class Node
+	{
+	public:
+		Node() : mParentNode( nullptr )
+		{}
+
+		Node* GetRoot()
+		{
+			return mParentNode ? mParentNode->GetRoot() : this;
+		}
+		const Node* GetRoot() const
+		{
+			return mParentNode ? mParentNode->GetRoot() : this;
+		}
+
+		void SetParentNode( Node* const other_node )
+		{
+			mParentNode = other_node;
+		}
+
+		void Connect( Node* const other_node )
+		{
+			R2ASSERT( nullptr != other_node, "Node::Connect : parent_node is nullptr" );
+
+			other_node->GetRoot()->SetParentNode( this );
+		}
+
+		bool IsConnected( Node* other_node )
+		{
+			return GetRoot() == other_node->GetRoot();
+		}
+
+		int GetIndex() const
+		{
+			return mIndex;
+		}
+		void SetIndex( const int index )
+		{
+			mIndex = index;
+		}
+
+	private:
+		Node* mParentNode;
+		int mIndex;
+	};
+
+	void PrintGrid( const r2::Grid<int>& grid, const r2::Grid<Node>& sets )
 	{
 		const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 
@@ -29,7 +75,10 @@ namespace maze_generation_kruskals_test
 					, pivot_point.y + static_cast<short>( y * 3 ) + 2
 				};
 				r2cm::WindowUtility::MoveCursorPoint( { my_pivot_point.x - 1, my_pivot_point.y } );
-				std::cout << std::setw( 3 ) << "@@@";
+				std::cout << "@@@";
+
+				r2cm::WindowUtility::MoveCursorPoint( { my_pivot_point.x - 1, my_pivot_point.y } );
+				std::cout << sets.Get( x, y ).GetRoot()->GetIndex();
 
 				r2::Direction4 dir4;
 				for( int i = 0; 4 > i; ++i, dir4.Rotate( true ) )
@@ -74,10 +123,12 @@ namespace maze_generation_kruskals_test
 			PROCESS_MAIN( grid.Set( 1, 1, r2::Direction4::eState::Left | r2::Direction4::eState::Right ) );
 			PROCESS_MAIN( grid.Set( 0, 1, r2::Direction4::eState::Left | r2::Direction4::eState::Right | r2::Direction4::eState::Up ) );
 
+			DECLARATION_MAIN( r2::Grid<Node> sets( 2, 2, Node{} ) );
+
 			std::cout << r2cm::split;
 
 			{
-				PrintGrid( grid );
+				PrintGrid( grid, sets );
 				std::cout << r2cm::linefeed2;
 			}
 
@@ -121,44 +172,6 @@ namespace maze_generation_kruskals_test
 			DECLARATION_MAIN( const int width = 3 );
 			DECLARATION_MAIN( const int height = 3 );
 			DECLARATION_MAIN( r2::Grid<int> grid( width, height, r2::Direction4::eState::None ) );
-
-			class Node
-			{
-			public:
-				Node() : mParentNode( nullptr )
-				{}
-
-				Node* GetRoot()
-				{
-					return mParentNode ? mParentNode->GetRoot() : this;
-				}
-
-				void SetParentNode( Node* const other_node )
-				{
-					mParentNode = other_node;
-				}
-
-				void Connect( Node* const other_node )
-				{
-					R2ASSERT( nullptr != other_node, "Node::Connect : parent_node is nullptr" );
-
-					other_node->GetRoot()->SetParentNode( this );
-				}
-
-				bool IsConnected( Node* other_node )
-				{
-					return GetRoot() == other_node->GetRoot();
-				}
-
-				void SetIndex( const int index )
-				{
-					mIndex = index;
-				}
-
-			private:
-				Node* mParentNode;
-				int mIndex;
-			};
 			DECLARATION_MAIN( r2::Grid<Node> sets( width, height, Node{} ) );
 			{
 				int temp_index = 0;
@@ -180,7 +193,7 @@ namespace maze_generation_kruskals_test
 				r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 				std::cout << r2cm::tab << "+ Grid" << r2cm::linefeed2;
 
-				PrintGrid( grid );
+				PrintGrid( grid, sets );
 				std::cout << r2cm::linefeed2;
 				_getch();
 			}
@@ -255,7 +268,7 @@ namespace maze_generation_kruskals_test
 					current_dir.Rotate( true );
 					grid.Get( next_point.GetX(), next_point.GetY() ) |= current_dir.GetState();
 
-					PrintGrid( grid );
+					PrintGrid( grid, sets );
 					std::cout << r2cm::linefeed2;
 					if( 27 == _getch() )
 					{
@@ -264,7 +277,7 @@ namespace maze_generation_kruskals_test
 				}
 
 				r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point_4_connect );
-				PrintGrid( grid );
+				PrintGrid( grid, sets );
 				std::cout << r2cm::linefeed2;
 			}
 
