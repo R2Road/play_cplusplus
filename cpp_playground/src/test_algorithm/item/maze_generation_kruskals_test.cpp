@@ -95,6 +95,20 @@ namespace maze_generation_kruskals_test
 
 			std::cout << r2cm::split;
 
+			std::cout << r2cm::tab << "# REF" << r2cm::linefeed2;
+			std::cout << r2cm::tab << "1. https://en.wikipedia.org/wiki/Kruskal's_algorithm" << r2cm::linefeed;
+			std::cout << r2cm::tab << "2. http://weblog.jamisbuck.org/2011/1/3/maze-generation-kruskal-s-algorithm" << r2cm::linefeed;
+			std::cout << r2cm::tab << "3. https://gmlwjd9405.github.io/2018/08/29/algorithm-kruskal-mst.html" << r2cm::linefeed;
+			std::cout << r2cm::tab << "4. https://gmlwjd9405.github.io/2018/08/31/algorithm-union-find.html" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			std::cout << r2cm::tab << "# 이해를 위해 반드시 알아둬야 할 것들" << r2cm::linefeed2;
+			std::cout << r2cm::tab << "1. Kruskal's Algorithm" << r2cm::linefeed;
+			std::cout << r2cm::tab << "2. Union Find Algorithm : 연결 과정에서 사용" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
 			DECLARATION_MAIN( const int width = 3 );
 			DECLARATION_MAIN( const int height = 3 );
 			DECLARATION_MAIN( r2::Grid<int> grid( width, height, r2::Direction4::eState::None ) );
