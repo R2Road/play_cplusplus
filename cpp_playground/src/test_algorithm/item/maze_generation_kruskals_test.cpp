@@ -95,8 +95,8 @@ namespace maze_generation_kruskals_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const int width = 4 );
-			DECLARATION_MAIN( const int height = 4 );
+			DECLARATION_MAIN( const int width = 3 );
+			DECLARATION_MAIN( const int height = 3 );
 			DECLARATION_MAIN( r2::Grid<int> grid( width, height, r2::Direction4::eState::None ) );
 
 			class Node
@@ -134,11 +134,15 @@ namespace maze_generation_kruskals_test
 
 			std::cout << r2cm::split;
 
+			const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+
 			{
+				r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 				std::cout << r2cm::tab << "+ Grid" << r2cm::linefeed2;
 
 				PrintGrid( grid );
 				std::cout << r2cm::linefeed2;
+				_getch();
 			}
 
 			struct Edge
@@ -151,6 +155,7 @@ namespace maze_generation_kruskals_test
 			std::cout << r2cm::split;
 
 			{
+				r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 				std::cout << r2cm::tab << "+ Make Edges" << r2cm::linefeed2;
 
 				edges.reserve( grid.GetSize() * 2u );
@@ -172,17 +177,23 @@ namespace maze_generation_kruskals_test
 				static std::random_device random_device;
 				static std::mt19937 random_engine( random_device() );
 				std::shuffle( edges.begin(), edges.end(), random_engine );
+				_getch();
 			}
 
 			std::cout << r2cm::split;
 
 			{
+				r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 				std::cout << r2cm::tab << "+ Connect" << r2cm::linefeed2;
+
+				const auto pivot_point_4_connect = r2cm::WindowUtility::GetCursorPoint();
 
 				r2::PointInt next_point;
 				r2::Direction4 current_dir;
 				for( const auto& e : edges )
 				{
+					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point_4_connect );
+
 					next_point = e.point + r2::Direction4( e.dir ).GetPoint();
 
 					auto& current_node = sets.Get( e.point.GetX(), e.point.GetY() );
@@ -215,6 +226,10 @@ namespace maze_generation_kruskals_test
 					std::cout << r2cm::linefeed2;
 					_getch();
 				}
+
+				r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point_4_connect );
+				PrintGrid( grid );
+				std::cout << r2cm::linefeed2;
 			}
 
 			std::cout << r2cm::split;
