@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <conio.h>
+#include <iomanip>
 #include <random>
 #include <vector>
 
@@ -24,19 +25,27 @@ namespace maze_generation_kruskals_test
 			for( int x = 0; grid.GetHeight() > x; ++x )
 			{
 				const r2cm::WindowUtility::CursorPoint my_pivot_point = {
-					pivot_point.x + static_cast<short>( x * 3 ) + 1
-					, pivot_point.y + static_cast<short>( y * 3 ) + 1
+					pivot_point.x + static_cast<short>( x * 5 ) + 2
+					, pivot_point.y + static_cast<short>( y * 3 ) + 2
 				};
-				r2cm::WindowUtility::MoveCursorPoint( my_pivot_point );
-				std::cout << '@';
+				r2cm::WindowUtility::MoveCursorPoint( { my_pivot_point.x - 1, my_pivot_point.y } );
+				std::cout << std::setw( 3 ) << "@@@";
 
 				r2::Direction4 dir4;
 				for( int i = 0; 4 > i; ++i, dir4.Rotate( true ) )
 				{
 					if( grid.Get( x, y ) & dir4.GetState() )
 					{
-						r2cm::WindowUtility::MoveCursorPoint( { my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) } );
-						std::cout << '+';
+						if( ( r2::Direction4::eState::Right | r2::Direction4::eState::Left ) & dir4.GetState() )
+						{
+							r2cm::WindowUtility::MoveCursorPoint( { my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() * 2 ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) } );
+							std::cout << '+';
+						}
+						else
+						{
+							r2cm::WindowUtility::MoveCursorPoint( { my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) } );
+							std::cout << '+';
+						}
 					}
 				}
 			}
