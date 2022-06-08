@@ -150,10 +150,20 @@ namespace maze_generation_kruskals_test
 					return GetRoot() == other_node->GetRoot();
 				}
 
+				void SetIndex( const int index )
+				{
+					mIndex = index;
+				}
+
 			private:
 				Node* mParentNode;
+				int mIndex;
 			};
 			DECLARATION_MAIN( r2::Grid<Node> sets( width, height, Node{} ) );
+			{
+				int temp_index = 0;
+				for( auto& n : sets ) { n.SetIndex( temp_index ); ++temp_index; }
+			}
 
 			struct Edge
 			{
