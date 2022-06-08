@@ -95,7 +95,9 @@ namespace maze_generation_kruskals_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( r2::Grid<int> grid( 4, 4, r2::Direction4::eState::None ) );
+			DECLARATION_MAIN( const int width = 4 );
+			DECLARATION_MAIN( const int height = 4 );
+			DECLARATION_MAIN( r2::Grid<int> grid( width, height, r2::Direction4::eState::None ) );
 
 			class Node
 			{
@@ -128,7 +130,7 @@ namespace maze_generation_kruskals_test
 			private:
 				Node* mParentNode;
 			};
-			DECLARATION_MAIN( r2::Grid<Node> sets( 4, 4, Node{} ) );
+			DECLARATION_MAIN( r2::Grid<Node> sets( width, height, Node{} ) );
 
 			std::cout << r2cm::split;
 
