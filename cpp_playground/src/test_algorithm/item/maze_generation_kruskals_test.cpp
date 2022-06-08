@@ -247,7 +247,10 @@ namespace maze_generation_kruskals_test
 
 					PrintGrid( grid );
 					std::cout << r2cm::linefeed2;
-					_getch();
+					if( 27 == _getch() )
+					{
+						break;
+					}
 				}
 
 				r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point_4_connect );
