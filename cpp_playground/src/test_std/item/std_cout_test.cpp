@@ -394,7 +394,7 @@ namespace std_cout_test
 
 			{
 				PROCESS_MAIN( std::cout << std::setw( 20 ) << std::right << "align right" << r2cm::linefeed2 );
-				PROCESS_MAIN( std::cout << std::setw( 20 ) << std::left << "align left" << r2cm::linefeed );
+				PROCESS_MAIN( std::cout << std::setw( 20 ) << std::left << "align left" << r2cm::linefeed2 );
 				PROCESS_MAIN( std::cout << std::setw( 20 ) << std::internal << std::showpos << 1234 << r2cm::linefeed );
 			}
 
@@ -402,7 +402,7 @@ namespace std_cout_test
 
 			{
 				PROCESS_MAIN( std::cout << std::setfill( 'x' ) << std::setw( 20 ) << std::right << "1234" << r2cm::linefeed2 );
-				PROCESS_MAIN( std::cout << std::setfill( 'x' ) << std::setw( 20 ) << std::left << "1234" << r2cm::linefeed );
+				PROCESS_MAIN( std::cout << std::setfill( 'x' ) << std::setw( 20 ) << std::left << "1234" << r2cm::linefeed2 );
 				PROCESS_MAIN( std::cout << std::setfill( 'x' ) << std::setw( 20 ) << std::internal << std::showpos << 1234 << r2cm::linefeed );
 			}
 
