@@ -19,7 +19,7 @@ namespace maze_generation_kruskals_test
 	class Node
 	{
 	public:
-		Node() : mParentNode( nullptr )
+		Node() : mParentNode( nullptr ), mIndex( 0 )
 		{}
 
 		Node* GetRoot()
@@ -72,7 +72,7 @@ namespace maze_generation_kruskals_test
 			{
 				const r2cm::WindowUtility::CursorPoint my_pivot_point = {
 					pivot_point.x + static_cast<short>( x * 5 ) + 2
-					, pivot_point.y + static_cast<short>( y * 3 ) + 2
+					, pivot_point.y + static_cast<short>( y * 3 ) + 1
 				};
 				r2cm::WindowUtility::MoveCursorPoint( { my_pivot_point.x - 1, my_pivot_point.y } );
 				std::cout << "@@@";
@@ -114,7 +114,7 @@ namespace maze_generation_kruskals_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
 
@@ -151,7 +151,7 @@ namespace maze_generation_kruskals_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
 
@@ -161,7 +161,7 @@ namespace maze_generation_kruskals_test
 			std::cout << r2cm::tab << "3. https://gmlwjd9405.github.io/2018/08/29/algorithm-kruskal-mst.html" << r2cm::linefeed;
 			std::cout << r2cm::tab << "4. https://gmlwjd9405.github.io/2018/08/31/algorithm-union-find.html" << r2cm::linefeed;
 
-			std::cout << r2cm::split;
+			std::cout << r2cm::linefeed2;
 
 			std::cout << r2cm::tab << "# 이해를 위해 반드시 알아둬야 할 것들" << r2cm::linefeed2;
 			std::cout << r2cm::tab << "1. Kruskal's Algorithm" << r2cm::linefeed;
