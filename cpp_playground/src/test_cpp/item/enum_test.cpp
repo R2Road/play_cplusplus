@@ -143,3 +143,55 @@ namespace enum_test
 		};
 	}
 }
+
+
+
+namespace enum_test
+{
+#define X_ENUMS			\
+		X( First ),		\
+		X( Second ),	\
+		X( Third ),		\
+		X( Max ),
+
+	enum eTestEnum
+	{
+#define X( e ) e
+		X_ENUMS
+#undef X
+	};
+
+	const char* STR_TestEnum[] = {
+#define X( e ) #e
+		X_ENUMS
+#undef X
+	};
+
+	r2cm::iItem::TitleFuncT XMacro::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "XMacro";
+		};
+	}
+	r2cm::iItem::DoFuncT XMacro::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				for( int i = 0; i <= eTestEnum::Max; ++i )
+				{
+					printf( "%s\n", STR_TestEnum[i] );
+				}
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+}

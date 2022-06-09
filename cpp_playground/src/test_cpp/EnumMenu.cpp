@@ -14,6 +14,7 @@ r2cm::MenuUp EnumMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem( '1', enum_test::Basic::GetInstance() );
 		ret->AddItem( '2', enum_test::Convert::GetInstance() );
+		ret->AddItem( '3', enum_test::XMacro::GetInstance() );
 
 
 		ret->AddSplit();
