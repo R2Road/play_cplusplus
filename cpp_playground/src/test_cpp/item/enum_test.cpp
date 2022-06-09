@@ -183,9 +183,38 @@ namespace enum_test
 			std::cout << r2cm::split;
 
 			{
+				std::cout << r2cm::tab << "#define X_ENUMS" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "X( First )," << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "X( Second )," << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "X( Third )," << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "X( Max )," << r2cm::linefeed;
+
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "enum eTestEnum" << r2cm::linefeed;
+				std::cout << r2cm::tab << "{" << r2cm::linefeed;
+				std::cout << r2cm::tab << "#define X( e ) e" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "X_ENUMS" << r2cm::linefeed;
+				std::cout << r2cm::tab << "#undef X" << r2cm::linefeed;
+				std::cout << r2cm::tab << "};" << r2cm::linefeed;
+
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "const char* STR_TestEnum[] = {" << r2cm::linefeed;
+				std::cout << r2cm::tab << "#define X( e ) #e" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "X_ENUMS" << r2cm::linefeed;
+				std::cout << r2cm::tab << "#undef X" << r2cm::linefeed;
+				std::cout << r2cm::tab << "};" << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ " << "Output" << r2cm::linefeed2;
+
 				for( int i = 0; i <= eTestEnum::Max; ++i )
 				{
-					printf( "%s\n", STR_TestEnum[i] );
+					printf( "%d : %s\n", i, STR_TestEnum[i] );
 				}
 			}
 
