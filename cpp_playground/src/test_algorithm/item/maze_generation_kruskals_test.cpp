@@ -85,16 +85,19 @@ namespace maze_generation_kruskals_test
 				{
 					if( grid.Get( x, y ) & dir4.GetState() )
 					{
+						r2cm::WindowUtility::CursorPoint current_point;
+
 						if( ( r2::Direction4::eState::Right | r2::Direction4::eState::Left ) & dir4.GetState() )
 						{
-							r2cm::WindowUtility::MoveCursorPoint( { my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() * 2 ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) } );
+							current_point = { my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() * 2 ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) };
 						}
 						else
 						{
-							r2cm::WindowUtility::MoveCursorPoint( { my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) } );
+							current_point = { my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) };
 						}
 
-						std::cout << '+';
+						r2cm::WindowUtility::MoveCursorPoint( current_point );
+						r2cm::WindowUtility::FillColor( current_point, r2cm::WindowUtility::eColor::BG_Aqua );
 					}
 				}
 			}
