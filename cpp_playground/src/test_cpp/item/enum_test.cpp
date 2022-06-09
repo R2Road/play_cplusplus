@@ -182,6 +182,11 @@ namespace enum_test
 
 			std::cout << r2cm::split;
 
+			std::cout << r2cm::tab << "+ Ref" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
 			{
 				std::cout << r2cm::tab << "#define X_ENUMS" << r2cm::linefeed;
 				std::cout << r2cm::tab2 << "X( First )," << r2cm::linefeed;
