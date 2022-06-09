@@ -19,6 +19,13 @@ namespace enum_test
 		DoFuncT GetDoFunction() override;
 	};
 
+	class MakeEnumWithMacro : public r2cm::iItem, public r2cm::SingleTon<MakeEnumWithMacro>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class XMacro : public r2cm::iItem, public r2cm::SingleTon<XMacro>
 	{
 	public:

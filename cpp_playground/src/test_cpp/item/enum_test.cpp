@@ -148,6 +148,58 @@ namespace enum_test
 
 namespace enum_test
 {
+#define MAKE_ENUM( enum_name, ... ) enum enum_name { __VA_ARGS__, __COUNT };
+
+	MAKE_ENUM( eMakeEnumTest, One, Two, Three, Max4MakeEnumTest );
+
+	r2cm::iItem::TitleFuncT MakeEnumWithMacro::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Make Enum With Macro";
+		};
+	}
+	r2cm::iItem::DoFuncT MakeEnumWithMacro::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			std::cout << r2cm::tab << "+ Ref" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "#define MAKE_ENUM( enum_name, ... ) enum enum_name { __VA_ARGS__, __COUNT };" << r2cm::linefeed2;
+
+				std::cout << r2cm::tab << "MAKE_ENUM( eMakeEnumTest, One, Two, Three, Max4MakeEnumTest );" << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ " << "Output" << r2cm::linefeed2;
+
+				for( int i = 0; i <= eMakeEnumTest::Max4MakeEnumTest; ++i )
+				{
+					printf( "%d\n", i );
+				}
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+}
+
+
+
+namespace enum_test
+{
 #define X_ENUMS			\
 		X( First ),		\
 		X( Second ),	\
