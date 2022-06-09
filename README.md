@@ -25,3 +25,6 @@
 <p float:left;">
 <img src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/algorithm_astar_test_20220131.png" width=80%></img>
 </p>
+<p float:left;">
+<img src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/maze_generation_kruskals_test_20220609_1.png" width=80%></img>
+</p>
