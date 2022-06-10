@@ -26,7 +26,7 @@ namespace enum_test
 		DoFuncT GetDoFunction() override;
 	};
 
-	class XMacro : public r2cm::iItem, public r2cm::SingleTon<XMacro>
+	class XMacro_1 : public r2cm::iItem, public r2cm::SingleTon<XMacro_1>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

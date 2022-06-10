@@ -219,14 +219,14 @@ namespace enum_test
 #undef X
 	};
 
-	r2cm::iItem::TitleFuncT XMacro::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT XMacro_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "XMacro";
+			return "XMacro_1";
 		};
 	}
-	r2cm::iItem::DoFuncT XMacro::GetDoFunction()
+	r2cm::iItem::DoFuncT XMacro_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
