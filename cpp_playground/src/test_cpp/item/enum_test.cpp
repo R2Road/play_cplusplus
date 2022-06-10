@@ -149,7 +149,7 @@ namespace enum_test
 
 namespace enum_test
 {
-#define MAKE_ENUM( enum_name, ... ) enum enum_name { __VA_ARGS__, __COUNT };
+#define MAKE_ENUM( enum_name, ... ) enum enum_name { __VA_ARGS__ };
 
 	MAKE_ENUM( eMakeEnumTest, One, Two, Three, Max4MakeEnumTest );
 
