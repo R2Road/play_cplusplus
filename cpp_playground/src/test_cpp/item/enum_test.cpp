@@ -236,6 +236,7 @@ namespace enum_test
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "+ Ref" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "https://en.wikipedia.org/wiki/X_Macro" << r2cm::linefeed;
 			std::cout << r2cm::tab2 << "https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
@@ -316,6 +317,7 @@ namespace enum_test
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "+ Ref" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "https://en.wikipedia.org/wiki/X_Macro" << r2cm::linefeed;
 			std::cout << r2cm::tab2 << "https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
