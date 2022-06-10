@@ -201,20 +201,20 @@ namespace enum_test
 
 namespace enum_test
 {
-#define X_ENUMS			\
-		X( First ),		\
-		X( Second ),	\
-		X( Third ),		\
-		X( Max ),
+#define X_ENUMS				\
+		X( XM1_First ),		\
+		X( XM1_Second ),	\
+		X( XM1_Third ),		\
+		X( XM1_Max ),
 
-	enum eTestEnum
+	enum eTestEnum4XM1
 	{
 #define X( e ) e
 		X_ENUMS
 #undef X
 	};
 
-	const char* STR_TestEnum[] = {
+	const char* STR_TestEnum4XM1[] = {
 #define X( e ) #e
 		X_ENUMS
 #undef X
@@ -242,14 +242,14 @@ namespace enum_test
 
 			{
 				std::cout << r2cm::tab << "#define X_ENUMS" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "X( First )," << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "X( Second )," << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "X( Third )," << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "X( Max )," << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "X( XM1_First )," << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "X( XM1_Second )," << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "X( XM1_Third )," << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "X( XM1_Max )," << r2cm::linefeed;
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "enum eTestEnum" << r2cm::linefeed;
+				std::cout << r2cm::tab << "enum eTestEnum4XM1" << r2cm::linefeed;
 				std::cout << r2cm::tab << "{" << r2cm::linefeed;
 				std::cout << r2cm::tab << "#define X( e ) e" << r2cm::linefeed;
 				std::cout << r2cm::tab2 << "X_ENUMS" << r2cm::linefeed;
@@ -258,7 +258,7 @@ namespace enum_test
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "const char* STR_TestEnum[] = {" << r2cm::linefeed;
+				std::cout << r2cm::tab << "const char* STR_TestEnum4XM1[] = {" << r2cm::linefeed;
 				std::cout << r2cm::tab << "#define X( e ) #e" << r2cm::linefeed;
 				std::cout << r2cm::tab2 << "X_ENUMS" << r2cm::linefeed;
 				std::cout << r2cm::tab << "#undef X" << r2cm::linefeed;
@@ -270,9 +270,9 @@ namespace enum_test
 			{
 				std::cout << r2cm::tab << "+ " << "Output" << r2cm::linefeed2;
 
-				for( int i = 0; i <= eTestEnum::Max; ++i )
+				for( int i = 0; i <= eTestEnum4XM1::XM1_Max; ++i )
 				{
-					printf( "%d : %s\n", i, STR_TestEnum[i] );
+					printf( "%d : %s\n", i, STR_TestEnum4XM1[i] );
 				}
 			}
 
