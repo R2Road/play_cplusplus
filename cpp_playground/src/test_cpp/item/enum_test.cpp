@@ -224,7 +224,7 @@ namespace enum_test
 	{
 		return []()->const char*
 		{
-			return "XMacro_1";
+			return "XMacro 1";
 		};
 	}
 	r2cm::iItem::DoFuncT XMacro_1::GetDoFunction()
