@@ -840,4 +840,9 @@
       <Filter>test_algorithm\item</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="src\test_cpp\item\enum_test_xmacro_2.def">
+      <Filter>test_cpp\item</Filter>
+    </None>
+  </ItemGroup>
 </Project>

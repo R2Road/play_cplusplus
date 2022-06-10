@@ -32,4 +32,11 @@ namespace enum_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class XMacro_2 : public r2cm::iItem, public r2cm::SingleTon<XMacro_2>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

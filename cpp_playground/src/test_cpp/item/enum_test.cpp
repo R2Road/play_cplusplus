@@ -4,6 +4,7 @@
 #include <type_traits>
 
 #include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_Inspector.h"
 
 namespace enum_test
 {
@@ -272,6 +273,82 @@ namespace enum_test
 				for( int i = 0; i <= eTestEnum::Max; ++i )
 				{
 					printf( "%d : %s\n", i, STR_TestEnum[i] );
+				}
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+}
+
+
+
+namespace enum_test
+{
+	enum eTestEnum4XM2
+	{
+#define X( e ) e,
+		#include "enum_test_xmacro_2.def"
+#undef X
+	};
+
+	const char* STR_TestEnum4XM2[] = {
+#define X( e ) #e,
+		#include "enum_test_xmacro_2.def"
+#undef X
+	};
+
+	r2cm::iItem::TitleFuncT XMacro_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "XMacro 2";
+		};
+	}
+	r2cm::iItem::DoFuncT XMacro_2::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			std::cout << r2cm::tab << "+ Ref" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				SHOW_FILE( "src/test_cpp/item/enum_test_xmacro_2.def" );
+
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "enum eTestEnum4XM2" << r2cm::linefeed;
+				std::cout << r2cm::tab << "{" << r2cm::linefeed;
+				std::cout << r2cm::tab << "#define X( e ) e" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "#include \"enum_test_xmacro_2.def\"" << r2cm::linefeed;
+				std::cout << r2cm::tab << "#undef X" << r2cm::linefeed;
+				std::cout << r2cm::tab << "};" << r2cm::linefeed;
+
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "const char* STR_TestEnum4MX[] = {" << r2cm::linefeed;
+				std::cout << r2cm::tab << "#define X( e ) #e" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "#include \"enum_test_xmacro_2.def\"" << r2cm::linefeed;
+				std::cout << r2cm::tab << "#undef X" << r2cm::linefeed;
+				std::cout << r2cm::tab << "};" << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ " << "Output" << r2cm::linefeed2;
+
+				for( int i = 0; i <= eTestEnum4XM2::XM2_Max; ++i )
+				{
+					printf( "%d : %s\n", i, STR_TestEnum4XM2[i] );
 				}
 			}
 
