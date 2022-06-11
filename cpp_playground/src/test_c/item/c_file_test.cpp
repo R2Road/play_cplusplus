@@ -67,12 +67,16 @@ namespace c_file_test
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( FILE* fp = nullptr );
+			EXPECT_EQ( 0, fopen_s( &fp, "src/test_c/item/c_file_test_openandclose_1.txt", "rb" ) );
+
+			std::cout << r2cm::split;
+
+			OUTPUT_CODE( temp = fgetc( fp ) );
+
+			std::cout << r2cm::split;
+
 			{
-				DECLARATION_MAIN( FILE* fp = nullptr );
-				EXPECT_EQ( 0, fopen_s( &fp, "src/test_c/item/c_file_test_openandclose_1.txt", "rb" ) );
-
-				std::cout << r2cm::linefeed2;
-
 				char temp = 0;
 				while( !feof( fp ) )
 				{
@@ -80,10 +84,12 @@ namespace c_file_test
 					printf( "%c", temp );
 				}
 
-				std::cout << r2cm::linefeed2;
-
-				PROCESS_MAIN( fclose( fp ) );
+				std::cout << r2cm::linefeed;
 			}
+
+			std::cout << r2cm::split;
+
+			PROCESS_MAIN( fclose( fp ) );
 
 			std::cout << r2cm::split;
 
