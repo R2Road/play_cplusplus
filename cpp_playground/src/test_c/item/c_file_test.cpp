@@ -74,14 +74,9 @@ namespace c_file_test
 				std::cout << r2cm::linefeed2;
 
 				char temp = 0;
-				while( true )
+				while( !feof( fp ) )
 				{
 					temp = fgetc( fp );
-					if( temp == EOF )
-					{
-						break;
-					}
-
 					printf( "%c", temp );
 				}
 
