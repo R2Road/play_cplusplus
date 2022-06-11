@@ -1,0 +1,31 @@
+#include "c_file_test.h"
+
+#include "r2cm/r2cm_constant.h"
+
+namespace c_file_test
+{
+	r2cm::iItem::TitleFuncT OpenAndClose::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "C File : Open And Close";
+		};
+	}
+	r2cm::iItem::DoFuncT OpenAndClose::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				FILE* fp = nullptr;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+}

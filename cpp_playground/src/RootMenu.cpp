@@ -3,6 +3,7 @@
 #include "r2cm/r2cm_constant.h"
 #include "r2cm/r2cm_Director.h"
 
+#include "test_c/item/c_file_test.h"
 #include "test_cpp/item/console_input_test.h"
 
 #include "test_algorithm/AlgorithmMenu.h"
@@ -42,6 +43,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
+		ret->AddItem( '3', c_file_test::OpenAndClose::GetInstance() );
 
 
 		ret->AddLineFeed();

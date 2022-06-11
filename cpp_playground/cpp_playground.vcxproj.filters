@@ -49,6 +49,12 @@
     <Filter Include="test_std\item">
       <UniqueIdentifier>{3e075bee-01f0-40df-a7cb-d0b6b5f09418}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test_c">
+      <UniqueIdentifier>{5e31479a-288d-46e3-8a1d-85fb424f6364}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test_c\item">
+      <UniqueIdentifier>{217ec678-6f35-4c58-914a-ed108f613964}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -430,6 +436,9 @@
     </ClCompile>
     <ClCompile Include="src\test_algorithm\item\maze_generation_kruskals_test.cpp">
       <Filter>test_algorithm\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_c\item\c_file_test.cpp">
+      <Filter>test_c\item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -838,6 +847,9 @@
     </ClInclude>
     <ClInclude Include="src\test_algorithm\item\maze_generation_kruskals_test.h">
       <Filter>test_algorithm\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_c\item\c_file_test.h">
+      <Filter>test_c\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
