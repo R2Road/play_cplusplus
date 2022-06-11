@@ -45,6 +45,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem( '3', c_file_test::OpenAndClose::GetInstance() );
 		ret->AddItem( '4', c_file_test::GetCharacter::GetInstance() );
+		ret->AddItem( '5', c_file_test::GetLine::GetInstance() );
 
 
 		ret->AddLineFeed();

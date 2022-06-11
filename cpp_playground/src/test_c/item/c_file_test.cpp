@@ -90,4 +90,51 @@ namespace c_file_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT GetLine::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "C File : Get Line";
+		};
+	}
+	r2cm::iItem::DoFuncT GetLine::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( FILE* fp = nullptr );
+			EXPECT_EQ( 0, fopen_s( &fp, "src/test_c/item/c_file_test_openandclose_1.txt", "rb" ) );
+
+			std::cout << r2cm::split;
+
+			OUTPUT_CODE( fgets( temp, sizeof( temp ), fp ) );
+
+			std::cout << r2cm::split;
+
+			{
+				char temp[256];
+				while( !feof( fp ) )
+				{
+					fgets( temp, sizeof( temp ), fp );
+					printf( "%s", temp );
+				}
+
+				std::cout << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			PROCESS_MAIN( fclose( fp ) );
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

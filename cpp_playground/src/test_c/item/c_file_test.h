@@ -18,4 +18,11 @@ namespace c_file_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class GetLine : public r2cm::iItem, public r2cm::SingleTon<GetLine>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }
