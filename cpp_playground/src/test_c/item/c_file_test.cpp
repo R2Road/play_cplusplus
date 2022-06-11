@@ -52,14 +52,14 @@ namespace c_file_test
 
 
 
-	r2cm::iItem::TitleFuncT ShowAll::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT GetCharacter::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "C File : ShowAll";
+			return "C File : Get Character";
 		};
 	}
-	r2cm::iItem::DoFuncT ShowAll::GetDoFunction()
+	r2cm::iItem::DoFuncT GetCharacter::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
