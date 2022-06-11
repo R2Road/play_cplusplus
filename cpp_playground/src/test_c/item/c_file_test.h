@@ -11,4 +11,11 @@ namespace c_file_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class ShowAll : public r2cm::iItem, public r2cm::SingleTon<ShowAll>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }
