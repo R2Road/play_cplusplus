@@ -7,7 +7,6 @@
 #include "test_std/item/std_cout_test.h"
 #include "test_std/item/std_function_test.h"
 #include "test_std/item/std_function_2_test.h"
-#include "test_std/item/std_fstream_test.h"
 #include "test_std/item/std_optional_test.h"
 #include "test_std/item/std_regex_test.h"
 #include "test_std/item/std_stringview_test.h"
@@ -46,7 +45,6 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 		ret->AddItem( '5', std_stringview_test::Basic::GetInstance() );
 		ret->AddItem( '6', std_tuple_test::Basic::GetInstance() );
 		ret->AddItem( '7', std_variant_test::Basic::GetInstance() );
-		ret->AddItem( '8', std_fstream_test::Basic::GetInstance() );
 
 		ret->AddLineFeed();
 

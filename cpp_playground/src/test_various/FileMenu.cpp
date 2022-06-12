@@ -4,6 +4,7 @@
 #include "r2cm/r2cm_Director.h"
 
 #include "test_c/item/c_file_test.h"
+#include "test_std/item/std_fstream_test.h"
 
 #include "RootMenu.h"
 
@@ -15,6 +16,12 @@ r2cm::MenuUp FileMenu::Create( r2cm::Director& director )
 		ret->AddItem( '1', c_file_test::OpenAndClose::GetInstance() );
 		ret->AddItem( '2', c_file_test::GetCharacter::GetInstance() );
 		ret->AddItem( '3', c_file_test::GetLine::GetInstance() );
+
+
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'q', std_fstream_test::Basic::GetInstance() );	
 
 
 		ret->AddSplit();
