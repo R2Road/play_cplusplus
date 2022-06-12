@@ -26,7 +26,7 @@ namespace std_fstream_test
 		DoFuncT GetDoFunction() override;
 	};
 
-	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	class GetBlank2Blank : public r2cm::iItem, public r2cm::SingleTon<GetBlank2Blank>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

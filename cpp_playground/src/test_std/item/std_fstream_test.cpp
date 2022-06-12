@@ -198,14 +198,14 @@ namespace std_fstream_test
 
 
 
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT GetBlank2Blank::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "fstream : Basic";
+			return "fstream : Get Blank 2 Blank";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT GetBlank2Blank::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -226,7 +226,7 @@ namespace std_fstream_test
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( while( ifs >> buffer ) std::cout << buffer << r2cm::linefeed );
+				PROCESS_MAIN( while( ifs >> buffer ) { std::cout << buffer << r2cm::linefeed; } );
 
 				std::cout << r2cm::linefeed;
 
