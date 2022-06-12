@@ -72,18 +72,8 @@ namespace c_file_test
 
 			std::cout << r2cm::split;
 
-			OUTPUT_CODE( temp = fgetc( fp ) );
-
-			std::cout << r2cm::split;
-
 			{
-				int temp = 0;
-				while( !feof( fp ) )
-				{
-					temp = fgetc( fp );
-					printf( "%c", temp );
-				}
-
+				PROCESS_MAIN( while( !feof( fp ) ) printf( "%c", fgetc( fp ) ) );
 				std::cout << r2cm::linefeed;
 			}
 
@@ -119,17 +109,9 @@ namespace c_file_test
 
 			std::cout << r2cm::split;
 
-			OUTPUT_CODE( fgets( temp, sizeof( temp ), fp ) );
-
-			std::cout << r2cm::split;
-
 			{
-				char temp[256];
-				while( !feof( fp ) )
-				{
-					fgets( temp, sizeof( temp ), fp );
-					printf( "%s", temp );
-				}
+				DECLARATION_MAIN( char temp[256] );
+				PROCESS_MAIN( while( !feof( fp ) ) { fgets( temp, sizeof( temp ), fp ); printf( "%s", temp ); } );
 
 				std::cout << r2cm::linefeed;
 			}
