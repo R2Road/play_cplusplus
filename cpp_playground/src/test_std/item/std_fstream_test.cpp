@@ -95,6 +95,51 @@ namespace std_fstream_test
 
 
 
+	r2cm::iItem::TitleFuncT GetCharacter::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "fstream : GetCharacter";
+		};
+	}
+	r2cm::iItem::DoFuncT GetCharacter::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
+			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
+			std::cout << "p : " << p << r2cm::linefeed;
+			EXPECT_TRUE( std::filesystem::exists( p ) );
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ std::ifstream::get" << r2cm::linefeed2;
+
+				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
+				EXPECT_FALSE( ifs.fail() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( while( !ifs.eof() ) { std::cout << static_cast<char>( ifs.get() ); } );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( ifs.close() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*

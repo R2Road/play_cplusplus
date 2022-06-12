@@ -12,6 +12,13 @@ namespace std_fstream_test
 		DoFuncT GetDoFunction() override;
 	};
 
+	class GetCharacter : public r2cm::iItem, public r2cm::SingleTon<GetCharacter>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
 	{
 	public:
