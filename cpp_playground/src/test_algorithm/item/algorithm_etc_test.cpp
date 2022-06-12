@@ -1,8 +1,5 @@
 #include "algorithm_etc_test.h"
 
-#include <conio.h> // _kbhit(), _getch()
-#include <Windows.h>
-
 #include "r2cm/r2cm_constant.h"
 
 //
