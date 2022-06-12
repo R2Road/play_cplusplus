@@ -111,8 +111,7 @@ namespace std_fstream_test
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
-			PROCESS_MAIN( p.append( "resources" ) );
-			PROCESS_MAIN( p.append( "std_fstream_test_0.txt" ) );
+			PROCESS_MAIN( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
 			std::cout << "p : " << p << r2cm::linefeed2;
 
 			EXPECT_TRUE( std::filesystem::exists( p ) );
