@@ -3,7 +3,6 @@
 #include "r2cm/r2cm_constant.h"
 #include "r2cm/r2cm_Director.h"
 
-#include "test_c/item/c_file_test.h"
 #include "test_cpp/item/console_input_test.h"
 
 #include "test_algorithm/AlgorithmMenu.h"
@@ -16,6 +15,7 @@
 #include "test_hobby/HobbyMenu.h"
 #include "test_performance/PerformanceMenu.h"
 #include "test_std/STDMenu.h"
+#include "test_various/FileMenu.h"
 #include "test_windows/TestWindowsMenu.h"
 
 r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
@@ -42,10 +42,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 				director.Setup( TestWindowsMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
-		);
-		ret->AddItem( '3', c_file_test::OpenAndClose::GetInstance() );
-		ret->AddItem( '4', c_file_test::GetCharacter::GetInstance() );
-		ret->AddItem( '5', c_file_test::GetLine::GetInstance() );
+		);		
 
 
 		ret->AddLineFeed();
@@ -71,6 +68,15 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			'e'
+			, []()->const char* { return FileMenu::GetTitle(); }
+			, [&director]()->r2cm::eItemLeaveAction
+			{
+				director.Setup( FileMenu::Create( director ) );
+				return r2cm::eItemLeaveAction::None;
+			}
+		);
+		ret->AddItem(
+			'r'
 			, []()->const char* { return TimeMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
@@ -79,7 +85,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem(
-			'r'
+			't'
 			, []()->const char* { return RandomMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
@@ -88,7 +94,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem(
-			't'
+			'y'
 			, []()->const char* { return DebugMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{

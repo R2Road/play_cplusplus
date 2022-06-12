@@ -55,6 +55,9 @@
     <Filter Include="test_c\item">
       <UniqueIdentifier>{217ec678-6f35-4c58-914a-ed108f613964}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test_various">
+      <UniqueIdentifier>{b19241a3-88bd-445e-80a0-e5851f32d0b1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -439,6 +442,9 @@
     </ClCompile>
     <ClCompile Include="src\test_c\item\c_file_test.cpp">
       <Filter>test_c\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_various\FileMenu.cpp">
+      <Filter>test_various</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -850,6 +856,9 @@
     </ClInclude>
     <ClInclude Include="src\test_c\item\c_file_test.h">
       <Filter>test_c\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_various\FileMenu.h">
+      <Filter>test_various</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

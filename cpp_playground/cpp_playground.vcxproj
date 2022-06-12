@@ -132,6 +132,7 @@
     <ClCompile Include="src\test_std\STDMenu.cpp" />
     <ClCompile Include="src\test_std\STDNumericMenu.cpp" />
     <ClCompile Include="src\test_std\STDThreadMenu.cpp" />
+    <ClCompile Include="src\test_various\FileMenu.cpp" />
     <ClCompile Include="src\test_windows\ConsoleTextColorMenu.cpp" />
     <ClCompile Include="src\test_windows\ConsoleWindowMenu.cpp" />
     <ClCompile Include="src\test_windows\FlickeringResearchMenu.cpp" />
@@ -271,6 +272,7 @@
     <ClInclude Include="src\test_std\STDMenu.h" />
     <ClInclude Include="src\test_std\STDNumericMenu.h" />
     <ClInclude Include="src\test_std\STDThreadMenu.h" />
+    <ClInclude Include="src\test_various\FileMenu.h" />
     <ClInclude Include="src\test_windows\ConsoleTextColorMenu.h" />
     <ClInclude Include="src\test_windows\ConsoleWindowMenu.h" />
     <ClInclude Include="src\test_windows\FlickeringResearchMenu.h" />
