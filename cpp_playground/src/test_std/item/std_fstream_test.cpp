@@ -213,26 +213,24 @@ namespace std_fstream_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
-			PROCESS_MAIN( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-			std::cout << "p : " << p << r2cm::linefeed2;
-
+			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
+			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
+			std::cout << "p : " << p << r2cm::linefeed;
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ while( ifs >> buffer )		std::cout << buffer << r2cm::linefeed;" << r2cm::linefeed2;
+				DECLARATION_MAIN( std::string buffer );
+				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
 
-				std::string buffer;
-				std::ifstream ifs( p, std::ios::in );
+				std::cout << r2cm::linefeed;
 
-				while( ifs >> buffer )
-				{
-					std::cout << buffer << r2cm::linefeed;
-				}
+				PROCESS_MAIN( while( ifs >> buffer ) std::cout << buffer << r2cm::linefeed );
 
-				ifs.close();
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( ifs.close() );
 			}
 
 			std::cout << r2cm::split;
