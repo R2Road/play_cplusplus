@@ -140,6 +140,64 @@ namespace std_fstream_test
 
 
 
+	r2cm::iItem::TitleFuncT GetLine::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "fstream : GetLine";
+		};
+	}
+	r2cm::iItem::DoFuncT GetLine::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
+			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
+			std::cout << "p : " << p << r2cm::linefeed;
+			EXPECT_TRUE( std::filesystem::exists( p ) );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::string buffer );
+				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( while( ifs.good() ) { std::getline( ifs, buffer ); std::cout << buffer << r2cm::linefeed; } );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( ifs.close() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( char buffer[100] );
+				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( while( ifs ) { ifs.getline( buffer, 100 ); std::cout << buffer << r2cm::linefeed; } );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( ifs.close() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -171,42 +229,6 @@ namespace std_fstream_test
 
 				while( ifs >> buffer )
 				{
-					std::cout << buffer << r2cm::linefeed;
-				}
-
-				ifs.close();
-			}
-
-			std::cout << r2cm::split;
-
-			{
-
-				std::cout << r2cm::tab << "+ while( ifs.good() )		std::getline( ifs, buffer );	std::cout << buffer << r2cm::linefeed;" << r2cm::linefeed2;
-
-				std::string buffer;
-				std::ifstream ifs( p, std::ios::in );
-
-				while( ifs.good() )
-				{
-					std::getline( ifs, buffer );
-					std::cout << buffer << r2cm::linefeed;
-				}
-
-				ifs.close();
-			}
-
-			std::cout << r2cm::split;
-
-			{
-
-				std::cout << r2cm::tab << "+ while( ifs )		ifs.getline( buffer, 100 );		std::cout << buffer << r2cm::linefeed;" << r2cm::linefeed2;
-
-				char buffer[100];
-				std::ifstream ifs( p, std::ios::in );
-
-				while( ifs )
-				{
-					ifs.getline( buffer, 100 );
 					std::cout << buffer << r2cm::linefeed;
 				}
 
