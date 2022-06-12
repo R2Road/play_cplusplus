@@ -77,7 +77,7 @@ namespace c_file_test
 			std::cout << r2cm::split;
 
 			{
-				char temp = 0;
+				int temp = 0;
 				while( !feof( fp ) )
 				{
 					temp = fgetc( fp );
