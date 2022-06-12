@@ -21,7 +21,8 @@ r2cm::MenuUp FileMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', std_fstream_test::Basic::GetInstance() );	
+		ret->AddItem( 'q', std_fstream_test::OpenAndClose::GetInstance() );
+		ret->AddItem( 'w', std_fstream_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();

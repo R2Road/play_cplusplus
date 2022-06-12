@@ -5,6 +5,13 @@
 
 namespace std_fstream_test
 {
+	class OpenAndClose : public r2cm::iItem, public r2cm::SingleTon<OpenAndClose>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
 	{
 	public:
