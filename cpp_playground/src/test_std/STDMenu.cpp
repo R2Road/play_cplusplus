@@ -7,7 +7,6 @@
 #include "test_std/item/std_cout_test.h"
 #include "test_std/item/std_function_test.h"
 #include "test_std/item/std_function_2_test.h"
-#include "test_std/item/std_optional_test.h"
 #include "test_std/item/std_regex_test.h"
 #include "test_std/item/std_stringview_test.h"
 #include "test_std/item/std_tuple_test.h"
@@ -20,6 +19,7 @@
 #include "STDFileSystemMenu.h"
 #include "STDMemoryMenu.h"
 #include "STDNumericMenu.h"
+#include "STDOptionalMenu.h"
 #include "STDThreadMenu.h"
 
 r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
@@ -36,9 +36,15 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
-		ret->AddItem( '2', std_optional_test::Basic::GetInstance() );
-		ret->AddItem( '2', std_optional_test::Constructor::GetInstance() );
-		ret->AddItem( '3', std_optional_test::Reference::GetInstance() );
+		ret->AddItem(
+			'2'
+			, []()->const char* { return STDOptionalMenu::GetTitle(); }
+			, [&director]()->r2cm::eItemLeaveAction
+			{
+				director.Setup( STDOptionalMenu::Create( director ) );
+				return r2cm::eItemLeaveAction::None;
+			}
+		);
 
 		ret->AddLineFeed();
 
