@@ -33,7 +33,7 @@ namespace console_buffer_test
 			{
 				assert( false && "Failed : GetConsoleScreenBufferInfo" );
 			}
-			const DWORD length = cs_buffer_info.srWindow.Right * cs_buffer_info.srWindow.Bottom;
+			const DWORD length = ( cs_buffer_info.srWindow.Right + 1 ) * ( cs_buffer_info.srWindow.Bottom + 1 );
 			DWORD out_result;
 
 			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
@@ -41,7 +41,7 @@ namespace console_buffer_test
 			std::cout << r2cm::tab2 << "COORD topLeft = { 0, 0 };" << r2cm::linefeed;
 			std::cout << r2cm::tab2 << "CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info;" << r2cm::linefeed;
 			std::cout << r2cm::tab2 << "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2cm::linefeed2;
-			std::cout << r2cm::tab2 << "const DWORD length = cs_buffer_info.srWindow.Right * cs_buffer_info.srWindow.Bottom";
+			std::cout << r2cm::tab2 << "const DWORD length = ( cs_buffer_info.srWindow.Right + 1 ) * ( cs_buffer_info.srWindow.Bottom + 1 );";
 			std::cout << r2cm::tab2 << "DWORD out_result;" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
@@ -51,7 +51,7 @@ namespace console_buffer_test
 			std::cout << r2cm::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_BLUE, length, topLeft, &out_result );" << r2cm::linefeed;
 			std::cout << r2cm::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_GREEN, length / 2, topLeft, &out_result );" << r2cm::linefeed;
 			std::cout << r2cm::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_RED, length / 3, topLeft, &out_result );" << r2cm::linefeed;
-			std::cout << r2cm::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_INTENSITY, length / 4, topLeft, &out_result );" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_INTENSITY, cs_buffer_info.srWindow.Right + 1, topLeft, &out_result );" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
 
@@ -63,7 +63,7 @@ namespace console_buffer_test
 				FillConsoleOutputAttribute( hStdout, FOREGROUND_BLUE, length, topLeft, &out_result );
 				FillConsoleOutputAttribute( hStdout, FOREGROUND_GREEN, length / 2, topLeft, &out_result );
 				FillConsoleOutputAttribute( hStdout, FOREGROUND_BLUE | FOREGROUND_GREEN, length / 3, topLeft, &out_result );
-				FillConsoleOutputAttribute( hStdout, FOREGROUND_INTENSITY, length / 4, topLeft, &out_result );
+				FillConsoleOutputAttribute( hStdout, FOREGROUND_INTENSITY, cs_buffer_info.srWindow.Right + 1, topLeft, &out_result );
 			}
 
 			std::cout << r2cm::tab << "Press Key : Rollback" << r2cm::linefeed;
