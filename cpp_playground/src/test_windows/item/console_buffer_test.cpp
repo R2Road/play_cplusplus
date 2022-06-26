@@ -33,7 +33,7 @@ namespace console_buffer_test
 			{
 				assert( false && "Failed : GetConsoleScreenBufferInfo" );
 			}
-			const DWORD length = cs_buffer_info.dwSize.X * cs_buffer_info.dwSize.Y;
+			const DWORD length = cs_buffer_info.srWindow.Right * cs_buffer_info.srWindow.Bottom;
 			DWORD out_result;
 
 			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
@@ -41,7 +41,7 @@ namespace console_buffer_test
 			std::cout << r2cm::tab2 << "COORD topLeft = { 0, 0 };" << r2cm::linefeed;
 			std::cout << r2cm::tab2 << "CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info;" << r2cm::linefeed;
 			std::cout << r2cm::tab2 << "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2cm::linefeed2;
-			std::cout << r2cm::tab2 << "const DWORD length = cs_buffer_info.dwSize.X * cs_buffer_info.dwSize.Y;" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "const DWORD length = cs_buffer_info.srWindow.Right * cs_buffer_info.srWindow.Bottom";
 			std::cout << r2cm::tab2 << "DWORD out_result;" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
@@ -56,8 +56,7 @@ namespace console_buffer_test
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "Press Key : Do" << r2cm::linefeed;
-
-			if( _getch() )
+			_getch();
 			{
 				FillConsoleOutputCharacter( hStdout, TEXT( '#' ), length, topLeft, &out_result );
 
@@ -69,8 +68,9 @@ namespace console_buffer_test
 
 			std::cout << r2cm::tab << "Press Key : Rollback" << r2cm::linefeed;
 			_getch();
-
-			FillConsoleOutputAttribute( hStdout, cs_buffer_info.wAttributes, length, topLeft, &out_result );
+			{
+				FillConsoleOutputAttribute( hStdout, cs_buffer_info.wAttributes, length, topLeft, &out_result );
+			}
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
