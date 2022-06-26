@@ -59,10 +59,10 @@ r2cm::MenuUp WindowsMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'a', console_buffer_test::FillBuffer::GetInstance() );
-		ret->AddItem( 's', console_buffer_test::Write2Buffer_WriteConsole::GetInstance() );
-		ret->AddItem( 'd', console_buffer_test::Write2Buffer_WriteConsoleOutput::GetInstance() );
-		ret->AddItem( 'f', console_buffer_test::DoubleBuffering::GetInstance() );
+		ret->AddItem( 'a', screen_buffer_test::FillBuffer::GetInstance() );
+		ret->AddItem( 's', screen_buffer_test::Write2Buffer_WriteConsole::GetInstance() );
+		ret->AddItem( 'd', screen_buffer_test::Write2Buffer_WriteConsoleOutput::GetInstance() );
+		ret->AddItem( 'f', screen_buffer_test::DoubleBuffering::GetInstance() );
 
 
 		ret->AddLineFeed();

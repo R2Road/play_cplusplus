@@ -9,7 +9,7 @@
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
-namespace console_buffer_test
+namespace screen_buffer_test
 {
 	r2cm::iItem::TitleFuncT FillBuffer::GetTitleFunction() const
 	{

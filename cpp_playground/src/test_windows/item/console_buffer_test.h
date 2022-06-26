@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_iItem.h"
 #include "r2cm/r2cm_Singleton.h"
 
-namespace console_buffer_test
+namespace screen_buffer_test
 {
 	class FillBuffer : public r2cm::iItem, public r2cm::SingleTon<FillBuffer>
 	{
