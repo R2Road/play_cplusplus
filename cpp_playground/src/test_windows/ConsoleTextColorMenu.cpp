@@ -35,7 +35,7 @@ r2cm::MenuUp ConsoleTextColorMenu::Create( r2cm::Director& director )
 			, []()->const char* { return "Return To Root"; }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( TestWindowsMenu::Create( director ) );
+				director.Setup( WindowsMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);

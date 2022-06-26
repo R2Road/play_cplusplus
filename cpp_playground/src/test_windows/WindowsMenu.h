@@ -9,12 +9,12 @@ namespace r2cm
 	class Director;
 }
 
-class TestWindowsMenu
+class WindowsMenu
 {
 private:
-	TestWindowsMenu() = delete;
+	WindowsMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Test Windows"; }
+	static const char* GetTitle() { return "Windows Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };

@@ -36,10 +36,10 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		ret->AddItem( '1', console_input_test::Basic::GetInstance() );
 		ret->AddItem(
 			'2'
-			, []()->const char* { return TestWindowsMenu::GetTitle(); }
+			, []()->const char* { return WindowsMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( TestWindowsMenu::Create( director ) );
+				director.Setup( WindowsMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);		

@@ -17,7 +17,7 @@
 // # REF
 // https://docs.microsoft.com/en-us/windows/console/console-reference
 
-r2cm::MenuUp TestWindowsMenu::Create( r2cm::Director& director )
+r2cm::MenuUp WindowsMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
