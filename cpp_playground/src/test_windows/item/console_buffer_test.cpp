@@ -15,7 +15,7 @@ namespace screen_buffer_test
 	{
 		return []()->const char*
 		{
-			return "Fill Buffer";
+			return "Screen Buffer : Fill Buffer";
 		};
 	}
 	r2cm::iItem::DoFuncT FillBuffer::GetDoFunction()
@@ -82,7 +82,7 @@ namespace screen_buffer_test
 	{
 		return []()->const char*
 		{
-			return "Write 2 Buffer : WriteConsole";
+			return "Screen Buffer : Write 2 Buffer : WriteConsole";
 		};
 	}
 	r2cm::iItem::DoFuncT Write2Buffer_WriteConsole::GetDoFunction()
@@ -125,7 +125,7 @@ namespace screen_buffer_test
 	{
 		return []()->const char*
 		{
-			return "Write 2 Buffer : WriteConsoleOutput";
+			return "Screen Buffer : Write 2 Buffer : WriteConsoleOutput";
 		};
 	}
 	r2cm::iItem::DoFuncT Write2Buffer_WriteConsoleOutput::GetDoFunction()
@@ -247,7 +247,7 @@ namespace screen_buffer_test
 	{
 		return []()->const char*
 		{
-			return "Double Buffering";
+			return "Screen Buffer : Double Buffering";
 		};
 	}
 	r2cm::iItem::DoFuncT DoubleBuffering::GetDoFunction()
