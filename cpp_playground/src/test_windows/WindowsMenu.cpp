@@ -3,10 +3,10 @@
 #include "r2cm/r2cm_constant.h"
 #include "r2cm/r2cm_Director.h"
 
-#include "item/console_buffer_test.h"
 #include "item/console_window_etc_test.h"
 #include "item/console_window_input_test.h"
 #include "item/console_window_message_test.h"
+#include "item/screen_buffer_test.h"
 #include "item/windows_sound_test.h"
 
 #include "ConsoleTextColorMenu.h"

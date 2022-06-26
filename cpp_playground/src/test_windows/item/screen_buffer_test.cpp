@@ -1,4 +1,4 @@
-#include "console_buffer_test.h"
+#include "screen_buffer_test.h"
 
 #include <assert.h>
 #include <conio.h> // _kbhit(), _getch()
