@@ -146,7 +146,7 @@
     <ClCompile Include="src\test_windows\item\flickering_research.cpp" />
     <ClCompile Include="src\test_windows\item\windows_sound_test.cpp" />
     <ClCompile Include="src\test_windows\item\windows_time_test.cpp" />
-    <ClCompile Include="src\test_windows\TestWindowsMenu.cpp" />
+    <ClCompile Include="src\test_windows\WindowsMenu.cpp" />
     <ClCompile Include="src\utility\r2utility_CharacterBuffer.cpp" />
     <ClCompile Include="src\utility\r2utility_FileUtil.cpp" />
     <ClCompile Include="src\utility\r2utility_StopWatch.cpp" />
@@ -287,7 +287,7 @@
     <ClInclude Include="src\test_windows\item\flickering_research.h" />
     <ClInclude Include="src\test_windows\item\windows_sound_test.h" />
     <ClInclude Include="src\test_windows\item\windows_time_test.h" />
-    <ClInclude Include="src\test_windows\TestWindowsMenu.h" />
+    <ClInclude Include="src\test_windows\WindowsMenu.h" />
     <ClInclude Include="src\utility\r2utility_CharacterBuffer.h" />
     <ClInclude Include="src\utility\r2utility_FileUtil.h" />
     <ClInclude Include="src\utility\r2utility_StopWatch.h" />

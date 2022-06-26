@@ -5,7 +5,7 @@
 
 #include "item/flickering_research.h"
 
-#include "test_windows/TestWindowsMenu.h"
+#include "test_windows/WindowsMenu.h"
 
 r2cm::MenuUp FlickeringResearchMenu::Create( r2cm::Director& director )
 {
