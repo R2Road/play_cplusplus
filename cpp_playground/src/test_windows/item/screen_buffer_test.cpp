@@ -185,7 +185,7 @@ namespace screen_buffer_test
 	{
 		return []()->const char*
 		{
-			return "Console Buffer : ReadConsoleOutputTest";
+			return "Screen Buffer : ReadConsoleOutputTest";
 		};
 	}
 	r2cm::iItem::DoFuncT ReadConsoleOutputTest::GetDoFunction()
@@ -196,43 +196,32 @@ namespace screen_buffer_test
 
 			std::cout << r2cm::split;
 
-			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
-			COORD topLeft = { 0, 0 };
-
-			//ReadConsoleOutputAttribute( hStdout, )
-
-			{
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "COORD topLeft = { 0, 0 };" << r2cm::linefeed;
-			}
+			DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
+			DECLARATION_MAIN( DWORD ret = 0; );
+			DECLARATION_MAIN( const char* str = "*************WriteConsole Test*************" );
 
 			std::cout << r2cm::split;
 
 			{
 				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "DWORD ret;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "const char* str = \"*************WriteConsole Test*************\";" << r2cm::linefeed;
 				std::cout << r2cm::tab2 << "WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), topLeft, &ret );" << r2cm::linefeed;
+			}
 
-				DWORD ret;
-				const char* str = "*************WriteConsole Test*************";
-				WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), topLeft, &ret );
+			std::cout << r2cm::split;
+
+			const auto cursor_point = r2cm::WindowUtility::GetCursorPoint();
+			{				
+				WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), { cursor_point.x, cursor_point.y }, &ret );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "DWORD ret;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "WORD colors[10];" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "std::fill_n( colors, 10, FOREGROUND_GREEN | BACKGROUND_BLUE );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "WriteConsoleOutputAttribute( hStdout, colors, static_cast<DWORD>( sizeof( colors ) / sizeof( DWORD ) ), topLeft, &ret );" << r2cm::linefeed;
+				char buffer[100] = { 0 };
 
-				DWORD ret;
-				WORD colors[10];
-				std::fill_n( colors, 10, static_cast<WORD>( FOREGROUND_GREEN | BACKGROUND_BLUE ) );
-				WriteConsoleOutputAttribute( hStdout, colors, static_cast<DWORD>( sizeof( colors ) / sizeof( DWORD ) ), topLeft, &ret );
+				ReadConsoleOutputCharacterA( hStdout, buffer, 30, { cursor_point.x, cursor_point.y }, &ret );
+
+				std::cout << buffer;
 			}
 
 			std::cout << r2cm::split;
