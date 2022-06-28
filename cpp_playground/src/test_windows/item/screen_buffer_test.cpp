@@ -3,6 +3,7 @@
 #include <assert.h>
 #include <conio.h> // _kbhit(), _getch()
 #include <cstring>
+#include <wchar.h>
 #include <Windows.h>
 
 #include "r2cm/r2cm_constant.h"
@@ -198,30 +199,45 @@ namespace screen_buffer_test
 
 			DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
 			DECLARATION_MAIN( DWORD ret = 0; );
-			DECLARATION_MAIN( const char* str = "*************WriteConsole Test*************" );
+			DECLARATION_MAIN( const char str[30] = "한글출력테스트팔구십\0" );
+			DECLARATION_MAIN( const wchar_t wstr[30] = L"한글출력테스트일이십\0" );
 
 			std::cout << r2cm::split;
-
+			
 			{
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), topLeft, &ret );" << r2cm::linefeed;
-			}
-
-			std::cout << r2cm::split;
-
-			const auto cursor_point = r2cm::WindowUtility::GetCursorPoint();
-			{				
+				const auto cursor_point = r2cm::WindowUtility::GetCursorPoint();
 				WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), { cursor_point.x, cursor_point.y }, &ret );
+
+				std::cout << r2cm::linefeed2;
+
+				DECLARATION_MAIN( char buffer[100] = { 0 } );
+				PROCESS_MAIN( ReadConsoleOutputCharacterA( hStdout, buffer, 10, { cursor_point.x, cursor_point.y }, &ret ) );
+
+				std::cout << r2cm::linefeed2;
+
+				PROCESS_MAIN( std::cout << buffer );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				char buffer[100] = { 0 };
+				const auto cursor_point = r2cm::WindowUtility::GetCursorPoint();
+				WriteConsoleOutputCharacterW( hStdout, wstr, static_cast<DWORD>( wcslen( wstr ) ), { cursor_point.x, cursor_point.y }, &ret );
 
-				ReadConsoleOutputCharacterA( hStdout, buffer, 30, { cursor_point.x, cursor_point.y }, &ret );
+				std::cout << r2cm::linefeed2;
 
-				std::cout << buffer;
+				DECLARATION_MAIN( wchar_t buffer[100] = { 0 } );
+				PROCESS_MAIN( ReadConsoleOutputCharacterW( hStdout, buffer, 10, { cursor_point.x, cursor_point.y }, &ret ) );
+
+				std::cout << r2cm::linefeed2;
+
+				PROCESS_MAIN( std::wcout << buffer );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "# ReadConsoleOutputCharacterW 를 활용해 가져온 문자열은 인코딩이 필요한 것 같다." << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
