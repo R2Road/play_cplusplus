@@ -199,8 +199,8 @@ namespace screen_buffer_test
 
 			DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
 			DECLARATION_MAIN( DWORD ret = 0; );
-			DECLARATION_MAIN( const char str[30] = "한글출력테스트팔구십\0" );
-			DECLARATION_MAIN( const wchar_t wstr[30] = L"한글출력테스트일이십\0" );
+			DECLARATION_MAIN( const char str[21] = "한글출력테스트팔구십" );
+			DECLARATION_MAIN( const wchar_t wstr[21] = L"한글출력테스트일이십" );
 
 			std::cout << r2cm::split;
 			
@@ -231,6 +231,7 @@ namespace screen_buffer_test
 
 				std::cout << r2cm::linefeed2;
 
+				PROCESS_MAIN( std::wcout.imbue( std::locale( "kor" ) ) );
 				PROCESS_MAIN( std::wcout << buffer );
 			}
 
