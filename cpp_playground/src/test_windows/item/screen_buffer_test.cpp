@@ -249,6 +249,58 @@ namespace screen_buffer_test
 
 
 
+	r2cm::iItem::TitleFuncT ETCTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Screen Buffer : ETC";
+		};
+	}
+	r2cm::iItem::DoFuncT ETCTest::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( char buffer[111] = { '0' } );
+				memset( buffer, 'A', sizeof( buffer ) );
+				buffer[110] = '\0';
+				PROCESS_MAIN( std::cout << buffer );
+
+				std::cout << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( char buffer[111] = { '0' } );
+				memset( buffer, 'a', sizeof( buffer ) );
+				buffer[110] = '\0';
+				PROCESS_MAIN( std::cout << buffer );
+
+				std::cout << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( char buffer[111] = "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한" );
+				PROCESS_MAIN( std::cout << buffer );
+
+				std::cout << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT DoubleBuffering::GetTitleFunction() const
 	{
 		return []()->const char*

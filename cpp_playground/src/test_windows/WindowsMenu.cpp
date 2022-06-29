@@ -64,6 +64,7 @@ r2cm::MenuUp WindowsMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'd', screen_buffer_test::Write2Buffer_WriteConsoleOutput::GetInstance() );
 		ret->AddItem( 'f', screen_buffer_test::DoubleBuffering::GetInstance() );
 		ret->AddItem( 'g', screen_buffer_test::ReadConsoleOutputTest::GetInstance() );
+		ret->AddItem( 'h', screen_buffer_test::ETCTest::GetInstance() );
 
 
 		ret->AddLineFeed();

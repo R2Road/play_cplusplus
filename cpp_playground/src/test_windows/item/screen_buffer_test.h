@@ -33,6 +33,13 @@ namespace screen_buffer_test
 		DoFuncT GetDoFunction() override;
 	};
 
+	class ETCTest : public r2cm::iItem, public r2cm::SingleTon<ETCTest>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class DoubleBuffering : public r2cm::iItem, public r2cm::SingleTon<DoubleBuffering>
 	{
 	public:
