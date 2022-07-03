@@ -70,7 +70,7 @@ namespace r2cm
 			for( short i = 0, end = last_cursor_point.y - fixed_new_cursor_point.y; end > i; ++i )
 			{
 				FillConsoleOutputCharacterA( hStdout, ' ', cs_buffer_info.dwSize.X, COORD{ 0, fixed_new_cursor_point.y + i }, &out_result );
-				FillConsoleOutputAttribute( hStdout, eColor::BG_Black | eColor::FG_White, 1, COORD{ 0, fixed_new_cursor_point.y + i }, &out_result );
+				FillConsoleOutputAttribute( hStdout, eColor::BG_Black | eColor::FG_White, cs_buffer_info.dwSize.X, COORD{ 0, fixed_new_cursor_point.y + i }, &out_result );
 			}
 		}
 	}
