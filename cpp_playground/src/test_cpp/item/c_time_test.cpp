@@ -11,14 +11,14 @@
 
 namespace c_time_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "C Time : Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -50,14 +50,14 @@ namespace c_time_test
 
 
 
-	r2cm::iItem::TitleFuncT Y_M_D_H_S::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Y_M_D_H_S::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "C Time : Y_M_D_H_S";
 		};
 	}
-	r2cm::iItem::DoFuncT Y_M_D_H_S::GetDoFunction()
+	r2cm::iItem::DoFunctionT Y_M_D_H_S::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -136,14 +136,14 @@ namespace c_time_test
 
 
 
-	r2cm::iItem::TitleFuncT Clock::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Clock::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "C Time : Clock";
 		};
 	}
-	r2cm::iItem::DoFuncT Clock::GetDoFunction()
+	r2cm::iItem::DoFunctionT Clock::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

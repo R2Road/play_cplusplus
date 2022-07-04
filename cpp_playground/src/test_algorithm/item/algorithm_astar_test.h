@@ -8,48 +8,48 @@ namespace algorithm_astar_test
 	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class Use_STDListSplice : public r2cm::iItem, public r2cm::SingleTon<Use_STDListSplice>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class Use_STDListSplice_STDVectorResultPath : public r2cm::iItem, public r2cm::SingleTon<Use_STDListSplice_STDVectorResultPath>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 	class Use_STDListSplice_DecreaseCloseList_STDVectorResultPath : public r2cm::iItem, public r2cm::SingleTon<Use_STDListSplice_DecreaseCloseList_STDVectorResultPath>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class Use_CostMap_STDListSplice_STDVectorResultPath : public r2cm::iItem, public r2cm::SingleTon<Use_CostMap_STDListSplice_STDVectorResultPath>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 	class Use_TinyCostMap_STDListSplice_STDVectorResultPath : public r2cm::iItem, public r2cm::SingleTon<Use_TinyCostMap_STDListSplice_STDVectorResultPath>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class Use_ArrayBasedList_TinyCostMap_STDVectorResultPath : public r2cm::iItem, public r2cm::SingleTon<Use_ArrayBasedList_TinyCostMap_STDVectorResultPath>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 
@@ -57,7 +57,7 @@ namespace algorithm_astar_test
 	class PerformanceTest : public r2cm::iItem, public r2cm::SingleTon<PerformanceTest>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 }

@@ -7,14 +7,14 @@
 
 namespace std_memory_test
 {
-	r2cm::iItem::TitleFuncT SharedPointer::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT SharedPointer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Shared Pointer";
 		};
 	}
-	r2cm::iItem::DoFuncT SharedPointer::GetDoFunction()
+	r2cm::iItem::DoFunctionT SharedPointer::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -90,14 +90,14 @@ namespace std_memory_test
 
 namespace std_memory_test
 {
-	r2cm::iItem::TitleFuncT UniquePointer::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT UniquePointer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Unique Pointer";
 		};
 	}
-	r2cm::iItem::DoFuncT UniquePointer::GetDoFunction()
+	r2cm::iItem::DoFunctionT UniquePointer::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -8,14 +8,14 @@
 
 namespace array_test
 {
-	r2cm::iItem::TitleFuncT Init::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Init::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array : Init";
 		};
 	}
-	r2cm::iItem::DoFuncT Init::GetDoFunction()
+	r2cm::iItem::DoFunctionT Init::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

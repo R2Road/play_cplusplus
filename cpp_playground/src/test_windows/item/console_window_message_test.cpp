@@ -49,14 +49,14 @@ namespace console_window_message_test
 			return FALSE;
 		}
 	}
-	r2cm::iItem::TitleFuncT ConsoleControlHandler::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ConsoleControlHandler::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Message : Console Control Handler";
 		};
 	}
-	r2cm::iItem::DoFuncT ConsoleControlHandler::GetDoFunction()
+	r2cm::iItem::DoFunctionT ConsoleControlHandler::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -144,14 +144,14 @@ namespace console_window_message_test
 		return CallNextHookEx( g_hook_mouse, code, w, l );
 	};
 
-	r2cm::iItem::TitleFuncT MessageHook::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MessageHook::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Message : Hook";
 		};
 	}
-	r2cm::iItem::DoFuncT MessageHook::GetDoFunction()
+	r2cm::iItem::DoFunctionT MessageHook::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

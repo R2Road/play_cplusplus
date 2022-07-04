@@ -19,14 +19,14 @@ namespace debug_test
 	std::cout << "Line : " << __LINE__ << r2cm::linefeed;			\
 }
 
-	r2cm::iItem::TitleFuncT PredefinedMacro::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PredefinedMacro::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Predefined Macro";
 		};
 	}
-	r2cm::iItem::DoFuncT PredefinedMacro::GetDoFunction()
+	r2cm::iItem::DoFunctionT PredefinedMacro::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -59,14 +59,14 @@ namespace debug_test
 
 
 
-	r2cm::iItem::TitleFuncT OutPutDebugString::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT OutPutDebugString::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "OutPutDebugString";
 		};
 	}
-	r2cm::iItem::DoFuncT OutPutDebugString::GetDoFunction()
+	r2cm::iItem::DoFunctionT OutPutDebugString::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -97,14 +97,14 @@ namespace debug_test
 
 
 
-	r2cm::iItem::TitleFuncT Assertion::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Assertion::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Assert";
 		};
 	}
-	r2cm::iItem::DoFuncT Assertion::GetDoFunction()
+	r2cm::iItem::DoFunctionT Assertion::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -127,14 +127,14 @@ namespace debug_test
 
 
 
-	r2cm::iItem::TitleFuncT DebugBreak::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT DebugBreak::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Debug Break";
 		};
 	}
-	r2cm::iItem::DoFuncT DebugBreak::GetDoFunction()
+	r2cm::iItem::DoFunctionT DebugBreak::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -157,14 +157,14 @@ namespace debug_test
 
 
 
-	r2cm::iItem::TitleFuncT MyAssertion::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MyAssertion::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "MyAssertion";
 		};
 	}
-	r2cm::iItem::DoFuncT MyAssertion::GetDoFunction()
+	r2cm::iItem::DoFunctionT MyAssertion::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -201,14 +201,14 @@ namespace debug_test
 		static std::string temp_string = r2utility::MakeOutPutPath( "debug_test__simple_log.txt" );
 		return temp_string.c_str();
 	}
-	r2cm::iItem::TitleFuncT SimpleLog::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT SimpleLog::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Simple Log";
 		};
 	}
-	r2cm::iItem::DoFuncT SimpleLog::GetDoFunction()
+	r2cm::iItem::DoFunctionT SimpleLog::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

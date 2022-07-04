@@ -8,14 +8,14 @@ namespace algorithm_selection_sort_test
 	class Case1 : public r2cm::iItem, public r2cm::SingleTon<Case1>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class Case2 : public r2cm::iItem, public r2cm::SingleTon<Case2>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 }

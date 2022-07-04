@@ -10,14 +10,14 @@
 
 namespace performance_1_test
 {
-	r2cm::iItem::TitleFuncT IncrementOperator::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT IncrementOperator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "++Operator";
 		};
 	}
-	r2cm::iItem::DoFuncT IncrementOperator::GetDoFunction()
+	r2cm::iItem::DoFunctionT IncrementOperator::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -167,14 +167,14 @@ namespace performance_1_test
 
 
 
-	r2cm::iItem::TitleFuncT Loop::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Loop::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Loop";
 		};
 	}
-	r2cm::iItem::DoFuncT Loop::GetDoFunction()
+	r2cm::iItem::DoFunctionT Loop::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -247,14 +247,14 @@ namespace performance_1_test
 
 
 
-	r2cm::iItem::TitleFuncT LoopWithBuildInArray::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT LoopWithBuildInArray::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Loop With Built-In Array";
 		};
 	}
-	r2cm::iItem::DoFuncT LoopWithBuildInArray::GetDoFunction()
+	r2cm::iItem::DoFunctionT LoopWithBuildInArray::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -340,14 +340,14 @@ namespace performance_1_test
 
 
 
-	r2cm::iItem::TitleFuncT LoopWithSTDArray::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT LoopWithSTDArray::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Loop With std::array";
 		};
 	}
-	r2cm::iItem::DoFuncT LoopWithSTDArray::GetDoFunction()
+	r2cm::iItem::DoFunctionT LoopWithSTDArray::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -433,14 +433,14 @@ namespace performance_1_test
 
 
 
-	r2cm::iItem::TitleFuncT CompareIteratorOperator::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CompareIteratorOperator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Iterator Operator";
 		};
 	}
-	r2cm::iItem::DoFuncT CompareIteratorOperator::GetDoFunction()
+	r2cm::iItem::DoFunctionT CompareIteratorOperator::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

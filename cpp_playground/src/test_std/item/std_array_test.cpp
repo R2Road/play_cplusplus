@@ -9,14 +9,14 @@
 
 namespace std_array_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array : Declaration";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -55,14 +55,14 @@ namespace std_array_test
 
 
 
-	r2cm::iItem::TitleFuncT Fill::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Fill::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array : Fill";
 		};
 	}
-	r2cm::iItem::DoFuncT Fill::GetDoFunction()
+	r2cm::iItem::DoFunctionT Fill::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -134,14 +134,14 @@ namespace std_array_test
 
 
 
-	r2cm::iItem::TitleFuncT Copy::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Copy::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array : Copy";
 		};
 	}
-	r2cm::iItem::DoFuncT Copy::GetDoFunction()
+	r2cm::iItem::DoFunctionT Copy::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

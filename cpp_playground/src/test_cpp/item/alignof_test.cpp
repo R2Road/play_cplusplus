@@ -9,14 +9,14 @@
 
 namespace alignof_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -122,14 +122,14 @@ namespace alignof_test
 
 
 
-	r2cm::iItem::TitleFuncT MixedStruct::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MixedStruct::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Mixed Struct";
 		};
 	}
-	r2cm::iItem::DoFuncT MixedStruct::GetDoFunction()
+	r2cm::iItem::DoFunctionT MixedStruct::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -8,7 +8,7 @@ namespace procedural_terrain_generation_2_test
 	class Bone : public r2cm::iItem, public r2cm::SingleTon<Bone>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 }

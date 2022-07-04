@@ -8,41 +8,41 @@ namespace class_test
 	class Braces : public r2cm::iItem, public r2cm::SingleTon<Braces>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class PrintName : public r2cm::iItem, public r2cm::SingleTon<PrintName>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class PrivateInheritance_1 : public r2cm::iItem, public r2cm::SingleTon<PrivateInheritance_1>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 	class PrivateInheritance_2 : public r2cm::iItem, public r2cm::SingleTon<PrivateInheritance_2>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class MemberAdress : public r2cm::iItem, public r2cm::SingleTon<MemberAdress>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class ImplicitTypeConversion : public r2cm::iItem, public r2cm::SingleTon<ImplicitTypeConversion>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 }

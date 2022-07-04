@@ -84,14 +84,14 @@ namespace procedural_terrain_generation_3_test
 	
 	
 	
-	r2cm::iItem::TitleFuncT Weights::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Weights::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "PROCEDURAL TERRAIN GENERATION 3 : Weights";
 		};
 	}
-	r2cm::iItem::DoFuncT Weights::GetDoFunction()
+	r2cm::iItem::DoFunctionT Weights::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

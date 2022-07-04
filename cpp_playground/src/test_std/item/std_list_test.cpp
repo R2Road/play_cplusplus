@@ -6,14 +6,14 @@
 
 namespace std_list_test
 {
-	r2cm::iItem::TitleFuncT Splice::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Splice::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "List : Splice";
 		};
 	}
-	r2cm::iItem::DoFuncT Splice::GetDoFunction()
+	r2cm::iItem::DoFunctionT Splice::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -142,14 +142,14 @@ namespace std_list_test
 
 
 
-	r2cm::iItem::TitleFuncT OthersIterator::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT OthersIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "List : Others Iterator";
 		};
 	}
-	r2cm::iItem::DoFuncT OthersIterator::GetDoFunction()
+	r2cm::iItem::DoFunctionT OthersIterator::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -205,14 +205,14 @@ namespace std_list_test
 
 
 
-	r2cm::iItem::TitleFuncT EndIterator::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT EndIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "List : End Iterator";
 		};
 	}
-	r2cm::iItem::DoFuncT EndIterator::GetDoFunction()
+	r2cm::iItem::DoFunctionT EndIterator::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

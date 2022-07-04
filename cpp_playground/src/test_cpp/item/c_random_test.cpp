@@ -7,14 +7,14 @@
 
 namespace c_random_test
 {
-	r2cm::iItem::TitleFuncT Rand::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Rand::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "C Rand : Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Rand::GetDoFunction()
+	r2cm::iItem::DoFunctionT Rand::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

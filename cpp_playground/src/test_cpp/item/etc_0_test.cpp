@@ -10,14 +10,14 @@ namespace etc_test
 {
 #define MACRO2STRING( x ) #x
 
-	r2cm::iItem::TitleFuncT Macro2String::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Macro2String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Macro 2 String";
 		};
 	}
-	r2cm::iItem::DoFuncT Macro2String::GetDoFunction()
+	r2cm::iItem::DoFunctionT Macro2String::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

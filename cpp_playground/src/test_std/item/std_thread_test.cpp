@@ -31,14 +31,14 @@ namespace std_thread_test
 		}
 	}
 
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -94,14 +94,14 @@ namespace std_thread_test
 {
 	void empty_thread_func( int ) {}
 
-	r2cm::iItem::TitleFuncT Declaration::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Declaration";
 		};
 	}
-	r2cm::iItem::DoFuncT Declaration::GetDoFunction()
+	r2cm::iItem::DoFunctionT Declaration::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -190,14 +190,14 @@ namespace std_thread_test
 
 namespace std_thread_test
 {
-	r2cm::iItem::TitleFuncT CopyAssaignment::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CopyAssaignment::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Copy Assaignment";
 		};
 	}
-	r2cm::iItem::DoFuncT CopyAssaignment::GetDoFunction()
+	r2cm::iItem::DoFunctionT CopyAssaignment::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -260,14 +260,14 @@ namespace std_thread_test
 
 namespace std_thread_test
 {
-	r2cm::iItem::TitleFuncT WaitProcess_SleepFor::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT WaitProcess_SleepFor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Wait Process : Sleep For";
 		};
 	}
-	r2cm::iItem::DoFuncT WaitProcess_SleepFor::GetDoFunction()
+	r2cm::iItem::DoFunctionT WaitProcess_SleepFor::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -309,14 +309,14 @@ namespace std_thread_test
 
 namespace std_thread_test
 {
-	r2cm::iItem::TitleFuncT WaitProcess_Yield::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT WaitProcess_Yield::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Wait Process : Yield";
 		};
 	}
-	r2cm::iItem::DoFuncT WaitProcess_Yield::GetDoFunction()
+	r2cm::iItem::DoFunctionT WaitProcess_Yield::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

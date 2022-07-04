@@ -4,14 +4,14 @@
 
 namespace align_test
 {
-	r2cm::iItem::TitleFuncT Align_0::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Align_0::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align 0";
 		};
 	}
-	r2cm::iItem::DoFuncT Align_0::GetDoFunction()
+	r2cm::iItem::DoFunctionT Align_0::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -122,14 +122,14 @@ namespace align_test
 	}
 
 
-	r2cm::iItem::TitleFuncT Align_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Align_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align 1";
 		};
 	}
-	r2cm::iItem::DoFuncT Align_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Align_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -239,14 +239,14 @@ namespace align_test
 
 
 	
-	r2cm::iItem::TitleFuncT Align_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Align_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align 2";
 		};
 	}
-	r2cm::iItem::DoFuncT Align_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT Align_2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

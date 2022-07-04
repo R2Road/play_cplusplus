@@ -20,14 +20,14 @@ void ShowFontInfo( const CONSOLE_FONT_INFOEX & cfie )
 
 namespace console_window_etc_test
 {
-	r2cm::iItem::TitleFuncT FontInfo::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT FontInfo::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Font Info";
 		};
 	}
-	r2cm::iItem::DoFuncT FontInfo::GetDoFunction()
+	r2cm::iItem::DoFunctionT FontInfo::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -64,14 +64,14 @@ namespace console_window_etc_test
 
 
 
-	r2cm::iItem::TitleFuncT FontChange::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT FontChange::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Font Change";
 		};
 	}
-	r2cm::iItem::DoFuncT FontChange::GetDoFunction()
+	r2cm::iItem::DoFunctionT FontChange::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -139,14 +139,14 @@ namespace console_window_etc_test
 
 
 
-	r2cm::iItem::TitleFuncT Pixel::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Pixel::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Set Pixel";
 		};
 	}
-	r2cm::iItem::DoFuncT Pixel::GetDoFunction()
+	r2cm::iItem::DoFunctionT Pixel::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

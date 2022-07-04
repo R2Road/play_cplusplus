@@ -13,14 +13,14 @@ namespace
 }
 namespace variadic_template_test
 {
-	r2cm::iItem::TitleFuncT SizeOfArgs::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT SizeOfArgs::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Size Of Args";
 		};
 	}
-	r2cm::iItem::DoFuncT SizeOfArgs::GetDoFunction()
+	r2cm::iItem::DoFunctionT SizeOfArgs::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -86,14 +86,14 @@ namespace
 }
 namespace variadic_template_test
 {
-	r2cm::iItem::TitleFuncT PrintValues::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PrintValues::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Print Values";
 		};
 	}
-	r2cm::iItem::DoFuncT PrintValues::GetDoFunction()
+	r2cm::iItem::DoFunctionT PrintValues::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -172,14 +172,14 @@ namespace
 }
 namespace variadic_template_test
 {
-	r2cm::iItem::TitleFuncT SumValues::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT SumValues::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Sum Values";
 		};
 	}
-	r2cm::iItem::DoFuncT SumValues::GetDoFunction()
+	r2cm::iItem::DoFunctionT SumValues::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -261,14 +261,14 @@ namespace
 }
 namespace variadic_template_test
 {
-	r2cm::iItem::TitleFuncT SubtractValues::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT SubtractValues::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Subtract Values";
 		};
 	}
-	r2cm::iItem::DoFuncT SubtractValues::GetDoFunction()
+	r2cm::iItem::DoFunctionT SubtractValues::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

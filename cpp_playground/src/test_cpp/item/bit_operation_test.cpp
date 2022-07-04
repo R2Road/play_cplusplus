@@ -25,14 +25,14 @@ namespace
 
 namespace bit_operation_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -79,14 +79,14 @@ namespace bit_operation_test
 
 
 
-	r2cm::iItem::TitleFuncT Operator::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Operator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Operator";
 		};
 	}
-	r2cm::iItem::DoFuncT Operator::GetDoFunction()
+	r2cm::iItem::DoFunctionT Operator::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -133,14 +133,14 @@ namespace bit_operation_test
 
 
 
-	r2cm::iItem::TitleFuncT Complement::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Complement::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Complement";
 		};
 	}
-	r2cm::iItem::DoFuncT Complement::GetDoFunction()
+	r2cm::iItem::DoFunctionT Complement::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -190,14 +190,14 @@ namespace bit_operation_test
 
 
 
-	r2cm::iItem::TitleFuncT Add_Remove_Toggle::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Add_Remove_Toggle::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Add, Remove, Toggle";
 		};
 	}
-	r2cm::iItem::DoFuncT Add_Remove_Toggle::GetDoFunction()
+	r2cm::iItem::DoFunctionT Add_Remove_Toggle::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -258,14 +258,14 @@ namespace bit_operation_test
 
 
 
-	r2cm::iItem::TitleFuncT Mask::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Mask::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Mask";
 		};
 	}
-	r2cm::iItem::DoFuncT Mask::GetDoFunction()
+	r2cm::iItem::DoFunctionT Mask::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -325,14 +325,14 @@ namespace bit_operation_test
 
 
 
-	r2cm::iItem::TitleFuncT XOR_Swap::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT XOR_Swap::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "XOR Swap";
 		};
 	}
-	r2cm::iItem::DoFuncT XOR_Swap::GetDoFunction()
+	r2cm::iItem::DoFunctionT XOR_Swap::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

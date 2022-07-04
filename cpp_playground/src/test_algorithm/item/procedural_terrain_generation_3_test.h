@@ -8,7 +8,7 @@ namespace procedural_terrain_generation_3_test
 	class Weights : public r2cm::iItem, public r2cm::SingleTon<Weights>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 }

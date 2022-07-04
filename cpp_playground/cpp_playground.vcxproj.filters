@@ -239,15 +239,6 @@
     <ClCompile Include="src\test_cpp\item\console_input_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_Director.cpp">
-      <Filter>r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_Inspector.cpp">
-      <Filter>r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
-      <Filter>r2cm</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_windows\ConsoleTextColorMenu.cpp">
       <Filter>test_windows</Filter>
     </ClCompile>
@@ -262,9 +253,6 @@
     </ClCompile>
     <ClCompile Include="src\test_cpp\item\bit_operation_test.cpp">
       <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_WindowUtility.cpp">
-      <Filter>r2cm</Filter>
     </ClCompile>
     <ClCompile Include="src\test_cpp\RandomMenu.cpp">
       <Filter>test_cpp</Filter>
@@ -448,6 +436,18 @@
     </ClCompile>
     <ClCompile Include="src\test_windows\item\screen_buffer_test.cpp">
       <Filter>test_windows\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Director.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Inspector.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_WindowUtility.cpp">
+      <Filter>r2cm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -647,24 +647,6 @@
     <ClInclude Include="src\test_cpp\item\console_input_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_constant.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Director.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_iItem.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Inspector.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Menu.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Singleton.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_windows\ConsoleTextColorMenu.h">
       <Filter>test_windows</Filter>
     </ClInclude>
@@ -679,9 +661,6 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\bit_operation_test.h">
       <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_WindowUtility.h">
-      <Filter>r2cm</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\RandomMenu.h">
       <Filter>test_cpp</Filter>
@@ -865,6 +844,30 @@
     </ClInclude>
     <ClInclude Include="src\test_windows\item\screen_buffer_test.h">
       <Filter>test_windows\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_constant.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Director.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_iItem.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Inspector.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Menu.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Singleton.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_VersionInfo.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_WindowUtility.h">
+      <Filter>r2cm</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

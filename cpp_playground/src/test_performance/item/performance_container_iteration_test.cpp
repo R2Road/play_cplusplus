@@ -14,14 +14,14 @@
 
 namespace performance_container_iteration_test
 {
-	r2cm::iItem::TitleFuncT BuiltInArrayIteration::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT BuiltInArrayIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Built-In Array Iteration";
 		};
 	}
-	r2cm::iItem::DoFuncT BuiltInArrayIteration::GetDoFunction()
+	r2cm::iItem::DoFunctionT BuiltInArrayIteration::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -93,14 +93,14 @@ namespace performance_container_iteration_test
 
 
 
-	r2cm::iItem::TitleFuncT STDArrayIteration::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT STDArrayIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "STD Array Iteration";
 		};
 	}
-	r2cm::iItem::DoFuncT STDArrayIteration::GetDoFunction()
+	r2cm::iItem::DoFunctionT STDArrayIteration::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -194,14 +194,14 @@ namespace performance_container_iteration_test
 
 
 
-	r2cm::iItem::TitleFuncT VectorIteration::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT VectorIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector Iteration";
 		};
 	}
-	r2cm::iItem::DoFuncT VectorIteration::GetDoFunction()
+	r2cm::iItem::DoFunctionT VectorIteration::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -293,14 +293,14 @@ namespace performance_container_iteration_test
 
 
 
-	r2cm::iItem::TitleFuncT ListIteration::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ListIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "List Iteration";
 		};
 	}
-	r2cm::iItem::DoFuncT ListIteration::GetDoFunction()
+	r2cm::iItem::DoFunctionT ListIteration::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -369,14 +369,14 @@ namespace performance_container_iteration_test
 
 
 
-	r2cm::iItem::TitleFuncT MapIteration::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MapIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Map Iteration";
 		};
 	}
-	r2cm::iItem::DoFuncT MapIteration::GetDoFunction()
+	r2cm::iItem::DoFunctionT MapIteration::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -471,14 +471,14 @@ namespace performance_container_iteration_test
 
 
 
-	r2cm::iItem::TitleFuncT UnorderedMapIteration::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT UnorderedMapIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Unordered-Map Iteration";
 		};
 	}
-	r2cm::iItem::DoFuncT UnorderedMapIteration::GetDoFunction()
+	r2cm::iItem::DoFunctionT UnorderedMapIteration::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -573,14 +573,14 @@ namespace performance_container_iteration_test
 
 
 
-	r2cm::iItem::TitleFuncT SetIteration::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT SetIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Set Iteration";
 		};
 	}
-	r2cm::iItem::DoFuncT SetIteration::GetDoFunction()
+	r2cm::iItem::DoFunctionT SetIteration::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -652,14 +652,14 @@ namespace performance_container_iteration_test
 
 
 
-	r2cm::iItem::TitleFuncT UnorderedSetIteration::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT UnorderedSetIteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Unordered-Set Iteration";
 		};
 	}
-	r2cm::iItem::DoFuncT UnorderedSetIteration::GetDoFunction()
+	r2cm::iItem::DoFunctionT UnorderedSetIteration::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -731,14 +731,14 @@ namespace performance_container_iteration_test
 
 
 
-	r2cm::iItem::TitleFuncT STDArrayIteration_WithPointer::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT STDArrayIteration_WithPointer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "STD Array Iteration With Pointer";
 		};
 	}
-	r2cm::iItem::DoFuncT STDArrayIteration_WithPointer::GetDoFunction()
+	r2cm::iItem::DoFunctionT STDArrayIteration_WithPointer::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

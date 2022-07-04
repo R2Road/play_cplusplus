@@ -8,14 +8,14 @@
 
 namespace lambda_test
 {
-	r2cm::iItem::TitleFuncT CaptureValue::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CaptureValue::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Value";
 		};
 	}
-	r2cm::iItem::DoFuncT CaptureValue::GetDoFunction()
+	r2cm::iItem::DoFunctionT CaptureValue::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -100,14 +100,14 @@ namespace lambda_test
 
 
 
-	r2cm::iItem::TitleFuncT CaptureValueWithMutable::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CaptureValueWithMutable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Value with Mutable";
 		};
 	}
-	r2cm::iItem::DoFuncT CaptureValueWithMutable::GetDoFunction()
+	r2cm::iItem::DoFunctionT CaptureValueWithMutable::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -147,14 +147,14 @@ namespace lambda_test
 
 
 
-	r2cm::iItem::TitleFuncT CaptureReference::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CaptureReference::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Reference";
 		};
 	}
-	r2cm::iItem::DoFuncT CaptureReference::GetDoFunction()
+	r2cm::iItem::DoFunctionT CaptureReference::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -222,14 +222,14 @@ namespace lambda_test
 
 
 
-	r2cm::iItem::TitleFuncT CaptureUniquePtr::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CaptureUniquePtr::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Unique Ptr";
 		};
 	}
-	r2cm::iItem::DoFuncT CaptureUniquePtr::GetDoFunction()
+	r2cm::iItem::DoFunctionT CaptureUniquePtr::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -283,14 +283,14 @@ namespace lambda_test
 
 
 
-	r2cm::iItem::TitleFuncT CaptureValueWithAssign::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CaptureValueWithAssign::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Capture Value with Assign";
 		};
 	}
-	r2cm::iItem::DoFuncT CaptureValueWithAssign::GetDoFunction()
+	r2cm::iItem::DoFunctionT CaptureValueWithAssign::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

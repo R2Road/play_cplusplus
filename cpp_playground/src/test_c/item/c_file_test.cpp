@@ -7,14 +7,14 @@
 
 namespace c_file_test
 {
-	r2cm::iItem::TitleFuncT OpenAndClose::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT OpenAndClose::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "C File : Open And Close";
 		};
 	}
-	r2cm::iItem::DoFuncT OpenAndClose::GetDoFunction()
+	r2cm::iItem::DoFunctionT OpenAndClose::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -52,14 +52,14 @@ namespace c_file_test
 
 
 
-	r2cm::iItem::TitleFuncT GetCharacter::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT GetCharacter::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "C File : Get Character";
 		};
 	}
-	r2cm::iItem::DoFuncT GetCharacter::GetDoFunction()
+	r2cm::iItem::DoFunctionT GetCharacter::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -89,14 +89,14 @@ namespace c_file_test
 
 
 
-	r2cm::iItem::TitleFuncT GetLine::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT GetLine::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "C File : Get Line";
 		};
 	}
-	r2cm::iItem::DoFuncT GetLine::GetDoFunction()
+	r2cm::iItem::DoFunctionT GetLine::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

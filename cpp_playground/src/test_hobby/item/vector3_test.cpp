@@ -47,14 +47,14 @@ namespace r2
 
 namespace vector3_test
 {
-	r2cm::iItem::TitleFuncT OperatorPlus::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT OperatorPlus::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator+";
 		};
 	}
-	r2cm::iItem::DoFuncT OperatorPlus::GetDoFunction()
+	r2cm::iItem::DoFunctionT OperatorPlus::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -95,14 +95,14 @@ namespace vector3_test
 		};
 	}
 
-	r2cm::iItem::TitleFuncT OperatorPlusEqual::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT OperatorPlusEqual::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator+=";
 		};
 	}
-	r2cm::iItem::DoFuncT OperatorPlusEqual::GetDoFunction()
+	r2cm::iItem::DoFunctionT OperatorPlusEqual::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -145,14 +145,14 @@ namespace vector3_test
 
 
 
-	r2cm::iItem::TitleFuncT OperatorMinus::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT OperatorMinus::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator-";
 		};
 	}
-	r2cm::iItem::DoFuncT OperatorMinus::GetDoFunction()
+	r2cm::iItem::DoFunctionT OperatorMinus::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -193,14 +193,14 @@ namespace vector3_test
 		};
 	}
 
-	r2cm::iItem::TitleFuncT OperatorMinusEqual::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT OperatorMinusEqual::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator-=";
 		};
 	}
-	r2cm::iItem::DoFuncT OperatorMinusEqual::GetDoFunction()
+	r2cm::iItem::DoFunctionT OperatorMinusEqual::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -243,14 +243,14 @@ namespace vector3_test
 
 
 
-	r2cm::iItem::TitleFuncT OperatorMultiply_With_Scalar::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT OperatorMultiply_With_Scalar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator* Scalar";
 		};
 	}
-	r2cm::iItem::DoFuncT OperatorMultiply_With_Scalar::GetDoFunction()
+	r2cm::iItem::DoFunctionT OperatorMultiply_With_Scalar::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -291,14 +291,14 @@ namespace vector3_test
 		};
 	}
 
-	r2cm::iItem::TitleFuncT OperatorMultiplyEqual_With_Scalar::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT OperatorMultiplyEqual_With_Scalar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector3 : Operator*= Scalar";
 		};
 	}
-	r2cm::iItem::DoFuncT OperatorMultiplyEqual_With_Scalar::GetDoFunction()
+	r2cm::iItem::DoFunctionT OperatorMultiplyEqual_With_Scalar::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

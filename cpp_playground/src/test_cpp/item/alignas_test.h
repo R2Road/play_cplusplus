@@ -8,7 +8,7 @@ namespace align_test
 	class AlignAs : public r2cm::iItem, public r2cm::SingleTon<AlignAs>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 }

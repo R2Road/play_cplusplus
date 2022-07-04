@@ -6,14 +6,14 @@
 
 namespace std_vector_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector : Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -73,14 +73,14 @@ namespace std_vector_test
 
 
 
-	r2cm::iItem::TitleFuncT NoneDefaultConstructor::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT NoneDefaultConstructor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector : None Default Constructor";
 		};
 	}
-	r2cm::iItem::DoFuncT NoneDefaultConstructor::GetDoFunction()
+	r2cm::iItem::DoFunctionT NoneDefaultConstructor::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -125,14 +125,14 @@ namespace std_vector_test
 
 
 
-	r2cm::iItem::TitleFuncT BoolVector::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT BoolVector::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector : Bool";
 		};
 	}
-	r2cm::iItem::DoFuncT BoolVector::GetDoFunction()
+	r2cm::iItem::DoFunctionT BoolVector::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -184,14 +184,14 @@ namespace std_vector_test
 
 
 
-	r2cm::iItem::TitleFuncT OthersIterator::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT OthersIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector : Others Iterator";
 		};
 	}
-	r2cm::iItem::DoFuncT OthersIterator::GetDoFunction()
+	r2cm::iItem::DoFunctionT OthersIterator::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -229,14 +229,14 @@ namespace std_vector_test
 
 
 
-	r2cm::iItem::TitleFuncT EndIterator::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT EndIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Vector : End Iterator";
 		};
 	}
-	r2cm::iItem::DoFuncT EndIterator::GetDoFunction()
+	r2cm::iItem::DoFunctionT EndIterator::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

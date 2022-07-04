@@ -13,14 +13,14 @@ namespace template_meta_programming_test
 		static constexpr const char c[size + 1] = { chars..., '\0' };
 	};
 
-	r2cm::iItem::TitleFuncT Character2String::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Character2String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Character 2 String";
 		};
 	}
-	r2cm::iItem::DoFuncT Character2String::GetDoFunction()
+	r2cm::iItem::DoFunctionT Character2String::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -60,14 +60,14 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2cm::iItem::TitleFuncT Integer2String::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Integer2String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Integer 2 String";
 		};
 	}
-	r2cm::iItem::DoFuncT Integer2String::GetDoFunction()
+	r2cm::iItem::DoFunctionT Integer2String::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -105,14 +105,14 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2cm::iItem::TitleFuncT CalculatePlaceValue::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CalculatePlaceValue::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Place Value 4 Integer";
 		};
 	}
-	r2cm::iItem::DoFuncT CalculatePlaceValue::GetDoFunction()
+	r2cm::iItem::DoFunctionT CalculatePlaceValue::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -174,14 +174,14 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2cm::iItem::TitleFuncT Integer2String_II::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Integer2String_II::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Integer 2 String II";
 		};
 	}
-	r2cm::iItem::DoFuncT Integer2String_II::GetDoFunction()
+	r2cm::iItem::DoFunctionT Integer2String_II::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

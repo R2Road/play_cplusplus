@@ -9,14 +9,14 @@
 
 namespace class_test
 {
-	r2cm::iItem::TitleFuncT Braces::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Braces::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Braces";
 		};
 	}
-	r2cm::iItem::DoFuncT Braces::GetDoFunction()
+	r2cm::iItem::DoFunctionT Braces::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -69,14 +69,14 @@ namespace
 
 namespace class_test
 {
-	r2cm::iItem::TitleFuncT PrintName::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PrintName::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Print Name";
 		};
 	}
-	r2cm::iItem::DoFuncT PrintName::GetDoFunction()
+	r2cm::iItem::DoFunctionT PrintName::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -157,14 +157,14 @@ namespace class_test
 
 namespace class_test
 {
-	r2cm::iItem::TitleFuncT PrivateInheritance_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PrivateInheritance_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Private Inheritance 1";
 		};
 	}
-	r2cm::iItem::DoFuncT PrivateInheritance_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT PrivateInheritance_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -258,14 +258,14 @@ namespace class_test
 
 
 
-	r2cm::iItem::TitleFuncT PrivateInheritance_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PrivateInheritance_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Private Inheritance 2";
 		};
 	}
-	r2cm::iItem::DoFuncT PrivateInheritance_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT PrivateInheritance_2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -344,14 +344,14 @@ namespace class_test
 	}
 
 
-	r2cm::iItem::TitleFuncT MemberAdress::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MemberAdress::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Member Adress";
 		};
 	}
-	r2cm::iItem::DoFuncT MemberAdress::GetDoFunction()
+	r2cm::iItem::DoFunctionT MemberAdress::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -423,14 +423,14 @@ namespace class_test
 
 
 
-	r2cm::iItem::TitleFuncT ImplicitTypeConversion::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ImplicitTypeConversion::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Class : Implicit Type Conversion";
 		};
 	}
-	r2cm::iItem::DoFuncT ImplicitTypeConversion::GetDoFunction()
+	r2cm::iItem::DoFunctionT ImplicitTypeConversion::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

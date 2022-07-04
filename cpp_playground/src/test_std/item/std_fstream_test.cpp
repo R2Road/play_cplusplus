@@ -9,14 +9,14 @@
 
 namespace std_fstream_test
 {
-	r2cm::iItem::TitleFuncT OpenAndClose::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT OpenAndClose::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "fstream : Open And Close";
 		};
 	}
-	r2cm::iItem::DoFuncT OpenAndClose::GetDoFunction()
+	r2cm::iItem::DoFunctionT OpenAndClose::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -95,14 +95,14 @@ namespace std_fstream_test
 
 
 
-	r2cm::iItem::TitleFuncT GetCharacter::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT GetCharacter::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "fstream : GetCharacter";
 		};
 	}
-	r2cm::iItem::DoFuncT GetCharacter::GetDoFunction()
+	r2cm::iItem::DoFunctionT GetCharacter::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -140,14 +140,14 @@ namespace std_fstream_test
 
 
 
-	r2cm::iItem::TitleFuncT GetLine::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT GetLine::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "fstream : GetLine";
 		};
 	}
-	r2cm::iItem::DoFuncT GetLine::GetDoFunction()
+	r2cm::iItem::DoFunctionT GetLine::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -198,14 +198,14 @@ namespace std_fstream_test
 
 
 
-	r2cm::iItem::TitleFuncT GetBlank2Blank::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT GetBlank2Blank::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "fstream : Get Blank 2 Blank";
 		};
 	}
-	r2cm::iItem::DoFuncT GetBlank2Blank::GetDoFunction()
+	r2cm::iItem::DoFunctionT GetBlank2Blank::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

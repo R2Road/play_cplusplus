@@ -41,14 +41,14 @@ namespace atomic_test
 		}		
 	};
 
-	r2cm::iItem::TitleFuncT IsLockFree::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT IsLockFree::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Is Lock Free";
 		};
 	}
-	r2cm::iItem::DoFuncT IsLockFree::GetDoFunction()
+	r2cm::iItem::DoFunctionT IsLockFree::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -86,14 +86,14 @@ namespace atomic_test
 		};
 	}
 
-	r2cm::iItem::TitleFuncT LockFreeTest1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT LockFreeTest1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Lock Free Test 1";
 		};
 	}
-	r2cm::iItem::DoFuncT LockFreeTest1::GetDoFunction()
+	r2cm::iItem::DoFunctionT LockFreeTest1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -144,14 +144,14 @@ namespace atomic_test
 		};
 	}
 
-	r2cm::iItem::TitleFuncT LockFreeTest2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT LockFreeTest2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Lock Free Test 2";
 		};
 	}
-	r2cm::iItem::DoFuncT LockFreeTest2::GetDoFunction()
+	r2cm::iItem::DoFunctionT LockFreeTest2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

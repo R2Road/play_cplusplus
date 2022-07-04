@@ -9,14 +9,14 @@
 
 namespace std_algorithm_test
 {
-	r2cm::iItem::TitleFuncT Shuffle::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Shuffle::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Algorithm : Shuffle";
 		};
 	}
-	r2cm::iItem::DoFuncT Shuffle::GetDoFunction()
+	r2cm::iItem::DoFunctionT Shuffle::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

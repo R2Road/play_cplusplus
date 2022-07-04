@@ -20,14 +20,14 @@ namespace std_function_2_test
 		}
 	};
 
-	r2cm::iItem::TitleFuncT Equality_STDBind_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Equality_STDBind_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::function : Equality : std::bind 1";
 		};
 	}
-	r2cm::iItem::DoFuncT Equality_STDBind_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Equality_STDBind_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

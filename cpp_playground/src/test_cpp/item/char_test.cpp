@@ -9,14 +9,14 @@
 
 namespace char_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Char : Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -59,14 +59,14 @@ namespace char_test
 //
 namespace char_test
 {
-	r2cm::iItem::TitleFuncT Encoding::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Encoding::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Char : Encoding";
 		};
 	}
-	r2cm::iItem::DoFuncT Encoding::GetDoFunction()
+	r2cm::iItem::DoFunctionT Encoding::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

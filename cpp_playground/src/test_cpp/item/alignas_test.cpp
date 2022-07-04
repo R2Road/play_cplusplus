@@ -6,14 +6,14 @@
 
 namespace align_test
 {
-	r2cm::iItem::TitleFuncT AlignAs::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT AlignAs::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align As";
 		};
 	}
-	r2cm::iItem::DoFuncT AlignAs::GetDoFunction()
+	r2cm::iItem::DoFunctionT AlignAs::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

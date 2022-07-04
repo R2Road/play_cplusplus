@@ -13,14 +13,14 @@
 
 namespace console_window_test
 {
-	r2cm::iItem::TitleFuncT BufferInfo::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT BufferInfo::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Buffer Info";
 		};
 	}
-	r2cm::iItem::DoFuncT BufferInfo::GetDoFunction()
+	r2cm::iItem::DoFunctionT BufferInfo::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -71,14 +71,14 @@ namespace console_window_test
 
 
 
-	r2cm::iItem::TitleFuncT ChangeWindowSize::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ChangeWindowSize::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Change Window Size";
 		};
 	}
-	r2cm::iItem::DoFuncT ChangeWindowSize::GetDoFunction()
+	r2cm::iItem::DoFunctionT ChangeWindowSize::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -136,14 +136,14 @@ namespace console_window_test
 
 
 
-	r2cm::iItem::TitleFuncT FullScreen::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT FullScreen::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "FullScreen";
 		};
 	}
-	r2cm::iItem::DoFuncT FullScreen::GetDoFunction()
+	r2cm::iItem::DoFunctionT FullScreen::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -173,14 +173,14 @@ namespace console_window_test
 
 
 
-	r2cm::iItem::TitleFuncT Focus::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Focus::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Focus";
 		};
 	}
-	r2cm::iItem::DoFuncT Focus::GetDoFunction()
+	r2cm::iItem::DoFunctionT Focus::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -219,14 +219,14 @@ namespace console_window_test
 
 
 
-	r2cm::iItem::TitleFuncT WindowPosition::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT WindowPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Position";
 		};
 	}
-	r2cm::iItem::DoFuncT WindowPosition::GetDoFunction()
+	r2cm::iItem::DoFunctionT WindowPosition::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -325,14 +325,14 @@ namespace console_window_test
 
 
 
-	r2cm::iItem::TitleFuncT ChangeWindowName::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ChangeWindowName::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Change Window Name";
 		};
 	}
-	r2cm::iItem::DoFuncT ChangeWindowName::GetDoFunction()
+	r2cm::iItem::DoFunctionT ChangeWindowName::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -375,14 +375,14 @@ namespace console_window_test
 
 
 
-	r2cm::iItem::TitleFuncT HideTitleBar::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT HideTitleBar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Hide Title Bar";
 		};
 	}
-	r2cm::iItem::DoFuncT HideTitleBar::GetDoFunction()
+	r2cm::iItem::DoFunctionT HideTitleBar::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -434,14 +434,14 @@ namespace console_window_test
 
 
 
-	r2cm::iItem::TitleFuncT HideScrollBar::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT HideScrollBar::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Hide Scroll Bar";
 		};
 	}
-	r2cm::iItem::DoFuncT HideScrollBar::GetDoFunction()
+	r2cm::iItem::DoFunctionT HideScrollBar::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -482,14 +482,14 @@ namespace console_window_test
 
 
 
-	r2cm::iItem::TitleFuncT LockWindowResizingByDragging::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT LockWindowResizingByDragging::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Lock Window Resizing By Dragging";
 		};
 	}
-	r2cm::iItem::DoFuncT LockWindowResizingByDragging::GetDoFunction()
+	r2cm::iItem::DoFunctionT LockWindowResizingByDragging::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -540,14 +540,14 @@ namespace console_window_test
 
 
 
-	r2cm::iItem::TitleFuncT MenuItem::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MenuItem::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Menu Item";
 		};
 	}
-	r2cm::iItem::DoFuncT MenuItem::GetDoFunction()
+	r2cm::iItem::DoFunctionT MenuItem::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -598,14 +598,14 @@ namespace console_window_test
 
 
 
-	r2cm::iItem::TitleFuncT CursorMove::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CursorMove::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Cursor Move";
 		};
 	}
-	r2cm::iItem::DoFuncT CursorMove::GetDoFunction()
+	r2cm::iItem::DoFunctionT CursorMove::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -654,14 +654,14 @@ namespace console_window_test
 		};
 	}
 
-	r2cm::iItem::TitleFuncT CursorVisibility::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CursorVisibility::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Cursor Visibility";
 		};
 	}
-	r2cm::iItem::DoFuncT CursorVisibility::GetDoFunction()
+	r2cm::iItem::DoFunctionT CursorVisibility::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

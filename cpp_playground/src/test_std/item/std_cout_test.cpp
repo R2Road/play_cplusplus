@@ -7,14 +7,14 @@
 
 namespace std_cout_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -40,14 +40,14 @@ namespace std_cout_test
 
 
 
-	r2cm::iItem::TitleFuncT FMTStatus::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT FMTStatus::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "FMTStatus";
 		};
 	}
-	r2cm::iItem::DoFuncT FMTStatus::GetDoFunction()
+	r2cm::iItem::DoFunctionT FMTStatus::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -104,14 +104,14 @@ namespace std_cout_test
 
 
 
-	r2cm::iItem::TitleFuncT NumberFormat_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT NumberFormat_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Number Format 1";
 		};
 	}
-	r2cm::iItem::DoFuncT NumberFormat_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT NumberFormat_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -160,14 +160,14 @@ namespace std_cout_test
 
 
 
-	r2cm::iItem::TitleFuncT NumberFormat_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT NumberFormat_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Number Format 2";
 		};
 	}
-	r2cm::iItem::DoFuncT NumberFormat_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT NumberFormat_2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -233,14 +233,14 @@ namespace std_cout_test
 
 
 
-	r2cm::iItem::TitleFuncT NumberFormat_3::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT NumberFormat_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Number Format 3";
 		};
 	}
-	r2cm::iItem::DoFuncT NumberFormat_3::GetDoFunction()
+	r2cm::iItem::DoFunctionT NumberFormat_3::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -313,14 +313,14 @@ namespace std_cout_test
 
 
 
-	r2cm::iItem::TitleFuncT NumberFormat_4::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT NumberFormat_4::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Number Format 4";
 		};
 	}
-	r2cm::iItem::DoFuncT NumberFormat_4::GetDoFunction()
+	r2cm::iItem::DoFunctionT NumberFormat_4::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -372,14 +372,14 @@ namespace std_cout_test
 
 
 
-	r2cm::iItem::TitleFuncT Align::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Align::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Align";
 		};
 	}
-	r2cm::iItem::DoFuncT Align::GetDoFunction()
+	r2cm::iItem::DoFunctionT Align::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -434,14 +434,14 @@ namespace std_cout_test
 
 
 
-	r2cm::iItem::TitleFuncT Flag::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Flag::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flag";
 		};
 	}
-	r2cm::iItem::DoFuncT Flag::GetDoFunction()
+	r2cm::iItem::DoFunctionT Flag::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -491,14 +491,14 @@ namespace std_cout_test
 
 
 	
-	r2cm::iItem::TitleFuncT BoolAlpha::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT BoolAlpha::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "BoolAlpha";
 		};
 	}
-	r2cm::iItem::DoFuncT BoolAlpha::GetDoFunction()
+	r2cm::iItem::DoFunctionT BoolAlpha::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -557,14 +557,14 @@ namespace std_cout_test
 			return os;
 		}
 	};
-	r2cm::iItem::TitleFuncT UserDefinedType::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT UserDefinedType::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "UserDefinedType";
 		};
 	}
-	r2cm::iItem::DoFuncT UserDefinedType::GetDoFunction()
+	r2cm::iItem::DoFunctionT UserDefinedType::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -9,14 +9,14 @@
 
 namespace flickering_research
 {
-	r2cm::iItem::TitleFuncT OneByOne::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT OneByOne::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print One By One";
 		};
 	}
-	r2cm::iItem::DoFuncT OneByOne::GetDoFunction()
+	r2cm::iItem::DoFunctionT OneByOne::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -63,14 +63,14 @@ namespace flickering_research
 			return r2cm::eItemLeaveAction::None;
 		};
 	}
-	r2cm::iItem::TitleFuncT OneByOne_WithOut_CLS::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT OneByOne_WithOut_CLS::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print One By One WithOut CLS";
 		};
 	}
-	r2cm::iItem::DoFuncT OneByOne_WithOut_CLS::GetDoFunction()
+	r2cm::iItem::DoFunctionT OneByOne_WithOut_CLS::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -123,14 +123,14 @@ namespace flickering_research
 
 
 
-	r2cm::iItem::TitleFuncT LineByLine::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT LineByLine::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print Line By Line";
 		};
 	}
-	r2cm::iItem::DoFuncT LineByLine::GetDoFunction()
+	r2cm::iItem::DoFunctionT LineByLine::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -171,14 +171,14 @@ namespace flickering_research
 
 
 
-	r2cm::iItem::TitleFuncT PageByPage::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PageByPage::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print Page By Page";
 		};
 	}
-	r2cm::iItem::DoFuncT PageByPage::GetDoFunction()
+	r2cm::iItem::DoFunctionT PageByPage::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -216,14 +216,14 @@ namespace flickering_research
 
 
 
-	r2cm::iItem::TitleFuncT PageByPage_WithOut_CLS_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PageByPage_WithOut_CLS_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print Page By Page Without CLS 1";
 		};
 	}
-	r2cm::iItem::DoFuncT PageByPage_WithOut_CLS_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT PageByPage_WithOut_CLS_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -257,14 +257,14 @@ namespace flickering_research
 
 
 
-	r2cm::iItem::TitleFuncT PageByPage_WithOut_CLS_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PageByPage_WithOut_CLS_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print Page By Page Without CLS 2";
 		};
 	}
-	r2cm::iItem::DoFuncT PageByPage_WithOut_CLS_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT PageByPage_WithOut_CLS_2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

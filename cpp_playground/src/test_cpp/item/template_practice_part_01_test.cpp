@@ -20,14 +20,14 @@ namespace template_practice_part_01_test
 		std::size_t size;
 	};
 
-	r2cm::iItem::TitleFuncT BufferWithTemplate::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT BufferWithTemplate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Buffer With Template";
 		};
 	}
-	r2cm::iItem::DoFuncT BufferWithTemplate::GetDoFunction()
+	r2cm::iItem::DoFunctionT BufferWithTemplate::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -76,14 +76,14 @@ namespace template_practice_part_01_test
 		return FindMax( FindMax( arg1, arg2 ), args... );
 	};
 
-	r2cm::iItem::TitleFuncT VaridicMax::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT VaridicMax::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Varidic Max";
 		};
 	}
-	r2cm::iItem::DoFuncT VaridicMax::GetDoFunction()
+	r2cm::iItem::DoFunctionT VaridicMax::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

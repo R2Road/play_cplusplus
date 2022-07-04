@@ -10,14 +10,14 @@
 
 namespace windows_sound_test
 {
-	r2cm::iItem::TitleFuncT PlaySoundTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PlaySoundTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "mmsystem : PlaySound";
 		};
 	}
-	r2cm::iItem::DoFuncT PlaySoundTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT PlaySoundTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -67,14 +67,14 @@ namespace windows_sound_test
 
 
 
-	r2cm::iItem::TitleFuncT BeepTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT BeepTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "utilapiset : Beep";
 		};
 	}
-	r2cm::iItem::DoFuncT BeepTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT BeepTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

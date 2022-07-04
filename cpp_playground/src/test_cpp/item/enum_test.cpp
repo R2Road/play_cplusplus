@@ -8,14 +8,14 @@
 
 namespace enum_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -73,14 +73,14 @@ namespace enum_test
 		return static_cast<std::underlying_type_t<EnumT>>( e );
 	}
 
-	r2cm::iItem::TitleFuncT Convert::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Convert::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Convert";
 		};
 	}
-	r2cm::iItem::DoFuncT Convert::GetDoFunction()
+	r2cm::iItem::DoFunctionT Convert::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -153,14 +153,14 @@ namespace enum_test
 
 	MAKE_ENUM( eMakeEnumTest, One, Two, Three, Max4MakeEnumTest );
 
-	r2cm::iItem::TitleFuncT MakeEnumWithMacro::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MakeEnumWithMacro::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Make Enum With Macro";
 		};
 	}
-	r2cm::iItem::DoFuncT MakeEnumWithMacro::GetDoFunction()
+	r2cm::iItem::DoFunctionT MakeEnumWithMacro::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -220,14 +220,14 @@ namespace enum_test
 #undef X
 	};
 
-	r2cm::iItem::TitleFuncT XMacro_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT XMacro_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "XMacro 1";
 		};
 	}
-	r2cm::iItem::DoFuncT XMacro_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT XMacro_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -301,14 +301,14 @@ namespace enum_test
 #undef X
 	};
 
-	r2cm::iItem::TitleFuncT XMacro_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT XMacro_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "XMacro 2";
 		};
 	}
-	r2cm::iItem::DoFuncT XMacro_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT XMacro_2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

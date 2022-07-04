@@ -6,14 +6,14 @@
 
 namespace print_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Print : Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -40,14 +40,14 @@ namespace print_test
 
 
 
-	r2cm::iItem::TitleFuncT ShowNumbers::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ShowNumbers::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Print : Number";
 		};
 	}
-	r2cm::iItem::DoFuncT ShowNumbers::GetDoFunction()
+	r2cm::iItem::DoFunctionT ShowNumbers::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -4,14 +4,6 @@
 
 namespace r2cm
 {
-	enum class eItemLeaveAction
-	{
-		None,
-		Pause,
-		Exit,
-	};
-
-
 	enum eColor
 	{
 		None = 0,

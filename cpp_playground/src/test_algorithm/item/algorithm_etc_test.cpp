@@ -22,14 +22,14 @@ namespace algorithm_etc_test
 		return hash;
 	}
 
-	r2cm::iItem::TitleFuncT DJB2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT DJB2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "DJB2";
 		};
 	}
-	r2cm::iItem::DoFuncT DJB2::GetDoFunction()
+	r2cm::iItem::DoFunctionT DJB2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

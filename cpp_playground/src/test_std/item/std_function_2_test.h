@@ -8,7 +8,7 @@ namespace std_function_2_test
 	class Equality_STDBind_1 : public r2cm::iItem, public r2cm::SingleTon<Equality_STDBind_1>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 }

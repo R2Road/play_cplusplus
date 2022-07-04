@@ -8,8 +8,8 @@ namespace std_random_test
 	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 
@@ -17,8 +17,8 @@ namespace std_random_test
 	class StatusSaveAndLoad : public r2cm::iItem, public r2cm::SingleTon<StatusSaveAndLoad>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 
@@ -26,7 +26,7 @@ namespace std_random_test
 	class DiscreateDistribution : public r2cm::iItem, public r2cm::SingleTon<DiscreateDistribution>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 }

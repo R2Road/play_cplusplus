@@ -4,14 +4,14 @@
 
 namespace pointer_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Pointer";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -67,14 +67,14 @@ namespace pointer_test
 #pragma warning( disable : 4311 )
 #pragma warning( disable : 4302 )
 
-	r2cm::iItem::TitleFuncT Pointer2Index::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Pointer2Index::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Pointer 2 Index";
 		};
 	}
-	r2cm::iItem::DoFuncT Pointer2Index::GetDoFunction()
+	r2cm::iItem::DoFunctionT Pointer2Index::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -116,14 +116,14 @@ namespace pointer_test
 
 
 
-	r2cm::iItem::TitleFuncT ConstPointer::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ConstPointer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Const Pointer";
 		};
 	}
-	r2cm::iItem::DoFuncT ConstPointer::GetDoFunction()
+	r2cm::iItem::DoFunctionT ConstPointer::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

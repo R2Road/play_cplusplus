@@ -6,14 +6,14 @@
 
 namespace std_optional_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Optional : Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -106,14 +106,14 @@ namespace std_optional_test
 	{
 		return std::optional<TestOptional>( TestOptional{} );
 	}
-	r2cm::iItem::TitleFuncT Constructor::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Constructor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Optional : Constructor";
 		};
 	}
-	r2cm::iItem::DoFuncT Constructor::GetDoFunction()
+	r2cm::iItem::DoFunctionT Constructor::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -198,14 +198,14 @@ namespace std_optional_test
 
 
 
-	r2cm::iItem::TitleFuncT Reference::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Reference::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Optional : Reference";
 		};
 	}
-	r2cm::iItem::DoFuncT Reference::GetDoFunction()
+	r2cm::iItem::DoFunctionT Reference::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

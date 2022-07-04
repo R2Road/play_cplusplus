@@ -8,7 +8,7 @@ namespace etc_test
 	class Macro2String : public r2cm::iItem, public r2cm::SingleTon<Macro2String>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 }

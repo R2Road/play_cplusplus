@@ -8,14 +8,14 @@ namespace template_practice_part_01_test
 	class BufferWithTemplate : public r2cm::iItem, public r2cm::SingleTon<BufferWithTemplate>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class VaridicMax : public r2cm::iItem, public r2cm::SingleTon<VaridicMax>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 }

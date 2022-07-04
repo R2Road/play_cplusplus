@@ -25,7 +25,7 @@ namespace
 
 namespace memory_pool_test
 {
-	r2cm::iItem::TitleFuncT Step01::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Step01::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -33,7 +33,7 @@ namespace memory_pool_test
 		};
 	}
 
-	r2cm::iItem::DoFuncT Step01::GetDoFunction()
+	r2cm::iItem::DoFunctionT Step01::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

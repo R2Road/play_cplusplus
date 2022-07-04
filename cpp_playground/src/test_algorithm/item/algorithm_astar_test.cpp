@@ -93,14 +93,14 @@ namespace
 
 namespace algorithm_astar_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -142,14 +142,14 @@ namespace algorithm_astar_test
 
 
 
-	r2cm::iItem::TitleFuncT Use_STDListSplice::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Use_STDListSplice::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use std::list::splice";
 		};
 	}
-	r2cm::iItem::DoFuncT Use_STDListSplice::GetDoFunction()
+	r2cm::iItem::DoFunctionT Use_STDListSplice::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -191,14 +191,14 @@ namespace algorithm_astar_test
 
 
 
-	r2cm::iItem::TitleFuncT Use_STDListSplice_STDVectorResultPath::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Use_STDListSplice_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use std::list::splice, std::vector Result Path";
 		};
 	}
-	r2cm::iItem::DoFuncT Use_STDListSplice_STDVectorResultPath::GetDoFunction()
+	r2cm::iItem::DoFunctionT Use_STDListSplice_STDVectorResultPath::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -241,14 +241,14 @@ namespace algorithm_astar_test
 
 
 
-	r2cm::iItem::TitleFuncT Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use std::list::splice, Decrease Close List, std::vector Result Path";
 		};
 	}
-	r2cm::iItem::DoFuncT Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetDoFunction()
+	r2cm::iItem::DoFunctionT Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -293,14 +293,14 @@ namespace algorithm_astar_test
 
 
 
-	r2cm::iItem::TitleFuncT Use_CostMap_STDListSplice_STDVectorResultPath::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Use_CostMap_STDListSplice_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use Cost Map, std::list::splice, std::vector Result Path";
 		};
 	}
-	r2cm::iItem::DoFuncT Use_CostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
+	r2cm::iItem::DoFunctionT Use_CostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -345,14 +345,14 @@ namespace algorithm_astar_test
 
 
 
-	r2cm::iItem::TitleFuncT Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use Tiny Cost Map, std::list::splice, std::vector Result Path";
 		};
 	}
-	r2cm::iItem::DoFuncT Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
+	r2cm::iItem::DoFunctionT Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -397,14 +397,14 @@ namespace algorithm_astar_test
 
 
 
-	r2cm::iItem::TitleFuncT Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : use Array Based List, Tiny Cost Map, std::vector Result Path";
 		};
 	}
-	r2cm::iItem::DoFuncT Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetDoFunction()
+	r2cm::iItem::DoFunctionT Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -449,14 +449,14 @@ namespace algorithm_astar_test
 
 
 
-	r2cm::iItem::TitleFuncT PerformanceTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PerformanceTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "A Star : Performance Test";
 		};
 	}
-	r2cm::iItem::DoFuncT PerformanceTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT PerformanceTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

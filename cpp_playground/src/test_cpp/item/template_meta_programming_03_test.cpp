@@ -28,14 +28,14 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2cm::iItem::TitleFuncT MultiTypePackage::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MultiTypePackage::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Multi Type Package( In Progress )";
 		};
 	}
-	r2cm::iItem::DoFuncT MultiTypePackage::GetDoFunction()
+	r2cm::iItem::DoFunctionT MultiTypePackage::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

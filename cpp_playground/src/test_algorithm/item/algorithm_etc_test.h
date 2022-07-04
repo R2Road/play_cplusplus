@@ -8,7 +8,7 @@ namespace algorithm_etc_test
 	class DJB2 : public r2cm::iItem, public r2cm::SingleTon<DJB2>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 }

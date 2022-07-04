@@ -8,35 +8,35 @@ namespace lambda_test
 	class CaptureValue : public r2cm::iItem, public r2cm::SingleTon<CaptureValue>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class CaptureValueWithMutable : public r2cm::iItem, public r2cm::SingleTon<CaptureValueWithMutable>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class CaptureReference : public r2cm::iItem, public r2cm::SingleTon<CaptureReference>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class CaptureUniquePtr : public r2cm::iItem, public r2cm::SingleTon<CaptureUniquePtr>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class CaptureValueWithAssign : public r2cm::iItem, public r2cm::SingleTon<CaptureValueWithAssign>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 }

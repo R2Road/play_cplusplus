@@ -8,28 +8,28 @@ namespace std_function_test
 	class Equality_FunctionPointer_1 : public r2cm::iItem, public r2cm::SingleTon<Equality_FunctionPointer_1>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class Equality_FunctionPointer_2 : public r2cm::iItem, public r2cm::SingleTon<Equality_FunctionPointer_2>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class Equality_FunctionPointer_3 : public r2cm::iItem, public r2cm::SingleTon<Equality_FunctionPointer_3>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class Equality_Lambda_1 : public r2cm::iItem, public r2cm::SingleTon<Equality_Lambda_1>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 }

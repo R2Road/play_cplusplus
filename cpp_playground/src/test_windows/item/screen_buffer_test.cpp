@@ -12,14 +12,14 @@
 
 namespace screen_buffer_test
 {
-	r2cm::iItem::TitleFuncT FillBuffer::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT FillBuffer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Screen Buffer : Fill Buffer";
 		};
 	}
-	r2cm::iItem::DoFuncT FillBuffer::GetDoFunction()
+	r2cm::iItem::DoFunctionT FillBuffer::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -79,14 +79,14 @@ namespace screen_buffer_test
 
 
 
-	r2cm::iItem::TitleFuncT Write2Buffer_WriteConsole::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Write2Buffer_WriteConsole::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Screen Buffer : Write 2 Buffer : WriteConsole";
 		};
 	}
-	r2cm::iItem::DoFuncT Write2Buffer_WriteConsole::GetDoFunction()
+	r2cm::iItem::DoFunctionT Write2Buffer_WriteConsole::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -122,14 +122,14 @@ namespace screen_buffer_test
 
 
 
-	r2cm::iItem::TitleFuncT Write2Buffer_WriteConsoleOutput::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Write2Buffer_WriteConsoleOutput::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Screen Buffer : Write 2 Buffer : WriteConsoleOutput";
 		};
 	}
-	r2cm::iItem::DoFuncT Write2Buffer_WriteConsoleOutput::GetDoFunction()
+	r2cm::iItem::DoFunctionT Write2Buffer_WriteConsoleOutput::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -182,14 +182,14 @@ namespace screen_buffer_test
 
 
 
-	r2cm::iItem::TitleFuncT ReadConsoleOutputTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ReadConsoleOutputTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Screen Buffer : ReadConsoleOutputTest";
 		};
 	}
-	r2cm::iItem::DoFuncT ReadConsoleOutputTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT ReadConsoleOutputTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -249,14 +249,14 @@ namespace screen_buffer_test
 
 
 
-	r2cm::iItem::TitleFuncT ETCTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ETCTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Screen Buffer : ETC";
 		};
 	}
-	r2cm::iItem::DoFuncT ETCTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT ETCTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -301,14 +301,14 @@ namespace screen_buffer_test
 
 
 
-	r2cm::iItem::TitleFuncT DoubleBuffering::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT DoubleBuffering::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Screen Buffer : Double Buffering";
 		};
 	}
-	r2cm::iItem::DoFuncT DoubleBuffering::GetDoFunction()
+	r2cm::iItem::DoFunctionT DoubleBuffering::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

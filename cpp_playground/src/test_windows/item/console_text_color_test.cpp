@@ -11,14 +11,14 @@
 
 namespace console_text_color_test
 {
-	r2cm::iItem::TitleFuncT ColorTable::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ColorTable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Color Table";
 		};
 	}
-	r2cm::iItem::DoFuncT ColorTable::GetDoFunction()
+	r2cm::iItem::DoFunctionT ColorTable::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -54,14 +54,14 @@ namespace console_text_color_test
 
 
 
-	r2cm::iItem::TitleFuncT TextColor1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT TextColor1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Text Color 1";
 		};
 	}
-	r2cm::iItem::DoFuncT TextColor1::GetDoFunction()
+	r2cm::iItem::DoFunctionT TextColor1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -97,14 +97,14 @@ namespace console_text_color_test
 
 
 
-	r2cm::iItem::TitleFuncT TextColor2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT TextColor2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Text Color 2";
 		};
 	}
-	r2cm::iItem::DoFuncT TextColor2::GetDoFunction()
+	r2cm::iItem::DoFunctionT TextColor2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -176,14 +176,14 @@ namespace console_text_color_test
 
 
 
-	r2cm::iItem::TitleFuncT AdjustColorTable::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT AdjustColorTable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Adjust Color Table";
 		};
 	}
-	r2cm::iItem::DoFuncT AdjustColorTable::GetDoFunction()
+	r2cm::iItem::DoFunctionT AdjustColorTable::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -240,14 +240,14 @@ namespace console_text_color_test
 
 
 
-	r2cm::iItem::TitleFuncT ColorTable2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ColorTable2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Color Table 2";
 		};
 	}
-	r2cm::iItem::DoFuncT ColorTable2::GetDoFunction()
+	r2cm::iItem::DoFunctionT ColorTable2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -328,14 +328,14 @@ namespace console_text_color_test
 
 
 
-	r2cm::iItem::TitleFuncT TextColor3::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT TextColor3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Text Color 3";
 		};
 	}
-	r2cm::iItem::DoFuncT TextColor3::GetDoFunction()
+	r2cm::iItem::DoFunctionT TextColor3::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
