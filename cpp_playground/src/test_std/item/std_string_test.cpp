@@ -90,7 +90,7 @@ namespace std_string_test
 		DECLARATION_MAIN( std::size_t find_pos = 0u; );
 
 		int i = 0;
-		while( std::string::npos != find_pos )
+		while( true )
 		{
 			find_pos = str.find( key_string, pivot_pos );
 			if( std::string::npos == find_pos )
