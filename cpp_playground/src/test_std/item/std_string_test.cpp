@@ -71,6 +71,12 @@ namespace std_string_test
 	{
 		std::cout << r2cm::linefeed;
 
+		if( str.empty() )
+		{
+			std::cout << "Empty" << r2cm::linefeed;
+			return;
+		}
+
 		DECLARATION_MAIN( const std::string key_string = "\n" );
 		OUTPUT_VALUE( key_string.size() );
 
@@ -89,6 +95,9 @@ namespace std_string_test
 			find_pos = str.find( key_string, pivot_pos );
 			if( std::string::npos == find_pos )
 			{
+				std::cout << r2cm::tab << i << "[" << pivot_pos << " ~ " << str.size() - 1u << "]" << " > ";
+				std::cout << ( &str[pivot_pos] );
+				std::cout << r2cm::linefeed;
 				break;
 			}
 
@@ -113,6 +122,26 @@ namespace std_string_test
 		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			PROCESS_MAIN( StringSplit( "" ) );
+
+			std::cout << r2cm::split;
+
+			PROCESS_MAIN( StringSplit( " " ) );
+
+			std::cout << r2cm::split;
+
+			PROCESS_MAIN( StringSplit( "\n " ) );
+
+			std::cout << r2cm::split;
+
+			PROCESS_MAIN( StringSplit( " \n" ) );
+
+			std::cout << r2cm::split;
+
+			PROCESS_MAIN( StringSplit( "\n \n" ) );
 
 			std::cout << r2cm::split;
 
