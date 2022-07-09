@@ -67,7 +67,7 @@ namespace std_string_test
 
 
 
-	void StringSplit( const std::string& str )
+	void StringSplit( const std::string& str, const std::string& key_string )
 	{
 		std::cout << r2cm::linefeed;
 
@@ -77,17 +77,12 @@ namespace std_string_test
 			return;
 		}
 
-		DECLARATION_MAIN( const std::string key_string = "\n" );
-		OUTPUT_VALUE( key_string.size() );
-
-		std::cout << r2cm::linefeed;
-
 		OUTPUT_VALUE( str.size() );
 
 		std::cout << r2cm::linefeed;
 
-		DECLARATION_MAIN( std::size_t pivot_pos = 0u );
-		DECLARATION_MAIN( std::size_t find_pos = 0u; );
+		std::size_t pivot_pos = 0u;
+		std::size_t find_pos = 0u;
 
 		int i = 0;
 		while( true )
@@ -125,31 +120,36 @@ namespace std_string_test
 
 			std::cout << r2cm::split;
 
-			PROCESS_MAIN( StringSplit( "" ) );
+			DECLARATION_MAIN( const std::string key_string = "\n" );
+			OUTPUT_VALUE( key_string.size() );
 
 			std::cout << r2cm::split;
 
-			PROCESS_MAIN( StringSplit( " " ) );
+			PROCESS_MAIN( StringSplit( "", key_string ) );
 
 			std::cout << r2cm::split;
 
-			PROCESS_MAIN( StringSplit( "\n " ) );
+			PROCESS_MAIN( StringSplit( " ", key_string ) );
 
 			std::cout << r2cm::split;
 
-			PROCESS_MAIN( StringSplit( " \n" ) );
+			PROCESS_MAIN( StringSplit( "\n ", key_string ) );
 
 			std::cout << r2cm::split;
 
-			PROCESS_MAIN( StringSplit( "\n \n" ) );
+			PROCESS_MAIN( StringSplit( " \n", key_string ) );
 
 			std::cout << r2cm::split;
 
-			PROCESS_MAIN( StringSplit( "\n" "\n" "012345" "\n" "6789abcd" "\n" "\n" "efghij" "\n" "klmnopqrstu" "\n" "\n" "\n" "vwxyz" "\n" ) );
+			PROCESS_MAIN( StringSplit( "\n \n", key_string ) );
 
 			std::cout << r2cm::split;
 
-			PROCESS_MAIN( StringSplit( "\n" "\n" "123" "\n" "456" "\n" "\n" "789" "\n" "abc" "\n" "\n" "\n" "defg" ) );
+			PROCESS_MAIN( StringSplit( "\n" "\n" "012345" "\n" "6789abcd" "\n" "\n" "efghij" "\n" "klmnopqrstu" "\n" "\n" "\n" "vwxyz" "\n", key_string ) );
+
+			std::cout << r2cm::split;
+
+			PROCESS_MAIN( StringSplit( "\n" "\n" "123" "\n" "456" "\n" "\n" "789" "\n" "abc" "\n" "\n" "\n" "defg", key_string ) );
 
 			std::cout << r2cm::split;
 
