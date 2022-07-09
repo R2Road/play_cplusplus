@@ -120,4 +120,78 @@ namespace std_string_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	std::size_t CalculateLineCount( const std::string& str )
+	{
+		if( str.empty() )
+		{
+			return 0u;
+		}
+
+		const char* key_string = "\n";
+
+		std::size_t pivot_pos = 0u;
+		std::size_t find_pos = 0u;
+
+		int line_count = 1;
+		while( std::string::npos != find_pos )
+		{
+			find_pos = str.find( key_string, pivot_pos );
+			if( std::string::npos == find_pos )
+			{
+				break;
+			}
+
+			pivot_pos = find_pos + 1u;
+			++line_count;
+		}
+
+		return line_count;
+	}
+	r2cm::iItem::TitleFunctionT Line_Count::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "String : Line Count";
+		};
+	}
+	r2cm::iItem::DoFunctionT Line_Count::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_VALUE( CalculateLineCount( "" ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( CalculateLineCount( " " ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( CalculateLineCount( "\n" " " ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( CalculateLineCount( " " "\n" ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( CalculateLineCount( "\n" " " "\n" ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( CalculateLineCount( "\n" "\n" "ab" "\n" "cd" "\n" "\n" "ef" "\n" "gh" "\n" "\n" "\n" "ijk" "\n" ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

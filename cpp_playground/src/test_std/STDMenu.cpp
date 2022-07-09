@@ -51,9 +51,10 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( '4', std_string_test::Find::GetInstance() );
 		ret->AddItem( '5', std_string_test::Find_And_Split::GetInstance() );
-		ret->AddItem( '6', std_stringview_test::Basic::GetInstance() );
-		ret->AddItem( '7', std_tuple_test::Basic::GetInstance() );
-		ret->AddItem( '8', std_variant_test::Basic::GetInstance() );
+		ret->AddItem( '6', std_string_test::Line_Count::GetInstance() );
+		ret->AddItem( '7', std_stringview_test::Basic::GetInstance() );
+		ret->AddItem( '8', std_tuple_test::Basic::GetInstance() );
+		ret->AddItem( '9', std_variant_test::Basic::GetInstance() );
 
 		ret->AddLineFeed();
 

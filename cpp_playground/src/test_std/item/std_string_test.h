@@ -18,4 +18,11 @@ namespace std_string_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Line_Count : public r2cm::iItem, public r2cm::SingleTon<Line_Count>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
