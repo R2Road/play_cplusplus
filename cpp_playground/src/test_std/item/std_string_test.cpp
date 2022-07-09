@@ -145,11 +145,11 @@ namespace std_string_test
 
 			std::cout << r2cm::split;
 
-			PROCESS_MAIN( StringSplit( "\n" "\n" "012345" "\n" "6789abcd" "\n" "\n" "efghij" "\n" "klmnopqrstu" "\n" "\n" "\n" "vwxyz" "\n", key_string ) );
+			PROCESS_MAIN( StringSplit( "\n" "\n" "012" "\n" "678" "\n" "\n" "efg" "\n" "\n" "\n" "vwx" "\n", key_string ) );
 
 			std::cout << r2cm::split;
 
-			PROCESS_MAIN( StringSplit( "\n" "\n" "123" "\n" "456" "\n" "\n" "789" "\n" "abc" "\n" "\n" "\n" "defg", key_string ) );
+			PROCESS_MAIN( StringSplit( "\n" "\n" "123" "\n" "456" "\n" "\n" "789" "\n" "\n" "\n" "defg", key_string ) );
 
 			std::cout << r2cm::split;
 
