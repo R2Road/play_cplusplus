@@ -223,6 +223,10 @@ namespace std_string_test
 				std::cout << r2cm::linefeed;
 
 				OUTPUT_VALUE( CalculateLineCount( "\n" "\n" "ab" "\n" "cd" "\n" "\n" "ef" "\n" "gh" "\n" "\n" "\n" "ijk" "\n" ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( CalculateLineCount( "\n" "\n" "ab" "\n" "cd" "\n" "\n" "ef" "\n" "gh" "\n" "\n" "\n" "i" ) );
 			}
 
 			std::cout << r2cm::split;
