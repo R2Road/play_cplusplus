@@ -5,6 +5,7 @@
 #include <stdlib.h>
 
 #include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_Inspector.h"
 
 namespace std_filesystem_test
 {
@@ -24,21 +25,17 @@ namespace std_filesystem_test
 			std::cout << r2cm::split;
 
 			{
-				std::filesystem::path p = std::filesystem::current_path();
-
-				std::cout << r2cm::tab << "+ Current Directory" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::filesystem::path p = std::filesystem::current_path();" << r2cm::linefeed2;
-				std::cout << r2cm::tab3 << "> " << p << r2cm::linefeed;
+				std::cout << r2cm::tab << "+ Current Path" << r2cm::linefeed2;
+				DECLARATION_MAIN( const std::filesystem::path p = std::filesystem::current_path() );
+				OUTPUT_VALUE( p );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::filesystem::path p = std::filesystem::temp_directory_path();
-
-				std::cout << r2cm::tab << "+ Temp Directory" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::filesystem::path p = std::filesystem::temp_directory_path();" << r2cm::linefeed2;
-				std::cout << r2cm::tab3 << "> " << p << r2cm::linefeed;
+				std::cout << r2cm::tab << "+ Temp Directory Path" << r2cm::linefeed2;
+				DECLARATION_MAIN( std::filesystem::path p = std::filesystem::temp_directory_path() );
+				OUTPUT_VALUE( p );
 			}
 
 			std::cout << r2cm::split;
