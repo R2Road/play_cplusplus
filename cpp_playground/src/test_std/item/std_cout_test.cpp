@@ -29,6 +29,13 @@ namespace std_cout_test
 
 				PROCESS_MAIN( std::cout.write( "1234" "5678" "90", 6 ) );
 
+				std::cout << r2cm::linefeed2;
+
+				PROCESS_MAIN( std::cout.write( "1234", 6 ) );
+				std::cout << r2cm::linefeed;
+				std::cout << r2cm::tab << "+ 출력할 문자의 숫자가 문자열의 길이를 넘어가도 터지지 않는다." << r2cm::linefeed;
+				std::cout << r2cm::tab << "+ 내부에 예외 처리를 위한 try-catch 구문이 있다." << r2cm::linefeed;
+
 				std::cout << r2cm::linefeed;
 			}
 
