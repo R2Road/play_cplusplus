@@ -69,11 +69,9 @@ namespace std_string_test
 
 	void StringSplit( const std::string& str, const std::string& key_string )
 	{
-		std::cout << r2cm::linefeed;
-
 		if( str.empty() )
 		{
-			std::cout << "Empty" << r2cm::linefeed;
+			std::cout << r2cm::tab << "> Empty" << r2cm::linefeed;
 			return;
 		}
 
