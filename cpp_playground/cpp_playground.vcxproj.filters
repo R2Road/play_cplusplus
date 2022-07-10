@@ -163,9 +163,6 @@
     <ClCompile Include="src\test_cpp\item\etc_0_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\filesystem_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\item\korean_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
@@ -455,6 +452,9 @@
     <ClCompile Include="src\test_std\STDStringMenu.cpp">
       <Filter>test_std</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_std\item\std_filesystem_test.cpp">
+      <Filter>test_std\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -575,9 +575,6 @@
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\etc_0_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\filesystem_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\korean_test.h">
@@ -880,6 +877,9 @@
     </ClInclude>
     <ClInclude Include="src\test_std\STDStringMenu.h">
       <Filter>test_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\item\std_filesystem_test.h">
+      <Filter>test_std\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
