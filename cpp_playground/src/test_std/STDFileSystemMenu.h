@@ -9,10 +9,10 @@ namespace r2cm
 	class Director;
 }
 
-class FileSystemMenu
+class STDFileSystemMenu
 {
 private:
-	FileSystemMenu() = delete;
+	STDFileSystemMenu() = delete;
 
 public:
 	static const char* GetTitle() { return "std::filesystem Menu"; }
