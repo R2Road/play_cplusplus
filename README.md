@@ -15,16 +15,17 @@
   - Visual Studio Community 2017 15.9.27
 
 - external library
-  - vld
+  - [vld]( https://kinddragon.github.io/vld/ )
+  - [r2_console_menu]( https://github.com/R2Road/r2_console_menu )
 
 
 ## ( '_')y-~
 <p float:left;">
-<img src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/algorithm_astar_test_20220131_2.png" width=80%></img>
+<img src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/algorithm_astar_test_20220131_2.png"></img>
 </p>
 <p float:left;">
-<img src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/algorithm_astar_test_20220131.png" width=80%></img>
+<img src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/algorithm_astar_test_20220131.png"></img>
 </p>
 <p float:left;">
-<img src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/maze_generation_kruskals_test_20220609_1.png" width=80%></img>
+<img src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/maze_generation_kruskals_test_20220609_1.png"></img>
 </p>
