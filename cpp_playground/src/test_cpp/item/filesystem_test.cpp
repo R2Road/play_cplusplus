@@ -6,7 +6,7 @@
 
 #include "r2cm/r2cm_constant.h"
 
-namespace filesystem_test
+namespace std_filesystem_test
 {
 	r2cm::iItem::TitleFunctionT DirectoryPath::GetTitleFunction() const
 	{

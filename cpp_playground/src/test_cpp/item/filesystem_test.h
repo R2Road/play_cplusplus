@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_iItem.h"
 #include "r2cm/r2cm_Singleton.h"
 
-namespace filesystem_test
+namespace std_filesystem_test
 {
 	class DirectoryPath : public r2cm::iItem, public r2cm::SingleTon<DirectoryPath>
 	{
