@@ -11,7 +11,7 @@ namespace std_string_test
 	{
 		return []()->const char*
 		{
-			return "String : Find";
+			return "Find";
 		};
 	}
 	r2cm::iItem::DoFunctionT Find::GetDoFunction()
@@ -107,7 +107,7 @@ namespace std_string_test
 	{
 		return []()->const char*
 		{
-			return "String : Find And Split";
+			return "Find And Split";
 		};
 	}
 	r2cm::iItem::DoFunctionT Find_And_Split::GetDoFunction()
@@ -188,7 +188,7 @@ namespace std_string_test
 	{
 		return []()->const char*
 		{
-			return "String : Line Count";
+			return "Line Count";
 		};
 	}
 	r2cm::iItem::DoFunctionT Line_Count::GetDoFunction()

@@ -21,6 +21,7 @@
 #include "STDMemoryMenu.h"
 #include "STDNumericMenu.h"
 #include "STDOptionalMenu.h"
+#include "STDStringMenu.h"
 #include "STDThreadMenu.h"
 
 r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
@@ -49,9 +50,7 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 
 		ret->AddLineFeed();
 
-		ret->AddItem( '4', std_string_test::Find::GetInstance() );
-		ret->AddItem( '5', std_string_test::Find_And_Split::GetInstance() );
-		ret->AddItem( '6', std_string_test::Line_Count::GetInstance() );
+		ret->AddMenu<STDStringMenu>( '4' );
 		ret->AddItem( '7', std_stringview_test::Basic::GetInstance() );
 		ret->AddItem( '8', std_tuple_test::Basic::GetInstance() );
 		ret->AddItem( '9', std_variant_test::Basic::GetInstance() );

@@ -452,6 +452,9 @@
     <ClCompile Include="src\test_std\item\std_string_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_std\STDStringMenu.cpp">
+      <Filter>test_std</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -874,6 +877,9 @@
     </ClInclude>
     <ClInclude Include="src\test_std\item\std_string_test.h">
       <Filter>test_std\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\STDStringMenu.h">
+      <Filter>test_std</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
