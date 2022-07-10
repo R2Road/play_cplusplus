@@ -69,16 +69,16 @@ namespace std_filesystem_test
 
 			{
 				std::cout << r2cm::tab << "+ View Directory" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::filesystem::directory_iterator itr( std::filesystem::current_path() );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "for( auto i : itr ) ..." << r2cm::linefeed;
+				DECLARATION_MAIN( std::filesystem::directory_iterator itr( p ) );
+
+				std::cout << r2cm::tab << "for( auto i : itr ) ..." << r2cm::linefeed;
 				
 				std::cout << r2cm::linefeed3;
 
-				std::filesystem::directory_iterator itr( p );
 				for( auto i : itr )
 				{
-					std::cout << r2cm::tab2 << i.path() << r2cm::linefeed;
-					std::cout << r2cm::tab3 << ( std::filesystem::is_regular_file( i.path() ) ? "file" : "directory" ) << r2cm::linefeed2;
+					std::cout << r2cm::tab << i.path() << r2cm::linefeed;
+					std::cout << r2cm::tab2 << ( std::filesystem::is_regular_file( i.path() ) ? "file" : "directory" ) << r2cm::linefeed2;
 				}
 			}
 
