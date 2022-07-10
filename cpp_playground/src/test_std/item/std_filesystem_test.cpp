@@ -61,13 +61,9 @@ namespace std_filesystem_test
 
 			std::cout << r2cm::split;
 
-			{
-				std::filesystem::path p = std::filesystem::current_path();
-
-				std::cout << r2cm::tab << "+ Target Path" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::filesystem::path p = std::filesystem::current_path();" << r2cm::linefeed2;
-				std::cout << r2cm::tab3 << "> " << p << r2cm::linefeed;
-			}
+			std::cout << r2cm::tab << "+ Target Path" << r2cm::linefeed2;
+			DECLARATION_MAIN( const std::filesystem::path p = std::filesystem::current_path() );
+			OUTPUT_VALUE( p );
 
 			std::cout << r2cm::split;
 
@@ -78,7 +74,7 @@ namespace std_filesystem_test
 				
 				std::cout << r2cm::linefeed3;
 
-				std::filesystem::directory_iterator itr( std::filesystem::current_path() );
+				std::filesystem::directory_iterator itr( p );
 				for( auto i : itr )
 				{
 					std::cout << r2cm::tab2 << i.path() << r2cm::linefeed;
