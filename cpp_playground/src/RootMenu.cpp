@@ -23,7 +23,11 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director
 		, GetTitle(),
-				"> To do : Regex"
+				"> In Progress : ..."
+
+		"\n"
+
+		"\n"	"> To do : Regex"
 		"\n"	"> To do : Vector3"
 		"\n"	"> To do : Encoding"
 		"\n"	"> To do : Infinite Number"
