@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <windows.h>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace console_window_input_test
 {

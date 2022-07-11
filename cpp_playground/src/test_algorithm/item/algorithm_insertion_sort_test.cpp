@@ -2,7 +2,7 @@
 
 #include <array>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "utility/r2utility_StopWatch.h"
 
 namespace algorithm_insertion_sort_test

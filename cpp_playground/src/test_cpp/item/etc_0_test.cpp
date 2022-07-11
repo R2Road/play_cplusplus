@@ -4,7 +4,7 @@
 #include <numeric> // std::iota
 #include <stdint.h>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace etc_test
 {

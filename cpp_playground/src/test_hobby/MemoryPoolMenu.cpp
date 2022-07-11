@@ -1,7 +1,7 @@
 #include "MemoryPoolMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "HobbyMenu.h"
 
 #include "test_hobby/item/memory_pool_test.h"

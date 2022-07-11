@@ -2,7 +2,7 @@
 
 #include <algorithm>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace template_practice_part_01_test
 {

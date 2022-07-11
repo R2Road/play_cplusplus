@@ -2,7 +2,7 @@
 
 #include <cstdlib> // rand, srand
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 
 namespace c_random_test

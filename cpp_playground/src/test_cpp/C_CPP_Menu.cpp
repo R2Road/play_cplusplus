@@ -1,7 +1,7 @@
 #include "C_CPP_Menu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "item/array_test.h"
 #include "item/operator_ternary_test.h"

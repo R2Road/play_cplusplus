@@ -4,7 +4,7 @@
 #include <cwchar>
 #include <Windows.h> // HDC
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 void ShowFontInfo( const CONSOLE_FONT_INFOEX & cfie )
 {

@@ -4,7 +4,7 @@
 #include <memory>
 #include <utility>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace lambda_test
 {

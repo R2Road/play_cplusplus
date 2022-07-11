@@ -1,6 +1,6 @@
 #include "EnumMenu.h"
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Director.h"
 
 #include "test_cpp/item/enum_test.h"

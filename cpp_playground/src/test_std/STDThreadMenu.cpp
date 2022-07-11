@@ -1,7 +1,7 @@
 #include "STDThreadMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "test_cpp/item/atomic_test.h"
 #include "test_std/item/std_thread_test.h"

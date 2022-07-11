@@ -5,7 +5,7 @@
 #include <unordered_map>
 #include <vector>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace alignof_test
 {

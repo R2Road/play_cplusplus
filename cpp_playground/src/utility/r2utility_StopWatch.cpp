@@ -3,7 +3,7 @@
 #include <iostream>
 #include <numeric>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace r2utility
 {

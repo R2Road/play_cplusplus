@@ -4,9 +4,9 @@
 
 namespace r2cm
 {
-	void WindowUtility::ChangeTitle( const wchar_t* title_string )
+	void WindowUtility::ChangeTitle( const char* title_string )
 	{
-		SetConsoleTitle( title_string );
+		SetConsoleTitleA( title_string );
 	}
 
 	void WindowUtility::Resize( const int w, const int h )

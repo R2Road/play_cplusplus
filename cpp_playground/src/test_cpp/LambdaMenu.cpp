@@ -1,7 +1,7 @@
 #include "LambdaMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "C_CPP_Menu.h"
 #include "test_cpp/item/lambda_test.h"

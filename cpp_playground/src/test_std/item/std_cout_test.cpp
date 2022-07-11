@@ -2,7 +2,7 @@
 
 #include <iomanip> // Manipulator : 조작자, 조정자
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Inspector.h"
 
 namespace std_cout_test

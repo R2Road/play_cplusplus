@@ -2,7 +2,7 @@
 
 #include <locale>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace korean_test
 {

@@ -12,7 +12,7 @@ int main()
 	//
 	// Environment : Title
 	//
-	r2cm::WindowUtility::ChangeTitle( L"cpp_playground" );
+	r2cm::WindowUtility::ChangeTitle( "cpp_playground" );
 
 	//
 	// Environment : Size

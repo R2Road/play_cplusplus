@@ -6,7 +6,7 @@
 #define  WIN32_LEAN_AND_MEAN
 #include <windows.h>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace console_window_message_test
 {

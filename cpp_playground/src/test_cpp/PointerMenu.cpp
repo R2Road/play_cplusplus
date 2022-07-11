@@ -1,7 +1,7 @@
 #include "PointerMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "test_cpp/item/pointer_test.h"
 

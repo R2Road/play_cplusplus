@@ -1,7 +1,7 @@
 #include "STDContainerMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "test_std/item/std_array_test.h"
 #include "test_std/item/std_list_test.h"

@@ -4,7 +4,7 @@
 #include <Windows.h>
 #pragma comment( lib, "winmm.lib" )
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "utility/r2utility_FileUtil.h"
 

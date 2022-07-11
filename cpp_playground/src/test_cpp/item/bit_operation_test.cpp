@@ -2,7 +2,7 @@
 
 #include <numeric>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Inspector.h"
 
 namespace

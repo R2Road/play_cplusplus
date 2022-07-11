@@ -1,6 +1,6 @@
 #include "align_test.h"
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace align_test
 {

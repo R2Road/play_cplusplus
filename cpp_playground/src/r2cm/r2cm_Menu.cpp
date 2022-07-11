@@ -2,7 +2,7 @@
 
 #include <cctype> // std::toupper
 
-#include "r2cm_constant.h"
+#include "r2cm_ostream.h"
 
 namespace
 {

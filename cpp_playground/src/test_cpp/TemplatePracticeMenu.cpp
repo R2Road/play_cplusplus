@@ -1,6 +1,6 @@
 #include "TemplatePracticeMenu.h"
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Director.h"
 
 #include "test_cpp/item/template_practice_part_01_test.h"

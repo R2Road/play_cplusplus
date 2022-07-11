@@ -1,6 +1,6 @@
 #include "MazeGenerationMenu.h"
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Director.h"
 
 #include "test_algorithm/item/algorithm_maze_test.h"

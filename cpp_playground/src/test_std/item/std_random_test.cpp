@@ -6,7 +6,7 @@
 #include <string>
 #include <map>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "utility/r2utility_FileUtil.h"
 
 

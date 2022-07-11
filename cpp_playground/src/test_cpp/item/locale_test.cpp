@@ -3,7 +3,7 @@
 #include <conio.h>
 #include <locale>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace locale_test
 {

@@ -1,6 +1,6 @@
 #include "fsm_v1_test.h"
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace fsm_v1_test
 {

@@ -8,7 +8,7 @@
 #include <unordered_set>
 #include <vector>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "utility/r2utility_StopWatch.h"
 

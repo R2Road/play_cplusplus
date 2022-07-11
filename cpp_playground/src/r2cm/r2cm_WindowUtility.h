@@ -7,7 +7,7 @@ namespace r2cm
 	class WindowUtility
 	{
 	public:
-		static void ChangeTitle( const wchar_t* title_string );
+		static void ChangeTitle( const char* title_string );
 		static void Resize( const int w, const int h );
 		static void Move( const int x, const int y );
 

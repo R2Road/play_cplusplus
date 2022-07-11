@@ -1,7 +1,7 @@
 #include "FlickeringResearchMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "item/flickering_research.h"
 

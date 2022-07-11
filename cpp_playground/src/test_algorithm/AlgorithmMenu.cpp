@@ -1,7 +1,7 @@
 #include "AlgorithmMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "test_algorithm/item/algorithm_bubble_sort_test.h"
 #include "test_algorithm/item/algorithm_selection_sort_test.h"

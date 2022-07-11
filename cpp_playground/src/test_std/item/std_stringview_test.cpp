@@ -3,7 +3,7 @@
 #include <string>
 #include <string_view>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 using namespace std::string_view_literals; // for sv
 

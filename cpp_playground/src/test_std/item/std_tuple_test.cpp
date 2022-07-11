@@ -3,7 +3,7 @@
 #include <string>
 #include <tuple>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace std_tuple_test
 {

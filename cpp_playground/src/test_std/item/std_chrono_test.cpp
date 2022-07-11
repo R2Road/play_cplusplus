@@ -4,7 +4,7 @@
 #include <chrono>
 #include <ctime> // time.h : c // time(), clock()
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace std_chrono_test
 {

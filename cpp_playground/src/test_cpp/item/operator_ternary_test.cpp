@@ -1,6 +1,6 @@
 #include "operator_ternary_test.h"
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Inspector.h"
 
 namespace operator_ternary_test

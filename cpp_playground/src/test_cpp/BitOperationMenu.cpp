@@ -1,6 +1,6 @@
 #include "BitOperationMenu.h"
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Director.h"
 
 #include "item/bit_operation_test.h"

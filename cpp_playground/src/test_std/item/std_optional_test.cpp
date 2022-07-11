@@ -2,7 +2,7 @@
 
 #include <optional>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace std_optional_test
 {

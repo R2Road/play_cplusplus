@@ -6,7 +6,7 @@
 #include <Windows.h>
 
 #include "r2/r2_Assert.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Inspector.h"
 #include "utility/r2utility_FileUtil.h"
 

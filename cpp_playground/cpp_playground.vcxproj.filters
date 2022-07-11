@@ -434,6 +434,15 @@
     <ClCompile Include="src\test_windows\item\screen_buffer_test.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_std\item\std_string_test.cpp">
+      <Filter>test_std\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_std\STDStringMenu.cpp">
+      <Filter>test_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_std\item\std_filesystem_test.cpp">
+      <Filter>test_std\item</Filter>
+    </ClCompile>
     <ClCompile Include="src\r2cm\r2cm_Director.cpp">
       <Filter>r2cm</Filter>
     </ClCompile>
@@ -445,15 +454,6 @@
     </ClCompile>
     <ClCompile Include="src\r2cm\r2cm_WindowUtility.cpp">
       <Filter>r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_string_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\STDStringMenu.cpp">
-      <Filter>test_std</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_filesystem_test.cpp">
-      <Filter>test_std\item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -848,8 +848,14 @@
     <ClInclude Include="src\test_windows\item\screen_buffer_test.h">
       <Filter>test_windows\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_constant.h">
-      <Filter>r2cm</Filter>
+    <ClInclude Include="src\test_std\item\std_string_test.h">
+      <Filter>test_std\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\STDStringMenu.h">
+      <Filter>test_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\item\std_filesystem_test.h">
+      <Filter>test_std\item</Filter>
     </ClInclude>
     <ClInclude Include="src\r2cm\r2cm_Director.h">
       <Filter>r2cm</Filter>
@@ -863,6 +869,9 @@
     <ClInclude Include="src\r2cm\r2cm_Menu.h">
       <Filter>r2cm</Filter>
     </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_ostream.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
     <ClInclude Include="src\r2cm\r2cm_Singleton.h">
       <Filter>r2cm</Filter>
     </ClInclude>
@@ -871,15 +880,6 @@
     </ClInclude>
     <ClInclude Include="src\r2cm\r2cm_WindowUtility.h">
       <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_string_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\STDStringMenu.h">
-      <Filter>test_std</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_filesystem_test.h">
-      <Filter>test_std\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

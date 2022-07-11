@@ -2,7 +2,7 @@
 
 #include <array>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Inspector.h"
 
 #pragma warning( disable : 4101 )

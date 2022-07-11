@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace template_meta_programming_test
 {
