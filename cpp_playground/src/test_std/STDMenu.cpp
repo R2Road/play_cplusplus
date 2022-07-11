@@ -29,37 +29,17 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem(
-			'1'
-			, []()->const char* { return STDCoutMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( STDCoutMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			'2'
-			, []()->const char* { return STDFileSystemMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( STDFileSystemMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			'3'
-			, []()->const char* { return STDOptionalMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( STDOptionalMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<STDCoutMenu>( '1' );
+		ret->AddMenu<STDFileSystemMenu>( '2' );
+		ret->AddMenu<STDOptionalMenu>( '3' );
+		ret->AddMenu<STDStringMenu>( '4' );
+
+
 
 		ret->AddLineFeed();
 
-		ret->AddMenu<STDStringMenu>( '4' );
+
+
 		ret->AddItem( '7', std_stringview_test::Basic::GetInstance() );
 		ret->AddItem( '8', std_tuple_test::Basic::GetInstance() );
 		ret->AddItem( '9', std_variant_test::Basic::GetInstance() );
