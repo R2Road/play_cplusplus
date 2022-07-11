@@ -31,6 +31,15 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem(
 			'1'
+			, []()->const char* { return STDCoutMenu::GetTitle(); }
+			, [&director]()->r2cm::eItemLeaveAction
+			{
+				director.Setup( STDCoutMenu::Create( director ) );
+				return r2cm::eItemLeaveAction::None;
+			}
+		);
+		ret->AddItem(
+			'2'
 			, []()->const char* { return STDFileSystemMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
@@ -39,7 +48,7 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem(
-			'2'
+			'3'
 			, []()->const char* { return STDOptionalMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
@@ -107,15 +116,6 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 		ret->AddItem( 'z', std_regex_test::Basic::GetInstance() );
-		ret->AddItem(
-			'x'
-			, []()->const char* { return STDCoutMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( STDCoutMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
 
 
 		ret->AddSplit();
