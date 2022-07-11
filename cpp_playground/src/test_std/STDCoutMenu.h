@@ -15,6 +15,6 @@ private:
 	STDCoutMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "std::cout"; }
+	static const char* GetTitle() { return "std::cout Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
