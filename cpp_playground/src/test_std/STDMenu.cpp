@@ -44,7 +44,11 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 		ret->AddItem( '8', std_tuple_test::Basic::GetInstance() );
 		ret->AddItem( '9', std_variant_test::Basic::GetInstance() );
 
+
+
 		ret->AddLineFeed();
+
+
 
 		ret->AddItem( 'q', std_function_test::Equality_FunctionPointer_1::GetInstance() );
 		ret->AddItem( 'w', std_function_test::Equality_FunctionPointer_2::GetInstance() );
@@ -52,64 +56,33 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'r', std_function_2_test::Equality_STDBind_1::GetInstance() );
 		ret->AddItem( 't', std_function_test::Equality_Lambda_1::GetInstance() );
 
+
+
 		ret->AddLineFeed();
 
 
-		ret->AddItem(
-			'a'
-			, []()->const char* { return STDMemoryMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( STDMemoryMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			's'
-			, []()->const char* { return STDNumericMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( STDNumericMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			'd'
-			, []()->const char* { return STDContainerMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( STDContainerMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			'f'
-			, []()->const char* { return STDThreadMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( STDThreadMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+
+		ret->AddMenu<STDMemoryMenu>( 'a' );
+		ret->AddMenu<STDNumericMenu>( 's' );
+		ret->AddMenu<STDContainerMenu>( 'd' );
+		ret->AddMenu<STDThreadMenu>( 'f' );
 		ret->AddItem( 'g', std_algorithm_test::Shuffle::GetInstance() );
 
+
+
 		ret->AddLineFeed();
 
+
+
 		ret->AddItem( 'z', std_regex_test::Basic::GetInstance() );
+
 
 
 		ret->AddSplit();
 
 
-		ret->AddItem(
-			27
-			, []()->const char* { return "Return To Root"; }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( RootMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+
+		ret->AddMenu<RootMenu>( 27 );
 	}
 
 	return ret;
