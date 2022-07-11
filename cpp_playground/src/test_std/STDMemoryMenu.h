@@ -15,6 +15,6 @@ private:
 	STDMemoryMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Memory"; }
+	static const char* GetTitle() { return "Memory Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
