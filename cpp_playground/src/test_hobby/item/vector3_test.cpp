@@ -109,7 +109,6 @@ namespace vector3_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Operation" << r2cm::linefeed2;
 				DECLARATION_MAIN( const auto v3 = v1 + v2 );
 
 				std::cout << r2cm::linefeed;
@@ -144,7 +143,6 @@ namespace vector3_test
 			std::cout << r2cm::split;
 
 			{
-
 				PROCESS_MAIN( v1 += v2 );
 
 				std::cout << r2cm::linefeed;
