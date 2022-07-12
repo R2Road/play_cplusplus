@@ -25,13 +25,13 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
-		ret->AddItem( '2', fsm_v1_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
 
 
 		ret->AddItem( 'q', infinite_number_test::Basic::GetInstance() );
+		ret->AddItem( 'w', fsm_v1_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
