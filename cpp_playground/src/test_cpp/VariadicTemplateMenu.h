@@ -14,6 +14,6 @@ private:
 	VariadicTemplateMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Variadic Template"; }
+	static const char* GetTitle() { return "Variadic Template Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
