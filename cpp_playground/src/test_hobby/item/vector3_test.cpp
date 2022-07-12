@@ -49,7 +49,7 @@ namespace r2
 
 	std::ostream& operator<<( std::ostream& os, const Vector3& v )
 	{
-		os << "x : " << v.x << "     y : " << v.y << "     z : " << v.z << r2cm::linefeed;
+		os << "x : " << v.x << "     y : " << v.y << "     z : " << v.z;
 		return os;
 	}
 }
