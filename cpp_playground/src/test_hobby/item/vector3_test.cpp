@@ -46,6 +46,12 @@ namespace r2
 		v1.y *= scalar;
 		v1.z *= scalar;
 	}
+
+	std::ostream& operator<<( std::ostream& os, const Vector3& v )
+	{
+		os << "x : " << v.x << "     y : " << v.y << "     z : " << v.z << r2cm::linefeed;
+		return os;
+	}
 }
 
 namespace vector3_test
@@ -77,9 +83,7 @@ namespace vector3_test
 
 				std::cout << r2cm::linefeed;
 
-				OUTPUT_VALUE( v3.x );
-				OUTPUT_VALUE( v3.y );
-				OUTPUT_VALUE( v3.z );
+				OUTPUT_VALUE( v3 );
 			}
 
 			std::cout << r2cm::split;
