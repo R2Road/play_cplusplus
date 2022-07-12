@@ -243,31 +243,17 @@ namespace vector3_test
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( const r2::Vector3 v1( 1.f, 1.1f, 2.2f ) );
+			DECLARATION_MAIN( const float scalar = 3.f );
+
+			std::cout << r2cm::split;
+
 			{
-				const r2::Vector3 v1{ 1.f, 1.1f, 2.2f };
-				const float scalar = 3.f;
-
-				const auto v3 = v1 * scalar;
-
-				std::cout << r2cm::tab << "+ Variable" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "r2::Vector3 v1{ 1.f, 1.1f, 2.2f };" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "float scalar = 3.f;" << r2cm::linefeed;
-
+				DECLARATION_MAIN( const auto v3 = v1 * scalar );
 
 				std::cout << r2cm::linefeed;
 
-
-				std::cout << r2cm::tab << "+ Operation" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "const auto v3 = v1 * scalar;" << r2cm::linefeed;
-
-
-				std::cout << r2cm::linefeed;
-
-
-				std::cout << r2cm::tab << "+ Result" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "v3.x : " << v3.x << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "v3.y : " << v3.y << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "v3.z : " << v3.z << r2cm::linefeed;
+				OUTPUT_VALUE( v3 );
 			}
 
 			std::cout << r2cm::split;
