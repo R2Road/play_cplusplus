@@ -1,11 +1,14 @@
 #include "vector3_test.h"
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace r2
 {
 	struct Vector3
 	{
+		Vector3( float new_x, float new_y, float new_z ) : x( new_x ), y( new_y ), z( new_z ) {}
+
 		float x = 0.f;
 		float y = 0.f;
 		float z = 0.f;
@@ -62,31 +65,21 @@ namespace vector3_test
 
 			std::cout << r2cm::split;
 
+			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+			DECLARATION_MAIN( const r2::Vector3 v1( 1.f, 1.1f, 2.2f ) );
+			DECLARATION_MAIN( const r2::Vector3 v2( 2.1f, 0.f, 2.f ) );
+
+			std::cout << r2cm::split;
+
 			{
-				const r2::Vector3 v1{ 1.f, 1.1f, 2.2f };
-				const r2::Vector3 v2{ 2.1f, 0.f, 2.f };
-
-				const auto v3 = v1 + v2;
-
-				std::cout << r2cm::tab << "+ Variable" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "r2::Vector3 v1{ 1.f, 1.1f, 2.2f };" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "r2::Vector3 v2{ 2.1f, 0.f, 2.f };" << r2cm::linefeed;
-
-
-				std::cout << r2cm::linefeed;
-
-
 				std::cout << r2cm::tab << "+ Operation" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "const auto v3 = v1 + v2;" << r2cm::linefeed;
-
+				DECLARATION_MAIN( const auto v3 = v1 + v2 );
 
 				std::cout << r2cm::linefeed;
 
-
-				std::cout << r2cm::tab << "+ Result" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "v3.x : " << v3.x << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "v3.y : " << v3.y << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "v3.z : " << v3.z << r2cm::linefeed;
+				OUTPUT_VALUE( v3.x );
+				OUTPUT_VALUE( v3.y );
+				OUTPUT_VALUE( v3.z );
 			}
 
 			std::cout << r2cm::split;
