@@ -2,9 +2,10 @@
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
-#include "HobbyMenu.h"
 
 #include "test_hobby/item/memory_pool_test.h"
+
+#include "HobbyMenu.h"
 
 r2cm::MenuUp MemoryPoolMenu::Create( r2cm::Director& director )
 {
@@ -17,15 +18,7 @@ r2cm::MenuUp MemoryPoolMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddItem(
-			27
-			, []()->const char* { return "Return To Root"; }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( HobbyMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<HobbyMenu>( 27 );
 	}
 
 	return ret;
