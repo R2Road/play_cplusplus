@@ -5,6 +5,13 @@
 
 namespace vector3_test
 {
+	class Declaration : public r2cm::iItem, public r2cm::SingleTon<Declaration>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class OperatorPlus : public r2cm::iItem, public r2cm::SingleTon<OperatorPlus>
 	{
 	public:

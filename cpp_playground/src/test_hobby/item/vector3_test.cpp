@@ -56,6 +56,37 @@ namespace r2
 
 namespace vector3_test
 {
+	r2cm::iItem::TitleFunctionT Declaration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Vector3 : Declaration";
+		};
+	}
+	r2cm::iItem::DoFunctionT Declaration::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const r2::Vector3 v1( 1.f, 1.1f, 2.2f ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( v1 );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT OperatorPlus::GetTitleFunction() const
 	{
 		return []()->const char*
