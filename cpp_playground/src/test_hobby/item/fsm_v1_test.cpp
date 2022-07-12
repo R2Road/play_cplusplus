@@ -8,7 +8,7 @@ namespace fsm_v1_test
 	{
 		return []()->const char*
 		{
-			return "FSM v1 : Basic";
+			return "FSM v1 : Basic( To do )";
 		};
 	}
 	r2cm::iItem::DoFunctionT Basic::GetDoFunction()

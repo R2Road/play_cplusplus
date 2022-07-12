@@ -14,6 +14,6 @@ private:
 	MemoryPoolMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Memory Pool( Inprogress )"; }
+	static const char* GetTitle() { return "Memory Pool( In Progress )"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
