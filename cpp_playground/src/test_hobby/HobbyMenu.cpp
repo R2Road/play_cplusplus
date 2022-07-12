@@ -2,7 +2,6 @@
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
-#include "RootMenu.h"
 
 #include "test_hobby/item/fsm_v1_test.h"
 #include "test_hobby/item/infinite_number_test.h"
@@ -11,20 +10,14 @@
 #include "ArrayBasedListMenu.h"
 #include "MemoryPoolMenu.h"
 
+#include "RootMenu.h"
+
 r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem(
-			'1'
-			, []()->const char* { return MemoryPoolMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( MemoryPoolMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<MemoryPoolMenu>( '1' );
 
 
 		ret->AddSplit();
@@ -49,15 +42,7 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddItem(
-			'z'
-			, []()->const char* { return ArrayBasedListMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( ArrayBasedListMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<ArrayBasedListMenu>( 'z' );
 
 
 		ret->AddSplit();
