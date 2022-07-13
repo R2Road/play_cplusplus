@@ -9,11 +9,11 @@
 namespace r2
 {
 	template<std::size_t N>
-	struct CharBuffer
+	struct MemoryBlock
 	{
 		using ElementT = int8_t;
 
-		CharBuffer() :
+		MemoryBlock() :
 			b()
 			, size( N )
 		{
@@ -44,7 +44,7 @@ namespace memory_pool_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( r2::CharBuffer<63> memory_block );
+				DECLARATION_MAIN( r2::MemoryBlock<63> memory_block );
 
 				std::cout << r2cm::linefeed;
 
