@@ -5,7 +5,7 @@
 
 namespace memory_pool_test
 {
-	class MemoryAllocation : public r2cm::iItem, public r2cm::SingleTon<MemoryAllocation>
+	class MemoryBlock_Declaration : public r2cm::iItem, public r2cm::SingleTon<MemoryBlock_Declaration>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
