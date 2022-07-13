@@ -8,10 +8,11 @@
 
 namespace r2
 {
-	template<std::size_t N>
+	template<uint32_t N>
 	struct MemoryBlock
 	{
 		using ElementT = int8_t;
+		using SizeT = uint32_t;
 
 		MemoryBlock() :
 			b()
@@ -21,7 +22,7 @@ namespace r2
 		}
 
 		ElementT b[N];
-		const std::size_t size;
+		const SizeT size;
 	};
 
 	class MemoryPool
