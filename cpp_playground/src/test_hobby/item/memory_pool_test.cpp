@@ -23,6 +23,12 @@ namespace r2
 		ElementT b[N];
 		const std::size_t size;
 	};
+
+	class MemoryPool
+	{
+	public:
+		MemoryPool() {}
+	};
 }
 
 namespace memory_pool_test
@@ -55,6 +61,34 @@ namespace memory_pool_test
 				}
 
 				std::cout << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT MemoryPool_Declaration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Memory Pool : Declaration";
+		};
+	}
+
+	r2cm::iItem::DoFunctionT MemoryPool_Declaration::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( r2::MemoryPool memory_pool );
 			}
 
 			std::cout << r2cm::split;

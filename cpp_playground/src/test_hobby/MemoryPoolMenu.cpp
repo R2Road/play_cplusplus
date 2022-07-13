@@ -13,6 +13,7 @@ r2cm::MenuUp MemoryPoolMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', memory_pool_test::MemoryAllocation::GetInstance() );
+		ret->AddItem( '2', memory_pool_test::MemoryPool_Declaration::GetInstance() );
 
 
 		ret->AddSplit();

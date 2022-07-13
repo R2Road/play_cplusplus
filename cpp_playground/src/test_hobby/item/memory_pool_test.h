@@ -11,4 +11,11 @@ namespace memory_pool_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class MemoryPool_Declaration : public r2cm::iItem, public r2cm::SingleTon<MemoryPool_Declaration>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
