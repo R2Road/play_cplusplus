@@ -1,6 +1,7 @@
 #include "memory_pool_test.h"
 
 #include <cassert>
+#include <stdint.h>
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
@@ -10,6 +11,8 @@ namespace r2
 	template<std::size_t N>
 	struct CharBuffer
 	{
+		using ElementT = int8_t;
+
 		CharBuffer() :
 			b()
 			, size( N )
@@ -17,7 +20,7 @@ namespace r2
 			memset( b, 0, sizeof( b ) );
 		}
 
-		char b[N];
+		ElementT b[N];
 		const std::size_t size;
 	};
 }
