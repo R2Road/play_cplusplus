@@ -2,6 +2,7 @@
 
 #include <cassert>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace r2
@@ -19,8 +20,6 @@ namespace r2
 		char b[N];
 		const std::size_t size;
 	};
-
-	using MemoryBlock = CharBuffer<64>;
 }
 
 namespace memory_pool_test
@@ -42,10 +41,11 @@ namespace memory_pool_test
 			std::cout << r2cm::split;
 
 			{
-				r2::MemoryBlock memory_block;
-				std::cout << r2cm::tab << "+ MemoryBlock memory_block;" << r2cm::linefeed;
+				DECLARATION_MAIN( r2::CharBuffer<63> memory_block );
 
-				std::cout << r2cm::tab2 << "- Print : ";
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "- Print : ";
 				for( const auto c : memory_block.b )
 				{
 					std::cout << static_cast<int>( c );
