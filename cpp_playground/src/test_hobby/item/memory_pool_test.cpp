@@ -25,15 +25,15 @@ namespace
 
 namespace memory_pool_test
 {
-	r2cm::iItem::TitleFunctionT Step01::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MemoryAllocation::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Memory Pool : Step 01( To do )";
+			return "Memory Pool : Memory Allocation";
 		};
 	}
 
-	r2cm::iItem::DoFunctionT Step01::GetDoFunction()
+	r2cm::iItem::DoFunctionT MemoryAllocation::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
