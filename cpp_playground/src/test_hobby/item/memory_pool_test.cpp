@@ -4,7 +4,7 @@
 
 #include "r2cm/r2cm_ostream.h"
 
-namespace
+namespace r2
 {
 	template<std::size_t N>
 	struct CharBuffer
@@ -42,7 +42,7 @@ namespace memory_pool_test
 			std::cout << r2cm::split;
 
 			{
-				MemoryBlock memory_block;
+				r2::MemoryBlock memory_block;
 				std::cout << r2cm::tab << "+ MemoryBlock memory_block;" << r2cm::linefeed;
 
 				std::cout << r2cm::tab2 << "- Print : ";
