@@ -14,6 +14,6 @@ private:
 	RandomMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Random"; }
+	static const char* GetTitle() { return "Random Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
