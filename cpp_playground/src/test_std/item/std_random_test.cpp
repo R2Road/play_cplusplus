@@ -207,12 +207,9 @@ namespace std_random_test
 
 			std::cout << r2cm::split;
 
-			std::random_device rd;
-			std::mt19937 gen( rd() );
-			std::discrete_distribution<> d( { 5, 10, 30, 50, 5 } );
-
-			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-			std::cout << r2cm::tab2 << "std::discrete_distribution<> d( { 5, 10, 30, 50, 5 } );" << r2cm::linefeed;
+			DECLARATION_MAIN( std::random_device rd );
+			DECLARATION_MAIN( std::mt19937 random_engine( rd() ) );
+			DECLARATION_MAIN( std::discrete_distribution<> dist( { 5, 10, 30, 50, 5 } ) );
 
 			std::cout << r2cm::split;
 
@@ -224,7 +221,7 @@ namespace std_random_test
 
 				for( int sample_count = 0; 100 > sample_count; ++sample_count )
 				{
-					++test_map[d( gen )];
+					++test_map[dist( random_engine )];
 				}
 
 				for( const auto& t : test_map )
