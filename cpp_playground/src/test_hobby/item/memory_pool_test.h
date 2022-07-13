@@ -18,4 +18,11 @@ namespace memory_pool_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class MemoryPool_New : public r2cm::iItem, public r2cm::SingleTon<MemoryPool_New>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }

@@ -28,7 +28,17 @@ namespace r2
 	class MemoryPool
 	{
 	public:
-		MemoryPool() {}
+		MemoryPool() : mBlock()
+		{}
+
+		template<typename T>
+		T* New()
+		{
+			return nullptr;
+		}
+
+	private:
+		MemoryBlock<64u> mBlock;
 	};
 }
 
@@ -95,6 +105,38 @@ namespace memory_pool_test
 
 			{
 				DECLARATION_MAIN( r2::MemoryPool memory_pool );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT MemoryPool_New::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Memory Pool : New";
+		};
+	}
+
+	r2cm::iItem::DoFunctionT MemoryPool_New::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( r2::MemoryPool pool );
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_EQ( nullptr, pool.New<char>() );
 			}
 
 			std::cout << r2cm::split;
