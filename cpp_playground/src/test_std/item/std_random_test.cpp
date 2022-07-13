@@ -90,79 +90,6 @@ namespace
 		static std::string temp_string = r2utility::MakeOutPutPath( "random_test_Status.dat" );
 		return temp_string.c_str();
 	}
-
-	void Status_Save()
-	{
-		std::cout << "# Status Save #" << r2cm::linefeed2;
-
-		std::cout << "File Path : " << GetFilePath() << r2cm::linefeed;
-		
-		std::cout << r2cm::split;
-
-		std::random_device rd;
-		std::mt19937 random_engine( rd() );
-		std::uniform_int_distribution<int> dist( 0, 999 );
-
-		std::cout << r2cm::tab << "+ Make Random Engine & Test Output" << r2cm::linefeed;
-		std::cout << r2cm::tab2 << dist( random_engine ) << r2cm::linefeed;
-		std::cout << r2cm::tab2 << dist( random_engine ) << r2cm::linefeed;
-		std::cout << r2cm::tab2 << dist( random_engine ) << r2cm::linefeed;
-		std::cout << r2cm::linefeed;
-
-		//
-		// status save
-		//
-		std::cout << r2cm::tab << "+ Save : Current Random Status" << r2cm::linefeed;
-		{
-			std::ofstream fs( GetFilePath() );
-			fs << random_engine;
-		}
-
-		std::cout << r2cm::split;
-	}
-
-	void Status_Load()
-	{
-		std::cout << "# Status Load #" << r2cm::linefeed;
-
-		std::cout << r2cm::split;
-
-		{
-			std::cout << r2cm::tab << "+ Test Step 1" << r2cm::linefeed;
-
-			std::ifstream ifs( GetFilePath() );
-			if( ifs.fail() )
-			{
-				std::cout << r2cm::tab2 << "Failed : Need - random_test::Status_Save" << r2cm::linefeed;
-				return;
-			}
-
-			std::mt19937 random_engine;
-			ifs >> random_engine;
-			std::uniform_int_distribution<int> dist( 0, 999 );
-
-			std::cout << r2cm::tab2 << dist( random_engine ) << r2cm::linefeed;
-			std::cout << r2cm::tab2 << dist( random_engine ) << r2cm::linefeed;
-			std::cout << r2cm::tab2 << dist( random_engine ) << r2cm::linefeed;
-		}
-
-		std::cout << r2cm::split;
-
-		{
-			std::cout << r2cm::tab << "+ Test Step 2" << r2cm::linefeed;
-
-			std::ifstream ifs( GetFilePath() );
-			std::mt19937 random_engine;
-			ifs >> random_engine;
-			std::uniform_int_distribution<int> dist( 0, 999 );
-
-			std::cout << r2cm::tab2 << dist( random_engine ) << r2cm::linefeed;
-			std::cout << r2cm::tab2 << dist( random_engine ) << r2cm::linefeed;
-			std::cout << r2cm::tab2 << dist( random_engine ) << r2cm::linefeed;
-		}
-
-		std::cout << r2cm::split;
-	}
 }
 namespace std_random_test
 {
@@ -177,11 +104,68 @@ namespace std_random_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			Status_Save();
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2cm::linefeed2;
+			std::cout << r2cm::split;
 
-			Status_Load();
+			std::cout << r2cm::tab << "+ Save : Current Random Status" << r2cm::linefeed2;
+
+			DECLARATION_MAIN( std::random_device rd );
+			DECLARATION_MAIN( std::mt19937 random_engine( rd() ) );
+			DECLARATION_MAIN( std::uniform_int_distribution<int> dist( 0, 999 ) );
+
+			std::cout << r2cm::linefeed;
+
+			{
+				std::cout << "File Path : " << GetFilePath() << r2cm::linefeed;
+				DECLARATION_MAIN( std::ofstream fs( GetFilePath() ) );
+				PROCESS_MAIN( fs << random_engine );
+			}
+
+			std::cout << r2cm::split;
+
+			for( int i = 0; 3 > i; ++i )
+			{
+				OUTPUT_VALUE( dist( random_engine ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Load x 1" << r2cm::linefeed2;
+
+				DECLARATION_MAIN( std::ifstream ifs( GetFilePath() ) );
+				DECLARATION_MAIN( std::mt19937 loaded_random_engine );
+				PROCESS_MAIN( ifs >> loaded_random_engine );
+				DECLARATION_MAIN( std::uniform_int_distribution<int> dist_2( 0, 999 ) );
+
+				std::cout << r2cm::linefeed;
+
+				for( int i = 0; 3 > i; ++i )
+				{
+					OUTPUT_VALUE( dist_2( loaded_random_engine ) );
+				}
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Load x 2" << r2cm::linefeed2;
+
+				DECLARATION_MAIN( std::ifstream ifs( GetFilePath() ) );
+				DECLARATION_MAIN( std::mt19937 loaded_random_engine );
+				PROCESS_MAIN( ifs >> loaded_random_engine );
+				DECLARATION_MAIN( std::uniform_int_distribution<int> dist_2( 0, 999 ) );
+
+				std::cout << r2cm::linefeed;
+
+				for( int i = 0; 3 > i; ++i )
+				{
+					OUTPUT_VALUE( dist_2( loaded_random_engine ) );
+				}
+			}
+
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
