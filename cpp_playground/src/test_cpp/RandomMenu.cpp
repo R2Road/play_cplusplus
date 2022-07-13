@@ -1,7 +1,7 @@
 #include "RandomMenu.h"
 
-#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Director.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "test_cpp/item/c_random_test.h"
 #include "test_std/item/std_random_test.h"
