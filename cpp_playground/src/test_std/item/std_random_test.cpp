@@ -6,6 +6,7 @@
 #include <string>
 #include <map>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 #include "utility/r2utility_FileUtil.h"
 
@@ -28,45 +29,49 @@ namespace std_random_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::uniform_int_distribution<int> dist( 0, 2 );" << r2cm::linefeed2;
+				DECLARATION_MAIN( std::random_device rd );
+				DECLARATION_MAIN( std::default_random_engine random_engine( rd() ) );
+				DECLARATION_MAIN( std::uniform_int_distribution<int> dist( 0, 2 ) );
 
-				std::random_device rd;
-				std::default_random_engine random_engine( rd() );
-				std::uniform_int_distribution<int> dist( 0, 2 );
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab2 << "Loop : 10" << r2cm::linefeed;
+				OUTPUT_VALUE( dist( random_engine ) );
 
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "Loop : 10" << r2cm::linefeed;
 				for( int i = 0; 10 > i; ++i )
 				{
-					std::cout << r2cm::tab3 << "- " << dist( random_engine ) << r2cm::linefeed;
+					std::cout << r2cm::tab2 << "- " << dist( random_engine ) << r2cm::linefeed;
 				}
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "Message : Contained Min and Max" << r2cm::linefeed;
+				std::cout << r2cm::tab << "+ Message : Contained Min and Max" << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::uniform_real_distribution<float> dist( 0, 2 );" << r2cm::linefeed2;
+				DECLARATION_MAIN( std::random_device rd );
+				DECLARATION_MAIN( std::default_random_engine random_engine( rd() ) );
+				DECLARATION_MAIN( std::uniform_real_distribution<float> dist( 0.f, 0.1f ) );
 
-				std::random_device rd;
-				std::default_random_engine random_engine( rd() );
-				std::uniform_real_distribution<float> dist( 0.f, 0.1f );
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab2 << "Loop : 10" << r2cm::linefeed;
+				OUTPUT_VALUE( dist( random_engine ) );
 
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "Loop : 10" << r2cm::linefeed;
 				for( int i = 0; 10 > i; ++i )
 				{
-					std::cout << r2cm::tab3 << "- " << dist( random_engine ) << r2cm::linefeed;
+					std::cout << r2cm::tab2 << "- " << dist( random_engine ) << r2cm::linefeed;
 				}
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "Message : Contained Min" << r2cm::linefeed;
+				std::cout << r2cm::tab << "+ Message : Contained Min" << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
