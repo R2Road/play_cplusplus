@@ -15,14 +15,14 @@ namespace r2
 		using SizeT = uint32_t;
 
 		MemoryBlock() :
-			b()
-			, size( N )
+			size( N )
+			, b()
 		{
 			memset( b, 0, sizeof( b ) );
 		}
 
-		ElementT b[N];
 		const SizeT size;
+		ElementT b[N];
 	};
 
 	class MemoryPool
