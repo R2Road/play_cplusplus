@@ -16,13 +16,13 @@ namespace r2
 
 		MemoryBlock() :
 			size( N )
-			, b()
+			, buffer()
 		{
-			memset( b, 0, sizeof( b ) );
+			memset( buffer, 0, sizeof( buffer ) );
 		}
 
 		const SizeT size;
-		ElementT b[N];
+		ElementT buffer[N];
 	};
 
 	class MemoryPool
@@ -71,7 +71,7 @@ namespace memory_pool_test
 				std::cout << r2cm::linefeed;
 
 				std::cout << r2cm::tab << "- Print : ";
-				for( const auto c : memory_block.b )
+				for( const auto c : memory_block.buffer )
 				{
 					std::cout << static_cast<int>( c );
 				}
