@@ -5,7 +5,6 @@
 
 #include "test_cpp/item/alignof_test.h"
 #include "test_cpp/item/alignas_test.h"
-#include "test_cpp/item/align_test.h"
 #include "test_cpp/item/struct_member_alignment_test.h"
 
 #include "C_CPP_Menu.h"
@@ -29,14 +28,6 @@ r2cm::MenuUp AlignMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'q', align_test::AlignAs::GetInstance() );
-
-
-		ret->AddLineFeed();
-
-
-		ret->AddItem( 'z', align_test::Align_0::GetInstance() );
-		ret->AddItem( 'x', align_test::Align_1::GetInstance() );
-		ret->AddItem( 'c', align_test::Align_2::GetInstance() );
 
 
 		ret->AddSplit();

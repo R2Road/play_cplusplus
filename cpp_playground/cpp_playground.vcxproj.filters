@@ -130,9 +130,6 @@
     <ClCompile Include="src\test_hobby\MemoryPoolMenu.cpp">
       <Filter>test_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\align_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\item\alignas_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
@@ -268,9 +265,6 @@
     </ClCompile>
     <ClCompile Include="src\test_algorithm\AlgorithmMenu.cpp">
       <Filter>test_algorithm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\AlignMenu.cpp">
-      <Filter>test_cpp</Filter>
     </ClCompile>
     <ClCompile Include="src\test_cpp\EnumMenu.cpp">
       <Filter>test_cpp</Filter>
@@ -455,6 +449,15 @@
     <ClCompile Include="src\r2cm\r2cm_WindowUtility.cpp">
       <Filter>r2cm</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_std\STDAlignMenu.cpp">
+      <Filter>test_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_cpp\AlignMenu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_std\item\std_align_test.cpp">
+      <Filter>test_std\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -543,9 +546,6 @@
     </ClInclude>
     <ClInclude Include="src\test_hobby\MemoryPoolMenu.h">
       <Filter>test_hobby</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\align_test.h">
-      <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\alignas_test.h">
       <Filter>test_cpp\item</Filter>
@@ -682,9 +682,6 @@
     </ClInclude>
     <ClInclude Include="src\test_algorithm\AlgorithmMenu.h">
       <Filter>test_algorithm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\AlignMenu.h">
-      <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\EnumMenu.h">
       <Filter>test_cpp</Filter>
@@ -880,6 +877,15 @@
     </ClInclude>
     <ClInclude Include="src\r2cm\r2cm_WindowUtility.h">
       <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\STDAlignMenu.h">
+      <Filter>test_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\AlignMenu.h">
+      <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\item\std_align_test.h">
+      <Filter>test_std\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

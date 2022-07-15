@@ -47,12 +47,12 @@
     <ClCompile Include="src\test_algorithm\item\procedural_terrain_generation_3_test.cpp" />
     <ClCompile Include="src\test_algorithm\MazeGenerationMenu.cpp" />
     <ClCompile Include="src\test_algorithm\ProceduralTerrainGenerationMenu.cpp" />
+    <ClCompile Include="src\test_cpp\AlignMenu.cpp" />
     <ClCompile Include="src\test_cpp\BitOperationMenu.cpp" />
     <ClCompile Include="src\test_cpp\ClassMenu.cpp" />
     <ClCompile Include="src\test_cpp\C_CPP_Menu.cpp" />
     <ClCompile Include="src\test_cpp\item\alignas_test.cpp" />
     <ClCompile Include="src\test_cpp\item\alignof_test.cpp" />
-    <ClCompile Include="src\test_cpp\item\align_test.cpp" />
     <ClCompile Include="src\test_cpp\item\array_test.cpp" />
     <ClCompile Include="src\test_cpp\item\atomic_test.cpp" />
     <ClCompile Include="src\test_cpp\item\bit_operation_test.cpp" />
@@ -79,7 +79,6 @@
     <ClCompile Include="src\test_cpp\item\template_practice_part_01_test.cpp" />
     <ClCompile Include="src\test_cpp\item\using_test.cpp" />
     <ClCompile Include="src\test_cpp\item\variadic_template_test.cpp" />
-    <ClCompile Include="src\test_cpp\AlignMenu.cpp" />
     <ClCompile Include="src\test_cpp\CharMenu.cpp" />
     <ClCompile Include="src\test_cpp\DebugMenu.cpp" />
     <ClCompile Include="src\test_cpp\EnumMenu.cpp" />
@@ -107,6 +106,7 @@
     <ClCompile Include="src\test_performance\item\performance_container_iteration_test.cpp" />
     <ClCompile Include="src\test_performance\PerformanceMenu.cpp" />
     <ClCompile Include="src\test_std\item\std_algorithm_test.cpp" />
+    <ClCompile Include="src\test_std\item\std_align_test.cpp" />
     <ClCompile Include="src\test_std\item\std_array_test.cpp" />
     <ClCompile Include="src\test_std\item\std_chrono_test.cpp" />
     <ClCompile Include="src\test_std\item\std_cout_test.cpp" />
@@ -126,6 +126,7 @@
     <ClCompile Include="src\test_std\item\std_tuple_test.cpp" />
     <ClCompile Include="src\test_std\item\std_variant_test.cpp" />
     <ClCompile Include="src\test_std\item\std_vector_test.cpp" />
+    <ClCompile Include="src\test_std\STDAlignMenu.cpp" />
     <ClCompile Include="src\test_std\STDContainerMenu.cpp" />
     <ClCompile Include="src\test_std\STDCoutMenu.cpp" />
     <ClCompile Include="src\test_std\STDFileSystemMenu.cpp" />
@@ -191,12 +192,12 @@
     <ClInclude Include="src\test_algorithm\item\procedural_terrain_generation_3_test.h" />
     <ClInclude Include="src\test_algorithm\MazeGenerationMenu.h" />
     <ClInclude Include="src\test_algorithm\ProceduralTerrainGenerationMenu.h" />
+    <ClInclude Include="src\test_cpp\AlignMenu.h" />
     <ClInclude Include="src\test_cpp\BitOperationMenu.h" />
     <ClInclude Include="src\test_cpp\ClassMenu.h" />
     <ClInclude Include="src\test_cpp\C_CPP_Menu.h" />
     <ClInclude Include="src\test_cpp\item\alignas_test.h" />
     <ClInclude Include="src\test_cpp\item\alignof_test.h" />
-    <ClInclude Include="src\test_cpp\item\align_test.h" />
     <ClInclude Include="src\test_cpp\item\array_test.h" />
     <ClInclude Include="src\test_cpp\item\atomic_test.h" />
     <ClInclude Include="src\test_cpp\item\bit_operation_test.h" />
@@ -223,7 +224,6 @@
     <ClInclude Include="src\test_cpp\item\template_practice_part_01_test.h" />
     <ClInclude Include="src\test_cpp\item\using_test.h" />
     <ClInclude Include="src\test_cpp\item\variadic_template_test.h" />
-    <ClInclude Include="src\test_cpp\AlignMenu.h" />
     <ClInclude Include="src\test_cpp\CharMenu.h" />
     <ClInclude Include="src\test_cpp\DebugMenu.h" />
     <ClInclude Include="src\test_cpp\EnumMenu.h" />
@@ -251,6 +251,7 @@
     <ClInclude Include="src\test_performance\item\performance_container_iteration_test.h" />
     <ClInclude Include="src\test_performance\PerformanceMenu.h" />
     <ClInclude Include="src\test_std\item\std_algorithm_test.h" />
+    <ClInclude Include="src\test_std\item\std_align_test.h" />
     <ClInclude Include="src\test_std\item\std_array_test.h" />
     <ClInclude Include="src\test_std\item\std_chrono_test.h" />
     <ClInclude Include="src\test_std\item\std_cout_test.h" />
@@ -270,6 +271,7 @@
     <ClInclude Include="src\test_std\item\std_tuple_test.h" />
     <ClInclude Include="src\test_std\item\std_variant_test.h" />
     <ClInclude Include="src\test_std\item\std_vector_test.h" />
+    <ClInclude Include="src\test_std\STDAlignMenu.h" />
     <ClInclude Include="src\test_std\STDContainerMenu.h" />
     <ClInclude Include="src\test_std\STDCoutMenu.h" />
     <ClInclude Include="src\test_std\STDFileSystemMenu.h" />

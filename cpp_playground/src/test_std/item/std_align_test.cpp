@@ -1,4 +1,4 @@
-#include "align_test.h"
+#include "std_align_test.h"
 
 #include "r2cm/r2cm_ostream.h"
 
