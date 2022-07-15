@@ -61,7 +61,7 @@ namespace memory_pool_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( const uint32_t memory_block_size = 63 );
+				DECLARATION_MAIN( const uint32_t memory_block_size = 64u );
 				DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
 
 				std::cout << r2cm::linefeed;
