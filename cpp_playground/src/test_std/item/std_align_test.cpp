@@ -1,5 +1,7 @@
 #include "std_align_test.h"
 
+#include <memory>
+
 #include "r2cm/r2cm_ostream.h"
 
 namespace align_test
