@@ -13,9 +13,7 @@ r2cm::MenuUp STDAlignMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', align_test::Basic::GetInstance() );
-		ret->AddItem( '2', align_test::Align_0::GetInstance() );
-		ret->AddItem( '3', align_test::Align_1::GetInstance() );
-		ret->AddItem( '4', align_test::Play::GetInstance() );
+		ret->AddItem( '2', align_test::Play::GetInstance() );
 
 
 		ret->AddSplit();
