@@ -20,7 +20,7 @@ do {																							\
 do {																							\
 	if( !( condition ) )																		\
 	{																							\
-		printf( "\x1B[92m" "[PASS]" "\033[0m" " EXPECT_FALSE( %s )\n", #condition );			\
+		printf( "\x1B[95m" "[PASS]" "\033[0m" " EXPECT_FALSE( %s )\n", #condition );			\
 	}																							\
 	else																						\
 	{																							\
