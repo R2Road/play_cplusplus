@@ -1,13 +1,13 @@
 #include "algorithm_astar_test.h"
 
 #include "r2cm/r2cm_ostream.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 #include "algorithm/r2algorithm_astar_Constant.h"
 #include "algorithm/r2algorithm_astar_PathBuilder.h"
 
 #include "r2/r2_Grid.h"
 #include "r2/r2_Point.h"
-#include "r2cm/r2cm_WindowUtility.h"
 
 #include "utility/r2utility_StopWatch.h"
 
