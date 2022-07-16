@@ -7,6 +7,14 @@
 
 namespace align_test
 {
+	void PrintResult( const void* const ip, const void* const resultp, const std::size_t space )
+	{ 
+		std::cout << r2cm::tab << "- ip : " << ip
+			<< "    - resultp : " << resultp
+			<< "    - space : " << space
+			<< r2cm::linefeed;
+	}
+
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -38,23 +46,14 @@ namespace align_test
 			DECLARATION_MAIN( void* ip = &i );
 			DECLARATION_MAIN( std::size_t space = sizeof( i ) );
 			DECLARATION_MAIN( void* resultp = nullptr );
-
-			{
-				std::cout << r2cm::tab << "- ip : " << ip
-					<< "    - resultp : " << resultp
-					<< "    - space : " << space
-					<< r2cm::linefeed;
-			}
+			PrintResult( ip, resultp, space );
 
 			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( resultp = std::align( alignof( char ), sizeof( char ), ip, space ) );
 				std::cout << r2cm::tab << ( resultp ? "- success" : "- failed" ) << r2cm::linefeed;
-				std::cout << r2cm::tab << "- ip : " << ip
-					<< "    - resultp : " << resultp
-					<< "    - space : " << space
-					<< r2cm::linefeed;
+				PrintResult( ip, resultp, space );
 			}
 
 			std::cout << r2cm::split;
@@ -68,10 +67,7 @@ namespace align_test
 				PROCESS_MAIN( ip = cp );
 				PROCESS_MAIN( space -= sizeof( char ) * move_amount );
 
-				std::cout << r2cm::tab << "- ip : " << ip
-					<< "    - resultp : " << resultp
-					<< "    - space : " << space
-					<< r2cm::linefeed;
+				PrintResult( ip, resultp, space );
 			}
 
 			std::cout << r2cm::split;
@@ -79,10 +75,7 @@ namespace align_test
 			{
 				PROCESS_MAIN( resultp = std::align( alignof( char ), sizeof( char ), ip, space ) );
 				std::cout << r2cm::tab << ( resultp ? "- success" : "- failed" ) << r2cm::linefeed;
-				std::cout << r2cm::tab << "- ip : " << ip
-					<< "    - resultp : " << resultp
-					<< "    - space : " << space
-					<< r2cm::linefeed;
+				PrintResult( ip, resultp, space );
 			}
 
 			std::cout << r2cm::split;
@@ -90,10 +83,7 @@ namespace align_test
 			{
 				PROCESS_MAIN( resultp = std::align( alignof( int ), sizeof( char ), ip, space ) );
 				std::cout << r2cm::tab << ( resultp ? "- success" : "- failed" ) << r2cm::linefeed;
-				std::cout << r2cm::tab << "- ip : " << ip
-					<< "    - resultp : " << resultp
-					<< "    - space : " << space
-					<< r2cm::linefeed;
+				PrintResult( ip, resultp, space );
 			}
 
 			std::cout << r2cm::split;
