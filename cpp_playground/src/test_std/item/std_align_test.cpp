@@ -52,7 +52,7 @@ namespace align_test
 
 			{
 				PROCESS_MAIN( resultp = std::align( alignof( char ), sizeof( char ), ip, space ) );
-				std::cout << r2cm::tab << ( resultp ? "- success" : "- failed" ) << r2cm::linefeed;
+				EXPECT_TRUE( resultp );
 				PrintResult( ip, resultp, space );
 			}
 
@@ -74,7 +74,7 @@ namespace align_test
 
 			{
 				PROCESS_MAIN( resultp = std::align( alignof( char ), sizeof( char ), ip, space ) );
-				std::cout << r2cm::tab << ( resultp ? "- success" : "- failed" ) << r2cm::linefeed;
+				EXPECT_TRUE( resultp );
 				PrintResult( ip, resultp, space );
 			}
 
@@ -82,7 +82,7 @@ namespace align_test
 
 			{
 				PROCESS_MAIN( resultp = std::align( alignof( int ), sizeof( char ), ip, space ) );
-				std::cout << r2cm::tab << ( resultp ? "- success" : "- failed" ) << r2cm::linefeed;
+				EXPECT_FALSE( resultp );
 				PrintResult( ip, resultp, space );
 			}
 
