@@ -5,6 +5,13 @@
 
 namespace align_test
 {
+	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Align_0 : public r2cm::iItem, public r2cm::SingleTon<Align_0>
 	{
 	public:

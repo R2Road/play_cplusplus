@@ -2,10 +2,100 @@
 
 #include <memory>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace align_test
 {
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Basic";
+		};
+	}
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Summury : std::align의 처리 순서" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "> 1. 지정한 bound 에 맞게 메모리 정렬이 가능한지 검토한다." << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "char가 3개 사용된 메모리 위치 에서 int 값을 요청하면 남은 공간에서 메모리 정렬이 가능한가" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "> 2. 메모리 정렬 완료후 남은 메모리 공간이 원하는 T 의 크기를 만족하는지 확인" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "> 3. 이동" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "> 4. 정렬이 필요 없고 남은 공간도 충분하다면 변하는 것이 없다." << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( int i = 1 );
+			DECLARATION_MAIN( void* ip = &i );
+			DECLARATION_MAIN( std::size_t space = sizeof( i ) );
+			DECLARATION_MAIN( void* resultp = nullptr );
+
+			{
+				std::cout << r2cm::tab << "- ip : " << ip << r2cm::linefeed;
+				std::cout << r2cm::tab << "- resultp : " << resultp << r2cm::linefeed;
+				std::cout << r2cm::tab << "- space : " << space << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( resultp = std::align( alignof( char ), sizeof( char ), ip, space ) );
+				std::cout << r2cm::tab << ( resultp ? "- success" : "- failed" ) << r2cm::linefeed;
+				std::cout << r2cm::tab << "- ip : " << ip << r2cm::linefeed;
+				std::cout << r2cm::tab << "- resultp : " << resultp << r2cm::linefeed;
+				std::cout << r2cm::tab << "- space : " << space << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				char* cp = static_cast<char*>( ip );
+				cp += 1;
+
+				ip = cp;
+				space -= sizeof( char ) * 1;
+
+				std::cout << r2cm::tab << "- ip : " << ip << r2cm::linefeed;
+				std::cout << r2cm::tab << "- resultp : " << resultp << r2cm::linefeed;
+				std::cout << r2cm::tab << "- space : " << space << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( resultp = std::align( alignof( char ), sizeof( char ), ip, space ) );
+				std::cout << r2cm::tab << ( resultp ? "- success" : "- failed" ) << r2cm::linefeed;
+				std::cout << r2cm::tab << "- ip : " << ip << r2cm::linefeed;
+				std::cout << r2cm::tab << "- resultp : " << resultp << r2cm::linefeed;
+				std::cout << r2cm::tab << "- space : " << space << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( resultp = std::align( alignof( int ), sizeof( char ), ip, space ) );
+				std::cout << r2cm::tab << ( resultp ? "- success" : "- failed" ) << r2cm::linefeed;
+				std::cout << r2cm::tab << "- ip : " << ip << r2cm::linefeed;
+				std::cout << r2cm::tab << "- resultp : " << resultp << r2cm::linefeed;
+				std::cout << r2cm::tab << "- space : " << space << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Align_0::GetTitleFunction() const
 	{
 		return []()->const char*
