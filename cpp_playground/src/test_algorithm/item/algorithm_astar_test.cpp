@@ -1,13 +1,14 @@
 #include "algorithm_astar_test.h"
 
-#include <Windows.h>
-
 #include "r2cm/r2cm_ostream.h"
 
 #include "algorithm/r2algorithm_astar_Constant.h"
 #include "algorithm/r2algorithm_astar_PathBuilder.h"
+
 #include "r2/r2_Grid.h"
 #include "r2/r2_Point.h"
+#include "r2cm/r2cm_WindowUtility.h"
+
 #include "utility/r2utility_StopWatch.h"
 
 using namespace r2algorithm_astar;
@@ -40,52 +41,52 @@ namespace
 
 	void ShowPath( const r2::PointInt entry_point, const r2::PointInt exit_point, const std::list<r2::PointInt>& path )
 	{
-		const COORD pivot_point{ 0, 4 };
+		const r2cm::WindowUtility::CursorPoint pivot_point{ 0, 4 };
 
 		for( const auto p : path )
 		{
-			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), {
-				pivot_point.X + static_cast<short>( p.GetX() * 2 )
-				, pivot_point.Y + static_cast<short>( p.GetY() )
+			r2cm::WindowUtility::MoveCursorPoint( {
+				pivot_point.x + static_cast<short>( p.GetX() * 2 )
+				, pivot_point.y + static_cast<short>( p.GetY() )
 			} );
 
 			std::cout << '*';
 		}
 
-		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), {
-				pivot_point.X + static_cast<short>( entry_point.GetX() * 2 )
-				, pivot_point.Y + static_cast<short>( entry_point.GetY() )
+		r2cm::WindowUtility::MoveCursorPoint( {
+				pivot_point.x + static_cast<short>( entry_point.GetX() * 2 )
+				, pivot_point.y + static_cast<short>( entry_point.GetY() )
 		} );
 		std::cout << '1';
-		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), {
-				pivot_point.X + static_cast<short>( exit_point.GetX() * 2 )
-				, pivot_point.Y + static_cast<short>( exit_point.GetY() )
+		r2cm::WindowUtility::MoveCursorPoint( {
+				pivot_point.x + static_cast<short>( exit_point.GetX() * 2 )
+				, pivot_point.y + static_cast<short>( exit_point.GetY() )
 		} );
 		std::cout << '2';
 	}
 
 	void ShowPath( const r2::PointInt entry_point, const r2::PointInt exit_point, const std::vector<r2::PointInt>& path )
 	{
-		const COORD pivot_point{ 0, 4 };
+		const r2cm::WindowUtility::CursorPoint pivot_point{ 0, 4 };
 
 		for( const auto p : path )
 		{
-			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), {
-				pivot_point.X + static_cast<short>( p.GetX() * 2 )
-				, pivot_point.Y + static_cast<short>( p.GetY() )
+			r2cm::WindowUtility::MoveCursorPoint( {
+				pivot_point.x + static_cast<short>( p.GetX() * 2 )
+				, pivot_point.y + static_cast<short>( p.GetY() )
 				} );
 
 			std::cout << '*';
 		}
 
-		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), {
-				pivot_point.X + static_cast<short>( entry_point.GetX() * 2 )
-				, pivot_point.Y + static_cast<short>( entry_point.GetY() )
+		r2cm::WindowUtility::MoveCursorPoint( {
+				pivot_point.x + static_cast<short>( entry_point.GetX() * 2 )
+				, pivot_point.y + static_cast<short>( entry_point.GetY() )
 			} );
 		std::cout << '1';
-		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), {
-				pivot_point.X + static_cast<short>( exit_point.GetX() * 2 )
-				, pivot_point.Y + static_cast<short>( exit_point.GetY() )
+		r2cm::WindowUtility::MoveCursorPoint( {
+				pivot_point.x + static_cast<short>( exit_point.GetX() * 2 )
+				, pivot_point.y + static_cast<short>( exit_point.GetY() )
 			} );
 		std::cout << '2';
 	}
@@ -130,7 +131,7 @@ namespace algorithm_astar_test
 				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
-			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
+			r2cm::WindowUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2cm::linefeed;
 
@@ -177,7 +178,7 @@ namespace algorithm_astar_test
 				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
-			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
+			r2cm::WindowUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2cm::linefeed;
 
@@ -225,7 +226,7 @@ namespace algorithm_astar_test
 				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
-			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
+			r2cm::WindowUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2cm::linefeed;
 
@@ -273,7 +274,7 @@ namespace algorithm_astar_test
 				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
-			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
+			r2cm::WindowUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2cm::linefeed2;
 
@@ -325,7 +326,7 @@ namespace algorithm_astar_test
 				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
-			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
+			r2cm::WindowUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2cm::linefeed;
 
@@ -375,7 +376,7 @@ namespace algorithm_astar_test
 				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
-			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
+			r2cm::WindowUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2cm::linefeed;
 
@@ -425,7 +426,7 @@ namespace algorithm_astar_test
 				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
-			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
+			r2cm::WindowUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2cm::linefeed;
 
