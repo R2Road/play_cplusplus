@@ -61,11 +61,11 @@ namespace align_test
 			{
 				std::cout << r2cm::tab << "+ Move" << r2cm::linefeed2;
 
-				DECLARATION_MAIN( const int move_amount = 1 );
 				DECLARATION_MAIN( char* cp = static_cast<char*>( ip ) );
-				PROCESS_MAIN( cp += move_amount );
+				PROCESS_MAIN( cp += sizeof( char ) );
 				PROCESS_MAIN( ip = cp );
-				PROCESS_MAIN( space -= sizeof( char ) * move_amount );
+				PROCESS_MAIN( space -= sizeof( char ) );
+				PROCESS_MAIN( resultp = nullptr );
 
 				PrintResult( ip, resultp, space );
 			}
