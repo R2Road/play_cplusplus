@@ -355,7 +355,7 @@ namespace align_test
 			std::cout << r2cm::split;
 
 			{
-				char buffer[] = "------------------------";
+				char buffer[] = "-------------------------";
 				void * pt = buffer;
 
 				std::cout << r2cm::tab << "+ orig : " << buffer << r2cm::linefeed;
