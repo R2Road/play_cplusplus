@@ -5,9 +5,8 @@
 #include <errno.h>
 #include <time.h>
 
-#include <Windows.h>
-
 #include "r2cm/r2cm_ostream.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 namespace c_time_test
 {
@@ -174,7 +173,7 @@ namespace c_time_test
 
 			while( true )
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 20 } );
+				r2cm::WindowUtility::MoveCursorPoint( { 0, 20 } );
 
 				current_clock = clock();
 				current_sec = current_clock / CLOCKS_PER_SEC;
