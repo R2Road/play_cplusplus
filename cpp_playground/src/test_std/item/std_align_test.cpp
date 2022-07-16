@@ -354,6 +354,10 @@ namespace align_test
 
 			std::cout << r2cm::split;
 
+			std::cout << r2cm::tab << "+ Ref : " << "https://en.cppreference.com/w/cpp/memory/align" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
 			{
 				char buffer[] = "-------------------------";
 				void * pt = buffer;
