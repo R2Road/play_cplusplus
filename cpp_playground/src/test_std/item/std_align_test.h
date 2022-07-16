@@ -26,7 +26,7 @@ namespace align_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Align_2 : public r2cm::iItem, public r2cm::SingleTon<Align_2>
+	class Play : public r2cm::iItem, public r2cm::SingleTon<Play>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

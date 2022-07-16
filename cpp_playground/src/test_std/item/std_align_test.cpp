@@ -339,14 +339,14 @@ namespace align_test
 
 
 	
-	r2cm::iItem::TitleFunctionT Align_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Play::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Align 2";
+			return "Play";
 		};
 	}
-	r2cm::iItem::DoFunctionT Align_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT Play::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
