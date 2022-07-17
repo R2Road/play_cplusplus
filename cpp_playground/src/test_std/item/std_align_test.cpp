@@ -113,16 +113,23 @@ namespace align_test
 
 			std::cout << r2cm::split;
 
-			{
-				char buffer[] = "-------------------------";
-				void * pt = buffer;
+			DECLARATION_MAIN( char buffer[] = "-----------------" );
+			DECLARATION_MAIN( void * pt = buffer );
 
+			std::cout << r2cm::linefeed;
+
+			DECLARATION_MAIN( std::size_t space = sizeof( buffer ) - 1u );
+			std::cout << r2cm::tab << "> \\0 Á¦¿Ü" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
 				std::cout << r2cm::tab << "+ orig : " << buffer << r2cm::linefeed;
 				std::cout << r2cm::tab << "+ adress of pt : " << pt << r2cm::linefeed << r2cm::linefeed;
 
 				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed;
 
-				std::size_t space = sizeof( buffer ) - 1;
+				
 				while( std::align( alignof( int ), sizeof( char ), pt, space ) )
 				{
 					std::cout << r2cm::tab2 << "- old adress of pt : " << pt << r2cm::linefeed;
