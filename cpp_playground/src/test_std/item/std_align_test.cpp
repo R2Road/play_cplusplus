@@ -7,10 +7,10 @@
 
 namespace align_test
 {
-	void PrintResult( const void* const ip, const void* const resultp, const std::size_t space )
+	void PrintResult( const void* const pb, const void* const presult, const std::size_t space )
 	{ 
-		std::cout << r2cm::tab << "- ip : " << ip
-			<< "    - resultp : " << resultp
+		std::cout << r2cm::tab << "- p : " << pb
+			<< "    - result : " << presult
 			<< "    - space : " << space
 			<< r2cm::linefeed;
 	}
@@ -43,17 +43,17 @@ namespace align_test
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( int i = 1 );
-			DECLARATION_MAIN( void* ip = &i );
+			DECLARATION_MAIN( void* pb = &i );
 			DECLARATION_MAIN( std::size_t space = sizeof( i ) );
-			DECLARATION_MAIN( void* resultp = nullptr );
-			PrintResult( ip, resultp, space );
+			DECLARATION_MAIN( void* presult = nullptr );
+			PrintResult( pb, presult, space );
 
 			std::cout << r2cm::split;
 
 			{
-				PROCESS_MAIN( resultp = std::align( alignof( char ), sizeof( char ), ip, space ) );
-				EXPECT_TRUE( resultp );
-				PrintResult( ip, resultp, space );
+				PROCESS_MAIN( presult = std::align( alignof( char ), sizeof( char ), pb, space ) );
+				EXPECT_TRUE( presult );
+				PrintResult( pb, presult, space );
 			}
 
 			std::cout << r2cm::split;
@@ -61,29 +61,29 @@ namespace align_test
 			{
 				std::cout << r2cm::tab << "+ Move" << r2cm::linefeed2;
 
-				DECLARATION_MAIN( char* cp = static_cast<char*>( ip ) );
+				DECLARATION_MAIN( char* cp = static_cast<char*>( pb ) );
 				PROCESS_MAIN( cp += sizeof( char ) );
-				PROCESS_MAIN( ip = cp );
+				PROCESS_MAIN( pb = cp );
 				PROCESS_MAIN( space -= sizeof( char ) );
-				PROCESS_MAIN( resultp = nullptr );
+				PROCESS_MAIN( presult = nullptr );
 
-				PrintResult( ip, resultp, space );
+				PrintResult( pb, presult, space );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				PROCESS_MAIN( resultp = std::align( alignof( char ), sizeof( char ), ip, space ) );
-				EXPECT_TRUE( resultp );
-				PrintResult( ip, resultp, space );
+				PROCESS_MAIN( presult = std::align( alignof( char ), sizeof( char ), pb, space ) );
+				EXPECT_TRUE( presult );
+				PrintResult( pb, presult, space );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				PROCESS_MAIN( resultp = std::align( alignof( int ), sizeof( char ), ip, space ) );
-				EXPECT_FALSE( resultp );
-				PrintResult( ip, resultp, space );
+				PROCESS_MAIN( presult = std::align( alignof( int ), sizeof( char ), pb, space ) );
+				EXPECT_FALSE( presult );
+				PrintResult( pb, presult, space );
 			}
 
 			std::cout << r2cm::split;
