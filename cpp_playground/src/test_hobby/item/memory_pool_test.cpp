@@ -62,20 +62,20 @@ namespace memory_pool_test
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( const uint32_t memory_block_size = 64u );
+			DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
+
+			std::cout << r2cm::split;
+
 			{
-				DECLARATION_MAIN( const uint32_t memory_block_size = 64u );
-				DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
-
-				std::cout << r2cm::linefeed;
-
 				EXPECT_EQ( memory_block_size, memory_block.size );
 				OUTPUT_VALUE( memory_block.size );
 				OUTPUT_VALUE( memory_block.pb );
+			}
 
-				std::cout << r2cm::linefeed;
+			std::cout << r2cm::split;
 
-
-
+			{
 				std::cout << r2cm::tab << "- Print : ";
 				for( const auto c : memory_block.buffer )
 				{
