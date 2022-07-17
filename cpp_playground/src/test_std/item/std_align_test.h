@@ -12,6 +12,13 @@ namespace align_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class Bound : public r2cm::iItem, public r2cm::SingleTon<Bound>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Play : public r2cm::iItem, public r2cm::SingleTon<Play>
 	{
 	public:

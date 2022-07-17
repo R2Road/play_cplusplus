@@ -93,6 +93,77 @@ namespace align_test
 	}
 
 
+
+	r2cm::iItem::TitleFunctionT Bound::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Bound";
+		};
+	}
+	r2cm::iItem::DoFunctionT Bound::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( char buffer[10] = { 0 } );
+			DECLARATION_MAIN( void* ip = buffer );
+			DECLARATION_MAIN( std::size_t space = sizeof( buffer ) );
+			DECLARATION_MAIN( void* resultp = nullptr );
+			PrintResult( ip, resultp, space );
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( ip = &buffer[1] );
+				PROCESS_MAIN( space = sizeof( buffer ) - sizeof( char ) );
+				PrintResult( ip, resultp, space );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( resultp = std::align( alignof( char ), sizeof( char ), ip, space ) );
+				PrintResult( ip, resultp, space );
+				std::cout << r2cm::tab << "Bound > " << ( static_cast<char*>( ip ) - &buffer[1] ) << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( ip = &buffer[1] );
+				PROCESS_MAIN( space = sizeof( buffer ) - sizeof( char ) );
+				PrintResult( ip, resultp, space );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( resultp = std::align( alignof( int ), sizeof( char ), ip, space ) );
+				PrintResult( ip, resultp, space );
+				std::cout << r2cm::tab << "Bound > " << ( static_cast<char*>( ip ) - &buffer[1] ) << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( ip = &buffer[1] );
+				PROCESS_MAIN( space = sizeof( buffer ) - sizeof( char ) );
+				PrintResult( ip, resultp, space );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( resultp = std::align( alignof( double ), sizeof( char ), ip, space ) );
+				PrintResult( ip, resultp, space );
+				std::cout << r2cm::tab << "Bound > " << ( static_cast<char*>( ip ) - &buffer[1] ) << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
 	
 	r2cm::iItem::TitleFunctionT Play::GetTitleFunction() const
 	{
