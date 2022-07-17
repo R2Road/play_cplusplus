@@ -134,11 +134,6 @@ namespace align_test
 				{
 					std::cout << r2cm::tab2 << "- old adress of pt : " << pt << r2cm::linefeed;
 
-					if( !std::align( alignof( int ), sizeof( char ), pt, space ) )
-					{
-						break;
-					}
-
 					char* temp = static_cast<char*>( pt );
 					*temp = '*';
 					++temp;
