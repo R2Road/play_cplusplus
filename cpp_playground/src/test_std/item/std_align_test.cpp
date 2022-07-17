@@ -120,6 +120,7 @@ namespace align_test
 			{
 				PROCESS_MAIN( ip = &buffer[1] );
 				PROCESS_MAIN( space = sizeof( buffer ) - sizeof( char ) );
+				PROCESS_MAIN( resultp = nullptr );
 				PrintResult( ip, resultp, space );
 
 				std::cout << r2cm::linefeed;
@@ -134,6 +135,7 @@ namespace align_test
 			{
 				PROCESS_MAIN( ip = &buffer[1] );
 				PROCESS_MAIN( space = sizeof( buffer ) - sizeof( char ) );
+				PROCESS_MAIN( resultp = nullptr );
 				PrintResult( ip, resultp, space );
 
 				std::cout << r2cm::linefeed;
@@ -148,6 +150,7 @@ namespace align_test
 			{
 				PROCESS_MAIN( ip = &buffer[1] );
 				PROCESS_MAIN( space = sizeof( buffer ) - sizeof( char ) );
+				PROCESS_MAIN( resultp = nullptr );
 				PrintResult( ip, resultp, space );
 
 				std::cout << r2cm::linefeed;
