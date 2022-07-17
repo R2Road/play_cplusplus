@@ -113,26 +113,38 @@ namespace align_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( char buffer[] = "-----------------" );
-			DECLARATION_MAIN( void * pt = buffer );
+			DECLARATION_MAIN( char buffer[] = "---------" );
+			DECLARATION_MAIN( void* pt = buffer );
 
 			std::cout << r2cm::linefeed;
 
 			DECLARATION_MAIN( std::size_t space = sizeof( buffer ) - 1u );
 			std::cout << r2cm::tab << "> \\0 Á¦¿Ü" << r2cm::linefeed;
 
+			std::cout << r2cm::linefeed;
+
+			DECLARATION_MAIN( void* presult = nullptr );
+
 			std::cout << r2cm::split;
 
 			{
 				std::cout << r2cm::tab << "+ orig : " << buffer << r2cm::linefeed;
-				std::cout << r2cm::tab << "+ adress of pt : " << pt << r2cm::linefeed << r2cm::linefeed;
+				std::cout << r2cm::tab << "+ adress of pt : " << pt << r2cm::linefeed;
+			}
 
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed;
+			std::cout << r2cm::split;
 
-				
-				while( std::align( alignof( int ), sizeof( char ), pt, space ) )
+			{
+				while( true )
 				{
-					std::cout << r2cm::tab2 << "- old adress of pt : " << pt << r2cm::linefeed;
+					PROCESS_MAIN( presult = std::align( alignof( int ), sizeof( char ), pt, space ) );
+					std::cout << r2cm::tab << "> " << ( presult ? "success" : "failed" ) << r2cm::linefeed;
+					if( !presult )
+					{
+						break;
+					}
+
+					std::cout << r2cm::tab2 << "- aligned adress of pt : " << pt << r2cm::linefeed;
 
 					char* temp = static_cast<char*>( pt );
 					*temp = '*';
@@ -141,13 +153,16 @@ namespace align_test
 
 					pt = temp;
 
-					std::cout << r2cm::tab2 << "- convert : " << buffer << r2cm::linefeed;
+					std::cout << r2cm::tab2 << "- edit : " << buffer << r2cm::linefeed;
 					std::cout << r2cm::tab2 << "- new adress of pt : " << pt << r2cm::linefeed;
 					std::cout << r2cm::linefeed;
 				}
 
-				std::cout << r2cm::tab << "result : " << buffer << r2cm::linefeed;
 			}
+
+			std::cout << r2cm::split;
+
+			std::cout << r2cm::tab << "result : " << buffer << r2cm::linefeed;
 
 			std::cout << r2cm::split;
 
