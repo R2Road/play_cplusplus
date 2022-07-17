@@ -17,12 +17,14 @@ namespace r2
 		MemoryBlock() :
 			size( N )
 			, buffer()
+			, pb( buffer )
 		{
 			memset( buffer, 0, sizeof( buffer ) );
 		}
 
 		const SizeT size;
 		ElementT buffer[N];
+		void* pb;
 	};
 
 	class MemoryPool
@@ -67,8 +69,12 @@ namespace memory_pool_test
 				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( memory_block_size, memory_block.size );
+				OUTPUT_VALUE( memory_block.size );
+				OUTPUT_VALUE( memory_block.pb );
 
 				std::cout << r2cm::linefeed;
+
+
 
 				std::cout << r2cm::tab << "- Print : ";
 				for( const auto c : memory_block.buffer )
