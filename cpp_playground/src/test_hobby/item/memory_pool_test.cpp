@@ -70,6 +70,10 @@ namespace memory_pool_test
 			{
 				EXPECT_EQ( memory_block_size, memory_block.size );
 				OUTPUT_VALUE( memory_block.size );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( memory_block.pb, memory_block.buffer );
 				OUTPUT_VALUE( memory_block.pb );
 			}
 
