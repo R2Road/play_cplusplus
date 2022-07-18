@@ -12,7 +12,7 @@ namespace r2
 	struct MemoryBlock
 	{
 		using ElementT = int8_t;
-		using SizeT = uint32_t;
+		using SizeT = uint64_t;
 
 		MemoryBlock() :
 			size( N )
@@ -22,7 +22,22 @@ namespace r2
 			memset( buffer, 0, sizeof( buffer ) );
 		}
 
-		const SizeT size;
+		template<typename T>
+		T* New()
+		{
+			void* ret = nullptr;
+
+			ret = std::align( alignof( T ), sizeof( T ), pb, size );
+			if( ret )
+			{
+				pb = static_cast<char*>( pb ) + sizeof( T );
+				size -= sizeof( T );
+			}
+
+			return reinterpret_cast<T*>( ret );
+		}
+
+		SizeT size;
 		ElementT buffer[N];
 		void* pb;
 	};
@@ -76,6 +91,62 @@ namespace memory_pool_test
 				EXPECT_EQ( memory_block.pb, memory_block.buffer );
 				OUTPUT_VALUE( memory_block.pb );
 			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "- Print : ";
+				for( const auto c : memory_block.buffer )
+				{
+					std::cout << static_cast<int>( c );
+				}
+
+				std::cout << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT MemoryBlock_New::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Memory Block : New";
+		};
+	}
+
+	r2cm::iItem::DoFunctionT MemoryBlock_New::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const uint32_t memory_block_size = 64u );
+			DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_EQ( memory_block_size, memory_block.size );
+				OUTPUT_VALUE( memory_block.size );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( memory_block.pb, memory_block.buffer );
+				OUTPUT_VALUE( memory_block.pb );
+			}
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( auto temp = memory_block.New<long long>() );
+			PROCESS_MAIN( memset( temp, 1, sizeof( long long ) ) );
 
 			std::cout << r2cm::split;
 

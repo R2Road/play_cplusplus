@@ -13,8 +13,14 @@ r2cm::MenuUp MemoryPoolMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', memory_pool_test::MemoryBlock_Declaration::GetInstance() );
-		ret->AddItem( '2', memory_pool_test::MemoryPool_Declaration::GetInstance() );
-		ret->AddItem( '3', memory_pool_test::MemoryPool_New::GetInstance() );
+		ret->AddItem( '2', memory_pool_test::MemoryBlock_New::GetInstance() );
+
+
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'q', memory_pool_test::MemoryPool_Declaration::GetInstance() );
+		ret->AddItem( 'w', memory_pool_test::MemoryPool_New::GetInstance() );
 
 
 		ret->AddSplit();
