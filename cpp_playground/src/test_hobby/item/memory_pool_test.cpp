@@ -30,7 +30,7 @@ namespace r2
 			ret = std::align( alignof( T ), sizeof( T ), pb, size );
 			if( ret )
 			{
-				pb = static_cast<char*>( pb ) + sizeof( T );
+				pb = static_cast<ElementT*>( pb ) + sizeof( T );
 				size -= sizeof( T );
 			}
 
