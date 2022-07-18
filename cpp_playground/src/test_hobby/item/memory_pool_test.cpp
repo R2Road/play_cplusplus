@@ -112,7 +112,7 @@ namespace memory_pool_test
 
 
 
-	r2cm::iItem::TitleFunctionT MemoryBlock_New_Fundamental_Type::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MemoryBlock_New_FundamentalType::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -120,7 +120,7 @@ namespace memory_pool_test
 		};
 	}
 
-	r2cm::iItem::DoFunctionT MemoryBlock_New_Fundamental_Type::GetDoFunction()
+	r2cm::iItem::DoFunctionT MemoryBlock_New_FundamentalType::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
