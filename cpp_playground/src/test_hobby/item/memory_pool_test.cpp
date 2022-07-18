@@ -116,7 +116,7 @@ namespace memory_pool_test
 	{
 		return []()->const char*
 		{
-			return "Memory Block : New";
+			return "Memory Block : New( Fundamental Type )";
 		};
 	}
 
