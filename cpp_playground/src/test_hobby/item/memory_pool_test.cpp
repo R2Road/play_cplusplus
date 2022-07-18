@@ -223,6 +223,65 @@ namespace memory_pool_test
 
 
 
+	r2cm::iItem::TitleFunctionT MemoryBlock_New_UserDefinedType::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Memory Block : New( User-Defined Type )";
+		};
+	}
+
+	r2cm::iItem::DoFunctionT MemoryBlock_New_UserDefinedType::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const uint32_t memory_block_size = 64u );
+			DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
+
+			std::cout << r2cm::linefeed;
+
+			{
+				EXPECT_EQ( memory_block_size, memory_block.size );
+				OUTPUT_VALUE( memory_block.size );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( memory_block.pb, memory_block.buffer );
+				OUTPUT_VALUE( memory_block.pb );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( struct TestStruct1 { double d1; double d2; char c1; } );
+
+				DECLARATION_MAIN( auto temp = memory_block.New<TestStruct1>() );
+				PROCESS_MAIN( memset( temp, 1, sizeof( TestStruct1 ) ) );
+				PROCESS_MAIN( temp->c1 = 2 );
+
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "- Print : ";
+				for( const auto c : memory_block.buffer )
+				{
+					std::cout << static_cast<int>( c );
+				}
+
+				std::cout << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT MemoryPool_Declaration::GetTitleFunction() const
 	{
 		return []()->const char*

@@ -19,6 +19,13 @@ namespace memory_pool_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class MemoryBlock_New_UserDefinedType : public r2cm::iItem, public r2cm::SingleTon<MemoryBlock_New_UserDefinedType>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class MemoryPool_Declaration : public r2cm::iItem, public r2cm::SingleTon<MemoryPool_Declaration>
 	{
 	public:

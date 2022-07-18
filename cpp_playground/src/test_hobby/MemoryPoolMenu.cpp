@@ -14,6 +14,7 @@ r2cm::MenuUp MemoryPoolMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem( '1', memory_pool_test::MemoryBlock_Declaration::GetInstance() );
 		ret->AddItem( '2', memory_pool_test::MemoryBlock_New_FundamentalType::GetInstance() );
+		ret->AddItem( '3', memory_pool_test::MemoryBlock_New_UserDefinedType::GetInstance() );
 
 
 		ret->AddLineFeed();
