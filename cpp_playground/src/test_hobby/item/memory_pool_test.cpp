@@ -145,12 +145,67 @@ namespace memory_pool_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( auto temp = memory_block.New<long long>() );
-			PROCESS_MAIN( memset( temp, 1, sizeof( long long ) ) );
+			{
+				DECLARATION_MAIN( auto temp = memory_block.New<long long>() );
+				PROCESS_MAIN( memset( temp, 1, sizeof( long long ) ) );
+
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "- Print : ";
+				for( const auto c : memory_block.buffer )
+				{
+					std::cout << static_cast<int>( c );
+				}
+
+				std::cout << r2cm::linefeed;
+			}
 
 			std::cout << r2cm::split;
 
 			{
+				DECLARATION_MAIN( auto temp = memory_block.New<long>() );
+				PROCESS_MAIN( memset( temp, 2, sizeof( long ) ) );
+			
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "- Print : ";
+				for( const auto c : memory_block.buffer )
+				{
+					std::cout << static_cast<int>( c );
+				}
+
+				std::cout << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto temp = memory_block.New<char>() );
+				PROCESS_MAIN( memset( temp, 3, sizeof( char ) ) );
+			}
+
+			{
+				DECLARATION_MAIN( auto temp = memory_block.New<char>() );
+				PROCESS_MAIN( memset( temp, 4, sizeof( char ) ) );
+
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "- Print : ";
+				for( const auto c : memory_block.buffer )
+				{
+					std::cout << static_cast<int>( c );
+				}
+
+				std::cout << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+			{
+				DECLARATION_MAIN( auto temp = memory_block.New<int>() );
+				PROCESS_MAIN( memset( temp, 5, sizeof( int ) ) );
+			
+				std::cout << r2cm::linefeed;
+
 				std::cout << r2cm::tab << "- Print : ";
 				for( const auto c : memory_block.buffer )
 				{
