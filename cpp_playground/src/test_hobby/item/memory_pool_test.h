@@ -12,7 +12,7 @@ namespace memory_pool_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class MemoryBlock_New : public r2cm::iItem, public r2cm::SingleTon<MemoryBlock_New>
+	class MemoryBlock_New_Fundamental_Type : public r2cm::iItem, public r2cm::SingleTon<MemoryBlock_New_Fundamental_Type>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
