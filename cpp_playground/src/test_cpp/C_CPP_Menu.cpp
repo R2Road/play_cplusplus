@@ -8,6 +8,7 @@
 #include "item/print_test.h"
 #include "item/structured_binding_test.h"
 #include "item/using_test.h"
+#include "test_c/item/c_sizeof_test.h"
 
 #include "AlignMenu.h"
 #include "BitOperationMenu.h"
@@ -45,6 +46,7 @@ r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
+		ret->AddItem( '4', c_sizeof_test::Basic::GetInstance() );
 
 
 		ret->AddLineFeed();
