@@ -2,6 +2,7 @@
 
 #include <cassert>
 #include <stdint.h>
+#include <type_traits>
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
@@ -61,6 +62,18 @@ namespace r2
 
 namespace memory_pool_test
 {
+	void PrintBuffer( const int8_t* buffer, const uint64_t size )
+	{
+		std::cout << r2cm::tab << "- Print : ";
+
+		for( std::remove_const<decltype( size )>::type i = 0ull; size > i; ++i )
+		{
+			std::cout << static_cast<int>( buffer[i] );
+		}
+
+		std::cout << r2cm::linefeed;
+	}
+
 	r2cm::iItem::TitleFunctionT MemoryBlock_Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -95,13 +108,7 @@ namespace memory_pool_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "- Print : ";
-				for( const auto c : memory_block.buffer )
-				{
-					std::cout << static_cast<int>( c );
-				}
-
-				std::cout << r2cm::linefeed;
+				PrintBuffer( memory_block.buffer, memory_block.size );
 			}
 
 			std::cout << r2cm::split;
@@ -151,13 +158,7 @@ namespace memory_pool_test
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "- Print : ";
-				for( const auto c : memory_block.buffer )
-				{
-					std::cout << static_cast<int>( c );
-				}
-
-				std::cout << r2cm::linefeed;
+				PrintBuffer( memory_block.buffer, memory_block.size );
 			}
 
 			std::cout << r2cm::split;
@@ -168,13 +169,7 @@ namespace memory_pool_test
 			
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "- Print : ";
-				for( const auto c : memory_block.buffer )
-				{
-					std::cout << static_cast<int>( c );
-				}
-
-				std::cout << r2cm::linefeed;
+				PrintBuffer( memory_block.buffer, memory_block.size );
 			}
 
 			std::cout << r2cm::split;
@@ -190,13 +185,7 @@ namespace memory_pool_test
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "- Print : ";
-				for( const auto c : memory_block.buffer )
-				{
-					std::cout << static_cast<int>( c );
-				}
-
-				std::cout << r2cm::linefeed;
+				PrintBuffer( memory_block.buffer, memory_block.size );
 			}
 
 			std::cout << r2cm::split;
@@ -206,13 +195,7 @@ namespace memory_pool_test
 			
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "- Print : ";
-				for( const auto c : memory_block.buffer )
-				{
-					std::cout << static_cast<int>( c );
-				}
-
-				std::cout << r2cm::linefeed;
+				PrintBuffer( memory_block.buffer, memory_block.size );
 			}
 
 			std::cout << r2cm::split;
@@ -265,13 +248,7 @@ namespace memory_pool_test
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "- Print : ";
-				for( const auto c : memory_block.buffer )
-				{
-					std::cout << static_cast<int>( c );
-				}
-
-				std::cout << r2cm::linefeed;
+				PrintBuffer( memory_block.buffer, memory_block.size );
 			}
 
 			std::cout << r2cm::split;
