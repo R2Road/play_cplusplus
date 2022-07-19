@@ -17,6 +17,7 @@ namespace r2
 
 		MemoryBlock() :
 			size( N )
+			, space( N )
 			, buffer()
 			, pb( buffer )
 		{
@@ -28,17 +29,18 @@ namespace r2
 		{
 			void* ret = nullptr;
 
-			ret = std::align( alignof( T ), sizeof( T ), pb, size );
+			ret = std::align( alignof( T ), sizeof( T ), pb, space );
 			if( ret )
 			{
 				pb = static_cast<ElementT*>( pb ) + sizeof( T );
-				size -= sizeof( T );
+				space -= sizeof( T );
 			}
 
 			return reinterpret_cast<T*>( ret );
 		}
 
-		SizeT size;
+		const SizeT size;
+		SizeT space;
 		ElementT buffer[N];
 		void* pb;
 	};
