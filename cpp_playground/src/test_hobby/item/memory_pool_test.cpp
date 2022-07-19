@@ -3,6 +3,7 @@
 #include <cassert>
 #include <stdint.h>
 #include <type_traits>
+#include <numeric>
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
@@ -198,6 +199,53 @@ namespace memory_pool_test
 				std::cout << r2cm::linefeed;
 
 				PrintBuffer( memory_block.buffer, memory_block.size );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT MemoryBlock_Check_FundamentalType::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Memory Block : Check( Fundamental Type )";
+		};
+	}
+
+	r2cm::iItem::DoFunctionT MemoryBlock_Check_FundamentalType::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const uint32_t memory_block_size = 16u );
+			DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
+
+			std::cout << r2cm::linefeed;
+
+			{
+				EXPECT_EQ( memory_block_size, memory_block.size );
+				EXPECT_EQ( memory_block.pb, memory_block.buffer );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto temp = memory_block.New<long long>() );
+				PROCESS_MAIN( memset( temp, 1, sizeof( long long ) ) );
+				OUTPUT_BINARY( *temp );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( *temp = std::numeric_limits<long long>::max() );
+				OUTPUT_BINARY( *temp );
 			}
 
 			std::cout << r2cm::split;
