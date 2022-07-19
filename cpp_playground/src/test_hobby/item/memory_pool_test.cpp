@@ -279,6 +279,23 @@ namespace memory_pool_test
 
 			std::cout << r2cm::split;
 
+			{
+				DECLARATION_MAIN( auto temp = memory_block.New<int>() );
+				PROCESS_MAIN( memset( temp, 1, sizeof( int ) ) );
+				OUTPUT_BINARY( *temp );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( *temp = std::numeric_limits<int>::max() );
+				OUTPUT_BINARY( *temp );
+
+				std::cout << r2cm::linefeed;
+
+				PrintBinary( memory_block.buffer, memory_block.size );
+			}
+
+			std::cout << r2cm::split;
+
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
