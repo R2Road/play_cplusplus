@@ -76,6 +76,31 @@ namespace memory_pool_test
 
 		std::cout << r2cm::linefeed;
 	}
+	void PrintBinary( const int8_t* buffer, const uint64_t size )
+	{
+		std::cout << r2cm::tab << "- Print : " << r2cm::linefeed;
+
+		std::cout << r2cm::tab;
+		std::remove_const<decltype( size )>::type lf_cnt = 0;
+		for( std::remove_const<decltype( size )>::type i = 0ull; size > i; ++i )
+		{
+			SHOW_BINARY( buffer[i] );
+
+			++lf_cnt;
+
+			if( 8 == lf_cnt && size > ( i + 1 ) )
+			{
+				std::cout << r2cm::linefeed << r2cm::tab;
+				lf_cnt = 0;
+			}
+			else
+			{
+				std::cout << ' ';
+			}
+		}
+
+		std::cout << r2cm::linefeed;
+	}
 
 	r2cm::iItem::TitleFunctionT MemoryBlock_Declaration::GetTitleFunction() const
 	{
@@ -246,6 +271,10 @@ namespace memory_pool_test
 
 				PROCESS_MAIN( *temp = std::numeric_limits<long long>::max() );
 				OUTPUT_BINARY( *temp );
+
+				std::cout << r2cm::linefeed;
+
+				PrintBinary( memory_block.buffer, memory_block.size );
 			}
 
 			std::cout << r2cm::split;
