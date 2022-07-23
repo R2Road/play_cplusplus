@@ -142,9 +142,6 @@
     <ClCompile Include="src\test_cpp\item\c_random_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\c_time_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\item\char_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
@@ -461,6 +458,9 @@
     <ClCompile Include="src\test_c\item\c_sizeof_test.cpp">
       <Filter>test_c\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_c\item\c_time_test.cpp">
+      <Filter>test_c\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -560,9 +560,6 @@
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\c_random_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\c_time_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\char_test.h">
@@ -891,6 +888,9 @@
       <Filter>test_std\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_c\item\c_sizeof_test.h">
+      <Filter>test_c\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_c\item\c_time_test.h">
       <Filter>test_c\item</Filter>
     </ClInclude>
   </ItemGroup>
