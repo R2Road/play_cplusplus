@@ -14,6 +14,6 @@ private:
 	DebugMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Debug"; }
+	static const char* GetTitle() { return "Debug Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
