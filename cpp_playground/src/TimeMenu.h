@@ -14,6 +14,6 @@ private:
 	TimeMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Time"; }
+	static const char* GetTitle() { return "Time Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
