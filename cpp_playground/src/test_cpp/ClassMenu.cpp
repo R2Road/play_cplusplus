@@ -23,15 +23,7 @@ r2cm::MenuUp ClassMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddItem(
-			27
-			, []()->const char* { return "Return To Root"; }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( C_CPP_Menu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<C_CPP_Menu>( 27 );
 	}
 
 	return ret;

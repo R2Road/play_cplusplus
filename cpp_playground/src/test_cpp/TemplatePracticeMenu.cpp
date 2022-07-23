@@ -19,15 +19,7 @@ r2cm::MenuUp TemplatePracticeMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddItem(
-			27
-			, []()->const char* { return "Return To Root"; }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( TemplateMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<TemplateMenu>( 27 );
 	}
 
 	return ret;

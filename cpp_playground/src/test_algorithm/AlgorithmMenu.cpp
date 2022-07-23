@@ -56,24 +56,8 @@ r2cm::MenuUp AlgorithmMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddItem(
-			'z'
-			, []()->const char* { return MazeGenerationMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( MazeGenerationMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			'x'
-			, []()->const char* { return ProceduralTerrainGenerationMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( ProceduralTerrainGenerationMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<MazeGenerationMenu>( 'z' );
+		ret->AddMenu<ProceduralTerrainGenerationMenu>( 'x' );
 
 
 		ret->AddSplit();
