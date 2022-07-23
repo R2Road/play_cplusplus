@@ -458,7 +458,9 @@
     <ClCompile Include="src\test_c\item\c_time_test.cpp">
       <Filter>test_c\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\TimeMenu.cpp" />
+    <ClCompile Include="src\test_various\TimeMenu.cpp">
+      <Filter>test_various</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -888,7 +890,9 @@
     <ClInclude Include="src\test_c\item\c_time_test.h">
       <Filter>test_c\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\TimeMenu.h" />
+    <ClInclude Include="src\test_various\TimeMenu.h">
+      <Filter>test_various</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\test_cpp\item\enum_test_xmacro_2.def">

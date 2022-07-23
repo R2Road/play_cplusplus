@@ -15,8 +15,8 @@
 #include "test_performance/PerformanceMenu.h"
 #include "test_std/STDMenu.h"
 #include "test_various/FileMenu.h"
+#include "test_various/TimeMenu.h"
 #include "test_windows/WindowsMenu.h"
-#include "TimeMenu.h"
 
 r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 {
