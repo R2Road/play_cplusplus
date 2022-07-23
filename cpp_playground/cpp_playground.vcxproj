@@ -90,7 +90,6 @@
     <ClCompile Include="src\test_cpp\TemplateMenu.cpp" />
     <ClCompile Include="src\test_cpp\TemplateMetaProgrammingMenu.cpp" />
     <ClCompile Include="src\test_cpp\TemplatePracticeMenu.cpp" />
-    <ClCompile Include="src\test_cpp\TimeMenu.cpp" />
     <ClCompile Include="src\test_cpp\VariadicTemplateMenu.cpp" />
     <ClCompile Include="src\test_c\item\c_file_test.cpp" />
     <ClCompile Include="src\test_c\item\c_sizeof_test.cpp" />
@@ -151,6 +150,7 @@
     <ClCompile Include="src\test_windows\item\windows_sound_test.cpp" />
     <ClCompile Include="src\test_windows\item\windows_time_test.cpp" />
     <ClCompile Include="src\test_windows\WindowsMenu.cpp" />
+    <ClCompile Include="src\TimeMenu.cpp" />
     <ClCompile Include="src\utility\r2utility_CharacterBuffer.cpp" />
     <ClCompile Include="src\utility\r2utility_FileUtil.cpp" />
     <ClCompile Include="src\utility\r2utility_StopWatch.cpp" />
@@ -236,7 +236,6 @@
     <ClInclude Include="src\test_cpp\TemplateMenu.h" />
     <ClInclude Include="src\test_cpp\TemplateMetaProgrammingMenu.h" />
     <ClInclude Include="src\test_cpp\TemplatePracticeMenu.h" />
-    <ClInclude Include="src\test_cpp\TimeMenu.h" />
     <ClInclude Include="src\test_cpp\VariadicTemplateMenu.h" />
     <ClInclude Include="src\test_c\item\c_file_test.h" />
     <ClInclude Include="src\test_c\item\c_sizeof_test.h" />
@@ -297,6 +296,7 @@
     <ClInclude Include="src\test_windows\item\windows_sound_test.h" />
     <ClInclude Include="src\test_windows\item\windows_time_test.h" />
     <ClInclude Include="src\test_windows\WindowsMenu.h" />
+    <ClInclude Include="src\TimeMenu.h" />
     <ClInclude Include="src\utility\r2utility_CharacterBuffer.h" />
     <ClInclude Include="src\utility\r2utility_FileUtil.h" />
     <ClInclude Include="src\utility\r2utility_StopWatch.h" />

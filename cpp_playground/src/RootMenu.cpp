@@ -11,12 +11,12 @@
 #include "test_cpp/DebugMenu.h"
 #include "test_cpp/MathMenu.h"
 #include "test_cpp/RandomMenu.h"
-#include "test_cpp/TimeMenu.h"
 #include "test_hobby/HobbyMenu.h"
 #include "test_performance/PerformanceMenu.h"
 #include "test_std/STDMenu.h"
 #include "test_various/FileMenu.h"
 #include "test_windows/WindowsMenu.h"
+#include "TimeMenu.h"
 
 r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 {

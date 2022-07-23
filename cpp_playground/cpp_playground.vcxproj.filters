@@ -272,9 +272,6 @@
     <ClCompile Include="src\test_cpp\LambdaMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\TimeMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\NewMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -461,6 +458,7 @@
     <ClCompile Include="src\test_c\item\c_time_test.cpp">
       <Filter>test_c\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\TimeMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -692,9 +690,6 @@
     <ClInclude Include="src\test_cpp\LambdaMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\TimeMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\NewMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -893,6 +888,7 @@
     <ClInclude Include="src\test_c\item\c_time_test.h">
       <Filter>test_c\item</Filter>
     </ClInclude>
+    <ClInclude Include="src\TimeMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\test_cpp\item\enum_test_xmacro_2.def">
