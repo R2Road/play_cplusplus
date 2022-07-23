@@ -17,17 +17,25 @@ r2cm::MenuUp ConsoleWindowMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem( '1', console_window_test::BufferInfo::GetInstance() );
 
+
 		ret->AddLineFeed();
+
 
 		ret->AddItem( '2', console_window_test::ChangeWindowSize::GetInstance() );
 		ret->AddItem( '3', console_window_test::FullScreen::GetInstance() );
 		ret->AddItem( '4', console_window_test::Focus::GetInstance() );
 
+
 		ret->AddLineFeed();
+		ret->AddLineFeed();
+
 
 		ret->AddItem( 'q', console_window_test::WindowPosition::GetInstance() );
 
+
 		ret->AddLineFeed();
+		ret->AddLineFeed();
+
 
 		ret->AddItem( 'a', console_window_test::ChangeWindowName::GetInstance() );
 		ret->AddItem( 's', console_window_test::HideTitleBar::GetInstance() );
@@ -35,8 +43,10 @@ r2cm::MenuUp ConsoleWindowMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'f', console_window_test::LockWindowResizingByDragging::GetInstance() );
 		ret->AddItem( 'g', console_window_test::MenuItem::GetInstance() );
 
+
 		ret->AddLineFeed();
 		ret->AddLineFeed();
+
 
 		ret->AddItem( 'z', console_window_test::CursorMove::GetInstance() );
 		ret->AddItem( 'x', console_window_test::CursorVisibility::GetInstance() );
@@ -45,15 +55,7 @@ r2cm::MenuUp ConsoleWindowMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddItem(
-			27
-			, []()->const char* { return "Return To Root"; }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( WindowsMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<WindowsMenu>( 27 );
 	}
 
 	return ret;

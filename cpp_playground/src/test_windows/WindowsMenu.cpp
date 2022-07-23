@@ -22,34 +22,22 @@ r2cm::MenuUp WindowsMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem(
-			'1'
-			, []()->const char* { return ConsoleWindowMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( ConsoleWindowMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			'2'
-			, []()->const char* { return ConsoleTextColorMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( ConsoleTextColorMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<ConsoleWindowMenu>( '1' );
+		ret->AddMenu<ConsoleTextColorMenu>( '2' );
+
 
 		ret->AddLineFeed();
 		ret->AddLineFeed();
+
 
 		ret->AddItem( 'e', console_window_input_test::WindowInput_ReadConsoleInput::GetInstance() );
 		ret->AddItem( 'r', console_window_input_test::WindowInput_GetKeyState::GetInstance() );
 		ret->AddItem( 't', console_window_input_test::WindowInput_GetKeyboardState::GetInstance() );
 		ret->AddItem( 'y', console_window_input_test::WindowInput_GetAsyncKeyStates::GetInstance() );
 
+
 		ret->AddLineFeed();
+
 
 		ret->AddItem( 'u', console_window_message_test::ConsoleControlHandler::GetInstance() );
 		ret->AddItem( 'i', console_window_message_test::MessageHook::GetInstance() );
@@ -71,15 +59,7 @@ r2cm::MenuUp WindowsMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddItem(
-			'z'
-			, []()->const char* { return FlickeringResearchMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( FlickeringResearchMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<FlickeringResearchMenu>( 'z' );
 		ret->AddItem( 'x', console_window_etc_test::FontInfo::GetInstance() );
 		ret->AddItem( 'c', console_window_etc_test::FontChange::GetInstance() );
 		ret->AddItem( 'v', console_window_etc_test::Pixel::GetInstance() );
