@@ -14,6 +14,6 @@ private:
 	MathMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Math"; }
+	static const char* GetTitle() { return "Math Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
