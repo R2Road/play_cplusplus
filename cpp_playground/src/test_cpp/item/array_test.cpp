@@ -4,6 +4,7 @@
 #include <numeric> // std::iota
 #include <stdint.h>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace array_test
@@ -24,8 +25,7 @@ namespace array_test
 			std::cout << r2cm::split;
 
 			{
-				int array[10];
-				std::cout << r2cm::tab2 << "int array[10];" << r2cm::linefeed;
+				DECLARATION_MAIN( int array[10] );
 
 				std::cout << r2cm::tab2 << "Print : ";
 				for( auto i : array )
@@ -66,8 +66,7 @@ namespace array_test
 			std::cout << r2cm::split;
 
 			{
-				int array[10] = {};
-				std::cout << r2cm::tab2 << "int array[10] = {};" << r2cm::linefeed;
+				DECLARATION_MAIN( int array[10] = {} );
 
 				std::cout << r2cm::tab2 << "Print : ";
 				for( auto i : array )
