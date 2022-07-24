@@ -82,7 +82,6 @@
     <ClCompile Include="src\test_cpp\DebugMenu.cpp" />
     <ClCompile Include="src\test_cpp\EnumMenu.cpp" />
     <ClCompile Include="src\test_cpp\LambdaMenu.cpp" />
-    <ClCompile Include="src\test_cpp\MathMenu.cpp" />
     <ClCompile Include="src\test_cpp\NewMenu.cpp" />
     <ClCompile Include="src\test_cpp\PointerMenu.cpp" />
     <ClCompile Include="src\test_cpp\RandomMenu.cpp" />
@@ -137,6 +136,7 @@
     <ClCompile Include="src\test_std\STDThreadMenu.cpp" />
     <ClCompile Include="src\test_various\ETCMenu.cpp" />
     <ClCompile Include="src\test_various\FileMenu.cpp" />
+    <ClCompile Include="src\test_various\MathMenu.cpp" />
     <ClCompile Include="src\test_various\TimeMenu.cpp" />
     <ClCompile Include="src\test_windows\ConsoleTextColorMenu.cpp" />
     <ClCompile Include="src\test_windows\ConsoleWindowMenu.cpp" />
@@ -228,7 +228,6 @@
     <ClInclude Include="src\test_cpp\DebugMenu.h" />
     <ClInclude Include="src\test_cpp\EnumMenu.h" />
     <ClInclude Include="src\test_cpp\LambdaMenu.h" />
-    <ClInclude Include="src\test_cpp\MathMenu.h" />
     <ClInclude Include="src\test_cpp\NewMenu.h" />
     <ClInclude Include="src\test_cpp\PointerMenu.h" />
     <ClInclude Include="src\test_cpp\RandomMenu.h" />
@@ -283,6 +282,7 @@
     <ClInclude Include="src\test_std\STDThreadMenu.h" />
     <ClInclude Include="src\test_various\ETCMenu.h" />
     <ClInclude Include="src\test_various\FileMenu.h" />
+    <ClInclude Include="src\test_various\MathMenu.h" />
     <ClInclude Include="src\test_various\TimeMenu.h" />
     <ClInclude Include="src\test_windows\ConsoleTextColorMenu.h" />
     <ClInclude Include="src\test_windows\ConsoleWindowMenu.h" />
