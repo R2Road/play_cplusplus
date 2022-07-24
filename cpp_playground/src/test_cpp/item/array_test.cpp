@@ -25,7 +25,7 @@ namespace array_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( int array[10] );
+				DECLARATION_MAIN( int array[5] );
 
 				std::cout << r2cm::tab2 << "Print : ";
 				for( auto i : array )
@@ -38,7 +38,7 @@ namespace array_test
 			std::cout << r2cm::split;
 
 			{
-				int array[10] = { 0, };
+				int array[5] = { 0, };
 				std::cout << r2cm::tab2 << "int array[10] = { 0, };" << r2cm::linefeed;
 
 				std::cout << r2cm::tab2 << "Print : ";
@@ -52,7 +52,7 @@ namespace array_test
 			std::cout << r2cm::split;
 
 			{
-				int array[10] = { '\0', };
+				int array[5] = { '\0', };
 				std::cout << r2cm::tab2 << "int array[10] = { \'\\0\', };" << r2cm::linefeed;
 
 				std::cout << r2cm::tab2 << "Print : ";
@@ -66,7 +66,7 @@ namespace array_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( int array[10] = {} );
+				DECLARATION_MAIN( int array[5] = {} );
 
 				std::cout << r2cm::tab2 << "Print : ";
 				for( auto i : array )
