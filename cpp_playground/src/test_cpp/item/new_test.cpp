@@ -93,7 +93,6 @@ namespace new_test
 				DECLARATION_MAIN( int* i = new int[10] );
 				OUTPUT_VALUE( *i );
 				OUTPUT_VALUE( i[1] );
-				OUTPUT_VALUE( i[2] );
 
 				std::cout << r2cm::linefeed;
 
@@ -143,8 +142,7 @@ namespace new_test
 
 				std::cout << r2cm::linefeed;
 
-				OUTPUT_VALUE( str[3] );
-				OUTPUT_VALUE( str[4] );
+				EXPECT_EQ( str[4], str[3] );
 
 				std::cout << r2cm::linefeed;
 
