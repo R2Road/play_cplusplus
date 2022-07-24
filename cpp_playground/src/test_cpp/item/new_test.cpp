@@ -24,7 +24,22 @@ namespace new_test
 			std::cout << r2cm::split;
 
 			{
+				DECLARATION_MAIN( int* i = new int );
+				OUTPUT_VALUE( *i );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( delete i );
+			}
+
+			std::cout << r2cm::split;
+
+			{
 				DECLARATION_MAIN( int* i = new int( 1 ) );
+				EXPECT_EQ( 1, *i );
+
+				std::cout << r2cm::linefeed;
+
 				OUTPUT_VALUE( *i );
 
 				std::cout << r2cm::linefeed;
@@ -36,6 +51,10 @@ namespace new_test
 
 			{
 				DECLARATION_MAIN( int* i = new ( std::nothrow ) int( 2 ) );
+				EXPECT_EQ( 2, *i );
+
+				std::cout << r2cm::linefeed;
+
 				OUTPUT_VALUE( *i );
 
 				std::cout << r2cm::linefeed;
