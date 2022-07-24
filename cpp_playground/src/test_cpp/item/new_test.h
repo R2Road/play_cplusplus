@@ -12,6 +12,13 @@ namespace new_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class Array : public r2cm::iItem, public r2cm::SingleTon<Array>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class PlacementNew : public r2cm::iItem, public r2cm::SingleTon<PlacementNew>
 	{
 	public:

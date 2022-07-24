@@ -13,7 +13,8 @@ r2cm::MenuUp NewMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', new_test::Basic::GetInstance() );
-		ret->AddItem( '2', new_test::PlacementNew::GetInstance() );
+		ret->AddItem( '2', new_test::Array::GetInstance() );
+		ret->AddItem( '3', new_test::PlacementNew::GetInstance() );
 
 
 		ret->AddSplit();

@@ -44,6 +44,27 @@ namespace new_test
 
 			std::cout << r2cm::split;
 
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Array::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Array";
+		};
+	}
+	r2cm::iItem::DoFunctionT Array::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
 			{
 				DECLARATION_MAIN( int* i = new int[10] );
 				OUTPUT_VALUE( *i );
