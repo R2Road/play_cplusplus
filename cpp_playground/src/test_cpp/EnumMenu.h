@@ -14,6 +14,6 @@ private:
 	EnumMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Enum"; }
+	static const char* GetTitle() { return "Enum Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
