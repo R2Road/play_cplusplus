@@ -109,6 +109,8 @@ namespace new_test
 				EXPECT_EQ( 0, *i );
 				EXPECT_EQ( 1, i[1] );
 				EXPECT_EQ( 2, i[2] );
+				EXPECT_EQ( 0, i[3] );
+				EXPECT_EQ( 0, i[4] );
 
 				std::cout << r2cm::linefeed;
 
@@ -136,6 +138,8 @@ namespace new_test
 			{
 				DECLARATION_MAIN( char* str = new char[7]{ "abc" } );
 				EXPECT_EQ( std::string_view( "abc" ), str );
+				EXPECT_EQ( 0, str[3] );
+				EXPECT_EQ( '\0', str[3] );
 
 				std::cout << r2cm::linefeed;
 
