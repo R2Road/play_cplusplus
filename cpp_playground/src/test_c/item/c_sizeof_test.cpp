@@ -36,14 +36,14 @@ namespace c_sizeof_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( const double buffer[2] = { 0 } );
+				DECLARATION_MAIN( const double buffer[10] = { 0 } );
 				OUTPUT_VALUE( sizeof( buffer ) );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( const double buffer[2] = { 0 } );
+				DECLARATION_MAIN( const double buffer[10] = { 0 } );
 				DECLARATION_MAIN( const void* pb = buffer );
 				OUTPUT_VALUE( sizeof( pb ) );
 
