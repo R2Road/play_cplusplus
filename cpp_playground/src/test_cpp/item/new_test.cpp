@@ -2,6 +2,7 @@
 
 #include <new>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace new_test
@@ -22,37 +23,34 @@ namespace new_test
 			std::cout << r2cm::split;
 
 			{
-				int* i = new int( 1 );
+				DECLARATION_MAIN( int* i = new int( 1 ) );
+				OUTPUT_VALUE( *i );
 
-				std::cout << r2cm::tab << "+ int* i = new int( 1 );" <<  r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- " << *i << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 
-				delete i;
-				std::cout << r2cm::tab << "+ delete i;" << r2cm::linefeed;
+				PROCESS_MAIN( delete i );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				int* i = new ( std::nothrow ) int( 2 );
+				DECLARATION_MAIN( int* i = new ( std::nothrow ) int( 2 ) );
+				OUTPUT_VALUE( *i );
 
-				std::cout << r2cm::tab << "+ int* i = new ( std::nothrow ) int( 2 );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- " << *i << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 
-				delete i;
-				std::cout << r2cm::tab << "+ delete i;" << r2cm::linefeed;
+				PROCESS_MAIN( delete i );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				int* i = new int[10];
+				DECLARATION_MAIN( int* i = new int[10] );
+				OUTPUT_VALUE( *i );
 
-				std::cout << r2cm::tab << "+ int* i = new int[10];" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- " << *i << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 
-				delete[] i;
-				std::cout << r2cm::tab << "+ delete[] i;" << r2cm::linefeed;
+				PROCESS_MAIN( delete[] i );
 			}
 
 			std::cout << r2cm::split;
@@ -60,39 +58,34 @@ namespace new_test
 			{
 				int* i = new int[10]{ 1, 2, 3 };
 
-				std::cout << r2cm::tab << "+ int* i = new int[10]{ 1, 2, 3 };" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- " << *i << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- [3] : " << i[3] << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- [4] : " << i[4] << r2cm::linefeed;
+				std::cout << "int* i = new int[10]{ 1, 2, 3 };" << r2cm::linefeed;
+				OUTPUT_VALUE( *i );
+				OUTPUT_VALUE( i[3] );
+				OUTPUT_VALUE( i[4] );
 
-				delete[] i;
-				std::cout << r2cm::tab << "+ delete[] i;" << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( delete[] i );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				char* str = new char[7];
+				DECLARATION_MAIN( char* str = new char[7] );
+				OUTPUT_VALUE( str );
 
-				std::cout << r2cm::tab << "+ char* str = new char[7];" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- " << str << r2cm::linefeed;
-
-				delete[] str;
-				std::cout << r2cm::tab << "+ delete[] str;" << r2cm::linefeed;
+				PROCESS_MAIN( delete[] str );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				char* str = new char[7]{ "abc" };
+				DECLARATION_MAIN( char* str = new char[7]{ "abc" } );
+				OUTPUT_VALUE( str );
+				OUTPUT_VALUE( str[3] );
+				OUTPUT_VALUE( str[4] );
 
-				std::cout << r2cm::tab << "+ char* str = new char[7]{ \"abc\" };" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- " << str << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- [3] : " << str[3] << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- [4] : " << str[4] << r2cm::linefeed;
-
-				delete[] str;
-				std::cout << r2cm::tab << "+ delete[] str;" << r2cm::linefeed;
+				PROCESS_MAIN( delete[] str );
 			}
 
 			std::cout << r2cm::split;
