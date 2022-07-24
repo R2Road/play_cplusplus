@@ -275,9 +275,6 @@
     <ClCompile Include="src\test_cpp\NewMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\ETCMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\item\using_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
@@ -459,6 +456,9 @@
       <Filter>test_c\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_various\TimeMenu.cpp">
+      <Filter>test_various</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_various\ETCMenu.cpp">
       <Filter>test_various</Filter>
     </ClCompile>
   </ItemGroup>
@@ -695,9 +695,6 @@
     <ClInclude Include="src\test_cpp\NewMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\ETCMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\item\using_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
@@ -891,6 +888,9 @@
       <Filter>test_c\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_various\TimeMenu.h">
+      <Filter>test_various</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_various\ETCMenu.h">
       <Filter>test_various</Filter>
     </ClInclude>
   </ItemGroup>
