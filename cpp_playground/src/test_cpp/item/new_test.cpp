@@ -68,6 +68,8 @@ namespace new_test
 			{
 				DECLARATION_MAIN( int* i = new int[10] );
 				OUTPUT_VALUE( *i );
+				OUTPUT_VALUE( i[1] );
+				OUTPUT_VALUE( i[2] );
 
 				std::cout << r2cm::linefeed;
 
@@ -81,6 +83,8 @@ namespace new_test
 
 				std::cout << "int* i = new int[10]{ 1, 2, 3 };" << r2cm::linefeed;
 				OUTPUT_VALUE( *i );
+				OUTPUT_VALUE( i[1] );
+				OUTPUT_VALUE( i[2] );
 				OUTPUT_VALUE( i[3] );
 				OUTPUT_VALUE( i[4] );
 
@@ -95,6 +99,8 @@ namespace new_test
 				DECLARATION_MAIN( char* str = new char[7] );
 				OUTPUT_VALUE( str );
 
+				std::cout << r2cm::linefeed;
+
 				PROCESS_MAIN( delete[] str );
 			}
 
@@ -105,6 +111,8 @@ namespace new_test
 				OUTPUT_VALUE( str );
 				OUTPUT_VALUE( str[3] );
 				OUTPUT_VALUE( str[4] );
+
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( delete[] str );
 			}
