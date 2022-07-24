@@ -14,6 +14,6 @@ private:
 	ETCMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "ETC"; }
+	static const char* GetTitle() { return "ETC Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
