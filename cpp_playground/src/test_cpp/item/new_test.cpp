@@ -103,12 +103,12 @@ namespace new_test
 			std::cout << r2cm::split;
 
 			{
-				int* i = new int[10]{ 1, 2, 3 };
+				int* i = new int[10]{ 0, 1, 2 };
 
-				std::cout << "int* i = new int[10]{ 1, 2, 3 };" << r2cm::linefeed;
-				EXPECT_EQ( 1, *i );
-				EXPECT_EQ( 2, i[1] );
-				EXPECT_EQ( 3, i[2] );
+				std::cout << "int* i = new int[10]{ 0, 1, 2 };" << r2cm::linefeed;
+				EXPECT_EQ( 0, *i );
+				EXPECT_EQ( 1, i[1] );
+				EXPECT_EQ( 2, i[2] );
 
 				std::cout << r2cm::linefeed;
 
