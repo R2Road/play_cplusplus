@@ -1,6 +1,7 @@
 #include "new_test.h"
 
 #include <new>
+#include <string_view>
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
@@ -82,9 +83,12 @@ namespace new_test
 				int* i = new int[10]{ 1, 2, 3 };
 
 				std::cout << "int* i = new int[10]{ 1, 2, 3 };" << r2cm::linefeed;
-				OUTPUT_VALUE( *i );
-				OUTPUT_VALUE( i[1] );
-				OUTPUT_VALUE( i[2] );
+				EXPECT_EQ( 1, *i );
+				EXPECT_EQ( 2, i[1] );
+				EXPECT_EQ( 3, i[2] );
+
+				std::cout << r2cm::linefeed;
+
 				OUTPUT_VALUE( i[3] );
 				OUTPUT_VALUE( i[4] );
 
@@ -108,7 +112,10 @@ namespace new_test
 
 			{
 				DECLARATION_MAIN( char* str = new char[7]{ "abc" } );
-				OUTPUT_VALUE( str );
+				EXPECT_EQ( std::string_view( "abc" ), str );
+
+				std::cout << r2cm::linefeed;
+
 				OUTPUT_VALUE( str[3] );
 				OUTPUT_VALUE( str[4] );
 
