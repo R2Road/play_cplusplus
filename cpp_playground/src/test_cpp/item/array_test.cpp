@@ -27,10 +27,12 @@ namespace array_test
 			{
 				DECLARATION_MAIN( int array[5] );
 
-				std::cout << r2cm::tab2 << "Print : ";
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "Print :";
 				for( auto i : array )
 				{
-					std::cout << i;
+					std::cout << " " << i;
 				}
 				std::cout << r2cm::linefeed;
 			}
@@ -39,12 +41,12 @@ namespace array_test
 
 			{
 				int array[5] = { 0, };
-				std::cout << r2cm::tab2 << "int array[10] = { 0, };" << r2cm::linefeed;
+				std::cout << r2cm::tab << "int array[10] = { 0, };" << r2cm::linefeed2;
 
-				std::cout << r2cm::tab2 << "Print : ";
+				std::cout << r2cm::tab << "Print :";
 				for( auto i : array )
 				{
-					std::cout << i;
+					std::cout << " " << i;
 				}
 				std::cout << r2cm::linefeed;
 			}
@@ -53,12 +55,12 @@ namespace array_test
 
 			{
 				int array[5] = { '\0', };
-				std::cout << r2cm::tab2 << "int array[10] = { \'\\0\', };" << r2cm::linefeed;
+				std::cout << r2cm::tab << "int array[10] = { \'\\0\', };" << r2cm::linefeed2;
 
-				std::cout << r2cm::tab2 << "Print : ";
+				std::cout << r2cm::tab << "Print :";
 				for( auto i : array )
 				{
-					std::cout << i;
+					std::cout << " " << i;
 				}
 				std::cout << r2cm::linefeed;
 			}
@@ -68,10 +70,12 @@ namespace array_test
 			{
 				DECLARATION_MAIN( int array[5] = {} );
 
-				std::cout << r2cm::tab2 << "Print : ";
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "Print :";
 				for( auto i : array )
 				{
-					std::cout << i;
+					std::cout << " " << i;
 				}
 				std::cout << r2cm::linefeed;
 			}
