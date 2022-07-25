@@ -49,17 +49,20 @@ namespace print_test
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( int num = 0xde81 );
+
+			std::cout << r2cm::split;
+
 			{
-				std::cout << r2cm::tab << "+ Show Number : Use printf" << r2cm::linefeed << r2cm::linefeed;
+				PROCESS_MAIN( printf( "\t( 8 : oct : %%o ) : %o\n", num ) );
 
-				int num = 0xde81; // hex
-
-				std::cout << r2cm::tab << "int num = 0xde81;" << r2cm::linefeed;
 				std::cout << r2cm::linefeed;
 
-				printf( "\t\tPrint( 8 : oct ) : %o\n", num );
-				printf( "\t\tPrint( 10 : dec ) : %d\n", num );
-				printf( "\t\tPrint( 16 : hex ) : %x\n", num );
+				PROCESS_MAIN( printf( "\t( 10 : dec : %%d ) : %d\n", num ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( printf( "\t( 16 : hex : %%x ) : %x\n", num ) );
 			}
 
 			std::cout << r2cm::split;
