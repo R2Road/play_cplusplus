@@ -464,6 +464,9 @@
     <ClCompile Include="src\test_various\item\etc_0_test.cpp">
       <Filter>test_various\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_c\C_Menu.cpp">
+      <Filter>test_c</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -895,6 +898,9 @@
     </ClInclude>
     <ClInclude Include="src\test_various\item\etc_0_test.h">
       <Filter>test_various\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_c\C_Menu.h">
+      <Filter>test_c</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

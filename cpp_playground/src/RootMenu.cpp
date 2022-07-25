@@ -6,6 +6,7 @@
 #include "test_cpp/item/console_input_test.h"
 
 #include "test_algorithm/AlgorithmMenu.h"
+#include "test_c/C_Menu.h"
 #include "test_cpp/C_CPP_Menu.h"
 #include "test_cpp/DebugMenu.h"
 #include "test_cpp/RandomMenu.h"
@@ -48,10 +49,11 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 
 		ret->AddMenu<C_CPP_Menu>( 'q' );
 		ret->AddMenu<STDMenu>( 'w' );
-		ret->AddMenu<FileMenu>( 'e' );
-		ret->AddMenu<TimeMenu>( 'r' );
-		ret->AddMenu<RandomMenu>( 't' );
-		ret->AddMenu<DebugMenu>( 'y' );
+		ret->AddMenu<C_Menu>( 'e' );
+		ret->AddMenu<FileMenu>( 'r' );
+		ret->AddMenu<TimeMenu>( 't' );
+		ret->AddMenu<RandomMenu>( 'y' );
+		ret->AddMenu<DebugMenu>( 'u' );
 
 
 

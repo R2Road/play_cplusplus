@@ -5,7 +5,6 @@
 
 #include "item/array_test.h"
 #include "item/operator_ternary_test.h"
-#include "item/print_test.h"
 #include "item/structured_binding_test.h"
 #include "item/using_test.h"
 #include "test_c/item/c_sizeof_test.h"
@@ -49,9 +48,7 @@ r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
 		ret->AddMenu<NewMenu>( 'q' );
 		ret->AddMenu<LambdaMenu>( 'w' );
 		ret->AddItem( 'e', structured_binding_test::Basic::GetInstance() );
-		ret->AddItem( 'r', print_test::Basic::GetInstance() );
-		ret->AddItem( 't', print_test::ShowNumbers::GetInstance() );
-		ret->AddItem( 'y', using_test::Basic::GetInstance() );
+		ret->AddItem( 'r', using_test::Basic::GetInstance() );
 
 
 		ret->AddLineFeed();
