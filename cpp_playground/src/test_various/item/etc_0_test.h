@@ -11,4 +11,11 @@ namespace etc_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class ShowBinary : public r2cm::iItem, public r2cm::SingleTon<ShowBinary>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }

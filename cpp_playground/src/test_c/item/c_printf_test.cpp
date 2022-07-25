@@ -1,7 +1,5 @@
 #include "c_printf_test.h"
 
-#include <bitset>
-
 #include "r2cm/r2cm_ostream.h"
 
 namespace print_test
@@ -66,42 +64,6 @@ namespace print_test
 				printf( "\t\tPrint( 8 : oct ) : %o\n", num );
 				printf( "\t\tPrint( 10 : dec ) : %d\n", num );
 				printf( "\t\tPrint( 16 : hex ) : %x\n", num );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				std::cout << r2cm::tab << "+ Show Binary : Use For" << r2cm::linefeed << r2cm::linefeed;
-
-				int num = 0b10110010101; // binary
-
-				std::cout << r2cm::tab << "int num = 0b10110010101;" << r2cm::linefeed;
-				std::cout << r2cm::linefeed;
-
-				std::cout << r2cm::tab2;
-				for( int i = 31; 0 <= i; --i )
-				{
-					const int temp_1 = ( num >> i );
-					const int temp_2 = temp_1 & 1;
-
-					std::cout << temp_2;
-				}
-				std::cout << r2cm::linefeed;
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				std::cout << r2cm::tab << "+ Show Binary : Use Bitset" << r2cm::linefeed << r2cm::linefeed;
-
-				int num = 0b0011001; // binary
-				std::bitset<16u> b( num );
-
-				std::cout << r2cm::tab << "int num = 0b0011001;" << r2cm::linefeed;
-				std::cout << r2cm::tab << "std::bitset<32u> b( num );" << r2cm::linefeed;
-				std::cout << r2cm::linefeed;
-
-				std::cout << r2cm::tab2 << "Print : " << b << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
