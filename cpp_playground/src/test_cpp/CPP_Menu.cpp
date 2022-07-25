@@ -8,7 +8,6 @@
 #include "item/operator_ternary_test.h"
 #include "item/structured_binding_test.h"
 #include "item/using_test.h"
-#include "test_c/item/c_sizeof_test.h"
 
 #include "AlignMenu.h"
 #include "BitOperationMenu.h"
@@ -30,7 +29,6 @@ r2cm::MenuUp CPP_Menu::Create( r2cm::Director& director )
 		ret->AddMenu<BitOperationMenu>( '1' );
 		ret->AddItem( '2', array_test::Init::GetInstance() );
 		ret->AddMenu<ClassMenu>( '3' );
-		ret->AddItem( '4', c_sizeof_test::Basic::GetInstance() );
 
 
 		ret->AddLineFeed();

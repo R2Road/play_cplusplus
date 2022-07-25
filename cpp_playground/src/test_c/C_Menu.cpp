@@ -4,6 +4,7 @@
 #include "r2cm/r2cm_ostream.h"
 
 #include "item/c_printf_test.h"
+#include "item/c_sizeof_test.h"
 
 #include "RootMenu.h"
 
@@ -14,6 +15,13 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 	{
 		ret->AddItem( '1', print_test::Basic::GetInstance() );
 		ret->AddItem( '2', print_test::ShowNumbers::GetInstance() );
+
+
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'q', c_sizeof_test::Basic::GetInstance() );
+
 
 		ret->AddLineFeed();
 
