@@ -14,6 +14,6 @@ private:
 	PointerMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Pointer"; }
+	static const char* GetTitle() { return "Pointer Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
