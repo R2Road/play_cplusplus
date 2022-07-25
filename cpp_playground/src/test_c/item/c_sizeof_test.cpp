@@ -9,7 +9,7 @@ namespace c_sizeof_test
 	{
 		return []()->const char*
 		{
-			return "c sizeof : Basic";
+			return "sizeof : Basic";
 		};
 	}
 	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
