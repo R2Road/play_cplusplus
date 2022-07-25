@@ -172,9 +172,6 @@
     <ClCompile Include="src\test_cpp\item\pointer_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\print_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\item\struct_member_alignment_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
@@ -467,6 +464,9 @@
     <ClCompile Include="src\test_cpp\CPP_Menu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_c\item\c_printf_test.cpp">
+      <Filter>test_c\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -593,9 +593,6 @@
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\pointer_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\print_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\struct_member_alignment_test.h">
@@ -901,6 +898,9 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\CPP_Menu.h">
       <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_c\item\c_printf_test.h">
+      <Filter>test_c\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -68,7 +68,6 @@
     <ClCompile Include="src\test_cpp\item\new_test.cpp" />
     <ClCompile Include="src\test_cpp\item\operator_ternary_test.cpp" />
     <ClCompile Include="src\test_cpp\item\pointer_test.cpp" />
-    <ClCompile Include="src\test_cpp\item\print_test.cpp" />
     <ClCompile Include="src\test_cpp\item\structured_binding_test.cpp" />
     <ClCompile Include="src\test_cpp\item\struct_member_alignment_test.cpp" />
     <ClCompile Include="src\test_cpp\item\template_meta_programming_01_test.cpp" />
@@ -90,6 +89,7 @@
     <ClCompile Include="src\test_cpp\VariadicTemplateMenu.cpp" />
     <ClCompile Include="src\test_c\C_Menu.cpp" />
     <ClCompile Include="src\test_c\item\c_file_test.cpp" />
+    <ClCompile Include="src\test_c\item\c_printf_test.cpp" />
     <ClCompile Include="src\test_c\item\c_sizeof_test.cpp" />
     <ClCompile Include="src\test_c\item\c_time_test.cpp" />
     <ClCompile Include="src\test_hobby\item\array_based_list_test.cpp" />
@@ -215,7 +215,6 @@
     <ClInclude Include="src\test_cpp\item\new_test.h" />
     <ClInclude Include="src\test_cpp\item\operator_ternary_test.h" />
     <ClInclude Include="src\test_cpp\item\pointer_test.h" />
-    <ClInclude Include="src\test_cpp\item\print_test.h" />
     <ClInclude Include="src\test_cpp\item\structured_binding_test.h" />
     <ClInclude Include="src\test_cpp\item\struct_member_alignment_test.h" />
     <ClInclude Include="src\test_cpp\item\template_meta_programming_01_test.h" />
@@ -237,6 +236,7 @@
     <ClInclude Include="src\test_cpp\VariadicTemplateMenu.h" />
     <ClInclude Include="src\test_c\C_Menu.h" />
     <ClInclude Include="src\test_c\item\c_file_test.h" />
+    <ClInclude Include="src\test_c\item\c_printf_test.h" />
     <ClInclude Include="src\test_c\item\c_sizeof_test.h" />
     <ClInclude Include="src\test_c\item\c_time_test.h" />
     <ClInclude Include="src\test_hobby\item\array_based_list_test.h" />
