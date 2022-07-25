@@ -7,7 +7,7 @@
 #include "test_cpp/item/korean_test.h"
 #include "test_cpp/item/locale_test.h"
 
-#include "C_CPP_Menu.h"
+#include "CPP_Menu.h"
 
 r2cm::MenuUp CharMenu::Create( r2cm::Director& director )
 {

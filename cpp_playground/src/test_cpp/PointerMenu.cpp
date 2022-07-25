@@ -5,7 +5,7 @@
 
 #include "test_cpp/item/pointer_test.h"
 
-#include "C_CPP_Menu.h"
+#include "CPP_Menu.h"
 
 r2cm::MenuUp PointerMenu::Create( r2cm::Director& director )
 {

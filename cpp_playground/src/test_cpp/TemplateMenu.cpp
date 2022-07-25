@@ -7,7 +7,7 @@
 #include "TemplateMetaProgrammingMenu.h"
 #include "TemplatePracticeMenu.h"
 
-#include "C_CPP_Menu.h"
+#include "CPP_Menu.h"
 
 r2cm::MenuUp TemplateMenu::Create( r2cm::Director& director )
 {

@@ -197,9 +197,6 @@
       <Filter>test_cpp\item</Filter>
     </ClCompile>
     <ClCompile Include="src\RootMenu.cpp" />
-    <ClCompile Include="src\test_cpp\C_CPP_Menu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_windows\item\windows_sound_test.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
@@ -467,6 +464,9 @@
     <ClCompile Include="src\test_c\C_Menu.cpp">
       <Filter>test_c</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\CPP_Menu.cpp">
+      <Filter>test_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -620,9 +620,6 @@
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\RootMenu.h" />
-    <ClInclude Include="src\test_cpp\C_CPP_Menu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_windows\item\windows_sound_test.h">
       <Filter>test_windows\item</Filter>
     </ClInclude>
@@ -901,6 +898,9 @@
     </ClInclude>
     <ClInclude Include="src\test_c\C_Menu.h">
       <Filter>test_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\CPP_Menu.h">
+      <Filter>test_cpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

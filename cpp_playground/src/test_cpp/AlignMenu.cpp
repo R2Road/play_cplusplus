@@ -7,7 +7,7 @@
 #include "test_cpp/item/alignas_test.h"
 #include "test_cpp/item/struct_member_alignment_test.h"
 
-#include "C_CPP_Menu.h"
+#include "CPP_Menu.h"
 
 r2cm::MenuUp AlignMenu::Create( r2cm::Director& director )
 {

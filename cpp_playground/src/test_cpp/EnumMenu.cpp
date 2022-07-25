@@ -5,7 +5,7 @@
 
 #include "item/enum_test.h"
 
-#include "C_CPP_Menu.h"
+#include "CPP_Menu.h"
 
 r2cm::MenuUp EnumMenu::Create( r2cm::Director& director )
 {

@@ -5,7 +5,7 @@
 
 #include "item/bit_operation_test.h"
 
-#include "C_CPP_Menu.h"
+#include "CPP_Menu.h"
 
 r2cm::MenuUp BitOperationMenu::Create( r2cm::Director& director )
 {

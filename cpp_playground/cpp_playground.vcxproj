@@ -50,7 +50,7 @@
     <ClCompile Include="src\test_cpp\AlignMenu.cpp" />
     <ClCompile Include="src\test_cpp\BitOperationMenu.cpp" />
     <ClCompile Include="src\test_cpp\ClassMenu.cpp" />
-    <ClCompile Include="src\test_cpp\C_CPP_Menu.cpp" />
+    <ClCompile Include="src\test_cpp\CPP_Menu.cpp" />
     <ClCompile Include="src\test_cpp\item\alignas_test.cpp" />
     <ClCompile Include="src\test_cpp\item\alignof_test.cpp" />
     <ClCompile Include="src\test_cpp\item\array_test.cpp" />
@@ -197,7 +197,7 @@
     <ClInclude Include="src\test_cpp\AlignMenu.h" />
     <ClInclude Include="src\test_cpp\BitOperationMenu.h" />
     <ClInclude Include="src\test_cpp\ClassMenu.h" />
-    <ClInclude Include="src\test_cpp\C_CPP_Menu.h" />
+    <ClInclude Include="src\test_cpp\CPP_Menu.h" />
     <ClInclude Include="src\test_cpp\item\alignas_test.h" />
     <ClInclude Include="src\test_cpp\item\alignof_test.h" />
     <ClInclude Include="src\test_cpp\item\array_test.h" />

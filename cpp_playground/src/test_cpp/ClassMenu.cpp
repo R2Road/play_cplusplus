@@ -5,7 +5,7 @@
 
 #include "item/class_test.h"
 
-#include "C_CPP_Menu.h"
+#include "CPP_Menu.h"
 
 r2cm::MenuUp ClassMenu::Create( r2cm::Director& director )
 {
