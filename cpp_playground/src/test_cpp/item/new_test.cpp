@@ -173,32 +173,29 @@ namespace new_test
 			std::cout << r2cm::split;
 
 			{
-				int i = 123;
-				float* fp = new (&i) float;
+				DECLARATION_MAIN( int i = 123 );
+				DECLARATION_MAIN( float* fp = new (&i) float );
 
-				std::cout << r2cm::tab << "+ int i = 123;" << r2cm::linefeed;
-				std::cout << r2cm::tab << "+ float* fp = new (&i) float;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- Print fp : " << *fp << r2cm::linefeed;
+				OUTPUT_VALUE( *fp );
 
 				std::cout << r2cm::linefeed;
 
-				*fp = 3.14f;
-				std::cout << r2cm::tab << "+ *fp = 3.14f;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- Print fp : " << *fp << r2cm::linefeed;
+				PROCESS_MAIN( *fp = 3.14f );
+				OUTPUT_VALUE( *fp );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				int i = 65;
-				std::cout << r2cm::tab << "+ int i = 65;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- Print i : " << i << r2cm::linefeed;
+				DECLARATION_MAIN( int i = 65 );
+				OUTPUT_VALUE( i );
+				OUTPUT_BINARY( i );
 
 				std::cout << r2cm::linefeed;
 
-				char* cp = new ( &i ) char;
-				std::cout << r2cm::tab << "+ char* cp = new ( &i ) char;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- Print cp : " << *cp << r2cm::linefeed;
+				DECLARATION_MAIN( char* cp = new ( &i ) char );
+				OUTPUT_VALUE( *cp );
+				OUTPUT_BINARY( *cp );
 			}
 
 			std::cout << r2cm::split;
