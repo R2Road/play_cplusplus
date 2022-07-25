@@ -54,7 +54,7 @@ r2cm::MenuUp CPP_Menu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'a', operator_ternary_test::Basic::GetInstance() );
-		ret->AddItem( 'b', number_test::Basic::GetInstance() );
+		ret->AddItem( 'b', number_test::Prefix::GetInstance() );
 
 
 		ret->AddSplit();

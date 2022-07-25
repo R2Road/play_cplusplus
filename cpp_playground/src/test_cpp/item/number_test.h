@@ -5,7 +5,7 @@
 
 namespace number_test
 {
-	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	class Prefix : public r2cm::iItem, public r2cm::SingleTon<Prefix>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

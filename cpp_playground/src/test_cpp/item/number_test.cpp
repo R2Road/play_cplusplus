@@ -9,14 +9,14 @@
 
 namespace number_test
 {
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Prefix::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Number : Basic";
+			return "Number : Prefix";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Prefix::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
