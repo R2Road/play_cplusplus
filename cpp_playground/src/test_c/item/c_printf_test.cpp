@@ -1,5 +1,7 @@
 #include "c_printf_test.h"
 
+#include <stdio.h>
+
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
@@ -9,7 +11,7 @@ namespace print_test
 	{
 		return []()->const char*
 		{
-			return "Print : Basic";
+			return "printf : Basic";
 		};
 	}
 	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
@@ -38,7 +40,7 @@ namespace print_test
 	{
 		return []()->const char*
 		{
-			return "Print : Number";
+			return "printf : Number";
 		};
 	}
 	r2cm::iItem::DoFunctionT ShowNumbers::GetDoFunction()
