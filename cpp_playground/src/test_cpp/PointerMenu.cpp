@@ -9,7 +9,7 @@
 
 r2cm::MenuUp PointerMenu::Create( r2cm::Director& director )
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, "Pointer" ) );
+	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, PointerMenu::GetTitle() ) );
 
 	{
 		ret->AddItem( '1', pointer_test::Basic::GetInstance() );
