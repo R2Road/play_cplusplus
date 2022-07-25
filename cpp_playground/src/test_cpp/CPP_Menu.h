@@ -8,10 +8,10 @@ namespace r2cm
 	using MenuUp = std::unique_ptr<class Menu>;
 }
 
-class C_CPP_Menu
+class CPP_Menu
 {
 private:
-	C_CPP_Menu() = delete;
+	CPP_Menu() = delete;
 
 public:
 	static const char* GetTitle() { return "C, CPP Menu"; }

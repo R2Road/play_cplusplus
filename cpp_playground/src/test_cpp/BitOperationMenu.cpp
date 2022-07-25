@@ -9,7 +9,7 @@
 
 r2cm::MenuUp BitOperationMenu::Create( r2cm::Director& director )
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, C_CPP_Menu::GetTitle() ) );
+	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, CPP_Menu::GetTitle() ) );
 
 	{
 		ret->AddItem( '1', bit_operation_test::Basic::GetInstance() );
@@ -23,7 +23,7 @@ r2cm::MenuUp BitOperationMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<C_CPP_Menu>( 27 );
+		ret->AddMenu<CPP_Menu>( 27 );
 	}
 
 	return ret;

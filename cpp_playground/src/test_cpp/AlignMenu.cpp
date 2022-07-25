@@ -33,7 +33,7 @@ r2cm::MenuUp AlignMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<C_CPP_Menu>( 27 );
+		ret->AddMenu<CPP_Menu>( 27 );
 	}
 
 	return ret;

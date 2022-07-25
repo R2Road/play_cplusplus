@@ -21,9 +21,9 @@
 #include "PointerMenu.h"
 #include "RootMenu.h"
 
-r2cm::MenuUp C_CPP_Menu::Create( r2cm::Director& director )
+r2cm::MenuUp CPP_Menu::Create( r2cm::Director& director )
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, C_CPP_Menu::GetTitle() ) );
+	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, CPP_Menu::GetTitle() ) );
 
 	{
 		ret->AddMenu<BitOperationMenu>( '1' );

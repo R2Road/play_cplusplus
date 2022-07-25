@@ -20,7 +20,7 @@ r2cm::MenuUp NewMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<C_CPP_Menu>( 27 );
+		ret->AddMenu<CPP_Menu>( 27 );
 	}
 
 	return ret;

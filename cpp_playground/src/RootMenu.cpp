@@ -47,7 +47,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<C_CPP_Menu>( 'q' );
+		ret->AddMenu<CPP_Menu>( 'q' );
 		ret->AddMenu<STDMenu>( 'w' );
 		ret->AddMenu<C_Menu>( 'e' );
 		ret->AddMenu<FileMenu>( 'r' );
