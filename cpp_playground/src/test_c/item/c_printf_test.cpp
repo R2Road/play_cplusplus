@@ -1,5 +1,6 @@
 #include "c_printf_test.h"
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace print_test
@@ -20,14 +21,9 @@ namespace print_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Show String : Use printf" << r2cm::linefeed << r2cm::linefeed;
+				std::cout << r2cm::tab << "+ Show String : Use printf" << r2cm::linefeed2;
 
-				std::cout << r2cm::tab << "printf( \"1111111\" \"2222222\" \"3333333\" \"   %d\", 456789 );" << r2cm::linefeed;
-				std::cout << r2cm::linefeed;
-
-				std::cout << r2cm::tab2;
-				printf( "1111111" "2222222" "3333333" "   %d", 456789 );
-				std::cout << r2cm::linefeed;
+				PROCESS_MAIN( printf( "1111111" "2222222" "3333333" "   %d" "\n", 456789 ) );
 			}
 
 			std::cout << r2cm::split;
