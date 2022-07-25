@@ -13,8 +13,8 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, C_Menu::GetTitle() ) );
 
 	{
-		ret->AddItem( '1', print_test::Basic::GetInstance() );
-		ret->AddItem( '2', print_test::ShowNumbers::GetInstance() );
+		ret->AddItem( '1', c_printf_test::Basic::GetInstance() );
+		ret->AddItem( '2', c_printf_test::ShowNumbers::GetInstance() );
 
 
 		ret->AddLineFeed();

@@ -5,7 +5,7 @@
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
-namespace print_test
+namespace c_printf_test
 {
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
