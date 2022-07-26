@@ -5,7 +5,7 @@
 
 #include "r2cm/r2cm_ostream.h"
 
-namespace r2utility
+namespace r2cm
 {
 	StopWatch::StopWatch() :
 		mStartTime( std::chrono::nanoseconds::duration( 0 ) )

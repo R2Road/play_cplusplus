@@ -33,7 +33,7 @@ namespace algorithm_selection_sort_test
 
 			std::cout << r2cm::split;
 
-			r2utility::StopWatch stop_watch;
+			r2cm::StopWatch stop_watch;
 			const std::array<int, 5u> test_container{ 5, 4, 3, 2, 1 };
 
 			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
@@ -123,7 +123,7 @@ namespace algorithm_selection_sort_test
 
 			std::cout << r2cm::split;
 
-			r2utility::StopWatch stop_watch;
+			r2cm::StopWatch stop_watch;
 			const std::array<int, 5u> test_container{ 5, 4, 3, 2, 1 };
 
 			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;

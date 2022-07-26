@@ -2,7 +2,7 @@
 
 #include <chrono>
 
-namespace r2utility
+namespace r2cm
 {
 	class StopWatch
 	{
