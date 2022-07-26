@@ -67,29 +67,32 @@ namespace c_time_test
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( time_t tt );
+			DECLARATION_MAIN( tm time_infos );
+			DECLARATION_MAIN( errno_t er );
+
+			std::cout << r2cm::split;
+
 			{
-				time_t tt;
-				time( &tt );
+				PROCESS_MAIN( time( &tt ) );
+				PROCESS_MAIN( er = localtime_s( &time_infos, &tt ) );
+				EXPECT_EQ( 0, er );
+			}
 
-				struct tm time_infos;
-				errno_t er = localtime_s( &time_infos, &tt );
-				if( 0 == er )
-				{
-					std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-					std::cout << r2cm::tab2 << "time_t tt;" << r2cm::linefeed;
-					std::cout << r2cm::tab2 << "time( &tt );" << r2cm::linefeed2;
-					std::cout << r2cm::tab2 << "struct tm time_infos;" << r2cm::linefeed;
-					std::cout << r2cm::tab2 << "localtime_s( &time_infos, &tt );" << r2cm::linefeed2;
+			std::cout << r2cm::split;
 
-					std::cout << r2cm::tab2 << time_infos.tm_year + 1900 << r2cm::linefeed;
-					std::cout << r2cm::tab2 << time_infos.tm_mon + 1 << r2cm::linefeed;
-					std::cout << r2cm::tab2 << time_infos.tm_mday << r2cm::linefeed;
-					std::cout << r2cm::tab2 << time_infos.tm_hour << " : " << time_infos.tm_min << " : " << time_infos.tm_sec << r2cm::linefeed;
-				}
-				else
-				{
-					std::cout << r2cm::tab << "Failed : localtime_s" << r2cm::linefeed;
-				}
+			{
+				std::cout << r2cm::tab << "+ 연, 월, 일" << r2cm::linefeed2;
+				OUTPUT_VALUE( time_infos.tm_year + 1900 );
+				OUTPUT_VALUE( time_infos.tm_mon + 1 );
+				OUTPUT_VALUE( time_infos.tm_mday );
+
+				std::cout << r2cm::linefeed2;
+
+				std::cout << r2cm::tab << "+ 시, 분, 초" << r2cm::linefeed2;
+				OUTPUT_VALUE( time_infos.tm_hour );
+				OUTPUT_VALUE( time_infos.tm_min );
+				OUTPUT_VALUE( time_infos.tm_sec );
 			}
 
 			std::cout << r2cm::split;
