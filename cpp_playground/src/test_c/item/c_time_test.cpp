@@ -97,6 +97,27 @@ namespace c_time_test
 
 			std::cout << r2cm::split;
 
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Y_M_D_H_M_S_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "C Time : Y_M_D_H_M_S 2";
+		};
+	}
+	r2cm::iItem::DoFunctionT Y_M_D_H_M_S_2::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
 			{
 				char str[128];
 				time_t tt;

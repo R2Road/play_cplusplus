@@ -16,7 +16,8 @@ r2cm::MenuUp TimeMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem( '1', c_time_test::Basic::GetInstance() );
 		ret->AddItem( '2', c_time_test::Y_M_D_H_M_S::GetInstance() );
-		ret->AddItem( '3', c_time_test::Clock::GetInstance() );
+		ret->AddItem( '3', c_time_test::Y_M_D_H_M_S_2::GetInstance() );
+		ret->AddItem( '4', c_time_test::Clock::GetInstance() );
 
 
 		ret->AddLineFeed();

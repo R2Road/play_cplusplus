@@ -19,6 +19,13 @@ namespace c_time_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class Y_M_D_H_M_S_2 : public r2cm::iItem, public r2cm::SingleTon<Y_M_D_H_M_S_2>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Clock : public r2cm::iItem, public r2cm::SingleTon<Clock>
 	{
 	public:
