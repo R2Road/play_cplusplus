@@ -3,8 +3,9 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "CPP_Menu.h"
 #include "test_cpp/item/lambda_test.h"
+
+#include "CPP_Menu.h"
 
 r2cm::MenuUp LambdaMenu::Create( r2cm::Director& director )
 {
