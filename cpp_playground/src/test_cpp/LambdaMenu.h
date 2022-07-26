@@ -14,6 +14,6 @@ private:
 	LambdaMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Lambda"; }
+	static const char* GetTitle() { return "Lambda Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
