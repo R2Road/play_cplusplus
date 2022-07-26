@@ -11,7 +11,7 @@
 
 r2cm::MenuUp TemplateMetaProgrammingMenu::Create( r2cm::Director& director )
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, "Template Meta Programming" ) );
+	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
 		ret->AddItem( '1', template_meta_programming_test::CalculateFactorial::GetInstance() );
