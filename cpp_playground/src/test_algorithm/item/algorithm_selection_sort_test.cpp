@@ -3,7 +3,7 @@
 #include <array>
 
 #include "r2cm/r2cm_ostream.h"
-#include "utility/r2utility_StopWatch.h"
+#include "r2cm/r2cm_StopWatch.h"
 
 template<class _Elem, class _Traits, class ContainerT>
 std::basic_ostream<_Elem, _Traits>& operator << ( std::basic_ostream<_Elem, _Traits>& _Ostr, const ContainerT& container )

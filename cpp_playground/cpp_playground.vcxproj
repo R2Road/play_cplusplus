@@ -24,6 +24,7 @@
     <ClCompile Include="src\r2cm\r2cm_Director.cpp" />
     <ClCompile Include="src\r2cm\r2cm_Inspector.cpp" />
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp" />
+    <ClCompile Include="src\r2cm\r2cm_StopWatch.cpp" />
     <ClCompile Include="src\r2cm\r2cm_WindowUtility.cpp" />
     <ClCompile Include="src\r2\r2_Direction4.cpp" />
     <ClCompile Include="src\r2\r2_Direction8.cpp" />
@@ -155,7 +156,6 @@
     <ClCompile Include="src\test_windows\WindowsMenu.cpp" />
     <ClCompile Include="src\utility\r2utility_CharacterBuffer.cpp" />
     <ClCompile Include="src\utility\r2utility_FileUtil.cpp" />
-    <ClCompile Include="src\utility\r2utility_StopWatch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h" />
@@ -166,6 +166,7 @@
     <ClInclude Include="src\r2cm\r2cm_Menu.h" />
     <ClInclude Include="src\r2cm\r2cm_ostream.h" />
     <ClInclude Include="src\r2cm\r2cm_Singleton.h" />
+    <ClInclude Include="src\r2cm\r2cm_StopWatch.h" />
     <ClInclude Include="src\r2cm\r2cm_VersionInfo.h" />
     <ClInclude Include="src\r2cm\r2cm_WindowUtility.h" />
     <ClInclude Include="src\r2\r2_ArrayBasedList.h" />
@@ -303,7 +304,6 @@
     <ClInclude Include="src\test_windows\WindowsMenu.h" />
     <ClInclude Include="src\utility\r2utility_CharacterBuffer.h" />
     <ClInclude Include="src\utility\r2utility_FileUtil.h" />
-    <ClInclude Include="src\utility\r2utility_StopWatch.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\test_cpp\item\enum_test_xmacro_2.def" />

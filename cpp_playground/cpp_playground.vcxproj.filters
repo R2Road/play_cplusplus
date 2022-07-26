@@ -76,9 +76,6 @@
     <ClCompile Include="src\algorithm\r2algorithm_astar_PathBuilder.cpp">
       <Filter>algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\utility\r2utility_StopWatch.cpp">
-      <Filter>utility</Filter>
-    </ClCompile>
     <ClCompile Include="src\utility\r2utility_CharacterBuffer.cpp">
       <Filter>utility</Filter>
     </ClCompile>
@@ -470,6 +467,9 @@
     <ClCompile Include="src\test_cpp\item\number_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_StopWatch.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Grid.h">
@@ -492,9 +492,6 @@
     </ClInclude>
     <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h">
       <Filter>algorithm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\utility\r2utility_StopWatch.h">
-      <Filter>utility</Filter>
     </ClInclude>
     <ClInclude Include="src\utility\r2utility_CharacterBuffer.h">
       <Filter>utility</Filter>
@@ -907,6 +904,9 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\number_test.h">
       <Filter>test_cpp\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_StopWatch.h">
+      <Filter>r2cm</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

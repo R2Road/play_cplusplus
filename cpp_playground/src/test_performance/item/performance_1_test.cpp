@@ -6,7 +6,7 @@
 
 #include "r2cm/r2cm_ostream.h"
 
-#include "utility/r2utility_StopWatch.h"
+#include "r2cm/r2cm_StopWatch.h"
 
 namespace performance_1_test
 {
