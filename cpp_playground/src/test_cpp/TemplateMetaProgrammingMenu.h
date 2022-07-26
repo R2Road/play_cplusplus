@@ -14,6 +14,6 @@ private:
 	TemplateMetaProgrammingMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Template Meta Programming"; }
+	static const char* GetTitle() { return "Template Meta Programming Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
