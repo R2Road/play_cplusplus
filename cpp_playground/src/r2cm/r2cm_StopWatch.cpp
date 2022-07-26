@@ -1,6 +1,5 @@
 #include "r2cm_StopWatch.h"
 
-#include <iostream>
 #include <numeric>
 
 #include "r2cm/r2cm_ostream.h"
