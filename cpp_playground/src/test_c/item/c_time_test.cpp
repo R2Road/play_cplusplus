@@ -5,6 +5,7 @@
 #include <errno.h>
 #include <time.h>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
@@ -26,19 +27,21 @@ namespace c_time_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "time() : " << time( NULL ) << r2cm::linefeed;
+				OUTPUT_VALUE( time( NULL ) );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				time_t tt;
+				DECLARATION_MAIN( time_t tt );
 
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "time_t tt;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "time( &tt ) : " << time( &tt ) << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "tt : " << tt << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( time( &tt ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( tt );
 			}
 
 			std::cout << r2cm::split;
