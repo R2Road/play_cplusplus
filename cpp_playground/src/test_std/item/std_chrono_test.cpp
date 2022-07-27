@@ -4,6 +4,7 @@
 #include <chrono>
 #include <ctime> // time.h : c // time(), clock()
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace std_chrono_test
@@ -19,50 +20,45 @@ namespace std_chrono_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			// REF : https://en.cppreference.com/w/cpp/chrono/time_point/time_since_epoch
-
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
 
-			char str[128];
+			std::cout << r2cm::tab << "REF : https://en.cppreference.com/w/cpp/chrono/time_point/time_since_epoch" << r2cm::linefeed2;
+			std::cout << r2cm::tab << "# Summury #" << r2cm::linefeed;
+			std::cout << r2cm::tab << "유닉스 시간( 영어: Unix time )은 시각을 나타내는 방식이다." << r2cm::linefeed;
+			std::cout << r2cm::tab << "POSIX 시간이나 Epoch 시간이라고 부르기도 한다." << r2cm::linefeed;
+			std::cout << r2cm::tab << "1970년 1월 1일 00:00 : 00 협정 세계시( UTC ) 부터의 경과 시간을 초로 환산하여 정수로 나타낸 것이다" << r2cm::linefeed;
 
-			const auto sc_default = std::chrono::time_point<std::chrono::system_clock>{};
-			const auto sc_now = std::chrono::system_clock::now();
+			std::cout << r2cm::split;
 
-			{
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "const auto sc_default = std::chrono::time_point<std::chrono::system_clock>{};" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "const auto sc_now = std::chrono::system_clock::now();" << r2cm::linefeed;
-			}
+			DECLARATION_MAIN( char str[128] );
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process : Epoch" << r2cm::linefeed2;
+				std::cout << r2cm::tab << "+ Epoch( 시간의 시작점 )" << r2cm::linefeed2;
 
-				auto epoch_time = std::chrono::system_clock::to_time_t( sc_default );
-				ctime_s( str, sizeof( str ), &epoch_time );
-
-				std::cout << r2cm::tab2 << "auto epoch_time = std::chrono::system_clock::to_time_t( sc_default );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "ctime_s( str, sizeof( str ), &epoch_time );" << r2cm::linefeed3;
-				std::cout << r2cm::tab << "## epoch: " << str;
+				DECLARATION_MAIN( const auto sc_default = std::chrono::time_point<std::chrono::system_clock>{} );
+				DECLARATION_MAIN( auto epoch_time = std::chrono::system_clock::to_time_t( sc_default ) );
+				PROCESS_MAIN( ctime_s( str, sizeof( str ), &epoch_time ) );
 
 				std::cout << r2cm::linefeed;
-				std::cout << r2cm::tab << "시간의 시작점" << r2cm::linefeed;
+
+				OUTPUT_VALUE( str );
+				
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process : Today" << r2cm::linefeed2;
+				std::cout << r2cm::tab << "+ Today" << r2cm::linefeed2;
 
-				auto today_time = std::chrono::system_clock::to_time_t( sc_now );
-				ctime_s( str, sizeof( str ), &today_time );
+				DECLARATION_MAIN( const auto sc_now = std::chrono::system_clock::now() );
+				DECLARATION_MAIN( auto today_time = std::chrono::system_clock::to_time_t( sc_now ) );
+				PROCESS_MAIN( ctime_s( str, sizeof( str ), &today_time ) );
 
-				std::cout << r2cm::tab2 << "auto today_time = std::chrono::system_clock::to_time_t( sc_now );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "ctime_s( str, sizeof( str ), &today_time );" << r2cm::linefeed3;
-				std::cout << r2cm::tab << "## today: " << str;
+				OUTPUT_VALUE( str );
 			}
 
 			std::cout << r2cm::split;
