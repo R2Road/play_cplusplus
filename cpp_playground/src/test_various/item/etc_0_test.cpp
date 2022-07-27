@@ -27,21 +27,17 @@ namespace etc_test
 
 			std::cout << r2cm::split;
 
+			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "#define MACRO2STRING( x ) #x" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
 			{
-				int test_int = 3456;
-
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "#define MACRO2STRING( x ) #x" << r2cm::linefeed;
+				DECLARATION_MAIN( const int test_int = 3456 );
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "+ Variable" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "int test_int = " << test_int << ";" << r2cm::linefeed;
-
-				std::cout << r2cm::linefeed;
-
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << MACRO2STRING( test_int ) << r2cm::linefeed;
+				OUTPUT_VALUE( MACRO2STRING( test_int ) );
 			}
 
 			std::cout << r2cm::split;
