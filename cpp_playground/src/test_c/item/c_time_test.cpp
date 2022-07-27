@@ -119,39 +119,41 @@ namespace c_time_test
 			std::cout << r2cm::split;
 
 			{
-				char str[128];
-				time_t tt;
-				time( &tt );
-				ctime_s( str, sizeof( str ), &tt );
+				DECLARATION_MAIN( char str[128] );
+				DECLARATION_MAIN( time_t tt );
 
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "char str[128];" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "time_t tt;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "time( &tt );" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "ctime_s( str, sizeof( str ), &tt ); : " << str;
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( time( &tt ) );
+				PROCESS_MAIN( ctime_s( str, sizeof( str ), &tt ) );
+
+				std::cout << r2cm::linefeed;
+				
+				OUTPUT_VALUE( str );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				char str[128];
+				DECLARATION_MAIN( char str[128] );
+				DECLARATION_MAIN( time_t tt );
+				DECLARATION_MAIN( struct tm time_infos );
 
-				time_t tt;
-				time( &tt );
+				std::cout << r2cm::linefeed;
 
-				struct tm time_infos;
-				localtime_s( &time_infos, &tt );
+				PROCESS_MAIN( time( &tt ) );
+				PROCESS_MAIN( localtime_s( &time_infos, &tt ) );
+				PROCESS_MAIN( asctime_s( str, sizeof( str ), &time_infos ) );
 
-				asctime_s( str, sizeof( str ), &time_infos );
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "char str[128];" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "time_t tt;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "time( &tt );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "struct tm time_infos;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "localtime_s( &time_infos, &tt );" << r2cm::linefeed2;
+				OUTPUT_VALUE( str );
+			}
 
-				std::cout << r2cm::tab2 << "asctime_s( str, sizeof( str ), &time_infos ); : " << str;
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ 만들어진 날짜 정보 문자열의 끝에는 \\n이 추가된다." << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
