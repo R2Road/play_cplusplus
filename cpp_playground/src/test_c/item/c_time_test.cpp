@@ -52,14 +52,14 @@ namespace c_time_test
 
 
 
-	r2cm::iItem::TitleFunctionT Y_M_D_H_M_S::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Y_M_D_H_M_S_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "C Time : Y_M_D_H_M_S";
+			return "C Time : Y_M_D_H_M_S_1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Y_M_D_H_M_S::GetDoFunction()
+	r2cm::iItem::DoFunctionT Y_M_D_H_M_S_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
