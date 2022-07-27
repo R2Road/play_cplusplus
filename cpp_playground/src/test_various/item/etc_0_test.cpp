@@ -67,7 +67,7 @@ namespace etc_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Show Binary : Use For" << r2cm::linefeed << r2cm::linefeed;
+				std::cout << r2cm::tab << "+ Use For" << r2cm::linefeed << r2cm::linefeed;
 
 				int num = 0b10110010101; // binary
 
@@ -88,7 +88,7 @@ namespace etc_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Show Binary : Use Bitset" << r2cm::linefeed << r2cm::linefeed;
+				std::cout << r2cm::tab << "+ Use Bitset" << r2cm::linefeed << r2cm::linefeed;
 
 				int num = 0b0011001; // binary
 				std::bitset<16u> b( num );
