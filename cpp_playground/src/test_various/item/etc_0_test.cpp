@@ -1,8 +1,6 @@
 #include "etc_0_test.h"
 
 #include <bitset>
-#include <list>
-#include <numeric> // std::iota
 #include <stdint.h>
 
 #include "r2cm/r2cm_Inspector.h"
