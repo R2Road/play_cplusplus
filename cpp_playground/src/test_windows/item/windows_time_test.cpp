@@ -5,6 +5,7 @@
 #pragma comment(lib, "winmm.lib") // for timeGetTime()
 
 #include "r2cm/r2cm_ostream.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 namespace window_time_test
 {
@@ -19,70 +20,68 @@ namespace window_time_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			std::cout << "[ANY KEY] Exit" << r2cm::linefeed2;
+
 			SYSTEMTIME local_time;
 			SYSTEMTIME system_time;
 			DWORD current_tick = 0;
 			DWORD last_tick = 0;
 
+			const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 			while( true )
 			{
+				r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+
 				GetLocalTime( &local_time );
 				GetSystemTime( &system_time );
 				current_tick = GetTickCount();
 
-				if( last_tick + 16 < current_tick ) // 60fps
 				{
-
-					system( "cls" );
-
-					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
-					std::cout << "[ANY KEY] Exit" << r2cm::linefeed;
-
-					std::cout << r2cm::split;
-
-					{
-						std::cout << r2cm::tab << "GetLocalTime( &local_time );" << r2cm::linefeed;
-						std::cout << r2cm::tab2 << local_time.wYear << local_time.wMonth << local_time.wDay << r2cm::linefeed;
-						std::cout << r2cm::tab2 << local_time.wDayOfWeek << r2cm::linefeed;
-						std::cout << r2cm::tab2 << local_time.wHour << local_time.wMinute << local_time.wSecond << r2cm::linefeed;
-						std::cout << r2cm::tab2 << local_time.wMilliseconds << r2cm::linefeed;
-					}
-
-					std::cout << r2cm::split;
-
-					{
-						std::cout << r2cm::tab << "GetSystemTime( &system_time );" << r2cm::linefeed;
-						std::cout << r2cm::tab2 << system_time.wYear << system_time.wMonth << system_time.wDay << r2cm::linefeed;
-						std::cout << r2cm::tab2 << system_time.wDayOfWeek << r2cm::linefeed;
-						std::cout << r2cm::tab2 << system_time.wHour << system_time.wMinute << system_time.wSecond << r2cm::linefeed;
-						std::cout << r2cm::tab2 << system_time.wMilliseconds << r2cm::linefeed;
-					}
-
-					std::cout << r2cm::split;
-
-					{
-						std::cout << r2cm::tab << "tick = GetTickCount();" << r2cm::linefeed;
-						std::cout << r2cm::tab2 << current_tick << r2cm::linefeed;
-
-						last_tick = current_tick;
-					}
-
-					std::cout << r2cm::split;
-
-					{
-						std::cout << r2cm::tab << "GetTickCount64();" << r2cm::linefeed;
-						std::cout << r2cm::tab2 << GetTickCount64() << r2cm::linefeed;
-					}
-
-					std::cout << r2cm::split;
-
-					{
-						std::cout << r2cm::tab << "timeGetTime();" << r2cm::linefeed;
-						std::cout << r2cm::tab2 << timeGetTime() << r2cm::linefeed;
-					}
-
-					std::cout << r2cm::split;
+					std::cout << r2cm::tab << "GetLocalTime( &local_time );" << r2cm::linefeed;
+					std::cout << r2cm::tab2 << local_time.wYear << local_time.wMonth << local_time.wDay << r2cm::linefeed;
+					std::cout << r2cm::tab2 << local_time.wDayOfWeek << r2cm::linefeed;
+					std::cout << r2cm::tab2 << local_time.wHour << local_time.wMinute << local_time.wSecond << r2cm::linefeed;
+					std::cout << r2cm::tab2 << local_time.wMilliseconds << r2cm::linefeed;
 				}
+
+				std::cout << r2cm::split;
+
+				{
+					std::cout << r2cm::tab << "GetSystemTime( &system_time );" << r2cm::linefeed;
+					std::cout << r2cm::tab2 << system_time.wYear << system_time.wMonth << system_time.wDay << r2cm::linefeed;
+					std::cout << r2cm::tab2 << system_time.wDayOfWeek << r2cm::linefeed;
+					std::cout << r2cm::tab2 << system_time.wHour << system_time.wMinute << system_time.wSecond << r2cm::linefeed;
+					std::cout << r2cm::tab2 << system_time.wMilliseconds << r2cm::linefeed;
+				}
+
+				std::cout << r2cm::split;
+
+				{
+					std::cout << r2cm::tab << "tick = GetTickCount();" << r2cm::linefeed;
+					std::cout << r2cm::tab2 << current_tick << r2cm::linefeed;
+
+					last_tick = current_tick;
+				}
+
+				std::cout << r2cm::split;
+
+				{
+					std::cout << r2cm::tab << "GetTickCount64();" << r2cm::linefeed;
+					std::cout << r2cm::tab2 << GetTickCount64() << r2cm::linefeed;
+				}
+
+				std::cout << r2cm::split;
+
+				{
+					std::cout << r2cm::tab << "timeGetTime();" << r2cm::linefeed;
+					std::cout << r2cm::tab2 << timeGetTime() << r2cm::linefeed;
+				}
+
+				std::cout << r2cm::split;
 
 				if( _kbhit() )
 				{
