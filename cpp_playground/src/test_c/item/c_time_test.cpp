@@ -175,39 +175,31 @@ namespace c_time_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
-			std::cout << "[ANY KEY] Exit" << r2cm::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
 
-			clock_t current_clock = 0;
-			clock_t current_sec = 0;
-
-			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-			std::cout << r2cm::tab2 << "clock_t current_clock = 0;" << r2cm::linefeed;
-			std::cout << r2cm::tab2 << "clock_t current_sec = 0;" << r2cm::linefeed;
+			DECLARATION_MAIN( clock_t current_clock = 0 );
+			DECLARATION_MAIN( clock_t current_sec = 0 );
 
 			std::cout << r2cm::split;
 
-			std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-			std::cout << r2cm::tab2 << "current_clock = clock();" << r2cm::linefeed;
-			std::cout << r2cm::tab2 << "current_sec = current_clock / CLOCKS_PER_SEC;" << r2cm::linefeed;
-
-			std::cout << r2cm::split;
-
-			std::cout << r2cm::linefeed;
-			std::cout << r2cm::split;
-
+			std::cout << r2cm::tab << "Message : clock() 은 어플리케이션의 실행 시간을 반환한다." << r2cm::linefeed;
 			std::cout << r2cm::tab << "Message : clock() Gives Processing Time" << r2cm::linefeed;
 
+			std::cout << r2cm::split;
+
+			std::cout << "[ANY KEY] Exit" << r2cm::linefeed2;
+
+			const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 			while( true )
 			{
-				r2cm::WindowUtility::MoveCursorPoint( { 0, 20 } );
+				r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
-				current_clock = clock();
-				current_sec = current_clock / CLOCKS_PER_SEC;
+				PROCESS_MAIN( current_clock = clock() );
+				PROCESS_MAIN( current_sec = current_clock / CLOCKS_PER_SEC );
 
-				std::cout << r2cm::tab << "current_clock : " << current_clock << r2cm::tab2 << "current_sec : " << current_sec;
+				std::cout << r2cm::tab << "current_clock : " << current_clock << r2cm::tab2 << "current_sec : " << current_sec << r2cm::linefeed;
 
 				if( _kbhit() )
 				{
@@ -220,7 +212,7 @@ namespace c_time_test
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::None;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
