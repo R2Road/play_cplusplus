@@ -46,15 +46,15 @@ r2cm::MenuUp CPP_Menu::Create( r2cm::Director& director )
 
 		ret->AddMenu<NewMenu>( 'q' );
 		ret->AddMenu<LambdaMenu>( 'w' );
-		ret->AddItem( 'e', structured_binding_test::Basic::GetInstance() );
-		ret->AddItem( 'r', using_test::Basic::GetInstance() );
+		ret->AddItem( 'e', using_test::Basic::GetInstance() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'a', operator_ternary_test::Basic::GetInstance() );
-		ret->AddItem( 'b', number_test::Prefix::GetInstance() );
+		ret->AddItem( 'a', structured_binding_test::Basic::GetInstance() );
+		ret->AddItem( 'b', operator_ternary_test::Basic::GetInstance() );
+		ret->AddItem( 'c', number_test::Prefix::GetInstance() );
 
 
 		ret->AddSplit();
