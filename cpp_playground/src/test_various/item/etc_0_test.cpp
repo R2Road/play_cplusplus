@@ -5,6 +5,7 @@
 #include <numeric> // std::iota
 #include <stdint.h>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace etc_test
@@ -67,14 +68,13 @@ namespace etc_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Use For" << r2cm::linefeed << r2cm::linefeed;
+				std::cout << r2cm::tab << "+ Use For" << r2cm::linefeed2;
 
-				int num = 0b10110010101; // binary
+				DECLARATION_MAIN( const int num = 0b10110010101 ); // binary
 
-				std::cout << r2cm::tab << "int num = 0b10110010101;" << r2cm::linefeed;
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab2;
+				std::cout << r2cm::tab;
 				for( int i = 31; 0 <= i; --i )
 				{
 					const int temp_1 = ( num >> i );
@@ -88,16 +88,14 @@ namespace etc_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Use Bitset" << r2cm::linefeed << r2cm::linefeed;
+				std::cout << r2cm::tab << "+ Use Bitset" << r2cm::linefeed2;
 
-				int num = 0b0011001; // binary
-				std::bitset<16u> b( num );
+				DECLARATION_MAIN( const int num = 0b0011001 ); // binary
+				DECLARATION_MAIN( std::bitset<16u> b( num ) );
 
-				std::cout << r2cm::tab << "int num = 0b0011001;" << r2cm::linefeed;
-				std::cout << r2cm::tab << "std::bitset<32u> b( num );" << r2cm::linefeed;
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab2 << "Print : " << b << r2cm::linefeed;
+				OUTPUT_VALUE( b );
 			}
 
 			std::cout << r2cm::split;
