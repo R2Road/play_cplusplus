@@ -37,31 +37,31 @@ namespace window_time_test
 			const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 			while( true )
 			{
-				r2cm::WindowUtility::MoveCursorPoint( pivot_point );
+				r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 				{
 					PROCESS_MAIN( GetLocalTime( &local_time ) );
-					std::cout << r2cm::tab2 << local_time.wYear << local_time.wMonth << local_time.wDay << r2cm::linefeed;
-					std::cout << r2cm::tab2 << local_time.wDayOfWeek << r2cm::linefeed;
-					std::cout << r2cm::tab2 << local_time.wHour << local_time.wMinute << local_time.wSecond << r2cm::linefeed;
-					std::cout << r2cm::tab2 << local_time.wMilliseconds << r2cm::linefeed;
+					std::cout << r2cm::tab << local_time.wYear << local_time.wMonth << local_time.wDay << r2cm::linefeed;
+					std::cout << r2cm::tab << local_time.wDayOfWeek << r2cm::linefeed;
+					std::cout << r2cm::tab << local_time.wHour << local_time.wMinute << local_time.wSecond << r2cm::linefeed;
+					std::cout << r2cm::tab << local_time.wMilliseconds << r2cm::linefeed;
 				}
 
 				std::cout << r2cm::linefeed;
 
 				{
 					PROCESS_MAIN( GetSystemTime( &system_time ) );
-					std::cout << r2cm::tab2 << system_time.wYear << system_time.wMonth << system_time.wDay << r2cm::linefeed;
-					std::cout << r2cm::tab2 << system_time.wDayOfWeek << r2cm::linefeed;
-					std::cout << r2cm::tab2 << system_time.wHour << system_time.wMinute << system_time.wSecond << r2cm::linefeed;
-					std::cout << r2cm::tab2 << system_time.wMilliseconds << r2cm::linefeed;
+					std::cout << r2cm::tab << system_time.wYear << system_time.wMonth << system_time.wDay << r2cm::linefeed;
+					std::cout << r2cm::tab << system_time.wDayOfWeek << r2cm::linefeed;
+					std::cout << r2cm::tab << system_time.wHour << system_time.wMinute << system_time.wSecond << r2cm::linefeed;
+					std::cout << r2cm::tab << system_time.wMilliseconds << r2cm::linefeed;
 				}
 
 				std::cout << r2cm::linefeed;
 
 				{
 					PROCESS_MAIN( current_tick = GetTickCount() );
-					std::cout << r2cm::tab2 << current_tick << r2cm::linefeed;
+					OUTPUT_VALUE( current_tick );
 
 					last_tick = current_tick;
 				}
@@ -69,15 +69,13 @@ namespace window_time_test
 				std::cout << r2cm::linefeed;
 
 				{
-					std::cout << r2cm::tab << "GetTickCount64();" << r2cm::linefeed;
-					std::cout << r2cm::tab2 << GetTickCount64() << r2cm::linefeed;
+					OUTPUT_VALUE( GetTickCount64() );
 				}
 
 				std::cout << r2cm::linefeed;
 
 				{
-					std::cout << r2cm::tab << "timeGetTime();" << r2cm::linefeed;
-					std::cout << r2cm::tab2 << timeGetTime() << r2cm::linefeed;
+					OUTPUT_VALUE( timeGetTime() );
 				}
 
 				std::cout << r2cm::split;
