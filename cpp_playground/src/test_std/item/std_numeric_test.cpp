@@ -12,7 +12,7 @@ namespace std_numeric_test
 	{
 		return []()->const char*
 		{
-			return "Accumulate : Number";
+			return "std::accumulate : Number";
 		};
 	}
 	r2cm::iItem::DoFunctionT Accumulate_Number::GetDoFunction()
@@ -99,7 +99,7 @@ namespace std_numeric_test
 	{
 		return []()->const char*
 		{
-			return "Accumulate : String";
+			return "std::accumulate : String";
 		};
 	}
 	r2cm::iItem::DoFunctionT Accumulate_String::GetDoFunction()
