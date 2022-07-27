@@ -181,7 +181,7 @@ namespace std_numeric_test
 	{
 		return []()->const char*
 		{
-			return "Partial_Sum";
+			return "std::partial_sum";
 		};
 	}
 	r2cm::iItem::DoFunctionT Partial_Sum::GetDoFunction()
@@ -261,7 +261,7 @@ namespace std_numeric_test
 	{
 		return []()->const char*
 		{
-			return "Fill Sequence Number In Container";
+			return "std::iota : Fill Sequence Number In Container";
 		};
 	}
 	r2cm::iItem::DoFunctionT FillSequenceNumber::GetDoFunction()
