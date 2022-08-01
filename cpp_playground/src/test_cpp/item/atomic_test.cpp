@@ -5,6 +5,7 @@
 #include <thread>
 #include <type_traits>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 struct TestStruct1
@@ -101,15 +102,12 @@ namespace atomic_test
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( int n = 0 );
+
+			std::cout << r2cm::split;
+
 			{
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "int n = 0;" << r2cm::linefeed2;
-
-				int n = 0;
-
-				std::cout << r2cm::tab2 << "thread x 5 : 100000 time ++n" << r2cm::linefeed2;
-
-
+				std::cout << r2cm::tab << "+ thread x 5 : 100000 time ++n" << r2cm::linefeed2;
 				auto thread_process = [&n]( int index, int attmpt )
 				{
 					printf( "\t\tThread Start : %d\n", index );
@@ -132,11 +130,11 @@ namespace atomic_test
 				test_thread_3.join();
 				test_thread_4.join();
 				test_thread_5.join();
-
-
-				std::cout << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "n = " << n << r2cm::linefeed2;
 			}
+
+			std::cout << r2cm::split;
+
+			EXPECT_NE( 100000 * 5, n );
 
 			std::cout << r2cm::split;
 
