@@ -14,6 +14,6 @@ private:
 	STDThreadMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Thread"; }
+	static const char* GetTitle() { return "Thread Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
