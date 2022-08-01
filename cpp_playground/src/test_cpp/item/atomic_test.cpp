@@ -157,13 +157,12 @@ namespace atomic_test
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( std::atomic_int32_t n = 0 );
+
+			std::cout << r2cm::split;
+
 			{
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::atomic_int32_t n = 0;" << r2cm::linefeed2;
-
-				std::atomic_int32_t n = 0;
-
-				std::cout << r2cm::tab2 << "thread x 5 : 100000 time ++n" << r2cm::linefeed2;
+				std::cout << r2cm::tab << "thread x 5 : 100000 time ++n" << r2cm::linefeed2;
 
 
 				auto thread_process = [&n]( int index, int attmpt )
@@ -188,11 +187,11 @@ namespace atomic_test
 				test_thread_3.join();
 				test_thread_4.join();
 				test_thread_5.join();
-
-
-				std::cout << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "n = " << n << r2cm::linefeed2;
 			}
+
+			std::cout << r2cm::split;
+
+			EXPECT_EQ( 100000 * 5, n );
 
 			std::cout << r2cm::split;
 
