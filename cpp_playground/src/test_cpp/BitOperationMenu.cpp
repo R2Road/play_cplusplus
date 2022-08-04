@@ -20,6 +20,15 @@ r2cm::MenuUp BitOperationMenu::Create( r2cm::Director& director )
 		ret->AddItem( '6', bit_operation_test::XOR_Swap::GetInstance() );
 
 
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'q', bit_operation_test::ETC_1::GetInstance() );
+
+
+
 		ret->AddSplit();
 
 

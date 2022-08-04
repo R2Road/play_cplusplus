@@ -46,4 +46,12 @@ namespace bit_operation_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+
+	class ETC_1 : public r2cm::iItem, public r2cm::SingleTon<ETC_1>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }

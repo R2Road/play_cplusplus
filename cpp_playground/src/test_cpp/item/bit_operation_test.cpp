@@ -376,4 +376,42 @@ namespace bit_operation_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT ETC_1::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "ETC_1";
+		};
+	}
+	r2cm::iItem::DoFunctionT ETC_1::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const char c_1 = std::numeric_limits<char>::max() );
+				PrintBinary( c_1, 8 );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( int i_1 = c_1 );
+				PrintBinary( i_1, 32 );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( i_1 += c_1 );
+				PrintBinary( i_1, 32 );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
