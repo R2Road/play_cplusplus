@@ -415,14 +415,14 @@ namespace bit_operation_test
 
 
 
-	r2cm::iItem::TitleFunctionT Plus::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Plus_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Plus";
+			return "Plus 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Plus::GetDoFunction()
+	r2cm::iItem::DoFunctionT Plus_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
