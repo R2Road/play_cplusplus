@@ -17,7 +17,15 @@ r2cm::MenuUp BitOperationMenu::Create( r2cm::Director& director )
 		ret->AddItem( '3', bit_operation_test::Complement::GetInstance() );
 		ret->AddItem( '4', bit_operation_test::Add_Remove_Toggle::GetInstance() );
 		ret->AddItem( '5', bit_operation_test::Mask::GetInstance() );
-		ret->AddItem( '6', bit_operation_test::XOR_Swap::GetInstance() );
+
+
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( '6', bit_operation_test::Operator_XOR::GetInstance() );
+		ret->AddItem( '7', bit_operation_test::XOR_Swap::GetInstance() );
 
 
 

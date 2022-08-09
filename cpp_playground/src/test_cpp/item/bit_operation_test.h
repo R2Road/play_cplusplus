@@ -40,6 +40,14 @@ namespace bit_operation_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+
+	class Operator_XOR : public r2cm::iItem, public r2cm::SingleTon<Operator_XOR>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class XOR_Swap : public r2cm::iItem, public r2cm::SingleTon<XOR_Swap>
 	{
 	public:

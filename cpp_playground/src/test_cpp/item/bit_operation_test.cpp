@@ -325,6 +325,67 @@ namespace bit_operation_test
 
 
 
+	r2cm::iItem::TitleFunctionT Operator_XOR::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Operator : XOR";
+		};
+	}
+	r2cm::iItem::DoFunctionT Operator_XOR::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( char result = 0 );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const char b_1 = 0b00000000 );
+				DECLARATION_MAIN( const char b_2 = 0b00000000 );
+				PROCESS_MAIN( result = b_1 ^ b_2 );
+				OUTPUT_BINARY( result );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const char b_1 = 0b00000011 );
+				DECLARATION_MAIN( const char b_2 = 0b00000000 );
+				PROCESS_MAIN( result = b_1 ^ b_2 );
+				OUTPUT_BINARY( result );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const char b_1 = 0b00000011 );
+				DECLARATION_MAIN( const char b_2 = 0b00001100 );
+				PROCESS_MAIN( result = b_1 ^ b_2 );
+				OUTPUT_BINARY( result );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const char b_1 = 0b00000111 );
+				DECLARATION_MAIN( const char b_2 = 0b00001110 );
+				PROCESS_MAIN( result = b_1 ^ b_2 );
+				OUTPUT_BINARY( result );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT XOR_Swap::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -430,11 +491,15 @@ namespace bit_operation_test
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( const short t_1 = 1 );
+			OUTPUT_BINARY( t_1 );
+			DECLARATION_MAIN( const short t_2 = 2 );
+			OUTPUT_BINARY( t_2 );
+
+			std::cout << r2cm::split;
+
 			{
-				DECLARATION_MAIN( const short t_1 = 1 );
-				OUTPUT_BINARY( t_1 );
-				DECLARATION_MAIN( const short t_2 = 2 );
-				OUTPUT_BINARY( t_2 );
+				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed;
 
 				std::cout << r2cm::linefeed;
 
