@@ -451,6 +451,27 @@ namespace bit_operation_test
 
 			std::cout << r2cm::split;
 
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Plus_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Plus 2";
+		};
+	}
+	r2cm::iItem::DoFunctionT Plus_2::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
 			{
 				DECLARATION_MAIN( const short t_1 = 1 );
 				OUTPUT_BINARY( t_1 );
