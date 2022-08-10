@@ -499,15 +499,17 @@ namespace bit_operation_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed;
-
-				std::cout << r2cm::linefeed;
+				std::cout << r2cm::tab << "+ 1´Ü°è : °ãÄ¡Áö ¾Ê´Â bit ¸¸ »Ì¾Æ³½´Ù." << r2cm::linefeed2;
 
 				DECLARATION_MAIN( const short sum = t_1 ^ t_2 );
 				OUTPUT_VALUE( sum );
 				OUTPUT_BINARY( sum );
+			}
 
-				std::cout << r2cm::linefeed;
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ 2´Ü°è : °ãÄ¡´Â bit ¸¸ »Ì¾Æ¼­ shift ÇÑ´Ù.( ½ÇÁúÀûÀÎ µ¡¼À Ã³¸® )" << r2cm::linefeed2;
 
 				DECLARATION_MAIN( const short carry = ( ( t_1 & t_2 ) << 1 ) );
 				OUTPUT_VALUE( carry );
