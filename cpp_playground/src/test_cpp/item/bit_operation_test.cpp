@@ -539,21 +539,47 @@ namespace bit_operation_test
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( short t_1 = 1 );
+			DECLARATION_MAIN( short t_2 = 3 );
+			OUTPUT_BINARY( t_1 );
+			OUTPUT_BINARY( t_2 );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( short sum = 0 );
+			DECLARATION_MAIN( short carry = 0 );
+
+			std::cout << r2cm::split;
+
 			{
-				DECLARATION_MAIN( const short t_1 = 1 );
-				OUTPUT_BINARY( t_1 );
-				DECLARATION_MAIN( const short t_2 = 3 );
-				OUTPUT_BINARY( t_2 );
-
-				std::cout << r2cm::linefeed;
-
-				DECLARATION_MAIN( const short sum = t_1 ^ t_2 );
+				PROCESS_MAIN( sum = t_1 ^ t_2 );
 				OUTPUT_VALUE( sum );
 				OUTPUT_BINARY( sum );
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( const short carry = ( ( t_1 & t_2 ) << 1 ) );
+				PROCESS_MAIN( carry = ( ( t_1 & t_2 ) << 1 ) );
+				OUTPUT_VALUE( carry );
+				OUTPUT_BINARY( carry );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( t_1 = sum );
+				PROCESS_MAIN( t_2 = carry );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( sum = t_1 ^ t_2 );
+				OUTPUT_VALUE( sum );
+				OUTPUT_BINARY( sum );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( carry = ( ( t_1 & t_2 ) << 1 ) );
 				OUTPUT_VALUE( carry );
 				OUTPUT_BINARY( carry );
 			}
