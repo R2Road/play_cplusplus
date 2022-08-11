@@ -492,8 +492,8 @@ namespace bit_operation_test
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const short t_1 = 1 );
-			OUTPUT_BINARY( t_1 );
 			DECLARATION_MAIN( const short t_2 = 2 );
+			OUTPUT_BINARY( t_1 );
 			OUTPUT_BINARY( t_2 );
 
 			std::cout << r2cm::split;
