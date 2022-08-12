@@ -589,4 +589,59 @@ namespace bit_operation_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Minus_1::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Minus 1";
+		};
+	}
+	r2cm::iItem::DoFunctionT Minus_1::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const short t_1 = 1 );
+			DECLARATION_MAIN( const short t_2 = 1 );
+			OUTPUT_BINARY( t_1 );
+			OUTPUT_BINARY( t_2 );
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ 1단계 : 겹치지 않는 bit 만 뽑아낸다." << r2cm::linefeed2;
+
+				DECLARATION_MAIN( const short sub = t_1 ^ t_2 );
+				OUTPUT_VALUE( sub );
+				OUTPUT_BINARY( sub );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ 2단계 : 앞의 수를 뒤집어 겹치는 bit 만 뽑아서 shift 한다.( 실질적인 뺄셈 처리 )" << r2cm::linefeed2;
+
+				OUTPUT_BINARY( short( ~t_1 ) );
+				OUTPUT_BINARY( t_2 );
+				OUTPUT_BINARY( short( ( ~t_1 ) & t_2 ) );
+				OUTPUT_BINARY( short( ( ( ~t_1 ) & t_2 ) <<1 ) );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const short borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
+				OUTPUT_VALUE( borrow );
+				OUTPUT_BINARY( borrow );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

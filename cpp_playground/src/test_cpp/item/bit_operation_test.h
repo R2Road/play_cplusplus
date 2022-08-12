@@ -76,4 +76,11 @@ namespace bit_operation_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Minus_1 : public r2cm::iItem, public r2cm::SingleTon<Minus_1>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
