@@ -644,4 +644,72 @@ namespace bit_operation_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Minus_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Minus 2";
+		};
+	}
+	r2cm::iItem::DoFunctionT Minus_2::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( short t_1 = 2 );
+			DECLARATION_MAIN( short t_2 = 1 );
+			OUTPUT_BINARY( t_1 );
+			OUTPUT_BINARY( t_2 );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( short sub = 0 );
+			DECLARATION_MAIN( short borrow = 0 );
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( sub = t_1 ^ t_2 );
+				OUTPUT_VALUE( sub );
+				OUTPUT_BINARY( sub );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
+				OUTPUT_VALUE( borrow );
+				OUTPUT_BINARY( borrow );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( t_1 = sub );
+				PROCESS_MAIN( t_2 = borrow );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( sub = t_1 ^ t_2 );
+				OUTPUT_VALUE( sub );
+				OUTPUT_BINARY( sub );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
+				OUTPUT_VALUE( borrow );
+				OUTPUT_BINARY( borrow );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

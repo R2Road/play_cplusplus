@@ -37,6 +37,7 @@ r2cm::MenuUp BitOperationMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'w', bit_operation_test::Plus_1::GetInstance() );
 		ret->AddItem( 'e', bit_operation_test::Plus_2::GetInstance() );
 		ret->AddItem( 'r', bit_operation_test::Minus_1::GetInstance() );
+		ret->AddItem( 't', bit_operation_test::Minus_2::GetInstance() );
 
 
 
