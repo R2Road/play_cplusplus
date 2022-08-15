@@ -96,9 +96,6 @@ namespace std_chrono_test
 				{
 					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
-					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
-					std::cout << "[ANY KEY] Exit" << r2cm::linefeed;
-
 					std::cout << r2cm::split;
 
 					{
