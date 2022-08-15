@@ -6,6 +6,7 @@
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 namespace std_chrono_test
 {
@@ -86,13 +87,14 @@ namespace std_chrono_test
 			std::chrono::milliseconds current_time;
 			std::chrono::milliseconds last_time = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::steady_clock::now() - steady_start_time_point );
 
+			const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 			while( true )
 			{
 				current_time = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::steady_clock::now() - steady_start_time_point );
 
 				if( last_time.count() + 32 < current_time.count() ) // 30fps
 				{
-					system( "cls" );
+					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 					std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
 					std::cout << "[ANY KEY] Exit" << r2cm::linefeed;
