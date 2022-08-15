@@ -19,20 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="external\r2cm\r2cm_Director.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_Inspector.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_Menu.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_StopWatch.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp" />
+    <ClCompile Include="external\r2\r2_Direction4.cpp" />
+    <ClCompile Include="external\r2\r2_Direction8.cpp" />
+    <ClCompile Include="external\r2\r2_GridIndexConverter.cpp" />
+    <ClCompile Include="external\r2\r2_PointInt.cpp" />
+    <ClCompile Include="external\r2\r2_Random.cpp" />
+    <ClCompile Include="external\r2\r2_RectInt.cpp" />
+    <ClCompile Include="external\r2\r2_Size.cpp" />
     <ClCompile Include="src\algorithm\r2algorithm_astar_PathBuilder.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\r2cm\r2cm_Director.cpp" />
-    <ClCompile Include="src\r2cm\r2cm_Inspector.cpp" />
-    <ClCompile Include="src\r2cm\r2cm_Menu.cpp" />
-    <ClCompile Include="src\r2cm\r2cm_StopWatch.cpp" />
-    <ClCompile Include="src\r2cm\r2cm_WindowUtility.cpp" />
-    <ClCompile Include="src\r2\r2_Direction4.cpp" />
-    <ClCompile Include="src\r2\r2_Direction8.cpp" />
-    <ClCompile Include="src\r2\r2_GridIndexConverter.cpp" />
-    <ClCompile Include="src\r2\r2_PointInt.cpp" />
-    <ClCompile Include="src\r2\r2_Random.cpp" />
-    <ClCompile Include="src\r2\r2_RectInt.cpp" />
-    <ClCompile Include="src\r2\r2_Size.cpp" />
     <ClCompile Include="src\RootMenu.cpp" />
     <ClCompile Include="src\test_algorithm\AlgorithmHelper.cpp" />
     <ClCompile Include="src\test_algorithm\item\algorithm_astar_test.cpp" />
@@ -158,29 +158,29 @@
     <ClCompile Include="src\utility\r2utility_FileUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="external\r2cm\r2cm_Director.h" />
+    <ClInclude Include="external\r2cm\r2cm_iItem.h" />
+    <ClInclude Include="external\r2cm\r2cm_Inspector.h" />
+    <ClInclude Include="external\r2cm\r2cm_Menu.h" />
+    <ClInclude Include="external\r2cm\r2cm_ostream.h" />
+    <ClInclude Include="external\r2cm\r2cm_Singleton.h" />
+    <ClInclude Include="external\r2cm\r2cm_StopWatch.h" />
+    <ClInclude Include="external\r2cm\r2cm_VersionInfo.h" />
+    <ClInclude Include="external\r2cm\r2cm_WindowUtility.h" />
+    <ClInclude Include="external\r2\r2_ArrayBasedList.h" />
+    <ClInclude Include="external\r2\r2_Assert.h" />
+    <ClInclude Include="external\r2\r2_Direction4.h" />
+    <ClInclude Include="external\r2\r2_Direction8.h" />
+    <ClInclude Include="external\r2\r2_Grid.h" />
+    <ClInclude Include="external\r2\r2_GridIndexConverter.h" />
+    <ClInclude Include="external\r2\r2_Point.h" />
+    <ClInclude Include="external\r2\r2_PointInt.h" />
+    <ClInclude Include="external\r2\r2_Random.h" />
+    <ClInclude Include="external\r2\r2_Rect.h" />
+    <ClInclude Include="external\r2\r2_RectInt.h" />
+    <ClInclude Include="external\r2\r2_Size.h" />
     <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h" />
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h" />
-    <ClInclude Include="src\r2cm\r2cm_Director.h" />
-    <ClInclude Include="src\r2cm\r2cm_iItem.h" />
-    <ClInclude Include="src\r2cm\r2cm_Inspector.h" />
-    <ClInclude Include="src\r2cm\r2cm_Menu.h" />
-    <ClInclude Include="src\r2cm\r2cm_ostream.h" />
-    <ClInclude Include="src\r2cm\r2cm_Singleton.h" />
-    <ClInclude Include="src\r2cm\r2cm_StopWatch.h" />
-    <ClInclude Include="src\r2cm\r2cm_VersionInfo.h" />
-    <ClInclude Include="src\r2cm\r2cm_WindowUtility.h" />
-    <ClInclude Include="src\r2\r2_ArrayBasedList.h" />
-    <ClInclude Include="src\r2\r2_Assert.h" />
-    <ClInclude Include="src\r2\r2_Direction4.h" />
-    <ClInclude Include="src\r2\r2_Direction8.h" />
-    <ClInclude Include="src\r2\r2_Grid.h" />
-    <ClInclude Include="src\r2\r2_GridIndexConverter.h" />
-    <ClInclude Include="src\r2\r2_Point.h" />
-    <ClInclude Include="src\r2\r2_PointInt.h" />
-    <ClInclude Include="src\r2\r2_Random.h" />
-    <ClInclude Include="src\r2\r2_Rect.h" />
-    <ClInclude Include="src\r2\r2_RectInt.h" />
-    <ClInclude Include="src\r2\r2_Size.h" />
     <ClInclude Include="src\RootMenu.h" />
     <ClInclude Include="src\test_algorithm\AlgorithmHelper.h" />
     <ClInclude Include="src\test_algorithm\item\algorithm_astar_test.h" />
@@ -381,14 +381,14 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>vld\include;$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)external;$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>vld\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>external\vld\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <CustomBuildStep>
       <Command>
@@ -396,7 +396,7 @@
     </CustomBuildStep>
     <PostBuildEvent>
       <Command>if not exist "$(OutDir)" mkdir "$(OutDir)"
-xcopy "$(ProjectDir)vld\bin\Win32\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
+xcopy "$(SolutionDir)external\vld\bin\Win32\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -408,18 +408,18 @@ xcopy "$(ProjectDir)vld\bin\Win32\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>vld\include;$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)external;$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>vld\lib\Win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>external\vld\lib\Win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>if not exist "$(OutDir)" mkdir "$(OutDir)"
-xcopy "$(ProjectDir)vld\bin\Win64\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
+xcopy "$(SolutionDir)external\vld\bin\Win64\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -435,7 +435,7 @@ xcopy "$(ProjectDir)vld\bin\Win64\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)external;$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -457,7 +457,7 @@ xcopy "$(ProjectDir)vld\bin\Win64\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)external;$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
