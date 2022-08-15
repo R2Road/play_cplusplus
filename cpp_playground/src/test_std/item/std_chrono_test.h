@@ -32,11 +32,4 @@ namespace std_chrono_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
-
-	class TimePoint : public r2cm::iItem, public r2cm::SingleTon<TimePoint>
-	{
-	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
-	};
 }
