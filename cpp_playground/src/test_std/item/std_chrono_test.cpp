@@ -191,4 +191,29 @@ namespace std_chrono_test
 			return r2cm::eItemLeaveAction::None;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT TimePoint::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "TimePoint";
+		};
+	}
+	r2cm::iItem::DoFunctionT TimePoint::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::chrono::steady_clock::time_point tp );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
