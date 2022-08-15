@@ -209,6 +209,37 @@ namespace std_chrono_test
 
 			{
 				DECLARATION_MAIN( std::chrono::steady_clock::time_point tp );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto sec = std::chrono::time_point_cast<std::chrono::seconds>( tp ) );
+				OUTPUT_VALUE( sec.time_since_epoch().count() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto min = std::chrono::time_point_cast<std::chrono::minutes>( tp ) );
+				OUTPUT_VALUE( min.time_since_epoch().count() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::chrono::steady_clock::time_point tp = std::chrono::high_resolution_clock::now() );
+				
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto sec = std::chrono::time_point_cast<std::chrono::seconds>( tp ) );
+				OUTPUT_VALUE( sec.time_since_epoch().count() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto min = std::chrono::time_point_cast<std::chrono::minutes>( tp ) );
+				OUTPUT_VALUE( min.time_since_epoch().count() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto hr = std::chrono::time_point_cast<std::chrono::hours>( tp ) );
+				OUTPUT_VALUE( hr.time_since_epoch().count() );
 			}
 
 			std::cout << r2cm::split;
