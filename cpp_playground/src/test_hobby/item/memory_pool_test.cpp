@@ -10,11 +10,11 @@
 
 namespace r2
 {
-	template<uint32_t N>
+	template<std::size_t N>
 	struct MemoryBlock
 	{
-		using ElementT = int8_t;
-		using SizeT = std::size_t;
+		using ElementT = int8_t; // char
+		using SizeT = std::size_t; // 플랫폼별로 std::size_t 크기가 달라질 수 있으므로 그냥 std::size_t 를 쓰자.
 
 		MemoryBlock() :
 			size( N )
