@@ -14,7 +14,7 @@ namespace r2
 	struct MemoryBlock
 	{
 		using ElementT = int8_t;
-		using SizeT = uint64_t;
+		using SizeT = std::size_t;
 
 		MemoryBlock() :
 			size( N )
