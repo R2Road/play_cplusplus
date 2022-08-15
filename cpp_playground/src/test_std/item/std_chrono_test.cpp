@@ -160,12 +160,11 @@ namespace std_chrono_test
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( std::chrono::steady_clock::time_point tp = std::chrono::steady_clock::now() );
+
+			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( std::chrono::steady_clock::time_point tp = std::chrono::steady_clock::now() );
-
-				std::cout << r2cm::linefeed;
-
 				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::hours>( tp.time_since_epoch() ).count() );
 
 				std::cout << r2cm::linefeed;
