@@ -26,7 +26,7 @@ namespace std_chrono_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Chrono : public r2cm::iItem, public r2cm::SingleTon<Chrono>
+	class Demo : public r2cm::iItem, public r2cm::SingleTon<Demo>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

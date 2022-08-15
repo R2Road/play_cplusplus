@@ -192,14 +192,14 @@ namespace std_chrono_test
 
 
 
-	r2cm::iItem::TitleFunctionT Chrono::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Demo::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Chrono";
+			return "Chrono : Demo";
 		};
 	}
-	r2cm::iItem::DoFunctionT Chrono::GetDoFunction()
+	r2cm::iItem::DoFunctionT Demo::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
