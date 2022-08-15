@@ -20,13 +20,17 @@ r2cm::MenuUp TimeMenu::Create( r2cm::Director& director )
 		ret->AddItem( '4', c_time_test::Clock::GetInstance() );
 
 
+
 		ret->AddLineFeed();
+
 
 
 		ret->AddItem( 'q', window_time_test::Basic::GetInstance() );
 
 
+
 		ret->AddLineFeed();
+
 
 
 		ret->AddItem( 'a', std_chrono_test::Epoch::GetInstance() );
@@ -35,7 +39,9 @@ r2cm::MenuUp TimeMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'f', std_chrono_test::Demo::GetInstance() );
 
 
+
 		ret->AddSplit();
+
 
 
 		ret->AddMenu<RootMenu>( 27 );
