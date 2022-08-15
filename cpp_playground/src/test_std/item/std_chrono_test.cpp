@@ -70,6 +70,61 @@ namespace std_chrono_test
 
 
 
+	r2cm::iItem::TitleFunctionT SteadyClock::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Chrono : SteadyClock";
+		};
+	}
+	r2cm::iItem::DoFunctionT SteadyClock::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			std::cout << r2cm::tab << "# Summury #" << r2cm::linefeed;
+			std::cout << r2cm::tab << "> " << "std::chrono::steady_clock 은 시스템의 시간이다." << r2cm::linefeed;
+			std::cout << r2cm::tab << "> " << "OS 가 부팅된 이후 경과한 시간을 반환한다." << r2cm::linefeed;
+			std::cout << r2cm::tab << "> " << "네트워크 동기화 되지 않는다." << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+
+			{
+				DECLARATION_MAIN( std::chrono::steady_clock::time_point tp = std::chrono::steady_clock::now() );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::hours>( tp.time_since_epoch() ).count() );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::minutes>( tp.time_since_epoch() ).count() );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::seconds>( tp.time_since_epoch() ).count() );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::milliseconds>( tp.time_since_epoch() ).count() );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::nanoseconds>( tp.time_since_epoch() ).count() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Chrono::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -218,16 +273,6 @@ namespace std_chrono_test
 
 				DECLARATION_MAIN( auto min = std::chrono::time_point_cast<std::chrono::minutes>( tp ) );
 				OUTPUT_VALUE( min.time_since_epoch().count() );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				DECLARATION_MAIN( std::chrono::steady_clock::time_point tp = std::chrono::steady_clock::now() );
-
-				std::cout << r2cm::linefeed;
-
-				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::seconds>( tp.time_since_epoch() ).count() );
 			}
 
 			std::cout << r2cm::split;

@@ -30,8 +30,9 @@ r2cm::MenuUp TimeMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'a', std_chrono_test::Epoch::GetInstance() );
-		ret->AddItem( 's', std_chrono_test::Chrono::GetInstance() );
-		ret->AddItem( 'd', std_chrono_test::TimePoint::GetInstance() );
+		ret->AddItem( 's', std_chrono_test::SteadyClock::GetInstance() );
+		ret->AddItem( 'd', std_chrono_test::Chrono::GetInstance() );
+		ret->AddItem( 'f', std_chrono_test::TimePoint::GetInstance() );
 
 
 		ret->AddSplit();
