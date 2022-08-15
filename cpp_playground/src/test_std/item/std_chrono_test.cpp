@@ -33,7 +33,7 @@ namespace std_chrono_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( char str[128] );
+			DECLARATION_SUB( char str[128] );
 
 			std::cout << r2cm::split;
 
@@ -48,18 +48,6 @@ namespace std_chrono_test
 
 				OUTPUT_VALUE( str );
 				
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				std::cout << r2cm::tab << "+ Today" << r2cm::linefeed2;
-
-				DECLARATION_MAIN( const auto sc_now = std::chrono::system_clock::now() );
-				DECLARATION_MAIN( auto today_time = std::chrono::system_clock::to_time_t( sc_now ) );
-				PROCESS_MAIN( ctime_s( str, sizeof( str ), &today_time ) );
-
-				OUTPUT_VALUE( str );
 			}
 
 			std::cout << r2cm::split;
