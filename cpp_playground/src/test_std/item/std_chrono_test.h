@@ -26,6 +26,13 @@ namespace std_chrono_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class SteadyClock_Duration : public r2cm::iItem, public r2cm::SingleTon<SteadyClock_Duration>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Demo : public r2cm::iItem, public r2cm::SingleTon<Demo>
 	{
 	public:

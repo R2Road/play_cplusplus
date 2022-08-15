@@ -180,6 +180,61 @@ namespace std_chrono_test
 
 
 
+	r2cm::iItem::TitleFunctionT SteadyClock_Duration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Chrono : SteadyClock :Duration";
+		};
+	}
+	r2cm::iItem::DoFunctionT SteadyClock_Duration::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const std::chrono::steady_clock::duration d( 30000000 ) );
+				OUTPUT_VALUE( d.count() );
+			}
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const std::chrono::steady_clock::duration d( std::chrono::nanoseconds( 30000000 ) ) );
+			OUTPUT_VALUE( d.count() );
+
+			std::cout << r2cm::linefeed;
+
+			{
+				DECLARATION_MAIN( const auto nns = std::chrono::duration_cast<std::chrono::nanoseconds>( d ) );
+				OUTPUT_VALUE( nns.count() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const auto mcs = std::chrono::duration_cast<std::chrono::microseconds>( d ) );
+				OUTPUT_VALUE( mcs.count() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>( d ) );
+				OUTPUT_VALUE( ms.count() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const auto sec = std::chrono::duration_cast<std::chrono::seconds>( d ) );
+				OUTPUT_VALUE( sec.count() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Demo::GetTitleFunction() const
 	{
 		return []()->const char*
