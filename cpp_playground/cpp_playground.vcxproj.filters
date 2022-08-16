@@ -470,6 +470,9 @@
     <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
       <Filter>r2cm</Filter>
     </ClCompile>
+    <ClCompile Include="external\r2\r2_FPSTimer.cpp">
+      <Filter>r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -907,6 +910,9 @@
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
       <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_FPSTimer.h">
+      <Filter>r2</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
