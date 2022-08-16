@@ -34,67 +34,70 @@ namespace window_time_test
 
 			std::cout << r2cm::split;
 
-			std::cout << "[ANY KEY] Exit" << r2cm::linefeed2;
-
-			r2::FPSTimer fps_timer( 30 );
-			const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
-			while( true )
-			{
-
-				if( fps_timer.Update() )
-				{
-					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
-
-					{
-						PROCESS_MAIN( GetLocalTime( &local_time ) );
-						std::cout << r2cm::tab << local_time.wYear << local_time.wMonth << local_time.wDay << r2cm::linefeed;
-						std::cout << r2cm::tab << local_time.wDayOfWeek << r2cm::linefeed;
-						std::cout << r2cm::tab << local_time.wHour << local_time.wMinute << local_time.wSecond << r2cm::linefeed;
-						std::cout << r2cm::tab << local_time.wMilliseconds << r2cm::linefeed;
-					}
-
-					std::cout << r2cm::linefeed;
-
-					{
-						PROCESS_MAIN( GetSystemTime( &system_time ) );
-						std::cout << r2cm::tab << system_time.wYear << system_time.wMonth << system_time.wDay << r2cm::linefeed;
-						std::cout << r2cm::tab << system_time.wDayOfWeek << r2cm::linefeed;
-						std::cout << r2cm::tab << system_time.wHour << system_time.wMinute << system_time.wSecond << r2cm::linefeed;
-						std::cout << r2cm::tab << system_time.wMilliseconds << r2cm::linefeed;
-					}
-
-					std::cout << r2cm::linefeed;
-
-					{
-						PROCESS_MAIN( current_tick = GetTickCount() );
-						OUTPUT_VALUE( current_tick );
-
-						last_tick = current_tick;
-					}
-
-					std::cout << r2cm::linefeed;
-
-					{
-						OUTPUT_VALUE( GetTickCount64() );
-					}
-
-					std::cout << r2cm::linefeed;
-
-					{
-						OUTPUT_VALUE( timeGetTime() );
-					}
-
-					std::cout << r2cm::split;
-				}
-
-				if( _kbhit() )
-				{
-					_getch();
-					break;
-				}
-			}
+			std::cout << r2cm::tab << "[ANY KEY] Exit" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
+
+			{
+				r2::FPSTimer fps_timer( 30 );
+				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+				do
+				{
+
+					if( fps_timer.Update() )
+					{
+						r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+
+						{
+							PROCESS_MAIN( GetLocalTime( &local_time ) );
+							std::cout << r2cm::tab << local_time.wYear << local_time.wMonth << local_time.wDay << r2cm::linefeed;
+							std::cout << r2cm::tab << local_time.wDayOfWeek << r2cm::linefeed;
+							std::cout << r2cm::tab << local_time.wHour << local_time.wMinute << local_time.wSecond << r2cm::linefeed;
+							std::cout << r2cm::tab << local_time.wMilliseconds << r2cm::linefeed;
+						}
+
+						std::cout << r2cm::linefeed;
+
+						{
+							PROCESS_MAIN( GetSystemTime( &system_time ) );
+							std::cout << r2cm::tab << system_time.wYear << system_time.wMonth << system_time.wDay << r2cm::linefeed;
+							std::cout << r2cm::tab << system_time.wDayOfWeek << r2cm::linefeed;
+							std::cout << r2cm::tab << system_time.wHour << system_time.wMinute << system_time.wSecond << r2cm::linefeed;
+							std::cout << r2cm::tab << system_time.wMilliseconds << r2cm::linefeed;
+						}
+
+						std::cout << r2cm::linefeed;
+
+						{
+							PROCESS_MAIN( current_tick = GetTickCount() );
+							OUTPUT_VALUE( current_tick );
+
+							last_tick = current_tick;
+						}
+
+						std::cout << r2cm::linefeed;
+
+						{
+							OUTPUT_VALUE( GetTickCount64() );
+						}
+
+						std::cout << r2cm::linefeed;
+
+						{
+							OUTPUT_VALUE( timeGetTime() );
+						}
+
+						std::cout << r2cm::split;
+					}
+
+					if( _kbhit() )
+					{
+						_getch();
+						break;
+					}
+
+				} while( true );
+			}
 
 			return r2cm::eItemLeaveAction::None;
 		};
