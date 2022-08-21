@@ -40,8 +40,9 @@ r2cm::MenuUp ConsoleWindowMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'a', console_window_test::ChangeWindowName::GetInstance() );
 		ret->AddItem( 's', console_window_test::HideTitleBar::GetInstance() );
 		ret->AddItem( 'd', console_window_test::HideScrollBar::GetInstance() );
-		ret->AddItem( 'f', console_window_test::LockWindowResizingByDragging::GetInstance() );
-		ret->AddItem( 'g', console_window_test::MenuItem::GetInstance() );
+		ret->AddItem( 'f', console_window_test::DisableMaximize::GetInstance() );
+		ret->AddItem( 'g', console_window_test::LockWindowResizingByDragging::GetInstance() );
+		ret->AddItem( 'h', console_window_test::MenuItem::GetInstance() );
 
 
 		ret->AddLineFeed();

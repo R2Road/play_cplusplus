@@ -59,6 +59,13 @@ namespace console_window_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class DisableMaximize : public r2cm::iItem, public r2cm::SingleTon<DisableMaximize>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class LockWindowResizingByDragging : public r2cm::iItem, public r2cm::SingleTon<LockWindowResizingByDragging>
 	{
 	public:

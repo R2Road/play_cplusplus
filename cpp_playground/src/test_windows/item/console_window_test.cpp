@@ -482,6 +482,65 @@ namespace console_window_test
 
 
 
+	r2cm::iItem::TitleFunctionT DisableMaximize::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Disable Maximize";
+		};
+	}
+	r2cm::iItem::DoFunctionT DisableMaximize::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( LONG last_window_style = 0 );
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Backup" << r2cm::linefeed2;
+
+				PROCESS_MAIN( last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE ) );
+				OUTPUT_BINARY( last_window_style );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Lock" << r2cm::linefeed2;
+
+				DECLARATION_MAIN( LONG new_window_style = last_window_style );
+				PROCESS_MAIN( new_window_style &= ~( WS_MAXIMIZEBOX) );
+				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style ) );
+				OUTPUT_BINARY( new_window_style );
+			}
+
+			std::cout << r2cm::split;
+
+			std::cout << r2cm::tab << "Press Any Key : Rollback" << r2cm::linefeed;
+			_getch();
+
+			std::cout << r2cm::split;
+
+			//
+			// Rollback
+			//
+			{
+				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, last_window_style ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT LockWindowResizingByDragging::GetTitleFunction() const
 	{
 		return []()->const char*
