@@ -51,6 +51,7 @@ r2cm::MenuUp ConsoleWindowMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( 'z', console_window_test::CursorMove::GetInstance() );
 		ret->AddItem( 'x', console_window_test::CursorVisibility::GetInstance() );
+		ret->AddItem( 'c', console_window_test::QuickEdit::GetInstance() );
 
 
 		ret->AddSplit();

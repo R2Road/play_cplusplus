@@ -95,4 +95,11 @@ namespace console_window_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class QuickEdit : public r2cm::iItem, public r2cm::SingleTon<QuickEdit>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }

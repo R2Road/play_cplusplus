@@ -760,4 +760,70 @@ namespace console_window_test
 			return r2cm::eItemLeaveAction::None;
 		};
 	}
+
+
+
+
+	r2cm::iItem::TitleFunctionT QuickEdit::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Quick Edit";
+		};
+	}
+	r2cm::iItem::DoFunctionT QuickEdit::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			std::cout << r2cm::tab << "# Quick Edit 는 콘솔창에서 마우스를 사용한 커서 이동, 선택이 가능한 옵션이다." << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( DWORD last_console_mode = 0 );
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Backup" << r2cm::linefeed2;
+
+				PROCESS_MAIN( GetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), &last_console_mode ) );
+				OUTPUT_BINARY( last_console_mode );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Disable" << r2cm::linefeed2;
+
+				DECLARATION_MAIN( DWORD new_console_mode = last_console_mode );
+				PROCESS_MAIN( new_console_mode |= ENABLE_EXTENDED_FLAGS );
+				OUTPUT_BINARY( new_console_mode );
+				PROCESS_MAIN( new_console_mode &= ~( ENABLE_QUICK_EDIT_MODE ) );
+				PROCESS_MAIN( SetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), new_console_mode ) );
+				OUTPUT_BINARY( new_console_mode );
+			}
+
+			std::cout << r2cm::split;
+
+			std::cout << r2cm::tab << "Press Any Key : Rollback" << r2cm::linefeed;
+			_getch();
+
+			std::cout << r2cm::split;
+
+			//
+			// Rollback
+			//
+			{
+				PROCESS_MAIN( SetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), last_console_mode ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
