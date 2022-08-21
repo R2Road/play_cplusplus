@@ -556,25 +556,21 @@ namespace console_window_test
 
 			std::cout << r2cm::split;
 
-			HMENU hmenu = GetSystemMenu( GetConsoleWindow(), FALSE );
-
 			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-			std::cout << r2cm::tab2 << "HMENU hmenu = GetSystemMenu( GetConsoleWindow(), FALSE );" << r2cm::linefeed;
-
-			std::cout << r2cm::split;
-
-			{
-				std::cout << r2cm::tab << "+ Process : Close Button Grayed" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "EnableMenuItem( hmenu, SC_CLOSE, MF_GRAYED );" << r2cm::linefeed;
-			}
+			DECLARATION_MAIN( HMENU hmenu = GetSystemMenu( GetConsoleWindow(), FALSE ) );
 
 			std::cout << r2cm::split;
 
 			{
 				std::cout << r2cm::tab << "Press Any Key : Do" << r2cm::linefeed;
 				_getch();
+			}
 
-				EnableMenuItem( hmenu, SC_CLOSE, MF_GRAYED );
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Process : Close Button Grayed" << r2cm::linefeed2;
+				PROCESS_MAIN( EnableMenuItem( hmenu, SC_CLOSE, MF_GRAYED ) );
 			}
 
 			std::cout << r2cm::split;
@@ -582,13 +578,15 @@ namespace console_window_test
 			{
 				std::cout << r2cm::tab << "Press Any Key : Rollback" << r2cm::linefeed;
 				_getch();
+			}
 
+			std::cout << r2cm::split;
+
+			{
 				//
 				// Rollback
 				//
-				{
-					EnableMenuItem( hmenu, SC_CLOSE, MF_ENABLED );
-				}
+				PROCESS_MAIN( EnableMenuItem( hmenu, SC_CLOSE, MF_ENABLED ) );
 			}
 
 			std::cout << r2cm::split;
