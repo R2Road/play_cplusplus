@@ -517,6 +517,12 @@ namespace console_window_test
 				PROCESS_MAIN( new_window_style &= ~( WS_MAXIMIZEBOX) );
 				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style ) );
 				OUTPUT_BINARY( new_window_style );
+
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "+ 아래 코드를 쓴 경우들이 있어서 남겨둔다. 상황에 따라 갱신에 사용되는 것 같다." << r2cm::linefeed2;
+
+				PROCESS_MAIN( SetWindowPos( GetConsoleWindow(), NULL, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_FRAMECHANGED ) );
 			}
 
 			std::cout << r2cm::split;
