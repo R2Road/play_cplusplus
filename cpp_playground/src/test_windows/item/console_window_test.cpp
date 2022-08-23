@@ -147,27 +147,34 @@ namespace console_window_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			{
-				SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 );
-			}
-
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
 
-			std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-			std::cout << r2cm::tab2 << "SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 );" << r2cm::linefeed;
+			{
+				std::cout << r2cm::tab << "# Alt + Enter" << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 ) );
+			}
 
 			std::cout << r2cm::split;
 
 			std::cout << "Press Any Key : Roll Back Window Size" << r2cm::linefeed;
 			_getch();
 
+			std::cout << r2cm::split;
+
 			{
-				SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 );
+				PROCESS_MAIN( SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 ) );
 			}
 
-			return r2cm::eItemLeaveAction::None;
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
