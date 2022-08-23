@@ -446,15 +446,17 @@ namespace console_window_test
 		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
-			std::cout << r2cm::tab << "WinUser.h" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			std::cout << r2cm::tab << " + Need : WinUser.h" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
 
 			{
-				ShowScrollBar( GetConsoleWindow(), SB_VERT, 0 );
-
 				std::cout << r2cm::tab << "+ Hide" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "ShowScrollBar( GetConsoleWindow(), SB_VERT, 0 );" << r2cm::linefeed;
+
+				PROCESS_MAIN( ShowScrollBar( GetConsoleWindow(), SB_VERT, 0 ) );
 			}
 
 			std::cout << r2cm::split;
@@ -468,10 +470,9 @@ namespace console_window_test
 			// Rollback
 			//
 			{
-				ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 );
-
 				std::cout << r2cm::tab << "+ Show" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 );" << r2cm::linefeed;
+
+				PROCESS_MAIN( ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 ) );
 			}
 
 			std::cout << r2cm::split;
