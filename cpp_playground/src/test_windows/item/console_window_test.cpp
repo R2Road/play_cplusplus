@@ -390,27 +390,24 @@ namespace console_window_test
 
 			std::cout << r2cm::split;
 
-			LONG last_window_style = 0;
+			DECLARATION_MAIN( LONG last_window_style = 0 );
 
 			{
-				last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE );
-
 				std::cout << r2cm::tab << "+ Backup" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE );" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << std::bitset<32>( last_window_style ) << r2cm::linefeed;
+
+				PROCESS_MAIN( last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE ) );
+				OUTPUT_BINARY( last_window_style );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				LONG new_window_style = last_window_style;
-				new_window_style &= ~( WS_BORDER | WS_CAPTION | WS_THICKFRAME );
-				SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style );
-
 				std::cout << r2cm::tab << "+ Lock" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "new_window_style &= ~( WS_BORDER | WS_CAPTION | WS_THICKFRAME );" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << std::bitset<32>( new_window_style ) << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style );" << r2cm::linefeed;
+
+				DECLARATION_MAIN( LONG new_window_style = last_window_style );
+				PROCESS_MAIN( new_window_style &= ~( WS_BORDER | WS_CAPTION | WS_THICKFRAME ) );
+				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style ) );
+				OUTPUT_BINARY( new_window_style );
 			}
 
 			std::cout << r2cm::split;
@@ -424,9 +421,10 @@ namespace console_window_test
 			// Rollback
 			//
 			{
-				HWND hwnd = GetConsoleWindow();
-				SetWindowLong( hwnd, GWL_STYLE, last_window_style );
+				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, last_window_style ) );
 			}
+
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
