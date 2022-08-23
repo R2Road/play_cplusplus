@@ -732,25 +732,34 @@ namespace console_window_test
 
 			std::cout << r2cm::split;
 
-			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+			DECLARATION_MAIN( HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE ) );
+			DECLARATION_MAIN( CONSOLE_CURSOR_INFO cursorInfo );
+
+			std::cout << r2cm::split;
 
 			{
-				CONSOLE_CURSOR_INFO     cursorInfo;
+				std::cout << r2cm::tab << "+ Hide" << r2cm::linefeed2;
 
-				GetConsoleCursorInfo( stdHandle, &cursorInfo );
-				cursorInfo.bVisible = false;
-				SetConsoleCursorInfo( stdHandle, &cursorInfo );
+				PROCESS_MAIN( GetConsoleCursorInfo( stdHandle, &cursorInfo ) );
+				PROCESS_MAIN( cursorInfo.bVisible = false );
+				PROCESS_MAIN( SetConsoleCursorInfo( stdHandle, &cursorInfo ) );
 			}
+
+			std::cout << r2cm::split;
 
 			system( "pause" );
 
-			{
-				CONSOLE_CURSOR_INFO     cursorInfo;
+			std::cout << r2cm::split;
 
-				GetConsoleCursorInfo( stdHandle, &cursorInfo );
-				cursorInfo.bVisible = true;
-				SetConsoleCursorInfo( stdHandle, &cursorInfo );
+			{
+				std::cout << r2cm::tab << "+ Show" << r2cm::linefeed2;
+
+				PROCESS_MAIN( GetConsoleCursorInfo( stdHandle, &cursorInfo ) );
+				PROCESS_MAIN( cursorInfo.bVisible = true );
+				PROCESS_MAIN( SetConsoleCursorInfo( stdHandle, &cursorInfo ) );
 			}
+
+			std::cout << r2cm::split;
 
 			system( "pause" );
 
