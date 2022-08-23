@@ -674,20 +674,32 @@ namespace console_window_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
 
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE ) );
+			DECLARATION_MAIN( COORD pos );
+			PROCESS_MAIN( pos.X = 20 );
+			PROCESS_MAIN( pos.Y = 30 );
+
+			std::cout << r2cm::split;
+
 			std::cout << "[W, A, S, D] : Move" << r2cm::linefeed;
 			std::cout << "[SPACE BAR] Foot Print" << r2cm::linefeed;
 			std::cout << "[ESC] Exit" << r2cm::linefeed;
 
-			{
-				HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-				COORD pos = { 0, 7 };
+			std::cout << r2cm::split;
 
-				bool process = true;
-				while( process )
+			PROCESS_MAIN( SetConsoleCursorPosition( stdHandle, pos ) );
+
+			{
+				int input = 0;
+				do
 				{
+
 					SetConsoleCursorPosition( stdHandle, pos );
 
-					switch( _getch() )
+					input = _getch();
+					switch( input )
 					{
 					case 'w': // up
 						pos.Y -= 1;
@@ -702,15 +714,12 @@ namespace console_window_test
 						pos.X += 1;
 						break;
 
-					case 27: // ESC
-						process = false;
-						break;
-
 					case 32: // space
 						std::cout << "test string";
 						break;
 					}
-				}
+
+				} while( 27 != input );
 			}
 
 			return r2cm::eItemLeaveAction::None;
