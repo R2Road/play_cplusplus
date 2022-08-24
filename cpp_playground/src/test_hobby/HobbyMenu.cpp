@@ -5,10 +5,10 @@
 
 #include "test_hobby/item/fsm_v1_test.h"
 #include "test_hobby/item/infinite_number_test.h"
-#include "test_hobby/item/vector3_test.h"
 
 #include "ArrayBasedListMenu.h"
 #include "MemoryPoolMenu.h"
+#include "Vector3Menu.h"
 
 #include "RootMenu.h"
 
@@ -30,13 +30,7 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddItem( 'a', vector3_test::Declaration::GetInstance() );
-		ret->AddItem( 's', vector3_test::OperatorPlus::GetInstance() );
-		ret->AddItem( 'd', vector3_test::OperatorPlusEqual::GetInstance() );
-		ret->AddItem( 'f', vector3_test::OperatorMinus::GetInstance() );
-		ret->AddItem( 'g', vector3_test::OperatorMinusEqual::GetInstance() );
-		ret->AddItem( 'h', vector3_test::OperatorMultiply_With_Scalar::GetInstance() );
-		ret->AddItem( 'j', vector3_test::OperatorMultiplyEqual_With_Scalar::GetInstance() );
+		ret->AddMenu<Vector3Menu>( 'a' );
 
 
 		ret->AddSplit();

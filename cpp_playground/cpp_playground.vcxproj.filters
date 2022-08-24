@@ -473,6 +473,9 @@
     <ClCompile Include="external\r2\r2_FPSTimer.cpp">
       <Filter>r2</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_hobby\Vector3Menu.cpp">
+      <Filter>test_hobby</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -913,6 +916,9 @@
     </ClInclude>
     <ClInclude Include="external\r2\r2_FPSTimer.h">
       <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\Vector3Menu.h">
+      <Filter>test_hobby</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

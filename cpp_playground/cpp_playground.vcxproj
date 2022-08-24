@@ -103,6 +103,7 @@
     <ClCompile Include="src\test_hobby\ArrayBasedListMenu.cpp" />
     <ClCompile Include="src\test_hobby\HobbyMenu.cpp" />
     <ClCompile Include="src\test_hobby\MemoryPoolMenu.cpp" />
+    <ClCompile Include="src\test_hobby\Vector3Menu.cpp" />
     <ClCompile Include="src\test_performance\item\performance_1_test.cpp" />
     <ClCompile Include="src\test_performance\item\performance_container_iteration_test.cpp" />
     <ClCompile Include="src\test_performance\PerformanceMenu.cpp" />
@@ -252,6 +253,7 @@
     <ClInclude Include="src\test_hobby\ArrayBasedListMenu.h" />
     <ClInclude Include="src\test_hobby\HobbyMenu.h" />
     <ClInclude Include="src\test_hobby\MemoryPoolMenu.h" />
+    <ClInclude Include="src\test_hobby\Vector3Menu.h" />
     <ClInclude Include="src\test_performance\item\performance_1_test.h" />
     <ClInclude Include="src\test_performance\item\performance_container_iteration_test.h" />
     <ClInclude Include="src\test_performance\PerformanceMenu.h" />
