@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "test_hobby/item/memory_pool_test.h"
+#include "item/memory_pool_test.h"
 
 #include "HobbyMenu.h"
 
