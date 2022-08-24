@@ -91,17 +91,6 @@ namespace console_window_test
 
 			std::cout << r2cm::split;
 
-			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
-			CONSOLE_SCREEN_BUFFER_INFO csbi;
-
-			{
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info;" << r2cm::linefeed;
-			}
-
-			std::cout << r2cm::split;
-
 			{
 				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
 				std::cout << r2cm::tab2 << "system( \"mode con lines = 30 cols = 120\" );" << r2cm::linefeed;
@@ -110,14 +99,16 @@ namespace console_window_test
 			std::cout << r2cm::split;
 
 			{
-				GetConsoleScreenBufferInfo( hStdout, &csbi );
-				const auto width = static_cast<int>( csbi.srWindow.Right - csbi.srWindow.Left + 1 );
-				const auto height = static_cast<int>( csbi.srWindow.Bottom - csbi.srWindow.Top + 1 );
+				DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
+				DECLARATION_MAIN( CONSOLE_SCREEN_BUFFER_INFO csbi );
 
-				std::cout << r2cm::tab << "+ Current Window Size" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "Width : " << width << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "Height : " << height << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( GetConsoleScreenBufferInfo( hStdout, &csbi ) );
+				DECLARATION_MAIN( const auto width = static_cast<int>( csbi.srWindow.Right - csbi.srWindow.Left + 1 ) );
+				DECLARATION_MAIN( const auto height = static_cast<int>( csbi.srWindow.Bottom - csbi.srWindow.Top + 1 ) );
+				OUTPUT_VALUE( width );
+				OUTPUT_VALUE( height );
 			}
 
 			std::cout << r2cm::split;
