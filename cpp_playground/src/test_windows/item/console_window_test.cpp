@@ -4,8 +4,11 @@
 #include <conio.h>
 #include <iomanip>
 #include <stdio.h>
-#include <wincon.h> // BACKGROUND_RED
 #include <Windows.h>
+#include <wincon.h> // BACKGROUND_RED
+
+// Windows.h 와 wincon.h 의 include 순서를 바꾸면 빌드에 문제가 생긴다.
+// - c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\winnt.h(173): fatal error C1189: #error:  "No Target Architecture"
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
