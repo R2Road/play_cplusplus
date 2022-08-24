@@ -4,11 +4,11 @@
 #include <conio.h>
 #include <iomanip>
 #include <stdio.h>
-#include <Windows.h>
 #include <wincon.h> // BACKGROUND_RED
+#include <Windows.h>
 
-#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Inspector.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
 namespace console_window_test
