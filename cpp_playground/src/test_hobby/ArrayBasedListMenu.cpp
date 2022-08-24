@@ -2,9 +2,10 @@
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
-#include "HobbyMenu.h"
 
-#include "test_hobby/item/array_based_list_test.h"
+#include "item/array_based_list_test.h"
+
+#include "HobbyMenu.h"
 
 r2cm::MenuUp ArrayBasedListMenu::Create( r2cm::Director& director )
 {
@@ -17,8 +18,11 @@ r2cm::MenuUp ArrayBasedListMenu::Create( r2cm::Director& director )
 		ret->AddItem( '4', array_based_list_test::EndIterator::GetInstance() );
 		ret->AddItem( '5', array_based_list_test::BeginIterator::GetInstance() );
 
+
+
 		ret->AddLineFeed();
-		ret->AddLineFeed();
+
+
 
 		ret->AddItem( 'q', array_based_list_test::Clear::GetInstance() );
 		ret->AddItem( 'w', array_based_list_test::PushBack::GetInstance() );
