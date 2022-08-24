@@ -3,8 +3,8 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "test_hobby/item/fsm_v1_test.h"
-#include "test_hobby/item/infinite_number_test.h"
+#include "item/fsm_v1_test.h"
+#include "item/infinite_number_test.h"
 
 #include "ArrayBasedListMenu.h"
 #include "MemoryPoolMenu.h"
