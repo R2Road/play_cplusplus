@@ -215,9 +215,6 @@
     <ClCompile Include="src\test_cpp\item\bit_operation_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\RandomMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\DebugMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -476,6 +473,9 @@
     <ClCompile Include="src\test_c\item\c_random_test.cpp">
       <Filter>test_c\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_various\RandomMenu.cpp">
+      <Filter>test_various</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -631,9 +631,6 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\bit_operation_test.h">
       <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\RandomMenu.h">
-      <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\DebugMenu.h">
       <Filter>test_cpp</Filter>
@@ -919,6 +916,9 @@
     </ClInclude>
     <ClInclude Include="src\test_c\item\c_random_test.h">
       <Filter>test_c\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_various\RandomMenu.h">
+      <Filter>test_various</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
