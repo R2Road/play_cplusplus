@@ -4,9 +4,6 @@
     <Filter Include="test_cpp">
       <UniqueIdentifier>{77a45f2c-1f22-46b3-9c35-5ee34c38a7b9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="r2">
-      <UniqueIdentifier>{2163bc18-fed6-4ce9-bd92-6934666924f5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test_algorithm">
       <UniqueIdentifier>{c256e4fc-5074-43ac-9a3c-e7ac60bb99b5}</UniqueIdentifier>
     </Filter>
@@ -27,9 +24,6 @@
     </Filter>
     <Filter Include="test_cpp\item">
       <UniqueIdentifier>{afef003b-bbc9-4b3d-9500-41ffccb176cd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="r2cm">
-      <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
     </Filter>
     <Filter Include="test_windows">
       <UniqueIdentifier>{8067c90e-f3a8-481b-9de8-239c1fd0385a}</UniqueIdentifier>
@@ -60,6 +54,15 @@
     </Filter>
     <Filter Include="test_various\item">
       <UniqueIdentifier>{d628ba0d-95c6-439f-843e-25cfcef096aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external">
+      <UniqueIdentifier>{a891eacb-842e-4a80-99c7-6a74d9149233}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\r2">
+      <UniqueIdentifier>{2163bc18-fed6-4ce9-bd92-6934666924f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\r2cm">
+      <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -429,43 +432,43 @@
       <Filter>test_cpp\item</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_Direction4.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_Direction8.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_GridIndexConverter.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_PointInt.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_Random.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_RectInt.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_Size.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_Director.cpp">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_Inspector.cpp">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_Menu.cpp">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_StopWatch.cpp">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_FPSTimer.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="src\test_hobby\Vector3Menu.cpp">
       <Filter>test_hobby</Filter>
@@ -846,70 +849,70 @@
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_ArrayBasedList.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Assert.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Direction4.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Direction8.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Grid.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_GridIndexConverter.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Point.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_PointInt.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Random.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Rect.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_RectInt.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Size.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_Director.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_iItem.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_Inspector.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_Menu.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_ostream.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_Singleton.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_StopWatch.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_VersionInfo.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_FPSTimer.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="src\test_hobby\Vector3Menu.h">
       <Filter>test_hobby</Filter>
