@@ -61,7 +61,6 @@
     <ClCompile Include="src\test_cpp\item\char_test.cpp" />
     <ClCompile Include="src\test_cpp\item\class_test.cpp" />
     <ClCompile Include="src\test_cpp\item\console_input_test.cpp" />
-    <ClCompile Include="src\test_cpp\item\c_random_test.cpp" />
     <ClCompile Include="src\test_cpp\item\debug_test.cpp" />
     <ClCompile Include="src\test_cpp\item\enum_test.cpp" />
     <ClCompile Include="src\test_cpp\item\korean_test.cpp" />
@@ -93,6 +92,7 @@
     <ClCompile Include="src\test_c\C_Menu.cpp" />
     <ClCompile Include="src\test_c\item\c_file_test.cpp" />
     <ClCompile Include="src\test_c\item\c_printf_test.cpp" />
+    <ClCompile Include="src\test_c\item\c_random_test.cpp" />
     <ClCompile Include="src\test_c\item\c_sizeof_test.cpp" />
     <ClCompile Include="src\test_c\item\c_time_test.cpp" />
     <ClCompile Include="src\test_hobby\item\array_based_list_test.cpp" />
@@ -211,7 +211,6 @@
     <ClInclude Include="src\test_cpp\item\char_test.h" />
     <ClInclude Include="src\test_cpp\item\class_test.h" />
     <ClInclude Include="src\test_cpp\item\console_input_test.h" />
-    <ClInclude Include="src\test_cpp\item\c_random_test.h" />
     <ClInclude Include="src\test_cpp\item\debug_test.h" />
     <ClInclude Include="src\test_cpp\item\enum_test.h" />
     <ClInclude Include="src\test_cpp\item\korean_test.h" />
@@ -243,6 +242,7 @@
     <ClInclude Include="src\test_c\C_Menu.h" />
     <ClInclude Include="src\test_c\item\c_file_test.h" />
     <ClInclude Include="src\test_c\item\c_printf_test.h" />
+    <ClInclude Include="src\test_c\item\c_random_test.h" />
     <ClInclude Include="src\test_c\item\c_sizeof_test.h" />
     <ClInclude Include="src\test_c\item\c_time_test.h" />
     <ClInclude Include="src\test_hobby\item\array_based_list_test.h" />

@@ -121,9 +121,6 @@
     <ClCompile Include="src\test_cpp\item\atomic_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\c_random_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\item\char_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
@@ -476,6 +473,9 @@
     <ClCompile Include="src\test_hobby\Vector3Menu.cpp">
       <Filter>test_hobby</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_c\item\c_random_test.cpp">
+      <Filter>test_c\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -536,9 +536,6 @@
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\atomic_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\c_random_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\char_test.h">
@@ -919,6 +916,9 @@
     </ClInclude>
     <ClInclude Include="src\test_hobby\Vector3Menu.h">
       <Filter>test_hobby</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_c\item\c_random_test.h">
+      <Filter>test_c\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
