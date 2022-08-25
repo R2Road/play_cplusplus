@@ -108,13 +108,12 @@ namespace std_random_test
 
 			std::cout << r2cm::split;
 
-			std::cout << r2cm::tab << "+ Save : Current Random Status" << r2cm::linefeed2;
-
 			DECLARATION_MAIN( std::random_device rd );
 			DECLARATION_MAIN( std::mt19937 random_engine( rd() ) );
 			DECLARATION_MAIN( std::uniform_int_distribution<int> dist( 0, 999 ) );
 
 			std::cout << r2cm::linefeed;
+			std::cout << r2cm::tab << "+ Save : Current Random Status" << r2cm::linefeed2;
 
 			{
 				std::cout << "File Path : " << GetFilePath() << r2cm::linefeed;
