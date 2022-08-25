@@ -2,6 +2,7 @@
 
 #include <cstdlib> // rand, srand
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 
@@ -25,9 +26,9 @@ namespace c_random_test
 			{
 				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
 
-				for( int i = 0; 10 > i; ++i )
+				for( int i = 0; 5 > i; ++i )
 				{
-					std::cout << r2cm::tab2 << "rand() : " << rand() << r2cm::linefeed;
+					OUTPUT_VALUE( rand() );;
 				}
 
 				std::cout << r2cm::linefeed;
@@ -38,14 +39,15 @@ namespace c_random_test
 			std::cout << r2cm::split;
 
 			{
-				srand( 1 );
-
 				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "srand( 1 );" << r2cm::linefeed2;
 
-				for( int i = 0; 10 > i; ++i )
+				PROCESS_MAIN( srand( 1 ) );
+
+				std::cout << r2cm::linefeed;
+
+				for( int i = 0; 5 > i; ++i )
 				{
-					std::cout << r2cm::tab2 << "rand() : " << rand() << r2cm::linefeed;
+					OUTPUT_VALUE( rand() );;
 				}
 
 				std::cout << r2cm::linefeed;
