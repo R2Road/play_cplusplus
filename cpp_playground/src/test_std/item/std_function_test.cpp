@@ -2,6 +2,7 @@
 
 #include <functional>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace
@@ -18,6 +19,38 @@ namespace
 
 namespace std_function_test
 {
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::function : Basic";
+		};
+	}
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+			
+			{
+				DECLARATION_MAIN( std::function<void()> f );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( nullptr, f );
+				EXPECT_FALSE( f );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Equality_FunctionPointer_1::GetTitleFunction() const
 	{
 		return []()->const char*

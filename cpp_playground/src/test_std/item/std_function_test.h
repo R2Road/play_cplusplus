@@ -5,6 +5,13 @@
 
 namespace std_function_test
 {
+	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Equality_FunctionPointer_1 : public r2cm::iItem, public r2cm::SingleTon<Equality_FunctionPointer_1>
 	{
 	public:
