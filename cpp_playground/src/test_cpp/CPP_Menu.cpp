@@ -18,7 +18,6 @@
 
 #include "ClassMenu.h"
 #include "CharMenu.h"
-#include "PointerMenu.h"
 #include "RootMenu.h"
 
 r2cm::MenuUp CPP_Menu::Create( r2cm::Director& director )
@@ -34,7 +33,6 @@ r2cm::MenuUp CPP_Menu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddMenu<PointerMenu>( '5' );
 		ret->AddMenu<CharMenu>( '6' );
 		ret->AddMenu<TemplateMenu>( '7' );
 		ret->AddMenu<AlignMenu>( '8' );

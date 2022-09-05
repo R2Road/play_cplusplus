@@ -179,9 +179,6 @@
     <ClCompile Include="src\test_cpp\CharMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\PointerMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_windows\item\windows_time_test.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
@@ -482,6 +479,9 @@
     <ClCompile Include="src\test_std\STDFunctionMenu.cpp">
       <Filter>test_std</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_c\PointerMenu.cpp">
+      <Filter>test_c</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -597,9 +597,6 @@
       <Filter>test_windows\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\CharMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\PointerMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_windows\item\windows_time_test.h">
@@ -928,6 +925,9 @@
     </ClInclude>
     <ClInclude Include="src\test_std\STDFunctionMenu.h">
       <Filter>test_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_c\PointerMenu.h">
+      <Filter>test_c</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

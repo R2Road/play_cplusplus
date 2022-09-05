@@ -5,7 +5,7 @@
 
 #include "test_cpp/item/pointer_test.h"
 
-#include "CPP_Menu.h"
+#include "C_Menu.h"
 
 r2cm::MenuUp PointerMenu::Create( r2cm::Director& director )
 {
@@ -20,7 +20,7 @@ r2cm::MenuUp PointerMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<CPP_Menu>( 27 );
+		ret->AddMenu<C_Menu>( 27 );
 	}
 
 	return ret;

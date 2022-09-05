@@ -6,6 +6,7 @@
 #include "item/c_printf_test.h"
 #include "item/c_sizeof_test.h"
 
+#include "PointerMenu.h"
 #include "RootMenu.h"
 
 r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
@@ -24,6 +25,9 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 
 
 		ret->AddLineFeed();
+
+
+		ret->AddMenu<PointerMenu>( 'a' );
 
 
 		ret->AddSplit();
