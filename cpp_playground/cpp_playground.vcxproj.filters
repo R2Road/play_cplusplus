@@ -148,9 +148,6 @@
     <ClCompile Include="src\test_cpp\item\new_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\pointer_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\item\struct_member_alignment_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
@@ -482,6 +479,9 @@
     <ClCompile Include="src\test_c\PointerMenu.cpp">
       <Filter>test_c</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_c\item\pointer_test.cpp">
+      <Filter>test_c\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -566,9 +566,6 @@
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\new_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\pointer_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\struct_member_alignment_test.h">
@@ -928,6 +925,9 @@
     </ClInclude>
     <ClInclude Include="src\test_c\PointerMenu.h">
       <Filter>test_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_c\item\pointer_test.h">
+      <Filter>test_c\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

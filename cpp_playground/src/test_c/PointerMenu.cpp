@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "test_cpp/item/pointer_test.h"
+#include "item/pointer_test.h"
 
 #include "C_Menu.h"
 
