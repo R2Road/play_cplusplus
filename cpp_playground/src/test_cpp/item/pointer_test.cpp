@@ -1,5 +1,6 @@
 #include "pointer_test.h"
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace pointer_test
@@ -20,13 +21,13 @@ namespace pointer_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "int i = 123;" << r2cm::linefeed;
-				std::cout << r2cm::tab << "int* ip= &i;" << r2cm::linefeed;
-				int i = 123;
-				int* ip = &i;
+				DECLARATION_MAIN( const int i = 123 );
+				DECLARATION_MAIN( const int* ip = &i );
+
+				std::cout << r2cm::linefeed;
 
 				std::cout << r2cm::tab << "+ adress of ip " << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- " << ip << r2cm::linefeed;
+				OUTPUT_VALUE( ip );
 			}
 
 			std::cout << r2cm::split;
