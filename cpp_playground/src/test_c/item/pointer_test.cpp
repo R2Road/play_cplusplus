@@ -26,7 +26,12 @@ namespace pointer_test
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "+ adress of ip " << r2cm::linefeed;
+				EXPECT_EQ( &i, ip );
+
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "+ adress" << r2cm::linefeed;
+				OUTPUT_VALUE( &i );
 				OUTPUT_VALUE( ip );
 			}
 
