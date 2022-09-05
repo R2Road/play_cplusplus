@@ -33,28 +33,32 @@ namespace pointer_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "int ip[] = { 123, 234, 456 };" << r2cm::linefeed;
-				int ip[] = { 123, 234, 456 };
+				DECLARATION_MAIN( int ip[3] );
+
+				std::cout << r2cm::linefeed;
 
 				std::cout << r2cm::tab << "+ adress of ip " << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- " << ip << r2cm::linefeed;
+				OUTPUT_VALUE( ip );
 
-				std::cout << r2cm::tab << "+ ip + 1;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- " << ip + 1 << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "+ offset : ( ( ip + 1 ) - ip )" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- " << ( ( ip + 1 ) - ip ) << r2cm::linefeed << r2cm::linefeed << r2cm::linefeed;
+				std::cout << r2cm::tab << "+ adress of ip + 1 " << r2cm::linefeed;
+				OUTPUT_VALUE( ip + 1 );
 
-				
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "auto t1 = reinterpret_cast<std::size_t>( ip );" << r2cm::linefeed;
-				std::cout << r2cm::tab << "auto t2 = reinterpret_cast<std::size_t>( ip + 1 );;" << r2cm::linefeed;
-				auto t1 = reinterpret_cast<std::size_t>( ip );
-				auto t2 = reinterpret_cast<std::size_t>( ip + 1 );
+				std::cout << r2cm::tab << "+ offset : ip ~ ip + 1" << r2cm::linefeed;
+				OUTPUT_VALUE( ( ( ip + 1 ) - ip ) );
 
-				std::cout << r2cm::tab2 << " - t1 : " << t1 << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- t2 : " << t2 << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- offset ( t2 - t1 ) : " << ( t2 - t1 ) << r2cm::linefeed;
+				std::cout << r2cm::linefeed2;
+
+				DECLARATION_MAIN( const auto t1 = reinterpret_cast<std::size_t>( ip ) );
+				DECLARATION_MAIN( const auto t2 = reinterpret_cast<std::size_t>( ip + 1 ) );
+				OUTPUT_VALUE( t1 );
+				OUTPUT_VALUE( t2 );
+
+				std::cout << r2cm::tab2 << "- offset ( t2 - t1 )" << r2cm::linefeed;
+				OUTPUT_VALUE( t2 - t1 );
 			}
 
 			std::cout << r2cm::split;
