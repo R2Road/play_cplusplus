@@ -9,7 +9,7 @@ namespace pointer_test
 	{
 		return []()->const char*
 		{
-			return "Pointer";
+			return "Basic";
 		};
 	}
 	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
@@ -32,11 +32,32 @@ namespace pointer_test
 
 			std::cout << r2cm::split;
 
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Offset::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Offset";
+		};
+	}
+	r2cm::iItem::DoFunctionT Offset::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( int ip[3] );
+
+			std::cout << r2cm::split;
+
 			{
-				DECLARATION_MAIN( int ip[3] );
-
-				std::cout << r2cm::linefeed;
-
 				std::cout << r2cm::tab << "+ adress of ip " << r2cm::linefeed;
 				OUTPUT_VALUE( ip );
 
@@ -45,19 +66,23 @@ namespace pointer_test
 				std::cout << r2cm::tab << "+ adress of ip + 1 " << r2cm::linefeed;
 				OUTPUT_VALUE( ip + 1 );
 
-				std::cout << r2cm::linefeed;
-
-				std::cout << r2cm::tab << "+ offset : ip ~ ip + 1" << r2cm::linefeed;
-				OUTPUT_VALUE( ( ( ip + 1 ) - ip ) );
-
 				std::cout << r2cm::linefeed2;
 
+				std::cout << r2cm::tab << "+ offset : ( ip + 1 ) ~ ip" << r2cm::linefeed;
+				OUTPUT_VALUE( ( ( ip + 1 ) - ip ) );
+			}
+
+			std::cout << r2cm::split;
+			
+			{
 				DECLARATION_MAIN( const auto t1 = reinterpret_cast<std::size_t>( ip ) );
 				DECLARATION_MAIN( const auto t2 = reinterpret_cast<std::size_t>( ip + 1 ) );
 				OUTPUT_VALUE( t1 );
 				OUTPUT_VALUE( t2 );
 
-				std::cout << r2cm::tab2 << "- offset ( t2 - t1 )" << r2cm::linefeed;
+				std::cout << r2cm::linefeed2;
+
+				std::cout << r2cm::tab << "+ offset : t2 ~ t1" << r2cm::linefeed;
 				OUTPUT_VALUE( t2 - t1 );
 			}
 

@@ -12,6 +12,13 @@ namespace pointer_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class Offset : public r2cm::iItem, public r2cm::SingleTon<Offset>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Pointer2Index : public r2cm::iItem, public r2cm::SingleTon<Pointer2Index>
 	{
 	public:
