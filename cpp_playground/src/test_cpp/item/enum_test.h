@@ -12,6 +12,13 @@ namespace enum_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class Cast : public r2cm::iItem, public r2cm::SingleTon<Cast>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class ConvertWithTemplate : public r2cm::iItem, public r2cm::SingleTon<ConvertWithTemplate>
 	{
 	public:

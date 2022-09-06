@@ -62,6 +62,45 @@ namespace enum_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Cast::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Cast";
+		};
+	}
+	r2cm::iItem::DoFunctionT Cast::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( enum class eTestEnum : uint32_t { one = 1 } );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const eTestEnum te_1 = static_cast<eTestEnum>( 0 ) );
+				DECLARATION_MAIN( eTestEnum te_2 );
+				PROCESS_MAIN( te_2 = te_1 );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ enum 의 범위에 없는 값을 강제 변환해서 넣어도 어떤 문제도 발생하지 않는다." << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
 
 
