@@ -24,37 +24,34 @@ namespace enum_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ " << "enum eTestOldEnum {};" << r2cm::linefeed << r2cm::linefeed;
-				enum eTestOldEnum {};
+				DECLARATION_MAIN( enum eTestOldEnum {} );
 
-				std::cout << r2cm::tab2 << "- " << "std::is_enum<eTestOldEnum>::value" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "- " << std::is_enum<eTestOldEnum>::value << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab2 << "- " << "typeid( std::underlying_type<eTestEnum_1>::type ).name()" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "- " << typeid( std::underlying_type<eTestOldEnum>::type ).name() << r2cm::linefeed;
+				OUTPUT_VALUE( std::is_enum<eTestOldEnum>::value );
+				OUTPUT_VALUE( typeid( std::underlying_type<eTestOldEnum>::type ).name() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ " << "enum class eTestNewEnum {};" << r2cm::linefeed << r2cm::linefeed;
-				enum class eTestNewEnum {};
+				DECLARATION_MAIN( enum class eTestNewEnum {} );
 
-				std::cout << r2cm::tab2 << "- " << "std::is_enum<eTestNewEnum>::value" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "- " << std::is_enum<eTestNewEnum>::value << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab2 << "- " << "typeid( std::underlying_type<eTestNewEnum>::type ).name()" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "- " << typeid( std::underlying_type<eTestNewEnum>::type ).name() << r2cm::linefeed;
+				OUTPUT_VALUE( std::is_enum<eTestNewEnum>::value );
+				OUTPUT_VALUE( typeid( std::underlying_type<eTestNewEnum>::type ).name() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ " << "enum class eTestNewEnum : char {};" << r2cm::linefeed << r2cm::linefeed;
-				enum class eTestNewEnum : char {};
+				DECLARATION_MAIN( enum class eTestNewEnum : char {} );
 
-				std::cout << r2cm::tab2 << "- " << "typeid( std::underlying_type<eTestNewEnum>::type ).name()" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "- " << typeid( std::underlying_type<eTestNewEnum>::type ).name() << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( std::is_enum<eTestNewEnum>::value );
+				OUTPUT_VALUE( typeid( std::underlying_type<eTestNewEnum>::type ).name() );
 			}
 
 			std::cout << r2cm::split;
