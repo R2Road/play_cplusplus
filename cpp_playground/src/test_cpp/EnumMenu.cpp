@@ -13,7 +13,7 @@ r2cm::MenuUp EnumMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', enum_test::Basic::GetInstance() );
-		ret->AddItem( '2', enum_test::Convert::GetInstance() );
+		ret->AddItem( '2', enum_test::ConvertWithTemplate::GetInstance() );
 		ret->AddItem( '3', enum_test::MakeEnumWithMacro::GetInstance() );
 		ret->AddItem( '4', enum_test::XMacro_1::GetInstance() );
 		ret->AddItem( '5', enum_test::XMacro_2::GetInstance() );

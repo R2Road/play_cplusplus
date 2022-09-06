@@ -73,14 +73,14 @@ namespace enum_test
 		return static_cast<std::underlying_type_t<EnumT>>( e );
 	}
 
-	r2cm::iItem::TitleFunctionT Convert::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ConvertWithTemplate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Convert";
+			return "Convert with Template";
 		};
 	}
-	r2cm::iItem::DoFunctionT Convert::GetDoFunction()
+	r2cm::iItem::DoFunctionT ConvertWithTemplate::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -12,7 +12,7 @@ namespace enum_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Convert : public r2cm::iItem, public r2cm::SingleTon<Convert>
+	class ConvertWithTemplate : public r2cm::iItem, public r2cm::SingleTon<ConvertWithTemplate>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
