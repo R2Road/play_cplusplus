@@ -217,7 +217,7 @@ namespace r2algorithm_astar
 
 		r2::Grid<TinyNode4AStar> cost_map;
 
-		using TargetContainerT = r2::ArrayBasedList<r2::PointInt, WORLD_MAP_WIDTH * WORLD_MAP_HEIGHT >;
+		using TargetContainerT = r2::ListBasedOnArray<r2::PointInt, WORLD_MAP_WIDTH * WORLD_MAP_HEIGHT >;
 		TargetContainerT open_list;
 		TargetContainerT close_list;
 	};

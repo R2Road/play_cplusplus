@@ -101,7 +101,7 @@ namespace r2
 	};
 
 	template<typename T, uint32_t N>
-	class ArrayBasedList
+	class ListBasedOnArray
 	{
 	public:
 		using ValueT = T;
@@ -114,7 +114,7 @@ namespace r2
 		//using iterator = ListIterator<ValueT>; // ...dev rule?
 		using ReverseIteratorT = ListReverseIterator<ValueT>;
 
-		ArrayBasedList() : mContainer(), mHead4Rest( nullptr ), mSize4Rest( 0u ), mEnd4Live( nullptr ), mSize( 0u )
+		ListBasedOnArray() : mContainer(), mHead4Rest( nullptr ), mSize4Rest( 0u ), mEnd4Live( nullptr ), mSize( 0u )
 		{
 			Clear();
 		}
@@ -175,7 +175,7 @@ namespace r2
 	private:
 		NodeT* GetRestNode()
 		{
-			R2ASSERT( nullptr != mHead4Rest, "Empty : ArrayBasedList::GetRestNode()" );
+			R2ASSERT( nullptr != mHead4Rest, "Empty : ListBasedOnArray::GetRestNode()" );
 
 			NodeT* ret = mHead4Rest;
 

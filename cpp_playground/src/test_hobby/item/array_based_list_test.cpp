@@ -22,11 +22,11 @@ namespace array_based_list_test
 
 			std::cout << r2cm::split;
 
-			r2::ArrayBasedList<int, 10> list;
+			r2::ListBasedOnArray<int, 10> list;
 
 			{
 				std::cout << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab << "r2::ArrayBasedList<int, 10> list" << r2cm::linefeed;
+				std::cout << r2cm::tab << "r2::ListBasedOnArray<int, 10> list" << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
@@ -59,17 +59,17 @@ namespace array_based_list_test
 
 			std::cout << r2cm::split;
 
-			r2::ArrayBasedList<int, 5> list;
+			r2::ListBasedOnArray<int, 5> list;
 
 			{
 				std::cout << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab << "r2::ArrayBasedList<int, 5> list" << r2cm::linefeed;
+				std::cout << r2cm::tab << "r2::ListBasedOnArray<int, 5> list" << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << "+ r2::ArrayBasedList::PushFront" << r2cm::linefeed2;
+				std::cout << "+ r2::ListBasedOnArray::PushFront" << r2cm::linefeed2;
 
 				list.PushFront( 11 );
 				std::cout << r2cm::tab << "list.PushFront( 11 );" << r2cm::linefeed2;
@@ -176,17 +176,17 @@ namespace array_based_list_test
 
 			std::cout << r2cm::split;
 
-			r2::ArrayBasedList<int, 10> list;
+			r2::ListBasedOnArray<int, 10> list;
 
 			{
 				std::cout << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab << "r2::ArrayBasedList<int, 10> list" << r2cm::linefeed;
+				std::cout << r2cm::tab << "r2::ListBasedOnArray<int, 10> list" << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << "+ r2::ArrayBasedList::End" << r2cm::linefeed2;
+				std::cout << "+ r2::ListBasedOnArray::End" << r2cm::linefeed2;
 
 				auto end_itr = list.end();
 				std::cout << r2cm::tab << "auto end_itr = list.end();" << r2cm::linefeed2;
@@ -240,17 +240,17 @@ namespace array_based_list_test
 
 			std::cout << r2cm::split;
 
-			r2::ArrayBasedList<int, 3> list;
+			r2::ListBasedOnArray<int, 3> list;
 
 			{
 				std::cout << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab << "r2::ArrayBasedList<int, 3> list" << r2cm::linefeed;
+				std::cout << r2cm::tab << "r2::ListBasedOnArray<int, 3> list" << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << "+ r2::ArrayBasedList::Begin" << r2cm::linefeed2;
+				std::cout << "+ r2::ListBasedOnArray::Begin" << r2cm::linefeed2;
 
 				list.PushFront( 11 );
 				std::cout << r2cm::tab << "list.PushFront( 11 );" << r2cm::linefeed2;
@@ -324,14 +324,14 @@ namespace array_based_list_test
 
 			std::cout << r2cm::split;
 
-			r2::ArrayBasedList<int, 3> list;
+			r2::ListBasedOnArray<int, 3> list;
 			list.PushFront( 11 );
 			list.PushFront( 22 );
 			list.PushFront( 33 );
 
 			{
 				std::cout << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab << "r2::ArrayBasedList<int, 3> list" << r2cm::linefeed;
+				std::cout << r2cm::tab << "r2::ListBasedOnArray<int, 3> list" << r2cm::linefeed;
 				std::cout << r2cm::tab << "list.PushFront( 11 );" << r2cm::linefeed;
 				std::cout << r2cm::tab << "list.PushFront( 22 );" << r2cm::linefeed;
 				std::cout << r2cm::tab << "list.PushFront( 33 );" << r2cm::linefeed;
@@ -347,7 +347,7 @@ namespace array_based_list_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << "+ r2::ArrayBasedList::Clear" << r2cm::linefeed2;
+				std::cout << "+ r2::ListBasedOnArray::Clear" << r2cm::linefeed2;
 
 				list.Clear();
 				std::cout << r2cm::tab << "list.Clear();" << r2cm::linefeed2;
@@ -412,17 +412,17 @@ namespace array_based_list_test
 
 			std::cout << r2cm::split;
 
-			r2::ArrayBasedList<int, 3> list;
+			r2::ListBasedOnArray<int, 3> list;
 
 			{
 				std::cout << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab << "r2::ArrayBasedList<int, 3> list" << r2cm::linefeed;
+				std::cout << r2cm::tab << "r2::ListBasedOnArray<int, 3> list" << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << "+ r2::ArrayBasedList::PushBack" << r2cm::linefeed2;
+				std::cout << "+ r2::ListBasedOnArray::PushBack" << r2cm::linefeed2;
 
 				list.PushBack( 11 );
 				std::cout << r2cm::tab << "list.PushBack( 11 );" << r2cm::linefeed2;
@@ -488,14 +488,14 @@ namespace array_based_list_test
 
 			std::cout << r2cm::split;
 
-			r2::ArrayBasedList<int, 5> list;
+			r2::ListBasedOnArray<int, 5> list;
 			list.PushBack( 11 );
 			list.PushBack( 22 );
 			list.PushBack( 33 );
 
 			{
 				std::cout << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab << "r2::ArrayBasedList<int, 5> list" << r2cm::linefeed;
+				std::cout << r2cm::tab << "r2::ListBasedOnArray<int, 5> list" << r2cm::linefeed;
 				std::cout << r2cm::tab << "list.PushBack( 11 );" << r2cm::linefeed;
 				std::cout << r2cm::tab << "list.PushBack( 22 );" << r2cm::linefeed;
 				std::cout << r2cm::tab << "list.PushBack( 33 );" << r2cm::linefeed;
@@ -511,7 +511,7 @@ namespace array_based_list_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << "+ r2::ArrayBasedList::Erase" << r2cm::linefeed2;
+				std::cout << "+ r2::ListBasedOnArray::Erase" << r2cm::linefeed2;
 
 				auto return_itr = list.Erase( ++list.begin() );
 				auto copied_itr = return_itr;
@@ -541,7 +541,7 @@ namespace array_based_list_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << "+ r2::ArrayBasedList::Erase : Erase End" << r2cm::linefeed2;
+				std::cout << "+ r2::ListBasedOnArray::Erase : Erase End" << r2cm::linefeed2;
 
 				auto return_itr = list.Erase( list.end() );
 				std::cout << r2cm::tab << "auto return_itr = list.Erase( list.end() );" << r2cm::linefeed2;
@@ -574,14 +574,14 @@ namespace array_based_list_test
 
 			std::cout << r2cm::split;
 
-			r2::ArrayBasedList<int, 5> list;
+			r2::ListBasedOnArray<int, 5> list;
 			list.PushBack( 11 );
 			list.PushBack( 22 );
 			list.PushBack( 33 );
 
 			{
 				std::cout  << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab << "r2::ArrayBasedList<int, 5> list" << r2cm::linefeed;
+				std::cout << r2cm::tab << "r2::ListBasedOnArray<int, 5> list" << r2cm::linefeed;
 				std::cout << r2cm::tab << "list.PushBack( 11 );" << r2cm::linefeed;
 				std::cout << r2cm::tab << "list.PushBack( 22 );" << r2cm::linefeed;
 				std::cout << r2cm::tab << "list.PushBack( 33 );" << r2cm::linefeed;
@@ -590,7 +590,7 @@ namespace array_based_list_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << "+ r2::ArrayBasedList::rbegin(), ArrayBasedList::rend()" << r2cm::linefeed2;
+				std::cout << "+ r2::ListBasedOnArray::rbegin(), ListBasedOnArray::rend()" << r2cm::linefeed2;
 
 				EXPECT_NE( list.rend().mTargetNode, nullptr );
 				EXPECT_NE( list.rend().mTargetNode->pPrev, nullptr );
