@@ -5,7 +5,7 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Inspector.h"
 
-namespace array_based_list_test
+namespace list_based_on_array_test
 {
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
