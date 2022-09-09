@@ -845,9 +845,6 @@
     <ClInclude Include="src\test_cpp\item\number_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_ArrayBasedList.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_Assert.h">
       <Filter>external\r2</Filter>
     </ClInclude>
@@ -928,6 +925,9 @@
     </ClInclude>
     <ClInclude Include="src\test_c\item\pointer_test.h">
       <Filter>test_c\item</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_ListBasedOnArray.h">
+      <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

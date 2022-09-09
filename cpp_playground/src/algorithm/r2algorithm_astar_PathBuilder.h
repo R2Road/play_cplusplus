@@ -6,7 +6,7 @@
 #include "r2algorithm_astar_Constant.h"
 #include "r2/r2_PointInt.h"
 #include "r2/r2_Grid.h"
-#include "r2/r2_ArrayBasedList.h"
+#include "r2/r2_ListBasedOnArray.h"
 
 namespace r2algorithm_astar
 {

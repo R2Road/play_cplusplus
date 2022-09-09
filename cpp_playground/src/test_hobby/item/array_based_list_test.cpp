@@ -1,6 +1,6 @@
 #include "array_based_list_test.h"
 
-#include "r2/r2_ArrayBasedList.h"
+#include "r2/r2_ListBasedOnArray.h"
 #include "r2/r2_PointInt.h"
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Inspector.h"
