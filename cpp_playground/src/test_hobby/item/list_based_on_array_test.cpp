@@ -11,7 +11,7 @@ namespace list_based_on_array_test
 	{
 		return []()->const char*
 		{
-			return "Array Based List : Basic";
+			return "Basic";
 		};
 	}
 	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
@@ -48,7 +48,7 @@ namespace list_based_on_array_test
 	{
 		return []()->const char*
 		{
-			return "Array Based List : PushFront";
+			return "PushFront";
 		};
 	}
 	r2cm::iItem::DoFunctionT PushFront::GetDoFunction()
@@ -115,7 +115,7 @@ namespace list_based_on_array_test
 	{
 		return []()->const char*
 		{
-			return "Array Based List : Iterator : operator*, operator->";
+			return "Iterator : operator*, operator->";
 		};
 	}
 	r2cm::iItem::DoFunctionT IteratorOperator_Indirection_StructureDereference::GetDoFunction()
@@ -165,7 +165,7 @@ namespace list_based_on_array_test
 	{
 		return []()->const char*
 		{
-			return "Array Based List : End Iterator";
+			return "End Iterator";
 		};
 	}
 	r2cm::iItem::DoFunctionT EndIterator::GetDoFunction()
@@ -229,7 +229,7 @@ namespace list_based_on_array_test
 	{
 		return []()->const char*
 		{
-			return "Array Based List : Begin Iterator";
+			return "Begin Iterator";
 		};
 	}
 	r2cm::iItem::DoFunctionT BeginIterator::GetDoFunction()
@@ -313,7 +313,7 @@ namespace list_based_on_array_test
 	{
 		return []()->const char*
 		{
-			return "Array Based List : Clear";
+			return "Clear";
 		};
 	}
 	r2cm::iItem::DoFunctionT Clear::GetDoFunction()
@@ -401,7 +401,7 @@ namespace list_based_on_array_test
 	{
 		return []()->const char*
 		{
-			return "Array Based List : PushBack";
+			return "PushBack";
 		};
 	}
 	r2cm::iItem::DoFunctionT PushBack::GetDoFunction()
@@ -477,7 +477,7 @@ namespace list_based_on_array_test
 	{
 		return []()->const char*
 		{
-			return "Array Based List : Erase";
+			return "Erase";
 		};
 	}
 	r2cm::iItem::DoFunctionT Erase::GetDoFunction()
@@ -563,7 +563,7 @@ namespace list_based_on_array_test
 	{
 		return []()->const char*
 		{
-			return "Array Based List : rbegin(), rend()";
+			return "rbegin(), rend()";
 		};
 	}
 	r2cm::iItem::DoFunctionT RBegin_REnd::GetDoFunction()
