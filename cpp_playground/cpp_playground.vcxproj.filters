@@ -109,9 +109,6 @@
     <ClCompile Include="src\test_hobby\HobbyMenu.cpp">
       <Filter>test_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_hobby\ArrayBasedListMenu.cpp">
-      <Filter>test_hobby</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_hobby\MemoryPoolMenu.cpp">
       <Filter>test_hobby</Filter>
     </ClCompile>
@@ -482,6 +479,9 @@
     <ClCompile Include="src\test_c\item\pointer_test.cpp">
       <Filter>test_c\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_hobby\ListBasedOnArrayMenu.cpp">
+      <Filter>test_hobby</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -527,9 +527,6 @@
       <Filter>test_hobby\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_hobby\HobbyMenu.h">
-      <Filter>test_hobby</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_hobby\ArrayBasedListMenu.h">
       <Filter>test_hobby</Filter>
     </ClInclude>
     <ClInclude Include="src\test_hobby\MemoryPoolMenu.h">
@@ -928,6 +925,9 @@
     </ClInclude>
     <ClInclude Include="external\r2\r2_ListBasedOnArray.h">
       <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\ListBasedOnArrayMenu.h">
+      <Filter>test_hobby</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

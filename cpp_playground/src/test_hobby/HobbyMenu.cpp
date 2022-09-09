@@ -6,7 +6,7 @@
 #include "item/fsm_v1_test.h"
 #include "item/infinite_number_test.h"
 
-#include "ArrayBasedListMenu.h"
+#include "ListBasedOnArrayMenu.h"
 #include "MemoryPoolMenu.h"
 #include "Vector3Menu.h"
 
