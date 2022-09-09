@@ -94,9 +94,6 @@
     <ClCompile Include="src\test_algorithm\item\algorithm_selection_sort_test.cpp">
       <Filter>test_algorithm\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_hobby\item\array_based_list_test.cpp">
-      <Filter>test_hobby\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_hobby\item\infinite_number_test.cpp">
       <Filter>test_hobby\item</Filter>
     </ClCompile>
@@ -482,6 +479,9 @@
     <ClCompile Include="src\test_hobby\ListBasedOnArrayMenu.cpp">
       <Filter>test_hobby</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_hobby\item\list_based_on_array_test.cpp">
+      <Filter>test_hobby\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -513,9 +513,6 @@
     </ClInclude>
     <ClInclude Include="src\test_algorithm\item\algorithm_selection_sort_test.h">
       <Filter>test_algorithm\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_hobby\item\array_based_list_test.h">
-      <Filter>test_hobby\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_hobby\item\infinite_number_test.h">
       <Filter>test_hobby\item</Filter>
@@ -928,6 +925,9 @@
     </ClInclude>
     <ClInclude Include="src\test_hobby\ListBasedOnArrayMenu.h">
       <Filter>test_hobby</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\item\list_based_on_array_test.h">
+      <Filter>test_hobby\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "item/array_based_list_test.h"
+#include "item/list_based_on_array_test.h"
 
 #include "HobbyMenu.h"
 
