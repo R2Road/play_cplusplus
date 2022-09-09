@@ -7,7 +7,7 @@
 
 #include "HobbyMenu.h"
 
-r2cm::MenuUp ArrayBasedListMenu::Create( r2cm::Director& director )
+r2cm::MenuUp ListBasedOnArrayMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 

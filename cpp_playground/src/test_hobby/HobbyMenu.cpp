@@ -36,7 +36,7 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<ArrayBasedListMenu>( 'z' );
+		ret->AddMenu<ListBasedOnArrayMenu>( 'z' );
 
 
 		ret->AddSplit();

@@ -8,12 +8,12 @@ namespace r2cm
 	using MenuUp = std::unique_ptr<class Menu>;
 }
 
-class ArrayBasedListMenu
+class ListBasedOnArrayMenu
 {
 private:
-	ArrayBasedListMenu() = delete;
+	ListBasedOnArrayMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Array Based List Menu"; }
+	static const char* GetTitle() { return "List Based On Array Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
