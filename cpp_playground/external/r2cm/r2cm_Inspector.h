@@ -232,7 +232,7 @@ void SHOW_BINARY( const T* p, const uint64_t size )
 		}
 		else if( 0 < count_4_linefeed && 0 == count_4_linefeed % tab_limit )
 		{
-			printf( "\t" );
+			printf( "   " );
 		}
 		else
 		{
