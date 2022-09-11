@@ -21,8 +21,6 @@ namespace etc_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
@@ -57,8 +55,6 @@ namespace etc_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{

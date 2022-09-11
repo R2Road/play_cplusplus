@@ -17,8 +17,6 @@ namespace std_optional_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "+ Message : " "Optional Use Placement New" << r2cm::linefeed;
@@ -117,8 +115,6 @@ namespace std_optional_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::optional<TestOptional> op_1;
@@ -209,8 +205,6 @@ namespace std_optional_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			struct EmptyStruct {};

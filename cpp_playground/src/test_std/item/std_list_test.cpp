@@ -17,8 +17,6 @@ namespace std_list_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::list<int> container_1 = { 1, 2, 3, 4, 5 };
@@ -153,8 +151,6 @@ namespace std_list_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::list<int> container_1 = { 1, 2, 3 };
@@ -216,8 +212,6 @@ namespace std_list_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::list<int> container_1 = { 1, 2, 3 };

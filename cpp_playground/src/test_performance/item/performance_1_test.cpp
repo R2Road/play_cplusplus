@@ -21,7 +21,7 @@ namespace performance_1_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed2;
+			std::cout << r2cm::split;
 
 			const int attempt_limit = std::numeric_limits<int>::max() / 1000;
 			const int loop_limit = 4;
@@ -178,7 +178,7 @@ namespace performance_1_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed2;
+			std::cout << r2cm::split;
 
 			const int attempt_limit = std::numeric_limits<int>::max() / 10;
 			const int loop_limit = 5;
@@ -258,7 +258,7 @@ namespace performance_1_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << r2cm::split;
 
 			const unsigned int attempt_limit = 100000;
 			const int loop_limit = 5;
@@ -351,7 +351,7 @@ namespace performance_1_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << r2cm::split;
 
 			const unsigned int attempt_limit = 100000;
 			const int loop_limit = 5;
@@ -444,8 +444,6 @@ namespace performance_1_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			const unsigned int attempt_count = 100000;

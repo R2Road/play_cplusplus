@@ -19,8 +19,6 @@ namespace enum_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{
@@ -73,8 +71,6 @@ namespace enum_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{
@@ -120,8 +116,6 @@ namespace enum_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "template<typename EnumT>" << r2cm::linefeed;
@@ -200,8 +194,6 @@ namespace enum_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "+ Ref" << r2cm::linefeed2;
@@ -267,8 +259,6 @@ namespace enum_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "+ Ref" << r2cm::linefeed2;
@@ -348,8 +338,6 @@ namespace enum_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "+ Ref" << r2cm::linefeed2;

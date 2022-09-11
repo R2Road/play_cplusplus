@@ -16,8 +16,6 @@ namespace pointer_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{
@@ -54,8 +52,6 @@ namespace pointer_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( int ip[3] );
@@ -113,8 +109,6 @@ namespace pointer_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{
@@ -162,8 +156,6 @@ namespace pointer_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{

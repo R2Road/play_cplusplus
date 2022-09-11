@@ -18,8 +18,6 @@ namespace std_cout_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{
@@ -58,8 +56,6 @@ namespace std_cout_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "+ Note : 표기 방식등의 Format은 유지된다." << r2cm::linefeed;
@@ -122,8 +118,6 @@ namespace std_cout_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
@@ -178,8 +172,6 @@ namespace std_cout_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
@@ -251,8 +243,6 @@ namespace std_cout_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
@@ -331,8 +321,6 @@ namespace std_cout_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
@@ -390,8 +378,6 @@ namespace std_cout_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
@@ -452,8 +438,6 @@ namespace std_cout_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
@@ -509,8 +493,6 @@ namespace std_cout_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
@@ -575,8 +557,6 @@ namespace std_cout_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{

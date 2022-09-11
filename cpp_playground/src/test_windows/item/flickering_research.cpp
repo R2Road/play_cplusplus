@@ -28,7 +28,6 @@ namespace flickering_research
 			{
 				system( "cls" );
 
-				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
 				std::cout << "[Any Key] End" << r2cm::linefeed;
 
 				std::cout << r2cm::split;
@@ -74,7 +73,8 @@ namespace flickering_research
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << r2cm::split;
+
 			std::cout << "[Any Key] End" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
@@ -142,7 +142,6 @@ namespace flickering_research
 			{
 				system( "cls" );
 
-				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
 				std::cout << "[Any Key] End" << r2cm::linefeed;
 
 				std::cout << r2cm::split;
@@ -190,7 +189,6 @@ namespace flickering_research
 			{
 				system( "cls" );
 
-				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
 				std::cout << "[Any Key] End" << r2cm::linefeed;
 
 				std::cout << r2cm::split;

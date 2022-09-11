@@ -22,8 +22,6 @@ namespace console_text_color_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{
@@ -65,8 +63,6 @@ namespace console_text_color_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{
@@ -108,8 +104,6 @@ namespace console_text_color_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
@@ -187,8 +181,6 @@ namespace console_text_color_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
@@ -251,8 +243,6 @@ namespace console_text_color_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			//
@@ -339,8 +329,6 @@ namespace console_text_color_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			//

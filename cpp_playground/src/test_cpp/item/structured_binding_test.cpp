@@ -30,8 +30,7 @@ namespace structured_binding_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed << r2cm::linefeed;
-
+			std::cout << r2cm::split;
 
 			{
 				std::cout << r2cm::tab << "+ Basic" << r2cm::linefeed;

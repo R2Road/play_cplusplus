@@ -18,8 +18,6 @@ namespace list_based_on_array_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			r2::ListBasedOnArray<int, 10> list;
@@ -55,8 +53,6 @@ namespace list_based_on_array_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			r2::ListBasedOnArray<int, 5> list;
@@ -122,8 +118,6 @@ namespace list_based_on_array_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			r2::ListNode<r2::PointInt> node{ { 11, 12 }, nullptr, nullptr };
@@ -172,8 +166,6 @@ namespace list_based_on_array_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			r2::ListBasedOnArray<int, 10> list;
@@ -236,8 +228,6 @@ namespace list_based_on_array_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			r2::ListBasedOnArray<int, 3> list;
@@ -320,8 +310,6 @@ namespace list_based_on_array_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			r2::ListBasedOnArray<int, 3> list;
@@ -408,8 +396,6 @@ namespace list_based_on_array_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			r2::ListBasedOnArray<int, 3> list;
@@ -484,8 +470,6 @@ namespace list_based_on_array_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			r2::ListBasedOnArray<int, 5> list;
@@ -570,8 +554,6 @@ namespace list_based_on_array_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			r2::ListBasedOnArray<int, 5> list;

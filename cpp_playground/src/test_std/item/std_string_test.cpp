@@ -18,8 +18,6 @@ namespace std_string_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const std::string key_string = "\n" );
@@ -114,8 +112,6 @@ namespace std_string_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const std::string key_string = "\n" );
@@ -195,8 +191,6 @@ namespace std_string_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{

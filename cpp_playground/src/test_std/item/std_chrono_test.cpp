@@ -21,8 +21,6 @@ namespace std_chrono_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "REF : https://en.cppreference.com/w/cpp/chrono/time_point/time_since_epoch" << r2cm::linefeed2;
@@ -69,8 +67,6 @@ namespace std_chrono_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "# Summury #" << r2cm::linefeed;
@@ -137,8 +133,6 @@ namespace std_chrono_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "# Summury #" << r2cm::linefeed;
@@ -191,8 +185,6 @@ namespace std_chrono_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{

@@ -17,8 +17,6 @@ namespace std_vector_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{
@@ -84,8 +82,6 @@ namespace std_vector_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			class TestClass
@@ -136,8 +132,6 @@ namespace std_vector_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::vector<bool> test_vector;
@@ -195,8 +189,6 @@ namespace std_vector_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::vector<int> container_1 = { 1, 2, 3 };
@@ -240,8 +232,6 @@ namespace std_vector_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::vector<int> container_1 = { 1, 2, 3 };

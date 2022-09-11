@@ -20,8 +20,6 @@ namespace std_algorithm_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::vector<int> container_1 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };

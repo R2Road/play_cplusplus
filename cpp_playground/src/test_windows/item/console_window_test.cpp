@@ -27,8 +27,6 @@ namespace console_window_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
@@ -90,8 +88,6 @@ namespace console_window_test
 				ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 );
 			}
 
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{
@@ -141,8 +137,6 @@ namespace console_window_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{
@@ -185,8 +179,6 @@ namespace console_window_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << "[Any Key] End" << r2cm::linefeed2;
@@ -231,8 +223,6 @@ namespace console_window_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			HWND hWnd = GetConsoleWindow();
@@ -337,8 +327,6 @@ namespace console_window_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{
@@ -387,8 +375,6 @@ namespace console_window_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( LONG last_window_style = 0 );
@@ -444,8 +430,6 @@ namespace console_window_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << " + Need : WinUser.h" << r2cm::linefeed;
@@ -493,8 +477,6 @@ namespace console_window_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( LONG last_window_style = 0 );
@@ -558,8 +540,6 @@ namespace console_window_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( LONG last_window_style = 0 );
@@ -617,8 +597,6 @@ namespace console_window_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
@@ -673,8 +651,6 @@ namespace console_window_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE ) );
@@ -738,8 +714,6 @@ namespace console_window_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE ) );
@@ -793,8 +767,6 @@ namespace console_window_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "# Quick Edit 는 콘솔창에서 마우스를 사용한 커서 이동, 선택이 가능한 옵션이다." << r2cm::linefeed;

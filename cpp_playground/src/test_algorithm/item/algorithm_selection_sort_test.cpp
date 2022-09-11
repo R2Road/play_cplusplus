@@ -29,8 +29,6 @@ namespace algorithm_selection_sort_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			r2cm::StopWatch stop_watch;
@@ -119,8 +117,6 @@ namespace algorithm_selection_sort_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			r2cm::StopWatch stop_watch;

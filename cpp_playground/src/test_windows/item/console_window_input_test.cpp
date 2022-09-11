@@ -27,8 +27,6 @@ namespace console_window_input_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
-
 			std::cout << r2cm::split;
 
 			HANDLE hStdInputHandle = GetStdHandle( STD_INPUT_HANDLE );
@@ -175,7 +173,7 @@ namespace console_window_input_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << r2cm::split;
 			std::cout << "[ESC] Exit" << r2cm::linefeed;
 			std::cout << "[SPACE] Do" << r2cm::linefeed;
 
@@ -239,7 +237,8 @@ namespace console_window_input_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << r2cm::split;
+
 			std::cout << "[ESC] Exit" << r2cm::linefeed;
 			std::cout << "[SPACE] Do" << r2cm::linefeed;
 
@@ -322,7 +321,8 @@ namespace console_window_input_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << r2cm::split;
+
 			std::cout << "[ESC] Exit" << r2cm::linefeed;
 			std::cout << "[SPACE] Do" << r2cm::linefeed;
 

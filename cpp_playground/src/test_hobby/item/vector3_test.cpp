@@ -67,8 +67,6 @@ namespace vector3_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{
@@ -98,8 +96,6 @@ namespace vector3_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
@@ -133,8 +129,6 @@ namespace vector3_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( r2::Vector3 v1( 3.f, .2f, 1.2f ) );
@@ -169,8 +163,6 @@ namespace vector3_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const r2::Vector3 v1( 1.f, 1.1f, 2.2f ) );
@@ -203,8 +195,6 @@ namespace vector3_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( r2::Vector3 v1( 3.f, .2f, 1.2f ) );
@@ -239,8 +229,6 @@ namespace vector3_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const r2::Vector3 v1( 1.f, 1.1f, 2.2f ) );
@@ -273,8 +261,6 @@ namespace vector3_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( r2::Vector3 v1( 1.f, 1.1f, 2.2f ) );

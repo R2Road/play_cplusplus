@@ -20,8 +20,6 @@ namespace std_fstream_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{
@@ -106,8 +104,6 @@ namespace std_fstream_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
@@ -151,8 +147,6 @@ namespace std_fstream_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
@@ -209,8 +203,6 @@ namespace std_fstream_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );

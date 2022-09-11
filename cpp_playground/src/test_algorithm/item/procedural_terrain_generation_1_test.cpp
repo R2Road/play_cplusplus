@@ -59,8 +59,6 @@ namespace procedural_terrain_generation_1_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			r2::Grid<eTerrainType> grid;
 			grid.Reset( 40, 40 );
 
@@ -159,8 +157,6 @@ namespace procedural_terrain_generation_1_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			r2::Grid<eTerrainType> grid_seed;
 			grid_seed.Reset( 40, 40 );
 			r2::Grid<eTerrainType> grid_terrain;

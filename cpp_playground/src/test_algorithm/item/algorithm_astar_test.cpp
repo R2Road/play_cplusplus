@@ -105,8 +105,6 @@ namespace algorithm_astar_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			ShowGrid( WORLD_MAP );
@@ -152,8 +150,6 @@ namespace algorithm_astar_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			ShowGrid( WORLD_MAP );
@@ -199,8 +195,6 @@ namespace algorithm_astar_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			ShowGrid( WORLD_MAP );
@@ -247,8 +241,6 @@ namespace algorithm_astar_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			ShowGrid( WORLD_MAP );
@@ -297,8 +289,6 @@ namespace algorithm_astar_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			ShowGrid( WORLD_MAP );
@@ -347,8 +337,6 @@ namespace algorithm_astar_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			ShowGrid( WORLD_MAP );
@@ -397,8 +385,6 @@ namespace algorithm_astar_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			ShowGrid( WORLD_MAP );
@@ -447,8 +433,6 @@ namespace algorithm_astar_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
-
 			const int attempt_limit = 1000;
 
 			{

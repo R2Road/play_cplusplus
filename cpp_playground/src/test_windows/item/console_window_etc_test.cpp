@@ -31,8 +31,6 @@ namespace console_window_etc_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			CONSOLE_FONT_INFOEX cfie;
@@ -75,8 +73,6 @@ namespace console_window_etc_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			CONSOLE_FONT_INFOEX backup_cfie;
@@ -150,7 +146,7 @@ namespace console_window_etc_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed2;
+			std::cout << r2cm::split;
 
 			std::cout << "[ESC] Exit" << r2cm::linefeed;
 

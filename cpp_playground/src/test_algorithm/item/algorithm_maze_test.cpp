@@ -25,7 +25,7 @@ namespace algorithm_maze_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << algorithm_maze_test::Basic::GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << r2cm::split;
 
 			std::cout << "[ANY KEY] Exit" << r2cm::linefeed;
 

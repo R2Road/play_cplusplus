@@ -20,8 +20,6 @@ namespace std_stringview_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed2;
-
 			std::cout << r2cm::split;
 
 			{

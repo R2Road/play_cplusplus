@@ -60,7 +60,8 @@ namespace console_window_message_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << r2cm::split;
+
 			std::cout << "[ESC] End" << r2cm::linefeed2;
 			std::cout << "[Ctrl + C] ..." << r2cm::linefeed;
 			std::cout << "[Ctrl + Break] ..." << r2cm::linefeed;
@@ -155,8 +156,6 @@ namespace console_window_message_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "+ Message" << r2cm::linefeed2;

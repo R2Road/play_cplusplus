@@ -16,8 +16,6 @@ namespace operator_ternary_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "+ 삼항 연산자의 실행식은 쉼표로 구분해 여러개 넣을 수 있다." << r2cm::linefeed;

@@ -21,8 +21,6 @@ namespace windows_sound_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()()  << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << "[ESC]" " Exit" << r2cm::linefeed;
@@ -78,8 +76,6 @@ namespace windows_sound_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << "[ESC]" " Exit" << r2cm::linefeed;

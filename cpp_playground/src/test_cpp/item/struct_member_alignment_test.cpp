@@ -15,8 +15,6 @@ namespace struct_member_alignment_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << "#pragma pack( push, 4 )" << r2cm::linefeed;

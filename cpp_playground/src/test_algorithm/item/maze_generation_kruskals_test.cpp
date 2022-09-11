@@ -117,8 +117,6 @@ namespace maze_generation_kruskals_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( r2::Grid<int> grid( 2, 2, r2::Direction4::eState::None ) );
@@ -154,8 +152,6 @@ namespace maze_generation_kruskals_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "# REF" << r2cm::linefeed2;
