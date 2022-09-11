@@ -40,6 +40,42 @@ namespace r2cm
 		MoveWindow( hWnd, x + offset_x, y, rectClient.right - rectClient.left, rectClient.bottom - rectClient.top, TRUE );
 	}
 
+	void WindowUtility::ScrollBarVisible( const bool visible )
+	{
+		ShowScrollBar( GetConsoleWindow(), SB_VERT, visible );
+	}
+
+	void WindowUtility::MaximizeButtonEnable( const bool enable )
+	{
+		LONG window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE );
+		window_style = ( enable ? window_style | ( WS_MAXIMIZEBOX ) : window_style & ~( WS_MAXIMIZEBOX ) );
+		SetWindowLong( GetConsoleWindow(), GWL_STYLE, window_style );
+	}
+
+	void WindowUtility::ResizingByDraggingEnable( const bool enable )
+	{
+		LONG window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE );
+		window_style = ( enable ? window_style | ( WS_SIZEBOX ) : window_style & ~( WS_SIZEBOX ) );
+		SetWindowLong( GetConsoleWindow(), GWL_STYLE, window_style );
+	}
+
+	void WindowUtility::QuickEditEnable( const bool enable )
+	{
+		DWORD console_mode = 0;
+		GetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), &console_mode );
+		if( enable )
+		{
+			console_mode |= ENABLE_EXTENDED_FLAGS;
+			console_mode |= ENABLE_QUICK_EDIT_MODE;
+		}
+		else
+		{
+			console_mode &= ~( ENABLE_EXTENDED_FLAGS );
+			console_mode &= ~( ENABLE_QUICK_EDIT_MODE );
+		}
+		SetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), console_mode );
+	}
+
 	WindowUtility::CursorPoint WindowUtility::GetCursorPoint()
 	{
 		CONSOLE_SCREEN_BUFFER_INFO csbi{};
