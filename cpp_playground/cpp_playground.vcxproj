@@ -88,6 +88,7 @@
     <ClCompile Include="src\test_cpp\VariadicTemplateMenu.cpp" />
     <ClCompile Include="src\test_c\C_Menu.cpp" />
     <ClCompile Include="src\test_c\item\c_file_test.cpp" />
+    <ClCompile Include="src\test_c\item\c_memset_test.cpp" />
     <ClCompile Include="src\test_c\item\c_printf_test.cpp" />
     <ClCompile Include="src\test_c\item\c_random_test.cpp" />
     <ClCompile Include="src\test_c\item\c_sizeof_test.cpp" />
@@ -239,6 +240,7 @@
     <ClInclude Include="src\test_cpp\VariadicTemplateMenu.h" />
     <ClInclude Include="src\test_c\C_Menu.h" />
     <ClInclude Include="src\test_c\item\c_file_test.h" />
+    <ClInclude Include="src\test_c\item\c_memset_test.h" />
     <ClInclude Include="src\test_c\item\c_printf_test.h" />
     <ClInclude Include="src\test_c\item\c_random_test.h" />
     <ClInclude Include="src\test_c\item\c_sizeof_test.h" />

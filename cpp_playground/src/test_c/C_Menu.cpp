@@ -4,6 +4,7 @@
 #include "r2cm/r2cm_ostream.h"
 
 #include "item/c_printf_test.h"
+#include "item/c_memset_test.h"
 #include "item/c_sizeof_test.h"
 
 #include "PointerMenu.h"
@@ -22,6 +23,7 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'q', c_sizeof_test::Basic::GetInstance() );
+		ret->AddItem( 'w', c_memset_test::Basic::GetInstance() );
 
 
 		ret->AddLineFeed();
