@@ -1,9 +1,9 @@
-#include "pointer_test.h"
+#include "c_pointer_test.h"
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
-namespace pointer_test
+namespace c_pointer_test
 {
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
