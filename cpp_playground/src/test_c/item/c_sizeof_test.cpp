@@ -34,15 +34,15 @@ namespace c_sizeof_test
 			std::cout << r2cm::split;
 
 			{
+				DECLARATION_MAIN( const int buffer[10] = { 0 } );
+				OUTPUT_VALUE( sizeof( buffer ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
 				DECLARATION_MAIN( const double buffer[10] = { 0 } );
 				OUTPUT_VALUE( sizeof( buffer ) );
-
-				std::cout << r2cm::linefeed;
-
-				DECLARATION_MAIN( const void* pb = buffer );
-				OUTPUT_VALUE( sizeof( pb ) );
-
-				std::cout << r2cm::linefeed << r2cm::tab << "+ ???" << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
@@ -55,7 +55,7 @@ namespace c_sizeof_test
 				DECLARATION_MAIN( const void* pb = buffer );
 				OUTPUT_VALUE( sizeof( pb ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2cm::linefeed << r2cm::tab << "+ ???" << r2cm::linefeed2;
 
 				DECLARATION_MAIN( const char* cb = buffer );
 				OUTPUT_VALUE( sizeof( cb ) );
