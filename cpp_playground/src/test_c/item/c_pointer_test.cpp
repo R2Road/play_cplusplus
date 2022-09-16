@@ -112,26 +112,19 @@ namespace c_pointer_test
 			std::cout << r2cm::split;
 
 			{
-				int i = 0;
-				int* pi = &i;
-				int32_t i32 = (int32_t)( &i );
-				int64_t i64_1 = (int64_t)( &i );
-				int64_t i64_2 = reinterpret_cast<int64_t>( &i );
+				DECLARATION_MAIN( int i = 0 );
+				DECLARATION_MAIN( int* pi = &i );
+				DECLARATION_MAIN( int32_t i32 = (int32_t)( &i ) );
+				DECLARATION_MAIN( int64_t i64_1 = (int64_t)( &i ) );
+				DECLARATION_MAIN( int64_t i64_2 = reinterpret_cast<int64_t>( &i ) );
 
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "int i = 0;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "int* pi = &i;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "int32_t i32 = (int32_t)( &i );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "int64_t i64_1 = (int64_t)( &i );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "int64_t i64_2 = reinterpret_cast<int64_t>( &i );" << r2cm::linefeed;
 				std::cout << r2cm::linefeed2;
 
-				std::cout << r2cm::tab << "+ ...." << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "pi : " << pi << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "i32 : " << i32 << r2cm::tab2 << " ...64bit 에서 잘림 Platform 신경써." << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "i64_1 dec : " << std::dec << i64_1 << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "i64_1 hex : " << std::hex << i64_1 << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "i64_2 hex : " << i64_2 << r2cm::linefeed;
+				std::cout << r2cm::tab << "pi : " << pi << r2cm::linefeed;
+				std::cout << r2cm::tab << "i32 : " << i32 << r2cm::tab4 << "<< 64bit 에서 잘림 Platform 신경써." << r2cm::linefeed;
+				std::cout << r2cm::tab << "i64_1 dec : " << std::dec << i64_1 << r2cm::linefeed;
+				std::cout << r2cm::tab << "i64_1 hex : " << std::hex << i64_1 << r2cm::linefeed;
+				std::cout << r2cm::tab << "i64_2 hex : " << i64_2 << r2cm::linefeed;
 
 				// rollback
 				std::cout << std::dec;
