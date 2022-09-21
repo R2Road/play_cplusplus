@@ -5,7 +5,9 @@
 #include <sstream>
 #include <thread>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
+#include "r2cm/r2cm_StopWatch.h"
 
 #pragma warning( disable : 4477 ) // for "%x" and std::this_thread::get_id()
 
@@ -348,6 +350,48 @@ namespace std_thread_test
 
 				std::cout << r2cm::linefeed;
 				std::cout << r2cm::tab2 << "Note : 양보 받을 놈이 없으면 아무 소용 없다." << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+}
+
+
+
+namespace std_thread_test
+{
+	r2cm::iItem::TitleFunctionT ThisThread_SleepFor::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "ThisThread : SleepFor";
+		};
+	}
+	r2cm::iItem::DoFunctionT ThisThread_SleepFor::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << r2cm::clm( r2cm::eColor::FG_Green ) << "# 음수 값을 넣어도 문제는 발생하지 않는다." << r2cm::clm() << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( r2cm::StopWatch stop_watch );
+
+				PROCESS_MAIN( stop_watch.Start() );
+				PROCESS_MAIN( std::this_thread::sleep_for( std::chrono::milliseconds( -100 ) ) );
+				PROCESS_MAIN( stop_watch.Stop() );
+
+				std::cout << r2cm::linefeed;
+
+				stop_watch.PrintElapsedTime_All();
 			}
 
 			std::cout << r2cm::split;

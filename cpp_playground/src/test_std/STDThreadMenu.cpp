@@ -18,6 +18,7 @@ r2cm::MenuUp STDThreadMenu::Create( r2cm::Director& director )
 		ret->AddItem( '3', std_thread_test::CopyAssaignment::GetInstance() );
 		ret->AddItem( '4', std_thread_test::WaitProcess_SleepFor::GetInstance() );
 		ret->AddItem( '5', std_thread_test::WaitProcess_Yield::GetInstance() );
+		ret->AddItem( '6', std_thread_test::ThisThread_SleepFor::GetInstance() );
 
 
 		ret->AddSplit();

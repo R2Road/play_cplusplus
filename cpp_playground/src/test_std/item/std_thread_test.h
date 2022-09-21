@@ -39,4 +39,11 @@ namespace std_thread_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class ThisThread_SleepFor : public r2cm::iItem, public r2cm::SingleTon<ThisThread_SleepFor>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
