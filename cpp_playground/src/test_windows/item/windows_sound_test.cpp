@@ -78,34 +78,28 @@ namespace windows_sound_test
 
 			std::cout << r2cm::split;
 
-			bool bPlay = true;
+			int input = 0;
 			do
 			{
-				if( _kbhit() )
+
+				input = _getch();
+				switch( input )
 				{
-					switch( _getch() )
-					{
-					case  49: // 1
-					{
-						Beep( 440, 300 );
-					}
-					break;
-					case  50: // 1
-					{
-						Beep( 110, 30 );
-					}
-					break;
-
-					case  27: // ESC
-						bPlay = false;
-						break;
-					}
+				case '1':
+				{
+					Beep( 440, 300 );
 				}
-			} while( bPlay );
+				break;
+				case '2':
+				{
+					Beep( 110, 30 );
+				}
+				break;
+				}
 
-			std::cout << r2cm::split;
+			} while( 27 != input );
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 }
