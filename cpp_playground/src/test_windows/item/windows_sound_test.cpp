@@ -29,37 +29,31 @@ namespace windows_sound_test
 
 			std::cout << r2cm::split;
 
-			bool bPlay = true;
+			int input = 0;
 			do
 			{
-				if( _kbhit() )
+
+				input = _getch();
+				switch( input )
 				{
-					switch( _getch() )
-					{
-					case  49: // 1
-					{
-						const std::string sfx_path = r2utility::MakeSFXPath( "rpg_sounds_kenney_bookopen.wav" );
-						PlaySoundA( sfx_path.c_str(), NULL, SND_FILENAME | SND_ASYNC );
-					}
-					break;
-
-					case  50: // 2
-					{
-						const std::string sfx_path = r2utility::MakeSFXPath( "rpg_sounds_kenney_handlecoins2.wav" );
-						PlaySoundA( sfx_path.c_str(), NULL, SND_FILENAME | SND_ASYNC );
-					}
-					break;
-
-					case  27: // ESC
-						bPlay = false;
-						break;
-					}
+				case '1':
+				{
+					const std::string sfx_path = r2utility::MakeSFXPath( "rpg_sounds_kenney_bookopen.wav" );
+					PlaySoundA( sfx_path.c_str(), NULL, SND_FILENAME | SND_ASYNC );
 				}
-			} while( bPlay );
+				break;
 
-			std::cout << r2cm::split;
+				case '2':
+				{
+					const std::string sfx_path = r2utility::MakeSFXPath( "rpg_sounds_kenney_handlecoins2.wav" );
+					PlaySoundA( sfx_path.c_str(), NULL, SND_FILENAME | SND_ASYNC );
+				}
+				break;
+				}
 
-			return r2cm::eItemLeaveAction::Pause;
+			} while( 27 != input );
+
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 
