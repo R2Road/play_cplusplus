@@ -3,6 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
+#include "item/c_array_test.h"
 #include "item/c_printf_test.h"
 #include "item/c_memset_test.h"
 #include "item/c_sizeof_test.h"
@@ -15,8 +16,14 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, C_Menu::GetTitle() ) );
 
 	{
-		ret->AddItem( '1', c_printf_test::Basic::GetInstance() );
-		ret->AddItem( '2', c_printf_test::ShowNumbers::GetInstance() );
+		ret->AddItem( '1', c_array_test::Init::GetInstance() );
+
+
+		ret->AddLineFeed();
+
+
+		ret->AddItem( '2', c_printf_test::Basic::GetInstance() );
+		ret->AddItem( '3', c_printf_test::ShowNumbers::GetInstance() );
 
 
 		ret->AddLineFeed();

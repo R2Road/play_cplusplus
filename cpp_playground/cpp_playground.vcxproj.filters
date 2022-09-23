@@ -341,9 +341,6 @@
     <ClCompile Include="src\test_algorithm\item\procedural_terrain_generation_3_test.cpp">
       <Filter>test_algorithm\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\array_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\ClassMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -483,6 +480,9 @@
       <Filter>test_c\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_c\item\c_pointer_test.cpp">
+      <Filter>test_c\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_c\item\c_array_test.cpp">
       <Filter>test_c\item</Filter>
     </ClCompile>
   </ItemGroup>
@@ -764,9 +764,6 @@
     <ClInclude Include="src\test_algorithm\item\procedural_terrain_generation_3_test.h">
       <Filter>test_algorithm\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\array_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\ClassMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -933,6 +930,9 @@
       <Filter>test_c\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_c\item\c_pointer_test.h">
+      <Filter>test_c\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_c\item\c_array_test.h">
       <Filter>test_c\item</Filter>
     </ClInclude>
   </ItemGroup>

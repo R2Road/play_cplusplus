@@ -1,4 +1,4 @@
-#include "array_test.h"
+#include "c_array_test.h"
 
 #include <list>
 #include <numeric> // std::iota
@@ -7,13 +7,13 @@
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
-namespace array_test
+namespace c_array_test
 {
 	r2cm::iItem::TitleFunctionT Init::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Array : Init";
+			return "array : Init";
 		};
 	}
 	r2cm::iItem::DoFunctionT Init::GetDoFunction()
