@@ -317,9 +317,6 @@
     <ClCompile Include="src\test_cpp\VariadicTemplateMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\operator_ternary_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_algorithm\AlgorithmHelper.cpp">
       <Filter>test_algorithm</Filter>
     </ClCompile>
@@ -484,6 +481,9 @@
     </ClCompile>
     <ClCompile Include="src\test_c\BitOperationMenu.cpp">
       <Filter>test_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_c\item\c_operator_ternary_test.cpp">
+      <Filter>test_c\item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -740,9 +740,6 @@
     <ClInclude Include="src\test_cpp\VariadicTemplateMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\operator_ternary_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_algorithm\AlgorithmHelper.h">
       <Filter>test_algorithm</Filter>
     </ClInclude>
@@ -934,6 +931,9 @@
     </ClInclude>
     <ClInclude Include="src\test_c\BitOperationMenu.h">
       <Filter>test_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_c\item\c_operator_ternary_test.h">
+      <Filter>test_c\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

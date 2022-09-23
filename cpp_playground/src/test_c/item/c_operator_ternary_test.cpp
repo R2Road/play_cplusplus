@@ -1,15 +1,15 @@
-#include "operator_ternary_test.h"
+#include "c_operator_ternary_test.h"
 
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Inspector.h"
 
-namespace operator_ternary_test
+namespace c_operator_ternary_test
 {
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "operator_ternary_test : Basic";
+			return "operator ternary : Basic";
 		};
 	}
 	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
@@ -19,7 +19,7 @@ namespace operator_ternary_test
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "+ 삼항 연산자의 실행식은 쉼표로 구분해 여러개 넣을 수 있다." << r2cm::linefeed;
-			std::cout << r2cm::tab << "+ 20년 만에 알았다 개 웃기네. 2022.05.18" << r2cm::linefeed;
+			std::cout << r2cm::tab << "+ 이걸 20년 만에 알았네. 2022.05.18" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
 

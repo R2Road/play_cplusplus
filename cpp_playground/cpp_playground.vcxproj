@@ -65,7 +65,6 @@
     <ClCompile Include="src\test_cpp\item\locale_test.cpp" />
     <ClCompile Include="src\test_cpp\item\new_test.cpp" />
     <ClCompile Include="src\test_cpp\item\number_test.cpp" />
-    <ClCompile Include="src\test_cpp\item\operator_ternary_test.cpp" />
     <ClCompile Include="src\test_cpp\item\structured_binding_test.cpp" />
     <ClCompile Include="src\test_cpp\item\struct_member_alignment_test.cpp" />
     <ClCompile Include="src\test_cpp\item\template_meta_programming_01_test.cpp" />
@@ -89,6 +88,7 @@
     <ClCompile Include="src\test_c\item\c_bit_operation_test.cpp" />
     <ClCompile Include="src\test_c\item\c_file_test.cpp" />
     <ClCompile Include="src\test_c\item\c_memset_test.cpp" />
+    <ClCompile Include="src\test_c\item\c_operator_ternary_test.cpp" />
     <ClCompile Include="src\test_c\item\c_printf_test.cpp" />
     <ClCompile Include="src\test_c\item\c_random_test.cpp" />
     <ClCompile Include="src\test_c\item\c_sizeof_test.cpp" />
@@ -217,7 +217,6 @@
     <ClInclude Include="src\test_cpp\item\locale_test.h" />
     <ClInclude Include="src\test_cpp\item\new_test.h" />
     <ClInclude Include="src\test_cpp\item\number_test.h" />
-    <ClInclude Include="src\test_cpp\item\operator_ternary_test.h" />
     <ClInclude Include="src\test_cpp\item\structured_binding_test.h" />
     <ClInclude Include="src\test_cpp\item\struct_member_alignment_test.h" />
     <ClInclude Include="src\test_cpp\item\template_meta_programming_01_test.h" />
@@ -241,6 +240,7 @@
     <ClInclude Include="src\test_c\item\c_bit_operation_test.h" />
     <ClInclude Include="src\test_c\item\c_file_test.h" />
     <ClInclude Include="src\test_c\item\c_memset_test.h" />
+    <ClInclude Include="src\test_c\item\c_operator_ternary_test.h" />
     <ClInclude Include="src\test_c\item\c_printf_test.h" />
     <ClInclude Include="src\test_c\item\c_random_test.h" />
     <ClInclude Include="src\test_c\item\c_sizeof_test.h" />

@@ -4,7 +4,6 @@
 #include "r2cm/r2cm_ostream.h"
 
 #include "item/number_test.h"
-#include "item/operator_ternary_test.h"
 #include "item/structured_binding_test.h"
 #include "item/using_test.h"
 
@@ -47,8 +46,7 @@ r2cm::MenuUp CPP_Menu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'a', structured_binding_test::Basic::GetInstance() );
-		ret->AddItem( 'b', operator_ternary_test::Basic::GetInstance() );
-		ret->AddItem( 'c', number_test::Prefix::GetInstance() );
+		ret->AddItem( 'b', number_test::Prefix::GetInstance() );
 
 
 		ret->AddSplit();

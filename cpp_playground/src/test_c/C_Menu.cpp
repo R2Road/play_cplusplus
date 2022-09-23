@@ -4,6 +4,7 @@
 #include "r2cm/r2cm_ostream.h"
 
 #include "item/c_array_test.h"
+#include "item/c_operator_ternary_test.h"
 #include "item/c_printf_test.h"
 #include "item/c_memset_test.h"
 #include "item/c_sizeof_test.h"
@@ -18,13 +19,14 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', c_array_test::Init::GetInstance() );
+		ret->AddItem( '2', c_operator_ternary_test::Basic::GetInstance() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( '2', c_printf_test::Basic::GetInstance() );
-		ret->AddItem( '3', c_printf_test::ShowNumbers::GetInstance() );
+		ret->AddItem( '3', c_printf_test::Basic::GetInstance() );
+		ret->AddItem( '4', c_printf_test::ShowNumbers::GetInstance() );
 
 
 		ret->AddLineFeed();
