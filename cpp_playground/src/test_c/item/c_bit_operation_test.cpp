@@ -23,7 +23,7 @@ namespace
 	}
 }
 
-namespace bit_operation_test
+namespace c_bit_operation_test
 {
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
