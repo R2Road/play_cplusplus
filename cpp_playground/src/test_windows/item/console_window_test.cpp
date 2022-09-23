@@ -225,25 +225,19 @@ namespace console_window_test
 		{
 			std::cout << r2cm::split;
 
-			HWND hWnd = GetConsoleWindow();
-			RECT last_window_rect;
-
-			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-			std::cout << r2cm::tab2 << "HWND hWnd = GetConsoleWindow();" << r2cm::linefeed;
-			std::cout << r2cm::tab2 << "RECT last_window_rect;" << r2cm::linefeed;
+			DECLARATION_MAIN( HWND hWnd = GetConsoleWindow() );
+			DECLARATION_MAIN( RECT last_window_rect );
 
 			std::cout << r2cm::split;
 
 			{
-				GetWindowRect( hWnd, &last_window_rect );
-
 				std::cout << r2cm::tab << "+ Backup" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "GetWindowRect( hWnd, &last_window_rect );" << r2cm::linefeed2;
 
-				std::cout << r2cm::tab3
+				PROCESS_MAIN( GetWindowRect( hWnd, &last_window_rect ) );
+
+				std::cout << r2cm::tab
 					<< "X : " << last_window_rect.left << "     "
-					<< "Y : " << last_window_rect.top << r2cm::linefeed;
-				std::cout << r2cm::tab3
+					<< "Y : " << last_window_rect.top << "     "
 					<< "W : " << ( last_window_rect.right - last_window_rect.left ) << "     "
 					<< "H : " << ( last_window_rect.bottom - last_window_rect.top ) << r2cm::linefeed;
 			}
@@ -252,43 +246,41 @@ namespace console_window_test
 
 			{
 				std::cout << r2cm::tab << "+ System Display Info" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "GetSystemMetrics( SM_CXSCREEN );" " > " << GetSystemMetrics( SM_CXSCREEN ) << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "GetSystemMetrics( SM_CYSCREEN );" " > " << GetSystemMetrics( SM_CYSCREEN ) << r2cm::linefeed;
+				OUTPUT_VALUE( GetSystemMetrics( SM_CXSCREEN ) );
+				OUTPUT_VALUE( GetSystemMetrics( SM_CYSCREEN ) );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				const int system_center_x = GetSystemMetrics( SM_CXSCREEN ) / 2;
-				const int system_center_y = GetSystemMetrics( SM_CYSCREEN ) / 2;
+				std::cout << r2cm::tab << "+ Move To Center" << r2cm::linefeed;
 
-				const int window_width = ( last_window_rect.right - last_window_rect.left );
-				const int window_height = ( last_window_rect.bottom - last_window_rect.top );
+				DECLARATION_MAIN( const int system_center_x = GetSystemMetrics( SM_CXSCREEN ) / 2 );
+				DECLARATION_MAIN( const int system_center_y = GetSystemMetrics( SM_CYSCREEN ) / 2 );
+				OUTPUT_VALUE( system_center_x );
+				OUTPUT_VALUE( system_center_y );
 
-				const int posx = system_center_x - ( window_width / 2 );
-				const int posy = system_center_y - ( window_height / 2 );
+				DECLARATION_MAIN( const int window_width = ( last_window_rect.right - last_window_rect.left ) );
+				DECLARATION_MAIN( const int window_height = ( last_window_rect.bottom - last_window_rect.top ) );
+				OUTPUT_VALUE( window_width );
+				OUTPUT_VALUE( window_height );
 
-				MoveWindow( hWnd, posx, posy, window_width, window_height, TRUE );
+				DECLARATION_MAIN( const int posx = system_center_x - ( window_width / 2 ) );
+				DECLARATION_MAIN( const int posy = system_center_y - ( window_height / 2 ) );
+				OUTPUT_VALUE( posx );
+				OUTPUT_VALUE( posy );
 
-				std::cout << r2cm::tab << "+ Move To Center" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "const int system_center_x = GetSystemMetrics( SM_CXSCREEN ) / 2;" " > " << system_center_x << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "const int system_center_y = GetSystemMetrics( SM_CYSCREEN ) / 2;" " > " << system_center_y << r2cm::linefeed2;
+				PROCESS_MAIN( MoveWindow( hWnd, posx, posy, window_width, window_height, TRUE ) );
 
-				std::cout << r2cm::tab2 << "const int window_width = ( last_window_rect.right - last_window_rect.left );" " > " << window_width << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "const int window_height = ( last_window_rect.bottom - last_window_rect.top );" " > " << window_height << r2cm::linefeed2;
-
-				std::cout << r2cm::tab2 << "const int posx = system_center_x - ( window_width / 2 );" " > " << posx << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "const int posy = system_center_y - ( window_height / 2 );" " > " << posy << r2cm::linefeed2;
-
-				std::cout << r2cm::tab2 << "MoveWindow( hWnd, posx, posy, window_width, window_height, TRUE );" << r2cm::linefeed2;
-
+				std::cout << r2cm::linefeed;
 
 				RECT current_window_rect;
 				GetWindowRect( hWnd, &current_window_rect );
 
-				std::cout << r2cm::tab2 << "Current Window Position" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << " - X : " << current_window_rect.left << r2cm::linefeed;
-				std::cout << r2cm::tab3 << " - Y : " << current_window_rect.top << r2cm::linefeed;
+				std::cout << r2cm::tab << "Current Window Position" << r2cm::linefeed;
+				std::cout << r2cm::tab2
+					<< "X : " << current_window_rect.left << "     "
+					<< "Y : " << current_window_rect.top << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
