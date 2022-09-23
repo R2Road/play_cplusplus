@@ -9,7 +9,6 @@
 #include "item/using_test.h"
 
 #include "AlignMenu.h"
-#include "BitOperationMenu.h"
 #include "EnumMenu.h"
 #include "LambdaMenu.h"
 #include "NewMenu.h"
@@ -24,8 +23,7 @@ r2cm::MenuUp CPP_Menu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, CPP_Menu::GetTitle() ) );
 
 	{
-		ret->AddMenu<BitOperationMenu>( '1' );
-		ret->AddMenu<ClassMenu>( '2' );
+		ret->AddMenu<ClassMenu>( '1' );
 
 
 		ret->AddLineFeed();

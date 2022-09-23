@@ -203,9 +203,6 @@
     <ClCompile Include="src\test_windows\item\console_window_etc_test.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\bit_operation_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\DebugMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -322,9 +319,6 @@
     </ClCompile>
     <ClCompile Include="src\test_cpp\item\operator_ternary_test.cpp">
       <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\BitOperationMenu.cpp">
-      <Filter>test_cpp</Filter>
     </ClCompile>
     <ClCompile Include="src\test_algorithm\AlgorithmHelper.cpp">
       <Filter>test_algorithm</Filter>
@@ -485,6 +479,12 @@
     <ClCompile Include="src\test_c\item\c_array_test.cpp">
       <Filter>test_c\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_c\item\c_bit_operation_test.cpp">
+      <Filter>test_c\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_c\BitOperationMenu.cpp">
+      <Filter>test_c</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -626,9 +626,6 @@
     <ClInclude Include="src\test_windows\item\console_window_etc_test.h">
       <Filter>test_windows\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\bit_operation_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\DebugMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -745,9 +742,6 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\operator_ternary_test.h">
       <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\BitOperationMenu.h">
-      <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_algorithm\AlgorithmHelper.h">
       <Filter>test_algorithm</Filter>
@@ -934,6 +928,12 @@
     </ClInclude>
     <ClInclude Include="src\test_c\item\c_array_test.h">
       <Filter>test_c\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_c\item\c_bit_operation_test.h">
+      <Filter>test_c\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_c\BitOperationMenu.h">
+      <Filter>test_c</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

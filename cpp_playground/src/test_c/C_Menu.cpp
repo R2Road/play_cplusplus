@@ -8,6 +8,7 @@
 #include "item/c_memset_test.h"
 #include "item/c_sizeof_test.h"
 
+#include "BitOperationMenu.h"
 #include "PointerMenu.h"
 #include "RootMenu.h"
 
@@ -37,6 +38,8 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 
 
 		ret->AddMenu<PointerMenu>( 'a' );
+		ret->AddMenu<BitOperationMenu>( 's' );
+
 
 
 		ret->AddSplit();
