@@ -321,34 +321,36 @@ namespace console_window_test
 		{
 			std::cout << r2cm::split;
 
-			{
-				TCHAR window_name_string[MAX_PATH];
-				GetConsoleTitle( window_name_string, MAX_PATH );
+			std::cout << r2cm::tab << " + Last Window Name" << r2cm::linefeed2;
 
-				std::cout << r2cm::tab << " + " << "Current Window Name" << r2cm::linefeed;
-				std::wcout << r2cm::tab2 << " - " << window_name_string << r2cm::linefeed;
+			DECLARATION_MAIN( char last_window_name_string[MAX_PATH] );
+			PROCESS_MAIN( GetConsoleTitleA( last_window_name_string, MAX_PATH ) );
+
+			std::cout << r2cm::linefeed;
+
+			OUTPUT_VALUE( last_window_name_string );
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << " + Change Window Name" << r2cm::linefeed2;
+
+				DECLARATION_MAIN( const char* window_name_string = "console_test : ChangeWindowName" );
+				PROCESS_MAIN( SetConsoleTitleA( window_name_string ) );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				auto* window_name_string = TEXT( "console_test : ChangeWindowName" );
-
-				SetConsoleTitle( window_name_string );
-
-				std::cout << r2cm::tab << " + " << "New Window Name" << r2cm::linefeed;
-				std::wcout << r2cm::tab2 << " - " << window_name_string << r2cm::linefeed;
+				std::cout << r2cm::tab << "Press Any Key : Roll Back Window Name" << r2cm::linefeed;
+				_getch();
 			}
 
 			std::cout << r2cm::split;
 
-			std::cout << "Press Any Key : Roll Back Window Name" << r2cm::linefeed;
-			_getch();
-
 			{
-				SetConsoleTitle( TEXT( "cpp_playground" ) );
+				SetConsoleTitleA( last_window_name_string );
 			}
-			_getch();
 
 			return r2cm::eItemLeaveAction::None;
 		};
