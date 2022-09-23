@@ -19,7 +19,7 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', c_array_test::Init::GetInstance() );
-		ret->AddItem( '2', c_operator_ternary_test::Basic::GetInstance() );
+		ret->AddItem( '2', c_operator_ternary_test::Comma::GetInstance() );
 
 
 		ret->AddLineFeed();

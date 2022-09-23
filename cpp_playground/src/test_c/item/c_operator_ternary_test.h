@@ -5,7 +5,7 @@
 
 namespace c_operator_ternary_test
 {
-	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	class Comma : public r2cm::iItem, public r2cm::SingleTon<Comma>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

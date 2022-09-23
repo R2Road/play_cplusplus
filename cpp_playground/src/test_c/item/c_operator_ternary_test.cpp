@@ -5,14 +5,14 @@
 
 namespace c_operator_ternary_test
 {
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Comma::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "operator ternary : Basic";
+			return "operator ternary : Comma";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Comma::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
