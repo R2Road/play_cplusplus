@@ -373,10 +373,15 @@ namespace console_window_test
 
 			DECLARATION_MAIN( LONG last_window_style = 0 );
 
+			std::cout << r2cm::split;
+
 			{
 				std::cout << r2cm::tab << "+ Backup" << r2cm::linefeed2;
 
 				PROCESS_MAIN( last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE ) );
+
+				std::cout << r2cm::linefeed;
+
 				OUTPUT_BINARY( last_window_style );
 			}
 
@@ -388,13 +393,18 @@ namespace console_window_test
 				DECLARATION_MAIN( LONG new_window_style = last_window_style );
 				PROCESS_MAIN( new_window_style &= ~( WS_BORDER | WS_CAPTION | WS_THICKFRAME ) );
 				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style ) );
+
+				std::cout << r2cm::linefeed;
+
 				OUTPUT_BINARY( new_window_style );
 			}
 
 			std::cout << r2cm::split;
 
-			std::cout << r2cm::tab << "Press Any Key : Rollback" << r2cm::linefeed;
-			_getch();
+			{
+				std::cout << r2cm::tab << "Press Any Key : Rollback" << r2cm::linefeed;
+				_getch();
+			}
 
 			std::cout << r2cm::split;
 
