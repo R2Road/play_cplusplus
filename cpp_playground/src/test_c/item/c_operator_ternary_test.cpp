@@ -5,6 +5,37 @@
 
 namespace c_operator_ternary_test
 {
+	void void_func() {}
+
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "operator ternary : Basic";
+		};
+	}
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ 반환값이 없어도 된다." << r2cm::linefeed2;
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( ( true ? void_func() : void_func() ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Comma::GetTitleFunction() const
 	{
 		return []()->const char*
