@@ -342,8 +342,16 @@ namespace std_vector_test
 			std::cout << r2cm::split;
 
 			{
+				OUTPUT_VALUE( &container[0] );
+
+				std::cout << r2cm::linefeed;
+
 				PROCESS_MAIN( container.clear() );
 				PROCESS_MAIN( container.resize( 2u ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( &container[0] );
 
 				std::cout << r2cm::linefeed;
 
