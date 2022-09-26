@@ -39,4 +39,11 @@ namespace std_vector_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Resize : public r2cm::iItem, public r2cm::SingleTon<Resize>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }

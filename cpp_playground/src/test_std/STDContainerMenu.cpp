@@ -35,6 +35,7 @@ r2cm::MenuUp STDContainerMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'd', std_vector_test::BoolVector::GetInstance() );
 		ret->AddItem( 'f', std_vector_test::OthersIterator::GetInstance() );
 		ret->AddItem( 'g', std_vector_test::EndIterator::GetInstance() );
+		ret->AddItem( 'h', std_vector_test::Resize::GetInstance() );
 
 
 		ret->AddSplit();

@@ -2,6 +2,7 @@
 
 #include <vector>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace std_vector_test
@@ -284,6 +285,74 @@ namespace std_vector_test
 				--cur;
 
 				std::cout << r2cm::tab2 << "( *cur );" << " > " << ( *cur ) << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Resize::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Vector : Resize";
+		};
+	}
+	r2cm::iItem::DoFunctionT Resize::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( std::vector<int> container( { 2, 3 } ) );
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_EQ( 2, container[0] );
+				EXPECT_EQ( 3, container[1] );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( container.resize( 2u ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 2, container[0] );
+				EXPECT_EQ( 3, container[1] );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( container.resize( 4u ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 2, container[0] );
+				EXPECT_EQ( 3, container[1] );
+				EXPECT_EQ( 0, container[2] );
+				EXPECT_EQ( 0, container[3] );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( container.clear() );
+				PROCESS_MAIN( container.resize( 2u ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 0, container[0] );
+				EXPECT_EQ( 0, container[1] );
+
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "# clear 는 최종적으로 Allocator에 Destory 요청한다." << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
