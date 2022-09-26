@@ -59,11 +59,8 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<STDMemoryMenu>( 'a' );
-		ret->AddMenu<STDNumericMenu>( 's' );
-		ret->AddMenu<STDContainerMenu>( 'd' );
-		ret->AddMenu<STDThreadMenu>( 'f' );
-		ret->AddItem( 'g', std_algorithm_test::Shuffle::GetInstance() );
+		ret->AddItem( 'a', std_regex_test::Basic::GetInstance() );
+		ret->AddItem( 's', std_algorithm_test::Shuffle::GetInstance() );
 
 
 
@@ -71,7 +68,10 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'z', std_regex_test::Basic::GetInstance() );
+		ret->AddMenu<STDMemoryMenu>( 'z' );
+		ret->AddMenu<STDNumericMenu>( 'x' );
+		ret->AddMenu<STDContainerMenu>( 'c' );
+		ret->AddMenu<STDThreadMenu>( 'v' );
 
 
 
