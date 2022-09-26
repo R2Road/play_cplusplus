@@ -101,14 +101,14 @@ namespace std_string_test
 			++i;
 		}
 	}
-	r2cm::iItem::TitleFunctionT Find_And_Split::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Find_And_Split_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Find And Split";
+			return "Find And Split 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Find_And_Split::GetDoFunction()
+	r2cm::iItem::DoFunctionT Find_And_Split_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

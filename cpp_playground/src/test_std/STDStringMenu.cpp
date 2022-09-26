@@ -13,7 +13,7 @@ r2cm::MenuUp STDStringMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', std_string_test::Find::GetInstance() );
-		ret->AddItem( '2', std_string_test::Find_And_Split::GetInstance() );
+		ret->AddItem( '2', std_string_test::Find_And_Split_1::GetInstance() );
 		ret->AddItem( '3', std_string_test::Find_And_Split_2::GetInstance() );
 		ret->AddItem( '4', std_string_test::Line_Count::GetInstance() );
 

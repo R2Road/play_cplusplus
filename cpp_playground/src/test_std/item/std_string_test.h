@@ -12,7 +12,7 @@ namespace std_string_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Find_And_Split : public r2cm::iItem, public r2cm::SingleTon<Find_And_Split>
+	class Find_And_Split_1 : public r2cm::iItem, public r2cm::SingleTon<Find_And_Split_1>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
