@@ -19,6 +19,13 @@ namespace std_string_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class Find_And_Split_2 : public r2cm::iItem, public r2cm::SingleTon<Find_And_Split_2>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Line_Count : public r2cm::iItem, public r2cm::SingleTon<Line_Count>
 	{
 	public:

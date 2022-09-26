@@ -139,6 +139,28 @@ namespace std_string_test
 
 			std::cout << r2cm::split;
 
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+	r2cm::iItem::TitleFunctionT Find_And_Split_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Find And Split 2";
+		};
+	}
+	r2cm::iItem::DoFunctionT Find_And_Split_2::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const std::string key_string = "\n" );
+			OUTPUT_VALUE( key_string.size() );
+
+			std::cout << r2cm::split;
+
 			PROCESS_MAIN( StringSplit( "\n" "\n" "012" "\n" "678" "\n" "\n" "efg" "\n" "\n" "\n" "vwx" "\n", key_string ) );
 
 			std::cout << r2cm::split;
