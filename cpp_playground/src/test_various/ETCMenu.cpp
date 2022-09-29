@@ -13,7 +13,6 @@ r2cm::MenuUp ETCMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', etc_test::ShowBinary::GetInstance() );
-		ret->AddItem( '3', etc_test::Macro2String::GetInstance() );
 
 
 		ret->AddSplit();

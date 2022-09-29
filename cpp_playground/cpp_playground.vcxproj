@@ -87,6 +87,7 @@
     <ClCompile Include="src\test_c\item\c_array_test.cpp" />
     <ClCompile Include="src\test_c\item\c_bit_operation_test.cpp" />
     <ClCompile Include="src\test_c\item\c_file_test.cpp" />
+    <ClCompile Include="src\test_c\item\c_macro_test.cpp" />
     <ClCompile Include="src\test_c\item\c_memset_test.cpp" />
     <ClCompile Include="src\test_c\item\c_operator_ternary_test.cpp" />
     <ClCompile Include="src\test_c\item\c_printf_test.cpp" />
@@ -239,6 +240,7 @@
     <ClInclude Include="src\test_c\item\c_array_test.h" />
     <ClInclude Include="src\test_c\item\c_bit_operation_test.h" />
     <ClInclude Include="src\test_c\item\c_file_test.h" />
+    <ClInclude Include="src\test_c\item\c_macro_test.h" />
     <ClInclude Include="src\test_c\item\c_memset_test.h" />
     <ClInclude Include="src\test_c\item\c_operator_ternary_test.h" />
     <ClInclude Include="src\test_c\item\c_printf_test.h" />

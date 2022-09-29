@@ -6,6 +6,7 @@
 #include "item/c_array_test.h"
 #include "item/c_operator_ternary_test.h"
 #include "item/c_printf_test.h"
+#include "item/c_macro_test.h"
 #include "item/c_memset_test.h"
 #include "item/c_sizeof_test.h"
 
@@ -35,6 +36,7 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 
 		ret->AddItem( 'q', c_sizeof_test::Basic::GetInstance() );
 		ret->AddItem( 'w', c_memset_test::Basic::GetInstance() );
+		ret->AddItem( 'e', c_macro_test::ToString::GetInstance() );
 
 
 		ret->AddLineFeed();
