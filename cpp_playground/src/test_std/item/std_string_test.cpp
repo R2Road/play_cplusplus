@@ -81,7 +81,7 @@ namespace std_string_test
 		std::size_t find_pos = 0u;
 
 		int i = 0;
-		while( true )
+		do
 		{
 			find_pos = str.find( key_string, pivot_pos );
 			if( std::string::npos == find_pos )
@@ -92,14 +92,36 @@ namespace std_string_test
 				break;
 			}
 
-			std::cout << r2cm::tab << i << "[" << pivot_pos << " ~ " << find_pos << "]" << " > ";
-			std::cout.write( &str[pivot_pos], find_pos - pivot_pos );
-			std::cout << r2cm::linefeed;
+			//
+			// \n
+			//
+			if( pivot_pos == find_pos )
+			{
+				std::cout << r2cm::tab << i << "[" << pivot_pos << " ~ " << find_pos << "]" << " > ";
+				std::cout << "\\n";
+				std::cout << r2cm::linefeed;
+			}
+
+			//
+			// string
+			//
+			if( pivot_pos != find_pos )
+			{
+				find_pos = find_pos - 1;
+
+				std::cout << r2cm::tab << i << "[" << pivot_pos << " ~ " << find_pos << "]" << " > ";
+				std::cout.write( &str[pivot_pos], find_pos - pivot_pos + 1 );
+				std::cout << r2cm::linefeed;
+			}
 
 			pivot_pos = find_pos + key_string.size();
+			if( str.size() <= pivot_pos )
+			{
+				break;
+			}
 
 			++i;
-		}
+		} while( str.size() > pivot_pos );
 	}
 	r2cm::iItem::TitleFunctionT Find_And_Split_1::GetTitleFunction() const
 	{
@@ -161,7 +183,7 @@ namespace std_string_test
 
 			std::cout << r2cm::split;
 
-			PROCESS_MAIN( StringSplit( "\n" "\n" "012" "\n" "678" "\n" "\n" "efg" "\n" "\n" "\n" "vwx" "\n", key_string ) );
+			PROCESS_MAIN( StringSplit( "\n" "\n" "1" "\n" "23" "\n" "\n" "efg" "\n" " " "\n" "vwx" "\n", key_string ) );
 
 			std::cout << r2cm::split;
 
