@@ -84,6 +84,10 @@ namespace std_string_test
 		do
 		{
 			find_pos = str.find( key_string, pivot_pos );
+
+			//
+			// \n 을 찾지 못했다.
+			//
 			if( std::string::npos == find_pos )
 			{
 				std::cout << r2cm::tab << i << "[" << pivot_pos << " ~ " << str.size() - 1u << "]" << " > ";
@@ -93,7 +97,7 @@ namespace std_string_test
 			}
 
 			//
-			// \n
+			// \n 을 찾았는데 pivot 과 find 의 위치가 같다.
 			//
 			if( pivot_pos == find_pos )
 			{
@@ -103,7 +107,7 @@ namespace std_string_test
 			}
 
 			//
-			// string
+			// \n 을 찾았다.
 			//
 			if( pivot_pos != find_pos )
 			{
