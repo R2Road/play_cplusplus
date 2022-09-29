@@ -93,13 +93,16 @@ namespace std_string_test
 				std::cout << r2cm::tab << i << "[" << pivot_pos << " ~ " << str.size() - 1u << "]" << " > ";
 				std::cout << ( &str[pivot_pos] );
 				std::cout << r2cm::linefeed;
+
+				// find_pos 가 npos 라면 pivot_pos 의 정상 갱신이 불가능 하다.
+				// break 로 여기서 loop를 끝내준다.
 				break;
 			}
 
 			//
 			// \n 을 찾았는데 pivot 과 find 의 위치가 같다.
 			//
-			if( pivot_pos == find_pos )
+			else if( pivot_pos == find_pos )
 			{
 				std::cout << r2cm::tab << i << "[" << pivot_pos << " ~ " << find_pos << "]" << " > ";
 				std::cout << "\\n";
@@ -109,7 +112,7 @@ namespace std_string_test
 			//
 			// \n 을 찾았다.
 			//
-			if( pivot_pos != find_pos )
+			else if( pivot_pos != find_pos )
 			{
 				find_pos = find_pos - 1;
 
