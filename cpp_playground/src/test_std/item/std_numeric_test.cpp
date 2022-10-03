@@ -4,6 +4,7 @@
 #include <numeric>
 #include <string>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace std_numeric_test
@@ -264,26 +265,22 @@ namespace std_numeric_test
 		{
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( std::list<int> temp_list( 10, 0 ) );
+
+			std::cout << r2cm::split;
+
 			{
-				std::list<int> temp_list( 10, 0 );
+				PROCESS_MAIN( std::iota( temp_list.begin(), temp_list.end(), 11 ) ); // fill : 0, 1, 2, 3, 4 ......
+			}
 
-				std::cout << r2cm::tab << "+ Variable" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "std::list<int> temp_list( 10, 0 );" << r2cm::linefeed;
-				std::cout << r2cm::linefeed;
+			std::cout << r2cm::split;
 
-				std::iota( temp_list.begin(), temp_list.end(), 11 ); // fill : 0, 1, 2, 3, 4 ......
-
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "std::iota( temp_list.begin(), temp_list.end(), 11 )" << r2cm::linefeed;
-				std::cout << r2cm::linefeed;
-
-				std::cout << r2cm::tab << "+ Result" << r2cm::linefeed;
-				std::cout << r2cm::tab2;
+			{
+				std::cout << r2cm::tab << "+ View" << r2cm::linefeed2;
 				for( auto i : temp_list )
 				{
-					std::cout << i << r2cm::tab;
+					OUTPUT_VALUE( i );
 				}
-				std::cout << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
