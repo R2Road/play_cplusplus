@@ -43,6 +43,7 @@ namespace new_test
 				std::cout << r2cm::linefeed;
 
 				OUTPUT_VALUE( *i );
+				OUTPUT_BINARY( *i );
 
 				std::cout << r2cm::linefeed;
 
@@ -58,6 +59,7 @@ namespace new_test
 				std::cout << r2cm::linefeed;
 
 				OUTPUT_VALUE( *i );
+				OUTPUT_BINARY( *i );
 
 				std::cout << r2cm::linefeed;
 
