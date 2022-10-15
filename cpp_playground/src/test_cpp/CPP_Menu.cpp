@@ -11,7 +11,6 @@
 #include "EnumMenu.h"
 #include "LambdaMenu.h"
 #include "NewMenu.h"
-#include "TemplateMenu.h"
 
 #include "ClassMenu.h"
 #include "CharMenu.h"
@@ -29,9 +28,8 @@ r2cm::MenuUp CPP_Menu::Create( r2cm::Director& director )
 
 
 		ret->AddMenu<CharMenu>( '6' );
-		ret->AddMenu<TemplateMenu>( '7' );
-		ret->AddMenu<AlignMenu>( '8' );
-		ret->AddMenu<EnumMenu>( '9' );
+		ret->AddMenu<AlignMenu>( '7' );
+		ret->AddMenu<EnumMenu>( '8' );
 
 
 		ret->AddLineFeed();

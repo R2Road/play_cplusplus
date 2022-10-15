@@ -64,6 +64,12 @@
     <Filter Include="external\r2cm">
       <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test_template">
+      <UniqueIdentifier>{31104b3b-edc7-4367-b673-b82d2f7ad11f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test_template\item">
+      <UniqueIdentifier>{8417e009-0b74-46fc-a4f1-d8ae80ed09e9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -148,21 +154,6 @@
     <ClCompile Include="src\test_cpp\item\structured_binding_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\template_meta_programming_01_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\template_meta_programming_02_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\template_meta_programming_03_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\template_practice_part_01_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\variadic_template_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\RootMenu.cpp" />
     <ClCompile Include="src\test_windows\item\windows_sound_test.cpp">
       <Filter>test_windows\item</Filter>
@@ -229,9 +220,6 @@
     </ClCompile>
     <ClCompile Include="src\test_cpp\item\using_test.cpp">
       <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\TemplateMenu.cpp">
-      <Filter>test_cpp</Filter>
     </ClCompile>
     <ClCompile Include="src\test_std\STDContainerMenu.cpp">
       <Filter>test_std</Filter>
@@ -307,15 +295,6 @@
     </ClCompile>
     <ClCompile Include="src\test_std\item\std_vector_test.cpp">
       <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\TemplateMetaProgrammingMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\TemplatePracticeMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\VariadicTemplateMenu.cpp">
-      <Filter>test_cpp</Filter>
     </ClCompile>
     <ClCompile Include="src\test_algorithm\AlgorithmHelper.cpp">
       <Filter>test_algorithm</Filter>
@@ -488,6 +467,33 @@
     <ClCompile Include="src\test_c\item\c_macro_test.cpp">
       <Filter>test_c\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_template\item\template_meta_programming_01_test.cpp">
+      <Filter>test_template\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_template\item\template_meta_programming_02_test.cpp">
+      <Filter>test_template\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_template\item\template_meta_programming_03_test.cpp">
+      <Filter>test_template\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_template\item\template_practice_part_01_test.cpp">
+      <Filter>test_template\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_template\item\variadic_template_test.cpp">
+      <Filter>test_template\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_template\TemplateMenu.cpp">
+      <Filter>test_template</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_template\TemplateMetaProgrammingMenu.cpp">
+      <Filter>test_template</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_template\TemplatePracticeMenu.cpp">
+      <Filter>test_template</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_template\VariadicTemplateMenu.cpp">
+      <Filter>test_template</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -574,21 +580,6 @@
     <ClInclude Include="src\test_cpp\item\structured_binding_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\template_meta_programming_01_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\template_meta_programming_02_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\template_meta_programming_03_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\template_practice_part_01_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\variadic_template_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\RootMenu.h" />
     <ClInclude Include="src\test_windows\item\windows_sound_test.h">
       <Filter>test_windows\item</Filter>
@@ -655,9 +646,6 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\using_test.h">
       <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\TemplateMenu.h">
-      <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_std\STDContainerMenu.h">
       <Filter>test_std</Filter>
@@ -733,15 +721,6 @@
     </ClInclude>
     <ClInclude Include="src\test_std\item\std_vector_test.h">
       <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\TemplateMetaProgrammingMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\TemplatePracticeMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\VariadicTemplateMenu.h">
-      <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_algorithm\AlgorithmHelper.h">
       <Filter>test_algorithm</Filter>
@@ -940,6 +919,33 @@
     </ClInclude>
     <ClInclude Include="src\test_c\item\c_macro_test.h">
       <Filter>test_c\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_template\item\template_meta_programming_01_test.h">
+      <Filter>test_template\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_template\item\template_meta_programming_02_test.h">
+      <Filter>test_template\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_template\item\template_meta_programming_03_test.h">
+      <Filter>test_template\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_template\item\template_practice_part_01_test.h">
+      <Filter>test_template\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_template\item\variadic_template_test.h">
+      <Filter>test_template\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_template\VariadicTemplateMenu.h">
+      <Filter>test_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_template\TemplateMenu.h">
+      <Filter>test_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_template\TemplateMetaProgrammingMenu.h">
+      <Filter>test_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_template\TemplatePracticeMenu.h">
+      <Filter>test_template</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

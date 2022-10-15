@@ -12,6 +12,7 @@
 #include "test_hobby/HobbyMenu.h"
 #include "test_performance/PerformanceMenu.h"
 #include "test_std/STDMenu.h"
+#include "test_template/TemplateMenu.h"
 #include "test_various/ETCMenu.h"
 #include "test_various/FileMenu.h"
 #include "test_various/MathMenu.h"
@@ -50,10 +51,11 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		ret->AddMenu<C_Menu>( 'q' );
 		ret->AddMenu<CPP_Menu>( 'w' );
 		ret->AddMenu<STDMenu>( 'e' );
-		ret->AddMenu<FileMenu>( 'r' );
-		ret->AddMenu<TimeMenu>( 't' );
-		ret->AddMenu<RandomMenu>( 'y' );
-		ret->AddMenu<DebugMenu>( 'u' );
+		ret->AddMenu<TemplateMenu>( 'r' );
+		ret->AddMenu<FileMenu>( 't' );
+		ret->AddMenu<TimeMenu>( 'y' );
+		ret->AddMenu<RandomMenu>( 'u' );
+		ret->AddMenu<DebugMenu>( 'i' );
 
 
 

@@ -7,7 +7,7 @@
 #include "TemplateMetaProgrammingMenu.h"
 #include "TemplatePracticeMenu.h"
 
-#include "CPP_Menu.h"
+#include "RootMenu.h"
 
 r2cm::MenuUp TemplateMenu::Create( r2cm::Director& director )
 {
@@ -22,7 +22,7 @@ r2cm::MenuUp TemplateMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<CPP_Menu>( 27 );
+		ret->AddMenu<RootMenu>( 27 );
 	}
 
 	return ret;

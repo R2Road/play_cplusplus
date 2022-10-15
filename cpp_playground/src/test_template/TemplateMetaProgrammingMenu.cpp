@@ -3,9 +3,9 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "test_cpp/item/template_meta_programming_01_test.h"
-#include "test_cpp/item/template_meta_programming_02_test.h"
-#include "test_cpp/item/template_meta_programming_03_test.h"
+#include "item/template_meta_programming_01_test.h"
+#include "item/template_meta_programming_02_test.h"
+#include "item/template_meta_programming_03_test.h"
 
 #include "TemplateMenu.h"
 
