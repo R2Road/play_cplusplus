@@ -3,9 +3,9 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "VariadicTemplateMenu.h"
 #include "TemplateMetaProgrammingMenu.h"
 #include "TemplatePracticeMenu.h"
+#include "VariadicTemplateMenu.h"
 
 #include "RootMenu.h"
 
