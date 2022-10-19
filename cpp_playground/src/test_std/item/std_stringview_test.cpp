@@ -3,6 +3,7 @@
 #include <string>
 #include <string_view>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 using namespace std::string_view_literals; // for sv
@@ -20,6 +21,20 @@ namespace std_stringview_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::string_view view );
+				EXPECT_TRUE( view.empty() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::string_view view = "" );
+				EXPECT_TRUE( view.empty() );
+			}
+
 			std::cout << r2cm::split;
 
 			{
