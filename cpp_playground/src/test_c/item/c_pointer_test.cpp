@@ -204,4 +204,34 @@ namespace c_pointer_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT CharacterPointer_Length_0::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Character Pointer : Length 0";
+		};
+	}
+	r2cm::iItem::DoFunctionT CharacterPointer_Length_0::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const char* empty_string = "" );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 0, strlen( empty_string ) );
+				EXPECT_NE( nullptr, empty_string );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

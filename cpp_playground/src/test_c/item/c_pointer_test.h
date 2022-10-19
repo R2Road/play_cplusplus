@@ -32,4 +32,13 @@ namespace c_pointer_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+
+
+	class CharacterPointer_Length_0 : public r2cm::iItem, public r2cm::SingleTon<CharacterPointer_Length_0>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }

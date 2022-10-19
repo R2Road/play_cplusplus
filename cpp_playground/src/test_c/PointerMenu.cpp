@@ -18,6 +18,15 @@ r2cm::MenuUp PointerMenu::Create( r2cm::Director& director )
 		ret->AddItem( '4', c_pointer_test::ConstPointer::GetInstance() );
 
 
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'q', c_pointer_test::CharacterPointer_Length_0::GetInstance() );
+
+
+
 		ret->AddSplit();
 
 
