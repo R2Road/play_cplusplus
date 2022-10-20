@@ -41,7 +41,6 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( '7', std_stringview_test::Basic::GetInstance() );
 		ret->AddItem( '8', std_tuple_test::Basic::GetInstance() );
 		ret->AddItem( '9', std_variant_test::Basic::GetInstance() );
 
@@ -52,6 +51,8 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 
 
 		ret->AddMenu<STDFunctionMenu>( 'q' );
+		ret->AddItem( 'w', std_stringview_test::Basic::GetInstance() );
+		ret->AddItem( 'e', std_stringview_test::Literal_Operator_sv::GetInstance() );
 
 
 

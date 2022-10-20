@@ -11,4 +11,11 @@ namespace std_stringview_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Literal_Operator_sv : public r2cm::iItem, public r2cm::SingleTon<Literal_Operator_sv>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
