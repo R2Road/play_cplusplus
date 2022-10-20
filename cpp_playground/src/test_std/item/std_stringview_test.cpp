@@ -135,9 +135,35 @@ namespace std_stringview_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto view = "String View Test_7"sv );
-				DECLARATION_MAIN( auto view_2 = view.substr( 12u, 6u ) );
+				DECLARATION_MAIN( auto view_1 = "String View Test_7"sv );
+
+				std::cout << r2cm::linefeed2;
+
+				DECLARATION_MAIN( auto view_2 = view_1.substr( 12u, 16u ) );
 				OUTPUT_VALUE( view_2 );
+
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "+ 복사를 요청한 구간의 끝이 원본 문자열의 최대 길이를 넘어서도 문제 없다." << r2cm::linefeed;
+				DECLARATION_MAIN( auto view_22 = view_1.substr( 12u, 20u ) );
+				OUTPUT_VALUE( view_22 );
+
+				std::cout << r2cm::linefeed2;
+
+				std::cout << r2cm::tab << "+ string_view 의 size 를 offset 으로 지정해도 문제가 없다. 왜???" << r2cm::linefeed;
+				std::cout << r2cm::tab << "- offset 검사 코드를 보면 if (_Mysize < _Off) 조건으로 되어있다. 왜???" << r2cm::linefeed;
+				DECLARATION_MAIN( auto view_3 = view_2.substr( view_2.size(), 6u ) );
+				OUTPUT_VALUE( view_3 );
+
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "+ string_view 에 할당된 범위를 넘어선 지역에 sub_str 을 시도하면 문제가 생긴다." << r2cm::linefeed;
+				OUTPUT_CODE( auto view_33 = view_2.substr( view_2.size() + 1, 6u ) );
+
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "+ 복사를 요청한 구간의 시작점이 원본 문자열의 범위를 넘어서면 문제가 생긴다." << r2cm::linefeed;
+				OUTPUT_CODE( auto view_4 = view_1.substr( view_1.size() + 1, 6u ) );
 			}
 
 			std::cout << r2cm::split;
