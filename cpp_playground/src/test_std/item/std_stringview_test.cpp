@@ -119,37 +119,25 @@ namespace std_stringview_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ auto view = \"String View Test_5\"sv;" << r2cm::linefeed2;
-				auto view = "String View Test_5"sv;
-
-				std::cout << r2cm::tab2 << "- view.remove_prefix( 3u );" << r2cm::linefeed;
-				view.remove_prefix( 3u );
-
-				std::cout << r2cm::tab3 << "- Print : " << view << r2cm::linefeed;
+				DECLARATION_MAIN( auto view = "String View Test_5"sv );
+				PROCESS_MAIN( view.remove_prefix( 3u ) );
+				OUTPUT_VALUE( view );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ auto view = \"String View Test_6\"sv;" << r2cm::linefeed2;
-				auto view = "String View Test_6"sv;
-
-				std::cout << r2cm::tab2 << "- view.remove_suffix( 4u );" << r2cm::linefeed;
-				view.remove_suffix( 4u );
-
-				std::cout << r2cm::tab3 << "- Print : " << view << r2cm::linefeed;
+				DECLARATION_MAIN( auto view = "String View Test_6"sv );
+				PROCESS_MAIN( view.remove_suffix( 4u ) );
+				OUTPUT_VALUE( view );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ auto view = \"String View Test_7\"sv;" << r2cm::linefeed;
-				auto view = "String View Test_7"sv;
-
-				std::cout << r2cm::tab << "+ auto view2 = view.substr( 7u, 4u );" << r2cm::linefeed;
-				auto view_2 = view.substr( 12u, 6u );
-
-				std::cout << r2cm::tab2 << "- Print : " << view_2 << r2cm::linefeed;
+				DECLARATION_MAIN( auto view = "String View Test_7"sv );
+				DECLARATION_MAIN( auto view_2 = view.substr( 12u, 6u ) );
+				OUTPUT_VALUE( view_2 );
 			}
 
 			std::cout << r2cm::split;
