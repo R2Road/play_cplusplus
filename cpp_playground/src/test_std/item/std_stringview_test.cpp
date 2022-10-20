@@ -24,48 +24,42 @@ namespace std_stringview_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( std::string_view view );
+				DECLARATION_MAIN( const std::string_view view );
 				EXPECT_TRUE( view.empty() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( std::string_view view = "" );
+				DECLARATION_MAIN( const std::string_view view = "" );
 				EXPECT_TRUE( view.empty() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ std::string_view view = \"String View Test_1\";" << r2cm::linefeed2;
-				std::string_view view = "String View Test_1";
-
-				std::cout << r2cm::tab2 << "- Print : " << view << r2cm::linefeed;
+				DECLARATION_MAIN( const std::string_view view = "String View Test_1" );
+				OUTPUT_VALUE( view );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ std::string str = \"String View Test_2\";" << r2cm::linefeed;
-				std::cout << r2cm::tab << "+ std::string_view view = str;" << r2cm::linefeed2;
-				std::string str = "String View Test_2";
-				std::string_view view = str;
-
-				std::cout << r2cm::tab2 << "- Print : " << view << r2cm::linefeed;
+				DECLARATION_MAIN( const std::string str = "String View Test_2" );
+				DECLARATION_MAIN( const std::string_view view = str );
+				OUTPUT_VALUE( view );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ std::string_view view = \"test 3\";" << r2cm::linefeed;
-				std::string_view view = "test 3";
+				DECLARATION_MAIN( const std::string_view view = "test 3" );
 
-				std::cout << r2cm::tab2 << "- Enable Ranged For" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "- for( const auto c : view )" << r2cm::linefeed;
+				std::cout << r2cm::tab << "- Enable Ranged For" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "- for( const auto c : view )" << r2cm::linefeed;
 				for( const auto c : view )
 				{
-					std::cout << r2cm::tab4 << c << r2cm::linefeed;
+					std::cout << r2cm::tab3 << c << r2cm::linefeed;
 				}
 			}
 
