@@ -65,6 +65,59 @@ namespace std_stringview_test
 
 			std::cout << r2cm::split;
 
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Literal_Operator_sv::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "StringView : Literal Operator \"\"sv";
+		};
+	}
+	r2cm::iItem::DoFunctionT Literal_Operator_sv::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ std::string_view 는 특별한 literal operator 를 가지고 있다." << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "- constexpr string_view operator \"\" sv(const char *_Str, size_t _Len) noexcept" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "- \"\" sv 는 constexpr string_view 를 만들어준다." << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto view = "String View Test_4"sv );
+				OUTPUT_VALUE( view );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Utility::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "StringView : Utility";
+		};
+	}
+	r2cm::iItem::DoFunctionT Utility::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
 			{
 				std::cout << r2cm::tab << "+ auto view = \"String View Test_5\"sv;" << r2cm::linefeed2;
 				auto view = "String View Test_5"sv;
@@ -97,40 +150,6 @@ namespace std_stringview_test
 				auto view_2 = view.substr( 12u, 6u );
 
 				std::cout << r2cm::tab2 << "- Print : " << view_2 << r2cm::linefeed;
-			}
-
-			std::cout << r2cm::split;
-
-			return r2cm::eItemLeaveAction::Pause;
-		};
-	}
-
-
-
-	r2cm::iItem::TitleFunctionT Literal_Operator_sv::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "StringView : Literal Operator \"\"sv";
-		};
-	}
-	r2cm::iItem::DoFunctionT Literal_Operator_sv::GetDoFunction()
-	{
-		return []()->r2cm::eItemLeaveAction
-		{
-			std::cout << r2cm::split;
-
-			{
-				std::cout << r2cm::tab << "+ std::string_view 는 특별한 literal operator 를 가지고 있다." << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- constexpr string_view operator \"\" sv(const char *_Str, size_t _Len) noexcept" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- \"\" sv 는 constexpr string_view 를 만들어준다." << r2cm::linefeed;
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				DECLARATION_MAIN( auto view = "String View Test_4"sv );
-				OUTPUT_VALUE( view );
 			}
 
 			std::cout << r2cm::split;
