@@ -22,6 +22,7 @@
 #include "STDNumericMenu.h"
 #include "STDOptionalMenu.h"
 #include "STDStringMenu.h"
+#include "STDStringViewMenu.h"
 #include "STDThreadMenu.h"
 
 r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
@@ -51,9 +52,7 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 
 
 		ret->AddMenu<STDFunctionMenu>( 'q' );
-		ret->AddItem( 'w', std_stringview_test::Basic::GetInstance() );
-		ret->AddItem( 'e', std_stringview_test::Literal_Operator_sv::GetInstance() );
-		ret->AddItem( 'r', std_stringview_test::Utility::GetInstance() );
+		ret->AddMenu<STDStringViewMenu>( 'w' );
 
 
 

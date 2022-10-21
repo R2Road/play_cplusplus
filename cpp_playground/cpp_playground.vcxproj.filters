@@ -494,6 +494,9 @@
     <ClCompile Include="src\test_template\VariadicTemplateMenu.cpp">
       <Filter>test_template</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_std\STDStringViewMenu.cpp">
+      <Filter>test_std</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -946,6 +949,9 @@
     </ClInclude>
     <ClInclude Include="src\test_template\TemplatePracticeMenu.h">
       <Filter>test_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\STDStringViewMenu.h">
+      <Filter>test_std</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

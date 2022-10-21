@@ -130,6 +130,7 @@
     <ClCompile Include="src\test_std\STDNumericMenu.cpp" />
     <ClCompile Include="src\test_std\STDOptionalMenu.cpp" />
     <ClCompile Include="src\test_std\STDStringMenu.cpp" />
+    <ClCompile Include="src\test_std\STDStringViewMenu.cpp" />
     <ClCompile Include="src\test_std\STDThreadMenu.cpp" />
     <ClCompile Include="src\test_template\item\template_meta_programming_01_test.cpp" />
     <ClCompile Include="src\test_template\item\template_meta_programming_02_test.cpp" />
@@ -283,6 +284,7 @@
     <ClInclude Include="src\test_std\STDNumericMenu.h" />
     <ClInclude Include="src\test_std\STDOptionalMenu.h" />
     <ClInclude Include="src\test_std\STDStringMenu.h" />
+    <ClInclude Include="src\test_std\STDStringViewMenu.h" />
     <ClInclude Include="src\test_std\STDThreadMenu.h" />
     <ClInclude Include="src\test_template\item\template_meta_programming_01_test.h" />
     <ClInclude Include="src\test_template\item\template_meta_programming_02_test.h" />
