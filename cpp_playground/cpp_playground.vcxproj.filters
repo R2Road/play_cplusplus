@@ -281,9 +281,6 @@
     <ClCompile Include="src\test_std\item\std_regex_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_std\item\std_stringview_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_std\item\std_thread_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
@@ -497,6 +494,9 @@
     <ClCompile Include="src\test_std\STDStringViewMenu.cpp">
       <Filter>test_std</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_std\item\std_string_view_test.cpp">
+      <Filter>test_std\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -708,9 +708,6 @@
       <Filter>test_std\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_std\item\std_regex_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_stringview_test.h">
       <Filter>test_std\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_std\item\std_thread_test.h">
@@ -952,6 +949,9 @@
     </ClInclude>
     <ClInclude Include="src\test_std\STDStringViewMenu.h">
       <Filter>test_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\item\std_string_view_test.h">
+      <Filter>test_std\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

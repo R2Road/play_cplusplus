@@ -7,7 +7,6 @@
 #include "test_std/item/std_cout_test.h"
 #include "test_std/item/std_regex_test.h"
 #include "test_std/item/std_string_test.h"
-#include "test_std/item/std_stringview_test.h"
 #include "test_std/item/std_tuple_test.h"
 #include "test_std/item/std_variant_test.h"
 

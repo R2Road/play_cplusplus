@@ -1,4 +1,4 @@
-#include "std_stringview_test.h"
+#include "std_string_view_test.h"
 
 #include <string>
 #include <string_view>
@@ -8,7 +8,7 @@
 
 using namespace std::string_view_literals; // for sv
 
-namespace std_stringview_test
+namespace std_string_view_test
 {
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
