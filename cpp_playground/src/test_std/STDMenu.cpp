@@ -34,6 +34,7 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 		ret->AddMenu<STDAlignMenu>( '3' );
 		ret->AddMenu<STDOptionalMenu>( '4' );
 		ret->AddMenu<STDStringMenu>( '5' );
+		ret->AddMenu<STDStringViewMenu>( '6' );
 
 
 
@@ -51,7 +52,6 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 
 
 		ret->AddMenu<STDFunctionMenu>( 'q' );
-		ret->AddMenu<STDStringViewMenu>( 'w' );
 
 
 
