@@ -19,6 +19,13 @@ namespace std_string_view_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class Remove : public r2cm::iItem, public r2cm::SingleTon<Remove>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Utility : public r2cm::iItem, public r2cm::SingleTon<Utility>
 	{
 	public:

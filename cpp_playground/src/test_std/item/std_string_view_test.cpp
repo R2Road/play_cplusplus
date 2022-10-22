@@ -105,14 +105,14 @@ namespace std_string_view_test
 
 
 
-	r2cm::iItem::TitleFunctionT Utility::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Remove::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "StringView : Utility";
+			return "StringView : Remove";
 		};
 	}
-	r2cm::iItem::DoFunctionT Utility::GetDoFunction()
+	r2cm::iItem::DoFunctionT Remove::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -132,6 +132,25 @@ namespace std_string_view_test
 				OUTPUT_VALUE( view );
 			}
 
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Utility::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "StringView : Utility";
+		};
+	}
+	r2cm::iItem::DoFunctionT Utility::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
 			std::cout << r2cm::split;
 
 			{
