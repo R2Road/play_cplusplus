@@ -118,8 +118,12 @@ namespace std_string_view_test
 		{
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( auto view = "String View Test_12345"sv );
+			OUTPUT_VALUE( view );
+
+			std::cout << r2cm::split;
+
 			{
-				DECLARATION_MAIN( auto view = "String View Test_5"sv );
 				PROCESS_MAIN( view.remove_prefix( 3u ) );
 				OUTPUT_VALUE( view );
 			}
@@ -127,7 +131,6 @@ namespace std_string_view_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto view = "String View Test_6"sv );
 				PROCESS_MAIN( view.remove_suffix( 4u ) );
 				OUTPUT_VALUE( view );
 			}
