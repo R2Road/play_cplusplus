@@ -15,7 +15,7 @@ r2cm::MenuUp STDStringViewMenu::Create( r2cm::Director& director )
 		ret->AddItem( '1', std_string_view_test::Basic::GetInstance() );
 		ret->AddItem( '2', std_string_view_test::Literal_Operator_sv::GetInstance() );
 		ret->AddItem( '3', std_string_view_test::Remove::GetInstance() );
-		ret->AddItem( '4', std_string_view_test::Utility::GetInstance() );
+		ret->AddItem( '4', std_string_view_test::SubStr::GetInstance() );
 
 
 

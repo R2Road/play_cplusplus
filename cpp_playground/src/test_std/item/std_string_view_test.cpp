@@ -143,14 +143,14 @@ namespace std_string_view_test
 
 
 
-	r2cm::iItem::TitleFunctionT Utility::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT SubStr::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "StringView : Utility";
+			return "StringView : SubStr";
 		};
 	}
-	r2cm::iItem::DoFunctionT Utility::GetDoFunction()
+	r2cm::iItem::DoFunctionT SubStr::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

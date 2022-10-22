@@ -26,7 +26,7 @@ namespace std_string_view_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Utility : public r2cm::iItem, public r2cm::SingleTon<Utility>
+	class SubStr : public r2cm::iItem, public r2cm::SingleTon<SubStr>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
