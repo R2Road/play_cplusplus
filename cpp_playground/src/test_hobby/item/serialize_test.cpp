@@ -60,9 +60,7 @@ namespace serialize_test
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( struct Dummy { int64_t a = 0; int64_t b = 0; } );
-			DECLARATION_MAIN( Dummy dummy_1 );
-			PROCESS_MAIN( dummy_1.a = 13 );
-			PROCESS_MAIN( dummy_1.b = -7 );
+			DECLARATION_MAIN( Dummy dummy_1; dummy_1.a = 13; dummy_1.b = -7; );
 			DECLARATION_MAIN( Dummy dummy_2 );
 
 			std::cout << r2cm::split;
