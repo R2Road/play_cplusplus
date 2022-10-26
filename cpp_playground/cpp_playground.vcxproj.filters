@@ -497,6 +497,9 @@
     <ClCompile Include="src\test_std\item\std_string_view_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_hobby\item\serialize_test.cpp">
+      <Filter>test_hobby\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -952,6 +955,9 @@
     </ClInclude>
     <ClInclude Include="src\test_std\item\std_string_view_test.h">
       <Filter>test_std\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\item\serialize_test.h">
+      <Filter>test_hobby\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
