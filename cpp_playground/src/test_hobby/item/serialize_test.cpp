@@ -1,5 +1,6 @@
 #include "serialize_test.h"
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace serialize_test
@@ -17,7 +18,13 @@ namespace serialize_test
 		{
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( struct { int64_t a; int64_t b; } dummy );
+
+			std::cout << r2cm::split;
+
 			{
+				DECLARATION_MAIN( const auto size = sizeof( dummy ) );
+				OUTPUT_VALUE( size );
 			}
 
 			std::cout << r2cm::split;

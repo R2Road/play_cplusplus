@@ -5,6 +5,7 @@
 
 #include "item/fsm_v1_test.h"
 #include "item/infinite_number_test.h"
+#include "item/serialize_test.h"
 
 #include "ListBasedOnArrayMenu.h"
 #include "MemoryPoolMenu.h"
@@ -17,14 +18,15 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddMenu<MemoryPoolMenu>( '1' );
+		ret->AddItem( '1', serialize_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
 
 
-		ret->AddItem( 'q', infinite_number_test::Basic::GetInstance() );
-		ret->AddItem( 'w', fsm_v1_test::Basic::GetInstance() );
+		ret->AddMenu<MemoryPoolMenu>( 'q' );
+		ret->AddItem( 'w', infinite_number_test::Basic::GetInstance() );
+		ret->AddItem( 'e', fsm_v1_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
