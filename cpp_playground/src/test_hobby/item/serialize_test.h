@@ -11,4 +11,11 @@ namespace serialize_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Copy : public r2cm::iItem, public r2cm::SingleTon<Copy>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }

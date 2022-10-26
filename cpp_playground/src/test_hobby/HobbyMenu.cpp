@@ -19,6 +19,7 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', serialize_test::Basic::GetInstance() );
+		ret->AddItem( '2', serialize_test::Copy::GetInstance() );
 
 
 		ret->AddSplit();
