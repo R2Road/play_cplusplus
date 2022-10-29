@@ -21,8 +21,6 @@ namespace c_printf_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Show String : Use printf" << r2cm::linefeed2;
-
 				PROCESS_MAIN( printf( "1111111" "2222222" "3333333" "   %d" "\n", 456789 ) );
 			}
 
