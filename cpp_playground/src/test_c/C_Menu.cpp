@@ -9,6 +9,7 @@
 #include "item/c_macro_test.h"
 #include "item/c_memset_test.h"
 #include "item/c_sizeof_test.h"
+#include "item/c_struct_test.h"
 
 #include "BitOperationMenu.h"
 #include "PointerMenu.h"
@@ -22,6 +23,7 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 		ret->AddItem( '1', c_array_test::Init::GetInstance() );
 		ret->AddItem( '2', c_operator_ternary_test::Basic::GetInstance() );
 		ret->AddItem( '3', c_operator_ternary_test::Comma::GetInstance() );
+		ret->AddItem( '4', c_struct_test::Array_Size_0::GetInstance() );
 
 
 		ret->AddLineFeed();
