@@ -1,5 +1,6 @@
 #include "struct_member_alignment_test.h"
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace struct_member_alignment_test
@@ -34,7 +35,7 @@ namespace struct_member_alignment_test
 				std::cout << r2cm::tab2 << "int i;" << r2cm::linefeed;
 				std::cout << r2cm::tab << "} test_struct;" << r2cm::linefeed2;
 
-				std::cout << r2cm::tab2 << "- sizeof : " << sizeof( test_struct ) << r2cm::linefeed;
+				OUTPUT_VALUE( sizeof( test_struct ) );
 			}
 
 			std::cout << r2cm::split;
@@ -50,7 +51,7 @@ namespace struct_member_alignment_test
 				std::cout << r2cm::tab2 << "long long ll;" << r2cm::linefeed;
 				std::cout << r2cm::tab << "} test_struct;" << r2cm::linefeed2;
 
-				std::cout << r2cm::tab2 << "- sizeof : " << sizeof( test_struct ) << r2cm::linefeed;
+				OUTPUT_VALUE( sizeof( test_struct ) );
 			}
 
 			std::cout << r2cm::split;
@@ -68,7 +69,7 @@ namespace struct_member_alignment_test
 				std::cout << r2cm::tab2 << "char c;" << r2cm::linefeed;
 				std::cout << r2cm::tab << "} test_struct;" << r2cm::linefeed2;
 
-				std::cout << r2cm::tab2 << sizeof( test_struct ) << r2cm::linefeed;
+				OUTPUT_VALUE( sizeof( test_struct ) );
 			}
 
 			std::cout << r2cm::split;
@@ -91,7 +92,7 @@ namespace struct_member_alignment_test
 				std::cout << r2cm::tab2 << "char c2;" << r2cm::linefeed;
 				std::cout << r2cm::tab << "} test_struct;" << r2cm::linefeed2;
 
-				std::cout << r2cm::tab2 << sizeof( test_struct ) << r2cm::linefeed;
+				OUTPUT_VALUE( sizeof( test_struct ) );
 			}
 #pragma pack( pop )
 
