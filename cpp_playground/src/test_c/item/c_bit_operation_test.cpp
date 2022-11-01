@@ -440,19 +440,32 @@ namespace c_bit_operation_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( const char c_1 = std::numeric_limits<char>::max() );
-				PrintBinary( c_1, 8 );
+				DECLARATION_MAIN( const char max_c = std::numeric_limits<char>::max() );
+				PrintBinary( max_c, 8 );
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( int i_1 = c_1 );
+				DECLARATION_MAIN( const int i_1 = max_c );
 				PrintBinary( i_1, 32 );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( i_1 += c_1 );
-				PrintBinary( i_1, 32 );
+				DECLARATION_MAIN( const int i_2 = max_c );
+				PrintBinary( i_2, 32 );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const int i_3 = i_1 + i_2 );
+				PrintBinary( i_3, 32 );
 			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ 최상위 1 bit 를 비워둘 수 있다면 최대 값 끼리 더해도 문제 없다." << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
