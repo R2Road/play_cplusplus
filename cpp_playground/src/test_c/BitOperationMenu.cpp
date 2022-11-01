@@ -33,11 +33,18 @@ r2cm::MenuUp BitOperationMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', c_bit_operation_test::ETC_1::GetInstance() );
-		ret->AddItem( 'w', c_bit_operation_test::Plus_1::GetInstance() );
-		ret->AddItem( 'e', c_bit_operation_test::Plus_2::GetInstance() );
-		ret->AddItem( 'r', c_bit_operation_test::Minus_1::GetInstance() );
-		ret->AddItem( 't', c_bit_operation_test::Minus_2::GetInstance() );
+		ret->AddItem( 'q', c_bit_operation_test::Plus_1::GetInstance() );
+		ret->AddItem( 'w', c_bit_operation_test::Plus_2::GetInstance() );
+		ret->AddItem( 'e', c_bit_operation_test::Minus_1::GetInstance() );
+		ret->AddItem( 'r', c_bit_operation_test::Minus_2::GetInstance() );
+
+
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'a', c_bit_operation_test::ETC_1::GetInstance() );
 
 
 
