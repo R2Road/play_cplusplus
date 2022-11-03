@@ -137,7 +137,7 @@ namespace performance_1_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ For : Int Sp : ++" << attempt_limit << r2cm::linefeed2;
+				std::cout << r2cm::tab << "+ For : Int Sp : ++" << r2cm::linefeed2;
 
 				std::shared_ptr<int> test_pointer( new int( 0 ) );
 
