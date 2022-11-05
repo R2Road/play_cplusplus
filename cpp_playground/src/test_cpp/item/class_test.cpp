@@ -461,4 +461,72 @@ namespace class_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Offset::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Offset";
+		};
+	}
+	r2cm::iItem::DoFunctionT Offset::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( class A {}; );
+				DECLARATION_MAIN( class B : public A {} );
+				DECLARATION_MAIN( class C : public B {} );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const auto pC = (C*)1 );
+				OUTPUT_VALUE( pC );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const auto pB = (B*)pC );
+				OUTPUT_VALUE( pB );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const auto pA = (A*)(B*)pB );
+				OUTPUT_VALUE( pA );
+			}
+
+			std::cout << r2cm::split;
+
+
+			{
+				DECLARATION_MAIN( class A {}; );
+				DECLARATION_MAIN( class B {} );
+
+				OUTPUT_CODE( ( class C : public A, public B {}; ) );
+				class C : public A, public B {};
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const auto pC = (C*)1 );
+				OUTPUT_VALUE( pC );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const auto pB = (B*)pC );
+				OUTPUT_VALUE( pB );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const auto pA = (A*)(B*)pB );
+				OUTPUT_VALUE( pA );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
