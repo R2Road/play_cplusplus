@@ -494,7 +494,7 @@ namespace class_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( const auto pA = (A*)pB );
+				DECLARATION_MAIN( const auto pA = (A*)pC );
 				OUTPUT_VALUE( pA );
 			}
 
