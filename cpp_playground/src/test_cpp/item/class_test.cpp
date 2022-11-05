@@ -539,7 +539,6 @@ namespace class_test
 
 				DECLARATION_MAIN( const auto pB = (B*)pC );
 				OUTPUT_VALUE( pB );
-
 			}
 
 			std::cout << r2cm::split;
@@ -569,6 +568,20 @@ namespace class_test
 
 				DECLARATION_MAIN( const auto pC = (C*)pD );
 				OUTPUT_VALUE( pC );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( dynamic_cast<C*>( pD ) );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const auto offset = reinterpret_cast<int64_t>( pD ) - reinterpret_cast<int64_t>( pC ) );
+				OUTPUT_VALUE( offset );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const auto pCastWithOffset = reinterpret_cast<D*>( pC + offset ) );
+				OUTPUT_VALUE( pCastWithOffset );
 			}
 
 			std::cout << r2cm::split;
