@@ -500,10 +500,8 @@ namespace class_test
 
 			std::cout << r2cm::split;
 
-
 			{
-				DECLARATION_MAIN( class A {}; );
-				DECLARATION_MAIN( class B {} );
+				DECLARATION_MAIN( class A {}; class B {}; );
 
 				OUTPUT_CODE( ( class C : public A, public B {}; ) );
 				class C : public A, public B {};
@@ -521,6 +519,35 @@ namespace class_test
 				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( const auto pA = (A*)pC );
+				OUTPUT_VALUE( pA );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( class A {}; class B {}; class C {}; );
+
+				OUTPUT_CODE( ( class D : public A, public B, public C {}; ) );
+				class D : public A, public B, public C {};
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const auto pD = (D*)1 );
+				OUTPUT_VALUE( pD );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const auto pC = (C*)pD );
+				OUTPUT_VALUE( pC );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const auto pB = (B*)pD );
+				OUTPUT_VALUE( pB );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const auto pA = (A*)pD );
 				OUTPUT_VALUE( pA );
 			}
 
