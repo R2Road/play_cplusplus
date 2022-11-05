@@ -54,4 +54,11 @@ namespace class_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Offset_MultipleInheritance : public r2cm::iItem, public r2cm::SingleTon<Offset_MultipleInheritance>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }

@@ -500,6 +500,25 @@ namespace class_test
 
 			std::cout << r2cm::split;
 
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Offset_MultipleInheritance::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Offset : Multiple Inheritance";
+		};
+	}
+	r2cm::iItem::DoFunctionT Offset_MultipleInheritance::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
 			{
 				DECLARATION_MAIN( class A {}; class B {}; );
 
