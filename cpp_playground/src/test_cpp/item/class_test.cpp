@@ -489,13 +489,13 @@ namespace class_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( const auto pB = (B*)pC );
-				OUTPUT_VALUE( pB );
+				DECLARATION_MAIN( const auto pA = (A*)pC );
+				OUTPUT_VALUE( pA );
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( const auto pA = (A*)pC );
-				OUTPUT_VALUE( pA );
+				DECLARATION_MAIN( const auto pB = (B*)pC );
+				OUTPUT_VALUE( pB );
 			}
 
 			std::cout << r2cm::split;
@@ -532,13 +532,14 @@ namespace class_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( const auto pB = (B*)pC );
-				OUTPUT_VALUE( pB );
+				DECLARATION_MAIN( const auto pA = (A*)pC );
+				OUTPUT_VALUE( pA );
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( const auto pA = (A*)pC );
-				OUTPUT_VALUE( pA );
+				DECLARATION_MAIN( const auto pB = (B*)pC );
+				OUTPUT_VALUE( pB );
+
 			}
 
 			std::cout << r2cm::split;
@@ -556,8 +557,8 @@ namespace class_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( const auto pC = (C*)pD );
-				OUTPUT_VALUE( pC );
+				DECLARATION_MAIN( const auto pA = (A*)pD );
+				OUTPUT_VALUE( pA );
 
 				std::cout << r2cm::linefeed;
 
@@ -566,8 +567,8 @@ namespace class_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( const auto pA = (A*)pD );
-				OUTPUT_VALUE( pA );
+				DECLARATION_MAIN( const auto pC = (C*)pD );
+				OUTPUT_VALUE( pC );
 			}
 
 			std::cout << r2cm::split;
