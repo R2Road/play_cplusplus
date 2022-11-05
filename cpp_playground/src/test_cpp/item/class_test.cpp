@@ -464,14 +464,14 @@ namespace class_test
 
 
 
-	r2cm::iItem::TitleFunctionT Offset::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Offset_SingleInheritance::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Class : Offset";
+			return "Class : Offset : Single Inheritance";
 		};
 	}
-	r2cm::iItem::DoFunctionT Offset::GetDoFunction()
+	r2cm::iItem::DoFunctionT Offset_SingleInheritance::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

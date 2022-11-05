@@ -48,7 +48,7 @@ namespace class_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Offset : public r2cm::iItem, public r2cm::SingleTon<Offset>
+	class Offset_SingleInheritance : public r2cm::iItem, public r2cm::SingleTon<Offset_SingleInheritance>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
