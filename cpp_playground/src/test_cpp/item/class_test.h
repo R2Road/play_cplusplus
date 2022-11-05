@@ -61,4 +61,11 @@ namespace class_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Offset_Singleton : public r2cm::iItem, public r2cm::SingleTon<Offset_Singleton>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
