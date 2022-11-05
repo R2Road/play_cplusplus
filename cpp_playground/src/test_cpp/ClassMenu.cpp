@@ -16,8 +16,16 @@ r2cm::MenuUp ClassMenu::Create( r2cm::Director& director )
 		ret->AddItem( '2', class_test::PrintName::GetInstance() );
 		ret->AddItem( '3', class_test::PrivateInheritance_1::GetInstance() );
 		ret->AddItem( '4', class_test::PrivateInheritance_2::GetInstance() );
-		ret->AddItem( '5', class_test::MemberAdress::GetInstance() );
-		ret->AddItem( '6', class_test::ImplicitTypeConversion::GetInstance() );
+		ret->AddItem( '5', class_test::ImplicitTypeConversion::GetInstance() );
+
+
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'q', class_test::MemberAdress::GetInstance() );
+
 
 
 		ret->AddSplit();

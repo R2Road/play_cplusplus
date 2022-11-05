@@ -336,6 +336,57 @@ namespace class_test
 	}
 
 
+
+	r2cm::iItem::TitleFunctionT ImplicitTypeConversion::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Implicit Type Conversion";
+		};
+	}
+	r2cm::iItem::DoFunctionT ImplicitTypeConversion::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				class TestClass1
+				{
+				public:
+					operator int() const { return 100; }
+				};
+
+				{
+					std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+
+					std::cout << r2cm::tab2 << "class TestClass1" << r2cm::linefeed;
+					std::cout << r2cm::tab2 << "{" << r2cm::linefeed;
+					std::cout << r2cm::tab2 << "public:" << r2cm::linefeed;
+					std::cout << r2cm::tab3 << "operator int() const { return 100; }" << r2cm::linefeed;
+					std::cout << r2cm::tab2 << "}" << r2cm::linefeed2;
+				}
+
+				std::cout << r2cm::split;
+
+				{
+					DECLARATION_MAIN( TestClass1 tc1 );
+					DECLARATION_MAIN( int i = tc1 );
+
+					std::cout << r2cm::linefeed;
+
+					OUTPUT_VALUE( i );
+				}
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT MemberAdress::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -403,56 +454,6 @@ namespace class_test
 				std::cout << r2cm::tab2 << "void ( TestClass1::*f1_ptr )() = &TestClass1::Func1;" << r2cm::linefeed;
 				std::cout << r2cm::tab2 << "auto f1_void = (void*&)f1_ptr;" << r2cm::linefeed;
 				std::cout << r2cm::tab2 << "f1_void : " << f1_void << r2cm::linefeed;
-			}
-
-			std::cout << r2cm::split;
-
-			return r2cm::eItemLeaveAction::Pause;
-		};
-	}
-
-
-
-	r2cm::iItem::TitleFunctionT ImplicitTypeConversion::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Class : Implicit Type Conversion";
-		};
-	}
-	r2cm::iItem::DoFunctionT ImplicitTypeConversion::GetDoFunction()
-	{
-		return []()->r2cm::eItemLeaveAction
-		{
-			std::cout << r2cm::split;
-
-			{
-				class TestClass1
-				{
-				public:
-					operator int() const { return 100; }
-				};
-
-				{
-					std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-
-					std::cout << r2cm::tab2 << "class TestClass1" << r2cm::linefeed;
-					std::cout << r2cm::tab2 << "{" << r2cm::linefeed;
-					std::cout << r2cm::tab2 << "public:" << r2cm::linefeed;
-					std::cout << r2cm::tab3 << "operator int() const { return 100; }" << r2cm::linefeed;
-					std::cout << r2cm::tab2 << "}" << r2cm::linefeed2;
-				}
-
-				std::cout << r2cm::split;
-
-				{
-					DECLARATION_MAIN( TestClass1 tc1 );
-					DECLARATION_MAIN( int i = tc1 );
-
-					std::cout << r2cm::linefeed;
-
-					OUTPUT_VALUE( i );
-				}
 			}
 
 			std::cout << r2cm::split;

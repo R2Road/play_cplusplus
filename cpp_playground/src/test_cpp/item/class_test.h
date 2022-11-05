@@ -32,14 +32,16 @@ namespace class_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class MemberAdress : public r2cm::iItem, public r2cm::SingleTon<MemberAdress>
+	class ImplicitTypeConversion : public r2cm::iItem, public r2cm::SingleTon<ImplicitTypeConversion>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class ImplicitTypeConversion : public r2cm::iItem, public r2cm::SingleTon<ImplicitTypeConversion>
+
+
+	class MemberAdress : public r2cm::iItem, public r2cm::SingleTon<MemberAdress>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
