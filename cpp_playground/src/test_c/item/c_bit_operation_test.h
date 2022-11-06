@@ -5,13 +5,6 @@
 
 namespace c_bit_operation_test
 {
-	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
-	{
-	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
-	};
-
 	class Operator : public r2cm::iItem, public r2cm::SingleTon<Operator>
 	{
 	public:

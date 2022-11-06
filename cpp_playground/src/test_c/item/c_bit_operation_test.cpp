@@ -9,7 +9,7 @@ namespace
 {
 	void PrintBinary( const int value, const int limit = 32 )
 	{
-		std::cout << r2cm::tab << "> ";
+		printf( "\t> %8d : ", value );
 
 		for( int position = limit - 1; 0 <= position; --position )
 		{
@@ -25,58 +25,6 @@ namespace
 
 namespace c_bit_operation_test
 {
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Basic";
-		};
-	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
-	{
-		return []()->r2cm::eItemLeaveAction
-		{
-			std::cout << r2cm::split;
-
-			std::cout << r2cm::tab << "+ 2의 보수 : 0 과 1을 뒤집고 + 1 해서 음수를 만든다." << r2cm::linefeed;
-			
-			std::cout << r2cm::split;
-
-			{
-				DECLARATION_MAIN( const int num = 1 ); // binary
-				PrintBinary( num );
-			}
-
-			std::cout << r2cm::split;
-
-
-			{
-				DECLARATION_MAIN( const int num = -1 ); // binary
-				PrintBinary( num );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				DECLARATION_MAIN( const int num = 2 ); // binary
-				PrintBinary( num );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				DECLARATION_MAIN( const int num = -2 ); // binary
-				PrintBinary( num );
-			}
-
-			std::cout << r2cm::split;
-
-			return r2cm::eItemLeaveAction::Pause;
-		};
-	}
-
-
-
 	r2cm::iItem::TitleFunctionT Operator::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -91,7 +39,6 @@ namespace c_bit_operation_test
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const int pivot = 0b1000000001 ); // binary
-			std::cout << r2cm::tab << "> " << pivot << r2cm::linefeed;
 			PrintBinary( pivot );
 
 			std::cout << r2cm::split;
@@ -142,8 +89,16 @@ namespace c_bit_operation_test
 		{
 			std::cout << r2cm::split;
 
+			{
+				PrintBinary( 1 );
+				PrintBinary( -1 );
+				PrintBinary( 2 );
+				PrintBinary( -2 );
+			}
+
+			std::cout << r2cm::split;
+
 			DECLARATION_MAIN( const int pivot = 0b1000000001 ); // binary
-			std::cout << r2cm::tab << "> " << pivot << r2cm::linefeed;
 			PrintBinary( pivot );
 
 			std::cout << r2cm::linefeed;
@@ -153,7 +108,7 @@ namespace c_bit_operation_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 1의 보수 만들기." << r2cm::linefeed2;
+				std::cout << r2cm::tab << "+ 1의 보수 : 0 과 1을 뒤집어 음수를 만든다." << r2cm::linefeed2;
 
 				PROCESS_MAIN( num = ~num );
 				PrintBinary( num );
@@ -162,7 +117,7 @@ namespace c_bit_operation_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 2의 보수 만들기." << r2cm::linefeed2;
+				std::cout << r2cm::tab << "+ 2의 보수 : 0 과 1을 뒤집고 + 1 해서 음수를 만든다." << r2cm::linefeed2;
 
 				PROCESS_MAIN( num += 1 );
 				PrintBinary( num );

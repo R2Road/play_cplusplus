@@ -12,11 +12,10 @@ r2cm::MenuUp BitOperationMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, BitOperationMenu::GetTitle() ) );
 
 	{
-		ret->AddItem( '1', c_bit_operation_test::Basic::GetInstance() );
-		ret->AddItem( '2', c_bit_operation_test::Operator::GetInstance() );
-		ret->AddItem( '3', c_bit_operation_test::Complement::GetInstance() );
-		ret->AddItem( '4', c_bit_operation_test::Add_Remove_Toggle::GetInstance() );
-		ret->AddItem( '5', c_bit_operation_test::Mask::GetInstance() );
+		ret->AddItem( '1', c_bit_operation_test::Operator::GetInstance() );
+		ret->AddItem( '2', c_bit_operation_test::Complement::GetInstance() );
+		ret->AddItem( '3', c_bit_operation_test::Add_Remove_Toggle::GetInstance() );
+		ret->AddItem( '4', c_bit_operation_test::Mask::GetInstance() );
 
 
 
