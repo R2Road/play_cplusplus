@@ -319,6 +319,15 @@ namespace c_bit_operation_test
 				DECLARATION_MAIN( const char b_2 = 0b00001110 );
 				PROCESS_MAIN( result = b_1 ^ b_2 );
 				OUTPUT_BINARY( result );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( result = b_1 );
+				OUTPUT_BINARY( result );
+				PROCESS_MAIN( result ^= b_2 );
+				OUTPUT_BINARY( result );
+				PROCESS_MAIN( result ^= b_2 );
+				OUTPUT_BINARY( result );
 			}
 
 			std::cout << r2cm::split;
