@@ -85,6 +85,7 @@
     <ClCompile Include="src\test_c\item\c_random_test.cpp" />
     <ClCompile Include="src\test_c\item\c_sizeof_test.cpp" />
     <ClCompile Include="src\test_c\item\c_struct_test.cpp" />
+    <ClCompile Include="src\test_c\item\c_system_test.cpp" />
     <ClCompile Include="src\test_c\item\c_time_test.cpp" />
     <ClCompile Include="src\test_c\item\c_pointer_test.cpp" />
     <ClCompile Include="src\test_c\PointerMenu.cpp" />
@@ -242,6 +243,7 @@
     <ClInclude Include="src\test_c\item\c_random_test.h" />
     <ClInclude Include="src\test_c\item\c_sizeof_test.h" />
     <ClInclude Include="src\test_c\item\c_struct_test.h" />
+    <ClInclude Include="src\test_c\item\c_system_test.h" />
     <ClInclude Include="src\test_c\item\c_time_test.h" />
     <ClInclude Include="src\test_c\item\c_pointer_test.h" />
     <ClInclude Include="src\test_c\PointerMenu.h" />

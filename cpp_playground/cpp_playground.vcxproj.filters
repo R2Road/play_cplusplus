@@ -506,6 +506,9 @@
     <ClCompile Include="src\test_c\item\c_struct_test.cpp">
       <Filter>test_c\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_c\item\c_system_test.cpp">
+      <Filter>test_c\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -969,6 +972,9 @@
       <Filter>test_template\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_c\item\c_struct_test.h">
+      <Filter>test_c\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_c\item\c_system_test.h">
       <Filter>test_c\item</Filter>
     </ClInclude>
   </ItemGroup>
