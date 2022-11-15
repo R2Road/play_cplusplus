@@ -4,6 +4,7 @@
 #include "r2cm/r2cm_ostream.h"
 
 #include "item/c_array_test.h"
+#include "item/c_atexit_test.h"
 #include "item/c_operator_ternary_test.h"
 #include "item/c_printf_test.h"
 #include "item/c_macro_test.h"
@@ -48,6 +49,7 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 		ret->AddMenu<PointerMenu>( 'a' );
 		ret->AddMenu<BitOperationMenu>( 's' );
 		ret->AddItem( 'd', c_system_test::Pause::GetInstance() );
+		ret->AddItem( 'f', c_atexit_test::Basic::GetInstance() );
 
 
 
