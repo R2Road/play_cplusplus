@@ -1,4 +1,5 @@
 #include "std_mem_fn_test.h"
+#include "std_mem_fn_test_helper.hpp"
 
 #include <functional>
 
@@ -20,7 +21,7 @@ namespace std_mem_fn_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( struct TestStruct { void Do() { printf( "TestStruct::Do" "\n" ); } } );
+			SHOW_FILE( "src/test_std/item/std_mem_fn_test_helper.hpp" );
 
 			std::cout << r2cm::split;
 

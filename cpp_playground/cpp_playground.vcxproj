@@ -275,6 +275,7 @@
     <ClInclude Include="src\test_std\item\std_list_test.h" />
     <ClInclude Include="src\test_std\item\std_memory_test.h" />
     <ClInclude Include="src\test_std\item\std_mem_fn_test.h" />
+    <ClInclude Include="src\test_std\item\std_mem_fn_test_helper.hpp" />
     <ClInclude Include="src\test_std\item\std_numeric_test.h" />
     <ClInclude Include="src\test_std\item\std_optional_test.h" />
     <ClInclude Include="src\test_std\item\std_random_test.h" />
