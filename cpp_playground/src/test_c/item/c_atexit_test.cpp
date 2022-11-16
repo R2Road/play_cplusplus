@@ -9,11 +9,6 @@
 
 namespace c_atexit_test
 {
-	void test_atexit()
-	{
-		R2ASSERT( false, "test_atexit" );
-	}
-
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -32,7 +27,26 @@ namespace c_atexit_test
 			std::cout << r2cm::split;
 
 			{
+				DECLARATION_MAIN( auto test_atexit = []()
+				{
+					R2ASSERT( false, "test_atexit" );
+				} );
+
 				EXPECT_EQ( 0, atexit( test_atexit ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( struct Test_AtExit
+				{
+					static void Do()
+					{
+						R2ASSERT( false, "test_atexit" );
+					}
+				} );
+
+				EXPECT_EQ( 0, atexit( Test_AtExit::Do ) );
 			}
 
 			std::cout << r2cm::split;
