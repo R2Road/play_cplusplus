@@ -306,6 +306,7 @@
     <ClInclude Include="src\test_template\item\template_meta_programming_03_test.h" />
     <ClInclude Include="src\test_template\item\template_practice_part_01_test.h" />
     <ClInclude Include="src\test_template\item\template_specialization_test.h" />
+    <ClInclude Include="src\test_template\item\template_specialization_test_helper_basic.hpp" />
     <ClInclude Include="src\test_template\item\variadic_template_test.h" />
     <ClInclude Include="src\test_template\TemplateMenu.h" />
     <ClInclude Include="src\test_template\TemplateMetaProgrammingMenu.h" />

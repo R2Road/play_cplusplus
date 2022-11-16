@@ -1,23 +1,11 @@
 #include "template_specialization_test.h"
+#include "template_specialization_test_helper_basic.hpp"
 
-#include <algorithm>
-
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace template_specialization_test
 {
-	template<typename T>
-	void TemplateFunc( const T value )
-	{
-		std::cout << "T Call : " << value << r2cm::linefeed;
-	}
-
-	template<>
-	void TemplateFunc( const uint8_t value )
-	{
-		std::cout << "unsigned char Call : " << value << r2cm::linefeed;
-	}
-
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -31,9 +19,16 @@ namespace template_specialization_test
 		{
 			std::cout << r2cm::split;
 
+			SHOW_FILE( "src/test_template/item/template_specialization_test_helper_basic.hpp" );
+
+			std::cout << r2cm::split;
+
 			{
-				TemplateFunc( int( 1 ) );
-				TemplateFunc( uint8_t( 1 ) );
+				PROCESS_MAIN( TemplateFunc( int( 1 ) ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( TemplateFunc( uint8_t( 1 ) ) );
 			}
 
 			std::cout << r2cm::split;

@@ -1001,6 +1001,9 @@
     <ClInclude Include="src\test_std\item\std_invoke_test_helper.hpp">
       <Filter>test_std\item</Filter>
     </ClInclude>
+    <ClInclude Include="src\test_template\item\template_specialization_test_helper_basic.hpp">
+      <Filter>test_template\item</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\test_cpp\item\enum_test_xmacro_2.def">
