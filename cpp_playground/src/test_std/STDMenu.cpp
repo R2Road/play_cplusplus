@@ -16,7 +16,7 @@
 #include "STDContainerMenu.h"
 #include "STDCoutMenu.h"
 #include "STDFileSystemMenu.h"
-#include "STDFunctionMenu.h"
+#include "STDFunctionalMenu.h"
 #include "STDMemoryMenu.h"
 #include "STDNumericMenu.h"
 #include "STDOptionalMenu.h"
@@ -51,7 +51,7 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<STDFunctionMenu>( 'q' );
+		ret->AddMenu<STDFunctionalMenu>( 'q' );
 
 
 

@@ -1,4 +1,4 @@
-#include "STDFunctionMenu.h"
+#include "STDFunctionalMenu.h"
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
@@ -8,7 +8,7 @@
 
 #include "STDMenu.h"
 
-r2cm::MenuUp STDFunctionMenu::Create( r2cm::Director& director )
+r2cm::MenuUp STDFunctionalMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 

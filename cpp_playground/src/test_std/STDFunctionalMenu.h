@@ -8,12 +8,12 @@ namespace r2cm
 	using MenuUp = std::unique_ptr<class Menu>;
 }
 
-class STDFunctionMenu
+class STDFunctionalMenu
 {
 private:
-	STDFunctionMenu() = delete;
+	STDFunctionalMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "std::function Menu"; }
+	static const char* GetTitle() { return "<functional>"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
