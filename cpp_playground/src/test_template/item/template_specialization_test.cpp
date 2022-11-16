@@ -29,6 +29,10 @@ namespace template_specialization_test
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( TemplateFunc( uint8_t( 1 ) ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( TemplateFunc( int64_t( 1 ) ) );
 			}
 
 			std::cout << r2cm::split;

@@ -12,6 +12,12 @@ namespace template_specialization_test
 	template<>
 	void TemplateFunc( const uint8_t value )
 	{
-		std::cout << "unsigned char Call : " << value << r2cm::linefeed;
+		std::cout << "uint8_t Call : " << value << r2cm::linefeed;
+	}
+
+	template<>
+	void TemplateFunc( const int64_t value )
+	{
+		std::cout << "int64_t Call : " << value << r2cm::linefeed;
 	}
 }
