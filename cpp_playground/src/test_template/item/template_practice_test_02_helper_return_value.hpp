@@ -4,7 +4,7 @@
 namespace template_practice_test_02_return_value
 {
 	template<typename ReturnValueT>
-	ReturnValueT R_A0()
+	ReturnValueT R_()
 	{
 		return ReturnValueT();
 	}

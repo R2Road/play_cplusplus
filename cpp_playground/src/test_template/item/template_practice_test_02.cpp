@@ -64,21 +64,21 @@ namespace template_practice_test_02
 			std::cout << r2cm::split;
 
 			{
-				OUTPUT_CODE( int i = template_practice_test_02_return_value::R_A0() );
-				std::cout << "\t" "> " "변수에 할당하는 행위로는 Templae 의 타입 추론에 영향을 주지 못한다." << r2cm::linefeed;
+				OUTPUT_CODE( int i = template_practice_test_02_return_value::R_() );
+				std::cout << "\t" "> " "변수에 할당하는 행위는 Template 의 타입 추론에 영향을 주지 못한다." << r2cm::linefeed;
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( int i = template_practice_test_02_return_value::R_A0<int>() );
-				OUTPUT_VALUE( i );
+				DECLARATION_MAIN( int i = template_practice_test_02_return_value::R_<int>() );
+				( i );
 			}
 
 			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( int i = template_practice_test_02_return_value::R_R1( 123 ) );
-				OUTPUT_VALUE( i );
-				std::cout << "\t" "> " "함수 인자 타입과 반환값이 같다면 인자에서 타입이 정해지므로 타입 추론에 성공한다." << r2cm::linefeed;
+				( i );
+				std::cout << "\t" "> " "함수 인자 타입과 반환값의 타입이 같다면 인자에서 타입이 정해지므로 타입 추론에 성공한다." << r2cm::linefeed;
 
 			}
 
