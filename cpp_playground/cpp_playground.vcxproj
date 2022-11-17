@@ -142,6 +142,7 @@
     <ClCompile Include="src\test_template\item\template_meta_programming_02_test.cpp" />
     <ClCompile Include="src\test_template\item\template_meta_programming_03_test.cpp" />
     <ClCompile Include="src\test_template\item\template_practice_part_01_test.cpp" />
+    <ClCompile Include="src\test_template\item\template_practice_test_02.cpp" />
     <ClCompile Include="src\test_template\item\template_specialization_test.cpp" />
     <ClCompile Include="src\test_template\item\variadic_template_test.cpp" />
     <ClCompile Include="src\test_template\TemplateMenu.cpp" />
@@ -305,6 +306,8 @@
     <ClInclude Include="src\test_template\item\template_meta_programming_02_test.h" />
     <ClInclude Include="src\test_template\item\template_meta_programming_03_test.h" />
     <ClInclude Include="src\test_template\item\template_practice_part_01_test.h" />
+    <ClInclude Include="src\test_template\item\template_practice_test_02.h" />
+    <ClInclude Include="src\test_template\item\template_practice_test_02_helper_basic.hpp" />
     <ClInclude Include="src\test_template\item\template_specialization_test.h" />
     <ClInclude Include="src\test_template\item\template_specialization_test_helper_basic.hpp" />
     <ClInclude Include="src\test_template\item\variadic_template_test.h" />
