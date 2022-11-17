@@ -1,5 +1,6 @@
 #include "class_test.h"
 #include "class_test_helper_member_adress.hpp"
+#include "class_test_helper_offset_singleton.hpp"
 
 #include <iterator>
 #include <numeric>
@@ -576,25 +577,6 @@ namespace class_test
 
 
 
-	template<typename T>
-	class ST
-	{
-	public:
-		ST()
-		{
-			OUTPUT_VALUE( this );
-
-			std::cout << r2cm::linefeed;
-
-			OUTPUT_CODE( dynamic_cast<T*>( this ) );
-			std::cout << "dynamic_cast 는 작동하지 않는다." << r2cm::linefeed2;
-
-			DECLARATION_MAIN( const auto offset = int64_t( (T*)1 ) - int64_t( (ST<T>*)(T*)1 ) );
-			OUTPUT_VALUE( this + offset );
-
-			std::cout << r2cm::linefeed;
-		}
-	};
 	r2cm::iItem::TitleFunctionT Offset_Singleton::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -608,17 +590,15 @@ namespace class_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( class A {}; class B {}; );
-			OUTPUT_CODE( ( class D : public A, public B, public ST<D> {}; ) );
-			class D : public A, public B, public ST<D> {};
+			SHOW_FILE( "src/test_cpp/item/class_test_helper_offset_singleton.hpp" );
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( D d );
+			DECLARATION_MAIN( A_B_ST abst );
 
 			std::cout << r2cm::split;
 
-			OUTPUT_VALUE( &d );
+			OUTPUT_VALUE( &abst );
 
 			std::cout << r2cm::split;
 
