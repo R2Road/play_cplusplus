@@ -1,5 +1,6 @@
 #include "template_practice_test_02.h"
 #include "template_practice_test_02_helper_basic.hpp"
+#include "template_practice_test_02_helper_return_value.hpp"
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
@@ -35,6 +36,43 @@ namespace template_practice_test_02
 
 				PROCESS_MAIN( f.Call<void>( "F1_A0" ) );
 				PROCESS_MAIN( f.Call<void>( "F5_A3", 100, 200, 300 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT ReturnValue::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Practice : Return Value";
+		};
+	}
+	r2cm::iItem::DoFunctionT ReturnValue::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			SHOW_FILE( "src/test_template/item/template_practice_test_02_helper_return_value.hpp" );
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_CODE( int i = template_practice_test_02_return_value::ReturnValueTestFunction() );
+				std::cout << "\t" "> " "변수에 할당하는 행위로는 Templae 의 타입 추론에 영향을 주지 못한다." << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( int i = template_practice_test_02_return_value::ReturnValueTestFunction<int>() );
+				OUTPUT_VALUE( i );
 			}
 
 			std::cout << r2cm::split;

@@ -17,7 +17,8 @@ r2cm::MenuUp TemplateMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', template_practice_test_02::Basic::GetInstance() );
+		ret->AddItem( '1', template_practice_test_02::ReturnValue::GetInstance() );
+		ret->AddItem( '2', template_practice_test_02::Basic::GetInstance() );
 
 
 
