@@ -4,13 +4,13 @@
 namespace template_practice_test_02_return_value
 {
 	template<typename ReturnValueT>
-	ReturnValueT ReturnValueTestFunction()
+	ReturnValueT R_A0()
 	{
 		return ReturnValueT();
 	}
 
 	template<typename ReturnValueT>
-	ReturnValueT ReturnValueTestFunction_With_Argument1( ReturnValueT a1 )
+	ReturnValueT R_A1( ReturnValueT a1 )
 	{
 		return ReturnValueT( a1 );
 	}
