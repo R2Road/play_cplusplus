@@ -25,10 +25,13 @@ namespace template_practice_test_02
 
 			{
 				DECLARATION_MAIN( FuncContainer f );
-				PROCESS_MAIN( f.def( "TestFunc", TestFunction ) );
-				PROCESS_MAIN( f.def( "TestFunc", TestFunction ) );
-				PROCESS_MAIN( f.def( "TestFunc", TestFunction ) );
-				PROCESS_MAIN( f.def( "TestFunc", TestFunction ) );
+				PROCESS_MAIN( f.def( "TestFunc", TestFunction_A0 ) );
+				PROCESS_MAIN( f.def( "TestFunc", TestFunction_A0 ) );
+				PROCESS_MAIN( f.def( "TestFunc", TestFunction_A1 ) );
+				PROCESS_MAIN( f.def( "TestFunc", TestFunction_A1 ) );
+
+				std::cout << r2cm::linefeed;
+
 				PROCESS_MAIN( f.CallAll() );
 			}
 
