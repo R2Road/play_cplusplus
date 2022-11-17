@@ -1,7 +1,7 @@
 #include <stdint.h>
 #include "r2cm/r2cm_ostream.h"
 
-#include <list>
+#include <map>
 
 namespace template_practice_test_02
 {
@@ -17,25 +17,25 @@ namespace template_practice_test_02
 
 	struct FuncContainer
 	{
-		std::list<void*> container;
+		std::map<const char*, void*> container;
 
 		template<typename ReturnValueT>
-		void push_functor( ReturnValueT(*func)() )
+		void push_functor( const char* name, ReturnValueT(*func)() )
 		{
-			container.push_back( func );
+			container.emplace( name, func );
 		}
 
 		template<typename ReturnValueT, typename ArgumentT>
-		void push_functor( ReturnValueT( *func )( ArgumentT ) )
+		void push_functor( const char* name, ReturnValueT( *func )( ArgumentT ) )
 		{
-			container.push_back( func );
+			container.emplace( name, func );
 		}
 
 		template<typename T>
 		void def( const char* name, T func )
 		{
 			std::cout << "def" << r2cm::linefeed;
-			push_functor( func );
+			push_functor( name, func );
 		}
 
 		void CallAll()
