@@ -219,6 +219,7 @@
     <ClInclude Include="src\test_cpp\item\atomic_test.h" />
     <ClInclude Include="src\test_cpp\item\char_test.h" />
     <ClInclude Include="src\test_cpp\item\class_test.h" />
+    <ClInclude Include="src\test_cpp\item\class_test_helper_member_adress.hpp" />
     <ClInclude Include="src\test_cpp\item\console_input_test.h" />
     <ClInclude Include="src\test_cpp\item\debug_test.h" />
     <ClInclude Include="src\test_cpp\item\enum_test.h" />
