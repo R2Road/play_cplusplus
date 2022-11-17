@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 namespace class_test_helper_member_adress
 {
 	class TestClass
@@ -8,8 +6,7 @@ namespace class_test_helper_member_adress
 		int a;
 		int b;
 
-		void Func1() {}
-		void Func2() {}
+		void Func() {}
 
 		int c;
 	};

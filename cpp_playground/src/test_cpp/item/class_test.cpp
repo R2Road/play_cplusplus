@@ -407,35 +407,37 @@ namespace class_test
 
 			DECLARATION_MAIN( using TC = class_test_helper_member_adress::TestClass );
 			DECLARATION_MAIN( TC tc );
-			DECLARATION_MAIN( auto pTc = &tc );
 
 			std::cout << r2cm::split;
 
 			{
 				std::cout << r2cm::tab << "+ Body Adress" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "&tc : " << &tc << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "pTc : " << pTc << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "&( *pTc ) : " << &( *pTc ) << r2cm::linefeed;
-				std::cout << r2cm::linefeed2;
+				OUTPUT_VALUE( &tc );
+			}
 
+			std::cout << r2cm::split;
+
+			{
 				std::cout << r2cm::tab << "+ Member Adress" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "&tc.a : " << &tc.a << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "&tc.b : " << &tc.b << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "&tc.c : " << &tc.c << r2cm::linefeed;
-				std::cout << r2cm::linefeed2;
+				OUTPUT_VALUE( &tc.a );
+				OUTPUT_VALUE( &tc.b );
+				OUTPUT_VALUE( &tc.c );
+			}
 
+			std::cout << r2cm::split;
+
+			{
 				std::cout << r2cm::tab << "+ Method Adress 1" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "&TestClass1::Func1 : " << &TC::Func1 << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "&TestClass1::Func2 : " << &TC::Func2 << r2cm::linefeed;
+				OUTPUT_VALUE( &TC::Func );
+			}
 
-				std::cout << r2cm::linefeed2;
+			std::cout << r2cm::split;
 
+			{
 				std::cout << r2cm::tab << "+ Method Adress 2" << r2cm::linefeed2;
-				void ( TC::*f1_ptr )( ) = &TC::Func1;
-				auto f1_void = (void*&)f1_ptr;
-				std::cout << r2cm::tab2 << "void ( TestClass1::*f1_ptr )() = &TestClass1::Func1;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "auto f1_void = (void*&)f1_ptr;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "f1_void : " << f1_void << r2cm::linefeed;
+				DECLARATION_MAIN( void ( TC::*f_ptr )( ) = &TC::Func );
+				DECLARATION_MAIN( auto f_void = (void*&)f_ptr );
+				OUTPUT_VALUE( f_void );
 			}
 
 			std::cout << r2cm::split;
