@@ -6,7 +6,8 @@ namespace class_test_helper_member_adress
 		int a;
 		int b;
 
-		void Func() {}
+		void Func1() {}
+		void Func2() {}
 
 		int c;
 	};

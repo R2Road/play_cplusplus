@@ -429,16 +429,23 @@ namespace class_test
 
 			{
 				std::cout << r2cm::tab << "+ Method Adress 1" << r2cm::linefeed2;
-				OUTPUT_VALUE( &TC::Func );
+				OUTPUT_VALUE( &TC::Func1 );
+				OUTPUT_VALUE( &TC::Func2 );
 			}
 
 			std::cout << r2cm::split;
 
 			{
 				std::cout << r2cm::tab << "+ Method Adress 2" << r2cm::linefeed2;
-				DECLARATION_MAIN( void ( TC::*f_ptr )( ) = &TC::Func );
-				DECLARATION_MAIN( auto f_void = (void*&)f_ptr );
-				OUTPUT_VALUE( f_void );
+				DECLARATION_MAIN( void ( TC::*f1_ptr )( ) = &TC::Func1 );
+				DECLARATION_MAIN( auto f1_void = (void*&)f1_ptr );
+				OUTPUT_VALUE( f1_void );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( void ( TC::*f2_ptr )( ) = &TC::Func2 );
+				DECLARATION_MAIN( auto f2_void = (void*&)f2_ptr );
+				OUTPUT_VALUE( f2_void );
 			}
 
 			std::cout << r2cm::split;
