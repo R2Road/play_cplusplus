@@ -404,21 +404,6 @@
     <ClCompile Include="external\r2\r2_Size.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_Director.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_Inspector.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_Menu.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_StopWatch.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
     <ClCompile Include="external\r2\r2_FPSTimer.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
@@ -520,6 +505,24 @@
     </ClCompile>
     <ClCompile Include="src\test_template\item\template_practice_test_02.cpp">
       <Filter>test_template\item</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2cm\r2cm_BinaryPrint.cpp">
+      <Filter>external\r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2cm\r2cm_Director.cpp">
+      <Filter>external\r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2cm\r2cm_Inspector.cpp">
+      <Filter>external\r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2cm\r2cm_Menu.cpp">
+      <Filter>external\r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2cm\r2cm_StopWatch.cpp">
+      <Filter>external\r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
+      <Filter>external\r2cm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -869,33 +872,6 @@
     <ClInclude Include="external\r2\r2_Size.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Director.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_iItem.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Inspector.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Menu.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_ostream.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Singleton.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_StopWatch.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_VersionInfo.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_FPSTimer.h">
       <Filter>external\r2</Filter>
     </ClInclude>
@@ -1018,6 +994,36 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\class_test_helper_member_adress.hpp">
       <Filter>test_cpp\item</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_BinaryPrint.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_Director.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_iItem.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_Inspector.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_Menu.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_ostream.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_Singleton.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_StopWatch.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_VersionInfo.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
+      <Filter>external\r2cm</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

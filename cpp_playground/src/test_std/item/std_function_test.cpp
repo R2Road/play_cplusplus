@@ -37,7 +37,7 @@ namespace std_function_test
 
 				std::cout << r2cm::linefeed;
 
-				EXPECT_EQ( nullptr, f );
+				EXPECT_TRUE( nullptr == f );
 				EXPECT_FALSE( f );
 			}
 

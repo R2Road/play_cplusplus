@@ -198,7 +198,7 @@ namespace list_based_on_array_test
 			{
 				std::cout << "+ Iterator : Operator--" << r2cm::linefeed2;
 
-				EXPECT_EQ( ( --list.end() ), list.end() );
+				EXPECT_TRUE( ( --list.end() ) == list.end() );
 			}
 
 			std::cout << r2cm::split;
@@ -206,7 +206,7 @@ namespace list_based_on_array_test
 			{
 				std::cout << "+ Iterator : Operator++" << r2cm::linefeed2;
 
-				EXPECT_EQ( ( ++list.end() ), list.end() );
+				EXPECT_TRUE( ( ++list.end() ) == list.end() );
 			}
 
 			std::cout << r2cm::split;
@@ -274,8 +274,8 @@ namespace list_based_on_array_test
 				EXPECT_EQ( *itr, 33 );
 				EXPECT_EQ( *( ++itr ), 22 );
 				EXPECT_EQ( *( ++itr ), 11 );
-				EXPECT_EQ( ( ++itr ), list.end() );
-				EXPECT_EQ( ( ++itr ), list.begin() );
+				EXPECT_TRUE( ( ++itr ) == list.end() );
+				EXPECT_TRUE( ( ++itr ) == list.begin() );
 			}
 
 			std::cout << r2cm::split;
@@ -284,11 +284,11 @@ namespace list_based_on_array_test
 				auto itr = list.begin();
 				std::cout << r2cm::tab << "auto itr = list.begin();" << r2cm::linefeed2;
 
-				EXPECT_EQ( ( --itr ), list.end() );
+				EXPECT_TRUE( ( --itr ) == list.end() );
 				EXPECT_EQ( *( --itr ), 11 );
 				EXPECT_EQ( *( --itr ), 22 );
 				EXPECT_EQ( *( --itr ), 33 );
-				EXPECT_EQ( ( --itr ), list.end() );
+				EXPECT_TRUE( ( --itr ) == list.end() );
 			}
 
 			std::cout << r2cm::split;
@@ -373,8 +373,8 @@ namespace list_based_on_array_test
 				EXPECT_EQ( *itr, 333 );
 				EXPECT_EQ( *( ++itr ), 222 );
 				EXPECT_EQ( *( ++itr ), 111 );
-				EXPECT_EQ( ( ++itr ), list.end() );
-				EXPECT_EQ( ( ++itr ), list.begin() );
+				EXPECT_TRUE( ( ++itr ) == list.end() );
+				EXPECT_TRUE( ( ++itr ) == list.begin() );
 			}
 
 			std::cout << r2cm::split;
@@ -445,7 +445,7 @@ namespace list_based_on_array_test
 				EXPECT_EQ( *list.begin(), 11 );
 				EXPECT_EQ( *( ++list.begin() ), 22 );
 				EXPECT_EQ( *( ++( ++list.begin() ) ), 33 );
-				EXPECT_EQ( ++( ++( ++list.begin() ) ), list.end() );
+				EXPECT_TRUE( ++( ++( ++list.begin() ) ) == list.end() );
 				EXPECT_EQ( *( --list.end() ), 33 );
 				EXPECT_EQ( list.GetRestNodeCount(), 0 );
 				EXPECT_EQ( list.Size(), 3 );
@@ -512,12 +512,12 @@ namespace list_based_on_array_test
 				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( *( --return_itr ), 11 );
-				EXPECT_EQ( ( --return_itr ), list.end() );
+				EXPECT_TRUE( ( --return_itr ) == list.end() );
 				EXPECT_EQ( *( --return_itr ), 33 );
 
 				std::cout << r2cm::linefeed;
 
-				EXPECT_EQ( ( ++copied_itr ), list.end() );
+				EXPECT_TRUE( ( ++copied_itr ) == list.end() );
 				EXPECT_EQ( *( ++copied_itr ), 11 );
 				EXPECT_EQ( *( ++copied_itr ), 33 );				
 			}
@@ -530,7 +530,7 @@ namespace list_based_on_array_test
 				auto return_itr = list.Erase( list.end() );
 				std::cout << r2cm::tab << "auto return_itr = list.Erase( list.end() );" << r2cm::linefeed2;
 
-				EXPECT_EQ( return_itr, list.end() );
+				EXPECT_TRUE( return_itr == list.end() );
 				EXPECT_EQ( list.GetRestNodeCount(), 3 );
 				EXPECT_EQ( list.Size(), 2 );
 			}
@@ -584,12 +584,12 @@ namespace list_based_on_array_test
 				EXPECT_EQ( *list.rbegin(), 33 );
 				EXPECT_EQ( *( ++list.rbegin() ), 22 );
 				EXPECT_EQ( *( ++( ++list.rbegin() ) ), 11 );
-				EXPECT_EQ( ( ++( ++( ++list.rbegin() ) ) ), list.rend() );
-				EXPECT_EQ( ( ++( ++( ++( ++list.rbegin() ) ) ) ), list.rbegin() );
+				EXPECT_TRUE( ( ++( ++( ++list.rbegin() ) ) ) == list.rend() );
+				EXPECT_TRUE( ( ++( ++( ++( ++list.rbegin() ) ) ) ) == list.rbegin() );
 
 				std::cout << r2cm::linefeed;
 
-				EXPECT_EQ( ( --list.rbegin() ), list.rend() );
+				EXPECT_TRUE( ( --list.rbegin() ) == list.rend() );
 				EXPECT_EQ( *( --( --list.rbegin() ) ), 11 );
 
 				std::cout << r2cm::linefeed;

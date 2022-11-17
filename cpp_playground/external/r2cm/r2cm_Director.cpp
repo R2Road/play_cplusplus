@@ -35,7 +35,6 @@ namespace r2cm
 			//case eItemLeaveAction::None: break;
 
 			case eItemLeaveAction::Pause:
-				std::cout << r2cm::linefeed;
 				system( "pause" );				
 				break;
 
