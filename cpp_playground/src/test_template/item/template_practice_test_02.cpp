@@ -66,13 +66,20 @@ namespace template_practice_test_02
 			{
 				OUTPUT_CODE( int i = template_practice_test_02_return_value::ReturnValueTestFunction() );
 				std::cout << "\t" "> " "변수에 할당하는 행위로는 Templae 의 타입 추론에 영향을 주지 못한다." << r2cm::linefeed;
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( int i = template_practice_test_02_return_value::ReturnValueTestFunction<int>() );
+				OUTPUT_VALUE( i );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( int i = template_practice_test_02_return_value::ReturnValueTestFunction<int>() );
+				DECLARATION_MAIN( int i = template_practice_test_02_return_value::ReturnValueTestFunction_With_Argument1( 123 ) );
 				OUTPUT_VALUE( i );
+				std::cout << "\t" "> " "함수 인자 타입과 반환값이 같다면 인자에서 타입이 정해지므로 타입 추론에 성공한다." << r2cm::linefeed;
+
 			}
 
 			std::cout << r2cm::split;
