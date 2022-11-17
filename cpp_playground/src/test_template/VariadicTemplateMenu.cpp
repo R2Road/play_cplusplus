@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "test_cpp/item/variadic_template_test.h"
+#include "test_template/item/variadic_template_test.h"
 
 #include "TemplateMenu.h"
 
