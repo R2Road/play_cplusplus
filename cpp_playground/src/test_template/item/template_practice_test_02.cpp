@@ -69,14 +69,14 @@ namespace template_practice_test_02
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( int i = template_practice_test_02_return_value::R_<int>() );
+				DECLARATION_MAIN( int i = template_practice_test_02_helper_return_value::R_<int>() );
 				( i );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( int i = template_practice_test_02_return_value::R_R1( 123 ) );
+				DECLARATION_MAIN( int i = template_practice_test_02_helper_return_value::R_R1( 123 ) );
 				( i );
 				std::cout << "\t" "> " "함수 인자 타입과 반환값의 타입이 같다면 인자에서 타입이 정해지므로 타입 추론에 성공한다." << r2cm::linefeed;
 
@@ -85,7 +85,7 @@ namespace template_practice_test_02
 			std::cout << r2cm::split;
 
 			{
-				OUTPUT_CODE( int i = template_practice_test_02_return_value::R_A1( 123 ) );
+				OUTPUT_CODE( int i = template_practice_test_02_helper_return_value::R_A1( 123 ) );
 				std::cout << "\t" "> " "함수 인자 타입과 반환값의 타입이 다르다면 반환값의 인자 추론에 영향을 주지 못한다." << r2cm::linefeed;
 
 			}
