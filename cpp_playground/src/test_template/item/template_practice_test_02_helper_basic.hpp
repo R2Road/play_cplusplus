@@ -7,12 +7,17 @@ namespace template_practice_test_02
 {
 	void TestFunction_A0()
 	{
-		std::cout << "\t" "> " "TestFunction : " << r2cm::linefeed;
+		std::cout << "\t" "> " "TestFunction" << r2cm::linefeed;
 	}
 
-	void TestFunction_A1( int )
+	void TestFunction_A1( int i )
 	{
-		std::cout << "\t" "> " "TestFunction : " << r2cm::linefeed;
+		std::cout << "\t" "> " "TestFunction : " << i << r2cm::linefeed;
+	}
+
+	void TestFunction_A3( int i, int j, int k )
+	{
+		std::cout << "\t" "> " "TestFunction : " << i << " " << j << " " << k << " " << r2cm::linefeed;
 	}
 
 	struct FuncContainer
@@ -31,6 +36,12 @@ namespace template_practice_test_02
 			container.emplace( name, func );
 		}
 
+		template<typename ReturnValueT, typename T1, typename T2, typename T3>
+		void push_functor( const char* name, ReturnValueT( *func )( T1, T2, T3 ) )
+		{
+			container.emplace( name, func );
+		}
+
 		template<typename T>
 		void def( const char* name, T func )
 		{
@@ -38,12 +49,44 @@ namespace template_practice_test_02
 			push_functor( name, func );
 		}
 
-		void CallAll()
+		template<typename ReturnValueT, typename T1 = void, typename T2 = void, typename T3 = void, typename T4 = void>
+		ReturnValueT Call( const char* name, T1 t1, T2 t2, T3 t3, T4 t4 )
 		{
-			for( auto& f : container )
-			{
-				//f();
-			}
+			std::cout << "Call : R, A4" "\n";
+
+			const auto f = container.find( name );
+			auto rf = ( ReturnValueT( *)( T1, T2, T3, T4 ) )( f->second );
+			return rf( t1, t2, t3, t4 );
+		}
+
+		template<typename ReturnValueT, typename T1 = void, typename T2 = void, typename T3 = void>
+		ReturnValueT Call( const char* name, T1 t1, T2 t2, T3 t3 )
+		{
+			std::cout << "Call : R, A3" "\n";
+
+			const auto f = container.find( name );
+			auto rf = ( ReturnValueT( *)( T1, T2, T3 ) )( f->second );
+			return rf( t1, t2, t3 );
+		}
+
+		template<typename ReturnValueT, typename T1>
+		ReturnValueT Call( const char* name, T1 t1 )
+		{
+			std::cout << "Call : R, A1" "\n";
+
+			const auto f = container.find( name );
+			auto rf = ( ReturnValueT( *)( T1 ) )( f->second );
+			return rf( t1 );
+		}
+
+		template<typename ReturnValueT>
+		ReturnValueT Call( const char* name )
+		{
+			std::cout << "Call : V, A0" "\n";
+
+			const auto f = container.find( name );
+			auto rf = ( void( *)( ) )( f->second );
+			return rf();
 		}
 	};
 }
