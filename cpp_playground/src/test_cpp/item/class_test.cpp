@@ -89,25 +89,17 @@ namespace class_test
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "+ Print Name" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "- " << "typeid( TestClass1 ).name()" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "> " << typeid( TestClass1 ).name() << r2cm::linefeed;
+				OUTPUT_VALUE( typeid( TestClass1 ).name() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				TestClass1 test_class;
-
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "TestClass1 test_class;" << r2cm::linefeed;
-
+				DECLARATION_MAIN( TestClass1 test_class );
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "+ Print Name" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "- " << "typeid( test_class ).name()" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "> " << typeid( test_class ).name() << r2cm::linefeed;
+				OUTPUT_VALUE( typeid( test_class ).name() );
 			}
 
 			std::cout << r2cm::split;
@@ -122,9 +114,7 @@ namespace class_test
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "+ Print Name" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "- " << "typeid( TestClass2 ).name()" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "> " << typeid( TestClass2 ).name() << r2cm::linefeed;
+				OUTPUT_VALUE( typeid( TestClass2 ).name() );
 			}
 
 			std::cout << r2cm::split;
@@ -139,9 +129,7 @@ namespace class_test
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "+ Print Name" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "- " << "typeid( TestClass3 ).name()" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "> " << typeid( TestClass3 ).name() << r2cm::linefeed;
+				OUTPUT_VALUE( typeid( TestClass3 ).name() );
 			}
 
 			std::cout << r2cm::split;
