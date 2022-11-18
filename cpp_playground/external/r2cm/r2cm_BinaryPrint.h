@@ -6,6 +6,8 @@
 #include <stdint.h>
 #include <stdio.h>
 
+void Uint8BinaryPrint( const uint8_t value );
+
 template<typename T>
 void BinaryPrint( const T value );
 
@@ -25,13 +27,9 @@ void BinaryPrint( const T value )
 		}
 
 		printf( " " );
-		BinaryPrint( *( up + ( fixed_size - position ) ) );
+		Uint8BinaryPrint( *( up + ( fixed_size - position ) ) );
 	}
 }
-
-
-template<>
-void BinaryPrint<uint8_t>( const uint8_t value );
 
 
 template<typename T>
@@ -60,7 +58,7 @@ void BinaryPrint( const T* array, const int64_t array_size )
 			}
 
 			printf( " " );
-			BinaryPrint( *( cp + ( fixed_size - u8_index ) ) );
+			Uint8BinaryPrint( *( cp + ( fixed_size - u8_index ) ) );
 
 			++u8_print_count;
 		}
