@@ -25,10 +25,21 @@ namespace std_mem_fn_test
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( TestStruct t );
+			PROCESS_MAIN( t.a = 123 );
+
+			std::cout << r2cm::split;
+
 			{
-				DECLARATION_MAIN( TestStruct t );
 				DECLARATION_MAIN( auto do_fn =  std::mem_fn( &TestStruct::Do ) );
 				PROCESS_MAIN( do_fn( &t ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto do_mv = std::mem_fn( &TestStruct::a ) );
+				OUTPUT_VALUE( do_mv( &t ) );
 			}
 
 			std::cout << r2cm::split;
