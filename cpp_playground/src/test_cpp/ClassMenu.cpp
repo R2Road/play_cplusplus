@@ -25,9 +25,10 @@ r2cm::MenuUp ClassMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'q', class_test::MemberAdress::GetInstance() );
-		ret->AddItem( 'w', class_test::Offset_SingleInheritance::GetInstance() );
-		ret->AddItem( 'e', class_test::Offset_MultipleInheritance::GetInstance() );
-		ret->AddItem( 'r', class_test::Offset_Singleton::GetInstance() );
+		ret->AddItem( 'w', class_test::MemberAdress_Method::GetInstance() );
+		ret->AddItem( 'e', class_test::Offset_SingleInheritance::GetInstance() );
+		ret->AddItem( 'r', class_test::Offset_MultipleInheritance::GetInstance() );
+		ret->AddItem( 't', class_test::Offset_Singleton::GetInstance() );
 
 
 

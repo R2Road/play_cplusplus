@@ -48,6 +48,13 @@ namespace class_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class MemberAdress_Method : public r2cm::iItem, public r2cm::SingleTon<MemberAdress_Method>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Offset_SingleInheritance : public r2cm::iItem, public r2cm::SingleTon<Offset_SingleInheritance>
 	{
 	public:

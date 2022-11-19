@@ -415,6 +415,40 @@ namespace class_test
 
 			std::cout << r2cm::split;
 
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT MemberAdress_Method::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Member Adress : Method";
+		};
+	}
+	r2cm::iItem::DoFunctionT MemberAdress_Method::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			SHOW_FILE( "src/test_cpp/item/class_test_helper_member_adress.hpp" );
+
+			std::cout << r2cm::linefeed;
+
+			DECLARATION_MAIN( using TC = class_test_helper_member_adress::TestClass );
+			DECLARATION_MAIN( TC tc );
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_VALUE( &tc );
+			}
+
+			std::cout << r2cm::split;
+
 			{
 				std::cout << r2cm::tab << "+ Method Adress 1" << r2cm::linefeed2;
 				OUTPUT_VALUE( &TC::Func1 );
