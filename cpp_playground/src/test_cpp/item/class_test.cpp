@@ -59,6 +59,43 @@ namespace class_test
 
 
 
+	r2cm::iItem::TitleFunctionT MemberValue::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : MemberValue";
+		};
+	}
+	r2cm::iItem::DoFunctionT MemberValue::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( DECLARATION_MAIN( struct TC
+			{
+				int a = 123; int b = 234;
+			} ); );
+			DECLARATION_MAIN( TC tc );
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_VALUE( tc.b );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( tc.TC::b );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Braces::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -675,43 +712,6 @@ namespace class_test
 			std::cout << r2cm::split;
 
 			OUTPUT_VALUE( &abst );
-
-			std::cout << r2cm::split;
-
-			return r2cm::eItemLeaveAction::Pause;
-		};
-	}
-
-
-
-	r2cm::iItem::TitleFunctionT Property::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Class : Property";
-		};
-	}
-	r2cm::iItem::DoFunctionT Property::GetDoFunction()
-	{
-		return []()->r2cm::eItemLeaveAction
-		{
-			std::cout << r2cm::split;
-
-			DECLARATION_MAIN( DECLARATION_MAIN( struct TC
-			{
-				int a = 0; int b = 0;
-			} ); );
-			DECLARATION_MAIN( TC tc );
-
-			std::cout << r2cm::split;
-
-			{
-				OUTPUT_VALUE( tc.b );
-
-				std::cout << r2cm::linefeed;
-
-				OUTPUT_VALUE( tc.TC::b );
-			}
 
 			std::cout << r2cm::split;
 

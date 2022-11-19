@@ -12,6 +12,13 @@ namespace class_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class MemberValue : public r2cm::iItem, public r2cm::SingleTon<MemberValue>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Braces : public r2cm::iItem, public r2cm::SingleTon<Braces>
 	{
 	public:
@@ -77,13 +84,6 @@ namespace class_test
 	};
 
 	class Offset_Singleton : public r2cm::iItem, public r2cm::SingleTon<Offset_Singleton>
-	{
-	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
-	};
-
-	class Property : public r2cm::iItem, public r2cm::SingleTon<Property>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

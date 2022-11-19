@@ -13,11 +13,12 @@ r2cm::MenuUp ClassMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', class_test::Method::GetInstance() );
-		ret->AddItem( '2', class_test::Braces::GetInstance() );
-		ret->AddItem( '3', class_test::PrintName::GetInstance() );
-		ret->AddItem( '4', class_test::PrivateInheritance_1::GetInstance() );
-		ret->AddItem( '5', class_test::PrivateInheritance_2::GetInstance() );
-		ret->AddItem( '6', class_test::ImplicitTypeConversion::GetInstance() );
+		ret->AddItem( '2', class_test::MemberValue::GetInstance() );
+		ret->AddItem( '3', class_test::Braces::GetInstance() );
+		ret->AddItem( '4', class_test::PrintName::GetInstance() );
+		ret->AddItem( '5', class_test::PrivateInheritance_1::GetInstance() );
+		ret->AddItem( '6', class_test::PrivateInheritance_2::GetInstance() );
+		ret->AddItem( '7', class_test::ImplicitTypeConversion::GetInstance() );
 
 
 
@@ -30,14 +31,6 @@ r2cm::MenuUp ClassMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'e', class_test::Offset_SingleInheritance::GetInstance() );
 		ret->AddItem( 'r', class_test::Offset_MultipleInheritance::GetInstance() );
 		ret->AddItem( 't', class_test::Offset_Singleton::GetInstance() );
-
-
-
-		ret->AddLineFeed();
-
-
-
-		ret->AddItem( 'a', class_test::Property::GetInstance() );
 
 
 
