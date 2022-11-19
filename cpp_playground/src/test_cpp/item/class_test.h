@@ -5,6 +5,13 @@
 
 namespace class_test
 {
+	class Method : public r2cm::iItem, public r2cm::SingleTon<Method>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Braces : public r2cm::iItem, public r2cm::SingleTon<Braces>
 	{
 	public:
