@@ -1,7 +1,6 @@
 #include "class_test.h"
 #include "class_test_helper_member_adress.hpp"
 #include "class_test_helper_offset_singleton.hpp"
-#include "class_test_helper_property.hpp"
 
 #include <iterator>
 #include <numeric>
@@ -25,7 +24,7 @@ namespace class_test
 		{
 			std::cout << r2cm::split;
 
-			OUTPUT_NOTE( "Class Method ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï´Â¹ï¿½." );
+			OUTPUT_NOTE( "Class Method ¸¦ È£ÃâÇÏ´Â¹ý." );
 
 			std::cout << r2cm::split;
 
@@ -698,22 +697,20 @@ namespace class_test
 		{
 			std::cout << r2cm::split;
 
-			SHOW_FILE( "src/test_cpp/item/class_test_helper_member_adress.hpp" );
-
-			std::cout << r2cm::linefeed;
-
-			DECLARATION_MAIN( using TC = class_test_helper_property::TestClass );
+			DECLARATION_MAIN( DECLARATION_MAIN( struct TC
+			{
+				int a = 0; int b = 0;
+			} ); );
 			DECLARATION_MAIN( TC tc );
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto f = &TC::Func1 );
-				PROCESS_MAIN( ( tc.*f )() );
+				OUTPUT_VALUE( tc.b );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( ( tc.TC::Func1 )( ) );
+				OUTPUT_VALUE( tc.TC::b );
 			}
 
 			std::cout << r2cm::split;
