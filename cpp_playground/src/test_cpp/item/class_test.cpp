@@ -1,6 +1,7 @@
 #include "class_test.h"
 #include "class_test_helper_member_adress.hpp"
 #include "class_test_helper_offset_singleton.hpp"
+#include "class_test_helper_property.hpp"
 
 #include <iterator>
 #include <numeric>
@@ -627,6 +628,45 @@ namespace class_test
 			std::cout << r2cm::split;
 
 			OUTPUT_VALUE( &abst );
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Property::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Property";
+		};
+	}
+	r2cm::iItem::DoFunctionT Property::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			SHOW_FILE( "src/test_cpp/item/class_test_helper_member_adress.hpp" );
+
+			std::cout << r2cm::linefeed;
+
+			DECLARATION_MAIN( using TC = class_test_helper_property::TestClass );
+			DECLARATION_MAIN( TC tc );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto f = &TC::Func1 );
+				PROCESS_MAIN( ( tc.*f )() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( ( tc.TC::Func1 )( ) );
+			}
 
 			std::cout << r2cm::split;
 

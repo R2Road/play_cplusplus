@@ -32,6 +32,14 @@ r2cm::MenuUp ClassMenu::Create( r2cm::Director& director )
 
 
 
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'a', class_test::Property::GetInstance() );
+
+
+
 		ret->AddSplit();
 
 
