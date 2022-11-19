@@ -12,6 +12,54 @@
 
 namespace class_test
 {
+	r2cm::iItem::TitleFunctionT Method::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Method";
+		};
+	}
+	r2cm::iItem::DoFunctionT Method::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_NOTE( "Class Method �� ȣ���ϴ¹�." );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( struct MethodTestStruct
+			{
+				void Func() { printf( "\t" "> " "[Call] Func" "\n" ); }
+			} );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( MethodTestStruct mts );
+
+			std::cout << r2cm::split;
+			{
+				PROCESS_MAIN( mts.Func() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( mts.MethodTestStruct::Func() );
+				
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto f = &MethodTestStruct::Func );
+				PROCESS_MAIN( ( mts.*f )( ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Braces::GetTitleFunction() const
 	{
 		return []()->const char*
