@@ -41,7 +41,7 @@ namespace class_test
 
 
 
-	class MemberAdress : public r2cm::iItem, public r2cm::SingleTon<MemberAdress>
+	class MemberAdress_Value : public r2cm::iItem, public r2cm::SingleTon<MemberAdress_Value>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

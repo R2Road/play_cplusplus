@@ -377,14 +377,14 @@ namespace class_test
 
 
 
-	r2cm::iItem::TitleFunctionT MemberAdress::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MemberAdress_Value::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Class : Member Adress";
+			return "Class : Member Adress : Value";
 		};
 	}
-	r2cm::iItem::DoFunctionT MemberAdress::GetDoFunction()
+	r2cm::iItem::DoFunctionT MemberAdress_Value::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -400,7 +400,6 @@ namespace class_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Body Adress" << r2cm::linefeed2;
 				OUTPUT_VALUE( &tc );
 			}
 
