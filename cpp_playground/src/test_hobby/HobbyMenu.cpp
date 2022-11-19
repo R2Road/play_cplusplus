@@ -9,6 +9,7 @@
 
 #include "ListBasedOnArrayMenu.h"
 #include "MemoryPoolMenu.h"
+#include "PropertyMenu.h"
 #include "Vector3Menu.h"
 
 #include "RootMenu.h"
@@ -18,8 +19,9 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', serialize_test::Basic::GetInstance() );
-		ret->AddItem( '2', serialize_test::Copy::GetInstance() );
+		ret->AddMenu<PropertyMenu>( '1' );
+		ret->AddItem( '2', serialize_test::Basic::GetInstance() );
+		ret->AddItem( '3', serialize_test::Copy::GetInstance() );
 
 
 		ret->AddSplit();

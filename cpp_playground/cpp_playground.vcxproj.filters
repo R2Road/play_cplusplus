@@ -524,6 +524,9 @@
     <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
       <Filter>external\r2cm</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_hobby\PropertyMenu.cpp">
+      <Filter>test_hobby</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1030,6 +1033,9 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\class_test_helper_property.hpp">
       <Filter>test_cpp\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\PropertyMenu.h">
+      <Filter>test_hobby</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
