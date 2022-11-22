@@ -1,6 +1,7 @@
 #include "c_union_test.h"
 #include "c_union_test_helper_unnamedunion_with_struct.hpp"
 #include "c_union_test_helper_unnamedunion_with_vector3.hpp"
+#include "c_union_test_helper_unnamedunion_with_vector3_2.hpp"
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
@@ -101,6 +102,54 @@ namespace c_union_test
 
 			{
 				DECLARATION_MAIN( c_union_test_helper_unnamedunion_with_vector3::TestStruct s );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( &s.r[0], &s.x );
+				EXPECT_EQ( &s.r[1], &s.y );
+				EXPECT_EQ( &s.r[2], &s.z );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Unnamed_Union_With_Vector3_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Union : Unnamed Union with Vector3 2";
+		};
+	}
+	r2cm::iItem::DoFunctionT Unnamed_Union_With_Vector3_2::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_NOTE( "Warning 없이 MS 전용 기능을 흉내내보자." );
+
+			std::cout << r2cm::split;
+
+			SHOW_FILE( "src/test_c/item/c_union_test_helper_unnamedunion_with_vector3_2.hpp" );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( c_union_test_helper_unnamedunion_with_vector3_2::TestStruct s );
+				PROCESS_MAIN( s.x = 1 );
+				PROCESS_MAIN( s.y = 2 );
+				PROCESS_MAIN( s.z = 3 );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( s.r[0] );
+				OUTPUT_VALUE( s.r[1] );
+				OUTPUT_VALUE( s.r[2] );
 
 				std::cout << r2cm::linefeed;
 
