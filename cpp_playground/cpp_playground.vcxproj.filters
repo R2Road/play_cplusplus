@@ -530,6 +530,9 @@
     <ClCompile Include="src\test_hobby\item\property_test.cpp">
       <Filter>test_hobby\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_c\item\c_union_test.cpp">
+      <Filter>test_c\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1040,6 +1043,9 @@
     </ClInclude>
     <ClInclude Include="src\test_hobby\item\property_test.h">
       <Filter>test_hobby\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_c\item\c_union_test.h">
+      <Filter>test_c\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
