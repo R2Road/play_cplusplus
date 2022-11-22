@@ -105,6 +105,10 @@ namespace c_union_test
 
 				std::cout << r2cm::linefeed;
 
+				OUTPUT_VALUE( sizeof( s ) );
+
+				std::cout << r2cm::linefeed;
+
 				EXPECT_EQ( &s.r[0], &s.x );
 				EXPECT_EQ( &s.r[1], &s.y );
 				EXPECT_EQ( &s.r[2], &s.z );
@@ -141,6 +145,10 @@ namespace c_union_test
 
 			{
 				DECLARATION_MAIN( c_union_test_helper_unnamedunion_with_vector3_2::TestStruct s );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( sizeof( s ) );
 
 				std::cout << r2cm::linefeed;
 
