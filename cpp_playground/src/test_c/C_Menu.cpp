@@ -29,13 +29,14 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 		ret->AddItem( '4', c_struct_test::Array_Size_0::GetInstance() );
 		ret->AddItem( '5', c_union_test::Basic::GetInstance() );
 		ret->AddItem( '6', c_union_test::Unnamed_Union_With_Struct::GetInstance() );
+		ret->AddItem( '7', c_union_test::Unnamed_Union_With_Vector3::GetInstance() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( '7', c_printf_test::Basic::GetInstance() );
-		ret->AddItem( '8', c_printf_test::ShowNumbers::GetInstance() );
+		ret->AddItem( '8', c_printf_test::Basic::GetInstance() );
+		ret->AddItem( '9', c_printf_test::ShowNumbers::GetInstance() );
 
 
 		ret->AddLineFeed();
