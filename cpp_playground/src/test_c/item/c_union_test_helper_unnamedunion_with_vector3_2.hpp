@@ -1,8 +1,8 @@
 namespace c_union_test_helper_unnamedunion_with_vector3_2
 {
-	struct TestStruct
+	struct Vector3
 	{
-		TestStruct() :
+		Vector3() :
 			r()
 			, x( r[0] )
 			, y( r[1] )

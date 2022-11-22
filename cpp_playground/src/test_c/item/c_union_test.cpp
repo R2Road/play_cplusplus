@@ -101,17 +101,17 @@ namespace c_union_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( c_union_test_helper_unnamedunion_with_vector3::TestStruct s );
+				DECLARATION_MAIN( c_union_test_helper_unnamedunion_with_vector3::Vector3 v );
 
 				std::cout << r2cm::linefeed;
 
-				OUTPUT_VALUE( sizeof( s ) );
+				OUTPUT_VALUE( sizeof( v ) );
 
 				std::cout << r2cm::linefeed;
 
-				EXPECT_EQ( &s.r[0], &s.x );
-				EXPECT_EQ( &s.r[1], &s.y );
-				EXPECT_EQ( &s.r[2], &s.z );
+				EXPECT_EQ( &v.r[0], &v.x );
+				EXPECT_EQ( &v.r[1], &v.y );
+				EXPECT_EQ( &v.r[2], &v.z );
 			}
 
 			std::cout << r2cm::split;
@@ -144,26 +144,26 @@ namespace c_union_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( c_union_test_helper_unnamedunion_with_vector3_2::TestStruct s );
+				DECLARATION_MAIN( c_union_test_helper_unnamedunion_with_vector3_2::Vector3 v );
 
 				std::cout << r2cm::linefeed;
 
-				OUTPUT_VALUE( sizeof( s ) );
+				OUTPUT_VALUE( sizeof( v ) );
 
 				std::cout << r2cm::linefeed;
 
-				EXPECT_EQ( &s.r[0], &s.x );
-				EXPECT_EQ( &s.r[1], &s.y );
-				EXPECT_EQ( &s.r[2], &s.z );
+				EXPECT_EQ( &v.r[0], &v.x );
+				EXPECT_EQ( &v.r[1], &v.y );
+				EXPECT_EQ( &v.r[2], &v.z );
 
 				std::cout << r2cm::linefeed;
 
-				OUTPUT_VALUE( &s.r[0] );
-				OUTPUT_VALUE( &s.r[1] );
-				OUTPUT_VALUE( &s.r[2] );
-				OUTPUT_VALUE( &s.x );
-				OUTPUT_VALUE( &s.y );
-				OUTPUT_VALUE( &s.z );
+				OUTPUT_VALUE( &v.r[0] );
+				OUTPUT_VALUE( &v.r[1] );
+				OUTPUT_VALUE( &v.r[2] );
+				OUTPUT_VALUE( &v.x );
+				OUTPUT_VALUE( &v.y );
+				OUTPUT_VALUE( &v.z );
 			}
 
 			std::cout << r2cm::split;

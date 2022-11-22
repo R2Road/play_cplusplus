@@ -3,7 +3,7 @@
 
 namespace c_union_test_helper_unnamedunion_with_vector3
 {
-	struct TestStruct
+	struct Vector3
 	{
 		union
 		{
