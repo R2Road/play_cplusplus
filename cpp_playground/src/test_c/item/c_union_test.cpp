@@ -141,21 +141,21 @@ namespace c_union_test
 
 			{
 				DECLARATION_MAIN( c_union_test_helper_unnamedunion_with_vector3_2::TestStruct s );
-				PROCESS_MAIN( s.x = 1 );
-				PROCESS_MAIN( s.y = 2 );
-				PROCESS_MAIN( s.z = 3 );
-
-				std::cout << r2cm::linefeed;
-
-				OUTPUT_VALUE( s.r[0] );
-				OUTPUT_VALUE( s.r[1] );
-				OUTPUT_VALUE( s.r[2] );
 
 				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( &s.r[0], &s.x );
 				EXPECT_EQ( &s.r[1], &s.y );
 				EXPECT_EQ( &s.r[2], &s.z );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( &s.r[0] );
+				OUTPUT_VALUE( &s.r[1] );
+				OUTPUT_VALUE( &s.r[2] );
+				OUTPUT_VALUE( &s.x );
+				OUTPUT_VALUE( &s.y );
+				OUTPUT_VALUE( &s.z );
 			}
 
 			std::cout << r2cm::split;
