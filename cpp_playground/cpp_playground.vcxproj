@@ -259,6 +259,7 @@
     <ClInclude Include="src\test_c\item\c_time_test.h" />
     <ClInclude Include="src\test_c\item\c_pointer_test.h" />
     <ClInclude Include="src\test_c\item\c_union_test.h" />
+    <ClInclude Include="src\test_c\item\c_union_test_helper_unnamedunion_with_struct.hpp" />
     <ClInclude Include="src\test_c\PointerMenu.h" />
     <ClInclude Include="src\test_hobby\item\list_based_on_array_test.h" />
     <ClInclude Include="src\test_hobby\item\fsm_v1_test.h" />

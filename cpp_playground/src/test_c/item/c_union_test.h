@@ -11,4 +11,11 @@ namespace c_union_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Unnamed_Union_With_Struct : public r2cm::iItem, public r2cm::SingleTon<Unnamed_Union_With_Struct>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
