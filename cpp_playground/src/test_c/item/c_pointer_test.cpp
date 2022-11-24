@@ -220,13 +220,45 @@ namespace c_pointer_test
 		{
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( const char* empty_string = "" );
+
+			std::cout << r2cm::split;
+
 			{
-				DECLARATION_MAIN( const char* empty_string = "" );
+				EXPECT_EQ( 0, strlen( empty_string ) );
+				EXPECT_NE( nullptr, empty_string );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const char* other_empty_string = "" );
 
 				std::cout << r2cm::linefeed;
 
-				EXPECT_EQ( 0, strlen( empty_string ) );
-				EXPECT_NE( nullptr, empty_string );
+				EXPECT_EQ( empty_string, other_empty_string );
+				OUTPUT_VALUE( (void*)empty_string );
+				OUTPUT_VALUE( (void*)other_empty_string );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "같은 내용의 정적 문자열들은 주소가 같다." );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const char* space_x1_string_1 = " " );
+				DECLARATION_MAIN( const char* space_x1_string_2 = " " );
+				DECLARATION_MAIN( const char* space_x2_string_1 = "  " );
+				DECLARATION_MAIN( const char* space_x2_string_2 = "  " );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( (void*)space_x1_string_1 );
+				OUTPUT_VALUE( (void*)space_x1_string_2 );
+				OUTPUT_VALUE( (void*)space_x2_string_1 );
+				OUTPUT_VALUE( (void*)space_x2_string_2 );
 			}
 
 			std::cout << r2cm::split;
