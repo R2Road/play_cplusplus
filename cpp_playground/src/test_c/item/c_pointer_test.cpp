@@ -211,7 +211,7 @@ namespace c_pointer_test
 	{
 		return []()->const char*
 		{
-			return "Character Pointer : Length 0";
+			return "char* : Length 0";
 		};
 	}
 	r2cm::iItem::DoFunctionT CharacterPointer_Length_0::GetDoFunction()
