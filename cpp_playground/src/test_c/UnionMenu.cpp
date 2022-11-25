@@ -16,6 +16,7 @@ r2cm::MenuUp UnionMenu::Create( r2cm::Director& director )
 		ret->AddItem( '2', c_union_test::Unnamed_Union_With_Struct::GetInstance() );
 		ret->AddItem( '3', c_union_test::Unnamed_Union_With_Vector3::GetInstance() );
 		ret->AddItem( '4', c_union_test::Unnamed_Union_With_Vector3_2::GetInstance() );
+		ret->AddItem( '5', c_union_test::Unnamed_Union_With_Vector3_3::GetInstance() );
 
 
 
