@@ -92,6 +92,7 @@
     <ClCompile Include="src\test_c\item\c_pointer_test.cpp" />
     <ClCompile Include="src\test_c\item\c_union_test.cpp" />
     <ClCompile Include="src\test_c\PointerMenu.cpp" />
+    <ClCompile Include="src\test_c\UnionMenu.cpp" />
     <ClCompile Include="src\test_hobby\item\list_based_on_array_test.cpp" />
     <ClCompile Include="src\test_hobby\item\fsm_v1_test.cpp" />
     <ClCompile Include="src\test_hobby\item\infinite_number_test.cpp" />
@@ -263,6 +264,7 @@
     <ClInclude Include="src\test_c\item\c_union_test_helper_unnamedunion_with_vector3.hpp" />
     <ClInclude Include="src\test_c\item\c_union_test_helper_unnamedunion_with_vector3_2.hpp" />
     <ClInclude Include="src\test_c\PointerMenu.h" />
+    <ClInclude Include="src\test_c\UnionMenu.h" />
     <ClInclude Include="src\test_hobby\item\list_based_on_array_test.h" />
     <ClInclude Include="src\test_hobby\item\fsm_v1_test.h" />
     <ClInclude Include="src\test_hobby\item\infinite_number_test.h" />

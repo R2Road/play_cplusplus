@@ -16,6 +16,7 @@
 
 #include "BitOperationMenu.h"
 #include "PointerMenu.h"
+#include "UnionMenu.h"
 #include "RootMenu.h"
 
 r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
@@ -27,10 +28,7 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 		ret->AddItem( '2', c_operator_ternary_test::Basic::GetInstance() );
 		ret->AddItem( '3', c_operator_ternary_test::Comma::GetInstance() );
 		ret->AddItem( '4', c_struct_test::Array_Size_0::GetInstance() );
-		ret->AddItem( '5', c_union_test::Basic::GetInstance() );
-		ret->AddItem( '6', c_union_test::Unnamed_Union_With_Struct::GetInstance() );
-		ret->AddItem( '7', c_union_test::Unnamed_Union_With_Vector3::GetInstance() );
-		ret->AddItem( '8', c_union_test::Unnamed_Union_With_Vector3_2::GetInstance() );
+		
 
 
 		ret->AddLineFeed();
@@ -53,8 +51,9 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 
 		ret->AddMenu<PointerMenu>( 'a' );
 		ret->AddMenu<BitOperationMenu>( 's' );
-		ret->AddItem( 'd', c_system_test::Pause::GetInstance() );
-		ret->AddItem( 'f', c_atexit_test::Basic::GetInstance() );
+		ret->AddMenu<UnionMenu>( 'd' );
+		ret->AddItem( 'f', c_system_test::Pause::GetInstance() );
+		ret->AddItem( 'g', c_atexit_test::Basic::GetInstance() );
 
 
 
