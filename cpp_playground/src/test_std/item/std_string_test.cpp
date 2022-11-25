@@ -7,6 +7,46 @@
 
 namespace std_string_test
 {
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Basic";
+		};
+	}
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const std::string empty_string_1 );
+				DECLARATION_MAIN( const std::string empty_string_2 );
+				EXPECT_EQ( empty_string_1, empty_string_2 );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const std::string string_1( " " ) );
+				DECLARATION_MAIN( const std::string string_2( " " ) );
+				EXPECT_EQ( empty_string_1, empty_string_2 );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( (void*)string_1.c_str() );
+				OUTPUT_VALUE( (void*)string_2.c_str() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Find::GetTitleFunction() const
 	{
 		return []()->const char*

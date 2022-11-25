@@ -5,6 +5,13 @@
 
 namespace std_string_test
 {
+	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Find : public r2cm::iItem, public r2cm::SingleTon<Find>
 	{
 	public:
