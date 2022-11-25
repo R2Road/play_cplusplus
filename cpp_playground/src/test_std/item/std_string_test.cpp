@@ -31,7 +31,7 @@ namespace std_string_test
 			{
 				DECLARATION_MAIN( const std::string string_1( " " ) );
 				DECLARATION_MAIN( const std::string string_2( " " ) );
-				EXPECT_EQ( empty_string_1, empty_string_2 );
+				EXPECT_EQ( string_1, string_2 );
 
 				std::cout << r2cm::linefeed;
 
