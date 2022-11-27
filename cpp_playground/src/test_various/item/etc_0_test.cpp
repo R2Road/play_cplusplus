@@ -161,8 +161,24 @@ namespace etc_test
 	class function<Ret (Param...)>
 	{
 	public:
+		function( Ret( *f )( Param... ) );
+
 		Ret operator()( Param... );
+
+	private:
+		struct callable_interface
+		{
+			virtual Ret call( Param... ) = 0;
+			virtual ~function_interface() = 0;
+		};
+
+		std::unique_ptr<callable_interface> mCallable;
 	};
+
+	int f( int x, int y )
+	{
+		return x + y;
+	}
 
 	r2cm::iItem::TitleFunctionT STDFunctionImplement::GetTitleFunction() const
 	{
