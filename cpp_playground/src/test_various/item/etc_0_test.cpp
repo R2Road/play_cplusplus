@@ -165,18 +165,33 @@ namespace etc_test
 			mCallable( std::make_unique<callable_impl<Ret( *)( Param... ) >>( f ) )
 		{}
 
-		Ret operator()( Param... );
+		template<typename FunctionObject>
+		function( FunctionObject fo )
+			: mCallable( std::make_unique<callable_impl<FunctionObject>>( std::move( fo ) ) )
+		{}
+
+		Ret operator()( Param... param ) { return mCallable->call( param... ); }
 
 	private:
 		struct callable_interface
 		{
 			virtual Ret call( Param... ) = 0;
-			virtual ~function_interface() = 0;
+			virtual ~callable_interface() = default;
 		};
 
 		template<typename Callable>
 		struct callable_impl : callable_interface
-		{};
+		{
+			callable_impl( Callable callable_ ) : callable( std::move( callable_ ) )
+			{}
+
+			Ret call( Param... param )
+			{
+				return callable( param... );
+			}
+
+			Callable callable;
+		};
 
 		std::unique_ptr<callable_interface> mCallable;
 	};
@@ -200,7 +215,14 @@ namespace etc_test
 			std::cout << r2cm::split;
 
 			{
-				function<int( int, int)> func;
+				function<int( int, int)> func( f );
+				PROCESS_MAIN( func( 1, 2 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				function<int( int, int )> func( []( int x, int y ) { return x + y; } );
 				PROCESS_MAIN( func( 1, 2 ) );
 			}
 
