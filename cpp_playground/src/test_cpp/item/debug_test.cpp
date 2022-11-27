@@ -162,7 +162,7 @@ namespace debug_test
 		{
 			std::cout << r2cm::split;
 
-			SHOW_FILE( "src/r2/r2_Assert.h" );
+			OUTPUT_FILE( "src/r2/r2_Assert.h" );
 
 			std::cout << r2cm::split;
 
@@ -238,7 +238,7 @@ namespace debug_test
 			std::cout << r2cm::split;
 
 			{
-				SHOW_FILE( file_path );
+				OUTPUT_FILE( file_path );
 			}
 
 			std::cout << r2cm::split;

@@ -20,7 +20,7 @@ namespace template_practice_test_02
 		{
 			std::cout << r2cm::split;
 
-			SHOW_FILE( "src/test_template/item/template_practice_test_02_helper_basic.hpp" );
+			OUTPUT_FILE( "src/test_template/item/template_practice_test_02_helper_basic.hpp" );
 
 			std::cout << r2cm::split;
 
@@ -59,7 +59,7 @@ namespace template_practice_test_02
 		{
 			std::cout << r2cm::split;
 
-			SHOW_FILE( "src/test_template/item/template_practice_test_02_helper_return_value.hpp" );
+			OUTPUT_FILE( "src/test_template/item/template_practice_test_02_helper_return_value.hpp" );
 
 			std::cout << r2cm::split;
 

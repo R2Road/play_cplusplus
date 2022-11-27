@@ -21,7 +21,7 @@ namespace std_invoke_test
 		{
 			std::cout << r2cm::split;
 
-			SHOW_FILE( "src/test_std/item/std_invoke_test_helper.hpp" );
+			OUTPUT_FILE( "src/test_std/item/std_invoke_test_helper.hpp" );
 
 			std::cout << r2cm::split;
 

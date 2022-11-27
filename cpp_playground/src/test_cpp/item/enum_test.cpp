@@ -347,7 +347,7 @@ namespace enum_test
 			std::cout << r2cm::split;
 
 			{
-				SHOW_FILE( "src/test_cpp/item/enum_test_xmacro_2.def" );
+				OUTPUT_FILE( "src/test_cpp/item/enum_test_xmacro_2.def" );
 
 				std::cout << r2cm::linefeed;
 

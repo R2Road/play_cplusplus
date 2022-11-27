@@ -3,7 +3,8 @@
 #include <iostream>
 #include <stdint.h>
 
-#include "r2cm_BinaryPrint.h"
+#include "r2cm_PrintBinary.h"
+#include "r2cm_PrintFile.h"
 
 #define R2CM_ENABLE_DEBUG_BREAK 0
 
@@ -14,6 +15,10 @@
 #endif // R2CM_ENABLE_DEBUG_BREAK
 
 
+
+//
+//
+//
 #define	EXPECT_TRUE( condition )																\
 do {																							\
 	if( ( condition ) )																			\
@@ -122,6 +127,9 @@ do {																											\
 	}																											\
 } while( false )
 
+
+
+
 //
 // Important Process Code
 //
@@ -139,6 +147,9 @@ do {																						\
 	{ condition; }																			\
 } while( false )
 
+
+
+
 //
 // Important Declaration Code
 //
@@ -152,6 +163,9 @@ printf( "\x1B[93m" "[DECLARATION]" "\033[0m" " %s\n", #condition );
 condition;																					\
 printf( "\x1B[90m" "[DECLARATION]" " %s" "\033[0m" "\n", #condition );
 
+
+
+
 //
 // Output Value
 //
@@ -161,13 +175,16 @@ do {																						\
 	std::cout << "\t> " << condition << "\n";												\
 } while( false )
 
+
+
+
 //
 // Output Binary
 //
 #define	OUTPUT_BINARY( condition )															\
 do {																						\
 	printf( "[BINARY]" " %s", #condition );													\
-	BinaryPrint( ( condition ) );															\
+	r2cm::PrintBinary( ( condition ) );														\
 	printf( "\n" );																			\
 } while( false )
 
@@ -179,9 +196,12 @@ do {																						\
 #define	OUTPUT_BINARIES( pointer, size )													\
 do {																						\
 	printf( "[BINARIES]" " %s" ", %s", #pointer, #size );									\
-	BinaryPrint( ( pointer ), ( size ) );													\
+	r2cm::PrintBinary( ( pointer ), ( size ) );												\
 	printf( "\n" );																			\
 } while( false )
+
+
+
 
 //
 // Output Code
@@ -191,20 +211,34 @@ do {																						\
 	printf( "[CODE]" " %s" "\n", #condition );												\
 } while( false )
 
+
+
+
 //
 // Output ETC
 //
-#define	OUTPUT_NOTE( str )															\
+#define	OUTPUT_NOTE( str )																	\
 do {																						\
 	printf( "\t" "+ Note : " "%s" "\n", str );												\
 } while( false )
 
-#define	OUTPUT_COMMENT( str )															\
+#define	OUTPUT_COMMENT( str )																\
 do {																						\
-	printf( "\t" "> " "%s" "\n", str );												\
+	printf( "\t" "> " "%s" "\n", str );														\
 } while( false )
 
+
+
+
 //
+// File
 //
-//
-void SHOW_FILE( const char* const path );
+#define OUTPUT_FILE( file_path )															\
+do {																						\
+	r2cm::PrintFile( file_path );															\
+} while( false )
+
+#define OUTPUT_FILE_RANGE( file_path, min, max )											\
+do {																						\
+	r2cm::PrintFile( file_path, min, max );													\
+} while( false )

@@ -55,7 +55,7 @@ namespace c_union_test
 
 			std::cout << r2cm::split;
 
-			SHOW_FILE( "src/test_c/item/c_union_test_helper_unnamedunion_with_struct.hpp" );
+			OUTPUT_FILE( "src/test_c/item/c_union_test_helper_unnamedunion_with_struct.hpp" );
 
 			std::cout << r2cm::split;
 
@@ -96,7 +96,7 @@ namespace c_union_test
 
 			std::cout << r2cm::split;
 
-			SHOW_FILE( "src/test_c/item/c_union_test_helper_unnamedunion_with_vector3.hpp" );
+			OUTPUT_FILE( "src/test_c/item/c_union_test_helper_unnamedunion_with_vector3.hpp" );
 
 			std::cout << r2cm::split;
 
@@ -139,7 +139,7 @@ namespace c_union_test
 
 			std::cout << r2cm::split;
 
-			SHOW_FILE( "src/test_c/item/c_union_test_helper_unnamedunion_with_vector3_2.hpp" );
+			OUTPUT_FILE( "src/test_c/item/c_union_test_helper_unnamedunion_with_vector3_2.hpp" );
 
 			std::cout << r2cm::split;
 

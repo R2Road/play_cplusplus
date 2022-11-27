@@ -19,7 +19,7 @@ namespace template_specialization_test
 		{
 			std::cout << r2cm::split;
 
-			SHOW_FILE( "src/test_template/item/template_specialization_test_helper_basic.hpp" );
+			OUTPUT_FILE( "src/test_template/item/template_specialization_test_helper_basic.hpp" );
 
 			std::cout << r2cm::split;
 

@@ -475,7 +475,7 @@ namespace class_test
 		{
 			std::cout << r2cm::split;
 
-			SHOW_FILE( "src/test_cpp/item/class_test_helper_member_adress.hpp" );
+			OUTPUT_FILE( "src/test_cpp/item/class_test_helper_member_adress.hpp" );
 
 			std::cout << r2cm::linefeed;
 
@@ -518,7 +518,7 @@ namespace class_test
 		{
 			std::cout << r2cm::split;
 
-			SHOW_FILE( "src/test_cpp/item/class_test_helper_member_adress.hpp" );
+			OUTPUT_FILE( "src/test_cpp/item/class_test_helper_member_adress.hpp" );
 
 			std::cout << r2cm::linefeed;
 
@@ -703,7 +703,7 @@ namespace class_test
 		{
 			std::cout << r2cm::split;
 
-			SHOW_FILE( "src/test_cpp/item/class_test_helper_offset_singleton.hpp" );
+			OUTPUT_FILE( "src/test_cpp/item/class_test_helper_offset_singleton.hpp" );
 
 			std::cout << r2cm::split;
 
