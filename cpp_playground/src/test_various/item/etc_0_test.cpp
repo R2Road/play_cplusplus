@@ -161,7 +161,9 @@ namespace etc_test
 	class function<Ret (Param...)>
 	{
 	public:
-		function( Ret( *f )( Param... ) );
+		function( Ret( *f )( Param... ) ) :
+			mCallable( std::make_unique<callable_impl<Ret( *)( Param... ) >>( f ) )
+		{}
 
 		Ret operator()( Param... );
 
@@ -171,6 +173,10 @@ namespace etc_test
 			virtual Ret call( Param... ) = 0;
 			virtual ~function_interface() = 0;
 		};
+
+		template<typename Callable>
+		struct callable_impl : callable_interface
+		{};
 
 		std::unique_ptr<callable_interface> mCallable;
 	};
