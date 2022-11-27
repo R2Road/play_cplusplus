@@ -216,14 +216,14 @@ namespace etc_test
 
 			{
 				function<int( int, int)> func( f );
-				PROCESS_MAIN( func( 1, 2 ) );
+				OUTPUT_VALUE( func( 1, 2 ) );
 			}
 
 			std::cout << r2cm::split;
 
 			{
 				function<int( int, int )> func( []( int x, int y ) { return x + y; } );
-				PROCESS_MAIN( func( 1, 2 ) );
+				OUTPUT_VALUE( func( 1, 2 ) );
 			}
 
 			std::cout << r2cm::split;
