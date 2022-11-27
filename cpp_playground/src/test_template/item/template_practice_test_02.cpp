@@ -23,18 +23,33 @@ namespace template_practice_test_02
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( FuncContainer f );
+			PROCESS_MAIN( f.def( "F1_A0", FN_V_A0 ) );
+			PROCESS_MAIN( f.def( "F2_A0", FN_V_A0 ) );
+			PROCESS_MAIN( f.def( "F3_A1", FN_V_A1 ) );
+			PROCESS_MAIN( f.def( "F4_A1", FN_V_A1 ) );
+			PROCESS_MAIN( f.def( "F5_A3", FN_V_A3 ) );
+
+			std::cout << r2cm::split;
+
 			{
-				DECLARATION_MAIN( FuncContainer f );
-				PROCESS_MAIN( f.def( "F1_A0", TestFunction_A0 ) );
-				PROCESS_MAIN( f.def( "F2_A0", TestFunction_A0 ) );
-				PROCESS_MAIN( f.def( "F3_A1", TestFunction_A1 ) );
-				PROCESS_MAIN( f.def( "F4_A1", TestFunction_A1 ) );
-				PROCESS_MAIN( f.def( "F5_A3", TestFunction_A3 ) );
+				OUTPUT_NOTE( "정상적인 인자 설정으로 함수 호출 시도" );
 
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( f.Call<void>( "F1_A0" ) );
 				PROCESS_MAIN( f.Call<void>( "F5_A3", 100, 200, 300 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "잘못된 인자 설정으로 함수 호출 시도" );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( f.Call<void>( "F5_A3", 100, 200, 300, 400 ) );
+				PROCESS_MAIN( f.Call<void>( "F5_A3" ) );
 			}
 
 			std::cout << r2cm::split;

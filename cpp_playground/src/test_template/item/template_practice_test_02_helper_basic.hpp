@@ -5,19 +5,17 @@
 
 namespace template_practice_test_02
 {
-	void TestFunction_A0()
+	void FN_V_A0()
 	{
-		std::cout << "\t" "> " "TestFunction" << r2cm::linefeed;
+		printf( "\t" "> " "FN_V_A0()" "\n" );
 	}
-
-	void TestFunction_A1( int i )
+	void FN_V_A1( int i )
 	{
-		std::cout << "\t" "> " "TestFunction : " << i << r2cm::linefeed;
+		printf( "\t" "> " "FN_V_A1() : %d" "\n", i );
 	}
-
-	void TestFunction_A3( int i, int j, int k )
+	void FN_V_A3( int i, int j, int k )
 	{
-		std::cout << "\t" "> " "TestFunction : " << i << " " << j << " " << k << " " << r2cm::linefeed;
+		printf( "\t" "> " "FN_V_A3() : %d, %d, %d" "\n", i, j, k );
 	}
 
 	struct FuncContainer
