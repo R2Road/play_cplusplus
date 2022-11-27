@@ -61,7 +61,7 @@ namespace template_basic_test
 		{
 			std::cout << r2cm::split;
 
-			OUTPUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 1, 15 );
+			OUTPUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 17, 36 );
 
 			std::cout << r2cm::split;
 
@@ -113,7 +113,7 @@ namespace template_basic_test
 		{
 			std::cout << r2cm::split;
 
-			OUTPUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 17, 40 );
+			OUTPUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 38, 61 );
 
 			std::cout << r2cm::split;
 
