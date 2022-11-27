@@ -159,7 +159,10 @@ namespace etc_test
 
 	template<typename Ret, typename ... Param>
 	class function<Ret (Param...)>
-	{};
+	{
+	public:
+		Ret operator()( Param... );
+	};
 
 	r2cm::iItem::TitleFunctionT STDFunctionImplement::GetTitleFunction() const
 	{
@@ -176,6 +179,7 @@ namespace etc_test
 
 			{
 				function<int( int, int)> func;
+				PROCESS_MAIN( func( 1, 2 ) );
 			}
 
 			std::cout << r2cm::split;
