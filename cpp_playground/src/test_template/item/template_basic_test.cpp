@@ -100,14 +100,14 @@ namespace template_basic_test
 
 
 
-	r2cm::iItem::TitleFunctionT Function::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Function_Object::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Basic : Function";
+			return "Basic : Function - Object";
 		};
 	}
-	r2cm::iItem::DoFunctionT Function::GetDoFunction()
+	r2cm::iItem::DoFunctionT Function_Object::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
