@@ -161,10 +161,6 @@ namespace etc_test
 	class function<Ret (Param...)>
 	{
 	public:
-		function( Ret( *f )( Param... ) ) :
-			mCallable( std::make_unique<callable_impl<Ret( *)( Param... ) >>( f ) )
-		{}
-
 		template<typename FunctionObject>
 		function( FunctionObject fo )
 			: mCallable( std::make_unique<callable_impl<FunctionObject>>( std::move( fo ) ) )
@@ -187,7 +183,8 @@ namespace etc_test
 
 			Ret call( Param... param )
 			{
-				return callable( param... );
+				//return callable( param... );
+				return std::invoke( callable, param... );
 			}
 
 			Callable callable;
@@ -222,11 +219,20 @@ namespace etc_test
 			std::cout << r2cm::split;
 
 			{
-				function<int( int, int )> func( []( int x, int y ) { return x + y; } );
+				function<int( int, int )> func( [z = 42]( int x, int y ) { return x + y + z; } );
 				OUTPUT_VALUE( func( 1, 2 ) );
 			}
 
 			std::cout << r2cm::split;
+
+			{
+				//class T { public: int Do( int x, int y ) { return x + y; } } t;
+				//function<int( int, int )> func( &T::Do );
+				//OUTPUT_VALUE( func( &t, 1, 2 ) );
+			}
+
+			std::cout << r2cm::split;
+
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
