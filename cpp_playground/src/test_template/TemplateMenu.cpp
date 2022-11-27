@@ -19,6 +19,9 @@ r2cm::MenuUp TemplateMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', template_basic_test::MemberVariable::GetInstance() );
+		ret->AddItem( '2', template_basic_test::Function::GetInstance() );
+
+
 		ret->AddItem( '5', template_practice_test_02::ReturnValue::GetInstance() );
 		ret->AddItem( '6', template_practice_test_02::Basic::GetInstance() );
 

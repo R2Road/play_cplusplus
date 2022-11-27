@@ -45,4 +45,48 @@ namespace template_basic_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Function::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Basic : Function";
+		};
+	}
+	r2cm::iItem::DoFunctionT Function::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 17, 40 );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( FunctionTest_01 FT( F_V_0 ) );
+				PROCESS_MAIN( FT() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( FunctionTest_01 FT( F_R_0 ) );
+				PROCESS_MAIN( FT() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( FunctionTest_01 FT( F_R_2 ) );
+				PROCESS_MAIN( FT( 3, 5 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
