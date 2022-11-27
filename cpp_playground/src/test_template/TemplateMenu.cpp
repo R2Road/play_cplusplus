@@ -3,6 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
+#include "item/template_basic_test.h"
 #include "item/template_practice_test_02.h"
 #include "item/template_specialization_test.h"
 
@@ -17,8 +18,9 @@ r2cm::MenuUp TemplateMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', template_practice_test_02::ReturnValue::GetInstance() );
-		ret->AddItem( '2', template_practice_test_02::Basic::GetInstance() );
+		ret->AddItem( '1', template_basic_test::MemberVariable::GetInstance() );
+		ret->AddItem( '5', template_practice_test_02::ReturnValue::GetInstance() );
+		ret->AddItem( '6', template_practice_test_02::Basic::GetInstance() );
 
 
 

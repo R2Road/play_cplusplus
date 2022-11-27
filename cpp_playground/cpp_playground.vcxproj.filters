@@ -536,6 +536,9 @@
     <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
       <Filter>external\r2cm</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_template\item\template_basic_test.cpp">
+      <Filter>test_template\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1063,6 +1066,12 @@
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
       <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_template\item\template_basic_test.h">
+      <Filter>test_template\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_template\item\template_basic_test_helper.hpp">
+      <Filter>test_template\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
