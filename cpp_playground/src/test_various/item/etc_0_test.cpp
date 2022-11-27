@@ -57,4 +57,96 @@ namespace etc_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+	// C++ Weekley with Jason Turners
+	// https://www.youtube.com/watch?v=287_oG4CNMc
+	class LifeTime
+	{
+	public:
+		LifeTime() noexcept
+		{
+			puts( "\t> LifeTime()" );
+		}
+		LifeTime( const LifeTime& ) noexcept
+		{
+			puts( "\t> LifeTime( const LifeTime& ) noexcept" );
+		}
+		LifeTime( LifeTime&& ) noexcept
+		{
+			puts( "\t> LifeTime( LifeTime&& ) noexcept" );
+		}
+		~LifeTime() noexcept
+		{
+			puts( "\t> ~LifeTime()\n" );
+		}
+
+		LifeTime& operator=( const LifeTime& ) noexcept
+		{
+			puts( "\t> operator=( const LifeTime& ) noexcept" );
+			return *this;
+		}
+		LifeTime& operator=( LifeTime&& ) noexcept
+		{
+			puts( "\t> operator=( LifeTime&& ) noexcept" );
+			return *this;
+		}
+	};
+	LifeTime f1()
+	{
+		return LifeTime{};
+	}
+	LifeTime f2()
+	{
+		return f1();
+	}
+	LifeTime f3()
+	{
+		return f2();
+	}
+
+	r2cm::iItem::TitleFunctionT LifeTimeTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Life Time";
+		};
+	}
+	r2cm::iItem::DoFunctionT LifeTimeTest::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "1. Create a Tool That Helps You Understand Object LifeTime" );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( LifeTime lt = f3() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "2. Study The Lambda!!" );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( LifeTime lt = f3() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto l = [ lt = std::move( lt ) ]() {} );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto l2 = l );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

@@ -11,4 +11,11 @@ namespace etc_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class LifeTimeTest : public r2cm::iItem, public r2cm::SingleTon<LifeTimeTest>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
