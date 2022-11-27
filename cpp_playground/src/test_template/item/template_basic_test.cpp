@@ -66,19 +66,19 @@ namespace template_basic_test
 			std::cout << r2cm::split;
 
 			{
-				OUTPUT_CODE( int i = R_() );
+				OUTPUT_CODE( int i = Template_Fn_R_() );
 				std::cout << "\t" "> " "변수에 할당하는 행위는 Template 의 타입 추론에 영향을 주지 못한다." << r2cm::linefeed;
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( int i = R_<int>() );
+				DECLARATION_MAIN( int i = Template_Fn_R_<int>() );
 				( i );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( int i = R_R1( 123 ) );
+				DECLARATION_MAIN( int i = Template_Fn_R_R1( 123 ) );
 				( i );
 				std::cout << "\t" "> " "함수 인자 타입과 반환값의 타입이 같다면 인자에서 타입이 정해지므로 타입 추론에 성공한다." << r2cm::linefeed;
 
@@ -87,7 +87,7 @@ namespace template_basic_test
 			std::cout << r2cm::split;
 
 			{
-				OUTPUT_CODE( int i = R_A1( 123 ) );
+				OUTPUT_CODE( int i = Template_Fn_R_A1( 123 ) );
 				std::cout << "\t" "> " "함수 인자 타입과 반환값의 타입이 다르다면 반환값의 인자 추론에 영향을 주지 못한다." << r2cm::linefeed;
 
 			}
