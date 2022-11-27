@@ -118,21 +118,21 @@ namespace template_basic_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( FunctionTest_01 FT( V_0 ) );
+				DECLARATION_MAIN( FunctionTest_01 FT( FN_V_0 ) );
 				PROCESS_MAIN( FT() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( FunctionTest_01 FT( R_0 ) );
+				DECLARATION_MAIN( FunctionTest_01 FT( FN_R_0 ) );
 				PROCESS_MAIN( FT() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( FunctionTest_01 FT( R_2 ) );
+				DECLARATION_MAIN( FunctionTest_01 FT( FN_R_2 ) );
 				PROCESS_MAIN( FT( 3, 5 ) );
 			}
 

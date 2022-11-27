@@ -37,11 +37,11 @@ namespace template_basic_test
 
 namespace template_basic_test
 {
-	void V_0() { puts( "void V_0()" ); }
+	void FN_V_0() { puts( "void FN_V_0()" ); }
 
-	int R_0() { puts( "int R_0()" ); return 0; }
+	int FN_R_0() { puts( "int FN_R_0()" ); return 0; }
 
-	int R_2( int x, int y ) { puts( "int R_0()" ); return x + y; }
+	int FN_R_2( int x, int y ) { puts( "int FN_R_0()" ); return x + y; }
 
 	template<typename Ret, typename ... Param>
 	class FunctionTest_01
