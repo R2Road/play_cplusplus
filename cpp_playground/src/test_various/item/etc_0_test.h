@@ -18,4 +18,11 @@ namespace etc_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class STDFunctionImplement : public r2cm::iItem, public r2cm::SingleTon<STDFunctionImplement>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }

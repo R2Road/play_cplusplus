@@ -14,6 +14,7 @@ r2cm::MenuUp ETCMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem( '1', etc_test::ShowBinary::GetInstance() );
 		ret->AddItem( '2', etc_test::LifeTimeTest::GetInstance() );
+		ret->AddItem( '3', etc_test::STDFunctionImplement::GetInstance() );
 
 
 		ret->AddSplit();

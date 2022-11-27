@@ -149,4 +149,38 @@ namespace etc_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	// C++ Weekley with Jason Turners : Ep 333
+	// https://www.youtube.com/watch?v=xJSKk_q25oQ
+	template<typename T>
+	class function;
+
+	template<typename Ret, typename ... Param>
+	class function<Ret (Param...)>
+	{};
+
+	r2cm::iItem::TitleFunctionT STDFunctionImplement::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "STD Function Implement";
+		};
+	}
+	r2cm::iItem::DoFunctionT STDFunctionImplement::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				function<int( int, int)> func;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
