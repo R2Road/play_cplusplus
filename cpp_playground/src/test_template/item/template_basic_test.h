@@ -12,6 +12,13 @@ namespace template_basic_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class Function_ReturnValue : public r2cm::iItem, public r2cm::SingleTon<Function_ReturnValue>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Function : public r2cm::iItem, public r2cm::SingleTon<Function>
 	{
 	public:

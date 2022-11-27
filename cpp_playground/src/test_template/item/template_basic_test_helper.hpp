@@ -16,6 +16,27 @@ namespace template_basic_test
 
 namespace template_basic_test
 {
+	template<typename ReturnValueT>
+	ReturnValueT R_()
+	{
+		return ReturnValueT();
+	}
+
+	template<typename ReturnValueT>
+	ReturnValueT R_R1( ReturnValueT a1 )
+	{
+		return ReturnValueT( a1 );
+	}
+
+	template<typename ReturnValueT, typename ArgumentT1>
+	ReturnValueT R_A1( ArgumentT1 a1 )
+	{
+		return ReturnValueT( a1 );
+	}
+}
+
+namespace template_basic_test
+{
 	void V_0() { puts( "void V_0()" ); }
 
 	int R_0() { puts( "int R_0()" ); return 0; }

@@ -1004,9 +1004,6 @@
     <ClInclude Include="src\test_template\item\template_practice_test_02_helper_basic.hpp">
       <Filter>test_template\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_template\item\template_practice_test_02_helper_return_value.hpp">
-      <Filter>test_template\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\item\class_test_helper_member_adress.hpp">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
