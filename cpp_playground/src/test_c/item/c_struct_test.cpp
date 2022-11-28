@@ -19,47 +19,47 @@ namespace c_struct_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( struct S1 { char c1; } );
-				OUTPUT_VALUE( sizeof( S1 ) );
+				DECLARATION_MAIN( struct C { char c1; } );
+				OUTPUT_VALUE( sizeof( C ) );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( struct S1 { char c1; char c2; } );
-				OUTPUT_VALUE( sizeof( S1 ) );
+				DECLARATION_MAIN( struct C_C { char c1; char c2; } );
+				OUTPUT_VALUE( sizeof( C_C ) );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( struct S1 { char c1 = -1; char c2 = -2; int i1 = -3; } );
-				OUTPUT_VALUE( sizeof( S1 ) );
-				OUTPUT_BINARY( S1() );
+				DECLARATION_MAIN( struct C_C_I { char c1 = -1; char c2 = -2; int i1 = -3; } );
+				OUTPUT_VALUE( sizeof( C_C_I ) );
+				OUTPUT_BINARY( C_C_I() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( struct S1 { int i1 = -1; char c1 = -2; int i2 = -3; } );
-				OUTPUT_VALUE( sizeof( S1 ) );
-				OUTPUT_BINARY( S1() );
+				DECLARATION_MAIN( struct I_C_I { int i1 = -1; char c1 = -2; int i2 = -3; } );
+				OUTPUT_VALUE( sizeof( I_C_I ) );
+				OUTPUT_BINARY( I_C_I() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( struct S1 { int i1 = -1; char c1 = -2; long long i2 = -3; } );
-				OUTPUT_VALUE( sizeof( S1 ) );
-				OUTPUT_BINARY( S1() );
+				DECLARATION_MAIN( struct I_C_LL { int i1 = -1; char c1 = -2; long long ll1 = -3; } );
+				OUTPUT_VALUE( sizeof( I_C_LL ) );
+				OUTPUT_BINARY( I_C_LL() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( struct S1 { int i1 = -1; char c1 = -2; long long ll2 = -3; int i2 = -4; } );
-				OUTPUT_VALUE( sizeof( S1 ) );
-				OUTPUT_BINARY( S1() );
+				DECLARATION_MAIN( struct I_C_LL_I { int i1 = -1; char c1 = -2; long long ll1 = -3; int i2 = -4; } );
+				OUTPUT_VALUE( sizeof( I_C_LL_I ) );
+				OUTPUT_BINARY( I_C_LL_I() );
 			}
 
 			std::cout << r2cm::split;
