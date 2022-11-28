@@ -5,6 +5,13 @@
 
 namespace alignof_test
 {
+	class PrimitiveType : public r2cm::iItem, public r2cm::SingleTon<PrimitiveType>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
 	{
 	public:

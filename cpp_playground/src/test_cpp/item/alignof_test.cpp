@@ -5,10 +5,58 @@
 #include <unordered_map>
 #include <vector>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace alignof_test
 {
+	r2cm::iItem::TitleFunctionT PrimitiveType::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "alignof : PrimitiveType";
+		};
+	}
+	r2cm::iItem::DoFunctionT PrimitiveType::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_VALUE( alignof( char ) );
+				OUTPUT_VALUE( sizeof( char ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_VALUE( alignof( int ) );
+				OUTPUT_VALUE( sizeof( int ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_VALUE( alignof( bool ) );
+				OUTPUT_VALUE( sizeof( bool ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_VALUE( alignof( double ) );
+				OUTPUT_VALUE( sizeof( double ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -20,24 +68,6 @@ namespace alignof_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << r2cm::split;
-
-			{
-				std::cout << "\t" << "+ align of char : " << alignof( char ) << r2cm::linefeed;
-				std::cout << "\t\t" << "- size of char : " << sizeof( char ) << r2cm::linefeed << r2cm::linefeed;
-
-				std::cout << "\t" << "+ align of int : " << alignof( int ) << r2cm::linefeed;
-				std::cout << "\t\t" << "- size of int : " << sizeof( int ) << r2cm::linefeed << r2cm::linefeed;
-
-				std::cout << "\t" << "+ align of bool : " << alignof( bool ) << r2cm::linefeed;
-				std::cout << "\t\t" << "- size of bool : " << sizeof( bool ) << r2cm::linefeed << r2cm::linefeed;
-
-				std::cout << "\t" << "+ align of double : " << alignof( double ) << r2cm::linefeed;
-				std::cout << "\t\t" << "- size of double : " << sizeof( double ) << r2cm::linefeed;
-			}
-
-			std::cout << r2cm::split;
-
 			{
 				struct EmptyStruct {};
 
