@@ -5,6 +5,71 @@
 
 namespace c_struct_test
 {
+	r2cm::iItem::TitleFunctionT ByteAlignment::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Struct : Byte Alignment";
+		};
+	}
+	r2cm::iItem::DoFunctionT ByteAlignment::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( struct S1 { char c1; } );
+				OUTPUT_VALUE( sizeof( S1 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( struct S1 { char c1; char c2; } );
+				OUTPUT_VALUE( sizeof( S1 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( struct S1 { char c1 = -1; char c2 = -2; int i1 = -3; } );
+				OUTPUT_VALUE( sizeof( S1 ) );
+				OUTPUT_BINARY( S1() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( struct S1 { int i1 = -1; char c1 = -2; int i2 = -3; } );
+				OUTPUT_VALUE( sizeof( S1 ) );
+				OUTPUT_BINARY( S1() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( struct S1 { int i1 = -1; char c1 = -2; long long i2 = -3; } );
+				OUTPUT_VALUE( sizeof( S1 ) );
+				OUTPUT_BINARY( S1() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( struct S1 { int i1 = -1; char c1 = -2; long long ll2 = -3; int i2 = -4; } );
+				OUTPUT_VALUE( sizeof( S1 ) );
+				OUTPUT_BINARY( S1() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Array_Size_0::GetTitleFunction() const
 	{
 		return []()->const char*
