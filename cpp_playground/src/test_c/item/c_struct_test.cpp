@@ -70,14 +70,14 @@ namespace c_struct_test
 
 
 
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PragmaPack::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Struct Member Alignment Test";
+			return "Struct : Pragma Pack";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT PragmaPack::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

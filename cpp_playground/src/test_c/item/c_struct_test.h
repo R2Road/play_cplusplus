@@ -12,7 +12,7 @@ namespace c_struct_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	class PragmaPack : public r2cm::iItem, public r2cm::SingleTon<PragmaPack>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
