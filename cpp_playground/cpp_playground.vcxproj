@@ -67,7 +67,6 @@
     <ClCompile Include="src\test_cpp\item\new_test.cpp" />
     <ClCompile Include="src\test_cpp\item\number_test.cpp" />
     <ClCompile Include="src\test_cpp\item\structured_binding_test.cpp" />
-    <ClCompile Include="src\test_cpp\item\struct_member_alignment_test.cpp" />
     <ClCompile Include="src\test_cpp\item\using_test.cpp" />
     <ClCompile Include="src\test_cpp\CharMenu.cpp" />
     <ClCompile Include="src\test_cpp\DebugMenu.cpp" />
@@ -238,7 +237,6 @@
     <ClInclude Include="src\test_cpp\item\new_test.h" />
     <ClInclude Include="src\test_cpp\item\number_test.h" />
     <ClInclude Include="src\test_cpp\item\structured_binding_test.h" />
-    <ClInclude Include="src\test_cpp\item\struct_member_alignment_test.h" />
     <ClInclude Include="src\test_cpp\item\using_test.h" />
     <ClInclude Include="src\test_cpp\CharMenu.h" />
     <ClInclude Include="src\test_cpp\DebugMenu.h" />

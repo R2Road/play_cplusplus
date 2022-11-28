@@ -28,7 +28,8 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 		ret->AddItem( '2', c_operator_ternary_test::Basic::GetInstance() );
 		ret->AddItem( '3', c_operator_ternary_test::Comma::GetInstance() );
 		ret->AddItem( '4', c_struct_test::ByteAlignment::GetInstance() );
-		ret->AddItem( '5', c_struct_test::Array_Size_0::GetInstance() );
+		ret->AddItem( '5', c_struct_test::Basic::GetInstance() );
+		ret->AddItem( '6', c_struct_test::Array_Size_0::GetInstance() );
 		
 
 

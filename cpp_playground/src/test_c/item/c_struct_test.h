@@ -12,6 +12,13 @@ namespace c_struct_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Array_Size_0 : public r2cm::iItem, public r2cm::SingleTon<Array_Size_0>
 	{
 	public:
