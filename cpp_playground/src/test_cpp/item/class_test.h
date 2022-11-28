@@ -89,4 +89,13 @@ namespace class_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+
+
+	class Size : public r2cm::iItem, public r2cm::SingleTon<Size>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }

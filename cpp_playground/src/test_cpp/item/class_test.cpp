@@ -718,4 +718,72 @@ namespace class_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Size::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Size";
+		};
+	}
+	r2cm::iItem::DoFunctionT Size::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( class C1 { int a; } );
+				OUTPUT_VALUE( sizeof( C1 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( class C1 {} );
+				DECLARATION_MAIN( class C2 : public C1 { int a; } );
+				OUTPUT_VALUE( sizeof( C2 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( class C1 { int i; } );
+				DECLARATION_MAIN( class C2 : public C1 { int a; } );
+				OUTPUT_VALUE( sizeof( C2 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( class C1 { public: virtual ~C1(){} } );
+				DECLARATION_MAIN( class C2 : public C1 { int a = -1; } );
+				OUTPUT_VALUE( sizeof( C2 ) );
+				OUTPUT_BINARY( C2() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( class C1 { public: virtual ~C1() {} int i = -1; int j = -2; } );
+				DECLARATION_MAIN( class C2 : public C1 { int a = -3; } );
+				OUTPUT_VALUE( sizeof( C2 ) );
+				OUTPUT_VALUE( sizeof( C1 ) );
+				OUTPUT_BINARY( C2() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( C1 c1 );
+				OUTPUT_VALUE( &c1 );
+				OUTPUT_VALUE( &c1.i );
+				OUTPUT_VALUE( &c1.j );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
