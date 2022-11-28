@@ -122,59 +122,75 @@ namespace alignof_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
+			struct EmptyStruct {};
+
+			struct IntFloatCharStruct
 			{
-				struct EmptyStruct {};
+				int i;
+				float f;
+				char c;
+			};
 
-				struct IntFloatCharStruct
-				{
-					int i;
-					float f;
-					char c;
-				};
+			struct CharCharCharStruct
+			{
+				char c1;
+				char c2;
+				char c3;
+			};
 
-				struct CharCharCharStruct
-				{
-					char c1;
-					char c2;
-					char c3;
-				};
+			struct CharDoubleStruct
+			{
+				char c;
+				double d;
+			};
 
-				struct CharDoubleStruct
-				{
-					char c;
-					double d;
-				};
+			struct CharBoolStruct
+			{
+				char c;
+				bool b;
+			};
 
-				struct CharBoolStruct
-				{
-					char c;
-					bool b;
-				};
+			struct CharIntDoubleStruct
+			{
+				char c;
+				int i;
+				double d;
+			};
 
-				struct CharIntDoubleStruct
-				{
-					char c;
-					int i;
-					double d;
-				};
+			std::cout << r2cm::split;
 
-				std::cout << "\t" << "+ align of EmptyStruct : " << alignof( EmptyStruct ) << r2cm::linefeed;
-				std::cout << "\t\t" << "- size of EmptyStruct : " << sizeof( EmptyStruct ) << r2cm::linefeed << r2cm::linefeed;
+			OUTPUT_FILE_RANGE( "src/test_cpp/item/alignof_test.cpp", 125, 158 );
 
-				std::cout << "\t" << "+ align of IntFloatCharStruct : " << alignof( IntFloatCharStruct ) << r2cm::linefeed;
-				std::cout << "\t\t" << "- size of IntFloatCharStruct : " << sizeof( IntFloatCharStruct ) << r2cm::linefeed << r2cm::linefeed;
+			std::cout << r2cm::split;
 
-				std::cout << "\t" << "+ align of CharCharCharStruct : " << alignof( CharCharCharStruct ) << r2cm::linefeed;
-				std::cout << "\t\t" << "- size of CharCharCharStruct : " << sizeof( CharCharCharStruct ) << r2cm::linefeed << r2cm::linefeed;
+			{
+				OUTPUT_VALUE( alignof( EmptyStruct ) );
+				OUTPUT_VALUE( sizeof( EmptyStruct ) );
 
-				std::cout << "\t" << "+ align of CharDoubleStruct : " << alignof( CharDoubleStruct ) << r2cm::linefeed;
-				std::cout << "\t\t" << "- size of CharDoubleStruct : " << sizeof( CharDoubleStruct ) << r2cm::linefeed << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << "\t" << "+ align of CharBoolStruct : " << alignof( CharBoolStruct ) << r2cm::linefeed;
-				std::cout << "\t\t" << "- size of CharBoolStruct : " << sizeof( CharBoolStruct ) << r2cm::linefeed << r2cm::linefeed;
+				OUTPUT_VALUE( alignof( IntFloatCharStruct ) );
+				OUTPUT_VALUE( sizeof( IntFloatCharStruct ) );
 
-				std::cout << "\t" << "+ align of CharIntDoubleStruct : " << alignof( CharIntDoubleStruct ) << r2cm::linefeed;
-				std::cout << "\t\t" << "- size of CharIntDoubleStruct : " << sizeof( CharIntDoubleStruct ) << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( alignof( CharCharCharStruct ) );
+				OUTPUT_VALUE( sizeof( CharCharCharStruct ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( alignof( CharDoubleStruct ) );
+				OUTPUT_VALUE( sizeof( CharDoubleStruct ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( alignof( CharBoolStruct ) );
+				OUTPUT_VALUE( sizeof( CharBoolStruct ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( alignof( CharIntDoubleStruct ) );
+				OUTPUT_VALUE( sizeof( CharIntDoubleStruct ) );
 			}
 
 			std::cout << r2cm::split;
