@@ -179,25 +179,6 @@ namespace alignof_test
 
 			std::cout << r2cm::split;
 
-			{
-				std::cout << "\t" << "+ align of std::list<char> : " << alignof( std::list<char> ) << r2cm::linefeed;
-				std::cout << "\t\t" << "- size of std::list<char> : " << sizeof( std::list<char> ) << r2cm::linefeed << r2cm::linefeed;
-
-				std::cout << "\t" << "+ align of std::list<int> : " << alignof( std::list<int> ) << r2cm::linefeed;
-				std::cout << "\t\t" << "- size of std::list<int> : " << sizeof( std::list<int> ) << r2cm::linefeed << r2cm::linefeed;
-
-				std::cout << "\t" << "+ align of std::vector<int> : " << alignof( std::vector<int> ) << r2cm::linefeed;
-				std::cout << "\t\t" << "- size of std::vector<int> : " << sizeof( std::vector<int> ) << r2cm::linefeed << r2cm::linefeed;
-
-				std::cout << "\t" << "+ align of std::alignof( std::unordered_map<int, int> ) : " << alignof( std::unordered_map<int, int> ) << r2cm::linefeed;
-				std::cout << "\t\t" << "- size of std::unordered_map<int, int> : " << sizeof( std::unordered_map<int, int> ) << r2cm::linefeed << r2cm::linefeed;
-
-				std::cout << "\t" << "+ align of std::alignof( std::deque<int> ) : " << alignof( std::deque<int> ) << r2cm::linefeed;
-				std::cout << "\t\t" << "- size of std::deque<int> : " << sizeof( std::deque<int> ) << r2cm::linefeed;
-			}
-
-			std::cout << r2cm::split;
-
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
