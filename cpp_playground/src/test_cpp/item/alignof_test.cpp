@@ -13,7 +13,7 @@ namespace alignof_test
 	{
 		return []()->const char*
 		{
-			return "Basic";
+			return "alignof : Basic";
 		};
 	}
 	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
@@ -124,7 +124,7 @@ namespace alignof_test
 	{
 		return []()->const char*
 		{
-			return "Mixed Struct";
+			return "alignof : Mixed Struct";
 		};
 	}
 	r2cm::iItem::DoFunctionT MixedStruct::GetDoFunction()
