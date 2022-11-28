@@ -57,6 +57,60 @@ namespace alignof_test
 
 
 
+	r2cm::iItem::TitleFunctionT STDContainer::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "alignof : STDContainer";
+		};
+	}
+	r2cm::iItem::DoFunctionT STDContainer::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_VALUE( alignof( std::list<char> ) );
+				OUTPUT_VALUE( sizeof( std::list<char> ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_VALUE( alignof( std::list<int> ) );
+				OUTPUT_VALUE( sizeof( std::list<int> ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_VALUE( alignof( std::vector<int> ) );
+				OUTPUT_VALUE( sizeof( std::vector<int> ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_VALUE( alignof( std::unordered_map<int, int> ) );
+				OUTPUT_VALUE( sizeof( std::unordered_map<int, int> ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_VALUE( alignof( std::deque<int> ) );
+				OUTPUT_VALUE( sizeof( std::deque<int> ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*

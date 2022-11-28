@@ -12,6 +12,13 @@ namespace alignof_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class STDContainer : public r2cm::iItem, public r2cm::SingleTon<STDContainer>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
 	{
 	public:
