@@ -111,14 +111,14 @@ namespace alignof_test
 
 
 
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Struct::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "alignof : Basic";
+			return "alignof : Struct";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Struct::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -22,7 +22,7 @@ r2cm::MenuUp AlignMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( '2', alignof_test::PrimitiveType::GetInstance() );
 		ret->AddItem( '3', alignof_test::STDContainer::GetInstance() );
-		ret->AddItem( '4', alignof_test::Basic::GetInstance() );
+		ret->AddItem( '4', alignof_test::Struct::GetInstance() );
 		ret->AddItem( '5', alignof_test::MixedStruct::GetInstance() );
 
 

@@ -19,7 +19,7 @@ namespace alignof_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	class Struct : public r2cm::iItem, public r2cm::SingleTon<Struct>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
