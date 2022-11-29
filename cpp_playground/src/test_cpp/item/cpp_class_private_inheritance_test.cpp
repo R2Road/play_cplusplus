@@ -3,6 +3,7 @@
 #include "cpp_class_private_inheritance_test_helper.hpp"
 #include "cpp_class_private_inheritance_test_helper_ienum.hpp"
 #include "cpp_class_private_inheritance_test_helper_pure_virtual_interface.hpp"
+#include "cpp_class_private_inheritance_test_helper_virtual_interface.hpp"
 
 #include <iterator>
 #include <numeric>
@@ -13,6 +14,50 @@
 
 namespace cpp_class_private_inheritance_test
 {
+	r2cm::iItem::TitleFunctionT VirtualInterface::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Private Inheritance : Virtual Interface";
+		};
+	}
+	r2cm::iItem::DoFunctionT VirtualInterface::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_FILE( "src/test_cpp/item/cpp_class_private_inheritance_test_helper_virtual_interface.hpp" );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_virtual_interface::VP_Private t );
+				PROCESS_MAIN( t.DoProcess() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_virtual_interface::VP_Protected t );
+				PROCESS_MAIN( t.DoProcess() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_virtual_interface::VP_Public t );
+				PROCESS_MAIN( t.DoProcess() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT PureVirtualInterface::GetTitleFunction() const
 	{
 		return []()->const char*

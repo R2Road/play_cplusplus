@@ -5,6 +5,13 @@
 
 namespace cpp_class_private_inheritance_test
 {
+	class VirtualInterface : public r2cm::iItem, public r2cm::SingleTon<VirtualInterface>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class PureVirtualInterface : public r2cm::iItem, public r2cm::SingleTon<PureVirtualInterface>
 	{
 	public:
