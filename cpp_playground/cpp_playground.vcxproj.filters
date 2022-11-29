@@ -539,6 +539,9 @@
     <ClCompile Include="src\test_cpp\item\cpp_class_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\item\cpp_class_private_inheritance_test.cpp">
+      <Filter>test_cpp\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1077,6 +1080,9 @@
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\cpp_class_test_helper_private_inheritance.hpp">
+      <Filter>test_cpp\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
   </ItemGroup>

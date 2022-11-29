@@ -4,6 +4,7 @@
 #include "r2cm/r2cm_ostream.h"
 
 #include "item/cpp_class_test.h"
+#include "item/cpp_class_private_inheritance_test.h"
 
 #include "CPP_Menu.h"
 
@@ -24,10 +25,10 @@ r2cm::MenuUp ClassMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', cpp_class_test::PrivateInheritance_1::GetInstance() );
-		ret->AddItem( 'w', cpp_class_test::PrivateInheritance_2::GetInstance() );
-		ret->AddItem( 'e', cpp_class_test::PrivateInheritance_iEnum::GetInstance() );
-		ret->AddItem( 'r', cpp_class_test::NoneVirtualInterface::GetInstance() );
+		ret->AddItem( 'q', cpp_class_private_inheritance_test::PrivateInheritance_1::GetInstance() );
+		ret->AddItem( 'w', cpp_class_private_inheritance_test::PrivateInheritance_2::GetInstance() );
+		ret->AddItem( 'e', cpp_class_private_inheritance_test::PrivateInheritance_iEnum::GetInstance() );
+		ret->AddItem( 'r', cpp_class_private_inheritance_test::NoneVirtualInterface::GetInstance() );
 
 
 

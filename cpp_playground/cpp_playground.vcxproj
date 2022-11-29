@@ -57,6 +57,7 @@
     <ClCompile Include="src\test_cpp\item\cpp_alignof_test.cpp" />
     <ClCompile Include="src\test_cpp\item\atomic_test.cpp" />
     <ClCompile Include="src\test_cpp\item\char_test.cpp" />
+    <ClCompile Include="src\test_cpp\item\cpp_class_private_inheritance_test.cpp" />
     <ClCompile Include="src\test_cpp\item\cpp_class_test.cpp" />
     <ClCompile Include="src\test_cpp\item\console_input_test.cpp" />
     <ClCompile Include="src\test_cpp\item\debug_test.cpp" />
@@ -222,6 +223,7 @@
     <ClInclude Include="src\test_cpp\AlignMenu.h" />
     <ClInclude Include="src\test_cpp\ClassMenu.h" />
     <ClInclude Include="src\test_cpp\CPP_Menu.h" />
+    <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test.h" />
     <ClInclude Include="src\test_cpp\item\cpp_class_test_helper_nvi.hpp" />
     <ClInclude Include="src\test_cpp\item\cpp_alignas_test.h" />
     <ClInclude Include="src\test_cpp\item\cpp_alignof_test.h" />
