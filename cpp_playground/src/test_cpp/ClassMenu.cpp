@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "item/class_test.h"
+#include "item/cpp_class_test.h"
 
 #include "CPP_Menu.h"
 
@@ -12,15 +12,15 @@ r2cm::MenuUp ClassMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', class_test::Method::GetInstance() );
-		ret->AddItem( '2', class_test::MemberValue::GetInstance() );
-		ret->AddItem( '3', class_test::Braces::GetInstance() );
-		ret->AddItem( '4', class_test::PrintName::GetInstance() );
-		ret->AddItem( '5', class_test::PrivateInheritance_1::GetInstance() );
-		ret->AddItem( '6', class_test::PrivateInheritance_2::GetInstance() );
-		ret->AddItem( '7', class_test::PrivateInheritance_iEnum::GetInstance() );
-		ret->AddItem( '8', class_test::ImplicitTypeConversion::GetInstance() );
-		ret->AddItem( '9', class_test::NoneVirtualInterface::GetInstance() );
+		ret->AddItem( '1', cpp_class_test::Method::GetInstance() );
+		ret->AddItem( '2', cpp_class_test::MemberValue::GetInstance() );
+		ret->AddItem( '3', cpp_class_test::Braces::GetInstance() );
+		ret->AddItem( '4', cpp_class_test::PrintName::GetInstance() );
+		ret->AddItem( '5', cpp_class_test::PrivateInheritance_1::GetInstance() );
+		ret->AddItem( '6', cpp_class_test::PrivateInheritance_2::GetInstance() );
+		ret->AddItem( '7', cpp_class_test::PrivateInheritance_iEnum::GetInstance() );
+		ret->AddItem( '8', cpp_class_test::ImplicitTypeConversion::GetInstance() );
+		ret->AddItem( '9', cpp_class_test::NoneVirtualInterface::GetInstance() );
 
 
 
@@ -28,11 +28,11 @@ r2cm::MenuUp ClassMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', class_test::MemberAdress_Value::GetInstance() );
-		ret->AddItem( 'w', class_test::MemberAdress_Method::GetInstance() );
-		ret->AddItem( 'e', class_test::Offset_SingleInheritance::GetInstance() );
-		ret->AddItem( 'r', class_test::Offset_MultipleInheritance::GetInstance() );
-		ret->AddItem( 't', class_test::Offset_Singleton::GetInstance() );
+		ret->AddItem( 'q', cpp_class_test::MemberAdress_Value::GetInstance() );
+		ret->AddItem( 'w', cpp_class_test::MemberAdress_Method::GetInstance() );
+		ret->AddItem( 'e', cpp_class_test::Offset_SingleInheritance::GetInstance() );
+		ret->AddItem( 'r', cpp_class_test::Offset_MultipleInheritance::GetInstance() );
+		ret->AddItem( 't', cpp_class_test::Offset_Singleton::GetInstance() );
 
 
 
@@ -40,7 +40,7 @@ r2cm::MenuUp ClassMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'a', class_test::Size::GetInstance() );
+		ret->AddItem( 'a', cpp_class_test::Size::GetInstance() );
 
 
 

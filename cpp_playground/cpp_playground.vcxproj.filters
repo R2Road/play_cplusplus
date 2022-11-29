@@ -121,9 +121,6 @@
     <ClCompile Include="src\test_cpp\item\char_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\class_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\item\debug_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
@@ -539,6 +536,9 @@
     <ClCompile Include="src\test_std\item\std_memory_test_helper_up_and_forward_declaration.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\item\cpp_class_test.cpp">
+      <Filter>test_cpp\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -590,9 +590,6 @@
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\char_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\class_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\debug_test.h">
@@ -995,12 +992,6 @@
     <ClInclude Include="src\test_template\item\template_practice_test_02_helper_basic.hpp">
       <Filter>test_template\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\class_test_helper_member_adress.hpp">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\class_test_helper_offset_singleton.hpp">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_hobby\PropertyMenu.h">
       <Filter>test_hobby</Filter>
     </ClInclude>
@@ -1070,10 +1061,19 @@
     <ClInclude Include="src\test_std\item\std_memory_test_helper_up_and_forward_declaration.h">
       <Filter>test_std\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\class_test_helper_nvi.hpp">
+    <ClInclude Include="src\test_cpp\item\cpp_class_test_helper_private_inheritance_ienum.hpp">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_class_test_helper_private_inheritance_ienum.hpp">
+    <ClInclude Include="src\test_cpp\item\cpp_class_test.h">
+      <Filter>test_cpp\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\item\cpp_class_test_helper_member_adress.hpp">
+      <Filter>test_cpp\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\item\cpp_class_test_helper_nvi.hpp">
+      <Filter>test_cpp\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\item\cpp_class_test_helper_offset_singleton.hpp">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
   </ItemGroup>

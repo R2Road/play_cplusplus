@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_iItem.h"
 #include "r2cm/r2cm_Singleton.h"
 
-namespace class_test
+namespace cpp_class_test
 {
 	class Method : public r2cm::iItem, public r2cm::SingleTon<Method>
 	{

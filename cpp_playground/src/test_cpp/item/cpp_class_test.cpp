@@ -1,7 +1,7 @@
-#include "class_test.h"
-#include "class_test_helper_nvi.hpp"
-#include "class_test_helper_member_adress.hpp"
-#include "class_test_helper_offset_singleton.hpp"
+#include "cpp_class_test.h"
+#include "cpp_class_test_helper_nvi.hpp"
+#include "cpp_class_test_helper_member_adress.hpp"
+#include "cpp_class_test_helper_offset_singleton.hpp"
 #include "cpp_class_test_helper_private_inheritance_ienum.hpp"
 
 #include <iterator>
@@ -11,7 +11,7 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Inspector.h"
 
-namespace class_test
+namespace cpp_class_test
 {
 	r2cm::iItem::TitleFunctionT Method::GetTitleFunction() const
 	{
@@ -154,7 +154,7 @@ namespace
 	class TestClass2 {};
 }
 
-namespace class_test
+namespace cpp_class_test
 {
 	r2cm::iItem::TitleFunctionT PrintName::GetTitleFunction() const
 	{
@@ -228,7 +228,7 @@ namespace class_test
 
 
 
-namespace class_test
+namespace cpp_class_test
 {
 	r2cm::iItem::TitleFunctionT PrivateInheritance_1::GetTitleFunction() const
 	{
@@ -516,19 +516,19 @@ namespace class_test
 		{
 			std::cout << r2cm::split;
 
-			OUTPUT_FILE( "src/test_cpp/item/class_test_helper_nvi.hpp" );
+			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_nvi.hpp" );
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( class_test_helper_nvi::D1 d1 );
+				DECLARATION_MAIN( cpp_class_test_helper_nvi::D1 d1 );
 				OUTPUT_VALUE( d1.Do() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( class_test_helper_nvi::D2 d2 );
+				DECLARATION_MAIN( cpp_class_test_helper_nvi::D2 d2 );
 				OUTPUT_VALUE( d2.Do() );
 			}
 
@@ -556,11 +556,11 @@ namespace class_test
 		{
 			std::cout << r2cm::split;
 
-			OUTPUT_FILE( "src/test_cpp/item/class_test_helper_member_adress.hpp" );
+			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_member_adress.hpp" );
 
 			std::cout << r2cm::linefeed;
 
-			DECLARATION_MAIN( using TC = class_test_helper_member_adress::TestClass );
+			DECLARATION_MAIN( using TC = cpp_class_test_helper_member_adress::TestClass );
 			DECLARATION_MAIN( TC tc );
 
 			std::cout << r2cm::split;
@@ -599,11 +599,11 @@ namespace class_test
 		{
 			std::cout << r2cm::split;
 
-			OUTPUT_FILE( "src/test_cpp/item/class_test_helper_member_adress.hpp" );
+			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_member_adress.hpp" );
 
 			std::cout << r2cm::linefeed;
 
-			DECLARATION_MAIN( using TC = class_test_helper_member_adress::TestClass );
+			DECLARATION_MAIN( using TC = cpp_class_test_helper_member_adress::TestClass );
 			DECLARATION_MAIN( TC tc );
 
 			std::cout << r2cm::split;
@@ -784,7 +784,7 @@ namespace class_test
 		{
 			std::cout << r2cm::split;
 
-			OUTPUT_FILE( "src/test_cpp/item/class_test_helper_offset_singleton.hpp" );
+			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_offset_singleton.hpp" );
 
 			std::cout << r2cm::split;
 

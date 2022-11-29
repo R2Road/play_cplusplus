@@ -1,4 +1,4 @@
-namespace class_test_helper_nvi
+namespace cpp_class_test_helper_nvi
 {
 	// private 속성의 virtual 함수는 자식 class 에서 재정의 가능하다.
 

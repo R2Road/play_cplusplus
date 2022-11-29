@@ -1,4 +1,4 @@
-namespace class_test_helper_member_adress
+namespace cpp_class_test_helper_member_adress
 {
 	class TestClass
 	{
