@@ -1,4 +1,5 @@
 #include "std_memory_test.h"
+#include "std_memory_test_helper_up_and_forward_declaration.h"
 
 #include <memory>
 #include <utility>
@@ -124,6 +125,31 @@ namespace std_memory_test
 
 				std::cout << r2cm::tab << "+ Move : Success" << r2cm::linefeed2;
 				std::cout << r2cm::tab2 << "auto test_up_2 = std::move( test_up );" << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT UniquePointer_FowardDeclaration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Unique Pointer : Forward Declaration";
+		};
+	}
+	r2cm::iItem::DoFunctionT UniquePointer_FowardDeclaration::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				std_memory_test_helper_up_and_forward_declaration::Processor p;
 			}
 
 			std::cout << r2cm::split;

@@ -14,6 +14,7 @@ r2cm::MenuUp STDMemoryMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem( '1', std_memory_test::SharedPointer::GetInstance() );
 		ret->AddItem( '2', std_memory_test::UniquePointer::GetInstance() );
+		ret->AddItem( '3', std_memory_test::UniquePointer_FowardDeclaration::GetInstance() );
 
 
 		ret->AddSplit();

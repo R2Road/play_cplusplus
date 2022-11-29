@@ -119,6 +119,7 @@
     <ClCompile Include="src\test_std\item\std_invoke_test.cpp" />
     <ClCompile Include="src\test_std\item\std_list_test.cpp" />
     <ClCompile Include="src\test_std\item\std_memory_test.cpp" />
+    <ClCompile Include="src\test_std\item\std_memory_test_helper_up_and_forward_declaration.cpp" />
     <ClCompile Include="src\test_std\item\std_mem_fn_test.cpp" />
     <ClCompile Include="src\test_std\item\std_numeric_test.cpp" />
     <ClCompile Include="src\test_std\item\std_optional_test.cpp" />
@@ -293,6 +294,7 @@
     <ClInclude Include="src\test_std\item\std_invoke_test_helper.hpp" />
     <ClInclude Include="src\test_std\item\std_list_test.h" />
     <ClInclude Include="src\test_std\item\std_memory_test.h" />
+    <ClInclude Include="src\test_std\item\std_memory_test_helper_up_and_forward_declaration.h" />
     <ClInclude Include="src\test_std\item\std_mem_fn_test.h" />
     <ClInclude Include="src\test_std\item\std_mem_fn_test_helper.hpp" />
     <ClInclude Include="src\test_std\item\std_numeric_test.h" />

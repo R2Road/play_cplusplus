@@ -536,6 +536,9 @@
     <ClCompile Include="src\test_cpp\item\cpp_alignas_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_std\item\std_memory_test_helper_up_and_forward_declaration.cpp">
+      <Filter>test_std\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1063,6 +1066,9 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\cpp_alignas_test.h">
       <Filter>test_cpp\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\item\std_memory_test_helper_up_and_forward_declaration.h">
+      <Filter>test_std\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

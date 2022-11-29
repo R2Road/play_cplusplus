@@ -18,4 +18,11 @@ namespace std_memory_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class UniquePointer_FowardDeclaration : public r2cm::iItem, public r2cm::SingleTon<UniquePointer_FowardDeclaration>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
