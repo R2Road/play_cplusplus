@@ -2,6 +2,7 @@
 #include "cpp_class_test_helper_nvi.hpp"
 #include "cpp_class_test_helper_member_adress.hpp"
 #include "cpp_class_test_helper_offset_singleton.hpp"
+#include "cpp_class_test_helper_private_inheritance.hpp"
 #include "cpp_class_test_helper_private_inheritance_ienum.hpp"
 
 #include <iterator>
@@ -243,83 +244,19 @@ namespace cpp_class_test
 		{
 			std::cout << r2cm::split;
 
+			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_private_inheritance.hpp" );
+
+			std::cout << r2cm::split;
+
 			{
-				class iPrivateInterface
-				{
-				protected:
-					virtual void DoProcess() = 0;
-				};
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "class iPrivateInterface" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "{" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "protected:" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "virtual void DoProcess() = 0;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "}" << r2cm::linefeed;
-
-
-				std::cout << r2cm::linefeed2;
-
-
-				class iPublicInterface
-				{
-				public:
-					virtual void Do() = 0;
-				};
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "class iPublicInterface" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "{" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "public:" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "virtual void Do() = 0;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "}" << r2cm::linefeed;
-
-
-				std::cout << r2cm::linefeed2;
-
-
-				class TestChild : private iPrivateInterface, public iPublicInterface
-				{
-				private:
-					void DoProcess() override
-					{
-						std::cout << "Call : TestChild::DoProcess()" << r2cm::linefeed;
-					}
-
-				public:
-					void Do() override
-					{
-						DoProcess();
-					}
-				};
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "class TestChild : private iPrivateInterface, public iPublicInterface" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "{" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "private:" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "void DoProcess() override" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "{" << r2cm::linefeed;
-				std::cout << r2cm::tab4 << "std::cout << \"Call : TestChild::DoProcess()\" << r2cm::linefeed;" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "}" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "public:" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "void Do() override" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "{" << r2cm::linefeed;
-				std::cout << r2cm::tab4 << "DoProcess();" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "}" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "}" << r2cm::linefeed;
-
-
-				std::cout << r2cm::linefeed2;
-
-
-				std::cout << r2cm::tab << "+ Call" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "- " << "TestChild().Do();" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "> ";
-				TestChild().Do();
+				DECLARATION_MAIN( cpp_class_test_helper_private_inheritance::T t );
+				PROCESS_MAIN( t.Do() );
+				PROCESS_MAIN( t.DoProcess() );
 			}
 
 			std::cout << r2cm::split;
 
-
-			std::cout << r2cm::tab << "mmm.... not good ( '_')y-~" << r2cm::linefeed;
-
+			OUTPUT_NOTE( "mmm.... not good ( '_')y-~" );
 
 			std::cout << r2cm::split;
 
