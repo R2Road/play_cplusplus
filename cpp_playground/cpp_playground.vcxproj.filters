@@ -118,9 +118,6 @@
     <ClCompile Include="src\test_cpp\item\alignas_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\alignof_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\item\atomic_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
@@ -536,6 +533,9 @@
     <ClCompile Include="src\test_template\item\template_basic_test.cpp">
       <Filter>test_template\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\item\cpp_alignof_test.cpp">
+      <Filter>test_cpp\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -584,9 +584,6 @@
       <Filter>test_hobby</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\alignas_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\alignof_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\atomic_test.h">
@@ -1063,6 +1060,9 @@
     </ClInclude>
     <ClInclude Include="src\test_template\item\template_basic_test_helper.hpp">
       <Filter>test_template\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\item\cpp_alignof_test.h">
+      <Filter>test_cpp\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

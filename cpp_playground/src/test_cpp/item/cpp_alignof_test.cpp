@@ -1,4 +1,4 @@
-#include "alignof_test.h"
+#include "cpp_alignof_test.h"
 
 #include <deque>
 #include <memory>
@@ -8,7 +8,7 @@
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
-namespace alignof_test
+namespace cpp_alignof_test
 {
 	r2cm::iItem::TitleFunctionT PrimitiveType::GetTitleFunction() const
 	{
