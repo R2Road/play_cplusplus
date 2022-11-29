@@ -159,7 +159,7 @@ namespace cpp_alignof_test
 
 			std::cout << r2cm::split;
 
-			OUTPUT_FILE_RANGE( "src/test_cpp/item/alignof_test.cpp", 125, 158 );
+			OUTPUT_FILE_RANGE( "src/test_cpp/item/cpp_alignof_test.cpp", 125, 158 );
 
 			std::cout << r2cm::split;
 
