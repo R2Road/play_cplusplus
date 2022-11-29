@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "test_cpp/item/alignas_test.h"
+#include "test_cpp/item/cpp_alignas_test.h"
 #include "test_cpp/item/cpp_alignof_test.h"
 
 #include "CPP_Menu.h"
@@ -24,7 +24,7 @@ r2cm::MenuUp AlignMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', align_test::AlignAs::GetInstance() );
+		ret->AddItem( 'q', cpp_align_test::AlignAs::GetInstance() );
 
 
 
