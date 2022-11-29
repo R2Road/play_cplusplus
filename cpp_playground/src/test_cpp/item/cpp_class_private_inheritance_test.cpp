@@ -1,7 +1,7 @@
 #include "cpp_class_private_inheritance_test.h"
 #include "cpp_class_test_helper_nvi.hpp"
-#include "cpp_class_test_helper_private_inheritance.hpp"
-#include "cpp_class_test_helper_private_inheritance_ienum.hpp"
+#include "cpp_class_private_inheritance_test_helper.hpp"
+#include "cpp_class_private_inheritance_test_helper_ienum.hpp"
 
 #include <iterator>
 #include <numeric>
@@ -25,12 +25,12 @@ namespace cpp_class_private_inheritance_test
 		{
 			std::cout << r2cm::split;
 
-			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_private_inheritance.hpp" );
+			OUTPUT_FILE( "src/test_cpp/item/cpp_class_private_inheritance_test_helper.hpp" );
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( cpp_class_test_helper_private_inheritance::T t );
+				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper::T t );
 				PROCESS_MAIN( t.Do() );
 				PROCESS_MAIN( t.DoProcess() );
 			}
@@ -145,17 +145,17 @@ namespace cpp_class_private_inheritance_test
 		{
 			std::cout << r2cm::split;
 
-			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_private_inheritance_ienum.hpp" );
+			OUTPUT_FILE( "src/test_cpp/item/cpp_class_private_inheritance_test_helper_ienum.hpp" );
 
 			std::cout << r2cm::split;
 
 			{
-				OUTPUT_VALUE( sizeof( cpp_class_test_helper_private_inheritance_ienum::iEnum ) );
-				OUTPUT_VALUE( sizeof( cpp_class_test_helper_private_inheritance_ienum::T ) );
+				OUTPUT_VALUE( sizeof( cpp_class_private_inheritance_test_helper_ienum::iEnum ) );
+				OUTPUT_VALUE( sizeof( cpp_class_private_inheritance_test_helper_ienum::T ) );
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( cpp_class_test_helper_private_inheritance_ienum::T t );
+				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_ienum::T t );
 				OUTPUT_VALUE( t.Do() );
 			}
 

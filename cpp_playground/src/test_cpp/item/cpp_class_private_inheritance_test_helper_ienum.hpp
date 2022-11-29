@@ -1,4 +1,4 @@
-namespace cpp_class_test_helper_private_inheritance_ienum
+namespace cpp_class_private_inheritance_test_helper_ienum
 {
 	class iEnum
 	{
