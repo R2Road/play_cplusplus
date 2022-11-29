@@ -1082,13 +1082,13 @@
     <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test_helper_ienum.hpp">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test_helper.hpp">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test_helper_pure_virtual_interface.hpp">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test_helper_virtual_interface.hpp">
+      <Filter>test_cpp\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test_helper_demo1.hpp">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
   </ItemGroup>

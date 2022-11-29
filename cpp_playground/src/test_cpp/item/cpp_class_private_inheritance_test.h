@@ -19,7 +19,7 @@ namespace cpp_class_private_inheritance_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class PrivateInheritance_1 : public r2cm::iItem, public r2cm::SingleTon<PrivateInheritance_1>
+	class PrivateInheritance_Demo1 : public r2cm::iItem, public r2cm::SingleTon<PrivateInheritance_Demo1>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

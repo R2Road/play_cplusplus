@@ -1,6 +1,6 @@
 #include "cpp_class_private_inheritance_test.h"
 #include "cpp_class_test_helper_nvi.hpp"
-#include "cpp_class_private_inheritance_test_helper.hpp"
+#include "cpp_class_private_inheritance_test_helper_demo1.hpp"
 #include "cpp_class_private_inheritance_test_helper_ienum.hpp"
 #include "cpp_class_private_inheritance_test_helper_pure_virtual_interface.hpp"
 #include "cpp_class_private_inheritance_test_helper_virtual_interface.hpp"
@@ -76,21 +76,21 @@ namespace cpp_class_private_inheritance_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_pure_virtual_interface::T_Private t );
+				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_pure_virtual_interface::PVP_Private t );
 				PROCESS_MAIN( t.DoProcess() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_pure_virtual_interface::T_Protected t );
+				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_pure_virtual_interface::PVP_Protected t );
 				PROCESS_MAIN( t.DoProcess() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_pure_virtual_interface::T_Public t );
+				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_pure_virtual_interface::PVP_Public t );
 				PROCESS_MAIN( t.DoProcess() );
 			}
 
@@ -102,25 +102,25 @@ namespace cpp_class_private_inheritance_test
 
 
 
-	r2cm::iItem::TitleFunctionT PrivateInheritance_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PrivateInheritance_Demo1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Class : Private Inheritance 1";
+			return "Class : Private Inheritance : Demo 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT PrivateInheritance_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT PrivateInheritance_Demo1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << r2cm::split;
 
-			OUTPUT_FILE( "src/test_cpp/item/cpp_class_private_inheritance_test_helper.hpp" );
+			OUTPUT_FILE( "src/test_cpp/item/cpp_class_private_inheritance_test_helper_demo1.hpp" );
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper::T t );
+				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_demo1::T t );
 				PROCESS_MAIN( t.Do() );
 				PROCESS_MAIN( t.DoProcess() );
 			}

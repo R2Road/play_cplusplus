@@ -1,7 +1,6 @@
 namespace cpp_class_private_inheritance_test_helper_pure_virtual_interface
 {
-	// private pure virtual method 는...
-	// 어떻게 상속하건 public 공개가 된다. 왜?
+	// private 상속이어도 자식 class 에서 열어 버릴 수 있다.
 
 	class iPureVirtualPrivate
 	{
@@ -9,19 +8,19 @@ namespace cpp_class_private_inheritance_test_helper_pure_virtual_interface
 		virtual void DoProcess() = 0;
 	};
 
-	class T_Private : private iPureVirtualPrivate
+	class PVP_Private : private iPureVirtualPrivate
 	{
 	public:
 		void DoProcess() override {}
 	};
 
-	class T_Protected : protected iPureVirtualPrivate
+	class PVP_Protected : protected iPureVirtualPrivate
 	{
 	public:
 		void DoProcess() override {}
 	};
 
-	class T_Public : public iPureVirtualPrivate
+	class PVP_Public : public iPureVirtualPrivate
 	{
 	public:
 		void DoProcess() override {}

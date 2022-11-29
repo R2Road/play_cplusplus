@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-namespace cpp_class_private_inheritance_test_helper
+namespace cpp_class_private_inheritance_test_helper_demo1
 {
 	class iPrivate
 	{
