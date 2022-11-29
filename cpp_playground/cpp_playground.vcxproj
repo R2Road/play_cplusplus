@@ -224,6 +224,7 @@
     <ClInclude Include="src\test_cpp\ClassMenu.h" />
     <ClInclude Include="src\test_cpp\CPP_Menu.h" />
     <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test.h" />
+    <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test_helper_pure_virtual_interface.hpp" />
     <ClInclude Include="src\test_cpp\item\cpp_class_test_helper_nvi.hpp" />
     <ClInclude Include="src\test_cpp\item\cpp_alignas_test.h" />
     <ClInclude Include="src\test_cpp\item\cpp_alignof_test.h" />
