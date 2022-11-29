@@ -121,13 +121,9 @@ namespace cpp_class_private_inheritance_test
 
 			{
 				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_demo1::T t );
-				PROCESS_MAIN( t.Do() );
-				PROCESS_MAIN( t.DoProcess() );
+				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_demo1::iPublic* pt = &t );
+				PROCESS_MAIN( pt->Do() );
 			}
-
-			std::cout << r2cm::split;
-
-			OUTPUT_NOTE( "mmm.... not good ( '_')y-~" );
 
 			std::cout << r2cm::split;
 
