@@ -133,14 +133,14 @@ namespace cpp_class_private_inheritance_test
 
 
 
-	r2cm::iItem::TitleFunctionT PrivateInheritance_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Using::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Class : Private Inheritance 2";
+			return "Class : Private Inheritance : Using";
 		};
 	}
-	r2cm::iItem::DoFunctionT PrivateInheritance_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT Using::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

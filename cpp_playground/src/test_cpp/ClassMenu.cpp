@@ -28,7 +28,7 @@ r2cm::MenuUp ClassMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'q', cpp_class_private_inheritance_test::VirtualInterface::GetInstance() );
 		ret->AddItem( 'w', cpp_class_private_inheritance_test::PureVirtualInterface::GetInstance() );
 		ret->AddItem( 'e', cpp_class_private_inheritance_test::Demo1::GetInstance() );
-		ret->AddItem( 'r', cpp_class_private_inheritance_test::PrivateInheritance_2::GetInstance() );
+		ret->AddItem( 'r', cpp_class_private_inheritance_test::Using::GetInstance() );
 		ret->AddItem( 't', cpp_class_private_inheritance_test::PrivateInheritance_iEnum::GetInstance() );
 		ret->AddItem( 'y', cpp_class_private_inheritance_test::NoneVirtualInterface::GetInstance() );
 
