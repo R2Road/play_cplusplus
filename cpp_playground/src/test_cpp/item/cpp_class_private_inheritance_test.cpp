@@ -150,6 +150,7 @@ namespace cpp_class_private_inheritance_test
 			{
 			public:
 				void Do() {}
+				int i = 10;
 			} );
 
 			DECLARATION_MAIN( class T1 : private iPrivate
@@ -160,6 +161,7 @@ namespace cpp_class_private_inheritance_test
 			{
 			public:
 				using iPrivate::Do;
+				using iPrivate::i;
 			} );
 
 			std::cout << r2cm::split;
@@ -167,12 +169,15 @@ namespace cpp_class_private_inheritance_test
 			{
 				OUTPUT_CODE( T1().Do() );
 				OUTPUT_COMMENT( "Not Working" );
+				OUTPUT_CODE( T1().i );
+				OUTPUT_COMMENT( "Not Working" );
 			}
 
 			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( T2().Do() );
+				OUTPUT_VALUE( T2().i );
 			}
 
 			std::cout << r2cm::split;
