@@ -18,8 +18,9 @@ r2cm::MenuUp ClassMenu::Create( r2cm::Director& director )
 		ret->AddItem( '4', class_test::PrintName::GetInstance() );
 		ret->AddItem( '5', class_test::PrivateInheritance_1::GetInstance() );
 		ret->AddItem( '6', class_test::PrivateInheritance_2::GetInstance() );
-		ret->AddItem( '7', class_test::ImplicitTypeConversion::GetInstance() );
-		ret->AddItem( '8', class_test::NoneVirtualInterface::GetInstance() );
+		ret->AddItem( '7', class_test::PrivateInheritance_iEnum::GetInstance() );
+		ret->AddItem( '8', class_test::ImplicitTypeConversion::GetInstance() );
+		ret->AddItem( '9', class_test::NoneVirtualInterface::GetInstance() );
 
 
 

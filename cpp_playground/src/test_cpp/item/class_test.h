@@ -45,6 +45,12 @@ namespace class_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+	class PrivateInheritance_iEnum : public r2cm::iItem, public r2cm::SingleTon<PrivateInheritance_iEnum>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 
 	class ImplicitTypeConversion : public r2cm::iItem, public r2cm::SingleTon<ImplicitTypeConversion>
 	{

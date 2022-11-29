@@ -2,6 +2,7 @@
 #include "class_test_helper_nvi.hpp"
 #include "class_test_helper_member_adress.hpp"
 #include "class_test_helper_offset_singleton.hpp"
+#include "cpp_class_test_helper_private_inheritance_ienum.hpp"
 
 #include <iterator>
 #include <numeric>
@@ -404,6 +405,45 @@ namespace class_test
 				std::cout << r2cm::tab3 << "> ";
 				TestChild_2().Do();
 			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT PrivateInheritance_iEnum::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Private Inheritance : iEnum";
+		};
+	}
+	r2cm::iItem::DoFunctionT PrivateInheritance_iEnum::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_private_inheritance_ienum.hpp" );
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_VALUE( sizeof( cpp_class_test_helper_private_inheritance_ienum::iEnum ) );
+				OUTPUT_VALUE( sizeof( cpp_class_test_helper_private_inheritance_ienum::T ) );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( cpp_class_test_helper_private_inheritance_ienum::T t );
+				OUTPUT_VALUE( t.Do() );
+			}
+
+			std::cout << r2cm::split;
+
+			OUTPUT_NOTE( "굳이 이런 짓을 해야만 하는가?" );
 
 			std::cout << r2cm::split;
 
