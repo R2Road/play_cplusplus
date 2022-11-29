@@ -53,6 +53,14 @@ namespace class_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class NoneVirtualInterface : public r2cm::iItem, public r2cm::SingleTon<NoneVirtualInterface>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
+
 
 
 	class MemberAdress_Value : public r2cm::iItem, public r2cm::SingleTon<MemberAdress_Value>

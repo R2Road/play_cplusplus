@@ -1,4 +1,5 @@
 #include "class_test.h"
+#include "class_test_helper_nvi.hpp"
 #include "class_test_helper_member_adress.hpp"
 #include "class_test_helper_offset_singleton.hpp"
 
@@ -459,6 +460,46 @@ namespace class_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT NoneVirtualInterface::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : NVI( None Virtual Interface )";
+		};
+	}
+	r2cm::iItem::DoFunctionT NoneVirtualInterface::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_FILE( "src/test_cpp/item/class_test_helper_nvi.hpp" );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( class_test_helper_nvi::D1 d1 );
+				OUTPUT_VALUE( d1.Do() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( class_test_helper_nvi::D2 d2 );
+				OUTPUT_VALUE( d2.Do() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 
 
 

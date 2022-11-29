@@ -222,6 +222,7 @@
     <ClInclude Include="src\test_cpp\AlignMenu.h" />
     <ClInclude Include="src\test_cpp\ClassMenu.h" />
     <ClInclude Include="src\test_cpp\CPP_Menu.h" />
+    <ClInclude Include="src\test_cpp\item\class_test_helper_nvi.hpp" />
     <ClInclude Include="src\test_cpp\item\cpp_alignas_test.h" />
     <ClInclude Include="src\test_cpp\item\cpp_alignof_test.h" />
     <ClInclude Include="src\test_cpp\item\atomic_test.h" />

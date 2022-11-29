@@ -1070,6 +1070,9 @@
     <ClInclude Include="src\test_std\item\std_memory_test_helper_up_and_forward_declaration.h">
       <Filter>test_std\item</Filter>
     </ClInclude>
+    <ClInclude Include="src\test_cpp\item\class_test_helper_nvi.hpp">
+      <Filter>test_cpp\item</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\test_cpp\item\enum_test_xmacro_2.def">
