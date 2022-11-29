@@ -146,69 +146,38 @@ namespace cpp_class_private_inheritance_test
 		{
 			std::cout << r2cm::split;
 
-			class iPrivateInheritance
+			DECLARATION_MAIN( class iPrivate
 			{
 			public:
-				virtual void Do()
-				{
-					std::cout << "Call : TestChild::DoProcess()" << r2cm::linefeed;
-				}
-			};
-			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-			std::cout << r2cm::tab2 << "class iPrivateInheritance" << r2cm::linefeed;
-			std::cout << r2cm::tab2 << "{" << r2cm::linefeed;
-			std::cout << r2cm::tab2 << "public:" << r2cm::linefeed;
-			std::cout << r2cm::tab3 << "virtual void Do() = 0;" << r2cm::linefeed;
-			std::cout << r2cm::tab3 << "{" << r2cm::linefeed;
-			std::cout << r2cm::tab4 << "std::cout << \"Call : TestChild::DoProcess()\" << r2cm::linefeed;" << r2cm::linefeed;
-			std::cout << r2cm::tab3 << "}" << r2cm::linefeed;
-			std::cout << r2cm::tab2 << "}" << r2cm::linefeed;
+				void Do() {}
+			} );
+
+			DECLARATION_MAIN( class T1 : private iPrivate
+			{
+			} );
+
+			DECLARATION_MAIN( class T2 : private iPrivate
+			{
+			public:
+				using iPrivate::Do;
+			} );
 
 			std::cout << r2cm::split;
 
 			{
-				class TestChild_1 : private iPrivateInheritance
-				{
-				};
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "class TestChild_1 : private iPrivateInheritance" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "{" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "}" << r2cm::linefeed;
-
-
-				std::cout << r2cm::linefeed2;
-
-
-				std::cout << r2cm::tab << "+ Call" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "- " << "TestChild_1().Do();" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "> " << " Not Working : Do is Private";
-				//TestChild_1.Do();
+				OUTPUT_CODE( T1().Do() );
+				OUTPUT_COMMENT( "Not Working" );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				class TestChild_2 : private iPrivateInheritance
-				{
-				public:
-					using iPrivateInheritance::Do;
-				};
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "class TestChild_2 : private iPrivateInheritance" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "{" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "public:" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "using iPrivateInheritance::Do;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "}" << r2cm::linefeed;
-
-
-				std::cout << r2cm::linefeed2;
-
-
-				std::cout << r2cm::tab << "+ Call" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "- " << "TestChild_2().Do();" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "> ";
-				TestChild_2().Do();
+				PROCESS_MAIN( T2().Do() );
 			}
+
+			std::cout << r2cm::split;
+
+			OUTPUT_NOTE( "private 상속한 멤버를 using 으로 열어줄 수 있다." );
 
 			std::cout << r2cm::split;
 
