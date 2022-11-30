@@ -2,6 +2,7 @@
 
 #include <list>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace std_list_test
@@ -81,18 +82,16 @@ namespace std_list_test
 			std::cout << r2cm::split;
 
 			{
-				auto target_itr = std::find( container_1.begin(), container_1.end(), 1 );
-				auto end_itr = target_itr;
-				++end_itr;
-				container_2.splice( container_2.begin(), container_1, target_itr, end_itr );
+				OUTPUT_NOTE( "Splice : target ~ next" );
 
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "auto target_itr = std::find( container_1.begin(), container_1.end(), 1 );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "auto end_itr = target_itr;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "++end_itr;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "container_2.splice( container_2.begin(), container_1, target_itr, end_itr );" << r2cm::linefeed2;
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "+ Result" << r2cm::linefeed;
+				DECLARATION_MAIN( auto target_itr = std::find( container_1.begin(), container_1.end(), 1 ) );
+				DECLARATION_MAIN( auto next_itr = target_itr );
+				PROCESS_MAIN( ++next_itr );
+				PROCESS_MAIN( container_2.splice( container_2.begin(), container_1, target_itr, next_itr ) );
+
+				std::cout << r2cm::linefeed;
 				std::cout << r2cm::tab2 << "- container_1 : ";
 				for( const auto i : container_1 )
 				{
