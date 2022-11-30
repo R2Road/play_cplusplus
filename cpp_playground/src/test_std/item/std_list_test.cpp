@@ -264,14 +264,13 @@ namespace std_list_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process : operator--" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "auto cur = container_1.end();" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "--cur;" << r2cm::linefeed2;
+				DECLARATION_MAIN( auto cur = container_1.end() );
+				PROCESS_MAIN( --cur );
+				OUTPUT_VALUE( *cur );
 
-				auto cur = container_1.end();
-				--cur;
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab2 << "( *cur );" << " > " << ( *cur ) << r2cm::linefeed;
+				OUTPUT_NOTE( "--end() 는 작동한다." );
 			}
 
 			std::cout << r2cm::split;
