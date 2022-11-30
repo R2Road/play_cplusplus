@@ -181,44 +181,27 @@ namespace std_list_test
 		{
 			std::cout << r2cm::split;
 
-			std::list<int> container_1 = { 1, 2, 3 };
-			std::list<int> container_2 = { 10, 20, 30 };
-
-			{
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::list<int> container_1 = { 1, 2, 3 };" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "std::list<int> container_2 = { 10, 20, 30 };" << r2cm::linefeed;
-			}
+			DECLARATION_MAIN( std::list<int> container_1( { 1, 2, 3 } ) );
+			DECLARATION_MAIN( std::list<int> container_2( { 10, 20, 30 } ) );
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "auto itr_from_container_1 = container_1.begin();" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "container_2.erase( itr_from_container_1 );" << r2cm::linefeed2;
+#if defined( DEBUG ) || defined( _DEBUG )
+				OUTPUT_CODE( container_2.erase( container_1.begin() ) );
+#else
+				PROCESS_MAIN( container_2.erase( container_1.begin() ) );
 
-				std::cout << r2cm::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2cm::linefeed;
-
-#if !defined( DEBUG ) && !defined( _DEBUG )
-				std::cout << r2cm::linefeed2;
-
-				auto itr_from_container_1 = container_1.begin();
-				container_2.erase( itr_from_container_1 );
-
-				std::cout << r2cm::tab << "+ Result" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "- container_1 : ";
-				for( const auto i : container_1 )
-				{
-					std::cout << i << " ";
-				}
 				std::cout << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- container_2 : ";
-				for( const auto i : container_2 )
-				{
-					std::cout << i << " ";
-				}
-				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "- container_1 : " << container_1 << r2cm::linefeed;
+				std::cout << r2cm::tab << "- container_2 : " << container_2 << r2cm::linefeed;
 #endif
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_NOTE( "남의 iterator 라도 삭제 처리는 된다." );
+				OUTPUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
 			}
 
 			std::cout << r2cm::split;
