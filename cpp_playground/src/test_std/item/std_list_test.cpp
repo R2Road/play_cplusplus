@@ -20,7 +20,7 @@ namespace std_list_test
 	{
 		return []()->const char*
 		{
-			return "List : Splice";
+			return "List : Splice Single";
 		};
 	}
 	r2cm::iItem::DoFunctionT Splice_Single::GetDoFunction()
