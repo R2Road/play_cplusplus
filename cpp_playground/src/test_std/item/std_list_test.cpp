@@ -70,6 +70,16 @@ namespace std_list_test
 
 			std::cout << r2cm::split;
 
+			{
+				OUTPUT_CODE( container_2.splice( container_2.end(), container_1, container_1.end() ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_NOTE( "end() iterator 를 이동하려 들면 터진다." );
+			}
+
+			std::cout << r2cm::split;
+
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
