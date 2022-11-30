@@ -56,6 +56,36 @@ namespace std_list_test
 
 			std::cout << r2cm::split;
 
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Splice_Range::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "List : Splice Range";
+		};
+	}
+	r2cm::iItem::DoFunctionT Splice_Range::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			std::list<int> container_1 = { 1, 2, 3, 4, 5 };
+			std::list<int> container_2 = { 10, 20, 30, 40, 50 };
+
+			{
+				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "std::list<int> container_1 = { 1, 2, 3, 4, 5 };" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "std::list<int> container_2 = { 10, 20, 30, 40, 50 };" << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
 			{
 				auto target_itr = std::find( container_1.begin(), container_1.end(), 4 );
 				container_2.splice( container_2.begin(), container_1, target_itr, container_1.end() );

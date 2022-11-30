@@ -12,6 +12,13 @@ namespace std_list_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class Splice_Range : public r2cm::iItem, public r2cm::SingleTon<Splice_Range>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class OthersIterator : public r2cm::iItem, public r2cm::SingleTon<OthersIterator>
 	{
 	public:
