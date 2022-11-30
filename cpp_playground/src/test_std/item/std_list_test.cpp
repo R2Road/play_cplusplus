@@ -15,6 +15,11 @@ namespace std_list_test
 		}
 		return o;
 	}
+	std::ostream& operator<<( std::ostream& o, std::list<int>::iterator itr )
+	{
+		o << ( *itr );
+		return o;
+	}
 
 	r2cm::iItem::TitleFunctionT Splice_Single::GetTitleFunction() const
 	{
@@ -271,6 +276,26 @@ namespace std_list_test
 				std::cout << r2cm::linefeed;
 
 				OUTPUT_NOTE( "--end() 는 작동한다." );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+#if defined( DEBUG ) || defined( _DEBUG )
+				OUTPUT_CODE( std::list<int> container_2 );
+				OUTPUT_CODE( auto itr = container_2.end() );
+				OUTPUT_CODE( EXPECT_EQ( container_2.end(), ( --itr ) ) );
+#else
+				DECLARATION_MAIN( std::list<int> container_2 );
+				DECLARATION_MAIN( auto itr = container_2.end() );
+				EXPECT_EQ( container_2.end(), ( --itr ) );
+#endif
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_NOTE( "빈 컨테이너의 --end() 는 end() 이다." );
+				OUTPUT_NOTE( "빈 컨테이너는 Debug 모드에서 Container Size 검사에 실패한다." );
+				OUTPUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
 			}
 
 			std::cout << r2cm::split;
