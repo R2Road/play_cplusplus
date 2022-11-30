@@ -50,6 +50,26 @@ namespace std_list_test
 
 			std::cout << r2cm::split;
 
+			{
+				DECLARATION_MAIN( auto target_itr = std::find( container_1.begin(), container_1.end(), 2 ) );
+				OUTPUT_VALUE( ( *target_itr ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( container_2.splice( container_2.end(), container_1, target_itr ) );
+
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "- container_1 : " << container_1 << r2cm::linefeed;
+				std::cout << r2cm::tab << "- container_2 : " << container_2 << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			OUTPUT_NOTE( "이동을 지정한 iterator 의 앞에 삽입된다." );
+
+			std::cout << r2cm::split;
+
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
