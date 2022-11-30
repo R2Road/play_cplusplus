@@ -225,26 +225,23 @@ namespace std_list_test
 		{
 			std::cout << r2cm::split;
 
-			std::list<int> container_1 = { 1, 2, 3 };
-
-			{
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::list<int> container_1 = { 1, 2, 3 };" << r2cm::linefeed;
-			}
+			DECLARATION_MAIN( std::list<int> container_1( { 1, 2, 3 } ) );
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process : operator*" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "auto cur = container_1.end();" << r2cm::linefeed2;
+				DECLARATION_MAIN( auto cur = container_1.end(); );
 
-				std::cout << r2cm::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2cm::linefeed2;
-
-#if !defined( DEBUG ) && !defined( _DEBUG )
-				auto cur = container_1.end();
-
-				std::cout << r2cm::tab2 << "( *cur );" << " > " << ( *cur ) << r2cm::linefeed;
+#if defined( DEBUG ) || defined( _DEBUG )
+				OUTPUT_CODE( auto v = *cur );
+#else
+				DECLARATION_MAIN( auto v = *cur );
+				OUTPUT_VALUE( v );
 #endif
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_NOTE( "end() iterator의 값을 사용 할 수 있다." );
+				OUTPUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
 			}
 
 			std::cout << r2cm::split;
