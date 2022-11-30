@@ -7,6 +7,15 @@
 
 namespace std_list_test
 {
+	std::ostream& operator<<( std::ostream& o, std::list<int>& container )
+	{
+		for( const auto& i : container )
+		{
+			std::cout << i << " ";
+		}
+		return o;
+	}
+
 	r2cm::iItem::TitleFunctionT Splice::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -20,38 +29,23 @@ namespace std_list_test
 		{
 			std::cout << r2cm::split;
 
-			std::list<int> container_1 = { 1, 2, 3, 4, 5 };
-			std::list<int> container_2 = { 10, 20, 30, 40, 50 };
-
-			{
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::list<int> container_1 = { 1, 2, 3, 4, 5 };" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "std::list<int> container_2 = { 10, 20, 30, 40, 50 };" << r2cm::linefeed;
-			}
+			DECLARATION_MAIN( std::list<int> container_1( { 1, 2, 3, 4, 5 } ) );
+			DECLARATION_MAIN( std::list<int> container_2( { 10, 20, 30, 40, 50 } ) );
 
 			std::cout << r2cm::split;
 
 			{
-				auto target_itr = std::find( container_1.begin(), container_1.end(), 3 );
-				container_2.splice( container_2.begin(), container_1, target_itr );
+				DECLARATION_MAIN( auto target_itr = std::find( container_1.begin(), container_1.end(), 3 ) );
+				OUTPUT_VALUE( ( *target_itr ) );
 
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "auto target_itr = std::find( container_1.begin(), container_1.end(), 3 );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "container_2.splice( container_2.begin(), container_1, target_itr );" << r2cm::linefeed2;
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "+ Result" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- container_1 : ";
-				for( const auto i : container_1 )
-				{
-					std::cout << i << " ";
-				}
+				PROCESS_MAIN( container_2.splice( container_2.begin(), container_1, target_itr ) );
+
 				std::cout << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- container_2 : ";
-				for( const auto i : container_2 )
-				{
-					std::cout << i << " ";
-				}
-				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "- container_1 : " << container_1 << r2cm::linefeed;
+				std::cout << r2cm::tab << "- container_2 : " << container_2 << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
