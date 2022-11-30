@@ -22,7 +22,7 @@ r2cm::MenuUp STDContainerMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', std_list_test::Splice::GetInstance() );
+		ret->AddItem( 'q', std_list_test::Splice_Single::GetInstance() );
 		ret->AddItem( 'w', std_list_test::Splice_Range::GetInstance() );
 		ret->AddItem( 'e', std_list_test::OthersIterator::GetInstance() );
 		ret->AddItem( 'r', std_list_test::EndIterator::GetInstance() );

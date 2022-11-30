@@ -5,7 +5,7 @@
 
 namespace std_list_test
 {
-	class Splice : public r2cm::iItem, public r2cm::SingleTon<Splice>
+	class Splice_Single : public r2cm::iItem, public r2cm::SingleTon<Splice_Single>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

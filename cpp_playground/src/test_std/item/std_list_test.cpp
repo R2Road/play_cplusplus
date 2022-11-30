@@ -16,14 +16,14 @@ namespace std_list_test
 		return o;
 	}
 
-	r2cm::iItem::TitleFunctionT Splice::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Splice_Single::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "List : Splice";
 		};
 	}
-	r2cm::iItem::DoFunctionT Splice::GetDoFunction()
+	r2cm::iItem::DoFunctionT Splice_Single::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
