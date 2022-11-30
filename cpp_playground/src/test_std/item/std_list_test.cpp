@@ -90,6 +90,7 @@ namespace std_list_test
 				std::cout << r2cm::linefeed;
 
 				OUTPUT_NOTE( "end() iterator 를 이동하려 들면 터진다." );
+				OUTPUT_NOTE( "Debug Mode Not Working, Release Mode Working" );
 			}
 
 			std::cout << r2cm::split;
@@ -113,38 +114,24 @@ namespace std_list_test
 		{
 			std::cout << r2cm::split;
 
-			std::list<int> container_1 = { 1, 2, 3, 4, 5 };
-			std::list<int> container_2 = { 10, 20, 30, 40, 50 };
-
-			{
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::list<int> container_1 = { 1, 2, 3, 4, 5 };" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "std::list<int> container_2 = { 10, 20, 30, 40, 50 };" << r2cm::linefeed;
-			}
+			DECLARATION_MAIN( std::list<int> container_1( { 1, 2, 3, 4, 5 } ) );
+			DECLARATION_MAIN( std::list<int> container_2( { 10, 20, 30, 40, 50 } ) );
 
 			std::cout << r2cm::split;
 
 			{
-				auto target_itr = std::find( container_1.begin(), container_1.end(), 4 );
-				container_2.splice( container_2.begin(), container_1, target_itr, container_1.end() );
+				OUTPUT_NOTE( "Splice : target ~ end" );
 
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "auto target_itr = std::find( container_1.begin(), container_1.end(), 4 );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "container_2.splice( container_2.begin(), container_1, target_itr, container_1.end() );" << r2cm::linefeed2;
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "+ Result" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- container_1 : ";
-				for( const auto i : container_1 )
-				{
-					std::cout << i << " ";
-				}
+				DECLARATION_MAIN( auto target_itr = std::find( container_1.begin(), container_1.end(), 4 ) );
+				OUTPUT_VALUE( ( *target_itr ) );
+
 				std::cout << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- container_2 : ";
-				for( const auto i : container_2 )
-				{
-					std::cout << i << " ";
-				}
-				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( container_2.splice( container_2.begin(), container_1, target_itr, container_1.end() ) );
+				std::cout << r2cm::tab << "- container_1 : " << container_1 << r2cm::linefeed;
+				std::cout << r2cm::tab << "- container_2 : " << container_2 << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
@@ -157,46 +144,20 @@ namespace std_list_test
 				DECLARATION_MAIN( auto target_itr = std::find( container_1.begin(), container_1.end(), 1 ) );
 				DECLARATION_MAIN( auto next_itr = target_itr );
 				PROCESS_MAIN( ++next_itr );
-				PROCESS_MAIN( container_2.splice( container_2.begin(), container_1, target_itr, next_itr ) );
+				OUTPUT_VALUE( ( *target_itr ) );
+				OUTPUT_VALUE( ( *next_itr ) );
 
 				std::cout << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- container_1 : ";
-				for( const auto i : container_1 )
-				{
-					std::cout << i << " ";
-				}
-				std::cout << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- container_2 : ";
-				for( const auto i : container_2 )
-				{
-					std::cout << i << " ";
-				}
-				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( container_2.splice( container_2.begin(), container_1, target_itr, next_itr ) );
+				std::cout << r2cm::tab << "- container_1 : " << container_1 << r2cm::linefeed;
+				std::cout << r2cm::tab << "- container_2 : " << container_2 << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				//container_2.splice( container_2.begin(), container_1, container_1.end() );
-
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "container_2.splice( container_2.begin(), container_1, container_1.end() );" << r2cm::linefeed2;
-
-				//std::cout << r2cm::tab << "+ Result" << r2cm::linefeed;
-				//std::cout << r2cm::tab2 << "- container_1 : ";
-				//for( const auto i : container_1 )
-				//{
-				//	std::cout << i << " ";
-				//}
-				//std::cout << r2cm::linefeed;
-				//std::cout << r2cm::tab2 << "- container_2 : ";
-				//for( const auto i : container_2 )
-				//{
-				//	std::cout << i << " ";
-				//}
-				//std::cout << r2cm::linefeed2;
-
-				std::cout << r2cm::tab << "Message : Debug Mode Not Working, Release Mode Working" << r2cm::linefeed;
+				OUTPUT_NOTE( "범위 이동의 경우 마지막 요소는 이동 대상에 포함되지 않는다." );
 			}
 
 			std::cout << r2cm::split;
