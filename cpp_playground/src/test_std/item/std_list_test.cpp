@@ -35,38 +35,52 @@ namespace std_list_test
 			std::cout << r2cm::split;
 
 			{
+				OUTPUT_NOTE( "splice는 list의 node를 메모리 할당 없이 통째로 옮긴다." );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto target_itr = container_1.begin() );
+				OUTPUT_VALUE( ( *target_itr ) );
+				OUTPUT_VALUE( &( *target_itr ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( container_2.splice( container_2.begin(), container_1, target_itr ) );
+				std::cout << r2cm::tab << "- container_1 : " << container_1 << r2cm::linefeed;
+				std::cout << r2cm::tab << "- container_2 : " << container_2 << r2cm::linefeed;
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( &( *container_2.begin() ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "이동을 지정한 iterator 의 앞에 삽입된다." );
+
+				std::cout << r2cm::linefeed;
+
 				DECLARATION_MAIN( auto target_itr = std::find( container_1.begin(), container_1.end(), 3 ) );
 				OUTPUT_VALUE( ( *target_itr ) );
 
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( container_2.splice( container_2.begin(), container_1, target_itr ) );
-
-				std::cout << r2cm::linefeed;
-
 				std::cout << r2cm::tab << "- container_1 : " << container_1 << r2cm::linefeed;
 				std::cout << r2cm::tab << "- container_2 : " << container_2 << r2cm::linefeed;
-			}
+			
+				std::cout << r2cm::linefeed;
 
-			std::cout << r2cm::split;
-
-			{
-				DECLARATION_MAIN( auto target_itr = std::find( container_1.begin(), container_1.end(), 2 ) );
+				PROCESS_MAIN( target_itr = std::find( container_1.begin(), container_1.end(), 2 ) );
 				OUTPUT_VALUE( ( *target_itr ) );
 
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( container_2.splice( container_2.end(), container_1, target_itr ) );
-
-				std::cout << r2cm::linefeed;
-
 				std::cout << r2cm::tab << "- container_1 : " << container_1 << r2cm::linefeed;
 				std::cout << r2cm::tab << "- container_2 : " << container_2 << r2cm::linefeed;
 			}
-
-			std::cout << r2cm::split;
-
-			OUTPUT_NOTE( "이동을 지정한 iterator 의 앞에 삽입된다." );
 
 			std::cout << r2cm::split;
 
