@@ -80,42 +80,42 @@ namespace std_vector_test
 			std::cout << r2cm::split;
 
 			{
-				OUTPUT_NOTE( "크기가 줄어들 때 메모리가 재할당 되는지 궁금했다. > 재할당 없다." );
-				OUTPUT_NOTE( "줄어든 메모리가 이전 크기로 돌아갈 때 메모리가 재할당 되는지 궁금했다. > 재할당 없다." );
+				OUTPUT_NOTE( "size가 줄어들 때 메모리가 재할당 되는지 궁금했다. > 재할당 없다." );
+				OUTPUT_NOTE( "줄어든 size가 이전 크기로 돌아갈 때 메모리가 재할당 되는지 궁금했다. > 재할당 없다." );
 			}
 
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( std::vector<int> test_vector( { 1, 2, 3, 4 } ) );
-			std::cout << r2cm::tab << "> test_vector : " << test_vector << r2cm::linefeed;
+			OUTPUT_VALUE( test_vector.size() );
 			OUTPUT_VALUE( test_vector.capacity() );
 			OUTPUT_VALUE( test_vector.data() );
 
 			std::cout << r2cm::split;
 			{
 				PROCESS_MAIN( test_vector.resize( 4 ) );
-				std::cout << r2cm::tab << "> test_vector : " << test_vector << r2cm::linefeed;
+				OUTPUT_VALUE( test_vector.size() );
 				OUTPUT_VALUE( test_vector.capacity() );
 				OUTPUT_VALUE( test_vector.data() );
 
 				std::cout << r2cm::linefeed2;
 
 				PROCESS_MAIN( test_vector.resize( 2 ) );
-				std::cout << r2cm::tab << "> test_vector : " << test_vector << r2cm::linefeed;
+				OUTPUT_VALUE( test_vector.size() );
 				OUTPUT_VALUE( test_vector.capacity() );
 				OUTPUT_VALUE( test_vector.data() );
 
 				std::cout << r2cm::linefeed2;
 
 				PROCESS_MAIN( test_vector.resize( 4 ) );
-				std::cout << r2cm::tab << "> test_vector : " << test_vector << r2cm::linefeed;
+				OUTPUT_VALUE( test_vector.size() );
 				OUTPUT_VALUE( test_vector.capacity() );
 				OUTPUT_VALUE( test_vector.data() );
 
 				std::cout << r2cm::linefeed2;
 
 				PROCESS_MAIN( test_vector.resize( 10 ) );
-				std::cout << r2cm::tab << "> test_vector : " << test_vector << r2cm::linefeed;
+				OUTPUT_VALUE( test_vector.size() );
 				OUTPUT_VALUE( test_vector.capacity() );
 				OUTPUT_VALUE( test_vector.data() );
 			}
