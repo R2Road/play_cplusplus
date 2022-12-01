@@ -86,38 +86,38 @@ namespace std_vector_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( std::vector<int> test_vector( { 1, 2, 3, 4 } ) );
-			OUTPUT_VALUE( test_vector.size() );
-			OUTPUT_VALUE( test_vector.capacity() );
-			OUTPUT_VALUE( test_vector.data() );
+			DECLARATION_MAIN( std::vector<int> container( { 1, 2, 3, 4 } ) );
+			OUTPUT_VALUE( container.size() );
+			OUTPUT_VALUE( container.capacity() );
+			OUTPUT_VALUE( container.data() );
 
 			std::cout << r2cm::split;
 			{
-				PROCESS_MAIN( test_vector.resize( 4 ) );
-				OUTPUT_VALUE( test_vector.size() );
-				OUTPUT_VALUE( test_vector.capacity() );
-				OUTPUT_VALUE( test_vector.data() );
+				PROCESS_MAIN( container.resize( 4 ) );
+				OUTPUT_VALUE( container.size() );
+				OUTPUT_VALUE( container.capacity() );
+				OUTPUT_VALUE( container.data() );
 
 				std::cout << r2cm::linefeed2;
 
-				PROCESS_MAIN( test_vector.resize( 2 ) );
-				OUTPUT_VALUE( test_vector.size() );
-				OUTPUT_VALUE( test_vector.capacity() );
-				OUTPUT_VALUE( test_vector.data() );
+				PROCESS_MAIN( container.resize( 2 ) );
+				OUTPUT_VALUE( container.size() );
+				OUTPUT_VALUE( container.capacity() );
+				OUTPUT_VALUE( container.data() );
 
 				std::cout << r2cm::linefeed2;
 
-				PROCESS_MAIN( test_vector.resize( 4 ) );
-				OUTPUT_VALUE( test_vector.size() );
-				OUTPUT_VALUE( test_vector.capacity() );
-				OUTPUT_VALUE( test_vector.data() );
+				PROCESS_MAIN( container.resize( 4 ) );
+				OUTPUT_VALUE( container.size() );
+				OUTPUT_VALUE( container.capacity() );
+				OUTPUT_VALUE( container.data() );
 
 				std::cout << r2cm::linefeed2;
 
-				PROCESS_MAIN( test_vector.resize( 10 ) );
-				OUTPUT_VALUE( test_vector.size() );
-				OUTPUT_VALUE( test_vector.capacity() );
-				OUTPUT_VALUE( test_vector.data() );
+				PROCESS_MAIN( container.resize( 10 ) );
+				OUTPUT_VALUE( container.size() );
+				OUTPUT_VALUE( container.capacity() );
+				OUTPUT_VALUE( container.data() );
 			}
 
 			std::cout << r2cm::split;
