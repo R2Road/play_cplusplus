@@ -142,6 +142,7 @@ namespace std_vector_test
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( std::vector<int> container( { 2, 3 } ) );
+			OUTPUT_VALUE( container.size() );
 			OUTPUT_VALUE( container.capacity() );
 			OUTPUT_VALUE( container.data() );
 
@@ -149,36 +150,20 @@ namespace std_vector_test
 
 			{
 				PROCESS_MAIN( container.clear() );
+				OUTPUT_VALUE( container.size() );
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( container.resize( 2u ) );
+				OUTPUT_VALUE( container.size() );
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
 				std::cout << r2cm::linefeed;
 
 				OUTPUT_NOTE( "clear 는 최종적으로 Allocator에 Destory 요청하지만 메모리를 해제하는 것은 아니다." );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				PROCESS_MAIN( container.clear() );
-				OUTPUT_VALUE( container.capacity() );
-				OUTPUT_VALUE( container.data() );
-
-				std::cout << r2cm::linefeed;
-
-				PROCESS_MAIN( container.resize( 4u ) );
-				OUTPUT_VALUE( container.capacity() );
-				OUTPUT_VALUE( container.data() );
-
-				std::cout << r2cm::linefeed;
-
-				OUTPUT_NOTE( "size 가 증가하면 메모리는 재할당 된다." );
 			}
 
 			std::cout << r2cm::split;
