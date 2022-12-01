@@ -280,40 +280,39 @@ namespace std_vector_test
 		{
 			std::cout << r2cm::split;
 
-			std::vector<bool> test_vector;
+			DECLARATION_MAIN( std::vector<bool> test_vector );
+			OUTPUT_VALUE( test_vector.capacity() );
+			OUTPUT_VALUE( test_vector._Myvec.capacity() );
+			OUTPUT_VALUE( test_vector._Myvec._Myfirst() );
+			OUTPUT_VALUE( test_vector._Myvec._Myend() );
+			OUTPUT_VALUE( test_vector.begin()._Myptr );
+
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::vector<bool> test_vector;" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "test_vector.capacity()" << " > " << test_vector.capacity() << r2cm::linefeed;
+				PROCESS_MAIN( test_vector.push_back( 1 ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( test_vector.capacity() );
+				OUTPUT_VALUE( test_vector._Myvec.capacity() );
+				OUTPUT_VALUE( test_vector._Myvec._Myfirst() );
+				OUTPUT_VALUE( test_vector._Myvec._Myend() );
+				OUTPUT_VALUE( test_vector.begin()._Myptr );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				test_vector.push_back( 1 );
+				PROCESS_MAIN( test_vector.reserve( 33 ) );
 
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "test_vector.push_back( 1 );" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "test_vector.capacity()" << " > " << test_vector.capacity() << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "test_vector._Myvec.capacity()" << " > " << test_vector._Myvec.capacity() << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "test_vector._Myvec._Myfirst()" << " > " << test_vector._Myvec._Myfirst() << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "test_vector._Myvec._Myend()" << " > " << test_vector._Myvec._Myend() << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "test_vector.begin()._Myptr" << " > " << test_vector.begin()._Myptr << r2cm::linefeed;
-			}
+				std::cout << r2cm::linefeed;
 
-			std::cout << r2cm::split;
-
-			{
-				test_vector.reserve( 33 );
-
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "test_vector.reserve( 33 );" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "test_vector.capacity()" << " > " << test_vector.capacity() << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "test_vector._Myvec.capacity()" << " > " << test_vector._Myvec.capacity() << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "test_vector._Myvec._Myfirst()" << " > " << test_vector._Myvec._Myfirst() << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "test_vector._Myvec._Myend()" << " > " << test_vector._Myvec._Myend() << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "test_vector.begin()._Myptr" << " > " << test_vector.begin()._Myptr << r2cm::linefeed;
+				OUTPUT_VALUE( test_vector.capacity() );
+				OUTPUT_VALUE( test_vector._Myvec.capacity() );
+				OUTPUT_VALUE( test_vector._Myvec._Myfirst() );
+				OUTPUT_VALUE( test_vector._Myvec._Myend() );
+				OUTPUT_VALUE( test_vector.begin()._Myptr );
 			}
 
 			std::cout << r2cm::split;
