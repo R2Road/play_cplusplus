@@ -30,34 +30,27 @@ namespace std_vector_test
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( std::vector<int> container( { 2, 3 } ) );
+			std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
 
 			std::cout << r2cm::split;
 
 			{
-				EXPECT_EQ( 2, container[0] );
-				EXPECT_EQ( 3, container[1] );
-
-				std::cout << r2cm::linefeed;
-
 				PROCESS_MAIN( container.resize( 2u ) );
-
-				std::cout << r2cm::linefeed;
-
-				EXPECT_EQ( 2, container[0] );
-				EXPECT_EQ( 3, container[1] );
+				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( container.resize( 4u ) );
+				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+			}
 
-				std::cout << r2cm::linefeed;
+			std::cout << r2cm::split;
 
-				EXPECT_EQ( 2, container[0] );
-				EXPECT_EQ( 3, container[1] );
-				EXPECT_EQ( 0, container[2] );
-				EXPECT_EQ( 0, container[3] );
+			{
+				PROCESS_MAIN( container.resize( 0 ) );
+				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
