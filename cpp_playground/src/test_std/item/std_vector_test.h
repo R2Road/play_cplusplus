@@ -12,6 +12,13 @@ namespace std_vector_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class Clear : public r2cm::iItem, public r2cm::SingleTon<Clear>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class NoneDefaultConstructor : public r2cm::iItem, public r2cm::SingleTon<NoneDefaultConstructor>
 	{
 	public:

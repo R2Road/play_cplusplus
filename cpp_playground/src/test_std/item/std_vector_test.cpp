@@ -71,6 +71,63 @@ namespace std_vector_test
 
 
 
+	r2cm::iItem::TitleFunctionT Clear::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Vector : Clear";
+		};
+	}
+	r2cm::iItem::DoFunctionT Clear::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( std::vector<int> container( { 2, 3 } ) );
+			OUTPUT_VALUE( container.capacity() );
+			OUTPUT_VALUE( container.data() );
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( container.clear() );
+				OUTPUT_VALUE( container.capacity() );
+				OUTPUT_VALUE( container.data() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( container.resize( 2u ) );
+				OUTPUT_VALUE( container.capacity() );
+				OUTPUT_VALUE( container.data() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( container.clear() );
+				OUTPUT_VALUE( container.capacity() );
+				OUTPUT_VALUE( container.data() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( container.resize( 4u ) );
+				OUTPUT_VALUE( container.capacity() );
+				OUTPUT_VALUE( container.data() );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_NOTE( "clear 는 최종적으로 Allocator에 Destory 요청하지만 메모리를 해제하는 것은 아니다." );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT NoneDefaultConstructor::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -336,30 +393,6 @@ namespace std_vector_test
 				EXPECT_EQ( 3, container[1] );
 				EXPECT_EQ( 0, container[2] );
 				EXPECT_EQ( 0, container[3] );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				OUTPUT_VALUE( &container[0] );
-
-				std::cout << r2cm::linefeed;
-
-				PROCESS_MAIN( container.clear() );
-				PROCESS_MAIN( container.resize( 2u ) );
-
-				std::cout << r2cm::linefeed;
-
-				OUTPUT_VALUE( &container[0] );
-
-				std::cout << r2cm::linefeed;
-
-				EXPECT_EQ( 0, container[0] );
-				EXPECT_EQ( 0, container[1] );
-
-				std::cout << r2cm::linefeed;
-
-				std::cout << r2cm::tab << "# clear 는 최종적으로 Allocator에 Destory 요청한다." << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;

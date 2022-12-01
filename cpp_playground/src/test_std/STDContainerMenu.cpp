@@ -32,11 +32,12 @@ r2cm::MenuUp STDContainerMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'a', std_vector_test::Basic::GetInstance() );
-		ret->AddItem( 's', std_vector_test::NoneDefaultConstructor::GetInstance() );
-		ret->AddItem( 'd', std_vector_test::BoolVector::GetInstance() );
-		ret->AddItem( 'f', std_vector_test::OthersIterator::GetInstance() );
-		ret->AddItem( 'g', std_vector_test::EndIterator::GetInstance() );
-		ret->AddItem( 'h', std_vector_test::Resize::GetInstance() );
+		ret->AddItem( 's', std_vector_test::Clear::GetInstance() );
+		ret->AddItem( 'd', std_vector_test::NoneDefaultConstructor::GetInstance() );
+		ret->AddItem( 'f', std_vector_test::BoolVector::GetInstance() );
+		ret->AddItem( 'g', std_vector_test::OthersIterator::GetInstance() );
+		ret->AddItem( 'h', std_vector_test::EndIterator::GetInstance() );
+		ret->AddItem( 'j', std_vector_test::Resize::GetInstance() );
 
 
 		ret->AddSplit();
