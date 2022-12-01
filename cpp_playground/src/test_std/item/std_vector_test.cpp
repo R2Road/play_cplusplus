@@ -7,6 +7,15 @@
 
 namespace std_vector_test
 {
+	std::ostream& operator<<( std::ostream& o, std::vector<int>& container )
+	{
+		for( const auto& i : container )
+		{
+			o << i << " ";
+		}
+		return o;
+	}
+
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -21,47 +30,37 @@ namespace std_vector_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Resize" << r2cm::linefeed2;
+				OUTPUT_NOTE( "크기가 줄어들 때 메모리가 재할당 되는지 궁금했다. > 재할당 없다." );
+				OUTPUT_NOTE( "줄어든 메모리가 이전 크기로 돌아갈 때 메모리가 재할당 되는지 궁금했다. > 재할당 없다." );
+			}
 
-				std::vector<int> test_vector = { 1, 2, 3, 4 };
-				std::cout << r2cm::tab2 << "std::vector<int> test_vector = { 1, 2, 3, 4 };" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- Print : ";
-				for( const auto i : test_vector )
-				{
-					std::cout << i;
-				}
+			std::cout << r2cm::split;
 
-				std::cout << r2cm::linefeed2;
+			DECLARATION_MAIN( std::vector<int> test_vector( { 1, 2, 3, 4 } ) );
+			std::cout << r2cm::tab << "- test_vector : " << test_vector << r2cm::linefeed;
+			OUTPUT_VALUE( ( &test_vector[0] ) );
+			OUTPUT_VALUE( test_vector.capacity() );
 
-				test_vector.resize( 10 );
-				std::cout << r2cm::tab2 << "test_vector.resize( 10 );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- Print : ";
-				for( const auto i : test_vector )
-				{
-					std::cout << i;
-				}
+			std::cout << r2cm::split;
+			{
+				PROCESS_MAIN( test_vector.resize( 2 ) );
+				std::cout << r2cm::tab << "- test_vector : " << test_vector << r2cm::linefeed;
+				OUTPUT_VALUE( ( &test_vector[0] ) );
+				OUTPUT_VALUE( test_vector.capacity() );
 
 				std::cout << r2cm::linefeed2;
 
-				test_vector.resize( 2 );
-				std::cout << r2cm::tab2 << "test_vector.resize( 2 );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- Print : ";
-				for( const auto i : test_vector )
-				{
-					std::cout << i;
-				}
+				PROCESS_MAIN( test_vector.resize( 4 ) );
+				std::cout << r2cm::tab << "- test_vector : " << test_vector << r2cm::linefeed;
+				OUTPUT_VALUE( ( &test_vector[0] ) );
+				OUTPUT_VALUE( test_vector.capacity() );
 
 				std::cout << r2cm::linefeed2;
 
-				test_vector.resize( 20 );
-				std::cout << r2cm::tab2 << "test_vector.resize( 10 );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "- Print : ";
-				for( const auto i : test_vector )
-				{
-					std::cout << i;
-				}
-
-				std::cout << r2cm::linefeed;
+				PROCESS_MAIN( test_vector.resize( 10 ) );
+				std::cout << r2cm::tab << "- test_vector : " << test_vector << r2cm::linefeed;
+				OUTPUT_VALUE( ( &test_vector[0] ) );
+				OUTPUT_VALUE( test_vector.capacity() );
 			}
 
 			std::cout << r2cm::split;
