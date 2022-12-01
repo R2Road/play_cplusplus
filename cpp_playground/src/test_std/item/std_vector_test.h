@@ -26,6 +26,13 @@ namespace std_vector_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class Reserve : public r2cm::iItem, public r2cm::SingleTon<Reserve>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class NoneDefaultConstructor : public r2cm::iItem, public r2cm::SingleTon<NoneDefaultConstructor>
 	{
 	public:

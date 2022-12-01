@@ -178,6 +178,58 @@ namespace std_vector_test
 
 				std::cout << r2cm::linefeed;
 
+				OUTPUT_NOTE( "size 가 증가하면 메모리는 재할당 된다." );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Reserve::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Vector : Reserve";
+		};
+	}
+	r2cm::iItem::DoFunctionT Reserve::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( std::vector<int> container( { 2, 3 } ) );
+			OUTPUT_VALUE( container.capacity() );
+			OUTPUT_VALUE( container.data() );
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( container.reserve( 1u ) );
+				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+				OUTPUT_VALUE( container.capacity() );
+				OUTPUT_VALUE( container.data() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( container.reserve( 2u ) );
+				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+				OUTPUT_VALUE( container.capacity() );
+				OUTPUT_VALUE( container.data() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( container.reserve( 4u ) );
+				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+				OUTPUT_VALUE( container.capacity() );
+				OUTPUT_VALUE( container.data() );
+
+				std::cout << r2cm::linefeed;
+
 				OUTPUT_NOTE( "capacity 가 증가하면 메모리는 재할당 된다." );
 			}
 
