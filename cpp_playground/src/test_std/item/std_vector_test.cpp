@@ -370,56 +370,46 @@ namespace std_vector_test
 		{
 			std::cout << r2cm::split;
 
-			std::vector<int> container_1 = { 1, 2, 3 };
-
-			{
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::vector<int> container_1 = { 1, 2, 3 };" << r2cm::linefeed;
-			}
+			DECLARATION_MAIN( std::vector<int> container_1( { 1, 2, 3 } ) );
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process : operator*" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "auto cur = container_1.end();" << r2cm::linefeed2;
-
-				std::cout << r2cm::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2cm::linefeed2;
-
-#if !defined( DEBUG ) && !defined( _DEBUG )
-				auto cur = container_1.end();
-
-				std::cout << r2cm::tab2 << "( *cur );" << " > " << ( *cur ) << r2cm::linefeed;
+#if defined( DEBUG ) || defined( _DEBUG )
+				OUTPUT_CODE( auto cur = container_1.end() );
+				OUTPUT_CODE( ( *cur ) );
+#else
+				DECLARATION_MAIN( auto cur = container_1.end() );
+				OUTPUT_VALUE( ( *cur ) );
 #endif
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process : operator++" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "auto cur = container_1.end();" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "++cur;" << r2cm::linefeed2;
+#if defined( DEBUG ) || defined( _DEBUG )
+				OUTPUT_CODE( auto cur = container_1.end() );
+				OUTPUT_CODE( ++cur );
+#else
+				DECLARATION_MAIN( auto cur = container_1.end() );
+				PROCESS_MAIN( ++cur );
 
-				std::cout << r2cm::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2cm::linefeed2;
-
-#if !defined( DEBUG ) && !defined( _DEBUG )
-				auto cur = container_1.end();
-				++cur;
-
-				std::cout << r2cm::tab2 << "( *cur );" << " > " << ( *cur ) << r2cm::linefeed;
+				OUTPUT_VALUE( ( *cur ) );
 #endif
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process : operator--" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "auto cur = container_1.end();" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "--cur;" << r2cm::linefeed2;
-
-				auto cur = container_1.end();
-				--cur;
-
-				std::cout << r2cm::tab2 << "( *cur );" << " > " << ( *cur ) << r2cm::linefeed;
+				DECLARATION_MAIN( auto cur = container_1.end() );
+				PROCESS_MAIN( --cur );
+				OUTPUT_VALUE( ( *cur ) );
 			}
 
 			std::cout << r2cm::split;
