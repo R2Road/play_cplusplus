@@ -12,7 +12,7 @@ namespace std_vector_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	class Resize_And_Memory : public r2cm::iItem, public r2cm::SingleTon<Resize_And_Memory>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

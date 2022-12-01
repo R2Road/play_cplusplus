@@ -59,14 +59,14 @@ namespace std_vector_test
 		};
 	}
 
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Resize_And_Memory::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Vector : Basic";
+			return "Vector : Resize And Memory";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Resize_And_Memory::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
