@@ -5,6 +5,13 @@
 
 namespace std_vector_test
 {
+	class Resize : public r2cm::iItem, public r2cm::SingleTon<Resize>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
 	{
 	public:
@@ -41,13 +48,6 @@ namespace std_vector_test
 	};
 
 	class EndIterator : public r2cm::iItem, public r2cm::SingleTon<EndIterator>
-	{
-	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
-	};
-
-	class Resize : public r2cm::iItem, public r2cm::SingleTon<Resize>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

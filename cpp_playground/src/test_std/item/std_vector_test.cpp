@@ -16,6 +16,56 @@ namespace std_vector_test
 		return o;
 	}
 
+	r2cm::iItem::TitleFunctionT Resize::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Vector : Resize";
+		};
+	}
+	r2cm::iItem::DoFunctionT Resize::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( std::vector<int> container( { 2, 3 } ) );
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_EQ( 2, container[0] );
+				EXPECT_EQ( 3, container[1] );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( container.resize( 2u ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 2, container[0] );
+				EXPECT_EQ( 3, container[1] );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( container.resize( 4u ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 2, container[0] );
+				EXPECT_EQ( 3, container[1] );
+				EXPECT_EQ( 0, container[2] );
+				EXPECT_EQ( 0, container[3] );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -341,58 +391,6 @@ namespace std_vector_test
 				--cur;
 
 				std::cout << r2cm::tab2 << "( *cur );" << " > " << ( *cur ) << r2cm::linefeed;
-			}
-
-			std::cout << r2cm::split;
-
-			return r2cm::eItemLeaveAction::Pause;
-		};
-	}
-
-
-
-	r2cm::iItem::TitleFunctionT Resize::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Vector : Resize";
-		};
-	}
-	r2cm::iItem::DoFunctionT Resize::GetDoFunction()
-	{
-		return []()->r2cm::eItemLeaveAction
-		{
-			std::cout << r2cm::split;
-
-			DECLARATION_MAIN( std::vector<int> container( { 2, 3 } ) );
-
-			std::cout << r2cm::split;
-
-			{
-				EXPECT_EQ( 2, container[0] );
-				EXPECT_EQ( 3, container[1] );
-
-				std::cout << r2cm::linefeed;
-
-				PROCESS_MAIN( container.resize( 2u ) );
-
-				std::cout << r2cm::linefeed;
-
-				EXPECT_EQ( 2, container[0] );
-				EXPECT_EQ( 3, container[1] );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				PROCESS_MAIN( container.resize( 4u ) );
-
-				std::cout << r2cm::linefeed;
-
-				EXPECT_EQ( 2, container[0] );
-				EXPECT_EQ( 3, container[1] );
-				EXPECT_EQ( 0, container[2] );
-				EXPECT_EQ( 0, container[3] );
 			}
 
 			std::cout << r2cm::split;
