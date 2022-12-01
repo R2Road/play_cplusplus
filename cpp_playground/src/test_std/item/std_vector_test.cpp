@@ -202,33 +202,24 @@ namespace std_vector_test
 		{
 			std::cout << r2cm::split;
 
-			class TestClass
+			DECLARATION_MAIN( class TestClass
 			{
 			public:
 				TestClass( int ) {}
-			};
-			std::vector<TestClass> test_vector;
+			} );
 
-			{
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "class TestClass" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "{" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "public:" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "TestClass( int ) {}" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "};" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "td::vector<TestClass> test_vector;" << r2cm::linefeed;
-			}
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( std::vector<TestClass> test_vector );
 
 			std::cout << r2cm::split;
 
 			{
-				//test_vector.resize( 10 );
+				OUTPUT_CODE( test_vector.resize( 10 ) );
 
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "test_vector.resize( 10 );" << r2cm::linefeed2;
+				std::cout << r2cm::linefeed;
 
-
-				std::cout << r2cm::tab << "## Now Working : Need Default Constructor" << r2cm::linefeed;
+				std::cout << r2cm::tab << "## Not Compiled : Need Default Constructor" << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
