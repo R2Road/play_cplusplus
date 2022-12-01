@@ -11,7 +11,7 @@ namespace std_list_test
 	{
 		for( const auto& i : container )
 		{
-			std::cout << i << " ";
+			o << i << " ";
 		}
 		return o;
 	}
