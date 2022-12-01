@@ -309,24 +309,15 @@ namespace std_vector_test
 		{
 			std::cout << r2cm::split;
 
-			std::vector<int> container_1 = { 1, 2, 3 };
-			std::vector<int> container_2 = { 10, 20, 30 };
-
-			{
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::vector<int> container_1 = { 1, 2, 3 };" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "std::vector<int> container_2 = { 10, 20, 30 };" << r2cm::linefeed;
-			}
+			DECLARATION_MAIN( std::vector<int> container_1( { 1, 2, 3 } ) );
+			DECLARATION_MAIN( std::vector<int> container_2( { 10, 20, 30 } ) );
 
 			std::cout << r2cm::split;
 
 			{
-				//auto itr_from_container_1 = container_1.begin();
-				//container_2.erase( itr_from_container_1 );
+				OUTPUT_CODE( container_2.erase( container_1.begin() ) );
 
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "auto itr_from_container_1 = container_1.begin();" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "container_2.erase( itr_from_container_1 );" << r2cm::linefeed2;
+				std::cout << r2cm::linefeed;
 
 				std::cout << r2cm::tab << "## Not Working" << r2cm::linefeed;
 			}
