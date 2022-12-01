@@ -247,12 +247,12 @@ namespace std_vector_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( std::vector<TestClass> test_vector );
+			DECLARATION_MAIN( std::vector<TestClass> container );
 
 			std::cout << r2cm::split;
 
 			{
-				OUTPUT_CODE( test_vector.resize( 10 ) );
+				OUTPUT_CODE( container.resize( 10 ) );
 
 				std::cout << r2cm::linefeed;
 
