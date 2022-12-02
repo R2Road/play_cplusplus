@@ -13,11 +13,21 @@ r2cm::MenuUp STDMemoryMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', std_memory_test::SharedPointer::GetInstance() );
-		ret->AddItem( '2', std_memory_test::UniquePointer::GetInstance() );
-		ret->AddItem( '3', std_memory_test::UniquePointer_FowardDeclaration::GetInstance() );
+		ret->AddItem( '2', std_memory_test::SharedPointer_MakeShared_And_Memory::GetInstance() );
+
+
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'q', std_memory_test::UniquePointer::GetInstance() );
+		ret->AddItem( 'w', std_memory_test::UniquePointer_FowardDeclaration::GetInstance() );
+
 
 
 		ret->AddSplit();
+
 
 
 		ret->AddMenu<STDMenu>( 27 );
