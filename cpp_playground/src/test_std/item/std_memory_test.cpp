@@ -207,8 +207,13 @@ namespace std_memory_test
 		{
 			std::cout << r2cm::split;
 
+			OUTPUT_FILE( "src/test_std/item/std_memory_test_helper_up_and_forward_declaration.h" );
+			OUTPUT_FILE( "src/test_std/item/std_memory_test_helper_up_and_forward_declaration.cpp" );
+
+			std::cout << r2cm::split;
+
 			{
-				std_memory_test_helper_up_and_forward_declaration::Processor p;
+				DECLARATION_MAIN( std_memory_test_helper_up_and_forward_declaration::Processor p );
 			}
 
 			std::cout << r2cm::split;
