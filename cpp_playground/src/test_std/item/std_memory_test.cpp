@@ -164,6 +164,9 @@ namespace std_memory_test
 			{
 				DECLARATION_MAIN( std::unique_ptr<int> up( new int( 3 ) ) );
 				OUTPUT_VALUE( *up );
+
+				std::cout << r2cm::linefeed;
+
 				EXPECT_NE( nullptr, up );
 				PROCESS_MAIN( up.reset() );
 				EXPECT_EQ( nullptr, up );
@@ -186,6 +189,22 @@ namespace std_memory_test
 				EXPECT_EQ( nullptr, up1 );
 				EXPECT_NE( nullptr, up4 );
 				OUTPUT_COMMENT( "move 가능" );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "release() 는 보유한 포인터를 반환하고 자신을 초기화 한다." );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto up1( std::make_unique<int>( 3 ) ) );
+				DECLARATION_MAIN( std::unique_ptr<int> up2( up1.release() ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( nullptr, up1 );
+				EXPECT_NE( nullptr, up2 );
 			}
 
 			std::cout << r2cm::split;
