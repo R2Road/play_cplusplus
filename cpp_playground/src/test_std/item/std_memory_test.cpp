@@ -106,13 +106,13 @@ namespace std_memory_test
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( int32_t* p = (int32_t* )sp.get() );
+			PROCESS_MAIN( p -= 2 );
+			OUTPUT_BINARIES( p, 3 );
+
+			std::cout << r2cm::split;
+
 			{
-				DECLARATION_MAIN( int32_t* p = (int32_t* )sp.get() );
-				PROCESS_MAIN( p -= 2 );
-				OUTPUT_BINARIES( p, 3 );
-
-				std::cout << r2cm::linefeed;
-
 				DECLARATION_MAIN( auto tp_1 = sp );
 				OUTPUT_BINARIES( p, 3 );
 
@@ -125,9 +125,11 @@ namespace std_memory_test
 
 				PROCESS_MAIN( tp_2.reset() );
 				OUTPUT_BINARIES( p, 3 );
+			}
 
-				std::cout << r2cm::linefeed;
+			std::cout << r2cm::split;
 
+			{
 				DECLARATION_MAIN( std::weak_ptr<int> wp_1 = sp );
 				OUTPUT_BINARIES( p, 3 );
 
@@ -236,6 +238,9 @@ namespace std_memory_test
 			std::cout << r2cm::split;
 
 			OUTPUT_FILE( "src/test_std/item/std_memory_test_helper_up_and_forward_declaration.h" );
+
+			std::cout << r2cm::split;
+
 			OUTPUT_FILE( "src/test_std/item/std_memory_test_helper_up_and_forward_declaration.cpp" );
 
 			std::cout << r2cm::split;
