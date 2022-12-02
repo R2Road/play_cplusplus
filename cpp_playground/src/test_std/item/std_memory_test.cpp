@@ -49,21 +49,17 @@ namespace std_memory_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Shared Pointer Has Const Value" << r2cm::linefeed << r2cm::linefeed;
+				OUTPUT_NOTE( "Shared Pointer Has Const Value" );
 
-				std::cout << r2cm::tab2 << "- Make Sp Has Const Value" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "std::shared_ptr<const int> test_sp( new int( 10 ) )" << r2cm::linefeed;
-				std::shared_ptr<const int> const_test_sp( new int( 10 ) );
-
-				std::cout << r2cm::tab4 << "- Print : " << *const_test_sp << r2cm::linefeed;
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab2 << "- Failed : Change Value" << r2cm::linefeed;
+				DECLARATION_MAIN( std::shared_ptr<const int> sp( new int( 10 ) ) );
+				OUTPUT_VALUE( *sp );
+
 				std::cout << r2cm::linefeed;
 
-				//*const_test_sp = 11;
-				//std::cout << r2cm::tab << "+ Change Value with Sp Has Const Value" << r2cm::linefeed;
-				//std::cout << r2cm::tab2 << *const_test_sp << r2cm::linefeed;
+				OUTPUT_CODE( *sp = 11 );
+				OUTPUT_COMMENT( "Failed : Change Value" );
 			}
 
 			std::cout << r2cm::split;
