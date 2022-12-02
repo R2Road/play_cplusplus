@@ -65,13 +65,13 @@ namespace std_memory_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Make Shared" << r2cm::linefeed << r2cm::linefeed;
+				OUTPUT_NOTE( "Make Shared" );
 
-				std::cout << r2cm::tab2 << "auto test_sp = std::make_shared<int>( 10 );" << r2cm::linefeed;
-				auto test_sp = std::make_shared<int>( 10 );
-
-				std::cout << r2cm::tab3 << "- Print : " << *test_sp << r2cm::linefeed;
 				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto sp = std::make_shared<int>( 10 ) );
+				OUTPUT_VALUE( sizeof( sp ) );
+				OUTPUT_VALUE( *sp );
 			}
 
 			std::cout << r2cm::split;
