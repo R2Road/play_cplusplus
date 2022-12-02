@@ -30,7 +30,6 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		"\n"
 
 		"\n"	"> To do : Regex"
-		"\n"	"> To do : Vector3"
 		"\n"	"> To do : Encoding"
 		"\n"	"> To do : Infinite Number"
 		"\n"	"> To do : Thread"
