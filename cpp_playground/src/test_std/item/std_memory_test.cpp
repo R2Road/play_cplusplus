@@ -23,8 +23,9 @@ namespace std_memory_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( std::shared_ptr<int> test_sp( new int( 10 ) ) );
-				OUTPUT_VALUE( *test_sp );
+				DECLARATION_MAIN( std::shared_ptr<int> sp( new int( 10 ) ) );
+				OUTPUT_VALUE( sizeof( sp ) );
+				OUTPUT_VALUE( *sp );
 			}
 
 			std::cout << r2cm::split;
