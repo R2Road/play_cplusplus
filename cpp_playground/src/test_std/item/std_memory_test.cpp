@@ -4,6 +4,7 @@
 #include <memory>
 #include <utility>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace std_memory_test
@@ -22,28 +23,27 @@ namespace std_memory_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Shared Pointer" << r2cm::linefeed << r2cm::linefeed;
+				DECLARATION_MAIN( std::shared_ptr<int> test_sp( new int( 10 ) ) );
+				OUTPUT_VALUE( *test_sp );
+			}
 
-				std::cout << r2cm::tab2 << "- Make Sp" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "std::shared_ptr<int> test_sp( new int( 10 ) )" << r2cm::linefeed;
-				std::shared_ptr<int> test_sp( new int( 10 ) );
-
-				std::cout << r2cm::tab4 << "- Print : " << *test_sp << r2cm::linefeed << r2cm::linefeed;
-
-
-				std::cout << r2cm::tab2 << "- Copy To Const Sp" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "const auto test_sp_2 = test_sp;" << r2cm::linefeed;
-				const auto test_sp_2 = test_sp;
+			std::cout << r2cm::split;
+			
+			{
+				OUTPUT_NOTE( "const sp 는 [* const] 에 가깝다." );
 
 				std::cout << r2cm::linefeed;
 
+				DECLARATION_MAIN( std::shared_ptr<int> sp1( new int( 10 ) ) );
+				DECLARATION_MAIN( const auto sp2 = sp1 );
+				OUTPUT_CODE( sp2 = nullptr );
+				OUTPUT_COMMENT( "지정된 pointer 변경 불가." );
 
-				std::cout << r2cm::tab2 << "- Change Value with Const Sp" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "*test_sp_2 = 11;" << r2cm::linefeed;
-				*test_sp_2 = 11;
-
-				std::cout << r2cm::tab4 << "- Print : " << *test_sp_2 << r2cm::linefeed;
 				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( *sp2 = 11 );
+				OUTPUT_VALUE( *sp2 );
+				OUTPUT_COMMENT( "값 변경 가능" );
 			}
 
 			std::cout << r2cm::split;
