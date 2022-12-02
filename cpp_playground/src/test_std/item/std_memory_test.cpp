@@ -162,6 +162,16 @@ namespace std_memory_test
 			std::cout << r2cm::split;
 
 			{
+				DECLARATION_MAIN( std::unique_ptr<int> up( new int( 3 ) ) );
+				OUTPUT_VALUE( *up );
+				EXPECT_NE( nullptr, up );
+				PROCESS_MAIN( up.reset() );
+				EXPECT_EQ( nullptr, up );
+			}
+
+			std::cout << r2cm::split;
+
+			{
 				DECLARATION_MAIN( std::unique_ptr<int> up1( new int( 3 ) ) );
 
 				std::cout << r2cm::linefeed;
@@ -176,6 +186,13 @@ namespace std_memory_test
 				EXPECT_EQ( nullptr, up1 );
 				EXPECT_NE( nullptr, up4 );
 				OUTPUT_COMMENT( "move °¡´É" );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto up( std::make_unique<int>( 3 ) ) );
+				OUTPUT_VALUE( *up );
 			}
 
 			std::cout << r2cm::split;
