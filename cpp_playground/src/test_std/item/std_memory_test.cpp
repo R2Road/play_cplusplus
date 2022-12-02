@@ -80,6 +80,68 @@ namespace std_memory_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT SharedPointer_MakeShared_And_Memory::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Shared Pointer : MakeShared And Memory";
+		};
+	}
+	r2cm::iItem::DoFunctionT SharedPointer_MakeShared_And_Memory::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_NOTE( "std::make_shared 로 메모리를 할당하면 ref count 와 weak count 를 위한 공간을..." );
+			OUTPUT_NOTE( "메모리의 앞 부분에 붙여서 메모리를 할당한다." );
+			OUTPUT_NOTE( "구조 : ref count + weak count + obj" );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( auto sp = std::make_shared<int>( 255 ) );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( int32_t* p = (int32_t* )sp.get() );
+				PROCESS_MAIN( p -= 2 );
+				OUTPUT_BINARIES( p, 3 );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto tp_1 = sp );
+				OUTPUT_BINARIES( p, 3 );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto tp_2 = sp );
+				OUTPUT_BINARIES( p, 3 );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( tp_2.reset() );
+				OUTPUT_BINARIES( p, 3 );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( std::weak_ptr<int> wp_1 = sp );
+				OUTPUT_BINARIES( p, 3 );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( wp_1.reset() );
+				OUTPUT_BINARIES( p, 3 );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
 
 

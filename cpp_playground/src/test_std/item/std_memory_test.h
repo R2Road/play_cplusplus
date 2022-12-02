@@ -12,6 +12,13 @@ namespace std_memory_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class SharedPointer_MakeShared_And_Memory : public r2cm::iItem, public r2cm::SingleTon<SharedPointer_MakeShared_And_Memory>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class UniquePointer : public r2cm::iItem, public r2cm::SingleTon<UniquePointer>
 	{
 	public:
