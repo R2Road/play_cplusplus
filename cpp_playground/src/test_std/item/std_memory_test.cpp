@@ -162,28 +162,20 @@ namespace std_memory_test
 			std::cout << r2cm::split;
 
 			{
-				auto test_up = std::unique_ptr<int>( new int( 3 ) );
-
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "auto test_up = std::unique_ptr<int>( new int( 3 ) );" << r2cm::linefeed;
-
+				DECLARATION_MAIN( std::unique_ptr<int> up1( new int( 3 ) ) );
 
 				std::cout << r2cm::linefeed;
 
-
-				//auto test_up_2 = test_up;
-
-				std::cout << r2cm::tab << "+ Move : Failed" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "auto test_up_2 = test_up;" << r2cm::linefeed;
-
+				OUTPUT_CODE( auto up2 = test_up );
+				OUTPUT_CODE( auto up3( test_up ) );
+				OUTPUT_COMMENT( "복사, 대입 불가" );
 
 				std::cout << r2cm::linefeed;
 
-
-				auto test_up_2 = std::move( test_up );
-
-				std::cout << r2cm::tab << "+ Move : Success" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "auto test_up_2 = std::move( test_up );" << r2cm::linefeed;
+				DECLARATION_MAIN( auto up4 = std::move( up1 ) );
+				EXPECT_EQ( nullptr, up1 );
+				EXPECT_NE( nullptr, up4 );
+				OUTPUT_COMMENT( "move 가능" );
 			}
 
 			std::cout << r2cm::split;
