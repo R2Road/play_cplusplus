@@ -1,5 +1,6 @@
 #include "std_memory_unique_ptr_test.h"
 #include "std_memory_unique_ptr_test_helper_forward_declaration.h"
+#include "std_memory_unique_ptr_test_helper_template_deleter.hpp"
 
 #include <memory>
 #include <utility>
@@ -107,6 +108,45 @@ namespace std_memory_unique_ptr_test
 			{
 				using U = std::unique_ptr<int, Deleter>;
 				std::cout << "using U = std::unique_ptr<int, Deleter>;" << r2cm::linefeed;
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( U up( new int( 3 ) ) );
+				OUTPUT_VALUE( *up );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( up.reset() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT TemplateDeleter::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::unique_ptr : Template Deleter";
+		};
+	}
+	r2cm::iItem::DoFunctionT TemplateDeleter::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_FILE( "src/test_std/item/std_memory_unique_ptr_test_helper_template_deleter.hpp" );
+
+			std::cout << r2cm::split;
+
+			{
+				using U = std::unique_ptr<int, std_memory_unique_ptr_test_helper_template_deleter::TDeleter<int>>;
+				std::cout << "using U = std::unique_ptr<int, std_memory_unique_ptr_test_helper_template_deleter::TDeleter<int>>;" << r2cm::linefeed;
 
 				std::cout << r2cm::linefeed;
 

@@ -1097,6 +1097,9 @@
     <ClInclude Include="src\test_std\item\std_memory_shared_ptr_test.h">
       <Filter>test_std\item</Filter>
     </ClInclude>
+    <ClInclude Include="src\test_std\item\std_memory_unique_ptr_test_helper_template_deleter.hpp">
+      <Filter>test_std\item</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\test_cpp\item\enum_test_xmacro_2.def">
