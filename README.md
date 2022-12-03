@@ -27,5 +27,9 @@
 <img src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/algorithm_astar_test_20220131.png"></img>
 </p>
 <p float:left;">
-<img src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/maze_generation_kruskals_test_20220609_1.png"></img>
+<img 
+src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/maze_generation_kruskals_test_20220609_1.png"></img>
+</p>
+<p float:left;">
+<img src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/std_memory_shared_ptr_test_makeshared_and_memory_20221203_1.png"></img>
 </p>
