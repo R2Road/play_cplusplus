@@ -83,6 +83,49 @@ namespace std_memory_unique_ptr_test
 
 
 
+	r2cm::iItem::TitleFunctionT Deleter::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::unique_ptr : Deleter";
+		};
+	}
+	r2cm::iItem::DoFunctionT Deleter::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_NOTE( "memory pool 이나 caching 등을 활용하고 있다면 삭제자를 지정해서 쓰면 된다." );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( struct Deleter { void operator()( int* p ) { delete p; puts( "Deleter::operator()" ); } } );
+
+			std::cout << r2cm::split;
+
+			{
+				using U = std::unique_ptr<int, Deleter>;
+				std::cout << "using U = std::unique_ptr<int, Deleter>;" << r2cm::linefeed;
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( U up( new int( 3 ) ) );
+				OUTPUT_VALUE( *up );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( up.reset() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT FowardDeclaration::GetTitleFunction() const
 	{
 		return []()->const char*

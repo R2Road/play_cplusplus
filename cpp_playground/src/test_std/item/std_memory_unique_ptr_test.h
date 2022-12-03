@@ -12,6 +12,13 @@ namespace std_memory_unique_ptr_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class Deleter : public r2cm::iItem, public r2cm::SingleTon<Deleter>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class FowardDeclaration : public r2cm::iItem, public r2cm::SingleTon<FowardDeclaration>
 	{
 	public:
