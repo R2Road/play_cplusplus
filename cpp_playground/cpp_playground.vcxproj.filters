@@ -533,9 +533,6 @@
     <ClCompile Include="src\test_cpp\item\cpp_alignas_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_std\item\std_memory_test_helper_up_and_forward_declaration.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\item\cpp_class_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
@@ -543,6 +540,9 @@
       <Filter>test_cpp\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_std\item\std_memory_unique_ptr_test.cpp">
+      <Filter>test_std\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_std\item\std_memory_unique_ptr_test_helper_forward_declaration.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1064,9 +1064,6 @@
     <ClInclude Include="src\test_cpp\item\cpp_alignas_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_std\item\std_memory_test_helper_up_and_forward_declaration.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\item\cpp_class_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
@@ -1095,6 +1092,9 @@
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_std\item\std_memory_unique_ptr_test.h">
+      <Filter>test_std\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\item\std_memory_unique_ptr_test_helper_forward_declaration.h">
       <Filter>test_std\item</Filter>
     </ClInclude>
   </ItemGroup>

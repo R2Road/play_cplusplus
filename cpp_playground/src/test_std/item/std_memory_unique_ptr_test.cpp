@@ -1,5 +1,5 @@
 #include "std_memory_unique_ptr_test.h"
-#include "std_memory_test_helper_up_and_forward_declaration.h"
+#include "std_memory_unique_ptr_test_helper_forward_declaration.h"
 
 #include <memory>
 #include <utility>
@@ -96,11 +96,11 @@ namespace std_memory_unique_ptr_test
 		{
 			std::cout << r2cm::split;
 
-			OUTPUT_FILE( "src/test_std/item/std_memory_test_helper_up_and_forward_declaration.h" );
+			OUTPUT_FILE( "src/test_std/item/std_memory_unique_ptr_test_helper_forward_declaration.h" );
 
 			std::cout << r2cm::split;
 
-			OUTPUT_FILE( "src/test_std/item/std_memory_test_helper_up_and_forward_declaration.cpp" );
+			OUTPUT_FILE( "src/test_std/item/std_memory_unique_ptr_test_helper_forward_declaration.cpp" );
 
 			std::cout << r2cm::split;
 
