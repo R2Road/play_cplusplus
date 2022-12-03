@@ -12,8 +12,8 @@ r2cm::MenuUp STDMemoryMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', std_memory_shared_ptr_test::SharedPointer::GetInstance() );
-		ret->AddItem( '2', std_memory_shared_ptr_test::SharedPointer_MakeShared_And_Memory::GetInstance() );
+		ret->AddItem( '1', std_memory_shared_ptr_test::Basic::GetInstance() );
+		ret->AddItem( '2', std_memory_shared_ptr_test::MakeShared_And_Memory::GetInstance() );
 
 
 

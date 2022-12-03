@@ -8,14 +8,14 @@
 
 namespace std_memory_shared_ptr_test
 {
-	r2cm::iItem::TitleFunctionT SharedPointer::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Shared Pointer";
+			return "std::shared_ptr : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT SharedPointer::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -82,14 +82,14 @@ namespace std_memory_shared_ptr_test
 
 
 
-	r2cm::iItem::TitleFunctionT SharedPointer_MakeShared_And_Memory::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MakeShared_And_Memory::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Shared Pointer : MakeShared And Memory";
+			return "std::shared_ptr : MakeShared And Memory";
 		};
 	}
-	r2cm::iItem::DoFunctionT SharedPointer_MakeShared_And_Memory::GetDoFunction()
+	r2cm::iItem::DoFunctionT MakeShared_And_Memory::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
