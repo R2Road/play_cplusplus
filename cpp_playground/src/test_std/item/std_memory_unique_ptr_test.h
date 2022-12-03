@@ -3,16 +3,16 @@
 #include "r2cm/r2cm_iItem.h"
 #include "r2cm/r2cm_Singleton.h"
 
-namespace std_memory_test
+namespace std_memory_unique_ptr_test
 {
-	class SharedPointer : public r2cm::iItem, public r2cm::SingleTon<SharedPointer>
+	class UniquePointer : public r2cm::iItem, public r2cm::SingleTon<UniquePointer>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class SharedPointer_MakeShared_And_Memory : public r2cm::iItem, public r2cm::SingleTon<SharedPointer_MakeShared_And_Memory>
+	class UniquePointer_FowardDeclaration : public r2cm::iItem, public r2cm::SingleTon<UniquePointer_FowardDeclaration>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

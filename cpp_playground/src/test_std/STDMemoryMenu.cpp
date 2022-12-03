@@ -3,6 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 
 #include "test_std/item/std_memory_test.h"
+#include "test_std/item/std_memory_unique_ptr_test.h"
 
 #include "STDMenu.h"
 
@@ -20,8 +21,8 @@ r2cm::MenuUp STDMemoryMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', std_memory_test::UniquePointer::GetInstance() );
-		ret->AddItem( 'w', std_memory_test::UniquePointer_FowardDeclaration::GetInstance() );
+		ret->AddItem( 'q', std_memory_unique_ptr_test::UniquePointer::GetInstance() );
+		ret->AddItem( 'w', std_memory_unique_ptr_test::UniquePointer_FowardDeclaration::GetInstance() );
 
 
 
