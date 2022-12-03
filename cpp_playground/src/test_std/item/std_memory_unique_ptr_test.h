@@ -5,14 +5,14 @@
 
 namespace std_memory_unique_ptr_test
 {
-	class UniquePointer : public r2cm::iItem, public r2cm::SingleTon<UniquePointer>
+	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class UniquePointer_FowardDeclaration : public r2cm::iItem, public r2cm::SingleTon<UniquePointer_FowardDeclaration>
+	class FowardDeclaration : public r2cm::iItem, public r2cm::SingleTon<FowardDeclaration>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

@@ -21,8 +21,8 @@ r2cm::MenuUp STDMemoryMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', std_memory_unique_ptr_test::UniquePointer::GetInstance() );
-		ret->AddItem( 'w', std_memory_unique_ptr_test::UniquePointer_FowardDeclaration::GetInstance() );
+		ret->AddItem( 'q', std_memory_unique_ptr_test::Basic::GetInstance() );
+		ret->AddItem( 'w', std_memory_unique_ptr_test::FowardDeclaration::GetInstance() );
 
 
 

@@ -9,14 +9,14 @@
 
 namespace std_memory_unique_ptr_test
 {
-	r2cm::iItem::TitleFunctionT UniquePointer::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Unique Pointer";
+			return "std::unique_ptr : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT UniquePointer::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -83,14 +83,14 @@ namespace std_memory_unique_ptr_test
 
 
 
-	r2cm::iItem::TitleFunctionT UniquePointer_FowardDeclaration::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT FowardDeclaration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Unique Pointer : Forward Declaration";
+			return "std::unique_ptr : Forward Declaration";
 		};
 	}
-	r2cm::iItem::DoFunctionT UniquePointer_FowardDeclaration::GetDoFunction()
+	r2cm::iItem::DoFunctionT FowardDeclaration::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
