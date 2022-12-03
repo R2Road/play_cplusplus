@@ -105,7 +105,7 @@ namespace std_memory_unique_ptr_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( std_memory_test_helper_up_and_forward_declaration::Processor p );
+				DECLARATION_MAIN( std_memory_unique_ptr_test_helper_forward_declaration::Processor p );
 			}
 
 			std::cout << r2cm::split;
