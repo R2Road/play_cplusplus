@@ -11,7 +11,7 @@ namespace std_variant_test
 	{
 		return []()->const char*
 		{
-			return "Variant : Basic";
+			return "std::variant : Basic";
 		};
 	}
 	r2cm::iItem::DoFunctionT Basic::GetDoFunction()

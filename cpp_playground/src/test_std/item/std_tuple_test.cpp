@@ -11,7 +11,7 @@ namespace std_tuple_test
 	{
 		return []()->const char*
 		{
-			return "Tuple : Basic";
+			return "std::tuple : Basic";
 		};
 	}
 	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
