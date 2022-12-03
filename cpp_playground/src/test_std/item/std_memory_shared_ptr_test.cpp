@@ -1,4 +1,4 @@
-#include "std_memory_test.h"
+#include "std_memory_shared_ptr_test.h"
 #include "std_memory_unique_ptr_test_helper_forward_declaration.h"
 
 #include <memory>
@@ -6,7 +6,7 @@
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
-namespace std_memory_test
+namespace std_memory_shared_ptr_test
 {
 	r2cm::iItem::TitleFunctionT SharedPointer::GetTitleFunction() const
 	{
