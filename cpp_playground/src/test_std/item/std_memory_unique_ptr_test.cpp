@@ -145,12 +145,7 @@ namespace std_memory_unique_ptr_test
 			std::cout << r2cm::split;
 
 			{
-				using U = std::unique_ptr<int, std_memory_unique_ptr_test_helper_template_deleter::TDeleter<int>>;
-				std::cout << "using U = std::unique_ptr<int, std_memory_unique_ptr_test_helper_template_deleter::TDeleter<int>>;" << r2cm::linefeed;
-
-				std::cout << r2cm::linefeed;
-
-				DECLARATION_MAIN( U up( new int( 3 ) ) );
+				DECLARATION_MAIN( std_memory_unique_ptr_test_helper_template_deleter::U<int> up( new int( 3 ) ) );
 				OUTPUT_VALUE( *up );
 
 				std::cout << r2cm::linefeed;
