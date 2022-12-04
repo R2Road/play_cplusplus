@@ -3,6 +3,7 @@
 #include <string>
 #include <tuple>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace std_tuple_test
@@ -20,19 +21,19 @@ namespace std_tuple_test
 		{
 			std::cout << r2cm::split;
 
-
 			{
-				std::cout << r2cm::tab << "+ std::tuple<int, std::string, char> v;" << r2cm::linefeed;
-				std::tuple<int, std::string, char> v;
+				using T = std::tuple<int, std::string, char>;
+				std::cout << "using T = std::tuple<int, std::string, char>;" << r2cm::linefeed;
 
-				std::cout << r2cm::tab2 << "- Call : std::get<0>( v );" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << std::get<0>( v ) << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab2 << "- Call : std::get<1>( v );" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << std::get<1>( v ) << r2cm::linefeed;
+				DECLARATION_MAIN( T t );
 
-				std::cout << r2cm::tab2 << "- Call : std::get<2>( v );" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << std::get<2>( v ) << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( std::get<0>( t ) );
+				OUTPUT_VALUE( std::get<1>( t ) );
+				OUTPUT_VALUE( std::get<2>( t ) );
 			}
 
 
@@ -40,17 +41,18 @@ namespace std_tuple_test
 
 
 			{
-				std::cout << r2cm::tab << "+ std::tuple<int, std::string, bool> v{ 2, \"park\", 'b' };" << r2cm::linefeed;
-				std::tuple<int, std::string, char> v{ 2, "park", 'b' };
+				using T = std::tuple<int, std::string, bool>;
+				std::cout << "using T = std::tuple<int, std::string, bool>;" << r2cm::linefeed;
 
-				std::cout << r2cm::tab2  << "- Call : std::get<0>( v );" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << std::get<0>( v ) << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab2 << "- Call : std::get<1>( v );" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << std::get<1>( v ) << r2cm::linefeed;
+				DECLARATION_MAIN( T t( { 2, "park", true } ) );
 
-				std::cout << r2cm::tab2 << "- Call : std::get<2>( v );" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << std::get<2>( v ) << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( std::get<0>( t ) );
+				OUTPUT_VALUE( std::get<1>( t ) );
+				OUTPUT_VALUE( std::get<2>( t ) );
 			}
 
 
@@ -58,17 +60,13 @@ namespace std_tuple_test
 
 
 			{
-				std::cout << r2cm::tab << "+ auto v = std::make_tuple( 10, \"Kim\", 'c' );" << r2cm::linefeed;
-				auto v = std::make_tuple( 10, "Kim", 'c' );
+				DECLARATION_MAIN( auto t = std::make_tuple( 10, "Kim", 'c' ) );
 
-				std::cout << r2cm::tab2 << "- Call : std::get<0>( v );" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << std::get<0>( v ) << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab2 << "- Call : std::get<1>( v );" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << std::get<1>( v ) << r2cm::linefeed;
-
-				std::cout << r2cm::tab2 << "- Call : std::get<2>( v );" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << std::get<2>( v ) << r2cm::linefeed;
+				OUTPUT_VALUE( std::get<0>( t ) );
+				OUTPUT_VALUE( std::get<1>( t ) );
+				OUTPUT_VALUE( std::get<2>( t ) );
 			}
 
 
