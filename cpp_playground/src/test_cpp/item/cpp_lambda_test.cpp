@@ -34,10 +34,10 @@ namespace cpp_lambda_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Message" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "Captures Default to Const Value" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "https://www.learncpp.com/cpp-tutorial/lambda-captures/" << r2cm::linefeed2;
+				OUTPUT_NOTE( "Captures Default to Const Value" );
+				OUTPUT_NOTE( "https://www.learncpp.com/cpp-tutorial/lambda-captures/" );
 
+				std::cout << r2cm::linefeed;
 
 				//int i = 0;
 				//auto lambda_1 = [i]()
@@ -372,7 +372,7 @@ namespace cpp_lambda_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto l = []() { int i = 0; } );
+				DECLARATION_MAIN( auto l = []() { int i = 0; i = 1; } );
 				OUTPUT_VALUE( sizeof( l ) );
 			}
 
