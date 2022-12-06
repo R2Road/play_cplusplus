@@ -4,6 +4,7 @@
 #include "r2cm/r2cm_ostream.h"
 
 #include "test_std/item/std_array_test.h"
+#include "test_std/item/std_bitset_test.h"
 #include "test_std/item/std_list_test.h"
 #include "test_std/item/std_vector_test.h"
 
@@ -17,6 +18,12 @@ r2cm::MenuUp STDContainerMenu::Create( r2cm::Director& director )
 		ret->AddItem( '1', std_array_test::Basic::GetInstance() );
 		ret->AddItem( '2', std_array_test::Fill::GetInstance() );
 		ret->AddItem( '3', std_array_test::Copy::GetInstance() );
+
+
+		ret->AddLineFeed();
+
+
+		ret->AddItem( '6', std_bitset_test::Size::GetInstance() );
 
 
 		ret->AddLineFeed();

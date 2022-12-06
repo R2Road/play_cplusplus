@@ -545,6 +545,9 @@
     <ClCompile Include="src\test_std\item\std_memory_shared_ptr_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_std\item\std_bitset_test.cpp">
+      <Filter>test_std\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1098,6 +1101,9 @@
       <Filter>test_std\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_std\item\std_memory_unique_ptr_test_helper_template_deleter.hpp">
+      <Filter>test_std\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\item\std_bitset_test.h">
       <Filter>test_std\item</Filter>
     </ClInclude>
   </ItemGroup>
