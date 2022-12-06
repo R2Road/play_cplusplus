@@ -1,4 +1,4 @@
-#include "lambda_test.h"
+#include "cpp_lambda_test.h"
 
 #include <cassert>
 #include <memory>
@@ -6,7 +6,7 @@
 
 #include "r2cm/r2cm_ostream.h"
 
-namespace lambda_test
+namespace cpp_lambda_test
 {
 	r2cm::iItem::TitleFunctionT CaptureValue::GetTitleFunction() const
 	{

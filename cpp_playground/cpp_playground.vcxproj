@@ -63,7 +63,7 @@
     <ClCompile Include="src\test_cpp\item\debug_test.cpp" />
     <ClCompile Include="src\test_cpp\item\enum_test.cpp" />
     <ClCompile Include="src\test_cpp\item\korean_test.cpp" />
-    <ClCompile Include="src\test_cpp\item\lambda_test.cpp" />
+    <ClCompile Include="src\test_cpp\item\cpp_lambda_test.cpp" />
     <ClCompile Include="src\test_cpp\item\locale_test.cpp" />
     <ClCompile Include="src\test_cpp\item\new_test.cpp" />
     <ClCompile Include="src\test_cpp\item\number_test.cpp" />
@@ -242,7 +242,7 @@
     <ClInclude Include="src\test_cpp\item\debug_test.h" />
     <ClInclude Include="src\test_cpp\item\enum_test.h" />
     <ClInclude Include="src\test_cpp\item\korean_test.h" />
-    <ClInclude Include="src\test_cpp\item\lambda_test.h" />
+    <ClInclude Include="src\test_cpp\item\cpp_lambda_test.h" />
     <ClInclude Include="src\test_cpp\item\locale_test.h" />
     <ClInclude Include="src\test_cpp\item\new_test.h" />
     <ClInclude Include="src\test_cpp\item\number_test.h" />
