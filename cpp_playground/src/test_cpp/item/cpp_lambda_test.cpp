@@ -23,25 +23,12 @@ namespace cpp_lambda_test
 			std::cout << r2cm::split;
 
 			{
-				int i = 888;
-				auto lambda_1 = [i]()
-				{
-					std::cout << i;
-				};
+				DECLARATION_MAIN( int i = 888 );
+				DECLARATION_MAIN( auto l = [i]() { printf( "i : %d", i ); } );
 
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "int i = 888;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "auto lambda_1 = [i]()" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "{" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "std::cout << i;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "};" << r2cm::linefeed2;
-
-				std::cout << r2cm::tab << "+ Call Lambda" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "lambda_1();" << r2cm::linefeed2;
-
-				std::cout << r2cm::tab2 << "> ";
-				lambda_1();
 				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( l() );
 			}
 
 			std::cout << r2cm::split;
