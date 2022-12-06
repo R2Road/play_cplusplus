@@ -4,6 +4,7 @@
 #include <memory>
 #include <utility>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace cpp_lambda_test
@@ -353,6 +354,53 @@ namespace cpp_lambda_test
 				lambda_1();
 
 				std::cout << r2cm::tab2 << "i : " << i << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Size::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Size";
+		};
+	}
+	r2cm::iItem::DoFunctionT Size::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto l = []() {} );
+				OUTPUT_VALUE( sizeof( l ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto l = []() { int i = 0; } );
+				OUTPUT_VALUE( sizeof( l ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto l = [i = 0]() {} );
+				OUTPUT_VALUE( sizeof( l ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto l = [ll = 0ll]() {} );
+				OUTPUT_VALUE( sizeof( l ) );
 			}
 
 			std::cout << r2cm::split;

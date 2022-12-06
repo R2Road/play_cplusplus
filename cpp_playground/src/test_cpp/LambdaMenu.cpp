@@ -17,6 +17,7 @@ r2cm::MenuUp LambdaMenu::Create( r2cm::Director& director )
 		ret->AddItem( '3', cpp_lambda_test::CaptureReference::GetInstance() );
 		ret->AddItem( '4', cpp_lambda_test::CaptureUniquePtr::GetInstance() );
 		ret->AddItem( '5', cpp_lambda_test::CaptureValueWithAssign::GetInstance() );
+		ret->AddItem( '6', cpp_lambda_test::Size::GetInstance() );
 
 
 		ret->AddSplit();
