@@ -2,6 +2,7 @@
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
+#include "r2cm/r2cm_VersionInfo.h"
 
 #include "test_cpp/item/console_input_test.h"
 
@@ -19,6 +20,14 @@
 #include "test_various/RandomMenu.h"
 #include "test_various/TimeMenu.h"
 #include "test_windows/WindowsMenu.h"
+
+const char* RootMenu::GetTitle()
+{
+	static const std::string ret =
+		std::string( "Root Menu" )
+		+ " : <" + r2cm::VersionInfo.String4Version + ">";
+	return ret.c_str();
+}
 
 r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 {
