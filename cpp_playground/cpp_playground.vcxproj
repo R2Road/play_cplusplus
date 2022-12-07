@@ -60,6 +60,7 @@
     <ClCompile Include="src\test_cpp\item\cpp_class_private_inheritance_test.cpp" />
     <ClCompile Include="src\test_cpp\item\cpp_class_test.cpp" />
     <ClCompile Include="src\test_cpp\item\console_input_test.cpp" />
+    <ClCompile Include="src\test_cpp\item\cpp_namespace_test.cpp" />
     <ClCompile Include="src\test_cpp\item\debug_test.cpp" />
     <ClCompile Include="src\test_cpp\item\enum_test.cpp" />
     <ClCompile Include="src\test_cpp\item\korean_test.cpp" />
@@ -239,6 +240,7 @@
     <ClInclude Include="src\test_cpp\item\console_input_test.h" />
     <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test_helper_demo1.hpp" />
     <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test_helper_ienum.hpp" />
+    <ClInclude Include="src\test_cpp\item\cpp_namespace_test.h" />
     <ClInclude Include="src\test_cpp\item\debug_test.h" />
     <ClInclude Include="src\test_cpp\item\enum_test.h" />
     <ClInclude Include="src\test_cpp\item\korean_test.h" />
