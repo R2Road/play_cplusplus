@@ -1,8 +1,10 @@
 #include "structured_binding_test.h"
 
+#include <array>
 #include <tuple>
 #include <utility> // pair
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace
@@ -30,6 +32,36 @@ namespace structured_binding_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( int arr[3] );
+				PROCESS_MAIN( arr[0] = 1; arr[1] = 2; arr[2] = 3; );
+				auto[a, b, c] = arr;
+				std::cout << "auto[a, b, c] = arr;" << r2cm::linefeed;
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( a );
+				OUTPUT_VALUE( b );
+				OUTPUT_VALUE( c );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::array<int, 3> arr { 1, 2, 3};
+				std::cout << "std::array<int, 3> arr( { 1, 2, 3} );" << r2cm::linefeed;
+				auto[a, b, c] = arr;
+				std::cout << "auto[a, b, c] = arr;" << r2cm::linefeed;
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( a );
+				OUTPUT_VALUE( b );
+				OUTPUT_VALUE( c );
+			}
+
 			std::cout << r2cm::split;
 
 			{
