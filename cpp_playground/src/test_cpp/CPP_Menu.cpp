@@ -24,6 +24,7 @@ r2cm::MenuUp CPP_Menu::Create( r2cm::Director& director )
 	{
 		ret->AddMenu<ClassMenu>( '1' );
 		ret->AddItem( '2', cpp_namespace_test::Basic::GetInstance() );
+		ret->AddItem( '3', cpp_namespace_test::Alias::GetInstance() );
 
 
 		ret->AddLineFeed();

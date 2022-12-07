@@ -61,4 +61,34 @@ namespace cpp_namespace_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Alias::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "namespace : Alias";
+		};
+	}
+	r2cm::iItem::DoFunctionT Alias::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( namespace alias_test = cpp_namespace_test::A::B::C; );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( alias_test::T t );
+				OUTPUT_VALUE( t.Do() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
