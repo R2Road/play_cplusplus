@@ -136,9 +136,6 @@
     <ClCompile Include="src\test_cpp\item\new_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\structured_binding_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\RootMenu.cpp" />
     <ClCompile Include="src\test_windows\item\windows_sound_test.cpp">
       <Filter>test_windows\item</Filter>
@@ -551,6 +548,9 @@
     <ClCompile Include="src\test_cpp\item\cpp_namespace_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\item\cpp_structured_binding_test.cpp">
+      <Filter>test_cpp\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -617,9 +617,6 @@
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\new_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\structured_binding_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\RootMenu.h" />
@@ -1110,6 +1107,9 @@
       <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\cpp_namespace_test.h">
+      <Filter>test_cpp\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\item\cpp_structured_binding_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
   </ItemGroup>

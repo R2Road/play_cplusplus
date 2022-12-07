@@ -1,4 +1,4 @@
-#include "structured_binding_test.h"
+#include "cpp_structured_binding_test.h"
 
 #include <array>
 #include <tuple>
@@ -19,7 +19,7 @@ namespace
 		return std::make_tuple( 2, 6.28f, 'b' );
 	}
 }
-namespace structured_binding_test
+namespace cpp_structured_binding_test
 {
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{

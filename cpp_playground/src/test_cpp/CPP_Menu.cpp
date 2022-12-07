@@ -4,8 +4,8 @@
 #include "r2cm/r2cm_ostream.h"
 
 #include "item/cpp_namespace_test.h"
+#include "item/cpp_structured_binding_test.h"
 #include "item/number_test.h"
-#include "item/structured_binding_test.h"
 #include "item/using_test.h"
 
 #include "AlignMenu.h"
@@ -46,7 +46,7 @@ r2cm::MenuUp CPP_Menu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'a', structured_binding_test::Basic::GetInstance() );
+		ret->AddItem( 'a', cpp_structured_binding_test::Basic::GetInstance() );
 		ret->AddItem( 'b', number_test::Prefix::GetInstance() );
 
 
