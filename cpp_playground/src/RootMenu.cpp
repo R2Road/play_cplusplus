@@ -4,7 +4,7 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_VersionInfo.h"
 
-#include "test_cpp/item/console_input_test.h"
+#include "test_various/item/various_console_input_test.h"
 
 #include "test_algorithm/AlgorithmMenu.h"
 #include "test_c/C_Menu.h"
@@ -47,7 +47,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', console_input_test::Basic::GetInstance() );
+		ret->AddItem( '1', various_console_input_test::Basic::GetInstance() );
 		ret->AddMenu<WindowsMenu>( '2' );		
 
 

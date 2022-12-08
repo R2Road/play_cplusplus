@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_iItem.h"
 #include "r2cm/r2cm_Singleton.h"
 
-namespace console_input_test
+namespace various_console_input_test
 {
 	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
 	{

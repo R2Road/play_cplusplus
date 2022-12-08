@@ -161,9 +161,6 @@
     <ClCompile Include="src\test_windows\item\flickering_research.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\console_input_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_windows\ConsoleTextColorMenu.cpp">
       <Filter>test_windows</Filter>
     </ClCompile>
@@ -551,6 +548,9 @@
     <ClCompile Include="src\test_cpp\item\cpp_structured_binding_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_various\item\various_console_input_test.cpp">
+      <Filter>test_various\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -643,9 +643,6 @@
     </ClInclude>
     <ClInclude Include="src\test_windows\item\console_window_test.h">
       <Filter>test_windows\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\console_input_test.h">
-      <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_windows\ConsoleTextColorMenu.h">
       <Filter>test_windows</Filter>
@@ -1111,6 +1108,9 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\cpp_structured_binding_test.h">
       <Filter>test_cpp\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_various\item\various_console_input_test.h">
+      <Filter>test_various\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

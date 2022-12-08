@@ -1,10 +1,10 @@
-#include "console_input_test.h"
+#include "various_console_input_test.h"
 
 #include <conio.h> // _kbhit(), _getch()
 
 #include "r2cm/r2cm_ostream.h"
 
-namespace console_input_test
+namespace various_console_input_test
 {
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
