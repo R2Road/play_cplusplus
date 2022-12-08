@@ -1,4 +1,4 @@
-#include "new_test.h"
+#include "cpp_new_test.h"
 
 #include <new>
 #include <string_view>
@@ -6,7 +6,7 @@
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
-namespace new_test
+namespace cpp_new_test
 {
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
