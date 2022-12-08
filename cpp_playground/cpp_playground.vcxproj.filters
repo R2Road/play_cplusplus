@@ -115,9 +115,6 @@
     <ClCompile Include="src\test_hobby\MemoryPoolMenu.cpp">
       <Filter>test_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\atomic_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\item\char_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
@@ -551,6 +548,9 @@
     <ClCompile Include="src\test_various\item\various_console_input_test.cpp">
       <Filter>test_various\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_std\item\std_atomic_test.cpp">
+      <Filter>test_std\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -597,9 +597,6 @@
     </ClInclude>
     <ClInclude Include="src\test_hobby\MemoryPoolMenu.h">
       <Filter>test_hobby</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\atomic_test.h">
-      <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\char_test.h">
       <Filter>test_cpp\item</Filter>
@@ -1111,6 +1108,9 @@
     </ClInclude>
     <ClInclude Include="src\test_various\item\various_console_input_test.h">
       <Filter>test_various\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\item\std_atomic_test.h">
+      <Filter>test_std\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

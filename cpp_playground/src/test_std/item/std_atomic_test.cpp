@@ -1,4 +1,4 @@
-#include "atomic_test.h"
+#include "std_atomic_test.h"
 
 #include <atomic>
 #include <memory>
@@ -26,7 +26,7 @@ struct TestStruct3
 	bool b;
 };
 
-namespace atomic_test
+namespace std_atomic_test
 {
 	template<typename T>
 	class IsLockFreePrinter
