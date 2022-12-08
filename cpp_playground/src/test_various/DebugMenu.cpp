@@ -1,9 +1,8 @@
 #include "DebugMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
 
-#include "test_various/item/various_debug_test.h"
+#include "item/various_debug_test.h"
 
 #include "RootMenu.h"
 
@@ -20,7 +19,9 @@ r2cm::MenuUp DebugMenu::Create( r2cm::Director& director )
 		ret->AddItem( '6', various_debug_test::SimpleLog::GetInstance() );
 
 
+
 		ret->AddSplit();
+
 
 
 		ret->AddMenu<RootMenu>( 27 );
