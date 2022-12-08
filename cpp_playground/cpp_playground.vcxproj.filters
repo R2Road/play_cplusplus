@@ -118,9 +118,6 @@
     <ClCompile Include="src\test_cpp\item\char_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\debug_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\item\enum_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
@@ -169,9 +166,6 @@
     </ClCompile>
     <ClCompile Include="src\test_windows\item\console_window_etc_test.cpp">
       <Filter>test_windows\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\DebugMenu.cpp">
-      <Filter>test_cpp</Filter>
     </ClCompile>
     <ClCompile Include="src\test_performance\item\performance_1_test.cpp">
       <Filter>test_performancee\item</Filter>
@@ -551,6 +545,12 @@
     <ClCompile Include="src\test_std\item\std_atomic_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_various\DebugMenu.cpp">
+      <Filter>test_various</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_various\item\various_debug_test.cpp">
+      <Filter>test_various\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -601,9 +601,6 @@
     <ClInclude Include="src\test_cpp\item\char_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\debug_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\item\enum_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
@@ -652,9 +649,6 @@
     </ClInclude>
     <ClInclude Include="src\test_windows\item\console_window_etc_test.h">
       <Filter>test_windows\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\DebugMenu.h">
-      <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_performance\item\performance_1_test.h">
       <Filter>test_performancee\item</Filter>
@@ -1111,6 +1105,12 @@
     </ClInclude>
     <ClInclude Include="src\test_std\item\std_atomic_test.h">
       <Filter>test_std\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_various\DebugMenu.h">
+      <Filter>test_various</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_various\item\various_debug_test.h">
+      <Filter>test_various\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-#include "debug_test.h"
+#include "various_debug_test.h"
 
 #include <cassert>
 #include <filesystem>
@@ -10,7 +10,7 @@
 #include "r2cm/r2cm_Inspector.h"
 #include "utility/r2utility_FileUtil.h"
 
-namespace debug_test
+namespace various_debug_test
 {
 #define ShowCodeInfo()											\
 {																\
