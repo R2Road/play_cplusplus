@@ -1,7 +1,6 @@
 #include "NewMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
 
 #include "item/cpp_new_test.h"
 
@@ -17,7 +16,9 @@ r2cm::MenuUp NewMenu::Create( r2cm::Director& director )
 		ret->AddItem( '3', cpp_new_test::PlacementNew::GetInstance() );
 
 
+
 		ret->AddSplit();
+
 
 
 		ret->AddMenu<CPP_Menu>( 27 );
