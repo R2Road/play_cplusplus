@@ -47,6 +47,19 @@ namespace std_bitset_test
 
 			std::cout << r2cm::split;
 
+			{
+				PROCESS_MAIN( b.set( 0, true ) );
+				PROCESS_MAIN( b.set( 2, true ) );
+				OUTPUT_VALUE( b.to_string() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( b = 0 );
+				OUTPUT_VALUE( b.to_string() );
+			}
+
+			std::cout << r2cm::split;
+
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
