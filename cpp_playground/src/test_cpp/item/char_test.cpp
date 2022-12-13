@@ -5,6 +5,7 @@
 #include <locale>
 #include <string>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace char_test
@@ -93,6 +94,67 @@ namespace char_test
 				external.resize( to_next - &external[0] );
 
 				std::cout << "The string in narrow multibyte encoding: " << external << '\n';
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+}
+
+
+
+namespace char_test
+{
+	r2cm::iItem::TitleFunctionT RawStringLiteral::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Char : Raw-String-Literal";
+		};
+	}
+	r2cm::iItem::DoFunctionT RawStringLiteral::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const char* str = R"(Test)" );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( std::cout << str << r2cm::linefeed );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "escape 문자들이 무시되고 입력된 그대로 출력된다." );
+
+				std::cout << r2cm::linefeed;
+
+				const char* str = R"(Test
+Test \n
+Test \t )";
+
+				std::cout << str << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "Delimeter는 따옴표 사용이 문제가 되는 경우( www 주소를 다룬다거나 )에..." );
+				OUTPUT_NOTE( "명확하게 구분지어 주기 위해 사용한다." );
+				OUTPUT_NOTE( "앞 뒤 같은 문자열로 맞춰주면 된다." );
+				OUTPUT_NOTE( "최대 16자." );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const char* str = R"delimeter(Embedded)" pre)delimeter" );
+
+				PROCESS_MAIN( std::cout << str << r2cm::linefeed );
 			}
 
 			std::cout << r2cm::split;

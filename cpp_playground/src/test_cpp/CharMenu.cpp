@@ -17,6 +17,7 @@ r2cm::MenuUp CharMenu::Create( r2cm::Director& director )
 		ret->AddItem( '1', char_test::Basic::GetInstance() );
 		ret->AddItem( '2', char_test::Encoding::GetInstance() );
 		ret->AddItem( '3', locale_test::Basic::GetInstance() );
+		ret->AddItem( '4', char_test::RawStringLiteral::GetInstance() );
 
 
 		ret->AddLineFeed();
