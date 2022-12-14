@@ -18,4 +18,11 @@ namespace std_bitset_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Operator : public r2cm::iItem, public r2cm::SingleTon<Operator>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }

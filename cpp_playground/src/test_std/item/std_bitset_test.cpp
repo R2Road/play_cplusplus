@@ -126,4 +126,39 @@ namespace std_bitset_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Operator::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::bitset : Operator";
+		};
+	}
+	r2cm::iItem::DoFunctionT Operator::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( std::bitset<10> b = 0b10101 );
+			OUTPUT_VALUE( b.to_string() );
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "bit 연산이 안되는 큰 단점." );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_TRUE( 0b10101 & b.to_ulong() );
+				EXPECT_FALSE( 0b01010 & b.to_ulong() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

@@ -25,6 +25,7 @@ r2cm::MenuUp STDContainerMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( '6', std_bitset_test::Set_And_Test::GetInstance() );
 		ret->AddItem( '7', std_bitset_test::Size::GetInstance() );
+		ret->AddItem( '8', std_bitset_test::Operator::GetInstance() );
 
 
 		ret->AddLineFeed();
