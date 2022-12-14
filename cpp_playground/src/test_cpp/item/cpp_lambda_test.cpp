@@ -392,6 +392,32 @@ namespace cpp_lambda_test
 
 			std::cout << r2cm::split;
 
+			{
+				DECLARATION_MAIN(
+					struct C
+					{
+						int i = 0;
+						void Do() {
+							auto l = [this]() {};
+							OUTPUT_VALUE( sizeof( l ) );
+							OUTPUT_VALUE( sizeof( this ) );
+						}
+					};
+				);
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( C c );
+				PROCESS_MAIN( c.Do() );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( sizeof( c ) );
+				OUTPUT_BINARY( c );
+			}
+
+			std::cout << r2cm::split;
+
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
