@@ -5,6 +5,13 @@
 
 namespace cpp_lambda_test
 {
+	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class CaptureValue : public r2cm::iItem, public r2cm::SingleTon<CaptureValue>
 	{
 	public:

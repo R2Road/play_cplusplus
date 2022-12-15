@@ -9,6 +9,52 @@
 
 namespace cpp_lambda_test
 {
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "lambda : Basic";
+		};
+	}
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_NOTE( "lambda 특성" );
+			OUTPUT_COMMENT( "익명 클래스와 operator() 의 조합." );
+			OUTPUT_COMMENT( "class의 this pointer를 capture 하면 friend 로 지정된다." );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto l = []() {}; );
+				PROCESS_MAIN( l() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto l = []()->int { return 1; }; );
+				OUTPUT_VALUE( l() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto l = []( const int i )->int { return i; }; );
+				OUTPUT_VALUE( l( 3 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT CaptureValue::GetTitleFunction() const
 	{
 		return []()->const char*
