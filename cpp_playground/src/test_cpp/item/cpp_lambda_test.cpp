@@ -449,6 +449,36 @@ namespace cpp_lambda_test
 
 			std::cout << r2cm::split;
 
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Size_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Size 2";
+		};
+	}
+	r2cm::iItem::DoFunctionT Size_2::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( int i = 1; int j = 2; );
+				DECLARATION_MAIN( auto l_1 = [=]() {} );
+				OUTPUT_VALUE( sizeof( l_1 ) );
+				DECLARATION_MAIN( auto l_2 = [=]() { std::cout << i << j; } );
+				OUTPUT_VALUE( sizeof( l_2 ) );
+				OUTPUT_BINARY( l_2 );
+			}
+
+			std::cout << r2cm::split;
+
 			{
 				DECLARATION_MAIN(
 					struct C
