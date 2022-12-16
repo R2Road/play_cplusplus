@@ -441,6 +441,7 @@ namespace cpp_lambda_test
 			{
 				DECLARATION_MAIN( int i = 1 );
 				DECLARATION_MAIN( int j = 255 );
+				( i ); ( j ); // warning Á¦°Å
 				DECLARATION_MAIN( auto l = [=]() {} );
 				OUTPUT_VALUE( sizeof( l ) );
 
