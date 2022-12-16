@@ -16,7 +16,14 @@ r2cm::MenuUp STDFunctionalMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', std_invoke_test::Basic::GetInstance() );
-		ret->AddItem( '2', std_mem_fn_test::Basic::GetInstance() );
+
+
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( '6', std_mem_fn_test::Basic::GetInstance() );
 
 
 
