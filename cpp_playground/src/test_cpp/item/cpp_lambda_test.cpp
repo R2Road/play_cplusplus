@@ -439,12 +439,28 @@ namespace cpp_lambda_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( int i = 1; int j = 2; );
-				DECLARATION_MAIN( auto l_1 = [=]() {} );
-				OUTPUT_VALUE( sizeof( l_1 ) );
-				DECLARATION_MAIN( auto l_2 = [=]() { std::cout << i << j; } );
-				OUTPUT_VALUE( sizeof( l_2 ) );
-				OUTPUT_BINARY( l_2 );
+				DECLARATION_MAIN( int i = 1 );
+				DECLARATION_MAIN( int j = 255 );
+				DECLARATION_MAIN( auto l = [=]() {} );
+				OUTPUT_VALUE( sizeof( l ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( l() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( int i = 1 );
+				DECLARATION_MAIN( int j = 255 );
+				DECLARATION_MAIN( auto l = [=]() { std::cout << i << j; } );
+				OUTPUT_VALUE( sizeof( l ) );
+				OUTPUT_BINARY( l );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( l() );
 			}
 
 			std::cout << r2cm::split;
