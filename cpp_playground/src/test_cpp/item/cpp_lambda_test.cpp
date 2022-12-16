@@ -452,6 +452,10 @@ namespace cpp_lambda_test
 			std::cout << r2cm::split;
 
 			{
+				OUTPUT_NOTE( "capture 했지만 사용하지 않은 변수들은 제거되는 모양이다. 스팩? 최적화?" );
+
+				std::cout << r2cm::linefeed;
+
 				DECLARATION_MAIN( int i = 1 );
 				DECLARATION_MAIN( int j = 255 );
 				DECLARATION_MAIN( auto l = [=]() { std::cout << i << j; } );
