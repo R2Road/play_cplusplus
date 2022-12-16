@@ -59,7 +59,7 @@ namespace cpp_lambda_test
 	{
 		return []()->const char*
 		{
-			return "Capture Value";
+			return "lambda : Capture Value";
 		};
 	}
 	r2cm::iItem::DoFunctionT CaptureValue::GetDoFunction()
@@ -136,7 +136,7 @@ namespace cpp_lambda_test
 	{
 		return []()->const char*
 		{
-			return "Capture Value with Mutable";
+			return "lambda : Capture Value with Mutable";
 		};
 	}
 	r2cm::iItem::DoFunctionT CaptureValueWithMutable::GetDoFunction()
@@ -181,7 +181,7 @@ namespace cpp_lambda_test
 	{
 		return []()->const char*
 		{
-			return "Capture Reference";
+			return "lambda : Capture Reference";
 		};
 	}
 	r2cm::iItem::DoFunctionT CaptureReference::GetDoFunction()
@@ -254,7 +254,7 @@ namespace cpp_lambda_test
 	{
 		return []()->const char*
 		{
-			return "Capture Unique Ptr";
+			return "lambda : Capture Unique Ptr";
 		};
 	}
 	r2cm::iItem::DoFunctionT CaptureUniquePtr::GetDoFunction()
@@ -313,7 +313,7 @@ namespace cpp_lambda_test
 	{
 		return []()->const char*
 		{
-			return "Capture Value with Assign";
+			return "lambda : Capture Value with Assign";
 		};
 	}
 	r2cm::iItem::DoFunctionT CaptureValueWithAssign::GetDoFunction()
@@ -401,7 +401,7 @@ namespace cpp_lambda_test
 	{
 		return []()->const char*
 		{
-			return "Size";
+			return "lambda : Size";
 		};
 	}
 	r2cm::iItem::DoFunctionT Size::GetDoFunction()
@@ -475,7 +475,7 @@ namespace cpp_lambda_test
 	{
 		return []()->const char*
 		{
-			return "Size 2";
+			return "lambda : Size 2";
 		};
 	}
 	r2cm::iItem::DoFunctionT Size_2::GetDoFunction()
