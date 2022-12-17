@@ -397,14 +397,14 @@ namespace cpp_lambda_test
 
 
 
-	r2cm::iItem::TitleFunctionT Size::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Size_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "lambda : Size";
+			return "lambda : Size 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Size::GetDoFunction()
+	r2cm::iItem::DoFunctionT Size_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
