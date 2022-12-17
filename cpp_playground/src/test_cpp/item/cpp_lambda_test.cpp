@@ -524,17 +524,6 @@ namespace cpp_lambda_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( int i = 1; int j = 2; );
-				DECLARATION_MAIN( auto l_1 = [=]() {} );
-				OUTPUT_VALUE( sizeof( l_1 ) );
-				DECLARATION_MAIN( auto l_2 = [=]() { std::cout << i << j; } );
-				OUTPUT_VALUE( sizeof( l_2 ) );
-				OUTPUT_BINARY( l_2 );
-			}
-
-			std::cout << r2cm::split;
-
-			{
 				DECLARATION_MAIN(
 					struct C
 					{
