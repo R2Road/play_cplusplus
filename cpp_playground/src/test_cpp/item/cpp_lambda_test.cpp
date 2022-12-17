@@ -1,4 +1,5 @@
 #include "cpp_lambda_test.h"
+#include "cpp_lambda_test__helper__size_3.hpp"
 
 #include <cassert>
 #include <memory>
@@ -523,27 +524,17 @@ namespace cpp_lambda_test
 		{
 			std::cout << r2cm::split;
 
+			OUTPUT_FILE( "src/test_cpp/item/cpp_lambda_test__helper__size_3.hpp" );
+
+			std::cout << r2cm::split;
+
 			{
-				DECLARATION_MAIN(
-					struct C
-					{
-						int i = 0;
-						void Do() {
-							auto l = [this]() {};
-							OUTPUT_VALUE( sizeof( l ) );
-							OUTPUT_VALUE( sizeof( this ) );
-						}
-					};
-				);
+				DECLARATION_MAIN( cpp_lambda_test__helper__size_3::S s );
+				PROCESS_MAIN( s.Do() );
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( C c );
-				PROCESS_MAIN( c.Do() );
-
-				std::cout << r2cm::linefeed;
-
-				OUTPUT_VALUE( sizeof( c ) );
+				OUTPUT_VALUE( sizeof( s ) );
 			}
 
 			std::cout << r2cm::split;

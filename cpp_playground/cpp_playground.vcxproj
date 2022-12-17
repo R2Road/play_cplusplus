@@ -238,6 +238,7 @@
     <ClInclude Include="src\test_cpp\item\cpp_class_test_helper_offset_singleton.hpp" />
     <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test_helper_demo1.hpp" />
     <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test_helper_ienum.hpp" />
+    <ClInclude Include="src\test_cpp\item\cpp_lambda_test__helper__size_3.hpp" />
     <ClInclude Include="src\test_cpp\item\cpp_namespace_test.h" />
     <ClInclude Include="src\test_cpp\item\enum_test.h" />
     <ClInclude Include="src\test_cpp\item\korean_test.h" />
