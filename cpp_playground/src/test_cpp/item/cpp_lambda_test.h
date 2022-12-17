@@ -54,7 +54,7 @@ namespace cpp_lambda_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Size_2 : public r2cm::iItem, public r2cm::SingleTon<Size_2>
+	class Size_CopyCapture : public r2cm::iItem, public r2cm::SingleTon<Size_CopyCapture>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
