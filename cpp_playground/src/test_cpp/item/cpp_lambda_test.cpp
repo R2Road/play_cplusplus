@@ -511,36 +511,6 @@ namespace cpp_lambda_test
 
 
 
-	r2cm::iItem::TitleFunctionT Size_3::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "lambda : Size 3";
-		};
-	}
-	r2cm::iItem::DoFunctionT Size_3::GetDoFunction()
-	{
-		return []()->r2cm::eItemLeaveAction
-		{
-			std::cout << r2cm::split;
-
-			OUTPUT_FILE( "src/test_cpp/item/cpp_lambda_test__helper__size_3.hpp" );
-
-			std::cout << r2cm::split;
-
-			{
-				DECLARATION_MAIN( cpp_lambda_test__helper__size_3::S s );
-				PROCESS_MAIN( s.Do() );
-			}
-
-			std::cout << r2cm::split;
-
-			return r2cm::eItemLeaveAction::Pause;
-		};
-	}
-
-
-
 	r2cm::iItem::TitleFunctionT Size_ReferenceCapture::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -601,6 +571,36 @@ namespace cpp_lambda_test
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( l() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Size_3::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "lambda : Size 3";
+		};
+	}
+	r2cm::iItem::DoFunctionT Size_3::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_FILE( "src/test_cpp/item/cpp_lambda_test__helper__size_3.hpp" );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( cpp_lambda_test__helper__size_3::S s );
+				PROCESS_MAIN( s.Do() );
 			}
 
 			std::cout << r2cm::split;
