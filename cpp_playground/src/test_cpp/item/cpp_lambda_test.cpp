@@ -472,13 +472,28 @@ namespace cpp_lambda_test
 			std::cout << r2cm::split;
 
 			{
+				DECLARATION_MAIN( int64_t i = 1 );
+				DECLARATION_MAIN( int64_t j = 255 );
+				( j ); // warning 제거
+				DECLARATION_MAIN( auto l = [=]() { std::cout << i << r2cm::linefeed; } );
+				OUTPUT_VALUE( sizeof( l ) );
+				OUTPUT_BINARY( l );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( l() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
 				OUTPUT_NOTE( "capture 했지만 사용하지 않은 변수들은 제거되는 모양이다. 스팩? 최적화?" );
 
 				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( int64_t i = 1 );
 				DECLARATION_MAIN( int64_t j = 255 );
-				DECLARATION_MAIN( auto l = [=]() { std::cout << i << j; } );
+				DECLARATION_MAIN( auto l = [=]() { std::cout << i << j << r2cm::linefeed;; } );
 				OUTPUT_VALUE( sizeof( l ) );
 				OUTPUT_BINARY( l );
 
