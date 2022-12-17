@@ -438,6 +438,25 @@ namespace cpp_lambda_test
 
 			std::cout << r2cm::split;
 
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Size_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "lambda : Size 2";
+		};
+	}
+	r2cm::iItem::DoFunctionT Size_2::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
 			{
 				DECLARATION_MAIN( int64_t i = 1 );
 				DECLARATION_MAIN( int64_t j = 255 );
@@ -476,14 +495,14 @@ namespace cpp_lambda_test
 
 
 
-	r2cm::iItem::TitleFunctionT Size_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Size_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "lambda : Size 2";
+			return "lambda : Size 3";
 		};
 	}
-	r2cm::iItem::DoFunctionT Size_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT Size_3::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
