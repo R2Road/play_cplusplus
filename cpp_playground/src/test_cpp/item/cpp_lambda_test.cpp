@@ -439,8 +439,8 @@ namespace cpp_lambda_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( int i = 1 );
-				DECLARATION_MAIN( int j = 255 );
+				DECLARATION_MAIN( int64_t i = 1 );
+				DECLARATION_MAIN( int64_t j = 255 );
 				( i ); ( j ); // warning Á¦°Å
 				DECLARATION_MAIN( auto l = [=]() {} );
 				OUTPUT_VALUE( sizeof( l ) );
@@ -457,8 +457,8 @@ namespace cpp_lambda_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( int i = 1 );
-				DECLARATION_MAIN( int j = 255 );
+				DECLARATION_MAIN( int64_t i = 1 );
+				DECLARATION_MAIN( int64_t j = 255 );
 				DECLARATION_MAIN( auto l = [=]() { std::cout << i << j; } );
 				OUTPUT_VALUE( sizeof( l ) );
 				OUTPUT_BINARY( l );
