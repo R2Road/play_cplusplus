@@ -33,3 +33,6 @@ src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/maze_generati
 <p float:left;">
 <img src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/std_memory_shared_ptr_test_makeshared_and_memory_20221203_1.png"></img>
 </p>
+<p float:left;">
+<img src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/cpp_lambda_test___size___20221217.png"></img>
+</p>
