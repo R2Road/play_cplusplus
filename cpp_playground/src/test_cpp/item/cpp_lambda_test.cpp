@@ -531,10 +531,6 @@ namespace cpp_lambda_test
 			{
 				DECLARATION_MAIN( cpp_lambda_test__helper__size_3::S s );
 				PROCESS_MAIN( s.Do() );
-
-				std::cout << r2cm::linefeed;
-
-				OUTPUT_VALUE( sizeof( s ) );
 			}
 
 			std::cout << r2cm::split;

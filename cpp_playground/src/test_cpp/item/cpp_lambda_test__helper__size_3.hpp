@@ -1,4 +1,5 @@
 #include "r2cm/r2cm_Inspector.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace cpp_lambda_test__helper__size_3
 {
@@ -6,9 +7,14 @@ namespace cpp_lambda_test__helper__size_3
 	{
 		int i = 0;
 		void Do() {
-			auto l = [this]() {};
+
+			OUTPUT_BINARY( this );
+
+			std::cout << r2cm::linefeed;
+
+			DECLARATION_MAIN( auto l = [this]() {} );
 			OUTPUT_VALUE( sizeof( l ) );
-			OUTPUT_VALUE( sizeof( this ) );
+			OUTPUT_BINARY( l );
 		}
 	};
 }
