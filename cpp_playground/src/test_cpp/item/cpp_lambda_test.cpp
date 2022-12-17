@@ -538,4 +538,74 @@ namespace cpp_lambda_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Size_ReferenceCapture::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "lambda : Size - Reference Capture";
+		};
+	}
+	r2cm::iItem::DoFunctionT Size_ReferenceCapture::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( struct S { int i = 1; int j = 255; int arr[10]; } );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( S s1 );
+				DECLARATION_MAIN( S s2 );
+				( s1 ); ( s2 ); // warning 제거
+				DECLARATION_MAIN( auto l = [&]() {} );
+				OUTPUT_VALUE( sizeof( l ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( l() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( S s1 );
+				DECLARATION_MAIN( S s2 );
+				( s2 ); // warning 제거
+				DECLARATION_MAIN( auto l = [&]() { std::cout << s1.i << r2cm::linefeed; } );
+				OUTPUT_VALUE( sizeof( l ) );
+				OUTPUT_BINARY( l );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( l() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "capture 했지만 사용하지 않은 변수들은 제거되는 모양이다. 스팩? 최적화?" );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( S s1 );
+				DECLARATION_MAIN( S s2 );
+				DECLARATION_MAIN( auto l = [&]() { std::cout << s1.i << s2.j << r2cm::linefeed;; } );
+				OUTPUT_VALUE( sizeof( l ) );
+				OUTPUT_BINARY( l );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( l() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

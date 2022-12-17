@@ -28,6 +28,7 @@ r2cm::MenuUp LambdaMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'q', cpp_lambda_test::Size_1::GetInstance() );
 		ret->AddItem( 'w', cpp_lambda_test::Size_2::GetInstance() );
 		ret->AddItem( 'e', cpp_lambda_test::Size_3::GetInstance() );
+		ret->AddItem( 'r', cpp_lambda_test::Size_ReferenceCapture::GetInstance() );
 
 
 
