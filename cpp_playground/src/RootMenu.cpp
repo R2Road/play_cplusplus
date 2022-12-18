@@ -1,5 +1,7 @@
 #include "RootMenu.h"
 
+#include <string>
+
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_VersionInfo.h"
@@ -25,7 +27,9 @@ const char* RootMenu::GetTitle()
 {
 	static const std::string ret =
 		std::string( "Root Menu" )
-		+ " : <" + r2cm::VersionInfo.String4Version + ">";
+		+ " : " + "<" + "C++17" + ">"
+		+ ", " + "<" + "MS C/C++ : " + std::to_string( _MSC_VER ) + ">"
+		+ ", " + "<" + r2cm::VersionInfo.String4Version + ">";
 	return ret.c_str();
 }
 
