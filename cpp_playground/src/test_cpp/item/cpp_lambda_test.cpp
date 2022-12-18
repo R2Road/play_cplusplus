@@ -1,7 +1,6 @@
 #include "cpp_lambda_test.h"
 #include "cpp_lambda_test__helper__size_3.hpp"
 
-#include <cassert>
 #include <memory>
 #include <utility>
 
