@@ -26,7 +26,7 @@ namespace c_random_test
 
 				for( int i = 0; 5 > i; ++i )
 				{
-					OUTPUT_VALUE( rand() );;
+					OUTPUT_VALUE( rand() );
 				}
 
 				std::cout << r2cm::linefeed;
@@ -45,7 +45,7 @@ namespace c_random_test
 
 				for( int i = 0; 5 > i; ++i )
 				{
-					OUTPUT_VALUE( rand() );;
+					OUTPUT_VALUE( rand() );
 				}
 
 				std::cout << r2cm::linefeed;
