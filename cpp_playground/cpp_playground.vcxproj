@@ -70,6 +70,7 @@
     <ClCompile Include="src\test_cpp\CharMenu.cpp" />
     <ClCompile Include="src\test_cpp\EnumMenu.cpp" />
     <ClCompile Include="src\test_cpp\LambdaMenu.cpp" />
+    <ClCompile Include="src\test_cpp\NameSpaceMenu.cpp" />
     <ClCompile Include="src\test_cpp\NewMenu.cpp" />
     <ClCompile Include="src\test_c\BitOperationMenu.cpp" />
     <ClCompile Include="src\test_c\C_Menu.cpp" />
@@ -251,6 +252,7 @@
     <ClInclude Include="src\test_cpp\CharMenu.h" />
     <ClInclude Include="src\test_cpp\EnumMenu.h" />
     <ClInclude Include="src\test_cpp\LambdaMenu.h" />
+    <ClInclude Include="src\test_cpp\NameSpaceMenu.h" />
     <ClInclude Include="src\test_cpp\NewMenu.h" />
     <ClInclude Include="src\test_c\BitOperationMenu.h" />
     <ClInclude Include="src\test_c\C_Menu.h" />

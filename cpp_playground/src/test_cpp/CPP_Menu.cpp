@@ -3,7 +3,6 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "item/cpp_namespace_test.h"
 #include "item/cpp_structured_binding_test.h"
 #include "item/number_test.h"
 #include "item/using_test.h"
@@ -11,6 +10,7 @@
 #include "AlignMenu.h"
 #include "EnumMenu.h"
 #include "LambdaMenu.h"
+#include "NameSpaceMenu.h"
 #include "NewMenu.h"
 
 #include "ClassMenu.h"
@@ -23,8 +23,7 @@ r2cm::MenuUp CPP_Menu::Create( r2cm::Director& director )
 
 	{
 		ret->AddMenu<ClassMenu>( '1' );
-		ret->AddItem( '2', cpp_namespace_test::Basic() );
-		ret->AddItem( '3', cpp_namespace_test::Alias() );
+		ret->AddMenu<NameSpaceMenu>( '2' );
 
 
 		ret->AddLineFeed();
