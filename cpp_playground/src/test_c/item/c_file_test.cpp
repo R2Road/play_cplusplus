@@ -14,7 +14,7 @@ namespace c_file_test
 			return "C File : Open And Close";
 		};
 	}
-	r2cm::iItem::DoFunctionT OpenAndClose::GetDoFunction()
+	r2cm::iItem::DoFunctionT OpenAndClose::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -57,7 +57,7 @@ namespace c_file_test
 			return "C File : Get Character";
 		};
 	}
-	r2cm::iItem::DoFunctionT GetCharacter::GetDoFunction()
+	r2cm::iItem::DoFunctionT GetCharacter::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -92,7 +92,7 @@ namespace c_file_test
 			return "C File : Get Line";
 		};
 	}
-	r2cm::iItem::DoFunctionT GetLine::GetDoFunction()
+	r2cm::iItem::DoFunctionT GetLine::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -1,62 +1,61 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace template_meta_programming_test
 {
-	class CalculateFactorial : public r2cm::iItem, public r2cm::SingleTon<CalculateFactorial>
+	class CalculateFactorial : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
 
 
-	class GreatestCommonDivisor : public r2cm::iItem, public r2cm::SingleTon<GreatestCommonDivisor>
+	class GreatestCommonDivisor : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
 
 
-	class BasicRatio : public r2cm::iItem, public r2cm::SingleTon<BasicRatio>
+	class BasicRatio : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
-	class SumBasicRatio : public r2cm::iItem, public r2cm::SingleTon<SumBasicRatio>
+	class SumBasicRatio : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
-	class RatioWithGCD : public r2cm::iItem, public r2cm::SingleTon<RatioWithGCD>
+	class RatioWithGCD : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
-	class SumRatioWithGCD : public r2cm::iItem, public r2cm::SingleTon<SumRatioWithGCD>
+	class SumRatioWithGCD : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
-	class SumRatioAndOperator1 : public r2cm::iItem, public r2cm::SingleTon<SumRatioAndOperator1>
+	class SumRatioAndOperator1 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
-	class SumRatioAndOperator2 : public r2cm::iItem, public r2cm::SingleTon<SumRatioAndOperator2>
+	class SumRatioAndOperator2 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

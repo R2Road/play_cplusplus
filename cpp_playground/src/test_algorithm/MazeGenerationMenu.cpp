@@ -13,14 +13,14 @@ r2cm::MenuUp MazeGenerationMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', algorithm_maze_test::Basic::GetInstance() );
+		ret->AddItem( '1', algorithm_maze_test::Basic() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', maze_generation_kruskals_test::ViewTest::GetInstance() );
-		ret->AddItem( 'w', maze_generation_kruskals_test::Basic::GetInstance() );
+		ret->AddItem( 'q', maze_generation_kruskals_test::ViewTest() );
+		ret->AddItem( 'w', maze_generation_kruskals_test::Basic() );
 
 
 		ret->AddSplit();

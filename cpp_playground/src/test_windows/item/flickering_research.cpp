@@ -16,7 +16,7 @@ namespace flickering_research
 			return "Flickering : Print One By One";
 		};
 	}
-	r2cm::iItem::DoFunctionT OneByOne::GetDoFunction()
+	r2cm::iItem::DoFunctionT OneByOne::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -69,7 +69,7 @@ namespace flickering_research
 			return "Flickering : Print One By One WithOut CLS";
 		};
 	}
-	r2cm::iItem::DoFunctionT OneByOne_WithOut_CLS::GetDoFunction()
+	r2cm::iItem::DoFunctionT OneByOne_WithOut_CLS::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -130,7 +130,7 @@ namespace flickering_research
 			return "Flickering : Print Line By Line";
 		};
 	}
-	r2cm::iItem::DoFunctionT LineByLine::GetDoFunction()
+	r2cm::iItem::DoFunctionT LineByLine::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -177,7 +177,7 @@ namespace flickering_research
 			return "Flickering : Print Page By Page";
 		};
 	}
-	r2cm::iItem::DoFunctionT PageByPage::GetDoFunction()
+	r2cm::iItem::DoFunctionT PageByPage::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -221,7 +221,7 @@ namespace flickering_research
 			return "Flickering : Print Page By Page Without CLS 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT PageByPage_WithOut_CLS_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT PageByPage_WithOut_CLS_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -262,7 +262,7 @@ namespace flickering_research
 			return "Flickering : Print Page By Page Without CLS 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT PageByPage_WithOut_CLS_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT PageByPage_WithOut_CLS_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

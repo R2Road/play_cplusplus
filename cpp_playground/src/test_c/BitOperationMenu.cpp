@@ -12,10 +12,10 @@ r2cm::MenuUp BitOperationMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, BitOperationMenu::GetTitle() ) );
 
 	{
-		ret->AddItem( '1', c_bit_operation_test::Operator::GetInstance() );
-		ret->AddItem( '2', c_bit_operation_test::Complement::GetInstance() );
-		ret->AddItem( '3', c_bit_operation_test::Add_Remove_Toggle::GetInstance() );
-		ret->AddItem( '4', c_bit_operation_test::Mask::GetInstance() );
+		ret->AddItem( '1', c_bit_operation_test::Operator() );
+		ret->AddItem( '2', c_bit_operation_test::Complement() );
+		ret->AddItem( '3', c_bit_operation_test::Add_Remove_Toggle() );
+		ret->AddItem( '4', c_bit_operation_test::Mask() );
 
 
 
@@ -23,8 +23,8 @@ r2cm::MenuUp BitOperationMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( '6', c_bit_operation_test::Operator_XOR::GetInstance() );
-		ret->AddItem( '7', c_bit_operation_test::XOR_Swap::GetInstance() );
+		ret->AddItem( '6', c_bit_operation_test::Operator_XOR() );
+		ret->AddItem( '7', c_bit_operation_test::XOR_Swap() );
 
 
 
@@ -32,10 +32,10 @@ r2cm::MenuUp BitOperationMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', c_bit_operation_test::Plus_1::GetInstance() );
-		ret->AddItem( 'w', c_bit_operation_test::Plus_2::GetInstance() );
-		ret->AddItem( 'e', c_bit_operation_test::Minus_1::GetInstance() );
-		ret->AddItem( 'r', c_bit_operation_test::Minus_2::GetInstance() );
+		ret->AddItem( 'q', c_bit_operation_test::Plus_1() );
+		ret->AddItem( 'w', c_bit_operation_test::Plus_2() );
+		ret->AddItem( 'e', c_bit_operation_test::Minus_1() );
+		ret->AddItem( 'r', c_bit_operation_test::Minus_2() );
 
 
 
@@ -43,7 +43,7 @@ r2cm::MenuUp BitOperationMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'a', c_bit_operation_test::ETC_1::GetInstance() );
+		ret->AddItem( 'a', c_bit_operation_test::ETC_1() );
 
 
 

@@ -14,7 +14,7 @@ namespace algorithm_insertion_sort_test
 			return "Insertion Sort";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

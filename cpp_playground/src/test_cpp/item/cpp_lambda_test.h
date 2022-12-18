@@ -1,77 +1,76 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace cpp_lambda_test
 {
-	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	class Basic : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class CaptureValue : public r2cm::iItem, public r2cm::SingleTon<CaptureValue>
+	class CaptureValue : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class CaptureValueWithMutable : public r2cm::iItem, public r2cm::SingleTon<CaptureValueWithMutable>
+	class CaptureValueWithMutable : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class CaptureReference : public r2cm::iItem, public r2cm::SingleTon<CaptureReference>
+	class CaptureReference : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class CaptureUniquePtr : public r2cm::iItem, public r2cm::SingleTon<CaptureUniquePtr>
+	class CaptureUniquePtr : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class CaptureValueWithAssign : public r2cm::iItem, public r2cm::SingleTon<CaptureValueWithAssign>
+	class CaptureValueWithAssign : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Size_Basic : public r2cm::iItem, public r2cm::SingleTon<Size_Basic>
+	class Size_Basic : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Size_CopyCapture : public r2cm::iItem, public r2cm::SingleTon<Size_CopyCapture>
+	class Size_CopyCapture : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Size_ReferenceCapture : public r2cm::iItem, public r2cm::SingleTon<Size_ReferenceCapture>
+	class Size_ReferenceCapture : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Size_3 : public r2cm::iItem, public r2cm::SingleTon<Size_3>
+	class Size_3 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

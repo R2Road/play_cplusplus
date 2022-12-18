@@ -15,7 +15,7 @@ namespace c_random_test
 			return "C Rand : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Rand::GetDoFunction()
+	r2cm::iItem::DoFunctionT Rand::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

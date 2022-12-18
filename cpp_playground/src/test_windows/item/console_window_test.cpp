@@ -23,7 +23,7 @@ namespace console_window_test
 			return "Buffer Info";
 		};
 	}
-	r2cm::iItem::DoFunctionT BufferInfo::GetDoFunction()
+	r2cm::iItem::DoFunctionT BufferInfo::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -79,7 +79,7 @@ namespace console_window_test
 			return "Change Window Size";
 		};
 	}
-	r2cm::iItem::DoFunctionT ChangeWindowSize::GetDoFunction()
+	r2cm::iItem::DoFunctionT ChangeWindowSize::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -133,7 +133,7 @@ namespace console_window_test
 			return "FullScreen";
 		};
 	}
-	r2cm::iItem::DoFunctionT FullScreen::GetDoFunction()
+	r2cm::iItem::DoFunctionT FullScreen::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -175,7 +175,7 @@ namespace console_window_test
 			return "Focus";
 		};
 	}
-	r2cm::iItem::DoFunctionT Focus::GetDoFunction()
+	r2cm::iItem::DoFunctionT Focus::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -219,7 +219,7 @@ namespace console_window_test
 			return "Window Position";
 		};
 	}
-	r2cm::iItem::DoFunctionT WindowPosition::GetDoFunction()
+	r2cm::iItem::DoFunctionT WindowPosition::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -315,7 +315,7 @@ namespace console_window_test
 			return "Change Window Name";
 		};
 	}
-	r2cm::iItem::DoFunctionT ChangeWindowName::GetDoFunction()
+	r2cm::iItem::DoFunctionT ChangeWindowName::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -365,7 +365,7 @@ namespace console_window_test
 			return "Hide Title Bar";
 		};
 	}
-	r2cm::iItem::DoFunctionT HideTitleBar::GetDoFunction()
+	r2cm::iItem::DoFunctionT HideTitleBar::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -430,7 +430,7 @@ namespace console_window_test
 			return "Hide Scroll Bar";
 		};
 	}
-	r2cm::iItem::DoFunctionT HideScrollBar::GetDoFunction()
+	r2cm::iItem::DoFunctionT HideScrollBar::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -477,7 +477,7 @@ namespace console_window_test
 			return "Disable Maximize";
 		};
 	}
-	r2cm::iItem::DoFunctionT DisableMaximize::GetDoFunction()
+	r2cm::iItem::DoFunctionT DisableMaximize::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -540,7 +540,7 @@ namespace console_window_test
 			return "Lock Window Resizing By Dragging";
 		};
 	}
-	r2cm::iItem::DoFunctionT LockWindowResizingByDragging::GetDoFunction()
+	r2cm::iItem::DoFunctionT LockWindowResizingByDragging::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -597,7 +597,7 @@ namespace console_window_test
 			return "Menu Item";
 		};
 	}
-	r2cm::iItem::DoFunctionT MenuItem::GetDoFunction()
+	r2cm::iItem::DoFunctionT MenuItem::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -651,7 +651,7 @@ namespace console_window_test
 			return "Cursor Move";
 		};
 	}
-	r2cm::iItem::DoFunctionT CursorMove::GetDoFunction()
+	r2cm::iItem::DoFunctionT CursorMove::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -714,7 +714,7 @@ namespace console_window_test
 			return "Cursor Visibility";
 		};
 	}
-	r2cm::iItem::DoFunctionT CursorVisibility::GetDoFunction()
+	r2cm::iItem::DoFunctionT CursorVisibility::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -767,7 +767,7 @@ namespace console_window_test
 			return "Quick Edit";
 		};
 	}
-	r2cm::iItem::DoFunctionT QuickEdit::GetDoFunction()
+	r2cm::iItem::DoFunctionT QuickEdit::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

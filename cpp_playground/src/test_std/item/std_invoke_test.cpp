@@ -1,5 +1,6 @@
 #include "std_invoke_test.h"
 #include "std_invoke_test_helper.hpp"
+#include "std_invoke_test_helper_how_call_function.hpp"
 
 #include <functional>
 
@@ -15,7 +16,7 @@ namespace std_invoke_test
 			return "std::invoke : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

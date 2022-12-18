@@ -14,7 +14,7 @@ namespace std_string_test
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -54,7 +54,7 @@ namespace std_string_test
 			return "Find";
 		};
 	}
-	r2cm::iItem::DoFunctionT Find::GetDoFunction()
+	r2cm::iItem::DoFunctionT Find::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -177,7 +177,7 @@ namespace std_string_test
 			return "Find And Split 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Find_And_Split_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Find_And_Split_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -219,7 +219,7 @@ namespace std_string_test
 			return "Find And Split 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT Find_And_Split_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT Find_And_Split_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -278,7 +278,7 @@ namespace std_string_test
 			return "Line Count";
 		};
 	}
-	r2cm::iItem::DoFunctionT Line_Count::GetDoFunction()
+	r2cm::iItem::DoFunctionT Line_Count::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -14,7 +14,7 @@ namespace list_based_on_array_test
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -49,7 +49,7 @@ namespace list_based_on_array_test
 			return "PushFront";
 		};
 	}
-	r2cm::iItem::DoFunctionT PushFront::GetDoFunction()
+	r2cm::iItem::DoFunctionT PushFront::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -114,7 +114,7 @@ namespace list_based_on_array_test
 			return "Iterator : operator*, operator->";
 		};
 	}
-	r2cm::iItem::DoFunctionT IteratorOperator_Indirection_StructureDereference::GetDoFunction()
+	r2cm::iItem::DoFunctionT IteratorOperator_Indirection_StructureDereference::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -162,7 +162,7 @@ namespace list_based_on_array_test
 			return "End Iterator";
 		};
 	}
-	r2cm::iItem::DoFunctionT EndIterator::GetDoFunction()
+	r2cm::iItem::DoFunctionT EndIterator::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -224,7 +224,7 @@ namespace list_based_on_array_test
 			return "Begin Iterator";
 		};
 	}
-	r2cm::iItem::DoFunctionT BeginIterator::GetDoFunction()
+	r2cm::iItem::DoFunctionT BeginIterator::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -306,7 +306,7 @@ namespace list_based_on_array_test
 			return "Clear";
 		};
 	}
-	r2cm::iItem::DoFunctionT Clear::GetDoFunction()
+	r2cm::iItem::DoFunctionT Clear::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -392,7 +392,7 @@ namespace list_based_on_array_test
 			return "PushBack";
 		};
 	}
-	r2cm::iItem::DoFunctionT PushBack::GetDoFunction()
+	r2cm::iItem::DoFunctionT PushBack::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -466,7 +466,7 @@ namespace list_based_on_array_test
 			return "Erase";
 		};
 	}
-	r2cm::iItem::DoFunctionT Erase::GetDoFunction()
+	r2cm::iItem::DoFunctionT Erase::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -550,7 +550,7 @@ namespace list_based_on_array_test
 			return "rbegin(), rend()";
 		};
 	}
-	r2cm::iItem::DoFunctionT RBegin_REnd::GetDoFunction()
+	r2cm::iItem::DoFunctionT RBegin_REnd::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

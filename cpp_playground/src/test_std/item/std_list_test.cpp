@@ -28,7 +28,7 @@ namespace std_list_test
 			return "List : Splice Single";
 		};
 	}
-	r2cm::iItem::DoFunctionT Splice_Single::GetDoFunction()
+	r2cm::iItem::DoFunctionT Splice_Single::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -113,7 +113,7 @@ namespace std_list_test
 			return "List : Splice Range";
 		};
 	}
-	r2cm::iItem::DoFunctionT Splice_Range::GetDoFunction()
+	r2cm::iItem::DoFunctionT Splice_Range::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -180,7 +180,7 @@ namespace std_list_test
 			return "List : Others Iterator";
 		};
 	}
-	r2cm::iItem::DoFunctionT OthersIterator::GetDoFunction()
+	r2cm::iItem::DoFunctionT OthersIterator::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -224,7 +224,7 @@ namespace std_list_test
 			return "List : End Iterator";
 		};
 	}
-	r2cm::iItem::DoFunctionT EndIterator::GetDoFunction()
+	r2cm::iItem::DoFunctionT EndIterator::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

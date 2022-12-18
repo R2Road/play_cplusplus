@@ -14,7 +14,7 @@ namespace algorithm_bubble_sort_test
 			return "Bubble Sort";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

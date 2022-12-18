@@ -14,7 +14,7 @@ namespace serialize_test
 			return "Serialize : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -53,7 +53,7 @@ namespace serialize_test
 			return "Serialize : Copy";
 		};
 	}
-	r2cm::iItem::DoFunctionT Copy::GetDoFunction()
+	r2cm::iItem::DoFunctionT Copy::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

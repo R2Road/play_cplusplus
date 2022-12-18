@@ -12,7 +12,7 @@ namespace c_struct_test
 			return "Struct : Byte Alignment";
 		};
 	}
-	r2cm::iItem::DoFunctionT ByteAlignment::GetDoFunction()
+	r2cm::iItem::DoFunctionT ByteAlignment::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -77,7 +77,7 @@ namespace c_struct_test
 			return "Struct : Pragma Pack";
 		};
 	}
-	r2cm::iItem::DoFunctionT PragmaPack::GetDoFunction()
+	r2cm::iItem::DoFunctionT PragmaPack::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -180,7 +180,7 @@ namespace c_struct_test
 			return "Struct : Array[0]";
 		};
 	}
-	r2cm::iItem::DoFunctionT Array_Size_0::GetDoFunction()
+	r2cm::iItem::DoFunctionT Array_Size_0::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -13,15 +13,15 @@ r2cm::MenuUp RandomMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, RandomMenu::GetTitle() ) );
 
 	{
-		ret->AddItem( '1', c_random_test::Rand::GetInstance() );
+		ret->AddItem( '1', c_random_test::Rand() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', std_random_test::Basic::GetInstance() );
-		ret->AddItem( 'w', std_random_test::StatusSaveAndLoad::GetInstance() );
-		ret->AddItem( 'e', std_random_test::DiscreateDistribution::GetInstance() );
+		ret->AddItem( 'q', std_random_test::Basic() );
+		ret->AddItem( 'w', std_random_test::StatusSaveAndLoad() );
+		ret->AddItem( 'e', std_random_test::DiscreateDistribution() );
 
 
 		ret->AddSplit();

@@ -23,7 +23,7 @@ namespace std_vector_test
 			return "Vector : Resize";
 		};
 	}
-	r2cm::iItem::DoFunctionT Resize::GetDoFunction()
+	r2cm::iItem::DoFunctionT Resize::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -73,7 +73,7 @@ namespace std_vector_test
 			return "Vector : Resize And Memory";
 		};
 	}
-	r2cm::iItem::DoFunctionT Resize_And_Memory::GetDoFunction()
+	r2cm::iItem::DoFunctionT Resize_And_Memory::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -135,7 +135,7 @@ namespace std_vector_test
 			return "Vector : Clear";
 		};
 	}
-	r2cm::iItem::DoFunctionT Clear::GetDoFunction()
+	r2cm::iItem::DoFunctionT Clear::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -181,7 +181,7 @@ namespace std_vector_test
 			return "Vector : Reserve";
 		};
 	}
-	r2cm::iItem::DoFunctionT Reserve::GetDoFunction()
+	r2cm::iItem::DoFunctionT Reserve::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -233,7 +233,7 @@ namespace std_vector_test
 			return "Vector : None Default Constructor";
 		};
 	}
-	r2cm::iItem::DoFunctionT NoneDefaultConstructor::GetDoFunction()
+	r2cm::iItem::DoFunctionT NoneDefaultConstructor::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -274,7 +274,7 @@ namespace std_vector_test
 			return "Vector : Bool";
 		};
 	}
-	r2cm::iItem::DoFunctionT BoolVector::GetDoFunction()
+	r2cm::iItem::DoFunctionT BoolVector::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -330,7 +330,7 @@ namespace std_vector_test
 			return "Vector : Others Iterator";
 		};
 	}
-	r2cm::iItem::DoFunctionT OthersIterator::GetDoFunction()
+	r2cm::iItem::DoFunctionT OthersIterator::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -364,7 +364,7 @@ namespace std_vector_test
 			return "Vector : End Iterator";
 		};
 	}
-	r2cm::iItem::DoFunctionT EndIterator::GetDoFunction()
+	r2cm::iItem::DoFunctionT EndIterator::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

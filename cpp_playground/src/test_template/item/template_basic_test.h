@@ -1,28 +1,27 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace template_basic_test
 {
-	class MemberVariable : public r2cm::iItem, public r2cm::SingleTon<MemberVariable>
+	class MemberVariable : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Function_ReturnValue : public r2cm::iItem, public r2cm::SingleTon<Function_ReturnValue>
+	class Function_ReturnValue : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Function_Object : public r2cm::iItem, public r2cm::SingleTon<Function_Object>
+	class Function_Object : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

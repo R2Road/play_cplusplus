@@ -15,7 +15,7 @@ namespace c_union_test
 			return "Union : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -45,7 +45,7 @@ namespace c_union_test
 			return "Union : Unnamed Union with Struct";
 		};
 	}
-	r2cm::iItem::DoFunctionT Unnamed_Union_With_Struct::GetDoFunction()
+	r2cm::iItem::DoFunctionT Unnamed_Union_With_Struct::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -84,7 +84,7 @@ namespace c_union_test
 			return "Union : Unnamed Union with Vector3";
 		};
 	}
-	r2cm::iItem::DoFunctionT Unnamed_Union_With_Vector3::GetDoFunction()
+	r2cm::iItem::DoFunctionT Unnamed_Union_With_Vector3::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -129,7 +129,7 @@ namespace c_union_test
 			return "Union : Unnamed Union with Vector3 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT Unnamed_Union_With_Vector3_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT Unnamed_Union_With_Vector3_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -181,7 +181,7 @@ namespace c_union_test
 			return "Union : Unnamed Union with Vector3 3";
 		};
 	}
-	r2cm::iItem::DoFunctionT Unnamed_Union_With_Vector3_3::GetDoFunction()
+	r2cm::iItem::DoFunctionT Unnamed_Union_With_Vector3_3::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

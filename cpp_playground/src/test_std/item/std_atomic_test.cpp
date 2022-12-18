@@ -49,7 +49,7 @@ namespace std_atomic_test
 			return "Is Lock Free";
 		};
 	}
-	r2cm::iItem::DoFunctionT IsLockFree::GetDoFunction()
+	r2cm::iItem::DoFunctionT IsLockFree::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -92,7 +92,7 @@ namespace std_atomic_test
 			return "Lock Free Test 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT LockFreeTest1::GetDoFunction()
+	r2cm::iItem::DoFunctionT LockFreeTest1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -145,7 +145,7 @@ namespace std_atomic_test
 			return "Lock Free Test 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT LockFreeTest2::GetDoFunction()
+	r2cm::iItem::DoFunctionT LockFreeTest2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

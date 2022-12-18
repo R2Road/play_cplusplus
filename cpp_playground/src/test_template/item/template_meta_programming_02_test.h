@@ -1,38 +1,37 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace template_meta_programming_test
 {
-	class Character2String : public r2cm::iItem, public r2cm::SingleTon<Character2String>
+	class Character2String : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
 
-	class Integer2String : public r2cm::iItem, public r2cm::SingleTon<Integer2String>
+	class Integer2String : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
 
-	class CalculatePlaceValue : public r2cm::iItem, public r2cm::SingleTon<CalculatePlaceValue>
+	class CalculatePlaceValue : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
 
-	class Integer2String_II : public r2cm::iItem, public r2cm::SingleTon<Integer2String_II>
+	class Integer2String_II : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

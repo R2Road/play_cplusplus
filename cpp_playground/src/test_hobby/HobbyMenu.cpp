@@ -20,16 +20,16 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddMenu<PropertyMenu>( '1' );
-		ret->AddItem( '2', serialize_test::Basic::GetInstance() );
-		ret->AddItem( '3', serialize_test::Copy::GetInstance() );
+		ret->AddItem( '2', serialize_test::Basic() );
+		ret->AddItem( '3', serialize_test::Copy() );
 
 
 		ret->AddSplit();
 
 
 		ret->AddMenu<MemoryPoolMenu>( 'q' );
-		ret->AddItem( 'w', infinite_number_test::Basic::GetInstance() );
-		ret->AddItem( 'e', fsm_v1_test::Basic::GetInstance() );
+		ret->AddItem( 'w', infinite_number_test::Basic() );
+		ret->AddItem( 'e', fsm_v1_test::Basic() );
 
 
 		ret->AddSplit();

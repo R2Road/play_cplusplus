@@ -18,7 +18,7 @@ namespace c_macro_test
 			return "macro : to string";
 		};
 	}
-	r2cm::iItem::DoFunctionT ToString::GetDoFunction()
+	r2cm::iItem::DoFunctionT ToString::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

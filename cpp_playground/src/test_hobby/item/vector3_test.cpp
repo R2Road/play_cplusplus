@@ -63,7 +63,7 @@ namespace vector3_test
 			return "Vector3 : Declaration";
 		};
 	}
-	r2cm::iItem::DoFunctionT Declaration::GetDoFunction()
+	r2cm::iItem::DoFunctionT Declaration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -92,7 +92,7 @@ namespace vector3_test
 			return "Vector3 : Operator+";
 		};
 	}
-	r2cm::iItem::DoFunctionT OperatorPlus::GetDoFunction()
+	r2cm::iItem::DoFunctionT OperatorPlus::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -125,7 +125,7 @@ namespace vector3_test
 			return "Vector3 : Operator+=";
 		};
 	}
-	r2cm::iItem::DoFunctionT OperatorPlusEqual::GetDoFunction()
+	r2cm::iItem::DoFunctionT OperatorPlusEqual::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -159,7 +159,7 @@ namespace vector3_test
 			return "Vector3 : Operator-";
 		};
 	}
-	r2cm::iItem::DoFunctionT OperatorMinus::GetDoFunction()
+	r2cm::iItem::DoFunctionT OperatorMinus::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -191,7 +191,7 @@ namespace vector3_test
 			return "Vector3 : Operator-=";
 		};
 	}
-	r2cm::iItem::DoFunctionT OperatorMinusEqual::GetDoFunction()
+	r2cm::iItem::DoFunctionT OperatorMinusEqual::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -225,7 +225,7 @@ namespace vector3_test
 			return "Vector3 : Operator* Scalar";
 		};
 	}
-	r2cm::iItem::DoFunctionT OperatorMultiply_With_Scalar::GetDoFunction()
+	r2cm::iItem::DoFunctionT OperatorMultiply_With_Scalar::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -257,7 +257,7 @@ namespace vector3_test
 			return "Vector3 : Operator*= Scalar";
 		};
 	}
-	r2cm::iItem::DoFunctionT OperatorMultiplyEqual_With_Scalar::GetDoFunction()
+	r2cm::iItem::DoFunctionT OperatorMultiplyEqual_With_Scalar::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

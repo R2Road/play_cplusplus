@@ -18,7 +18,7 @@ namespace c_time_test
 			return "C Time : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -57,7 +57,7 @@ namespace c_time_test
 			return "C Time : Y_M_D_H_M_S_1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Y_M_D_H_M_S_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Y_M_D_H_M_S_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -106,7 +106,7 @@ namespace c_time_test
 			return "C Time : Y_M_D_H_M_S 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT Y_M_D_H_M_S_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT Y_M_D_H_M_S_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -165,7 +165,7 @@ namespace c_time_test
 			return "C Time : Clock";
 		};
 	}
-	r2cm::iItem::DoFunctionT Clock::GetDoFunction()
+	r2cm::iItem::DoFunctionT Clock::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -101,7 +101,7 @@ namespace algorithm_astar_test
 			return "A Star : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -146,7 +146,7 @@ namespace algorithm_astar_test
 			return "A Star : use std::list::splice";
 		};
 	}
-	r2cm::iItem::DoFunctionT Use_STDListSplice::GetDoFunction()
+	r2cm::iItem::DoFunctionT Use_STDListSplice::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -191,7 +191,7 @@ namespace algorithm_astar_test
 			return "A Star : use std::list::splice, std::vector Result Path";
 		};
 	}
-	r2cm::iItem::DoFunctionT Use_STDListSplice_STDVectorResultPath::GetDoFunction()
+	r2cm::iItem::DoFunctionT Use_STDListSplice_STDVectorResultPath::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -237,7 +237,7 @@ namespace algorithm_astar_test
 			return "A Star : use std::list::splice, Decrease Close List, std::vector Result Path";
 		};
 	}
-	r2cm::iItem::DoFunctionT Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetDoFunction()
+	r2cm::iItem::DoFunctionT Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -285,7 +285,7 @@ namespace algorithm_astar_test
 			return "A Star : use Cost Map, std::list::splice, std::vector Result Path";
 		};
 	}
-	r2cm::iItem::DoFunctionT Use_CostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
+	r2cm::iItem::DoFunctionT Use_CostMap_STDListSplice_STDVectorResultPath::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -333,7 +333,7 @@ namespace algorithm_astar_test
 			return "A Star : use Tiny Cost Map, std::list::splice, std::vector Result Path";
 		};
 	}
-	r2cm::iItem::DoFunctionT Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetDoFunction()
+	r2cm::iItem::DoFunctionT Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -381,7 +381,7 @@ namespace algorithm_astar_test
 			return "A Star : use Array Based List, Tiny Cost Map, std::vector Result Path";
 		};
 	}
-	r2cm::iItem::DoFunctionT Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetDoFunction()
+	r2cm::iItem::DoFunctionT Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -429,7 +429,7 @@ namespace algorithm_astar_test
 			return "A Star : Performance Test";
 		};
 	}
-	r2cm::iItem::DoFunctionT PerformanceTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT PerformanceTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

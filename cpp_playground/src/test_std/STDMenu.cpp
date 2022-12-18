@@ -42,8 +42,8 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( '8', std_tuple_test::Basic::GetInstance() );
-		ret->AddItem( '9', std_variant_test::Basic::GetInstance() );
+		ret->AddItem( '8', std_tuple_test::Basic() );
+		ret->AddItem( '9', std_variant_test::Basic() );
 
 
 
@@ -59,8 +59,8 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'a', std_regex_test::Basic::GetInstance() );
-		ret->AddItem( 's', std_algorithm_test::Shuffle::GetInstance() );
+		ret->AddItem( 'a', std_regex_test::Basic() );
+		ret->AddItem( 's', std_algorithm_test::Shuffle() );
 
 
 

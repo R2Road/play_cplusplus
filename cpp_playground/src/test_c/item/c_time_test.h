@@ -1,35 +1,34 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace c_time_test
 {
-	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	class Basic : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Y_M_D_H_M_S_1 : public r2cm::iItem, public r2cm::SingleTon<Y_M_D_H_M_S_1>
+	class Y_M_D_H_M_S_1 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Y_M_D_H_M_S_2 : public r2cm::iItem, public r2cm::SingleTon<Y_M_D_H_M_S_2>
+	class Y_M_D_H_M_S_2 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Clock : public r2cm::iItem, public r2cm::SingleTon<Clock>
+	class Clock : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

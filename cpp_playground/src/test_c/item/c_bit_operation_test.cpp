@@ -32,7 +32,7 @@ namespace c_bit_operation_test
 			return "Operator";
 		};
 	}
-	r2cm::iItem::DoFunctionT Operator::GetDoFunction()
+	r2cm::iItem::DoFunctionT Operator::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -83,7 +83,7 @@ namespace c_bit_operation_test
 			return "Complement";
 		};
 	}
-	r2cm::iItem::DoFunctionT Complement::GetDoFunction()
+	r2cm::iItem::DoFunctionT Complement::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -146,7 +146,7 @@ namespace c_bit_operation_test
 			return "Add, Remove, Toggle";
 		};
 	}
-	r2cm::iItem::DoFunctionT Add_Remove_Toggle::GetDoFunction()
+	r2cm::iItem::DoFunctionT Add_Remove_Toggle::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -212,7 +212,7 @@ namespace c_bit_operation_test
 			return "Mask";
 		};
 	}
-	r2cm::iItem::DoFunctionT Mask::GetDoFunction()
+	r2cm::iItem::DoFunctionT Mask::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -277,7 +277,7 @@ namespace c_bit_operation_test
 			return "Operator : XOR";
 		};
 	}
-	r2cm::iItem::DoFunctionT Operator_XOR::GetDoFunction()
+	r2cm::iItem::DoFunctionT Operator_XOR::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -345,7 +345,7 @@ namespace c_bit_operation_test
 			return "XOR Swap";
 		};
 	}
-	r2cm::iItem::DoFunctionT XOR_Swap::GetDoFunction()
+	r2cm::iItem::DoFunctionT XOR_Swap::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -397,7 +397,7 @@ namespace c_bit_operation_test
 			return "ETC_1";
 		};
 	}
-	r2cm::iItem::DoFunctionT ETC_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT ETC_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -444,7 +444,7 @@ namespace c_bit_operation_test
 			return "Plus 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Plus_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Plus_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -490,7 +490,7 @@ namespace c_bit_operation_test
 			return "Plus 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT Plus_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT Plus_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -556,7 +556,7 @@ namespace c_bit_operation_test
 			return "Minus 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Minus_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Minus_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -609,7 +609,7 @@ namespace c_bit_operation_test
 			return "Minus 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT Minus_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT Minus_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

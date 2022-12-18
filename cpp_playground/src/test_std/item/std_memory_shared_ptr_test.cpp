@@ -15,7 +15,7 @@ namespace std_memory_shared_ptr_test
 			return "std::shared_ptr : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -89,7 +89,7 @@ namespace std_memory_shared_ptr_test
 			return "std::shared_ptr : MakeShared And Memory";
 		};
 	}
-	r2cm::iItem::DoFunctionT MakeShared_And_Memory::GetDoFunction()
+	r2cm::iItem::DoFunctionT MakeShared_And_Memory::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

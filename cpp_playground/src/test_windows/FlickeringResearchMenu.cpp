@@ -12,12 +12,12 @@ r2cm::MenuUp FlickeringResearchMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', flickering_research::OneByOne::GetInstance() );
-		ret->AddItem( '2', flickering_research::OneByOne_WithOut_CLS::GetInstance() );
-		ret->AddItem( '3', flickering_research::LineByLine::GetInstance() );
-		ret->AddItem( '4', flickering_research::PageByPage::GetInstance() );
-		ret->AddItem( '5', flickering_research::PageByPage_WithOut_CLS_1::GetInstance() );
-		ret->AddItem( '6', flickering_research::PageByPage_WithOut_CLS_2::GetInstance() );
+		ret->AddItem( '1', flickering_research::OneByOne() );
+		ret->AddItem( '2', flickering_research::OneByOne_WithOut_CLS() );
+		ret->AddItem( '3', flickering_research::LineByLine() );
+		ret->AddItem( '4', flickering_research::PageByPage() );
+		ret->AddItem( '5', flickering_research::PageByPage_WithOut_CLS_1() );
+		ret->AddItem( '6', flickering_research::PageByPage_WithOut_CLS_2() );
 
 
 		ret->AddSplit();

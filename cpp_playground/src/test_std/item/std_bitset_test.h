@@ -1,35 +1,34 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace std_bitset_test
 {
-	class All_Any_None : public r2cm::iItem, public r2cm::SingleTon<All_Any_None>
+	class All_Any_None : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Set_And_Test : public r2cm::iItem, public r2cm::SingleTon<Set_And_Test>
+	class Set_And_Test : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Size : public r2cm::iItem, public r2cm::SingleTon<Size>
+	class Size : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Operator : public r2cm::iItem, public r2cm::SingleTon<Operator>
+	class Operator : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

@@ -1,115 +1,114 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace cpp_class_test
 {
-	class Method : public r2cm::iItem, public r2cm::SingleTon<Method>
+	class Method : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class MemberValue : public r2cm::iItem, public r2cm::SingleTon<MemberValue>
+	class MemberValue : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Braces : public r2cm::iItem, public r2cm::SingleTon<Braces>
+	class Braces : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class PrintName : public r2cm::iItem, public r2cm::SingleTon<PrintName>
+	class PrintName : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class PrivateInheritance_1 : public r2cm::iItem, public r2cm::SingleTon<PrivateInheritance_1>
+	class PrivateInheritance_1 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
-	class PrivateInheritance_2 : public r2cm::iItem, public r2cm::SingleTon<PrivateInheritance_2>
+	class PrivateInheritance_2 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
-	class PrivateInheritance_iEnum : public r2cm::iItem, public r2cm::SingleTon<PrivateInheritance_iEnum>
+	class PrivateInheritance_iEnum : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
-	};
-
-	class ImplicitTypeConversion : public r2cm::iItem, public r2cm::SingleTon<ImplicitTypeConversion>
-	{
-	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class NoneVirtualInterface : public r2cm::iItem, public r2cm::SingleTon<NoneVirtualInterface>
+	class ImplicitTypeConversion : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-
-
-
-	class MemberAdress_Value : public r2cm::iItem, public r2cm::SingleTon<MemberAdress_Value>
+	class NoneVirtualInterface : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
-	};
-
-	class MemberAdress_Method : public r2cm::iItem, public r2cm::SingleTon<MemberAdress_Method>
-	{
-	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
-	};
-
-	class Offset_SingleInheritance : public r2cm::iItem, public r2cm::SingleTon<Offset_SingleInheritance>
-	{
-	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
-	};
-
-	class Offset_MultipleInheritance : public r2cm::iItem, public r2cm::SingleTon<Offset_MultipleInheritance>
-	{
-	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
-	};
-
-	class Offset_Singleton : public r2cm::iItem, public r2cm::SingleTon<Offset_Singleton>
-	{
-	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
 
 
-	class Size : public r2cm::iItem, public r2cm::SingleTon<Size>
+
+	class MemberAdress_Value : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
+	};
+
+	class MemberAdress_Method : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
+	};
+
+	class Offset_SingleInheritance : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
+	};
+
+	class Offset_MultipleInheritance : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
+	};
+
+	class Offset_Singleton : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
+	};
+
+
+
+	class Size : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

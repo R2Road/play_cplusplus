@@ -14,7 +14,7 @@ namespace std_bitset_test
 			return "std::bitset : All_Any_None";
 		};
 	}
-	r2cm::iItem::DoFunctionT All_Any_None::GetDoFunction()
+	r2cm::iItem::DoFunctionT All_Any_None::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -73,7 +73,7 @@ namespace std_bitset_test
 			return "std::bitset : Set And Test";
 		};
 	}
-	r2cm::iItem::DoFunctionT Set_And_Test::GetDoFunction()
+	r2cm::iItem::DoFunctionT Set_And_Test::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -132,7 +132,7 @@ namespace std_bitset_test
 			return "std::bitset : Size";
 		};
 	}
-	r2cm::iItem::DoFunctionT Size::GetDoFunction()
+	r2cm::iItem::DoFunctionT Size::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -195,7 +195,7 @@ namespace std_bitset_test
 			return "std::bitset : Operator";
 		};
 	}
-	r2cm::iItem::DoFunctionT Operator::GetDoFunction()
+	r2cm::iItem::DoFunctionT Operator::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

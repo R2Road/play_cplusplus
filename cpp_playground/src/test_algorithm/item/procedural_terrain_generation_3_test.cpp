@@ -91,7 +91,7 @@ namespace procedural_terrain_generation_3_test
 			return "PROCEDURAL TERRAIN GENERATION 3 : Weights";
 		};
 	}
-	r2cm::iItem::DoFunctionT Weights::GetDoFunction()
+	r2cm::iItem::DoFunctionT Weights::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

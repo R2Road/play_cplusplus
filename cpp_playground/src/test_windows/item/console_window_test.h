@@ -1,105 +1,104 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace console_window_test
 {
-	class BufferInfo : public r2cm::iItem, public r2cm::SingleTon<BufferInfo>
+	class BufferInfo : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class ChangeWindowSize : public r2cm::iItem, public r2cm::SingleTon<ChangeWindowSize>
+	class ChangeWindowSize : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
-	class FullScreen : public r2cm::iItem, public r2cm::SingleTon<FullScreen>
+	class FullScreen : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
-	class Focus : public r2cm::iItem, public r2cm::SingleTon<Focus>
+	class Focus : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
-	};
-
-	class WindowPosition : public r2cm::iItem, public r2cm::SingleTon<WindowPosition>
-	{
-	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class ChangeWindowName : public r2cm::iItem, public r2cm::SingleTon<ChangeWindowName>
+	class WindowPosition : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class HideTitleBar : public r2cm::iItem, public r2cm::SingleTon<HideTitleBar>
+	class ChangeWindowName : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class HideScrollBar : public r2cm::iItem, public r2cm::SingleTon<HideScrollBar>
+	class HideTitleBar : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class DisableMaximize : public r2cm::iItem, public r2cm::SingleTon<DisableMaximize>
+	class HideScrollBar : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class LockWindowResizingByDragging : public r2cm::iItem, public r2cm::SingleTon<LockWindowResizingByDragging>
+	class DisableMaximize : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class MenuItem : public r2cm::iItem, public r2cm::SingleTon<MenuItem>
+	class LockWindowResizingByDragging : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
+	};
+
+	class MenuItem : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
 
 
-	class CursorMove : public r2cm::iItem, public r2cm::SingleTon<CursorMove>
+	class CursorMove : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class CursorVisibility : public r2cm::iItem, public r2cm::SingleTon<CursorVisibility>
+	class CursorVisibility : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class QuickEdit : public r2cm::iItem, public r2cm::SingleTon<QuickEdit>
+	class QuickEdit : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

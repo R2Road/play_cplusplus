@@ -10,9 +10,9 @@ public:
 		// dynamic_cast<T*>( this );
 		// > dynamic_cast 는 작동하지 않는다.
 
-		std::cout << r2cm::clm( r2cm::eColor::FG_Green );
+		std::cout << clm( r2cm::eColor::FG_Green );
 		std::cout << "[START] ST::ST()" << r2cm::linefeed;
-		std::cout << r2cm::clm();
+		std::cout << clm();
 
 		OUTPUT_VALUE( this );
 
@@ -26,9 +26,9 @@ public:
 		DECLARATION_MAIN( auto offset = int64_t( (T*)1 ) - int64_t( ( ST<T>* )( T* )1 ) );
 		OUTPUT_VALUE( this + offset );
 
-		std::cout << r2cm::clm( r2cm::eColor::FG_Green );
-		std::cout << "[End]" << r2cm::clm() << r2cm::linefeed2;
-		std::cout << r2cm::clm();
+		std::cout << clm( r2cm::eColor::FG_Green );
+		std::cout << "[End]" << r2cm::linefeed2;
+		std::cout << clm();
 	}
 };
 

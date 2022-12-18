@@ -16,7 +16,7 @@ namespace number_test
 			return "Number : Prefix";
 		};
 	}
-	r2cm::iItem::DoFunctionT Prefix::GetDoFunction()
+	r2cm::iItem::DoFunctionT Prefix::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

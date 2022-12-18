@@ -12,10 +12,10 @@ r2cm::MenuUp STDNumericMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', std_numeric_test::Accumulate_Number::GetInstance() );
-		ret->AddItem( '2', std_numeric_test::Accumulate_String::GetInstance() );
-		ret->AddItem( '3', std_numeric_test::Partial_Sum::GetInstance() );
-		ret->AddItem( '4', std_numeric_test::FillSequenceNumber::GetInstance() );
+		ret->AddItem( '1', std_numeric_test::Accumulate_Number() );
+		ret->AddItem( '2', std_numeric_test::Accumulate_String() );
+		ret->AddItem( '3', std_numeric_test::Partial_Sum() );
+		ret->AddItem( '4', std_numeric_test::FillSequenceNumber() );
 
 
 		ret->AddSplit();

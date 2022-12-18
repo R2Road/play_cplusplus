@@ -13,7 +13,7 @@ namespace cpp_align_test
 			return "Align As";
 		};
 	}
-	r2cm::iItem::DoFunctionT AlignAs::GetDoFunction()
+	r2cm::iItem::DoFunctionT AlignAs::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

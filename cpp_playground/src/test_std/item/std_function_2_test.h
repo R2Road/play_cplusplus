@@ -1,14 +1,13 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace std_function_2_test
 {
-	class Equality_STDBind_1 : public r2cm::iItem, public r2cm::SingleTon<Equality_STDBind_1>
+	class Equality_STDBind_1 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

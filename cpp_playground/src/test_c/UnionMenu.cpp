@@ -12,11 +12,11 @@ r2cm::MenuUp UnionMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, UnionMenu::GetTitle() ) );
 
 	{
-		ret->AddItem( '1', c_union_test::Basic::GetInstance() );
-		ret->AddItem( '2', c_union_test::Unnamed_Union_With_Struct::GetInstance() );
-		ret->AddItem( '3', c_union_test::Unnamed_Union_With_Vector3::GetInstance() );
-		ret->AddItem( '4', c_union_test::Unnamed_Union_With_Vector3_2::GetInstance() );
-		ret->AddItem( '5', c_union_test::Unnamed_Union_With_Vector3_3::GetInstance() );
+		ret->AddItem( '1', c_union_test::Basic() );
+		ret->AddItem( '2', c_union_test::Unnamed_Union_With_Struct() );
+		ret->AddItem( '3', c_union_test::Unnamed_Union_With_Vector3() );
+		ret->AddItem( '4', c_union_test::Unnamed_Union_With_Vector3_2() );
+		ret->AddItem( '5', c_union_test::Unnamed_Union_With_Vector3_3() );
 
 
 

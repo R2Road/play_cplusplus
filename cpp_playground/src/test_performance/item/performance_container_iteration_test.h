@@ -1,71 +1,70 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace performance_container_iteration_test
 {
-	class BuiltInArrayIteration : public r2cm::iItem, public r2cm::SingleTon<BuiltInArrayIteration>
+	class BuiltInArrayIteration : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class STDArrayIteration : public r2cm::iItem, public r2cm::SingleTon<STDArrayIteration>
+	class STDArrayIteration : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class VectorIteration: public r2cm::iItem, public r2cm::SingleTon<VectorIteration>
+	class VectorIteration: public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class ListIteration : public r2cm::iItem, public r2cm::SingleTon<ListIteration>
+	class ListIteration : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class MapIteration : public r2cm::iItem, public r2cm::SingleTon<MapIteration>
+	class MapIteration : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class UnorderedMapIteration : public r2cm::iItem, public r2cm::SingleTon<UnorderedMapIteration>
+	class UnorderedMapIteration : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class SetIteration : public r2cm::iItem, public r2cm::SingleTon<SetIteration>
+	class SetIteration : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class UnorderedSetIteration : public r2cm::iItem, public r2cm::SingleTon<UnorderedSetIteration>
+	class UnorderedSetIteration : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
 
-	class STDArrayIteration_WithPointer : public r2cm::iItem, public r2cm::SingleTon<STDArrayIteration_WithPointer>
+	class STDArrayIteration_WithPointer : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

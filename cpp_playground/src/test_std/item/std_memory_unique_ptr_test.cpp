@@ -17,7 +17,7 @@ namespace std_memory_unique_ptr_test
 			return "std::unique_ptr : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -91,7 +91,7 @@ namespace std_memory_unique_ptr_test
 			return "std::unique_ptr : Deleter";
 		};
 	}
-	r2cm::iItem::DoFunctionT Deleter::GetDoFunction()
+	r2cm::iItem::DoFunctionT Deleter::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -134,7 +134,7 @@ namespace std_memory_unique_ptr_test
 			return "std::unique_ptr : Template Deleter";
 		};
 	}
-	r2cm::iItem::DoFunctionT TemplateDeleter::GetDoFunction()
+	r2cm::iItem::DoFunctionT TemplateDeleter::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -168,7 +168,7 @@ namespace std_memory_unique_ptr_test
 			return "std::unique_ptr : Forward Declaration";
 		};
 	}
-	r2cm::iItem::DoFunctionT FowardDeclaration::GetDoFunction()
+	r2cm::iItem::DoFunctionT FowardDeclaration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

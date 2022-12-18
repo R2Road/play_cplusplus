@@ -1,63 +1,62 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace std_vector_test
 {
-	class Resize : public r2cm::iItem, public r2cm::SingleTon<Resize>
+	class Resize : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Resize_And_Memory : public r2cm::iItem, public r2cm::SingleTon<Resize_And_Memory>
+	class Resize_And_Memory : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Clear : public r2cm::iItem, public r2cm::SingleTon<Clear>
+	class Clear : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Reserve : public r2cm::iItem, public r2cm::SingleTon<Reserve>
+	class Reserve : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class NoneDefaultConstructor : public r2cm::iItem, public r2cm::SingleTon<NoneDefaultConstructor>
+	class NoneDefaultConstructor : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class BoolVector : public r2cm::iItem, public r2cm::SingleTon<BoolVector>
+	class BoolVector : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class OthersIterator : public r2cm::iItem, public r2cm::SingleTon<OthersIterator>
+	class OthersIterator : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class EndIterator : public r2cm::iItem, public r2cm::SingleTon<EndIterator>
+	class EndIterator : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

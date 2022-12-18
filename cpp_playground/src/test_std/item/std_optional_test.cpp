@@ -13,7 +13,7 @@ namespace std_optional_test
 			return "Optional : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -111,7 +111,7 @@ namespace std_optional_test
 			return "Optional : Constructor";
 		};
 	}
-	r2cm::iItem::DoFunctionT Constructor::GetDoFunction()
+	r2cm::iItem::DoFunctionT Constructor::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -201,7 +201,7 @@ namespace std_optional_test
 			return "Optional : Reference";
 		};
 	}
-	r2cm::iItem::DoFunctionT Reference::GetDoFunction()
+	r2cm::iItem::DoFunctionT Reference::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

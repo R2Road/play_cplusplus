@@ -16,7 +16,7 @@ namespace cpp_lambda_test
 			return "lambda : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -62,7 +62,7 @@ namespace cpp_lambda_test
 			return "lambda : Capture Value";
 		};
 	}
-	r2cm::iItem::DoFunctionT CaptureValue::GetDoFunction()
+	r2cm::iItem::DoFunctionT CaptureValue::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -139,7 +139,7 @@ namespace cpp_lambda_test
 			return "lambda : Capture Value with Mutable";
 		};
 	}
-	r2cm::iItem::DoFunctionT CaptureValueWithMutable::GetDoFunction()
+	r2cm::iItem::DoFunctionT CaptureValueWithMutable::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -184,7 +184,7 @@ namespace cpp_lambda_test
 			return "lambda : Capture Reference";
 		};
 	}
-	r2cm::iItem::DoFunctionT CaptureReference::GetDoFunction()
+	r2cm::iItem::DoFunctionT CaptureReference::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -257,7 +257,7 @@ namespace cpp_lambda_test
 			return "lambda : Capture Unique Ptr";
 		};
 	}
-	r2cm::iItem::DoFunctionT CaptureUniquePtr::GetDoFunction()
+	r2cm::iItem::DoFunctionT CaptureUniquePtr::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -316,7 +316,7 @@ namespace cpp_lambda_test
 			return "lambda : Capture Value with Assign";
 		};
 	}
-	r2cm::iItem::DoFunctionT CaptureValueWithAssign::GetDoFunction()
+	r2cm::iItem::DoFunctionT CaptureValueWithAssign::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -404,7 +404,7 @@ namespace cpp_lambda_test
 			return "lambda : Size - Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Size_Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Size_Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -451,7 +451,7 @@ namespace cpp_lambda_test
 			return "lambda : Size - Copy Capture";
 		};
 	}
-	r2cm::iItem::DoFunctionT Size_CopyCapture::GetDoFunction()
+	r2cm::iItem::DoFunctionT Size_CopyCapture::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -517,7 +517,7 @@ namespace cpp_lambda_test
 			return "lambda : Size - Reference Capture";
 		};
 	}
-	r2cm::iItem::DoFunctionT Size_ReferenceCapture::GetDoFunction()
+	r2cm::iItem::DoFunctionT Size_ReferenceCapture::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -587,7 +587,7 @@ namespace cpp_lambda_test
 			return "lambda : Size 3";
 		};
 	}
-	r2cm::iItem::DoFunctionT Size_3::GetDoFunction()
+	r2cm::iItem::DoFunctionT Size_3::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -23,7 +23,7 @@ namespace console_window_input_test
 			return "Window Input : ReadConsoleInput";
 		};
 	}
-	r2cm::iItem::DoFunctionT WindowInput_ReadConsoleInput::GetDoFunction()
+	r2cm::iItem::DoFunctionT WindowInput_ReadConsoleInput::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -169,7 +169,7 @@ namespace console_window_input_test
 			return "Window Input : GetKeyState";
 		};
 	}
-	r2cm::iItem::DoFunctionT WindowInput_GetKeyState::GetDoFunction()
+	r2cm::iItem::DoFunctionT WindowInput_GetKeyState::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -233,7 +233,7 @@ namespace console_window_input_test
 			return "Window Input : GetKeyboardState";
 		};
 	}
-	r2cm::iItem::DoFunctionT WindowInput_GetKeyboardState::GetDoFunction()
+	r2cm::iItem::DoFunctionT WindowInput_GetKeyboardState::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -317,7 +317,7 @@ namespace console_window_input_test
 			return "Window Input : GetAsyncKeyStates";
 		};
 	}
-	r2cm::iItem::DoFunctionT WindowInput_GetAsyncKeyStates::GetDoFunction()
+	r2cm::iItem::DoFunctionT WindowInput_GetAsyncKeyStates::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

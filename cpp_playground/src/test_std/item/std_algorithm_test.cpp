@@ -25,7 +25,7 @@ namespace std_algorithm_test
 			return "<algorithm> : std::shuffle";
 		};
 	}
-	r2cm::iItem::DoFunctionT Shuffle::GetDoFunction()
+	r2cm::iItem::DoFunctionT Shuffle::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

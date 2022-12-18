@@ -22,7 +22,7 @@ namespace align_test
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -99,7 +99,7 @@ namespace align_test
 			return "Bound";
 		};
 	}
-	r2cm::iItem::DoFunctionT Bound::GetDoFunction()
+	r2cm::iItem::DoFunctionT Bound::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -171,7 +171,7 @@ namespace align_test
 			return "Play";
 		};
 	}
-	r2cm::iItem::DoFunctionT Play::GetDoFunction()
+	r2cm::iItem::DoFunctionT Play::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -16,7 +16,7 @@ namespace std_filesystem_test
 			return "Directory Path";
 		};
 	}
-	r2cm::iItem::DoFunctionT DirectoryPath::GetDoFunction()
+	r2cm::iItem::DoFunctionT DirectoryPath::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -51,7 +51,7 @@ namespace std_filesystem_test
 			return "Directory Iterator";
 		};
 	}
-	r2cm::iItem::DoFunctionT DirectoryIterator::GetDoFunction()
+	r2cm::iItem::DoFunctionT DirectoryIterator::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -93,7 +93,7 @@ namespace std_filesystem_test
 			return "Recursive Directory Iterator";
 		};
 	}
-	r2cm::iItem::DoFunctionT RecursiveDirectoryIterator::GetDoFunction()
+	r2cm::iItem::DoFunctionT RecursiveDirectoryIterator::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -137,7 +137,7 @@ namespace std_filesystem_test
 			return "Path Operation 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT PathOperation_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT PathOperation_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -219,7 +219,7 @@ namespace std_filesystem_test
 			return "Path Operation 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT PathOperation_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT PathOperation_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -25,7 +25,7 @@ namespace algorithm_selection_sort_test
 			return "Selection Sort : Case 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Case1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Case1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -113,7 +113,7 @@ namespace algorithm_selection_sort_test
 			return "Selection Sort : Case 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT Case2::GetDoFunction()
+	r2cm::iItem::DoFunctionT Case2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

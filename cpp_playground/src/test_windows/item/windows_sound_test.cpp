@@ -17,7 +17,7 @@ namespace windows_sound_test
 			return "mmsystem : PlaySound";
 		};
 	}
-	r2cm::iItem::DoFunctionT PlaySoundTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT PlaySoundTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -66,7 +66,7 @@ namespace windows_sound_test
 			return "utilapiset : Beep";
 		};
 	}
-	r2cm::iItem::DoFunctionT BeepTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT BeepTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

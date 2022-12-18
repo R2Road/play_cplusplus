@@ -20,7 +20,7 @@ namespace std_random_test
 			return "STD Random : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -98,7 +98,7 @@ namespace std_random_test
 			return "STD Random : Status Save And Load";
 		};
 	}
-	r2cm::iItem::DoFunctionT StatusSaveAndLoad::GetDoFunction()
+	r2cm::iItem::DoFunctionT StatusSaveAndLoad::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -178,7 +178,7 @@ namespace std_random_test
 			return "STD Random : Discreate Distribution";
 		};
 	}
-	r2cm::iItem::DoFunctionT DiscreateDistribution::GetDoFunction()
+	r2cm::iItem::DoFunctionT DiscreateDistribution::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

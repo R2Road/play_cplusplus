@@ -26,7 +26,7 @@ namespace std_function_test
 			return "std::function : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -56,7 +56,7 @@ namespace std_function_test
 			return "std::function : Equality : Function Pointer 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Equality_FunctionPointer_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Equality_FunctionPointer_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -145,7 +145,7 @@ namespace std_function_test
 			return "std::function : Equality : Function Pointer 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT Equality_FunctionPointer_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT Equality_FunctionPointer_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -244,7 +244,7 @@ namespace std_function_test
 			return "std::function : Equality : Function Pointer 3";
 		};
 	}
-	r2cm::iItem::DoFunctionT Equality_FunctionPointer_3::GetDoFunction()
+	r2cm::iItem::DoFunctionT Equality_FunctionPointer_3::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -347,7 +347,7 @@ namespace std_function_test
 			return "std::function : Equality : Lambda 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Equality_Lambda_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Equality_Lambda_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

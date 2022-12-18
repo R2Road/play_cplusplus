@@ -1,49 +1,48 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace various_debug_test
 {
-	class PredefinedMacro : public r2cm::iItem, public r2cm::SingleTon<PredefinedMacro>
+	class PredefinedMacro : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class OutPutDebugString : public r2cm::iItem, public r2cm::SingleTon<OutPutDebugString>
+	class OutPutDebugString : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Assertion : public r2cm::iItem, public r2cm::SingleTon<Assertion>
+	class Assertion : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class DebugBreak : public r2cm::iItem, public r2cm::SingleTon<DebugBreak>
+	class DebugBreak : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class MyAssertion : public r2cm::iItem, public r2cm::SingleTon<MyAssertion>
+	class MyAssertion : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class SimpleLog : public r2cm::iItem, public r2cm::SingleTon<SimpleLog>
+	class SimpleLog : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

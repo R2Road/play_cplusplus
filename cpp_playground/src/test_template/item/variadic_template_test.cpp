@@ -20,7 +20,7 @@ namespace variadic_template_test
 			return "Size Of Args";
 		};
 	}
-	r2cm::iItem::DoFunctionT SizeOfArgs::GetDoFunction()
+	r2cm::iItem::DoFunctionT SizeOfArgs::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -91,7 +91,7 @@ namespace variadic_template_test
 			return "Print Values";
 		};
 	}
-	r2cm::iItem::DoFunctionT PrintValues::GetDoFunction()
+	r2cm::iItem::DoFunctionT PrintValues::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -175,7 +175,7 @@ namespace variadic_template_test
 			return "Sum Values";
 		};
 	}
-	r2cm::iItem::DoFunctionT SumValues::GetDoFunction()
+	r2cm::iItem::DoFunctionT SumValues::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -262,7 +262,7 @@ namespace variadic_template_test
 			return "Subtract Values";
 		};
 	}
-	r2cm::iItem::DoFunctionT SubtractValues::GetDoFunction()
+	r2cm::iItem::DoFunctionT SubtractValues::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

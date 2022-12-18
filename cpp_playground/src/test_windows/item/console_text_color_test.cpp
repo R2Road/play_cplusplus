@@ -18,7 +18,7 @@ namespace console_text_color_test
 			return "Color Table";
 		};
 	}
-	r2cm::iItem::DoFunctionT ColorTable::GetDoFunction()
+	r2cm::iItem::DoFunctionT ColorTable::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -59,7 +59,7 @@ namespace console_text_color_test
 			return "Text Color 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT TextColor1::GetDoFunction()
+	r2cm::iItem::DoFunctionT TextColor1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -100,7 +100,7 @@ namespace console_text_color_test
 			return "Text Color 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT TextColor2::GetDoFunction()
+	r2cm::iItem::DoFunctionT TextColor2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -177,7 +177,7 @@ namespace console_text_color_test
 			return "Adjust Color Table";
 		};
 	}
-	r2cm::iItem::DoFunctionT AdjustColorTable::GetDoFunction()
+	r2cm::iItem::DoFunctionT AdjustColorTable::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -239,7 +239,7 @@ namespace console_text_color_test
 			return "Color Table 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT ColorTable2::GetDoFunction()
+	r2cm::iItem::DoFunctionT ColorTable2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -325,7 +325,7 @@ namespace console_text_color_test
 			return "Text Color 3";
 		};
 	}
-	r2cm::iItem::DoFunctionT TextColor3::GetDoFunction()
+	r2cm::iItem::DoFunctionT TextColor3::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

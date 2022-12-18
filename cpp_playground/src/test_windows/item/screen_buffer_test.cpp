@@ -19,7 +19,7 @@ namespace screen_buffer_test
 			return "Screen Buffer : Fill Buffer";
 		};
 	}
-	r2cm::iItem::DoFunctionT FillBuffer::GetDoFunction()
+	r2cm::iItem::DoFunctionT FillBuffer::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -84,7 +84,7 @@ namespace screen_buffer_test
 			return "Screen Buffer : Write 2 Buffer : WriteConsole";
 		};
 	}
-	r2cm::iItem::DoFunctionT Write2Buffer_WriteConsole::GetDoFunction()
+	r2cm::iItem::DoFunctionT Write2Buffer_WriteConsole::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -125,7 +125,7 @@ namespace screen_buffer_test
 			return "Screen Buffer : Write 2 Buffer : WriteConsoleOutput";
 		};
 	}
-	r2cm::iItem::DoFunctionT Write2Buffer_WriteConsoleOutput::GetDoFunction()
+	r2cm::iItem::DoFunctionT Write2Buffer_WriteConsoleOutput::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -183,7 +183,7 @@ namespace screen_buffer_test
 			return "Screen Buffer : ReadConsoleOutputTest";
 		};
 	}
-	r2cm::iItem::DoFunctionT ReadConsoleOutputTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT ReadConsoleOutputTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -248,7 +248,7 @@ namespace screen_buffer_test
 			return "Screen Buffer : ETC";
 		};
 	}
-	r2cm::iItem::DoFunctionT ETCTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT ETCTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -298,7 +298,7 @@ namespace screen_buffer_test
 			return "Screen Buffer : Double Buffering";
 		};
 	}
-	r2cm::iItem::DoFunctionT DoubleBuffering::GetDoFunction()
+	r2cm::iItem::DoFunctionT DoubleBuffering::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

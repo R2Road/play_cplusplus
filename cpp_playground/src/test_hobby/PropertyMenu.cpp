@@ -12,7 +12,7 @@ r2cm::MenuUp PropertyMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', property_test::Functor::GetInstance() );
+		ret->AddItem( '1', property_test::Functor() );
 
 
 

@@ -1,42 +1,41 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace c_union_test
 {
-	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	class Basic : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Unnamed_Union_With_Struct : public r2cm::iItem, public r2cm::SingleTon<Unnamed_Union_With_Struct>
+	class Unnamed_Union_With_Struct : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Unnamed_Union_With_Vector3 : public r2cm::iItem, public r2cm::SingleTon<Unnamed_Union_With_Vector3>
+	class Unnamed_Union_With_Vector3 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Unnamed_Union_With_Vector3_2 : public r2cm::iItem, public r2cm::SingleTon<Unnamed_Union_With_Vector3_2>
+	class Unnamed_Union_With_Vector3_2 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Unnamed_Union_With_Vector3_3 : public r2cm::iItem, public r2cm::SingleTon<Unnamed_Union_With_Vector3_3>
+	class Unnamed_Union_With_Vector3_3 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

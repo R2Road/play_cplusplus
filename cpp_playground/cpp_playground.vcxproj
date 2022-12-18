@@ -182,6 +182,7 @@
     <ClCompile Include="src\utility\r2utility_FileUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="external\r2cm\r2cm_ColorModifier.h" />
     <ClInclude Include="external\r2cm\r2cm_Director.h" />
     <ClInclude Include="external\r2cm\r2cm_iItem.h" />
     <ClInclude Include="external\r2cm\r2cm_Inspector.h" />
@@ -189,7 +190,6 @@
     <ClInclude Include="external\r2cm\r2cm_ostream.h" />
     <ClInclude Include="external\r2cm\r2cm_PrintBinary.h" />
     <ClInclude Include="external\r2cm\r2cm_PrintFile.h" />
-    <ClInclude Include="external\r2cm\r2cm_Singleton.h" />
     <ClInclude Include="external\r2cm\r2cm_StopWatch.h" />
     <ClInclude Include="external\r2cm\r2cm_VersionInfo.h" />
     <ClInclude Include="external\r2cm\r2cm_WindowUtility.h" />

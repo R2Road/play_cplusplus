@@ -1,35 +1,34 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace std_list_test
 {
-	class Splice_Single : public r2cm::iItem, public r2cm::SingleTon<Splice_Single>
+	class Splice_Single : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Splice_Range : public r2cm::iItem, public r2cm::SingleTon<Splice_Range>
+	class Splice_Range : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class OthersIterator : public r2cm::iItem, public r2cm::SingleTon<OthersIterator>
+	class OthersIterator : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class EndIterator : public r2cm::iItem, public r2cm::SingleTon<EndIterator>
+	class EndIterator : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

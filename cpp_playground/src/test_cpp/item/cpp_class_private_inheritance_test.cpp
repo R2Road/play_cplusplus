@@ -21,7 +21,7 @@ namespace cpp_class_private_inheritance_test
 			return "Class : Private Inheritance : Virtual Interface";
 		};
 	}
-	r2cm::iItem::DoFunctionT VirtualInterface::GetDoFunction()
+	r2cm::iItem::DoFunctionT VirtualInterface::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -65,7 +65,7 @@ namespace cpp_class_private_inheritance_test
 			return "Class : Private Inheritance : Pure Virtual Interface";
 		};
 	}
-	r2cm::iItem::DoFunctionT PureVirtualInterface::GetDoFunction()
+	r2cm::iItem::DoFunctionT PureVirtualInterface::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -109,7 +109,7 @@ namespace cpp_class_private_inheritance_test
 			return "Class : Private Inheritance : Demo 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Demo1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Demo1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -140,7 +140,7 @@ namespace cpp_class_private_inheritance_test
 			return "Class : Private Inheritance : Using";
 		};
 	}
-	r2cm::iItem::DoFunctionT Using::GetDoFunction()
+	r2cm::iItem::DoFunctionT Using::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -199,7 +199,7 @@ namespace cpp_class_private_inheritance_test
 			return "Class : Private Inheritance : iEnum";
 		};
 	}
-	r2cm::iItem::DoFunctionT PrivateInheritance_iEnum::GetDoFunction()
+	r2cm::iItem::DoFunctionT PrivateInheritance_iEnum::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -238,7 +238,7 @@ namespace cpp_class_private_inheritance_test
 			return "Class : NVI( None Virtual Interface )";
 		};
 	}
-	r2cm::iItem::DoFunctionT NoneVirtualInterface::GetDoFunction()
+	r2cm::iItem::DoFunctionT NoneVirtualInterface::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

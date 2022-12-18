@@ -55,7 +55,7 @@ namespace procedural_terrain_generation_1_test
 			return "PROCEDURAL TERRAIN GENERATION : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -153,7 +153,7 @@ namespace procedural_terrain_generation_1_test
 			return "PROCEDURAL TERRAIN GENERATION : Test 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Test_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Test_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

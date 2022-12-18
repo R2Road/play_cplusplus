@@ -23,8 +23,8 @@ r2cm::MenuUp CPP_Menu::Create( r2cm::Director& director )
 
 	{
 		ret->AddMenu<ClassMenu>( '1' );
-		ret->AddItem( '2', cpp_namespace_test::Basic::GetInstance() );
-		ret->AddItem( '3', cpp_namespace_test::Alias::GetInstance() );
+		ret->AddItem( '2', cpp_namespace_test::Basic() );
+		ret->AddItem( '3', cpp_namespace_test::Alias() );
 
 
 		ret->AddLineFeed();
@@ -40,14 +40,14 @@ r2cm::MenuUp CPP_Menu::Create( r2cm::Director& director )
 
 		ret->AddMenu<NewMenu>( 'q' );
 		ret->AddMenu<LambdaMenu>( 'w' );
-		ret->AddItem( 'e', using_test::Basic::GetInstance() );
+		ret->AddItem( 'e', using_test::Basic() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'a', cpp_structured_binding_test::Basic::GetInstance() );
-		ret->AddItem( 'b', number_test::Prefix::GetInstance() );
+		ret->AddItem( 'a', cpp_structured_binding_test::Basic() );
+		ret->AddItem( 'b', number_test::Prefix() );
 
 
 		ret->AddSplit();

@@ -1,40 +1,39 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace performance_1_test
 {
-	class IncrementOperator : public r2cm::iItem, public r2cm::SingleTon<IncrementOperator>
+	class IncrementOperator : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Loop : public r2cm::iItem, public r2cm::SingleTon<Loop>
+	class Loop : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
-	class LoopWithBuildInArray : public r2cm::iItem, public r2cm::SingleTon<LoopWithBuildInArray>
+	class LoopWithBuildInArray : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
-	class LoopWithSTDArray : public r2cm::iItem, public r2cm::SingleTon<LoopWithSTDArray>
+	class LoopWithSTDArray : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class CompareIteratorOperator : public r2cm::iItem, public r2cm::SingleTon<CompareIteratorOperator>
+	class CompareIteratorOperator : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

@@ -15,7 +15,7 @@ namespace etc_test
 			return "Show Binary";
 		};
 	}
-	r2cm::iItem::DoFunctionT ShowBinary::GetDoFunction()
+	r2cm::iItem::DoFunctionT ShowBinary::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -112,7 +112,7 @@ namespace etc_test
 			return "Life Time";
 		};
 	}
-	r2cm::iItem::DoFunctionT LifeTimeTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT LifeTimeTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -205,7 +205,7 @@ namespace etc_test
 			return "STD Function Implement";
 		};
 	}
-	r2cm::iItem::DoFunctionT STDFunctionImplement::GetDoFunction()
+	r2cm::iItem::DoFunctionT STDFunctionImplement::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

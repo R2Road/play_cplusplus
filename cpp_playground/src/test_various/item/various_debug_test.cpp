@@ -26,7 +26,7 @@ namespace various_debug_test
 			return "Predefined Macro";
 		};
 	}
-	r2cm::iItem::DoFunctionT PredefinedMacro::GetDoFunction()
+	r2cm::iItem::DoFunctionT PredefinedMacro::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -64,7 +64,7 @@ namespace various_debug_test
 			return "OutPutDebugString";
 		};
 	}
-	r2cm::iItem::DoFunctionT OutPutDebugString::GetDoFunction()
+	r2cm::iItem::DoFunctionT OutPutDebugString::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -100,7 +100,7 @@ namespace various_debug_test
 			return "Assert";
 		};
 	}
-	r2cm::iItem::DoFunctionT Assertion::GetDoFunction()
+	r2cm::iItem::DoFunctionT Assertion::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -128,7 +128,7 @@ namespace various_debug_test
 			return "Debug Break";
 		};
 	}
-	r2cm::iItem::DoFunctionT DebugBreak::GetDoFunction()
+	r2cm::iItem::DoFunctionT DebugBreak::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -156,7 +156,7 @@ namespace various_debug_test
 			return "MyAssertion";
 		};
 	}
-	r2cm::iItem::DoFunctionT MyAssertion::GetDoFunction()
+	r2cm::iItem::DoFunctionT MyAssertion::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -198,7 +198,7 @@ namespace various_debug_test
 			return "Simple Log";
 		};
 	}
-	r2cm::iItem::DoFunctionT SimpleLog::GetDoFunction()
+	r2cm::iItem::DoFunctionT SimpleLog::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

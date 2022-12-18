@@ -17,7 +17,7 @@ namespace cpp_alignof_test
 			return "alignof : PrimitiveType";
 		};
 	}
-	r2cm::iItem::DoFunctionT PrimitiveType::GetDoFunction()
+	r2cm::iItem::DoFunctionT PrimitiveType::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -64,7 +64,7 @@ namespace cpp_alignof_test
 			return "alignof : STDContainer";
 		};
 	}
-	r2cm::iItem::DoFunctionT STDContainer::GetDoFunction()
+	r2cm::iItem::DoFunctionT STDContainer::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -118,7 +118,7 @@ namespace cpp_alignof_test
 			return "alignof : Struct";
 		};
 	}
-	r2cm::iItem::DoFunctionT Struct::GetDoFunction()
+	r2cm::iItem::DoFunctionT Struct::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -208,7 +208,7 @@ namespace cpp_alignof_test
 			return "alignof : Mixed Struct";
 		};
 	}
-	r2cm::iItem::DoFunctionT MixedStruct::GetDoFunction()
+	r2cm::iItem::DoFunctionT MixedStruct::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

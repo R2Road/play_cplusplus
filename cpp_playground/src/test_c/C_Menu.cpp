@@ -24,28 +24,28 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, C_Menu::GetTitle() ) );
 
 	{
-		ret->AddItem( '1', c_array_test::Init::GetInstance() );
-		ret->AddItem( '2', c_operator_ternary_test::Basic::GetInstance() );
-		ret->AddItem( '3', c_operator_ternary_test::Comma::GetInstance() );
-		ret->AddItem( '4', c_struct_test::ByteAlignment::GetInstance() );
-		ret->AddItem( '5', c_struct_test::PragmaPack::GetInstance() );
-		ret->AddItem( '6', c_struct_test::Array_Size_0::GetInstance() );
+		ret->AddItem( '1', c_array_test::Init() );
+		ret->AddItem( '2', c_operator_ternary_test::Basic() );
+		ret->AddItem( '3', c_operator_ternary_test::Comma() );
+		ret->AddItem( '4', c_struct_test::ByteAlignment() );
+		ret->AddItem( '5', c_struct_test::PragmaPack() );
+		ret->AddItem( '6', c_struct_test::Array_Size_0() );
 		
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( '9', c_printf_test::Basic::GetInstance() );
-		ret->AddItem( '0', c_printf_test::ShowNumbers::GetInstance() );
+		ret->AddItem( '9', c_printf_test::Basic() );
+		ret->AddItem( '0', c_printf_test::ShowNumbers() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', c_sizeof_test::Basic::GetInstance() );
-		ret->AddItem( 'w', c_memset_test::Basic::GetInstance() );
-		ret->AddItem( 'e', c_macro_test::ToString::GetInstance() );
+		ret->AddItem( 'q', c_sizeof_test::Basic() );
+		ret->AddItem( 'w', c_memset_test::Basic() );
+		ret->AddItem( 'e', c_macro_test::ToString() );
 
 
 		ret->AddLineFeed();
@@ -54,8 +54,8 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 		ret->AddMenu<PointerMenu>( 'a' );
 		ret->AddMenu<BitOperationMenu>( 's' );
 		ret->AddMenu<UnionMenu>( 'd' );
-		ret->AddItem( 'f', c_system_test::Pause::GetInstance() );
-		ret->AddItem( 'g', c_atexit_test::Basic::GetInstance() );
+		ret->AddItem( 'f', c_system_test::Pause() );
+		ret->AddItem( 'g', c_atexit_test::Basic() );
 
 
 

@@ -12,7 +12,7 @@ namespace c_pointer_test
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -48,7 +48,7 @@ namespace c_pointer_test
 			return "Offset";
 		};
 	}
-	r2cm::iItem::DoFunctionT Offset::GetDoFunction()
+	r2cm::iItem::DoFunctionT Offset::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -105,7 +105,7 @@ namespace c_pointer_test
 			return "Pointer 2 Index";
 		};
 	}
-	r2cm::iItem::DoFunctionT Pointer2Index::GetDoFunction()
+	r2cm::iItem::DoFunctionT Pointer2Index::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -145,7 +145,7 @@ namespace c_pointer_test
 			return "Const Pointer";
 		};
 	}
-	r2cm::iItem::DoFunctionT ConstPointer::GetDoFunction()
+	r2cm::iItem::DoFunctionT ConstPointer::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -214,7 +214,7 @@ namespace c_pointer_test
 			return "char* : Length 0";
 		};
 	}
-	r2cm::iItem::DoFunctionT CharacterPointer_Length_0::GetDoFunction()
+	r2cm::iItem::DoFunctionT CharacterPointer_Length_0::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

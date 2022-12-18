@@ -27,7 +27,7 @@ namespace std_function_2_test
 			return "std::function : Equality : std::bind 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Equality_STDBind_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Equality_STDBind_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

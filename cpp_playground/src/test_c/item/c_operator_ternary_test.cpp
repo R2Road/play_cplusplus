@@ -14,7 +14,7 @@ namespace c_operator_ternary_test
 			return "operator ternary : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -43,7 +43,7 @@ namespace c_operator_ternary_test
 			return "operator ternary : Comma";
 		};
 	}
-	r2cm::iItem::DoFunctionT Comma::GetDoFunction()
+	r2cm::iItem::DoFunctionT Comma::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

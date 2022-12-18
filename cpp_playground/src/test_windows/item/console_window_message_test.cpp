@@ -56,7 +56,7 @@ namespace console_window_message_test
 			return "Window Message : Console Control Handler";
 		};
 	}
-	r2cm::iItem::DoFunctionT ConsoleControlHandler::GetDoFunction()
+	r2cm::iItem::DoFunctionT ConsoleControlHandler::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -152,7 +152,7 @@ namespace console_window_message_test
 			return "Window Message : Hook";
 		};
 	}
-	r2cm::iItem::DoFunctionT MessageHook::GetDoFunction()
+	r2cm::iItem::DoFunctionT MessageHook::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

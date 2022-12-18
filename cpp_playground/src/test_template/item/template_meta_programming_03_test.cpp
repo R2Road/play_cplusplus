@@ -35,7 +35,7 @@ namespace template_meta_programming_test
 			return "Multi Type Package( In Progress )";
 		};
 	}
-	r2cm::iItem::DoFunctionT MultiTypePackage::GetDoFunction()
+	r2cm::iItem::DoFunctionT MultiTypePackage::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

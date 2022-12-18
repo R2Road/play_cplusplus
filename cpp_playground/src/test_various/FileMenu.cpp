@@ -13,18 +13,18 @@ r2cm::MenuUp FileMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', c_file_test::OpenAndClose::GetInstance() );
-		ret->AddItem( '2', c_file_test::GetCharacter::GetInstance() );
-		ret->AddItem( '3', c_file_test::GetLine::GetInstance() );
+		ret->AddItem( '1', c_file_test::OpenAndClose() );
+		ret->AddItem( '2', c_file_test::GetCharacter() );
+		ret->AddItem( '3', c_file_test::GetLine() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', std_fstream_test::OpenAndClose::GetInstance() );
-		ret->AddItem( 'w', std_fstream_test::GetCharacter::GetInstance() );
-		ret->AddItem( 'e', std_fstream_test::GetLine::GetInstance() );
-		ret->AddItem( 'r', std_fstream_test::GetBlank2Blank::GetInstance() );
+		ret->AddItem( 'q', std_fstream_test::OpenAndClose() );
+		ret->AddItem( 'w', std_fstream_test::GetCharacter() );
+		ret->AddItem( 'e', std_fstream_test::GetLine() );
+		ret->AddItem( 'r', std_fstream_test::GetBlank2Blank() );
 
 
 		ret->AddSplit();

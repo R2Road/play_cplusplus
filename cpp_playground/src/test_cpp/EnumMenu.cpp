@@ -12,8 +12,8 @@ r2cm::MenuUp EnumMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', enum_test::Basic::GetInstance() );
-		ret->AddItem( '2', enum_test::Cast::GetInstance() );
+		ret->AddItem( '1', enum_test::Basic() );
+		ret->AddItem( '2', enum_test::Cast() );
 
 
 
@@ -21,7 +21,7 @@ r2cm::MenuUp EnumMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', enum_test::ConvertWithTemplate::GetInstance() );
+		ret->AddItem( 'q', enum_test::ConvertWithTemplate() );
 
 
 
@@ -29,9 +29,9 @@ r2cm::MenuUp EnumMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'a', enum_test::MakeEnumWithMacro::GetInstance() );
-		ret->AddItem( 's', enum_test::XMacro_1::GetInstance() );
-		ret->AddItem( 'd', enum_test::XMacro_2::GetInstance() );
+		ret->AddItem( 'a', enum_test::MakeEnumWithMacro() );
+		ret->AddItem( 's', enum_test::XMacro_1() );
+		ret->AddItem( 'd', enum_test::XMacro_2() );
 
 
 		ret->AddSplit();

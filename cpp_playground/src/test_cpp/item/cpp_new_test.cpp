@@ -15,7 +15,7 @@ namespace cpp_new_test
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -81,7 +81,7 @@ namespace cpp_new_test
 			return "Array";
 		};
 	}
-	r2cm::iItem::DoFunctionT Array::GetDoFunction()
+	r2cm::iItem::DoFunctionT Array::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -162,7 +162,7 @@ namespace cpp_new_test
 			return "Placement New";
 		};
 	}
-	r2cm::iItem::DoFunctionT PlacementNew::GetDoFunction()
+	r2cm::iItem::DoFunctionT PlacementNew::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

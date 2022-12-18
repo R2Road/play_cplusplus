@@ -14,10 +14,10 @@ r2cm::MenuUp TimeMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', c_time_test::Basic::GetInstance() );
-		ret->AddItem( '2', c_time_test::Y_M_D_H_M_S_1::GetInstance() );
-		ret->AddItem( '3', c_time_test::Y_M_D_H_M_S_2::GetInstance() );
-		ret->AddItem( '4', c_time_test::Clock::GetInstance() );
+		ret->AddItem( '1', c_time_test::Basic() );
+		ret->AddItem( '2', c_time_test::Y_M_D_H_M_S_1() );
+		ret->AddItem( '3', c_time_test::Y_M_D_H_M_S_2() );
+		ret->AddItem( '4', c_time_test::Clock() );
 
 
 
@@ -25,7 +25,7 @@ r2cm::MenuUp TimeMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', window_time_test::Basic::GetInstance() );
+		ret->AddItem( 'q', window_time_test::Basic() );
 
 
 
@@ -33,11 +33,11 @@ r2cm::MenuUp TimeMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'a', std_chrono_test::Epoch::GetInstance() );
-		ret->AddItem( 's', std_chrono_test::SystemClock::GetInstance() );
-		ret->AddItem( 'd', std_chrono_test::SteadyClock::GetInstance() );
-		ret->AddItem( 'f', std_chrono_test::SteadyClock_Duration::GetInstance() );
-		ret->AddItem( 'g', std_chrono_test::Demo::GetInstance() );
+		ret->AddItem( 'a', std_chrono_test::Epoch() );
+		ret->AddItem( 's', std_chrono_test::SystemClock() );
+		ret->AddItem( 'd', std_chrono_test::SteadyClock() );
+		ret->AddItem( 'f', std_chrono_test::SteadyClock_Duration() );
+		ret->AddItem( 'g', std_chrono_test::Demo() );
 
 
 

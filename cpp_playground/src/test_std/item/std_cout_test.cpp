@@ -14,7 +14,7 @@ namespace std_cout_test
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -52,7 +52,7 @@ namespace std_cout_test
 			return "FMTStatus";
 		};
 	}
-	r2cm::iItem::DoFunctionT FMTStatus::GetDoFunction()
+	r2cm::iItem::DoFunctionT FMTStatus::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -114,7 +114,7 @@ namespace std_cout_test
 			return "Number Format 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT NumberFormat_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT NumberFormat_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -168,7 +168,7 @@ namespace std_cout_test
 			return "Number Format 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT NumberFormat_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT NumberFormat_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -239,7 +239,7 @@ namespace std_cout_test
 			return "Number Format 3";
 		};
 	}
-	r2cm::iItem::DoFunctionT NumberFormat_3::GetDoFunction()
+	r2cm::iItem::DoFunctionT NumberFormat_3::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -317,7 +317,7 @@ namespace std_cout_test
 			return "Number Format 4";
 		};
 	}
-	r2cm::iItem::DoFunctionT NumberFormat_4::GetDoFunction()
+	r2cm::iItem::DoFunctionT NumberFormat_4::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -374,7 +374,7 @@ namespace std_cout_test
 			return "Align";
 		};
 	}
-	r2cm::iItem::DoFunctionT Align::GetDoFunction()
+	r2cm::iItem::DoFunctionT Align::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -434,7 +434,7 @@ namespace std_cout_test
 			return "Flag";
 		};
 	}
-	r2cm::iItem::DoFunctionT Flag::GetDoFunction()
+	r2cm::iItem::DoFunctionT Flag::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -489,7 +489,7 @@ namespace std_cout_test
 			return "BoolAlpha";
 		};
 	}
-	r2cm::iItem::DoFunctionT BoolAlpha::GetDoFunction()
+	r2cm::iItem::DoFunctionT BoolAlpha::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -553,7 +553,7 @@ namespace std_cout_test
 			return "UserDefinedType";
 		};
 	}
-	r2cm::iItem::DoFunctionT UserDefinedType::GetDoFunction()
+	r2cm::iItem::DoFunctionT UserDefinedType::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

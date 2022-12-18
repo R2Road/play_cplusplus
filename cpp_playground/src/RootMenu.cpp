@@ -51,7 +51,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', various_console_input_test::Basic::GetInstance() );
+		ret->AddItem( '1', various_console_input_test::Basic() );
 		ret->AddMenu<WindowsMenu>( '2' );		
 
 

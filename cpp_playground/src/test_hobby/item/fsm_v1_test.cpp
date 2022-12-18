@@ -11,7 +11,7 @@ namespace fsm_v1_test
 			return "FSM v1 : Basic( To do )";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

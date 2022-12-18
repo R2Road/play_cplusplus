@@ -26,7 +26,7 @@ namespace property_test
 			return "Property : Functor";
 		};
 	}
-	r2cm::iItem::DoFunctionT Functor::GetDoFunction()
+	r2cm::iItem::DoFunctionT Functor::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

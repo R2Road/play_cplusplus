@@ -1,48 +1,47 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace flickering_research
 {
-	class OneByOne : public r2cm::iItem, public r2cm::SingleTon<OneByOne>
+	class OneByOne : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
-	class OneByOne_WithOut_CLS : public r2cm::iItem, public r2cm::SingleTon<OneByOne_WithOut_CLS>
+	class OneByOne_WithOut_CLS : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
-	};
-
-	class LineByLine : public r2cm::iItem, public r2cm::SingleTon<LineByLine>
-	{
-	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class PageByPage : public r2cm::iItem, public r2cm::SingleTon<PageByPage>
+	class LineByLine : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class PageByPage_WithOut_CLS_1 : public r2cm::iItem, public r2cm::SingleTon<PageByPage_WithOut_CLS_1>
+	class PageByPage : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class PageByPage_WithOut_CLS_2 : public r2cm::iItem, public r2cm::SingleTon<PageByPage_WithOut_CLS_2>
+	class PageByPage_WithOut_CLS_1 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
+	};
+
+	class PageByPage_WithOut_CLS_2 : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

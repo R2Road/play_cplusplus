@@ -39,7 +39,7 @@ namespace template_meta_programming_test
 			return "Factorial";
 		};
 	}
-	r2cm::iItem::DoFunctionT CalculateFactorial::GetDoFunction()
+	r2cm::iItem::DoFunctionT CalculateFactorial::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -103,7 +103,7 @@ namespace template_meta_programming_test
 			return "Greatest Common Divisor";
 		};
 	}
-	r2cm::iItem::DoFunctionT GreatestCommonDivisor::GetDoFunction()
+	r2cm::iItem::DoFunctionT GreatestCommonDivisor::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -147,7 +147,7 @@ namespace template_meta_programming_test
 			return "Basic Ratio";
 		};
 	}
-	r2cm::iItem::DoFunctionT BasicRatio::GetDoFunction()
+	r2cm::iItem::DoFunctionT BasicRatio::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -185,7 +185,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char* { return "Sum Basic Ratio"; };
 	}
-	r2cm::iItem::DoFunctionT SumBasicRatio::GetDoFunction()
+	r2cm::iItem::DoFunctionT SumBasicRatio::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -233,7 +233,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char* { return "Ratio with GCD"; };
 	}
-	r2cm::iItem::DoFunctionT RatioWithGCD::GetDoFunction()
+	r2cm::iItem::DoFunctionT RatioWithGCD::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -293,7 +293,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char* { return "Sum Ratio with GCD"; };
 	}
-	r2cm::iItem::DoFunctionT SumRatioWithGCD::GetDoFunction()
+	r2cm::iItem::DoFunctionT SumRatioWithGCD::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -333,7 +333,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char* { return "Sum Ratio and Operator 1"; };
 	}
-	r2cm::iItem::DoFunctionT SumRatioAndOperator1::GetDoFunction()
+	r2cm::iItem::DoFunctionT SumRatioAndOperator1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -401,7 +401,7 @@ namespace template_meta_programming_test
 	{
 		return []()->const char* { return "Sum Ratio and Operator 2"; };
 	}
-	r2cm::iItem::DoFunctionT SumRatioAndOperator2::GetDoFunction()
+	r2cm::iItem::DoFunctionT SumRatioAndOperator2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

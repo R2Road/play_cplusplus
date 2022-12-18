@@ -30,29 +30,29 @@ r2cm::MenuUp WindowsMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'e', console_window_input_test::WindowInput_ReadConsoleInput::GetInstance() );
-		ret->AddItem( 'r', console_window_input_test::WindowInput_GetKeyState::GetInstance() );
-		ret->AddItem( 't', console_window_input_test::WindowInput_GetKeyboardState::GetInstance() );
-		ret->AddItem( 'y', console_window_input_test::WindowInput_GetAsyncKeyStates::GetInstance() );
+		ret->AddItem( 'e', console_window_input_test::WindowInput_ReadConsoleInput() );
+		ret->AddItem( 'r', console_window_input_test::WindowInput_GetKeyState() );
+		ret->AddItem( 't', console_window_input_test::WindowInput_GetKeyboardState() );
+		ret->AddItem( 'y', console_window_input_test::WindowInput_GetAsyncKeyStates() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'u', console_window_message_test::ConsoleControlHandler::GetInstance() );
-		ret->AddItem( 'i', console_window_message_test::MessageHook::GetInstance() );
+		ret->AddItem( 'u', console_window_message_test::ConsoleControlHandler() );
+		ret->AddItem( 'i', console_window_message_test::MessageHook() );
 
 
 		ret->AddLineFeed();
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'a', screen_buffer_test::FillBuffer::GetInstance() );
-		ret->AddItem( 's', screen_buffer_test::Write2Buffer_WriteConsole::GetInstance() );
-		ret->AddItem( 'd', screen_buffer_test::Write2Buffer_WriteConsoleOutput::GetInstance() );
-		ret->AddItem( 'f', screen_buffer_test::DoubleBuffering::GetInstance() );
-		ret->AddItem( 'g', screen_buffer_test::ReadConsoleOutputTest::GetInstance() );
-		ret->AddItem( 'h', screen_buffer_test::ETCTest::GetInstance() );
+		ret->AddItem( 'a', screen_buffer_test::FillBuffer() );
+		ret->AddItem( 's', screen_buffer_test::Write2Buffer_WriteConsole() );
+		ret->AddItem( 'd', screen_buffer_test::Write2Buffer_WriteConsoleOutput() );
+		ret->AddItem( 'f', screen_buffer_test::DoubleBuffering() );
+		ret->AddItem( 'g', screen_buffer_test::ReadConsoleOutputTest() );
+		ret->AddItem( 'h', screen_buffer_test::ETCTest() );
 
 
 		ret->AddLineFeed();
@@ -60,11 +60,11 @@ r2cm::MenuUp WindowsMenu::Create( r2cm::Director& director )
 
 
 		ret->AddMenu<FlickeringResearchMenu>( 'z' );
-		ret->AddItem( 'x', console_window_etc_test::FontInfo::GetInstance() );
-		ret->AddItem( 'c', console_window_etc_test::FontChange::GetInstance() );
-		ret->AddItem( 'v', console_window_etc_test::Pixel::GetInstance() );
-		ret->AddItem( 'b', windows_sound_test::PlaySoundTest::GetInstance() );
-		ret->AddItem( 'n', windows_sound_test::BeepTest::GetInstance() );
+		ret->AddItem( 'x', console_window_etc_test::FontInfo() );
+		ret->AddItem( 'c', console_window_etc_test::FontChange() );
+		ret->AddItem( 'v', console_window_etc_test::Pixel() );
+		ret->AddItem( 'b', windows_sound_test::PlaySoundTest() );
+		ret->AddItem( 'n', windows_sound_test::BeepTest() );
 
 
 		ret->AddSplit();

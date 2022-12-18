@@ -12,12 +12,12 @@ r2cm::MenuUp LambdaMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', cpp_lambda_test::Basic::GetInstance() );
-		ret->AddItem( '2', cpp_lambda_test::CaptureValue::GetInstance() );
-		ret->AddItem( '3', cpp_lambda_test::CaptureValueWithMutable::GetInstance() );
-		ret->AddItem( '4', cpp_lambda_test::CaptureReference::GetInstance() );
-		ret->AddItem( '5', cpp_lambda_test::CaptureUniquePtr::GetInstance() );
-		ret->AddItem( '6', cpp_lambda_test::CaptureValueWithAssign::GetInstance() );
+		ret->AddItem( '1', cpp_lambda_test::Basic() );
+		ret->AddItem( '2', cpp_lambda_test::CaptureValue() );
+		ret->AddItem( '3', cpp_lambda_test::CaptureValueWithMutable() );
+		ret->AddItem( '4', cpp_lambda_test::CaptureReference() );
+		ret->AddItem( '5', cpp_lambda_test::CaptureUniquePtr() );
+		ret->AddItem( '6', cpp_lambda_test::CaptureValueWithAssign() );
 
 
 
@@ -25,10 +25,10 @@ r2cm::MenuUp LambdaMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', cpp_lambda_test::Size_Basic::GetInstance() );
-		ret->AddItem( 'w', cpp_lambda_test::Size_CopyCapture::GetInstance() );
-		ret->AddItem( 'e', cpp_lambda_test::Size_ReferenceCapture::GetInstance() );
-		ret->AddItem( 'r', cpp_lambda_test::Size_3::GetInstance() );
+		ret->AddItem( 'q', cpp_lambda_test::Size_Basic() );
+		ret->AddItem( 'w', cpp_lambda_test::Size_CopyCapture() );
+		ret->AddItem( 'e', cpp_lambda_test::Size_ReferenceCapture() );
+		ret->AddItem( 'r', cpp_lambda_test::Size_3() );
 
 
 

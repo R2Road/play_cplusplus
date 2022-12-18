@@ -12,10 +12,10 @@ r2cm::MenuUp AlignMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', cpp_alignof_test::PrimitiveType::GetInstance() );
-		ret->AddItem( '2', cpp_alignof_test::STDContainer::GetInstance() );
-		ret->AddItem( '3', cpp_alignof_test::Struct::GetInstance() );
-		ret->AddItem( '4', cpp_alignof_test::MixedStruct::GetInstance() );
+		ret->AddItem( '1', cpp_alignof_test::PrimitiveType() );
+		ret->AddItem( '2', cpp_alignof_test::STDContainer() );
+		ret->AddItem( '3', cpp_alignof_test::Struct() );
+		ret->AddItem( '4', cpp_alignof_test::MixedStruct() );
 
 
 
@@ -23,7 +23,7 @@ r2cm::MenuUp AlignMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', cpp_align_test::AlignAs::GetInstance() );
+		ret->AddItem( 'q', cpp_align_test::AlignAs() );
 
 
 

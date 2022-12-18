@@ -40,7 +40,7 @@ namespace std_thread_test
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -101,7 +101,7 @@ namespace std_thread_test
 			return "Declaration";
 		};
 	}
-	r2cm::iItem::DoFunctionT Declaration::GetDoFunction()
+	r2cm::iItem::DoFunctionT Declaration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -195,7 +195,7 @@ namespace std_thread_test
 			return "Copy Assaignment";
 		};
 	}
-	r2cm::iItem::DoFunctionT CopyAssaignment::GetDoFunction()
+	r2cm::iItem::DoFunctionT CopyAssaignment::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -263,7 +263,7 @@ namespace std_thread_test
 			return "Wait Process : Sleep For";
 		};
 	}
-	r2cm::iItem::DoFunctionT WaitProcess_SleepFor::GetDoFunction()
+	r2cm::iItem::DoFunctionT WaitProcess_SleepFor::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -310,7 +310,7 @@ namespace std_thread_test
 			return "Wait Process : Yield";
 		};
 	}
-	r2cm::iItem::DoFunctionT WaitProcess_Yield::GetDoFunction()
+	r2cm::iItem::DoFunctionT WaitProcess_Yield::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -370,14 +370,14 @@ namespace std_thread_test
 			return "ThisThread : SleepFor";
 		};
 	}
-	r2cm::iItem::DoFunctionT ThisThread_SleepFor::GetDoFunction()
+	r2cm::iItem::DoFunctionT ThisThread_SleepFor::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << r2cm::clm( r2cm::eColor::FG_Green ) << "# 음수 값을 넣어도 문제는 발생하지 않는다." << r2cm::clm() << r2cm::linefeed;
+				std::cout << r2cm::tab << clm( r2cm::eColor::FG_Green ) << "# 음수 값을 넣어도 문제는 발생하지 않는다." << clm() << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;

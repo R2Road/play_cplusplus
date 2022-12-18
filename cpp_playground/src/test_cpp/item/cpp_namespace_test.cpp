@@ -37,7 +37,7 @@ namespace cpp_namespace_test
 			return "namespace : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -71,7 +71,7 @@ namespace cpp_namespace_test
 			return "namespace : Alias";
 		};
 	}
-	r2cm::iItem::DoFunctionT Alias::GetDoFunction()
+	r2cm::iItem::DoFunctionT Alias::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

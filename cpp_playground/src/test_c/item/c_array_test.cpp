@@ -16,7 +16,7 @@ namespace c_array_test
 			return "array : Init";
 		};
 	}
-	r2cm::iItem::DoFunctionT Init::GetDoFunction()
+	r2cm::iItem::DoFunctionT Init::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

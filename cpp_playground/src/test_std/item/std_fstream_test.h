@@ -1,35 +1,34 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace std_fstream_test
 {
-	class OpenAndClose : public r2cm::iItem, public r2cm::SingleTon<OpenAndClose>
+	class OpenAndClose : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class GetCharacter : public r2cm::iItem, public r2cm::SingleTon<GetCharacter>
+	class GetCharacter : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class GetLine : public r2cm::iItem, public r2cm::SingleTon<GetLine>
+	class GetLine : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class GetBlank2Blank : public r2cm::iItem, public r2cm::SingleTon<GetBlank2Blank>
+	class GetBlank2Blank : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

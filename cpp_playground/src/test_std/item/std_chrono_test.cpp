@@ -17,7 +17,7 @@ namespace std_chrono_test
 			return "Epoch";
 		};
 	}
-	r2cm::iItem::DoFunctionT Epoch::GetDoFunction()
+	r2cm::iItem::DoFunctionT Epoch::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -63,7 +63,7 @@ namespace std_chrono_test
 			return "Chrono : SystemClock";
 		};
 	}
-	r2cm::iItem::DoFunctionT SystemClock::GetDoFunction()
+	r2cm::iItem::DoFunctionT SystemClock::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -129,7 +129,7 @@ namespace std_chrono_test
 			return "Chrono : SteadyClock";
 		};
 	}
-	r2cm::iItem::DoFunctionT SteadyClock::GetDoFunction()
+	r2cm::iItem::DoFunctionT SteadyClock::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -181,7 +181,7 @@ namespace std_chrono_test
 			return "Chrono : SteadyClock :Duration";
 		};
 	}
-	r2cm::iItem::DoFunctionT SteadyClock_Duration::GetDoFunction()
+	r2cm::iItem::DoFunctionT SteadyClock_Duration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -234,7 +234,7 @@ namespace std_chrono_test
 			return "Chrono : Demo";
 		};
 	}
-	r2cm::iItem::DoFunctionT Demo::GetDoFunction()
+	r2cm::iItem::DoFunctionT Demo::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

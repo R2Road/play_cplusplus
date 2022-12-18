@@ -17,7 +17,7 @@ namespace std_string_view_test
 			return "StringView : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -78,7 +78,7 @@ namespace std_string_view_test
 			return "StringView : Literal Operator \"\"sv";
 		};
 	}
-	r2cm::iItem::DoFunctionT Literal_Operator_sv::GetDoFunction()
+	r2cm::iItem::DoFunctionT Literal_Operator_sv::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -112,7 +112,7 @@ namespace std_string_view_test
 			return "StringView : Remove";
 		};
 	}
-	r2cm::iItem::DoFunctionT Remove::GetDoFunction()
+	r2cm::iItem::DoFunctionT Remove::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -150,7 +150,7 @@ namespace std_string_view_test
 			return "StringView : SubStr";
 		};
 	}
-	r2cm::iItem::DoFunctionT SubStr::GetDoFunction()
+	r2cm::iItem::DoFunctionT SubStr::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -13,7 +13,7 @@ namespace template_basic_test
 			return "Basic : MemberVariable";
 		};
 	}
-	r2cm::iItem::DoFunctionT MemberVariable::GetDoFunction()
+	r2cm::iItem::DoFunctionT MemberVariable::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -55,7 +55,7 @@ namespace template_basic_test
 			return "Basic : Function - Return Value";
 		};
 	}
-	r2cm::iItem::DoFunctionT Function_ReturnValue::GetDoFunction()
+	r2cm::iItem::DoFunctionT Function_ReturnValue::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -107,7 +107,7 @@ namespace template_basic_test
 			return "Basic : Function - Object";
 		};
 	}
-	r2cm::iItem::DoFunctionT Function_Object::GetDoFunction()
+	r2cm::iItem::DoFunctionT Function_Object::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

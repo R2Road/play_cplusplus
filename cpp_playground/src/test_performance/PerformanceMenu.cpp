@@ -13,23 +13,23 @@ r2cm::MenuUp PerformanceMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', performance_1_test::IncrementOperator::GetInstance() );
-		ret->AddItem( '2', performance_1_test::Loop::GetInstance() );
-		ret->AddItem( '3', performance_1_test::LoopWithBuildInArray::GetInstance() );
-		ret->AddItem( '4', performance_1_test::LoopWithSTDArray::GetInstance() );
-		ret->AddItem( '5', performance_1_test::CompareIteratorOperator::GetInstance() );
+		ret->AddItem( '1', performance_1_test::IncrementOperator() );
+		ret->AddItem( '2', performance_1_test::Loop() );
+		ret->AddItem( '3', performance_1_test::LoopWithBuildInArray() );
+		ret->AddItem( '4', performance_1_test::LoopWithSTDArray() );
+		ret->AddItem( '5', performance_1_test::CompareIteratorOperator() );
 
 		ret->AddLineFeed();
 
-		ret->AddItem( 'q', performance_container_iteration_test::BuiltInArrayIteration::GetInstance() );
-		ret->AddItem( 'w', performance_container_iteration_test::STDArrayIteration::GetInstance() );
-		ret->AddItem( 'e', performance_container_iteration_test::VectorIteration::GetInstance() );
-		ret->AddItem( 'r', performance_container_iteration_test::ListIteration::GetInstance() );
-		ret->AddItem( 't', performance_container_iteration_test::MapIteration::GetInstance() );
-		ret->AddItem( 'y', performance_container_iteration_test::UnorderedMapIteration::GetInstance() );
-		ret->AddItem( 'u', performance_container_iteration_test::SetIteration::GetInstance() );
-		ret->AddItem( 'i', performance_container_iteration_test::UnorderedSetIteration::GetInstance() );
-		ret->AddItem( 'o', performance_container_iteration_test::STDArrayIteration_WithPointer::GetInstance() );
+		ret->AddItem( 'q', performance_container_iteration_test::BuiltInArrayIteration() );
+		ret->AddItem( 'w', performance_container_iteration_test::STDArrayIteration() );
+		ret->AddItem( 'e', performance_container_iteration_test::VectorIteration() );
+		ret->AddItem( 'r', performance_container_iteration_test::ListIteration() );
+		ret->AddItem( 't', performance_container_iteration_test::MapIteration() );
+		ret->AddItem( 'y', performance_container_iteration_test::UnorderedMapIteration() );
+		ret->AddItem( 'u', performance_container_iteration_test::SetIteration() );
+		ret->AddItem( 'i', performance_container_iteration_test::UnorderedSetIteration() );
+		ret->AddItem( 'o', performance_container_iteration_test::STDArrayIteration_WithPointer() );
 
 
 		ret->AddSplit();

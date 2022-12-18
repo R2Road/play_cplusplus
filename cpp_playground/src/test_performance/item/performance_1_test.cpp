@@ -17,7 +17,7 @@ namespace performance_1_test
 			return "++Operator";
 		};
 	}
-	r2cm::iItem::DoFunctionT IncrementOperator::GetDoFunction()
+	r2cm::iItem::DoFunctionT IncrementOperator::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -174,7 +174,7 @@ namespace performance_1_test
 			return "Loop";
 		};
 	}
-	r2cm::iItem::DoFunctionT Loop::GetDoFunction()
+	r2cm::iItem::DoFunctionT Loop::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -254,7 +254,7 @@ namespace performance_1_test
 			return "Loop With Built-In Array";
 		};
 	}
-	r2cm::iItem::DoFunctionT LoopWithBuildInArray::GetDoFunction()
+	r2cm::iItem::DoFunctionT LoopWithBuildInArray::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -347,7 +347,7 @@ namespace performance_1_test
 			return "Loop With std::array";
 		};
 	}
-	r2cm::iItem::DoFunctionT LoopWithSTDArray::GetDoFunction()
+	r2cm::iItem::DoFunctionT LoopWithSTDArray::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -440,7 +440,7 @@ namespace performance_1_test
 			return "Iterator Operator";
 		};
 	}
-	r2cm::iItem::DoFunctionT CompareIteratorOperator::GetDoFunction()
+	r2cm::iItem::DoFunctionT CompareIteratorOperator::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

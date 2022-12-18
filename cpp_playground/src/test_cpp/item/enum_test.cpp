@@ -15,7 +15,7 @@ namespace enum_test
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -67,7 +67,7 @@ namespace enum_test
 			return "Cast";
 		};
 	}
-	r2cm::iItem::DoFunctionT Cast::GetDoFunction()
+	r2cm::iItem::DoFunctionT Cast::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -112,7 +112,7 @@ namespace enum_test
 			return "Convert with Template";
 		};
 	}
-	r2cm::iItem::DoFunctionT ConvertWithTemplate::GetDoFunction()
+	r2cm::iItem::DoFunctionT ConvertWithTemplate::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -190,7 +190,7 @@ namespace enum_test
 			return "Make Enum With Macro";
 		};
 	}
-	r2cm::iItem::DoFunctionT MakeEnumWithMacro::GetDoFunction()
+	r2cm::iItem::DoFunctionT MakeEnumWithMacro::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -255,7 +255,7 @@ namespace enum_test
 			return "XMacro 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT XMacro_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT XMacro_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -334,7 +334,7 @@ namespace enum_test
 			return "XMacro 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT XMacro_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT XMacro_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

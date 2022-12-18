@@ -20,7 +20,7 @@ namespace template_meta_programming_test
 			return "Character 2 String";
 		};
 	}
-	r2cm::iItem::DoFunctionT Character2String::GetDoFunction()
+	r2cm::iItem::DoFunctionT Character2String::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -65,7 +65,7 @@ namespace template_meta_programming_test
 			return "Integer 2 String";
 		};
 	}
-	r2cm::iItem::DoFunctionT Integer2String::GetDoFunction()
+	r2cm::iItem::DoFunctionT Integer2String::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -108,7 +108,7 @@ namespace template_meta_programming_test
 			return "Place Value 4 Integer";
 		};
 	}
-	r2cm::iItem::DoFunctionT CalculatePlaceValue::GetDoFunction()
+	r2cm::iItem::DoFunctionT CalculatePlaceValue::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -175,7 +175,7 @@ namespace template_meta_programming_test
 			return "Integer 2 String II";
 		};
 	}
-	r2cm::iItem::DoFunctionT Integer2String_II::GetDoFunction()
+	r2cm::iItem::DoFunctionT Integer2String_II::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

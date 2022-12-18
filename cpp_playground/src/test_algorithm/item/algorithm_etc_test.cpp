@@ -29,7 +29,7 @@ namespace algorithm_etc_test
 			return "DJB2";
 		};
 	}
-	r2cm::iItem::DoFunctionT DJB2::GetDoFunction()
+	r2cm::iItem::DoFunctionT DJB2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

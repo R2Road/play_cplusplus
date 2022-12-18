@@ -17,7 +17,7 @@ namespace char_test
 			return "Char : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -65,7 +65,7 @@ namespace char_test
 			return "Char : Encoding";
 		};
 	}
-	r2cm::iItem::DoFunctionT Encoding::GetDoFunction()
+	r2cm::iItem::DoFunctionT Encoding::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -114,7 +114,7 @@ namespace char_test
 			return "Char : Raw-String-Literal";
 		};
 	}
-	r2cm::iItem::DoFunctionT RawStringLiteral::GetDoFunction()
+	r2cm::iItem::DoFunctionT RawStringLiteral::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -18,7 +18,7 @@ namespace cpp_class_test
 			return "Class : Method";
 		};
 	}
-	r2cm::iItem::DoFunctionT Method::GetDoFunction()
+	r2cm::iItem::DoFunctionT Method::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -66,7 +66,7 @@ namespace cpp_class_test
 			return "Class : MemberValue";
 		};
 	}
-	r2cm::iItem::DoFunctionT MemberValue::GetDoFunction()
+	r2cm::iItem::DoFunctionT MemberValue::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -103,7 +103,7 @@ namespace cpp_class_test
 			return "Class : Braces";
 		};
 	}
-	r2cm::iItem::DoFunctionT Braces::GetDoFunction()
+	r2cm::iItem::DoFunctionT Braces::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -161,7 +161,7 @@ namespace cpp_class_test
 			return "Class : Print Name";
 		};
 	}
-	r2cm::iItem::DoFunctionT PrintName::GetDoFunction()
+	r2cm::iItem::DoFunctionT PrintName::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -235,7 +235,7 @@ namespace cpp_class_test
 			return "Class : Implicit Type Conversion";
 		};
 	}
-	r2cm::iItem::DoFunctionT ImplicitTypeConversion::GetDoFunction()
+	r2cm::iItem::DoFunctionT ImplicitTypeConversion::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -288,7 +288,7 @@ namespace cpp_class_test
 			return "Class : Member Adress : Value";
 		};
 	}
-	r2cm::iItem::DoFunctionT MemberAdress_Value::GetDoFunction()
+	r2cm::iItem::DoFunctionT MemberAdress_Value::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -331,7 +331,7 @@ namespace cpp_class_test
 			return "Class : Member Adress : Method";
 		};
 	}
-	r2cm::iItem::DoFunctionT MemberAdress_Method::GetDoFunction()
+	r2cm::iItem::DoFunctionT MemberAdress_Method::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -388,7 +388,7 @@ namespace cpp_class_test
 			return "Class : Offset : Single Inheritance";
 		};
 	}
-	r2cm::iItem::DoFunctionT Offset_SingleInheritance::GetDoFunction()
+	r2cm::iItem::DoFunctionT Offset_SingleInheritance::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -430,7 +430,7 @@ namespace cpp_class_test
 			return "Class : Offset : Multiple Inheritance";
 		};
 	}
-	r2cm::iItem::DoFunctionT Offset_MultipleInheritance::GetDoFunction()
+	r2cm::iItem::DoFunctionT Offset_MultipleInheritance::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -516,7 +516,7 @@ namespace cpp_class_test
 			return "Class : Offset : Singleton";
 		};
 	}
-	r2cm::iItem::DoFunctionT Offset_Singleton::GetDoFunction()
+	r2cm::iItem::DoFunctionT Offset_Singleton::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -547,7 +547,7 @@ namespace cpp_class_test
 			return "Class : Size";
 		};
 	}
-	r2cm::iItem::DoFunctionT Size::GetDoFunction()
+	r2cm::iItem::DoFunctionT Size::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

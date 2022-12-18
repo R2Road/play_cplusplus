@@ -1,49 +1,48 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace std_thread_test
 {
-	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	class Basic : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Declaration : public r2cm::iItem, public r2cm::SingleTon<Declaration>
+	class Declaration : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class CopyAssaignment : public r2cm::iItem, public r2cm::SingleTon<CopyAssaignment>
+	class CopyAssaignment : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class WaitProcess_SleepFor : public r2cm::iItem, public r2cm::SingleTon<WaitProcess_SleepFor>
+	class WaitProcess_SleepFor : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class WaitProcess_Yield : public r2cm::iItem, public r2cm::SingleTon<WaitProcess_Yield>
+	class WaitProcess_Yield : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class ThisThread_SleepFor : public r2cm::iItem, public r2cm::SingleTon<ThisThread_SleepFor>
+	class ThisThread_SleepFor : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

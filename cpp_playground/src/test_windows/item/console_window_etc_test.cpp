@@ -27,7 +27,7 @@ namespace console_window_etc_test
 			return "Font Info";
 		};
 	}
-	r2cm::iItem::DoFunctionT FontInfo::GetDoFunction()
+	r2cm::iItem::DoFunctionT FontInfo::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -69,7 +69,7 @@ namespace console_window_etc_test
 			return "Font Change";
 		};
 	}
-	r2cm::iItem::DoFunctionT FontChange::GetDoFunction()
+	r2cm::iItem::DoFunctionT FontChange::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -142,7 +142,7 @@ namespace console_window_etc_test
 			return "Set Pixel";
 		};
 	}
-	r2cm::iItem::DoFunctionT Pixel::GetDoFunction()
+	r2cm::iItem::DoFunctionT Pixel::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

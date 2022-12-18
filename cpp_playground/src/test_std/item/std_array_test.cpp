@@ -16,7 +16,7 @@ namespace std_array_test
 			return "Array : Declaration";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -60,7 +60,7 @@ namespace std_array_test
 			return "Array : Fill";
 		};
 	}
-	r2cm::iItem::DoFunctionT Fill::GetDoFunction()
+	r2cm::iItem::DoFunctionT Fill::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -137,7 +137,7 @@ namespace std_array_test
 			return "Array : Copy";
 		};
 	}
-	r2cm::iItem::DoFunctionT Copy::GetDoFunction()
+	r2cm::iItem::DoFunctionT Copy::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

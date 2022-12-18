@@ -25,7 +25,7 @@ namespace r2cm
 
 			mMenu->ShowTitle();
 			mMenu->ShowDescription();
-			mMenu->ShowMenu();
+			mMenu->ShowItems();
 			input = _getch();
 
 			system( "cls" );

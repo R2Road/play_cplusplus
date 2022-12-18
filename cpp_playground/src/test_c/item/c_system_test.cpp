@@ -14,7 +14,7 @@ namespace c_system_test
 			return "system : Pause";
 		};
 	}
-	r2cm::iItem::DoFunctionT Pause::GetDoFunction()
+	r2cm::iItem::DoFunctionT Pause::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

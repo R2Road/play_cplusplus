@@ -19,38 +19,38 @@ r2cm::MenuUp AlgorithmMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', algorithm_selection_sort_test::Case1::GetInstance() );
-		ret->AddItem( '2', algorithm_selection_sort_test::Case2::GetInstance() );
+		ret->AddItem( '1', algorithm_selection_sort_test::Case1() );
+		ret->AddItem( '2', algorithm_selection_sort_test::Case2() );
 
 		ret->AddLineFeed();
 
-		ret->AddItem( '3', algorithm_bubble_sort_test::Basic::GetInstance() );
+		ret->AddItem( '3', algorithm_bubble_sort_test::Basic() );
 
 		ret->AddLineFeed();
 
-		ret->AddItem( '4', algorithm_insertion_sort_test::Basic::GetInstance() );
+		ret->AddItem( '4', algorithm_insertion_sort_test::Basic() );
 
 
 		ret->AddSplit();
 
 
-		ret->AddItem( 'w', algorithm_astar_test::Basic::GetInstance() );
-		ret->AddItem( 'e', algorithm_astar_test::Use_STDListSplice::GetInstance() );
-		ret->AddItem( 'r', algorithm_astar_test::Use_STDListSplice_STDVectorResultPath::GetInstance() );
-		ret->AddItem( 't', algorithm_astar_test::Use_STDListSplice_DecreaseCloseList_STDVectorResultPath::GetInstance() );
-		ret->AddItem( 'y', algorithm_astar_test::Use_CostMap_STDListSplice_STDVectorResultPath::GetInstance() );
-		ret->AddItem( 'u', algorithm_astar_test::Use_TinyCostMap_STDListSplice_STDVectorResultPath::GetInstance() );
-		ret->AddItem( 'i', algorithm_astar_test::Use_ArrayBasedList_TinyCostMap_STDVectorResultPath::GetInstance() );
+		ret->AddItem( 'w', algorithm_astar_test::Basic() );
+		ret->AddItem( 'e', algorithm_astar_test::Use_STDListSplice() );
+		ret->AddItem( 'r', algorithm_astar_test::Use_STDListSplice_STDVectorResultPath() );
+		ret->AddItem( 't', algorithm_astar_test::Use_STDListSplice_DecreaseCloseList_STDVectorResultPath() );
+		ret->AddItem( 'y', algorithm_astar_test::Use_CostMap_STDListSplice_STDVectorResultPath() );
+		ret->AddItem( 'u', algorithm_astar_test::Use_TinyCostMap_STDListSplice_STDVectorResultPath() );
+		ret->AddItem( 'i', algorithm_astar_test::Use_ArrayBasedList_TinyCostMap_STDVectorResultPath() );
 
 		ret->AddLineFeed();
 
-		ret->AddItem( 'o', algorithm_astar_test::PerformanceTest::GetInstance() );
+		ret->AddItem( 'o', algorithm_astar_test::PerformanceTest() );
 
 
 		ret->AddSplit();
 
 
-		ret->AddItem( 'a', algorithm_etc_test::DJB2::GetInstance() );
+		ret->AddItem( 'a', algorithm_etc_test::DJB2() );
 
 
 		ret->AddSplit();

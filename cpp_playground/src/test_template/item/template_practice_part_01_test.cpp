@@ -27,7 +27,7 @@ namespace template_practice_part_01_test
 			return "Buffer With Template";
 		};
 	}
-	r2cm::iItem::DoFunctionT BufferWithTemplate::GetDoFunction()
+	r2cm::iItem::DoFunctionT BufferWithTemplate::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -81,7 +81,7 @@ namespace template_practice_part_01_test
 			return "Varidic Max";
 		};
 	}
-	r2cm::iItem::DoFunctionT VaridicMax::GetDoFunction()
+	r2cm::iItem::DoFunctionT VaridicMax::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

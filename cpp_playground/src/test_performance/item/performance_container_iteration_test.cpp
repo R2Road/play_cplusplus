@@ -21,7 +21,7 @@ namespace performance_container_iteration_test
 			return "Built-In Array Iteration";
 		};
 	}
-	r2cm::iItem::DoFunctionT BuiltInArrayIteration::GetDoFunction()
+	r2cm::iItem::DoFunctionT BuiltInArrayIteration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -98,7 +98,7 @@ namespace performance_container_iteration_test
 			return "STD Array Iteration";
 		};
 	}
-	r2cm::iItem::DoFunctionT STDArrayIteration::GetDoFunction()
+	r2cm::iItem::DoFunctionT STDArrayIteration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -197,7 +197,7 @@ namespace performance_container_iteration_test
 			return "Vector Iteration";
 		};
 	}
-	r2cm::iItem::DoFunctionT VectorIteration::GetDoFunction()
+	r2cm::iItem::DoFunctionT VectorIteration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -294,7 +294,7 @@ namespace performance_container_iteration_test
 			return "List Iteration";
 		};
 	}
-	r2cm::iItem::DoFunctionT ListIteration::GetDoFunction()
+	r2cm::iItem::DoFunctionT ListIteration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -368,7 +368,7 @@ namespace performance_container_iteration_test
 			return "Map Iteration";
 		};
 	}
-	r2cm::iItem::DoFunctionT MapIteration::GetDoFunction()
+	r2cm::iItem::DoFunctionT MapIteration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -468,7 +468,7 @@ namespace performance_container_iteration_test
 			return "Unordered-Map Iteration";
 		};
 	}
-	r2cm::iItem::DoFunctionT UnorderedMapIteration::GetDoFunction()
+	r2cm::iItem::DoFunctionT UnorderedMapIteration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -568,7 +568,7 @@ namespace performance_container_iteration_test
 			return "Set Iteration";
 		};
 	}
-	r2cm::iItem::DoFunctionT SetIteration::GetDoFunction()
+	r2cm::iItem::DoFunctionT SetIteration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -645,7 +645,7 @@ namespace performance_container_iteration_test
 			return "Unordered-Set Iteration";
 		};
 	}
-	r2cm::iItem::DoFunctionT UnorderedSetIteration::GetDoFunction()
+	r2cm::iItem::DoFunctionT UnorderedSetIteration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -722,7 +722,7 @@ namespace performance_container_iteration_test
 			return "STD Array Iteration With Pointer";
 		};
 	}
-	r2cm::iItem::DoFunctionT STDArrayIteration_WithPointer::GetDoFunction()
+	r2cm::iItem::DoFunctionT STDArrayIteration_WithPointer::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

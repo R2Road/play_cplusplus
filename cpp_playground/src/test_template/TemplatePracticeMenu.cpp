@@ -12,8 +12,8 @@ r2cm::MenuUp TemplatePracticeMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', template_practice_part_01_test::BufferWithTemplate::GetInstance() );
-		ret->AddItem( '2', template_practice_part_01_test::VaridicMax::GetInstance() );
+		ret->AddItem( '1', template_practice_part_01_test::BufferWithTemplate() );
+		ret->AddItem( '2', template_practice_part_01_test::VaridicMax() );
 
 
 		ret->AddSplit();

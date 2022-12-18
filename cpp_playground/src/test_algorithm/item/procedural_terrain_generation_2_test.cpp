@@ -92,7 +92,7 @@ namespace procedural_terrain_generation_2_test
 			return "PROCEDURAL TERRAIN GENERATION 2 : Bone";
 		};
 	}
-	r2cm::iItem::DoFunctionT Bone::GetDoFunction()
+	r2cm::iItem::DoFunctionT Bone::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

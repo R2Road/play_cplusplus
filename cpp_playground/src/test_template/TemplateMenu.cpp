@@ -18,9 +18,9 @@ r2cm::MenuUp TemplateMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', template_basic_test::MemberVariable::GetInstance() );
-		ret->AddItem( '2', template_basic_test::Function_ReturnValue::GetInstance() );
-		ret->AddItem( '3', template_basic_test::Function_Object::GetInstance() );
+		ret->AddItem( '1', template_basic_test::MemberVariable() );
+		ret->AddItem( '2', template_basic_test::Function_ReturnValue() );
+		ret->AddItem( '3', template_basic_test::Function_Object() );
 
 
 
@@ -28,7 +28,7 @@ r2cm::MenuUp TemplateMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( '6', template_practice_test_02::Basic::GetInstance() );
+		ret->AddItem( '6', template_practice_test_02::Basic() );
 
 
 
@@ -36,7 +36,7 @@ r2cm::MenuUp TemplateMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', template_specialization_test::Basic::GetInstance() );
+		ret->AddItem( 'q', template_specialization_test::Basic() );
 
 
 

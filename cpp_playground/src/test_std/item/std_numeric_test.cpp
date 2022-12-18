@@ -16,7 +16,7 @@ namespace std_numeric_test
 			return "std::accumulate : Number";
 		};
 	}
-	r2cm::iItem::DoFunctionT Accumulate_Number::GetDoFunction()
+	r2cm::iItem::DoFunctionT Accumulate_Number::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -101,7 +101,7 @@ namespace std_numeric_test
 			return "std::accumulate : String";
 		};
 	}
-	r2cm::iItem::DoFunctionT Accumulate_String::GetDoFunction()
+	r2cm::iItem::DoFunctionT Accumulate_String::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -181,7 +181,7 @@ namespace std_numeric_test
 			return "std::partial_sum";
 		};
 	}
-	r2cm::iItem::DoFunctionT Partial_Sum::GetDoFunction()
+	r2cm::iItem::DoFunctionT Partial_Sum::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -259,7 +259,7 @@ namespace std_numeric_test
 			return "std::iota : Fill Sequence Number In Container";
 		};
 	}
-	r2cm::iItem::DoFunctionT FillSequenceNumber::GetDoFunction()
+	r2cm::iItem::DoFunctionT FillSequenceNumber::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

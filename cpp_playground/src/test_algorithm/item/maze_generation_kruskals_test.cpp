@@ -113,7 +113,7 @@ namespace maze_generation_kruskals_test
 			return "Kruskals : ViewTest";
 		};
 	}
-	r2cm::iItem::DoFunctionT ViewTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT ViewTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -148,7 +148,7 @@ namespace maze_generation_kruskals_test
 			return "Kruskals : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

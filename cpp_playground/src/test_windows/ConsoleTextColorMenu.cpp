@@ -16,17 +16,17 @@ r2cm::MenuUp ConsoleTextColorMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', console_text_color_test::ColorTable::GetInstance() );
-		ret->AddItem( '2', console_text_color_test::TextColor1::GetInstance() );
-		ret->AddItem( '3', console_text_color_test::TextColor2::GetInstance() );
-		ret->AddItem( '4', console_text_color_test::AdjustColorTable::GetInstance() );
+		ret->AddItem( '1', console_text_color_test::ColorTable() );
+		ret->AddItem( '2', console_text_color_test::TextColor1() );
+		ret->AddItem( '3', console_text_color_test::TextColor2() );
+		ret->AddItem( '4', console_text_color_test::AdjustColorTable() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', console_text_color_test::ColorTable2::GetInstance() );
-		ret->AddItem( 'w', console_text_color_test::TextColor3::GetInstance() );
+		ret->AddItem( 'q', console_text_color_test::ColorTable2() );
+		ret->AddItem( 'w', console_text_color_test::TextColor3() );
 
 
 		ret->AddSplit();

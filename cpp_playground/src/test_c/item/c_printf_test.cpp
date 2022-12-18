@@ -14,7 +14,7 @@ namespace c_printf_test
 			return "printf : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -39,7 +39,7 @@ namespace c_printf_test
 			return "printf : Number";
 		};
 	}
-	r2cm::iItem::DoFunctionT ShowNumbers::GetDoFunction()
+	r2cm::iItem::DoFunctionT ShowNumbers::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

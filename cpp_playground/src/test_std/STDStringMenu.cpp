@@ -12,7 +12,7 @@ r2cm::MenuUp STDStringMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', std_string_test::Basic::GetInstance() );
+		ret->AddItem( '1', std_string_test::Basic() );
 
 
 
@@ -20,10 +20,10 @@ r2cm::MenuUp STDStringMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', std_string_test::Find::GetInstance() );
-		ret->AddItem( 'w', std_string_test::Find_And_Split_1::GetInstance() );
-		ret->AddItem( 'e', std_string_test::Find_And_Split_2::GetInstance() );
-		ret->AddItem( 'r', std_string_test::Line_Count::GetInstance() );
+		ret->AddItem( 'q', std_string_test::Find() );
+		ret->AddItem( 'w', std_string_test::Find_And_Split_1() );
+		ret->AddItem( 'e', std_string_test::Find_And_Split_2() );
+		ret->AddItem( 'r', std_string_test::Line_Count() );
 
 
 		ret->AddSplit();

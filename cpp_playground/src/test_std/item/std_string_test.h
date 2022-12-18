@@ -1,42 +1,41 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace std_string_test
 {
-	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	class Basic : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Find : public r2cm::iItem, public r2cm::SingleTon<Find>
+	class Find : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Find_And_Split_1 : public r2cm::iItem, public r2cm::SingleTon<Find_And_Split_1>
+	class Find_And_Split_1 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Find_And_Split_2 : public r2cm::iItem, public r2cm::SingleTon<Find_And_Split_2>
+	class Find_And_Split_2 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Line_Count : public r2cm::iItem, public r2cm::SingleTon<Line_Count>
+	class Line_Count : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

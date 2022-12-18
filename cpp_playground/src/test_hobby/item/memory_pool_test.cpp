@@ -87,7 +87,7 @@ namespace memory_pool_test
 		};
 	}
 
-	r2cm::iItem::DoFunctionT MemoryBlock_Declaration::GetDoFunction()
+	r2cm::iItem::DoFunctionT MemoryBlock_Declaration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -130,7 +130,7 @@ namespace memory_pool_test
 		};
 	}
 
-	r2cm::iItem::DoFunctionT MemoryBlock_New_FundamentalType::GetDoFunction()
+	r2cm::iItem::DoFunctionT MemoryBlock_New_FundamentalType::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -215,7 +215,7 @@ namespace memory_pool_test
 		};
 	}
 
-	r2cm::iItem::DoFunctionT MemoryBlock_Check_FundamentalType::GetDoFunction()
+	r2cm::iItem::DoFunctionT MemoryBlock_Check_FundamentalType::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -281,7 +281,7 @@ namespace memory_pool_test
 		};
 	}
 
-	r2cm::iItem::DoFunctionT MemoryBlock_New_UserDefinedType::GetDoFunction()
+	r2cm::iItem::DoFunctionT MemoryBlock_New_UserDefinedType::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -332,7 +332,7 @@ namespace memory_pool_test
 		};
 	}
 
-	r2cm::iItem::DoFunctionT MemoryPool_Declaration::GetDoFunction()
+	r2cm::iItem::DoFunctionT MemoryPool_Declaration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -358,7 +358,7 @@ namespace memory_pool_test
 		};
 	}
 
-	r2cm::iItem::DoFunctionT MemoryPool_New::GetDoFunction()
+	r2cm::iItem::DoFunctionT MemoryPool_New::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
