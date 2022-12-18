@@ -12,7 +12,7 @@ namespace cpp_lambda_test__helper__size_3
 
 			std::cout << r2cm::linefeed;
 
-			DECLARATION_MAIN( auto l = [this]() {} );
+			auto l = [this, j = 255ll]() { ( this->i ); };
 			OUTPUT_VALUE( sizeof( l ) );
 			OUTPUT_BINARY( l );
 		}

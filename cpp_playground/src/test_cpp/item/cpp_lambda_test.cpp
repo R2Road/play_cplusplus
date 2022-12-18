@@ -594,13 +594,29 @@ namespace cpp_lambda_test
 		{
 			std::cout << r2cm::split;
 
-			OUTPUT_FILE( "src/test_cpp/item/cpp_lambda_test__helper__size_3.hpp" );
+			{
+				OUTPUT_NOTE( "this capture는 익명 class 안에 this를 담는 멤버 변수가 하나 추가된다." );
+				OUTPUT_NOTE( "람다 안에서 사용한 this는 capture 한 this로 여겨진다." );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_FILE( "src/test_cpp/item/cpp_lambda_test__helper__size_3.hpp" );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( cpp_lambda_test__helper__size_3::S s );
+				PROCESS_MAIN( s.Do() );
+			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( cpp_lambda_test__helper__size_3::S s );
-				PROCESS_MAIN( s.Do() );
+				OUTPUT_NOTE( "람다 안에서 자신의 this pointer를 목표로한 this 사용이 안된다." );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_CODE( int i = 0 );
+				OUTPUT_CODE( auto l = [=]() { std::cout << this->i << r2cm::linefeed; } );
 			}
 
 			std::cout << r2cm::split;
