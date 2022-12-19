@@ -77,6 +77,14 @@ namespace cpp_namespace_test
 		{
 			std::cout << r2cm::split;
 
+			OUTPUT_NOTE( "namespace 에 별칭 지정 가능" );
+
+			std::cout << r2cm::split;
+
+			OUTPUT_FILE_RANGE( "src/test_cpp/item/cpp_namespace_test.cpp", 6, 29 );
+
+			std::cout << r2cm::split;
+
 			DECLARATION_MAIN( namespace alias_test = cpp_namespace_test::A::B::C; );
 
 			std::cout << r2cm::split;
