@@ -554,6 +554,9 @@
     <ClCompile Include="src\test_cpp\NameSpaceMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_hobby\TreeMenu.cpp">
+      <Filter>test_hobby</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1120,6 +1123,9 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\NameSpaceMenu.h">
       <Filter>test_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\TreeMenu.h">
+      <Filter>test_hobby</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
