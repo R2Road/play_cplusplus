@@ -20,7 +20,8 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddMenu<TreeMenu>( '1' );
+		ret->AddItem( '1', fsm_v1_test::Basic() );
+		ret->AddMenu<TreeMenu>( '2' );
 
 
 		ret->AddLineFeed();
@@ -36,7 +37,6 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 
 		ret->AddMenu<MemoryPoolMenu>( 'q' );
 		ret->AddItem( 'w', infinite_number_test::Basic() );
-		ret->AddItem( 'e', fsm_v1_test::Basic() );
 
 
 		ret->AddSplit();
