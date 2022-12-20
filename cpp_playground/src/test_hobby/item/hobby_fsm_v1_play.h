@@ -4,7 +4,7 @@
 
 namespace hobby_fsm_v1_play
 {
-	class Basic : public r2cm::iItem
+	class Machine_Declaration : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

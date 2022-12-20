@@ -20,7 +20,7 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', hobby_fsm_v1_play::Basic() );
+		ret->AddItem( '1', hobby_fsm_v1_play::Machine_Declaration() );
 		ret->AddMenu<TreeMenu>( '2' );
 
 
