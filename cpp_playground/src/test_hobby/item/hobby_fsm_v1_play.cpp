@@ -12,7 +12,7 @@ namespace
 	{
 	};
 
-	class Package
+	class Package : public State
 	{
 	public:
 		Package() : mStateContainer()
