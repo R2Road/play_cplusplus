@@ -1,8 +1,8 @@
-#include "fsm_v1_test.h"
+#include "hobby_fsm_v1_play.h"
 
 #include "r2cm/r2cm_ostream.h"
 
-namespace fsm_v1_test
+namespace hobby_fsm_v1_play
 {
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{

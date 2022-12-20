@@ -260,9 +260,6 @@
     <ClCompile Include="src\test_algorithm\AlgorithmHelper.cpp">
       <Filter>test_algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_hobby\item\fsm_v1_test.cpp">
-      <Filter>test_hobby\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_algorithm\item\procedural_terrain_generation_1_test.cpp">
       <Filter>test_algorithm\item</Filter>
     </ClCompile>
@@ -560,6 +557,9 @@
     <ClCompile Include="src\test_hobby\item\hobby_tree_play.cpp">
       <Filter>test_hobby\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_hobby\item\hobby_fsm_v1_play.cpp">
+      <Filter>test_hobby\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -751,9 +751,6 @@
     </ClInclude>
     <ClInclude Include="src\test_algorithm\AlgorithmHelper.h">
       <Filter>test_algorithm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_hobby\item\fsm_v1_test.h">
-      <Filter>test_hobby\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_algorithm\item\procedural_terrain_generation_1_test.h">
       <Filter>test_algorithm\item</Filter>
@@ -1131,6 +1128,9 @@
       <Filter>test_hobby</Filter>
     </ClInclude>
     <ClInclude Include="src\test_hobby\item\hobby_tree_play.h">
+      <Filter>test_hobby\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_hobby\item\hobby_fsm_v1_play.h">
       <Filter>test_hobby\item</Filter>
     </ClInclude>
   </ItemGroup>

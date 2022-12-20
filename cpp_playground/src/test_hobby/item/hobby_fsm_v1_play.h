@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace fsm_v1_test
+namespace hobby_fsm_v1_play
 {
 	class Basic : public r2cm::iItem
 	{

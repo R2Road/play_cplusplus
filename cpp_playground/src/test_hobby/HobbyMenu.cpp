@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "item/fsm_v1_test.h"
+#include "item/hobby_fsm_v1_play.h"
 #include "item/infinite_number_test.h"
 #include "item/serialize_test.h"
 
@@ -20,7 +20,7 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', fsm_v1_test::Basic() );
+		ret->AddItem( '1', hobby_fsm_v1_play::Basic() );
 		ret->AddMenu<TreeMenu>( '2' );
 
 

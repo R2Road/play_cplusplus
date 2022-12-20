@@ -93,7 +93,7 @@
     <ClCompile Include="src\test_c\UnionMenu.cpp" />
     <ClCompile Include="src\test_hobby\item\hobby_tree_play.cpp" />
     <ClCompile Include="src\test_hobby\item\list_based_on_array_test.cpp" />
-    <ClCompile Include="src\test_hobby\item\fsm_v1_test.cpp" />
+    <ClCompile Include="src\test_hobby\item\hobby_fsm_v1_play.cpp" />
     <ClCompile Include="src\test_hobby\item\infinite_number_test.cpp" />
     <ClCompile Include="src\test_hobby\item\memory_pool_test.cpp" />
     <ClCompile Include="src\test_hobby\item\property_test.cpp" />
@@ -280,7 +280,7 @@
     <ClInclude Include="src\test_c\UnionMenu.h" />
     <ClInclude Include="src\test_hobby\item\hobby_tree_play.h" />
     <ClInclude Include="src\test_hobby\item\list_based_on_array_test.h" />
-    <ClInclude Include="src\test_hobby\item\fsm_v1_test.h" />
+    <ClInclude Include="src\test_hobby\item\hobby_fsm_v1_play.h" />
     <ClInclude Include="src\test_hobby\item\infinite_number_test.h" />
     <ClInclude Include="src\test_hobby\item\memory_pool_test.h" />
     <ClInclude Include="src\test_hobby\item\property_test.h" />
