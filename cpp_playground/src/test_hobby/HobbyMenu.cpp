@@ -22,6 +22,7 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem( '1', hobby_fsm_v1_play::Package_Declaration() );
 		ret->AddItem( '2', hobby_fsm_v1_play::Package_Add() );
+		ret->AddItem( '3', hobby_fsm_v1_play::Machine_Declaration() );
 		ret->AddMenu<TreeMenu>( '4' );
 
 

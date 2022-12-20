@@ -34,6 +34,24 @@ namespace
 		using StateContainer = std::vector<StateUp>;
 		StateContainer mStateContainer;
 	};
+
+	class Machine
+	{
+	private:
+		using StateUp = std::unique_ptr<State>;
+
+	public:
+		Machine() : mState()
+		{}
+
+		void Add( StateUp&& state )
+		{
+			mState = std::move( state );
+		}
+
+	private:
+		StateUp mState;
+	};
 }
 
 namespace
@@ -89,6 +107,32 @@ namespace hobby_fsm_v1_play
 				DECLARATION_MAIN( Package p );
 				DECLARATION_MAIN( TestState* s = p.Add<TestState>() );
 				OUTPUT_VALUE( s->i );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Machine_Declaration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "fsm v1 : Machine - Declaration";
+		};
+	}
+	r2cm::iItem::DoFunctionT Machine_Declaration::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( Machine m );
+				PROCESS_MAIN( m.Add( std::move( std::make_unique<TestState>() ) ) );
 			}
 
 			std::cout << r2cm::split;
