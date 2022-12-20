@@ -11,10 +11,11 @@ namespace
 	class State
 	{
 	};
-	class Machine
+
+	class Package
 	{
 	public:
-		Machine() : mStateContainer()
+		Package() : mStateContainer()
 		{}
 
 		template<typename T>
@@ -46,21 +47,21 @@ namespace
 
 namespace hobby_fsm_v1_play
 {
-	r2cm::iItem::TitleFunctionT Machine_Declaration::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Package_Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "fsm v1 : Machine - Declaration";
+			return "fsm v1 : Package - Declaration";
 		};
 	}
-	r2cm::iItem::DoFunctionT Machine_Declaration::GetDoFunction() const
+	r2cm::iItem::DoFunctionT Package_Declaration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( Machine m );
+				DECLARATION_MAIN( Package p );
 			}
 
 			std::cout << r2cm::split;
@@ -71,22 +72,22 @@ namespace hobby_fsm_v1_play
 
 
 
-	r2cm::iItem::TitleFunctionT Machine_Add::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Package_Add::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "fsm v1 : Machine - Add";
+			return "fsm v1 : Package - Add";
 		};
 	}
-	r2cm::iItem::DoFunctionT Machine_Add::GetDoFunction() const
+	r2cm::iItem::DoFunctionT Package_Add::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( Machine m );
-				DECLARATION_MAIN( TestState* s = m.Add<TestState>() );
+				DECLARATION_MAIN( Package p );
+				DECLARATION_MAIN( TestState* s = p.Add<TestState>() );
 				OUTPUT_VALUE( s->i );
 			}
 
