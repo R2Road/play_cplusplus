@@ -20,14 +20,27 @@ namespace
 		template<typename T>
 		T* Add()
 		{
-			StateUp& ret = mStateContainer.emplace_back( std::make_unique<T>() );
-			return ret.get();
+			std::unique_ptr<T> up = std::make_unique<T>();
+			T* ret = up.get();
+
+			mStateContainer.emplace_back( std::move( up ) );
+
+			return ret;
 		}
 
 	private:
 		using StateUp = std::unique_ptr<State>;
 		using StateContainer = std::vector<StateUp>;
 		StateContainer mStateContainer;
+	};
+}
+
+namespace
+{
+	class TestState : public State
+	{
+	public:
+		int i = 10;
 	};
 }
 
@@ -73,7 +86,8 @@ namespace hobby_fsm_v1_play
 
 			{
 				DECLARATION_MAIN( Machine m );
-				DECLARATION_MAIN( State* s = m.Add<State>() );
+				DECLARATION_MAIN( TestState* s = m.Add<TestState>() );
+				OUTPUT_VALUE( s->i );
 			}
 
 			std::cout << r2cm::split;
