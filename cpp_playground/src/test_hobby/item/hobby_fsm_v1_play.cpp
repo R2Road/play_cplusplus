@@ -140,4 +140,30 @@ namespace hobby_fsm_v1_play
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Demo::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "fsm v1 : Demo";
+		};
+	}
+	r2cm::iItem::DoFunctionT Demo::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( Machine m );
+				PROCESS_MAIN( m.Add( std::move( std::make_unique<TestState>() ) ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

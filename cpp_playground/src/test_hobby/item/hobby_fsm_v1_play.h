@@ -24,4 +24,11 @@ namespace hobby_fsm_v1_play
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() const override;
 	};
+
+	class Demo : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
+	};
 }

@@ -18,6 +18,14 @@ r2cm::MenuUp FSM_V1_Menu::Create( r2cm::Director& director )
 
 
 
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 32, hobby_fsm_v1_play::Demo() );
+
+
+
 		ret->AddSplit();
 
 
