@@ -4,6 +4,13 @@
 
 namespace hobby_fsm_v1_play
 {
+	class State_Declaration : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
+	};
+
 	class Package_Declaration : public r2cm::iItem
 	{
 	public:

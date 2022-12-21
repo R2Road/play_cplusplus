@@ -65,6 +65,31 @@ namespace
 
 namespace hobby_fsm_v1_play
 {
+	r2cm::iItem::TitleFunctionT State_Declaration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "fsm v1 : State - Declaration";
+		};
+	}
+	r2cm::iItem::DoFunctionT State_Declaration::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( State s );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Package_Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
