@@ -34,6 +34,9 @@ namespace
 		State( const StateIndexT index ) : mIndex( index ), mTransitionContainer()
 		{}
 
+		virtual ~State()
+		{}
+
 		const StateIndexT GetIndex() const
 		{
 			return mIndex;
