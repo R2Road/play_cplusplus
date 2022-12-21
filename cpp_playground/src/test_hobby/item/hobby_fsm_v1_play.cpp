@@ -11,12 +11,25 @@
 
 namespace
 {
+	class Transition
+	{
+	private:
+		using IndexT = int;
+
+	public:
+		Transition( const IndexT to_state_index ) : mToStateIndex( to_state_index )
+		{}
+
+	private:
+		const IndexT mToStateIndex;
+	};
+
 	class State
 	{
 	public:
 		using IndexT = int;
 
-		State( const IndexT index ) : mIndex( index )
+		State( const IndexT index ) : mIndex( index ), mTransitionContainer()
 		{}
 
 		const IndexT GetIndex() const
@@ -24,8 +37,18 @@ namespace
 			return mIndex;
 		}
 
+		const std::vector<Transition>& GetTransitionContainer() const
+		{
+			return mTransitionContainer;
+		}
+		void AddTransition( State::IndexT to_state_index )
+		{
+			mTransitionContainer.emplace_back( to_state_index );
+		}
+
 	private:
 		const IndexT mIndex;
+		std::vector<Transition> mTransitionContainer;
 	};
 
 	class Package : public State
@@ -53,6 +76,8 @@ namespace
 			//
 			R2ASSERT( mStateContainer.size() > from_state_index, "" );
 			R2ASSERT( mStateContainer.size() > to_state_index, "" );
+
+			mStateContainer[from_state_index]->AddTransition( to_state_index );
 		}
 
 	private:
@@ -85,6 +110,9 @@ namespace
 	class TestState : public State
 	{
 	public:
+		TestState( const IndexT state_index ) : State( state_index )
+		{}
+
 		int i = 10;
 	};
 }
@@ -188,10 +216,21 @@ namespace hobby_fsm_v1_play
 			{
 				DECLARATION_MAIN( auto s_1 = p.Add<TestState>() );
 				DECLARATION_MAIN( auto s_2 = p.Add<TestState>() );
+				DECLARATION_MAIN( auto s_3 = p.Add<TestState>() );
 
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( p.AddTransition( s_1->GetIndex(), s_2->GetIndex() ) );
+				EXPECT_EQ( 1, s_1->GetTransitionContainer().size() );
+				EXPECT_EQ( 0, s_2->GetTransitionContainer().size() );
+				EXPECT_EQ( 0, s_3->GetTransitionContainer().size() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( p.AddTransition( s_2->GetIndex(), s_3->GetIndex() ) );
+				EXPECT_EQ( 1, s_1->GetTransitionContainer().size() );
+				EXPECT_EQ( 1, s_2->GetTransitionContainer().size() );
+				EXPECT_EQ( 0, s_3->GetTransitionContainer().size() );
 			}
 
 			std::cout << r2cm::split;
@@ -217,7 +256,7 @@ namespace hobby_fsm_v1_play
 
 			{
 				DECLARATION_MAIN( Machine m );
-				PROCESS_MAIN( m.Add( std::move( std::make_unique<TestState>() ) ) );
+				PROCESS_MAIN( m.Add( std::move( std::make_unique<TestState>( 0 ) ) ) );
 			}
 
 			std::cout << r2cm::split;
@@ -243,7 +282,7 @@ namespace hobby_fsm_v1_play
 
 			{
 				DECLARATION_MAIN( Machine m );
-				PROCESS_MAIN( m.Add( std::move( std::make_unique<TestState>() ) ) );
+				PROCESS_MAIN( m.Add( std::move( std::make_unique<TestState>( 0 ) ) ) );
 			}
 
 			std::cout << r2cm::split;
