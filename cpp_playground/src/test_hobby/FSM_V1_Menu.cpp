@@ -22,6 +22,7 @@ r2cm::MenuUp FSM_V1_Menu::Create( r2cm::Director& director )
 
 		ret->AddItem( 'q', hobby_fsm_v1_play::Package_Declaration() );
 		ret->AddItem( 'w', hobby_fsm_v1_play::Package_Add() );
+		ret->AddItem( 'e', hobby_fsm_v1_play::Package_Transition() );
 
 
 
