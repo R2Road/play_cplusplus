@@ -65,7 +65,7 @@ namespace
 		template<typename T>
 		T* Add()
 		{
-			std::unique_ptr<T> up = std::make_unique<T>( mStateContainer.size() );
+			std::unique_ptr<T> up = std::make_unique<T>( static_cast<State::IndexT>( mStateContainer.size() ) );
 			T* ret = up.get();
 
 			mStateContainer.emplace_back( std::move( up ) );
