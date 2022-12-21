@@ -298,9 +298,26 @@ namespace hobby_fsm_v1_play
 		{
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( Machine m );
+			DECLARATION_MAIN( auto p = std::make_unique<Package>( 0 ) );
+
+			std::cout << r2cm::split;
+
 			{
-				DECLARATION_MAIN( Machine m );
-				PROCESS_MAIN( m.Add( std::move( std::make_unique<TestState>( 0 ) ) ) );
+				DECLARATION_MAIN( auto s_1 = p->Add<TestState>() );
+				DECLARATION_MAIN( auto s_2 = p->Add<TestState>() );
+				DECLARATION_MAIN( auto s_3 = p->Add<TestState>() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( p->AddTransition( s_1->GetIndex(), s_2->GetIndex() ) );
+				PROCESS_MAIN( p->AddTransition( s_2->GetIndex(), s_3->GetIndex() ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( m.Add( std::move( p ) ) );
 			}
 
 			std::cout << r2cm::split;
