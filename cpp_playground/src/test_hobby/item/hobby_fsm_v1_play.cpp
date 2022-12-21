@@ -11,7 +11,7 @@
 
 namespace
 {
-	using StateIndexT = int;
+	using StateIndexT = uint32_t;
 
 	class Transition
 	{
