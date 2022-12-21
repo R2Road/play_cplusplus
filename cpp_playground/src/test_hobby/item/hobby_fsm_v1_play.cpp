@@ -11,13 +11,12 @@
 
 namespace
 {
+	using StateIndexT = int;
+
 	class Transition
 	{
-	private:
-		using IndexT = int;
-
 	public:
-		Transition( const IndexT to_state_index ) : mToStateIndex( to_state_index )
+		Transition( const StateIndexT to_state_index ) : mToStateIndex( to_state_index )
 		{}
 
 		bool Do() const
@@ -26,18 +25,16 @@ namespace
 		}
 
 	private:
-		const IndexT mToStateIndex;
+		const StateIndexT mToStateIndex;
 	};
 
 	class State
 	{
 	public:
-		using IndexT = int;
-
-		State( const IndexT index ) : mIndex( index ), mTransitionContainer()
+		State( const StateIndexT index ) : mIndex( index ), mTransitionContainer()
 		{}
 
-		const IndexT GetIndex() const
+		const StateIndexT GetIndex() const
 		{
 			return mIndex;
 		}
@@ -46,26 +43,26 @@ namespace
 		{
 			return mTransitionContainer;
 		}
-		void AddTransition( State::IndexT to_state_index )
+		void AddTransition( StateIndexT to_state_index )
 		{
 			mTransitionContainer.emplace_back( to_state_index );
 		}
 
 	private:
-		const IndexT mIndex;
+		const StateIndexT mIndex;
 		std::vector<Transition> mTransitionContainer;
 	};
 
 	class Package : public State
 	{
 	public:
-		Package( const IndexT index ) : State( index ), mStateContainer()
+		Package( const StateIndexT index ) : State( index ), mStateContainer(), mCurrentState( nullptr )
 		{}
 
 		template<typename T>
 		T* Add()
 		{
-			std::unique_ptr<T> up = std::make_unique<T>( static_cast<State::IndexT>( mStateContainer.size() ) );
+			std::unique_ptr<T> up = std::make_unique<T>( static_cast<StateIndexT>( mStateContainer.size() ) );
 			T* ret = up.get();
 
 			mStateContainer.emplace_back( std::move( up ) );
@@ -74,7 +71,7 @@ namespace
 		}
 
 		// from ~ to
-		void AddTransition( State::IndexT from_state_index, State::IndexT to_state_index )
+		void AddTransition( StateIndexT from_state_index, StateIndexT to_state_index )
 		{
 			//
 			// 문제 생겼을 때 편하게 확인 되게 따로 assert 로 확인한다.
@@ -85,10 +82,19 @@ namespace
 			mStateContainer[from_state_index]->AddTransition( to_state_index );
 		}
 
+		void SetEntryState( StateIndexT entry_state_index )
+		{
+			R2ASSERT( mStateContainer.size() > entry_state_index, "" );
+
+			mCurrentState = mStateContainer[entry_state_index].get();
+		}
+
 	private:
 		using StateUp = std::unique_ptr<State>;
 		using StateContainer = std::vector<StateUp>;
 		StateContainer mStateContainer;
+
+		State* mCurrentState;
 	};
 
 	class Machine
@@ -115,7 +121,7 @@ namespace
 	class TestState : public State
 	{
 	public:
-		TestState( const IndexT state_index ) : State( state_index )
+		TestState( const StateIndexT state_index ) : State( state_index )
 		{}
 
 		int i = 10;
