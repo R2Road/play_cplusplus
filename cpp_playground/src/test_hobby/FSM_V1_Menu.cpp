@@ -12,9 +12,24 @@ r2cm::MenuUp FSM_V1_Menu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle()	) );
 
 	{
-		ret->AddItem( '1', hobby_fsm_v1_play::Package_Declaration() );
-		ret->AddItem( '2', hobby_fsm_v1_play::Package_Add() );
-		ret->AddItem( '3', hobby_fsm_v1_play::Machine_Declaration() );
+		ret->AddItem( '1', hobby_fsm_v1_play::State_Declaration() );
+
+
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'q', hobby_fsm_v1_play::Package_Declaration() );
+		ret->AddItem( 'w', hobby_fsm_v1_play::Package_Add() );
+
+
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'a', hobby_fsm_v1_play::Machine_Declaration() );
 
 
 
