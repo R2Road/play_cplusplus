@@ -11,6 +11,8 @@ namespace hobby_fsm_v1_play
 		DoFunctionT GetDoFunction() const override;
 	};
 
+
+
 	class Package_Declaration : public r2cm::iItem
 	{
 	public:
@@ -25,12 +27,16 @@ namespace hobby_fsm_v1_play
 		DoFunctionT GetDoFunction() const override;
 	};
 
+
+
 	class Machine_Declaration : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() const override;
 	};
+
+
 
 	class Demo : public r2cm::iItem
 	{
