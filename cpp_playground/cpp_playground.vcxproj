@@ -91,6 +91,7 @@
     <ClCompile Include="src\test_c\item\c_union_test.cpp" />
     <ClCompile Include="src\test_c\PointerMenu.cpp" />
     <ClCompile Include="src\test_c\UnionMenu.cpp" />
+    <ClCompile Include="src\test_hobby\FSM_V1_Menu.cpp" />
     <ClCompile Include="src\test_hobby\item\hobby_tree_play.cpp" />
     <ClCompile Include="src\test_hobby\item\list_based_on_array_test.cpp" />
     <ClCompile Include="src\test_hobby\item\hobby_fsm_v1_play.cpp" />
@@ -278,6 +279,7 @@
     <ClInclude Include="src\test_c\item\c_union_test_helper_unnamedunion_with_vector3_2.hpp" />
     <ClInclude Include="src\test_c\PointerMenu.h" />
     <ClInclude Include="src\test_c\UnionMenu.h" />
+    <ClInclude Include="src\test_hobby\FSM_V1_Menu.h" />
     <ClInclude Include="src\test_hobby\item\hobby_tree_play.h" />
     <ClInclude Include="src\test_hobby\item\list_based_on_array_test.h" />
     <ClInclude Include="src\test_hobby\item\hobby_fsm_v1_play.h" />
