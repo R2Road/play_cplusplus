@@ -60,10 +60,24 @@ namespace
 			mTransitionContainer.emplace_back( to_state_index );
 		}
 
+		//
+		// Override 4 System
+		//
 		virtual void Enter()
-		{}
+		{
+			UserEnter();
+		}
 		virtual void Exit()
-		{}
+		{
+			UserExit();
+		}
+
+		//
+		// Override 4 User
+		//
+	private:
+		virtual void UserEnter() {}
+		virtual void UserExit() {}
 
 	private:
 		const StateIndexT mIndex;
@@ -355,17 +369,13 @@ namespace hobby_fsm_v1_play
 				P( const StateIndexT state_index ) : Package( state_index )
 				{}
 
-				void Enter() override
+				void UserEnter() override
 				{
-					std::cout << "P::Enter" << r2cm::linefeed;
-
-					Package::Enter();
+					std::cout << "P::UserEnter" << r2cm::linefeed;
 				}
-				void Exit() override
+				void UserExit() override
 				{
-					Package::Exit();
-
-					std::cout << "P::Exit" << r2cm::linefeed;
+					std::cout << "P::UserExit" << r2cm::linefeed;
 				}
 			};
 
@@ -375,13 +385,13 @@ namespace hobby_fsm_v1_play
 				S( const StateIndexT state_index ) : State( state_index )
 				{}
 
-				void Enter() override
+				void UserEnter() override
 				{
-					std::cout << "S::Enter" << r2cm::linefeed;
+					std::cout << "S::UserEnter" << r2cm::linefeed;
 				}
-				void Exit() override
+				void UserExit() override
 				{
-					std::cout << "S::Exit" << r2cm::linefeed;
+					std::cout << "S::UserExit" << r2cm::linefeed;
 				}
 			};
 
