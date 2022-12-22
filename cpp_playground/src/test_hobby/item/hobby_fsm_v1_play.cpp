@@ -109,6 +109,25 @@ namespace
 			mCurrentState = mStateContainer[entry_state_index].get();
 		}
 
+		void Enter() override
+		{
+			State::Enter();
+
+			if( mCurrentState )
+			{
+				mCurrentState->Enter();
+			}
+		}
+		void Exit() override
+		{
+			if( mCurrentState )
+			{
+				mCurrentState->Exit();
+			}
+
+			State::Exit();
+		}
+
 	private:
 		using StateUp = std::unique_ptr<State>;
 		using StateContainer = std::vector<StateUp>;
@@ -330,45 +349,58 @@ namespace hobby_fsm_v1_play
 		{
 			std::cout << r2cm::split;
 
-			class TestStartAndStopState : public State
+			class P : public Package
 			{
 			public:
-				TestStartAndStopState( const StateIndexT state_index, int& i ) : State( state_index ), mI( i )
+				P( const StateIndexT state_index ) : Package( state_index )
 				{}
 
 				void Enter() override
 				{
-					mI = 1;
+					std::cout << "P::Enter" << r2cm::linefeed;
+
+					Package::Enter();
 				}
 				void Exit() override
 				{
-					mI = 2;
-				}
+					Package::Exit();
 
-				int& mI;
+					std::cout << "P::Exit" << r2cm::linefeed;
+				}
+			};
+
+			class S : public State
+			{
+			public:
+				S( const StateIndexT state_index ) : State( state_index )
+				{}
+
+				void Enter() override
+				{
+					std::cout << "S::Enter" << r2cm::linefeed;
+				}
+				void Exit() override
+				{
+					std::cout << "S::Exit" << r2cm::linefeed;
+				}
 			};
 
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( Machine m );
-			DECLARATION_MAIN( int i = 0 );
-			DECLARATION_MAIN( auto s = std::make_unique<TestStartAndStopState>( 0, i ) );
-			PROCESS_MAIN( m.Add( std::move( s ) ) );
+			DECLARATION_MAIN( auto p = std::make_unique<P>( 0 ) );
+			DECLARATION_MAIN( auto s = p->Add<S>() );
+			PROCESS_MAIN( p->SetEntryState( s->GetIndex() ) );
+			PROCESS_MAIN( m.Add( std::move( p ) ) );
 
 			std::cout << r2cm::split;
 
 			{
-				EXPECT_EQ( 0, i );
-
-				std::cout << r2cm::linefeed;
-
 				PROCESS_MAIN( m.Start() );
-				EXPECT_EQ( 1, i );
 
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( m.Stop() );
-				EXPECT_EQ( 2, i );
 			}
 
 			std::cout << r2cm::split;
