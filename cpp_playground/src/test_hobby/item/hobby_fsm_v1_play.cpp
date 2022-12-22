@@ -60,6 +60,11 @@ namespace
 			mTransitionContainer.emplace_back( to_state_index );
 		}
 
+		virtual void Enter()
+		{}
+		virtual void Exit()
+		{}
+
 	private:
 		const StateIndexT mIndex;
 		std::vector<Transition> mTransitionContainer;
@@ -120,6 +125,21 @@ namespace
 	public:
 		Machine() : mState()
 		{}
+
+		void Start()
+		{
+			if( mState )
+			{
+				mState->Enter();
+			}
+		}
+		void Stop()
+		{
+			if( mState )
+			{
+				mState->Exit();
+			}
+		}
 
 		void Add( StateUp&& state )
 		{
@@ -287,6 +307,68 @@ namespace hobby_fsm_v1_play
 			{
 				DECLARATION_MAIN( Machine m );
 				PROCESS_MAIN( m.Add( std::move( std::make_unique<TestState>( 0 ) ) ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Machine_Start_Stop::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "fsm v1 : Machine - Start and Stop";
+		};
+	}
+	r2cm::iItem::DoFunctionT Machine_Start_Stop::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			class TestStartAndStopState : public State
+			{
+			public:
+				TestStartAndStopState( const StateIndexT state_index, int& i ) : State( state_index ), mI( i )
+				{}
+
+				void Enter() override
+				{
+					mI = 1;
+				}
+				void Exit() override
+				{
+					mI = 2;
+				}
+
+				int& mI;
+			};
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( Machine m );
+			DECLARATION_MAIN( int i = 0 );
+			DECLARATION_MAIN( auto s = std::make_unique<TestStartAndStopState>( 0, i ) );
+			PROCESS_MAIN( m.Add( std::move( s ) ) );
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_EQ( 0, i );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( m.Start() );
+				EXPECT_EQ( 1, i );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( m.Stop() );
+				EXPECT_EQ( 2, i );
 			}
 
 			std::cout << r2cm::split;

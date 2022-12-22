@@ -31,6 +31,7 @@ r2cm::MenuUp FSM_V1_Menu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'a', hobby_fsm_v1_play::Machine_Declaration() );
+		ret->AddItem( 's', hobby_fsm_v1_play::Machine_Start_Stop() );
 
 
 
