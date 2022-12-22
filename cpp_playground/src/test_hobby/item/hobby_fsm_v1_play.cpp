@@ -13,6 +13,12 @@ namespace
 {
 	using StateIndexT = uint32_t;
 
+	//
+	// Transition 작동 룰
+	// > 기본 Transition은 State의 Enter에서 만 작동
+	// > 부가 기능이 붙은 Transition은 State의 Update 에서 만 작동
+	// > Event Transition 은 Event 가 발생시 작동
+	//
 	class Transition
 	{
 	public:
@@ -28,6 +34,9 @@ namespace
 		const StateIndexT mToStateIndex;
 	};
 
+	//
+	// State 는 최대한 가볍게
+	//
 	class State
 	{
 	public:
@@ -56,6 +65,9 @@ namespace
 		std::vector<Transition> mTransitionContainer;
 	};
 
+	//
+	// FSM 의 운용에 관련된 기능은 가급적 모두 Package 에 넣는다.
+	//
 	class Package : public State
 	{
 	public:
