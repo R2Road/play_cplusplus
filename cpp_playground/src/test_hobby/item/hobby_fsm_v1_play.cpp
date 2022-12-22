@@ -77,7 +77,7 @@ namespace
 		void AddTransition( StateIndexT from_state_index, StateIndexT to_state_index )
 		{
 			//
-			// 문제 생겼을 때 편하게 확인 되게 따로 assert 로 확인한다.
+			// 문제 생겼을 때 편하게 따로 assert 작성.
 			//
 			R2ASSERT( mStateContainer.size() > from_state_index, "" );
 			R2ASSERT( mStateContainer.size() > to_state_index, "" );
