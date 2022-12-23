@@ -235,14 +235,16 @@ namespace hobby_fsm_v1_play
 
 			{
 				DECLARATION_MAIN( Machine m );
-				PROCESS_MAIN( m.Add( std::move( std::make_unique<State>( 0 ) ) ) );
+				PROCESS_MAIN( m.Add( std::make_unique<State>( 0 ) ) );
+				PROCESS_MAIN( m.Add<State>() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( Machine m );
-				PROCESS_MAIN( m.Add<State>() );
+				PROCESS_MAIN( m.Add( std::make_unique<Package>( 0 ) ) );
+				PROCESS_MAIN( m.Add<Package>() );
 			}
 
 			std::cout << r2cm::split;
@@ -341,7 +343,7 @@ namespace hobby_fsm_v1_play
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( Machine m );
-			DECLARATION_MAIN( auto p = std::make_unique<Package>( 0 ) );
+			DECLARATION_MAIN( auto p = m.Add<Package>() );
 
 			std::cout << r2cm::split;
 
@@ -355,12 +357,6 @@ namespace hobby_fsm_v1_play
 			{
 				PROCESS_MAIN( p->AddTransition( s_1->GetIndex(), s_2->GetIndex() ) );
 				PROCESS_MAIN( p->AddTransition( s_2->GetIndex(), s_3->GetIndex() ) );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				PROCESS_MAIN( m.Add( std::move( p ) ) );
 			}
 
 			std::cout << r2cm::split;

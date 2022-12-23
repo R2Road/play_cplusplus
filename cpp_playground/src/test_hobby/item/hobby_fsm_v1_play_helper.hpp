@@ -229,7 +229,7 @@ namespace hobby_fsm_v1_play_helper
 		{
 			mState = std::make_unique<T>( 0 );
 
-			return mState.get();
+			return static_cast<T*>( mState.get() );
 		}
 
 	private:
