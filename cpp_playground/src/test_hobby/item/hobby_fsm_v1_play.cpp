@@ -184,18 +184,6 @@ namespace
 	};
 }
 
-namespace
-{
-	class TestState : public State
-	{
-	public:
-		TestState( const StateIndexT state_index ) : State( state_index )
-		{}
-
-		int i = 10;
-	};
-}
-
 namespace hobby_fsm_v1_play
 {
 	r2cm::iItem::TitleFunctionT State_Declaration::GetTitleFunction() const
@@ -261,9 +249,20 @@ namespace hobby_fsm_v1_play
 		{
 			std::cout << r2cm::split;
 
+			class S : public State
+			{
+			public:
+				S( const StateIndexT state_index ) : State( state_index )
+				{}
+
+				int i = 10;
+			};
+
+			std::cout << r2cm::split;
+
 			{
 				DECLARATION_MAIN( Package p( 0 ) );
-				DECLARATION_MAIN( TestState* s = p.Add<TestState>() );
+				DECLARATION_MAIN( S* s = p.Add<S>() );
 				OUTPUT_VALUE( s->i );
 			}
 
@@ -293,9 +292,9 @@ namespace hobby_fsm_v1_play
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto s_1 = p.Add<TestState>() );
-				DECLARATION_MAIN( auto s_2 = p.Add<TestState>() );
-				DECLARATION_MAIN( auto s_3 = p.Add<TestState>() );
+				DECLARATION_MAIN( auto s_1 = p.Add<State>() );
+				DECLARATION_MAIN( auto s_2 = p.Add<State>() );
+				DECLARATION_MAIN( auto s_3 = p.Add<State>() );
 
 				std::cout << r2cm::linefeed;
 
@@ -339,7 +338,7 @@ namespace hobby_fsm_v1_play
 
 			{
 				DECLARATION_MAIN( Machine m );
-				PROCESS_MAIN( m.Add( std::move( std::make_unique<TestState>( 0 ) ) ) );
+				PROCESS_MAIN( m.Add( std::move( std::make_unique<State>( 0 ) ) ) );
 			}
 
 			std::cout << r2cm::split;
@@ -440,9 +439,9 @@ namespace hobby_fsm_v1_play
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto s_1 = p->Add<TestState>() );
-				DECLARATION_MAIN( auto s_2 = p->Add<TestState>() );
-				DECLARATION_MAIN( auto s_3 = p->Add<TestState>() );
+				DECLARATION_MAIN( auto s_1 = p->Add<State>() );
+				DECLARATION_MAIN( auto s_2 = p->Add<State>() );
+				DECLARATION_MAIN( auto s_3 = p->Add<State>() );
 
 				std::cout << r2cm::linefeed;
 
