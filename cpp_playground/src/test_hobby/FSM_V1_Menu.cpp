@@ -13,6 +13,7 @@ r2cm::MenuUp FSM_V1_Menu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', hobby_fsm_v1_play::State_Declaration() );
+		ret->AddItem( '2', hobby_fsm_v1_play::State_Enter_Exit() );
 
 
 

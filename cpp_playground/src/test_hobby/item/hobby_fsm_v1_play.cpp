@@ -211,6 +211,70 @@ namespace hobby_fsm_v1_play
 
 
 
+	r2cm::iItem::TitleFunctionT State_Enter_Exit::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "fsm v1 : State - Enter, Exit";
+		};
+	}
+	r2cm::iItem::DoFunctionT State_Enter_Exit::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			class S : public State
+			{
+			public:
+				S( const StateIndexT state_index ) : State( state_index )
+				{}
+
+				void Enter() override
+				{
+					std::cout << "[START] S::Enter" << r2cm::linefeed;
+					State::Enter();
+					std::cout << "[ END ] S::Enter" << r2cm::linefeed;
+				}
+				void Exit() override
+				{
+					std::cout << "[START] S::UserExit" << r2cm::linefeed;
+					State::Exit();
+					std::cout << "[ END ] S::UserExit" << r2cm::linefeed;
+				}
+
+				void UserEnter() override
+				{
+					std::cout << "S::UserEnter" << r2cm::linefeed;
+				}
+				void UserExit() override
+				{
+					std::cout << "S::UserExit" << r2cm::linefeed;
+				}
+			};
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( S s( 0 ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( s.Enter() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( s.Exit() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Package_Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
