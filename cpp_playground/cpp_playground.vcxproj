@@ -280,6 +280,7 @@
     <ClInclude Include="src\test_c\PointerMenu.h" />
     <ClInclude Include="src\test_c\UnionMenu.h" />
     <ClInclude Include="src\test_hobby\FSM_V1_Menu.h" />
+    <ClInclude Include="src\test_hobby\item\hobby_fsm_v1_play_helper.hpp" />
     <ClInclude Include="src\test_hobby\item\hobby_tree_play.h" />
     <ClInclude Include="src\test_hobby\item\list_based_on_array_test.h" />
     <ClInclude Include="src\test_hobby\item\hobby_fsm_v1_play.h" />

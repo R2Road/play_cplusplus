@@ -1139,6 +1139,9 @@
     <ClInclude Include="src\test_hobby\FSM_V1_Menu.h">
       <Filter>test_hobby</Filter>
     </ClInclude>
+    <ClInclude Include="src\test_hobby\item\hobby_fsm_v1_play_helper.hpp">
+      <Filter>test_hobby\item</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\test_cpp\item\enum_test_xmacro_2.def">
