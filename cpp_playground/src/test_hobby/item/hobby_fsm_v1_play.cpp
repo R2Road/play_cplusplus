@@ -309,7 +309,7 @@ namespace hobby_fsm_v1_play
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( Machine m );
-			DECLARATION_MAIN( auto p = m.Add<Package>() );
+			DECLARATION_MAIN( auto p = m.Add<LoggingPackage>(); p->SetName( "P" ) );
 
 			std::cout << r2cm::split;
 
@@ -329,6 +329,12 @@ namespace hobby_fsm_v1_play
 
 			{
 				PROCESS_MAIN( m.Start() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( m.Stop() );
 			}
 
 			std::cout << r2cm::split;
