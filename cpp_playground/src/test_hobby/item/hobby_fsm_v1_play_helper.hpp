@@ -20,6 +20,11 @@ namespace hobby_fsm_v1_play_helper
 		Transition( const StateIndexT to_state_index ) : mToStateIndex( to_state_index )
 		{}
 
+		const StateIndexT GetToStateIndex() const
+		{
+			return mToStateIndex;
+		}
+
 		bool Do() const
 		{
 			return true;
@@ -125,12 +130,36 @@ namespace hobby_fsm_v1_play_helper
 
 		void Enter() override
 		{
+			//
+			// To do
+			// 1. Parent State : Enter Call
+			// 2. Current State : Enter Call
+			// 3. Transition : Success > 2, Failed > End
+			//
+
 			State::Enter();
 
-			if( mCurrentState )
+			bool bWorking = false;
+			do
 			{
-				mCurrentState->Enter();
-			}
+				bWorking = false;
+				
+				if( !mCurrentState )
+				{
+					mCurrentState->Enter();
+
+					for( const auto& t : mCurrentState->GetTransitionContainer() )
+					{
+						if( t.Do() )
+						{
+							bWorking = true;
+							mCurrentState = mStateContainer[t.GetToStateIndex()].get();
+							break;
+						}
+					}
+				}
+
+			} while( bWorking );
 		}
 		void Exit() override
 		{
