@@ -1,3 +1,5 @@
+#include <string>
+
 #include "r2/r2_Assert.h"
 
 #include "r2cm/r2cm_ostream.h"
@@ -203,5 +205,37 @@ namespace hobby_fsm_v1_play_helper
 
 	private:
 		StateUp mState;
+	};
+
+	class LoggingState : public State
+	{
+	public:
+		LoggingState( const StateIndexT state_index ) : State( state_index )
+			, mStateName()
+			, mI( 0 )
+		{}
+
+		void UserEnter() override
+		{
+			std::cout << mStateName << "::UserEnter" << r2cm::linefeed;
+		}
+		void UserUpdate() override
+		{
+			++mI;
+			std::cout << mStateName << "::UserUpdate" " : " << mI << r2cm::linefeed;
+		}
+		void UserExit() override
+		{
+			std::cout << mStateName << "::UserExit" << r2cm::linefeed;
+		}
+
+		void SetName( const char* state_name )
+		{
+			mStateName = state_name;
+		}
+
+	private:
+		std::string mStateName;
+		int mI = 0;
 	};
 }

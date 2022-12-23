@@ -338,13 +338,14 @@ namespace hobby_fsm_v1_play
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( auto s_1 = p->AddState<LoggingState>(); s_1->SetName( "S1" ) );
+			DECLARATION_MAIN( auto s_2 = p->AddState<LoggingState>(); s_2->SetName( "S2" ) );
+			DECLARATION_MAIN( auto s_3 = p->AddState<LoggingState>(); s_3->SetName( "S3" ) );
+			PROCESS_MAIN( p->SetEntryState( s_1->GetIndex() ) );
+
+			std::cout << r2cm::split;
+
 			{
-				DECLARATION_MAIN( auto s_1 = p->AddState<State>() );
-				DECLARATION_MAIN( auto s_2 = p->AddState<State>() );
-				DECLARATION_MAIN( auto s_3 = p->AddState<State>() );
-
-				std::cout << r2cm::linefeed;
-
 				PROCESS_MAIN( p->AddTransition( s_1->GetIndex(), s_2->GetIndex() ) );
 				PROCESS_MAIN( p->AddTransition( s_2->GetIndex(), s_3->GetIndex() ) );
 			}
@@ -353,6 +354,12 @@ namespace hobby_fsm_v1_play
 
 			{
 				PROCESS_MAIN( m.Add( std::move( p ) ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( m.Start() );
 			}
 
 			std::cout << r2cm::split;
