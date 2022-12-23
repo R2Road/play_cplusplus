@@ -300,14 +300,14 @@ namespace hobby_fsm_v1_play
 
 
 
-	r2cm::iItem::TitleFunctionT Package_Add::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Package_AddState::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "fsm v1 : Package - Add";
+			return "fsm v1 : Package - AddState";
 		};
 	}
-	r2cm::iItem::DoFunctionT Package_Add::GetDoFunction() const
+	r2cm::iItem::DoFunctionT Package_AddState::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
