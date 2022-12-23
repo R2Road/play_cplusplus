@@ -216,6 +216,51 @@ namespace hobby_fsm_v1_play
 
 
 
+	r2cm::iItem::TitleFunctionT Package_DoTransition::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "fsm v1 : Package - Do Transition";
+		};
+	}
+	r2cm::iItem::DoFunctionT Package_DoTransition::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( Package p( 0 ) );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( auto s_1 = p.AddState<LoggingState>(); s_1->SetName( "S1" ); );
+			DECLARATION_MAIN( auto s_2 = p.AddState<LoggingState>(); s_2->SetName( "S2" ); );
+			DECLARATION_MAIN( auto s_3 = p.AddState<LoggingState>(); s_3->SetName( "S3" ); );
+			PROCESS_MAIN( p.SetEntryState( s_1->GetIndex() ) );
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "경합 상황에는 먼저 작동한 Transition이 승리한다." );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( p.AddTransition( s_1->GetIndex(), s_2->GetIndex() ) );
+				PROCESS_MAIN( p.AddTransition( s_1->GetIndex(), s_3->GetIndex() ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( p.Enter() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Machine_Basic::GetTitleFunction() const
 	{
 		return []()->const char*
