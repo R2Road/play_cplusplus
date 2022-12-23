@@ -94,7 +94,7 @@ namespace
 		{}
 
 		template<typename T>
-		T* Add()
+		T* AddState()
 		{
 			std::unique_ptr<T> up = std::make_unique<T>( static_cast<StateIndexT>( mStateContainer.size() ) );
 			T* ret = up.get();
@@ -326,7 +326,7 @@ namespace hobby_fsm_v1_play
 
 			{
 				DECLARATION_MAIN( Package p( 0 ) );
-				DECLARATION_MAIN( S* s = p.Add<S>() );
+				DECLARATION_MAIN( S* s = p.AddState<S>() );
 				OUTPUT_VALUE( s->i );
 			}
 
@@ -356,9 +356,9 @@ namespace hobby_fsm_v1_play
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto s_1 = p.Add<State>() );
-				DECLARATION_MAIN( auto s_2 = p.Add<State>() );
-				DECLARATION_MAIN( auto s_3 = p.Add<State>() );
+				DECLARATION_MAIN( auto s_1 = p.AddState<State>() );
+				DECLARATION_MAIN( auto s_2 = p.AddState<State>() );
+				DECLARATION_MAIN( auto s_3 = p.AddState<State>() );
 
 				std::cout << r2cm::linefeed;
 
@@ -462,7 +462,7 @@ namespace hobby_fsm_v1_play
 
 			DECLARATION_MAIN( Machine m );
 			DECLARATION_MAIN( auto p = std::make_unique<P>( 0 ) );
-			DECLARATION_MAIN( auto s = p->Add<S>() );
+			DECLARATION_MAIN( auto s = p->AddState<S>() );
 			PROCESS_MAIN( p->SetEntryState( s->GetIndex() ) );
 			PROCESS_MAIN( m.Add( std::move( p ) ) );
 
@@ -503,9 +503,9 @@ namespace hobby_fsm_v1_play
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto s_1 = p->Add<State>() );
-				DECLARATION_MAIN( auto s_2 = p->Add<State>() );
-				DECLARATION_MAIN( auto s_3 = p->Add<State>() );
+				DECLARATION_MAIN( auto s_1 = p->AddState<State>() );
+				DECLARATION_MAIN( auto s_2 = p->AddState<State>() );
+				DECLARATION_MAIN( auto s_3 = p->AddState<State>() );
 
 				std::cout << r2cm::linefeed;
 
