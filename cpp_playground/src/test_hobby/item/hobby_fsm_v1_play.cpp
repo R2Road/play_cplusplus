@@ -395,14 +395,14 @@ namespace hobby_fsm_v1_play
 
 
 
-	r2cm::iItem::TitleFunctionT Machine_Declaration::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Machine_Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "fsm v1 : Machine - Declaration";
+			return "fsm v1 : Machine - Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Machine_Declaration::GetDoFunction() const
+	r2cm::iItem::DoFunctionT Machine_Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
