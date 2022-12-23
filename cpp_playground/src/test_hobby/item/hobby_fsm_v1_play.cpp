@@ -27,6 +27,14 @@ namespace hobby_fsm_v1_play
 
 			{
 				DECLARATION_MAIN( State s( 0 ) );
+				EXPECT_EQ( 0, s.GetIndex() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( State s( 10 ) );
+				EXPECT_EQ( 10, s.GetIndex() );
 			}
 
 			std::cout << r2cm::split;
