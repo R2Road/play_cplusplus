@@ -363,13 +363,13 @@ namespace hobby_fsm_v1_play
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( auto s_1 = p.AddState<State>() );
+			DECLARATION_MAIN( auto s_2 = p.AddState<State>() );
+			DECLARATION_MAIN( auto s_3 = p.AddState<State>() );
+
+			std::cout << r2cm::split;
+
 			{
-				DECLARATION_MAIN( auto s_1 = p.AddState<State>() );
-				DECLARATION_MAIN( auto s_2 = p.AddState<State>() );
-				DECLARATION_MAIN( auto s_3 = p.AddState<State>() );
-
-				std::cout << r2cm::linefeed;
-
 				PROCESS_MAIN( p.AddTransition( s_1->GetIndex(), s_2->GetIndex() ) );
 				EXPECT_EQ( 1, s_1->GetTransitionContainer().size() );
 				EXPECT_EQ( 0, s_2->GetTransitionContainer().size() );
