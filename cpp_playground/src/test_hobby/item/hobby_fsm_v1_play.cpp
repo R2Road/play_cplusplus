@@ -206,10 +206,6 @@ namespace hobby_fsm_v1_play
 				EXPECT_EQ( 1, s_1->GetTransitionContainer().size() );
 				EXPECT_EQ( 1, s_2->GetTransitionContainer().size() );
 				EXPECT_EQ( 0, s_3->GetTransitionContainer().size() );
-
-				std::cout << r2cm::linefeed;
-
-				EXPECT_TRUE( s_1->GetTransitionContainer()[0].Do() );
 			}
 
 			std::cout << r2cm::split;
