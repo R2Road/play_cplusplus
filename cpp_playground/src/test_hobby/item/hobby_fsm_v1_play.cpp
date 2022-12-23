@@ -139,21 +139,20 @@ namespace hobby_fsm_v1_play
 		{
 			std::cout << r2cm::split;
 
-			class S : public State
-			{
-			public:
-				S( const StateIndexT state_index ) : State( state_index )
-				{}
-
-				int i = 10;
-			};
+			DECLARATION_MAIN( Package p( 0 ) );
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( Package p( 0 ) );
-				DECLARATION_MAIN( S* s = p.AddState<S>() );
-				OUTPUT_VALUE( s->i );
+				DECLARATION_MAIN( auto s_1 = p.AddState<State>() );
+				DECLARATION_MAIN( auto s_2 = p.AddState<State>() );
+				DECLARATION_MAIN( auto s_3 = p.AddState<State>() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 0, s_1->GetIndex() );
+				EXPECT_EQ( 1, s_2->GetIndex() );
+				EXPECT_EQ( 2, s_3->GetIndex() );
 			}
 
 			std::cout << r2cm::split;
