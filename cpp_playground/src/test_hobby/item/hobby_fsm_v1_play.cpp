@@ -461,6 +461,9 @@ namespace hobby_fsm_v1_play
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( Machine m );
+
+			std::cout << r2cm::split;
+
 			DECLARATION_MAIN( auto p = std::make_unique<P>( 0 ) );
 			DECLARATION_MAIN( auto s = p->AddState<S>() );
 			PROCESS_MAIN( p->SetEntryState( s->GetIndex() ) );
