@@ -346,14 +346,14 @@ namespace hobby_fsm_v1_play
 
 
 
-	r2cm::iItem::TitleFunctionT Package_Transition::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Package_AddTransition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "fsm v1 : Package - Transition";
+			return "fsm v1 : Package - AddTransition";
 		};
 	}
-	r2cm::iItem::DoFunctionT Package_Transition::GetDoFunction() const
+	r2cm::iItem::DoFunctionT Package_AddTransition::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

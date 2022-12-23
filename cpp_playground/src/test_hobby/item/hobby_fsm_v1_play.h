@@ -34,7 +34,7 @@ namespace hobby_fsm_v1_play
 		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Package_Transition : public r2cm::iItem
+	class Package_AddTransition : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
