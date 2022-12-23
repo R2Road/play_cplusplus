@@ -144,7 +144,7 @@ namespace hobby_fsm_v1_play_helper
 			{
 				bWorking = false;
 				
-				if( !mCurrentState )
+				if( mCurrentState )
 				{
 					mCurrentState->Enter();
 
