@@ -179,6 +179,14 @@ namespace
 			mState = std::move( state );
 		}
 
+		template<typename T>
+		T* Add()
+		{
+			mState = std::make_unique<T>( 0 );
+
+			return mState.get();
+		}
+
 	private:
 		StateUp mState;
 	};
@@ -403,6 +411,13 @@ namespace hobby_fsm_v1_play
 			{
 				DECLARATION_MAIN( Machine m );
 				PROCESS_MAIN( m.Add( std::move( std::make_unique<State>( 0 ) ) ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( Machine m );
+				PROCESS_MAIN( m.Add<State>() );
 			}
 
 			std::cout << r2cm::split;
