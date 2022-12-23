@@ -268,46 +268,12 @@ namespace hobby_fsm_v1_play
 		{
 			std::cout << r2cm::split;
 
-			class P : public Package
-			{
-			public:
-				P( const StateIndexT state_index ) : Package( state_index )
-				{}
-
-				void UserEnter() override
-				{
-					std::cout << "P::UserEnter" << r2cm::linefeed;
-				}
-				void UserExit() override
-				{
-					std::cout << "P::UserExit" << r2cm::linefeed;
-				}
-			};
-
-			class S : public State
-			{
-			public:
-				S( const StateIndexT state_index ) : State( state_index )
-				{}
-
-				void UserEnter() override
-				{
-					std::cout << "S::UserEnter" << r2cm::linefeed;
-				}
-				void UserExit() override
-				{
-					std::cout << "S::UserExit" << r2cm::linefeed;
-				}
-			};
-
-			std::cout << r2cm::split;
-
 			DECLARATION_MAIN( Machine m );
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( auto p = std::make_unique<P>( 0 ) );
-			DECLARATION_MAIN( auto s = p->AddState<S>() );
+			DECLARATION_MAIN( auto p = std::make_unique<LoggingPackage>( 0 ); p->SetName( "P" ); );
+			DECLARATION_MAIN( auto s = p->AddState<LoggingState>(); s->SetName( "S" ); );
 			PROCESS_MAIN( p->SetEntryState( s->GetIndex() ) );
 			PROCESS_MAIN( m.Add( std::move( p ) ) );
 

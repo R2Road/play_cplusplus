@@ -236,6 +236,8 @@ namespace hobby_fsm_v1_play_helper
 		StateUp mState;
 	};
 
+
+
 	class LoggingState : public State
 	{
 	public:
@@ -243,6 +245,54 @@ namespace hobby_fsm_v1_play_helper
 			, mStateName()
 			, mI( 0 )
 		{}
+
+		void UserEnter() override
+		{
+			std::cout << mStateName << "::UserEnter" << r2cm::linefeed;
+		}
+		void UserUpdate() override
+		{
+			++mI;
+			std::cout << mStateName << "::UserUpdate" " : " << mI << r2cm::linefeed;
+		}
+		void UserExit() override
+		{
+			std::cout << mStateName << "::UserExit" << r2cm::linefeed;
+		}
+
+		void SetName( const char* state_name )
+		{
+			mStateName = state_name;
+		}
+
+	private:
+		std::string mStateName;
+		int mI = 0;
+	};
+
+	class LoggingPackage : public Package
+	{
+	public:
+		LoggingPackage( const StateIndexT state_index ) : Package( state_index )
+			, mStateName()
+			, mI( 0 )
+		{}
+
+		void Enter() override
+		{
+			std::cout << mStateName << "::Enter" << r2cm::linefeed;
+			Package::Enter();
+		}
+		void Update() override
+		{
+			std::cout << mStateName << "::Update" << r2cm::linefeed;
+			Package::Update();
+		}
+		void Exit() override
+		{
+			Package::Exit();
+			std::cout << mStateName << "::Exit" << r2cm::linefeed;
+		}
 
 		void UserEnter() override
 		{
