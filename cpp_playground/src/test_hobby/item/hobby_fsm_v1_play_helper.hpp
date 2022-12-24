@@ -1,3 +1,4 @@
+#include <functional>
 #include <string>
 
 #include "r2/r2_Assert.h"
@@ -17,7 +18,11 @@ namespace hobby_fsm_v1_play_helper
 	class Transition
 	{
 	public:
-		Transition( const StateIndexT to_state_index ) : mToStateIndex( to_state_index )
+		using CheckerT = std::function<bool()>;
+
+		Transition( const StateIndexT to_state_index ) : mToStateIndex( to_state_index ), mChecker( []()->bool { return true; } )
+		{}
+		Transition( const StateIndexT to_state_index, const CheckerT& checker ) : mToStateIndex( to_state_index ), mChecker( checker )
 		{}
 
 		const StateIndexT GetToStateIndex() const
@@ -27,11 +32,12 @@ namespace hobby_fsm_v1_play_helper
 
 		bool Do() const
 		{
-			return true;
+			return mChecker();
 		}
 
 	private:
 		const StateIndexT mToStateIndex;
+		const CheckerT mChecker;
 	};
 
 	//
