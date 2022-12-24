@@ -193,12 +193,16 @@ namespace hobby_fsm_v1_play_helper
 			//
 
 			State::Enter();
-
+			EnterProcess();
+		}
+	private:
+		void EnterProcess()
+		{
 			bool bWorking = false;
 			do
 			{
 				bWorking = false;
-				
+
 				if( mCurrentState )
 				{
 					mCurrentState->Enter();
@@ -216,6 +220,8 @@ namespace hobby_fsm_v1_play_helper
 
 			} while( bWorking );
 		}
+
+	public:
 		void Exit() override
 		{
 			if( mCurrentState )
@@ -243,7 +249,7 @@ namespace hobby_fsm_v1_play_helper
 					if( t.Do( event_index ) )
 					{
 						mCurrentState = mStateContainer[t.GetToStateIndex()].get();
-						mCurrentState->Enter();
+						EnterProcess();
 						break;
 					}
 				}
