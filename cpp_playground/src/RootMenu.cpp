@@ -8,10 +8,10 @@
 
 #include "test_various/item/various_console_input_test.h"
 
+#include "play_hobby/HobbyMenu.h"
 #include "test_algorithm/AlgorithmMenu.h"
 #include "test_c/C_Menu.h"
 #include "test_cpp/CPP_Menu.h"
-#include "test_hobby/HobbyMenu.h"
 #include "test_performance/PerformanceMenu.h"
 #include "test_std/STDMenu.h"
 #include "test_template/TemplateMenu.h"
