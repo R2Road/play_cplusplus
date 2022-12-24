@@ -40,13 +40,39 @@ namespace hobby_fsm_v1_play_helper
 		const CheckerT mChecker;
 	};
 
+	enum class eEventIndex
+	{
+		Start,
+		Stop
+	};
+	class EventTransition
+	{
+	public:
+		EventTransition( const StateIndexT to_state_index, const eEventIndex event_index ) : mToStateIndex( to_state_index ), mEventIndex( event_index )
+		{}
+
+		const StateIndexT GetToStateIndex() const
+		{
+			return mToStateIndex;
+		}
+
+		bool Do( const eEventIndex event_index ) const
+		{
+			return ( event_index == mEventIndex );
+		}
+
+	private:
+		const StateIndexT mToStateIndex;
+		const eEventIndex mEventIndex;
+	};
+
 	//
 	// State 는 최대한 가볍게
 	//
 	class State
 	{
 	public:
-		State( const StateIndexT index ) : mIndex( index ), mTransitionContainer()
+		State( const StateIndexT index ) : mIndex( index ), mTransitionContainer(), mEventTransitionContainer()
 		{}
 
 		virtual ~State()
@@ -57,6 +83,9 @@ namespace hobby_fsm_v1_play_helper
 			return mIndex;
 		}
 
+		//
+		// Normal Transition
+		//
 		const std::vector<Transition>& GetTransitionContainer() const
 		{
 			return mTransitionContainer;
@@ -64,6 +93,18 @@ namespace hobby_fsm_v1_play_helper
 		void AddTransition( StateIndexT to_state_index )
 		{
 			mTransitionContainer.emplace_back( to_state_index );
+		}
+
+		//
+		// Event Transition
+		//
+		const std::vector<EventTransition>& GetEventTransitionContainer() const
+		{
+			return mEventTransitionContainer;
+		}
+		void AddEventTransition( const StateIndexT to_state_index, const eEventIndex event_index )
+		{
+			mEventTransitionContainer.emplace_back( to_state_index, event_index );
 		}
 
 		//
@@ -93,6 +134,7 @@ namespace hobby_fsm_v1_play_helper
 	private:
 		const StateIndexT mIndex;
 		std::vector<Transition> mTransitionContainer;
+		std::vector<EventTransition> mEventTransitionContainer;
 	};
 
 	//
@@ -125,6 +167,13 @@ namespace hobby_fsm_v1_play_helper
 			R2ASSERT( mStateContainer.size() > to_state_index, "" );
 
 			mStateContainer[from_state_index]->AddTransition( to_state_index );
+		}
+		void AddEventTransition( const StateIndexT from_state_index, const StateIndexT to_state_index, const eEventIndex event_index )
+		{
+			R2ASSERT( mStateContainer.size() > from_state_index, "" );
+			R2ASSERT( mStateContainer.size() > to_state_index, "" );
+
+			mStateContainer[from_state_index]->AddEventTransition( to_state_index, event_index );
 		}
 
 		void SetEntryState( StateIndexT entry_state_index )
@@ -184,6 +233,21 @@ namespace hobby_fsm_v1_play_helper
 			}
 
 			State::Update();
+		}
+		void OnEvent( const eEventIndex event_index )
+		{
+			if( mCurrentState )
+			{
+				for( const auto& t : mCurrentState->GetEventTransitionContainer() )
+				{
+					if( t.Do( event_index ) )
+					{
+						mCurrentState = mStateContainer[t.GetToStateIndex()].get();
+						mCurrentState->Enter();
+						break;
+					}
+				}
+			}
 		}
 
 	private:

@@ -356,6 +356,7 @@ namespace hobby_fsm_v1_play
 			DECLARATION_MAIN( auto s_1 = p->AddState<LoggingState>(); s_1->SetName( "S1" ) );
 			DECLARATION_MAIN( auto s_2 = p->AddState<LoggingState>(); s_2->SetName( "S2" ) );
 			DECLARATION_MAIN( auto s_3 = p->AddState<LoggingState>(); s_3->SetName( "S3" ) );
+			DECLARATION_MAIN( auto s_4 = p->AddState<LoggingState>(); s_4->SetName( "S4" ) );
 			PROCESS_MAIN( p->SetEntryState( s_1->GetIndex() ) );
 
 			std::cout << r2cm::split;
@@ -363,12 +364,19 @@ namespace hobby_fsm_v1_play
 			{
 				PROCESS_MAIN( p->AddTransition( s_1->GetIndex(), s_2->GetIndex() ) );
 				PROCESS_MAIN( p->AddTransition( s_2->GetIndex(), s_3->GetIndex() ) );
+				PROCESS_MAIN( p->AddEventTransition( s_3->GetIndex(), s_4->GetIndex(), eEventIndex::Start ) );
 			}
 
 			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( m.Start() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( p->OnEvent( eEventIndex::Start ) );
 			}
 
 			std::cout << r2cm::split;
