@@ -15,6 +15,8 @@ namespace
 	{
 		std::cout << "TestFunction_2";
 	}
+
+	void LocalFunction( int ) {}
 }
 
 namespace std_function_test
@@ -31,14 +33,80 @@ namespace std_function_test
 		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << r2cm::split;
+
+			OUTPUT_NOTE( "REF : https://en.cppreference.com/w/cpp/utility/functional/function" );
+
+			std::cout << r2cm::split;
 			
 			{
 				DECLARATION_MAIN( std::function<void()> f );
+				EXPECT_TRUE( nullptr == f );
+				EXPECT_FALSE( f );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::function<void()> f = TestFunction_1 );
+				EXPECT_TRUE( nullptr != f );
+				EXPECT_TRUE( f );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::function<void()> f = []() {} );
+				EXPECT_TRUE( nullptr != f );
+				EXPECT_TRUE( f );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::function<void()> f = std::bind( LocalFunction, 10 ) );
+				EXPECT_TRUE( nullptr != f );
+				EXPECT_TRUE( f );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( struct S { void Do( int ) {} } );
+				DECLARATION_MAIN( S s );
+				DECLARATION_MAIN( std::function<void( S&, int )> f = &S::Do );
+				EXPECT_TRUE( nullptr != f );
+				EXPECT_TRUE( f );
 
 				std::cout << r2cm::linefeed;
 
-				EXPECT_TRUE( nullptr == f );
-				EXPECT_FALSE( f );
+				PROCESS_MAIN( f( s, 1 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( struct S { int i = 1234; } );
+				DECLARATION_MAIN( S s );
+				DECLARATION_MAIN( std::function<int( S& )> f = &S::i );
+				EXPECT_TRUE( nullptr != f );
+				EXPECT_TRUE( f );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( f( s ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( struct S { int operator()() { return 0; } } );
+				DECLARATION_MAIN( std::function<int()> f = S() );
+				EXPECT_TRUE( nullptr != f );
+				EXPECT_TRUE( f );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( f() );
 			}
 
 			std::cout << r2cm::split;
