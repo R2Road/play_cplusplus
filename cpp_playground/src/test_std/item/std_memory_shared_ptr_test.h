@@ -11,6 +11,13 @@ namespace std_memory_shared_ptr_test
 		DoFunctionT GetDoFunction() const override;
 	};
 
+	class Size : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
+	};
+
 	class MakeShared_And_Memory : public r2cm::iItem
 	{
 	public:
