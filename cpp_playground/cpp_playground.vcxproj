@@ -125,7 +125,7 @@
     <ClCompile Include="src\test_std\item\std_memory_shared_ptr_test.cpp" />
     <ClCompile Include="src\test_std\item\std_memory_unique_ptr_test_helper_forward_declaration.cpp" />
     <ClCompile Include="src\test_std\item\std_memory_unique_ptr_test.cpp" />
-    <ClCompile Include="src\test_std\item\std_mem_fn_test.cpp" />
+    <ClCompile Include="src\test_std\item\std_functional_mem_fn_test.cpp" />
     <ClCompile Include="src\test_std\item\std_numeric_test.cpp" />
     <ClCompile Include="src\test_std\item\std_optional_test.cpp" />
     <ClCompile Include="src\test_std\item\std_random_test.cpp" />
@@ -316,8 +316,8 @@
     <ClInclude Include="src\test_std\item\std_memory_unique_ptr_test_helper_forward_declaration.h" />
     <ClInclude Include="src\test_std\item\std_memory_unique_ptr_test.h" />
     <ClInclude Include="src\test_std\item\std_memory_unique_ptr_test_helper_template_deleter.hpp" />
-    <ClInclude Include="src\test_std\item\std_mem_fn_test.h" />
-    <ClInclude Include="src\test_std\item\std_mem_fn_test_helper.hpp" />
+    <ClInclude Include="src\test_std\item\std_functional_mem_fn_test.h" />
+    <ClInclude Include="src\test_std\item\std_functional_mem_fn_test_helper.hpp" />
     <ClInclude Include="src\test_std\item\std_numeric_test.h" />
     <ClInclude Include="src\test_std\item\std_optional_test.h" />
     <ClInclude Include="src\test_std\item\std_random_test.h" />

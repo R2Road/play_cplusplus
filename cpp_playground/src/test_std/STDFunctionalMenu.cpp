@@ -6,7 +6,7 @@
 #include "test_std/item/std_invoke_test.h"
 #include "test_std/item/std_function_test.h"
 #include "test_std/item/std_function_2_test.h"
-#include "test_std/item/std_mem_fn_test.h"
+#include "test_std/item/std_functional_mem_fn_test.h"
 
 #include "STDMenu.h"
 
@@ -23,7 +23,7 @@ r2cm::MenuUp STDFunctionalMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( '6', std_mem_fn_test::Basic() );
+		ret->AddItem( '6', std_functional_mem_fn_test::Basic() );
 
 
 

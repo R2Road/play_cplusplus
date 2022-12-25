@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-namespace std_mem_fn_test
+namespace std_functional_mem_fn_test
 {
 	struct TestStruct
 	{

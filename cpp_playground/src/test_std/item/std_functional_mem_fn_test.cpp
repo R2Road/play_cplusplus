@@ -1,12 +1,12 @@
-#include "std_mem_fn_test.h"
-#include "std_mem_fn_test_helper.hpp"
+#include "std_functional_mem_fn_test.h"
+#include "std_functional_mem_fn_test_helper.hpp"
 
 #include <functional>
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
-namespace std_mem_fn_test
+namespace std_functional_mem_fn_test
 {
 	//template<class _Callable,
 	//	class _Ty1,
@@ -129,7 +129,7 @@ namespace std_mem_fn_test
 		{
 			std::cout << r2cm::split;
 
-			OUTPUT_FILE( "src/test_std/item/std_mem_fn_test_helper.hpp" );
+			OUTPUT_FILE( "src/test_std/item/std_functional_mem_fn_test_helper.hpp" );
 
 			std::cout << r2cm::split;
 

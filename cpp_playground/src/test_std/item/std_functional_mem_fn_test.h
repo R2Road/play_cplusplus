@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace std_mem_fn_test
+namespace std_functional_mem_fn_test
 {
 	class Basic : public r2cm::iItem
 	{
