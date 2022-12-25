@@ -67,7 +67,7 @@ namespace cpp_lambda_test
 		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Size_3 : public r2cm::iItem
+	class Size_ThisCapture : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
