@@ -22,8 +22,15 @@ namespace std_memory_shared_ptr_test
 			std::cout << r2cm::split;
 
 			{
+				DECLARATION_MAIN( std::shared_ptr<int> sp );
+				OUTPUT_CODE( *sp );
+				OUTPUT_COMMENT( "Not Working" );
+			}
+
+			std::cout << r2cm::split;
+
+			{
 				DECLARATION_MAIN( std::shared_ptr<int> sp( new int( 10 ) ) );
-				OUTPUT_VALUE( sizeof( sp ) );
 				OUTPUT_VALUE( *sp );
 			}
 
