@@ -28,27 +28,27 @@ namespace cpp_class_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( struct MethodTestStruct
+			DECLARATION_MAIN( struct S
 			{
 				void Func() { printf( "\t" "> " "[Call] Func" "\n" ); }
 			} );
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( MethodTestStruct mts );
+			DECLARATION_MAIN( S s );
 
 			std::cout << r2cm::split;
 			{
-				PROCESS_MAIN( mts.Func() );
+				PROCESS_MAIN( s.Func() );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( mts.MethodTestStruct::Func() );
+				PROCESS_MAIN( s.S::Func() );
 				
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( auto f = &MethodTestStruct::Func );
-				PROCESS_MAIN( ( mts.*f )( ) );
+				DECLARATION_MAIN( auto f = &S::Func );
+				PROCESS_MAIN( ( s.*f )( ) );
 			}
 
 			std::cout << r2cm::split;
