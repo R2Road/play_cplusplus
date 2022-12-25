@@ -34,14 +34,14 @@ namespace std_functional_invoke_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( TestStruct_1 ts_1 );
-				PROCESS_MAIN( std::invoke( &TestStruct_1::Do, ts_1, 123 ) );
-				PROCESS_MAIN( std::invoke( &TestStruct_1::Do, &ts_1, 234 ) );
+				DECLARATION_MAIN( S1 s_1 );
+				PROCESS_MAIN( std::invoke( &S1::Do, s_1, 123 ) );
+				PROCESS_MAIN( std::invoke( &S1::Do, &s_1, 234 ) );
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( TestStruct_2 ts_2 );
-				OUTPUT_VALUE( std::invoke( &TestStruct_2::n, &ts_2 ) );
+				DECLARATION_MAIN( S2 s_2 );
+				OUTPUT_VALUE( std::invoke( &S2::n, &s_2 ) );
 			}
 
 			std::cout << r2cm::split;

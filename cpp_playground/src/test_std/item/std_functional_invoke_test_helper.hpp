@@ -12,15 +12,15 @@ namespace std_functional_invoke_test
 		printf( "\t" "> " "do_lam : " "%d" "\n", i );
 	};
 
-	struct TestStruct_1
+	struct S1
 	{
 		void Do( int i )
 		{
-			printf( "\t" "> " "TestStruct_1::Do : " "%d" "\n", i );
+			printf( "\t" "> " "S1::Do : " "%d" "\n", i );
 		}
 	};
 
-	struct TestStruct_2
+	struct S2
 	{
 		int n = 777;
 	};
