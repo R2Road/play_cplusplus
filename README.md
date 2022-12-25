@@ -36,3 +36,6 @@ src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/maze_generati
 <p float:left;">
 <img src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/cpp_lambda_test___size___20221217.png"></img>
 </p>
+<p float:left;">
+<img src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/cpp_lambda_test___size_with_stdfunction___20221225.png"></img>
+</p>
