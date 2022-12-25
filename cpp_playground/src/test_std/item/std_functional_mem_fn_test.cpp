@@ -140,6 +140,10 @@ namespace std_functional_mem_fn_test
 
 			{
 				DECLARATION_MAIN( auto do_fn =  std::mem_fn( &TestStruct::Do ) );
+				OUTPUT_VALUE( sizeof( do_fn ) );
+
+				std::cout << r2cm::linefeed;
+
 				PROCESS_MAIN( do_fn( &t ) );
 			}
 
@@ -147,6 +151,10 @@ namespace std_functional_mem_fn_test
 
 			{
 				DECLARATION_MAIN( auto do_mv = std::mem_fn( &TestStruct::a ) );
+				OUTPUT_VALUE( sizeof( do_mv ) );
+
+				std::cout << r2cm::linefeed;
+
 				OUTPUT_VALUE( do_mv( &t ) );
 			}
 
