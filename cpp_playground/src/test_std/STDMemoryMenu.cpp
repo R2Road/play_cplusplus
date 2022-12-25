@@ -14,9 +14,10 @@ r2cm::MenuUp STDMemoryMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem( '1', std_memory_unique_ptr_test::Basic() );
 		ret->AddItem( '2', std_memory_unique_ptr_test::Size() );
-		ret->AddItem( '3', std_memory_unique_ptr_test::Deleter() );
-		ret->AddItem( '4', std_memory_unique_ptr_test::TemplateDeleter() );
-		ret->AddItem( '5', std_memory_unique_ptr_test::FowardDeclaration() );
+		ret->AddItem( '3', std_memory_unique_ptr_test::Binary() );
+		ret->AddItem( '4', std_memory_unique_ptr_test::Deleter() );
+		ret->AddItem( '5', std_memory_unique_ptr_test::TemplateDeleter() );
+		ret->AddItem( '6', std_memory_unique_ptr_test::FowardDeclaration() );
 
 
 

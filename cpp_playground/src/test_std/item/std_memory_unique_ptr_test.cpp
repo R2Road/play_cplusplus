@@ -117,6 +117,40 @@ namespace std_memory_unique_ptr_test
 
 
 
+	r2cm::iItem::TitleFunctionT Binary::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::unique_ptr : Binary";
+		};
+	}
+	r2cm::iItem::DoFunctionT Binary::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::unique_ptr<int> up );
+				OUTPUT_BINARIES( (uint8_t*)&up, sizeof( up ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::unique_ptr<int> up( new int( 3 ) ) );
+				OUTPUT_BINARY( up.get() );
+				OUTPUT_BINARIES( (uint8_t*)&up, sizeof( up ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Deleter::GetTitleFunction() const
 	{
 		return []()->const char*
