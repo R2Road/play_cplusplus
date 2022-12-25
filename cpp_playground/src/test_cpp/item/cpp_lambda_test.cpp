@@ -1,6 +1,7 @@
 #include "cpp_lambda_test.h"
 #include "cpp_lambda_test__helper__size_3.hpp"
 
+#include <functional>
 #include <memory>
 #include <utility>
 
@@ -616,6 +617,74 @@ namespace cpp_lambda_test
 
 				OUTPUT_CODE( int i = 0 );
 				OUTPUT_CODE( auto l = [=]() { std::cout << this->i << r2cm::linefeed; } );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	void LocalFunction() {}
+	r2cm::iItem::TitleFunctionT Size_With_STDFunction::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "lambda : Size with std::function";
+		};
+	}
+	r2cm::iItem::DoFunctionT Size_With_STDFunction::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto l = []() {} );
+				OUTPUT_VALUE( sizeof( l ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::function<void()> f = []() {} );
+				OUTPUT_VALUE( sizeof( f ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto l = [ll = 10ll]() {} );
+				OUTPUT_VALUE( sizeof( l ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::function<void()> f = [ll = 10ll]() {} );
+				OUTPUT_VALUE( sizeof( f ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::function<void()> f = LocalFunction );
+				OUTPUT_VALUE( sizeof( f ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( struct S
+				{
+					int i[100];
+					void f() {}
+				} );
+				DECLARATION_MAIN( S s );
+				DECLARATION_MAIN( std::function<void()> f = std::bind( &S::f, &s ) );
+				OUTPUT_VALUE( sizeof( f ) );
 			}
 
 			std::cout << r2cm::split;

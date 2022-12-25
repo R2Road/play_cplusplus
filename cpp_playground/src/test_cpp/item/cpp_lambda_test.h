@@ -73,4 +73,11 @@ namespace cpp_lambda_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() const override;
 	};
+
+	class Size_With_STDFunction: public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
+	};
 }
