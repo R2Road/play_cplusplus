@@ -27,7 +27,8 @@ r2cm::MenuUp STDMemoryMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( 'q', std_memory_shared_ptr_test::Basic() );
 		ret->AddItem( 'w', std_memory_shared_ptr_test::Size() );
-		ret->AddItem( 'e', std_memory_shared_ptr_test::MakeShared_And_Memory() );
+		ret->AddItem( 'e', std_memory_shared_ptr_test::Binary() );
+		ret->AddItem( 'r', std_memory_shared_ptr_test::MakeShared_And_Memory() );
 
 
 

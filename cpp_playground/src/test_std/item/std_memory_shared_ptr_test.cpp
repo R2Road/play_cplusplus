@@ -115,6 +115,46 @@ namespace std_memory_shared_ptr_test
 
 
 
+	r2cm::iItem::TitleFunctionT Binary::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::shared_ptr : Binary";
+		};
+	}
+	r2cm::iItem::DoFunctionT Binary::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::shared_ptr<int> sp );
+				OUTPUT_BINARY( sp );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::shared_ptr<int> sp( new int( 3 ) ) );
+				OUTPUT_BINARY( sp.get() );
+				OUTPUT_BINARY( sp );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( sp.reset( new int( 3 ) ) );
+				OUTPUT_BINARY( sp.get() );
+				OUTPUT_BINARY( sp );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT MakeShared_And_Memory::GetTitleFunction() const
 	{
 		return []()->const char*
