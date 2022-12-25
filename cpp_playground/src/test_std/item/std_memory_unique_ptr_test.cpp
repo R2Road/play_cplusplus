@@ -84,6 +84,39 @@ namespace std_memory_unique_ptr_test
 
 
 
+	r2cm::iItem::TitleFunctionT Size::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::unique_ptr : Size";
+		};
+	}
+	r2cm::iItem::DoFunctionT Size::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::unique_ptr<int> up );
+				OUTPUT_VALUE( sizeof( up ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::unique_ptr<int> up( new int( 3 ) ) );
+				OUTPUT_VALUE( sizeof( up ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Deleter::GetTitleFunction() const
 	{
 		return []()->const char*

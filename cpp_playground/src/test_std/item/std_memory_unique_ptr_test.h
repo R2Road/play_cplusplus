@@ -11,6 +11,13 @@ namespace std_memory_unique_ptr_test
 		DoFunctionT GetDoFunction() const override;
 	};
 
+	class Size : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
+	};
+
 	class Deleter : public r2cm::iItem
 	{
 	public:
