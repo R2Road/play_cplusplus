@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "test_std/item/std_invoke_test.h"
+#include "test_std/item/std_functional_invoke_test.h"
 #include "test_std/item/std_function_test.h"
 #include "test_std/item/std_function_2_test.h"
 #include "test_std/item/std_functional_mem_fn_test.h"
@@ -15,7 +15,7 @@ r2cm::MenuUp STDFunctionalMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', std_invoke_test::Basic() );
+		ret->AddItem( '1', std_functional_invoke_test::Basic() );
 
 
 

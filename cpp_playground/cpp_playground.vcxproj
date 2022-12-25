@@ -120,7 +120,7 @@
     <ClCompile Include="src\test_std\item\std_fstream_test.cpp" />
     <ClCompile Include="src\test_std\item\std_function_2_test.cpp" />
     <ClCompile Include="src\test_std\item\std_function_test.cpp" />
-    <ClCompile Include="src\test_std\item\std_invoke_test.cpp" />
+    <ClCompile Include="src\test_std\item\std_functional_invoke_test.cpp" />
     <ClCompile Include="src\test_std\item\std_list_test.cpp" />
     <ClCompile Include="src\test_std\item\std_memory_shared_ptr_test.cpp" />
     <ClCompile Include="src\test_std\item\std_memory_unique_ptr_test_helper_forward_declaration.cpp" />
@@ -309,8 +309,8 @@
     <ClInclude Include="src\test_std\item\std_fstream_test.h" />
     <ClInclude Include="src\test_std\item\std_function_2_test.h" />
     <ClInclude Include="src\test_std\item\std_function_test.h" />
-    <ClInclude Include="src\test_std\item\std_invoke_test.h" />
-    <ClInclude Include="src\test_std\item\std_invoke_test_helper.hpp" />
+    <ClInclude Include="src\test_std\item\std_functional_invoke_test.h" />
+    <ClInclude Include="src\test_std\item\std_functional_invoke_test_helper.hpp" />
     <ClInclude Include="src\test_std\item\std_list_test.h" />
     <ClInclude Include="src\test_std\item\std_memory_shared_ptr_test.h" />
     <ClInclude Include="src\test_std\item\std_memory_unique_ptr_test_helper_forward_declaration.h" />

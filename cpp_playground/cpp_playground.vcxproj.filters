@@ -431,9 +431,6 @@
     <ClCompile Include="src\test_std\STDFunctionalMenu.cpp">
       <Filter>test_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_std\item\std_invoke_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_template\item\template_practice_test_02.cpp">
       <Filter>test_template\item</Filter>
     </ClCompile>
@@ -561,6 +558,9 @@
       <Filter>play_hobby\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_std\item\std_functional_mem_fn_test.cpp">
+      <Filter>test_std\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_std\item\std_functional_invoke_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
   </ItemGroup>
@@ -941,12 +941,6 @@
     <ClInclude Include="src\test_std\STDFunctionalMenu.h">
       <Filter>test_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_std\item\std_invoke_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_invoke_test_helper.hpp">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_template\item\template_specialization_test_helper_basic.hpp">
       <Filter>test_template\item</Filter>
     </ClInclude>
@@ -1140,6 +1134,12 @@
       <Filter>test_std\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_std\item\std_functional_mem_fn_test.h">
+      <Filter>test_std\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\item\std_functional_invoke_test.h">
+      <Filter>test_std\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\item\std_functional_invoke_test_helper.hpp">
       <Filter>test_std\item</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace std_invoke_test
+namespace std_functional_invoke_test
 {
 	class Basic : public r2cm::iItem
 	{
