@@ -13,7 +13,7 @@ namespace std_array_test
 	{
 		return []()->const char*
 		{
-			return "Array : Declaration";
+			return "std::array : Declaration";
 		};
 	}
 	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
@@ -57,7 +57,7 @@ namespace std_array_test
 	{
 		return []()->const char*
 		{
-			return "Array : Fill";
+			return "std::array : Fill";
 		};
 	}
 	r2cm::iItem::DoFunctionT Fill::GetDoFunction() const
@@ -134,7 +134,7 @@ namespace std_array_test
 	{
 		return []()->const char*
 		{
-			return "Array : Copy";
+			return "std::array : Copy";
 		};
 	}
 	r2cm::iItem::DoFunctionT Copy::GetDoFunction() const
