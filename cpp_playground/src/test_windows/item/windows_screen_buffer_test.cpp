@@ -1,4 +1,4 @@
-#include "screen_buffer_test.h"
+#include "windows_screen_buffer_test.h"
 
 #include <assert.h>
 #include <conio.h> // _kbhit(), _getch()
@@ -10,7 +10,7 @@
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
-namespace screen_buffer_test
+namespace windows_screen_buffer_test
 {
 	r2cm::iItem::TitleFunctionT FillBuffer::GetTitleFunction() const
 	{

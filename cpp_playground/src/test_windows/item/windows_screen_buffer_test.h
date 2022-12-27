@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace screen_buffer_test
+namespace windows_screen_buffer_test
 {
 	class FillBuffer : public r2cm::iItem
 	{

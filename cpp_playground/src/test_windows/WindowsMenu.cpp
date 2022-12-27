@@ -6,7 +6,7 @@
 #include "item/console_window_etc_test.h"
 #include "item/console_window_input_test.h"
 #include "item/console_window_message_test.h"
-#include "item/screen_buffer_test.h"
+#include "item/windows_screen_buffer_test.h"
 #include "item/windows_sound_test.h"
 
 #include "ConsoleTextColorMenu.h"
@@ -47,12 +47,12 @@ r2cm::MenuUp WindowsMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'a', screen_buffer_test::FillBuffer() );
-		ret->AddItem( 's', screen_buffer_test::Write2Buffer_WriteConsole() );
-		ret->AddItem( 'd', screen_buffer_test::Write2Buffer_WriteConsoleOutput() );
-		ret->AddItem( 'f', screen_buffer_test::DoubleBuffering() );
-		ret->AddItem( 'g', screen_buffer_test::ReadConsoleOutputTest() );
-		ret->AddItem( 'h', screen_buffer_test::ETCTest() );
+		ret->AddItem( 'a', windows_screen_buffer_test::FillBuffer() );
+		ret->AddItem( 's', windows_screen_buffer_test::Write2Buffer_WriteConsole() );
+		ret->AddItem( 'd', windows_screen_buffer_test::Write2Buffer_WriteConsoleOutput() );
+		ret->AddItem( 'f', windows_screen_buffer_test::DoubleBuffering() );
+		ret->AddItem( 'g', windows_screen_buffer_test::ReadConsoleOutputTest() );
+		ret->AddItem( 'h', windows_screen_buffer_test::ETCTest() );
 
 
 		ret->AddLineFeed();
