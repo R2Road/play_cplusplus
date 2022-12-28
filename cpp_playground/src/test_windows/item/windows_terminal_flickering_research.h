@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace flickering_research
+namespace windows_terminal_flickering_research
 {
 	class OneByOne : public r2cm::iItem
 	{

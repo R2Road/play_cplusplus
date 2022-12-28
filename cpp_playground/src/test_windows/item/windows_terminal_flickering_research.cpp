@@ -1,4 +1,4 @@
-#include "flickering_research.h"
+#include "windows_terminal_flickering_research.h"
 
 #include <conio.h> // _kbhit(), _getch()
 #include <Windows.h> // HANDLE, COORD, SetConsoleCursorPosition()
@@ -7,7 +7,7 @@
 
 #include "utility/r2utility_CharacterBuffer.h"
 
-namespace flickering_research
+namespace windows_terminal_flickering_research
 {
 	r2cm::iItem::TitleFunctionT OneByOne::GetTitleFunction() const
 	{

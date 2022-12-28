@@ -179,7 +179,7 @@
     <ClCompile Include="src\test_windows\item\console_window_input_test.cpp" />
     <ClCompile Include="src\test_windows\item\console_window_message_test.cpp" />
     <ClCompile Include="src\test_windows\item\console_window_test.cpp" />
-    <ClCompile Include="src\test_windows\item\flickering_research.cpp" />
+    <ClCompile Include="src\test_windows\item\windows_terminal_flickering_research.cpp" />
     <ClCompile Include="src\test_windows\item\windows_sound_test.cpp" />
     <ClCompile Include="src\test_windows\item\windows_time_test.cpp" />
     <ClCompile Include="src\test_windows\WindowsMenu.cpp" />
@@ -375,7 +375,7 @@
     <ClInclude Include="src\test_windows\item\console_window_input_test.h" />
     <ClInclude Include="src\test_windows\item\console_window_message_test.h" />
     <ClInclude Include="src\test_windows\item\console_window_test.h" />
-    <ClInclude Include="src\test_windows\item\flickering_research.h" />
+    <ClInclude Include="src\test_windows\item\windows_terminal_flickering_research.h" />
     <ClInclude Include="src\test_windows\item\windows_sound_test.h" />
     <ClInclude Include="src\test_windows\item\windows_time_test.h" />
     <ClInclude Include="src\test_windows\WindowsMenu.h" />
