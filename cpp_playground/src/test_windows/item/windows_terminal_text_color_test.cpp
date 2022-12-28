@@ -1,4 +1,4 @@
-#include "console_text_color_test.h"
+#include "windows_terminal_text_color_test.h"
 
 #include <bitset>
 #include <conio.h>
@@ -9,7 +9,7 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Inspector.h"
 
-namespace console_text_color_test
+namespace windows_terminal_text_color_test
 {
 	r2cm::iItem::TitleFunctionT ColorTable::GetTitleFunction() const
 	{

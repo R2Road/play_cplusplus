@@ -122,9 +122,6 @@
     <ClCompile Include="src\test_windows\item\windows_time_test.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_windows\item\console_text_color_test.cpp">
-      <Filter>test_windows\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_windows\item\console_window_input_test.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
@@ -563,6 +560,9 @@
     <ClCompile Include="src\test_windows\item\windows_screen_buffer_test.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_windows\item\windows_terminal_text_color_test.cpp">
+      <Filter>test_windows\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -618,9 +618,6 @@
       <Filter>test_windows\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_windows\item\flickering_research.h">
-      <Filter>test_windows\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_windows\item\console_text_color_test.h">
       <Filter>test_windows\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_windows\item\console_window_input_test.h">
@@ -1140,6 +1137,9 @@
       <Filter>test_std\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_windows\item\windows_screen_buffer_test.h">
+      <Filter>test_windows\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_windows\item\windows_terminal_text_color_test.h">
       <Filter>test_windows\item</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace console_text_color_test
+namespace windows_terminal_text_color_test
 {
 	class ColorTable : public r2cm::iItem
 	{
