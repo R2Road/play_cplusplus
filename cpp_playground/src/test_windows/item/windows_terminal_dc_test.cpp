@@ -1,11 +1,11 @@
-#include "console_window_etc_test.h"
+#include "windows_terminal_dc_test.h"
 
 #include <conio.h> // _kbhit(), _getch()
 #include <Windows.h> // HDC
 
 #include "r2cm/r2cm_ostream.h"
 
-namespace console_window_etc_test
+namespace windows_terminal_dc_test
 {
 	r2cm::iItem::TitleFunctionT Pixel::GetTitleFunction() const
 	{

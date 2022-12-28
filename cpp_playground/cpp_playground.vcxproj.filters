@@ -143,9 +143,6 @@
     <ClCompile Include="src\test_windows\FlickeringResearchMenu.cpp">
       <Filter>test_windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_windows\item\console_window_etc_test.cpp">
-      <Filter>test_windows\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_performance\item\performance_1_test.cpp">
       <Filter>test_performancee\item</Filter>
     </ClCompile>
@@ -566,6 +563,9 @@
     <ClCompile Include="src\test_windows\item\windows_terminal_font_test.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_windows\item\windows_terminal_dc_test.cpp">
+      <Filter>test_windows\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -640,9 +640,6 @@
     </ClInclude>
     <ClInclude Include="src\test_windows\FlickeringResearchMenu.h">
       <Filter>test_windows</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_windows\item\console_window_etc_test.h">
-      <Filter>test_windows\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_performance\item\performance_1_test.h">
       <Filter>test_performancee\item</Filter>
@@ -1146,6 +1143,9 @@
       <Filter>test_windows\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_windows\item\windows_terminal_font_test.h">
+      <Filter>test_windows\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_windows\item\windows_terminal_dc_test.h">
       <Filter>test_windows\item</Filter>
     </ClInclude>
   </ItemGroup>

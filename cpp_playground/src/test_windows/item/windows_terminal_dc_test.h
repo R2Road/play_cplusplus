@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace console_window_etc_test
+namespace windows_terminal_dc_test
 {
 	class Pixel : public r2cm::iItem
 	{
