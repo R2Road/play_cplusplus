@@ -563,6 +563,9 @@
     <ClCompile Include="src\test_windows\item\windows_terminal_text_color_test.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_windows\item\windows_terminal_font_test.cpp">
+      <Filter>test_windows\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1140,6 +1143,9 @@
       <Filter>test_windows\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_windows\item\windows_terminal_text_color_test.h">
+      <Filter>test_windows\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_windows\item\windows_terminal_font_test.h">
       <Filter>test_windows\item</Filter>
     </ClInclude>
   </ItemGroup>

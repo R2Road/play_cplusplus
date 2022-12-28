@@ -8,6 +8,7 @@
 #include "item/console_window_message_test.h"
 #include "item/windows_screen_buffer_test.h"
 #include "item/windows_sound_test.h"
+#include "item/windows_terminal_font_test.h"
 
 #include "ConsoleTextColorMenu.h"
 #include "ConsoleWindowMenu.h"
@@ -60,8 +61,8 @@ r2cm::MenuUp WindowsMenu::Create( r2cm::Director& director )
 
 
 		ret->AddMenu<FlickeringResearchMenu>( 'z' );
-		ret->AddItem( 'x', console_window_etc_test::FontInfo() );
-		ret->AddItem( 'c', console_window_etc_test::FontChange() );
+		ret->AddItem( 'x', windows_terminal_font_test::FontInfo() );
+		ret->AddItem( 'c', windows_terminal_font_test::FontChange() );
 		ret->AddItem( 'v', console_window_etc_test::Pixel() );
 		ret->AddItem( 'b', windows_sound_test::PlaySoundTest() );
 		ret->AddItem( 'n', windows_sound_test::BeepTest() );
