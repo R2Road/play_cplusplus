@@ -220,4 +220,62 @@ namespace c_union_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Memory::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Union : Memory";
+		};
+	}
+	r2cm::iItem::DoFunctionT Memory::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_NOTE( "다뤄지는 type 의 크기 만큼만 메모리에 접근한다." );
+			OUTPUT_NOTE( "char type에 0 을 대입하면 8bit만 0 이 할당된다." );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( union U { char c; int64_t i64; } );
+			DECLARATION_MAIN( U u );
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( u.c = 0 );
+				PROCESS_MAIN( u.i64 = 0ll );
+				OUTPUT_BINARY( u );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( u.i64 = -1ll );
+				OUTPUT_BINARY( u );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( u.c = 0 );
+				OUTPUT_BINARY( u );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( u.i64 = 255 );
+				OUTPUT_BINARY( u );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

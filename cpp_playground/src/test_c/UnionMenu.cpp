@@ -20,6 +20,14 @@ r2cm::MenuUp UnionMenu::Create( r2cm::Director& director )
 
 
 
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'q', c_union_test::Memory() );
+
+
+
 		ret->AddSplit();
 
 
