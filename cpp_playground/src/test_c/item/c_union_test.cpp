@@ -3,6 +3,8 @@
 #include "c_union_test_helper_unnamedunion_with_vector3.hpp"
 #include "c_union_test_helper_unnamedunion_with_vector3_2.hpp"
 
+#include <string>
+
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
@@ -134,6 +136,36 @@ namespace c_union_test
 			{
 				PROCESS_MAIN( u_1 = u_2 );
 				OUTPUT_BINARY( u_1 );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Complex::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Union : Complex";
+		};
+	}
+	r2cm::iItem::DoFunctionT Complex::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_NOTE( "Not Working" );
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_CODE( union U { char c; std::string s = ""; } );
+				OUTPUT_CODE( U u_1 );
 			}
 
 			std::cout << r2cm::split;

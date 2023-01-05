@@ -25,6 +25,13 @@ namespace c_union_test
 		DoFunctionT GetDoFunction() const override;
 	};
 
+	class Complex : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
+	};
+
 
 
 	class Unnamed_Union_With_Struct : public r2cm::iItem

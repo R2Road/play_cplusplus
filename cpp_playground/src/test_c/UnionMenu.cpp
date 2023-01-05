@@ -15,6 +15,7 @@ r2cm::MenuUp UnionMenu::Create( r2cm::Director& director )
 		ret->AddItem( '1', c_union_test::Basic() );
 		ret->AddItem( '2', c_union_test::Memory() );
 		ret->AddItem( '3', c_union_test::Assign() );
+		ret->AddItem( '4', c_union_test::Complex() );
 
 
 
