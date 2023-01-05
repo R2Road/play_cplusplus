@@ -278,4 +278,52 @@ namespace c_union_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Assign::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Union : Assign";
+		};
+	}
+	r2cm::iItem::DoFunctionT Assign::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( union U { char c; int64_t i64; } );
+			DECLARATION_MAIN( U u_1 );
+			DECLARATION_MAIN( U u_2 );
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( u_1.i64 = -1ll );
+				PROCESS_MAIN( u_1.c = 0 );
+				OUTPUT_BINARY( u_1 );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( u_2.i64 = 0 );
+				PROCESS_MAIN( u_2.c = -1 );
+				OUTPUT_BINARY( u_2 );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( u_1 = u_2 );
+				OUTPUT_BINARY( u_1 );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
