@@ -13,10 +13,8 @@ r2cm::MenuUp UnionMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', c_union_test::Basic() );
-		ret->AddItem( '2', c_union_test::Unnamed_Union_With_Struct() );
-		ret->AddItem( '3', c_union_test::Unnamed_Union_With_Vector3() );
-		ret->AddItem( '4', c_union_test::Unnamed_Union_With_Vector3_2() );
-		ret->AddItem( '5', c_union_test::Unnamed_Union_With_Vector3_3() );
+		ret->AddItem( '2', c_union_test::Memory() );
+		ret->AddItem( '3', c_union_test::Assign() );
 
 
 
@@ -24,8 +22,10 @@ r2cm::MenuUp UnionMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', c_union_test::Memory() );
-		ret->AddItem( 'w', c_union_test::Assign() );
+		ret->AddItem( 'q', c_union_test::Unnamed_Union_With_Struct() );
+		ret->AddItem( 'w', c_union_test::Unnamed_Union_With_Vector3() );
+		ret->AddItem( 'e', c_union_test::Unnamed_Union_With_Vector3_2() );
+		ret->AddItem( 'r', c_union_test::Unnamed_Union_With_Vector3_3() );
 
 
 

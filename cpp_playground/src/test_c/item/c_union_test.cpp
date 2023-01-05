@@ -38,6 +38,112 @@ namespace c_union_test
 
 
 
+	r2cm::iItem::TitleFunctionT Memory::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Union : Memory";
+		};
+	}
+	r2cm::iItem::DoFunctionT Memory::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_NOTE( "다뤄지는 type 의 크기 만큼만 메모리에 접근한다." );
+			OUTPUT_NOTE( "char type에 0 을 대입하면 8bit만 0 이 할당된다." );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( union U { char c; int64_t i64; } );
+			DECLARATION_MAIN( U u );
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( u.c = 0 );
+				PROCESS_MAIN( u.i64 = 0ll );
+				OUTPUT_BINARY( u );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( u.i64 = -1ll );
+				OUTPUT_BINARY( u );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( u.c = 0 );
+				OUTPUT_BINARY( u );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( u.i64 = 255 );
+				OUTPUT_BINARY( u );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Assign::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Union : Assign";
+		};
+	}
+	r2cm::iItem::DoFunctionT Assign::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( union U { char c; int64_t i64; } );
+			DECLARATION_MAIN( U u_1 );
+			DECLARATION_MAIN( U u_2 );
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( u_1.i64 = -1ll );
+				PROCESS_MAIN( u_1.c = 0 );
+				OUTPUT_BINARY( u_1 );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( u_2.i64 = 0 );
+				PROCESS_MAIN( u_2.c = -1 );
+				OUTPUT_BINARY( u_2 );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( u_1 = u_2 );
+				OUTPUT_BINARY( u_1 );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Unnamed_Union_With_Struct::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -213,112 +319,6 @@ namespace c_union_test
 				OUTPUT_VALUE( &v.x );
 				OUTPUT_VALUE( &v.y );
 				OUTPUT_VALUE( &v.z );
-			}
-
-			std::cout << r2cm::split;
-
-			return r2cm::eItemLeaveAction::Pause;
-		};
-	}
-
-
-
-	r2cm::iItem::TitleFunctionT Memory::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Union : Memory";
-		};
-	}
-	r2cm::iItem::DoFunctionT Memory::GetDoFunction() const
-	{
-		return []()->r2cm::eItemLeaveAction
-		{
-			std::cout << r2cm::split;
-
-			OUTPUT_NOTE( "다뤄지는 type 의 크기 만큼만 메모리에 접근한다." );
-			OUTPUT_NOTE( "char type에 0 을 대입하면 8bit만 0 이 할당된다." );
-
-			std::cout << r2cm::split;
-
-			DECLARATION_MAIN( union U { char c; int64_t i64; } );
-			DECLARATION_MAIN( U u );
-
-			std::cout << r2cm::split;
-
-			{
-				PROCESS_MAIN( u.c = 0 );
-				PROCESS_MAIN( u.i64 = 0ll );
-				OUTPUT_BINARY( u );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				PROCESS_MAIN( u.i64 = -1ll );
-				OUTPUT_BINARY( u );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				PROCESS_MAIN( u.c = 0 );
-				OUTPUT_BINARY( u );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				PROCESS_MAIN( u.i64 = 255 );
-				OUTPUT_BINARY( u );
-			}
-
-			std::cout << r2cm::split;
-
-			return r2cm::eItemLeaveAction::Pause;
-		};
-	}
-
-
-
-	r2cm::iItem::TitleFunctionT Assign::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Union : Assign";
-		};
-	}
-	r2cm::iItem::DoFunctionT Assign::GetDoFunction() const
-	{
-		return []()->r2cm::eItemLeaveAction
-		{
-			std::cout << r2cm::split;
-
-			DECLARATION_MAIN( union U { char c; int64_t i64; } );
-			DECLARATION_MAIN( U u_1 );
-			DECLARATION_MAIN( U u_2 );
-
-			std::cout << r2cm::split;
-
-			{
-				PROCESS_MAIN( u_1.i64 = -1ll );
-				PROCESS_MAIN( u_1.c = 0 );
-				OUTPUT_BINARY( u_1 );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				PROCESS_MAIN( u_2.i64 = 0 );
-				PROCESS_MAIN( u_2.c = -1 );
-				OUTPUT_BINARY( u_2 );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				PROCESS_MAIN( u_1 = u_2 );
-				OUTPUT_BINARY( u_1 );
 			}
 
 			std::cout << r2cm::split;
