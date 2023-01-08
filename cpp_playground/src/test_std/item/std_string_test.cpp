@@ -21,6 +21,13 @@ namespace std_string_test
 			std::cout << r2cm::split;
 
 			{
+				DECLARATION_MAIN( const std::string s );
+				OUTPUT_VALUE( sizeof( s ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
 				DECLARATION_MAIN( const std::string empty_string_1 );
 				DECLARATION_MAIN( const std::string empty_string_2 );
 				EXPECT_EQ( empty_string_1, empty_string_2 );
