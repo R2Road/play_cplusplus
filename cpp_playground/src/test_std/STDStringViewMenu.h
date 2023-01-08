@@ -14,6 +14,6 @@ private:
 	STDStringViewMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "std::string_view Menu"; }
+	static const char* GetTitle() { return "<string_view>"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
