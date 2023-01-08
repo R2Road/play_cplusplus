@@ -14,6 +14,6 @@ private:
 	STDFileSystemMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "std::filesystem Menu"; }
+	static const char* GetTitle() { return "<filesystem>"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
