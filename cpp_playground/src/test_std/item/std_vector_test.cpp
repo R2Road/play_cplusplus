@@ -417,4 +417,46 @@ namespace std_vector_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Move::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Vector : Move";
+		};
+	}
+	r2cm::iItem::DoFunctionT Move::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( std::vector<int> v_1( { 1, 2, 3 } ) );
+			DECLARATION_MAIN( std::vector<int> v_2( { 3, 4, 5 } ) );
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_VALUE( v_1.data() );
+				OUTPUT_VALUE( v_2.data() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( v_1 = std::move( v_2 ) );
+				OUTPUT_VALUE( v_1 );
+				OUTPUT_VALUE( v_2 );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( v_1.data() );
+				OUTPUT_VALUE( v_2.data() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

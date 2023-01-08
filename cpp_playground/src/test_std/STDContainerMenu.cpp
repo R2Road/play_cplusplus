@@ -49,6 +49,7 @@ r2cm::MenuUp STDContainerMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'h', std_vector_test::BoolVector() );
 		ret->AddItem( 'j', std_vector_test::OthersIterator() );
 		ret->AddItem( 'k', std_vector_test::EndIterator() );
+		ret->AddItem( 'l', std_vector_test::Move() );
 
 
 		ret->AddSplit();
