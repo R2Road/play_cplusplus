@@ -46,6 +46,83 @@ namespace std_string_test
 	}
 
 
+	r2cm::iItem::TitleFunctionT Move::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Move";
+		};
+	}
+	r2cm::iItem::DoFunctionT Move::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_NOTE( "짧은 문자열의 경우 move가 작동하지 않는다." );
+			OUTPUT_NOTE( "xstring 의 ""_Assign_rv_contents_with_alloc_always_equal"" 함수 참조" );
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "move : X" );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( std::string s_1( "123456789012345" ) );
+				DECLARATION_MAIN( std::string s_2( "234567890123456" ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( (void*)s_1.c_str() );
+				OUTPUT_VALUE( (void*)s_2.c_str() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( s_1 = std::move( s_2 ) );
+				OUTPUT_VALUE( s_1 );
+				OUTPUT_VALUE( s_2 );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( (void*)s_1.c_str() );
+				OUTPUT_VALUE( (void*)s_2.c_str() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "move : O" );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( std::string s_1( "1234567890123456" ) );
+				DECLARATION_MAIN( std::string s_2( "2345678901234567" ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( (void*)s_1.c_str() );
+				OUTPUT_VALUE( (void*)s_2.c_str() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( s_1 = std::move( s_2 ) );
+				OUTPUT_VALUE( s_1 );
+				OUTPUT_VALUE( s_2 );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( (void*)s_1.c_str() );
+				OUTPUT_VALUE( (void*)s_2.c_str() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
 
 	r2cm::iItem::TitleFunctionT Find::GetTitleFunction() const
 	{
