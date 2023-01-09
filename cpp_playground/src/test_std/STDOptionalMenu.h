@@ -14,6 +14,6 @@ private:
 	STDOptionalMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "std::optional Menu"; }
+	static const char* GetTitle() { return "<optional>"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
