@@ -5,7 +5,7 @@
 
 #include "item/std_align_test.h"
 
-#include "STDMenu.h"
+#include "STDMemoryMenu.h"
 
 r2cm::MenuUp STDAlignMenu::Create( r2cm::Director& director )
 {
@@ -20,7 +20,7 @@ r2cm::MenuUp STDAlignMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<STDMenu>( 27 );
+		ret->AddMenu<STDMemoryMenu>( 27 );
 	}
 
 	return ret;

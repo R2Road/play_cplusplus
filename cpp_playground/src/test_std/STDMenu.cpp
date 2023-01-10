@@ -12,7 +12,6 @@
 
 
 #include "RootMenu.h"
-#include "STDAlignMenu.h"
 #include "STDContainerMenu.h"
 #include "STDCoutMenu.h"
 #include "STDFileSystemMenu.h"
@@ -31,10 +30,9 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 	{
 		ret->AddMenu<STDCoutMenu>( '1' );
 		ret->AddMenu<STDFileSystemMenu>( '2' );
-		ret->AddMenu<STDAlignMenu>( '3' );
-		ret->AddMenu<STDOptionalMenu>( '4' );
-		ret->AddMenu<STDStringMenu>( '5' );
-		ret->AddMenu<STDStringViewMenu>( '6' );
+		ret->AddMenu<STDOptionalMenu>( '3' );
+		ret->AddMenu<STDStringMenu>( '4' );
+		ret->AddMenu<STDStringViewMenu>( '5' );
 
 
 
