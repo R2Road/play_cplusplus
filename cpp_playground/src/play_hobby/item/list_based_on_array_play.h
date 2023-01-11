@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace list_based_on_array_test
+namespace list_based_on_array_play
 {
 	class Basic : public r2cm::iItem
 	{

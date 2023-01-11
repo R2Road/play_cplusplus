@@ -1,11 +1,11 @@
-#include "list_based_on_array_test.h"
+#include "list_based_on_array_play.h"
 
 #include "r2/r2_ListBasedOnArray.h"
 #include "r2/r2_PointInt.h"
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Inspector.h"
 
-namespace list_based_on_array_test
+namespace list_based_on_array_play
 {
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
