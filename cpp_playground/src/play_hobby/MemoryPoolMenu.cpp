@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "item/memory_pool_test.h"
+#include "item/play_memory_pool.h"
 
 #include "HobbyMenu.h"
 
@@ -25,17 +25,17 @@ r2cm::MenuUp MemoryPoolMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', memory_pool_test::MemoryBlock_Declaration() );
-		ret->AddItem( '2', memory_pool_test::MemoryBlock_New_FundamentalType() );
-		ret->AddItem( '3', memory_pool_test::MemoryBlock_Check_FundamentalType() );
-		ret->AddItem( '4', memory_pool_test::MemoryBlock_New_UserDefinedType() );
+		ret->AddItem( '1', play_memory_pool::MemoryBlock_Declaration() );
+		ret->AddItem( '2', play_memory_pool::MemoryBlock_New_FundamentalType() );
+		ret->AddItem( '3', play_memory_pool::MemoryBlock_Check_FundamentalType() );
+		ret->AddItem( '4', play_memory_pool::MemoryBlock_New_UserDefinedType() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', memory_pool_test::MemoryPool_Declaration() );
-		ret->AddItem( 'w', memory_pool_test::MemoryPool_New() );
+		ret->AddItem( 'q', play_memory_pool::MemoryPool_Declaration() );
+		ret->AddItem( 'w', play_memory_pool::MemoryPool_New() );
 
 
 		ret->AddSplit();

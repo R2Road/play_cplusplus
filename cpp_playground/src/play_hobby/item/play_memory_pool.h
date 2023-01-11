@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace memory_pool_test
+namespace play_memory_pool
 {
 	class MemoryBlock_Declaration : public r2cm::iItem
 	{

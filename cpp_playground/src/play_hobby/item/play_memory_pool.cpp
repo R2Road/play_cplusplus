@@ -1,4 +1,4 @@
-#include "memory_pool_test.h"
+#include "play_memory_pool.h"
 
 #include <cassert>
 #include <stdint.h>
@@ -63,7 +63,7 @@ namespace r2
 	};
 }
 
-namespace memory_pool_test
+namespace play_memory_pool
 {
 	void PrintBuffer( const int8_t* buffer, const uint64_t size )
 	{
