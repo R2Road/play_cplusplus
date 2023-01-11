@@ -1,11 +1,11 @@
-#include "std_align_test.h"
+#include "std_memory_align_test.h"
 
 #include <memory>
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
-namespace align_test
+namespace std_memory_align_test
 {
 	void PrintResult( const void* const pb, const void* const presult, const std::size_t space )
 	{ 

@@ -110,7 +110,7 @@
     <ClCompile Include="src\test_performance\item\performance_container_iteration_test.cpp" />
     <ClCompile Include="src\test_performance\PerformanceMenu.cpp" />
     <ClCompile Include="src\test_std\item\std_algorithm_test.cpp" />
-    <ClCompile Include="src\test_std\item\std_align_test.cpp" />
+    <ClCompile Include="src\test_std\item\std_memory_align_test.cpp" />
     <ClCompile Include="src\test_std\item\std_array_test.cpp" />
     <ClCompile Include="src\test_std\item\std_atomic_test.cpp" />
     <ClCompile Include="src\test_std\item\std_bitset_test.cpp" />
@@ -300,7 +300,7 @@
     <ClInclude Include="src\test_performance\item\performance_container_iteration_test.h" />
     <ClInclude Include="src\test_performance\PerformanceMenu.h" />
     <ClInclude Include="src\test_std\item\std_algorithm_test.h" />
-    <ClInclude Include="src\test_std\item\std_align_test.h" />
+    <ClInclude Include="src\test_std\item\std_memory_align_test.h" />
     <ClInclude Include="src\test_std\item\std_array_test.h" />
     <ClInclude Include="src\test_std\item\std_atomic_test.h" />
     <ClInclude Include="src\test_std\item\std_bitset_test.h" />

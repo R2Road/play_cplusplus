@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace align_test
+namespace std_memory_align_test
 {
 	class Basic : public r2cm::iItem
 	{

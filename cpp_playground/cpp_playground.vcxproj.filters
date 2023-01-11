@@ -284,9 +284,6 @@
     <ClCompile Include="src\test_cpp\AlignMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_std\item\std_align_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_c\item\c_sizeof_test.cpp">
       <Filter>test_c\item</Filter>
     </ClCompile>
@@ -566,6 +563,9 @@
     <ClCompile Include="src\test_windows\item\windows_terminal_flickering_research.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_std\item\std_memory_align_test.cpp">
+      <Filter>test_std\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -781,9 +781,6 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\AlignMenu.h">
       <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_align_test.h">
-      <Filter>test_std\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_c\item\c_sizeof_test.h">
       <Filter>test_c\item</Filter>
@@ -1147,6 +1144,9 @@
     </ClInclude>
     <ClInclude Include="src\test_windows\item\windows_terminal_flickering_research.h">
       <Filter>test_windows\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\item\std_memory_align_test.h">
+      <Filter>test_std\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
