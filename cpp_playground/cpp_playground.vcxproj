@@ -44,6 +44,7 @@
     <ClCompile Include="src\play_hobby\item\memory_pool_test.cpp" />
     <ClCompile Include="src\play_hobby\item\property_test.cpp" />
     <ClCompile Include="src\play_hobby\item\serialize_test.cpp" />
+    <ClCompile Include="src\play_hobby\item\spin_lock_play.cpp" />
     <ClCompile Include="src\play_hobby\item\vector3_test.cpp" />
     <ClCompile Include="src\play_hobby\ListBasedOnArrayMenu.cpp" />
     <ClCompile Include="src\play_hobby\MemoryPoolMenu.cpp" />
@@ -223,6 +224,7 @@
     <ClInclude Include="src\play_hobby\item\memory_pool_test.h" />
     <ClInclude Include="src\play_hobby\item\property_test.h" />
     <ClInclude Include="src\play_hobby\item\serialize_test.h" />
+    <ClInclude Include="src\play_hobby\item\spin_lock_play.h" />
     <ClInclude Include="src\play_hobby\item\vector3_test.h" />
     <ClInclude Include="src\play_hobby\ListBasedOnArrayMenu.h" />
     <ClInclude Include="src\play_hobby\MemoryPoolMenu.h" />
