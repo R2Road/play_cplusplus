@@ -20,35 +20,36 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddMenu<FSM_V1_Menu>( '1' );
-		ret->AddMenu<TreeMenu>( '4' );
+
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddMenu<PropertyMenu>( '5' );
-		ret->AddItem( '6', serialize_test::Basic() );
-		ret->AddItem( '7', serialize_test::Copy() );
+
+		ret->AddMenu<TreeMenu>( 'q' );
+		ret->AddMenu<PropertyMenu>( 'w' );
 
 
-		ret->AddSplit();
+
+		ret->AddLineFeed();
 
 
-		ret->AddMenu<MemoryPoolMenu>( 'q' );
-		ret->AddItem( 'w', infinite_number_test::Basic() );
+
+		ret->AddMenu<FSM_V1_Menu>( 'a' );
+		ret->AddItem( 's', serialize_test::Basic() );
+		ret->AddItem( 'd', serialize_test::Copy() );
+		ret->AddItem( 'f', infinite_number_test::Basic() );
 
 
-		ret->AddSplit();
 
+		ret->AddLineFeed();
 
-		ret->AddMenu<Vector3Menu>( 'a' );
-
-
-		ret->AddSplit();
 
 
 		ret->AddMenu<ListBasedOnArrayMenu>( 'z' );
+		ret->AddMenu<Vector3Menu>( 'x' );
+		ret->AddMenu<MemoryPoolMenu>( 'c' );
 
 
 		ret->AddSplit();
