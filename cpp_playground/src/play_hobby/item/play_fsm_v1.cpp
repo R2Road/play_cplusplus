@@ -1,5 +1,5 @@
-#include "hobby_fsm_v1_play.h"
-#include "hobby_fsm_v1_play_helper.hpp"
+#include "play_fsm_v1.h"
+#include "play_fsm_v1_helper.hpp"
 
 #include <memory>
 #include <vector>
@@ -7,9 +7,9 @@
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
-using namespace hobby_fsm_v1_play_helper;
+using namespace play_fsm_v1_helper;
 
-namespace hobby_fsm_v1_play
+namespace play_fsm_v1
 {
 	r2cm::iItem::TitleFunctionT State_Declaration::GetTitleFunction() const
 	{

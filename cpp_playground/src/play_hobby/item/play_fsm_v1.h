@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace hobby_fsm_v1_play
+namespace play_fsm_v1
 {
 	class State_Declaration : public r2cm::iItem
 	{

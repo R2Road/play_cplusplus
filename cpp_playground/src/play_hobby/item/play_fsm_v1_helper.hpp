@@ -5,7 +5,7 @@
 
 #include "r2cm/r2cm_ostream.h"
 
-namespace hobby_fsm_v1_play_helper
+namespace play_fsm_v1_helper
 {
 	using StateIndexT = uint32_t;
 
