@@ -521,9 +521,6 @@
     <ClCompile Include="src\play_hobby\item\property_test.cpp">
       <Filter>play_hobby\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\item\vector3_test.cpp">
-      <Filter>play_hobby\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_std\item\std_functional_mem_fn_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
@@ -567,6 +564,9 @@
       <Filter>play_hobby\item</Filter>
     </ClCompile>
     <ClCompile Include="src\play_hobby\item\play_infinite_number.cpp">
+      <Filter>play_hobby\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_hobby\item\play_vector3.cpp">
       <Filter>play_hobby\item</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1097,9 +1097,6 @@
     <ClInclude Include="src\play_hobby\item\property_test.h">
       <Filter>play_hobby\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\item\vector3_test.h">
-      <Filter>play_hobby\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_std\item\std_functional_mem_fn_test_helper.hpp">
       <Filter>test_std\item</Filter>
     </ClInclude>
@@ -1152,6 +1149,9 @@
       <Filter>play_hobby\item</Filter>
     </ClInclude>
     <ClInclude Include="src\play_hobby\item\play_infinite_number.h">
+      <Filter>play_hobby\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_hobby\item\play_vector3.h">
       <Filter>play_hobby\item</Filter>
     </ClInclude>
   </ItemGroup>

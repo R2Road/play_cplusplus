@@ -1,4 +1,4 @@
-#include "vector3_test.h"
+#include "play_vector3.h"
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
@@ -54,7 +54,7 @@ namespace r2
 	}
 }
 
-namespace vector3_test
+namespace play_vector3
 {
 	r2cm::iItem::TitleFunctionT Declaration::GetTitleFunction() const
 	{

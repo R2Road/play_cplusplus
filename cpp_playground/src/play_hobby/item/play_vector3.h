@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace vector3_test
+namespace play_vector3
 {
 	class Declaration : public r2cm::iItem
 	{
