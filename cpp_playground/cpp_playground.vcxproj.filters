@@ -557,9 +557,6 @@
     <ClCompile Include="src\test_std\item\std_memory_align_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\item\spin_lock_play.cpp">
-      <Filter>play_hobby\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\play_hobby\item\list_based_on_array_play.cpp">
       <Filter>play_hobby\item</Filter>
     </ClCompile>
@@ -567,6 +564,9 @@
       <Filter>play_hobby\item</Filter>
     </ClCompile>
     <ClCompile Include="src\play_hobby\item\play_serialize.cpp">
+      <Filter>play_hobby\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_hobby\item\play_spin_lock.cpp">
       <Filter>play_hobby\item</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1142,9 +1142,6 @@
     <ClInclude Include="src\test_std\item\std_memory_align_test.h">
       <Filter>test_std\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\item\spin_lock_play.h">
-      <Filter>play_hobby\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\play_hobby\item\list_based_on_array_play.h">
       <Filter>play_hobby\item</Filter>
     </ClInclude>
@@ -1152,6 +1149,9 @@
       <Filter>play_hobby\item</Filter>
     </ClInclude>
     <ClInclude Include="src\play_hobby\item\play_serialize.h">
+      <Filter>play_hobby\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_hobby\item\play_spin_lock.h">
       <Filter>play_hobby\item</Filter>
     </ClInclude>
   </ItemGroup>

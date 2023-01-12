@@ -1,9 +1,9 @@
-#include "spin_lock_play.h"
+#include "play_spin_lock.h"
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
-namespace spin_lock_play
+namespace play_spin_lock
 {
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{

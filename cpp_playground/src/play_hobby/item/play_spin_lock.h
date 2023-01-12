@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace spin_lock_play
+namespace play_spin_lock
 {
 	class Basic : public r2cm::iItem
 	{

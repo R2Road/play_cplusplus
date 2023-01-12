@@ -5,7 +5,7 @@
 
 #include "item/infinite_number_test.h"
 #include "item/play_serialize.h"
-#include "item/spin_lock_play.h"
+#include "item/play_spin_lock.h"
 
 #include "FSM_V1_Menu.h"
 #include "ListBasedOnArrayMenu.h"
@@ -21,7 +21,7 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', spin_lock_play::Basic() );
+		ret->AddItem( '1', play_spin_lock::Basic() );
 
 
 
