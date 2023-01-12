@@ -530,9 +530,6 @@
     <ClCompile Include="src\play_hobby\item\property_test.cpp">
       <Filter>play_hobby\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\item\serialize_test.cpp">
-      <Filter>play_hobby\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\play_hobby\item\vector3_test.cpp">
       <Filter>play_hobby\item</Filter>
     </ClCompile>
@@ -567,6 +564,9 @@
       <Filter>play_hobby\item</Filter>
     </ClCompile>
     <ClCompile Include="src\play_hobby\item\play_memory_pool.cpp">
+      <Filter>play_hobby\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_hobby\item\play_serialize.cpp">
       <Filter>play_hobby\item</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1109,9 +1109,6 @@
     <ClInclude Include="src\play_hobby\item\property_test.h">
       <Filter>play_hobby\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\item\serialize_test.h">
-      <Filter>play_hobby\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\play_hobby\item\vector3_test.h">
       <Filter>play_hobby\item</Filter>
     </ClInclude>
@@ -1152,6 +1149,9 @@
       <Filter>play_hobby\item</Filter>
     </ClInclude>
     <ClInclude Include="src\play_hobby\item\play_memory_pool.h">
+      <Filter>play_hobby\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_hobby\item\play_serialize.h">
       <Filter>play_hobby\item</Filter>
     </ClInclude>
   </ItemGroup>

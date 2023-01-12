@@ -4,7 +4,7 @@
 #include "r2cm/r2cm_ostream.h"
 
 #include "item/infinite_number_test.h"
-#include "item/serialize_test.h"
+#include "item/play_serialize.h"
 #include "item/spin_lock_play.h"
 
 #include "FSM_V1_Menu.h"
@@ -39,8 +39,8 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 
 
 		ret->AddMenu<FSM_V1_Menu>( 'a' );
-		ret->AddItem( 's', serialize_test::Basic() );
-		ret->AddItem( 'd', serialize_test::Copy() );
+		ret->AddItem( 's', play_serialize::Basic() );
+		ret->AddItem( 'd', play_serialize::Copy() );
 		ret->AddItem( 'f', infinite_number_test::Basic() );
 
 

@@ -1,11 +1,11 @@
-#include "serialize_test.h"
+#include "play_serialize.h"
 
 #include <vector>
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
-namespace serialize_test
+namespace play_serialize
 {
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{

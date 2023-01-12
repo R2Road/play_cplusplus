@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace serialize_test
+namespace play_serialize
 {
 	class Basic : public r2cm::iItem
 	{
