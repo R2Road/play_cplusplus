@@ -1,4 +1,4 @@
-#include "infinite_number_test.h"
+#include "play_infinite_number.h"
 
 #include "r2cm/r2cm_ostream.h"
 
@@ -29,7 +29,7 @@ namespace
 	};
 }
 
-namespace infinite_number_test
+namespace play_infinite_number
 {
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{

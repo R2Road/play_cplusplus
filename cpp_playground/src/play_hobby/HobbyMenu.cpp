@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "item/infinite_number_test.h"
+#include "item/play_infinite_number.h"
 #include "item/play_serialize.h"
 #include "item/play_spin_lock.h"
 
@@ -41,7 +41,7 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 		ret->AddMenu<FSM_V1_Menu>( 'a' );
 		ret->AddItem( 's', play_serialize::Basic() );
 		ret->AddItem( 'd', play_serialize::Copy() );
-		ret->AddItem( 'f', infinite_number_test::Basic() );
+		ret->AddItem( 'f', play_infinite_number::Basic() );
 
 
 

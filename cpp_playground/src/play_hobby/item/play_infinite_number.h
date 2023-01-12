@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace infinite_number_test
+namespace play_infinite_number
 {
 	class Basic : public r2cm::iItem
 	{
