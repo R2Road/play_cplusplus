@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace property_test
+namespace play_property
 {
 	class Functor : public r2cm::iItem
 	{

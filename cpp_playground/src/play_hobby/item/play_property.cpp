@@ -1,9 +1,9 @@
-#include "property_test.h"
+#include "play_property.h"
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
-namespace property_test
+namespace play_property
 {
 	template<typename C, typename F>
 	struct invoke_functor

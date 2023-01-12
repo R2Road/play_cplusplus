@@ -42,7 +42,7 @@
     <ClCompile Include="src\play_hobby\item\play_infinite_number.cpp" />
     <ClCompile Include="src\play_hobby\item\play_list_based_on_array.cpp" />
     <ClCompile Include="src\play_hobby\item\play_memory_pool.cpp" />
-    <ClCompile Include="src\play_hobby\item\property_test.cpp" />
+    <ClCompile Include="src\play_hobby\item\play_property.cpp" />
     <ClCompile Include="src\play_hobby\item\play_serialize.cpp" />
     <ClCompile Include="src\play_hobby\item\play_spin_lock.cpp" />
     <ClCompile Include="src\play_hobby\item\play_vector3.cpp" />
@@ -222,7 +222,7 @@
     <ClInclude Include="src\play_hobby\item\play_infinite_number.h" />
     <ClInclude Include="src\play_hobby\item\play_list_based_on_array.h" />
     <ClInclude Include="src\play_hobby\item\play_memory_pool.h" />
-    <ClInclude Include="src\play_hobby\item\property_test.h" />
+    <ClInclude Include="src\play_hobby\item\play_property.h" />
     <ClInclude Include="src\play_hobby\item\play_serialize.h" />
     <ClInclude Include="src\play_hobby\item\play_spin_lock.h" />
     <ClInclude Include="src\play_hobby\item\play_vector3.h" />
