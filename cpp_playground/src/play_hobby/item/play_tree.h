@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace hobby_tree_play
+namespace play_tree
 {
 	class Basic : public r2cm::iItem
 	{

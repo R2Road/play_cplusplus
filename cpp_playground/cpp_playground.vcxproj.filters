@@ -518,9 +518,6 @@
     <ClCompile Include="src\play_hobby\Vector3Menu.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\item\hobby_tree_play.cpp">
-      <Filter>play_hobby\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\play_hobby\item\infinite_number_test.cpp">
       <Filter>play_hobby\item</Filter>
     </ClCompile>
@@ -567,6 +564,9 @@
       <Filter>play_hobby\item</Filter>
     </ClCompile>
     <ClCompile Include="src\play_hobby\item\play_fsm_v1.cpp">
+      <Filter>play_hobby\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_hobby\item\play_tree.cpp">
       <Filter>play_hobby\item</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1094,9 +1094,6 @@
     <ClInclude Include="src\play_hobby\Vector3Menu.h">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\item\hobby_tree_play.h">
-      <Filter>play_hobby\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\play_hobby\item\infinite_number_test.h">
       <Filter>play_hobby\item</Filter>
     </ClInclude>
@@ -1152,6 +1149,9 @@
       <Filter>play_hobby\item</Filter>
     </ClInclude>
     <ClInclude Include="src\play_hobby\item\play_fsm_v1_helper.hpp">
+      <Filter>play_hobby\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_hobby\item\play_tree.h">
       <Filter>play_hobby\item</Filter>
     </ClInclude>
   </ItemGroup>

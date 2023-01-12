@@ -38,7 +38,7 @@
     <ClCompile Include="src\play_hobby\FSM_V1_Menu.cpp" />
     <ClCompile Include="src\play_hobby\HobbyMenu.cpp" />
     <ClCompile Include="src\play_hobby\item\play_fsm_v1.cpp" />
-    <ClCompile Include="src\play_hobby\item\hobby_tree_play.cpp" />
+    <ClCompile Include="src\play_hobby\item\play_tree.cpp" />
     <ClCompile Include="src\play_hobby\item\infinite_number_test.cpp" />
     <ClCompile Include="src\play_hobby\item\play_list_based_on_array.cpp" />
     <ClCompile Include="src\play_hobby\item\play_memory_pool.cpp" />
@@ -218,7 +218,7 @@
     <ClInclude Include="src\play_hobby\HobbyMenu.h" />
     <ClInclude Include="src\play_hobby\item\play_fsm_v1.h" />
     <ClInclude Include="src\play_hobby\item\play_fsm_v1_helper.hpp" />
-    <ClInclude Include="src\play_hobby\item\hobby_tree_play.h" />
+    <ClInclude Include="src\play_hobby\item\play_tree.h" />
     <ClInclude Include="src\play_hobby\item\infinite_number_test.h" />
     <ClInclude Include="src\play_hobby\item\play_list_based_on_array.h" />
     <ClInclude Include="src\play_hobby\item\play_memory_pool.h" />

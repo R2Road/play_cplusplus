@@ -1,9 +1,9 @@
-#include "hobby_tree_play.h"
+#include "play_tree.h"
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
-namespace hobby_tree_play
+namespace play_tree
 {
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
