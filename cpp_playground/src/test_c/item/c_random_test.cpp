@@ -22,23 +22,20 @@ namespace c_random_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-
 				for( int i = 0; 5 > i; ++i )
 				{
 					OUTPUT_VALUE( rand() );
 				}
 
 				std::cout << r2cm::linefeed;
-				std::cout << r2cm::tab << "# Message : Same Value Printed When Every Single Execute" << r2cm::linefeed;
-				std::cout << r2cm::tab << "# Message : 프로그램 새로 기동해도 rand() 가 반환하는 값과 순서는 같다." << r2cm::linefeed;
+
+				OUTPUT_NOTE( "Same Value Printed When Every Single Execute" );
+				OUTPUT_NOTE( "프로그램 새로 기동해도 rand() 가 반환하는 값과 순서는 같다." );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-
 				PROCESS_MAIN( srand( 1 ) );
 
 				std::cout << r2cm::linefeed;
@@ -49,8 +46,9 @@ namespace c_random_test
 				}
 
 				std::cout << r2cm::linefeed;
-				std::cout << r2cm::tab << "# Message : srand( 1 ) is Default" << r2cm::linefeed;
-				std::cout << r2cm::tab << "# Message : srand( n ) is init rand() Sequence" << r2cm::linefeed;
+
+				OUTPUT_NOTE( "srand( 1 ) is Default" );
+				OUTPUT_NOTE( "srand( n ) is init rand() Sequence" );
 			}
 
 			std::cout << r2cm::split;
