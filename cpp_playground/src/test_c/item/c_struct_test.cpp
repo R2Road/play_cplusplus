@@ -192,8 +192,9 @@ namespace c_struct_test
 				DECLARATION_MAIN( struct Case_1 { int i; int arr[0]; } );
 
 				std::cout << r2cm::linefeed;
-				std::cout << r2cm::tab << "+ struct 안에 길이가 0 인 배열이 선언된다." << r2cm::linefeed;
-				std::cout << r2cm::tab << "+ warning 4200 : ( 비표준 확장이 사용됨: 구조체/공용 구조체의 배열 크기가 0입니다. )" << r2cm::linefeed;
+
+				OUTPUT_NOTE( "struct 안에 길이가 0 인 배열이 선언된다." );
+				OUTPUT_NOTE( "warning 4200 : ( 비표준 확장이 사용됨: 구조체/공용 구조체의 배열 크기가 0입니다. )" );
 #pragma warning( pop )
 			}
 
@@ -205,8 +206,9 @@ namespace c_struct_test
 				DECLARATION_MAIN( struct Case_2 { int i; int arr[]; } );
 
 				std::cout << r2cm::linefeed;
-				std::cout << r2cm::tab << "+ struct 안에 길이가 지정되지 않은 배열이 선언된다." << r2cm::linefeed;
-				std::cout << r2cm::tab << "+ warning 4200 : ( 비표준 확장이 사용됨: 구조체/공용 구조체의 배열 크기가 0입니다. )" << r2cm::linefeed;
+
+				OUTPUT_NOTE( "struct 안에 길이가 지정되지 않은 배열이 선언된다." );
+				OUTPUT_NOTE( "warning 4200 : ( 비표준 확장이 사용됨: 구조체/공용 구조체의 배열 크기가 0입니다. )" );
 #pragma warning( pop )
 			}
 
@@ -216,13 +218,16 @@ namespace c_struct_test
 				DECLARATION_MAIN( struct Case_2 { int i; int arr[1]; } );
 
 				std::cout << r2cm::linefeed;
-				std::cout << r2cm::tab << "+ 안전하게 길이를 1 로 지정하자" << r2cm::linefeed;
+
+				OUTPUT_NOTE( "안전하게 길이를 1 로 지정하자" );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 활용 예" << r2cm::linefeed2;
+				OUTPUT_NOTE( "활용 예" );
+
+				std::cout << r2cm::linefeed;
 
 #pragma warning( push )
 #pragma warning( disable : 4200 )
