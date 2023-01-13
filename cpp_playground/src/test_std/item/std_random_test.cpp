@@ -45,7 +45,7 @@ namespace std_random_test
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "+ Message : Contained Min and Max" << r2cm::linefeed;
+				OUTPUT_NOTE( "Contained Min and Max" );
 			}
 
 			std::cout << r2cm::split;
@@ -69,7 +69,7 @@ namespace std_random_test
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "+ Message : Contained Min" << r2cm::linefeed;
+				OUTPUT_NOTE( "Contained Min" );;
 			}
 
 			std::cout << r2cm::split;
