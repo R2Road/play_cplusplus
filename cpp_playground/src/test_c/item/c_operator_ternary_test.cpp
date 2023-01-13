@@ -21,7 +21,7 @@ namespace c_operator_ternary_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 반환값이 없어도 된다." << r2cm::linefeed2;
+				OUTPUT_NOTE( "반환값이 없어도 된다." );
 
 				std::cout << r2cm::linefeed;
 
@@ -49,8 +49,8 @@ namespace c_operator_ternary_test
 		{
 			std::cout << r2cm::split;
 
-			std::cout << r2cm::tab << "+ 삼항 연산자의 실행식은 쉼표로 구분해 여러개 넣을 수 있다." << r2cm::linefeed;
-			std::cout << r2cm::tab << "+ 이걸 20년 만에 알았네. 2022.05.18" << r2cm::linefeed;
+			OUTPUT_NOTE( "삼항 연산자의 실행식은 쉼표로 구분해 여러개 넣을 수 있다." );
+			OUTPUT_NOTE( "이걸 20년 만에 알았네. 2022.05.18" );
 
 			std::cout << r2cm::split;
 
