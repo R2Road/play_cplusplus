@@ -59,18 +59,34 @@ namespace c_pointer_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ adress of ip " << r2cm::linefeed;
+				OUTPUT_NOTE( "adress of ip" );
 				OUTPUT_VALUE( ip );
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "+ adress of ip + 1 " << r2cm::linefeed;
+				OUTPUT_NOTE( "adress of ip + 1" );
 				OUTPUT_VALUE( ip + 1 );
 
-				std::cout << r2cm::linefeed2;
+				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "+ offset : ( ip + 1 ) ~ ip" << r2cm::linefeed;
+				OUTPUT_NOTE( "offset : ( ip + 1 ) ~ ip" );
+				OUTPUT_VALUE( ip + 1 );
 				OUTPUT_VALUE( ( ( ip + 1 ) - ip ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_NOTE( "offset : ( ip + 2 ) ~ ip" );
+				OUTPUT_VALUE( ip + 2 );
+				OUTPUT_VALUE( ( ( ip + 2 ) - ip ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_NOTE( "offset : ( char* )( ip + 2 ) ~ ( char* )ip" );
+				OUTPUT_VALUE( ( (char*)( ip + 2 ) ) - ( (char*)ip ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_NOTE( "포인터간 연산은 Type의 영향을 받는다." );
 			}
 
 			std::cout << r2cm::split;
@@ -83,7 +99,7 @@ namespace c_pointer_test
 
 				std::cout << r2cm::linefeed2;
 
-				std::cout << r2cm::tab << "+ offset : t2 ~ t1" << r2cm::linefeed;
+				OUTPUT_NOTE( "offset : t2 ~ t1" );
 				OUTPUT_VALUE( t2 - t1 );
 			}
 
