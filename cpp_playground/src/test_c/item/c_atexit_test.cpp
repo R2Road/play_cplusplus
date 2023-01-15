@@ -9,6 +9,11 @@
 
 namespace c_atexit_test
 {
+	void Do()
+	{
+		R2ASSERT( false, "Function : test_atexit" );
+	}
+
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -22,15 +27,27 @@ namespace c_atexit_test
 		{
 			std::cout << r2cm::split;
 
-			std::cout << r2cm::tab << "프로그램이 종료될 때 등록한 함수가 작동된다." << r2cm::linefeed;
+			OUTPUT_NOTE( "프로그램이 종료될 때 등록한 함수가 작동된다." );
+			OUTPUT_NOTE( "반환값은 성공하면 0, 성공이 아니면 다른 값" );
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto test_atexit = []()
-				{
-					R2ASSERT( false, "test_atexit" );
-				} );
+				OUTPUT_NOTE( "Function" );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 0, atexit( Do ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "Lambda" );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto test_atexit = []() { R2ASSERT( false, "Lambda : test_atexit" ); } );
 
 				EXPECT_EQ( 0, atexit( test_atexit ) );
 			}
@@ -38,11 +55,15 @@ namespace c_atexit_test
 			std::cout << r2cm::split;
 
 			{
+				OUTPUT_NOTE( "Static Method" );
+
+				std::cout << r2cm::linefeed;
+
 				DECLARATION_MAIN( struct Test_AtExit
 				{
 					static void Do()
 					{
-						R2ASSERT( false, "test_atexit" );
+						R2ASSERT( false, "Static Method : test_atexit" );
 					}
 				} );
 
