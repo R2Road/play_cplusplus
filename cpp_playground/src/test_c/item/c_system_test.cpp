@@ -24,15 +24,6 @@ namespace c_system_test
 				PROCESS_MAIN( system( "pause" ) );
 			}
 
-			std::cout << r2cm::split;
-
-			{
-				PROCESS_MAIN( printf( "test" ); );
-				PROCESS_MAIN( system( "pause" ) );
-			}
-
-			std::cout << r2cm::split;
-
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
