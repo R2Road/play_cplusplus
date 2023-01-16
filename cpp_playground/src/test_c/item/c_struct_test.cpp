@@ -21,6 +21,7 @@ namespace c_struct_test
 			{
 				DECLARATION_MAIN( struct C { char c1; } );
 				OUTPUT_VALUE( sizeof( C ) );
+				OUTPUT_BINARY( C() );
 			}
 
 			std::cout << r2cm::split;
@@ -28,6 +29,7 @@ namespace c_struct_test
 			{
 				DECLARATION_MAIN( struct C_C { char c1; char c2; } );
 				OUTPUT_VALUE( sizeof( C_C ) );
+				OUTPUT_BINARY( C_C() );
 			}
 
 			std::cout << r2cm::split;
