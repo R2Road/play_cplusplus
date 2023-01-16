@@ -28,12 +28,16 @@ namespace c_atexit_test
 			std::cout << r2cm::split;
 
 			OUTPUT_NOTE( "프로그램이 종료될 때 등록한 함수가 작동된다." );
-			OUTPUT_NOTE( "반환값은 성공하면 0, 성공이 아니면 다른 값" );
+			OUTPUT_NOTE( "반환값 : 성공 = 0, 실패 = 다른 값" );
 
 			std::cout << r2cm::split;
 
 			{
 				OUTPUT_NOTE( "Function" );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_FILE_RANGE( "src/test_c/item/c_atexit_test.cpp", 12, 15 );
 
 				std::cout << r2cm::linefeed;
 
@@ -47,9 +51,9 @@ namespace c_atexit_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( auto test_atexit = []() { R2ASSERT( false, "Lambda : test_atexit" ); } );
+				DECLARATION_MAIN( auto l = []() { R2ASSERT( false, "Lambda : test_atexit" ); } );
 
-				EXPECT_EQ( 0, atexit( test_atexit ) );
+				EXPECT_EQ( 0, atexit( l ) );
 			}
 
 			std::cout << r2cm::split;
@@ -59,7 +63,7 @@ namespace c_atexit_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( struct Test_AtExit
+				DECLARATION_MAIN( struct S
 				{
 					static void Do()
 					{
@@ -67,7 +71,7 @@ namespace c_atexit_test
 					}
 				} );
 
-				EXPECT_EQ( 0, atexit( Test_AtExit::Do ) );
+				EXPECT_EQ( 0, atexit( S::Do ) );
 			}
 
 			std::cout << r2cm::split;
