@@ -6,6 +6,7 @@
 #include "test_std/item/std_array_test.h"
 #include "test_std/item/std_bitset_test.h"
 #include "test_std/item/std_list_test.h"
+#include "test_std/item/std_queue_test.h"
 #include "test_std/item/std_vector_test.h"
 
 #include "STDMenu.h"
@@ -50,6 +51,12 @@ r2cm::MenuUp STDContainerMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'j', std_vector_test::OthersIterator() );
 		ret->AddItem( 'k', std_vector_test::EndIterator() );
 		ret->AddItem( 'l', std_vector_test::Move() );
+
+
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'z', std_queue_test::Declaration() );
 
 
 		ret->AddSplit();

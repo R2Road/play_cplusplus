@@ -129,6 +129,7 @@
     <ClCompile Include="src\test_std\item\std_functional_mem_fn_test.cpp" />
     <ClCompile Include="src\test_std\item\std_numeric_test.cpp" />
     <ClCompile Include="src\test_std\item\std_optional_test.cpp" />
+    <ClCompile Include="src\test_std\item\std_queue_test.cpp" />
     <ClCompile Include="src\test_std\item\std_random_test.cpp" />
     <ClCompile Include="src\test_std\item\std_regex_test.cpp" />
     <ClCompile Include="src\test_std\item\std_string_test.cpp" />
@@ -323,6 +324,7 @@
     <ClInclude Include="src\test_std\item\std_functional_mem_fn_test_helper.hpp" />
     <ClInclude Include="src\test_std\item\std_numeric_test.h" />
     <ClInclude Include="src\test_std\item\std_optional_test.h" />
+    <ClInclude Include="src\test_std\item\std_queue_test.h" />
     <ClInclude Include="src\test_std\item\std_random_test.h" />
     <ClInclude Include="src\test_std\item\std_regex_test.h" />
     <ClInclude Include="src\test_std\item\std_string_test.h" />

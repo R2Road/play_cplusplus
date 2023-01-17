@@ -569,6 +569,9 @@
     <ClCompile Include="src\play_hobby\item\play_property.cpp">
       <Filter>play_hobby\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_std\item\std_queue_test.cpp">
+      <Filter>test_std\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1153,6 +1156,9 @@
     </ClInclude>
     <ClInclude Include="src\play_hobby\item\play_property.h">
       <Filter>play_hobby\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\item\std_queue_test.h">
+      <Filter>test_std\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
