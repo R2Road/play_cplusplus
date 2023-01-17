@@ -125,6 +125,101 @@ namespace std_queue_test
 
 
 
+	r2cm::iItem::TitleFunctionT Push_Pop::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::queue : Push, Pop";
+		};
+	}
+	r2cm::iItem::DoFunctionT Push_Pop::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( std::queue<int> q );
+			EXPECT_EQ( 0, q.size() );
+			EXPECT_TRUE( q.empty() );
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( q.push( 1 ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 1, q.size() );
+				EXPECT_FALSE( q.empty() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 1, q.front() );
+				EXPECT_EQ( 1, q.back() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( q.push( 2 ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 2, q.size() );
+				EXPECT_FALSE( q.empty() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 1, q.front() );
+				EXPECT_EQ( 2, q.back() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( q.pop() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 1, q.size() );
+				EXPECT_FALSE( q.empty() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 2, q.front() );
+				EXPECT_EQ( 2, q.back() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( q.pop() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 0, q.size() );
+				EXPECT_TRUE( q.empty() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "빈 컨테이너에 pop() 쓰지마라." );
+				OUTPUT_NOTE( "release | debug 예외 발생" );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_CODE( q.pop() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Iteration::GetTitleFunction() const
 	{
 		return []()->const char*
