@@ -57,6 +57,7 @@ r2cm::MenuUp STDContainerMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'z', std_queue_test::Declaration() );
+		ret->AddItem( 'c', std_queue_test::Iteration() );
 
 
 		ret->AddSplit();

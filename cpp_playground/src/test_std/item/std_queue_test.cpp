@@ -32,6 +32,48 @@ namespace std_queue_test
 				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( std::queue<int> q( { 1, 2, 3 } ) );
+				while( !q.empty() )
+				{
+					const auto& i = q.front();
+					OUTPUT_VALUE( i );
+
+					q.pop();
+				}
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Iteration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::queue : Iteration";
+		};
+	}
+	r2cm::iItem::DoFunctionT Iteration::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( std::queue<int> q( { 1, 2, 3 } ) );
+
+			std::cout << r2cm::split;
+
+			{
+				while( !q.empty() )
+				{
+					const auto& i = q.front();
+					OUTPUT_VALUE( i );
+
+					q.pop();
+				}
 			}
 
 			std::cout << r2cm::split;
