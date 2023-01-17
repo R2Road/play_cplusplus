@@ -85,87 +85,83 @@ namespace c_struct_test
 		{
 			std::cout << r2cm::split;
 
-			std::cout << "#pragma pack( push, 4 )" << r2cm::linefeed;
-
-			std::cout << r2cm::split;
-
-			// #pragma pack( 4 )
-#pragma pack( push, 4 )
-			{
-				struct
-				{
-					int i;
-				} test_struct;
-
-				std::cout << r2cm::tab << "struct" << r2cm::linefeed;
-				std::cout << r2cm::tab << "{" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "int i;" << r2cm::linefeed;
-				std::cout << r2cm::tab << "} test_struct;" << r2cm::linefeed2;
-
-				OUTPUT_VALUE( sizeof( test_struct ) );
-			}
+			OUTPUT_NOTE( "Byte Alignment 의 기준을 조정한다." );
 
 			std::cout << r2cm::split;
 
 			{
-				struct
-				{
-					long long ll;
-				} test_struct;
+#pragma pack( push, 1 )
+				OUTPUT_NOTE( "#pragma pack( push, 1 )" );
 
-				std::cout << r2cm::tab << "struct" << r2cm::linefeed;
-				std::cout << r2cm::tab << "{" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "long long ll;" << r2cm::linefeed;
-				std::cout << r2cm::tab << "} test_struct;" << r2cm::linefeed2;
+				std::cout << r2cm::linefeed;
 
-				OUTPUT_VALUE( sizeof( test_struct ) );
-			}
+				DECLARATION_MAIN( struct C { char c; }; );
+				OUTPUT_VALUE( sizeof( C ) );
+				OUTPUT_BINARY( C() );
 
-			std::cout << r2cm::split;
+				std::cout << r2cm::linefeed;
 
-			{
-				struct
-				{
-					long long ll;
-					char c;
-				} test_struct;
+				DECLARATION_MAIN( struct I { int i; }; );
+				OUTPUT_VALUE( sizeof( I ) );
+				OUTPUT_BINARY( I() );
 
-				std::cout << r2cm::tab << "struct" << r2cm::linefeed;
-				std::cout << r2cm::tab << "{" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "long long ll;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "char c;" << r2cm::linefeed;
-				std::cout << r2cm::tab << "} test_struct;" << r2cm::linefeed2;
+				std::cout << r2cm::linefeed;
 
-				OUTPUT_VALUE( sizeof( test_struct ) );
-			}
+				DECLARATION_MAIN( struct C_C { char c; char c2; }; );
+				OUTPUT_VALUE( sizeof( C_C ) );
+				OUTPUT_BINARY( C_C() );
 
-			std::cout << r2cm::split;
+				std::cout << r2cm::linefeed;
 
-			{
-#pragma warning( push )
-#pragma warning( disable : 4121 )
-				struct
-				{
-					char c;
-					long long ll; // warning 4121
-					char c2;
-				} test_struct;
-#pragma warning( pop )
+				DECLARATION_MAIN( struct C_I { char c; int i; }; );
+				OUTPUT_VALUE( sizeof( C_I ) );
+				OUTPUT_BINARY( C_I() );
 
-				std::cout << r2cm::tab << "struct" << r2cm::linefeed;
-				std::cout << r2cm::tab << "{" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "char c;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "long long ll;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "char c2;" << r2cm::linefeed;
-				std::cout << r2cm::tab << "} test_struct;" << r2cm::linefeed2;
+				std::cout << r2cm::linefeed;
 
-				OUTPUT_VALUE( sizeof( test_struct ) );
-			}
+				DECLARATION_MAIN( struct LL_I_C { long long ll; int i; char c; }; );
+				OUTPUT_VALUE( sizeof( LL_I_C ) );
+				OUTPUT_BINARY( LL_I_C() );
 #pragma pack( pop )
+			}
 
 			std::cout << r2cm::split;
 
-			std::cout << "#pragma pack( pop )" << r2cm::linefeed;
+			{
+#pragma pack( push, 4 )
+				OUTPUT_NOTE( "#pragma pack( push, 4 )" );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( struct C { char c; }; );
+				OUTPUT_VALUE( sizeof( C ) );
+				OUTPUT_BINARY( C() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( struct I { int i; }; );
+				OUTPUT_VALUE( sizeof( I ) );
+				OUTPUT_BINARY( I() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( struct C_C { char c; char c2; }; );
+				OUTPUT_VALUE( sizeof( C_C ) );
+				OUTPUT_BINARY( C_C() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( struct C_I { char c; int i; }; );
+				OUTPUT_VALUE( sizeof( C_I ) );
+				OUTPUT_BINARY( C_I() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( struct LL_I_C { long long ll; int i; char c; }; );
+				OUTPUT_VALUE( sizeof( LL_I_C ) );
+				OUTPUT_BINARY( LL_I_C() );
+#pragma pack( pop )
+			}
 
 			std::cout << r2cm::split;
 
