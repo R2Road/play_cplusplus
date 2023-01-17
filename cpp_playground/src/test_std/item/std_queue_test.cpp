@@ -28,6 +28,11 @@ namespace std_queue_test
 
 			{
 				DECLARATION_MAIN( std::queue<int> q );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_TRUE( q.empty() );
+				EXPECT_EQ( 0, q.size() );
 			}
 
 			std::cout << r2cm::split;
@@ -38,13 +43,11 @@ namespace std_queue_test
 				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( std::queue<int> q( { 1, 2, 3 } ) );
-				while( !q.empty() )
-				{
-					const auto& i = q.front();
-					OUTPUT_VALUE( i );
 
-					q.pop();
-				}
+				std::cout << r2cm::linefeed;
+
+				EXPECT_FALSE( q.empty() );
+				EXPECT_EQ( 3, q.size() );
 			}
 
 			std::cout << r2cm::split;
