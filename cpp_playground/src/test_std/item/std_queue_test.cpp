@@ -21,6 +21,12 @@ namespace std_queue_test
 			std::cout << r2cm::split;
 
 			{
+				OUTPUT_NOTE( "FIFO, Simple( iterator ¾øÀ½ )" );
+			}
+
+			std::cout << r2cm::split;
+
+			{
 				DECLARATION_MAIN( std::queue<int> q );
 			}
 
