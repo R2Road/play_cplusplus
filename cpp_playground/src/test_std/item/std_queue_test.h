@@ -11,6 +11,13 @@ namespace std_queue_test
 		DoFunctionT GetDoFunction() const override;
 	};
 
+	class Front_Back : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
+	};
+
 	class Iteration : public r2cm::iItem
 	{
 	public:
