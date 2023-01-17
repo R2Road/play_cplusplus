@@ -135,6 +135,14 @@ namespace std_queue_test
 		{
 			std::cout << r2cm::split;
 
+			{
+				OUTPUT_NOTE( "Front, Back 외에는 값의 확인이 불가능 하다." );
+				OUTPUT_NOTE( "Iterator 도 없다." );
+				OUTPUT_NOTE( "그럼 값을 꺼내는 것 말고는 순회할 방법이 없다???" );
+			}
+
+			std::cout << r2cm::split;
+
 			DECLARATION_MAIN( std::queue<int> q( { 1, 2, 3 } ) );
 
 			std::cout << r2cm::split;
