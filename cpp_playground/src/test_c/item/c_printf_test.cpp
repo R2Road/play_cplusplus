@@ -21,7 +21,7 @@ namespace c_printf_test
 			std::cout << r2cm::split;
 
 			{
-				PROCESS_MAIN( printf( "1111111" "2222222" "3333333" "   %d" "\n", 456789 ) );
+				PROCESS_MAIN( printf( "\t" "1111111" "2222222" "3333333" "   %d" "\n", 456789 ) );
 			}
 
 			std::cout << r2cm::split;
