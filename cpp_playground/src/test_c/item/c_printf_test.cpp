@@ -45,20 +45,36 @@ namespace c_printf_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( int num = 0xde81 );
+			DECLARATION_MAIN( const int num = 0xde81 );
 
 			std::cout << r2cm::split;
 
 			{
-				PROCESS_MAIN( printf( "\t( 8 : oct : %%o ) : %o\n", num ) );
+				OUTPUT_NOTE( "8 : oct : %%o" );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( printf( "\t( 10 : dec : %%d ) : %d\n", num ) );
+				PROCESS_MAIN( printf( "\t> " "%o" "\n", num ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "10 : dec : %%d" );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( printf( "\t( 16 : hex : %%x ) : %x\n", num ) );
+				PROCESS_MAIN( printf( "\t> " "%d" "\n", num ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "16 : hex : %%x" );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( printf( "\t> " "%x" "\n", num ) );
 			}
 
 			std::cout << r2cm::split;
