@@ -78,9 +78,11 @@ namespace c_pointer_test
 				OUTPUT_NOTE( "offset : ( ip + 2 ) ~ ip" );
 				OUTPUT_VALUE( ip + 2 );
 				OUTPUT_VALUE( ( ( ip + 2 ) - ip ) );
+			}
 
-				std::cout << r2cm::linefeed;
+			std::cout << r2cm::split;
 
+			{
 				OUTPUT_NOTE( "offset : ( char* )( ip + 2 ) ~ ( char* )ip" );
 				OUTPUT_VALUE( ( (char*)( ip + 2 ) ) - ( (char*)ip ) );
 
