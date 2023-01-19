@@ -40,6 +40,22 @@ namespace c_memset_test
 
 			std::cout << r2cm::split;
 
+			{
+				PROCESS_MAIN( memset( buffer, 255, sizeof( buffer ) ) );
+				OUTPUT_BINARIES( buffer, buffer_size );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( memset( buffer, 258, sizeof( buffer ) ) );
+				OUTPUT_BINARIES( buffer, buffer_size );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_NOTE( "값을 byte 단위로 쓴다." );
+			}
+
+			std::cout << r2cm::split;
+
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
