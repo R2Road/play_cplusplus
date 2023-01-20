@@ -24,6 +24,8 @@ namespace c_system_test
 				PROCESS_MAIN( system( "pause" ) );
 			}
 
+			std::cout << r2cm::split;
+
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
