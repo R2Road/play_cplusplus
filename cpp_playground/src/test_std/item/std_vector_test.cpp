@@ -146,6 +146,10 @@ namespace std_vector_test
 			OUTPUT_VALUE( container.capacity() );
 			OUTPUT_VALUE( container.data() );
 
+			std::cout << r2cm::linefeed;
+
+			std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+
 			std::cout << r2cm::split;
 
 			{
@@ -156,10 +160,20 @@ namespace std_vector_test
 
 				std::cout << r2cm::linefeed;
 
+				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
 				PROCESS_MAIN( container.resize( 2u ) );
 				OUTPUT_VALUE( container.size() );
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
+
+				std::cout << r2cm::linefeed;
+
+				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
 
 				std::cout << r2cm::linefeed;
 
