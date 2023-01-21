@@ -35,9 +35,7 @@
     <ClCompile Include="external\r2\r2_Size.cpp" />
     <ClCompile Include="src\algorithm\r2algorithm_astar_PathBuilder.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\play_hobby\FSM_V1_Menu.cpp" />
     <ClCompile Include="src\play_hobby\HobbyMenu.cpp" />
-    <ClCompile Include="src\play_hobby\item\play_fsm_v1.cpp" />
     <ClCompile Include="src\play_hobby\item\play_tree.cpp" />
     <ClCompile Include="src\play_hobby\item\play_infinite_number.cpp" />
     <ClCompile Include="src\play_hobby\item\play_list_based_on_array.cpp" />
@@ -215,10 +213,7 @@
     <ClInclude Include="external\r2\r2_Size.h" />
     <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h" />
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h" />
-    <ClInclude Include="src\play_hobby\FSM_V1_Menu.h" />
     <ClInclude Include="src\play_hobby\HobbyMenu.h" />
-    <ClInclude Include="src\play_hobby\item\play_fsm_v1.h" />
-    <ClInclude Include="src\play_hobby\item\play_fsm_v1_helper.hpp" />
     <ClInclude Include="src\play_hobby\item\play_tree.h" />
     <ClInclude Include="src\play_hobby\item\play_infinite_number.h" />
     <ClInclude Include="src\play_hobby\item\play_list_based_on_array.h" />

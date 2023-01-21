@@ -497,9 +497,6 @@
     <ClCompile Include="src\test_cpp\NameSpaceMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\FSM_V1_Menu.cpp">
-      <Filter>play_hobby</Filter>
-    </ClCompile>
     <ClCompile Include="src\play_hobby\HobbyMenu.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
@@ -552,9 +549,6 @@
       <Filter>play_hobby\item</Filter>
     </ClCompile>
     <ClCompile Include="src\play_hobby\item\play_list_based_on_array.cpp">
-      <Filter>play_hobby\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\play_hobby\item\play_fsm_v1.cpp">
       <Filter>play_hobby\item</Filter>
     </ClCompile>
     <ClCompile Include="src\play_hobby\item\play_tree.cpp">
@@ -1076,9 +1070,6 @@
     <ClInclude Include="src\test_cpp\NameSpaceMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\FSM_V1_Menu.h">
-      <Filter>play_hobby</Filter>
-    </ClInclude>
     <ClInclude Include="src\play_hobby\HobbyMenu.h">
       <Filter>play_hobby</Filter>
     </ClInclude>
@@ -1137,12 +1128,6 @@
       <Filter>play_hobby\item</Filter>
     </ClInclude>
     <ClInclude Include="src\play_hobby\item\play_list_based_on_array.h">
-      <Filter>play_hobby\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\play_hobby\item\play_fsm_v1.h">
-      <Filter>play_hobby\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\play_hobby\item\play_fsm_v1_helper.hpp">
       <Filter>play_hobby\item</Filter>
     </ClInclude>
     <ClInclude Include="src\play_hobby\item\play_tree.h">

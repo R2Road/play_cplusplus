@@ -7,7 +7,6 @@
 #include "item/play_serialize.h"
 #include "item/play_spin_lock.h"
 
-#include "FSM_V1_Menu.h"
 #include "ListBasedOnArrayMenu.h"
 #include "MemoryPoolMenu.h"
 #include "PropertyMenu.h"
@@ -38,10 +37,9 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<FSM_V1_Menu>( 'a' );
-		ret->AddItem( 's', play_serialize::Basic() );
-		ret->AddItem( 'd', play_serialize::Copy() );
-		ret->AddItem( 'f', play_infinite_number::Basic() );
+		ret->AddItem( 'a', play_serialize::Basic() );
+		ret->AddItem( 's', play_serialize::Copy() );
+		ret->AddItem( 'd', play_infinite_number::Basic() );
 
 
 
