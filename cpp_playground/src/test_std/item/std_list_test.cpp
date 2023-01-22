@@ -303,4 +303,43 @@ namespace std_list_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Erase::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "List : Erase";
+		};
+	}
+	r2cm::iItem::DoFunctionT Erase::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( std::list<int> l( { 1, 2, 3 } ) );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto target = ( ++l.begin() ) );
+				OUTPUT_VALUE( target );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( target = l.erase( target ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 3, *target );
+				OUTPUT_VALUE( l );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
