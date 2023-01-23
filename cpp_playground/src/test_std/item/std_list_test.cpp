@@ -212,14 +212,14 @@ namespace std_list_test
 
 
 
-	r2cm::iItem::TitleFunctionT OthersIterator::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Erase_OthersIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "List : Others Iterator";
+			return "List : Erase - Others Iterator";
 		};
 	}
-	r2cm::iItem::DoFunctionT OthersIterator::GetDoFunction() const
+	r2cm::iItem::DoFunctionT Erase_OthersIterator::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

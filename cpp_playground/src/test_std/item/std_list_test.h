@@ -25,7 +25,7 @@ namespace std_list_test
 		DoFunctionT GetDoFunction() const override;
 	};
 
-	class OthersIterator : public r2cm::iItem
+	class Erase_OthersIterator : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
