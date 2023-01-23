@@ -206,6 +206,16 @@ namespace std_list_test
 
 			std::cout << r2cm::split;
 
+			{
+				OUTPUT_NOTE( "end() iterator 의 삭제는 시도하지 말자." );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_CODE( l.erase( l.end() ) );
+			}
+
+			std::cout << r2cm::split;
+
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
