@@ -173,6 +173,45 @@ namespace std_list_test
 
 
 
+	r2cm::iItem::TitleFunctionT Erase::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "List : Erase";
+		};
+	}
+	r2cm::iItem::DoFunctionT Erase::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( std::list<int> l( { 1, 2, 3 } ) );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto target = ( ++l.begin() ) );
+				OUTPUT_VALUE( target );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( target = l.erase( target ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 3, *target );
+				OUTPUT_VALUE( l );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT OthersIterator::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -296,45 +335,6 @@ namespace std_list_test
 				OUTPUT_NOTE( "빈 컨테이너의 --end() 는 end() 이다." );
 				OUTPUT_NOTE( "빈 컨테이너는 Debug 모드에서 Container Size 검사에 실패한다." );
 				OUTPUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
-			}
-
-			std::cout << r2cm::split;
-
-			return r2cm::eItemLeaveAction::Pause;
-		};
-	}
-
-
-
-	r2cm::iItem::TitleFunctionT Erase::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "List : Erase";
-		};
-	}
-	r2cm::iItem::DoFunctionT Erase::GetDoFunction() const
-	{
-		return []()->r2cm::eItemLeaveAction
-		{
-			std::cout << r2cm::split;
-
-			DECLARATION_MAIN( std::list<int> l( { 1, 2, 3 } ) );
-
-			std::cout << r2cm::split;
-
-			{
-				DECLARATION_MAIN( auto target = ( ++l.begin() ) );
-				OUTPUT_VALUE( target );
-
-				std::cout << r2cm::linefeed;
-
-				PROCESS_MAIN( target = l.erase( target ) );
-
-				std::cout << r2cm::linefeed;
-
-				EXPECT_EQ( 3, *target );
-				OUTPUT_VALUE( l );
 			}
 
 			std::cout << r2cm::split;

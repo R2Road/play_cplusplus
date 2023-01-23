@@ -35,9 +35,9 @@ r2cm::MenuUp STDContainerMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( 'q', std_list_test::Splice_Single() );
 		ret->AddItem( 'w', std_list_test::Splice_Range() );
-		ret->AddItem( 'e', std_list_test::OthersIterator() );
-		ret->AddItem( 'r', std_list_test::EndIterator() );
-		ret->AddItem( 't', std_list_test::Erase() );
+		ret->AddItem( 'e', std_list_test::Erase() );
+		ret->AddItem( 'r', std_list_test::OthersIterator() );
+		ret->AddItem( 't', std_list_test::EndIterator() );
 
 
 		ret->AddLineFeed();

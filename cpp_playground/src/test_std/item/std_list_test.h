@@ -18,6 +18,13 @@ namespace std_list_test
 		DoFunctionT GetDoFunction() const override;
 	};
 
+	class Erase : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
+	};
+
 	class OthersIterator : public r2cm::iItem
 	{
 	public:
@@ -26,13 +33,6 @@ namespace std_list_test
 	};
 
 	class EndIterator : public r2cm::iItem
-	{
-	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() const override;
-	};
-
-	class Erase : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
