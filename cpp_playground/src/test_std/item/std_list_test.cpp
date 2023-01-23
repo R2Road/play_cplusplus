@@ -21,6 +21,8 @@ namespace std_list_test
 		return o;
 	}
 
+
+
 	r2cm::iItem::TitleFunctionT Splice_Single::GetTitleFunction() const
 	{
 		return []()->const char*
