@@ -23,6 +23,49 @@ namespace std_list_test
 
 
 
+	r2cm::iItem::TitleFunctionT Insert::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "List : Insert";
+		};
+	}
+	r2cm::iItem::DoFunctionT Insert::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_NOTE( "insert를 지시한 iterator의 앞에 삽입된다." );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( std::list<int> l( { 1, 2, 3 } ) );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto itr = ( ++l.begin() ) );
+				OUTPUT_VALUE( ( *itr ) );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto result_itr = l.insert( itr, 4 ) );
+				OUTPUT_VALUE( result_itr );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( l );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Splice_Single::GetTitleFunction() const
 	{
 		return []()->const char*

@@ -4,6 +4,13 @@
 
 namespace std_list_test
 {
+	class Insert : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
+	};
+
 	class Splice_Single : public r2cm::iItem
 	{
 	public:
