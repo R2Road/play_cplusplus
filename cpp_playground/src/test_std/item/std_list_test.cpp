@@ -27,7 +27,7 @@ namespace std_list_test
 	{
 		return []()->const char*
 		{
-			return "List : Insert";
+			return "std::list : Insert";
 		};
 	}
 	r2cm::iItem::DoFunctionT Insert::GetDoFunction() const
@@ -70,7 +70,7 @@ namespace std_list_test
 	{
 		return []()->const char*
 		{
-			return "List : Splice Single";
+			return "std::list : Splice Single";
 		};
 	}
 	r2cm::iItem::DoFunctionT Splice_Single::GetDoFunction() const
@@ -155,7 +155,7 @@ namespace std_list_test
 	{
 		return []()->const char*
 		{
-			return "List : Splice Range";
+			return "std::list : Splice Range";
 		};
 	}
 	r2cm::iItem::DoFunctionT Splice_Range::GetDoFunction() const
@@ -222,7 +222,7 @@ namespace std_list_test
 	{
 		return []()->const char*
 		{
-			return "List : Erase";
+			return "std::list : Erase";
 		};
 	}
 	r2cm::iItem::DoFunctionT Erase::GetDoFunction() const
@@ -271,7 +271,7 @@ namespace std_list_test
 	{
 		return []()->const char*
 		{
-			return "List : Erase - Others Iterator";
+			return "std::list : Erase - Others Iterator";
 		};
 	}
 	r2cm::iItem::DoFunctionT Erase_OthersIterator::GetDoFunction() const
@@ -315,7 +315,7 @@ namespace std_list_test
 	{
 		return []()->const char*
 		{
-			return "List : End Iterator";
+			return "std::list : End Iterator";
 		};
 	}
 	r2cm::iItem::DoFunctionT EndIterator::GetDoFunction() const
