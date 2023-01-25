@@ -5,6 +5,11 @@
 
 namespace play_myint
 {
+	struct MyInt
+	{
+		char mBuffer[3] = {};
+	};
+
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -19,6 +24,8 @@ namespace play_myint
 			std::cout << r2cm::split;
 
 			{
+				DECLARATION_MAIN( MyInt m );
+				OUTPUT_BINARY( m );
 			}
 
 			std::cout << r2cm::split;
