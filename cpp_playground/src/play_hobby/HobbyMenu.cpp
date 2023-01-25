@@ -22,6 +22,9 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', play_myint::Basic() );
+		ret->AddItem( '2', play_myint::Operator_Plus() );
+
+
 		ret->AddItem( '9', play_spin_lock::Basic() );
 
 
