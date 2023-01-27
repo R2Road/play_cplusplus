@@ -1,5 +1,6 @@
 #include "play_infinite_number.h"
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 namespace
@@ -51,25 +52,13 @@ namespace play_infinite_number
 			std::cout << r2cm::split;
 
 			{
-				InfiniteNumber infinite_number;
-				infinite_number = 1999;
-
-				std::cout << r2cm::tab << "+ Variable" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "InfiniteNumber infinite_number;" << r2cm::linefeed;
-
+				DECLARATION_MAIN( InfiniteNumber infinite_number );
+				PROCESS_MAIN( infinite_number = 1999 );
 
 				std::cout << r2cm::linefeed;
 
 
-				std::cout << r2cm::tab << "+ Operation" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "infinite_number = 1999;" << r2cm::linefeed;
-
-
-				std::cout << r2cm::linefeed;
-
-
-				std::cout << r2cm::tab << "+ Result" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "infinite_number : " << infinite_number.Get() << r2cm::linefeed;
+				OUTPUT_VALUE(infinite_number.Get() );
 			}
 
 			std::cout << r2cm::split;
