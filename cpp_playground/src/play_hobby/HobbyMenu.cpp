@@ -20,7 +20,7 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', play_infinite_number::Basic() );
+		ret->AddItem( '1', play_infinite_number::Declaration() );
 		ret->AddItem( '2', play_infinite_number::Operator_Plus() );
 
 

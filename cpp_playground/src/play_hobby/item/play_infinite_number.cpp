@@ -53,14 +53,14 @@ namespace
 
 namespace play_infinite_number
 {
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Infinite Number : Declaration";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
+	r2cm::iItem::DoFunctionT Declaration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

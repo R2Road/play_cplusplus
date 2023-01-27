@@ -4,7 +4,7 @@
 
 namespace play_infinite_number
 {
-	class Basic : public r2cm::iItem
+	class Declaration : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
