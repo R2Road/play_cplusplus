@@ -20,12 +20,27 @@ namespace
 	public:
 		InfiniteNumber() : mValue( 0 )
 		{}
+		explicit InfiniteNumber( const short i )
+		{}
 
 		void operator=( const short new_value )
 		{
 			mValue = new_value;
 		}
 
+		InfiniteNumber operator+( const InfiniteNumber& other )
+		{
+			return InfiniteNumber();
+		}
+
+		operator int32_t()
+		{
+			return 0;
+		}
+
+		//
+		//
+		//
 		short Get() const
 		{
 			return mValue;
@@ -42,7 +57,7 @@ namespace play_infinite_number
 	{
 		return []()->const char*
 		{
-			return "Infinite Number( To do )";
+			return "Infinite Number : Declaration";
 		};
 	}
 	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
@@ -57,8 +72,40 @@ namespace play_infinite_number
 
 				std::cout << r2cm::linefeed;
 
-
 				OUTPUT_VALUE(infinite_number.Get() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( InfiniteNumber m( 123 ) );
+				EXPECT_EQ( 123, m );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Operator_Plus::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Infinite Number : operator+";
+		};
+	}
+	r2cm::iItem::DoFunctionT Operator_Plus::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto m = InfiniteNumber( 100 ) + InfiniteNumber( 23 ) );
+				EXPECT_EQ( 123ll, m );
 			}
 
 			std::cout << r2cm::split;

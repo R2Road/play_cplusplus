@@ -4,7 +4,6 @@
 #include "r2cm/r2cm_ostream.h"
 
 #include "item/play_infinite_number.h"
-#include "item/play_myint.h"
 #include "item/play_serialize.h"
 #include "item/play_spin_lock.h"
 
@@ -21,8 +20,13 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
 
 	{
-		ret->AddItem( '1', play_myint::Basic() );
-		ret->AddItem( '2', play_myint::Operator_Plus() );
+		ret->AddItem( '1', play_infinite_number::Basic() );
+		ret->AddItem( '2', play_infinite_number::Operator_Plus() );
+
+
+
+		ret->AddLineFeed();
+
 
 
 		ret->AddItem( '9', play_spin_lock::Basic() );
@@ -44,7 +48,6 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( 'a', play_serialize::Basic() );
 		ret->AddItem( 's', play_serialize::Copy() );
-		ret->AddItem( 'd', play_infinite_number::Basic() );
 
 
 
