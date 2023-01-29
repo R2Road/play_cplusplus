@@ -598,7 +598,11 @@ namespace c_bit_operation_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const short t_1 = 1 );
+			OUTPUT_NOTE( "개념 잡기" );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const short t_1 = 4 );
 			DECLARATION_MAIN( const short t_2 = 1 );
 			OUTPUT_BINARY( t_1 );
 			OUTPUT_BINARY( t_2 );
@@ -606,7 +610,9 @@ namespace c_bit_operation_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 1단계 : 겹치지 않는 bit 만 뽑아낸다." << r2cm::linefeed2;
+				OUTPUT_NOTE( "1단계 : 겹치지 않는 bit 만 뽑아낸다." );
+
+				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( const short sub = t_1 ^ t_2 );
 				OUTPUT_VALUE( sub );
@@ -616,7 +622,9 @@ namespace c_bit_operation_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 2단계 : 앞의 수를 뒤집어 겹치는 bit 만 뽑아서 shift 한다.( 실질적인 뺄셈 처리 )" << r2cm::linefeed2;
+				OUTPUT_NOTE( "2단계 : 앞의 수를 뒤집어 겹치는 bit 만 뽑아서 shift 한다.( 실질적인 뺄셈 처리 )" );
+
+				std::cout << r2cm::linefeed;
 
 				OUTPUT_BINARY( short( ~t_1 ) );
 				OUTPUT_BINARY( t_2 );
@@ -628,6 +636,18 @@ namespace c_bit_operation_test
 				DECLARATION_MAIN( const short borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
 				OUTPUT_VALUE( borrow );
 				OUTPUT_BINARY( borrow );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "3완료" );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const short result = ( ( t_1 ^ t_2 ) - ( ( ( ~t_1 ) & t_2 ) << 1 ) ) );
+				OUTPUT_VALUE( result );
+				OUTPUT_BINARY( result );
 			}
 
 			std::cout << r2cm::split;
