@@ -450,7 +450,11 @@ namespace c_bit_operation_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const short t_1 = 3 );
+			OUTPUT_NOTE( "°³³ä Àâ±â" );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const short t_1 = 1 );
 			DECLARATION_MAIN( const short t_2 = 5 );
 			OUTPUT_BINARY( t_1 );
 			OUTPUT_BINARY( t_2 );
@@ -458,7 +462,9 @@ namespace c_bit_operation_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 1´Ü°è : °ãÄ¡Áö ¾Ê´Â bit ¸¸ »Ì¾Æ³½´Ù." << r2cm::linefeed2;
+				OUTPUT_NOTE( "1´Ü°è : °ãÄ¡Áö ¾Ê´Â bit ¸¸ »Ì¾Æ³½´Ù." );
+
+				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( const short sum = t_1 ^ t_2 );
 				OUTPUT_VALUE( sum );
@@ -468,9 +474,17 @@ namespace c_bit_operation_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 2´Ü°è : °ãÄ¡´Â bit ¸¸ »Ì¾Æ¼­ shift ÇÑ´Ù.( ½ÇÁúÀûÀÎ µ¡¼À Ã³¸® )" << r2cm::linefeed2;
+				OUTPUT_NOTE( "2´Ü°è : °ãÄ¡´Â bit ¸¸ »Ì¾Æ¼­ shift ÇÑ´Ù.( ½ÇÁúÀûÀÎ µ¡¼À Ã³¸® )" );
 
-				DECLARATION_MAIN( const short carry = ( ( t_1 & t_2 ) << 1 ) );
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const short temp = ( t_1 & t_2 ) );
+				OUTPUT_VALUE( temp );
+				OUTPUT_BINARY( temp );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const short carry = ( temp << 1 ) );
 				OUTPUT_VALUE( carry );
 				OUTPUT_BINARY( carry );
 			}
@@ -480,7 +494,9 @@ namespace c_bit_operation_test
 			{
 				std::cout << r2cm::tab << "+ 3¿Ï·á" << r2cm::linefeed2;
 
-				OUTPUT_VALUE( ( t_1 ^ t_2 ) + ( ( t_1 & t_2 ) << 1 ) );
+				DECLARATION_MAIN( const short result = ( ( t_1 ^ t_2 ) + ( ( t_1 & t_2 ) << 1 ) ) );
+				OUTPUT_VALUE( result );
+				OUTPUT_BINARY( result );
 			}
 
 			std::cout << r2cm::split;
