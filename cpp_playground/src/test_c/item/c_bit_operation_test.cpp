@@ -450,8 +450,8 @@ namespace c_bit_operation_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const short t_1 = 1 );
-			DECLARATION_MAIN( const short t_2 = 2 );
+			DECLARATION_MAIN( const short t_1 = 3 );
+			DECLARATION_MAIN( const short t_2 = 5 );
 			OUTPUT_BINARY( t_1 );
 			OUTPUT_BINARY( t_2 );
 
@@ -473,6 +473,14 @@ namespace c_bit_operation_test
 				DECLARATION_MAIN( const short carry = ( ( t_1 & t_2 ) << 1 ) );
 				OUTPUT_VALUE( carry );
 				OUTPUT_BINARY( carry );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ 3¿Ï·á" << r2cm::linefeed2;
+
+				OUTPUT_VALUE( ( t_1 ^ t_2 ) + ( ( t_1 & t_2 ) << 1 ) );
 			}
 
 			std::cout << r2cm::split;
