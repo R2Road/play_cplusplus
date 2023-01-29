@@ -492,7 +492,9 @@ namespace c_bit_operation_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 3완료" << r2cm::linefeed2;
+				OUTPUT_NOTE( "3단계 : 완료" );
+
+				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( const short result = ( ( t_1 ^ t_2 ) + ( ( t_1 & t_2 ) << 1 ) ) );
 				OUTPUT_VALUE( result );
