@@ -492,7 +492,7 @@ namespace c_bit_operation_test
 			std::cout << r2cm::split;
 
 			{
-				OUTPUT_NOTE( "3단계 : 완료" );
+				OUTPUT_NOTE( "3	단계 : 완료" );
 
 				std::cout << r2cm::linefeed;
 
@@ -673,6 +673,10 @@ namespace c_bit_operation_test
 		{
 			std::cout << r2cm::split;
 
+			OUTPUT_NOTE( "bit 연산 만으로 뺄셈 처리 해보자." );
+
+			std::cout << r2cm::split;
+
 			DECLARATION_MAIN( short t_1 = 2 );
 			DECLARATION_MAIN( short t_2 = 1 );
 			OUTPUT_BINARY( t_1 );
@@ -686,6 +690,10 @@ namespace c_bit_operation_test
 			std::cout << r2cm::split;
 
 			{
+				OUTPUT_NOTE( "cycle 1" );
+
+				std::cout << r2cm::linefeed;
+
 				PROCESS_MAIN( sub = t_1 ^ t_2 );
 				OUTPUT_VALUE( sub );
 				OUTPUT_BINARY( sub );
@@ -707,6 +715,10 @@ namespace c_bit_operation_test
 			std::cout << r2cm::split;
 
 			{
+				OUTPUT_NOTE( "cycle 2" );
+
+				std::cout << r2cm::linefeed;
+
 				PROCESS_MAIN( sub = t_1 ^ t_2 );
 				OUTPUT_VALUE( sub );
 				OUTPUT_BINARY( sub );
