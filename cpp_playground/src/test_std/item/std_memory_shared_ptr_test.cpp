@@ -42,7 +42,7 @@ namespace std_memory_shared_ptr_test
 				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( std::shared_ptr<int> sp1( new int( 10 ) ) );
-				DECLARATION_MAIN( const auto sp2 = sp1 );
+				DECLARATION_MAIN( const std::shared_ptr<int> sp2 = sp1 );
 				OUTPUT_CODE( sp2 = nullptr );
 				OUTPUT_COMMENT( "지정된 pointer 변경 불가." );
 
