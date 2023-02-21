@@ -1,5 +1,7 @@
 #include "play_infinite_number.h"
 
+#include <string>
+
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
@@ -106,6 +108,21 @@ namespace play_infinite_number
 			{
 				DECLARATION_MAIN( auto m = InfiniteNumber( 100 ) + InfiniteNumber( 23 ) );
 				EXPECT_EQ( 123ll, m );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				unsigned int i = -1;
+				unsigned int j = i % 10;
+				OUTPUT_VALUE( j );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_BINARY( i );
+				OUTPUT_BINARY( j );
+
+				std::to_string( j );
 			}
 
 			std::cout << r2cm::split;

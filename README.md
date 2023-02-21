@@ -1,4 +1,4 @@
-# cplusplus_playground
+# play_cplusplus
 
 ## 개괄 | Overview
 - 이런 저런 C++ 기능 확인 | Play with C++
