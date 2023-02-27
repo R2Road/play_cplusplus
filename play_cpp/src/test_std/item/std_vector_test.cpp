@@ -35,28 +35,40 @@ namespace std_vector_test
 			std::cout << r2cm::split;
 
 			{
+				EXPECT_EQ( 2u, container.capacity() );
 				PROCESS_MAIN( container.resize( 2u ) );
+				EXPECT_EQ( 2u, container.capacity() );
 				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
 
 			{
+				EXPECT_EQ( 2u, container.capacity() );
 				PROCESS_MAIN( container.resize( 4u ) );
+				EXPECT_EQ( 4u, container.capacity() );
 				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+
+				std::cout << r2cm::linefeed2;
+
+				OUTPUT_NOTE( "resize 는 capacity 가 증가한 경우 메모리를 할당하고 이전 데이터를 카피한다." );
 			}
 
 			std::cout << r2cm::split;
 
 			{
+				EXPECT_EQ( 4u, container.capacity() );
 				PROCESS_MAIN( container.resize( 0 ) );
+				EXPECT_EQ( 4u, container.capacity() );
 				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
 
 			{
+				EXPECT_EQ( 4u, container.capacity() );
 				PROCESS_MAIN( container.resize( 10 ) );
+				EXPECT_EQ( 10u, container.capacity() );
 				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
 			}
 
