@@ -10,4 +10,11 @@ namespace std_functional_hash_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() const override;
 	};
+
+	class CString : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
+	};
 }

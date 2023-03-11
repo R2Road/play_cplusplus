@@ -46,6 +46,25 @@ namespace std_functional_hash_test
 
 			std::cout << r2cm::split;
 
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT CString::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::hash : CString";
+		};
+	}
+	r2cm::iItem::DoFunctionT CString::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
 			{
 				OUTPUT_VALUE( Hash4CString{}( "asdf", 4 ) );
 			}

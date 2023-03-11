@@ -53,6 +53,7 @@ r2cm::MenuUp STDFunctionalMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'a', std_functional_hash_test::Basic() );
+		ret->AddItem( 's', std_functional_hash_test::CString() );
 
 
 
