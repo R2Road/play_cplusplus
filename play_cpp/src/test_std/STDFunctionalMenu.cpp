@@ -3,6 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
+#include "test_std/item/std_functional_hash_test.h"
 #include "test_std/item/std_functional_invoke_test.h"
 #include "test_std/item/std_function_test.h"
 #include "test_std/item/std_function_2_test.h"
@@ -46,7 +47,17 @@ r2cm::MenuUp STDFunctionalMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'y', std_function_test::Equality_Lambda_1() );
 
 
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'a', std_functional_hash_test::Basic() );
+
+
+
 		ret->AddSplit();
+
 
 
 		ret->AddMenu<STDMenu>( 27 );
