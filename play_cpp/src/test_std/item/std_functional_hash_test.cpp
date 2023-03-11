@@ -1,4 +1,5 @@
 #include "std_functional_hash_test.h"
+#include "std_functional_hash_test_helper_cstring.hpp"
 
 #include <functional>
 #include <string>
@@ -8,19 +9,6 @@
 
 namespace std_functional_hash_test
 {
-	//
-	// Copy From <xstring>
-	//
-	struct Hash4CString
-	{
-		_NODISCARD size_t operator()( const char* str, const std::size_t size ) const noexcept
-		{	// hash _Keyval to size_t value by pseudorandomizing transform
-			return ( std::_Hash_array_representation( str, size ) );
-		}
-	};
-
-
-
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -65,8 +53,12 @@ namespace std_functional_hash_test
 		{
 			std::cout << r2cm::split;
 
+			OUTPUT_FILE( "src/test_std/item/std_functional_hash_test_helper_cstring.hpp" );
+
+			std::cout << r2cm::split;
+
 			{
-				OUTPUT_VALUE( Hash4CString{}( "asdf", 4 ) );
+				OUTPUT_VALUE( std_functional_hash_test_helper_cstring::Hash4CString{}( "asdf", 4 ) );
 			}
 
 			std::cout << r2cm::split;

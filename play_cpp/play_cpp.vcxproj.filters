@@ -1151,6 +1151,9 @@
     <ClInclude Include="src\test_std\item\std_functional_hash_test.h">
       <Filter>test_std\item</Filter>
     </ClInclude>
+    <ClInclude Include="src\test_std\item\std_functional_hash_test_helper_cstring.hpp">
+      <Filter>test_std\item</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\test_cpp\item\enum_test_xmacro_2.def">

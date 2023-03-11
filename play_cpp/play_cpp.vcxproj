@@ -300,6 +300,7 @@
     <ClInclude Include="src\test_performance\PerformanceMenu.h" />
     <ClInclude Include="src\test_std\item\std_algorithm_test.h" />
     <ClInclude Include="src\test_std\item\std_functional_hash_test.h" />
+    <ClInclude Include="src\test_std\item\std_functional_hash_test_helper_cstring.hpp" />
     <ClInclude Include="src\test_std\item\std_memory_align_test.h" />
     <ClInclude Include="src\test_std\item\std_array_test.h" />
     <ClInclude Include="src\test_std\item\std_atomic_test.h" />
