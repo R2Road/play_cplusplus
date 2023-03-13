@@ -7,6 +7,7 @@
 #include "test_std/item/std_bitset_test.h"
 #include "test_std/item/std_list_test.h"
 #include "test_std/item/std_queue_test.h"
+#include "test_std/item/std_unordered_map_test.h"
 #include "test_std/item/std_vector_test.h"
 
 #include "STDMenu.h"
@@ -62,6 +63,12 @@ r2cm::MenuUp STDContainerMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'x', std_queue_test::Front_Back() );
 		ret->AddItem( 'c', std_queue_test::Push_Pop() );
 		ret->AddItem( 'v', std_queue_test::Iteration() );
+
+
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'n', std_unordered_map_test::CString() );
 
 
 		ret->AddSplit();

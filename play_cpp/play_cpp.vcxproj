@@ -135,6 +135,7 @@
     <ClCompile Include="src\test_std\item\std_string_view_test.cpp" />
     <ClCompile Include="src\test_std\item\std_thread_test.cpp" />
     <ClCompile Include="src\test_std\item\std_tuple_test.cpp" />
+    <ClCompile Include="src\test_std\item\std_unordered_map_test.cpp" />
     <ClCompile Include="src\test_std\item\std_variant_test.cpp" />
     <ClCompile Include="src\test_std\item\std_vector_test.cpp" />
     <ClCompile Include="src\test_std\STDAlignMenu.cpp" />
@@ -329,6 +330,8 @@
     <ClInclude Include="src\test_std\item\std_string_view_test.h" />
     <ClInclude Include="src\test_std\item\std_thread_test.h" />
     <ClInclude Include="src\test_std\item\std_tuple_test.h" />
+    <ClInclude Include="src\test_std\item\std_unordered_map_test.h" />
+    <ClInclude Include="src\test_std\item\std_unordered_map_test_helper_cstring.hpp" />
     <ClInclude Include="src\test_std\item\std_variant_test.h" />
     <ClInclude Include="src\test_std\item\std_vector_test.h" />
     <ClInclude Include="src\test_std\STDAlignMenu.h" />
