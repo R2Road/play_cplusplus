@@ -1,6 +1,7 @@
 #include "etc_0_test.h"
 
 #include <bitset>
+#include <memory>
 #include <stdint.h>
 
 #include "r2cm/r2cm_Inspector.h"
@@ -233,6 +234,49 @@ namespace etc_test
 
 			std::cout << r2cm::split;
 
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Braces_PrimitiveType::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "{}";
+		};
+	}
+	r2cm::iItem::DoFunctionT Braces_PrimitiveType::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( int i{} );
+				OUTPUT_VALUE( i );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( int i = 123 );
+				PROCESS_MAIN( i = {} );
+				OUTPUT_VALUE( i );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::shared_ptr<int> i = std::make_shared<int>( 123 ) );
+				EXPECT_NE( nullptr, i );
+				PROCESS_MAIN( i = {} );
+				EXPECT_EQ( nullptr, i );
+			}
+
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};

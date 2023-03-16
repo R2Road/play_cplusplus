@@ -24,4 +24,11 @@ namespace etc_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() const override;
 	};
+
+	class Braces_PrimitiveType : public r2cm::iItem
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() const override;
+	};
 }
