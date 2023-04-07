@@ -90,4 +90,38 @@ namespace c_operator_ternary_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Void::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "operator ternary : Void";
+		};
+	}
+	r2cm::iItem::DoFunctionT Void::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_NOTE( "삼항 연산자에서 반환값 없는 함수를 호출하는 경우 void() 를 넣을 수 있다." );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( std::function<void()> Do = []() {} );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( 1 == 1 ? Do() : void() );
+				PROCESS_MAIN( 1 == 2 ? Do() : void() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

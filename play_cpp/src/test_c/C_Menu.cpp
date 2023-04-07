@@ -27,9 +27,10 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 		ret->AddItem( '1', c_array_test::Init() );
 		ret->AddItem( '2', c_operator_ternary_test::Basic() );
 		ret->AddItem( '3', c_operator_ternary_test::Comma() );
-		ret->AddItem( '4', c_struct_test::ByteAlignment() );
-		ret->AddItem( '5', c_struct_test::PragmaPack() );
-		ret->AddItem( '6', c_struct_test::Array_Size_0() );
+		ret->AddItem( '4', c_operator_ternary_test::Void() );
+		ret->AddItem( '5', c_struct_test::ByteAlignment() );
+		ret->AddItem( '6', c_struct_test::PragmaPack() );
+		ret->AddItem( '7', c_struct_test::Array_Size_0() );
 		
 
 
