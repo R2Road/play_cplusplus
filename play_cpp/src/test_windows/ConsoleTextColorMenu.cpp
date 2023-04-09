@@ -1,7 +1,6 @@
 #include "ConsoleTextColorMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
 
 #include "test_windows/item/windows_terminal_text_color_test.h"
 

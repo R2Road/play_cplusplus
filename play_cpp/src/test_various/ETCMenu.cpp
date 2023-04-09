@@ -1,7 +1,6 @@
 #include "ETCMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
 
 #include "item/etc_0_test.h"
 

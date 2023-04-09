@@ -1,7 +1,6 @@
 #include "HobbyMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
 
 #include "item/play_infinite_number.h"
 #include "item/play_serialize.h"

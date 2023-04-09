@@ -1,7 +1,6 @@
 #include "C_Menu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
 
 #include "item/c_array_test.h"
 #include "item/c_atexit_test.h"

@@ -3,7 +3,6 @@
 #include <string>
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_VersionInfo.h"
 
 #include "test_various/item/various_console_input_test.h"

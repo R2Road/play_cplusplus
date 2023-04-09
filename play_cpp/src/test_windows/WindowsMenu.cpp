@@ -1,6 +1,5 @@
 #include "WindowsMenu.h"
 
-#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Director.h"
 
 #include "item/console_window_input_test.h"

@@ -1,7 +1,6 @@
 #include "NameSpaceMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
 
 #include "item/cpp_namespace_test.h"
 

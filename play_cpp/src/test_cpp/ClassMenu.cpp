@@ -1,7 +1,6 @@
 #include "ClassMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
 
 #include "item/cpp_class_test.h"
 #include "item/cpp_class_private_inheritance_test.h"

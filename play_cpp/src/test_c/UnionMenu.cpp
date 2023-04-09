@@ -1,7 +1,6 @@
 #include "UnionMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
 
 #include "item/c_union_test.h"
 
