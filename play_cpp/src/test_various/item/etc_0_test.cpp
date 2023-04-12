@@ -281,4 +281,101 @@ namespace etc_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT CircularReference::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Circular Reference";
+		};
+	}
+	r2cm::iItem::DoFunctionT CircularReference::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( struct A
+			{
+				std::shared_ptr<A> self;
+			} );
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "자기 참조" );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto a = std::make_shared<A>() );
+				PROCESS_MAIN( a->self = a );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_NOTE( "{} 를 벗어날 때 shared_ptr a 의 소멸자가 불린다." );
+				OUTPUT_NOTE( "ref count 가 2 라서 보유한 메모리에 delete 를 호출하지 않고 ref count 만 감소 시켜 1로 만든다." );
+				OUTPUT_NOTE( "A 의 소멸자가 불리지 않았기 때문에 self 는 그대로 남아있다." );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "상호 참조" );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto a = std::make_shared<A>() );
+				DECLARATION_MAIN( auto b = std::make_shared<A>() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( a->self = b );
+				PROCESS_MAIN( b->self = a );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_NOTE( "상호 참조가 되어 형태는 바뀌었지만 내용은 똑같다." );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_NOTE( "{} 를 벗어날 때 shared_ptr a 의 소멸자가 불린다." );
+				OUTPUT_NOTE( "ref count 가 2 라서 보유한 메모리에 delete 를 호출하지 않고 ref count 만 감소 시켜 1로 만든다." );
+				OUTPUT_NOTE( "A 의 소멸자가 불리지 않았기 때문에 self 는 그대로 남아있다." );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "순환 참조" );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto a = std::make_shared<A>() );
+				DECLARATION_MAIN( auto b = std::make_shared<A>() );
+				DECLARATION_MAIN( auto c = std::make_shared<A>() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( a->self = b );
+				PROCESS_MAIN( b->self = c );
+				PROCESS_MAIN( c->self = a );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_NOTE( "순환 참조가 되어 형태는 바뀌었지만 내용은 똑같다." );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_NOTE( "{} 를 벗어날 때 shared_ptr a 의 소멸자가 불린다." );
+				OUTPUT_NOTE( "ref count 가 2 라서 보유한 메모리에 delete 를 호출하지 않고 ref count 만 감소 시켜 1로 만든다." );
+				OUTPUT_NOTE( "A 의 소멸자가 불리지 않았기 때문에 self 는 그대로 남아있다." );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
