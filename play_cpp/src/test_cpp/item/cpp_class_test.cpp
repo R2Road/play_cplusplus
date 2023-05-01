@@ -554,29 +554,73 @@ namespace cpp_class_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( class C1 { int a; } );
+				OUTPUT_NOTE( "type 의 최소 크기 : 1 byte" );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( class C1 {} );
 				OUTPUT_VALUE( sizeof( C1 ) );
+				OUTPUT_BINARY( C1() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
+				OUTPUT_NOTE( "member 변수의 크기" );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( class C1 { int a; } );
+				OUTPUT_VALUE( sizeof( C1 ) );
+				OUTPUT_BINARY( C1() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "공백 class 최적화" );
+
+				std::cout << r2cm::linefeed;
+
 				DECLARATION_MAIN( class C1 {} );
 				DECLARATION_MAIN( class C2 : public C1 { int a; } );
 				OUTPUT_VALUE( sizeof( C2 ) );
+				OUTPUT_BINARY( C2() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
+				OUTPUT_NOTE( "각 member 변수의 크기의 총합" );
+
+				std::cout << r2cm::linefeed;
+
 				DECLARATION_MAIN( class C1 { int i; } );
 				DECLARATION_MAIN( class C2 : public C1 { int a; } );
 				OUTPUT_VALUE( sizeof( C2 ) );
+				OUTPUT_BINARY( C2() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
+				OUTPUT_NOTE( "virtual table의 크기" );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( class C1 { public: virtual ~C1() {} } );
+				DECLARATION_MAIN( class C2 : public C1 {} );
+				OUTPUT_VALUE( sizeof( C2 ) );
+				OUTPUT_BINARY( C2() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "virtual table 의 영향으로 결정된 byte 정렬" );
+
+				std::cout << r2cm::linefeed;
+
 				DECLARATION_MAIN( class C1 { public: virtual ~C1(){} } );
 				DECLARATION_MAIN( class C2 : public C1 { int a = -1; } );
 				OUTPUT_VALUE( sizeof( C2 ) );
