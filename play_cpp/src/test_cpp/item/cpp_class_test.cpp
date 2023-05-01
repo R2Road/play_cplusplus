@@ -605,4 +605,41 @@ namespace cpp_class_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+	class C_has_StaticConstexprInt { static constexpr int etest = 1; };
+
+	r2cm::iItem::TitleFunctionT Size_With_Enum::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Size With Enum";
+		};
+	}
+	r2cm::iItem::DoFunctionT Size_With_Enum::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			OUTPUT_NOTE( "enum 과 static constexpr 은 비슷한 의도로 사용 가능하다." );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( class C { enum { etest = 1 }; } );
+				OUTPUT_VALUE( sizeof( C ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_VALUE( sizeof( C_has_StaticConstexprInt ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
