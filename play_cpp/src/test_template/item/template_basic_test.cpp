@@ -141,4 +141,43 @@ namespace template_basic_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	template<typename T>
+	struct P
+	{
+		using type = T;
+	};
+
+	template<typename T>
+	struct P<T*>
+	{
+		using type = T;
+	};
+
+	r2cm::iItem::TitleFunctionT RemovePointer::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Basic : Remove Pointer";
+		};
+	}
+	r2cm::iItem::DoFunctionT RemovePointer::GetDoFunction() const
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				using PT1 = typename P<int*>::type;
+				using PT2 = typename P<int*>::type;
+
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

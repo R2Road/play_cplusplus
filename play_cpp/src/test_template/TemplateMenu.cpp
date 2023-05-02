@@ -20,6 +20,7 @@ r2cm::MenuUp TemplateMenu::Create( r2cm::Director& director )
 		ret->AddItem( '1', template_basic_test::MemberVariable() );
 		ret->AddItem( '2', template_basic_test::Function_ReturnValue() );
 		ret->AddItem( '3', template_basic_test::Function_Object() );
+		ret->AddItem( '4', template_basic_test::RemovePointer() );
 
 
 
