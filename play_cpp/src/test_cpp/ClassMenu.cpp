@@ -42,7 +42,7 @@ r2cm::MenuUp ClassMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'd', cpp_class_test::Offset_SingleInheritance() );
 		ret->AddItem( 'f', cpp_class_test::Offset_MultipleInheritance() );
 		ret->AddItem( 'g', cpp_class_test::Offset_Singleton() );
-		ret->AddItem( 'h', cpp_class_test::Size() );
+		ret->AddItem( 'h', cpp_class_test::Size_And_Byte() );
 		ret->AddItem( 'j', cpp_class_test::Size_With_Enum() );
 
 

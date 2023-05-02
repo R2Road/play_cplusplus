@@ -540,14 +540,14 @@ namespace cpp_class_test
 
 
 
-	r2cm::iItem::TitleFunctionT Size::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Size_And_Byte::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Class : Size";
+			return "Class : Size And Byte";
 		};
 	}
-	r2cm::iItem::DoFunctionT Size::GetDoFunction() const
+	r2cm::iItem::DoFunctionT Size_And_Byte::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

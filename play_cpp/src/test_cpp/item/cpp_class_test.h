@@ -105,7 +105,7 @@ namespace cpp_class_test
 
 
 
-	class Size : public r2cm::iItem
+	class Size_And_Byte : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
