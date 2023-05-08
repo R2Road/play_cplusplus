@@ -46,6 +46,8 @@ namespace cpp_lambda_test
 		DoFunctionT GetDoFunction() const override;
 	};
 
+
+
 	class Size_Basic : public r2cm::iItem
 	{
 	public:
