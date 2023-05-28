@@ -1,10 +1,10 @@
-#include "r2cm_StopWatch.h"
+#include "r2tm_StopWatch.h"
 
 #include <numeric>
 
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_ostream.h"
 
-namespace r2cm
+namespace r2tm
 {
 	StopWatch::StopWatch() :
 		mStartTime( std::chrono::nanoseconds::duration( 0 ) )
@@ -61,16 +61,16 @@ namespace r2cm
 	void StopWatch::PrintElapsedTime_All()
 	{
 		PrintElapsedTime_MilliSeconds();
-		std::cout << r2cm::tab;
+		std::cout << r2tm::tab;
 		PrintElapsedTime_MicroSeconds();
-		std::cout << r2cm::tab;
+		std::cout << r2tm::tab;
 		PrintElapsedTime_NanoSeconds();
 	}
 
 	void StopWatch::PrintMinAndMaxTime()
 	{
 		std::cout << "Min : " << mMinTime << "ns";
-		std::cout << r2cm::tab;
+		std::cout << r2tm::tab;
 		std::cout << "Max : " << mMaxTime << "ns";
 	}
 }

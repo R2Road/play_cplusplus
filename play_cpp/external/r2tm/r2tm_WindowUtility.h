@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 
-namespace r2cm
+namespace r2tm
 {
 	class WindowUtility
 	{
@@ -33,6 +33,9 @@ namespace r2cm
 		static void FillCharacter( const CursorPoint point, const char c );
 		static void FillCharacter( const int x, const int y, const char c );
 
+		static void FillString( const CursorPoint point, const char* str, const int size );
+		static void FillString( const int x, const int y, const char* str, const int size );
+
 		enum eColor : unsigned char
 		{
 			FG_Black = 0,
@@ -47,7 +50,7 @@ namespace r2cm
 			FG_LightBlue,
 			FG_LightGreen,
 			FG_LightAqua,
-			FG_LightLed,
+			FG_LightRed,
 			FG_LightPurple,
 			FG_LightYellow,
 			FG_BrightWhite,
@@ -64,7 +67,7 @@ namespace r2cm
 			BG_LightBlue = 9 << 4,
 			BG_LightGreen = 10 << 4,
 			BG_LightAqua = 11 << 4,
-			BG_LightLed = 12 << 4,
+			BG_LightRed = 12 << 4,
 			BG_LightPurple = 13 << 4,
 			BG_LightYellow = 14 << 4,
 			BG_BrightWhite = 15 << 4,

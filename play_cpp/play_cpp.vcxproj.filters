@@ -55,9 +55,6 @@
     <Filter Include="external\r2">
       <UniqueIdentifier>{2163bc18-fed6-4ce9-bd92-6934666924f5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="external\r2cm">
-      <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test_template">
       <UniqueIdentifier>{31104b3b-edc7-4367-b673-b82d2f7ad11f}</UniqueIdentifier>
     </Filter>
@@ -69,6 +66,9 @@
     </Filter>
     <Filter Include="play_hobby\item">
       <UniqueIdentifier>{406a41e2-4122-4715-929d-62249886c0d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\r2tm">
+      <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -476,24 +476,6 @@
     <ClCompile Include="src\test_cpp\item\cpp_new_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_Director.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_Menu.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_PrintBinary.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_PrintFile.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_StopWatch.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\NameSpaceMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
@@ -571,6 +553,24 @@
     </ClCompile>
     <ClCompile Include="src\test_std\item\std_functional_hash_test.cpp">
       <Filter>test_std\item</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_Director.cpp">
+      <Filter>external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_MenuProcessor.cpp">
+      <Filter>external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_PrintBinary.cpp">
+      <Filter>external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_PrintFile.cpp">
+      <Filter>external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_StopWatch.cpp">
+      <Filter>external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_WindowUtility.cpp">
+      <Filter>external\r2tm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1040,39 +1040,6 @@
     <ClInclude Include="src\test_cpp\item\cpp_lambda_test__helper__size_3.hpp">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_ColorModifier.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Director.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_iItem.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Inspector.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Menu.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_ostream.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_PrintBinary.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_PrintFile.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_StopWatch.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_VersionInfo.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\NameSpaceMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
@@ -1162,6 +1129,45 @@
     </ClInclude>
     <ClInclude Include="src\test_std\item\std_unordered_map_test_helper_cstring.hpp">
       <Filter>test_std\item</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_ColorModifier.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_Director.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_iItem.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_iMenu.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_Inspector.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_MenuConstant.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_MenuProcessor.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_ostream.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_PrintBinary.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_PrintFile.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_StopWatch.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_VersionInfo.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_WindowUtility.h">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
