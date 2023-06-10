@@ -4,230 +4,230 @@
 #include <fstream>
 #include <string>
 
-#include "r2cm/r2cm_ostream.h"
-#include "r2cm/r2cm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
 
 namespace std_fstream_test
 {
-	r2cm::iItem::TitleFunctionT OpenAndClose::GetTitleFunction() const
+	r2tm::TitleFunctionT OpenAndClose::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "fstream : Open And Close";
 		};
 	}
-	r2cm::iItem::DoFunctionT OpenAndClose::GetDoFunction() const
+	r2tm::DoFunctionT OpenAndClose::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 없는 파일." << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ 없는 파일." << r2tm::linefeed2;
 
 				DECLARATION_MAIN( std::ifstream ifs( "", std::ios::in ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_FALSE( ifs );
 				EXPECT_TRUE( ifs.fail() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( ifs.close() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-			std::cout << "p : " << p << r2cm::linefeed;
+			std::cout << "p : " << p << r2tm::linefeed;
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 파일 열기 성공." << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ 파일 열기 성공." << r2tm::linefeed2;
 
 				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_TRUE( ifs );
 				EXPECT_FALSE( ifs.fail() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( ifs.close() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				std::cout << r2cm::tab << "+ 파일을 닫아도 유효성 검사를 통과 한다." << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ 파일을 닫아도 유효성 검사를 통과 한다." << r2tm::linefeed2;
 				EXPECT_TRUE( ifs );
 				EXPECT_FALSE( ifs.fail() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ use std::ifstream::open" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ use std::ifstream::open" << r2tm::linefeed2;
 
 				DECLARATION_MAIN( std::ifstream ifs );
 				PROCESS_MAIN( ifs.open( p ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_TRUE( ifs );
 				EXPECT_FALSE( ifs.fail() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( ifs.close() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT GetCharacter::GetTitleFunction() const
+	r2tm::TitleFunctionT GetCharacter::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "fstream : GetCharacter";
 		};
 	}
-	r2cm::iItem::DoFunctionT GetCharacter::GetDoFunction() const
+	r2tm::DoFunctionT GetCharacter::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-			std::cout << "p : " << p << r2cm::linefeed;
+			std::cout << "p : " << p << r2tm::linefeed;
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ std::ifstream::get" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ std::ifstream::get" << r2tm::linefeed2;
 
 				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
 				EXPECT_FALSE( ifs.fail() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( while( !ifs.eof() ) { std::cout << static_cast<char>( ifs.get() ); } );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( ifs.close() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT GetLine::GetTitleFunction() const
+	r2tm::TitleFunctionT GetLine::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "fstream : GetLine";
 		};
 	}
-	r2cm::iItem::DoFunctionT GetLine::GetDoFunction() const
+	r2tm::DoFunctionT GetLine::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-			std::cout << "p : " << p << r2cm::linefeed;
+			std::cout << "p : " << p << r2tm::linefeed;
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( std::string buffer );
 				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				PROCESS_MAIN( while( ifs.good() ) { std::getline( ifs, buffer ); std::cout << buffer << r2cm::linefeed; } );
+				PROCESS_MAIN( while( ifs.good() ) { std::getline( ifs, buffer ); std::cout << buffer << r2tm::linefeed; } );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( ifs.close() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( char buffer[100] );
 				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				PROCESS_MAIN( while( ifs ) { ifs.getline( buffer, 100 ); std::cout << buffer << r2cm::linefeed; } );
+				PROCESS_MAIN( while( ifs ) { ifs.getline( buffer, 100 ); std::cout << buffer << r2tm::linefeed; } );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( ifs.close() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT GetBlank2Blank::GetTitleFunction() const
+	r2tm::TitleFunctionT GetBlank2Blank::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "fstream : Get Blank 2 Blank";
 		};
 	}
-	r2cm::iItem::DoFunctionT GetBlank2Blank::GetDoFunction() const
+	r2tm::DoFunctionT GetBlank2Blank::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-			std::cout << "p : " << p << r2cm::linefeed;
+			std::cout << "p : " << p << r2tm::linefeed;
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( std::string buffer );
 				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				PROCESS_MAIN( while( ifs >> buffer ) { std::cout << buffer << r2cm::linefeed; } );
+				PROCESS_MAIN( while( ifs >> buffer ) { std::cout << buffer << r2tm::linefeed; } );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( ifs.close() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

@@ -2,9 +2,9 @@
 
 #include <conio.h>
 
-#include "r2cm/r2cm_ostream.h"
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_WindowUtility.h"
+#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_WindowUtility.h"
 
 #include "r2/r2_Grid.h"
 #include "r2/r2_Random.h"
@@ -85,28 +85,28 @@ namespace procedural_terrain_generation_2_test
 	
 	
 	
-	r2cm::iItem::TitleFunctionT Bone::GetTitleFunction() const
+	r2tm::TitleFunctionT Bone::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "PROCEDURAL TERRAIN GENERATION 2 : Bone";
 		};
 	}
-	r2cm::iItem::DoFunctionT Bone::GetDoFunction() const
+	r2tm::DoFunctionT Bone::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			r2::Grid<Cell> grid_seed;
 			grid_seed.Reset( 40, 40 );
 			r2::Grid<eTerrainType> grid_terrain;
 			grid_terrain.Reset( 40, 40 );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+			const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
 
 			{
-				std::cout << r2cm::tab << "+ Make Seed" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Make Seed" << r2tm::linefeed2;
 
 				for( int y = 0; grid_seed.GetHeight() > y; ++y )
 				{
@@ -122,16 +122,16 @@ namespace procedural_terrain_generation_2_test
 				}
 
 				AlgorithmHelper::PrintGrid( grid_seed, seed_evaluator );
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::linefeed;
+			std::cout << r2tm::linefeed;
 			std::cout << "> Next Step";
 			_getch();
-			r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+			r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 			{
-				std::cout << r2cm::tab << "+ Make Terranin [Immortal] : ( 9 <= grid_seed.Get( x, y ) && 80 <= r2::Random::GetInt( 0, 100 ) )" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Make Terranin [Immortal] : ( 9 <= grid_seed.Get( x, y ) && 80 <= r2::Random::GetInt( 0, 100 ) )" << r2tm::linefeed2;
 
 				for( int y = 0; grid_seed.GetHeight() > y; ++y )
 				{
@@ -148,16 +148,16 @@ namespace procedural_terrain_generation_2_test
 				}
 
 				AlgorithmHelper::PrintGrid( grid_terrain, terrain_type_evaluator );
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::linefeed;
+			std::cout << r2tm::linefeed;
 			std::cout << "> Next Step";
 			_getch();
-			r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+			r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 			{
-				std::cout << r2cm::tab << "+ Terranin View : If [ Wall_Normal ] : [ 3 < Neighbor Wall : Wall_Normal ] else [ Normal ]" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Terranin View : If [ Wall_Normal ] : [ 3 < Neighbor Wall : Wall_Normal ] else [ Normal ]" << r2tm::linefeed2;
 
 				for( int y = 0; grid_seed.GetHeight() > y; ++y )
 				{
@@ -178,16 +178,16 @@ namespace procedural_terrain_generation_2_test
 				}
 
 				AlgorithmHelper::PrintGrid( grid_terrain, terrain_type_evaluator );
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::linefeed;
+			std::cout << r2tm::linefeed;
 			std::cout << "> Next Step";
 			_getch();
-			r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+			r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 			{
-				std::cout << r2cm::tab << "+ Terranin View : If [ Normal ] : [ 4 < Neighbor Wall_Normal : Wall_Normal ] else [ Normal ]" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Terranin View : If [ Normal ] : [ 4 < Neighbor Wall_Normal : Wall_Normal ] else [ Normal ]" << r2tm::linefeed2;
 
 				for( int y = 0; grid_seed.GetHeight() > y; ++y )
 				{
@@ -208,18 +208,18 @@ namespace procedural_terrain_generation_2_test
 				}
 
 				AlgorithmHelper::PrintGrid( grid_terrain, terrain_type_evaluator );
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::linefeed;
+			std::cout << r2tm::linefeed;
 			std::cout << "> Next Step";
 			_getch();
 			
 			for( int i = 0; 5 > i; ++i )
 			{
-				r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+				r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
-				std::cout << r2cm::tab << "+ Repeat x " << i << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Repeat x " << i << r2tm::linefeed2;
 
 				for( int y = 0; grid_terrain.GetHeight() > y; ++y )
 				{
@@ -246,14 +246,14 @@ namespace procedural_terrain_generation_2_test
 				}
 
 				AlgorithmHelper::PrintGrid( grid_terrain, terrain_type_evaluator );
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				_getch();
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

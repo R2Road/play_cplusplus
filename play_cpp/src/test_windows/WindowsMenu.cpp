@@ -1,6 +1,6 @@
 #include "WindowsMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/console_window_input_test.h"
 #include "item/console_window_message_test.h"
@@ -17,13 +17,23 @@
 // # REF
 // https://docs.microsoft.com/en-us/windows/console/console-reference
 
-r2cm::MenuUp WindowsMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT WindowsMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
 	{
-		ret->AddMenu<ConsoleWindowMenu>( '1' );
-		ret->AddMenu<ConsoleTextColorMenu>( '2' );
+		return "Windows";
+	};
+}
+r2tm::DescriptionFunctionT WindowsMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT WindowsMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
+	{
+		ret->AddMenu( '1', ConsoleWindowMenu() );
+		ret->AddMenu( '2', ConsoleTextColorMenu() );
 
 
 		ret->AddLineFeed();
@@ -59,7 +69,7 @@ r2cm::MenuUp WindowsMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddMenu<FlickeringResearchMenu>( 'z' );
+		ret->AddMenu( 'z', FlickeringResearchMenu() );
 		ret->AddItem( 'x', windows_terminal_font_test::FontInfo() );
 		ret->AddItem( 'c', windows_terminal_font_test::FontChange() );
 		ret->AddItem( 'v', windows_terminal_dc_test::Pixel() );
@@ -70,8 +80,6 @@ r2cm::MenuUp WindowsMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<RootMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, RootMenu() );
+	};
 }

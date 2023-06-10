@@ -1,20 +1,20 @@
 #pragma once
 
-#include "r2cm/r2cm_iItem.h"
+#include "r2tm/r2tm_iItem.h"
 
 namespace c_printf_test
 {
-	class Basic : public r2cm::iItem
+	class Basic : public r2tm::iItem
 	{
 	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() const override;
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class ShowNumbers : public r2cm::iItem
+	class ShowNumbers : public r2tm::iItem
 	{
 	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() const override;
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 }

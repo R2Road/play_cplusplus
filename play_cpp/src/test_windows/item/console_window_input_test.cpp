@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <windows.h>
 
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_ostream.h"
 
 namespace console_window_input_test
 {
@@ -14,29 +14,29 @@ namespace console_window_input_test
 		DWORD temp_console_mode;
 
 		GetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), &temp_console_mode );
-		std::cout << r2cm::tab << "Current Console Mode : " << temp_console_mode << r2cm::linefeed;
+		std::cout << r2tm::tab << "Current Console Mode : " << temp_console_mode << r2tm::linefeed;
 	}
-	r2cm::iItem::TitleFunctionT WindowInput_ReadConsoleInput::GetTitleFunction() const
+	r2tm::TitleFunctionT WindowInput_ReadConsoleInput::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Input : ReadConsoleInput";
 		};
 	}
-	r2cm::iItem::DoFunctionT WindowInput_ReadConsoleInput::GetDoFunction() const
+	r2tm::DoFunctionT WindowInput_ReadConsoleInput::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			HANDLE hStdInputHandle = GetStdHandle( STD_INPUT_HANDLE );
 			DWORD last_console_mode;
 
-			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-			std::cout << r2cm::tab2 << "HANDLE hStdInputHandle = GetStdHandle( STD_INPUT_HANDLE );" << r2cm::linefeed;
-			std::cout << r2cm::tab2 << "DWORD last_console_mode;" << r2cm::linefeed;
+			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
+			std::cout << r2tm::tab2 << "HANDLE hStdInputHandle = GetStdHandle( STD_INPUT_HANDLE );" << r2tm::linefeed;
+			std::cout << r2tm::tab2 << "DWORD last_console_mode;" << r2tm::linefeed;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				if( !GetConsoleMode( hStdInputHandle, &last_console_mode ) )
@@ -44,14 +44,14 @@ namespace console_window_input_test
 					assert( false && "GetConsoleMode( hStdInputHandle, &last_console_mode )" );
 				}
 
-				std::cout << r2cm::tab << "+ Backup Console Mode" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "GetConsoleMode( hStdInputHandle, &last_console_mode )" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Backup Console Mode" << r2tm::linefeed2;
+				std::cout << r2tm::tab2 << "GetConsoleMode( hStdInputHandle, &last_console_mode )" << r2tm::linefeed2;
 				
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 				ShowCurrentConsoleMode();
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				const DWORD new_console_mode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT;
@@ -60,16 +60,16 @@ namespace console_window_input_test
 					assert( false && "SetConsoleMode( hStdInputHandle, new_console_mode )" );
 				}
 
-				std::cout << r2cm::tab << "+ Change Console Mode" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "const DWORD new_console_mode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT;" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "SetConsoleMode( hStdInputHandle, new_console_mode )" << r2cm::linefeed;
-				std::cout << r2cm::tab3 << "> " << new_console_mode << r2cm::linefeed;
+				std::cout << r2tm::tab << "+ Change Console Mode" << r2tm::linefeed2;
+				std::cout << r2tm::tab2 << "const DWORD new_console_mode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT;" << r2tm::linefeed;
+				std::cout << r2tm::tab2 << "SetConsoleMode( hStdInputHandle, new_console_mode )" << r2tm::linefeed;
+				std::cout << r2tm::tab3 << "> " << new_console_mode << r2tm::linefeed;
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 				ShowCurrentConsoleMode();
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				//
@@ -98,15 +98,15 @@ namespace console_window_input_test
 						switch( input_records[i].EventType )
 						{
 						case KEY_EVENT: // keyboard input
-							std::cout << "================== KEY_EVENT ==================" << r2cm::linefeed;
-							std::cout << "input_records[i].EventType : " << input_records[i].EventType << r2cm::linefeed;
-							std::cout << "input_records[i].Event.KeyEvent.uChar.AsciiChar : " << input_records[i].Event.KeyEvent.uChar.AsciiChar << r2cm::linefeed;
-							std::cout << "input_records[i].Event.KeyEvent.bKeyDown : " << input_records[i].Event.KeyEvent.bKeyDown << r2cm::linefeed;
-							std::cout << "input_records[i].Event.KeyEvent.wVirtualKeyCode : " << input_records[i].Event.KeyEvent.wVirtualKeyCode << r2cm::linefeed;
-							std::cout << "input_records[i].Event.KeyEvent.wVirtualScanCode : " << input_records[i].Event.KeyEvent.wVirtualScanCode << r2cm::linefeed;
-							std::cout << "input_records[i].Event.KeyEvent.wRepeatCount : " << input_records[i].Event.KeyEvent.wRepeatCount << r2cm::linefeed;
-							std::cout << "input_records[i].Event.KeyEvent.dwControlKeyState : " << input_records[i].Event.KeyEvent.dwControlKeyState << r2cm::linefeed;
-							std::cout << "===============================================" << r2cm::linefeed;
+							std::cout << "================== KEY_EVENT ==================" << r2tm::linefeed;
+							std::cout << "input_records[i].EventType : " << input_records[i].EventType << r2tm::linefeed;
+							std::cout << "input_records[i].Event.KeyEvent.uChar.AsciiChar : " << input_records[i].Event.KeyEvent.uChar.AsciiChar << r2tm::linefeed;
+							std::cout << "input_records[i].Event.KeyEvent.bKeyDown : " << input_records[i].Event.KeyEvent.bKeyDown << r2tm::linefeed;
+							std::cout << "input_records[i].Event.KeyEvent.wVirtualKeyCode : " << input_records[i].Event.KeyEvent.wVirtualKeyCode << r2tm::linefeed;
+							std::cout << "input_records[i].Event.KeyEvent.wVirtualScanCode : " << input_records[i].Event.KeyEvent.wVirtualScanCode << r2tm::linefeed;
+							std::cout << "input_records[i].Event.KeyEvent.wRepeatCount : " << input_records[i].Event.KeyEvent.wRepeatCount << r2tm::linefeed;
+							std::cout << "input_records[i].Event.KeyEvent.dwControlKeyState : " << input_records[i].Event.KeyEvent.dwControlKeyState << r2tm::linefeed;
+							std::cout << "===============================================" << r2tm::linefeed;
 
 							if( 27 == input_records[i].Event.KeyEvent.wVirtualKeyCode )
 							{
@@ -116,33 +116,33 @@ namespace console_window_input_test
 							break;
 
 						case MOUSE_EVENT: // mouse input
-							std::cout << "MOUSE_EVENT" << r2cm::linefeed;
+							std::cout << "MOUSE_EVENT" << r2tm::linefeed;
 							break;
 
 						case WINDOW_BUFFER_SIZE_EVENT: // scrn buf. resizing
-							std::cout << "WINDOW_BUFFER_SIZE_EVENT" << r2cm::linefeed;
+							std::cout << "WINDOW_BUFFER_SIZE_EVENT" << r2tm::linefeed;
 							break;
 
 						case FOCUS_EVENT:  // disregard focus events
-							std::cout << "FOCUS_EVENT" << r2cm::linefeed;
+							std::cout << "FOCUS_EVENT" << r2tm::linefeed;
 							break;
 
 						case MENU_EVENT:   // disregard menu events
-							std::cout << "MENU_EVENT" << r2cm::linefeed;
+							std::cout << "MENU_EVENT" << r2tm::linefeed;
 							break;
 
 						default:
-							std::cout << "Unknown event type" << r2cm::linefeed;
+							std::cout << "Unknown event type" << r2tm::linefeed;
 							break;
 						}
 					}
 				} while( process );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "Press Any Key : Rollback" << r2cm::linefeed;
+				std::cout << r2tm::tab << "Press Any Key : Rollback" << r2tm::linefeed;
 				_getch();
 
 				//
@@ -150,44 +150,44 @@ namespace console_window_input_test
 				//
 				SetConsoleMode( hStdInputHandle, last_console_mode );
 				
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 				ShowCurrentConsoleMode();
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT WindowInput_GetKeyState::GetTitleFunction() const
+	r2tm::TitleFunctionT WindowInput_GetKeyState::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Input : GetKeyState";
 		};
 	}
-	r2cm::iItem::DoFunctionT WindowInput_GetKeyState::GetDoFunction() const
+	r2tm::DoFunctionT WindowInput_GetKeyState::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
-			std::cout << "[ESC] Exit" << r2cm::linefeed;
-			std::cout << "[SPACE] Do" << r2cm::linefeed;
+			std::cout << r2tm::split;
+			std::cout << "[ESC] Exit" << r2tm::linefeed;
+			std::cout << "[SPACE] Do" << r2tm::linefeed;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << "+ Message" << r2cm::linefeed2;
-			std::cout << "pause 없이 메뉴를 전환하는 경우 메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." << r2cm::linefeed;
-			std::cout << "키 반응성이 중요한 프로그램을 만든다면 이 녀석은 쓰지 않는게 좋겠다." << r2cm::linefeed;
+			std::cout << "+ Message" << r2tm::linefeed2;
+			std::cout << "pause 없이 메뉴를 전환하는 경우 메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." << r2tm::linefeed;
+			std::cout << "키 반응성이 중요한 프로그램을 만든다면 이 녀석은 쓰지 않는게 좋겠다." << r2tm::linefeed;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << r2cm::tab << "+ Key Info : VK_SPACE" << r2cm::linefeed3;
+			std::cout << r2tm::tab << "+ Key Info : VK_SPACE" << r2tm::linefeed3;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				int key_value = 0;
@@ -220,39 +220,39 @@ namespace console_window_input_test
 				}
 			}
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT WindowInput_GetKeyboardState::GetTitleFunction() const
+	r2tm::TitleFunctionT WindowInput_GetKeyboardState::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Input : GetKeyboardState";
 		};
 	}
-	r2cm::iItem::DoFunctionT WindowInput_GetKeyboardState::GetDoFunction() const
+	r2tm::DoFunctionT WindowInput_GetKeyboardState::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << "[ESC] Exit" << r2cm::linefeed;
-			std::cout << "[SPACE] Do" << r2cm::linefeed;
+			std::cout << "[ESC] Exit" << r2tm::linefeed;
+			std::cout << "[SPACE] Do" << r2tm::linefeed;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << "+ Message" << r2cm::linefeed2;
-			std::cout << "이 녀석 역시 pause 없이 메뉴를 전환하는 경우 메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." << r2cm::linefeed;
-			std::cout << "키 반응성이 중요한 프로그램을 만든다면 이 녀석은 쓰지 않는게 좋겠다." << r2cm::linefeed;
+			std::cout << "+ Message" << r2tm::linefeed2;
+			std::cout << "이 녀석 역시 pause 없이 메뉴를 전환하는 경우 메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." << r2tm::linefeed;
+			std::cout << "키 반응성이 중요한 프로그램을 만든다면 이 녀석은 쓰지 않는게 좋겠다." << r2tm::linefeed;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << r2cm::linefeed3 << r2cm::linefeed2;
+			std::cout << r2tm::linefeed3 << r2tm::linefeed2;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				int key_value;
@@ -302,35 +302,35 @@ namespace console_window_input_test
 				//
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT WindowInput_GetAsyncKeyStates::GetTitleFunction() const
+	r2tm::TitleFunctionT WindowInput_GetAsyncKeyStates::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Input : GetAsyncKeyStates";
 		};
 	}
-	r2cm::iItem::DoFunctionT WindowInput_GetAsyncKeyStates::GetDoFunction() const
+	r2tm::DoFunctionT WindowInput_GetAsyncKeyStates::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << "[ESC] Exit" << r2cm::linefeed;
-			std::cout << "[SPACE] Do" << r2cm::linefeed;
+			std::cout << "[ESC] Exit" << r2tm::linefeed;
+			std::cout << "[SPACE] Do" << r2tm::linefeed;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << r2cm::tab << "+ Key Info : VK_SPACE" << r2cm::linefeed << r2cm::linefeed3;
+			std::cout << r2tm::tab << "+ Key Info : VK_SPACE" << r2tm::linefeed << r2tm::linefeed3;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				int key_value = 0;
@@ -363,7 +363,7 @@ namespace console_window_input_test
 				}
 			}
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

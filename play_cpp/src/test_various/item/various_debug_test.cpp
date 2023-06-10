@@ -6,181 +6,181 @@
 #include <Windows.h>
 
 #include "r2/r2_Assert.h"
-#include "r2cm/r2cm_ostream.h"
-#include "r2cm/r2cm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
 #include "utility/r2utility_FileUtil.h"
 
 namespace various_debug_test
 {
 #define ShowCodeInfo()											\
 {																\
-	std::cout << "File : " << __FILE__ << r2cm::linefeed;			\
-	std::cout << "Function : " << __FUNCTION__ << r2cm::linefeed;	\
-	std::cout << "Line : " << __LINE__ << r2cm::linefeed;			\
+	std::cout << "File : " << __FILE__ << r2tm::linefeed;			\
+	std::cout << "Function : " << __FUNCTION__ << r2tm::linefeed;	\
+	std::cout << "Line : " << __LINE__ << r2tm::linefeed;			\
 }
 
-	r2cm::iItem::TitleFunctionT PredefinedMacro::GetTitleFunction() const
+	r2tm::TitleFunctionT PredefinedMacro::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Predefined Macro";
 		};
 	}
-	r2cm::iItem::DoFunctionT PredefinedMacro::GetDoFunction() const
+	r2tm::DoFunctionT PredefinedMacro::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-			std::cout << r2cm::tab2 << "#define ShowCodeInfo()" << r2cm::linefeed;
-			std::cout << r2cm::tab2 << "{" << r2cm::linefeed;
-			std::cout << r2cm::tab3 << "std::cout << \"File : \" << __FILE__ << r2cm::linefeed;" << r2cm::linefeed;
-			std::cout << r2cm::tab3 << "std::cout << \"Function : \" << __FUNCTION__ << r2cm::linefeed;" << r2cm::linefeed;
-			std::cout << r2cm::tab3 << "std::cout << \"Line : \" << __LINE__ << r2cm::linefeed;" << r2cm::linefeed;
-			std::cout << r2cm::tab2 << "}" << r2cm::linefeed;
+			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
+			std::cout << r2tm::tab2 << "#define ShowCodeInfo()" << r2tm::linefeed;
+			std::cout << r2tm::tab2 << "{" << r2tm::linefeed;
+			std::cout << r2tm::tab3 << "std::cout << \"File : \" << __FILE__ << r2tm::linefeed;" << r2tm::linefeed;
+			std::cout << r2tm::tab3 << "std::cout << \"Function : \" << __FUNCTION__ << r2tm::linefeed;" << r2tm::linefeed;
+			std::cout << r2tm::tab3 << "std::cout << \"Line : \" << __LINE__ << r2tm::linefeed;" << r2tm::linefeed;
+			std::cout << r2tm::tab2 << "}" << r2tm::linefeed;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "ShowCodeInfo();" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
+				std::cout << r2tm::tab2 << "ShowCodeInfo();" << r2tm::linefeed2;
 
 				ShowCodeInfo();
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT OutPutDebugString::GetTitleFunction() const
+	r2tm::TitleFunctionT OutPutDebugString::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "OutPutDebugString";
 		};
 	}
-	r2cm::iItem::DoFunctionT OutPutDebugString::GetDoFunction() const
+	r2tm::DoFunctionT OutPutDebugString::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "OutputDebugStringW( L\"What The Fuck\" );" << r2cm::linefeed;
+				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
+				std::cout << r2tm::tab2 << "OutputDebugStringW( L\"What The Fuck\" );" << r2tm::linefeed;
 
 				OutputDebugStringW( L"What The Fuck" );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Has Some Problem" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "C1189 : #include <debugapi.h>" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "use <Windows.h> instead <debugapi.h>" << r2cm::linefeed;
+				std::cout << r2tm::tab << "+ Has Some Problem" << r2tm::linefeed2;
+				std::cout << r2tm::tab2 << "C1189 : #include <debugapi.h>" << r2tm::linefeed;
+				std::cout << r2tm::tab2 << "use <Windows.h> instead <debugapi.h>" << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Assertion::GetTitleFunction() const
+	r2tm::TitleFunctionT Assertion::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Assert";
 		};
 	}
-	r2cm::iItem::DoFunctionT Assertion::GetDoFunction() const
+	r2tm::DoFunctionT Assertion::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "assert( 1 > 2 && \"What The Fuck\" );" << r2cm::linefeed;
+				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
+				std::cout << r2tm::tab2 << "assert( 1 > 2 && \"What The Fuck\" );" << r2tm::linefeed;
 
-				std::cout << r2cm::split;
+				std::cout << r2tm::split;
 			}
 
 			assert( 1 > 2 && "What The Fuck" );
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT DebugBreak::GetTitleFunction() const
+	r2tm::TitleFunctionT DebugBreak::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Debug Break";
 		};
 	}
-	r2cm::iItem::DoFunctionT DebugBreak::GetDoFunction() const
+	r2tm::DoFunctionT DebugBreak::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "__debugbreak();" << r2cm::linefeed;
+				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
+				std::cout << r2tm::tab2 << "__debugbreak();" << r2tm::linefeed;
 
 				__debugbreak();
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT MyAssertion::GetTitleFunction() const
+	r2tm::TitleFunctionT MyAssertion::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "MyAssertion";
 		};
 	}
-	r2cm::iItem::DoFunctionT MyAssertion::GetDoFunction() const
+	r2tm::DoFunctionT MyAssertion::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			OUTPUT_FILE( "src/r2/r2_Assert.h" );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
 
 				DECLARATION_MAIN( int a = 1 );
 				DECLARATION_MAIN( int b = 2 );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( R2ASSERT( a > b, "What The Fuck" ) );
 
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
@@ -191,32 +191,32 @@ namespace various_debug_test
 		static std::string temp_string = r2utility::MakeOutPutPath( "debug_test__simple_log.txt" );
 		return temp_string.c_str();
 	}
-	r2cm::iItem::TitleFunctionT SimpleLog::GetTitleFunction() const
+	r2tm::TitleFunctionT SimpleLog::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Simple Log";
 		};
 	}
-	r2cm::iItem::DoFunctionT SimpleLog::GetDoFunction() const
+	r2tm::DoFunctionT SimpleLog::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << r2cm::tab << "+ File Open" << r2cm::linefeed2;
+			std::cout << r2tm::tab << "+ File Open" << r2tm::linefeed2;
 
 			DECLARATION_MAIN( const char* const file_path = GetSimpleLogFilePath() );
 			DECLARATION_MAIN( std::ofstream log_stream( file_path ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << r2cm::tab << "+ Redirection" << r2cm::linefeed2;
+			std::cout << r2tm::tab << "+ Redirection" << r2tm::linefeed2;
 
 			DECLARATION_MAIN( std::streambuf * const orig = std::cerr.rdbuf() );
 			PROCESS_MAIN( std::cerr.rdbuf( log_stream.rdbuf() ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( std::cerr << "[Test]" );
@@ -226,24 +226,24 @@ namespace various_debug_test
 				PROCESS_MAIN( std::cerr << "redirection 2 file" );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ End" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ End" << r2tm::linefeed2;
 
 				PROCESS_MAIN( std::cerr.set_rdbuf( orig ) );
 				PROCESS_MAIN( log_stream.close() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				OUTPUT_FILE( file_path );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

@@ -1,6 +1,6 @@
 #include "ConsoleTextColorMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test_windows/item/windows_terminal_text_color_test.h"
 
@@ -10,10 +10,20 @@
 // https://docs.microsoft.com/en-us/windows/console/console-reference
 
 
-r2cm::MenuUp ConsoleTextColorMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT ConsoleTextColorMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Console Text Color";
+	};
+}
+r2tm::DescriptionFunctionT ConsoleTextColorMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT ConsoleTextColorMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', windows_terminal_text_color_test::ColorTable() );
 		ret->AddItem( '2', windows_terminal_text_color_test::TextColor1() );
@@ -31,8 +41,6 @@ r2cm::MenuUp ConsoleTextColorMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<WindowsMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, WindowsMenu() );
+	};
 }

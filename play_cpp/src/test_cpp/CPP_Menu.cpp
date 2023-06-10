@@ -1,6 +1,6 @@
 #include "CPP_Menu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/cpp_structured_binding_test.h"
 #include "item/number_test.h"
@@ -16,28 +16,38 @@
 #include "CharMenu.h"
 #include "RootMenu.h"
 
-r2cm::MenuUp CPP_Menu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT CPP_Menu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, CPP_Menu::GetTitle() ) );
-
+	return []()->const char*
 	{
-		ret->AddMenu<ClassMenu>( '1' );
-		ret->AddMenu<NameSpaceMenu>( '2' );
+		return "CPP";
+	};
+}
+r2tm::DescriptionFunctionT CPP_Menu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT CPP_Menu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
+	{
+		ret->AddMenu( '1', ClassMenu() );
+		ret->AddMenu( '2', NameSpaceMenu() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddMenu<CharMenu>( '6' );
-		ret->AddMenu<AlignMenu>( '7' );
-		ret->AddMenu<EnumMenu>( '8' );
+		ret->AddMenu( '6', CharMenu() );
+		ret->AddMenu( '7', AlignMenu() );
+		ret->AddMenu( '8', EnumMenu() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddMenu<NewMenu>( 'q' );
-		ret->AddMenu<LambdaMenu>( 'w' );
+		ret->AddMenu( 'q', NewMenu() );
+		ret->AddMenu( 'w', LambdaMenu() );
 		ret->AddItem( 'e', using_test::Basic() );
 
 
@@ -51,8 +61,6 @@ r2cm::MenuUp CPP_Menu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<RootMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, RootMenu() );
+	};
 }

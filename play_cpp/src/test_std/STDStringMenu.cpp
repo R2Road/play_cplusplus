@@ -1,15 +1,25 @@
 #include "STDStringMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test_std/item/std_string_test.h"
 
 #include "STDMenu.h"
 
-r2cm::MenuUp STDStringMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT STDStringMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "<string>";
+	};
+}
+r2tm::DescriptionFunctionT STDStringMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT STDStringMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', std_string_test::Basic() );
 		ret->AddItem( '2', std_string_test::Move() );
@@ -26,11 +36,11 @@ r2cm::MenuUp STDStringMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'r', std_string_test::Line_Count() );
 
 
+
 		ret->AddSplit();
 
 
-		ret->AddMenu<STDMenu>( 27 );
-	}
 
-	return ret;
+		ret->AddMenu( 27, STDMenu() );
+	};
 }

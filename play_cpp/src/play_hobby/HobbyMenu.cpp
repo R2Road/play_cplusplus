@@ -1,6 +1,6 @@
 #include "HobbyMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/play_infinite_number.h"
 #include "item/play_serialize.h"
@@ -14,10 +14,20 @@
 
 #include "RootMenu.h"
 
-r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT HobbyMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Hobby";
+	};
+}
+r2tm::DescriptionFunctionT HobbyMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT HobbyMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', play_infinite_number::Declaration() );
 		ret->AddItem( '2', play_infinite_number::Operator_Plus() );
@@ -36,8 +46,8 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<TreeMenu>( 'q' );
-		ret->AddMenu<PropertyMenu>( 'w' );
+		ret->AddMenu( 'q', TreeMenu() );
+		ret->AddMenu( 'w', PropertyMenu() );
 
 
 
@@ -54,16 +64,14 @@ r2cm::MenuUp HobbyMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<ListBasedOnArrayMenu>( 'z' );
-		ret->AddMenu<Vector3Menu>( 'x' );
-		ret->AddMenu<MemoryPoolMenu>( 'c' );
+		ret->AddMenu( 'z', ListBasedOnArrayMenu() );
+		ret->AddMenu( 'x', Vector3Menu() );
+		ret->AddMenu( 'c', MemoryPoolMenu() );
 
 
 		ret->AddSplit();
 
 
-		ret->AddMenu<RootMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, RootMenu() );
+	};
 }

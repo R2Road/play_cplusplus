@@ -3,22 +3,22 @@
 #include <conio.h> // _kbhit(), _getch()
 #include <Windows.h> // HANDLE, COORD, SetConsoleCursorPosition()
 
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_ostream.h"
 
 #include "utility/r2utility_CharacterBuffer.h"
 
 namespace windows_terminal_flickering_research
 {
-	r2cm::iItem::TitleFunctionT OneByOne::GetTitleFunction() const
+	r2tm::TitleFunctionT OneByOne::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print One By One";
 		};
 	}
-	r2cm::iItem::DoFunctionT OneByOne::GetDoFunction() const
+	r2tm::DoFunctionT OneByOne::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			r2utility::CharacterBuffer visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
@@ -28,16 +28,16 @@ namespace windows_terminal_flickering_research
 			{
 				system( "cls" );
 
-				std::cout << "[Any Key] End" << r2cm::linefeed;
+				std::cout << "[Any Key] End" << r2tm::linefeed;
 
-				std::cout << r2cm::split;
+				std::cout << r2tm::split;
 
 				int current_x = 0;
 				for( const auto v : visible_resource )
 				{
 					if( visible_resource.GetWidth() <= current_x )
 					{
-						std::cout << r2cm::linefeed;
+						std::cout << r2tm::linefeed;
 						current_x = 0;
 					}
 
@@ -46,7 +46,7 @@ namespace windows_terminal_flickering_research
 					++current_x;
 				}
 
-				std::cout << r2cm::linefeed << r2cm::split;
+				std::cout << r2tm::linefeed << r2tm::split;
 
 				//
 				// Input
@@ -59,27 +59,27 @@ namespace windows_terminal_flickering_research
 
 			} while( process );
 
-			return r2cm::eItemLeaveAction::None;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
-	r2cm::iItem::TitleFunctionT OneByOne_WithOut_CLS::GetTitleFunction() const
+	r2tm::TitleFunctionT OneByOne_WithOut_CLS::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print One By One WithOut CLS";
 		};
 	}
-	r2cm::iItem::DoFunctionT OneByOne_WithOut_CLS::GetDoFunction() const
+	r2tm::DoFunctionT OneByOne_WithOut_CLS::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << "[Any Key] End" << r2cm::linefeed;
+			std::cout << "[Any Key] End" << r2tm::linefeed;
 
-			std::cout << r2cm::split;
-			std::cout << r2cm::linefeed3 << r2cm::linefeed3 << r2cm::linefeed3 << r2cm::linefeed3 << r2cm::linefeed3 << r2cm::linefeed3 << r2cm::linefeed;
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
+			std::cout << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed;
+			std::cout << r2tm::split;
 
 			r2utility::CharacterBuffer visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
@@ -97,7 +97,7 @@ namespace windows_terminal_flickering_research
 				{
 					if( visible_resource.GetWidth() <= current_x )
 					{
-						std::cout << r2cm::linefeed;
+						std::cout << r2tm::linefeed;
 						current_x = 0;
 					}
 
@@ -117,22 +117,22 @@ namespace windows_terminal_flickering_research
 
 			} while( process );
 
-			return r2cm::eItemLeaveAction::None;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT LineByLine::GetTitleFunction() const
+	r2tm::TitleFunctionT LineByLine::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print Line By Line";
 		};
 	}
-	r2cm::iItem::DoFunctionT LineByLine::GetDoFunction() const
+	r2tm::DoFunctionT LineByLine::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			r2utility::CharacterBuffer visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
@@ -142,16 +142,16 @@ namespace windows_terminal_flickering_research
 			{
 				system( "cls" );
 
-				std::cout << "[Any Key] End" << r2cm::linefeed;
+				std::cout << "[Any Key] End" << r2tm::linefeed;
 
-				std::cout << r2cm::split;
+				std::cout << r2tm::split;
 
 				for( int current_y = 0; visible_resource.GetHeight() > current_y; ++current_y )
 				{
-					std::cout << visible_resource.GetLine( current_y ) << r2cm::linefeed;
+					std::cout << visible_resource.GetLine( current_y ) << r2tm::linefeed;
 				}
 
-				std::cout << r2cm::split;
+				std::cout << r2tm::split;
 
 				//
 				// Input
@@ -164,22 +164,22 @@ namespace windows_terminal_flickering_research
 
 			} while( process );
 
-			return r2cm::eItemLeaveAction::None;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT PageByPage::GetTitleFunction() const
+	r2tm::TitleFunctionT PageByPage::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print Page By Page";
 		};
 	}
-	r2cm::iItem::DoFunctionT PageByPage::GetDoFunction() const
+	r2tm::DoFunctionT PageByPage::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			r2utility::CharacterBuffer character_buffer( 100, 40 );
 			character_buffer.FillAll( 'c' );
@@ -189,13 +189,13 @@ namespace windows_terminal_flickering_research
 			{
 				system( "cls" );
 
-				std::cout << "[Any Key] End" << r2cm::linefeed;
+				std::cout << "[Any Key] End" << r2tm::linefeed;
 
-				std::cout << r2cm::split;
+				std::cout << r2tm::split;
 
 				std::cout << &( *character_buffer.begin() );
 
-				std::cout << r2cm::split;
+				std::cout << r2tm::split;
 
 				//
 				// Input
@@ -208,22 +208,22 @@ namespace windows_terminal_flickering_research
 
 			} while( process );
 
-			return r2cm::eItemLeaveAction::None;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT PageByPage_WithOut_CLS_1::GetTitleFunction() const
+	r2tm::TitleFunctionT PageByPage_WithOut_CLS_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print Page By Page Without CLS 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT PageByPage_WithOut_CLS_1::GetDoFunction() const
+	r2tm::DoFunctionT PageByPage_WithOut_CLS_1::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			r2utility::CharacterBuffer character_buffer( 100, 40 );
 			character_buffer.FillAll( 'c' );
@@ -249,22 +249,22 @@ namespace windows_terminal_flickering_research
 
 			} while( process );
 
-			return r2cm::eItemLeaveAction::None;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT PageByPage_WithOut_CLS_2::GetTitleFunction() const
+	r2tm::TitleFunctionT PageByPage_WithOut_CLS_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print Page By Page Without CLS 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT PageByPage_WithOut_CLS_2::GetDoFunction() const
+	r2tm::DoFunctionT PageByPage_WithOut_CLS_2::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			r2utility::CharacterBuffer character_buffer_1( 100, 40 );
 			character_buffer_1.FillAll( 'c' );
@@ -303,7 +303,7 @@ namespace windows_terminal_flickering_research
 
 			} while( process );
 
-			return r2cm::eItemLeaveAction::None;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 }

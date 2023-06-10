@@ -4,83 +4,83 @@
 #include <numeric> // std::iota
 #include <stdint.h>
 
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
 
 namespace c_array_test
 {
-	r2cm::iItem::TitleFunctionT Init::GetTitleFunction() const
+	r2tm::TitleFunctionT Init::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "array : Init";
 		};
 	}
-	r2cm::iItem::DoFunctionT Init::GetDoFunction() const
+	r2tm::DoFunctionT Init::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( int array[5] );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				std::cout << r2cm::tab << "Print :";
+				std::cout << r2tm::tab << "Print :";
 				for( auto i : array )
 				{
 					std::cout << " " << i;
 				}
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				int array[5] = { 0, };
-				std::cout << r2cm::tab << "int array[10] = { 0, };" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "int array[10] = { 0, };" << r2tm::linefeed2;
 
-				std::cout << r2cm::tab << "Print :";
+				std::cout << r2tm::tab << "Print :";
 				for( auto i : array )
 				{
 					std::cout << " " << i;
 				}
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				int array[5] = { '\0', };
-				std::cout << r2cm::tab << "int array[10] = { \'\\0\', };" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "int array[10] = { \'\\0\', };" << r2tm::linefeed2;
 
-				std::cout << r2cm::tab << "Print :";
+				std::cout << r2tm::tab << "Print :";
 				for( auto i : array )
 				{
 					std::cout << " " << i;
 				}
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( int array[5] = {} );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				std::cout << r2cm::tab << "Print :";
+				std::cout << r2tm::tab << "Print :";
 				for( auto i : array )
 				{
 					std::cout << " " << i;
 				}
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

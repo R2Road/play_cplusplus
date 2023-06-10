@@ -1,7 +1,7 @@
 #include "play_property.h"
 
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
 
 namespace play_property
 {
@@ -19,38 +19,38 @@ namespace play_property
 		}
 	};
 
-	r2cm::iItem::TitleFunctionT Functor::GetTitleFunction() const
+	r2tm::TitleFunctionT Functor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Property : Functor";
 		};
 	}
-	r2cm::iItem::DoFunctionT Functor::GetDoFunction() const
+	r2tm::DoFunctionT Functor::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( struct InvokerFunctorTestStruct
 			{
 				void Func() { printf( "\t" "> " "[Call] Func" "\n" ); }
 			} );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( InvokerFunctorTestStruct ts );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				invoke_functor f( &InvokerFunctorTestStruct::Func );
 				PROCESS_MAIN( f.Do( &ts ) );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

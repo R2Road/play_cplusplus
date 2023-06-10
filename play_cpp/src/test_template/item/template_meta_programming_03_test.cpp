@@ -1,6 +1,6 @@
 #include "template_meta_programming_03_test.h"
 
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_ostream.h"
 
 namespace
 {
@@ -28,30 +28,30 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2cm::iItem::TitleFunctionT MultiTypePackage::GetTitleFunction() const
+	r2tm::TitleFunctionT MultiTypePackage::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Multi Type Package( In Progress )";
 		};
 	}
-	r2cm::iItem::DoFunctionT MultiTypePackage::GetDoFunction() const
+	r2tm::DoFunctionT MultiTypePackage::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << "\t" << "+ MTPackage<int, float, char> mtp{ 1, 2.f, '3' };" << r2cm::linefeed;
+				std::cout << "\t" << "+ MTPackage<int, float, char> mtp{ 1, 2.f, '3' };" << r2tm::linefeed;
 
 				MTPackage<int, float, char> mtp{ 1, 2.f, '3' };
 
-				std::cout << "\t\t" << "result : " << mtp.val << r2cm::linefeed;
+				std::cout << "\t\t" << "result : " << mtp.val << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

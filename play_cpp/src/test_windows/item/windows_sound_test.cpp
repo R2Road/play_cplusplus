@@ -4,30 +4,30 @@
 #include <Windows.h>
 #pragma comment( lib, "winmm.lib" )
 
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_ostream.h"
 
 #include "utility/r2utility_FileUtil.h"
 
 namespace windows_sound_test
 {
-	r2cm::iItem::TitleFunctionT PlaySoundTest::GetTitleFunction() const
+	r2tm::TitleFunctionT PlaySoundTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "mmsystem : PlaySound";
 		};
 	}
-	r2cm::iItem::DoFunctionT PlaySoundTest::GetDoFunction() const
+	r2tm::DoFunctionT PlaySoundTest::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << "[ESC]" " Exit" << r2cm::linefeed;
-			std::cout << "[1]" " Play SFX 1" << r2cm::linefeed;
-			std::cout << "[2]" " Play SFX 2" << r2cm::linefeed;
+			std::cout << "[ESC]" " Exit" << r2tm::linefeed;
+			std::cout << "[1]" " Play SFX 1" << r2tm::linefeed;
+			std::cout << "[2]" " Play SFX 2" << r2tm::linefeed;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			int input = 0;
 			do
@@ -53,30 +53,30 @@ namespace windows_sound_test
 
 			} while( 27 != input );
 
-			return r2cm::eItemLeaveAction::None;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT BeepTest::GetTitleFunction() const
+	r2tm::TitleFunctionT BeepTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "utilapiset : Beep";
 		};
 	}
-	r2cm::iItem::DoFunctionT BeepTest::GetDoFunction() const
+	r2tm::DoFunctionT BeepTest::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << "[ESC]" " Exit" << r2cm::linefeed;
-			std::cout << "[1]" " Play Beep" << r2cm::linefeed;
-			std::cout << "[2]" " Play Beep" << r2cm::linefeed;
+			std::cout << "[ESC]" " Exit" << r2tm::linefeed;
+			std::cout << "[1]" " Play Beep" << r2tm::linefeed;
+			std::cout << "[2]" " Play Beep" << r2tm::linefeed;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			int input = 0;
 			do
@@ -99,7 +99,7 @@ namespace windows_sound_test
 
 			} while( 27 != input );
 
-			return r2cm::eItemLeaveAction::None;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 }

@@ -1,19 +1,27 @@
 #include "MathMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "RootMenu.h"
 
-r2cm::MenuUp MathMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT MathMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Math";
+	};
+}
+r2tm::DescriptionFunctionT MathMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT MathMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddSplit();
 
 
-		ret->AddMenu<RootMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, RootMenu() );
+	};
 }

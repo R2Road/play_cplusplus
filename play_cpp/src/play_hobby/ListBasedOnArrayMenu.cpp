@@ -1,15 +1,25 @@
 #include "ListBasedOnArrayMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/play_list_based_on_array.h"
 
 #include "HobbyMenu.h"
 
-r2cm::MenuUp ListBasedOnArrayMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT ListBasedOnArrayMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "List Based On Array";
+	};
+}
+r2tm::DescriptionFunctionT ListBasedOnArrayMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT ListBasedOnArrayMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', play_list_based_on_array::Basic() );
 		ret->AddItem( '2', play_list_based_on_array::PushFront() );
@@ -32,8 +42,6 @@ r2cm::MenuUp ListBasedOnArrayMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<HobbyMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, HobbyMenu() );
+	};
 }

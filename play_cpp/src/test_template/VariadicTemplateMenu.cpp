@@ -1,15 +1,25 @@
 #include "VariadicTemplateMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test_template/item/variadic_template_test.h"
 
 #include "TemplateMenu.h"
 
-r2cm::MenuUp VariadicTemplateMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT VariadicTemplateMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Variadic Template";
+	};
+}
+r2tm::DescriptionFunctionT VariadicTemplateMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT VariadicTemplateMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', variadic_template_test::SizeOfArgs() );
 		ret->AddItem( '2', variadic_template_test::PrintValues() );
@@ -20,8 +30,6 @@ r2cm::MenuUp VariadicTemplateMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<TemplateMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, TemplateMenu() );
+	};
 }

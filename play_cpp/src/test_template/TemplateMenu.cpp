@@ -1,6 +1,6 @@
 #include "TemplateMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/template_basic_test.h"
 #include "item/template_practice_test_02.h"
@@ -12,10 +12,20 @@
 
 #include "RootMenu.h"
 
-r2cm::MenuUp TemplateMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT TemplateMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Template";
+	};
+}
+r2tm::DescriptionFunctionT TemplateMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT TemplateMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', template_basic_test::MemberVariable() );
 		ret->AddItem( '2', template_basic_test::Function_ReturnValue() );
@@ -44,9 +54,9 @@ r2cm::MenuUp TemplateMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<VariadicTemplateMenu>( 'a' );
-		ret->AddMenu<TemplateMetaProgrammingMenu>( 's' );
-		ret->AddMenu<TemplatePracticeMenu>( 'd' );
+		ret->AddMenu( 'a', VariadicTemplateMenu() );
+		ret->AddMenu( 's', TemplateMetaProgrammingMenu() );
+		ret->AddMenu( 'd', TemplatePracticeMenu() );
 
 
 
@@ -54,8 +64,6 @@ r2cm::MenuUp TemplateMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<RootMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, RootMenu() );
+	};
 }

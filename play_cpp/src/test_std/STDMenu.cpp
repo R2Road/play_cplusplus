@@ -1,6 +1,6 @@
 #include "STDMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test_std/item/std_algorithm_test.h"
 #include "test_std/item/std_cout_test.h"
@@ -22,16 +22,26 @@
 #include "STDStringViewMenu.h"
 #include "STDThreadMenu.h"
 
-r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT STDMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
 	{
-		ret->AddMenu<STDCoutMenu>( '1' );
-		ret->AddMenu<STDFileSystemMenu>( '2' );
-		ret->AddMenu<STDOptionalMenu>( '3' );
-		ret->AddMenu<STDStringMenu>( '4' );
-		ret->AddMenu<STDStringViewMenu>( '5' );
+		return "STD";
+	};
+}
+r2tm::DescriptionFunctionT STDMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT STDMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
+	{
+		ret->AddMenu( '1', STDCoutMenu() );
+		ret->AddMenu( '2', STDFileSystemMenu() );
+		ret->AddMenu( '3', STDOptionalMenu() );
+		ret->AddMenu( '4', STDStringMenu() );
+		ret->AddMenu( '5', STDStringViewMenu() );
 
 
 
@@ -48,7 +58,7 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<STDFunctionalMenu>( 'q' );
+		ret->AddMenu( 'q', STDFunctionalMenu() );
 
 
 
@@ -65,10 +75,10 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<STDMemoryMenu>( 'z' );
-		ret->AddMenu<STDNumericMenu>( 'x' );
-		ret->AddMenu<STDContainerMenu>( 'c' );
-		ret->AddMenu<STDThreadMenu>( 'v' );
+		ret->AddMenu( 'z', STDMemoryMenu() );
+		ret->AddMenu( 'x', STDNumericMenu() );
+		ret->AddMenu( 'c', STDContainerMenu() );
+		ret->AddMenu( 'v', STDThreadMenu() );
 
 
 
@@ -76,8 +86,6 @@ r2cm::MenuUp STDMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<RootMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, RootMenu() );
+	};
 }

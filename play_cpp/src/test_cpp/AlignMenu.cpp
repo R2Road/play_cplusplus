@@ -1,16 +1,26 @@
 #include "AlignMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test_cpp/item/cpp_alignas_test.h"
 #include "test_cpp/item/cpp_alignof_test.h"
 
 #include "CPP_Menu.h"
 
-r2cm::MenuUp AlignMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT AlignMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Align";
+	};
+}
+r2tm::DescriptionFunctionT AlignMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT AlignMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', cpp_alignof_test::PrimitiveType() );
 		ret->AddItem( '2', cpp_alignof_test::STDContainer() );
@@ -31,8 +41,6 @@ r2cm::MenuUp AlignMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<CPP_Menu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, CPP_Menu() );
+	};
 }

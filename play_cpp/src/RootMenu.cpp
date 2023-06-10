@@ -2,8 +2,8 @@
 
 #include <string>
 
-#include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_VersionInfo.h"
+#include "r2tm/r2tm_Director.h"
+#include "r2tm/r2tm_VersionInfo.h"
 
 #include "test_various/item/various_console_input_test.h"
 
@@ -22,22 +22,24 @@
 #include "test_various/TimeMenu.h"
 #include "test_windows/WindowsMenu.h"
 
-const char* RootMenu::GetTitle()
+r2tm::TitleFunctionT RootMenu::GetTitleFunction() const
 {
-	static const std::string ret =
-		std::string( "Root Menu" )
-		+ " : " + "<" + "C++17" + ">"
-		+ ", " + "<" + "MS C/C++ : " + std::to_string( _MSC_VER ) + ">"
-		+ ", " + "<" + r2cm::VersionInfo.String4Version + ">";
-	return ret.c_str();
+	return []()->const char*
+	{
+		static const std::string ret =
+			std::string( "Root" )
+			+ " : " + "<" + "C++17" + ">"
+			+ ", " + "<" + "MS C/C++ : " + std::to_string( _MSC_VER ) + ">"
+			+ ", " + "<" + r2tm::VersionInfo.String4Version + ">";
+		return ret.c_str();
+	};
 }
-
-r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
+r2tm::DescriptionFunctionT RootMenu::GetDescriptionFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle(),
-				"> In Progress : ..."
+	return []()->const char*
+	{
+		return
+			"> In Progress : ..."
 
 		"\n"
 
@@ -47,12 +49,15 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		"\n"	"> To do : Infinite Number"
 		"\n"	"> To do : Thread"
 		"\n"	"> To do : Memory Pool"
-		"\n"	"> To do : Spin-Lock"
-	) );
-
+		"\n"	"> To do : Spin-Lock";
+	};
+}
+r2tm::WriteFunctionT RootMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', various_console_input_test::Basic() );
-		ret->AddMenu<WindowsMenu>( '2' );		
+		ret->AddMenu( '2', WindowsMenu() );
 
 
 
@@ -60,14 +65,14 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<C_Menu>( 'q' );
-		ret->AddMenu<CPP_Menu>( 'w' );
-		ret->AddMenu<STDMenu>( 'e' );
-		ret->AddMenu<TemplateMenu>( 'r' );
-		ret->AddMenu<FileMenu>( 't' );
-		ret->AddMenu<TimeMenu>( 'y' );
-		ret->AddMenu<RandomMenu>( 'u' );
-		ret->AddMenu<DebugMenu>( 'i' );
+		ret->AddMenu( 'q', C_Menu() );
+		ret->AddMenu( 'w', CPP_Menu() );
+		ret->AddMenu( 'e', STDMenu() );
+		ret->AddMenu( 'r', TemplateMenu() );
+		ret->AddMenu( 't', FileMenu() );
+		ret->AddMenu( 'y', TimeMenu() );
+		ret->AddMenu( 'u', RandomMenu() );
+		ret->AddMenu( 'i', DebugMenu() );
 
 
 
@@ -75,8 +80,8 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<ETCMenu>( 'a' );
-		ret->AddMenu<MathMenu>( 's' );
+		ret->AddMenu( 'a', ETCMenu() );
+		ret->AddMenu( 's', MathMenu() );
 
 
 
@@ -84,9 +89,9 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<AlgorithmMenu>( 'z' );
-		ret->AddMenu<HobbyMenu>( 'x' );
-		ret->AddMenu<PerformanceMenu>( 'c' );
+		ret->AddMenu( 'z', AlgorithmMenu() );
+		ret->AddMenu( 'x', HobbyMenu() );
+		ret->AddMenu( 'c', PerformanceMenu() );
 
 
 
@@ -97,9 +102,7 @@ r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			27
 			, []()->const char* { return "Exit"; }
-			, []()->r2cm::eItemLeaveAction { return r2cm::eItemLeaveAction::Exit; }
+			, []()->r2tm::eDoLeaveAction { return r2tm::eDoLeaveAction::Exit; }
 		);
-	}
-
-	return ret;
+	};
 }

@@ -2,49 +2,49 @@
 
 #include <conio.h> // _kbhit(), _getch()
 
-#include "r2cm/r2cm_ostream.h"
-#include "r2cm/r2cm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
 
 #include "r2/r2_Direction4.h"
 #include "r2/r2_Grid.h"
 #include "r2/r2_PointInt.h"
 
-#include "r2cm/r2cm_WindowUtility.h"
+#include "r2tm/r2tm_WindowUtility.h"
 #include "test_algorithm/AlgorithmHelper.h"
 
 namespace algorithm_maze_test
 {
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Maze : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Basic::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << "[ANY KEY] Exit" << r2cm::linefeed;
+			std::cout << "[ANY KEY] Exit" << r2tm::linefeed;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( r2::Direction4 current_direction );
 			DECLARATION_MAIN( r2::PointInt current_point( 0, 0 ) );
 			DECLARATION_MAIN( r2::PointInt next_point( 0, 0 ) );
 			DECLARATION_MAIN( r2::Grid<int> grid );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( grid.Reset( 19, 19 ) );
 				PROCESS_MAIN( grid.Set( current_point.GetX(), current_point.GetY(), true ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
 				int stay_count = 0;
 				while( 4 >= stay_count )
 				{
@@ -66,9 +66,9 @@ namespace algorithm_maze_test
 					//
 					// Output
 					//
-					r2cm::WindowUtility::MoveCursorPoint( pivot_point );
+					r2tm::WindowUtility::MoveCursorPoint( pivot_point );
 					AlgorithmHelper::PrintGrid( grid );
-					std::cout << r2cm::linefeed;
+					std::cout << r2tm::linefeed;
 
 					//
 					// Key
@@ -80,9 +80,9 @@ namespace algorithm_maze_test
 				}
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

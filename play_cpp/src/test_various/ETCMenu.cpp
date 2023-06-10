@@ -1,15 +1,25 @@
 #include "ETCMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/etc_0_test.h"
 
 #include "RootMenu.h"
 
-r2cm::MenuUp ETCMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT ETCMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "ETC";
+	};
+}
+r2tm::DescriptionFunctionT ETCMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT ETCMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', etc_test::ShowBinary() );
 		ret->AddItem( '2', etc_test::LifeTimeTest() );
@@ -22,8 +32,6 @@ r2cm::MenuUp ETCMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<RootMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, RootMenu() );
+	};
 }

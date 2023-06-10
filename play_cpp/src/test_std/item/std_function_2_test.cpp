@@ -2,7 +2,7 @@
 
 #include <functional>
 
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_ostream.h"
 
 namespace std_function_2_test
 {
@@ -20,32 +20,32 @@ namespace std_function_2_test
 		}
 	};
 
-	r2cm::iItem::TitleFunctionT Equality_STDBind_1::GetTitleFunction() const
+	r2tm::TitleFunctionT Equality_STDBind_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::function : Equality : std::bind 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Equality_STDBind_1::GetDoFunction() const
+	r2tm::DoFunctionT Equality_STDBind_1::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 
 			using FunctionPointerT = void(*)();
 			using STDFunctionT = std::function<void()>;
 
-			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-			std::cout << r2cm::tab2 << "using FunctionPointerT = void(*)();" << r2cm::linefeed;
-			std::cout << r2cm::tab2 << "using STDFunctionT = std::function<void()>;" << r2cm::linefeed;
+			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
+			std::cout << r2tm::tab2 << "using FunctionPointerT = void(*)();" << r2tm::linefeed;
+			std::cout << r2tm::tab2 << "using STDFunctionT = std::function<void()>;" << r2tm::linefeed;
 
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 음... 어떻게 해야 하지?" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ 음... 어떻게 해야 하지?" << r2tm::linefeed2;
 
 				NamedTestClass test_class;
 
@@ -53,40 +53,40 @@ namespace std_function_2_test
 				auto fn_1 = sf1.target<void(*)()>();
 				auto fn_2 = sf1.target<void(std_function_2_test::NamedTestClass::*)()>();
 
-				std::cout << r2cm::tab2 << "TestClass test_class;" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "STDFunctionT sf1 = TestFunction_1;" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "auto fn_1 = sf1.target<void()>();" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "auto fn_2 = sf1.target<void(*)()>();" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "auto fn_3 = sf1.target<void(std_function_2_test::NamedTestClass::*)()>();" << r2cm::linefeed2;
+				std::cout << r2tm::tab2 << "TestClass test_class;" << r2tm::linefeed2;
+				std::cout << r2tm::tab2 << "STDFunctionT sf1 = TestFunction_1;" << r2tm::linefeed2;
+				std::cout << r2tm::tab2 << "auto fn_1 = sf1.target<void()>();" << r2tm::linefeed;
+				std::cout << r2tm::tab2 << "auto fn_2 = sf1.target<void(*)()>();" << r2tm::linefeed;
+				std::cout << r2tm::tab2 << "auto fn_3 = sf1.target<void(std_function_2_test::NamedTestClass::*)()>();" << r2tm::linefeed2;
 
-				std::cout << r2cm::tab2 << "nullptr == fn_1" << r2cm::linefeed;
+				std::cout << r2tm::tab2 << "nullptr == fn_1" << r2tm::linefeed;
 				if( nullptr == fn_1 )
 				{
-					std::cout << r2cm::tab3 << "- Is Null" << r2cm::linefeed;
-					std::cout << r2cm::tab3 << "- Convert Failed" << r2cm::linefeed;
+					std::cout << r2tm::tab3 << "- Is Null" << r2tm::linefeed;
+					std::cout << r2tm::tab3 << "- Convert Failed" << r2tm::linefeed;
 				}
 				else
 				{
-					std::cout << r2cm::tab3 << "- Is Not Null" << r2cm::linefeed;
+					std::cout << r2tm::tab3 << "- Is Not Null" << r2tm::linefeed;
 				}
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				std::cout << r2cm::tab2 << "nullptr == fn_2" << r2cm::linefeed;
+				std::cout << r2tm::tab2 << "nullptr == fn_2" << r2tm::linefeed;
 				if( nullptr == fn_2 )
 				{
-					std::cout << r2cm::tab3 << "- Is Null" << r2cm::linefeed;
-					std::cout << r2cm::tab3 << "- Convert Failed" << r2cm::linefeed;
+					std::cout << r2tm::tab3 << "- Is Null" << r2tm::linefeed;
+					std::cout << r2tm::tab3 << "- Convert Failed" << r2tm::linefeed;
 				}
 				else
 				{
-					std::cout << r2cm::tab3 << "- Is Not Null" << r2cm::linefeed;
+					std::cout << r2tm::tab3 << "- Is Not Null" << r2tm::linefeed;
 				}
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

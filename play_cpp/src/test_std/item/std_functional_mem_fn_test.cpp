@@ -3,8 +3,8 @@
 
 #include <functional>
 
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
 
 namespace std_functional_mem_fn_test
 {
@@ -116,51 +116,51 @@ namespace std_functional_mem_fn_test
 		std::cout << "asdf\n";
 	}
 
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::mem_fn : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Basic::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			OUTPUT_FILE( "src/test_std/item/std_functional_mem_fn_test_helper.hpp" );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( TestStruct t );
 			PROCESS_MAIN( t.a = 123 );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( auto do_fn =  std::mem_fn( &TestStruct::Do ) );
 				OUTPUT_VALUE( sizeof( do_fn ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( do_fn( &t ) );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( auto do_mv = std::mem_fn( &TestStruct::a ) );
 				OUTPUT_VALUE( sizeof( do_mv ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( do_mv( &t ) );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

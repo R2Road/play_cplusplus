@@ -2,7 +2,7 @@
 
 #include <algorithm>
 
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_ostream.h"
 
 namespace template_practice_part_01_test
 {
@@ -20,35 +20,35 @@ namespace template_practice_part_01_test
 		std::size_t size;
 	};
 
-	r2cm::iItem::TitleFunctionT BufferWithTemplate::GetTitleFunction() const
+	r2tm::TitleFunctionT BufferWithTemplate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Buffer With Template";
 		};
 	}
-	r2cm::iItem::DoFunctionT BufferWithTemplate::GetDoFunction() const
+	r2tm::DoFunctionT BufferWithTemplate::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				Buffer<64> buffer;
-				std::cout << r2cm::tab << "+ Buffer<64> buffer" << r2cm::linefeed;
+				std::cout << r2tm::tab << "+ Buffer<64> buffer" << r2tm::linefeed;
 
-				std::cout << r2cm::tab2;
+				std::cout << r2tm::tab2;
 				for( const auto c : buffer.b )
 				{
 					std::cout << c;
 				}
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }
@@ -74,56 +74,56 @@ namespace template_practice_part_01_test
 		return FindMax( FindMax( arg1, arg2 ), args... );
 	};
 
-	r2cm::iItem::TitleFunctionT VaridicMax::GetTitleFunction() const
+	r2tm::TitleFunctionT VaridicMax::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Varidic Max";
 		};
 	}
-	r2cm::iItem::DoFunctionT VaridicMax::GetDoFunction() const
+	r2tm::DoFunctionT VaridicMax::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ FindMax( 1, 2, 30, 4, 5, 60, 7 )" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "Result : " << FindMax( 1, 2, 30, 4, 5, 60, 7 );
-				std::cout << r2cm::linefeed;
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::tab << "+ FindMax( 1, 2, 30, 4, 5, 60, 7 )" << r2tm::linefeed;
+				std::cout << r2tm::tab2 << "Result : " << FindMax( 1, 2, 30, 4, 5, 60, 7 );
+				std::cout << r2tm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				std::cout << r2cm::tab << "+ FindMax( 1, 2, 30 )" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "Result : " << FindMax( 1, 2, 30 );
-				std::cout << r2cm::linefeed;
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::tab << "+ FindMax( 1, 2, 30 )" << r2tm::linefeed;
+				std::cout << r2tm::tab2 << "Result : " << FindMax( 1, 2, 30 );
+				std::cout << r2tm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				std::cout << r2cm::tab << "+ FindMax( 1, 2 )" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "Result : " << FindMax( 1, 2 );
-				std::cout << r2cm::linefeed;
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::tab << "+ FindMax( 1, 2 )" << r2tm::linefeed;
+				std::cout << r2tm::tab2 << "Result : " << FindMax( 1, 2 );
+				std::cout << r2tm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				std::cout << r2cm::tab << "+ FindMax( 1 )" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "Result : " << FindMax( 1 );
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::tab << "+ FindMax( 1 )" << r2tm::linefeed;
+				std::cout << r2tm::tab2 << "Result : " << FindMax( 1 );
+				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ std::max( { 1, 2, 30, 4, 5, 60, 7 } )" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "Result : " << std::max( { 1, 2, 30, 4, 5, 60, 7 } );
-				std::cout << r2cm::linefeed;
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::tab << "+ std::max( { 1, 2, 30, 4, 5, 60, 7 } )" << r2tm::linefeed;
+				std::cout << r2tm::tab2 << "Result : " << std::max( { 1, 2, 30, 4, 5, 60, 7 } );
+				std::cout << r2tm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				std::cout << r2cm::tab << "std::max( { 1, 2, 30 } )" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "Result : " << std::max( { 1, 2, 30 } );
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::tab << "std::max( { 1, 2, 30 } )" << r2tm::linefeed;
+				std::cout << r2tm::tab2 << "Result : " << std::max( { 1, 2, 30 } );
+				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

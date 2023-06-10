@@ -1,15 +1,25 @@
 #include "STDAlignMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/std_memory_align_test.h"
 
 #include "STDMemoryMenu.h"
 
-r2cm::MenuUp STDAlignMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT STDAlignMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "STDAlign";
+	};
+}
+r2tm::DescriptionFunctionT STDAlignMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT STDAlignMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', std_memory_align_test::Basic() );
 		ret->AddItem( '2', std_memory_align_test::Bound() );
@@ -19,8 +29,6 @@ r2cm::MenuUp STDAlignMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<STDMemoryMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, STDMemoryMenu() );
+	};
 }

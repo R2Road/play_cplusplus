@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_ostream.h"
 
 #include <map>
 
@@ -43,7 +43,7 @@ namespace template_practice_test_02
 		template<typename T>
 		void def( const char* name, T func )
 		{
-			std::cout << "def" << r2cm::linefeed;
+			std::cout << "def" << r2tm::linefeed;
 			push_functor( name, func );
 		}
 

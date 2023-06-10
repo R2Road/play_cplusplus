@@ -1,6 +1,6 @@
 #include "algorithm_etc_test.h"
 
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_ostream.h"
 
 //
 // # REF
@@ -22,27 +22,27 @@ namespace algorithm_etc_test
 		return hash;
 	}
 
-	r2cm::iItem::TitleFunctionT DJB2::GetTitleFunction() const
+	r2tm::TitleFunctionT DJB2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "DJB2";
 		};
 	}
-	r2cm::iItem::DoFunctionT DJB2::GetDoFunction() const
+	r2tm::DoFunctionT DJB2::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << "djb2_hash( \"a\" );" << r2cm::linefeed;
-				std::cout << r2cm::tab << djb2_hash( "a" ) << r2cm::linefeed;
+				std::cout << "djb2_hash( \"a\" );" << r2tm::linefeed;
+				std::cout << r2tm::tab << djb2_hash( "a" ) << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

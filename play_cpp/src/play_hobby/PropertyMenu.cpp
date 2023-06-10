@@ -1,15 +1,25 @@
 #include "PropertyMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/play_property.h"
 
 #include "HobbyMenu.h"
 
-r2cm::MenuUp PropertyMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT PropertyMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Property";
+	};
+}
+r2tm::DescriptionFunctionT PropertyMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT PropertyMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', play_property::Functor() );
 
@@ -19,8 +29,6 @@ r2cm::MenuUp PropertyMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<HobbyMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, HobbyMenu() );
+	};
 }

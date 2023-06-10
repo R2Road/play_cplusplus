@@ -1,16 +1,25 @@
 #include "TreeMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/play_tree.h"
 
 #include "HobbyMenu.h"
 
-r2cm::MenuUp TreeMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT TreeMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle()	) );
-
+	return []()->const char*
 	{
+		return "Tree";
+	};
+}
+r2tm::DescriptionFunctionT TreeMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT TreeMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret ) {
 		ret->AddItem( '1', play_tree::Basic() );
 
 
@@ -19,8 +28,6 @@ r2cm::MenuUp TreeMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<HobbyMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, HobbyMenu() );
+	};
 }

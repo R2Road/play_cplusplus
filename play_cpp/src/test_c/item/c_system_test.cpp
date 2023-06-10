@@ -2,31 +2,31 @@
 
 #include <stdlib.h>
 
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
 
 namespace c_system_test
 {
-	r2cm::iItem::TitleFunctionT Pause::GetTitleFunction() const
+	r2tm::TitleFunctionT Pause::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "system : Pause";
 		};
 	}
-	r2cm::iItem::DoFunctionT Pause::GetDoFunction() const
+	r2tm::DoFunctionT Pause::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( system( "pause" ) );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

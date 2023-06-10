@@ -1,16 +1,26 @@
 #include "ClassMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/cpp_class_test.h"
 #include "item/cpp_class_private_inheritance_test.h"
 
 #include "CPP_Menu.h"
 
-r2cm::MenuUp ClassMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT ClassMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Class";
+	};
+}
+r2tm::DescriptionFunctionT ClassMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT ClassMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', cpp_class_test::Method() );
 		ret->AddItem( '2', cpp_class_test::MemberValue() );
@@ -50,8 +60,6 @@ r2cm::MenuUp ClassMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<CPP_Menu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, CPP_Menu() );
+	};
 }

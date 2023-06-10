@@ -2,183 +2,183 @@
 
 #include <array>
 
-#include "r2cm/r2cm_ostream.h"
-#include "r2cm/r2cm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
 
 #pragma warning( disable : 4101 )
 
 namespace std_array_test
 {
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::array : Declaration";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Basic::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
 
 			{
 				std::array<int, 3u> test_array;
-				std::cout << r2cm::tab2 << "std::array<int, 3u> test_array;" << r2cm::linefeed2;
+				std::cout << r2tm::tab2 << "std::array<int, 3u> test_array;" << r2tm::linefeed2;
 			}
 
 			{
 				std::array<int, 3u> test_array{ { 1, 2, 3 } };
-				std::cout << r2cm::tab2 << "std::array<int, 3u> test_array{ { 1, 2, 3 } };" << r2cm::linefeed2;
+				std::cout << r2tm::tab2 << "std::array<int, 3u> test_array{ { 1, 2, 3 } };" << r2tm::linefeed2;
 			}
 
 			{
 				std::array<int, 3u> test_array = { 1, 2, 3 };
-				std::cout << r2cm::tab2 << "std::array<int, 3u> test_array = { 1, 2, 3 };" << r2cm::linefeed2;
+				std::cout << r2tm::tab2 << "std::array<int, 3u> test_array = { 1, 2, 3 };" << r2tm::linefeed2;
 			}
 
 			{
 				std::array aa{ 1, 2, 3 };
-				std::cout << r2cm::tab2 << "std::array aa{ 1, 2, 3 };" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "* Note : Since c++17" << r2cm::linefeed;
+				std::cout << r2tm::tab2 << "std::array aa{ 1, 2, 3 };" << r2tm::linefeed;
+				std::cout << r2tm::tab2 << "* Note : Since c++17" << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Fill::GetTitleFunction() const
+	r2tm::TitleFunctionT Fill::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::array : Fill";
 		};
 	}
-	r2cm::iItem::DoFunctionT Fill::GetDoFunction() const
+	r2tm::DoFunctionT Fill::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			auto printer = []( const std::array<int, 3u>& container )
 			{
-				std::cout << r2cm::tab3 << "- Print : ";
+				std::cout << r2tm::tab3 << "- Print : ";
 				for( const auto i : container )
 				{
-					std::cout << i << r2cm::tab;
+					std::cout << i << r2tm::tab;
 				}
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 			};
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << r2cm::tab << "+ Variable" << r2cm::linefeed2;
+			std::cout << r2tm::tab << "+ Variable" << r2tm::linefeed2;
 
 			std::array<int, 3u> test_array{ { 1, 2, 3 } };
-			std::cout << r2cm::tab2 << "std::array<int, 3u> test_array{ { 1, 2, 3 } };" << r2cm::linefeed3;
+			std::cout << r2tm::tab2 << "std::array<int, 3u> test_array{ { 1, 2, 3 } };" << r2tm::linefeed3;
 
 			{
 				test_array.fill( 4 );
 
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "test_array.fill( 4 );" << r2cm::linefeed;
+				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
+				std::cout << r2tm::tab2 << "test_array.fill( 4 );" << r2tm::linefeed;
 
 				printer( test_array );
 			}
 			
-			std::cout << r2cm::linefeed2;
+			std::cout << r2tm::linefeed2;
 
 			{
 				std::fill( test_array.begin(), test_array.end(), 5 );
 
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::fill( test_array.begin(), test_array.end(), 5 );" << r2cm::linefeed;
+				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
+				std::cout << r2tm::tab2 << "std::fill( test_array.begin(), test_array.end(), 5 );" << r2tm::linefeed;
 
 				printer( test_array );
 			}
 
-			std::cout << r2cm::linefeed2;
+			std::cout << r2tm::linefeed2;
 
 			{
 				std::fill_n( test_array.begin(), 1, 6 );
 
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::fill_n( test_array.begin(), 1, 6 );" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
+				std::cout << r2tm::tab2 << "std::fill_n( test_array.begin(), 1, 6 );" << r2tm::linefeed2;
 
 				printer( test_array );
 			}
 
-			std::cout << r2cm::linefeed2;
+			std::cout << r2tm::linefeed2;
 
 			{
 				//std::fill_n( test_array.begin(), 5, 7 );
 
-				std::cout << r2cm::tab << "+ Process" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "std::fill_n( test_array.begin(), 5, 6 );" << r2cm::linefeed2;
-				std::cout << r2cm::tab3 << "- Not Working" << r2cm::linefeed;
+				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
+				std::cout << r2tm::tab2 << "std::fill_n( test_array.begin(), 5, 6 );" << r2tm::linefeed2;
+				std::cout << r2tm::tab3 << "- Not Working" << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Copy::GetTitleFunction() const
+	r2tm::TitleFunctionT Copy::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::array : Copy";
 		};
 	}
-	r2cm::iItem::DoFunctionT Copy::GetDoFunction() const
+	r2tm::DoFunctionT Copy::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			auto printer = []( const std::array<int, 3u>& container )
 			{
-				std::cout << r2cm::tab << "Print : ";
+				std::cout << r2tm::tab << "Print : ";
 				for( const auto i : container )
 				{
-					std::cout << i << r2cm::tab;
+					std::cout << i << r2tm::tab;
 				}
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 			};
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << "# Note : Macro가 쉼표를 인자의 구별자로 인식해서 std::array 선언에 Inspector 활용이 안된다." << r2cm::linefeed;
-			std::cout << "# Note : 생성자에서 array를 복사해야 한다면 std::array 를 활용해도 괜찮을듯." << r2cm::linefeed;
+			std::cout << "# Note : Macro가 쉼표를 인자의 구별자로 인식해서 std::array 선언에 Inspector 활용이 안된다." << r2tm::linefeed;
+			std::cout << "# Note : 생성자에서 array를 복사해야 한다면 std::array 를 활용해도 괜찮을듯." << r2tm::linefeed;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			using TestArrayT = std::array<int, 3u>;
-			std::cout << "using TestArrayT = std::array<int, 3u>;" << r2cm::linefeed2;
+			std::cout << "using TestArrayT = std::array<int, 3u>;" << r2tm::linefeed2;
 
 			{
 				DECLARATION_MAIN( TestArrayT array_1 );
 				PROCESS_MAIN( array_1.fill( 2 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				DECLARATION_MAIN( TestArrayT array_2 );
 				printer( array_2 );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( array_2 = array_1 );
 				printer( array_2 );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

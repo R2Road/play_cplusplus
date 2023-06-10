@@ -1,15 +1,25 @@
 #include "UnionMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/c_union_test.h"
 
 #include "C_Menu.h"
 
-r2cm::MenuUp UnionMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT UnionMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, UnionMenu::GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Union";
+	};
+}
+r2tm::DescriptionFunctionT UnionMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT UnionMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', c_union_test::Basic() );
 		ret->AddItem( '2', c_union_test::Memory() );
@@ -33,8 +43,6 @@ r2cm::MenuUp UnionMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<C_Menu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, C_Menu() );
+	};
 }

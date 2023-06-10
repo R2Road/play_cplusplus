@@ -2,34 +2,34 @@
 
 #include <array>
 
-#include "r2cm/r2cm_ostream.h"
-#include "r2cm/r2cm_StopWatch.h"
+#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_StopWatch.h"
 
 namespace algorithm_insertion_sort_test
 {
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Insertion Sort";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Basic::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			r2cm::StopWatch stop_watch;
+			r2tm::StopWatch stop_watch;
 			const std::array<int, 5u> test_container{ 5, 4, 3, 2, 1 };
 
-			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-			std::cout << r2cm::tab2 << "std::array<int, 5u> test_container{ 5, 4, 3, 2, 1 };" << r2cm::linefeed;
+			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
+			std::cout << r2tm::tab2 << "std::array<int, 5u> test_container{ 5, 4, 3, 2, 1 };" << r2tm::linefeed;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Case" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Case" << r2tm::linefeed2;
 
 				auto temp_container = test_container;
 
@@ -53,33 +53,33 @@ namespace algorithm_insertion_sort_test
 				}
 				stop_watch.Stop();
 
-				std::cout << r2cm::tab2;
+				std::cout << r2tm::tab2;
 				for( const auto a : temp_container )
 				{
-					std::cout << a << r2cm::tab;
+					std::cout << a << r2tm::tab;
 				}
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				std::cout << r2cm::tab2;
+				std::cout << r2tm::tab2;
 				stop_watch.PrintElapsedTime_All();
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Show" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Show" << r2tm::linefeed2;
 
 				auto temp_container = test_container;
 
 				//
 				//
 				//
-				std::cout << r2cm::tab2;
+				std::cout << r2tm::tab2;
 				for( const auto a : temp_container )
 				{
-					std::cout << a << r2cm::tab;
+					std::cout << a << r2tm::tab;
 				}
-				std::cout << r2cm::linefeed2;
+				std::cout << r2tm::linefeed2;
 
 				int key = 0;
 				int compare_index = 0;
@@ -88,8 +88,8 @@ namespace algorithm_insertion_sort_test
 					key = temp_container[key_index];
 					compare_index = key_index - 1;
 
-					std::cout << r2cm::tab2 << "start" << r2cm::linefeed;
-					std::cout << r2cm::tab2 << "key : " << key << r2cm::tab2 << "key index : " << key_index << r2cm::tab << "compare index : " << compare_index << r2cm::linefeed;
+					std::cout << r2tm::tab2 << "start" << r2tm::linefeed;
+					std::cout << r2tm::tab2 << "key : " << key << r2tm::tab2 << "key index : " << key_index << r2tm::tab << "compare index : " << compare_index << r2tm::linefeed;
 
 					while( 0 <= compare_index && temp_container[compare_index] > key )
 					{
@@ -98,12 +98,12 @@ namespace algorithm_insertion_sort_test
 						//
 						//
 						//
-						std::cout << r2cm::tab2;
+						std::cout << r2tm::tab2;
 						for( const auto a : temp_container )
 						{
-							std::cout << a << r2cm::tab;
+							std::cout << a << r2tm::tab;
 						}
-						std::cout << "shift index : " << compare_index << " > " << ( compare_index + 1 ) << r2cm::linefeed;
+						std::cout << "shift index : " << compare_index << " > " << ( compare_index + 1 ) << r2tm::linefeed;
 
 						--compare_index;
 					}
@@ -113,21 +113,21 @@ namespace algorithm_insertion_sort_test
 					//
 					//
 					//
-					std::cout << r2cm::linefeed;
-					std::cout << r2cm::tab2;
+					std::cout << r2tm::linefeed;
+					std::cout << r2tm::tab2;
 					for( const auto a : temp_container )
 					{
-						std::cout << a << r2cm::tab;
+						std::cout << a << r2tm::tab;
 					}
-					std::cout << "insert : target index - " << ( compare_index + 1 ) << r2cm::linefeed2;
+					std::cout << "insert : target index - " << ( compare_index + 1 ) << r2tm::linefeed2;
 				}
 
 				
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

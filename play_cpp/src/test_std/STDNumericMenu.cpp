@@ -1,15 +1,25 @@
 #include "STDNumericMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test_std/item/std_numeric_test.h"
 
 #include "STDMenu.h"
 
-r2cm::MenuUp STDNumericMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT STDNumericMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "<numeric>";
+	};
+}
+r2tm::DescriptionFunctionT STDNumericMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT STDNumericMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', std_numeric_test::Accumulate_Number() );
 		ret->AddItem( '2', std_numeric_test::Accumulate_String() );
@@ -20,8 +30,6 @@ r2cm::MenuUp STDNumericMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<STDMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, STDMenu() );
+	};
 }

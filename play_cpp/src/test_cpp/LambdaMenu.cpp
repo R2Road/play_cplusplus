@@ -1,15 +1,25 @@
 #include "LambdaMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test_cpp/item/cpp_lambda_test.h"
 
 #include "CPP_Menu.h"
 
-r2cm::MenuUp LambdaMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT LambdaMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Lambda";
+	};
+}
+r2tm::DescriptionFunctionT LambdaMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT LambdaMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', cpp_lambda_test::Basic() );
 		ret->AddItem( '2', cpp_lambda_test::CaptureValue() );
@@ -36,8 +46,6 @@ r2cm::MenuUp LambdaMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<CPP_Menu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, CPP_Menu() );
+	};
 }

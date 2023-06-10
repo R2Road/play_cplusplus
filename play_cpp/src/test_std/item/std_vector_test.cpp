@@ -2,8 +2,8 @@
 
 #include <vector>
 
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
 
 namespace std_vector_test
 {
@@ -16,115 +16,115 @@ namespace std_vector_test
 		return o;
 	}
 
-	r2cm::iItem::TitleFunctionT Resize::GetTitleFunction() const
+	r2tm::TitleFunctionT Resize::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::vector : Resize";
 		};
 	}
-	r2cm::iItem::DoFunctionT Resize::GetDoFunction() const
+	r2tm::DoFunctionT Resize::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( std::vector<int> container( { 2, 3 } ) );
-			std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+			std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				EXPECT_EQ( 2u, container.capacity() );
 				PROCESS_MAIN( container.resize( 2u ) );
 				EXPECT_EQ( 2u, container.capacity() );
-				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				EXPECT_EQ( 2u, container.capacity() );
 				PROCESS_MAIN( container.resize( 4u ) );
 				EXPECT_EQ( 4u, container.capacity() );
-				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 
-				std::cout << r2cm::linefeed2;
+				std::cout << r2tm::linefeed2;
 
 				OUTPUT_NOTE( "resize 는 capacity 가 증가한 경우 메모리를 할당하고 이전 데이터를 카피한다." );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				EXPECT_EQ( 4u, container.capacity() );
 				PROCESS_MAIN( container.resize( 0 ) );
 				EXPECT_EQ( 4u, container.capacity() );
-				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				EXPECT_EQ( 4u, container.capacity() );
 				PROCESS_MAIN( container.resize( 10 ) );
 				EXPECT_EQ( 10u, container.capacity() );
-				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
-	r2cm::iItem::TitleFunctionT Resize_And_Memory::GetTitleFunction() const
+	r2tm::TitleFunctionT Resize_And_Memory::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::vector : Resize And Memory";
 		};
 	}
-	r2cm::iItem::DoFunctionT Resize_And_Memory::GetDoFunction() const
+	r2tm::DoFunctionT Resize_And_Memory::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				OUTPUT_NOTE( "size가 줄어들 때 메모리가 재할당 되는지 궁금했다. > 재할당 없다." );
 				OUTPUT_NOTE( "줄어든 size가 이전 크기로 돌아갈 때 메모리가 재할당 되는지 궁금했다. > 재할당 없다." );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( std::vector<int> container( { 1, 2, 3, 4 } ) );
 			OUTPUT_VALUE( container.size() );
 			OUTPUT_VALUE( container.capacity() );
 			OUTPUT_VALUE( container.data() );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 			{
 				PROCESS_MAIN( container.resize( 4 ) );
 				OUTPUT_VALUE( container.size() );
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
-				std::cout << r2cm::linefeed2;
+				std::cout << r2tm::linefeed2;
 
 				PROCESS_MAIN( container.resize( 2 ) );
 				OUTPUT_VALUE( container.size() );
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
-				std::cout << r2cm::linefeed2;
+				std::cout << r2tm::linefeed2;
 
 				PROCESS_MAIN( container.resize( 4 ) );
 				OUTPUT_VALUE( container.size() );
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
-				std::cout << r2cm::linefeed2;
+				std::cout << r2tm::linefeed2;
 
 				PROCESS_MAIN( container.resize( 10 ) );
 				OUTPUT_VALUE( container.size() );
@@ -132,37 +132,37 @@ namespace std_vector_test
 				OUTPUT_VALUE( container.data() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Clear::GetTitleFunction() const
+	r2tm::TitleFunctionT Clear::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::vector : Clear";
 		};
 	}
-	r2cm::iItem::DoFunctionT Clear::GetDoFunction() const
+	r2tm::DoFunctionT Clear::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( std::vector<int> container( { 2, 3 } ) );
 			OUTPUT_VALUE( container.size() );
 			OUTPUT_VALUE( container.capacity() );
 			OUTPUT_VALUE( container.data() );
 
-			std::cout << r2cm::linefeed;
+			std::cout << r2tm::linefeed;
 
-			std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+			std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( container.clear() );
@@ -170,12 +170,12 @@ namespace std_vector_test
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( container.resize( 2u ) );
@@ -183,87 +183,87 @@ namespace std_vector_test
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_NOTE( "clear 는 최종적으로 Allocator에 Destory 요청하지만 메모리를 해제하는 것은 아니다." );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Reserve::GetTitleFunction() const
+	r2tm::TitleFunctionT Reserve::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::vector : Reserve";
 		};
 	}
-	r2cm::iItem::DoFunctionT Reserve::GetDoFunction() const
+	r2tm::DoFunctionT Reserve::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( std::vector<int> container( { 2, 3 } ) );
 			OUTPUT_VALUE( container.capacity() );
 			OUTPUT_VALUE( container.data() );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( container.reserve( 1u ) );
-				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( container.reserve( 2u ) );
-				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( container.reserve( 4u ) );
-				std::cout << r2cm::tab << "> container : " << container << r2cm::linefeed;
+				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_NOTE( "capacity 가 증가하면 메모리는 재할당 된다." );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT NoneDefaultConstructor::GetTitleFunction() const
+	r2tm::TitleFunctionT NoneDefaultConstructor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::vector : None Default Constructor";
 		};
 	}
-	r2cm::iItem::DoFunctionT NoneDefaultConstructor::GetDoFunction() const
+	r2tm::DoFunctionT NoneDefaultConstructor::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( class TestClass
 			{
@@ -271,40 +271,40 @@ namespace std_vector_test
 				TestClass( int ) {}
 			} );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( std::vector<TestClass> container );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				OUTPUT_CODE( container.resize( 10 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				std::cout << r2cm::tab << "## Not Compiled : Need Default Constructor" << r2cm::linefeed;
+				std::cout << r2tm::tab << "## Not Compiled : Need Default Constructor" << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT BoolVector::GetTitleFunction() const
+	r2tm::TitleFunctionT BoolVector::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::vector : Bool";
 		};
 	}
-	r2cm::iItem::DoFunctionT BoolVector::GetDoFunction() const
+	r2tm::DoFunctionT BoolVector::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( std::vector<bool> container );
 			OUTPUT_VALUE( container.capacity() );
@@ -313,12 +313,12 @@ namespace std_vector_test
 			OUTPUT_VALUE( container._Myvec._Myend() );
 			OUTPUT_VALUE( container.begin()._Myptr );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( container.push_back( 1 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container._Myvec.capacity() );
@@ -327,12 +327,12 @@ namespace std_vector_test
 				OUTPUT_VALUE( container.begin()._Myptr );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( container.reserve( 33 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container._Myvec.capacity() );
@@ -341,64 +341,64 @@ namespace std_vector_test
 				OUTPUT_VALUE( container.begin()._Myptr );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT OthersIterator::GetTitleFunction() const
+	r2tm::TitleFunctionT OthersIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::vector : Others Iterator";
 		};
 	}
-	r2cm::iItem::DoFunctionT OthersIterator::GetDoFunction() const
+	r2tm::DoFunctionT OthersIterator::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( std::vector<int> container_1( { 1, 2, 3 } ) );
 			DECLARATION_MAIN( std::vector<int> container_2( { 10, 20, 30 } ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				OUTPUT_CODE( container_2.erase( container_1.begin() ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				std::cout << r2cm::tab << "## Not Working" << r2cm::linefeed;
+				std::cout << r2tm::tab << "## Not Working" << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT EndIterator::GetTitleFunction() const
+	r2tm::TitleFunctionT EndIterator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::vector : End Iterator";
 		};
 	}
-	r2cm::iItem::DoFunctionT EndIterator::GetDoFunction() const
+	r2tm::DoFunctionT EndIterator::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( std::vector<int> container_1( { 1, 2, 3 } ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 #if defined( DEBUG ) || defined( _DEBUG )
@@ -408,12 +408,12 @@ namespace std_vector_test
 				DECLARATION_MAIN( auto cur = container_1.end() );
 				OUTPUT_VALUE( ( *cur ) );
 #endif
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				std::cout << r2cm::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2cm::linefeed;
+				std::cout << r2tm::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 #if defined( DEBUG ) || defined( _DEBUG )
@@ -425,12 +425,12 @@ namespace std_vector_test
 
 				OUTPUT_VALUE( ( *cur ) );
 #endif
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				std::cout << r2cm::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2cm::linefeed;
+				std::cout << r2tm::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( auto cur = container_1.end() );
@@ -438,51 +438,51 @@ namespace std_vector_test
 				OUTPUT_VALUE( ( *cur ) );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Move::GetTitleFunction() const
+	r2tm::TitleFunctionT Move::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::vector : Move";
 		};
 	}
-	r2cm::iItem::DoFunctionT Move::GetDoFunction() const
+	r2tm::DoFunctionT Move::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( std::vector<int> v_1( { 1, 2, 3 } ) );
 			DECLARATION_MAIN( std::vector<int> v_2( { 3, 4, 5 } ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				OUTPUT_VALUE( v_1.data() );
 				OUTPUT_VALUE( v_2.data() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( v_1 = std::move( v_2 ) );
 				OUTPUT_VALUE( v_1 );
 				OUTPUT_VALUE( v_2 );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( v_1.data() );
 				OUTPUT_VALUE( v_2.data() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

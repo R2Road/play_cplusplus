@@ -2,24 +2,24 @@
 
 #include <cstdlib> // rand, srand
 
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
 
 
 namespace c_random_test
 {
-	r2cm::iItem::TitleFunctionT Rand::GetTitleFunction() const
+	r2tm::TitleFunctionT Rand::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "C Rand : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Rand::GetDoFunction() const
+	r2tm::DoFunctionT Rand::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				for( int i = 0; 5 > i; ++i )
@@ -27,33 +27,33 @@ namespace c_random_test
 					OUTPUT_VALUE( rand() );
 				}
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_NOTE( "Same Value Printed When Every Single Execute" );
 				OUTPUT_NOTE( "프로그램 새로 기동해도 rand() 가 반환하는 값과 순서는 같다." );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( srand( 1 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				for( int i = 0; 5 > i; ++i )
 				{
 					OUTPUT_VALUE( rand() );
 				}
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_NOTE( "srand( 1 ) is Default" );
 				OUTPUT_NOTE( "srand( n ) is init rand() Sequence" );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

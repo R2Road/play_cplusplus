@@ -1,5 +1,5 @@
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
 
 template<typename T>
 class ST
@@ -10,24 +10,24 @@ public:
 		// dynamic_cast<T*>( this );
 		// > dynamic_cast 는 작동하지 않는다.
 
-		std::cout << clm( r2cm::eColor::FG_Green );
-		std::cout << "[START] ST::ST()" << r2cm::linefeed;
+		std::cout << clm( r2tm::eColor::FG_Green );
+		std::cout << "[START] ST::ST()" << r2tm::linefeed;
 		std::cout << clm();
 
 		OUTPUT_VALUE( this );
 
-		std::cout << r2cm::linefeed;
+		std::cout << r2tm::linefeed;
 
 		OUTPUT_VALUE( int64_t( (T*)1 ) );
 		OUTPUT_VALUE( int64_t( ( ST<T>* )( T* )1 ) );
 
-		std::cout << r2cm::linefeed;
+		std::cout << r2tm::linefeed;
 
 		DECLARATION_MAIN( auto offset = int64_t( (T*)1 ) - int64_t( ( ST<T>* )( T* )1 ) );
 		OUTPUT_VALUE( this + offset );
 
-		std::cout << clm( r2cm::eColor::FG_Green );
-		std::cout << "[End]" << r2cm::linefeed2;
+		std::cout << clm( r2tm::eColor::FG_Green );
+		std::cout << "[End]" << r2tm::linefeed2;
 		std::cout << clm();
 	}
 };

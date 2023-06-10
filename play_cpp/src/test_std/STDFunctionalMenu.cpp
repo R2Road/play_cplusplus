@@ -1,6 +1,6 @@
 #include "STDFunctionalMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test_std/item/std_functional_hash_test.h"
 #include "test_std/item/std_functional_invoke_test.h"
@@ -10,10 +10,20 @@
 
 #include "STDMenu.h"
 
-r2cm::MenuUp STDFunctionalMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT STDFunctionalMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "<functional>";
+	};
+}
+r2tm::DescriptionFunctionT STDFunctionalMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT STDFunctionalMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', std_functional_invoke_test::Basic() );
 
@@ -60,8 +70,6 @@ r2cm::MenuUp STDFunctionalMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<STDMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, STDMenu() );
+	};
 }

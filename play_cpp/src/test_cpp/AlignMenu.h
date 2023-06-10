@@ -1,19 +1,11 @@
 #pragma once
 
-#include <memory>
+#include "r2tm/r2tm_iMenu.h"
 
-namespace r2cm
+class AlignMenu : public r2tm::iMenu
 {
-	class Director;
-	using MenuUp = std::unique_ptr<class Menu>;
-}
-
-class AlignMenu
-{
-private:
-	AlignMenu() = delete;
-
 public:
-	static const char* GetTitle() { return "Align"; }
-	static r2cm::MenuUp Create( r2cm::Director& director );
+	r2tm::TitleFunctionT GetTitleFunction() const override;
+	r2tm::DescriptionFunctionT GetDescriptionFunction() const override;
+	r2tm::WriteFunctionT GetWriteFunction() const override;
 };

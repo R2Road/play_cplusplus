@@ -1,16 +1,26 @@
 #include "FileMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test_c/item/c_file_test.h"
 #include "test_std/item/std_fstream_test.h"
 
 #include "RootMenu.h"
 
-r2cm::MenuUp FileMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT FileMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "File";
+	};
+}
+r2tm::DescriptionFunctionT FileMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT FileMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', c_file_test::OpenAndClose() );
 		ret->AddItem( '2', c_file_test::GetCharacter() );
@@ -29,8 +39,6 @@ r2cm::MenuUp FileMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<RootMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, RootMenu() );
+	};
 }

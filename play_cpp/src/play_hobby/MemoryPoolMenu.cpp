@@ -1,15 +1,22 @@
 #include "MemoryPoolMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/play_memory_pool.h"
 
 #include "HobbyMenu.h"
 
-r2cm::MenuUp MemoryPoolMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT MemoryPoolMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle(),
-				"memory pool 은 크게..."
+	return []()->const char*
+	{
+		return "Memory Pool Menu ( Researching... )";
+	};
+}
+r2tm::DescriptionFunctionT MemoryPoolMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return
+		"memory pool 은 크게..."
 		"\n"
 		"\n"	"1. 주 메모리 할당, 해제"
 		"\n"	"2. 요청받은 메모리의 할당"
@@ -21,8 +28,12 @@ r2cm::MenuUp MemoryPoolMenu::Create( r2cm::Director& director )
 		"\n"	"재사용과 관련한 자료들을 찾아 보고, 약간의 연구를 거쳐 설계 및 작업을 재 진행 하려 한다."
 		"\n"
 		"\n"	"2022.07.20 by R"
-	) );
-
+		;
+	};
+}
+r2tm::WriteFunctionT MemoryPoolMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', play_memory_pool::MemoryBlock_Declaration() );
 		ret->AddItem( '2', play_memory_pool::MemoryBlock_New_FundamentalType() );
@@ -40,8 +51,6 @@ r2cm::MenuUp MemoryPoolMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<HobbyMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, HobbyMenu() );
+	};
 }

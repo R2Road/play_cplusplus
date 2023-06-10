@@ -1,15 +1,25 @@
 #include "EnumMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/enum_test.h"
 
 #include "CPP_Menu.h"
 
-r2cm::MenuUp EnumMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT EnumMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Enum";
+	};
+}
+r2tm::DescriptionFunctionT EnumMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT EnumMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', enum_test::Basic() );
 		ret->AddItem( '2', enum_test::Cast() );
@@ -36,8 +46,6 @@ r2cm::MenuUp EnumMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<CPP_Menu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, CPP_Menu() );
+	};
 }

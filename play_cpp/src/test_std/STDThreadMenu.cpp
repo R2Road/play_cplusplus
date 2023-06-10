@@ -1,16 +1,26 @@
 #include "STDThreadMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test_std/item/std_atomic_test.h"
 #include "test_std/item/std_thread_test.h"
 
 #include "STDMenu.h"
 
-r2cm::MenuUp STDThreadMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT STDThreadMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Thread";
+	};
+}
+r2tm::DescriptionFunctionT STDThreadMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT STDThreadMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', std_thread_test::Basic() );
 		ret->AddItem( '2', std_thread_test::Declaration() );
@@ -31,8 +41,6 @@ r2cm::MenuUp STDThreadMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<STDMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, STDMenu() );
+	};
 }

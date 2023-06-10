@@ -3,24 +3,24 @@
 #include <conio.h> // _kbhit(), _getch()
 #include <Windows.h> // HDC
 
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_ostream.h"
 
 namespace windows_terminal_dc_test
 {
-	r2cm::iItem::TitleFunctionT Pixel::GetTitleFunction() const
+	r2tm::TitleFunctionT Pixel::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Set Pixel";
 		};
 	}
-	r2cm::iItem::DoFunctionT Pixel::GetDoFunction() const
+	r2tm::DoFunctionT Pixel::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << "[ESC] Exit" << r2cm::linefeed;
+			std::cout << "[ESC] Exit" << r2tm::linefeed;
 
 			{
 				HWND console_window = GetConsoleWindow();
@@ -54,7 +54,7 @@ namespace windows_terminal_dc_test
 				ReleaseDC( console_window, dc );
 			}
 
-			return r2cm::eItemLeaveAction::None;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 }

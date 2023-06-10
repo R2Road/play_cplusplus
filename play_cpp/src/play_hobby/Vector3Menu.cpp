@@ -1,15 +1,25 @@
 #include "Vector3Menu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/play_vector3.h"
 
 #include "HobbyMenu.h"
 
-r2cm::MenuUp Vector3Menu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT Vector3Menu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Vector3";
+	};
+}
+r2tm::DescriptionFunctionT Vector3Menu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT Vector3Menu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( 'a', play_vector3::Declaration() );
 		ret->AddItem( 's', play_vector3::OperatorPlus() );
@@ -25,8 +35,6 @@ r2cm::MenuUp Vector3Menu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<HobbyMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, HobbyMenu() );
+	};
 }

@@ -2,30 +2,30 @@
 
 #include <string>
 
-#include "r2cm/r2cm_ostream.h"
-#include "r2cm/r2cm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
 
 namespace std_string_test
 {
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Basic::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( const std::string s );
 				OUTPUT_VALUE( sizeof( s ) );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( const std::string empty_string_1 );
@@ -33,126 +33,126 @@ namespace std_string_test
 				EXPECT_EQ( empty_string_1, empty_string_2 );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( const std::string string_1( " " ) );
 				DECLARATION_MAIN( const std::string string_2( " " ) );
 				EXPECT_EQ( string_1, string_2 );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( (void*)string_1.c_str() );
 				OUTPUT_VALUE( (void*)string_2.c_str() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
-	r2cm::iItem::TitleFunctionT Move::GetTitleFunction() const
+	r2tm::TitleFunctionT Move::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Move";
 		};
 	}
-	r2cm::iItem::DoFunctionT Move::GetDoFunction() const
+	r2tm::DoFunctionT Move::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			OUTPUT_NOTE( "짧은 문자열의 경우 move가 작동하지 않는다." );
 			OUTPUT_NOTE( "xstring 의 ""_Assign_rv_contents_with_alloc_always_equal"" 함수 참조" );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				OUTPUT_NOTE( "move : X" );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				DECLARATION_MAIN( std::string s_1( "123456789012345" ) );
 				DECLARATION_MAIN( std::string s_2( "234567890123456" ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( (void*)s_1.c_str() );
 				OUTPUT_VALUE( (void*)s_2.c_str() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( s_1 = std::move( s_2 ) );
 				OUTPUT_VALUE( s_1 );
 				OUTPUT_VALUE( s_2 );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( (void*)s_1.c_str() );
 				OUTPUT_VALUE( (void*)s_2.c_str() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				OUTPUT_NOTE( "move : O" );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				DECLARATION_MAIN( std::string s_1( "1234567890123456" ) );
 				DECLARATION_MAIN( std::string s_2( "2345678901234567" ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( (void*)s_1.c_str() );
 				OUTPUT_VALUE( (void*)s_2.c_str() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( s_1 = std::move( s_2 ) );
 				OUTPUT_VALUE( s_1 );
 				OUTPUT_VALUE( s_2 );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( (void*)s_1.c_str() );
 				OUTPUT_VALUE( (void*)s_2.c_str() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Find::GetTitleFunction() const
+	r2tm::TitleFunctionT Find::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Find";
 		};
 	}
-	r2cm::iItem::DoFunctionT Find::GetDoFunction() const
+	r2tm::DoFunctionT Find::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( const std::string key_string = "\n" );
 			OUTPUT_VALUE( key_string.size() );
 
-			std::cout << r2cm::linefeed;
+			std::cout << r2tm::linefeed;
 
 			DECLARATION_MAIN( const std::string orig_string = "\n\n012345\n6789abcd\n\nefghij\nklmnopqrstu\n\n\nvwxyz\n" );
 			OUTPUT_VALUE( orig_string.size() );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( std::size_t pivot_pos = 0u );
@@ -164,7 +164,7 @@ namespace std_string_test
 				OUTPUT_VALUE( pivot_pos );
 				OUTPUT_VALUE( orig_string[pivot_pos] );
 
-				std::cout << r2cm::linefeed2;
+				std::cout << r2tm::linefeed2;
 
 				PROCESS_MAIN( find_pos = orig_string.find( key_string, pivot_pos ) );
 				OUTPUT_VALUE( find_pos );
@@ -172,7 +172,7 @@ namespace std_string_test
 				OUTPUT_VALUE( pivot_pos );
 				OUTPUT_VALUE( orig_string[pivot_pos] );
 
-				std::cout << r2cm::linefeed2;
+				std::cout << r2tm::linefeed2;
 
 				PROCESS_MAIN( find_pos = orig_string.find( key_string, pivot_pos ) );
 				OUTPUT_VALUE( find_pos );
@@ -181,9 +181,9 @@ namespace std_string_test
 				OUTPUT_VALUE( orig_string[pivot_pos] );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
@@ -193,13 +193,13 @@ namespace std_string_test
 	{
 		if( str.empty() )
 		{
-			std::cout << r2cm::tab << "> Empty" << r2cm::linefeed;
+			std::cout << r2tm::tab << "> Empty" << r2tm::linefeed;
 			return;
 		}
 
 		OUTPUT_VALUE( str.size() );
 
-		std::cout << r2cm::linefeed;
+		std::cout << r2tm::linefeed;
 
 		std::size_t pivot_pos = 0u;
 		std::size_t find_pos = 0u;
@@ -214,9 +214,9 @@ namespace std_string_test
 			//
 			if( std::string::npos == find_pos )
 			{
-				std::cout << r2cm::tab << i << "[" << pivot_pos << " ~ " << str.size() - 1u << "]" << " > ";
+				std::cout << r2tm::tab << i << "[" << pivot_pos << " ~ " << str.size() - 1u << "]" << " > ";
 				std::cout << ( &str[pivot_pos] );
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				// find_pos 가 npos 라면 pivot_pos 의 정상 갱신이 불가능 하다.
 				// break 로 여기서 loop를 끝내준다.
@@ -228,9 +228,9 @@ namespace std_string_test
 			//
 			else if( pivot_pos == find_pos )
 			{
-				std::cout << r2cm::tab << i << "[" << pivot_pos << " ~ " << find_pos << "]" << " > ";
+				std::cout << r2tm::tab << i << "[" << pivot_pos << " ~ " << find_pos << "]" << " > ";
 				std::cout << "\\n";
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 			}
 
 			//
@@ -240,9 +240,9 @@ namespace std_string_test
 			{
 				find_pos = find_pos - 1;
 
-				std::cout << r2cm::tab << i << "[" << pivot_pos << " ~ " << find_pos << "]" << " > ";
+				std::cout << r2tm::tab << i << "[" << pivot_pos << " ~ " << find_pos << "]" << " > ";
 				std::cout.write( &str[pivot_pos], find_pos - pivot_pos + 1 );
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 			}
 
 			pivot_pos = find_pos + key_string.size();
@@ -254,75 +254,75 @@ namespace std_string_test
 			++i;
 		} while( str.size() > pivot_pos );
 	}
-	r2cm::iItem::TitleFunctionT Find_And_Split_1::GetTitleFunction() const
+	r2tm::TitleFunctionT Find_And_Split_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Find And Split 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Find_And_Split_1::GetDoFunction() const
+	r2tm::DoFunctionT Find_And_Split_1::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( const std::string key_string = "\n" );
 			OUTPUT_VALUE( key_string.size() );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			PROCESS_MAIN( StringSplit( "", key_string ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			PROCESS_MAIN( StringSplit( " ", key_string ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			PROCESS_MAIN( StringSplit( "\n ", key_string ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			PROCESS_MAIN( StringSplit( " \n", key_string ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			PROCESS_MAIN( StringSplit( "\n \n", key_string ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
-	r2cm::iItem::TitleFunctionT Find_And_Split_2::GetTitleFunction() const
+	r2tm::TitleFunctionT Find_And_Split_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Find And Split 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT Find_And_Split_2::GetDoFunction() const
+	r2tm::DoFunctionT Find_And_Split_2::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( const std::string key_string = "\n" );
 			OUTPUT_VALUE( key_string.size() );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			PROCESS_MAIN( StringSplit( "\n" "\n" "1" "\n" "23" "\n" "\n" "efg" "\n" " " "\n" "vwx" "\n", key_string ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			PROCESS_MAIN( StringSplit( "\n" "\n" "123" "\n" "456" "\n" "\n" "789" "\n" "\n" "\n" "defg", key_string ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
@@ -355,50 +355,50 @@ namespace std_string_test
 
 		return line_count;
 	}
-	r2cm::iItem::TitleFunctionT Line_Count::GetTitleFunction() const
+	r2tm::TitleFunctionT Line_Count::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Line Count";
 		};
 	}
-	r2cm::iItem::DoFunctionT Line_Count::GetDoFunction() const
+	r2tm::DoFunctionT Line_Count::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				OUTPUT_VALUE( CalculateLineCount( "" ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( CalculateLineCount( " " ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( CalculateLineCount( "\n" " " ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( CalculateLineCount( " " "\n" ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( CalculateLineCount( "\n" " " "\n" ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( CalculateLineCount( "\n" "\n" "ab" "\n" "cd" "\n" "\n" "ef" "\n" "gh" "\n" "\n" "\n" "ijk" "\n" ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( CalculateLineCount( "\n" "\n" "ab" "\n" "cd" "\n" "\n" "ef" "\n" "gh" "\n" "\n" "\n" "i" ) );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

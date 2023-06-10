@@ -3,134 +3,134 @@
 #include <new>
 #include <string_view>
 
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
 
 namespace cpp_new_test
 {
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Basic::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( int* i = new int );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( *i );
 				OUTPUT_BINARY( *i );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( delete i );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( int* i = new int( 1 ) );
 				EXPECT_EQ( 1, *i );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( *i );
 				OUTPUT_BINARY( *i );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( delete i );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( int* i = new ( std::nothrow ) int( 2 ) );
 				EXPECT_EQ( 2, *i );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( *i );
 				OUTPUT_BINARY( *i );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( delete i );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Array::GetTitleFunction() const
+	r2tm::TitleFunctionT Array::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Array";
 		};
 	}
-	r2cm::iItem::DoFunctionT Array::GetDoFunction() const
+	r2tm::DoFunctionT Array::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( int* i = new int[10] );
 				OUTPUT_VALUE( *i );
 				OUTPUT_VALUE( i[1] );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( delete[] i );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				int* i = new int[10]{ 0, 1, 2 };
 
-				std::cout << "int* i = new int[10]{ 0, 1, 2 };" << r2cm::linefeed;
+				std::cout << "int* i = new int[10]{ 0, 1, 2 };" << r2tm::linefeed;
 				EXPECT_EQ( 0, *i );
 				EXPECT_EQ( 1, i[1] );
 				EXPECT_EQ( 2, i[2] );
 				EXPECT_EQ( 0, i[3] );
 				EXPECT_EQ( 0, i[4] );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				OUTPUT_VALUE( i[3] );
 				OUTPUT_VALUE( i[4] );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( delete[] i );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( char* str = new char[7] );
 				OUTPUT_VALUE( str );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( delete[] str );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( char* str = new char[7]{ "abc" } );
@@ -138,35 +138,35 @@ namespace cpp_new_test
 				EXPECT_EQ( 0, str[3] );
 				EXPECT_EQ( '\0', str[3] );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( str[4], str[3] );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( delete[] str );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT PlacementNew::GetTitleFunction() const
+	r2tm::TitleFunctionT PlacementNew::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Placement New";
 		};
 	}
-	r2cm::iItem::DoFunctionT PlacementNew::GetDoFunction() const
+	r2tm::DoFunctionT PlacementNew::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( int i = 123 );
@@ -174,29 +174,29 @@ namespace cpp_new_test
 
 				OUTPUT_VALUE( *fp );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( *fp = 3.14f );
 				OUTPUT_VALUE( *fp );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( int i = 65 );
 				OUTPUT_VALUE( i );
 				OUTPUT_BINARY( i );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				DECLARATION_MAIN( char* cp = new ( &i ) char );
 				OUTPUT_VALUE( *cp );
 				OUTPUT_BINARY( *cp );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

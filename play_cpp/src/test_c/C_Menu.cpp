@@ -1,6 +1,6 @@
 #include "C_Menu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/c_array_test.h"
 #include "item/c_atexit_test.h"
@@ -18,10 +18,20 @@
 #include "UnionMenu.h"
 #include "RootMenu.h"
 
-r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT C_Menu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, C_Menu::GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "C";
+	};
+}
+r2tm::DescriptionFunctionT C_Menu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT C_Menu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', c_array_test::Init() );
 		ret->AddItem( '2', c_operator_ternary_test::Basic() );
@@ -51,9 +61,9 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddMenu<PointerMenu>( 'a' );
-		ret->AddMenu<BitOperationMenu>( 's' );
-		ret->AddMenu<UnionMenu>( 'd' );
+		ret->AddMenu( 'a', PointerMenu() );
+		ret->AddMenu( 's', BitOperationMenu() );
+		ret->AddMenu( 'd', UnionMenu() );
 		ret->AddItem( 'f', c_system_test::Pause() );
 		ret->AddItem( 'g', c_atexit_test::Basic() );
 
@@ -62,8 +72,6 @@ r2cm::MenuUp C_Menu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<RootMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, RootMenu() );
+	};
 }

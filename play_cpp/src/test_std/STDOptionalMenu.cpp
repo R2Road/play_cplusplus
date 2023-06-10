@@ -1,15 +1,25 @@
 #include "STDOptionalMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test_std/item/std_optional_test.h"
 
 #include "STDMenu.h"
 
-r2cm::MenuUp STDOptionalMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT STDOptionalMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "<optional>";
+	};
+}
+r2tm::DescriptionFunctionT STDOptionalMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT STDOptionalMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', std_optional_test::Basic() );
 		ret->AddItem( '2', std_optional_test::Constructor() );
@@ -19,8 +29,6 @@ r2cm::MenuUp STDOptionalMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<STDMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, STDMenu() );
+	};
 }

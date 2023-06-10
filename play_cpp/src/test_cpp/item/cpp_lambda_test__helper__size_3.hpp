@@ -1,5 +1,5 @@
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
 
 namespace cpp_lambda_test__helper__size_3
 {
@@ -10,7 +10,7 @@ namespace cpp_lambda_test__helper__size_3
 
 			OUTPUT_BINARY( this );
 
-			std::cout << r2cm::linefeed;
+			std::cout << r2tm::linefeed;
 
 			auto l = [this, j = 255ll]() { ( this->i ); };
 			OUTPUT_VALUE( sizeof( l ) );

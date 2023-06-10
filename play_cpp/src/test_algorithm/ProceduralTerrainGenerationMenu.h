@@ -1,19 +1,11 @@
 #pragma once
 
-#include <memory>
+#include "r2tm/r2tm_iMenu.h"
 
-namespace r2cm
+class ProceduralTerrainGenerationMenu : public r2tm::iMenu
 {
-	class Director;
-	using MenuUp = std::unique_ptr<class Menu>;
-}
-
-class ProceduralTerrainGenerationMenu
-{
-private:
-	ProceduralTerrainGenerationMenu() = delete;
-
 public:
-	static const char* GetTitle() { return "Procedural Terrain Generation Menu"; }
-	static r2cm::MenuUp Create( r2cm::Director& director );
+	r2tm::TitleFunctionT GetTitleFunction() const override;
+	r2tm::DescriptionFunctionT GetDescriptionFunction() const override;
+	r2tm::WriteFunctionT GetWriteFunction() const override;
 };

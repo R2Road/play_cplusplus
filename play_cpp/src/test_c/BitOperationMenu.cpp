@@ -1,15 +1,25 @@
 #include "BitOperationMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/c_bit_operation_test.h"
 
 #include "C_Menu.h"
 
-r2cm::MenuUp BitOperationMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT BitOperationMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, BitOperationMenu::GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Bit Operation";
+	};
+}
+r2tm::DescriptionFunctionT BitOperationMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT BitOperationMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', c_bit_operation_test::Operator() );
 		ret->AddItem( '2', c_bit_operation_test::Complement() );
@@ -49,8 +59,6 @@ r2cm::MenuUp BitOperationMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<C_Menu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, C_Menu() );
+	};
 }

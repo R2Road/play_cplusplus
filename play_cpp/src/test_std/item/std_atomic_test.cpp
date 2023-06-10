@@ -5,8 +5,8 @@
 #include <thread>
 #include <type_traits>
 
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
 
 struct TestStruct1
 {
@@ -36,27 +36,27 @@ namespace std_atomic_test
 		{
 			std::atomic<T> atm;
 
-			std::cout << r2cm::tab2 << "std::atomic<" << typeid( T ).name() << "> atm;" << r2cm::linefeed;
-			std::cout << r2cm::tab3 << "- type size : " << sizeof( T ) << " byte" << r2cm::linefeed;
-			std::cout << r2cm::tab3 << "- atm.is_lock_free() : " << ( atm.is_lock_free() ? "O" : "X" ) << r2cm::linefeed2;
+			std::cout << r2tm::tab2 << "std::atomic<" << typeid( T ).name() << "> atm;" << r2tm::linefeed;
+			std::cout << r2tm::tab3 << "- type size : " << sizeof( T ) << " byte" << r2tm::linefeed;
+			std::cout << r2tm::tab3 << "- atm.is_lock_free() : " << ( atm.is_lock_free() ? "O" : "X" ) << r2tm::linefeed2;
 		}		
 	};
 
-	r2cm::iItem::TitleFunctionT IsLockFree::GetTitleFunction() const
+	r2tm::TitleFunctionT IsLockFree::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Is Lock Free";
 		};
 	}
-	r2cm::iItem::DoFunctionT IsLockFree::GetDoFunction() const
+	r2tm::DoFunctionT IsLockFree::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Test 1" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Test 1" << r2tm::linefeed2;
 
 				IsLockFreePrinter<bool>().Print();
 				IsLockFreePrinter<char>().Print();
@@ -68,42 +68,42 @@ namespace std_atomic_test
 				IsLockFreePrinter<void*>().Print();
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Test 2" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Test 2" << r2tm::linefeed2;
 
 				IsLockFreePrinter<TestStruct1>().Print();
 
-				std::cout << r2cm::tab << "# 멤버가 2개 이상인 struct 의 atomic을 만들면 어쩔때는 static assert가 걸리고 어쩔때는 안걸린다." << r2cm::linefeed;
-				std::cout << r2cm::tab << "# vs2017에 버그가 있는듯." << r2cm::linefeed2;
+				std::cout << r2tm::tab << "# 멤버가 2개 이상인 struct 의 atomic을 만들면 어쩔때는 static assert가 걸리고 어쩔때는 안걸린다." << r2tm::linefeed;
+				std::cout << r2tm::tab << "# vs2017에 버그가 있는듯." << r2tm::linefeed2;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
-	r2cm::iItem::TitleFunctionT LockFreeTest1::GetTitleFunction() const
+	r2tm::TitleFunctionT LockFreeTest1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Lock Free Test 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT LockFreeTest1::GetDoFunction() const
+	r2tm::DoFunctionT LockFreeTest1::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( int n = 0 );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ thread x 5 : 100000 time ++n" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ thread x 5 : 100000 time ++n" << r2tm::linefeed2;
 				auto thread_process = [&n]( int index, int attmpt )
 				{
 					printf( "\t\tThread Start : %d\n", index );
@@ -128,35 +128,35 @@ namespace std_atomic_test
 				test_thread_5.join();
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			EXPECT_NE( 100000 * 5, n );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
-	r2cm::iItem::TitleFunctionT LockFreeTest2::GetTitleFunction() const
+	r2tm::TitleFunctionT LockFreeTest2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Lock Free Test 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT LockFreeTest2::GetDoFunction() const
+	r2tm::DoFunctionT LockFreeTest2::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( std::atomic_int32_t n = 0 );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "thread x 5 : 100000 time ++n" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "thread x 5 : 100000 time ++n" << r2tm::linefeed2;
 
 
 				auto thread_process = [&n]( int index, int attmpt )
@@ -183,13 +183,13 @@ namespace std_atomic_test
 				test_thread_5.join();
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			EXPECT_EQ( 100000 * 5, n );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

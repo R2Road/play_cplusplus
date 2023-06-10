@@ -1,16 +1,26 @@
 #include "PerformanceMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/performance_1_test.h"
 #include "item/performance_container_iteration_test.h"
 
 #include "RootMenu.h"
 
-r2cm::MenuUp PerformanceMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT PerformanceMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Performance";
+	};
+}
+r2tm::DescriptionFunctionT PerformanceMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT PerformanceMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', performance_1_test::IncrementOperator() );
 		ret->AddItem( '2', performance_1_test::Loop() );
@@ -34,8 +44,6 @@ r2cm::MenuUp PerformanceMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<RootMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, RootMenu() );
+	};
 }

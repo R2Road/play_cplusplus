@@ -1,16 +1,26 @@
 #include "RandomMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test_c/item/c_random_test.h"
 #include "test_std/item/std_random_test.h"
 
 #include "RootMenu.h"
 
-r2cm::MenuUp RandomMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT RandomMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, RandomMenu::GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Random";
+	};
+}
+r2tm::DescriptionFunctionT RandomMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT RandomMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', c_random_test::Rand() );
 
@@ -26,8 +36,6 @@ r2cm::MenuUp RandomMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<RootMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, RootMenu() );
+	};
 }

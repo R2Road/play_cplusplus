@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_ostream.h"
 
 namespace template_meta_programming_test
 {
@@ -13,32 +13,32 @@ namespace template_meta_programming_test
 		static constexpr const char c[size + 1] = { chars..., '\0' };
 	};
 
-	r2cm::iItem::TitleFunctionT Character2String::GetTitleFunction() const
+	r2tm::TitleFunctionT Character2String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Character 2 String";
 		};
 	}
-	r2cm::iItem::DoFunctionT Character2String::GetDoFunction() const
+	r2tm::DoFunctionT Character2String::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::size" << r2cm::linefeed;
-				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::size << r2cm::linefeed;
+				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::size" << r2tm::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::size << r2tm::linefeed;
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::c" << r2cm::linefeed;
-				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::c << r2cm::linefeed;
+				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::c" << r2tm::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::c << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }
@@ -58,27 +58,27 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2cm::iItem::TitleFunctionT Integer2String::GetTitleFunction() const
+	r2tm::TitleFunctionT Integer2String::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Integer 2 String";
 		};
 	}
-	r2cm::iItem::DoFunctionT Integer2String::GetDoFunction() const
+	r2tm::DoFunctionT Integer2String::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << "\t" << "+ ConvertInteger2String_1<2468>::c.c_str()" << r2cm::linefeed;
-				std::cout << "\t\t" << "result : " << ConvertInteger2String_1<2468>::c.c_str() << r2cm::linefeed;
+				std::cout << "\t" << "+ ConvertInteger2String_1<2468>::c.c_str()" << r2tm::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertInteger2String_1<2468>::c.c_str() << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }
@@ -101,33 +101,33 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2cm::iItem::TitleFunctionT CalculatePlaceValue::GetTitleFunction() const
+	r2tm::TitleFunctionT CalculatePlaceValue::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Place Value 4 Integer";
 		};
 	}
-	r2cm::iItem::DoFunctionT CalculatePlaceValue::GetDoFunction() const
+	r2tm::DoFunctionT CalculatePlaceValue::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << "\t" << "+ CalculatePlaceValue<1>::c" << r2cm::linefeed;
-				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<1>::place_value << r2cm::linefeed << r2cm::linefeed;
+				std::cout << "\t" << "+ CalculatePlaceValue<1>::c" << r2tm::linefeed;
+				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<1>::place_value << r2tm::linefeed << r2tm::linefeed;
 
-				std::cout << "\t" << "+ CalculatePlaceValue<100>::c" << r2cm::linefeed;
-				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<100>::place_value << r2cm::linefeed << r2cm::linefeed;
+				std::cout << "\t" << "+ CalculatePlaceValue<100>::c" << r2tm::linefeed;
+				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<100>::place_value << r2tm::linefeed << r2tm::linefeed;
 
-				std::cout << "\t" << "+ CalculatePlaceValue<123456>::c" << r2cm::linefeed;
-				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<123456>::place_value << r2cm::linefeed;
+				std::cout << "\t" << "+ CalculatePlaceValue<123456>::c" << r2tm::linefeed;
+				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<123456>::place_value << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }
@@ -168,54 +168,54 @@ namespace
 }
 namespace template_meta_programming_test
 {
-	r2cm::iItem::TitleFunctionT Integer2String_II::GetTitleFunction() const
+	r2tm::TitleFunctionT Integer2String_II::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Integer 2 String II";
 		};
 	}
-	r2cm::iItem::DoFunctionT Integer2String_II::GetDoFunction() const
+	r2tm::DoFunctionT Integer2String_II::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << "+ Units 2 Character" << r2cm::linefeed << r2cm::linefeed;
+				std::cout << "+ Units 2 Character" << r2tm::linefeed << r2tm::linefeed;
 
-				std::cout << "\t" << "+ ConvertUnits2Character<1>::c" << r2cm::linefeed;
-				std::cout << "\t\t" << "result : " << ConvertUnits2Character<1>::c << r2cm::linefeed << r2cm::linefeed;
-
-
-				std::cout << "\t" << "+ ConvertUnits2Character<9>::c" << r2cm::linefeed;
-				std::cout << "\t\t" << "result : " << ConvertUnits2Character<9>::c << r2cm::linefeed << r2cm::linefeed;
+				std::cout << "\t" << "+ ConvertUnits2Character<1>::c" << r2tm::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertUnits2Character<1>::c << r2tm::linefeed << r2tm::linefeed;
 
 
-				std::cout << "\t" << "+ ConvertUnits2Character<10>::c" << r2cm::linefeed;
-				std::cout << "\t\t" << "result : " << ConvertUnits2Character<10>::c << r2cm::linefeed << r2cm::linefeed;
+				std::cout << "\t" << "+ ConvertUnits2Character<9>::c" << r2tm::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertUnits2Character<9>::c << r2tm::linefeed << r2tm::linefeed;
+
+
+				std::cout << "\t" << "+ ConvertUnits2Character<10>::c" << r2tm::linefeed;
+				std::cout << "\t\t" << "result : " << ConvertUnits2Character<10>::c << r2tm::linefeed << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << "+ Integer 2 String II" << r2cm::linefeed << r2cm::linefeed;
+				std::cout << "+ Integer 2 String II" << r2tm::linefeed << r2tm::linefeed;
 
-				std::cout << "\t" << "+ ConvertInteger2String_2<101010>" << r2cm::linefeed;
-				std::cout << "\t\t" << "size : " << ConvertInteger2String_2<101010>::size << r2cm::linefeed;
-				std::cout << "\t\t" << "string : " << ConvertInteger2String_2<101010>::str << r2cm::linefeed;
+				std::cout << "\t" << "+ ConvertInteger2String_2<101010>" << r2tm::linefeed;
+				std::cout << "\t\t" << "size : " << ConvertInteger2String_2<101010>::size << r2tm::linefeed;
+				std::cout << "\t\t" << "string : " << ConvertInteger2String_2<101010>::str << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << "ConvertInteger2String_2 의 전방 선언 코드를 지우고 가장 아래의 템플릿 코드를 가장 위로 올려도 정상 작동 한다." << r2cm::linefeed;
-				std::cout << "전방 선언은 템플릿 코드의 번역 순서에 따라 발생하는 문제를 해결해준다." << r2cm::linefeed;
+				std::cout << "ConvertInteger2String_2 의 전방 선언 코드를 지우고 가장 아래의 템플릿 코드를 가장 위로 올려도 정상 작동 한다." << r2tm::linefeed;
+				std::cout << "전방 선언은 템플릿 코드의 번역 순서에 따라 발생하는 문제를 해결해준다." << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

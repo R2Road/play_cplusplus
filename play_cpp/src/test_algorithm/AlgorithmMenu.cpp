@@ -1,6 +1,6 @@
 #include "AlgorithmMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test_algorithm/item/algorithm_bubble_sort_test.h"
 #include "test_algorithm/item/algorithm_selection_sort_test.h"
@@ -13,10 +13,20 @@
 #include "ProceduralTerrainGenerationMenu.h"
 #include "RootMenu.h"
 
-r2cm::MenuUp AlgorithmMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT AlgorithmMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Algorithm";
+	};
+}
+r2tm::DescriptionFunctionT AlgorithmMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT AlgorithmMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', algorithm_selection_sort_test::Case1() );
 		ret->AddItem( '2', algorithm_selection_sort_test::Case2() );
@@ -55,15 +65,13 @@ r2cm::MenuUp AlgorithmMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<MazeGenerationMenu>( 'z' );
-		ret->AddMenu<ProceduralTerrainGenerationMenu>( 'x' );
+		ret->AddMenu( 'z', MazeGenerationMenu() );
+		ret->AddMenu( 'x', ProceduralTerrainGenerationMenu() );
 
 
 		ret->AddSplit();
 
 
-		ret->AddMenu<RootMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, RootMenu() );
+	};
 }

@@ -1,15 +1,25 @@
 #include "FlickeringResearchMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/windows_terminal_flickering_research.h"
 
 #include "test_windows/WindowsMenu.h"
 
-r2cm::MenuUp FlickeringResearchMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT FlickeringResearchMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Flickering Research";
+	};
+}
+r2tm::DescriptionFunctionT FlickeringResearchMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT FlickeringResearchMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', windows_terminal_flickering_research::OneByOne() );
 		ret->AddItem( '2', windows_terminal_flickering_research::OneByOne_WithOut_CLS() );
@@ -22,8 +32,6 @@ r2cm::MenuUp FlickeringResearchMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<WindowsMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, WindowsMenu() );
+	};
 }

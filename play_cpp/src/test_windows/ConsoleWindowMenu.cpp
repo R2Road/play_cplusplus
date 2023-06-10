@@ -1,6 +1,6 @@
 #include "ConsoleWindowMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/console_window_test.h"
 
@@ -9,10 +9,20 @@
 // # REF
 // https://docs.microsoft.com/en-us/windows/console/console-reference
 
-r2cm::MenuUp ConsoleWindowMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT ConsoleWindowMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Console Window";
+	};
+}
+r2tm::DescriptionFunctionT ConsoleWindowMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT ConsoleWindowMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', console_window_test::BufferInfo() );
 
@@ -56,8 +66,6 @@ r2cm::MenuUp ConsoleWindowMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<WindowsMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, WindowsMenu() );
+	};
 }

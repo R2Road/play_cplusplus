@@ -19,7 +19,7 @@ public:
 			if( grid.GetWidth() <= x )
 			{
 				x = 0;
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 			}
 
 			std::cout << i << ' ';
@@ -37,7 +37,7 @@ public:
 			if( grid.GetWidth() <= x )
 			{
 				x = 0;
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 			}
 
 			std::cout << evaluator( i ) << ' ';

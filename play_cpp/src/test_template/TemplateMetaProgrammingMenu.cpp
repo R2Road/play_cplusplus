@@ -1,6 +1,6 @@
 #include "TemplateMetaProgrammingMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/template_meta_programming_01_test.h"
 #include "item/template_meta_programming_02_test.h"
@@ -8,10 +8,20 @@
 
 #include "TemplateMenu.h"
 
-r2cm::MenuUp TemplateMetaProgrammingMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT TemplateMetaProgrammingMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu( director, GetTitle() ) );
-
+	return []()->const char*
+	{
+		return "Template Meta Programming";
+	};
+}
+r2tm::DescriptionFunctionT TemplateMetaProgrammingMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT TemplateMetaProgrammingMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', template_meta_programming_test::CalculateFactorial() );
 		ret->AddItem( '2', template_meta_programming_test::GreatestCommonDivisor() );
@@ -41,8 +51,6 @@ r2cm::MenuUp TemplateMetaProgrammingMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<TemplateMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, TemplateMenu() );
+	};
 }

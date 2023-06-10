@@ -2,23 +2,23 @@
 
 #include <bitset>
 
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
 
 namespace std_bitset_test
 {
-	r2cm::iItem::TitleFunctionT All_Any_None::GetTitleFunction() const
+	r2tm::TitleFunctionT All_Any_None::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::bitset : All_Any_None";
 		};
 	}
-	r2cm::iItem::DoFunctionT All_Any_None::GetDoFunction() const
+	r2tm::DoFunctionT All_Any_None::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( std::bitset<3u> b = 0b000 );
@@ -28,7 +28,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( b.size() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( std::bitset<3u> b = 0b001 );
@@ -38,7 +38,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( b.size() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( std::bitset<3u> b = 0b011 );
@@ -48,7 +48,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( b.size() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( std::bitset<3u> b = 0b111 );
@@ -58,37 +58,37 @@ namespace std_bitset_test
 				OUTPUT_VALUE( b.size() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Set_And_Test::GetTitleFunction() const
+	r2tm::TitleFunctionT Set_And_Test::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::bitset : Set And Test";
 		};
 	}
-	r2cm::iItem::DoFunctionT Set_And_Test::GetDoFunction() const
+	r2tm::DoFunctionT Set_And_Test::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( std::bitset<3u> b );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				EXPECT_FALSE( b.test( 0 ) );
 				OUTPUT_VALUE( b.to_string() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( b.set( 0, true ) );
@@ -96,7 +96,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( b.to_string() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( b.set( 0, false ) );
@@ -104,43 +104,43 @@ namespace std_bitset_test
 				OUTPUT_VALUE( b.to_string() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( b.set( 0, true ) );
 				PROCESS_MAIN( b.set( 2, true ) );
 				OUTPUT_VALUE( b.to_string() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( b = 0 );
 				OUTPUT_VALUE( b.to_string() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Size::GetTitleFunction() const
+	r2tm::TitleFunctionT Size::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::bitset : Size";
 		};
 	}
-	r2cm::iItem::DoFunctionT Size::GetDoFunction() const
+	r2tm::DoFunctionT Size::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			OUTPUT_NOTE( "크기는 4byte 단위로 증가." );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( std::bitset<1> container );
@@ -148,7 +148,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( container.size() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( std::bitset<8> container );
@@ -156,7 +156,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( container.size() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( std::bitset<16> container );
@@ -164,7 +164,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( container.size() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( std::bitset<32> container );
@@ -172,7 +172,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( container.size() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( std::bitset<48> container );
@@ -180,44 +180,44 @@ namespace std_bitset_test
 				OUTPUT_VALUE( container.size() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Operator::GetTitleFunction() const
+	r2tm::TitleFunctionT Operator::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::bitset : Operator";
 		};
 	}
-	r2cm::iItem::DoFunctionT Operator::GetDoFunction() const
+	r2tm::DoFunctionT Operator::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( std::bitset<10> b = 0b10101 );
 			OUTPUT_VALUE( b.to_string() );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				OUTPUT_NOTE( "bit 연산이 안되는 큰 단점." );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_TRUE( 0b10101 & b.to_ulong() );
 				EXPECT_FALSE( 0b01010 & b.to_ulong() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }
