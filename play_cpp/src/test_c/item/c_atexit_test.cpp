@@ -35,11 +35,11 @@ namespace c_atexit_test
 			{
 				OUTPUT_NOTE( "Function" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_FILE_RANGE( "src/test_c/item/c_atexit_test.cpp", 12, 15 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 0, atexit( Do ) );
 			}
@@ -49,7 +49,7 @@ namespace c_atexit_test
 			{
 				OUTPUT_NOTE( "Lambda" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto l = []() { R2ASSERT( false, "Lambda : test_atexit" ); } );
 
@@ -61,7 +61,7 @@ namespace c_atexit_test
 			{
 				OUTPUT_NOTE( "Static Method" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( struct S
 				{

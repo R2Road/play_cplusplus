@@ -45,7 +45,7 @@ namespace locale_test
 				std::cout << r2tm::tab2 << "const std::string current_locale = setlocale( LC_ALL, nullptr );" << r2tm::linefeed2;
 				std::cout << r2tm::tab2 << "Locale Name : " << current_locale << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "** Need nullptr in call setlocale" << r2tm::linefeed;
 			}

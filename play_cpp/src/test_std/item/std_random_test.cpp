@@ -31,11 +31,11 @@ namespace std_random_test
 				DECLARATION_MAIN( std::default_random_engine random_engine( rd() ) );
 				DECLARATION_MAIN( std::uniform_int_distribution<int> dist( 0, 2 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( dist( random_engine ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "Loop : 10" << r2tm::linefeed;
 				for( int i = 0; 10 > i; ++i )
@@ -43,7 +43,7 @@ namespace std_random_test
 					std::cout << r2tm::tab2 << "- " << dist( random_engine ) << r2tm::linefeed;
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "Contained Min and Max" );
 			}
@@ -55,11 +55,11 @@ namespace std_random_test
 				DECLARATION_MAIN( std::default_random_engine random_engine( rd() ) );
 				DECLARATION_MAIN( std::uniform_real_distribution<float> dist( 0.f, 0.1f ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( dist( random_engine ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "Loop : 10" << r2tm::linefeed;
 				for( int i = 0; 10 > i; ++i )
@@ -67,7 +67,7 @@ namespace std_random_test
 					std::cout << r2tm::tab2 << "- " << dist( random_engine ) << r2tm::linefeed;
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "Contained Min" );;
 			}
@@ -108,7 +108,7 @@ namespace std_random_test
 			DECLARATION_MAIN( std::mt19937 random_engine( rd() ) );
 			DECLARATION_MAIN( std::uniform_int_distribution<int> dist( 0, 999 ) );
 
-			std::cout << r2tm::linefeed;
+			LF();
 			std::cout << r2tm::tab << "+ Save : Current Random Status" << r2tm::linefeed2;
 
 			{
@@ -134,7 +134,7 @@ namespace std_random_test
 				PROCESS_MAIN( ifs >> loaded_random_engine );
 				DECLARATION_MAIN( std::uniform_int_distribution<int> dist_2( 0, 999 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				for( int i = 0; 3 > i; ++i )
 				{
@@ -152,7 +152,7 @@ namespace std_random_test
 				PROCESS_MAIN( ifs >> loaded_random_engine );
 				DECLARATION_MAIN( std::uniform_int_distribution<int> dist_2( 0, 999 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				for( int i = 0; 3 > i; ++i )
 				{

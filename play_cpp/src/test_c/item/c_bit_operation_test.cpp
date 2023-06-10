@@ -19,7 +19,7 @@ namespace
 			std::cout << temp_2;
 		}
 
-		std::cout << r2tm::linefeed;
+		LF();
 	}
 }
 
@@ -101,7 +101,7 @@ namespace c_bit_operation_test
 			DECLARATION_MAIN( const int pivot = 0b1000000001 ); // binary
 			PrintBinary( pivot );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( int num = pivot );
 
@@ -191,7 +191,7 @@ namespace c_bit_operation_test
 				PROCESS_MAIN( num ^= ( 1 << 2 ) );
 				PrintBinary( num, 16 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( num ^= ( 1 << 2 ) );
 				PrintBinary( num, 16 );
@@ -223,7 +223,7 @@ namespace c_bit_operation_test
 			DECLARATION_MAIN( unsigned int mask = 0 );
 			PrintBinary( mask );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( const unsigned int target_pos = 3 );
 			DECLARATION_MAIN( const unsigned int target_range = 5 );
@@ -320,7 +320,7 @@ namespace c_bit_operation_test
 				PROCESS_MAIN( result = b_1 ^ b_2 );
 				OUTPUT_BINARY( result );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( result = b_1 );
 				OUTPUT_BINARY( result );
@@ -365,7 +365,7 @@ namespace c_bit_operation_test
 				OUTPUT_VALUE( b );
 				PrintBinary( b, 31 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( b = b ^ a );
 				OUTPUT_VALUE( a );
@@ -373,7 +373,7 @@ namespace c_bit_operation_test
 				OUTPUT_VALUE( b );
 				PrintBinary( b, 31 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( a = a ^ b );
 				OUTPUT_VALUE( a );
@@ -407,17 +407,17 @@ namespace c_bit_operation_test
 				DECLARATION_MAIN( const char max_c = std::numeric_limits<char>::max() );
 				PrintBinary( max_c, 8 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const int i_1 = max_c );
 				PrintBinary( i_1, 32 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const int i_2 = max_c );
 				PrintBinary( i_2, 32 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const int i_3 = i_1 + i_2 );
 				PrintBinary( i_3, 32 );
@@ -464,7 +464,7 @@ namespace c_bit_operation_test
 			{
 				OUTPUT_NOTE( "1단계 : 겹치지 않는 bit 만 뽑아낸다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const short sum = t_1 ^ t_2 );
 				OUTPUT_VALUE( sum );
@@ -476,13 +476,13 @@ namespace c_bit_operation_test
 			{
 				OUTPUT_NOTE( "2단계 : 겹치는 bit 만 뽑아서 shift 한다.( 실질적인 덧셈 처리 )" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const short temp = ( t_1 & t_2 ) );
 				OUTPUT_VALUE( temp );
 				OUTPUT_BINARY( temp );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const short carry = ( temp << 1 ) );
 				OUTPUT_VALUE( carry );
@@ -494,7 +494,7 @@ namespace c_bit_operation_test
 			{
 				OUTPUT_NOTE( "3	단계 : 완료" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const short result = ( ( t_1 ^ t_2 ) + ( ( t_1 & t_2 ) << 1 ) ) );
 				OUTPUT_VALUE( result );
@@ -531,7 +531,7 @@ namespace c_bit_operation_test
 			OUTPUT_BINARY( t_1 );
 			OUTPUT_BINARY( t_2 );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( short sum = 0 );
 			DECLARATION_MAIN( short carry = 0 );
@@ -541,13 +541,13 @@ namespace c_bit_operation_test
 			{
 				OUTPUT_NOTE( "cycle 1" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( sum = t_1 ^ t_2 );
 				OUTPUT_VALUE( sum );
 				OUTPUT_BINARY( sum );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( carry = ( ( t_1 & t_2 ) << 1 ) );
 				OUTPUT_VALUE( carry );
@@ -566,13 +566,13 @@ namespace c_bit_operation_test
 			{
 				OUTPUT_NOTE( "cycle 2" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( sum = t_1 ^ t_2 );
 				OUTPUT_VALUE( sum );
 				OUTPUT_BINARY( sum );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( carry = ( ( t_1 & t_2 ) << 1 ) );
 				OUTPUT_VALUE( carry );
@@ -614,7 +614,7 @@ namespace c_bit_operation_test
 			{
 				OUTPUT_NOTE( "1단계 : 겹치지 않는 bit 만 뽑아낸다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const short sub = t_1 ^ t_2 );
 				OUTPUT_VALUE( sub );
@@ -626,14 +626,14 @@ namespace c_bit_operation_test
 			{
 				OUTPUT_NOTE( "2단계 : 앞의 수를 뒤집어 겹치는 bit 만 뽑아서 shift 한다.( 실질적인 뺄셈 처리 )" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_BINARY( short( ~t_1 ) );
 				OUTPUT_BINARY( t_2 );
 				OUTPUT_BINARY( short( ( ~t_1 ) & t_2 ) );
 				OUTPUT_BINARY( short( ( ( ~t_1 ) & t_2 ) <<1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const short borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
 				OUTPUT_VALUE( borrow );
@@ -645,7 +645,7 @@ namespace c_bit_operation_test
 			{
 				OUTPUT_NOTE( "3완료" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const short result = ( ( t_1 ^ t_2 ) - ( ( ( ~t_1 ) & t_2 ) << 1 ) ) );
 				OUTPUT_VALUE( result );
@@ -692,13 +692,13 @@ namespace c_bit_operation_test
 			{
 				OUTPUT_NOTE( "cycle 1" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( sub = t_1 ^ t_2 );
 				OUTPUT_VALUE( sub );
 				OUTPUT_BINARY( sub );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
 				OUTPUT_VALUE( borrow );
@@ -717,13 +717,13 @@ namespace c_bit_operation_test
 			{
 				OUTPUT_NOTE( "cycle 2" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( sub = t_1 ^ t_2 );
 				OUTPUT_VALUE( sub );
 				OUTPUT_BINARY( sub );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
 				OUTPUT_VALUE( borrow );

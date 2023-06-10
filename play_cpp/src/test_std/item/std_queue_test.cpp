@@ -29,7 +29,7 @@ namespace std_queue_test
 			{
 				DECLARATION_MAIN( std::queue<int> q );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( q.empty() );
 				EXPECT_EQ( 0, q.size() );
@@ -40,11 +40,11 @@ namespace std_queue_test
 			{
 				OUTPUT_NOTE( "r-value Move Constructor" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( std::queue<int> q( { 1, 2, 3 } ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_FALSE( q.empty() );
 				EXPECT_EQ( 3, q.size() );
@@ -75,11 +75,11 @@ namespace std_queue_test
 				OUTPUT_NOTE( "빈 컨테이너에 font(), back() 쓰지마라." );
 				OUTPUT_NOTE( "release | debug 모두 access violation" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( std::queue<int> q );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_CODE( q.front() );
 				OUTPUT_CODE( q.back() );
@@ -90,12 +90,12 @@ namespace std_queue_test
 			{
 				DECLARATION_MAIN( std::queue<int> q( { 1 } ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 1, q.front() );
 				EXPECT_EQ( 1, q.back() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( q.front() );
 				OUTPUT_VALUE( q.back() );
@@ -106,12 +106,12 @@ namespace std_queue_test
 			{
 				DECLARATION_MAIN( std::queue<int> q( { 1, 2, 3 } ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 1, q.front() );
 				EXPECT_EQ( 3, q.back() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( q.front() );
 				OUTPUT_VALUE( q.back() );
@@ -147,12 +147,12 @@ namespace std_queue_test
 			{
 				PROCESS_MAIN( q.push( 1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 1, q.size() );
 				EXPECT_FALSE( q.empty() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 1, q.front() );
 				EXPECT_EQ( 1, q.back() );
@@ -163,12 +163,12 @@ namespace std_queue_test
 			{
 				PROCESS_MAIN( q.push( 2 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 2, q.size() );
 				EXPECT_FALSE( q.empty() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 1, q.front() );
 				EXPECT_EQ( 2, q.back() );
@@ -179,12 +179,12 @@ namespace std_queue_test
 			{
 				PROCESS_MAIN( q.pop() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 1, q.size() );
 				EXPECT_FALSE( q.empty() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 2, q.front() );
 				EXPECT_EQ( 2, q.back() );
@@ -195,7 +195,7 @@ namespace std_queue_test
 			{
 				PROCESS_MAIN( q.pop() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 0, q.size() );
 				EXPECT_TRUE( q.empty() );
@@ -207,7 +207,7 @@ namespace std_queue_test
 				OUTPUT_NOTE( "빈 컨테이너에 pop() 쓰지마라." );
 				OUTPUT_NOTE( "release | debug 예외 발생" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_CODE( q.pop() );
 			}

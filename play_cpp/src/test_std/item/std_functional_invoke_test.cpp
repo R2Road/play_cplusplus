@@ -28,17 +28,17 @@ namespace std_functional_invoke_test
 			{
 				PROCESS_MAIN( std::invoke( Do, 2 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::invoke( do_lam, 3 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( S1 s_1 );
 				PROCESS_MAIN( std::invoke( &S1::Do, s_1, 123 ) );
 				PROCESS_MAIN( std::invoke( &S1::Do, &s_1, 234 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( S2 s_2 );
 				OUTPUT_VALUE( std::invoke( &S2::n, &s_2 ) );

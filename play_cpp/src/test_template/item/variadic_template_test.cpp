@@ -112,7 +112,7 @@ namespace variadic_template_test
 				std::cout << r2tm::tab2 << "}" << r2tm::linefeed2;
 
 				PROCESS_MAIN( print_args_2( 1, 2, 3, 4, "variadic_template_test", 3.141592 ) );
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -271,7 +271,7 @@ namespace variadic_template_test
 			{
 				std::cout << r2tm::tab << "+ int subtract_args_with_fold_1(IntegerList... integer_list )" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "return ( integer_list - ... );" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				{
 					std::cout << r2tm::tab2 << "Call : subtract_args_with_fold_1( 10, 5 );" << r2tm::linefeed;
@@ -279,7 +279,7 @@ namespace variadic_template_test
 					std::cout << r2tm::tab3 << subtract_args_with_fold_1( 10, 5 ) << r2tm::linefeed;
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				{
 					std::cout << r2tm::tab2 << "Call : subtract_args_with_fold_1( 5, 10 );" << r2tm::linefeed;
@@ -287,7 +287,7 @@ namespace variadic_template_test
 					std::cout << r2tm::tab3 << subtract_args_with_fold_1( 5, 10 ) << r2tm::linefeed;
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				{
 					std::cout << r2tm::tab2 << "Call : subtract_args_with_fold_1( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 );" << r2tm::linefeed;
@@ -295,7 +295,7 @@ namespace variadic_template_test
 					std::cout << r2tm::tab3 << subtract_args_with_fold_1( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << r2tm::linefeed;
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				{
 					std::cout << r2tm::tab2 << "Test : ( 100 - ( 1 - ( 2 - ( 3 - ( 4 - ( 5 - ( 6 - ( 7 - ( 8 - 9 ) ) ) ) ) ) ) ) );" << r2tm::linefeed;
@@ -309,7 +309,7 @@ namespace variadic_template_test
 			{
 				std::cout << r2tm::tab << "+ int subtract_args_with_fold_2(IntegerList... integer_list )" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "return ( ... - integer_list );" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				{
 					std::cout << r2tm::tab2 << "Call : subtract_args_with_fold_2( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << r2tm::linefeed;
@@ -317,7 +317,7 @@ namespace variadic_template_test
 					std::cout << r2tm::tab3 << subtract_args_with_fold_2( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << r2tm::linefeed;
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				{
 					std::cout << r2tm::tab2 << "Test : ( ( ( ( ( ( ( ( ( 100 - 1 ) - 2 ) - 3 ) - 4 ) - 5 ) - 6 ) - 7 ) - 8 ) - 9 );" << r2tm::linefeed;
@@ -331,7 +331,7 @@ namespace variadic_template_test
 			{
 				std::cout << r2tm::tab << "+ int subtract_args_with_fold_3( I integer, IntegerList... integer_list )" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "return ( integer_list - ... - integer );" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab2 << "Call : subtract_args_with_fold_3( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << r2tm::linefeed;
 
@@ -343,7 +343,7 @@ namespace variadic_template_test
 			{
 				std::cout << r2tm::tab << "+ int subtract_args_with_fold_4( I integer, IntegerList... integer_list )" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "return ( integer - ... - integer_list );" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab2 << "Call : subtract_args_with_fold_4( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << r2tm::linefeed;
 

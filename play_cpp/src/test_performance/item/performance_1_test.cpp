@@ -53,7 +53,7 @@ namespace performance_1_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << test_int;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -79,7 +79,7 @@ namespace performance_1_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << *test_pointer;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -105,7 +105,7 @@ namespace performance_1_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << *test_pointer;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -130,7 +130,7 @@ namespace performance_1_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << *test_pointer;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -155,7 +155,7 @@ namespace performance_1_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << *test_pointer;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -210,7 +210,7 @@ namespace performance_1_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << test_int;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -235,7 +235,7 @@ namespace performance_1_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << test_int;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -302,7 +302,7 @@ namespace performance_1_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -328,7 +328,7 @@ namespace performance_1_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -395,7 +395,7 @@ namespace performance_1_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -421,7 +421,7 @@ namespace performance_1_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -486,7 +486,7 @@ namespace performance_1_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -509,7 +509,7 @@ namespace performance_1_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 

@@ -27,7 +27,7 @@ namespace c_random_test
 					OUTPUT_VALUE( rand() );
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "Same Value Printed When Every Single Execute" );
 				OUTPUT_NOTE( "프로그램 새로 기동해도 rand() 가 반환하는 값과 순서는 같다." );
@@ -38,14 +38,14 @@ namespace c_random_test
 			{
 				PROCESS_MAIN( srand( 1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				for( int i = 0; 5 > i; ++i )
 				{
 					OUTPUT_VALUE( rand() );
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "srand( 1 ) is Default" );
 				OUTPUT_NOTE( "srand( n ) is init rand() Sequence" );

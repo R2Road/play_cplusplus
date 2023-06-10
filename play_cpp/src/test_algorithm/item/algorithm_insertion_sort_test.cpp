@@ -58,7 +58,7 @@ namespace algorithm_insertion_sort_test
 				{
 					std::cout << a << r2tm::tab;
 				}
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab2;
 				stop_watch.PrintElapsedTime_All();
@@ -113,7 +113,7 @@ namespace algorithm_insertion_sort_test
 					//
 					//
 					//
-					std::cout << r2tm::linefeed;
+					LF();
 					std::cout << r2tm::tab2;
 					for( const auto a : temp_container )
 					{

@@ -26,11 +26,11 @@ namespace template_specialization_test
 			{
 				PROCESS_MAIN( TemplateFunc( int( 1 ) ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( TemplateFunc( uint8_t( 1 ) ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( TemplateFunc( int64_t( 1 ) ) );
 			}

@@ -23,7 +23,7 @@ namespace c_operator_ternary_test
 			{
 				OUTPUT_NOTE( "반환값이 없어도 된다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( ( true ? void_func() : void_func() ) );
 			}
@@ -58,7 +58,7 @@ namespace c_operator_ternary_test
 				DECLARATION_MAIN( int i = 0 );
 				DECLARATION_MAIN( int j = 0 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( (
 					false
@@ -66,12 +66,12 @@ namespace c_operator_ternary_test
 					: ++i
 				) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( i );
 				OUTPUT_VALUE( j );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( (
 					true
@@ -79,7 +79,7 @@ namespace c_operator_ternary_test
 					: ++i
 				) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( i );
 				OUTPUT_VALUE( j );
@@ -113,7 +113,7 @@ namespace c_operator_ternary_test
 			{
 				DECLARATION_MAIN( std::function<void()> Do = []() {} );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( 1 == 1 ? Do() : void() );
 				PROCESS_MAIN( 1 == 2 ? Do() : void() );

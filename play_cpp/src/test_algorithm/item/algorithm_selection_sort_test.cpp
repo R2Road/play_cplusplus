@@ -90,7 +90,7 @@ namespace algorithm_selection_sort_test
 							temp_container[j] = temp;
 
 							std::cout << r2tm::tab2 << temp_container << r2tm::tab2 << " swap : " << temp_container[i] << " <> " << temp_container[j];
-							std::cout << r2tm::linefeed;
+							LF();
 						}
 					}
 

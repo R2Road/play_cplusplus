@@ -42,7 +42,7 @@ namespace algorithm_maze_test
 				PROCESS_MAIN( grid.Reset( 19, 19 ) );
 				PROCESS_MAIN( grid.Set( current_point.GetX(), current_point.GetY(), true ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
 				int stay_count = 0;
@@ -68,7 +68,7 @@ namespace algorithm_maze_test
 					//
 					r2tm::WindowUtility::MoveCursorPoint( pivot_point );
 					AlgorithmHelper::PrintGrid( grid );
-					std::cout << r2tm::linefeed;
+					LF();
 
 					//
 					// Key

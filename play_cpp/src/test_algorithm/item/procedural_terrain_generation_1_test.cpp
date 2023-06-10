@@ -78,10 +78,10 @@ namespace procedural_terrain_generation_1_test
 				}
 
 				AlgorithmHelper::PrintGrid( grid, terrain_type_evaluator );
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
-			std::cout << r2tm::linefeed;
+			LF();
 			std::cout << "> Next Step";
 			_getch();
 			r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
@@ -101,10 +101,10 @@ namespace procedural_terrain_generation_1_test
 				}
 
 				AlgorithmHelper::PrintGrid( grid2 );
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
-			std::cout << r2tm::linefeed;
+			LF();
 			std::cout << "> Next Step";
 			_getch();
 			r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
@@ -135,7 +135,7 @@ namespace procedural_terrain_generation_1_test
 				}
 
 				AlgorithmHelper::PrintGrid( grid3, terrain_type_evaluator );
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -178,10 +178,10 @@ namespace procedural_terrain_generation_1_test
 				}
 
 				AlgorithmHelper::PrintGrid( grid_seed, terrain_type_evaluator );
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
-			std::cout << r2tm::linefeed;
+			LF();
 			std::cout << "> Next Step";
 			_getch();
 			r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
@@ -208,10 +208,10 @@ namespace procedural_terrain_generation_1_test
 				}
 
 				AlgorithmHelper::PrintGrid( grid_terrain, terrain_type_evaluator );
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
-			std::cout << r2tm::linefeed;
+			LF();
 			std::cout << "> Next Step";
 			_getch();
 			r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
@@ -238,12 +238,12 @@ namespace procedural_terrain_generation_1_test
 				}
 
 				AlgorithmHelper::PrintGrid( grid_terrain, terrain_type_evaluator );
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
 
-			std::cout << r2tm::linefeed;
+			LF();
 			std::cout << "> Next Step";
 			_getch();
 			
@@ -275,7 +275,7 @@ namespace procedural_terrain_generation_1_test
 				}
 
 				AlgorithmHelper::PrintGrid( grid_terrain, terrain_type_evaluator );
-				std::cout << r2tm::linefeed;
+				LF();
 
 				_getch();
 			}

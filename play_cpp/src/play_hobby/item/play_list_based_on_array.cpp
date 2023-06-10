@@ -187,7 +187,7 @@ namespace play_list_based_on_array
 				EXPECT_NE( end_itr.mTargetNode->pPrev, nullptr );
 				EXPECT_NE( end_itr.mTargetNode->pNext, nullptr );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( end_itr.mTargetNode->pPrev, end_itr.mTargetNode );
 				EXPECT_EQ( end_itr.mTargetNode->pNext, end_itr.mTargetNode );
@@ -505,17 +505,17 @@ namespace play_list_based_on_array
 				EXPECT_EQ( list.GetRestNodeCount(), 3 );
 				EXPECT_EQ( list.Size(), 2 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( *return_itr, 33 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( *( --return_itr ), 11 );
 				EXPECT_TRUE( ( --return_itr ) == list.end() );
 				EXPECT_EQ( *( --return_itr ), 33 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( ( ++copied_itr ) == list.end() );
 				EXPECT_EQ( *( ++copied_itr ), 11 );
@@ -579,7 +579,7 @@ namespace play_list_based_on_array
 				EXPECT_NE( list.rend().mTargetNode->pNext, nullptr );
 				EXPECT_EQ( list.rend().mTargetNode, list.end().mTargetNode );
 
-				std::cout << r2tm::linefeed;
+				LF();
 				
 				EXPECT_EQ( *list.rbegin(), 33 );
 				EXPECT_EQ( *( ++list.rbegin() ), 22 );
@@ -587,12 +587,12 @@ namespace play_list_based_on_array
 				EXPECT_TRUE( ( ++( ++( ++list.rbegin() ) ) ) == list.rend() );
 				EXPECT_TRUE( ( ++( ++( ++( ++list.rbegin() ) ) ) ) == list.rbegin() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( ( --list.rbegin() ) == list.rend() );
 				EXPECT_EQ( *( --( --list.rbegin() ) ), 11 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( *( ++list.rend() ), 33 );
 				EXPECT_EQ( *( --list.rend() ), 11 );

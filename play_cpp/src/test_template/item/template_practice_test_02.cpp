@@ -35,7 +35,7 @@ namespace template_practice_test_02
 			{
 				OUTPUT_NOTE( "정상적인 인자 설정으로 함수 호출 시도" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( f.Call<void>( "F1_A0" ) );
 				PROCESS_MAIN( f.Call<void>( "F5_A3", 100, 200, 300 ) );
@@ -46,7 +46,7 @@ namespace template_practice_test_02
 			{
 				OUTPUT_NOTE( "잘못된 인자 설정으로 함수 호출 시도" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( f.Call<void>( "F5_A3", 100, 200, 300, 400 ) );
 				PROCESS_MAIN( f.Call<void>( "F5_A3" ) );

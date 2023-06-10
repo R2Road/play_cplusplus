@@ -70,7 +70,7 @@ namespace std_function_2_test
 					std::cout << r2tm::tab3 << "- Is Not Null" << r2tm::linefeed;
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab2 << "nullptr == fn_2" << r2tm::linefeed;
 				if( nullptr == fn_2 )

@@ -119,7 +119,7 @@ namespace std_memory_align_test
 				PROCESS_MAIN( presult = nullptr );
 				PrintResult( pb, presult, space );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( presult = std::align( alignof( char ), sizeof( char ), pb, space ) );
 				PrintResult( pb, presult, space );
@@ -134,7 +134,7 @@ namespace std_memory_align_test
 				PROCESS_MAIN( presult = nullptr );
 				PrintResult( pb, presult, space );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( presult = std::align( alignof( int ), sizeof( char ), pb, space ) );
 				PrintResult( pb, presult, space );
@@ -149,7 +149,7 @@ namespace std_memory_align_test
 				PROCESS_MAIN( presult = nullptr );
 				PrintResult( pb, presult, space );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( presult = std::align( alignof( double ), sizeof( char ), pb, space ) );
 				PrintResult( pb, presult, space );
@@ -184,12 +184,12 @@ namespace std_memory_align_test
 			DECLARATION_MAIN( char buffer[] = "---------" );
 			DECLARATION_MAIN( void* pt = buffer );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( std::size_t space = sizeof( buffer ) - 1u );
 			std::cout << r2tm::tab << "> \\0 Á¦¿Ü" << r2tm::linefeed;
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( void* presult = nullptr );
 
@@ -223,7 +223,7 @@ namespace std_memory_align_test
 
 					std::cout << r2tm::tab2 << "- edit : " << buffer << r2tm::linefeed;
 					std::cout << r2tm::tab2 << "- new adress of pt : " << pt << r2tm::linefeed;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 
 			}

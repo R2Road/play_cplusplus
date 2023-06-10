@@ -111,7 +111,7 @@ namespace std_bitset_test
 				PROCESS_MAIN( b.set( 2, true ) );
 				OUTPUT_VALUE( b.to_string() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( b = 0 );
 				OUTPUT_VALUE( b.to_string() );
@@ -209,7 +209,7 @@ namespace std_bitset_test
 			{
 				OUTPUT_NOTE( "bit 연산이 안되는 큰 단점." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( 0b10101 & b.to_ulong() );
 				EXPECT_FALSE( 0b01010 & b.to_ulong() );

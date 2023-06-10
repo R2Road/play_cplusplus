@@ -42,24 +42,24 @@ namespace console_window_test
 				OUTPUT_VALUE( console_screen_buffer_info.dwCursorPosition.X );
 				OUTPUT_VALUE( console_screen_buffer_info.dwCursorPosition.Y );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( console_screen_buffer_info.dwMaximumWindowSize.X );
 				OUTPUT_VALUE( console_screen_buffer_info.dwMaximumWindowSize.Y );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( console_screen_buffer_info.dwSize.X );
 				OUTPUT_VALUE( console_screen_buffer_info.dwSize.Y );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( console_screen_buffer_info.srWindow.Left );
 				OUTPUT_VALUE( console_screen_buffer_info.srWindow.Top );
 				OUTPUT_VALUE( console_screen_buffer_info.srWindow.Right );
 				OUTPUT_VALUE( console_screen_buffer_info.srWindow.Bottom );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( console_screen_buffer_info.wAttributes );
 			}
@@ -101,7 +101,7 @@ namespace console_window_test
 				DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
 				DECLARATION_MAIN( CONSOLE_SCREEN_BUFFER_INFO csbi );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( GetConsoleScreenBufferInfo( hStdout, &csbi ) );
 				DECLARATION_MAIN( const auto width = static_cast<int>( csbi.srWindow.Right - csbi.srWindow.Left + 1 ) );
@@ -272,7 +272,7 @@ namespace console_window_test
 
 				PROCESS_MAIN( MoveWindow( hWnd, posx, posy, window_width, window_height, TRUE ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				RECT current_window_rect;
 				GetWindowRect( hWnd, &current_window_rect );
@@ -326,7 +326,7 @@ namespace console_window_test
 			DECLARATION_MAIN( char last_window_name_string[MAX_PATH] );
 			PROCESS_MAIN( GetConsoleTitleA( last_window_name_string, MAX_PATH ) );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			OUTPUT_VALUE( last_window_name_string );
 
@@ -380,7 +380,7 @@ namespace console_window_test
 
 				PROCESS_MAIN( last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_BINARY( last_window_style );
 			}
@@ -394,7 +394,7 @@ namespace console_window_test
 				PROCESS_MAIN( new_window_style &= ~( WS_BORDER | WS_CAPTION | WS_THICKFRAME ) );
 				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_BINARY( new_window_style );
 			}
@@ -504,7 +504,7 @@ namespace console_window_test
 				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style ) );
 				OUTPUT_BINARY( new_window_style );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ 아래 코드를 쓴 경우들이 있어서 남겨둔다. 상황에 따라 갱신에 사용되는 것 같다." << r2tm::linefeed2;
 

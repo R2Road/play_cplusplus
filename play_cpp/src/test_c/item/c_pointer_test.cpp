@@ -22,11 +22,11 @@ namespace c_pointer_test
 				DECLARATION_MAIN( const int i = 123 );
 				DECLARATION_MAIN( const int* ip = &i );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( &i, ip );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ adress" << r2tm::linefeed;
 				OUTPUT_VALUE( &i );
@@ -62,18 +62,18 @@ namespace c_pointer_test
 				OUTPUT_NOTE( "adress of ip" );
 				OUTPUT_VALUE( ip );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "adress of ip + 1" );
 				OUTPUT_VALUE( ip + 1 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "offset : ( ip + 1 ) ~ ip" );
 				OUTPUT_VALUE( ip + 1 );
 				OUTPUT_VALUE( ( ( ip + 1 ) - ip ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "offset : ( ip + 2 ) ~ ip" );
 				OUTPUT_VALUE( ip + 2 );
@@ -86,7 +86,7 @@ namespace c_pointer_test
 				OUTPUT_NOTE( "offset : ( char* )( ip + 2 ) ~ ( char* )ip" );
 				OUTPUT_VALUE( ( (char*)( ip + 2 ) ) - ( (char*)ip ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "포인터간 연산은 Type의 영향을 받는다." );
 			}
@@ -175,7 +175,7 @@ namespace c_pointer_test
 				int temp_int_1 = 0;
 				int temp_int_2 = 0;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ const int* temp_const_pointer = &temp_int_1;" << r2tm::linefeed << r2tm::linefeed;
 				const int* temp_const_pointer = &temp_int_1;
@@ -206,12 +206,12 @@ namespace c_pointer_test
 				std::cout << r2tm::tab << "const int temp_const_int_1 = 0;" << r2tm::linefeed;
 				//const int temp_const_int_1 = 0;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "OK : const int* temp_pointer_const = &temp_const_int_1;" << r2tm::linefeed;
 				//const int* temp_pointer_const = &temp_const_int_1;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "Error : int* const temp_pointer_const = &temp_const_int_1;" << r2tm::linefeed;
 				//int* const temp_pointer_const = &temp_const_int_1;
@@ -252,7 +252,7 @@ namespace c_pointer_test
 			{
 				DECLARATION_MAIN( const char* other_empty_string = "" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( empty_string, other_empty_string );
 				OUTPUT_VALUE( (void*)empty_string );
@@ -264,14 +264,14 @@ namespace c_pointer_test
 			{
 				OUTPUT_NOTE( "같은 내용의 정적 문자열들은 주소가 같다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const char* space_x1_string_1 = " " );
 				DECLARATION_MAIN( const char* space_x1_string_2 = " " );
 				DECLARATION_MAIN( const char* space_x2_string_1 = "  " );
 				DECLARATION_MAIN( const char* space_x2_string_2 = "  " );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( (void*)space_x1_string_1 );
 				OUTPUT_VALUE( (void*)space_x1_string_2 );

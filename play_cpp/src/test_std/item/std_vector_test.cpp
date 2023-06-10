@@ -158,7 +158,7 @@ namespace std_vector_test
 			OUTPUT_VALUE( container.capacity() );
 			OUTPUT_VALUE( container.data() );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 
@@ -170,7 +170,7 @@ namespace std_vector_test
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 			}
@@ -183,11 +183,11 @@ namespace std_vector_test
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "clear 는 최종적으로 Allocator에 Destory 요청하지만 메모리를 해제하는 것은 아니다." );
 			}
@@ -225,21 +225,21 @@ namespace std_vector_test
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( container.reserve( 2u ) );
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( container.reserve( 4u ) );
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "capacity 가 증가하면 메모리는 재할당 된다." );
 			}
@@ -280,7 +280,7 @@ namespace std_vector_test
 			{
 				OUTPUT_CODE( container.resize( 10 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "## Not Compiled : Need Default Constructor" << r2tm::linefeed;
 			}
@@ -318,7 +318,7 @@ namespace std_vector_test
 			{
 				PROCESS_MAIN( container.push_back( 1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container._Myvec.capacity() );
@@ -332,7 +332,7 @@ namespace std_vector_test
 			{
 				PROCESS_MAIN( container.reserve( 33 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container._Myvec.capacity() );
@@ -370,7 +370,7 @@ namespace std_vector_test
 			{
 				OUTPUT_CODE( container_2.erase( container_1.begin() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "## Not Working" << r2tm::linefeed;
 			}
@@ -408,7 +408,7 @@ namespace std_vector_test
 				DECLARATION_MAIN( auto cur = container_1.end() );
 				OUTPUT_VALUE( ( *cur ) );
 #endif
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2tm::linefeed;
 			}
@@ -425,7 +425,7 @@ namespace std_vector_test
 
 				OUTPUT_VALUE( ( *cur ) );
 #endif
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2tm::linefeed;
 			}
@@ -468,13 +468,13 @@ namespace std_vector_test
 				OUTPUT_VALUE( v_1.data() );
 				OUTPUT_VALUE( v_2.data() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( v_1 = std::move( v_2 ) );
 				OUTPUT_VALUE( v_1 );
 				OUTPUT_VALUE( v_2 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( v_1.data() );
 				OUTPUT_VALUE( v_2.data() );

@@ -30,7 +30,7 @@ namespace template_meta_programming_test
 				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::size" << r2tm::linefeed;
 				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::size << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::c" << r2tm::linefeed;
 				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::c << r2tm::linefeed;

@@ -37,7 +37,7 @@ namespace windows_terminal_flickering_research
 				{
 					if( visible_resource.GetWidth() <= current_x )
 					{
-						std::cout << r2tm::linefeed;
+						LF();
 						current_x = 0;
 					}
 
@@ -97,7 +97,7 @@ namespace windows_terminal_flickering_research
 				{
 					if( visible_resource.GetWidth() <= current_x )
 					{
-						std::cout << r2tm::linefeed;
+						LF();
 						current_x = 0;
 					}
 

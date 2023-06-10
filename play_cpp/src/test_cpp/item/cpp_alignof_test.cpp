@@ -167,27 +167,27 @@ namespace cpp_alignof_test
 				OUTPUT_VALUE( alignof( EmptyStruct ) );
 				OUTPUT_VALUE( sizeof( EmptyStruct ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( alignof( IntFloatCharStruct ) );
 				OUTPUT_VALUE( sizeof( IntFloatCharStruct ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( alignof( CharCharCharStruct ) );
 				OUTPUT_VALUE( sizeof( CharCharCharStruct ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( alignof( CharDoubleStruct ) );
 				OUTPUT_VALUE( sizeof( CharDoubleStruct ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( alignof( CharBoolStruct ) );
 				OUTPUT_VALUE( sizeof( CharBoolStruct ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( alignof( CharIntDoubleStruct ) );
 				OUTPUT_VALUE( sizeof( CharIntDoubleStruct ) );

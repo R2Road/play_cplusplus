@@ -213,7 +213,7 @@ namespace cpp_class_private_inheritance_test
 				OUTPUT_VALUE( sizeof( cpp_class_private_inheritance_test_helper_ienum::iEnum ) );
 				OUTPUT_VALUE( sizeof( cpp_class_private_inheritance_test_helper_ienum::T ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_ienum::T t );
 				OUTPUT_VALUE( t.Do() );

@@ -24,7 +24,7 @@ namespace std_numeric_test
 
 			{
 				std::cout << "# Sum" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::vector<int> v{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
@@ -32,11 +32,11 @@ namespace std_numeric_test
 
 				std::cout << r2tm::tab << "+ Variable" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "std::vector<int> v{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "const int sum = std::accumulate( v.begin(), v.end(), 0 );" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ Result" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << sum << r2tm::linefeed;
@@ -46,7 +46,7 @@ namespace std_numeric_test
 
 			{
 				std::cout << "# Minus" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::vector<int> v{ 5, 10, 25 };
 
@@ -54,11 +54,11 @@ namespace std_numeric_test
 
 				std::cout << r2tm::tab << "+ Variable" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "std::vector<int> v{ 5, 10, 25 };" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "const int product = std::accumulate( v.begin(), v.end(), 100, std::minus<int>() );" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ Result" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << result << r2tm::linefeed;
@@ -68,7 +68,7 @@ namespace std_numeric_test
 
 			{
 				std::cout << "# Multiply" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::vector<int> v{ 2, 10, 4 };
 
@@ -76,11 +76,11 @@ namespace std_numeric_test
 
 				std::cout << r2tm::tab << "+ Variable" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "std::vector<int> v{ 2, 10, 4 };" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "const int product = std::accumulate( v.begin(), v.end(), 2, std::multiplies<int>() );" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ Result" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << result << r2tm::linefeed;
@@ -122,7 +122,7 @@ namespace std_numeric_test
 			std::cout << r2tm::tab2 << "{" << r2tm::linefeed;
 			std::cout << r2tm::tab3 << "return std::move( a ) + '-' + std::to_string( b );" << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "};" << r2tm::linefeed;
-			std::cout << r2tm::linefeed;
+			LF();
 
 			LS();
 
@@ -139,7 +139,7 @@ namespace std_numeric_test
 				std::cout << r2tm::tab3 << ", std::to_string( v[0] )" << r2tm::linefeed;
 				std::cout << r2tm::tab3 << ", modifier" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << ");" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ Result" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << s << r2tm::linefeed;
@@ -160,7 +160,7 @@ namespace std_numeric_test
 				std::cout << r2tm::tab3 << ", , std::to_string( v.back() )" << r2tm::linefeed;
 				std::cout << r2tm::tab3 << ", modifier" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << ");" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ Result" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << rs << r2tm::linefeed;
@@ -196,11 +196,11 @@ namespace std_numeric_test
 
 				std::cout << r2tm::tab << "+ Variable" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "std::vector<int> v{ 1, 2, 3, 4, 5 };" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "std::partial_sum( v.begin(), v.end(), v.begin(), std::plus<int>() );" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ Result" << r2tm::linefeed;
 				std::cout << r2tm::tab2;
@@ -208,7 +208,7 @@ namespace std_numeric_test
 				{
 					std::cout << i << r2tm::tab;
 				}
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -220,7 +220,7 @@ namespace std_numeric_test
 
 				std::cout << r2tm::tab << "+ Variable" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "std::vector<int> v{ 1, 2, 3, 4, 5 };" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 
 				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed;
@@ -229,7 +229,7 @@ namespace std_numeric_test
 				std::cout << r2tm::tab3 << ", std::ostream_iterator<int>( std::cout, \"-\" )" << r2tm::linefeed;
 				std::cout << r2tm::tab3 << ", std::multiplies<int>()" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << ");" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 
 				std::cout << r2tm::tab << "+ Result" << r2tm::linefeed;
@@ -241,7 +241,7 @@ namespace std_numeric_test
 					, std::multiplies<int>()
 				);
 
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();

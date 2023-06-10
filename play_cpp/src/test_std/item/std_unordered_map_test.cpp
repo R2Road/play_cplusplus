@@ -28,7 +28,7 @@ namespace std_unordered_map_test
 
 			DECLARATION_MAIN( UM4CStringT container );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			{
 				PROCESS_MAIN( container.insert( std::make_pair( CStringNSize{ "1", 1 }, 123 ) ) );
@@ -36,7 +36,7 @@ namespace std_unordered_map_test
 				PROCESS_MAIN( container.insert( std::make_pair( CStringNSize{ "3", 1 }, 345 ) ) );
 				PROCESS_MAIN( container.insert( std::make_pair( CStringNSize{ "4", 1 }, 456 ) ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				for( const auto& i : container )
 				{

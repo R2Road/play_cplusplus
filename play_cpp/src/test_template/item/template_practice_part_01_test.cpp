@@ -43,7 +43,7 @@ namespace template_practice_part_01_test
 					std::cout << c;
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -90,22 +90,22 @@ namespace template_practice_part_01_test
 			{
 				std::cout << r2tm::tab << "+ FindMax( 1, 2, 30, 4, 5, 60, 7 )" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "Result : " << FindMax( 1, 2, 30, 4, 5, 60, 7 );
-				std::cout << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
+				LF();
 
 				std::cout << r2tm::tab << "+ FindMax( 1, 2, 30 )" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "Result : " << FindMax( 1, 2, 30 );
-				std::cout << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
+				LF();
 
 				std::cout << r2tm::tab << "+ FindMax( 1, 2 )" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "Result : " << FindMax( 1, 2 );
-				std::cout << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
+				LF();
 
 				std::cout << r2tm::tab << "+ FindMax( 1 )" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "Result : " << FindMax( 1 );
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -113,12 +113,12 @@ namespace template_practice_part_01_test
 			{
 				std::cout << r2tm::tab << "+ std::max( { 1, 2, 30, 4, 5, 60, 7 } )" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "Result : " << std::max( { 1, 2, 30, 4, 5, 60, 7 } );
-				std::cout << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
+				LF();
 
 				std::cout << r2tm::tab << "std::max( { 1, 2, 30 } )" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "Result : " << std::max( { 1, 2, 30 } );
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();

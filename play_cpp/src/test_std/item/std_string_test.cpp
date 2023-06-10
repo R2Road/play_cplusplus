@@ -40,7 +40,7 @@ namespace std_string_test
 				DECLARATION_MAIN( const std::string string_2( " " ) );
 				EXPECT_EQ( string_1, string_2 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( (void*)string_1.c_str() );
 				OUTPUT_VALUE( (void*)string_2.c_str() );
@@ -74,23 +74,23 @@ namespace std_string_test
 			{
 				OUTPUT_NOTE( "move : X" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( std::string s_1( "123456789012345" ) );
 				DECLARATION_MAIN( std::string s_2( "234567890123456" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( (void*)s_1.c_str() );
 				OUTPUT_VALUE( (void*)s_2.c_str() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( s_1 = std::move( s_2 ) );
 				OUTPUT_VALUE( s_1 );
 				OUTPUT_VALUE( s_2 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( (void*)s_1.c_str() );
 				OUTPUT_VALUE( (void*)s_2.c_str() );
@@ -101,23 +101,23 @@ namespace std_string_test
 			{
 				OUTPUT_NOTE( "move : O" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( std::string s_1( "1234567890123456" ) );
 				DECLARATION_MAIN( std::string s_2( "2345678901234567" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( (void*)s_1.c_str() );
 				OUTPUT_VALUE( (void*)s_2.c_str() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( s_1 = std::move( s_2 ) );
 				OUTPUT_VALUE( s_1 );
 				OUTPUT_VALUE( s_2 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( (void*)s_1.c_str() );
 				OUTPUT_VALUE( (void*)s_2.c_str() );
@@ -147,7 +147,7 @@ namespace std_string_test
 			DECLARATION_MAIN( const std::string key_string = "\n" );
 			OUTPUT_VALUE( key_string.size() );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( const std::string orig_string = "\n\n012345\n6789abcd\n\nefghij\nklmnopqrstu\n\n\nvwxyz\n" );
 			OUTPUT_VALUE( orig_string.size() );
@@ -199,7 +199,7 @@ namespace std_string_test
 
 		OUTPUT_VALUE( str.size() );
 
-		std::cout << r2tm::linefeed;
+		LF();
 
 		std::size_t pivot_pos = 0u;
 		std::size_t find_pos = 0u;
@@ -216,7 +216,7 @@ namespace std_string_test
 			{
 				std::cout << r2tm::tab << i << "[" << pivot_pos << " ~ " << str.size() - 1u << "]" << " > ";
 				std::cout << ( &str[pivot_pos] );
-				std::cout << r2tm::linefeed;
+				LF();
 
 				// find_pos 가 npos 라면 pivot_pos 의 정상 갱신이 불가능 하다.
 				// break 로 여기서 loop를 끝내준다.
@@ -230,7 +230,7 @@ namespace std_string_test
 			{
 				std::cout << r2tm::tab << i << "[" << pivot_pos << " ~ " << find_pos << "]" << " > ";
 				std::cout << "\\n";
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			//
@@ -242,7 +242,7 @@ namespace std_string_test
 
 				std::cout << r2tm::tab << i << "[" << pivot_pos << " ~ " << find_pos << "]" << " > ";
 				std::cout.write( &str[pivot_pos], find_pos - pivot_pos + 1 );
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			pivot_pos = find_pos + key_string.size();
@@ -371,27 +371,27 @@ namespace std_string_test
 			{
 				OUTPUT_VALUE( CalculateLineCount( "" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( CalculateLineCount( " " ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( CalculateLineCount( "\n" " " ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( CalculateLineCount( " " "\n" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( CalculateLineCount( "\n" " " "\n" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( CalculateLineCount( "\n" "\n" "ab" "\n" "cd" "\n" "\n" "ef" "\n" "gh" "\n" "\n" "\n" "ijk" "\n" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( CalculateLineCount( "\n" "\n" "ab" "\n" "cd" "\n" "\n" "ef" "\n" "gh" "\n" "\n" "\n" "i" ) );
 			}

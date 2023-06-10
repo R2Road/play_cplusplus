@@ -24,12 +24,12 @@ namespace cpp_new_test
 			{
 				DECLARATION_MAIN( int* i = new int );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( *i );
 				OUTPUT_BINARY( *i );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( delete i );
 			}
@@ -40,12 +40,12 @@ namespace cpp_new_test
 				DECLARATION_MAIN( int* i = new int( 1 ) );
 				EXPECT_EQ( 1, *i );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( *i );
 				OUTPUT_BINARY( *i );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( delete i );
 			}
@@ -56,12 +56,12 @@ namespace cpp_new_test
 				DECLARATION_MAIN( int* i = new ( std::nothrow ) int( 2 ) );
 				EXPECT_EQ( 2, *i );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( *i );
 				OUTPUT_BINARY( *i );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( delete i );
 			}
@@ -92,7 +92,7 @@ namespace cpp_new_test
 				OUTPUT_VALUE( *i );
 				OUTPUT_VALUE( i[1] );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( delete[] i );
 			}
@@ -109,12 +109,12 @@ namespace cpp_new_test
 				EXPECT_EQ( 0, i[3] );
 				EXPECT_EQ( 0, i[4] );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( i[3] );
 				OUTPUT_VALUE( i[4] );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( delete[] i );
 			}
@@ -125,7 +125,7 @@ namespace cpp_new_test
 				DECLARATION_MAIN( char* str = new char[7] );
 				OUTPUT_VALUE( str );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( delete[] str );
 			}
@@ -138,11 +138,11 @@ namespace cpp_new_test
 				EXPECT_EQ( 0, str[3] );
 				EXPECT_EQ( '\0', str[3] );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( str[4], str[3] );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( delete[] str );
 			}
@@ -174,7 +174,7 @@ namespace cpp_new_test
 
 				OUTPUT_VALUE( *fp );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( *fp = 3.14f );
 				OUTPUT_VALUE( *fp );
@@ -187,7 +187,7 @@ namespace cpp_new_test
 				OUTPUT_VALUE( i );
 				OUTPUT_BINARY( i );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( char* cp = new ( &i ) char );
 				OUTPUT_VALUE( *cp );

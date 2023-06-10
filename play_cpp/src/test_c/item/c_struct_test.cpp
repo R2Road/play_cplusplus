@@ -93,31 +93,31 @@ namespace c_struct_test
 #pragma pack( push, 1 )
 				OUTPUT_NOTE( "#pragma pack( push, 1 )" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( struct C { char c; }; );
 				OUTPUT_VALUE( sizeof( C ) );
 				OUTPUT_BINARY( C() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( struct I { int i; }; );
 				OUTPUT_VALUE( sizeof( I ) );
 				OUTPUT_BINARY( I() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( struct C_C { char c; char c2; }; );
 				OUTPUT_VALUE( sizeof( C_C ) );
 				OUTPUT_BINARY( C_C() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( struct C_I { char c; int i; }; );
 				OUTPUT_VALUE( sizeof( C_I ) );
 				OUTPUT_BINARY( C_I() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( struct LL_I_C { long long ll; int i; char c; }; );
 				OUTPUT_VALUE( sizeof( LL_I_C ) );
@@ -131,31 +131,31 @@ namespace c_struct_test
 #pragma pack( push, 4 )
 				OUTPUT_NOTE( "#pragma pack( push, 4 )" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( struct C { char c; }; );
 				OUTPUT_VALUE( sizeof( C ) );
 				OUTPUT_BINARY( C() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( struct I { int i; }; );
 				OUTPUT_VALUE( sizeof( I ) );
 				OUTPUT_BINARY( I() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( struct C_C { char c; char c2; }; );
 				OUTPUT_VALUE( sizeof( C_C ) );
 				OUTPUT_BINARY( C_C() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( struct C_I { char c; int i; }; );
 				OUTPUT_VALUE( sizeof( C_I ) );
 				OUTPUT_BINARY( C_I() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( struct LL_I_C { long long ll; int i; char c; }; );
 				OUTPUT_VALUE( sizeof( LL_I_C ) );
@@ -189,7 +189,7 @@ namespace c_struct_test
 #pragma warning( disable : 4200 )
 				DECLARATION_MAIN( struct Case_1 { int i; int arr[0]; } );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "struct 안에 길이가 0 인 배열이 선언된다." );
 				OUTPUT_NOTE( "warning 4200 : ( 비표준 확장이 사용됨: 구조체/공용 구조체의 배열 크기가 0입니다. )" );
@@ -203,7 +203,7 @@ namespace c_struct_test
 #pragma warning( disable : 4200 )
 				DECLARATION_MAIN( struct Case_2 { int i; int arr[]; } );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "struct 안에 길이가 지정되지 않은 배열이 선언된다." );
 				OUTPUT_NOTE( "warning 4200 : ( 비표준 확장이 사용됨: 구조체/공용 구조체의 배열 크기가 0입니다. )" );
@@ -215,7 +215,7 @@ namespace c_struct_test
 			{
 				DECLARATION_MAIN( struct Case_2 { int i; int arr[1]; } );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "안전하게 길이를 1 로 지정하자" );
 			}
@@ -225,13 +225,13 @@ namespace c_struct_test
 			{
 				OUTPUT_NOTE( "활용 예" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 #pragma warning( push )
 #pragma warning( disable : 4200 )
 				DECLARATION_MAIN( struct Dummy { int i; int arr[0]; } );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( Dummy* dp = ( Dummy* )malloc( sizeof( Dummy ) + ( sizeof( int ) * 4 ) ) );
 				PROCESS_MAIN( dp->arr[0] = 1 );
@@ -239,14 +239,14 @@ namespace c_struct_test
 				PROCESS_MAIN( dp->arr[2] = 3 );
 				PROCESS_MAIN( dp->arr[3] = 4 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( dp->arr[0] );
 				OUTPUT_VALUE( dp->arr[1] );
 				OUTPUT_VALUE( dp->arr[2] );
 				OUTPUT_VALUE( dp->arr[3] );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( free( dp ) );
 #pragma warning( pop )

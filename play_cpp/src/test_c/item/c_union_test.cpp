@@ -26,7 +26,7 @@ namespace c_union_test
 			{
 				DECLARATION_MAIN( union { int32_t a; int64_t b; } u );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( &u.a );
 				OUTPUT_VALUE( &u.b );
@@ -200,7 +200,7 @@ namespace c_union_test
 			{
 				DECLARATION_MAIN( c_union_test_helper_unnamedunion_with_struct::TestStruct s );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( &s.b );
 				OUTPUT_VALUE( &s.i );
@@ -241,11 +241,11 @@ namespace c_union_test
 			{
 				DECLARATION_MAIN( c_union_test_helper_unnamedunion_with_vector3::Vector3 v );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( sizeof( v ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( &v.r[0], &v.x );
 				EXPECT_EQ( &v.r[1], &v.y );
@@ -284,17 +284,17 @@ namespace c_union_test
 			{
 				DECLARATION_MAIN( c_union_test_helper_unnamedunion_with_vector3_2::Vector3 v );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( sizeof( v ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( &v.r[0], &v.x );
 				EXPECT_EQ( &v.r[1], &v.y );
 				EXPECT_EQ( &v.r[2], &v.z );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( &v.r[0] );
 				OUTPUT_VALUE( &v.r[1] );
@@ -337,13 +337,13 @@ namespace c_union_test
 			{
 				DECLARATION_MAIN( float* f = (float*)&v );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( &f[0], &v.x );
 				EXPECT_EQ( &f[1], &v.y );
 				EXPECT_EQ( &f[2], &v.z );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( &f[0] );
 				OUTPUT_VALUE( &f[1] );

@@ -28,7 +28,7 @@ namespace play_serialize
 				DECLARATION_MAIN( const auto size = sizeof( dummy ) );
 				OUTPUT_VALUE( size );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( uint8_t* up = reinterpret_cast<uint8_t*>( &dummy ) );
 				for( int i = 0; size > i; ++i )
@@ -76,7 +76,7 @@ namespace play_serialize
 				DECLARATION_MAIN( const auto size = sizeof( dummy_1 ) );
 				OUTPUT_VALUE( size );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( std::vector<uint8_t> bytes( size, 0 ) );
 

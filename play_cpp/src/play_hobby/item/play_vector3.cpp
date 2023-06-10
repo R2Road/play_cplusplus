@@ -72,7 +72,7 @@ namespace play_vector3
 			{
 				DECLARATION_MAIN( const r2::Vector3 v1( 1.f, 1.1f, 2.2f ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( v1 );
 			}
@@ -107,7 +107,7 @@ namespace play_vector3
 			{
 				DECLARATION_MAIN( const auto v3 = v1 + v2 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( v3 );
 			}
@@ -139,7 +139,7 @@ namespace play_vector3
 			{
 				PROCESS_MAIN( v1 += v2 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( v1 );
 			}
@@ -173,7 +173,7 @@ namespace play_vector3
 			{
 				DECLARATION_MAIN( const auto v3 = v1 - v2 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( v3 );
 			}
@@ -205,7 +205,7 @@ namespace play_vector3
 			{
 				PROCESS_MAIN( v1 -= v2 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( v1 );
 			}
@@ -239,7 +239,7 @@ namespace play_vector3
 			{
 				DECLARATION_MAIN( const auto v3 = v1 * scalar );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( v3 );
 			}
@@ -271,7 +271,7 @@ namespace play_vector3
 			{
 				PROCESS_MAIN( v1 *= scalar );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( v1 );
 			}

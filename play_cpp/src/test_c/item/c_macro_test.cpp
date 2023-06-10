@@ -32,7 +32,7 @@ namespace c_macro_test
 			{
 				DECLARATION_MAIN( const int test_int = 3456 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( MACRO2STRING( test_int ) );
 			}

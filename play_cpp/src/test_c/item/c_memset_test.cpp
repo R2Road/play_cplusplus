@@ -44,12 +44,12 @@ namespace c_memset_test
 				PROCESS_MAIN( memset( buffer, 255, sizeof( buffer ) ) );
 				OUTPUT_BINARIES( buffer, buffer_size );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( memset( buffer, 258, sizeof( buffer ) ) );
 				OUTPUT_BINARIES( buffer, buffer_size );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "값을 byte 단위로 쓴다." );
 			}

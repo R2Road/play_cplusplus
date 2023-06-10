@@ -190,19 +190,19 @@ namespace windows_terminal_text_color_test
 				info.cbSize = sizeof( CONSOLE_SCREEN_BUFFER_INFOEX );
 				std::cout << r2tm::tab << "CONSOLE_SCREEN_BUFFER_INFOEX info;" << r2tm::linefeed;
 				std::cout << r2tm::tab << "info.cbSize = sizeof( CONSOLE_SCREEN_BUFFER_INFOEX );" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				GetConsoleScreenBufferInfoEx( stdHandle, &info );
 				std::cout << r2tm::tab << "GetConsoleScreenBufferInfoEx( stdHandle, &info );" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				info.ColorTable[1] = RGB( 255, 100, 100 );
 				std::cout << r2tm::tab << "info.ColorTable[1] = RGB( 255, 100, 100 );" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				SetConsoleScreenBufferInfoEx( stdHandle, &info );
 				std::cout << r2tm::tab << "SetConsoleScreenBufferInfoEx( stdHandle, &info );" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -277,36 +277,36 @@ namespace windows_terminal_text_color_test
 				{
 					std::cout << r2tm::tab2;
 					printf( "\x1B[%dm" "Foreground Color" "\033[0m : %d", i, i );
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				for( int i = 90; 97 >= i; ++i )
 				{
 					std::cout << r2tm::tab2;
 					printf( "\x1B[%dm" "Foreground Color" "\033[0m : %d", i, i );
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			{
 				for( int i = 40; 47 >= i; ++i )
 				{
 					std::cout << r2tm::tab2;
 					printf( "\x1B[%dm" "Background Color" "\033[0m : %d", i, i );
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				for( int i = 100; 107 >= i; ++i )
 				{
 					std::cout << r2tm::tab2;
 					printf( "\x1B[%dm" "Background Color" "\033[0m : %d", i, i );
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -345,12 +345,12 @@ namespace windows_terminal_text_color_test
 				std::cout << r2tm::tab2;
 				printf( "\x1B[%d;%dm" "Color" "\033[0m", foreground_color, background_color );
 				printf( ": First - %d, Second - %d", foreground_color, background_color );
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab2;
 				printf( "\x1B[%d;%dm" "Color" "\033[0m", background_color, foreground_color );
 				printf( ": First - %d, Second - %d", background_color, foreground_color );
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -365,12 +365,12 @@ namespace windows_terminal_text_color_test
 				std::cout << r2tm::tab2;
 				printf( "\x1B[%d;%dm" "Color" "\033[0m", background_color_2, background_color_1 );
 				printf( ": First - %d, Second - %d", background_color_2, background_color_1 );
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab2;
 				printf( "\x1B[%d;%dm" "Color" "\033[0m", background_color_1, background_color_2 );
 				printf( ": First - %d, Second - %d", background_color_1, background_color_2 );
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -396,11 +396,11 @@ namespace windows_terminal_text_color_test
 				DECLARATION_MAIN( const short fg_color = 31 );
 				DECLARATION_MAIN( const short bg_color = 44 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << header << fg_color << ";" << bg_color << tail << "Change Color with std::cout" << header << "0" << tail << r2tm::linefeed );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << header << fg_color << tail << header << bg_color << tail << "Change Color with std::cout" << header << "0" << tail << r2tm::linefeed );
 			}

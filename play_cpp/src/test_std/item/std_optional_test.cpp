@@ -133,7 +133,7 @@ namespace std_optional_test
 				std::cout << r2tm::tab3;
 				op_1 = op_2;
 				std::cout << "> Nothing";
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -143,7 +143,7 @@ namespace std_optional_test
 				std::cout << r2tm::tab2 << "op_1 = TestOptional{};" << r2tm::linefeed;
 				std::cout << r2tm::tab3;
 				op_1 = TestOptional{};
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -153,7 +153,7 @@ namespace std_optional_test
 				std::cout << r2tm::tab2 << "op_2 = op_1;" << r2tm::linefeed;
 				std::cout << r2tm::tab3;
 				op_2 = op_1;
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -163,7 +163,7 @@ namespace std_optional_test
 				std::cout << r2tm::tab2 << "std::optional<TestOptional> temp_op = op_1;" << r2tm::linefeed;
 				std::cout << r2tm::tab3;
 				std::optional<TestOptional> temp_op = op_1;
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -173,7 +173,7 @@ namespace std_optional_test
 				std::cout << r2tm::tab2 << "op_1 = GetTestOptional();" << r2tm::linefeed;
 				std::cout << r2tm::tab3;
 				op_1 = GetTestOptional();
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -183,7 +183,7 @@ namespace std_optional_test
 				std::cout << r2tm::tab2 << "std::optional<TestOptional> temp_op = GetTestOptional();" << r2tm::linefeed;
 				std::cout << r2tm::tab3;
 				std::optional<TestOptional> temp_op = GetTestOptional();
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();

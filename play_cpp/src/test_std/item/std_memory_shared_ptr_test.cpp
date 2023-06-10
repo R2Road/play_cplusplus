@@ -39,14 +39,14 @@ namespace std_memory_shared_ptr_test
 			{
 				OUTPUT_NOTE( "const sp 는 [* const] 에 가깝다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( std::shared_ptr<int> sp1( new int( 10 ) ) );
 				DECLARATION_MAIN( const std::shared_ptr<int> sp2 = sp1 );
 				OUTPUT_CODE( sp2 = nullptr );
 				OUTPUT_COMMENT( "지정된 pointer 변경 불가." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( *sp2 = 11 );
 				OUTPUT_VALUE( *sp2 );
@@ -58,12 +58,12 @@ namespace std_memory_shared_ptr_test
 			{
 				OUTPUT_NOTE( "Shared Pointer Has Const Value" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( std::shared_ptr<const int> sp( new int( 10 ) ) );
 				OUTPUT_VALUE( *sp );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_CODE( *sp = 11 );
 				OUTPUT_COMMENT( "Failed : Change Value" );
@@ -74,7 +74,7 @@ namespace std_memory_shared_ptr_test
 			{
 				OUTPUT_NOTE( "Make Shared" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto sp = std::make_shared<int>( 10 ) );
 				OUTPUT_VALUE( sizeof( sp ) );
@@ -147,7 +147,7 @@ namespace std_memory_shared_ptr_test
 				OUTPUT_BINARY( sp.get() );
 				OUTPUT_BINARY( sp );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( sp.reset( new int( 3 ) ) );
 				OUTPUT_BINARY( sp.get() );
@@ -195,12 +195,12 @@ namespace std_memory_shared_ptr_test
 				DECLARATION_MAIN( auto tp_1 = sp );
 				OUTPUT_BINARIES( p, 3 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto tp_2 = sp );
 				OUTPUT_BINARIES( p, 3 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( tp_2.reset() );
 				OUTPUT_BINARIES( p, 3 );
@@ -212,7 +212,7 @@ namespace std_memory_shared_ptr_test
 				DECLARATION_MAIN( std::weak_ptr<int> wp_1 = sp );
 				OUTPUT_BINARIES( p, 3 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( wp_1.reset() );
 				OUTPUT_BINARIES( p, 3 );

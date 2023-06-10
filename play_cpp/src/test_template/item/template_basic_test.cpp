@@ -69,7 +69,7 @@ namespace template_basic_test
 				OUTPUT_CODE( int i = Template_Fn_R_() );
 				std::cout << "\t" "> " "변수에 할당하는 행위는 Template 의 타입 추론에 영향을 주지 못한다." << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( int i = Template_Fn_R_<int>() );
 				( i );

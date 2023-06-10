@@ -25,11 +25,11 @@ namespace std_tuple_test
 				using T = std::tuple<int, std::string, char>;
 				std::cout << "using T = std::tuple<int, std::string, char>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( T t );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( std::get<0>( t ) );
 				OUTPUT_VALUE( std::get<1>( t ) );
@@ -44,11 +44,11 @@ namespace std_tuple_test
 				using T = std::tuple<int, std::string, bool>;
 				std::cout << "using T = std::tuple<int, std::string, bool>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( T t( { 2, "park", true } ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( std::get<0>( t ) );
 				OUTPUT_VALUE( std::get<1>( t ) );
@@ -62,7 +62,7 @@ namespace std_tuple_test
 			{
 				DECLARATION_MAIN( auto t = std::make_tuple( 10, "Kim", 'c' ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( std::get<0>( t ) );
 				OUTPUT_VALUE( std::get<1>( t ) );

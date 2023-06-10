@@ -56,7 +56,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -79,7 +79,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -132,7 +132,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -155,7 +155,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -178,7 +178,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -229,7 +229,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -252,7 +252,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -275,7 +275,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -326,7 +326,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -349,7 +349,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -403,7 +403,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -426,7 +426,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -449,7 +449,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -503,7 +503,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -526,7 +526,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -549,7 +549,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -603,7 +603,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -626,7 +626,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -680,7 +680,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -703,7 +703,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -757,7 +757,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -780,7 +780,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
@@ -803,7 +803,7 @@ namespace performance_container_iteration_test
 					std::cout << r2tm::tab2;
 					stop_watch.PrintElapsedTime_All();
 					std::cout << r2tm::tab2 << "sum_result : " << sum_result;
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 

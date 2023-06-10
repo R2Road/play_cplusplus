@@ -30,11 +30,11 @@ namespace std_cout_test
 				std::cout << r2tm::linefeed2;
 
 				PROCESS_MAIN( std::cout.write( "1234", 6 ) );
-				std::cout << r2tm::linefeed;
+				LF();
 				std::cout << r2tm::tab << "+ 출력할 문자의 숫자가 문자열의 길이를 넘어가도 터지지 않는다." << r2tm::linefeed;
 				std::cout << r2tm::tab << "+ 내부에 예외 처리를 위한 try-catch 구문이 있다." << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -140,7 +140,7 @@ namespace std_cout_test
 
 				PROCESS_MAIN( std::cout << std::showbase );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << std::oct << 10 << r2tm::linefeed );
 				PROCESS_MAIN( std::cout << std::hex << 10 << r2tm::linefeed );
@@ -184,15 +184,15 @@ namespace std_cout_test
 
 				PROCESS_MAIN( std::cout << std::showpos );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << 10 << r2tm::linefeed );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << std::noshowpos );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << 10 << r2tm::linefeed );
 			}
@@ -205,7 +205,7 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << std::showbase );
 				PROCESS_MAIN( std::cout << std::uppercase );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << std::hex << 10 << r2tm::linefeed );
 
@@ -213,7 +213,7 @@ namespace std_cout_test
 
 				PROCESS_MAIN( std::cout << std::nouppercase );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << std::hex << 10 << r2tm::linefeed );
 			}
@@ -255,7 +255,7 @@ namespace std_cout_test
 
 				PROCESS_MAIN( std::cout << std::showpoint );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << 10.f << r2tm::linefeed );
 				PROCESS_MAIN( std::cout << 11.2f << r2tm::linefeed );
@@ -266,7 +266,7 @@ namespace std_cout_test
 
 				PROCESS_MAIN( std::cout << std::noshowpoint );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << 10.f << r2tm::linefeed );
 				PROCESS_MAIN( std::cout << 11.2f << r2tm::linefeed );
@@ -279,7 +279,7 @@ namespace std_cout_test
 
 				PROCESS_MAIN( std::cout << std::setprecision( 10 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << 1110.f << r2tm::linefeed );
 				PROCESS_MAIN( std::cout << 123.45f << r2tm::linefeed );
@@ -290,7 +290,7 @@ namespace std_cout_test
 
 				PROCESS_MAIN( std::cout << std::setprecision( 5 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << 1110.f << r2tm::linefeed );
 				PROCESS_MAIN( std::cout << 123.45f << r2tm::linefeed );
@@ -336,7 +336,7 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << std::fixed );
 				PROCESS_MAIN( std::cout << std::setprecision( 4 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << 10.f << r2tm::linefeed );
 				PROCESS_MAIN( std::cout << 11.2f << r2tm::linefeed );
@@ -347,7 +347,7 @@ namespace std_cout_test
 
 				PROCESS_MAIN( std::cout << std::defaultfloat );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << 10.f << r2tm::linefeed );
 				PROCESS_MAIN( std::cout << 11.2f << r2tm::linefeed );
@@ -451,7 +451,7 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << std::setiosflags( std::ios::fixed ) );
 				PROCESS_MAIN( std::cout << std::setprecision( 4 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << 10.f << r2tm::linefeed );
 				PROCESS_MAIN( std::cout << 11.2f << r2tm::linefeed );
@@ -462,7 +462,7 @@ namespace std_cout_test
 
 				PROCESS_MAIN( std::cout << std::resetiosflags( std::ios::fixed ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << 10.f << r2tm::linefeed );
 				PROCESS_MAIN( std::cout << 11.2f << r2tm::linefeed );

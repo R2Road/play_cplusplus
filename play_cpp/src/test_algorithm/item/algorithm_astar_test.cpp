@@ -23,7 +23,7 @@ namespace
 			if( grid.GetWidth() <= x )
 			{
 				x = 0;
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			if( 0 == i )
@@ -109,7 +109,7 @@ namespace algorithm_astar_test
 
 			ShowGrid( WORLD_MAP );
 
-			std::cout << r2tm::linefeed;
+			LF();
 			LS();
 
 			r2tm::StopWatch stop_watch;
@@ -131,7 +131,7 @@ namespace algorithm_astar_test
 
 			r2tm::WindowUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
-			std::cout << r2tm::linefeed;
+			LF();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -154,7 +154,7 @@ namespace algorithm_astar_test
 
 			ShowGrid( WORLD_MAP );
 
-			std::cout << r2tm::linefeed;
+			LF();
 			LS();
 
 			r2tm::StopWatch stop_watch;
@@ -176,7 +176,7 @@ namespace algorithm_astar_test
 
 			r2tm::WindowUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
-			std::cout << r2tm::linefeed;
+			LF();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -199,7 +199,7 @@ namespace algorithm_astar_test
 
 			ShowGrid( WORLD_MAP );
 
-			std::cout << r2tm::linefeed;
+			LF();
 			LS();
 
 			r2tm::StopWatch stop_watch;
@@ -222,7 +222,7 @@ namespace algorithm_astar_test
 
 			r2tm::WindowUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
-			std::cout << r2tm::linefeed;
+			LF();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -245,7 +245,7 @@ namespace algorithm_astar_test
 
 			ShowGrid( WORLD_MAP );
 
-			std::cout << r2tm::linefeed;
+			LF();
 			LS();
 
 			r2tm::StopWatch stop_watch;
@@ -293,7 +293,7 @@ namespace algorithm_astar_test
 
 			ShowGrid( WORLD_MAP );
 
-			std::cout << r2tm::linefeed;
+			LF();
 			LS();
 
 			r2tm::StopWatch stop_watch;
@@ -318,7 +318,7 @@ namespace algorithm_astar_test
 
 			r2tm::WindowUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
-			std::cout << r2tm::linefeed;
+			LF();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -341,7 +341,7 @@ namespace algorithm_astar_test
 
 			ShowGrid( WORLD_MAP );
 
-			std::cout << r2tm::linefeed;
+			LF();
 			LS();
 
 			r2tm::StopWatch stop_watch;
@@ -366,7 +366,7 @@ namespace algorithm_astar_test
 
 			r2tm::WindowUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
-			std::cout << r2tm::linefeed;
+			LF();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -389,7 +389,7 @@ namespace algorithm_astar_test
 
 			ShowGrid( WORLD_MAP );
 
-			std::cout << r2tm::linefeed;
+			LF();
 			LS();
 
 			r2tm::StopWatch stop_watch;
@@ -414,7 +414,7 @@ namespace algorithm_astar_test
 
 			r2tm::WindowUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
-			std::cout << r2tm::linefeed;
+			LF();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -462,7 +462,7 @@ namespace algorithm_astar_test
 				// Show Time
 				//
 				stop_watch.PrintMinAndMaxTime();
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -488,7 +488,7 @@ namespace algorithm_astar_test
 				// Show Time
 				//
 				stop_watch.PrintMinAndMaxTime();
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -515,7 +515,7 @@ namespace algorithm_astar_test
 				// Show Time
 				//
 				stop_watch.PrintMinAndMaxTime();
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -542,7 +542,7 @@ namespace algorithm_astar_test
 				// Show Time
 				//
 				stop_watch.PrintMinAndMaxTime();
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -572,7 +572,7 @@ namespace algorithm_astar_test
 				// Show Time
 				//
 				stop_watch.PrintMinAndMaxTime();
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -602,7 +602,7 @@ namespace algorithm_astar_test
 				// Show Time
 				//
 				stop_watch.PrintMinAndMaxTime();
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -632,7 +632,7 @@ namespace algorithm_astar_test
 				// Show Time
 				//
 				stop_watch.PrintMinAndMaxTime();
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();

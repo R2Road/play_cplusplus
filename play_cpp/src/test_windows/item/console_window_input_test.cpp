@@ -47,7 +47,7 @@ namespace console_window_input_test
 				std::cout << r2tm::tab << "+ Backup Console Mode" << r2tm::linefeed2;
 				std::cout << r2tm::tab2 << "GetConsoleMode( hStdInputHandle, &last_console_mode )" << r2tm::linefeed2;
 				
-				std::cout << r2tm::linefeed;
+				LF();
 				ShowCurrentConsoleMode();
 			}
 
@@ -65,7 +65,7 @@ namespace console_window_input_test
 				std::cout << r2tm::tab2 << "SetConsoleMode( hStdInputHandle, new_console_mode )" << r2tm::linefeed;
 				std::cout << r2tm::tab3 << "> " << new_console_mode << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 				ShowCurrentConsoleMode();
 			}
 
@@ -150,7 +150,7 @@ namespace console_window_input_test
 				//
 				SetConsoleMode( hStdInputHandle, last_console_mode );
 				
-				std::cout << r2tm::linefeed;
+				LF();
 				ShowCurrentConsoleMode();
 			}
 

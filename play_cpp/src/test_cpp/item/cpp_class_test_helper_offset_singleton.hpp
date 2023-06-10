@@ -16,12 +16,12 @@ public:
 
 		OUTPUT_VALUE( this );
 
-		std::cout << r2tm::linefeed;
+		LF();
 
 		OUTPUT_VALUE( int64_t( (T*)1 ) );
 		OUTPUT_VALUE( int64_t( ( ST<T>* )( T* )1 ) );
 
-		std::cout << r2tm::linefeed;
+		LF();
 
 		DECLARATION_MAIN( auto offset = int64_t( (T*)1 ) - int64_t( ( ST<T>* )( T* )1 ) );
 		OUTPUT_VALUE( this + offset );

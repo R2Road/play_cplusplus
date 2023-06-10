@@ -27,7 +27,7 @@ namespace etc_test
 
 				DECLARATION_MAIN( const int num = 0b10110010101 ); // binary
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab;
 				for( int i = 31; 0 <= i; --i )
@@ -37,7 +37,7 @@ namespace etc_test
 
 					std::cout << temp_2;
 				}
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -48,7 +48,7 @@ namespace etc_test
 				DECLARATION_MAIN( const int num = 0b0011001 ); // binary
 				DECLARATION_MAIN( std::bitset<16u> b( num ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( b );
 			}
@@ -122,7 +122,7 @@ namespace etc_test
 			{
 				OUTPUT_NOTE( "1. Create a Tool That Helps You Understand Object LifeTime" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( LifeTime lt = f3() );
 			}
@@ -132,15 +132,15 @@ namespace etc_test
 			{
 				OUTPUT_NOTE( "2. Study The Lambda!!" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( LifeTime lt = f3() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto l = [ lt = std::move( lt ) ]() {} );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto l2 = l );
 			}
@@ -307,12 +307,12 @@ namespace etc_test
 			{
 				OUTPUT_NOTE( "자기 참조" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto a = std::make_shared<A>() );
 				PROCESS_MAIN( a->self = a );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "{} 를 벗어날 때 shared_ptr a 의 소멸자가 불린다." );
 				OUTPUT_NOTE( "ref count 가 2 라서 보유한 메모리에 delete 를 호출하지 않고 ref count 만 감소 시켜 1로 만든다." );
@@ -324,21 +324,21 @@ namespace etc_test
 			{
 				OUTPUT_NOTE( "상호 참조" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto a = std::make_shared<A>() );
 				DECLARATION_MAIN( auto b = std::make_shared<A>() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( a->self = b );
 				PROCESS_MAIN( b->self = a );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "상호 참조가 되어 형태는 바뀌었지만 내용은 똑같다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "{} 를 벗어날 때 shared_ptr a 의 소멸자가 불린다." );
 				OUTPUT_NOTE( "ref count 가 2 라서 보유한 메모리에 delete 를 호출하지 않고 ref count 만 감소 시켜 1로 만든다." );
@@ -350,23 +350,23 @@ namespace etc_test
 			{
 				OUTPUT_NOTE( "순환 참조" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto a = std::make_shared<A>() );
 				DECLARATION_MAIN( auto b = std::make_shared<A>() );
 				DECLARATION_MAIN( auto c = std::make_shared<A>() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( a->self = b );
 				PROCESS_MAIN( b->self = c );
 				PROCESS_MAIN( c->self = a );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "순환 참조가 되어 형태는 바뀌었지만 내용은 똑같다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "{} 를 벗어날 때 shared_ptr a 의 소멸자가 불린다." );
 				OUTPUT_NOTE( "ref count 가 2 라서 보유한 메모리에 delete 를 호출하지 않고 ref count 만 감소 시켜 1로 만든다." );

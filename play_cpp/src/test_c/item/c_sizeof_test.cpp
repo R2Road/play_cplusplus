@@ -50,12 +50,12 @@ namespace c_sizeof_test
 			{
 				DECLARATION_MAIN( const char buffer[10] = { 0 } );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const char* cb = buffer );
 				OUTPUT_VALUE( sizeof( cb ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "sizeof 에 pointer 를 넣으면 pointer 자체의 크기를 반환한다." );
 			}
@@ -66,7 +66,7 @@ namespace c_sizeof_test
 				DECLARATION_MAIN( struct Dummy {} dummy; );
 				OUTPUT_VALUE( sizeof( dummy ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "sizeof 의 반환값은 최소 1 이다.." );
 			}

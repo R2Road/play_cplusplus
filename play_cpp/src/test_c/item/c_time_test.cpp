@@ -33,11 +33,11 @@ namespace c_time_test
 			{
 				DECLARATION_MAIN( time_t tt );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( time( &tt ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( tt );
 			}
@@ -116,12 +116,12 @@ namespace c_time_test
 				DECLARATION_MAIN( char str[128] );
 				DECLARATION_MAIN( time_t tt );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( time( &tt ) );
 				PROCESS_MAIN( ctime_s( str, sizeof( str ), &tt ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 				
 				OUTPUT_VALUE( str );
 			}
@@ -133,13 +133,13 @@ namespace c_time_test
 				DECLARATION_MAIN( time_t tt );
 				DECLARATION_MAIN( struct tm time_infos );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( time( &tt ) );
 				PROCESS_MAIN( localtime_s( &time_infos, &tt ) );
 				PROCESS_MAIN( asctime_s( str, sizeof( str ), &time_infos ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( str );
 			}

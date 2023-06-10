@@ -10,7 +10,7 @@ namespace cpp_lambda_test__helper__size_3
 
 			OUTPUT_BINARY( this );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			auto l = [this, j = 255ll]() { ( this->i ); };
 			OUTPUT_VALUE( sizeof( l ) );

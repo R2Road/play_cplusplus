@@ -41,11 +41,11 @@ namespace cpp_class_test
 			{
 				PROCESS_MAIN( s.Func() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( s.S::Func() );
 				
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto f = &S::Func );
 				PROCESS_MAIN( ( s.*f )( ) );
@@ -83,7 +83,7 @@ namespace cpp_class_test
 			{
 				OUTPUT_VALUE( tc.b );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( tc.TC::b );
 			}
@@ -127,7 +127,7 @@ namespace cpp_class_test
 				std::cout << r2tm::tab2 << "}" << r2tm::linefeed;
 
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 
 				TestClass1 t1{ 1, 2 };
@@ -172,7 +172,7 @@ namespace cpp_class_test
 				std::cout << r2tm::tab2 << "class TestClass1 {};" << r2tm::linefeed;
 
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( typeid( TestClass1 ).name() );
 			}
@@ -182,7 +182,7 @@ namespace cpp_class_test
 			{
 				DECLARATION_MAIN( TestClass1 test_class );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( typeid( test_class ).name() );
 			}
@@ -197,7 +197,7 @@ namespace cpp_class_test
 				std::cout << r2tm::tab2 << "}" << r2tm::linefeed;
 
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( typeid( TestClass2 ).name() );
 			}
@@ -212,7 +212,7 @@ namespace cpp_class_test
 				std::cout << r2tm::tab2 << "...In this space" << r2tm::linefeed;
 
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( typeid( TestClass3 ).name() );
 			}
@@ -264,7 +264,7 @@ namespace cpp_class_test
 					DECLARATION_MAIN( TestClass1 tc1 );
 					DECLARATION_MAIN( int i = tc1 );
 
-					std::cout << r2tm::linefeed;
+					LF();
 
 					OUTPUT_VALUE( i );
 				}
@@ -296,7 +296,7 @@ namespace cpp_class_test
 
 			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_member_adress.hpp" );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( using TC = cpp_class_test_helper_member_adress::TestClass );
 			DECLARATION_MAIN( TC tc );
@@ -339,7 +339,7 @@ namespace cpp_class_test
 
 			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_member_adress.hpp" );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( using TC = cpp_class_test_helper_member_adress::TestClass );
 			DECLARATION_MAIN( TC tc );
@@ -366,7 +366,7 @@ namespace cpp_class_test
 				DECLARATION_MAIN( auto f1_void = (void*&)f1_ptr );
 				OUTPUT_VALUE( f1_void );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( void ( TC::*f2_ptr )( ) = &TC::Func2 );
 				DECLARATION_MAIN( auto f2_void = (void*&)f2_ptr );
@@ -399,17 +399,17 @@ namespace cpp_class_test
 				DECLARATION_MAIN( class B : public A {} );
 				DECLARATION_MAIN( class C : public B {} );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto pC = (C*)1 );
 				OUTPUT_VALUE( pC );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto pA = (A*)pC );
 				OUTPUT_VALUE( pA );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto pB = (B*)pC );
 				OUTPUT_VALUE( pB );
@@ -442,17 +442,17 @@ namespace cpp_class_test
 				OUTPUT_CODE( ( class C : public A, public B {}; ) );
 				class C : public A, public B {};
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto pC = (C*)1 );
 				OUTPUT_VALUE( pC );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto pA = (A*)pC );
 				OUTPUT_VALUE( pA );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto pB = (B*)pC );
 				OUTPUT_VALUE( pB );
@@ -466,36 +466,36 @@ namespace cpp_class_test
 				OUTPUT_CODE( ( class D : public A, public B, public C {}; ) );
 				class D : public A, public B, public C {};
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto pD = (D*)1 );
 				OUTPUT_VALUE( pD );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto pA = (A*)pD );
 				OUTPUT_VALUE( pA );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto pB = (B*)pD );
 				OUTPUT_VALUE( pB );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto pC = (C*)pD );
 				OUTPUT_VALUE( pC );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( dynamic_cast<C*>( pD ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto offset = reinterpret_cast<int64_t>( pD ) - reinterpret_cast<int64_t>( pC ) );
 				OUTPUT_VALUE( offset );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto pCastWithOffset = reinterpret_cast<D*>( pC + offset ) );
 				OUTPUT_VALUE( pCastWithOffset );
@@ -556,7 +556,7 @@ namespace cpp_class_test
 			{
 				OUTPUT_NOTE( "type 의 최소 크기 : 1 byte" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( class C1 {} );
 				OUTPUT_VALUE( sizeof( C1 ) );
@@ -568,7 +568,7 @@ namespace cpp_class_test
 			{
 				OUTPUT_NOTE( "member 변수의 크기" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( class C1 { int a; } );
 				OUTPUT_VALUE( sizeof( C1 ) );
@@ -580,7 +580,7 @@ namespace cpp_class_test
 			{
 				OUTPUT_NOTE( "공백 class 최적화" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( class C1 {} );
 				DECLARATION_MAIN( class C2 : public C1 { int a; } );
@@ -593,7 +593,7 @@ namespace cpp_class_test
 			{
 				OUTPUT_NOTE( "각 member 변수의 크기의 총합" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( class C1 { int i; } );
 				DECLARATION_MAIN( class C2 : public C1 { int a; } );
@@ -606,7 +606,7 @@ namespace cpp_class_test
 			{
 				OUTPUT_NOTE( "virtual table의 크기" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( class C1 { public: virtual ~C1() {} } );
 				DECLARATION_MAIN( class C2 : public C1 {} );
@@ -619,7 +619,7 @@ namespace cpp_class_test
 			{
 				OUTPUT_NOTE( "virtual table 의 영향으로 결정된 byte 정렬" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( class C1 { public: virtual ~C1(){} } );
 				DECLARATION_MAIN( class C2 : public C1 { int a = -1; } );
@@ -636,7 +636,7 @@ namespace cpp_class_test
 				OUTPUT_VALUE( sizeof( C1 ) );
 				OUTPUT_BINARY( C2() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( C1 c1 );
 				OUTPUT_VALUE( &c1 );

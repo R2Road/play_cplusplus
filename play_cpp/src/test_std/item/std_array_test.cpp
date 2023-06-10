@@ -71,7 +71,7 @@ namespace std_array_test
 				{
 					std::cout << i << r2tm::tab;
 				}
-				std::cout << r2tm::linefeed;
+				LF();
 			};
 
 			LS();
@@ -148,7 +148,7 @@ namespace std_array_test
 				{
 					std::cout << i << r2tm::tab;
 				}
-				std::cout << r2tm::linefeed;
+				LF();
 			};
 
 			LS();
@@ -165,12 +165,12 @@ namespace std_array_test
 				DECLARATION_MAIN( TestArrayT array_1 );
 				PROCESS_MAIN( array_1.fill( 2 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( TestArrayT array_2 );
 				printer( array_2 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( array_2 = array_1 );
 				printer( array_2 );

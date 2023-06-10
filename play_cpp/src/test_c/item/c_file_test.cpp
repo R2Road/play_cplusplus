@@ -24,7 +24,7 @@ namespace c_file_test
 				DECLARATION_MAIN( FILE* fp = nullptr );
 				EXPECT_EQ( 0, fopen_s( &fp, "resources/c_file_test_openandclose_1.txt", "rb" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( fclose( fp ) );
 
@@ -70,7 +70,7 @@ namespace c_file_test
 
 			{
 				PROCESS_MAIN( while( !feof( fp ) ) printf( "%c", fgetc( fp ) ) );
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -107,7 +107,7 @@ namespace c_file_test
 				DECLARATION_MAIN( char temp[256] );
 				PROCESS_MAIN( while( !feof( fp ) ) { fgets( temp, sizeof( temp ), fp ); printf( "%s", temp ); } );
 
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();

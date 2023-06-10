@@ -52,7 +52,7 @@ namespace c_printf_test
 			{
 				OUTPUT_NOTE( "8 : oct : %%o" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( printf( "\t> " "%o" "\n", num ) );
 			}
@@ -62,7 +62,7 @@ namespace c_printf_test
 			{
 				OUTPUT_NOTE( "10 : dec : %%d" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( printf( "\t> " "%d" "\n", num ) );
 			}
@@ -72,7 +72,7 @@ namespace c_printf_test
 			{
 				OUTPUT_NOTE( "16 : hex : %%x" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( printf( "\t> " "%x" "\n", num ) );
 			}

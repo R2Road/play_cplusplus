@@ -48,12 +48,12 @@ namespace std_list_test
 				DECLARATION_MAIN( auto itr = ( ++l.begin() ) );
 				OUTPUT_VALUE( ( *itr ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto result_itr = l.insert( itr, 4 ) );
 				OUTPUT_VALUE( result_itr );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( l );
 			}
@@ -87,19 +87,19 @@ namespace std_list_test
 			{
 				OUTPUT_NOTE( "splice는 list의 node를 메모리 할당 없이 통째로 옮긴다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto target_itr = container_1.begin() );
 				OUTPUT_VALUE( ( *target_itr ) );
 				OUTPUT_VALUE( &( *target_itr ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( container_2.splice( container_2.begin(), container_1, target_itr ) );
 				std::cout << r2tm::tab << "- container_1 : " << container_1 << r2tm::linefeed;
 				std::cout << r2tm::tab << "- container_2 : " << container_2 << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( &( *container_2.begin() ) );
 			}
@@ -109,23 +109,23 @@ namespace std_list_test
 			{
 				OUTPUT_NOTE( "이동을 지정한 iterator 의 앞에 삽입된다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto target_itr = std::find( container_1.begin(), container_1.end(), 3 ) );
 				OUTPUT_VALUE( ( *target_itr ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( container_2.splice( container_2.begin(), container_1, target_itr ) );
 				std::cout << r2tm::tab << "- container_1 : " << container_1 << r2tm::linefeed;
 				std::cout << r2tm::tab << "- container_2 : " << container_2 << r2tm::linefeed;
 			
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( target_itr = std::find( container_1.begin(), container_1.end(), 2 ) );
 				OUTPUT_VALUE( ( *target_itr ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( container_2.splice( container_2.end(), container_1, target_itr ) );
 				std::cout << r2tm::tab << "- container_1 : " << container_1 << r2tm::linefeed;
@@ -137,7 +137,7 @@ namespace std_list_test
 			{
 				OUTPUT_CODE( container_2.splice( container_2.end(), container_1, container_1.end() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "end() iterator 를 이동하려 들면 터진다." );
 				OUTPUT_NOTE( "Debug Mode Not Working, Release Mode Working" );
@@ -172,12 +172,12 @@ namespace std_list_test
 			{
 				OUTPUT_NOTE( "Splice : target ~ end" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto target_itr = std::find( container_1.begin(), container_1.end(), 4 ) );
 				OUTPUT_VALUE( ( *target_itr ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( container_2.splice( container_2.begin(), container_1, target_itr, container_1.end() ) );
 				std::cout << r2tm::tab << "- container_1 : " << container_1 << r2tm::linefeed;
@@ -189,7 +189,7 @@ namespace std_list_test
 			{
 				OUTPUT_NOTE( "Splice : target ~ next" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto target_itr = std::find( container_1.begin(), container_1.end(), 1 ) );
 				DECLARATION_MAIN( auto next_itr = target_itr );
@@ -197,7 +197,7 @@ namespace std_list_test
 				OUTPUT_VALUE( ( *target_itr ) );
 				OUTPUT_VALUE( ( *next_itr ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( container_2.splice( container_2.begin(), container_1, target_itr, next_itr ) );
 				std::cout << r2tm::tab << "- container_1 : " << container_1 << r2tm::linefeed;
@@ -239,11 +239,11 @@ namespace std_list_test
 				DECLARATION_MAIN( auto target = ( ++l.begin() ) );
 				OUTPUT_VALUE( target );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( target = l.erase( target ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 3, *target );
 				OUTPUT_VALUE( l );
@@ -254,7 +254,7 @@ namespace std_list_test
 			{
 				OUTPUT_NOTE( "end() iterator 의 삭제는 시도하지 말자." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_CODE( l.erase( l.end() ) );
 			}
@@ -291,13 +291,13 @@ namespace std_list_test
 #else
 				PROCESS_MAIN( container_2.erase( container_1.begin() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "- container_1 : " << container_1 << r2tm::linefeed;
 				std::cout << r2tm::tab << "- container_2 : " << container_2 << r2tm::linefeed;
 #endif
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "남의 iterator 라도 삭제 처리는 된다." );
 				OUTPUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
@@ -337,7 +337,7 @@ namespace std_list_test
 				DECLARATION_MAIN( auto v = *cur );
 				OUTPUT_VALUE( v );
 #endif
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "end() iterator의 값을 사용 할 수 있다." );
 				OUTPUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
@@ -354,7 +354,7 @@ namespace std_list_test
 				PROCESS_MAIN( ++cur );
 				OUTPUT_VALUE( *cur );
 #endif
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "++end() 는 begin() 이다." );
 				OUTPUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
@@ -367,7 +367,7 @@ namespace std_list_test
 				PROCESS_MAIN( --cur );
 				OUTPUT_VALUE( *cur );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "--end() 는 작동한다." );
 			}
@@ -385,7 +385,7 @@ namespace std_list_test
 				EXPECT_EQ( container_2.end(), ( --itr ) );
 #endif
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_NOTE( "빈 컨테이너의 --end() 는 end() 이다." );
 				OUTPUT_NOTE( "빈 컨테이너는 Debug 모드에서 Container Size 검사에 실패한다." );

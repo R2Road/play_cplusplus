@@ -69,7 +69,7 @@ namespace std_thread_test
 				std::cout << r2tm::tab3 << "- ID : " << t2.get_id() << r2tm::linefeed;
 				std::cout << r2tm::tab3 << "- Joinable : " << ( t2.joinable() ? "O" : "X" ) << r2tm::linefeed2;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ Wait 4 Thread End" << r2tm::linefeed2;
 				std::cout << r2tm::tab2 << "t1.join();" << r2tm::linefeed;
@@ -278,7 +278,7 @@ namespace std_thread_test
 				std::cout << r2tm::tab3 << "}" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << ");" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::thread test_thread( []()
 					{
@@ -326,7 +326,7 @@ namespace std_thread_test
 				std::cout << r2tm::tab3 << "}" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "}" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				auto thread_process = []()
 				{
@@ -348,7 +348,7 @@ namespace std_thread_test
 				test_thread_4.join();
 
 
-				std::cout << r2tm::linefeed;
+				LF();
 				std::cout << r2tm::tab2 << "Note : 양보 받을 놈이 없으면 아무 소용 없다." << r2tm::linefeed;
 			}
 
@@ -389,7 +389,7 @@ namespace std_thread_test
 				PROCESS_MAIN( std::this_thread::sleep_for( std::chrono::milliseconds( -100 ) ) );
 				PROCESS_MAIN( stop_watch.Stop() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				stop_watch.PrintElapsedTime_All();
 			}

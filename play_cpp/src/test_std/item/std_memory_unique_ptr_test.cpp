@@ -27,7 +27,7 @@ namespace std_memory_unique_ptr_test
 				DECLARATION_MAIN( std::unique_ptr<int> up( new int( 3 ) ) );
 				OUTPUT_VALUE( *up );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_NE( nullptr, up );
 				PROCESS_MAIN( up.reset() );
@@ -39,13 +39,13 @@ namespace std_memory_unique_ptr_test
 			{
 				DECLARATION_MAIN( std::unique_ptr<int> up1( new int( 3 ) ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_CODE( auto up2 = test_up );
 				OUTPUT_CODE( auto up3( test_up ) );
 				OUTPUT_COMMENT( "복사, 대입 불가" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto up4 = std::move( up1 ) );
 				EXPECT_EQ( nullptr, up1 );
@@ -58,12 +58,12 @@ namespace std_memory_unique_ptr_test
 			{
 				OUTPUT_NOTE( "release() 는 보유한 포인터를 반환하고 자신을 초기화 한다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto up1( std::make_unique<int>( 3 ) ) );
 				DECLARATION_MAIN( std::unique_ptr<int> up2( up1.release() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( nullptr, up1 );
 				EXPECT_NE( nullptr, up2 );
@@ -176,12 +176,12 @@ namespace std_memory_unique_ptr_test
 				using U = std::unique_ptr<int, Deleter>;
 				std::cout << "using U = std::unique_ptr<int, Deleter>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( U up( new int( 3 ) ) );
 				OUTPUT_VALUE( *up );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( up.reset() );
 			}
@@ -215,7 +215,7 @@ namespace std_memory_unique_ptr_test
 				DECLARATION_MAIN( std_memory_unique_ptr_test_helper_template_deleter::U<int> up( new int( 3 ) ) );
 				OUTPUT_VALUE( *up );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( up.reset() );
 			}

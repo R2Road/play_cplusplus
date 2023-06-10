@@ -24,7 +24,7 @@ namespace enum_test
 			{
 				DECLARATION_MAIN( enum eTestOldEnum {} );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( std::is_enum<eTestOldEnum>::value );
 				OUTPUT_VALUE( typeid( std::underlying_type<eTestOldEnum>::type ).name() );
@@ -35,7 +35,7 @@ namespace enum_test
 			{
 				DECLARATION_MAIN( enum class eTestNewEnum {} );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( std::is_enum<eTestNewEnum>::value );
 				OUTPUT_VALUE( typeid( std::underlying_type<eTestNewEnum>::type ).name() );
@@ -46,7 +46,7 @@ namespace enum_test
 			{
 				DECLARATION_MAIN( enum class eTestNewEnum : char {} );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( std::is_enum<eTestNewEnum>::value );
 				OUTPUT_VALUE( typeid( std::underlying_type<eTestNewEnum>::type ).name() );
@@ -76,7 +76,7 @@ namespace enum_test
 			{
 				DECLARATION_MAIN( enum class eTestEnum : uint32_t { one = 1 } );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const eTestEnum te_1 = static_cast<eTestEnum>( 0 ) );
 				DECLARATION_MAIN( eTestEnum te_2 );
@@ -274,7 +274,7 @@ namespace enum_test
 				std::cout << r2tm::tab2 << "X( XM1_Third )," << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "X( XM1_Max )," << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "enum eTestEnum4XM1" << r2tm::linefeed;
 				std::cout << r2tm::tab << "{" << r2tm::linefeed;
@@ -283,7 +283,7 @@ namespace enum_test
 				std::cout << r2tm::tab << "#undef X" << r2tm::linefeed;
 				std::cout << r2tm::tab << "};" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "const char* STR_TestEnum4XM1[] = {" << r2tm::linefeed;
 				std::cout << r2tm::tab << "#define X( e ) #e" << r2tm::linefeed;
@@ -349,7 +349,7 @@ namespace enum_test
 			{
 				OUTPUT_FILE( "src/test_cpp/item/enum_test_xmacro_2.def" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "enum eTestEnum4XM2" << r2tm::linefeed;
 				std::cout << r2tm::tab << "{" << r2tm::linefeed;
@@ -358,7 +358,7 @@ namespace enum_test
 				std::cout << r2tm::tab << "#undef X" << r2tm::linefeed;
 				std::cout << r2tm::tab << "};" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "const char* STR_TestEnum4MX[] = {" << r2tm::linefeed;
 				std::cout << r2tm::tab << "#define X( e ) #e" << r2tm::linefeed;

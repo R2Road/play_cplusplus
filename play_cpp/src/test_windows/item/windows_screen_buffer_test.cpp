@@ -107,7 +107,7 @@ namespace windows_screen_buffer_test
 
 				WriteConsoleA( hStdout, str, static_cast<DWORD>( strlen( str ) ), nullptr, nullptr ); // 64bit size_t == typedef unsigned __int64 size_t; 
 
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -260,7 +260,7 @@ namespace windows_screen_buffer_test
 				buffer[110] = '\0';
 				PROCESS_MAIN( std::cout << buffer );
 
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -271,7 +271,7 @@ namespace windows_screen_buffer_test
 				buffer[110] = '\0';
 				PROCESS_MAIN( std::cout << buffer );
 
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -280,7 +280,7 @@ namespace windows_screen_buffer_test
 				DECLARATION_MAIN( char buffer[111] = "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한" );
 				PROCESS_MAIN( std::cout << buffer );
 
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();

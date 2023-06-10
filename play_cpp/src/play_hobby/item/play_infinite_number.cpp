@@ -72,7 +72,7 @@ namespace play_infinite_number
 				DECLARATION_MAIN( InfiniteNumber infinite_number );
 				PROCESS_MAIN( infinite_number = 1999 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE(infinite_number.Get() );
 			}
@@ -117,7 +117,7 @@ namespace play_infinite_number
 				unsigned int j = i % 10;
 				OUTPUT_VALUE( j );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_BINARY( i );
 				OUTPUT_BINARY( j );

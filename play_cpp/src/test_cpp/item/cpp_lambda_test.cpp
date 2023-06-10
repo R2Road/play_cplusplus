@@ -73,7 +73,7 @@ namespace cpp_lambda_test
 				DECLARATION_MAIN( int i = 888 );
 				DECLARATION_MAIN( auto l = [i]() { printf( "i : %d", i ); } );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( l() );
 			}
@@ -84,7 +84,7 @@ namespace cpp_lambda_test
 				OUTPUT_NOTE( "Captures Default to Const Value" );
 				OUTPUT_NOTE( "https://www.learncpp.com/cpp-tutorial/lambda-captures/" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				//int i = 0;
 				//auto lambda_1 = [i]()
@@ -122,7 +122,7 @@ namespace cpp_lambda_test
 
 				std::cout << r2tm::tab2 << "> ";
 				lambda_1();
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -162,7 +162,7 @@ namespace cpp_lambda_test
 				std::cout << r2tm::tab2 << "{" << r2tm::linefeed;
 				std::cout << r2tm::tab3 << "++i;" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "};" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ Call Lambda" << r2tm::linefeed;
 				lambda_1();
@@ -211,7 +211,7 @@ namespace cpp_lambda_test
 
 				std::cout << r2tm::tab2 << "- Call Lambda" << r2tm::linefeed;
 				test_func();
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab2 << "- Print : i" << r2tm::linefeed;
 				std::cout << r2tm::tab3 << i << r2tm::linefeed;
@@ -237,7 +237,7 @@ namespace cpp_lambda_test
 
 				std::cout << r2tm::tab2 << "- Call Lambda" << r2tm::linefeed;
 				test_func();
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab2 << "- Print : i" << r2tm::linefeed;
 				std::cout << r2tm::tab3 << i << r2tm::linefeed;
@@ -275,7 +275,7 @@ namespace cpp_lambda_test
 				auto test_func = [moved_up = std::move( test_up )]() {};
 				std::cout << r2tm::tab2 << "auto test_func = [moved_up = std::move( test_up )]() {}" << r2tm::linefeed;
 				std::cout << r2tm::tab3 << "test_up Validation : " << ( nullptr != test_up.get() ? "O" : "X" ) << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -335,7 +335,7 @@ namespace cpp_lambda_test
 				std::cout << r2tm::tab2 << "{" << r2tm::linefeed;
 				std::cout << r2tm::tab3 << "std::cout << i << r2tm::linefeed;" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "};" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ Call Lambda" << r2tm::linefeed;
 				lambda_1();
@@ -355,7 +355,7 @@ namespace cpp_lambda_test
 				std::cout << r2tm::tab2 << "{" << r2tm::linefeed;
 				std::cout << r2tm::tab3 << "std::cout << i << r2tm::linefeed;" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "};" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -374,12 +374,12 @@ namespace cpp_lambda_test
 				std::cout << r2tm::tab2 << "{" << r2tm::linefeed;
 				std::cout << r2tm::tab3 << "std::cout << i2 << r2tm::linefeed;" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "};" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ Call Lambda" << r2tm::linefeed;
 				lambda_1();
 				std::cout << r2tm::tab2 << "i : " << i << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				i = 777;
 				std::cout << r2tm::tab2 << "i = 777;" << r2tm::linefeed2;
@@ -465,7 +465,7 @@ namespace cpp_lambda_test
 				DECLARATION_MAIN( auto l = [=]() {} );
 				OUTPUT_VALUE( sizeof( l ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( l() );
 			}
@@ -480,7 +480,7 @@ namespace cpp_lambda_test
 				OUTPUT_VALUE( sizeof( l ) );
 				OUTPUT_BINARY( l );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( l() );
 			}
@@ -490,7 +490,7 @@ namespace cpp_lambda_test
 			{
 				OUTPUT_NOTE( "capture 했지만 사용하지 않은 변수들은 제거되는 모양이다. 스팩? 최적화?" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( int64_t i = 1 );
 				DECLARATION_MAIN( int64_t j = 255 );
@@ -498,7 +498,7 @@ namespace cpp_lambda_test
 				OUTPUT_VALUE( sizeof( l ) );
 				OUTPUT_BINARY( l );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( l() );
 			}
@@ -535,7 +535,7 @@ namespace cpp_lambda_test
 				DECLARATION_MAIN( auto l = [&]() {} );
 				OUTPUT_VALUE( sizeof( l ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( l() );
 			}
@@ -550,7 +550,7 @@ namespace cpp_lambda_test
 				OUTPUT_VALUE( sizeof( l ) );
 				OUTPUT_BINARY( l );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( l() );
 			}
@@ -560,7 +560,7 @@ namespace cpp_lambda_test
 			{
 				OUTPUT_NOTE( "capture 했지만 사용하지 않은 변수들은 제거되는 모양이다. 스팩? 최적화?" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( S s1 );
 				DECLARATION_MAIN( S s2 );
@@ -568,7 +568,7 @@ namespace cpp_lambda_test
 				OUTPUT_VALUE( sizeof( l ) );
 				OUTPUT_BINARY( l );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( l() );
 			}
@@ -598,11 +598,11 @@ namespace cpp_lambda_test
 				OUTPUT_NOTE( "this capture는 익명 class 안에 this를 담는 멤버 변수가 하나 추가된다." );
 				OUTPUT_NOTE( "람다 안에서 사용한 this는 capture 한 this로 여겨진다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_FILE( "src/test_cpp/item/cpp_lambda_test__helper__size_3.hpp" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( cpp_lambda_test__helper__size_3::S s );
 				PROCESS_MAIN( s.Do() );
@@ -613,7 +613,7 @@ namespace cpp_lambda_test
 			{
 				OUTPUT_NOTE( "람다 안에서 자신의 this pointer를 목표로한 this 사용이 안된다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_CODE( int i = 0 );
 				OUTPUT_CODE( auto l = [=]() { std::cout << this->i << r2tm::linefeed; } );

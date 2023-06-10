@@ -172,7 +172,7 @@ namespace various_debug_test
 				DECLARATION_MAIN( int a = 1 );
 				DECLARATION_MAIN( int b = 2 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( R2ASSERT( a > b, "What The Fuck" ) );
 

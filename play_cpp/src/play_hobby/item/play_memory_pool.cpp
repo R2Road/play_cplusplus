@@ -74,7 +74,7 @@ namespace play_memory_pool
 			std::cout << static_cast<int>( buffer[i] );
 		}
 
-		std::cout << r2tm::linefeed;
+		LF();
 	}
 
 
@@ -96,13 +96,13 @@ namespace play_memory_pool
 			DECLARATION_MAIN( const uint32_t memory_block_size = 64u );
 			DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			{
 				EXPECT_EQ( memory_block_size, memory_block.size );
 				OUTPUT_VALUE( memory_block.size );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( memory_block.pb, memory_block.buffer );
 				OUTPUT_VALUE( memory_block.pb );
@@ -139,13 +139,13 @@ namespace play_memory_pool
 			DECLARATION_MAIN( const uint32_t memory_block_size = 64u );
 			DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			{
 				EXPECT_EQ( memory_block_size, memory_block.size );
 				OUTPUT_VALUE( memory_block.size );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( memory_block.pb, memory_block.buffer );
 				OUTPUT_VALUE( memory_block.pb );
@@ -157,7 +157,7 @@ namespace play_memory_pool
 				DECLARATION_MAIN( auto temp = memory_block.New<long long>() );
 				PROCESS_MAIN( memset( temp, 1, sizeof( long long ) ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PrintBuffer( memory_block.buffer, memory_block.size );
 			}
@@ -168,7 +168,7 @@ namespace play_memory_pool
 				DECLARATION_MAIN( auto temp = memory_block.New<long>() );
 				PROCESS_MAIN( memset( temp, 2, sizeof( long ) ) );
 			
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PrintBuffer( memory_block.buffer, memory_block.size );
 			}
@@ -184,7 +184,7 @@ namespace play_memory_pool
 				DECLARATION_MAIN( auto temp = memory_block.New<char>() );
 				PROCESS_MAIN( memset( temp, 4, sizeof( char ) ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PrintBuffer( memory_block.buffer, memory_block.size );
 			}
@@ -194,7 +194,7 @@ namespace play_memory_pool
 				DECLARATION_MAIN( auto temp = memory_block.New<int>() );
 				PROCESS_MAIN( memset( temp, 5, sizeof( int ) ) );
 			
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PrintBuffer( memory_block.buffer, memory_block.size );
 			}
@@ -224,7 +224,7 @@ namespace play_memory_pool
 			DECLARATION_MAIN( const uint32_t memory_block_size = 16u );
 			DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			{
 				EXPECT_EQ( memory_block_size, memory_block.size );
@@ -238,12 +238,12 @@ namespace play_memory_pool
 				PROCESS_MAIN( memset( temp, 1, sizeof( long long ) ) );
 				OUTPUT_BINARY( *temp );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( *temp = std::numeric_limits<long long>::max() );
 				OUTPUT_BINARY( *temp );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_BINARIES( memory_block.buffer, memory_block.size );
 			}
@@ -255,12 +255,12 @@ namespace play_memory_pool
 				PROCESS_MAIN( memset( temp, 1, sizeof( int ) ) );
 				OUTPUT_BINARY( *temp );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( *temp = std::numeric_limits<int>::max() );
 				OUTPUT_BINARY( *temp );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_BINARIES( memory_block.buffer, memory_block.size );
 			}
@@ -290,13 +290,13 @@ namespace play_memory_pool
 			DECLARATION_MAIN( const uint32_t memory_block_size = 64u );
 			DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			{
 				EXPECT_EQ( memory_block_size, memory_block.size );
 				OUTPUT_VALUE( memory_block.size );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( memory_block.pb, memory_block.buffer );
 				OUTPUT_VALUE( memory_block.pb );
@@ -311,7 +311,7 @@ namespace play_memory_pool
 				PROCESS_MAIN( memset( temp, 1, sizeof( TestStruct1 ) ) );
 				PROCESS_MAIN( temp->c1 = 2 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PrintBuffer( memory_block.buffer, memory_block.size );
 			}

@@ -54,7 +54,7 @@ namespace window_time_test
 							std::cout << r2tm::tab << local_time.wMilliseconds << r2tm::linefeed;
 						}
 
-						std::cout << r2tm::linefeed;
+						LF();
 
 						{
 							PROCESS_MAIN( GetSystemTime( &system_time ) );
@@ -64,7 +64,7 @@ namespace window_time_test
 							std::cout << r2tm::tab << system_time.wMilliseconds << r2tm::linefeed;
 						}
 
-						std::cout << r2tm::linefeed;
+						LF();
 
 						{
 							PROCESS_MAIN( current_tick = GetTickCount() );
@@ -73,13 +73,13 @@ namespace window_time_test
 							last_tick = current_tick;
 						}
 
-						std::cout << r2tm::linefeed;
+						LF();
 
 						{
 							OUTPUT_VALUE( GetTickCount64() );
 						}
 
-						std::cout << r2tm::linefeed;
+						LF();
 
 						{
 							OUTPUT_VALUE( timeGetTime() );

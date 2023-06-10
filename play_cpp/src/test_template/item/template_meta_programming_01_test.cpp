@@ -199,11 +199,11 @@ namespace template_meta_programming_test
 				std::cout << "\t" << "using ratio1 = Ratio_VER0<7, 4>;" << r2tm::linefeed;
 				std::cout << "\t" << "using ratio2 = Ratio_VER0<3, 2>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER0_Operator_Sum<ratio1, ratio2>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << "\t\t - Result : " << ratio_operator_sum::ratio.Numerator << " / " << ratio_operator_sum::ratio.Denominator << r2tm::linefeed;
 			}
@@ -244,7 +244,7 @@ namespace template_meta_programming_test
 
 				std::cout << "\t" << "using ratio1 = Ratio_VER1<12, 3>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << "\t\t - GCD : " << ratio::gcd::value << r2tm::linefeed;
 				std::cout << "\t\t - Result : " << ratio::Numerator << " / " << ratio::Denominator << r2tm::linefeed;
@@ -257,7 +257,7 @@ namespace template_meta_programming_test
 
 				std::cout << "\t" << "using ratio1 = Ratio_VER1<36, 20>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << "\t\t - GCD : " << ratio::gcd::value << r2tm::linefeed;
 				std::cout << "\t\t - Result : " << ratio::Numerator << " / " << ratio::Denominator << r2tm::linefeed;
@@ -307,11 +307,11 @@ namespace template_meta_programming_test
 				std::cout << "\t" << "using ratio1 = Ratio_VER1<7, 4>;" << r2tm::linefeed;
 				std::cout << "\t" << "using ratio2 = Ratio_VER1<3, 2>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum<ratio1, ratio2>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << "\t\t - Original : " << ratio_operator_sum::orig::Numerator << " / " << ratio_operator_sum::orig::Denominator << r2tm::linefeed;
 				std::cout << "\t\t - GCD : " << ratio_operator_sum::gcd::value << r2tm::linefeed;
@@ -347,11 +347,11 @@ namespace template_meta_programming_test
 				std::cout << "\t" << "using ratio1 = Ratio_VER1<7, 4>;" << r2tm::linefeed;
 				std::cout << "\t" << "using ratio2 = Ratio_VER1<3, 2>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum<ratio1, ratio2>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << "\t\t - Original : " << ratio_operator_sum::orig::Numerator << " / " << ratio_operator_sum::orig::Denominator << r2tm::linefeed;
 				std::cout << "\t\t - GCD : " << ratio_operator_sum::gcd::value << r2tm::linefeed;
@@ -365,7 +365,7 @@ namespace template_meta_programming_test
 
 				std::cout << "\t" << "using ratio_operator_sum_2 = Ratio_VER1_Operator_Sum<ratio1, ratio_operator_sum>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << "\t\t - Original : " << ratio_operator_sum_2::orig::Numerator << " / " << ratio_operator_sum_2::orig::Denominator << r2tm::linefeed;
 				std::cout << "\t\t - GCD : " << ratio_operator_sum_2::gcd::value << r2tm::linefeed;
@@ -415,11 +415,11 @@ namespace template_meta_programming_test
 				std::cout << "\t" << "using ratio1 = Ratio_VER1<7, 4>;" << r2tm::linefeed;
 				std::cout << "\t" << "using ratio2 = Ratio_VER1<3, 2>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum2_Result<ratio1, ratio2>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << "\t\t - Original : " << ratio_operator_sum::orig::Numerator << " / " << ratio_operator_sum::orig::Denominator << r2tm::linefeed;
 				std::cout << "\t\t - Result : " << ratio_operator_sum::ratio::Numerator << " / " << ratio_operator_sum::ratio::Denominator << r2tm::linefeed;
@@ -435,11 +435,11 @@ namespace template_meta_programming_test
 				std::cout << "\t" << "using ratio1 = Ratio_VER1<7, 4>;" << r2tm::linefeed;
 				std::cout << "\t" << "using ratio2 = Ratio_VER1<3, 2>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum2_Result<ratio1, ratio2>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << "\t\t - Result : " << ratio_operator_sum::Numerator << " / " << ratio_operator_sum::Denominator << r2tm::linefeed;
 
@@ -451,7 +451,7 @@ namespace template_meta_programming_test
 
 				std::cout << "\t" << "using ratio_operator_sum = Ratio_VER1_Operator_Sum2_Result<ratio1, ratio_operator_sum>;" << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << "\t\t - Result : " << ratio_operator_sum_2::Numerator << " / " << ratio_operator_sum_2::Denominator << r2tm::linefeed;
 			}

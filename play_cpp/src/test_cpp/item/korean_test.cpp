@@ -22,7 +22,7 @@ namespace korean_test
 
 			{
 				std::cout << r2tm::tab << "+ use std::cout" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ const char* korean = \"한글 출력\";" << r2tm::linefeed;
 				const char* korean = "한글 출력";
@@ -34,7 +34,7 @@ namespace korean_test
 
 			{
 				std::cout << r2tm::tab << "+ use std::wcout" << r2tm::linefeed;
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ const wchar_t* korean = L\"한글 출력\";" << r2tm::linefeed;
 				const wchar_t* korean = L"한글 출력";

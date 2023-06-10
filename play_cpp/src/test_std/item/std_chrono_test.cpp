@@ -42,7 +42,7 @@ namespace std_chrono_test
 				DECLARATION_MAIN( auto epoch_time = std::chrono::system_clock::to_time_t( sc_default ) );
 				PROCESS_MAIN( ctime_s( str, sizeof( str ), &epoch_time ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( str );
 				
@@ -93,23 +93,23 @@ namespace std_chrono_test
 			{
 				OUTPUT_VALUE( std::chrono::system_clock::to_time_t( tp ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::hours>( tp.time_since_epoch() ).count() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::minutes>( tp.time_since_epoch() ).count() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::seconds>( tp.time_since_epoch() ).count() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::milliseconds>( tp.time_since_epoch() ).count() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::nanoseconds>( tp.time_since_epoch() ).count() );
 			}
@@ -149,19 +149,19 @@ namespace std_chrono_test
 			{
 				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::hours>( tp.time_since_epoch() ).count() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::minutes>( tp.time_since_epoch() ).count() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::seconds>( tp.time_since_epoch() ).count() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::milliseconds>( tp.time_since_epoch() ).count() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::nanoseconds>( tp.time_since_epoch() ).count() );
 			}
@@ -197,23 +197,23 @@ namespace std_chrono_test
 			DECLARATION_MAIN( const std::chrono::steady_clock::duration d( std::chrono::nanoseconds( 30000000 ) ) );
 			OUTPUT_VALUE( d.count() );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			{
 				DECLARATION_MAIN( const auto nns = std::chrono::duration_cast<std::chrono::nanoseconds>( d ) );
 				OUTPUT_VALUE( nns.count() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto mcs = std::chrono::duration_cast<std::chrono::microseconds>( d ) );
 				OUTPUT_VALUE( mcs.count() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>( d ) );
 				OUTPUT_VALUE( ms.count() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto sec = std::chrono::duration_cast<std::chrono::seconds>( d ) );
 				OUTPUT_VALUE( sec.count() );

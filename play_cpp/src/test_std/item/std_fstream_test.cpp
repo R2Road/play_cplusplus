@@ -27,12 +27,12 @@ namespace std_fstream_test
 
 				DECLARATION_MAIN( std::ifstream ifs( "", std::ios::in ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_FALSE( ifs );
 				EXPECT_TRUE( ifs.fail() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( ifs.close() );
 			}
@@ -51,16 +51,16 @@ namespace std_fstream_test
 
 				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( ifs );
 				EXPECT_FALSE( ifs.fail() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( ifs.close() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "+ 파일을 닫아도 유효성 검사를 통과 한다." << r2tm::linefeed2;
 				EXPECT_TRUE( ifs );
@@ -75,12 +75,12 @@ namespace std_fstream_test
 				DECLARATION_MAIN( std::ifstream ifs );
 				PROCESS_MAIN( ifs.open( p ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( ifs );
 				EXPECT_FALSE( ifs.fail() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( ifs.close() );
 			}
@@ -119,11 +119,11 @@ namespace std_fstream_test
 				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
 				EXPECT_FALSE( ifs.fail() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( while( !ifs.eof() ) { std::cout << static_cast<char>( ifs.get() ); } );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( ifs.close() );
 			}
@@ -160,11 +160,11 @@ namespace std_fstream_test
 				DECLARATION_MAIN( std::string buffer );
 				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( while( ifs.good() ) { std::getline( ifs, buffer ); std::cout << buffer << r2tm::linefeed; } );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( ifs.close() );
 			}
@@ -175,11 +175,11 @@ namespace std_fstream_test
 				DECLARATION_MAIN( char buffer[100] );
 				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( while( ifs ) { ifs.getline( buffer, 100 ); std::cout << buffer << r2tm::linefeed; } );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( ifs.close() );
 			}
@@ -216,11 +216,11 @@ namespace std_fstream_test
 				DECLARATION_MAIN( std::string buffer );
 				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( while( ifs >> buffer ) { std::cout << buffer << r2tm::linefeed; } );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( ifs.close() );
 			}

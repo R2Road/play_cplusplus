@@ -31,7 +31,7 @@ namespace char_test
 					std::cout << c;
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -123,7 +123,7 @@ namespace char_test
 			{
 				DECLARATION_MAIN( const char* str = R"(Test)" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( std::cout << str << r2tm::linefeed );
 			}
@@ -133,7 +133,7 @@ namespace char_test
 			{
 				OUTPUT_NOTE( "escape 문자들이 무시되고 입력된 그대로 출력된다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				const char* str = R"(Test
 Test \n
@@ -150,7 +150,7 @@ Test \t )";
 				OUTPUT_NOTE( "앞 뒤 같은 문자열로 맞춰주면 된다." );
 				OUTPUT_NOTE( "최대 16자." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const char* str = R"delimeter(Embedded)" pre)delimeter" );
 

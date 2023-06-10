@@ -25,14 +25,14 @@ namespace c_array_test
 			{
 				DECLARATION_MAIN( int array[5] );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "Print :";
 				for( auto i : array )
 				{
 					std::cout << " " << i;
 				}
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -46,7 +46,7 @@ namespace c_array_test
 				{
 					std::cout << " " << i;
 				}
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -60,7 +60,7 @@ namespace c_array_test
 				{
 					std::cout << " " << i;
 				}
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();
@@ -68,14 +68,14 @@ namespace c_array_test
 			{
 				DECLARATION_MAIN( int array[5] = {} );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "Print :";
 				for( auto i : array )
 				{
 					std::cout << " " << i;
 				}
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 
 			LS();

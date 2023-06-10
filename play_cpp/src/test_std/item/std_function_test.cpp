@@ -77,7 +77,7 @@ namespace std_function_test
 				EXPECT_TRUE( nullptr != f );
 				EXPECT_TRUE( f );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( f( s, 1 ) );
 			}
@@ -91,7 +91,7 @@ namespace std_function_test
 				EXPECT_TRUE( nullptr != f );
 				EXPECT_TRUE( f );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( f( s ) );
 			}
@@ -104,7 +104,7 @@ namespace std_function_test
 				EXPECT_TRUE( nullptr != f );
 				EXPECT_TRUE( f );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( f() );
 			}
@@ -162,7 +162,7 @@ namespace std_function_test
 					std::cout << r2tm::tab3 << "- Is Not Null" << r2tm::linefeed;
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab2 << "nullptr == fn_2" << r2tm::linefeed;
 				if( nullptr == fn_2 )
@@ -451,7 +451,7 @@ namespace std_function_test
 					std::cout << r2tm::tab3 << "- Is Not Equal" << r2tm::linefeed;
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab2 << "sf1.target<FunctionPointerT>() == sf1.target<FunctionPointerT>()" << r2tm::linefeed;
 				if( sf1.target<FunctionPointerT>() == sf1.target<FunctionPointerT>() )
@@ -463,7 +463,7 @@ namespace std_function_test
 					std::cout << r2tm::tab3 << "- Is Not Equal" << r2tm::linefeed;
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab2 << "sf1.target<FunctionPointerT>() == sf1.target<FunctionPointerT>()" << r2tm::linefeed;
 				if( sf1.target<FunctionPointerT>() == sf2.target<FunctionPointerT>() )

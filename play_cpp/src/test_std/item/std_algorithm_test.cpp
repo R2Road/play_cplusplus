@@ -38,13 +38,13 @@ namespace std_algorithm_test
 			{
 				std::cout << r2tm::tab << "- container : " << container << r2tm::linefeed;
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto seed = (unsigned int)std::chrono::system_clock::now().time_since_epoch().count() );
 				DECLARATION_MAIN( std::default_random_engine random_engine( seed ) );
 				PROCESS_MAIN( std::shuffle( container.begin(), container.end(), random_engine ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				std::cout << r2tm::tab << "- container : " << container << r2tm::linefeed;
 			}

@@ -27,7 +27,7 @@ namespace number_test
 
 				DECLARATION_MAIN( const int num = 0b0011111 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( num );
 			}
@@ -39,7 +39,7 @@ namespace number_test
 
 				DECLARATION_MAIN( const int num = 037 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( num );
 			}
@@ -51,7 +51,7 @@ namespace number_test
 
 				DECLARATION_MAIN( const int num = 31 );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( num );
 			}
@@ -63,7 +63,7 @@ namespace number_test
 
 				DECLARATION_MAIN( const int num = 0x1f );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( num );
 			}
