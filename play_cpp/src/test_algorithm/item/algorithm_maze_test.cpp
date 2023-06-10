@@ -25,18 +25,18 @@ namespace algorithm_maze_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "[ANY KEY] Exit" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( r2::Direction4 current_direction );
 			DECLARATION_MAIN( r2::PointInt current_point( 0, 0 ) );
 			DECLARATION_MAIN( r2::PointInt next_point( 0, 0 ) );
 			DECLARATION_MAIN( r2::Grid<int> grid );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( grid.Reset( 19, 19 ) );
@@ -80,7 +80,7 @@ namespace algorithm_maze_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

@@ -21,7 +21,7 @@ namespace std_chrono_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "REF : https://en.cppreference.com/w/cpp/chrono/time_point/time_since_epoch" << r2tm::linefeed2;
 			std::cout << r2tm::tab << "# Summury #" << r2tm::linefeed;
@@ -29,11 +29,11 @@ namespace std_chrono_test
 			std::cout << r2tm::tab << "POSIX 시간이나 Epoch 시간이라고 부르기도 한다." << r2tm::linefeed;
 			std::cout << r2tm::tab << "1970년 1월 1일 00:00 : 00 협정 세계시( UTC ) 부터의 경과 시간을 초로 환산하여 정수로 나타낸 것이다" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( char str[128] );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Epoch( 시간의 시작점 )" << r2tm::linefeed2;
@@ -48,7 +48,7 @@ namespace std_chrono_test
 				
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -67,7 +67,7 @@ namespace std_chrono_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "# Summury #" << r2tm::linefeed;
 			std::cout << r2tm::tab << "> " << "std::chrono::system_clock 은 시스템 시간이다." << r2tm::linefeed;
@@ -75,11 +75,11 @@ namespace std_chrono_test
 			std::cout << r2tm::tab << "> " << "네트워크 동기화 될 수 있다." << r2tm::linefeed;
 			std::cout << r2tm::tab << "> " << "OS의 시간 값을 조정하면 바뀔 수 있다." << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::chrono::system_clock::time_point tp = std::chrono::system_clock::now() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( char str[128] );
@@ -88,7 +88,7 @@ namespace std_chrono_test
 				OUTPUT_VALUE( str );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( std::chrono::system_clock::to_time_t( tp ) );
@@ -114,7 +114,7 @@ namespace std_chrono_test
 				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::nanoseconds>( tp.time_since_epoch() ).count() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -133,18 +133,18 @@ namespace std_chrono_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "# Summury #" << r2tm::linefeed;
 			std::cout << r2tm::tab << "> " << "std::chrono::steady_clock 은 내 기계의 가동 시간이다." << r2tm::linefeed;
 			std::cout << r2tm::tab << "> " << "OS 가 부팅된 이후 경과한 시간을 반환한다." << r2tm::linefeed;
 			std::cout << r2tm::tab << "> " << "네트워크 동기화 되지 않는다." << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::chrono::steady_clock::time_point tp = std::chrono::steady_clock::now() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::hours>( tp.time_since_epoch() ).count() );
@@ -166,7 +166,7 @@ namespace std_chrono_test
 				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::nanoseconds>( tp.time_since_epoch() ).count() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -185,14 +185,14 @@ namespace std_chrono_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const std::chrono::steady_clock::duration d( 30000000 ) );
 				OUTPUT_VALUE( d.count() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const std::chrono::steady_clock::duration d( std::chrono::nanoseconds( 30000000 ) ) );
 			OUTPUT_VALUE( d.count() );
@@ -219,7 +219,7 @@ namespace std_chrono_test
 				OUTPUT_VALUE( sec.count() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -253,21 +253,21 @@ namespace std_chrono_test
 				{
 					r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
-					std::cout << r2tm::split;
+					LS();
 
 					{
 						std::cout << r2tm::tab << "std::chrono::system_clock::now();" << r2tm::linefeed;
 						std::cout << r2tm::tab2 << ( std::chrono::system_clock::now() - system_start_time_point ).count() << r2tm::linefeed;
 					}
 
-					std::cout << r2tm::split;
+					LS();
 
 					{
 						std::cout << r2tm::tab << "std::chrono::steady_clock::now();" << r2tm::linefeed;
 						std::cout << r2tm::tab2 << ( std::chrono::steady_clock::now() - steady_start_time_point ).count() << r2tm::linefeed;
 					}
 
-					std::cout << r2tm::split;
+					LS();
 
 					{
 						const std::chrono::nanoseconds nano = std::chrono::duration_cast<std::chrono::nanoseconds>( std::chrono::steady_clock::now() - steady_start_time_point );
@@ -276,7 +276,7 @@ namespace std_chrono_test
 						std::cout << r2tm::tab2 << "nanoseconds : " << nano.count() << r2tm::linefeed;
 					}
 
-					std::cout << r2tm::split;
+					LS();
 
 					{
 						const std::chrono::microseconds micro = std::chrono::duration_cast<std::chrono::microseconds>( std::chrono::steady_clock::now() - steady_start_time_point );
@@ -285,7 +285,7 @@ namespace std_chrono_test
 						std::cout << r2tm::tab2 << "microseconds : " << micro.count() << r2tm::linefeed;
 					}
 
-					std::cout << r2tm::split;
+					LS();
 
 					{
 						const std::chrono::milliseconds micro = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::steady_clock::now() - steady_start_time_point );
@@ -294,7 +294,7 @@ namespace std_chrono_test
 						std::cout << r2tm::tab2 << "milliseconds : " << micro.count() << r2tm::linefeed;
 					}
 
-					std::cout << r2tm::split;
+					LS();
 
 					{
 						const std::chrono::seconds sec = std::chrono::duration_cast<std::chrono::seconds>( std::chrono::steady_clock::now() - steady_start_time_point );
@@ -303,7 +303,7 @@ namespace std_chrono_test
 						std::cout << r2tm::tab2 << "seconds : " << sec.count() << r2tm::linefeed;
 					}
 
-					std::cout << r2tm::split;
+					LS();
 
 					{
 						const std::chrono::minutes min = std::chrono::duration_cast<std::chrono::minutes>( std::chrono::steady_clock::now() - steady_start_time_point );
@@ -312,7 +312,7 @@ namespace std_chrono_test
 						std::cout << r2tm::tab2 << "minutes : " << min.count() << r2tm::linefeed;
 					}
 
-					std::cout << r2tm::split;
+					LS();
 
 					{
 						const std::chrono::hours hour = std::chrono::duration_cast<std::chrono::hours>( std::chrono::steady_clock::now() - steady_start_time_point );
@@ -321,7 +321,7 @@ namespace std_chrono_test
 						std::cout << r2tm::tab2 << "hours : " << hour.count() << r2tm::linefeed;
 					}
 
-					std::cout << r2tm::split;
+					LS();
 
 					{
 						std::chrono::duration<double> default_time = std::chrono::system_clock::now() - system_start_time_point;
@@ -330,7 +330,7 @@ namespace std_chrono_test
 						std::cout << r2tm::tab2 << default_time.count() << r2tm::linefeed;
 					}
 
-					std::cout << r2tm::split;
+					LS();
 
 					last_time = current_time;
 				}
@@ -342,7 +342,7 @@ namespace std_chrono_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::None;
 		};

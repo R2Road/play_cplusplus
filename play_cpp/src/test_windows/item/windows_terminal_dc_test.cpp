@@ -18,7 +18,7 @@ namespace windows_terminal_dc_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "[ESC] Exit" << r2tm::linefeed;
 

@@ -20,7 +20,7 @@ namespace std_fstream_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ 없는 파일." << r2tm::linefeed2;
@@ -37,14 +37,14 @@ namespace std_fstream_test
 				PROCESS_MAIN( ifs.close() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
 			std::cout << "p : " << p << r2tm::linefeed;
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ 파일 열기 성공." << r2tm::linefeed2;
@@ -67,7 +67,7 @@ namespace std_fstream_test
 				EXPECT_FALSE( ifs.fail() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ use std::ifstream::open" << r2tm::linefeed2;
@@ -85,7 +85,7 @@ namespace std_fstream_test
 				PROCESS_MAIN( ifs.close() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -104,14 +104,14 @@ namespace std_fstream_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
 			std::cout << "p : " << p << r2tm::linefeed;
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::ifstream::get" << r2tm::linefeed2;
@@ -128,7 +128,7 @@ namespace std_fstream_test
 				PROCESS_MAIN( ifs.close() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -147,14 +147,14 @@ namespace std_fstream_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
 			std::cout << "p : " << p << r2tm::linefeed;
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::string buffer );
@@ -169,7 +169,7 @@ namespace std_fstream_test
 				PROCESS_MAIN( ifs.close() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( char buffer[100] );
@@ -184,7 +184,7 @@ namespace std_fstream_test
 				PROCESS_MAIN( ifs.close() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -203,14 +203,14 @@ namespace std_fstream_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
 			std::cout << "p : " << p << r2tm::linefeed;
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::string buffer );
@@ -225,7 +225,7 @@ namespace std_fstream_test
 				PROCESS_MAIN( ifs.close() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

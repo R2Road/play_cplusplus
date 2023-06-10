@@ -60,19 +60,19 @@ namespace console_window_message_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "[ESC] End" << r2tm::linefeed2;
 			std::cout << "[Ctrl + C] ..." << r2tm::linefeed;
 			std::cout << "[Ctrl + Break] ..." << r2tm::linefeed;
 			std::cout << "[Close Window] ..." << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Ref" << r2tm::linefeed2;
 			std::cout << r2tm::tab2 << "https://docs.microsoft.com/ko-kr/windows/console/registering-a-control-handler-function" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Message" << r2tm::linefeed2;
 			std::cout << r2tm::tab2 << "Ctrl + C 를 누르면 디버거가 붙어있는 경우 PDB가 없다며 예외가 터진다." << r2tm::linefeed;
@@ -80,7 +80,7 @@ namespace console_window_message_test
 			std::cout << r2tm::tab2 << "Ctrl + Break 는 메세지 받고 TRUE 를 반환하지 않으면 프로그램이 종료된다." << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "가급적 Ctrl + F5 로 실행할 것" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "Press Key" << r2tm::linefeed2;
 
@@ -102,7 +102,7 @@ namespace console_window_message_test
 				while( 1 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -156,7 +156,7 @@ namespace console_window_message_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Message" << r2tm::linefeed2;
 			std::cout << r2tm::tab2 << "GetMessage 함수를 쓰지 않으면 키 입력이 화면에 표시가 안된다." << r2tm::linefeed;
@@ -165,7 +165,7 @@ namespace console_window_message_test
 			std::cout << r2tm::tab2 << "마우스 왼 클릭을 하면 엄청나게 느려진다." << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "CallNextHookEx 함수를 호출하지 않으면 느려지지 않는 대신 마우스가 움직이지 않는다." << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				g_hook_keyboard = SetWindowsHookEx( WH_KEYBOARD_LL, &KeyboardProc, GetModuleHandle( NULL ), 0 );
@@ -187,7 +187,7 @@ namespace console_window_message_test
 				g_hook_mouse = NULL;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

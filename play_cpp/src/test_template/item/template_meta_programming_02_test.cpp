@@ -24,7 +24,7 @@ namespace template_meta_programming_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "\t" << "+ ConvertCharacter2String_1<'1', '2', '3'>::size" << r2tm::linefeed;
@@ -36,7 +36,7 @@ namespace template_meta_programming_test
 				std::cout << "\t\t" << "result : " << ConvertCharacter2String_1<'1', '2', '3'>::c << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -69,14 +69,14 @@ namespace template_meta_programming_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "\t" << "+ ConvertInteger2String_1<2468>::c.c_str()" << r2tm::linefeed;
 				std::cout << "\t\t" << "result : " << ConvertInteger2String_1<2468>::c.c_str() << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -112,7 +112,7 @@ namespace template_meta_programming_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "\t" << "+ CalculatePlaceValue<1>::c" << r2tm::linefeed;
@@ -125,7 +125,7 @@ namespace template_meta_programming_test
 				std::cout << "\t\t" << "result : " << CalculatePlaceValue4Integer<123456>::place_value << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -179,7 +179,7 @@ namespace template_meta_programming_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "+ Units 2 Character" << r2tm::linefeed << r2tm::linefeed;
@@ -196,7 +196,7 @@ namespace template_meta_programming_test
 				std::cout << "\t\t" << "result : " << ConvertUnits2Character<10>::c << r2tm::linefeed << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "+ Integer 2 String II" << r2tm::linefeed << r2tm::linefeed;
@@ -206,14 +206,14 @@ namespace template_meta_programming_test
 				std::cout << "\t\t" << "string : " << ConvertInteger2String_2<101010>::str << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "ConvertInteger2String_2 의 전방 선언 코드를 지우고 가장 아래의 템플릿 코드를 가장 위로 올려도 정상 작동 한다." << r2tm::linefeed;
 				std::cout << "전방 선언은 템플릿 코드의 번역 순서에 따라 발생하는 문제를 해결해준다." << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

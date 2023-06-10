@@ -20,7 +20,7 @@ namespace c_array_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( int array[5] );
@@ -35,7 +35,7 @@ namespace c_array_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				int array[5] = { 0, };
@@ -49,7 +49,7 @@ namespace c_array_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				int array[5] = { '\0', };
@@ -63,7 +63,7 @@ namespace c_array_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( int array[5] = {} );
@@ -78,7 +78,7 @@ namespace c_array_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

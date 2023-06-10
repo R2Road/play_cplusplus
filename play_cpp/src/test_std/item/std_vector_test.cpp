@@ -27,12 +27,12 @@ namespace std_vector_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::vector<int> container( { 2, 3 } ) );
 			std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( 2u, container.capacity() );
@@ -41,7 +41,7 @@ namespace std_vector_test
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( 2u, container.capacity() );
@@ -54,7 +54,7 @@ namespace std_vector_test
 				OUTPUT_NOTE( "resize 는 capacity 가 증가한 경우 메모리를 할당하고 이전 데이터를 카피한다." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( 4u, container.capacity() );
@@ -63,7 +63,7 @@ namespace std_vector_test
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( 4u, container.capacity() );
@@ -72,7 +72,7 @@ namespace std_vector_test
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -89,21 +89,21 @@ namespace std_vector_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "size가 줄어들 때 메모리가 재할당 되는지 궁금했다. > 재할당 없다." );
 				OUTPUT_NOTE( "줄어든 size가 이전 크기로 돌아갈 때 메모리가 재할당 되는지 궁금했다. > 재할당 없다." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::vector<int> container( { 1, 2, 3, 4 } ) );
 			OUTPUT_VALUE( container.size() );
 			OUTPUT_VALUE( container.capacity() );
 			OUTPUT_VALUE( container.data() );
 
-			std::cout << r2tm::split;
+			LS();
 			{
 				PROCESS_MAIN( container.resize( 4 ) );
 				OUTPUT_VALUE( container.size() );
@@ -132,7 +132,7 @@ namespace std_vector_test
 				OUTPUT_VALUE( container.data() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -151,7 +151,7 @@ namespace std_vector_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::vector<int> container( { 2, 3 } ) );
 			OUTPUT_VALUE( container.size() );
@@ -162,7 +162,7 @@ namespace std_vector_test
 
 			std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( container.clear() );
@@ -175,7 +175,7 @@ namespace std_vector_test
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( container.resize( 2u ) );
@@ -192,7 +192,7 @@ namespace std_vector_test
 				OUTPUT_NOTE( "clear 는 최종적으로 Allocator에 Destory 요청하지만 메모리를 해제하는 것은 아니다." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -211,13 +211,13 @@ namespace std_vector_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::vector<int> container( { 2, 3 } ) );
 			OUTPUT_VALUE( container.capacity() );
 			OUTPUT_VALUE( container.data() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( container.reserve( 1u ) );
@@ -244,7 +244,7 @@ namespace std_vector_test
 				OUTPUT_NOTE( "capacity 가 증가하면 메모리는 재할당 된다." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -263,7 +263,7 @@ namespace std_vector_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( class TestClass
 			{
@@ -271,11 +271,11 @@ namespace std_vector_test
 				TestClass( int ) {}
 			} );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::vector<TestClass> container );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_CODE( container.resize( 10 ) );
@@ -285,7 +285,7 @@ namespace std_vector_test
 				std::cout << r2tm::tab << "## Not Compiled : Need Default Constructor" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -304,7 +304,7 @@ namespace std_vector_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::vector<bool> container );
 			OUTPUT_VALUE( container.capacity() );
@@ -313,7 +313,7 @@ namespace std_vector_test
 			OUTPUT_VALUE( container._Myvec._Myend() );
 			OUTPUT_VALUE( container.begin()._Myptr );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( container.push_back( 1 ) );
@@ -327,7 +327,7 @@ namespace std_vector_test
 				OUTPUT_VALUE( container.begin()._Myptr );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( container.reserve( 33 ) );
@@ -341,7 +341,7 @@ namespace std_vector_test
 				OUTPUT_VALUE( container.begin()._Myptr );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -360,12 +360,12 @@ namespace std_vector_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::vector<int> container_1( { 1, 2, 3 } ) );
 			DECLARATION_MAIN( std::vector<int> container_2( { 10, 20, 30 } ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_CODE( container_2.erase( container_1.begin() ) );
@@ -375,7 +375,7 @@ namespace std_vector_test
 				std::cout << r2tm::tab << "## Not Working" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -394,11 +394,11 @@ namespace std_vector_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::vector<int> container_1( { 1, 2, 3 } ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 #if defined( DEBUG ) || defined( _DEBUG )
@@ -413,7 +413,7 @@ namespace std_vector_test
 				std::cout << r2tm::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 #if defined( DEBUG ) || defined( _DEBUG )
@@ -430,7 +430,7 @@ namespace std_vector_test
 				std::cout << r2tm::tab << "## Not Working In Debug Mode : _STL_VERIFY" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto cur = container_1.end() );
@@ -438,7 +438,7 @@ namespace std_vector_test
 				OUTPUT_VALUE( ( *cur ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -457,12 +457,12 @@ namespace std_vector_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::vector<int> v_1( { 1, 2, 3 } ) );
 			DECLARATION_MAIN( std::vector<int> v_2( { 3, 4, 5 } ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( v_1.data() );
@@ -480,7 +480,7 @@ namespace std_vector_test
 				OUTPUT_VALUE( v_2.data() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

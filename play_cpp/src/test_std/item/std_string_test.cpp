@@ -18,14 +18,14 @@ namespace std_string_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const std::string s );
 				OUTPUT_VALUE( sizeof( s ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const std::string empty_string_1 );
@@ -33,7 +33,7 @@ namespace std_string_test
 				EXPECT_EQ( empty_string_1, empty_string_2 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const std::string string_1( " " ) );
@@ -46,7 +46,7 @@ namespace std_string_test
 				OUTPUT_VALUE( (void*)string_2.c_str() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -64,12 +64,12 @@ namespace std_string_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "짧은 문자열의 경우 move가 작동하지 않는다." );
 			OUTPUT_NOTE( "xstring 의 ""_Assign_rv_contents_with_alloc_always_equal"" 함수 참조" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "move : X" );
@@ -96,7 +96,7 @@ namespace std_string_test
 				OUTPUT_VALUE( (void*)s_2.c_str() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "move : O" );
@@ -123,7 +123,7 @@ namespace std_string_test
 				OUTPUT_VALUE( (void*)s_2.c_str() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -142,7 +142,7 @@ namespace std_string_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const std::string key_string = "\n" );
 			OUTPUT_VALUE( key_string.size() );
@@ -152,7 +152,7 @@ namespace std_string_test
 			DECLARATION_MAIN( const std::string orig_string = "\n\n012345\n6789abcd\n\nefghij\nklmnopqrstu\n\n\nvwxyz\n" );
 			OUTPUT_VALUE( orig_string.size() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::size_t pivot_pos = 0u );
@@ -181,7 +181,7 @@ namespace std_string_test
 				OUTPUT_VALUE( orig_string[pivot_pos] );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -265,32 +265,32 @@ namespace std_string_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const std::string key_string = "\n" );
 			OUTPUT_VALUE( key_string.size() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROCESS_MAIN( StringSplit( "", key_string ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROCESS_MAIN( StringSplit( " ", key_string ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROCESS_MAIN( StringSplit( "\n ", key_string ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROCESS_MAIN( StringSplit( " \n", key_string ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROCESS_MAIN( StringSplit( "\n \n", key_string ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -307,20 +307,20 @@ namespace std_string_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const std::string key_string = "\n" );
 			OUTPUT_VALUE( key_string.size() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROCESS_MAIN( StringSplit( "\n" "\n" "1" "\n" "23" "\n" "\n" "efg" "\n" " " "\n" "vwx" "\n", key_string ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROCESS_MAIN( StringSplit( "\n" "\n" "123" "\n" "456" "\n" "\n" "789" "\n" "\n" "\n" "defg", key_string ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -366,7 +366,7 @@ namespace std_string_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( CalculateLineCount( "" ) );
@@ -396,7 +396,7 @@ namespace std_string_test
 				OUTPUT_VALUE( CalculateLineCount( "\n" "\n" "ab" "\n" "cd" "\n" "\n" "ef" "\n" "gh" "\n" "\n" "\n" "i" ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

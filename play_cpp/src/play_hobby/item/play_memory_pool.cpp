@@ -91,7 +91,7 @@ namespace play_memory_pool
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const uint32_t memory_block_size = 64u );
 			DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
@@ -108,13 +108,13 @@ namespace play_memory_pool
 				OUTPUT_VALUE( memory_block.pb );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PrintBuffer( memory_block.buffer, memory_block.size );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -134,7 +134,7 @@ namespace play_memory_pool
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const uint32_t memory_block_size = 64u );
 			DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
@@ -151,7 +151,7 @@ namespace play_memory_pool
 				OUTPUT_VALUE( memory_block.pb );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto temp = memory_block.New<long long>() );
@@ -162,7 +162,7 @@ namespace play_memory_pool
 				PrintBuffer( memory_block.buffer, memory_block.size );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto temp = memory_block.New<long>() );
@@ -173,7 +173,7 @@ namespace play_memory_pool
 				PrintBuffer( memory_block.buffer, memory_block.size );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto temp = memory_block.New<char>() );
@@ -189,7 +189,7 @@ namespace play_memory_pool
 				PrintBuffer( memory_block.buffer, memory_block.size );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 			{
 				DECLARATION_MAIN( auto temp = memory_block.New<int>() );
 				PROCESS_MAIN( memset( temp, 5, sizeof( int ) ) );
@@ -199,7 +199,7 @@ namespace play_memory_pool
 				PrintBuffer( memory_block.buffer, memory_block.size );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -219,7 +219,7 @@ namespace play_memory_pool
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const uint32_t memory_block_size = 16u );
 			DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
@@ -231,7 +231,7 @@ namespace play_memory_pool
 				EXPECT_EQ( memory_block.pb, memory_block.buffer );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto temp = memory_block.New<long long>() );
@@ -248,7 +248,7 @@ namespace play_memory_pool
 				OUTPUT_BINARIES( memory_block.buffer, memory_block.size );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto temp = memory_block.New<int>() );
@@ -265,7 +265,7 @@ namespace play_memory_pool
 				OUTPUT_BINARIES( memory_block.buffer, memory_block.size );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -285,7 +285,7 @@ namespace play_memory_pool
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const uint32_t memory_block_size = 64u );
 			DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
@@ -302,7 +302,7 @@ namespace play_memory_pool
 				OUTPUT_VALUE( memory_block.pb );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( struct TestStruct1 { double d1; double d2; char c1; } );
@@ -316,7 +316,7 @@ namespace play_memory_pool
 				PrintBuffer( memory_block.buffer, memory_block.size );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -336,13 +336,13 @@ namespace play_memory_pool
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( r2::MemoryPool memory_pool );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -362,17 +362,17 @@ namespace play_memory_pool
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( r2::MemoryPool pool );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( nullptr, pool.New<char>() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

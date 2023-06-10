@@ -17,11 +17,11 @@ namespace template_basic_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 1, 15 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( MemberVariableTest_01<int> m );
@@ -29,7 +29,7 @@ namespace template_basic_test
 				OUTPUT_VALUE( m.t );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				MemberVariableTest_02<int, float> m;
@@ -40,7 +40,7 @@ namespace template_basic_test
 				OUTPUT_VALUE( m.t2 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -59,11 +59,11 @@ namespace template_basic_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 17, 36 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_CODE( int i = Template_Fn_R_() );
@@ -75,7 +75,7 @@ namespace template_basic_test
 				( i );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( int i = Template_Fn_R_R1( 123 ) );
@@ -84,7 +84,7 @@ namespace template_basic_test
 
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_CODE( int i = Template_Fn_R_A1( 123 ) );
@@ -92,7 +92,7 @@ namespace template_basic_test
 
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -111,32 +111,32 @@ namespace template_basic_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 38, 61 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( FunctionTest_01 FT( FN_V_0 ) );
 				PROCESS_MAIN( FT() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( FunctionTest_01 FT( FN_R_0 ) );
 				PROCESS_MAIN( FT() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( FunctionTest_01 FT( FN_R_2 ) );
 				PROCESS_MAIN( FT( 3, 5 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -167,7 +167,7 @@ namespace template_basic_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				using PT1 = typename P<int*>::type;
@@ -175,7 +175,7 @@ namespace template_basic_test
 
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

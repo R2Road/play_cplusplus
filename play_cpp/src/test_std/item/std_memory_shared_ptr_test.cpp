@@ -19,7 +19,7 @@ namespace std_memory_shared_ptr_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::shared_ptr<int> sp );
@@ -27,14 +27,14 @@ namespace std_memory_shared_ptr_test
 				OUTPUT_COMMENT( "Not Working" );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::shared_ptr<int> sp( new int( 10 ) ) );
 				OUTPUT_VALUE( *sp );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 			
 			{
 				OUTPUT_NOTE( "const sp 는 [* const] 에 가깝다." );
@@ -53,7 +53,7 @@ namespace std_memory_shared_ptr_test
 				OUTPUT_COMMENT( "값 변경 가능" );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "Shared Pointer Has Const Value" );
@@ -69,7 +69,7 @@ namespace std_memory_shared_ptr_test
 				OUTPUT_COMMENT( "Failed : Change Value" );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "Make Shared" );
@@ -81,7 +81,7 @@ namespace std_memory_shared_ptr_test
 				OUTPUT_VALUE( *sp );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -100,21 +100,21 @@ namespace std_memory_shared_ptr_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::shared_ptr<int> sp );
 				OUTPUT_VALUE( sizeof( sp ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::shared_ptr<int> sp( new int( 10 ) ) );
 				OUTPUT_VALUE( sizeof( sp ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -133,14 +133,14 @@ namespace std_memory_shared_ptr_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::shared_ptr<int> sp );
 				OUTPUT_BINARY( sp );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::shared_ptr<int> sp( new int( 3 ) ) );
@@ -154,7 +154,7 @@ namespace std_memory_shared_ptr_test
 				OUTPUT_BINARY( sp );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -173,23 +173,23 @@ namespace std_memory_shared_ptr_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "std::make_shared 로 메모리를 할당하면 ref count 와 weak count 를 위한 공간을..." );
 			OUTPUT_NOTE( "메모리의 앞 부분에 붙여서 메모리를 할당한다." );
 			OUTPUT_NOTE( "구조 : ref count + weak count + obj" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto sp = std::make_shared<int>( 255 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( int32_t* p = (int32_t* )sp.get() );
 			PROCESS_MAIN( p -= 2 );
 			OUTPUT_BINARIES( p, 3 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto tp_1 = sp );
@@ -206,7 +206,7 @@ namespace std_memory_shared_ptr_test
 				OUTPUT_BINARIES( p, 3 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::weak_ptr<int> wp_1 = sp );
@@ -218,7 +218,7 @@ namespace std_memory_shared_ptr_test
 				OUTPUT_BINARIES( p, 3 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

@@ -33,14 +33,14 @@ namespace algorithm_etc_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "djb2_hash( \"a\" );" << r2tm::linefeed;
 				std::cout << r2tm::tab << djb2_hash( "a" ) << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

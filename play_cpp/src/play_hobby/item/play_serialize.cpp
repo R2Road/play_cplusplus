@@ -18,11 +18,11 @@ namespace play_serialize
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( struct { int64_t a = 13; int64_t b = -7; } dummy );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const auto size = sizeof( dummy ) );
@@ -38,7 +38,7 @@ namespace play_serialize
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -57,20 +57,20 @@ namespace play_serialize
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( struct Dummy { int64_t a = 0; int64_t b = 0; } );
 			DECLARATION_MAIN( Dummy dummy_1; dummy_1.a = 13; dummy_1.b = -7; );
 			DECLARATION_MAIN( Dummy dummy_2 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( dummy_2.a );
 				OUTPUT_VALUE( dummy_2.b );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const auto size = sizeof( dummy_1 ) );
@@ -110,14 +110,14 @@ namespace play_serialize
 				EXPECT_EQ( dummy_1.b, dummy_2.b );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( dummy_2.a );
 				OUTPUT_VALUE( dummy_2.b );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

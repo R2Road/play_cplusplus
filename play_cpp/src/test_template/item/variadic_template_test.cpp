@@ -24,7 +24,7 @@ namespace variadic_template_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
@@ -35,14 +35,14 @@ namespace variadic_template_test
 				std::cout << r2tm::tab2 << "}" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ ArgsCount<int, float, int, int, bool>::size" << r2tm::linefeed2;
 				std::cout << r2tm::tab2 << "> " << ArgsCount<int, float, int, int, bool>::size << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -95,13 +95,13 @@ namespace variadic_template_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( print_args_1( 1, 2, 3, 4, "variadic_template_test", 3.141592 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
@@ -115,7 +115,7 @@ namespace variadic_template_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
@@ -128,7 +128,7 @@ namespace variadic_template_test
 				PROCESS_MAIN( print_args_3( 1, 2, 3, 4, "variadic_template_test", 3.141592 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -179,7 +179,7 @@ namespace variadic_template_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ sum_args_with_fold_1( 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << r2tm::linefeed;
@@ -190,7 +190,7 @@ namespace variadic_template_test
 				std::cout << r2tm::tab3 << sum_result << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ sum_args_with_fold_2( 1, 2, 3, 4, 5, 6, 7, 8, 9 )" << r2tm::linefeed;
@@ -201,7 +201,7 @@ namespace variadic_template_test
 				std::cout << r2tm::tab3 << sum_result << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ SumArgs<1>::result" << r2tm::linefeed;
@@ -211,7 +211,7 @@ namespace variadic_template_test
 				std::cout << r2tm::tab3 << sum_result << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ SumArgs<1, 2, 3, 4, 5, 6, 7, 8, 9>::result" << r2tm::linefeed;
@@ -221,7 +221,7 @@ namespace variadic_template_test
 				std::cout << r2tm::tab3 << sum_result << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -266,7 +266,7 @@ namespace variadic_template_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ int subtract_args_with_fold_1(IntegerList... integer_list )" << r2tm::linefeed;
@@ -304,7 +304,7 @@ namespace variadic_template_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ int subtract_args_with_fold_2(IntegerList... integer_list )" << r2tm::linefeed;
@@ -326,7 +326,7 @@ namespace variadic_template_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ int subtract_args_with_fold_3( I integer, IntegerList... integer_list )" << r2tm::linefeed;
@@ -338,7 +338,7 @@ namespace variadic_template_test
 				std::cout << r2tm::tab3 << subtract_args_with_fold_4( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ int subtract_args_with_fold_4( I integer, IntegerList... integer_list )" << r2tm::linefeed;
@@ -350,7 +350,7 @@ namespace variadic_template_test
 				std::cout << r2tm::tab3 << subtract_args_with_fold_3( 100, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

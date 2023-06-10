@@ -20,7 +20,7 @@ namespace etc_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Use For" << r2tm::linefeed2;
@@ -40,7 +40,7 @@ namespace etc_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Use Bitset" << r2tm::linefeed2;
@@ -53,7 +53,7 @@ namespace etc_test
 				OUTPUT_VALUE( b );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -117,7 +117,7 @@ namespace etc_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "1. Create a Tool That Helps You Understand Object LifeTime" );
@@ -127,7 +127,7 @@ namespace etc_test
 				DECLARATION_MAIN( LifeTime lt = f3() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "2. Study The Lambda!!" );
@@ -145,7 +145,7 @@ namespace etc_test
 				DECLARATION_MAIN( auto l2 = l );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -210,21 +210,21 @@ namespace etc_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				function<int( int, int)> func( f );
 				OUTPUT_VALUE( func( 1, 2 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				function<int( int, int )> func( [z = 42]( int x, int y ) { return x + y + z; } );
 				OUTPUT_VALUE( func( 1, 2 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				//class T { public: int Do( int x, int y ) { return x + y; } } t;
@@ -232,7 +232,7 @@ namespace etc_test
 				//OUTPUT_VALUE( func( &t, 1, 2 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			return r2tm::eDoLeaveAction::Pause;
@@ -252,14 +252,14 @@ namespace etc_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( int i{} );
 				OUTPUT_VALUE( i );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( int i = 123 );
@@ -267,7 +267,7 @@ namespace etc_test
 				OUTPUT_VALUE( i );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::shared_ptr<int> i = std::make_shared<int>( 123 ) );
@@ -276,7 +276,7 @@ namespace etc_test
 				EXPECT_EQ( nullptr, i );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -295,14 +295,14 @@ namespace etc_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( struct A
 			{
 				std::shared_ptr<A> self;
 			} );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "자기 참조" );
@@ -319,7 +319,7 @@ namespace etc_test
 				OUTPUT_NOTE( "A 의 소멸자가 불리지 않았기 때문에 self 는 그대로 남아있다." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "상호 참조" );
@@ -345,7 +345,7 @@ namespace etc_test
 				OUTPUT_NOTE( "A 의 소멸자가 불리지 않았기 때문에 self 는 그대로 남아있다." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "순환 참조" );
@@ -373,7 +373,7 @@ namespace etc_test
 				OUTPUT_NOTE( "A 의 소멸자가 불리지 않았기 때문에 self 는 그대로 남아있다." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

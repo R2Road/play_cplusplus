@@ -19,7 +19,7 @@ namespace std_tuple_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				using T = std::tuple<int, std::string, char>;
@@ -37,7 +37,7 @@ namespace std_tuple_test
 			}
 
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			{
@@ -56,7 +56,7 @@ namespace std_tuple_test
 			}
 
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			{
@@ -70,7 +70,7 @@ namespace std_tuple_test
 			}
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

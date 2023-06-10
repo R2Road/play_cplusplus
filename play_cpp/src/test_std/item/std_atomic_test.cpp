@@ -53,7 +53,7 @@ namespace std_atomic_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Test 1" << r2tm::linefeed2;
@@ -68,7 +68,7 @@ namespace std_atomic_test
 				IsLockFreePrinter<void*>().Print();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Test 2" << r2tm::linefeed2;
@@ -79,7 +79,7 @@ namespace std_atomic_test
 				std::cout << r2tm::tab << "# vs2017에 버그가 있는듯." << r2tm::linefeed2;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -96,11 +96,11 @@ namespace std_atomic_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( int n = 0 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ thread x 5 : 100000 time ++n" << r2tm::linefeed2;
@@ -128,11 +128,11 @@ namespace std_atomic_test
 				test_thread_5.join();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			EXPECT_NE( 100000 * 5, n );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -149,11 +149,11 @@ namespace std_atomic_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::atomic_int32_t n = 0 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "thread x 5 : 100000 time ++n" << r2tm::linefeed2;
@@ -183,11 +183,11 @@ namespace std_atomic_test
 				test_thread_5.join();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			EXPECT_EQ( 100000 * 5, n );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

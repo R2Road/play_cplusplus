@@ -23,18 +23,18 @@ namespace window_time_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( SYSTEMTIME local_time );
 			DECLARATION_MAIN( SYSTEMTIME system_time );
 			DECLARATION_MAIN( DWORD current_tick = 0 );
 			DECLARATION_MAIN( DWORD last_tick = 0 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "[ANY KEY] Exit" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				r2::FPSTimer fps_timer( 30 );
@@ -85,7 +85,7 @@ namespace window_time_test
 							OUTPUT_VALUE( timeGetTime() );
 						}
 
-						std::cout << r2tm::split;
+						LS();
 					}
 
 					if( _kbhit() )

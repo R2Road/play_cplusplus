@@ -66,7 +66,7 @@ namespace play_infinite_number
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( InfiniteNumber infinite_number );
@@ -77,14 +77,14 @@ namespace play_infinite_number
 				OUTPUT_VALUE(infinite_number.Get() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( InfiniteNumber m( 123 ) );
 				EXPECT_EQ( 123, m );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -103,14 +103,14 @@ namespace play_infinite_number
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto m = InfiniteNumber( 100 ) + InfiniteNumber( 23 ) );
 				EXPECT_EQ( 123ll, m );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				unsigned int i = -1;
@@ -125,7 +125,7 @@ namespace play_infinite_number
 				std::to_string( j );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

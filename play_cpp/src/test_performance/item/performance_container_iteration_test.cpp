@@ -25,7 +25,7 @@ namespace performance_container_iteration_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			int test_container[100000];
 			std::fill_n( test_container, sizeof( test_container ) / sizeof( test_container[0] ), 1 );
@@ -37,7 +37,7 @@ namespace performance_container_iteration_test
 			std::cout << r2tm::tab2 << "int test_container[100000];" << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "std::fill_n( test_container, sizeof( test_container ) / sizeof( test_container[0] ), 1 );" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ For with Index" << r2tm::linefeed2;
@@ -60,7 +60,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Range-Based For" << r2tm::linefeed2;
@@ -83,7 +83,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -102,7 +102,7 @@ namespace performance_container_iteration_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::array<int, 100000> test_container;
 			test_container.fill( 1 );
@@ -113,7 +113,7 @@ namespace performance_container_iteration_test
 			std::cout << r2tm::tab2 << "std::array<int, 100000> test_container;" << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "test_container.fill( 1 );" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ For with Index" << r2tm::linefeed2;
@@ -136,7 +136,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Range-Based For" << r2tm::linefeed2;
@@ -159,7 +159,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Iterator" << r2tm::linefeed2;
@@ -182,7 +182,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -201,7 +201,7 @@ namespace performance_container_iteration_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::vector<int> test_container( 100000, 1 );
 			unsigned int sum_result = 0;
@@ -210,7 +210,7 @@ namespace performance_container_iteration_test
 			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
 			std::cout << r2tm::tab2 << "std::vector<int> test_container( 100000, 1 );" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ For with Index" << r2tm::linefeed2;
@@ -233,7 +233,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Range-Based For" << r2tm::linefeed2;
@@ -256,7 +256,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Iterator" << r2tm::linefeed2;
@@ -279,7 +279,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -298,7 +298,7 @@ namespace performance_container_iteration_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::list<int> test_container( 100000, 1 );
 			unsigned int sum_result = 0;
@@ -307,7 +307,7 @@ namespace performance_container_iteration_test
 			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
 			std::cout << r2tm::tab2 << "std::list<int> test_container( 100000, 1 );" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Range-Based For" << r2tm::linefeed2;
@@ -330,7 +330,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Iterator" << r2tm::linefeed2;
@@ -353,7 +353,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -372,7 +372,7 @@ namespace performance_container_iteration_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::map<std::size_t, int> test_container;
 			for( int n = 0; 100000 > n; ++n ) test_container.emplace( n, 1 );
@@ -384,7 +384,7 @@ namespace performance_container_iteration_test
 			std::cout << r2tm::tab2 << "std::map<std::size_t, int> test_container;" << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "for( int n = 0; n > 100000; ++n ) test_container.emplace( n, 1 );" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ For with Index" << r2tm::linefeed2;
@@ -407,7 +407,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Range-Based For" << r2tm::linefeed2;
@@ -430,7 +430,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Iterator" << r2tm::linefeed2;
@@ -453,7 +453,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -472,7 +472,7 @@ namespace performance_container_iteration_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::unordered_map<std::size_t, int> test_container( 100000 );
 			for( int n = 0; 100000 > n; ++n ) test_container.emplace( n, 1 );
@@ -484,7 +484,7 @@ namespace performance_container_iteration_test
 			std::cout << r2tm::tab2 << "std::unordered_map<std::size_t, int> test_container( 100000 );" << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "for( int n = 0; n > 100000; ++n ) test_container.emplace( n, 1 );" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ For with Index" << r2tm::linefeed2;
@@ -507,7 +507,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Range-Based For" << r2tm::linefeed2;
@@ -530,7 +530,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Iterator" << r2tm::linefeed2;
@@ -553,7 +553,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -572,7 +572,7 @@ namespace performance_container_iteration_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::set<int> test_container;
 			for( int n = 0; 100000 > n; ++n ) test_container.emplace( n );
@@ -584,7 +584,7 @@ namespace performance_container_iteration_test
 			std::cout << r2tm::tab2 << "std::set<int> test_container;" << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "for( int n = 0; 100000 > n; ++n ) test_container.emplace( n );" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Range-Based For" << r2tm::linefeed2;
@@ -607,7 +607,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Iterator" << r2tm::linefeed2;
@@ -630,7 +630,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -649,7 +649,7 @@ namespace performance_container_iteration_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::unordered_set<int> test_container( 100000 );
 			for( int n = 0; 100000 > n; ++n ) test_container.emplace( n );
@@ -661,7 +661,7 @@ namespace performance_container_iteration_test
 			std::cout << r2tm::tab2 << "std::map<int, int> test_container;" << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "for( int n = 0; 100000 > n; ++n ) test_container.emplace( n );" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Range-Based For" << r2tm::linefeed2;
@@ -684,7 +684,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Iterator" << r2tm::linefeed2;
@@ -707,7 +707,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -726,7 +726,7 @@ namespace performance_container_iteration_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::array<int*, 100000> test_container;
 			for( auto& i : test_container ) i = new int( 1 );
@@ -738,7 +738,7 @@ namespace performance_container_iteration_test
 			std::cout << r2tm::tab2 << "std::array<int, 100000> test_container;" << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "for( auto& i : test_container ) i = new int( 1 );" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ For with Index" << r2tm::linefeed2;
@@ -761,7 +761,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Range-Based For" << r2tm::linefeed2;
@@ -784,7 +784,7 @@ namespace performance_container_iteration_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Iterator" << r2tm::linefeed2;
@@ -809,7 +809,7 @@ namespace performance_container_iteration_test
 
 			for( auto& i : test_container ) delete i;
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

@@ -30,25 +30,25 @@ namespace play_property
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( struct InvokerFunctorTestStruct
 			{
 				void Func() { printf( "\t" "> " "[Call] Func" "\n" ); }
 			} );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( InvokerFunctorTestStruct ts );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				invoke_functor f( &InvokerFunctorTestStruct::Func );
 				PROCESS_MAIN( f.Do( &ts ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

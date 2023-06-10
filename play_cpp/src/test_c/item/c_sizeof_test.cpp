@@ -16,7 +16,7 @@ namespace c_sizeof_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( sizeof( char ) );
@@ -24,28 +24,28 @@ namespace c_sizeof_test
 				OUTPUT_VALUE( sizeof( long long ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const char buffer[10] = { 0 } );
 				OUTPUT_VALUE( sizeof( buffer ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const int buffer[10] = { 0 } );
 				OUTPUT_VALUE( sizeof( buffer ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const double buffer[10] = { 0 } );
 				OUTPUT_VALUE( sizeof( buffer ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const char buffer[10] = { 0 } );
@@ -60,7 +60,7 @@ namespace c_sizeof_test
 				OUTPUT_NOTE( "sizeof 에 pointer 를 넣으면 pointer 자체의 크기를 반환한다." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( struct Dummy {} dummy; );
@@ -71,7 +71,7 @@ namespace c_sizeof_test
 				OUTPUT_NOTE( "sizeof 의 반환값은 최소 1 이다.." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			return r2tm::eDoLeaveAction::Pause;

@@ -22,12 +22,12 @@ namespace c_macro_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
 			std::cout << r2tm::tab2 << "#define MACRO2STRING( x ) #x" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const int test_int = 3456 );
@@ -37,7 +37,7 @@ namespace c_macro_test
 				OUTPUT_VALUE( MACRO2STRING( test_int ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

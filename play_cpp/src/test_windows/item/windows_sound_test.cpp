@@ -21,13 +21,13 @@ namespace windows_sound_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "[ESC]" " Exit" << r2tm::linefeed;
 			std::cout << "[1]" " Play SFX 1" << r2tm::linefeed;
 			std::cout << "[2]" " Play SFX 2" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			int input = 0;
 			do
@@ -70,13 +70,13 @@ namespace windows_sound_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "[ESC]" " Exit" << r2tm::linefeed;
 			std::cout << "[1]" " Play Beep" << r2tm::linefeed;
 			std::cout << "[2]" " Play Beep" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			int input = 0;
 			do

@@ -18,7 +18,7 @@ namespace korean_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ use std::cout" << r2tm::linefeed;
@@ -30,7 +30,7 @@ namespace korean_test
 				std::cout << r2tm::tab2 << "- " << korean << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ use std::wcout" << r2tm::linefeed;
@@ -45,7 +45,7 @@ namespace korean_test
 				std::wcout << r2tm::tab2 << "- " << korean << r2tm::linefeed2;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

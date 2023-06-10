@@ -22,22 +22,22 @@ namespace cpp_class_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "Class Method 를 호출하는법." );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( struct S
 			{
 				void Func() { printf( "\t" "> " "[Call] Func" "\n" ); }
 			} );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( S s );
 
-			std::cout << r2tm::split;
+			LS();
 			{
 				PROCESS_MAIN( s.Func() );
 
@@ -51,7 +51,7 @@ namespace cpp_class_test
 				PROCESS_MAIN( ( s.*f )( ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -70,7 +70,7 @@ namespace cpp_class_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( DECLARATION_MAIN( struct TC
 			{
@@ -78,7 +78,7 @@ namespace cpp_class_test
 			} ); );
 			DECLARATION_MAIN( TC tc );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( tc.b );
@@ -88,7 +88,7 @@ namespace cpp_class_test
 				OUTPUT_VALUE( tc.TC::b );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -107,7 +107,7 @@ namespace cpp_class_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				class TestClass1
@@ -136,7 +136,7 @@ namespace cpp_class_test
 				std::cout << r2tm::tab2 << "TestClass1 t1{ 1, 2 }" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -165,7 +165,7 @@ namespace cpp_class_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
@@ -177,7 +177,7 @@ namespace cpp_class_test
 				OUTPUT_VALUE( typeid( TestClass1 ).name() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( TestClass1 test_class );
@@ -187,7 +187,7 @@ namespace cpp_class_test
 				OUTPUT_VALUE( typeid( test_class ).name() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
@@ -202,7 +202,7 @@ namespace cpp_class_test
 				OUTPUT_VALUE( typeid( TestClass2 ).name() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 			
 			{
 				class TestClass3 {};
@@ -217,7 +217,7 @@ namespace cpp_class_test
 				OUTPUT_VALUE( typeid( TestClass3 ).name() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -239,7 +239,7 @@ namespace cpp_class_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				class TestClass1
@@ -258,7 +258,7 @@ namespace cpp_class_test
 					std::cout << r2tm::tab2 << "}" << r2tm::linefeed2;
 				}
 
-				std::cout << r2tm::split;
+				LS();
 
 				{
 					DECLARATION_MAIN( TestClass1 tc1 );
@@ -270,7 +270,7 @@ namespace cpp_class_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -292,7 +292,7 @@ namespace cpp_class_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_member_adress.hpp" );
 
@@ -301,13 +301,13 @@ namespace cpp_class_test
 			DECLARATION_MAIN( using TC = cpp_class_test_helper_member_adress::TestClass );
 			DECLARATION_MAIN( TC tc );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( &tc );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Member Adress" << r2tm::linefeed2;
@@ -316,7 +316,7 @@ namespace cpp_class_test
 				OUTPUT_VALUE( &tc.c );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -335,7 +335,7 @@ namespace cpp_class_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_member_adress.hpp" );
 
@@ -344,13 +344,13 @@ namespace cpp_class_test
 			DECLARATION_MAIN( using TC = cpp_class_test_helper_member_adress::TestClass );
 			DECLARATION_MAIN( TC tc );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( &tc );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Method Adress 1" << r2tm::linefeed2;
@@ -358,7 +358,7 @@ namespace cpp_class_test
 				OUTPUT_VALUE( &TC::Func2 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Method Adress 2" << r2tm::linefeed2;
@@ -373,7 +373,7 @@ namespace cpp_class_test
 				OUTPUT_VALUE( f2_void );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -392,7 +392,7 @@ namespace cpp_class_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( class A {}; );
@@ -415,7 +415,7 @@ namespace cpp_class_test
 				OUTPUT_VALUE( pB );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -434,7 +434,7 @@ namespace cpp_class_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( class A {}; class B {}; );
@@ -458,7 +458,7 @@ namespace cpp_class_test
 				OUTPUT_VALUE( pB );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( class A {}; class B {}; class C {}; );
@@ -501,7 +501,7 @@ namespace cpp_class_test
 				OUTPUT_VALUE( pCastWithOffset );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -520,19 +520,19 @@ namespace cpp_class_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_offset_singleton.hpp" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( A_B_ST abst );
 
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_VALUE( &abst );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -551,7 +551,7 @@ namespace cpp_class_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "type 의 최소 크기 : 1 byte" );
@@ -563,7 +563,7 @@ namespace cpp_class_test
 				OUTPUT_BINARY( C1() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "member 변수의 크기" );
@@ -575,7 +575,7 @@ namespace cpp_class_test
 				OUTPUT_BINARY( C1() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "공백 class 최적화" );
@@ -588,7 +588,7 @@ namespace cpp_class_test
 				OUTPUT_BINARY( C2() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "각 member 변수의 크기의 총합" );
@@ -601,7 +601,7 @@ namespace cpp_class_test
 				OUTPUT_BINARY( C2() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "virtual table의 크기" );
@@ -614,7 +614,7 @@ namespace cpp_class_test
 				OUTPUT_BINARY( C2() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "virtual table 의 영향으로 결정된 byte 정렬" );
@@ -627,7 +627,7 @@ namespace cpp_class_test
 				OUTPUT_BINARY( C2() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( class C1 { public: virtual ~C1() {} int i = -1; int j = -2; } );
@@ -644,7 +644,7 @@ namespace cpp_class_test
 				OUTPUT_VALUE( &c1.j );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -664,24 +664,24 @@ namespace cpp_class_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "enum 과 static constexpr 은 비슷한 의도로 사용 가능하다." );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( class C { enum { etest = 1 }; } );
 				OUTPUT_VALUE( sizeof( C ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( sizeof( C_has_StaticConstexprInt ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

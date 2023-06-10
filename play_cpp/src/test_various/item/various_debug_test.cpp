@@ -30,7 +30,7 @@ namespace various_debug_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
 			std::cout << r2tm::tab2 << "#define ShowCodeInfo()" << r2tm::linefeed;
@@ -40,7 +40,7 @@ namespace various_debug_test
 			std::cout << r2tm::tab3 << "std::cout << \"Line : \" << __LINE__ << r2tm::linefeed;" << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "}" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
@@ -49,7 +49,7 @@ namespace various_debug_test
 				ShowCodeInfo();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -68,7 +68,7 @@ namespace various_debug_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
@@ -77,7 +77,7 @@ namespace various_debug_test
 				OutputDebugStringW( L"What The Fuck" );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Has Some Problem" << r2tm::linefeed2;
@@ -85,7 +85,7 @@ namespace various_debug_test
 				std::cout << r2tm::tab2 << "use <Windows.h> instead <debugapi.h>" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -104,13 +104,13 @@ namespace various_debug_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
 				std::cout << r2tm::tab2 << "assert( 1 > 2 && \"What The Fuck\" );" << r2tm::linefeed;
 
-				std::cout << r2tm::split;
+				LS();
 			}
 
 			assert( 1 > 2 && "What The Fuck" );
@@ -132,7 +132,7 @@ namespace various_debug_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
@@ -141,7 +141,7 @@ namespace various_debug_test
 				__debugbreak();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -160,11 +160,11 @@ namespace various_debug_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/r2/r2_Assert.h" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
@@ -178,7 +178,7 @@ namespace various_debug_test
 
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -202,21 +202,21 @@ namespace various_debug_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ File Open" << r2tm::linefeed2;
 
 			DECLARATION_MAIN( const char* const file_path = GetSimpleLogFilePath() );
 			DECLARATION_MAIN( std::ofstream log_stream( file_path ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Redirection" << r2tm::linefeed2;
 
 			DECLARATION_MAIN( std::streambuf * const orig = std::cerr.rdbuf() );
 			PROCESS_MAIN( std::cerr.rdbuf( log_stream.rdbuf() ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( std::cerr << "[Test]" );
@@ -226,7 +226,7 @@ namespace various_debug_test
 				PROCESS_MAIN( std::cerr << "redirection 2 file" );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ End" << r2tm::linefeed2;
@@ -235,13 +235,13 @@ namespace various_debug_test
 				PROCESS_MAIN( log_stream.close() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_FILE( file_path );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

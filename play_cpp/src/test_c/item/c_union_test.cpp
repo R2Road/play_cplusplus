@@ -21,7 +21,7 @@ namespace c_union_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( union { int32_t a; int64_t b; } u );
@@ -32,7 +32,7 @@ namespace c_union_test
 				OUTPUT_VALUE( &u.b );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -51,17 +51,17 @@ namespace c_union_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "다뤄지는 type 의 크기 만큼만 메모리에 접근한다." );
 			OUTPUT_NOTE( "char type에 0 을 대입하면 8bit만 0 이 할당된다." );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( union U { char c; int64_t i64; } );
 			DECLARATION_MAIN( U u );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( u.c = 0 );
@@ -69,28 +69,28 @@ namespace c_union_test
 				OUTPUT_BINARY( u );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( u.i64 = -1ll );
 				OUTPUT_BINARY( u );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( u.c = 0 );
 				OUTPUT_BINARY( u );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( u.i64 = 255 );
 				OUTPUT_BINARY( u );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -109,13 +109,13 @@ namespace c_union_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( union U { char c; int64_t i64; } );
 			DECLARATION_MAIN( U u_1 );
 			DECLARATION_MAIN( U u_2 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( u_1.i64 = -1ll );
@@ -123,7 +123,7 @@ namespace c_union_test
 				OUTPUT_BINARY( u_1 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( u_2.i64 = 0 );
@@ -131,14 +131,14 @@ namespace c_union_test
 				OUTPUT_BINARY( u_2 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( u_1 = u_2 );
 				OUTPUT_BINARY( u_1 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -157,18 +157,18 @@ namespace c_union_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "Not Working" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_CODE( union U { char c; std::string s = ""; } );
 				OUTPUT_CODE( U u_1 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -187,15 +187,15 @@ namespace c_union_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "struct 안의 익명 공용체는 공용체 안에 선언된 멤버들을 struct 의 멤버처럼 접근하게 해준다." );
 
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/test_c/item/c_union_test_helper_unnamedunion_with_struct.hpp" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( c_union_test_helper_unnamedunion_with_struct::TestStruct s );
@@ -207,7 +207,7 @@ namespace c_union_test
 				OUTPUT_VALUE( &s.ll );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -226,17 +226,17 @@ namespace c_union_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "MS 확장(/Ze)에서 선언자가 없는 구조를 다른 구조체 또는 공용 구조체의 멤버로 지정할 수 있다." );
 			OUTPUT_NOTE( "이러한 구조체는 ANSI 호환성(/Za)에서 오류를 생성한다." );
 			OUTPUT_NOTE( "https://learn.microsoft.com/ko-kr/cpp/error-messages/compiler-warnings/compiler-warning-level-4-c4201?view=msvc-170" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/test_c/item/c_union_test_helper_unnamedunion_with_vector3.hpp" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( c_union_test_helper_unnamedunion_with_vector3::Vector3 v );
@@ -252,7 +252,7 @@ namespace c_union_test
 				EXPECT_EQ( &v.r[2], &v.z );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -271,15 +271,15 @@ namespace c_union_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "Warning 없이 MS 전용 기능을 흉내내보자." );
 
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/test_c/item/c_union_test_helper_unnamedunion_with_vector3_2.hpp" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( c_union_test_helper_unnamedunion_with_vector3_2::Vector3 v );
@@ -304,7 +304,7 @@ namespace c_union_test
 				OUTPUT_VALUE( &v.z );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -323,16 +323,16 @@ namespace c_union_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "Warning 없이 MS 전용 기능을 흉내내보자." );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( struct { float x; float y; float z; } v );
 			OUTPUT_VALUE( sizeof( v ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( float* f = (float*)&v );
@@ -353,7 +353,7 @@ namespace c_union_test
 				OUTPUT_VALUE( &v.z );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

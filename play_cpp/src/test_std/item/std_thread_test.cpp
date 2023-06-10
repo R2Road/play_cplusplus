@@ -44,7 +44,7 @@ namespace std_thread_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::thread t1;
@@ -55,7 +55,7 @@ namespace std_thread_test
 				std::cout << r2tm::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::thread t1( thread_func_1 );
@@ -75,13 +75,13 @@ namespace std_thread_test
 				std::cout << r2tm::tab2 << "t1.join();" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "t2.join();" << r2tm::linefeed;
 
-				std::cout << r2tm::split;
+				LS();
 
 				t1.join();
 				t2.join();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -105,7 +105,7 @@ namespace std_thread_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::thread test_thread( empty_thread_func, 3 );
@@ -116,7 +116,7 @@ namespace std_thread_test
 				std::cout << r2tm::tab2 << "std::thread test_thread( empty_thread_func, 3 );" << r2tm::linefeed2;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				class ThreadTestClass
@@ -141,7 +141,7 @@ namespace std_thread_test
 				std::cout << r2tm::tab2 << "std::thread test_thread{ ThreadTestClass( 3 ) };" << r2tm::linefeed2;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::thread test_thread( []( int, int ) {}, 3, 4 );
@@ -151,7 +151,7 @@ namespace std_thread_test
 				std::cout << r2tm::tab2 << "std::thread test_thread( []() {}, 3, 4 );" << r2tm::linefeed2;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				class ThreadTestClass
@@ -177,7 +177,7 @@ namespace std_thread_test
 				std::cout << r2tm::tab2 << "std::thread test_thread( &ThreadTestClass::process, &thread_test_class );" << r2tm::linefeed2;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -199,7 +199,7 @@ namespace std_thread_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::thread t1;
 			std::thread t2(
@@ -226,7 +226,7 @@ namespace std_thread_test
 				std::cout << r2tm::tab3 << "- Joinable : " << ( t2.joinable() ? "O" : "X" ) << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				t1 = std::move( t2 );
@@ -245,7 +245,7 @@ namespace std_thread_test
 
 			t1.join();
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -267,7 +267,7 @@ namespace std_thread_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab2 << "std::thread test_thread( []()" << r2tm::linefeed;
@@ -292,7 +292,7 @@ namespace std_thread_test
 				test_thread.join();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -314,7 +314,7 @@ namespace std_thread_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab2 << "auto thread_process = []()" << r2tm::linefeed;
@@ -352,7 +352,7 @@ namespace std_thread_test
 				std::cout << r2tm::tab2 << "Note : 양보 받을 놈이 없으면 아무 소용 없다." << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -374,13 +374,13 @@ namespace std_thread_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << clm( r2tm::eColor::FG_Green ) << "# 음수 값을 넣어도 문제는 발생하지 않는다." << clm() << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( r2tm::StopWatch stop_watch );
@@ -394,7 +394,7 @@ namespace std_thread_test
 				stop_watch.PrintElapsedTime_All();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

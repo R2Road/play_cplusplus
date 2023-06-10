@@ -30,7 +30,7 @@ namespace windows_terminal_flickering_research
 
 				std::cout << "[Any Key] End" << r2tm::linefeed;
 
-				std::cout << r2tm::split;
+				LS();
 
 				int current_x = 0;
 				for( const auto v : visible_resource )
@@ -73,13 +73,13 @@ namespace windows_terminal_flickering_research
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "[Any Key] End" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 			std::cout << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed;
-			std::cout << r2tm::split;
+			LS();
 
 			r2utility::CharacterBuffer visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
@@ -144,14 +144,14 @@ namespace windows_terminal_flickering_research
 
 				std::cout << "[Any Key] End" << r2tm::linefeed;
 
-				std::cout << r2tm::split;
+				LS();
 
 				for( int current_y = 0; visible_resource.GetHeight() > current_y; ++current_y )
 				{
 					std::cout << visible_resource.GetLine( current_y ) << r2tm::linefeed;
 				}
 
-				std::cout << r2tm::split;
+				LS();
 
 				//
 				// Input
@@ -191,11 +191,11 @@ namespace windows_terminal_flickering_research
 
 				std::cout << "[Any Key] End" << r2tm::linefeed;
 
-				std::cout << r2tm::split;
+				LS();
 
 				std::cout << &( *character_buffer.begin() );
 
-				std::cout << r2tm::split;
+				LS();
 
 				//
 				// Input

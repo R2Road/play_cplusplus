@@ -18,7 +18,7 @@ namespace std_cout_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( std::cout << "1234" "5678" "90" );
@@ -37,7 +37,7 @@ namespace std_cout_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -56,18 +56,18 @@ namespace std_cout_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Note : 표기 방식등의 Format은 유지된다." << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Status Save" << r2tm::linefeed2;
 
 			DECLARATION_MAIN( std::ios last_fmt( nullptr ) );
 			PROCESS_MAIN( last_fmt.copyfmt( std::cout ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Format" << r2tm::linefeed2;
@@ -75,7 +75,7 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << std::hex; );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Test 1" << r2tm::linefeed2;
@@ -83,7 +83,7 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << 10 << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Status Rollback" << r2tm::linefeed2;
@@ -91,7 +91,7 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout.copyfmt( last_fmt ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Test 2" << r2tm::linefeed2;
@@ -99,7 +99,7 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << 10 << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -118,12 +118,12 @@ namespace std_cout_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
 			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::oct, hex, dec" << r2tm::linefeed2;
@@ -133,7 +133,7 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << std::dec << 10 << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::showbase" << r2tm::linefeed2;
@@ -147,13 +147,13 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << std::dec << 10 << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -172,12 +172,12 @@ namespace std_cout_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
 			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::showpos : show positive : 10진수 양수에 + 를 표시 한다." << r2tm::linefeed2;
@@ -197,7 +197,7 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << 10 << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::uppercase : 16진수의 영문자를 대문자 표기로 바꾼다." << r2tm::linefeed2;
@@ -218,13 +218,13 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << std::hex << 10 << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -243,12 +243,12 @@ namespace std_cout_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
 			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::showpoint" << r2tm::linefeed2;
@@ -272,7 +272,7 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << 11.2f << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::setprecision" << r2tm::linefeed2;
@@ -296,13 +296,13 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << 123.45f << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -321,12 +321,12 @@ namespace std_cout_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
 			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Note : 소수점 이하 4자리 출력으로 고정." << r2tm::linefeed2;
@@ -353,13 +353,13 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << 11.2f << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -378,12 +378,12 @@ namespace std_cout_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
 			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( std::cout << std::setw( 20 ) << std::right << "align right" << r2tm::linefeed2 );
@@ -391,7 +391,7 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << std::setw( 20 ) << std::internal << std::showpos << 1234 << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( std::cout << std::setfill( 'x' ) << std::setw( 20 ) << std::right << "1234" << r2tm::linefeed2 );
@@ -399,27 +399,27 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << std::setfill( 'x' ) << std::setw( 20 ) << std::internal << std::showpos << 1234 << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( std::cout << "1234" << "5678" << r2tm::linefeed2 );
 				PROCESS_MAIN( std::cout << std::setw( 20 ) << "1234" << "5678" << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Note : std::setw, std::right 등은 한 번 작동한다. 유지되지 않는다." << r2tm::linefeed;
 				std::cout << r2tm::tab << "+ Note : std::setfill 은 유지 된다." << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -438,12 +438,12 @@ namespace std_cout_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
 			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::setiosflags" << r2tm::linefeed2;
@@ -468,13 +468,13 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << 11.2f << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -493,12 +493,12 @@ namespace std_cout_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
 			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::boolalpha" << r2tm::linefeed2;
@@ -511,7 +511,7 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << false << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::noboolalpha" << r2tm::linefeed2;
@@ -524,13 +524,13 @@ namespace std_cout_test
 				PROCESS_MAIN( std::cout << false << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -557,13 +557,13 @@ namespace std_cout_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( std::cout << A() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

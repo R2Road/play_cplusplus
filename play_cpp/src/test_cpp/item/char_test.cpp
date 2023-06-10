@@ -21,7 +21,7 @@ namespace char_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Print Chars" << r2tm::linefeed << r2tm::linefeed;
@@ -34,7 +34,7 @@ namespace char_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Sound" << r2tm::linefeed;
@@ -43,7 +43,7 @@ namespace char_test
 				std::cout << r2tm::tab2 << "- std::cout << (char)7;" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -69,7 +69,7 @@ namespace char_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ char 2 wchar_t" << r2tm::linefeed << r2tm::linefeed;
@@ -96,7 +96,7 @@ namespace char_test
 				std::cout << "The string in narrow multibyte encoding: " << external << '\n';
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -118,7 +118,7 @@ namespace char_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const char* str = R"(Test)" );
@@ -128,7 +128,7 @@ namespace char_test
 				PROCESS_MAIN( std::cout << str << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "escape 문자들이 무시되고 입력된 그대로 출력된다." );
@@ -142,7 +142,7 @@ Test \t )";
 				std::cout << str << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "Delimeter는 따옴표 사용이 문제가 되는 경우( www 주소를 다룬다거나 )에..." );
@@ -157,7 +157,7 @@ Test \t )";
 				PROCESS_MAIN( std::cout << str << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

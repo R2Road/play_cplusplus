@@ -62,7 +62,7 @@ namespace procedural_terrain_generation_1_test
 			r2::Grid<eTerrainType> grid;
 			grid.Reset( 40, 40 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
 
@@ -138,7 +138,7 @@ namespace procedural_terrain_generation_1_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -162,7 +162,7 @@ namespace procedural_terrain_generation_1_test
 			r2::Grid<eTerrainType> grid_terrain;
 			grid_terrain.Reset( 40, 40 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
 
@@ -241,7 +241,7 @@ namespace procedural_terrain_generation_1_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::linefeed;
 			std::cout << "> Next Step";
@@ -280,7 +280,7 @@ namespace procedural_terrain_generation_1_test
 				_getch();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

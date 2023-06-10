@@ -20,7 +20,7 @@ namespace std_numeric_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "# Sum" << r2tm::linefeed;
@@ -42,7 +42,7 @@ namespace std_numeric_test
 				std::cout << r2tm::tab2 << sum << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "# Minus" << r2tm::linefeed;
@@ -64,7 +64,7 @@ namespace std_numeric_test
 				std::cout << r2tm::tab2 << result << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "# Multiply" << r2tm::linefeed;
@@ -86,7 +86,7 @@ namespace std_numeric_test
 				std::cout << r2tm::tab2 << result << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -105,7 +105,7 @@ namespace std_numeric_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			// Copy from https://en.cppreference.com/w/cpp/algorithm/accumulate
 
@@ -124,7 +124,7 @@ namespace std_numeric_test
 			std::cout << r2tm::tab2 << "};" << r2tm::linefeed;
 			std::cout << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const std::string s = std::accumulate(
@@ -145,7 +145,7 @@ namespace std_numeric_test
 				std::cout << r2tm::tab2 << s << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const std::string rs = std::accumulate(
@@ -166,7 +166,7 @@ namespace std_numeric_test
 				std::cout << r2tm::tab2 << rs << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -185,7 +185,7 @@ namespace std_numeric_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				// Copy from https://en.cppreference.com/w/cpp/algorithm/partial_sum
@@ -211,7 +211,7 @@ namespace std_numeric_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				// Copy from https://en.cppreference.com/w/cpp/algorithm/partial_sum
@@ -244,7 +244,7 @@ namespace std_numeric_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -263,17 +263,17 @@ namespace std_numeric_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::list<int> temp_list( 10, 0 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( std::iota( temp_list.begin(), temp_list.end(), 11 ) ); // fill : 0, 1, 2, 3, 4 ......
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ View" << r2tm::linefeed2;
@@ -283,7 +283,7 @@ namespace std_numeric_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

@@ -20,7 +20,7 @@ namespace std_array_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
 
@@ -45,7 +45,7 @@ namespace std_array_test
 				std::cout << r2tm::tab2 << "* Note : Since c++17" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -74,7 +74,7 @@ namespace std_array_test
 				std::cout << r2tm::linefeed;
 			};
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Variable" << r2tm::linefeed2;
 
@@ -122,7 +122,7 @@ namespace std_array_test
 				std::cout << r2tm::tab3 << "- Not Working" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -151,12 +151,12 @@ namespace std_array_test
 				std::cout << r2tm::linefeed;
 			};
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "# Note : Macro가 쉼표를 인자의 구별자로 인식해서 std::array 선언에 Inspector 활용이 안된다." << r2tm::linefeed;
 			std::cout << "# Note : 생성자에서 array를 복사해야 한다면 std::array 를 활용해도 괜찮을듯." << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			using TestArrayT = std::array<int, 3u>;
 			std::cout << "using TestArrayT = std::array<int, 3u>;" << r2tm::linefeed2;
@@ -176,7 +176,7 @@ namespace std_array_test
 				printer( array_2 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

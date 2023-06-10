@@ -25,12 +25,12 @@ namespace c_atexit_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "프로그램이 종료될 때 등록한 함수가 작동된다." );
 			OUTPUT_NOTE( "반환값 : 성공 = 0, 실패 = 다른 값" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "Function" );
@@ -44,7 +44,7 @@ namespace c_atexit_test
 				EXPECT_EQ( 0, atexit( Do ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "Lambda" );
@@ -56,7 +56,7 @@ namespace c_atexit_test
 				EXPECT_EQ( 0, atexit( l ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "Static Method" );
@@ -74,7 +74,7 @@ namespace c_atexit_test
 				EXPECT_EQ( 0, atexit( S::Do ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

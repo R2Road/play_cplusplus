@@ -21,7 +21,7 @@ namespace performance_1_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			const int attempt_limit = std::numeric_limits<int>::max() / 1000;
 			const int loop_limit = 4;
@@ -32,7 +32,7 @@ namespace performance_1_test
 				std::cout << r2tm::tab2 << "Loop Limit : " << loop_limit << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ For : Int : ++" << r2tm::linefeed2;
@@ -57,7 +57,7 @@ namespace performance_1_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ For : Int* : ++" << r2tm::linefeed2;
@@ -83,7 +83,7 @@ namespace performance_1_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ For : new Int* : ++" << r2tm::linefeed2;
@@ -109,7 +109,7 @@ namespace performance_1_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ For : Int Up : ++" << r2tm::linefeed2;
@@ -134,7 +134,7 @@ namespace performance_1_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ For : Int Sp : ++" << r2tm::linefeed2;
@@ -159,7 +159,7 @@ namespace performance_1_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -178,7 +178,7 @@ namespace performance_1_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			const int attempt_limit = std::numeric_limits<int>::max() / 10;
 			const int loop_limit = 5;
@@ -189,7 +189,7 @@ namespace performance_1_test
 				std::cout << r2tm::tab2 << "Loop Limit : " << loop_limit << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ For : unsigned int : ++" << r2tm::linefeed2;
@@ -214,7 +214,7 @@ namespace performance_1_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ While : unsigned int : ++" << r2tm::linefeed2;
@@ -239,7 +239,7 @@ namespace performance_1_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -258,7 +258,7 @@ namespace performance_1_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			const unsigned int attempt_limit = 100000;
 			const int loop_limit = 5;
@@ -269,7 +269,7 @@ namespace performance_1_test
 				std::cout << r2tm::tab2 << "Loop Limit : " << loop_limit << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			int test_container[attempt_limit];
 			std::fill_n( test_container, attempt_limit, 1 );
@@ -283,7 +283,7 @@ namespace performance_1_test
 				std::cout << r2tm::tab2 << "unsigned int sum_result = 0;" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ For : sum all" << r2tm::linefeed2;
@@ -306,7 +306,7 @@ namespace performance_1_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ While : sum all" << r2tm::linefeed2;
@@ -332,7 +332,7 @@ namespace performance_1_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -351,7 +351,7 @@ namespace performance_1_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			const unsigned int attempt_limit = 100000;
 			const int loop_limit = 5;
@@ -362,7 +362,7 @@ namespace performance_1_test
 				std::cout << r2tm::tab2 << "Loop Limit : " << loop_limit << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::array<int, attempt_limit> test_container;
 			test_container.fill( 1 );
@@ -376,7 +376,7 @@ namespace performance_1_test
 				std::cout << r2tm::tab2 << "unsigned int sum_result = 0;" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ For : sum all" << r2tm::linefeed2;
@@ -399,7 +399,7 @@ namespace performance_1_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ While : sum all" << r2tm::linefeed2;
@@ -425,7 +425,7 @@ namespace performance_1_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -444,7 +444,7 @@ namespace performance_1_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			const unsigned int attempt_count = 100000;
 
@@ -467,7 +467,7 @@ namespace performance_1_test
 			unsigned int sum_result = 0;
 			r2tm::StopWatch stop_watch;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ For And Iterator Operator->" << r2tm::linefeed2;
@@ -490,7 +490,7 @@ namespace performance_1_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ For And Iterator Operator*" << r2tm::linefeed2;
@@ -513,7 +513,7 @@ namespace performance_1_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

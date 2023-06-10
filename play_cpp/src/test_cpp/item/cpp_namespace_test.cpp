@@ -41,22 +41,22 @@ namespace cpp_namespace_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "C++ 17 부터는 namespace 를 붙여 쓸 수 있다." );
 
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE_RANGE( "src/test_cpp/item/cpp_namespace_test.cpp", 6, 29 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( cpp_namespace_test::A::B::C::T t );
 				OUTPUT_VALUE( t.Do() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -75,26 +75,26 @@ namespace cpp_namespace_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "namespace 에 별칭 지정 가능" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE_RANGE( "src/test_cpp/item/cpp_namespace_test.cpp", 6, 29 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( namespace alias_test = cpp_namespace_test::A::B::C; );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( alias_test::T t );
 				OUTPUT_VALUE( t.Do() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

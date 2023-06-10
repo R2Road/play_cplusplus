@@ -18,7 +18,7 @@ namespace std_variant_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::variant<int, float, bool> v;" << r2tm::linefeed;
@@ -36,7 +36,7 @@ namespace std_variant_test
 			}
 
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			{
@@ -51,7 +51,7 @@ namespace std_variant_test
 			}
 
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			{
@@ -77,7 +77,7 @@ namespace std_variant_test
 			}
 
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			{
@@ -113,7 +113,7 @@ namespace std_variant_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

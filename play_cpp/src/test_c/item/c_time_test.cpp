@@ -22,13 +22,13 @@ namespace c_time_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( time( NULL ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( time_t tt );
@@ -42,7 +42,7 @@ namespace c_time_test
 				OUTPUT_VALUE( tt );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -61,13 +61,13 @@ namespace c_time_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( time_t tt );
 			DECLARATION_MAIN( tm time_infos );
 			DECLARATION_MAIN( errno_t er );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( time( &tt ) );
@@ -75,7 +75,7 @@ namespace c_time_test
 				EXPECT_EQ( 0, er );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ 연, 월, 일" << r2tm::linefeed2;
@@ -91,7 +91,7 @@ namespace c_time_test
 				OUTPUT_VALUE( time_infos.tm_sec );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -110,7 +110,7 @@ namespace c_time_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( char str[128] );
@@ -126,7 +126,7 @@ namespace c_time_test
 				OUTPUT_VALUE( str );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( char str[128] );
@@ -144,13 +144,13 @@ namespace c_time_test
 				OUTPUT_VALUE( str );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ 만들어진 날짜 정보 문자열의 끝에는 \\n이 추가된다." << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -169,17 +169,17 @@ namespace c_time_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( clock_t current_clock = 0 );
 			DECLARATION_MAIN( clock_t current_sec = 0 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "Message : clock() 은 어플리케이션의 실행 시간을 반환한다." << r2tm::linefeed;
 			std::cout << r2tm::tab << "Message : clock() Gives Processing Time" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "[ANY KEY] Exit" << r2tm::linefeed2;
 
@@ -202,7 +202,7 @@ namespace c_time_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

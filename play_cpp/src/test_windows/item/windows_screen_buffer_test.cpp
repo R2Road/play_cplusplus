@@ -23,7 +23,7 @@ namespace windows_screen_buffer_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
 			COORD topLeft = { 0, 0 };
@@ -43,7 +43,7 @@ namespace windows_screen_buffer_test
 			std::cout << r2tm::tab2 << "const DWORD length = ( cs_buffer_info.srWindow.Right + 1 ) * ( cs_buffer_info.srWindow.Bottom + 1 );";
 			std::cout << r2tm::tab2 << "DWORD out_result;" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Upcoming Process : Fill All Buffer" << r2tm::linefeed2;
 			std::cout << r2tm::tab2 << "FillConsoleOutputCharacter( hStdout, TEXT( '#' ), length, topLeft, &out_result );" << r2tm::linefeed2;
@@ -52,7 +52,7 @@ namespace windows_screen_buffer_test
 			std::cout << r2tm::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_RED, length / 3, topLeft, &out_result );" << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "FillConsoleOutputAttribute( hStdout, FOREGROUND_INTENSITY, cs_buffer_info.srWindow.Right + 1, topLeft, &out_result );" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "Press Key : Do" << r2tm::linefeed;
 			_getch();
@@ -88,7 +88,7 @@ namespace windows_screen_buffer_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
@@ -98,19 +98,19 @@ namespace windows_screen_buffer_test
 				std::cout << r2tm::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "const char* str = \"*************WriteConsole Test*************\";" << r2tm::linefeed;
 
-				std::cout << r2tm::split;
+				LS();
 
 				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
 				std::cout << r2tm::tab2 << "WriteConsoleA( hStdout, str, sizeof( str ), nullptr, nullptr );" << r2tm::linefeed;
 
-				std::cout << r2tm::split;
+				LS();
 
 				WriteConsoleA( hStdout, str, static_cast<DWORD>( strlen( str ) ), nullptr, nullptr ); // 64bit size_t == typedef unsigned __int64 size_t; 
 
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -129,7 +129,7 @@ namespace windows_screen_buffer_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
 			COORD topLeft = { 0, 0 };
@@ -140,7 +140,7 @@ namespace windows_screen_buffer_test
 				std::cout << r2tm::tab2 << "COORD topLeft = { 0, 0 };" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
@@ -153,7 +153,7 @@ namespace windows_screen_buffer_test
 				WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), topLeft, &ret );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
@@ -168,7 +168,7 @@ namespace windows_screen_buffer_test
 				WriteConsoleOutputAttribute( hStdout, colors, static_cast<DWORD>( sizeof( colors ) / sizeof( DWORD ) ), topLeft, &ret );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -187,14 +187,14 @@ namespace windows_screen_buffer_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
 			DECLARATION_MAIN( DWORD ret = 0; );
 			DECLARATION_MAIN( const char str[21] = "한글출력테스트팔구십" );
 			DECLARATION_MAIN( const wchar_t wstr[21] = L"한글출력테스트일이십" );
 
-			std::cout << r2tm::split;
+			LS();
 			
 			{
 				const auto cursor_point = r2tm::WindowUtility::GetCursorPoint();
@@ -210,7 +210,7 @@ namespace windows_screen_buffer_test
 				PROCESS_MAIN( std::cout << buffer );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const auto cursor_point = r2tm::WindowUtility::GetCursorPoint();
@@ -227,13 +227,13 @@ namespace windows_screen_buffer_test
 				PROCESS_MAIN( std::wcout << buffer );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "# ReadConsoleOutputCharacterW 를 활용해 가져온 문자열은 인코딩이 필요한 것 같다." << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -252,7 +252,7 @@ namespace windows_screen_buffer_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( char buffer[111] = { '0' } );
@@ -263,7 +263,7 @@ namespace windows_screen_buffer_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( char buffer[111] = { '0' } );
@@ -274,7 +274,7 @@ namespace windows_screen_buffer_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( char buffer[111] = "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한" );
@@ -283,7 +283,7 @@ namespace windows_screen_buffer_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -302,11 +302,11 @@ namespace windows_screen_buffer_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "[ESC] Exit" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DWORD out_result;
@@ -366,7 +366,7 @@ namespace windows_screen_buffer_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::None;
 		};

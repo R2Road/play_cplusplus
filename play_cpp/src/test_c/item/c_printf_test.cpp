@@ -18,13 +18,13 @@ namespace c_printf_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( printf( "\t" "1111111" "2222222" "3333333" "   %d" "\n", 456789 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -43,11 +43,11 @@ namespace c_printf_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const int num = 0xde81 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "8 : oct : %%o" );
@@ -57,7 +57,7 @@ namespace c_printf_test
 				PROCESS_MAIN( printf( "\t> " "%o" "\n", num ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "10 : dec : %%d" );
@@ -67,7 +67,7 @@ namespace c_printf_test
 				PROCESS_MAIN( printf( "\t> " "%d" "\n", num ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "16 : hex : %%x" );
@@ -77,7 +77,7 @@ namespace c_printf_test
 				PROCESS_MAIN( printf( "\t> " "%x" "\n", num ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

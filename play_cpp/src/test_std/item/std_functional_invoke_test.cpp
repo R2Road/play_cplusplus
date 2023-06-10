@@ -19,11 +19,11 @@ namespace std_functional_invoke_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/test_std/item/std_functional_invoke_test_helper.hpp" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( std::invoke( Do, 2 ) );
@@ -44,7 +44,7 @@ namespace std_functional_invoke_test
 				OUTPUT_VALUE( std::invoke( &S2::n, &s_2 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

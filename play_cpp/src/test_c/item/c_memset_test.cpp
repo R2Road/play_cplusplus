@@ -18,27 +18,27 @@ namespace c_memset_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const uint32_t buffer_size = 6 );
 			DECLARATION_MAIN( char buffer[buffer_size] = { 0 } );
 			OUTPUT_BINARIES( buffer, buffer_size );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( memset( buffer, 1, sizeof( buffer ) ) );
 				OUTPUT_BINARIES( buffer, buffer_size );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( memset( buffer, -1, sizeof( buffer ) / 2 ) );
 				OUTPUT_BINARIES( buffer, buffer_size );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( memset( buffer, 255, sizeof( buffer ) ) );
@@ -54,7 +54,7 @@ namespace c_memset_test
 				OUTPUT_NOTE( "값을 byte 단위로 쓴다." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

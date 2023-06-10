@@ -19,7 +19,7 @@ namespace cpp_new_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( int* i = new int );
@@ -34,7 +34,7 @@ namespace cpp_new_test
 				PROCESS_MAIN( delete i );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( int* i = new int( 1 ) );
@@ -50,7 +50,7 @@ namespace cpp_new_test
 				PROCESS_MAIN( delete i );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( int* i = new ( std::nothrow ) int( 2 ) );
@@ -66,7 +66,7 @@ namespace cpp_new_test
 				PROCESS_MAIN( delete i );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -85,7 +85,7 @@ namespace cpp_new_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( int* i = new int[10] );
@@ -97,7 +97,7 @@ namespace cpp_new_test
 				PROCESS_MAIN( delete[] i );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				int* i = new int[10]{ 0, 1, 2 };
@@ -119,7 +119,7 @@ namespace cpp_new_test
 				PROCESS_MAIN( delete[] i );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( char* str = new char[7] );
@@ -130,7 +130,7 @@ namespace cpp_new_test
 				PROCESS_MAIN( delete[] str );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( char* str = new char[7]{ "abc" } );
@@ -147,7 +147,7 @@ namespace cpp_new_test
 				PROCESS_MAIN( delete[] str );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -166,7 +166,7 @@ namespace cpp_new_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( int i = 123 );
@@ -180,7 +180,7 @@ namespace cpp_new_test
 				OUTPUT_VALUE( *fp );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( int i = 65 );
@@ -194,7 +194,7 @@ namespace cpp_new_test
 				OUTPUT_BINARY( *cp );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

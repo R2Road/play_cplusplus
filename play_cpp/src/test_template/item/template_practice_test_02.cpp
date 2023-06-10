@@ -17,11 +17,11 @@ namespace template_practice_test_02
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/test_template/item/template_practice_test_02_helper_basic.hpp" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( FuncContainer f );
 			PROCESS_MAIN( f.def( "F1_A0", FN_V_A0 ) );
@@ -30,7 +30,7 @@ namespace template_practice_test_02
 			PROCESS_MAIN( f.def( "F4_A1", FN_V_A1 ) );
 			PROCESS_MAIN( f.def( "F5_A3", FN_V_A3 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "정상적인 인자 설정으로 함수 호출 시도" );
@@ -41,7 +41,7 @@ namespace template_practice_test_02
 				PROCESS_MAIN( f.Call<void>( "F5_A3", 100, 200, 300 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "잘못된 인자 설정으로 함수 호출 시도" );
@@ -52,7 +52,7 @@ namespace template_practice_test_02
 				PROCESS_MAIN( f.Call<void>( "F5_A3" ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

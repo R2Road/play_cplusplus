@@ -39,7 +39,7 @@ namespace template_meta_programming_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "\t" << "+ MTPackage<int, float, char> mtp{ 1, 2.f, '3' };" << r2tm::linefeed;
@@ -49,7 +49,7 @@ namespace template_meta_programming_test
 				std::cout << "\t\t" << "result : " << mtp.val << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

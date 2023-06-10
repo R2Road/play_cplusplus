@@ -32,7 +32,7 @@ namespace cpp_structured_binding_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "array" );
@@ -51,7 +51,7 @@ namespace cpp_structured_binding_test
 				OUTPUT_VALUE( c );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "std::array" );
@@ -70,7 +70,7 @@ namespace cpp_structured_binding_test
 				OUTPUT_VALUE( c );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "struct" );
@@ -98,7 +98,7 @@ namespace cpp_structured_binding_test
 				OUTPUT_VALUE( f );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "with Pair" );
@@ -116,7 +116,7 @@ namespace cpp_structured_binding_test
 				OUTPUT_VALUE( b );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "with Tuple" );
@@ -135,7 +135,7 @@ namespace cpp_structured_binding_test
 				OUTPUT_VALUE( c );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "with Function x 1" );
@@ -151,7 +151,7 @@ namespace cpp_structured_binding_test
 				OUTPUT_VALUE( b );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "with Function x 2" );
@@ -168,7 +168,7 @@ namespace cpp_structured_binding_test
 				OUTPUT_VALUE( c );
 			}
 			
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

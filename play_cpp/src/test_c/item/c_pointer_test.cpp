@@ -16,7 +16,7 @@ namespace c_pointer_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const int i = 123 );
@@ -33,7 +33,7 @@ namespace c_pointer_test
 				OUTPUT_VALUE( ip );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -52,11 +52,11 @@ namespace c_pointer_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( int ip[3] );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "adress of ip" );
@@ -80,7 +80,7 @@ namespace c_pointer_test
 				OUTPUT_VALUE( ( ( ip + 2 ) - ip ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "offset : ( char* )( ip + 2 ) ~ ( char* )ip" );
@@ -91,7 +91,7 @@ namespace c_pointer_test
 				OUTPUT_NOTE( "포인터간 연산은 Type의 영향을 받는다." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 			
 			{
 				DECLARATION_MAIN( const auto t1 = reinterpret_cast<std::size_t>( ip ) );
@@ -105,7 +105,7 @@ namespace c_pointer_test
 				OUTPUT_VALUE( t2 - t1 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -127,7 +127,7 @@ namespace c_pointer_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( int i = 0 );
@@ -148,7 +148,7 @@ namespace c_pointer_test
 				std::cout << std::dec;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -167,7 +167,7 @@ namespace c_pointer_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "int temp_int_1 = 0;" << r2tm::linefeed;
@@ -200,7 +200,7 @@ namespace c_pointer_test
 				*temp_pointer_const = temp_int_2;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "const int temp_const_int_1 = 0;" << r2tm::linefeed;
@@ -217,7 +217,7 @@ namespace c_pointer_test
 				//int* const temp_pointer_const = &temp_const_int_1;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -236,18 +236,18 @@ namespace c_pointer_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const char* empty_string = "" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( 0, strlen( empty_string ) );
 				EXPECT_NE( nullptr, empty_string );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const char* other_empty_string = "" );
@@ -259,7 +259,7 @@ namespace c_pointer_test
 				OUTPUT_VALUE( (void*)other_empty_string );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "같은 내용의 정적 문자열들은 주소가 같다." );
@@ -279,7 +279,7 @@ namespace c_pointer_test
 				OUTPUT_VALUE( (void*)space_x2_string_2 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

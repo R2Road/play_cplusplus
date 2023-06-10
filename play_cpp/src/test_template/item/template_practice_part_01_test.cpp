@@ -31,7 +31,7 @@ namespace template_practice_part_01_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				Buffer<64> buffer;
@@ -46,7 +46,7 @@ namespace template_practice_part_01_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -85,7 +85,7 @@ namespace template_practice_part_01_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ FindMax( 1, 2, 30, 4, 5, 60, 7 )" << r2tm::linefeed;
@@ -108,7 +108,7 @@ namespace template_practice_part_01_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::max( { 1, 2, 30, 4, 5, 60, 7 } )" << r2tm::linefeed;
@@ -121,7 +121,7 @@ namespace template_practice_part_01_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

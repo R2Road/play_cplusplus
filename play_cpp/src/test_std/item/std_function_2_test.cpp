@@ -31,7 +31,7 @@ namespace std_function_2_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 
 			using FunctionPointerT = void(*)();
@@ -42,7 +42,7 @@ namespace std_function_2_test
 			std::cout << r2tm::tab2 << "using STDFunctionT = std::function<void()>;" << r2tm::linefeed;
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ 음... 어떻게 해야 하지?" << r2tm::linefeed2;
@@ -84,7 +84,7 @@ namespace std_function_2_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

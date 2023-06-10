@@ -18,13 +18,13 @@ namespace std_queue_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "FIFO, Simple( iterator 없음 )" );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::queue<int> q );
@@ -35,7 +35,7 @@ namespace std_queue_test
 				EXPECT_EQ( 0, q.size() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "r-value Move Constructor" );
@@ -50,7 +50,7 @@ namespace std_queue_test
 				EXPECT_EQ( 3, q.size() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -69,7 +69,7 @@ namespace std_queue_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "빈 컨테이너에 font(), back() 쓰지마라." );
@@ -85,7 +85,7 @@ namespace std_queue_test
 				OUTPUT_CODE( q.back() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::queue<int> q( { 1 } ) );
@@ -101,7 +101,7 @@ namespace std_queue_test
 				OUTPUT_VALUE( q.back() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::queue<int> q( { 1, 2, 3 } ) );
@@ -117,7 +117,7 @@ namespace std_queue_test
 				OUTPUT_VALUE( q.back() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -136,13 +136,13 @@ namespace std_queue_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::queue<int> q );
 			EXPECT_EQ( 0, q.size() );
 			EXPECT_TRUE( q.empty() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( q.push( 1 ) );
@@ -158,7 +158,7 @@ namespace std_queue_test
 				EXPECT_EQ( 1, q.back() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( q.push( 2 ) );
@@ -174,7 +174,7 @@ namespace std_queue_test
 				EXPECT_EQ( 2, q.back() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( q.pop() );
@@ -190,7 +190,7 @@ namespace std_queue_test
 				EXPECT_EQ( 2, q.back() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( q.pop() );
@@ -201,7 +201,7 @@ namespace std_queue_test
 				EXPECT_TRUE( q.empty() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "빈 컨테이너에 pop() 쓰지마라." );
@@ -212,7 +212,7 @@ namespace std_queue_test
 				OUTPUT_CODE( q.pop() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -231,7 +231,7 @@ namespace std_queue_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "Front, Back 외에는 값의 확인이 불가능 하다." );
@@ -239,11 +239,11 @@ namespace std_queue_test
 				OUTPUT_NOTE( "그럼 값을 꺼내는 것 말고는 순회할 방법이 없다???" );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::queue<int> q( { 1, 2, 3 } ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				while( !q.empty() )
@@ -255,7 +255,7 @@ namespace std_queue_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

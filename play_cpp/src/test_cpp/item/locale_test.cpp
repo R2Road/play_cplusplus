@@ -18,7 +18,7 @@ namespace locale_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::locale l( \"\" );" << r2tm::linefeed2;
@@ -27,7 +27,7 @@ namespace locale_test
 				std::cout << r2tm::tab2 << "Locale Name : " << l.name().c_str() << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::locale l( \"en_US.utf8\" );" << r2tm::linefeed2;
@@ -36,7 +36,7 @@ namespace locale_test
 				std::cout << r2tm::tab2 << "Locale Name : " << l.name().c_str() << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const std::string current_locale = setlocale( LC_ALL, nullptr );
@@ -50,7 +50,7 @@ namespace locale_test
 				std::cout << r2tm::tab << "** Need nullptr in call setlocale" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const std::string current_locale = setlocale( LC_ALL, "" );
@@ -60,7 +60,7 @@ namespace locale_test
 				std::cout << r2tm::tab2 << "Locale Name : " << current_locale << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const char* kor = "한글 테스트";
@@ -89,7 +89,7 @@ namespace locale_test
 				std::wcout << "Print W Korean : " << wkor;// << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const std::string current_locale = setlocale( LC_ALL, "C" );
@@ -99,7 +99,7 @@ namespace locale_test
 				std::cout << r2tm::tab2 << "Locale Name : " << current_locale << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

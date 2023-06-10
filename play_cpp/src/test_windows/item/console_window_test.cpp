@@ -27,16 +27,16 @@ namespace console_window_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
 			DECLARATION_MAIN( CONSOLE_SCREEN_BUFFER_INFO console_screen_buffer_info );
 
-			std::cout << r2tm::split;
+			LS();
 
 			EXPECT_TRUE( GetConsoleScreenBufferInfo( hStdout, &console_screen_buffer_info ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( console_screen_buffer_info.dwCursorPosition.X );
@@ -64,7 +64,7 @@ namespace console_window_test
 				OUTPUT_VALUE( console_screen_buffer_info.wAttributes );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -88,14 +88,14 @@ namespace console_window_test
 				ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
 				std::cout << r2tm::tab2 << "system( \"mode con lines = 30 cols = 120\" );" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
@@ -110,7 +110,7 @@ namespace console_window_test
 				OUTPUT_VALUE( height );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "Press Any Key : Roll Back Window Size" << r2tm::linefeed;
 			_getch();
@@ -137,30 +137,30 @@ namespace console_window_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "# Alt + Enter" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "Press Any Key : Roll Back Window Size" << r2tm::linefeed;
 			_getch();
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -179,7 +179,7 @@ namespace console_window_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "[Any Key] End" << r2tm::linefeed2;
 
@@ -223,12 +223,12 @@ namespace console_window_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( HWND hWnd = GetConsoleWindow() );
 			DECLARATION_MAIN( RECT last_window_rect );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Backup" << r2tm::linefeed2;
@@ -242,7 +242,7 @@ namespace console_window_test
 					<< "H : " << ( last_window_rect.bottom - last_window_rect.top ) << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ System Display Info" << r2tm::linefeed2;
@@ -250,7 +250,7 @@ namespace console_window_test
 				OUTPUT_VALUE( GetSystemMetrics( SM_CYSCREEN ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Move To Center" << r2tm::linefeed;
@@ -283,7 +283,7 @@ namespace console_window_test
 					<< "Y : " << current_window_rect.top << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 			
 			std::cout << "Press Any Key : Roll Back Window Position" << r2tm::linefeed;
 			_getch();
@@ -300,7 +300,7 @@ namespace console_window_test
 				);
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -319,7 +319,7 @@ namespace console_window_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << " + Last Window Name" << r2tm::linefeed2;
 
@@ -330,7 +330,7 @@ namespace console_window_test
 
 			OUTPUT_VALUE( last_window_name_string );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << " + Change Window Name" << r2tm::linefeed2;
@@ -339,14 +339,14 @@ namespace console_window_test
 				PROCESS_MAIN( SetConsoleTitleA( window_name_string ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "Press Any Key : Roll Back Window Name" << r2tm::linefeed;
 				_getch();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				SetConsoleTitleA( last_window_name_string );
@@ -369,11 +369,11 @@ namespace console_window_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( LONG last_window_style = 0 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Backup" << r2tm::linefeed2;
@@ -385,7 +385,7 @@ namespace console_window_test
 				OUTPUT_BINARY( last_window_style );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Lock" << r2tm::linefeed2;
@@ -399,14 +399,14 @@ namespace console_window_test
 				OUTPUT_BINARY( new_window_style );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "Press Any Key : Rollback" << r2tm::linefeed;
 				_getch();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			//
 			// Rollback
@@ -415,7 +415,7 @@ namespace console_window_test
 				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, last_window_style ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -434,11 +434,11 @@ namespace console_window_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << " + Need : WinUser.h" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Hide" << r2tm::linefeed2;
@@ -446,12 +446,12 @@ namespace console_window_test
 				PROCESS_MAIN( ShowScrollBar( GetConsoleWindow(), SB_VERT, 0 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 			
 			std::cout << r2tm::tab << "Press Any Key : Rollback" << r2tm::linefeed;
 			_getch();
 
-			std::cout << r2tm::split;
+			LS();
 
 			//
 			// Rollback
@@ -462,7 +462,7 @@ namespace console_window_test
 				PROCESS_MAIN( ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -481,11 +481,11 @@ namespace console_window_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( LONG last_window_style = 0 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Backup" << r2tm::linefeed2;
@@ -494,7 +494,7 @@ namespace console_window_test
 				OUTPUT_BINARY( last_window_style );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Lock" << r2tm::linefeed2;
@@ -511,12 +511,12 @@ namespace console_window_test
 				PROCESS_MAIN( SetWindowPos( GetConsoleWindow(), NULL, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_FRAMECHANGED ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "Press Any Key : Rollback" << r2tm::linefeed;
 			_getch();
 
-			std::cout << r2tm::split;
+			LS();
 
 			//
 			// Rollback
@@ -525,7 +525,7 @@ namespace console_window_test
 				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, last_window_style ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -544,11 +544,11 @@ namespace console_window_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( LONG last_window_style = 0 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Backup" << r2tm::linefeed2;
@@ -557,7 +557,7 @@ namespace console_window_test
 				OUTPUT_BINARY( last_window_style );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Lock" << r2tm::linefeed2;
@@ -568,12 +568,12 @@ namespace console_window_test
 				OUTPUT_BINARY( new_window_style );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "Press Any Key : Rollback" << r2tm::linefeed;
 			_getch();
 
-			std::cout << r2tm::split;
+			LS();
 
 			//
 			// Rollback
@@ -582,7 +582,7 @@ namespace console_window_test
 				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, last_window_style ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -601,33 +601,33 @@ namespace console_window_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
 			DECLARATION_MAIN( HMENU hmenu = GetSystemMenu( GetConsoleWindow(), FALSE ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "Press Any Key : Do" << r2tm::linefeed;
 				_getch();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Process : Close Button Grayed" << r2tm::linefeed2;
 				PROCESS_MAIN( EnableMenuItem( hmenu, SC_CLOSE, MF_GRAYED ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "Press Any Key : Rollback" << r2tm::linefeed;
 				_getch();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				//
@@ -636,7 +636,7 @@ namespace console_window_test
 				PROCESS_MAIN( EnableMenuItem( hmenu, SC_CLOSE, MF_ENABLED ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -655,20 +655,20 @@ namespace console_window_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE ) );
 			DECLARATION_MAIN( COORD pos );
 			PROCESS_MAIN( pos.X = 20 );
 			PROCESS_MAIN( pos.Y = 30 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "[W, A, S, D] : Move" << r2tm::linefeed;
 			std::cout << "[SPACE BAR] Foot Print" << r2tm::linefeed;
 			std::cout << "[ESC] Exit" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROCESS_MAIN( SetConsoleCursorPosition( stdHandle, pos ) );
 
@@ -718,12 +718,12 @@ namespace console_window_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE ) );
 			DECLARATION_MAIN( CONSOLE_CURSOR_INFO cursorInfo );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Hide" << r2tm::linefeed2;
@@ -733,11 +733,11 @@ namespace console_window_test
 				PROCESS_MAIN( SetConsoleCursorInfo( stdHandle, &cursorInfo ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			system( "pause" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Show" << r2tm::linefeed2;
@@ -747,11 +747,11 @@ namespace console_window_test
 				PROCESS_MAIN( SetConsoleCursorInfo( stdHandle, &cursorInfo ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			system( "pause" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::None;
 		};
@@ -771,15 +771,15 @@ namespace console_window_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "# Quick Edit 는 콘솔창에서 마우스를 사용한 커서 이동, 선택이 가능한 옵션이다." << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( DWORD last_console_mode = 0 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Backup" << r2tm::linefeed2;
@@ -788,7 +788,7 @@ namespace console_window_test
 				OUTPUT_BINARY( last_console_mode );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Disable" << r2tm::linefeed2;
@@ -801,12 +801,12 @@ namespace console_window_test
 				OUTPUT_BINARY( new_console_mode );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "Press Any Key : Rollback" << r2tm::linefeed;
 			_getch();
 
-			std::cout << r2tm::split;
+			LS();
 
 			//
 			// Rollback
@@ -815,7 +815,7 @@ namespace console_window_test
 				PROCESS_MAIN( SetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), last_console_mode ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

@@ -36,12 +36,12 @@ namespace c_bit_operation_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const int pivot = 0b1000000001 ); // binary
 			PrintBinary( pivot );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Flip" << r2tm::linefeed2;
@@ -50,7 +50,7 @@ namespace c_bit_operation_test
 				PrintBinary( ~pivot );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Shift : Left" << r2tm::linefeed2;
@@ -59,7 +59,7 @@ namespace c_bit_operation_test
 				PrintBinary( pivot << 1 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Shift : Right" << r2tm::linefeed2;
@@ -68,7 +68,7 @@ namespace c_bit_operation_test
 				PrintBinary( pivot >> 1 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -87,7 +87,7 @@ namespace c_bit_operation_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PrintBinary( 1 );
@@ -96,7 +96,7 @@ namespace c_bit_operation_test
 				PrintBinary( -2 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const int pivot = 0b1000000001 ); // binary
 			PrintBinary( pivot );
@@ -105,7 +105,7 @@ namespace c_bit_operation_test
 
 			DECLARATION_MAIN( int num = pivot );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ 1의 보수 : 0 과 1을 뒤집어 음수를 만든다." << r2tm::linefeed2;
@@ -114,7 +114,7 @@ namespace c_bit_operation_test
 				PrintBinary( num );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ 2의 보수 : 0 과 1을 뒤집고 + 1 해서 음수를 만든다." << r2tm::linefeed2;
@@ -123,7 +123,7 @@ namespace c_bit_operation_test
 				PrintBinary( num );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( num, -pivot );
@@ -131,7 +131,7 @@ namespace c_bit_operation_test
 				OUTPUT_VALUE( -pivot );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -150,12 +150,12 @@ namespace c_bit_operation_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( unsigned int num = 0b1000000001 ); // binary
 			PrintBinary( num, 16 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Test Flag" << r2tm::linefeed2;
@@ -165,7 +165,7 @@ namespace c_bit_operation_test
 				EXPECT_TRUE( num & ( 1 << 9 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Add Flag" << r2tm::linefeed2;
@@ -174,7 +174,7 @@ namespace c_bit_operation_test
 				PrintBinary( num, 16 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Remove Flag" << r2tm::linefeed2;
@@ -183,7 +183,7 @@ namespace c_bit_operation_test
 				PrintBinary( num, 16 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Toggle Flag" << r2tm::linefeed2;
@@ -197,7 +197,7 @@ namespace c_bit_operation_test
 				PrintBinary( num, 16 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -216,7 +216,7 @@ namespace c_bit_operation_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const unsigned int num = 0b0011011000 );
 			PrintBinary( num );
@@ -229,7 +229,7 @@ namespace c_bit_operation_test
 			DECLARATION_MAIN( const unsigned int target_range = 5 );
 			DECLARATION_MAIN( const unsigned int bit_length = sizeof( num ) * 8 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ 1로 채운다" << r2tm::linefeed2;
@@ -262,7 +262,7 @@ namespace c_bit_operation_test
 				PrintBinary( result );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -281,11 +281,11 @@ namespace c_bit_operation_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( char result = 0 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const char b_1 = 0b00000000 );
@@ -294,7 +294,7 @@ namespace c_bit_operation_test
 				OUTPUT_BINARY( result );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const char b_1 = 0b00000011 );
@@ -303,7 +303,7 @@ namespace c_bit_operation_test
 				OUTPUT_BINARY( result );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const char b_1 = 0b00000011 );
@@ -312,7 +312,7 @@ namespace c_bit_operation_test
 				OUTPUT_BINARY( result );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const char b_1 = 0b00000111 );
@@ -330,7 +330,7 @@ namespace c_bit_operation_test
 				OUTPUT_BINARY( result );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -349,7 +349,7 @@ namespace c_bit_operation_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( int a = 123 );
@@ -382,7 +382,7 @@ namespace c_bit_operation_test
 				PrintBinary( b, 31 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -401,7 +401,7 @@ namespace c_bit_operation_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const char max_c = std::numeric_limits<char>::max() );
@@ -423,13 +423,13 @@ namespace c_bit_operation_test
 				PrintBinary( i_3, 32 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ 최상위 1 bit 를 비워둘 수 있다면 최대 값 끼리 더해도 문제 없다." << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -448,18 +448,18 @@ namespace c_bit_operation_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "개념 잡기" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const short t_1 = 1 );
 			DECLARATION_MAIN( const short t_2 = 5 );
 			OUTPUT_BINARY( t_1 );
 			OUTPUT_BINARY( t_2 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "1단계 : 겹치지 않는 bit 만 뽑아낸다." );
@@ -471,7 +471,7 @@ namespace c_bit_operation_test
 				OUTPUT_BINARY( sum );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "2단계 : 겹치는 bit 만 뽑아서 shift 한다.( 실질적인 덧셈 처리 )" );
@@ -489,7 +489,7 @@ namespace c_bit_operation_test
 				OUTPUT_BINARY( carry );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "3	단계 : 완료" );
@@ -501,7 +501,7 @@ namespace c_bit_operation_test
 				OUTPUT_BINARY( result );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -520,11 +520,11 @@ namespace c_bit_operation_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "bit 연산 만으로 덧셈 처리 해보자." );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( short t_1 = 1 );
 			DECLARATION_MAIN( short t_2 = 3 );
@@ -536,7 +536,7 @@ namespace c_bit_operation_test
 			DECLARATION_MAIN( short sum = 0 );
 			DECLARATION_MAIN( short carry = 0 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "cycle 1" );
@@ -554,14 +554,14 @@ namespace c_bit_operation_test
 				OUTPUT_BINARY( carry );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( t_1 = sum );
 				PROCESS_MAIN( t_2 = carry );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "cycle 2" );
@@ -579,7 +579,7 @@ namespace c_bit_operation_test
 				OUTPUT_BINARY( carry );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -598,18 +598,18 @@ namespace c_bit_operation_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "개념 잡기" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const short t_1 = 4 );
 			DECLARATION_MAIN( const short t_2 = 1 );
 			OUTPUT_BINARY( t_1 );
 			OUTPUT_BINARY( t_2 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "1단계 : 겹치지 않는 bit 만 뽑아낸다." );
@@ -621,7 +621,7 @@ namespace c_bit_operation_test
 				OUTPUT_BINARY( sub );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "2단계 : 앞의 수를 뒤집어 겹치는 bit 만 뽑아서 shift 한다.( 실질적인 뺄셈 처리 )" );
@@ -640,7 +640,7 @@ namespace c_bit_operation_test
 				OUTPUT_BINARY( borrow );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "3완료" );
@@ -652,7 +652,7 @@ namespace c_bit_operation_test
 				OUTPUT_BINARY( result );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -671,23 +671,23 @@ namespace c_bit_operation_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "bit 연산 만으로 뺄셈 처리 해보자." );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( short t_1 = 2 );
 			DECLARATION_MAIN( short t_2 = 1 );
 			OUTPUT_BINARY( t_1 );
 			OUTPUT_BINARY( t_2 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( short sub = 0 );
 			DECLARATION_MAIN( short borrow = 0 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "cycle 1" );
@@ -705,14 +705,14 @@ namespace c_bit_operation_test
 				OUTPUT_BINARY( borrow );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( t_1 = sub );
 				PROCESS_MAIN( t_2 = borrow );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "cycle 2" );
@@ -730,7 +730,7 @@ namespace c_bit_operation_test
 				OUTPUT_BINARY( borrow );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

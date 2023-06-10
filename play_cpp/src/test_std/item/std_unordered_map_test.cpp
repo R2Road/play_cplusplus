@@ -20,11 +20,11 @@ namespace std_unordered_map_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/test_std/item/std_unordered_map_test_helper_cstring.hpp" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( UM4CStringT container );
 
@@ -44,21 +44,21 @@ namespace std_unordered_map_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const auto itr = container.find( CStringNSize{ "1", 1 } ) );
 				OUTPUT_VALUE( itr->second );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const auto itr = container.find( CStringNSize{ "4", 1 } ) );
 				OUTPUT_VALUE( itr->second );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "char* 의 메모리 관리를 직접 해야 한다." );
@@ -66,7 +66,7 @@ namespace std_unordered_map_test
 				OUTPUT_NOTE( "그냥 std::string 을 쓰는게 좋지 않을까?" );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

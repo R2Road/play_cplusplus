@@ -19,7 +19,7 @@ namespace c_random_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				for( int i = 0; 5 > i; ++i )
@@ -33,7 +33,7 @@ namespace c_random_test
 				OUTPUT_NOTE( "프로그램 새로 기동해도 rand() 가 반환하는 값과 순서는 같다." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( srand( 1 ) );
@@ -51,7 +51,7 @@ namespace c_random_test
 				OUTPUT_NOTE( "srand( n ) is init rand() Sequence" );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

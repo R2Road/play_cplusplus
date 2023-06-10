@@ -22,7 +22,7 @@ namespace windows_terminal_text_color_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Color Table" << r2tm::linefeed;
@@ -44,7 +44,7 @@ namespace windows_terminal_text_color_test
 				std::cout << r2tm::tab2 << "Bright White" << r2tm::tab2 << "F" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -63,7 +63,7 @@ namespace windows_terminal_text_color_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				//
@@ -76,7 +76,7 @@ namespace windows_terminal_text_color_test
 				std::cout << r2tm::tab2 << "- A : text color( Green )" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "Press Any Key : Roll Back Text Color" << r2tm::linefeed;
 			system( "pause" );
@@ -104,7 +104,7 @@ namespace windows_terminal_text_color_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
 
@@ -126,7 +126,7 @@ namespace windows_terminal_text_color_test
 
 			SetConsoleTextAttribute( stdHandle, 7 ); // bg - black( 0 ), text - white( 7 )
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const WORD current_color = BACKGROUND_BLUE | FOREGROUND_GREEN | COMMON_LVB_GRID_HORIZONTAL;
@@ -142,7 +142,7 @@ namespace windows_terminal_text_color_test
 
 			SetConsoleTextAttribute( stdHandle, 7 ); // bg - black( 0 ), text - white( 7 )
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const char background_color = BACKGROUND_RED;
@@ -162,7 +162,7 @@ namespace windows_terminal_text_color_test
 
 			SetConsoleTextAttribute( stdHandle, 7 ); // bg - black( 0 ), text - white( 7 )
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -181,7 +181,7 @@ namespace windows_terminal_text_color_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
 
@@ -205,7 +205,7 @@ namespace windows_terminal_text_color_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				char background_color = 8;
@@ -224,7 +224,7 @@ namespace windows_terminal_text_color_test
 
 			SetConsoleTextAttribute( stdHandle, 7 ); // bg - black( 0 ), text - white( 7 )
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -243,7 +243,7 @@ namespace windows_terminal_text_color_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			//
 			// Link : https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
@@ -270,7 +270,7 @@ namespace windows_terminal_text_color_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				for( int i = 30; 37 >= i; ++i )
@@ -310,7 +310,7 @@ namespace windows_terminal_text_color_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -329,7 +329,7 @@ namespace windows_terminal_text_color_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			//
 			// Link : https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
@@ -353,7 +353,7 @@ namespace windows_terminal_text_color_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			{
@@ -373,7 +373,7 @@ namespace windows_terminal_text_color_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const int background_color = 47;
@@ -388,7 +388,7 @@ namespace windows_terminal_text_color_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const char* header = "\033[" );
@@ -405,7 +405,7 @@ namespace windows_terminal_text_color_test
 				PROCESS_MAIN( std::cout << header << fg_color << tail << header << bg_color << tail << "Change Color with std::cout" << header << "0" << tail << r2tm::linefeed );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

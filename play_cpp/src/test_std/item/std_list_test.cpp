@@ -34,15 +34,15 @@ namespace std_list_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "insert를 지시한 iterator의 앞에 삽입된다." );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::list<int> l( { 1, 2, 3 } ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto itr = ( ++l.begin() ) );
@@ -58,7 +58,7 @@ namespace std_list_test
 				OUTPUT_VALUE( l );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -77,12 +77,12 @@ namespace std_list_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::list<int> container_1( { 1, 2, 3, 4, 5 } ) );
 			DECLARATION_MAIN( std::list<int> container_2( { 10, 20, 30, 40, 50 } ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "splice는 list의 node를 메모리 할당 없이 통째로 옮긴다." );
@@ -104,7 +104,7 @@ namespace std_list_test
 				OUTPUT_VALUE( &( *container_2.begin() ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "이동을 지정한 iterator 의 앞에 삽입된다." );
@@ -132,7 +132,7 @@ namespace std_list_test
 				std::cout << r2tm::tab << "- container_2 : " << container_2 << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_CODE( container_2.splice( container_2.end(), container_1, container_1.end() ) );
@@ -143,7 +143,7 @@ namespace std_list_test
 				OUTPUT_NOTE( "Debug Mode Not Working, Release Mode Working" );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -162,12 +162,12 @@ namespace std_list_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::list<int> container_1( { 1, 2, 3, 4, 5 } ) );
 			DECLARATION_MAIN( std::list<int> container_2( { 10, 20, 30, 40, 50 } ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "Splice : target ~ end" );
@@ -184,7 +184,7 @@ namespace std_list_test
 				std::cout << r2tm::tab << "- container_2 : " << container_2 << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "Splice : target ~ next" );
@@ -204,13 +204,13 @@ namespace std_list_test
 				std::cout << r2tm::tab << "- container_2 : " << container_2 << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "범위 이동의 경우 마지막 요소는 이동 대상에 포함되지 않는다." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -229,11 +229,11 @@ namespace std_list_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::list<int> l( { 1, 2, 3 } ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto target = ( ++l.begin() ) );
@@ -249,7 +249,7 @@ namespace std_list_test
 				OUTPUT_VALUE( l );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "end() iterator 의 삭제는 시도하지 말자." );
@@ -259,7 +259,7 @@ namespace std_list_test
 				OUTPUT_CODE( l.erase( l.end() ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -278,12 +278,12 @@ namespace std_list_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::list<int> container_1( { 1, 2, 3 } ) );
 			DECLARATION_MAIN( std::list<int> container_2( { 10, 20, 30 } ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 #if defined( DEBUG ) || defined( _DEBUG )
@@ -303,7 +303,7 @@ namespace std_list_test
 				OUTPUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -322,11 +322,11 @@ namespace std_list_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::list<int> container_1( { 1, 2, 3 } ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto cur = container_1.end(); );
@@ -343,7 +343,7 @@ namespace std_list_test
 				OUTPUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 #if defined( DEBUG ) || defined( _DEBUG )
@@ -360,7 +360,7 @@ namespace std_list_test
 				OUTPUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto cur = container_1.end() );
@@ -372,7 +372,7 @@ namespace std_list_test
 				OUTPUT_NOTE( "--end() 는 작동한다." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 #if defined( DEBUG ) || defined( _DEBUG )
@@ -392,7 +392,7 @@ namespace std_list_test
 				OUTPUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

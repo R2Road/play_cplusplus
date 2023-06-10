@@ -31,7 +31,7 @@ namespace windows_terminal_font_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			CONSOLE_FONT_INFOEX cfie;
 			cfie.cbSize = sizeof( CONSOLE_FONT_INFOEX );
@@ -40,21 +40,21 @@ namespace windows_terminal_font_test
 			std::cout << r2tm::tab << "+ Declartion" << r2tm::linefeed2;
 			std::cout << r2tm::tab2 << "CONSOLE_FONT_INFOEX cfie;" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			// https://docs.microsoft.com/ko-kr/windows/console/console-font-infoex
 			std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
 			std::cout << r2tm::tab2 << "cfie.cbSize = sizeof( CONSOLE_FONT_INFOEX );" << r2tm::tab << "<===== Need This" << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "GetCurrentConsoleFontEx( GetStdHandle( STD_OUTPUT_HANDLE ), 0, &cfie );" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Font Info" << r2tm::linefeed2;
 				ShowFontInfo( cfie );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -73,7 +73,7 @@ namespace windows_terminal_font_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			CONSOLE_FONT_INFOEX backup_cfie;
 			backup_cfie.cbSize = sizeof( CONSOLE_FONT_INFOEX );
@@ -84,7 +84,7 @@ namespace windows_terminal_font_test
 				ShowFontInfo( backup_cfie );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				CONSOLE_FONT_INFOEX cfie;
@@ -105,12 +105,12 @@ namespace windows_terminal_font_test
 				std::cout << r2tm::tab2 << "cfi.FontWeight = FW_NORMAL;" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "wcscpy_s( cfi.FaceName, L\"NSimSun\" );" << r2tm::linefeed;
 
-				std::cout << r2tm::split;
+				LS();
 
 				std::cout << r2tm::tab << "Press Key : Change Font" << r2tm::linefeed;
 				_getch();
 
-				std::cout << r2tm::split;
+				LS();
 				
 				SetCurrentConsoleFontEx( GetStdHandle( STD_OUTPUT_HANDLE ), FALSE, &cfie );
 
@@ -120,14 +120,14 @@ namespace windows_terminal_font_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "Press Key : Rollback" << r2tm::linefeed;
 			_getch();
 
 			SetCurrentConsoleFontEx( GetStdHandle( STD_OUTPUT_HANDLE ), FALSE, &backup_cfie );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

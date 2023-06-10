@@ -19,7 +19,7 @@ namespace enum_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( enum eTestOldEnum {} );
@@ -30,7 +30,7 @@ namespace enum_test
 				OUTPUT_VALUE( typeid( std::underlying_type<eTestOldEnum>::type ).name() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( enum class eTestNewEnum {} );
@@ -41,7 +41,7 @@ namespace enum_test
 				OUTPUT_VALUE( typeid( std::underlying_type<eTestNewEnum>::type ).name() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( enum class eTestNewEnum : char {} );
@@ -52,7 +52,7 @@ namespace enum_test
 				OUTPUT_VALUE( typeid( std::underlying_type<eTestNewEnum>::type ).name() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -71,7 +71,7 @@ namespace enum_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( enum class eTestEnum : uint32_t { one = 1 } );
@@ -83,13 +83,13 @@ namespace enum_test
 				PROCESS_MAIN( te_2 = te_1 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ enum 의 범위에 없는 값을 강제 변환해서 넣어도 어떤 문제도 발생하지 않는다." << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -116,7 +116,7 @@ namespace enum_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "template<typename EnumT>" << r2tm::linefeed;
 			std::cout << r2tm::tab << "constexpr auto Enum2Value( EnumT e )" << r2tm::linefeed;
@@ -124,7 +124,7 @@ namespace enum_test
 			std::cout << r2tm::tab2 << "return static_cast<std::underlying_type_t<EnumT>>( e );" << r2tm::linefeed;
 			std::cout << r2tm::tab << "}" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "enum eOldEnum" << r2tm::linefeed;
@@ -146,7 +146,7 @@ namespace enum_test
 				std::cout << r2tm::tab2 << "- " << typeid( Enum2Value( eOldEnum::three ) ).name() << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "enum class eNewEnum : short" << r2tm::linefeed;
@@ -168,7 +168,7 @@ namespace enum_test
 				std::cout << r2tm::tab2 << "- " << typeid( Enum2Value( eNewEnum::dul ) ).name() << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -194,12 +194,12 @@ namespace enum_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Ref" << r2tm::linefeed2;
 			std::cout << r2tm::tab2 << "https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "#define MAKE_ENUM( enum_name, ... ) enum enum_name { __VA_ARGS__, __COUNT };" << r2tm::linefeed2;
@@ -207,7 +207,7 @@ namespace enum_test
 				std::cout << r2tm::tab << "MAKE_ENUM( eMakeEnumTest, One, Two, Three, Max4MakeEnumTest );" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ " << "Output" << r2tm::linefeed2;
@@ -218,7 +218,7 @@ namespace enum_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -259,13 +259,13 @@ namespace enum_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Ref" << r2tm::linefeed2;
 			std::cout << r2tm::tab2 << "https://en.wikipedia.org/wiki/X_Macro" << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "#define X_ENUMS" << r2tm::linefeed;
@@ -292,7 +292,7 @@ namespace enum_test
 				std::cout << r2tm::tab << "};" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ " << "Output" << r2tm::linefeed2;
@@ -303,7 +303,7 @@ namespace enum_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -338,13 +338,13 @@ namespace enum_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Ref" << r2tm::linefeed2;
 			std::cout << r2tm::tab2 << "https://en.wikipedia.org/wiki/X_Macro" << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_FILE( "src/test_cpp/item/enum_test_xmacro_2.def" );
@@ -367,7 +367,7 @@ namespace enum_test
 				std::cout << r2tm::tab << "};" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ " << "Output" << r2tm::linefeed2;
@@ -378,7 +378,7 @@ namespace enum_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

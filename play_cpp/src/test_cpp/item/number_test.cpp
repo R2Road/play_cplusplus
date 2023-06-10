@@ -20,7 +20,7 @@ namespace number_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Binary" << r2tm::linefeed2;
@@ -32,7 +32,7 @@ namespace number_test
 				OUTPUT_VALUE( num );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Oct" << r2tm::linefeed2;
@@ -44,7 +44,7 @@ namespace number_test
 				OUTPUT_VALUE( num );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Dec" << r2tm::linefeed2;
@@ -56,7 +56,7 @@ namespace number_test
 				OUTPUT_VALUE( num );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Hex" << r2tm::linefeed2;
@@ -68,7 +68,7 @@ namespace number_test
 				OUTPUT_VALUE( num );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

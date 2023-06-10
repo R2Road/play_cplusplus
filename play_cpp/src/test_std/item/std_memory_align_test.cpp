@@ -26,7 +26,7 @@ namespace std_memory_align_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Summury : std::align의 처리 순서" << r2tm::linefeed2;
@@ -38,7 +38,7 @@ namespace std_memory_align_test
 				std::cout << r2tm::tab << "> 4. 정렬이 필요 없고 남은 공간도 충분하다면 변하는 것이 없다." << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( int i = 1 );
 			DECLARATION_MAIN( void* pb = &i );
@@ -46,7 +46,7 @@ namespace std_memory_align_test
 			DECLARATION_MAIN( void* presult = nullptr );
 			PrintResult( pb, presult, space );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( presult = std::align( alignof( char ), sizeof( char ), pb, space ) );
@@ -54,7 +54,7 @@ namespace std_memory_align_test
 				PrintResult( pb, presult, space );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Move" << r2tm::linefeed2;
@@ -68,7 +68,7 @@ namespace std_memory_align_test
 				PrintResult( pb, presult, space );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( presult = std::align( alignof( char ), sizeof( char ), pb, space ) );
@@ -76,7 +76,7 @@ namespace std_memory_align_test
 				PrintResult( pb, presult, space );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( presult = std::align( alignof( int ), sizeof( char ), pb, space ) );
@@ -84,7 +84,7 @@ namespace std_memory_align_test
 				PrintResult( pb, presult, space );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -103,7 +103,7 @@ namespace std_memory_align_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( char buffer[10] = { 0 } );
 			DECLARATION_MAIN( void* pb = buffer );
@@ -111,7 +111,7 @@ namespace std_memory_align_test
 			DECLARATION_MAIN( void* presult = nullptr );
 			PrintResult( pb, presult, space );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( pb = &buffer[1] );
@@ -126,7 +126,7 @@ namespace std_memory_align_test
 				std::cout << r2tm::tab << "Bound > " << ( static_cast<char*>( pb ) - &buffer[1] ) << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( pb = &buffer[1] );
@@ -141,7 +141,7 @@ namespace std_memory_align_test
 				std::cout << r2tm::tab << "Bound > " << ( static_cast<char*>( pb ) - &buffer[1] ) << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( pb = &buffer[1] );
@@ -156,7 +156,7 @@ namespace std_memory_align_test
 				std::cout << r2tm::tab << "Bound > " << ( static_cast<char*>( pb ) - &buffer[1] ) << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -175,11 +175,11 @@ namespace std_memory_align_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Ref : " << "https://en.cppreference.com/w/cpp/memory/align" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( char buffer[] = "---------" );
 			DECLARATION_MAIN( void* pt = buffer );
@@ -193,14 +193,14 @@ namespace std_memory_align_test
 
 			DECLARATION_MAIN( void* presult = nullptr );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ orig : " << buffer << r2tm::linefeed;
 				std::cout << r2tm::tab << "+ adress of pt : " << pt << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				while( true )
@@ -228,11 +228,11 @@ namespace std_memory_align_test
 
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "result : " << buffer << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

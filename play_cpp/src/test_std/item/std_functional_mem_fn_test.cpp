@@ -127,16 +127,16 @@ namespace std_functional_mem_fn_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/test_std/item/std_functional_mem_fn_test_helper.hpp" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( TestStruct t );
 			PROCESS_MAIN( t.a = 123 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto do_fn =  std::mem_fn( &TestStruct::Do ) );
@@ -147,7 +147,7 @@ namespace std_functional_mem_fn_test
 				PROCESS_MAIN( do_fn( &t ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto do_mv = std::mem_fn( &TestStruct::a ) );
@@ -158,7 +158,7 @@ namespace std_functional_mem_fn_test
 				OUTPUT_VALUE( do_mv( &t ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

@@ -17,11 +17,11 @@ namespace template_specialization_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/test_template/item/template_specialization_test_helper_basic.hpp" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( TemplateFunc( int( 1 ) ) );
@@ -35,7 +35,7 @@ namespace template_specialization_test
 				PROCESS_MAIN( TemplateFunc( int64_t( 1 ) ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

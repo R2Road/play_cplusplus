@@ -20,7 +20,7 @@ namespace std_filesystem_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Current Path" << r2tm::linefeed2;
@@ -28,7 +28,7 @@ namespace std_filesystem_test
 				OUTPUT_VALUE( p );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Temp Directory Path" << r2tm::linefeed2;
@@ -36,7 +36,7 @@ namespace std_filesystem_test
 				OUTPUT_VALUE( p );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -55,13 +55,13 @@ namespace std_filesystem_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Target Path" << r2tm::linefeed2;
 			DECLARATION_MAIN( const std::filesystem::path p = std::filesystem::current_path() );
 			OUTPUT_VALUE( p );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ View Directory" << r2tm::linefeed2;
@@ -78,7 +78,7 @@ namespace std_filesystem_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -97,7 +97,7 @@ namespace std_filesystem_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				int i = 0;
@@ -122,7 +122,7 @@ namespace std_filesystem_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -141,7 +141,7 @@ namespace std_filesystem_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::filesystem::path p = std::filesystem::current_path();
 
@@ -150,7 +150,7 @@ namespace std_filesystem_test
 				std::cout << r2tm::tab2 << p << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Append with Operator /" << r2tm::linefeed2;
@@ -168,7 +168,7 @@ namespace std_filesystem_test
 				std::cout << r2tm::tab3 << "result : " << p << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Remove File Name And Separator" << r2tm::linefeed2;
@@ -181,7 +181,7 @@ namespace std_filesystem_test
 				std::cout << r2tm::tab3 << "result : " << p << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Replace Extension" << r2tm::linefeed2;
@@ -194,7 +194,7 @@ namespace std_filesystem_test
 				std::cout << r2tm::tab3 << "result : " << p << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Replace File Name" << r2tm::linefeed2;
@@ -206,7 +206,7 @@ namespace std_filesystem_test
 				std::cout << r2tm::tab3 << "result : " << p << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -223,7 +223,7 @@ namespace std_filesystem_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::filesystem::path p = std::filesystem::current_path();
 
@@ -232,7 +232,7 @@ namespace std_filesystem_test
 				std::cout << r2tm::tab2 << p << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Has Parent Path" << r2tm::linefeed2;
@@ -241,7 +241,7 @@ namespace std_filesystem_test
 				std::cout << r2tm::tab3 << "result : " << ( p.has_parent_path() ? "True" : "False" ) << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Get Parent Path" << r2tm::linefeed2;
@@ -250,7 +250,7 @@ namespace std_filesystem_test
 				std::cout << r2tm::tab3 << "result : " << ( p.has_parent_path() ? p.parent_path() : "Nothing" ) << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

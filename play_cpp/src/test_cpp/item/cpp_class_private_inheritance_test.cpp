@@ -25,32 +25,32 @@ namespace cpp_class_private_inheritance_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/test_cpp/item/cpp_class_private_inheritance_test_helper_virtual_interface.hpp" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_virtual_interface::VP_Private t );
 				PROCESS_MAIN( t.DoProcess() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_virtual_interface::VP_Protected t );
 				PROCESS_MAIN( t.DoProcess() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_virtual_interface::VP_Public t );
 				PROCESS_MAIN( t.DoProcess() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -69,32 +69,32 @@ namespace cpp_class_private_inheritance_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/test_cpp/item/cpp_class_private_inheritance_test_helper_pure_virtual_interface.hpp" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_pure_virtual_interface::PVP_Private t );
 				PROCESS_MAIN( t.DoProcess() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_pure_virtual_interface::PVP_Protected t );
 				PROCESS_MAIN( t.DoProcess() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_pure_virtual_interface::PVP_Public t );
 				PROCESS_MAIN( t.DoProcess() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -113,11 +113,11 @@ namespace cpp_class_private_inheritance_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/test_cpp/item/cpp_class_private_inheritance_test_helper_demo1.hpp" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_demo1::T t );
@@ -125,7 +125,7 @@ namespace cpp_class_private_inheritance_test
 				PROCESS_MAIN( pt->Do() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -144,7 +144,7 @@ namespace cpp_class_private_inheritance_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( class iPrivate
 			{
@@ -164,7 +164,7 @@ namespace cpp_class_private_inheritance_test
 				using iPrivate::i;
 			} );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_CODE( T1().Do() );
@@ -173,18 +173,18 @@ namespace cpp_class_private_inheritance_test
 				OUTPUT_COMMENT( "Not Working" );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( T2().Do() );
 				OUTPUT_VALUE( T2().i );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "private 상속한 멤버를 using 으로 열어줄 수 있다." );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -203,11 +203,11 @@ namespace cpp_class_private_inheritance_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/test_cpp/item/cpp_class_private_inheritance_test_helper_ienum.hpp" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( sizeof( cpp_class_private_inheritance_test_helper_ienum::iEnum ) );
@@ -219,11 +219,11 @@ namespace cpp_class_private_inheritance_test
 				OUTPUT_VALUE( t.Do() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "굳이 이런 짓을 해야만 하는가?" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -242,25 +242,25 @@ namespace cpp_class_private_inheritance_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_nvi.hpp" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( cpp_class_test_helper_nvi::D1 d1 );
 				OUTPUT_VALUE( d1.Do() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( cpp_class_test_helper_nvi::D2 d2 );
 				OUTPUT_VALUE( d2.Do() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

@@ -24,7 +24,7 @@ namespace std_random_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::random_device rd );
@@ -48,7 +48,7 @@ namespace std_random_test
 				OUTPUT_NOTE( "Contained Min and Max" );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::random_device rd );
@@ -72,7 +72,7 @@ namespace std_random_test
 				OUTPUT_NOTE( "Contained Min" );;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -102,7 +102,7 @@ namespace std_random_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::random_device rd );
 			DECLARATION_MAIN( std::mt19937 random_engine( rd() ) );
@@ -117,14 +117,14 @@ namespace std_random_test
 				PROCESS_MAIN( fs << random_engine );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			for( int i = 0; 3 > i; ++i )
 			{
 				OUTPUT_VALUE( dist( random_engine ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Load x 1" << r2tm::linefeed2;
@@ -142,7 +142,7 @@ namespace std_random_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Load x 2" << r2tm::linefeed2;
@@ -160,7 +160,7 @@ namespace std_random_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -182,13 +182,13 @@ namespace std_random_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::random_device rd );
 			DECLARATION_MAIN( std::mt19937 random_engine( rd() ) );
 			DECLARATION_MAIN( std::discrete_distribution<> dist( { 5, 10, 30, 50, 5 } ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::map<int, int> test_map;
 
@@ -206,7 +206,7 @@ namespace std_random_test
 					std::cout << r2tm::tab << "key : " << t.first << std::setw( 20 ) << "count : " << t.second << r2tm::linefeed;
 				}
 
-				std::cout << r2tm::split;
+				LS();
 			}
 
 			return r2tm::eDoLeaveAction::Pause;

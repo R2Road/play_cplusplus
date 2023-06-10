@@ -19,7 +19,7 @@ namespace various_console_input_test
 		{
 			std::cout << "[ESC] End" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			int input = 0;
 			while( true )
@@ -34,7 +34,7 @@ namespace various_console_input_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

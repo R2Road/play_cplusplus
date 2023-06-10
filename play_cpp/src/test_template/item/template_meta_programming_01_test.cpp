@@ -43,7 +43,7 @@ namespace template_meta_programming_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "\t" << "+ Factorial<2>::f" << r2tm::linefeed;
@@ -53,7 +53,7 @@ namespace template_meta_programming_test
 				std::cout << "\t\t" << "result : " << Factorial<2>::f << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "\t" << "+ Factorial<4>::f" << r2tm::linefeed;
@@ -63,7 +63,7 @@ namespace template_meta_programming_test
 				std::cout << "\t\t" << "result : " << Factorial<4>::f << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "\t" << "+ Factorial<10>::f" << r2tm::linefeed;
@@ -73,7 +73,7 @@ namespace template_meta_programming_test
 				std::cout << "\t\t" << "result : " << Factorial<10>::f << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -107,21 +107,21 @@ namespace template_meta_programming_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "\t + " << "GCDCalculator<9, 3>::value" << r2tm::linefeed;
 				std::cout << "\t\t - Result : " << GCDCalculator<9, 3>::value << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "\t + " << "GCDCalculator<5, 2>::value" << r2tm::linefeed;
 				std::cout << "\t\t - Result : " << GCDCalculator<5, 2>::value << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -151,7 +151,7 @@ namespace template_meta_programming_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				Ratio_VER0<7, 4> ratio;
@@ -160,7 +160,7 @@ namespace template_meta_programming_test
 				std::cout << "\t\t - " << ratio.Numerator << " / " << ratio.Denominator << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -189,7 +189,7 @@ namespace template_meta_programming_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				using ratio1 = Ratio_VER0<7, 4>;
@@ -208,7 +208,7 @@ namespace template_meta_programming_test
 				std::cout << "\t\t - Result : " << ratio_operator_sum::ratio.Numerator << " / " << ratio_operator_sum::ratio.Denominator << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -237,7 +237,7 @@ namespace template_meta_programming_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				using ratio = Ratio_VER1<12, 3>;
@@ -250,7 +250,7 @@ namespace template_meta_programming_test
 				std::cout << "\t\t - Result : " << ratio::Numerator << " / " << ratio::Denominator << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				using ratio = Ratio_VER1<36, 20>;
@@ -263,7 +263,7 @@ namespace template_meta_programming_test
 				std::cout << "\t\t - Result : " << ratio::Numerator << " / " << ratio::Denominator << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -297,7 +297,7 @@ namespace template_meta_programming_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				using ratio1 = Ratio_VER1<7, 4>;
@@ -318,7 +318,7 @@ namespace template_meta_programming_test
 				std::cout << "\t\t - Result : " << ratio_operator_sum::Numerator << " / " << ratio_operator_sum::Denominator << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -337,7 +337,7 @@ namespace template_meta_programming_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				using ratio1 = Ratio_VER1<7, 4>;
@@ -372,7 +372,7 @@ namespace template_meta_programming_test
 				std::cout << "\t\t - Result : " << ratio_operator_sum_2::Numerator << " / " << ratio_operator_sum_2::Denominator << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -405,7 +405,7 @@ namespace template_meta_programming_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				using ratio1 = Ratio_VER1<7, 4>;
@@ -425,7 +425,7 @@ namespace template_meta_programming_test
 				std::cout << "\t\t - Result : " << ratio_operator_sum::ratio::Numerator << " / " << ratio_operator_sum::ratio::Denominator << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				using ratio1 = Ratio_VER1<7, 4>;
@@ -456,7 +456,7 @@ namespace template_meta_programming_test
 				std::cout << "\t\t - Result : " << ratio_operator_sum_2::Numerator << " / " << ratio_operator_sum_2::Denominator << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

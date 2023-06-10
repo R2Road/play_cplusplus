@@ -18,7 +18,7 @@ namespace algorithm_insertion_sort_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			r2tm::StopWatch stop_watch;
 			const std::array<int, 5u> test_container{ 5, 4, 3, 2, 1 };
@@ -26,7 +26,7 @@ namespace algorithm_insertion_sort_test
 			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
 			std::cout << r2tm::tab2 << "std::array<int, 5u> test_container{ 5, 4, 3, 2, 1 };" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Case" << r2tm::linefeed2;
@@ -64,7 +64,7 @@ namespace algorithm_insertion_sort_test
 				stop_watch.PrintElapsedTime_All();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Show" << r2tm::linefeed2;
@@ -125,7 +125,7 @@ namespace algorithm_insertion_sort_test
 				
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

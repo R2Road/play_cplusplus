@@ -21,35 +21,35 @@ namespace cpp_alignof_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( alignof( char ) );
 				OUTPUT_VALUE( sizeof( char ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( alignof( int ) );
 				OUTPUT_VALUE( sizeof( int ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( alignof( bool ) );
 				OUTPUT_VALUE( sizeof( bool ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( alignof( double ) );
 				OUTPUT_VALUE( sizeof( double ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -68,42 +68,42 @@ namespace cpp_alignof_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( alignof( std::list<char> ) );
 				OUTPUT_VALUE( sizeof( std::list<char> ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( alignof( std::list<int> ) );
 				OUTPUT_VALUE( sizeof( std::list<int> ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( alignof( std::vector<int> ) );
 				OUTPUT_VALUE( sizeof( std::vector<int> ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( alignof( std::unordered_map<int, int> ) );
 				OUTPUT_VALUE( sizeof( std::unordered_map<int, int> ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( alignof( std::deque<int> ) );
 				OUTPUT_VALUE( sizeof( std::deque<int> ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -157,11 +157,11 @@ namespace cpp_alignof_test
 				double d;
 			};
 
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_FILE_RANGE( "src/test_cpp/item/cpp_alignof_test.cpp", 125, 158 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( alignof( EmptyStruct ) );
@@ -193,7 +193,7 @@ namespace cpp_alignof_test
 				OUTPUT_VALUE( sizeof( CharIntDoubleStruct ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -212,7 +212,7 @@ namespace cpp_alignof_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			struct EmptyStruct {};
 
@@ -259,7 +259,7 @@ namespace cpp_alignof_test
 				std::cout << "\t\t" << "- size of DoubleStruct : " << sizeof( DoubleStruct ) << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "\t" << "+ align of Mixed_1_Empty_N_CIF_Struct : " << alignof( Mixed_1_Empty_N_CIF_Struct ) << r2tm::linefeed;
@@ -272,7 +272,7 @@ namespace cpp_alignof_test
 				std::cout << "\t\t" << "- size of Mixed_3_Empty_N_CIF_D_Struct : " << sizeof( Mixed_3_Empty_N_CIF_D_Struct ) << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

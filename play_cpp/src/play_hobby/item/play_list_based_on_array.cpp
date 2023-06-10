@@ -18,7 +18,7 @@ namespace play_list_based_on_array
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			r2::ListBasedOnArray<int, 10> list;
 
@@ -27,14 +27,14 @@ namespace play_list_based_on_array
 				std::cout << r2tm::tab << "r2::ListBasedOnArray<int, 10> list" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( list.GetRestNodeCount(), 10 );
 				EXPECT_EQ( list.Size(), 0 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -53,7 +53,7 @@ namespace play_list_based_on_array
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			r2::ListBasedOnArray<int, 5> list;
 
@@ -62,7 +62,7 @@ namespace play_list_based_on_array
 				std::cout << r2tm::tab << "r2::ListBasedOnArray<int, 5> list" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "+ r2::ListBasedOnArray::PushFront" << r2tm::linefeed2;
@@ -98,7 +98,7 @@ namespace play_list_based_on_array
 				EXPECT_EQ( list.Size(), 5 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -118,7 +118,7 @@ namespace play_list_based_on_array
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			r2::ListNode<r2::PointInt> node{ { 11, 12 }, nullptr, nullptr };
 			r2::ListIterator<r2::PointInt> itr( &node );
@@ -129,7 +129,7 @@ namespace play_list_based_on_array
 				std::cout << r2tm::tab << "r2::ListIterator<r2::Point> itr( &node );" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "+ List Iterator Operator : *" << r2tm::linefeed2;
@@ -138,7 +138,7 @@ namespace play_list_based_on_array
 				EXPECT_EQ( ( *itr ).GetY(), 12 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "+ List Iterator Operator : ->" << r2tm::linefeed2;
@@ -147,7 +147,7 @@ namespace play_list_based_on_array
 				EXPECT_EQ( itr->GetY(), 12 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -166,7 +166,7 @@ namespace play_list_based_on_array
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			r2::ListBasedOnArray<int, 10> list;
 
@@ -175,7 +175,7 @@ namespace play_list_based_on_array
 				std::cout << r2tm::tab << "r2::ListBasedOnArray<int, 10> list" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "+ r2::ListBasedOnArray::End" << r2tm::linefeed2;
@@ -193,7 +193,7 @@ namespace play_list_based_on_array
 				EXPECT_EQ( end_itr.mTargetNode->pNext, end_itr.mTargetNode );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "+ Iterator : Operator--" << r2tm::linefeed2;
@@ -201,7 +201,7 @@ namespace play_list_based_on_array
 				EXPECT_TRUE( ( --list.end() ) == list.end() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "+ Iterator : Operator++" << r2tm::linefeed2;
@@ -209,7 +209,7 @@ namespace play_list_based_on_array
 				EXPECT_TRUE( ( ++list.end() ) == list.end() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -228,7 +228,7 @@ namespace play_list_based_on_array
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			r2::ListBasedOnArray<int, 3> list;
 
@@ -237,7 +237,7 @@ namespace play_list_based_on_array
 				std::cout << r2tm::tab << "r2::ListBasedOnArray<int, 3> list" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "+ r2::ListBasedOnArray::Begin" << r2tm::linefeed2;
@@ -265,7 +265,7 @@ namespace play_list_based_on_array
 				EXPECT_EQ( ( *list.begin() ), 33 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				auto itr = list.begin();
@@ -278,7 +278,7 @@ namespace play_list_based_on_array
 				EXPECT_TRUE( ( ++itr ) == list.begin() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				auto itr = list.begin();
@@ -291,7 +291,7 @@ namespace play_list_based_on_array
 				EXPECT_TRUE( ( --itr ) == list.end() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -310,7 +310,7 @@ namespace play_list_based_on_array
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			r2::ListBasedOnArray<int, 3> list;
 			list.PushFront( 11 );
@@ -325,14 +325,14 @@ namespace play_list_based_on_array
 				std::cout << r2tm::tab << "list.PushFront( 33 );" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( list.GetRestNodeCount(), 0 );
 				EXPECT_EQ( list.Size(), 3 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "+ r2::ListBasedOnArray::Clear" << r2tm::linefeed2;
@@ -344,7 +344,7 @@ namespace play_list_based_on_array
 				EXPECT_EQ( list.Size(), 0 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				list.PushFront( 111 );
@@ -364,7 +364,7 @@ namespace play_list_based_on_array
 				EXPECT_EQ( ( *list.begin() ), 333 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				auto itr = list.begin();
@@ -377,7 +377,7 @@ namespace play_list_based_on_array
 				EXPECT_TRUE( ( ++itr ) == list.begin() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -396,7 +396,7 @@ namespace play_list_based_on_array
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			r2::ListBasedOnArray<int, 3> list;
 
@@ -405,7 +405,7 @@ namespace play_list_based_on_array
 				std::cout << r2tm::tab << "r2::ListBasedOnArray<int, 3> list" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "+ r2::ListBasedOnArray::PushBack" << r2tm::linefeed2;
@@ -451,7 +451,7 @@ namespace play_list_based_on_array
 				EXPECT_EQ( list.Size(), 3 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -470,7 +470,7 @@ namespace play_list_based_on_array
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			r2::ListBasedOnArray<int, 5> list;
 			list.PushBack( 11 );
@@ -485,14 +485,14 @@ namespace play_list_based_on_array
 				std::cout << r2tm::tab << "list.PushBack( 33 );" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( list.GetRestNodeCount(), 2 );
 				EXPECT_EQ( list.Size(), 3 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "+ r2::ListBasedOnArray::Erase" << r2tm::linefeed2;
@@ -522,7 +522,7 @@ namespace play_list_based_on_array
 				EXPECT_EQ( *( ++copied_itr ), 33 );				
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "+ r2::ListBasedOnArray::Erase : Erase End" << r2tm::linefeed2;
@@ -535,7 +535,7 @@ namespace play_list_based_on_array
 				EXPECT_EQ( list.Size(), 2 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -554,7 +554,7 @@ namespace play_list_based_on_array
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			r2::ListBasedOnArray<int, 5> list;
 			list.PushBack( 11 );
@@ -569,7 +569,7 @@ namespace play_list_based_on_array
 				std::cout << r2tm::tab << "list.PushBack( 33 );" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "+ r2::ListBasedOnArray::rbegin(), ListBasedOnArray::rend()" << r2tm::linefeed2;
@@ -598,7 +598,7 @@ namespace play_list_based_on_array
 				EXPECT_EQ( *( --list.rend() ), 11 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

@@ -105,12 +105,12 @@ namespace algorithm_astar_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			ShowGrid( WORLD_MAP );
 
 			std::cout << r2tm::linefeed;
-			std::cout << r2tm::split;
+			LS();
 
 			r2tm::StopWatch stop_watch;
 			{
@@ -150,12 +150,12 @@ namespace algorithm_astar_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			ShowGrid( WORLD_MAP );
 
 			std::cout << r2tm::linefeed;
-			std::cout << r2tm::split;
+			LS();
 
 			r2tm::StopWatch stop_watch;
 			{
@@ -195,12 +195,12 @@ namespace algorithm_astar_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			ShowGrid( WORLD_MAP );
 
 			std::cout << r2tm::linefeed;
-			std::cout << r2tm::split;
+			LS();
 
 			r2tm::StopWatch stop_watch;
 			{
@@ -241,12 +241,12 @@ namespace algorithm_astar_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			ShowGrid( WORLD_MAP );
 
 			std::cout << r2tm::linefeed;
-			std::cout << r2tm::split;
+			LS();
 
 			r2tm::StopWatch stop_watch;
 			{
@@ -289,12 +289,12 @@ namespace algorithm_astar_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			ShowGrid( WORLD_MAP );
 
 			std::cout << r2tm::linefeed;
-			std::cout << r2tm::split;
+			LS();
 
 			r2tm::StopWatch stop_watch;
 			{
@@ -337,12 +337,12 @@ namespace algorithm_astar_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			ShowGrid( WORLD_MAP );
 
 			std::cout << r2tm::linefeed;
-			std::cout << r2tm::split;
+			LS();
 
 			r2tm::StopWatch stop_watch;
 			{
@@ -385,12 +385,12 @@ namespace algorithm_astar_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			ShowGrid( WORLD_MAP );
 
 			std::cout << r2tm::linefeed;
-			std::cout << r2tm::split;
+			LS();
 
 			r2tm::StopWatch stop_watch;
 			{
@@ -439,7 +439,7 @@ namespace algorithm_astar_test
 				std::cout << r2tm::tab << "+ Attempt Limit : " << attempt_limit << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ AStarPathBuilder" << r2tm::linefeed2;
@@ -465,7 +465,7 @@ namespace algorithm_astar_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ AStarPathBuilder_Use_STDListSplice" << r2tm::linefeed2;
@@ -491,7 +491,7 @@ namespace algorithm_astar_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ AStarPathBuilder_Use_STDListSplice_STDVectorResultPath" << r2tm::linefeed2;
@@ -518,7 +518,7 @@ namespace algorithm_astar_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ AStarPathBuilder_Use_STDListSplice_DecreaseCloseList_STDVectorResultPath" << r2tm::linefeed2;
@@ -545,7 +545,7 @@ namespace algorithm_astar_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ AStarPathBuilder_Use_CostMap_STDListSplice_STDVectorResultPath" << r2tm::linefeed2;
@@ -575,7 +575,7 @@ namespace algorithm_astar_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ AStarPathBuilder_Use_TinyCostMap_STDListSplice_STDVectorResultPath" << r2tm::linefeed2;
@@ -605,7 +605,7 @@ namespace algorithm_astar_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ AStarPathBuilder_Use_ArrayBasedList_TinyCostMap_STDVectorResultPath" << r2tm::linefeed2;
@@ -635,7 +635,7 @@ namespace algorithm_astar_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

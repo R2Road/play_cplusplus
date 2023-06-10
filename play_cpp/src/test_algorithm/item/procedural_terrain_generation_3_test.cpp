@@ -100,7 +100,7 @@ namespace procedural_terrain_generation_3_test
 			r2::Grid<eTerrainType> grid_terrain;
 			grid_terrain.Reset( 40, 40 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
 
@@ -256,7 +256,7 @@ namespace procedural_terrain_generation_3_test
 				_getch();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

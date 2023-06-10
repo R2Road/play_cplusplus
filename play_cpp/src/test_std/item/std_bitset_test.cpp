@@ -18,7 +18,7 @@ namespace std_bitset_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::bitset<3u> b = 0b000 );
@@ -28,7 +28,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( b.size() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::bitset<3u> b = 0b001 );
@@ -38,7 +38,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( b.size() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::bitset<3u> b = 0b011 );
@@ -48,7 +48,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( b.size() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::bitset<3u> b = 0b111 );
@@ -58,7 +58,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( b.size() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -77,18 +77,18 @@ namespace std_bitset_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::bitset<3u> b );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_FALSE( b.test( 0 ) );
 				OUTPUT_VALUE( b.to_string() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( b.set( 0, true ) );
@@ -96,7 +96,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( b.to_string() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( b.set( 0, false ) );
@@ -104,7 +104,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( b.to_string() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( b.set( 0, true ) );
@@ -117,7 +117,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( b.to_string() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -136,11 +136,11 @@ namespace std_bitset_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "크기는 4byte 단위로 증가." );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::bitset<1> container );
@@ -148,7 +148,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( container.size() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::bitset<8> container );
@@ -156,7 +156,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( container.size() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::bitset<16> container );
@@ -164,7 +164,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( container.size() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::bitset<32> container );
@@ -172,7 +172,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( container.size() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::bitset<48> container );
@@ -180,7 +180,7 @@ namespace std_bitset_test
 				OUTPUT_VALUE( container.size() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -199,12 +199,12 @@ namespace std_bitset_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( std::bitset<10> b = 0b10101 );
 			OUTPUT_VALUE( b.to_string() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "bit 연산이 안되는 큰 단점." );
@@ -215,7 +215,7 @@ namespace std_bitset_test
 				EXPECT_FALSE( 0b01010 & b.to_ulong() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

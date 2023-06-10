@@ -32,11 +32,11 @@ namespace std_function_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "REF : https://en.cppreference.com/w/cpp/utility/functional/function" );
 
-			std::cout << r2tm::split;
+			LS();
 			
 			{
 				DECLARATION_MAIN( std::function<void()> f );
@@ -44,7 +44,7 @@ namespace std_function_test
 				EXPECT_FALSE( f );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::function<void()> f = TestFunction_1 );
@@ -52,7 +52,7 @@ namespace std_function_test
 				EXPECT_TRUE( f );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::function<void()> f = []() {} );
@@ -60,7 +60,7 @@ namespace std_function_test
 				EXPECT_TRUE( f );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( std::function<void()> f = std::bind( LocalFunction, 10 ) );
@@ -68,7 +68,7 @@ namespace std_function_test
 				EXPECT_TRUE( f );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( struct S { void Do( int ) {} } );
@@ -82,7 +82,7 @@ namespace std_function_test
 				PROCESS_MAIN( f( s, 1 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( struct S { int i = 1234; } );
@@ -96,7 +96,7 @@ namespace std_function_test
 				OUTPUT_VALUE( f( s ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( struct S { int operator()() { return 0; } } );
@@ -109,7 +109,7 @@ namespace std_function_test
 				PROCESS_MAIN( f() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -128,7 +128,7 @@ namespace std_function_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			using FunctionPointerT = void(*)();
 			using STDFunctionT = std::function<void()>;
@@ -138,7 +138,7 @@ namespace std_function_test
 			std::cout << r2tm::tab2 << "using STDFunctionT = std::function<void()>;" << r2tm::linefeed;
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::function::target<T>()" << r2tm::linefeed2;
@@ -176,7 +176,7 @@ namespace std_function_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Empty" << r2tm::linefeed2;
@@ -198,7 +198,7 @@ namespace std_function_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -217,7 +217,7 @@ namespace std_function_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			using FunctionPointerT = void(*)();
 			using STDFunctionT = std::function<void()>;
@@ -227,7 +227,7 @@ namespace std_function_test
 			std::cout << r2tm::tab2 << "using STDFunctionT = std::function<void()>;" << r2tm::linefeed;
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Not Empty" << r2tm::linefeed2;
@@ -297,7 +297,7 @@ namespace std_function_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -316,7 +316,7 @@ namespace std_function_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			using FunctionPointerT = void(*)();
 			using STDFunctionT = std::function<void()>;
@@ -326,7 +326,7 @@ namespace std_function_test
 			std::cout << r2tm::tab2 << "using STDFunctionT = std::function<void()>;" << r2tm::linefeed;
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Hash" << r2tm::linefeed2;
@@ -397,7 +397,7 @@ namespace std_function_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -419,7 +419,7 @@ namespace std_function_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			using FunctionPointerT = void(*)( );
 			using STDFunctionT = std::function<void()>;
@@ -429,7 +429,7 @@ namespace std_function_test
 			std::cout << r2tm::tab2 << "using STDFunctionT = std::function<void()>;" << r2tm::linefeed;
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ 람다로 초기화된 std::function 에서 람다의 함수 포인터를 꺼내오는 방법은 모르겠다." << r2tm::linefeed;
@@ -476,7 +476,7 @@ namespace std_function_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

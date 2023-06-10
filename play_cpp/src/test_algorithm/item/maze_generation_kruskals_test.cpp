@@ -117,7 +117,7 @@ namespace maze_generation_kruskals_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( r2::Grid<int> grid( 2, 2, r2::Direction4::eState::None ) );
 			PROCESS_MAIN( grid.Set( 1, 0, r2::Direction4::eState::Up | r2::Direction4::eState::Down ) );
@@ -126,14 +126,14 @@ namespace maze_generation_kruskals_test
 
 			DECLARATION_MAIN( r2::Grid<Node> sets( 2, 2, Node{} ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PrintGrid( grid, sets );
 				std::cout << r2tm::linefeed2;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -152,7 +152,7 @@ namespace maze_generation_kruskals_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "# REF" << r2tm::linefeed2;
 			std::cout << r2tm::tab << "1. https://en.wikipedia.org/wiki/Kruskal's_algorithm" << r2tm::linefeed;
@@ -166,7 +166,7 @@ namespace maze_generation_kruskals_test
 			std::cout << r2tm::tab << "1. Kruskal's Algorithm" << r2tm::linefeed;
 			std::cout << r2tm::tab << "2. Union Find Algorithm : 연결 과정에서 사용" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const int width = 3 );
 			DECLARATION_MAIN( const int height = 3 );
@@ -184,7 +184,7 @@ namespace maze_generation_kruskals_test
 			};
 			DECLARATION_MAIN( std::vector<Edge> edges );
 
-			std::cout << r2tm::split;
+			LS();
 
 			const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
 
@@ -197,7 +197,7 @@ namespace maze_generation_kruskals_test
 				_getch();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
@@ -225,7 +225,7 @@ namespace maze_generation_kruskals_test
 				_getch();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
@@ -280,7 +280,7 @@ namespace maze_generation_kruskals_test
 				std::cout << r2tm::linefeed2;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

@@ -17,11 +17,11 @@ namespace std_optional_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Message : " "Optional Use Placement New" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			struct TestOptional { int i = 8; };
 			std::optional<TestOptional> op_ts;
@@ -30,7 +30,7 @@ namespace std_optional_test
 			std::cout << r2tm::tab2 << "struct TestOptional { int i = 8; };" << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "std::optional<TestOptional> op_ts;" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Process 1" << r2tm::linefeed2;
@@ -65,7 +65,7 @@ namespace std_optional_test
 				std::cout << r2tm::tab3 << "> " << op_ts.has_value() << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -115,7 +115,7 @@ namespace std_optional_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::optional<TestOptional> op_1;
 			std::optional<TestOptional> op_2;
@@ -125,7 +125,7 @@ namespace std_optional_test
 			std::cout << r2tm::tab2 << "std::optional<TestOptional> op_1;" << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "std::optional<TestOptional> op_2;" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Process 1" << r2tm::linefeed2;
@@ -136,7 +136,7 @@ namespace std_optional_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Process 2" << r2tm::linefeed2;
@@ -146,7 +146,7 @@ namespace std_optional_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Process 3" << r2tm::linefeed2;
@@ -156,7 +156,7 @@ namespace std_optional_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Process 4" << r2tm::linefeed2;
@@ -166,7 +166,7 @@ namespace std_optional_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Process 5" << r2tm::linefeed2;
@@ -176,7 +176,7 @@ namespace std_optional_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Process 5" << r2tm::linefeed2;
@@ -186,7 +186,7 @@ namespace std_optional_test
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -205,7 +205,7 @@ namespace std_optional_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			struct EmptyStruct {};
 			EmptyStruct t_1;
@@ -216,7 +216,7 @@ namespace std_optional_test
 			std::cout << r2tm::tab2 << "EmptyStruct t_1;" << r2tm::linefeed;
 			std::cout << r2tm::tab2 << "EmptyStruct t_2;" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				//
@@ -226,7 +226,7 @@ namespace std_optional_test
 				std::cout << r2tm::tab2 << "> Not Working" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::optional<std::reference_wrapper<EmptyStruct>> maybe_test_struct_ref = t_1;
@@ -238,7 +238,7 @@ namespace std_optional_test
 				std::cout << r2tm::tab2 << "> Working" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

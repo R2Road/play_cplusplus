@@ -67,7 +67,7 @@ namespace play_vector3
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const r2::Vector3 v1( 1.f, 1.1f, 2.2f ) );
@@ -77,7 +77,7 @@ namespace play_vector3
 				OUTPUT_VALUE( v1 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -96,13 +96,13 @@ namespace play_vector3
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
 			DECLARATION_MAIN( const r2::Vector3 v1( 1.f, 1.1f, 2.2f ) );
 			DECLARATION_MAIN( const r2::Vector3 v2( 2.1f, 0.f, 2.f ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const auto v3 = v1 + v2 );
@@ -112,7 +112,7 @@ namespace play_vector3
 				OUTPUT_VALUE( v3 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -129,12 +129,12 @@ namespace play_vector3
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( r2::Vector3 v1( 3.f, .2f, 1.2f ) );
 			DECLARATION_MAIN( const r2::Vector3 v2( 1.4f, 1.3f, 1.5f ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( v1 += v2 );
@@ -144,7 +144,7 @@ namespace play_vector3
 				OUTPUT_VALUE( v1 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -163,12 +163,12 @@ namespace play_vector3
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const r2::Vector3 v1( 1.f, 1.1f, 2.2f ) );
 			DECLARATION_MAIN( const r2::Vector3 v2( 2.1f, 0.f, 2.f ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const auto v3 = v1 - v2 );
@@ -178,7 +178,7 @@ namespace play_vector3
 				OUTPUT_VALUE( v3 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -195,12 +195,12 @@ namespace play_vector3
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( r2::Vector3 v1( 3.f, .2f, 1.2f ) );
 			DECLARATION_MAIN( const r2::Vector3 v2( 1.4f, 1.3f, 1.5f ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( v1 -= v2 );
@@ -210,7 +210,7 @@ namespace play_vector3
 				OUTPUT_VALUE( v1 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -229,12 +229,12 @@ namespace play_vector3
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const r2::Vector3 v1( 1.f, 1.1f, 2.2f ) );
 			DECLARATION_MAIN( const float scalar = 3.f );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const auto v3 = v1 * scalar );
@@ -244,7 +244,7 @@ namespace play_vector3
 				OUTPUT_VALUE( v3 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -261,12 +261,12 @@ namespace play_vector3
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( r2::Vector3 v1( 1.f, 1.1f, 2.2f ) );
 			DECLARATION_MAIN( const float scalar = 3.f );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( v1 *= scalar );
@@ -276,7 +276,7 @@ namespace play_vector3
 				OUTPUT_VALUE( v1 );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
