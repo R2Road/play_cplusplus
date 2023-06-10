@@ -16,7 +16,7 @@
 
 - external library
   - [vld]( https://kinddragon.github.io/vld/ )
-  - [r2_console_menu]( https://github.com/R2Road/r2_console_menu )
+  - [r2_terminal_menu]( https://github.com/R2Road/r2_terminal_menu )
 
 
 ## ( '_')y-~
