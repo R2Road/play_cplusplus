@@ -4,6 +4,8 @@
 
 #include "r2/r2_Grid.h"
 
+#include "r2tm/r2tm_ostream.h"
+
 class AlgorithmHelper
 {
 private:
