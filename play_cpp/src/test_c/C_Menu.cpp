@@ -14,6 +14,7 @@
 #include "item/c_union_test.h"
 
 #include "BitOperationMenu.h"
+#include "C_FileMenu.h"
 #include "PointerMenu.h"
 #include "UnionMenu.h"
 #include "RootMenu.h"
@@ -66,6 +67,12 @@ r2tm::WriteFunctionT C_Menu::GetWriteFunction() const
 		ret->AddMenu( 'd', UnionMenu() );
 		ret->AddItem( 'f', c_system_test::Pause() );
 		ret->AddItem( 'g', c_atexit_test::Basic() );
+
+
+		ret->AddLineFeed();
+
+
+		ret->AddMenu( 'z', C_FileMenu() );
 
 
 

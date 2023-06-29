@@ -87,6 +87,7 @@
     <ClCompile Include="src\test_cpp\NameSpaceMenu.cpp" />
     <ClCompile Include="src\test_cpp\NewMenu.cpp" />
     <ClCompile Include="src\test_c\BitOperationMenu.cpp" />
+    <ClCompile Include="src\test_c\C_FileMenu.cpp" />
     <ClCompile Include="src\test_c\C_Menu.cpp" />
     <ClCompile Include="src\test_c\item\c_array_test.cpp" />
     <ClCompile Include="src\test_c\item\c_atexit_test.cpp" />
@@ -277,6 +278,7 @@
     <ClInclude Include="src\test_cpp\NameSpaceMenu.h" />
     <ClInclude Include="src\test_cpp\NewMenu.h" />
     <ClInclude Include="src\test_c\BitOperationMenu.h" />
+    <ClInclude Include="src\test_c\C_FileMenu.h" />
     <ClInclude Include="src\test_c\C_Menu.h" />
     <ClInclude Include="src\test_c\item\c_array_test.h" />
     <ClInclude Include="src\test_c\item\c_atexit_test.h" />

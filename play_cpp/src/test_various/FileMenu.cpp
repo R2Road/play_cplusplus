@@ -22,14 +22,6 @@ r2tm::WriteFunctionT FileMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* ret )
 	{
-		ret->AddItem( '1', c_file_test::OpenAndClose() );
-		ret->AddItem( '2', c_file_test::GetCharacter() );
-		ret->AddItem( '3', c_file_test::GetLine() );
-
-
-		ret->AddLineFeed();
-
-
 		ret->AddItem( 'q', std_fstream_test::OpenAndClose() );
 		ret->AddItem( 'w', std_fstream_test::GetCharacter() );
 		ret->AddItem( 'e', std_fstream_test::GetLine() );

@@ -572,6 +572,9 @@
     <ClCompile Include="external\r2tm\r2tm_WindowUtility.cpp">
       <Filter>external\r2tm</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_c\C_FileMenu.cpp">
+      <Filter>test_c</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1168,6 +1171,9 @@
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_WindowUtility.h">
       <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_c\C_FileMenu.h">
+      <Filter>test_c</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
