@@ -283,7 +283,7 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "폴더 생성" );
+				OUTPUT_SUBJECT( "디렉토리 생성" );
 
 				LF();
 
@@ -294,7 +294,7 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "이미 있는 폴더 생성 시도" );
+				OUTPUT_SUBJECT( "이미 있는 디렉토리 생성 시도" );
 
 				LF();
 
@@ -309,7 +309,7 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "폴더 삭제" );
+				OUTPUT_SUBJECT( "디렉토리 삭제" );
 
 				LF();
 
@@ -320,7 +320,7 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "없는 폴더 삭제 시도" );
+				OUTPUT_SUBJECT( "없는 디렉토리 삭제 시도" );
 
 				LF();
 
