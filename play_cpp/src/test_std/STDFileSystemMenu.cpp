@@ -28,6 +28,15 @@ r2tm::WriteFunctionT STDFileSystemMenu::GetWriteFunction() const
 		ret->AddItem( '5', std_filesystem_test::PathOperation_2() );
 
 
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'q', std_filesystem_test::Directory_Check_Make_Delete() );
+
+
+
 		ret->AddSplit();
 
 
