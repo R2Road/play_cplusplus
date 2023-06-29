@@ -6,6 +6,7 @@
 #include "test_std/item/std_cout_test.h"
 #include "test_std/item/std_regex_test.h"
 #include "test_std/item/std_string_test.h"
+#include "test_std/item/std_system_test.h"
 #include "test_std/item/std_tuple_test.h"
 #include "test_std/item/std_variant_test.h"
 
@@ -38,12 +39,13 @@ r2tm::WriteFunctionT STDMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* ret )
 	{
-		ret->AddMenu( '1', STDCoutMenu() );
-		ret->AddMenu( '2', STDFileSystemMenu() );
-		ret->AddMenu( '3', STDFstreamMenu() );
-		ret->AddMenu( '4', STDOptionalMenu() );
-		ret->AddMenu( '5', STDStringMenu() );
-		ret->AddMenu( '6', STDStringViewMenu() );
+		ret->AddItem( '1', std_system_test::Demo() );
+		ret->AddMenu( '2', STDCoutMenu() );
+		ret->AddMenu( '3', STDFileSystemMenu() );
+		ret->AddMenu( '4', STDFstreamMenu() );
+		ret->AddMenu( '5', STDOptionalMenu() );
+		ret->AddMenu( '6', STDStringMenu() );
+		ret->AddMenu( '7', STDStringViewMenu() );
 
 
 
