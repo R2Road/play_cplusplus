@@ -256,6 +256,8 @@ namespace std_filesystem_test
 		};
 	}
 
+
+
 	r2tm::TitleFunctionT Directory_Check_Make_Delete::GetTitleFunction() const
 	{
 		return []()->const char*
