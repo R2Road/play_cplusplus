@@ -11,8 +11,6 @@ namespace std_filesystem_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-
-
 	class DirectoryIterator : public r2tm::iItem
 	{
 	public:
@@ -20,16 +18,12 @@ namespace std_filesystem_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-
-
 	class RecursiveDirectoryIterator : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
-
-
 
 	class PathOperation_1 : public r2tm::iItem
 	{
