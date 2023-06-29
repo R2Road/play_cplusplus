@@ -354,7 +354,7 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "디렉토리 리스트 생성" );
+				OUTPUT_SUBJECT( "디렉토리 목록 생성" );
 
 				LF();
 
@@ -370,11 +370,19 @@ namespace std_filesystem_test
 				LF();
 
 				OUTPUT_NOTE( "현재 경로와 생성 하려는 경로가 바로 맞닿을 수 없는 경우 중간 경로를 함께 생성한다." );
+
+				LS();
+
+				OUTPUT_SUBJECT( "이미 있는 디렉토리 목록 생성 시도" );
+
+				LF();
+
+				EXPECT_FALSE( std::filesystem::create_directory( p ) );
 			}
 
 			LS();
 
-			OUTPUT_COMMENT( "아무 키 누르면 디렉토리 삭제" );
+			OUTPUT_COMMENT( "아무 키 누르면 디렉토리 목록 삭제" );
 			_getch();
 
 			LS();
@@ -386,6 +394,16 @@ namespace std_filesystem_test
 
 				EXPECT_TRUE( std::filesystem::remove_all( pivot_path ) );
 				EXPECT_FALSE( std::filesystem::exists( pivot_path ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "없는 디렉토리 목록 삭제 시도" );
+
+				LF();
+
+				EXPECT_FALSE( std::filesystem::remove( pivot_path ) );
 			}
 
 			LS();
