@@ -335,6 +335,67 @@ namespace std_filesystem_test
 
 
 
+	r2tm::TitleFunctionT Directories_Make::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Directories Make";
+		};
+	}
+	r2tm::DoFunctionT Directories_Make::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( std::filesystem::path pivot_path = std::filesystem::current_path() );
+			PROCESS_MAIN( pivot_path /= "temp" );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "디렉토리 리스트 생성" );
+
+				LF();
+
+				DECLARATION_MAIN( std::filesystem::path p = pivot_path );
+				PROCESS_MAIN( p /= "a" );
+				PROCESS_MAIN( p /= "b" );
+				PROCESS_MAIN( p /= "c" );
+
+
+				EXPECT_TRUE( std::filesystem::create_directories( p ) );
+				EXPECT_TRUE( std::filesystem::exists( p ) );
+
+				LF();
+
+				OUTPUT_NOTE( "현재 경로와 생성 하려는 경로가 바로 맞닿을 수 없는 경우 중간 경로를 함께 생성한다." );
+			}
+
+			LS();
+
+			OUTPUT_COMMENT( "아무 키 누르면 디렉토리 삭제" );
+			_getch();
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "자식 디렉토리가 있는 경우 함께 삭제한다." );
+
+				LF();
+
+				EXPECT_TRUE( std::filesystem::remove_all( pivot_path ) );
+				EXPECT_FALSE( std::filesystem::exists( pivot_path ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 
 	r2tm::TitleFunctionT FileStatus::GetTitleFunction() const
 	{

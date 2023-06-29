@@ -34,6 +34,7 @@ r2tm::WriteFunctionT STDFileSystemMenu::GetWriteFunction() const
 
 
 		ret->AddItem( 'q', std_filesystem_test::Directory_Check_Make_Delete() );
+		ret->AddItem( 'w', std_filesystem_test::Directories_Make() );
 
 
 
