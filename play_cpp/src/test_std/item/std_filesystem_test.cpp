@@ -280,6 +280,25 @@ namespace std_filesystem_test
 
 			LS();
 
+			{
+				EXPECT_TRUE( std::filesystem::create_directory( p ) );
+				EXPECT_TRUE( std::filesystem::exists( p ) );
+			}
+
+			LS();
+
+			OUTPUT_COMMENT( "아무 키 누르면 디렉토리 삭제" );
+			_getch();
+
+			LS();
+
+			{
+				EXPECT_TRUE( std::filesystem::remove( p ) );
+				EXPECT_FALSE( std::filesystem::exists( p ) );
+			}
+
+			LS();
+
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
