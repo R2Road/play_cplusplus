@@ -37,6 +37,14 @@ r2tm::WriteFunctionT STDFileSystemMenu::GetWriteFunction() const
 
 
 
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'a', std_filesystem_test::FileStatus() );
+
+
+
 		ret->AddSplit();
 
 

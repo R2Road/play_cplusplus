@@ -330,4 +330,35 @@ namespace std_filesystem_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+
+	r2tm::TitleFunctionT FileStatus::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "File Status";
+		};
+	}
+	r2tm::DoFunctionT FileStatus::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
+			PROCESS_MAIN( p /= "play_cpp.sln" );
+
+			LS();
+
+			{
+				OUTPUT_VALUE( std::filesystem::file_size( p ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
