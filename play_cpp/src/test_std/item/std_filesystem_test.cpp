@@ -281,8 +281,22 @@ namespace std_filesystem_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "폴더 생성" );
+
+				LF();
+
 				EXPECT_TRUE( std::filesystem::create_directory( p ) );
 				EXPECT_TRUE( std::filesystem::exists( p ) );
+			}
+			
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "이미 있는 폴더 생성 시도" );
+
+				LF();
+
+				EXPECT_FALSE( std::filesystem::create_directory( p ) );
 			}
 
 			LS();
@@ -293,8 +307,22 @@ namespace std_filesystem_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "폴더 삭제" );
+
+				LF();
+
 				EXPECT_TRUE( std::filesystem::remove( p ) );
 				EXPECT_FALSE( std::filesystem::exists( p ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "없는 폴더 삭제 시도" );
+
+				LF();
+
+				EXPECT_FALSE( std::filesystem::remove( p ) );
 			}
 
 			LS();
