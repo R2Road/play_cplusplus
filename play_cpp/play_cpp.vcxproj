@@ -143,6 +143,7 @@
     <ClCompile Include="src\test_std\STDContainerMenu.cpp" />
     <ClCompile Include="src\test_std\STDCoutMenu.cpp" />
     <ClCompile Include="src\test_std\STDFileSystemMenu.cpp" />
+    <ClCompile Include="src\test_std\STDFstreamMenu.cpp" />
     <ClCompile Include="src\test_std\STDFunctionalMenu.cpp" />
     <ClCompile Include="src\test_std\STDMemoryMenu.cpp" />
     <ClCompile Include="src\test_std\STDMenu.cpp" />
@@ -165,7 +166,6 @@
     <ClCompile Include="src\test_template\VariadicTemplateMenu.cpp" />
     <ClCompile Include="src\test_various\DebugMenu.cpp" />
     <ClCompile Include="src\test_various\ETCMenu.cpp" />
-    <ClCompile Include="src\test_various\FileMenu.cpp" />
     <ClCompile Include="src\test_various\item\etc_0_test.cpp" />
     <ClCompile Include="src\test_various\item\various_console_input_test.cpp" />
     <ClCompile Include="src\test_various\item\various_debug_test.cpp" />
@@ -342,6 +342,7 @@
     <ClInclude Include="src\test_std\STDContainerMenu.h" />
     <ClInclude Include="src\test_std\STDCoutMenu.h" />
     <ClInclude Include="src\test_std\STDFileSystemMenu.h" />
+    <ClInclude Include="src\test_std\STDFstreamMenu.h" />
     <ClInclude Include="src\test_std\STDFunctionalMenu.h" />
     <ClInclude Include="src\test_std\STDMemoryMenu.h" />
     <ClInclude Include="src\test_std\STDMenu.h" />
@@ -367,7 +368,6 @@
     <ClInclude Include="src\test_template\VariadicTemplateMenu.h" />
     <ClInclude Include="src\test_various\DebugMenu.h" />
     <ClInclude Include="src\test_various\ETCMenu.h" />
-    <ClInclude Include="src\test_various\FileMenu.h" />
     <ClInclude Include="src\test_various\item\etc_0_test.h" />
     <ClInclude Include="src\test_various\item\various_console_input_test.h" />
     <ClInclude Include="src\test_various\item\various_debug_test.h" />

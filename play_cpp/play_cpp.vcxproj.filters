@@ -260,9 +260,6 @@
     <ClCompile Include="src\test_c\item\c_file_test.cpp">
       <Filter>test_c\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_various\FileMenu.cpp">
-      <Filter>test_various</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_std\STDOptionalMenu.cpp">
       <Filter>test_std</Filter>
     </ClCompile>
@@ -575,6 +572,9 @@
     <ClCompile Include="src\test_c\C_FileMenu.cpp">
       <Filter>test_c</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_std\STDFstreamMenu.cpp">
+      <Filter>test_std</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -766,9 +766,6 @@
     </ClInclude>
     <ClInclude Include="src\test_c\item\c_file_test.h">
       <Filter>test_c\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_various\FileMenu.h">
-      <Filter>test_various</Filter>
     </ClInclude>
     <ClInclude Include="src\test_std\STDOptionalMenu.h">
       <Filter>test_std</Filter>
@@ -1174,6 +1171,9 @@
     </ClInclude>
     <ClInclude Include="src\test_c\C_FileMenu.h">
       <Filter>test_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\STDFstreamMenu.h">
+      <Filter>test_std</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

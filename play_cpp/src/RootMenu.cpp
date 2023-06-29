@@ -16,7 +16,6 @@
 #include "test_template/TemplateMenu.h"
 #include "test_various/DebugMenu.h"
 #include "test_various/ETCMenu.h"
-#include "test_various/FileMenu.h"
 #include "test_various/MathMenu.h"
 #include "test_various/RandomMenu.h"
 #include "test_various/TimeMenu.h"
@@ -69,10 +68,9 @@ r2tm::WriteFunctionT RootMenu::GetWriteFunction() const
 		ret->AddMenu( 'w', CPP_Menu() );
 		ret->AddMenu( 'e', STDMenu() );
 		ret->AddMenu( 'r', TemplateMenu() );
-		ret->AddMenu( 't', FileMenu() );
-		ret->AddMenu( 'y', TimeMenu() );
-		ret->AddMenu( 'u', RandomMenu() );
-		ret->AddMenu( 'i', DebugMenu() );
+		ret->AddMenu( 't', TimeMenu() );
+		ret->AddMenu( 'y', RandomMenu() );
+		ret->AddMenu( 'u', DebugMenu() );
 
 
 

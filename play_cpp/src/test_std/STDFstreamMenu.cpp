@@ -1,24 +1,24 @@
-#include "FileMenu.h"
+#include "STDFstreamMenu.h"
 
 #include "r2tm/r2tm_Director.h"
 
 #include "test_c/item/c_file_test.h"
 #include "test_std/item/std_fstream_test.h"
 
-#include "RootMenu.h"
+#include "STDMenu.h"
 
-r2tm::TitleFunctionT FileMenu::GetTitleFunction() const
+r2tm::TitleFunctionT STDFstreamMenu::GetTitleFunction() const
 {
 	return []()->const char*
 	{
-		return "File";
+		return "<fstream>";
 	};
 }
-r2tm::DescriptionFunctionT FileMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT STDFstreamMenu::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT FileMenu::GetWriteFunction() const
+r2tm::WriteFunctionT STDFstreamMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* ret )
 	{
@@ -31,6 +31,6 @@ r2tm::WriteFunctionT FileMenu::GetWriteFunction() const
 		ret->AddSplit();
 
 
-		ret->AddMenu( 27, RootMenu() );
+		ret->AddMenu( 27, STDMenu() );
 	};
 }
