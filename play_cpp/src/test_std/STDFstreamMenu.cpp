@@ -22,13 +22,15 @@ r2tm::WriteFunctionT STDFstreamMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* ret )
 	{
-		ret->AddItem( 'q', std_fstream_test::OpenAndClose() );
-		ret->AddItem( 'w', std_fstream_test::GetCharacter() );
-		ret->AddItem( 'e', std_fstream_test::GetLine() );
-		ret->AddItem( 'r', std_fstream_test::GetBlank2Blank() );
+		ret->AddItem( '1', std_fstream_test::OpenAndClose() );
+		ret->AddItem( '2', std_fstream_test::GetCharacter() );
+		ret->AddItem( '3', std_fstream_test::GetLine() );
+		ret->AddItem( '4', std_fstream_test::GetBlank2Blank() );
+
 
 
 		ret->AddSplit();
+
 
 
 		ret->AddMenu( 27, STDMenu() );
