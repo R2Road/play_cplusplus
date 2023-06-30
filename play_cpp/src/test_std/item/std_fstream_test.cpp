@@ -254,8 +254,8 @@ namespace std_fstream_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::ofstream ifs( p, std::ios::out ) );
-				PROCESS_MAIN( ifs.close() );
+				DECLARATION_MAIN( std::ofstream fs( p, std::ios::out ) );
+				PROCESS_MAIN( fs.close() );
 
 				LF();
 
