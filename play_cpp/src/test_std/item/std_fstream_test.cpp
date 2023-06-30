@@ -230,4 +230,47 @@ namespace std_fstream_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT FileGenerate::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "fstream : File Generate";
+		};
+	}
+	r2tm::DoFunctionT FileGenerate::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
+			PROCESS_SUB( p.append( "resources" ).append( "temp.txt" ) );
+			std::cout << "p : " << p << r2tm::linefeed;
+			EXPECT_FALSE( std::filesystem::exists( p ) );
+
+			LS();
+
+			{
+				DECLARATION_MAIN( std::ofstream ifs( p, std::ios::out ) );
+				PROCESS_MAIN( ifs.close() );
+
+				LF();
+
+				EXPECT_TRUE( std::filesystem::exists( p ) );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( std::filesystem::remove_all( p ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

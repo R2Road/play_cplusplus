@@ -28,6 +28,14 @@ r2tm::WriteFunctionT STDFstreamMenu::GetWriteFunction() const
 
 
 
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'q', std_fstream_test::FileGenerate() );
+
+
+
 		ret->AddSplit();
 
 
