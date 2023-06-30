@@ -254,7 +254,16 @@ namespace std_fstream_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::ofstream fs( p, std::ios::out ) );
+				DECLARATION_MAIN( std::ofstream fs );
+				EXPECT_FALSE( fs.fail() );
+
+				LF();
+
+				PROCESS_MAIN( fs.open( p, std::ios::out ) );
+				EXPECT_TRUE( fs.is_open() );
+
+				LF();
+
 				PROCESS_MAIN( fs.close() );
 
 				LF();
