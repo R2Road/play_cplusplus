@@ -27,6 +27,14 @@ r2tm::WriteFunctionT C_FileMenu::GetWriteFunction() const
 
 
 
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'q', c_file_test::FileGenerate() );
+
+
+
 		ret->AddSplit();
 
 

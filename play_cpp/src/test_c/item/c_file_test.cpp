@@ -1,6 +1,7 @@
 #include "c_file_test.h"
 
 #include <stdio.h>
+#include <sys/stat.h>
 
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_Inspector.h"
@@ -113,6 +114,83 @@ namespace c_file_test
 			LS();
 
 			PROCESS_MAIN( fclose( fp ) );
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT FileGenerate::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "fstream : File Generate";
+		};
+	}
+	r2tm::DoFunctionT FileGenerate::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( const char* path = "resources/temp_4_c_file_test__file_generate.txt" );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "파일 없음 확인" );
+
+				LF();
+
+				DECLARATION_MAIN( struct stat s = { 0 } );
+				EXPECT_NE( 0, stat( path, &s ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "파일 생성" );
+
+				LF();
+
+				DECLARATION_MAIN( FILE* fp = nullptr );
+				EXPECT_EQ( 0, fopen_s( &fp, path, "w" ) );
+
+				LF();
+
+				PROCESS_MAIN( fclose( fp ) );
+
+				LF();
+
+				OUTPUT_SUBJECT( "파일 있음 확인" );
+
+				LF();
+
+				DECLARATION_MAIN( struct stat s = { 0 } );
+				EXPECT_EQ( 0, stat( path, &s ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "파일 삭제" );
+
+				LF();
+
+				EXPECT_EQ( 0, remove( path ) );
+
+				LF();
+
+				OUTPUT_SUBJECT( "파일 없음 확인" );
+
+				LF();
+
+				DECLARATION_MAIN( struct stat s = { 0 } );
+				EXPECT_NE( 0, stat( path, &s ) );
+			}
 
 			LS();
 
