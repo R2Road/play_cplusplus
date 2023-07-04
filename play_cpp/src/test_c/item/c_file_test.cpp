@@ -127,7 +127,7 @@ namespace c_file_test
 	{
 		return []()->const char*
 		{
-			return "fstream : File Generate";
+			return "C File : File Generate";
 		};
 	}
 	r2tm::DoFunctionT FileGenerate::GetDoFunction() const
