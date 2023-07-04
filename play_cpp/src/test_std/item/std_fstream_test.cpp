@@ -23,7 +23,9 @@ namespace std_fstream_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ 없는 파일." << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "없는 파일" );
+
+				LF();
 
 				DECLARATION_MAIN( std::ifstream ifs( "", std::ios::in ) );
 
@@ -47,7 +49,9 @@ namespace std_fstream_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ 파일 열기 성공." << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "파일 열기" );
+
+				LF();
 
 				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
 
@@ -62,7 +66,10 @@ namespace std_fstream_test
 
 				LF();
 
-				std::cout << r2tm::tab << "+ 파일을 닫아도 유효성 검사를 통과 한다." << r2tm::linefeed2;
+				OUTPUT_NOTE( "파일을 닫아도 유효성 검사를 통과 한다." );
+
+				LF();
+
 				EXPECT_TRUE( ifs );
 				EXPECT_FALSE( ifs.fail() );
 			}
@@ -70,7 +77,9 @@ namespace std_fstream_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ use std::ifstream::open" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "use std::ifstream::open" );
+
+				LF();
 
 				DECLARATION_MAIN( std::ifstream ifs );
 				PROCESS_MAIN( ifs.open( p ) );
