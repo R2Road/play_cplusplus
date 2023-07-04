@@ -253,9 +253,13 @@ namespace std_fstream_test
 
 			LS();
 
+			DECLARATION_MAIN( std::ofstream fs );
+			EXPECT_FALSE( fs.fail() );
+
+			LS();
+
 			{
-				DECLARATION_MAIN( std::ofstream fs );
-				EXPECT_FALSE( fs.fail() );
+				OUTPUT_SUBJECT( "파일 생성" );
 
 				LF();
 
@@ -268,13 +272,29 @@ namespace std_fstream_test
 
 				LF();
 
+				OUTPUT_SUBJECT( "파일 있음 확인" );
+
+				LF();
+
 				EXPECT_TRUE( std::filesystem::exists( p ) );
 			}
 
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "파일 삭제" );
+
+				LF();
+
 				PROCESS_MAIN( std::filesystem::remove_all( p ) );
+
+				LF();
+
+				OUTPUT_SUBJECT( "파일 없음 확인" );
+
+				LF();
+
+				EXPECT_FALSE( std::filesystem::exists( p ) );
 			}
 
 			LS();
