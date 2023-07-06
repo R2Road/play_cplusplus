@@ -23,7 +23,7 @@ namespace std_fstream_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "없는 파일" );
+				OUTPUT_SUBJECT( "없는 파일 열기" );
 
 				LF();
 
@@ -49,7 +49,7 @@ namespace std_fstream_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "파일 열기" );
+				OUTPUT_SUBJECT( "있는 파일 열기" );
 
 				LF();
 
@@ -77,7 +77,7 @@ namespace std_fstream_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "use std::ifstream::open" );
+				OUTPUT_SUBJECT( "open 함수로 열기" );
 
 				LF();
 
