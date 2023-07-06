@@ -43,8 +43,11 @@ namespace std_fstream_test
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-			std::cout << "p : " << p << r2tm::linefeed;
 			EXPECT_TRUE( std::filesystem::exists( p ) );
+
+			LF();
+
+			OUTPUT_VALUE( p );
 
 			LS();
 
