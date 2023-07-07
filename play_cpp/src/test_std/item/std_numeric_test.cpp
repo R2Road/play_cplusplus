@@ -130,67 +130,46 @@ namespace std_numeric_test
 			LS();
 
 			{
-				std::cout << "# Sum" << r2tm::linefeed;
+				OUTPUT_SUBJECT( "Sum" );
+
 				LF();
 
-				std::vector<int> v{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+				DECLARATION_MAIN( const std::vector<int> v( { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 } ) );
+				DECLARATION_MAIN( const int result = std::accumulate( v.begin(), v.end(), 0 ) );
 
-				const int sum = std::accumulate( v.begin(), v.end(), 0 );
-
-				std::cout << r2tm::tab << "+ Variable" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "std::vector<int> v{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };" << r2tm::linefeed;
 				LF();
 
-				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "const int sum = std::accumulate( v.begin(), v.end(), 0 );" << r2tm::linefeed;
-				LF();
-
-				std::cout << r2tm::tab << "+ Result" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << sum << r2tm::linefeed;
+				OUTPUT_VALUE( result );
 			}
 
 			LS();
 
 			{
-				std::cout << "# Minus" << r2tm::linefeed;
+				OUTPUT_SUBJECT( "Minus" );
+
 				LF();
 
-				std::vector<int> v{ 5, 10, 25 };
+				DECLARATION_MAIN( const std::vector<int> v( { 5, 10, 25 } ) );
+				DECLARATION_MAIN( const int result = std::accumulate( v.begin(), v.end(), 100, std::minus<int>() ) );
 
-				const int result = std::accumulate( v.begin(), v.end(), 100, std::minus<int>() );
-
-				std::cout << r2tm::tab << "+ Variable" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "std::vector<int> v{ 5, 10, 25 };" << r2tm::linefeed;
 				LF();
 
-				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "const int product = std::accumulate( v.begin(), v.end(), 100, std::minus<int>() );" << r2tm::linefeed;
-				LF();
-
-				std::cout << r2tm::tab << "+ Result" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << result << r2tm::linefeed;
+				OUTPUT_VALUE( result );
 			}
 
 			LS();
 
 			{
-				std::cout << "# Multiply" << r2tm::linefeed;
+				OUTPUT_SUBJECT( "Multiply" );
+
 				LF();
 
-				std::vector<int> v{ 2, 10, 4 };
+				DECLARATION_MAIN( std::vector<int> v( { 2, 10, 4 } ) );
+				DECLARATION_MAIN( const int result = std::accumulate( v.begin(), v.end(), 2, std::multiplies<int>() ) );
 
-				const int result = std::accumulate( v.begin(), v.end(), 2, std::multiplies<int>() );
-
-				std::cout << r2tm::tab << "+ Variable" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "std::vector<int> v{ 2, 10, 4 };" << r2tm::linefeed;
 				LF();
 
-				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "const int product = std::accumulate( v.begin(), v.end(), 2, std::multiplies<int>() );" << r2tm::linefeed;
-				LF();
-
-				std::cout << r2tm::tab << "+ Result" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << result << r2tm::linefeed;
+				OUTPUT_VALUE( result );
 			}
 
 			LS();
