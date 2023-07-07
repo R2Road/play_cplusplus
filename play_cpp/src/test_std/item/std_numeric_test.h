@@ -4,6 +4,20 @@
 
 namespace std_numeric_test
 {
+	class Min : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
+	class Max : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
 	class Accumulate_Number : public r2tm::iItem
 	{
 	public:

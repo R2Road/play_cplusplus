@@ -9,6 +9,113 @@
 
 namespace std_numeric_test
 {
+	r2tm::TitleFunctionT Min::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::accumulate : Min";
+		};
+	}
+	r2tm::DoFunctionT Min::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_VALUE( std::numeric_limits<int>::min() );
+			OUTPUT_BINARY( std::numeric_limits<int>::min() );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "min 값 직접 만들기" );
+
+				LF();
+
+				DECLARATION_MAIN( const int a = 1 << ( ( sizeof( int ) * 8 ) - 1 ) );
+				OUTPUT_VALUE( a );
+				OUTPUT_BINARY( a );
+
+				LF();
+
+				EXPECT_EQ( std::numeric_limits<int>::min(), a );
+
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Max::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::accumulate : Max";
+		};
+	}
+	r2tm::DoFunctionT Max::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_VALUE( std::numeric_limits<int>::max() );
+			OUTPUT_BINARY( std::numeric_limits<int>::max() );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "max 값 직접 만들기" );
+
+				LF();
+
+				DECLARATION_MAIN( int a = -1 );
+				OUTPUT_BINARY( a );
+
+				LF();
+
+				DECLARATION_MAIN( const int mask = 1 << ( ( sizeof( int ) * 8 ) - 1 ) );
+				OUTPUT_BINARY( mask );
+
+				LF();
+
+				PROCESS_MAIN( a ^= mask );
+				OUTPUT_VALUE( a );
+				OUTPUT_BINARY( a );
+
+				LF();
+
+				EXPECT_EQ( std::numeric_limits<int>::max(), a );
+			}
+
+			LS();
+
+			{
+				OUTPUT_NOTE( "-1 >> 1 은 작동하지 않는다." );
+
+				LF();
+
+				DECLARATION_MAIN( int a = -1 );
+				PROCESS_MAIN( a = a >> 1 );
+
+				LF();
+
+				OUTPUT_VALUE( a );
+				OUTPUT_BINARY( a );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT Accumulate_Number::GetTitleFunction() const
 	{
 		return []()->const char*

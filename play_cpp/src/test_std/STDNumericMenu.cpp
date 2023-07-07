@@ -21,10 +21,12 @@ r2tm::WriteFunctionT STDNumericMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* ret )
 	{
-		ret->AddItem( '1', std_numeric_test::Accumulate_Number() );
-		ret->AddItem( '2', std_numeric_test::Accumulate_String() );
-		ret->AddItem( '3', std_numeric_test::Partial_Sum() );
-		ret->AddItem( '4', std_numeric_test::FillSequenceNumber() );
+		ret->AddItem( '1', std_numeric_test::Min() );
+		ret->AddItem( '2', std_numeric_test::Max() );
+		ret->AddItem( '3', std_numeric_test::Accumulate_Number() );
+		ret->AddItem( '4', std_numeric_test::Accumulate_String() );
+		ret->AddItem( '5', std_numeric_test::Partial_Sum() );
+		ret->AddItem( '6', std_numeric_test::FillSequenceNumber() );
 
 
 		ret->AddSplit();
