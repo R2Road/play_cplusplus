@@ -1,9 +1,5 @@
 #include "number_test.h"
 
-#include <iterator>
-#include <numeric>
-#include <string>
-
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
 
@@ -23,7 +19,9 @@ namespace number_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Binary" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Binary" );
+
+				LF();
 
 				DECLARATION_MAIN( const int num = 0b0011111 );
 
@@ -35,7 +33,9 @@ namespace number_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Oct" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Oct" );
+
+				LF();
 
 				DECLARATION_MAIN( const int num = 037 );
 
@@ -47,7 +47,9 @@ namespace number_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Dec" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Dec" );
+
+				LF();
 
 				DECLARATION_MAIN( const int num = 31 );
 
@@ -59,7 +61,9 @@ namespace number_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Hex" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Hex" );
+
+				LF();
 
 				DECLARATION_MAIN( const int num = 0x1f );
 
