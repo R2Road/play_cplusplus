@@ -70,6 +70,20 @@ namespace c_file_test
 			LS();
 
 			{
+				PROCESS_MAIN( printf( "%c \n", fgetc( fp ) ) );
+
+				LF();
+
+				PROCESS_MAIN( printf( "%c \n", fgetc( fp ) ) );
+
+				LF();
+
+				PROCESS_MAIN( printf( "%c \n", fgetc( fp ) ) );
+			}
+
+			LS();
+
+			{
 				PROCESS_MAIN( while( !feof( fp ) ) printf( "%c", fgetc( fp ) ) );
 				LF();
 			}
