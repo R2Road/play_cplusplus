@@ -116,10 +116,27 @@ namespace c_file_test
 			DECLARATION_MAIN( FILE* fp = nullptr );
 			EXPECT_EQ( 0, fopen_s( &fp, "resources/c_file_test_openandclose_1.txt", "rb" ) );
 
+			LF();
+
+			DECLARATION_MAIN( char temp[256] );
+
 			LS();
 
 			{
-				DECLARATION_MAIN( char temp[256] );
+				PROCESS_MAIN( fgets( temp, sizeof( temp ), fp ); printf( "%s \n", temp ); );
+
+				LF();
+
+				PROCESS_MAIN( fgets( temp, sizeof( temp ), fp ); printf( "%s \n", temp ); );
+
+				LF();
+
+				PROCESS_MAIN( fgets( temp, sizeof( temp ), fp ); printf( "%s \n", temp ); );
+			}
+
+			LS();
+
+			{
 				PROCESS_MAIN( while( !feof( fp ) ) { fgets( temp, sizeof( temp ), fp ); printf( "%s", temp ); } );
 
 				LF();
