@@ -22,15 +22,26 @@ namespace c_file_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "Open" );
+
+				LF();
+
 				DECLARATION_MAIN( FILE* fp = nullptr );
 				EXPECT_EQ( 0, fopen_s( &fp, "resources/c_file_test_openandclose_1.txt", "rb" ) );
 
 				LF();
 
+				OUTPUT_SUBJECT( "Close" );
+
+				LF();
+
 				PROCESS_MAIN( fclose( fp ) );
 
-				std::cout << r2tm::linefeed2;
-				std::cout << r2tm::tab << "+ 한 번 더 불러도 문제가 없다." << r2tm::linefeed2;
+				SS();
+
+				OUTPUT_SUBJECT( "fclose 를 한 번 더 불러도 문제 없다." );
+
+				LF();
 
 				PROCESS_MAIN( fclose( fp ) );
 			}
@@ -38,7 +49,9 @@ namespace c_file_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ 터짐" << r2tm::linefeed2;
+				OUTPUT_NOTE( "이러면 터진다." );
+
+				LF();
 
 				OUTPUT_CODE( fclose( nullptr ) );
 			}
