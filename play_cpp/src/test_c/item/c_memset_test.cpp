@@ -27,7 +27,14 @@ namespace c_memset_test
 			LS();
 
 			{
-				PROCESS_MAIN( memset( buffer, 1, sizeof( buffer ) ) );
+				PROCESS_MAIN( memset( buffer, 1, 1 ) );
+				OUTPUT_BINARIES( buffer, buffer_size );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( memset( buffer, 2, sizeof( buffer ) ) );
 				OUTPUT_BINARIES( buffer, buffer_size );
 			}
 
