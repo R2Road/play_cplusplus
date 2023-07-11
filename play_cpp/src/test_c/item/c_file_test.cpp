@@ -77,6 +77,10 @@ namespace c_file_test
 		{
 			LS();
 
+			OUTPUT_SUBJECT( "한 문자씩 읽는다." );
+
+			LS();
+
 			DECLARATION_MAIN( FILE* fp = nullptr );
 			EXPECT_EQ( 0, fopen_s( &fp, "resources/c_file_test_openandclose_1.txt", "rb" ) );
 
@@ -92,11 +96,9 @@ namespace c_file_test
 				LF();
 
 				PROCESS_MAIN( printf( "%c \n", fgetc( fp ) ) );
-			}
 
-			LS();
+				SS();
 
-			{
 				PROCESS_MAIN( while( !feof( fp ) ) printf( "%c", fgetc( fp ) ) );
 				LF();
 			}
@@ -126,6 +128,10 @@ namespace c_file_test
 		{
 			LS();
 
+			OUTPUT_SUBJECT( "한 줄씩 읽는다." );
+
+			LS();
+
 			DECLARATION_MAIN( FILE* fp = nullptr );
 			EXPECT_EQ( 0, fopen_s( &fp, "resources/c_file_test_openandclose_1.txt", "rb" ) );
 
@@ -145,13 +151,10 @@ namespace c_file_test
 				LF();
 
 				PROCESS_MAIN( fgets( temp, sizeof( temp ), fp ); printf( "%s \n", temp ); );
-			}
+			
+				SS();
 
-			LS();
-
-			{
 				PROCESS_MAIN( while( !feof( fp ) ) { fgets( temp, sizeof( temp ), fp ); printf( "%s", temp ); } );
-
 				LF();
 			}
 
