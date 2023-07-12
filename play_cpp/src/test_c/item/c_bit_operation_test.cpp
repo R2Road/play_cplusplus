@@ -232,31 +232,45 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ 1로 채운다" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "1로 채운다" );
+
+				LF();
 
 				PROCESS_MAIN( mask = std::numeric_limits<unsigned int>::max() );
 				PrintBinary( mask );
+				
+				LF2();
 
-				std::cout << r2tm::linefeed2;
-				std::cout << r2tm::tab << "+ 꺼내올 데이터 크기 만큼 남긴다." << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "꺼내올 데이터 크기 만큼 남긴다" );
+
+				LF();
 
 				PROCESS_MAIN( mask >>= ( bit_length - target_range ) );
 				PrintBinary( mask );
+				
+				LF2();
 
-				std::cout << r2tm::linefeed2;
-				std::cout << r2tm::tab << "+ 꺼내올 데이터 위치로 이동한다." << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "꺼내올 데이터 위치로 이동한다" );
+
+				LF();
 
 				PROCESS_MAIN( mask <<= target_pos );
 				PrintBinary( mask );
+				
+				LF2();
 
-				std::cout << r2tm::linefeed2;
-				std::cout << r2tm::tab << "+ 꺼낸다." << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "꺼낸다" );
+
+				LF();
 
 				DECLARATION_MAIN( unsigned int result = num & mask );
 				PrintBinary( result );
+				
+				LF2();
 
-				std::cout << r2tm::linefeed2;
-				std::cout << r2tm::tab << "+ 0번 bit 까지 이동시킨다." << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "0번 bit 까지 이동시킨다" );
+
+				LF();
 
 				PROCESS_MAIN( result >>= target_pos );
 				PrintBinary( result );
