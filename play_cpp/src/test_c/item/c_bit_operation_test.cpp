@@ -158,7 +158,9 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Test Flag" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Test Flag" );
+
+				LF();
 
 				EXPECT_TRUE( num & ( 1 << 0 ) );
 				EXPECT_FALSE( num & ( 1 << 2 ) );
@@ -168,7 +170,9 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Add Flag" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Add Flag" );
+
+				LF();
 
 				PROCESS_MAIN( num |= ( 1 << 2 ) );
 				PrintBinary( num, 16 );
@@ -177,7 +181,9 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Remove Flag" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Remove Flag" );
+
+				LF();
 
 				PROCESS_MAIN( num &= ~( 1 << 2 ) );
 				PrintBinary( num, 16 );
@@ -186,7 +192,9 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Toggle Flag" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Toggle Flag" );
+
+				LF();
 
 				PROCESS_MAIN( num ^= ( 1 << 2 ) );
 				PrintBinary( num, 16 );
