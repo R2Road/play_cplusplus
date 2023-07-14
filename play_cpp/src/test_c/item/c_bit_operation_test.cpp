@@ -44,7 +44,9 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Flip" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Flip" );
+
+				LF();
 
 				OUTPUT_CODE( ~pivot );
 				PrintBinary( ~pivot );
@@ -53,7 +55,9 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Shift : Left" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Shift : Left" );
+
+				LF();
 
 				OUTPUT_CODE( pivot << 1 );
 				PrintBinary( pivot << 1 );
@@ -62,7 +66,9 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Shift : Right" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Shift : Right" );
+
+				LF();
 
 				OUTPUT_CODE( pivot >> 1 );
 				PrintBinary( pivot >> 1 );
