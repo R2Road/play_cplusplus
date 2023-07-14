@@ -41,7 +41,7 @@ namespace c_bit_operation_test
 		{
 			LS();
 
-			DECLARATION_MAIN( const short pivot = 0b100000001 ); // binary
+			DECLARATION_MAIN( const int pivot = 0b100000001 ); // binary
 			PrintBinary( pivot );
 
 			LS();
@@ -51,6 +51,7 @@ namespace c_bit_operation_test
 
 				LF();
 
+				PrintBinary( pivot );
 				OUTPUT_CODE( ~pivot );
 				PrintBinary( ~pivot );
 			}
@@ -62,6 +63,7 @@ namespace c_bit_operation_test
 
 				LF();
 
+				PrintBinary( pivot );
 				OUTPUT_CODE( pivot << 1 );
 				PrintBinary( pivot << 1 );
 			}
@@ -73,6 +75,7 @@ namespace c_bit_operation_test
 
 				LF();
 
+				PrintBinary( pivot );
 				OUTPUT_CODE( pivot >> 1 );
 				PrintBinary( pivot >> 1 );
 			}
