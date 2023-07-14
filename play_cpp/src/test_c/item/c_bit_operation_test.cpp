@@ -7,8 +7,11 @@
 
 namespace
 {
-	void PrintBinary( const int value, const int limit = 32 )
+	template<typename T>
+	void PrintBinary( const T value )
 	{
+		const int limit = sizeof( value ) * 8;
+
 		printf( "\t> %8d : ", value );
 
 		for( int position = limit - 1; 0 <= position; --position )
@@ -38,7 +41,7 @@ namespace c_bit_operation_test
 		{
 			LS();
 
-			DECLARATION_MAIN( const int pivot = 0b1000000001 ); // binary
+			DECLARATION_MAIN( const short pivot = 0b100000001 ); // binary
 			PrintBinary( pivot );
 
 			LS();
@@ -159,7 +162,7 @@ namespace c_bit_operation_test
 			LS();
 
 			DECLARATION_MAIN( unsigned int num = 0b1000000001 ); // binary
-			PrintBinary( num, 16 );
+			PrintBinary( num );
 
 			LS();
 
@@ -181,7 +184,7 @@ namespace c_bit_operation_test
 				LF();
 
 				PROCESS_MAIN( num |= ( 1 << 2 ) );
-				PrintBinary( num, 16 );
+				PrintBinary( num );
 			}
 
 			LS();
@@ -192,7 +195,7 @@ namespace c_bit_operation_test
 				LF();
 
 				PROCESS_MAIN( num &= ~( 1 << 2 ) );
-				PrintBinary( num, 16 );
+				PrintBinary( num );
 			}
 
 			LS();
@@ -203,12 +206,12 @@ namespace c_bit_operation_test
 				LF();
 
 				PROCESS_MAIN( num ^= ( 1 << 2 ) );
-				PrintBinary( num, 16 );
+				PrintBinary( num );
 
 				LF();
 
 				PROCESS_MAIN( num ^= ( 1 << 2 ) );
-				PrintBinary( num, 16 );
+				PrintBinary( num );
 			}
 
 			LS();
@@ -381,33 +384,33 @@ namespace c_bit_operation_test
 
 			{
 				DECLARATION_MAIN( int a = 123 );
-				PrintBinary( a, 31 );
+				PrintBinary( a );
 				DECLARATION_MAIN( int b = 456 );
-				PrintBinary( b, 31 );
+				PrintBinary( b );
 
 				std::cout << r2tm::linefeed2;
 
 				PROCESS_MAIN( a = a ^ b );
 				OUTPUT_VALUE( a );
-				PrintBinary( a, 31 );
+				PrintBinary( a );
 				OUTPUT_VALUE( b );
-				PrintBinary( b, 31 );
+				PrintBinary( b );
 
 				LF();
 
 				PROCESS_MAIN( b = b ^ a );
 				OUTPUT_VALUE( a );
-				PrintBinary( a, 31 );
+				PrintBinary( a );
 				OUTPUT_VALUE( b );
-				PrintBinary( b, 31 );
+				PrintBinary( b );
 
 				LF();
 
 				PROCESS_MAIN( a = a ^ b );
 				OUTPUT_VALUE( a );
-				PrintBinary( a, 31 );
+				PrintBinary( a );
 				OUTPUT_VALUE( b );
-				PrintBinary( b, 31 );
+				PrintBinary( b );
 			}
 
 			LS();
@@ -433,22 +436,22 @@ namespace c_bit_operation_test
 
 			{
 				DECLARATION_MAIN( const char max_c = std::numeric_limits<char>::max() );
-				PrintBinary( max_c, 8 );
+				PrintBinary( max_c );
 
 				LF();
 
 				DECLARATION_MAIN( const int i_1 = max_c );
-				PrintBinary( i_1, 32 );
+				PrintBinary( i_1 );
 
 				LF();
 
 				DECLARATION_MAIN( const int i_2 = max_c );
-				PrintBinary( i_2, 32 );
+				PrintBinary( i_2 );
 
 				LF();
 
 				DECLARATION_MAIN( const int i_3 = i_1 + i_2 );
-				PrintBinary( i_3, 32 );
+				PrintBinary( i_3 );
 			}
 
 			LS();
