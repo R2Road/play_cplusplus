@@ -64,6 +64,16 @@ namespace c_union_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "아래의 초기화 코드가 없으면..." );
+				OUTPUT_SUBJECT( "[error C4700: 초기화되지 않은 'u' 지역 변수를 사용했습니다.]" );
+				OUTPUT_SUBJECT( "...가 발생한다." );
+
+				LF();
+
+				OUTPUT_SUBJECT( "공용체 내부에서 직접 초기화 해도 된다." );
+
+				LF();
+
 				PROCESS_MAIN( u.c = 0 );
 				PROCESS_MAIN( u.i64 = 0ll );
 				OUTPUT_BINARY( u );
