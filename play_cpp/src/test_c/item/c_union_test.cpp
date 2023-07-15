@@ -23,17 +23,38 @@ namespace c_union_test
 		{
 			LS();
 
+			DECLARATION_MAIN( union U { int32_t a; int64_t b; } );
+
+			LF();
+
 			{
 				OUTPUT_SUBJECT( "공용체 구성요소는 메모리 주소가 같다." );
 
 				LF();
 
-				DECLARATION_MAIN( union { int32_t a; int64_t b; } u );
+				DECLARATION_MAIN( U u );
 
 				LF();
 
 				OUTPUT_VALUE( &u.a );
 				OUTPUT_VALUE( &u.b );
+			}
+
+			LS();
+
+			{
+				DECLARATION_MAIN( U u );
+
+				LF();
+
+				OUTPUT_NOTE( "아래의 초기화 코드가 없으면..." );
+				OUTPUT_NOTE( "[error C4700: 초기화되지 않은 'u' 지역 변수를 사용했습니다.]" );
+				OUTPUT_NOTE( "...가 발생한다." );
+
+				LF();
+
+				PROCESS_MAIN( u.a = 0 );
+				OUTPUT_VALUE( u.a );
 			}
 
 			LS();
@@ -63,16 +84,6 @@ namespace c_union_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "아래의 초기화 코드가 없으면..." );
-				OUTPUT_NOTE( "[error C4700: 초기화되지 않은 'u' 지역 변수를 사용했습니다.]" );
-				OUTPUT_NOTE( "...가 발생한다." );
-
-				LF();
-
-				OUTPUT_NOTE( "공용체 내부에서 직접 초기화 해도 된다." );
-
-				LF();
-
 				PROCESS_MAIN( u.i64 = -1ll );
 				OUTPUT_BINARY( u );
 			}
