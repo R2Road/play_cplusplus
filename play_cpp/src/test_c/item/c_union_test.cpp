@@ -73,6 +73,19 @@ namespace c_union_test
 
 			LS();
 
+			{
+				OUTPUT_CODE( union { int32_t a = 0; int64_t b = 0; } u );
+
+				LF();
+
+				OUTPUT_NOTE( "공영체 내에서 초기화를 진행 할 때는 1개의 멤버만 초기화 해야 한다." );
+				OUTPUT_NOTE( "그렇지 않으면..." );
+				OUTPUT_NOTE( "error C2836 : 공용 구조체에서 한 개의 비정적 데이터 멤버만 기본 멤버 이니셜라이저를 가질 수 있습니다." );
+				OUTPUT_NOTE( "...가 발생한다." );
+			}
+
+			LS();
+
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
