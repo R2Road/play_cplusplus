@@ -24,6 +24,10 @@ namespace c_union_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "공용체 구성요소는 메모리 주소가 같다." );
+
+				LF();
+
 				DECLARATION_MAIN( union { int32_t a; int64_t b; } u );
 
 				LF();
