@@ -120,7 +120,9 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ 1의 보수 : 0 과 1을 뒤집어 음수를 만든다." << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "1의 보수 : 0 과 1을 뒤집어 음수를 만든다" );
+
+				LF();
 
 				PROCESS_MAIN( num = ~num );
 				PrintBinary( num );
@@ -129,7 +131,9 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ 2의 보수 : 0 과 1을 뒤집고 + 1 해서 음수를 만든다." << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "2의 보수 : 0 과 1을 뒤집고 + 1 해서 음수를 만든다" );
+
+				LF();
 
 				PROCESS_MAIN( num += 1 );
 				PrintBinary( num );
