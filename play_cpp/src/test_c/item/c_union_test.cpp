@@ -59,6 +59,20 @@ namespace c_union_test
 
 			LS();
 
+			{
+				DECLARATION_MAIN( union { int32_t a = 0; int64_t b; } u );
+
+				LF();
+
+				OUTPUT_NOTE( "공용체 내부에서 직접 초기화 해도 된다." );
+
+				LF();
+
+				OUTPUT_VALUE( u.a );
+			}
+
+			LS();
+
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
