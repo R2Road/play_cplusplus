@@ -53,35 +53,22 @@ namespace c_union_test
 		{
 			LS();
 
-			OUTPUT_NOTE( "다뤄지는 type 의 크기 만큼만 메모리에 접근한다." );
-			OUTPUT_NOTE( "char type에 0 을 대입하면 8bit만 0 이 할당된다." );
-
-			LS();
-
 			DECLARATION_MAIN( union U { char c; int64_t i64; } );
 			DECLARATION_MAIN( U u );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "아래의 초기화 코드가 없으면..." );
-				OUTPUT_SUBJECT( "[error C4700: 초기화되지 않은 'u' 지역 변수를 사용했습니다.]" );
-				OUTPUT_SUBJECT( "...가 발생한다." );
+				OUTPUT_NOTE( "아래의 초기화 코드가 없으면..." );
+				OUTPUT_NOTE( "[error C4700: 초기화되지 않은 'u' 지역 변수를 사용했습니다.]" );
+				OUTPUT_NOTE( "...가 발생한다." );
 
 				LF();
 
-				OUTPUT_SUBJECT( "공용체 내부에서 직접 초기화 해도 된다." );
+				OUTPUT_NOTE( "공용체 내부에서 직접 초기화 해도 된다." );
 
 				LF();
 
-				PROCESS_MAIN( u.c = 0 );
-				PROCESS_MAIN( u.i64 = 0ll );
-				OUTPUT_BINARY( u );
-			}
-
-			LS();
-
-			{
 				PROCESS_MAIN( u.i64 = -1ll );
 				OUTPUT_BINARY( u );
 			}
@@ -89,6 +76,11 @@ namespace c_union_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "다뤄지는 type 의 크기 만큼만 메모리에 접근한다." );
+				OUTPUT_SUBJECT( "char type에 0 을 대입하면 8bit만 0 이 할당된다." );
+
+				LF();
+
 				PROCESS_MAIN( u.c = 0 );
 				OUTPUT_BINARY( u );
 			}
