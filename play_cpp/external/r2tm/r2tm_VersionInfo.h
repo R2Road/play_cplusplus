@@ -25,20 +25,34 @@ namespace r2tm
 
 		const char VersionNumber_1 = '1';
 		const char VersionNumber_2 = '0';
-		const char VersionNumber_3 = '6';
-		const char VersionNumber_4 = '3';
+		const char VersionNumber_3 = '7';
+		const char VersionNumber_4 = '0';
 
 		const char String4Version[16] = { 'r', '2', 't', 'm', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '.', VersionNumber_4, '\0' };
 
 
 
+		const char* const String4Road2Version_1_0_8 =
+					"### Road 2 Version 1.0.8 ###"
+			"\n"
+			"\n"	"[ ] " "..."
+		;
+
 		const char* const String4Road2Version_1_0_7 =
 					"### Road 2 Version 1.0.7 ###"
 			"\n"
-			"\n"	"[o] " "add method : r2tm::WindowUtility::FillString"
-			"\n"	"[o] " "update inspector : Add - OUTPUT_STRING"
-			"\n"	"[o] " "update inspector : OUTPUT_SIZE - 크기 뒤에 byte 문자열 출력"
-			"\n"	"[ ] " "..."
+			"\n"	"[o] " "add method           : r2tm::WindowUtility::FillString"
+			"\n"	"[o] " "update inspector     : Add - OUTPUT_STRING"
+			"\n"	"[o] " "update inspector     : OUTPUT_SIZE - 크기 뒤에 byte 문자열 출력"
+			"\n"	"[o] " "rename method        : r2tm::StopWatch - PrintMinAndMaxTime_NanoSeconds"
+			"\n"	"[o] " "add    method        : r2tm::StopWatch - PrintMinAndMaxTime_MilliSeconds"
+			"\n"	"[o] " "add    method        : r2tm::StopWatch - PrintMinAndMaxTime_MicroSeconds"
+			"\n"	"[o] " "update menuprocessor : 키, 메세지 텍스트의 백그라운드 색상 설정"
+			"\n"	"[o] " "overload    method   : r2tm::WindowUtility - FillString"
+			"\n"	"[o] " "overload    method   : r2tm::WindowUtility - MoveCursorPoint"
+			"\n"	"[o] " "overload    method   : r2tm::WindowUtility - FillCharacter"
+			"\n"	"[o] " "overload    method   : r2tm::WindowUtility - FillColor"
+			"\n"	"[o] " "overload    method   : r2tm::WindowUtility - MoveCursorPointWithClearBuffer"
 		;
 
 		const char* const String4Road2Version_1_0_6 =
@@ -105,7 +119,7 @@ namespace r2tm
 
 
 
-		const char* const String4Road2NextVersion = String4Road2Version_1_0_7;
+		const char* const String4Road2NextVersion = String4Road2Version_1_0_8;
 
 	} VersionInfo;
 }

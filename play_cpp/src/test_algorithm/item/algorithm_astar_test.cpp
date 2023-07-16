@@ -461,7 +461,7 @@ namespace algorithm_astar_test
 				//
 				// Show Time
 				//
-				stop_watch.PrintMinAndMaxTime();
+				stop_watch.PrintMinAndMaxTime_NanoSeconds();
 				LF();
 			}
 
@@ -487,7 +487,7 @@ namespace algorithm_astar_test
 				//
 				// Show Time
 				//
-				stop_watch.PrintMinAndMaxTime();
+				stop_watch.PrintMinAndMaxTime_NanoSeconds();
 				LF();
 			}
 
@@ -514,7 +514,7 @@ namespace algorithm_astar_test
 				//
 				// Show Time
 				//
-				stop_watch.PrintMinAndMaxTime();
+				stop_watch.PrintMinAndMaxTime_NanoSeconds();
 				LF();
 			}
 
@@ -541,7 +541,7 @@ namespace algorithm_astar_test
 				//
 				// Show Time
 				//
-				stop_watch.PrintMinAndMaxTime();
+				stop_watch.PrintMinAndMaxTime_NanoSeconds();
 				LF();
 			}
 
@@ -571,7 +571,7 @@ namespace algorithm_astar_test
 				//
 				// Show Time
 				//
-				stop_watch.PrintMinAndMaxTime();
+				stop_watch.PrintMinAndMaxTime_NanoSeconds();
 				LF();
 			}
 
@@ -601,7 +601,7 @@ namespace algorithm_astar_test
 				//
 				// Show Time
 				//
-				stop_watch.PrintMinAndMaxTime();
+				stop_watch.PrintMinAndMaxTime_NanoSeconds();
 				LF();
 			}
 
@@ -631,7 +631,7 @@ namespace algorithm_astar_test
 				//
 				// Show Time
 				//
-				stop_watch.PrintMinAndMaxTime();
+				stop_watch.PrintMinAndMaxTime_NanoSeconds();
 				LF();
 			}
 

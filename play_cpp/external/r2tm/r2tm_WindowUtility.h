@@ -7,34 +7,16 @@ namespace r2tm
 	class WindowUtility
 	{
 	public:
-		static void ChangeTitle( const char* title_string );
-		static void Resize( const int w, const int h );
-		static void Move( const int x, const int y );
-		static void ScrollBarVisible( const bool visible );
-		static void MaximizeButtonEnable( const bool enable );
-		static void ResizingByDraggingEnable( const bool enable );
-
-		//
-		// 마우스를 사용한 커서 이동, 영역 선택 On/Off
-		//
-		static void QuickEditEnable( const bool enable );
-
 		struct CursorPoint
 		{
 			short x = 0;
 			short y = 0;
 
-			CursorPoint operator+( const CursorPoint& other ) const { return CursorPoint{ x + other.x, y + other.y }; }
+			CursorPoint operator+( const CursorPoint& other ) const
+			{
+				return CursorPoint{ x + other.x, y + other.y };
+			}
 		};
-		static CursorPoint GetCursorPoint();
-		static void MoveCursorPoint( const CursorPoint new_cursor_point );
-		static void MoveCursorPointWithClearBuffer( const CursorPoint new_cursor_point );
-
-		static void FillCharacter( const CursorPoint point, const char c );
-		static void FillCharacter( const int x, const int y, const char c );
-
-		static void FillString( const CursorPoint point, const char* str, const int size );
-		static void FillString( const int x, const int y, const char* str, const int size );
 
 		enum eColor : unsigned char
 		{
@@ -72,10 +54,61 @@ namespace r2tm
 			BG_LightYellow = 14 << 4,
 			BG_BrightWhite = 15 << 4,
 		};
+
+
+
+		static void ChangeTitle( const char* title_string );
+		static void Resize( const int w, const int h );
+		static void Move( const int x, const int y );
+		static void ScrollBarVisible( const bool visible );
+		static void MaximizeButtonEnable( const bool enable );
+		static void ResizingByDraggingEnable( const bool enable );
+
+
+
+		//
+		// 마우스를 사용한 커서 이동, 영역 선택 On/Off
+		//
+		static void QuickEditEnable( const bool enable );
+
+
+
+		static CursorPoint GetCursorPoint();
+		static void MoveCursorPoint( const CursorPoint new_cursor_point );
+		static void MoveCursorPoint( const short x, const short y );
+		static void MoveCursorPointWithClearBuffer( const CursorPoint new_cursor_point );
+		static void MoveCursorPointWithClearBuffer( const short x, const short y );
+
+
+
+
+		static void FillColor( const CursorPoint point, const short c, const int size );
 		static void FillColor( const CursorPoint point, const short c );
+		static void FillColor( const int x, const int y, const short c, const int size );
 		static void FillColor( const int x, const int y, const short c );
 
-		static void RequestSleep( const uint32_t m );
+
+
+		static void FillCharacter( const CursorPoint point, const char c );
+		static void FillCharacter( const CursorPoint point, const char c, const short color );
+		static void FillCharacter( const int x, const int y, const char c );
+		static void FillCharacter( const int x, const int y, const char c, const short color );
+
+
+
+		static void FillString( const CursorPoint point, const char* str, const int size );
+		static void FillString( const CursorPoint point, const char* str, const int size, const short color );
+		static void FillString( const int x, const int y, const char* str, const int size );
+		static void FillString( const int x, const int y, const char* str, const int size, const short color );
+
+		static void FillString( const CursorPoint point, const char c, const int size );
+		static void FillString( const CursorPoint point, const char c, const int size, const short color );
+		static void FillString( const int x, const int y, const char c, const int size );
+		static void FillString( const int x, const int y, const char c, const int size, const short color );
+
+
+
+		static void RequestSleep( const uint32_t milli_seconds );
 
 	};
 }
