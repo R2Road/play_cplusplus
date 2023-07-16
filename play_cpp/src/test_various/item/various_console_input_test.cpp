@@ -17,22 +17,20 @@ namespace various_console_input_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
+			LS();
+
 			std::cout << "[ESC] End" << r2tm::linefeed;
 
 			LS();
 
 			int input = 0;
-			while( true )
+			do
 			{
 				input = _getch();
 
 				std::cout << "Key : " << input << r2tm::linefeed;
 
-				if( 27 == input )
-				{
-					break;
-				}
-			}
+			} while( 27 != input );
 
 			LS();
 
