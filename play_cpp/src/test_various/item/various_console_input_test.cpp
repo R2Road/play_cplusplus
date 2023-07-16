@@ -6,14 +6,14 @@
 
 namespace various_console_input_test
 {
-	r2tm::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT KeyCodeView::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Key : Basic";
+			return "Key Code View";
 		};
 	}
-	r2tm::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT KeyCodeView::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

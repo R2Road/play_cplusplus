@@ -4,7 +4,7 @@
 
 namespace various_console_input_test
 {
-	class Basic : public r2tm::iItem
+	class KeyCodeView : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

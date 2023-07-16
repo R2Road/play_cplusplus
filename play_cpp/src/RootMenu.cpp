@@ -55,7 +55,7 @@ r2tm::WriteFunctionT RootMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* ret )
 	{
-		ret->AddItem( '1', various_console_input_test::Basic() );
+		ret->AddItem( '1', various_console_input_test::KeyCodeView() );
 		ret->AddMenu( '2', WindowsMenu() );
 
 
