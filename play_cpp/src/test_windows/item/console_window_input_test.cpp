@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <windows.h>
 
+#include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
 
 namespace console_window_input_test
@@ -239,14 +240,18 @@ namespace console_window_input_test
 		{
 			LS();
 
-			std::cout << "[ESC] Exit" << r2tm::linefeed;
-			std::cout << "[SPACE] Do" << r2tm::linefeed;
+			OUTPUT_STRING( "[ ESC ] Exit" );
+			OUTPUT_STRING( "[SPACE] Do" );
 
 			LS();
 
-			std::cout << "+ Message" << r2tm::linefeed2;
-			std::cout << "이 녀석 역시 pause 없이 메뉴를 전환하는 경우 메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." << r2tm::linefeed;
-			std::cout << "키 반응성이 중요한 프로그램을 만든다면 이 녀석은 쓰지 않는게 좋겠다." << r2tm::linefeed;
+			OUTPUT_NOTE( "Pause 없이 메뉴를 전환하는 경우 메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." );
+			OUTPUT_NOTE( "키 반응성이 중요한 프로그램을 만든다면 이 녀석은 쓰지 않는게 좋겠다." );
+
+			LS();
+
+			OUTPUT_NOTE( "1st 4bit : Toggle Info : 키 누를 때마다 변화 0001 > 0000 > 0001 > 0000 ...." );
+			OUTPUT_NOTE( "2nd 4bit : Current Key State : 눌리면 1000" );
 
 			LS();
 
@@ -277,7 +282,7 @@ namespace console_window_input_test
 							str_flags[i] = key_value > 0 ? 'O' : 'X';
 						}
 						
-						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 14 } );
+						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 19 } );
 						printf_s(
 							"%s"
 							"\n\n"
@@ -295,11 +300,6 @@ namespace console_window_input_test
 						}
 					}
 				}
-
-				//
-				// 1st 4bit : Toggle Info : 키 누를 때마다 변화 0001 > 0000 > 0001 > 0000 ....
-				// 2nd 4bit : Current Key State : 눌리면 1000
-				//
 			}
 
 			LS();
