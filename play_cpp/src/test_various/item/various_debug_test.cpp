@@ -39,8 +39,13 @@ namespace various_debug_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "ShowCodeInfo();" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Process" );
+
+				LF();
+
+				OUTPUT_CODE( "ShowCodeInfo();" );
+
+				SS();
 
 				ShowCodeInfo();
 			}
