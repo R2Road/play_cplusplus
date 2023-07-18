@@ -12,11 +12,11 @@
 
 namespace various_debug_test
 {
-#define ShowCodeInfo()											\
-{																\
-	std::cout << "File : " << __FILE__ << r2tm::linefeed;			\
-	std::cout << "Function : " << __FUNCTION__ << r2tm::linefeed;	\
-	std::cout << "Line : " << __LINE__ << r2tm::linefeed;			\
+#define ShowCodeInfo()	\
+{	\
+	std::cout << "File : " << __FILE__ << r2tm::linefeed;		\
+	std::cout << "Func : " << __FUNCTION__ << r2tm::linefeed;	\
+	std::cout << "Line : " << __LINE__ << r2tm::linefeed;		\
 }
 
 	r2tm::TitleFunctionT PredefinedMacro::GetTitleFunction() const
@@ -32,13 +32,9 @@ namespace various_debug_test
 		{
 			LS();
 
-			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
-			std::cout << r2tm::tab2 << "#define ShowCodeInfo()" << r2tm::linefeed;
-			std::cout << r2tm::tab2 << "{" << r2tm::linefeed;
-			std::cout << r2tm::tab3 << "std::cout << \"File : \" << __FILE__ << r2tm::linefeed;" << r2tm::linefeed;
-			std::cout << r2tm::tab3 << "std::cout << \"Function : \" << __FUNCTION__ << r2tm::linefeed;" << r2tm::linefeed;
-			std::cout << r2tm::tab3 << "std::cout << \"Line : \" << __LINE__ << r2tm::linefeed;" << r2tm::linefeed;
-			std::cout << r2tm::tab2 << "}" << r2tm::linefeed;
+			{
+				OUTPUT_FILE_RANGE( "src/test_various/item/various_debug_test.cpp", 15, 20 );
+			}
 
 			LS();
 
