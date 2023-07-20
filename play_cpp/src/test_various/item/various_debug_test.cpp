@@ -136,10 +136,7 @@ namespace various_debug_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "__debugbreak();" << r2tm::linefeed;
-
-				__debugbreak();
+				PROCESS_MAIN( __debugbreak() );
 			}
 
 			LS();
