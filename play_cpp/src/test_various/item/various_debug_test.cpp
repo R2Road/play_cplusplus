@@ -160,7 +160,7 @@ namespace various_debug_test
 		{
 			LS();
 
-			OUTPUT_FILE( "src/r2/r2_Assert.h" );
+			OUTPUT_FILE( "external/r2/r2_Assert.h" );
 
 			LS();
 
