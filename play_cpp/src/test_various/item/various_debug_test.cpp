@@ -43,11 +43,7 @@ namespace various_debug_test
 
 				LF();
 
-				OUTPUT_CODE( "ShowCodeInfo();" );
-
-				SS();
-
-				ShowCodeInfo();
+				PROCESS_MAIN( ShowCodeInfo() );
 			}
 
 			LS();
