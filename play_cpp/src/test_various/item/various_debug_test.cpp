@@ -165,8 +165,6 @@ namespace various_debug_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
-
 				DECLARATION_MAIN( int a = 1 );
 				DECLARATION_MAIN( int b = 2 );
 
