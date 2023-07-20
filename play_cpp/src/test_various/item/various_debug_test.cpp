@@ -1,6 +1,7 @@
 #include "various_debug_test.h"
 
 #include <cassert>
+#include <chrono>
 #include <filesystem>
 #include <fstream>
 #include <Windows.h>
@@ -200,14 +201,18 @@ namespace various_debug_test
 		{
 			LS();
 
-			std::cout << r2tm::tab << "+ File Open" << r2tm::linefeed2;
+			OUTPUT_SUBJECT( "File Open" );
+
+			LF();
 
 			DECLARATION_MAIN( const char* const file_path = GetSimpleLogFilePath() );
 			DECLARATION_MAIN( std::ofstream log_stream( file_path ) );
 
 			LS();
 
-			std::cout << r2tm::tab << "+ Redirection" << r2tm::linefeed2;
+			OUTPUT_SUBJECT( "Redirection" );
+
+			LF();
 
 			DECLARATION_MAIN( std::streambuf * const orig = std::cerr.rdbuf() );
 			PROCESS_MAIN( std::cerr.rdbuf( log_stream.rdbuf() ) );
@@ -215,7 +220,12 @@ namespace various_debug_test
 			LS();
 
 			{
-				PROCESS_MAIN( std::cerr << "[Test]" );
+				OUTPUT_SUBJECT( "Output Log" );
+
+				LF();
+
+				PROCESS_MAIN( std::cerr << "[Test] " );
+				PROCESS_MAIN( std::cerr << std::chrono::system_clock::now().time_since_epoch().count() );
 				PROCESS_MAIN( std::cerr << std::endl );
 				PROCESS_MAIN( std::cerr << "std::cerr" );
 				PROCESS_MAIN( std::cerr << std::endl );
@@ -225,7 +235,9 @@ namespace various_debug_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ End" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "End" );
+
+				LF();
 
 				PROCESS_MAIN( std::cerr.set_rdbuf( orig ) );
 				PROCESS_MAIN( log_stream.close() );
