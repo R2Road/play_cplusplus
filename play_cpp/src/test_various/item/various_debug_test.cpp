@@ -72,18 +72,22 @@ namespace various_debug_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "OutputDebugStringW( L\"What The Fuck\" );" << r2tm::linefeed;
+				OUTPUT_SUBJECT( "Visual Studio 의 ""출력창"" 에 메세지 출력" );
 
-				OutputDebugStringW( L"What The Fuck" );
+				LF();
+
+				PROCESS_MAIN( OutputDebugStringW( L"What The Fuck" ) );
 			}
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Has Some Problem" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "C1189 : #include <debugapi.h>" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "use <Windows.h> instead <debugapi.h>" << r2tm::linefeed;
+				OUTPUT_NOTE( "Has Some Problem" );
+
+				LF();
+
+				OUTPUT_COMMENT( "C1189 : #include <debugapi.h>" );
+				OUTPUT_COMMENT( "use <Windows.h> instead <debugapi.h>" );
 			}
 
 			LS();
