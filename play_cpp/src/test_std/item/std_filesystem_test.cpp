@@ -244,29 +244,40 @@ namespace std_filesystem_test
 		{
 			LS();
 
-			std::filesystem::path p = std::filesystem::current_path();
+			OUTPUT_SUBJECT( "has_parent_path" );
+			OUTPUT_SUBJECT( "parent_path" );
+
+			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Directory : " << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << p << r2tm::linefeed;
+				DECLARATION_MAIN( std::filesystem::path p );
+
+				LF();
+
+				EXPECT_FALSE( p.has_parent_path() );
+				OUTPUT_VALUE( p.parent_path() );
 			}
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Has Parent Path" << r2tm::linefeed2;
+				DECLARATION_MAIN( std::filesystem::path p = "123.txt" );
 
-				std::cout << r2tm::tab2 << "p.has_parent_path();" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "result : " << ( p.has_parent_path() ? "True" : "False" ) << r2tm::linefeed;
+				LF();
+
+				EXPECT_FALSE( p.has_parent_path() );
+				OUTPUT_VALUE( p.parent_path() );
 			}
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Get Parent Path" << r2tm::linefeed2;
+				DECLARATION_MAIN( std::filesystem::path p = "aaa\\bbb" );
 
-				std::cout << r2tm::tab2 << "p.parent_path();" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "result : " << ( p.has_parent_path() ? p.parent_path() : "Nothing" ) << r2tm::linefeed;
+				LF();
+
+				EXPECT_TRUE( p.has_parent_path() );
+				OUTPUT_VALUE( p.parent_path() );
 			}
 
 			LS();
