@@ -142,6 +142,9 @@ namespace std_filesystem_test
 
 
 
+
+
+
 	r2tm::TitleFunctionT PathOperation_1::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -216,6 +219,8 @@ namespace std_filesystem_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
 
 	r2tm::TitleFunctionT PathOperation_2::GetTitleFunction() const
 	{
