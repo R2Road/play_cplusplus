@@ -292,8 +292,25 @@ namespace std_filesystem_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
-			OUTPUT_VALUE( p );
+			{
+				OUTPUT_SUBJECT( "Remove File Name" );
+
+				LF();
+
+				DECLARATION_MAIN( auto p = std::filesystem::current_path() / "test.txt" );
+
+				LF();
+
+				OUTPUT_VALUE( p );
+
+				LF();
+
+				PROCESS_MAIN( p.remove_filename() );
+
+				LF();
+
+				OUTPUT_VALUE( p );
+			}
 
 			LS();
 
@@ -302,14 +319,44 @@ namespace std_filesystem_test
 
 				LF();
 
-				PROCESS_MAIN( p /= "test.txt" );
+				DECLARATION_MAIN( auto p = std::filesystem::current_path() / "test.txt" );
+
+				LF();
+
 				OUTPUT_VALUE( p );
 
 				LF();
 
 				PROCESS_MAIN( p._Remove_filename_and_separator() );
+
+				LF();
+
 				OUTPUT_VALUE( p );
 			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT PathOperation_4::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Path Operation 4";
+		};
+	}
+	r2tm::DoFunctionT PathOperation_4::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
+			OUTPUT_VALUE( p );
 
 			LS();
 

@@ -27,6 +27,7 @@ r2tm::WriteFunctionT STDFileSystemMenu::GetWriteFunction() const
 		ret->AddItem( '4', std_filesystem_test::PathOperation_1() );
 		ret->AddItem( '5', std_filesystem_test::PathOperation_2() );
 		ret->AddItem( '6', std_filesystem_test::PathOperation_3() );
+		ret->AddItem( '7', std_filesystem_test::PathOperation_4() );
 
 
 
