@@ -23,7 +23,10 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Current Path" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Current Path" );
+
+				LF();
+
 				DECLARATION_MAIN( const std::filesystem::path p = std::filesystem::current_path() );
 				OUTPUT_VALUE( p );
 			}
@@ -31,7 +34,10 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Temp Directory Path" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Temp Directory Path" );
+
+				LF();
+
 				DECLARATION_MAIN( std::filesystem::path p = std::filesystem::temp_directory_path() );
 				OUTPUT_VALUE( p );
 			}
@@ -57,14 +63,20 @@ namespace std_filesystem_test
 		{
 			LS();
 
-			std::cout << r2tm::tab << "+ Target Path" << r2tm::linefeed2;
+			OUTPUT_SUBJECT( "Target Path" );
+
+			LF();
+
 			DECLARATION_MAIN( const std::filesystem::path p = std::filesystem::current_path() );
 			OUTPUT_VALUE( p );
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ View Directory" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "View Directory" );
+
+				LF();
+
 				DECLARATION_MAIN( std::filesystem::directory_iterator itr( p ) );
 
 				std::cout << r2tm::tab << "for( auto i : itr ) ..." << r2tm::linefeed;
@@ -143,67 +155,74 @@ namespace std_filesystem_test
 		{
 			LS();
 
-			std::filesystem::path p = std::filesystem::current_path();
+			DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
+			OUTPUT_VALUE( p );
+
+			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Target Path" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << p << r2tm::linefeed;
+				OUTPUT_SUBJECT( "Append with Operator" );
+
+				LF();
+
+				PROCESS_MAIN( p /= "test.txt" );
+				OUTPUT_VALUE( p );
+
+				LF();
+
+				OUTPUT_SUBJECT( "Remove File Name" );
+
+				LF();
+
+				PROCESS_MAIN( p.remove_filename() );
+				OUTPUT_VALUE( p );
 			}
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Append with Operator /" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Remove File Name And Separator" );
 
-				p /= "test.txt";
-				std::cout << r2tm::tab2 << "p /= \"test.txt\"" << r2tm::linefeed;
+				LF();
 
-				std::cout << r2tm::tab3 << p << r2tm::linefeed2;
+				PROCESS_MAIN( p /= "test.txt" );
+				OUTPUT_VALUE( p );
 
+				LF();
 
-				std::cout << r2tm::tab << "+ Remove File Name" << r2tm::linefeed2;
-
-				p.remove_filename();
-				std::cout << r2tm::tab2 << "p.remove_filename();" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "result : " << p << r2tm::linefeed;
+				PROCESS_MAIN( p._Remove_filename_and_separator() );
+				OUTPUT_VALUE( p );
 			}
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Remove File Name And Separator" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Replace Extension" );
 
-				p /= "test.txt";
-				std::cout << r2tm::tab3 << "orig : " << p << r2tm::linefeed2;
+				LF();
 
-				p._Remove_filename_and_separator();
-				std::cout << r2tm::tab2 << "p._Remove_filename_and_separator();" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "result : " << p << r2tm::linefeed;
+				PROCESS_MAIN( p /= "test.txt" );
+				OUTPUT_VALUE( p );
+
+				LF();
+
+				PROCESS_MAIN( p.replace_extension( "json" ) );
+				OUTPUT_VALUE( p );
 			}
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Replace Extension" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Replace File Name" );
 
-				p /= "test.txt";
-				std::cout << r2tm::tab3 << "orig : " << p << r2tm::linefeed2;
+				LF();
 
-				p.replace_extension( "json" );
-				std::cout << r2tm::tab2 << "p.replace_extension( \"json\" );" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "result : " << p << r2tm::linefeed;
-			}
+				OUTPUT_VALUE( p );
 
-			LS();
+				LF();
 
-			{
-				std::cout << r2tm::tab << "+ Replace File Name" << r2tm::linefeed2;
-
-				std::cout << r2tm::tab3 << "orig : " << p << r2tm::linefeed2;
-
-				p.replace_filename( "new_filename" );
-				std::cout << r2tm::tab2 << "p.replace_filename( \"new_filename\" );" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "result : " << p << r2tm::linefeed;
+				PROCESS_MAIN( p.replace_filename( "new_filename" ) );
+				OUTPUT_VALUE( p );
 			}
 
 			LS();
