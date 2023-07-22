@@ -155,73 +155,59 @@ namespace std_filesystem_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
-			OUTPUT_VALUE( p );
+			OUTPUT_VALUE( std::filesystem::current_path() );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Append with Operator" );
+				OUTPUT_SUBJECT( "Append" );
 
 				LF();
 
-				PROCESS_MAIN( p /= "test.txt" );
-				OUTPUT_VALUE( p );
+				DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
 
 				LF();
 
-				OUTPUT_SUBJECT( "Remove File Name" );
+				PROCESS_MAIN( p.append( "test.txt" ) );
 
 				LF();
 
-				PROCESS_MAIN( p.remove_filename() );
 				OUTPUT_VALUE( p );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Remove File Name And Separator" );
+				OUTPUT_SUBJECT( "Operator /" );
 
 				LF();
 
-				PROCESS_MAIN( p /= "test.txt" );
-				OUTPUT_VALUE( p );
+				DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
 
 				LF();
 
-				PROCESS_MAIN( p._Remove_filename_and_separator() );
+				PROCESS_MAIN( p = p / "test.txt" );
+
+				LF();
+
 				OUTPUT_VALUE( p );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Replace Extension" );
+				OUTPUT_SUBJECT( "Operator /=" );
+
+				LF();
+
+				DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
 
 				LF();
 
 				PROCESS_MAIN( p /= "test.txt" );
-				OUTPUT_VALUE( p );
 
 				LF();
 
-				PROCESS_MAIN( p.replace_extension( "json" ) );
-				OUTPUT_VALUE( p );
-			}
-
-			LS();
-
-			{
-				OUTPUT_SUBJECT( "Replace File Name" );
-
-				LF();
-
-				OUTPUT_VALUE( p );
-
-				LF();
-
-				PROCESS_MAIN( p.replace_filename( "new_filename" ) );
 				OUTPUT_VALUE( p );
 			}
 
@@ -285,6 +271,80 @@ namespace std_filesystem_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT PathOperation_3::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Path Operation 3";
+		};
+	}
+	r2tm::DoFunctionT PathOperation_3::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
+			OUTPUT_VALUE( p );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Remove File Name And Separator" );
+
+				LF();
+
+				PROCESS_MAIN( p /= "test.txt" );
+				OUTPUT_VALUE( p );
+
+				LF();
+
+				PROCESS_MAIN( p._Remove_filename_and_separator() );
+				OUTPUT_VALUE( p );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Replace Extension" );
+
+				LF();
+
+				PROCESS_MAIN( p /= "test.txt" );
+				OUTPUT_VALUE( p );
+
+				LF();
+
+				PROCESS_MAIN( p.replace_extension( "json" ) );
+				OUTPUT_VALUE( p );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Replace File Name" );
+
+				LF();
+
+				OUTPUT_VALUE( p );
+
+				LF();
+
+				PROCESS_MAIN( p.replace_filename( "new_filename" ) );
+				OUTPUT_VALUE( p );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 
 
 
