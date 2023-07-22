@@ -111,16 +111,21 @@ namespace std_filesystem_test
 		{
 			LS();
 
-			{
-				int i = 0;
+			DECLARATION_MAIN( const auto target_path = std::filesystem::current_path() / "src" );
+			OUTPUT_VALUE( target_path );
 
-				std::filesystem::recursive_directory_iterator itr( std::filesystem::current_path() / "src" );
-				for( auto p : itr )
+			LS();
+
+			{
+				std::filesystem::recursive_directory_iterator itr( target_path );
+
+				int i = 0;
+				for( const auto& p : itr )
 				{
 					std::cout << p.path() << r2tm::linefeed;
 
 					++i;
-					if( 40 > i )
+					if( 30 < i )
 					{
 						i = 0;
 						
@@ -136,7 +141,7 @@ namespace std_filesystem_test
 
 			LS();
 
-			return r2tm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 
