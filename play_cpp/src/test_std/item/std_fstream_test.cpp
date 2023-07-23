@@ -43,15 +43,15 @@ namespace std_fstream_test
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-			EXPECT_TRUE( std::filesystem::exists( p ) );
-
-			LF();
-
 			OUTPUT_VALUE( p );
 
 			LS();
 
 			{
+				EXPECT_TRUE( std::filesystem::exists( p ) );
+
+				LF();
+
 				OUTPUT_SUBJECT( "있는 파일 열기" );
 
 				LF();
@@ -120,7 +120,7 @@ namespace std_fstream_test
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-			std::cout << "p : " << p << r2tm::linefeed;
+			OUTPUT_VALUE( p );
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
 			LS();
@@ -179,7 +179,7 @@ namespace std_fstream_test
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-			std::cout << "p : " << p << r2tm::linefeed;
+			OUTPUT_VALUE( p );
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
 			LS();
@@ -238,7 +238,7 @@ namespace std_fstream_test
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-			std::cout << "p : " << p << r2tm::linefeed;
+			OUTPUT_VALUE( p );
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
 			LS();
@@ -297,7 +297,7 @@ namespace std_fstream_test
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-			std::cout << "p : " << p << r2tm::linefeed;
+			OUTPUT_VALUE( p );
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
 			LS();
@@ -356,7 +356,7 @@ namespace std_fstream_test
 
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROCESS_SUB( p.append( "resources" ).append( "temp.txt" ) );
-			std::cout << "p : " << p << r2tm::linefeed;
+			OUTPUT_VALUE( p );
 
 			LS();
 
