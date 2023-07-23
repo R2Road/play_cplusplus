@@ -184,16 +184,34 @@ namespace std_fstream_test
 
 			LS();
 
+			DECLARATION_MAIN( std::string buffer );
+			DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
+
+			LS();
+
 			{
-				DECLARATION_MAIN( std::string buffer );
-				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
+				OUTPUT_SUBJECT( "std::getline" );
+
+				LF();
+
+				PROCESS_MAIN( std::getline( ifs, buffer ); std::cout << buffer << r2tm::linefeed );
+				PROCESS_MAIN( std::getline( ifs, buffer ); std::cout << buffer << r2tm::linefeed );
+				PROCESS_MAIN( std::getline( ifs, buffer ); std::cout << buffer << r2tm::linefeed );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "while" );
 
 				LF();
 
 				PROCESS_MAIN( while( ifs.good() ) { std::getline( ifs, buffer ); std::cout << buffer << r2tm::linefeed; } );
+			}
 
-				LF();
+			LS();
 
+			{
 				PROCESS_MAIN( ifs.close() );
 			}
 
