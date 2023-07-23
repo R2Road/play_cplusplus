@@ -125,20 +125,36 @@ namespace std_fstream_test
 
 			LS();
 
-			{
-				std::cout << r2tm::tab << "+ std::ifstream::get" << r2tm::linefeed2;
+			DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
+			EXPECT_FALSE( ifs.fail() );
 
-				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
-				EXPECT_FALSE( ifs.fail() );
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "std::ifstream::get" );
+
+				LF();
+
+				OUTPUT_VALUE( static_cast<char>( ifs.get() ) );
+				OUTPUT_VALUE( static_cast<char>( ifs.get() ) );
+				OUTPUT_VALUE( static_cast<char>( ifs.get() ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "while" );
 
 				LF();
 
 				PROCESS_MAIN( while( !ifs.eof() ) { std::cout << static_cast<char>( ifs.get() ); } );
 
 				LF();
-
-				PROCESS_MAIN( ifs.close() );
 			}
+
+			LS();
+
+			PROCESS_MAIN( ifs.close() );
 
 			LS();
 
