@@ -42,8 +42,9 @@ r2tm::WriteFunctionT STDFileSystemMenu::GetWriteFunction() const
 
 
 
-		ret->AddItem( 'a', std_filesystem_test::Directory_Check_Make_Delete() );
-		ret->AddItem( 's', std_filesystem_test::Directories_Make() );
+		ret->AddItem( 'a', std_filesystem_test::Exist() );
+		ret->AddItem( 's', std_filesystem_test::Directory_Check_Make_Delete() );
+		ret->AddItem( 'd', std_filesystem_test::Directories_Make() );
 
 
 

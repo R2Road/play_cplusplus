@@ -405,6 +405,66 @@ namespace std_filesystem_test
 
 
 
+	r2tm::TitleFunctionT Exist::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Exist";
+		};
+	}
+	r2tm::DoFunctionT Exist::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				DECLARATION_SUB( std::filesystem::path p );
+
+				LF();
+
+				EXPECT_FALSE( std::filesystem::exists( p ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "디렉토리 유/무 확인" );
+
+				LF();
+
+				DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
+				OUTPUT_VALUE( p );
+
+				LF();
+
+				EXPECT_TRUE( std::filesystem::exists( p ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "파일 유/무 확인" );
+
+				LF();
+
+				DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
+				PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
+				OUTPUT_VALUE( p );
+
+				LF();
+
+				EXPECT_TRUE( std::filesystem::exists( p ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT Directory_Check_Make_Delete::GetTitleFunction() const
 	{
 		return []()->const char*
