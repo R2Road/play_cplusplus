@@ -465,21 +465,21 @@ namespace std_filesystem_test
 
 
 
-	r2tm::TitleFunctionT Directory_Check_Make_Delete::GetTitleFunction() const
+	r2tm::TitleFunctionT Directory_Make_Delete::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Directory Check, Make, Delete";
+			return "Directory Make, Delete";
 		};
 	}
-	r2tm::DoFunctionT Directory_Check_Make_Delete::GetDoFunction() const
+	r2tm::DoFunctionT Directory_Make_Delete::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
 			DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
-			PROCESS_MAIN( p /= "Directory_Check_Make_Delete" );
+			PROCESS_MAIN( p /= "Directory_Make_Delete" );
 
 			LS();
 
