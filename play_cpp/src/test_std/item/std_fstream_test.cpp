@@ -302,16 +302,34 @@ namespace std_fstream_test
 
 			LS();
 
+			DECLARATION_MAIN( std::string buffer );
+			DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
+
+			LS();
+
 			{
-				DECLARATION_MAIN( std::string buffer );
-				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
+				OUTPUT_SUBJECT( "Operator >>" );
+
+				LF();
+
+				PROCESS_MAIN( ifs >> buffer; std::cout << buffer << r2tm::linefeed );
+				PROCESS_MAIN( ifs >> buffer; std::cout << buffer << r2tm::linefeed );
+				PROCESS_MAIN( ifs >> buffer; std::cout << buffer << r2tm::linefeed );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "while" );
 
 				LF();
 
 				PROCESS_MAIN( while( ifs >> buffer ) { std::cout << buffer << r2tm::linefeed; } );
+			}
 
-				LF();
+			LS();
 
+			{
 				PROCESS_MAIN( ifs.close() );
 			}
 
@@ -339,7 +357,16 @@ namespace std_fstream_test
 			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROCESS_SUB( p.append( "resources" ).append( "temp.txt" ) );
 			std::cout << "p : " << p << r2tm::linefeed;
-			EXPECT_FALSE( std::filesystem::exists( p ) );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "파일 없음 확인" );
+
+				LF();
+
+				EXPECT_FALSE( std::filesystem::exists( p ) );
+			}
 
 			LS();
 
@@ -356,12 +383,15 @@ namespace std_fstream_test
 				PROCESS_MAIN( fs.open( p, std::ios::out ) );
 				EXPECT_TRUE( fs.is_open() );
 
+
 				LF();
 
 				PROCESS_MAIN( fs.close() );
+			}
 
-				LF();
+			LS();
 
+			{
 				OUTPUT_SUBJECT( "파일 있음 확인" );
 
 				LF();
@@ -377,9 +407,11 @@ namespace std_fstream_test
 				LF();
 
 				PROCESS_MAIN( std::filesystem::remove_all( p ) );
+			}
 
-				LF();
+			LS();
 
+			{
 				OUTPUT_SUBJECT( "파일 없음 확인" );
 
 				LF();
