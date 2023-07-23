@@ -24,10 +24,6 @@ r2tm::WriteFunctionT STDFileSystemMenu::GetWriteFunction() const
 		ret->AddItem( '1', std_filesystem_test::DirectoryPath() );
 		ret->AddItem( '2', std_filesystem_test::DirectoryIterator() );
 		ret->AddItem( '3', std_filesystem_test::RecursiveDirectoryIterator() );
-		ret->AddItem( '4', std_filesystem_test::PathOperation_1() );
-		ret->AddItem( '5', std_filesystem_test::PathOperation_2() );
-		ret->AddItem( '6', std_filesystem_test::PathOperation_3() );
-		ret->AddItem( '7', std_filesystem_test::PathOperation_4() );
 
 
 
@@ -35,8 +31,10 @@ r2tm::WriteFunctionT STDFileSystemMenu::GetWriteFunction() const
 
 
 
-		ret->AddItem( 'q', std_filesystem_test::Directory_Check_Make_Delete() );
-		ret->AddItem( 'w', std_filesystem_test::Directories_Make() );
+		ret->AddItem( 'q', std_filesystem_test::PathOperation_1() );
+		ret->AddItem( 'w', std_filesystem_test::PathOperation_2() );
+		ret->AddItem( 'e', std_filesystem_test::PathOperation_3() );
+		ret->AddItem( 'r', std_filesystem_test::PathOperation_4() );
 
 
 
@@ -44,7 +42,16 @@ r2tm::WriteFunctionT STDFileSystemMenu::GetWriteFunction() const
 
 
 
-		ret->AddItem( 'a', std_filesystem_test::FileStatus() );
+		ret->AddItem( 'a', std_filesystem_test::Directory_Check_Make_Delete() );
+		ret->AddItem( 's', std_filesystem_test::Directories_Make() );
+
+
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'z', std_filesystem_test::FileStatus() );
 
 
 
