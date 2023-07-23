@@ -199,16 +199,60 @@ namespace std_fstream_test
 
 			LS();
 
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT GetLine2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "fstream : GetLine 2";
+		};
+	}
+	r2tm::DoFunctionT GetLine2::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
+			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
+			std::cout << "p : " << p << r2tm::linefeed;
+			EXPECT_TRUE( std::filesystem::exists( p ) );
+
+			LS();
+
+			DECLARATION_MAIN( char buffer[100] );
+			DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
+
+			LS();
+
 			{
-				DECLARATION_MAIN( char buffer[100] );
-				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
+				OUTPUT_SUBJECT( "std::ifstream::getline" );
+
+				LF();
+
+				PROCESS_MAIN( ifs.getline( buffer, 100 ); std::cout << buffer << r2tm::linefeed );
+				PROCESS_MAIN( ifs.getline( buffer, 100 ); std::cout << buffer << r2tm::linefeed );
+				PROCESS_MAIN( ifs.getline( buffer, 100 ); std::cout << buffer << r2tm::linefeed );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "while" );
 
 				LF();
 
 				PROCESS_MAIN( while( ifs ) { ifs.getline( buffer, 100 ); std::cout << buffer << r2tm::linefeed; } );
+			}
 
-				LF();
+			LS();
 
+			{
 				PROCESS_MAIN( ifs.close() );
 			}
 
