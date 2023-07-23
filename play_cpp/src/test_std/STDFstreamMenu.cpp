@@ -23,7 +23,7 @@ r2tm::WriteFunctionT STDFstreamMenu::GetWriteFunction() const
 	{
 		ret->AddItem( '1', std_fstream_test::OpenAndClose() );
 		ret->AddItem( '2', std_fstream_test::GetCharacter() );
-		ret->AddItem( '3', std_fstream_test::GetLine() );
+		ret->AddItem( '3', std_fstream_test::GetLine1() );
 		ret->AddItem( '4', std_fstream_test::GetLine2() );
 		ret->AddItem( '5', std_fstream_test::GetBlank2Blank() );
 

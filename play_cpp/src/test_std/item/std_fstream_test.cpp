@@ -164,14 +164,14 @@ namespace std_fstream_test
 
 
 
-	r2tm::TitleFunctionT GetLine::GetTitleFunction() const
+	r2tm::TitleFunctionT GetLine1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "fstream : GetLine";
+			return "fstream : GetLine 1";
 		};
 	}
-	r2tm::DoFunctionT GetLine::GetDoFunction() const
+	r2tm::DoFunctionT GetLine1::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

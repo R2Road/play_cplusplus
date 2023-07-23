@@ -18,7 +18,7 @@ namespace std_fstream_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class GetLine : public r2tm::iItem
+	class GetLine1 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
