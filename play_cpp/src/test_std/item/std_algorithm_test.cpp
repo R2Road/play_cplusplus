@@ -33,20 +33,23 @@ namespace std_algorithm_test
 
 			DECLARATION_MAIN( std::vector<int> container( { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 } ) );
 
+			LF();
+
+			OUTPUT_VALUE( container );
+
 			LS();
 
 			{
-				std::cout << r2tm::tab << "- container : " << container << r2tm::linefeed;
+				DECLARATION_SUB( const auto seed = (unsigned int)std::chrono::system_clock::now().time_since_epoch().count() );
+				DECLARATION_SUB( std::default_random_engine random_engine( seed ) );
 
 				LF();
 
-				DECLARATION_MAIN( const auto seed = (unsigned int)std::chrono::system_clock::now().time_since_epoch().count() );
-				DECLARATION_MAIN( std::default_random_engine random_engine( seed ) );
 				PROCESS_MAIN( std::shuffle( container.begin(), container.end(), random_engine ) );
 
 				LF();
 
-				std::cout << r2tm::tab << "- container : " << container << r2tm::linefeed;
+				OUTPUT_VALUE( container );
 			}
 
 			LS();
