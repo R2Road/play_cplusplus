@@ -28,6 +28,10 @@ namespace std_string_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "빈 std::string 은 같은 것으로 간주된다." );
+
+				LF();
+
 				DECLARATION_MAIN( const std::string empty_string_1 );
 				DECLARATION_MAIN( const std::string empty_string_2 );
 				EXPECT_EQ( empty_string_1, empty_string_2 );
@@ -36,6 +40,10 @@ namespace std_string_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "같은 문자열이니까 같다." );
+
+				LF();
+
 				DECLARATION_MAIN( const std::string string_1( " " ) );
 				DECLARATION_MAIN( const std::string string_2( " " ) );
 				EXPECT_EQ( string_1, string_2 );
@@ -45,6 +53,36 @@ namespace std_string_test
 				OUTPUT_VALUE( (void*)string_1.c_str() );
 				OUTPUT_VALUE( (void*)string_2.c_str() );
 			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "다른 문자열을 저장했더라도 clear() 를 호출하면 같은 것으로 판단된다." );
+
+				LF();
+
+				DECLARATION_MAIN( std::string string_1( "              " ) );
+				DECLARATION_MAIN( std::string string_2( "                         " ) );
+				EXPECT_NE( string_1, string_2 );
+
+				LF();
+
+				PROCESS_MAIN( string_1.clear() );
+				PROCESS_MAIN( string_2.clear() );
+
+				LF();
+
+				EXPECT_EQ( string_1, string_2 );
+
+				LF();
+
+				OUTPUT_VALUE( (void*)string_1.c_str() );
+				OUTPUT_VALUE( (void*)string_2.c_str() );
+			}
+
+			LS();
+
+			OUTPUT_NOTE( "할당된 메모리의 주소, capacity 등이 operator== 의 결과에 영향을 주지 않는다." );
 
 			LS();
 
