@@ -91,6 +91,96 @@ namespace std_string_test
 	}
 
 
+
+	r2tm::TitleFunctionT Memory::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Memory";
+		};
+	}
+	r2tm::DoFunctionT Memory::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_NOTE( "최초 생성시 heap에서 메모리를 할당 받지 않는다." );
+			OUTPUT_NOTE( "member buffer 를 사용한다." );
+
+			LS();
+
+			DECLARATION_MAIN( std::string s );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Heap 에서 메모리를 할당 받기 전 버퍼의 크기" );
+
+				LF();
+
+				OUTPUT_VALUE( s.capacity() );
+
+				LF();
+
+				OUTPUT_VALUE( (void*)s.c_str() );
+				OUTPUT_BINARY( s );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "단일 값으로 채워넣어 기본 버퍼로 사용되는 Local Variable의 변화를 확인해보자." );
+
+				LF();
+
+				PROCESS_MAIN( s.resize( 15, '\177' ) );
+
+				LF();
+
+				OUTPUT_VALUE( (void*)s.c_str() );
+				OUTPUT_BINARY( s );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "member buffer의 크기를 넘는 문자열을 할당하면 heap 에서 메모리를 할당 받는다." );
+
+				LF();
+
+				PROCESS_MAIN( s = "1234567890123456" );
+
+				LF();
+
+				OUTPUT_VALUE( (void*)s.c_str() );
+				OUTPUT_BINARY( s );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "clear() 를 호출해도 member buffer를 사용하게 되지는 않는다." );
+				OUTPUT_SUBJECT( "되돌리는 방법이 없을까?" );
+
+				LF();
+
+				PROCESS_MAIN( s.clear() );
+
+				LF();
+
+				OUTPUT_VALUE( (void*)s.c_str() );
+				OUTPUT_BINARY( s );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT Move::GetTitleFunction() const
 	{
 		return []()->const char*
