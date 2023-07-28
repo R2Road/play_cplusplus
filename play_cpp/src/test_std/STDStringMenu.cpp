@@ -23,7 +23,8 @@ r2tm::WriteFunctionT STDStringMenu::GetWriteFunction() const
 	{
 		ret->AddItem( '1', std_string_test::Basic() );
 		ret->AddItem( '2', std_string_test::Memory() );
-		ret->AddItem( '3', std_string_test::Move() );
+		ret->AddItem( '3', std_string_test::Memory_2() );
+		ret->AddItem( '4', std_string_test::Move() );
 
 
 

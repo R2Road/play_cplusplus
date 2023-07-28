@@ -144,6 +144,38 @@ namespace std_string_test
 
 			LS();
 
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Memory_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Memory 2";
+		};
+	}
+	r2tm::DoFunctionT Memory_2::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( std::string s );
+
+			LF();
+
+			OUTPUT_VALUE( s.capacity() );
+
+			LF();
+
+			OUTPUT_VALUE( (void*)s.c_str() );
+			OUTPUT_BINARY( s );
+
+			LS();
+
 			{
 				OUTPUT_SUBJECT( "member buffer의 크기를 넘는 문자열을 할당하면 heap 에서 메모리를 할당 받는다." );
 
