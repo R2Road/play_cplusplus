@@ -92,14 +92,14 @@ namespace std_string_test
 
 
 
-	r2tm::TitleFunctionT Memory::GetTitleFunction() const
+	r2tm::TitleFunctionT Memory_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Memory";
+			return "Memory 1";
 		};
 	}
-	r2tm::DoFunctionT Memory::GetDoFunction() const
+	r2tm::DoFunctionT Memory_1::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

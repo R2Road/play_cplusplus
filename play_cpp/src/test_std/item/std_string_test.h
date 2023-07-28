@@ -11,7 +11,7 @@ namespace std_string_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Memory : public r2tm::iItem
+	class Memory_1 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
