@@ -134,7 +134,7 @@ namespace std_string_test
 
 				LF();
 
-				PROCESS_MAIN( s.resize( 15, '\177' ) );
+				PROCESS_MAIN( s.resize( 15, 0b01111111 ) );
 
 				LF();
 
