@@ -315,10 +315,41 @@ namespace std_string_test
 				LF();
 
 				OUTPUT_VALUE( std::string().find( key_string, 0 ) );
+
+				LF();
+
 				OUTPUT_VALUE( std::string::npos );
+
+				LF();
+
+				OUTPUT_NOTE( "결과 비교는 std::string::npos 를 활용하자." );
 			}
 
 			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Find_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Find 2";
+		};
+	}
+	r2tm::DoFunctionT Find_2::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( const std::string key_string = "\n" );
+			OUTPUT_VALUE( key_string.size() );
+
+			LF();
 
 			DECLARATION_MAIN( const std::string orig_string = "\n\n012345\n6789abcd\n\nefghij\nklmnopqrstu\n\n\nvwxyz\n" );
 			OUTPUT_VALUE( orig_string.size() );
