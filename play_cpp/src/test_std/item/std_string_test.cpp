@@ -307,7 +307,18 @@ namespace std_string_test
 			DECLARATION_MAIN( const std::string key_string = "\n" );
 			OUTPUT_VALUE( key_string.size() );
 
-			LF();
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "실패 결과 확인" );
+
+				LF();
+
+				OUTPUT_VALUE( std::string().find( key_string, 0 ) );
+				OUTPUT_VALUE( std::string::npos );
+			}
+
+			LS();
 
 			DECLARATION_MAIN( const std::string orig_string = "\n\n012345\n6789abcd\n\nefghij\nklmnopqrstu\n\n\nvwxyz\n" );
 			OUTPUT_VALUE( orig_string.size() );
