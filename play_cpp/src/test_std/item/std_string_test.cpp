@@ -291,14 +291,14 @@ namespace std_string_test
 
 
 
-	r2tm::TitleFunctionT Find::GetTitleFunction() const
+	r2tm::TitleFunctionT Find_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Find";
+			return "Find 1";
 		};
 	}
-	r2tm::DoFunctionT Find::GetDoFunction() const
+	r2tm::DoFunctionT Find_1::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

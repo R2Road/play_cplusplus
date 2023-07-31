@@ -32,7 +32,7 @@ r2tm::WriteFunctionT STDStringMenu::GetWriteFunction() const
 
 
 
-		ret->AddItem( 'q', std_string_test::Find() );
+		ret->AddItem( 'q', std_string_test::Find_1() );
 		ret->AddItem( 'w', std_string_test::Find_2() );
 		ret->AddItem( 'e', std_string_test::Find_And_Split_1() );
 		ret->AddItem( 'r', std_string_test::Find_And_Split_2() );
