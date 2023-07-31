@@ -354,11 +354,21 @@ namespace std_string_test
 			DECLARATION_MAIN( const std::string orig_string = "\n\n012345\n6789abcd\n\nefghij\nklmnopqrstu\n\n\nvwxyz\n" );
 			OUTPUT_VALUE( orig_string.size() );
 
+			LF();
+
+			DECLARATION_MAIN( std::size_t pivot_pos = 0u );
+			DECLARATION_MAIN( std::size_t find_pos = 0u );
+
 			LS();
 
 			{
-				DECLARATION_MAIN( std::size_t pivot_pos = 0u );
-				DECLARATION_MAIN( std::size_t find_pos = 0u );
+				PROCESS_MAIN( find_pos = orig_string.find( key_string, pivot_pos ) );
+				OUTPUT_VALUE( find_pos );
+				PROCESS_MAIN( pivot_pos = find_pos + key_string.size() );
+				OUTPUT_VALUE( pivot_pos );
+				OUTPUT_VALUE( orig_string[pivot_pos] );
+
+				SS();
 
 				PROCESS_MAIN( find_pos = orig_string.find( key_string, pivot_pos ) );
 				OUTPUT_VALUE( find_pos );
@@ -366,15 +376,7 @@ namespace std_string_test
 				OUTPUT_VALUE( pivot_pos );
 				OUTPUT_VALUE( orig_string[pivot_pos] );
 
-				std::cout << r2tm::linefeed2;
-
-				PROCESS_MAIN( find_pos = orig_string.find( key_string, pivot_pos ) );
-				OUTPUT_VALUE( find_pos );
-				PROCESS_MAIN( pivot_pos = find_pos + key_string.size() );
-				OUTPUT_VALUE( pivot_pos );
-				OUTPUT_VALUE( orig_string[pivot_pos] );
-
-				std::cout << r2tm::linefeed2;
+				SS();
 
 				PROCESS_MAIN( find_pos = orig_string.find( key_string, pivot_pos ) );
 				OUTPUT_VALUE( find_pos );
