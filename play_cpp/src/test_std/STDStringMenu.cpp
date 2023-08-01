@@ -21,10 +21,11 @@ r2tm::WriteFunctionT STDStringMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* ret )
 	{
-		ret->AddItem( '1', std_string_test::Basic() );
-		ret->AddItem( '2', std_string_test::Memory_1() );
-		ret->AddItem( '3', std_string_test::Memory_2() );
-		ret->AddItem( '4', std_string_test::Move() );
+		ret->AddItem( '1', std_string_test::Declaration() );
+		ret->AddItem( '2', std_string_test::Basic() );
+		ret->AddItem( '3', std_string_test::Memory_1() );
+		ret->AddItem( '4', std_string_test::Memory_2() );
+		ret->AddItem( '5', std_string_test::Move() );
 
 
 

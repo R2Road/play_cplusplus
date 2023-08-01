@@ -7,6 +7,83 @@
 
 namespace std_string_test
 {
+	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Declaration";
+		};
+	}
+	r2tm::DoFunctionT Declaration::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "인자 없는 생성자" );
+
+				LF();
+
+				DECLARATION_MAIN( const std::string s );
+				OUTPUT_VALUE( s );
+
+				LF();
+
+				OUTPUT_VALUE( s.capacity() );
+				OUTPUT_VALUE( sizeof( s ) );
+				OUTPUT_BINARY( s );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "문자열을 인자로 받는 생성자" );
+
+				LF();
+
+				DECLARATION_MAIN( const std::string s( "1234" ) );
+				OUTPUT_VALUE( s );
+
+				LF();
+
+				OUTPUT_VALUE( s.capacity() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "문자열을 인자로 받는 생성자 : capacity over" );
+
+				LF();
+
+				DECLARATION_MAIN( const std::string s( "1234567890123456" ) );
+				OUTPUT_VALUE( s );
+
+				LF();
+
+				OUTPUT_VALUE( s.capacity() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "문자와 길이를 인자로 받는 생성자" );
+
+				LF();
+
+				DECLARATION_MAIN( const std::string s( 4, 'a' ) );
+				OUTPUT_VALUE( s );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
