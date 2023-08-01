@@ -4,6 +4,13 @@
 
 namespace std_string_view_test
 {
+	class Declaration : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
 	class Basic : public r2tm::iItem
 	{
 	public:

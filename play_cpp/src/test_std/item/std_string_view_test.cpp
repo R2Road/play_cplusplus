@@ -10,14 +10,14 @@ using namespace std::string_view_literals; // for sv
 
 namespace std_string_view_test
 {
-	r2tm::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "StringView : Basic";
+			return "StringView : Declaration";
 		};
 	}
-	r2tm::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Declaration::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -50,6 +50,25 @@ namespace std_string_view_test
 				OUTPUT_VALUE( view );
 			}
 
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "StringView : Basic";
+		};
+	}
+	r2tm::DoFunctionT Basic::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
 			LS();
 
 			{
