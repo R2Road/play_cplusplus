@@ -35,7 +35,7 @@ namespace std_string_view_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "인자 있는 생성자 : 공백 문자열" );
+				OUTPUT_SUBJECT( "문자열을 인자로 받는 생성자 : 공백 문자열" );
 
 				LF();
 
@@ -46,7 +46,7 @@ namespace std_string_view_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "인자 있는 생성자" );
+				OUTPUT_SUBJECT( "문자열을 인자로 받는 생성자" );
 				
 				LF();
 
