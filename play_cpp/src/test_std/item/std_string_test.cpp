@@ -26,12 +26,15 @@ namespace std_string_test
 				LF();
 
 				DECLARATION_MAIN( const std::string s );
+				OUTPUT_VALUE( sizeof( s ) );
+
+				LF();
+
 				OUTPUT_VALUE( s );
 
 				LF();
 
 				OUTPUT_VALUE( s.capacity() );
-				OUTPUT_VALUE( sizeof( s ) );
 				OUTPUT_BINARY( s );
 			}
 
