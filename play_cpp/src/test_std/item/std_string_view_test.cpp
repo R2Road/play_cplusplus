@@ -87,15 +87,12 @@ namespace std_string_view_test
 		{
 			LS();
 
-			{
-				DECLARATION_MAIN( const std::string_view view = "test 3" );
+			DECLARATION_MAIN( const std::string_view view = "test 3" );
 
-				std::cout << r2tm::tab << "- Enable Ranged For" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "- for( const auto c : view )" << r2tm::linefeed;
-				for( const auto c : view )
-				{
-					std::cout << r2tm::tab3 << c << r2tm::linefeed;
-				}
+			LS();
+
+			{
+				PROCESS_MAIN( for( const auto& c : view ) { OUTPUT_VALUE( c ); } );
 			}
 
 			LS();
