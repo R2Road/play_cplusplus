@@ -24,6 +24,10 @@ namespace std_string_view_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "인자 없는 생성자" );
+
+				LF();
+
 				DECLARATION_MAIN( const std::string_view view );
 				EXPECT_TRUE( view.empty() );
 			}
@@ -31,6 +35,10 @@ namespace std_string_view_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "인자 있는 생성자 : 공백 문자열" );
+
+				LF();
+
 				DECLARATION_MAIN( const std::string_view view = "" );
 				EXPECT_TRUE( view.empty() );
 			}
@@ -38,6 +46,10 @@ namespace std_string_view_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "인자 있는 생성자" );
+				
+				LF();
+
 				DECLARATION_MAIN( const std::string_view view = "String View Test_1" );
 				OUTPUT_VALUE( view );
 			}
@@ -45,6 +57,10 @@ namespace std_string_view_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "std::string을 인자로 받는 생성자" );
+
+				LF();
+
 				DECLARATION_MAIN( const std::string str = "String View Test_2" );
 				DECLARATION_MAIN( const std::string_view view = str );
 				OUTPUT_VALUE( view );
