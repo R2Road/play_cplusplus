@@ -84,14 +84,14 @@ namespace std_string_test
 
 
 
-	r2tm::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Operator_Equal::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Basic";
+			return "Operator ==";
 		};
 	}
-	r2tm::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Operator_Equal::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

@@ -11,7 +11,7 @@ namespace std_string_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Basic : public r2tm::iItem
+	class Operator_Equal : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
