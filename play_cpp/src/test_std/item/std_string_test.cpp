@@ -101,20 +101,13 @@ namespace std_string_test
 			LS();
 
 			{
-				DECLARATION_MAIN( const std::string s );
-				OUTPUT_VALUE( sizeof( s ) );
-			}
-
-			LS();
-
-			{
 				OUTPUT_SUBJECT( "빈 std::string 은 같은 것으로 간주된다." );
 
 				LF();
 
-				DECLARATION_MAIN( const std::string empty_string_1 );
-				DECLARATION_MAIN( const std::string empty_string_2 );
-				EXPECT_EQ( empty_string_1, empty_string_2 );
+				DECLARATION_MAIN( const std::string s_1 );
+				DECLARATION_MAIN( const std::string s_2 );
+				EXPECT_EQ( s_1, s_2 );
 			}
 
 			LS();
@@ -124,14 +117,14 @@ namespace std_string_test
 
 				LF();
 
-				DECLARATION_MAIN( const std::string string_1( " " ) );
-				DECLARATION_MAIN( const std::string string_2( " " ) );
-				EXPECT_EQ( string_1, string_2 );
+				DECLARATION_MAIN( const std::string s_1( " " ) );
+				DECLARATION_MAIN( const std::string s_2( " " ) );
+				EXPECT_EQ( s_1, s_2 );
 
 				LF();
 
-				OUTPUT_VALUE( (void*)string_1.c_str() );
-				OUTPUT_VALUE( (void*)string_2.c_str() );
+				OUTPUT_VALUE( (void*)s_1.c_str() );
+				OUTPUT_VALUE( (void*)s_2.c_str() );
 			}
 
 			LS();
@@ -141,23 +134,23 @@ namespace std_string_test
 
 				LF();
 
-				DECLARATION_MAIN( std::string string_1( "              " ) );
-				DECLARATION_MAIN( std::string string_2( "                         " ) );
-				EXPECT_NE( string_1, string_2 );
+				DECLARATION_MAIN( std::string s_1( "              " ) );
+				DECLARATION_MAIN( std::string s_2( "                         " ) );
+				EXPECT_NE( s_1, s_2 );
 
 				LF();
 
-				PROCESS_MAIN( string_1.clear() );
-				PROCESS_MAIN( string_2.clear() );
+				PROCESS_MAIN( s_1.clear() );
+				PROCESS_MAIN( s_2.clear() );
 
 				LF();
 
-				EXPECT_EQ( string_1, string_2 );
+				EXPECT_EQ( s_1, s_2 );
 
 				LF();
 
-				OUTPUT_VALUE( (void*)string_1.c_str() );
-				OUTPUT_VALUE( (void*)string_2.c_str() );
+				OUTPUT_VALUE( (void*)s_1.c_str() );
+				OUTPUT_VALUE( (void*)s_2.c_str() );
 			}
 
 			LS();
