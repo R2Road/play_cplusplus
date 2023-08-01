@@ -74,14 +74,14 @@ namespace std_string_view_test
 
 
 
-	r2tm::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Iteration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "StringView : Basic";
+			return "StringView : Iteration";
 		};
 	}
-	r2tm::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Iteration::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

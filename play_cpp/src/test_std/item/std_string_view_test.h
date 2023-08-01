@@ -11,7 +11,7 @@ namespace std_string_view_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Basic : public r2tm::iItem
+	class Iteration : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
