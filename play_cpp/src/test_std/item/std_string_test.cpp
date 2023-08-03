@@ -211,6 +211,10 @@ namespace std_string_test
 
 				LF();
 
+				OUTPUT_VALUE( s.capacity() );
+
+				LF();
+
 				OUTPUT_VALUE( (void*)s.c_str() );
 				OUTPUT_BINARY( s );
 			}
@@ -238,14 +242,16 @@ namespace std_string_test
 
 			DECLARATION_MAIN( std::string s );
 
-			LF();
+			LS();
 
-			OUTPUT_VALUE( s.capacity() );
+			{
+				OUTPUT_VALUE( s.capacity() );
 
-			LF();
+				LF();
 
-			OUTPUT_VALUE( (void*)s.c_str() );
-			OUTPUT_BINARY( s );
+				OUTPUT_VALUE( (void*)s.c_str() );
+				OUTPUT_BINARY( s );
+			}
 
 			LS();
 
@@ -258,6 +264,10 @@ namespace std_string_test
 
 				LF();
 
+				OUTPUT_VALUE( s.capacity() );
+
+				LF();
+
 				OUTPUT_VALUE( (void*)s.c_str() );
 				OUTPUT_BINARY( s );
 			}
@@ -265,12 +275,15 @@ namespace std_string_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "clear() 를 호출해도 member buffer를 사용하게 되지는 않는다." );
-				OUTPUT_SUBJECT( "되돌리는 방법이 없을까?" );
+				OUTPUT_SUBJECT( "clear() 를 호출해도 member buffer를 사용하게 되지는 않는다. 되돌리는 방법이 없을까?" );
 
 				LF();
 
 				PROCESS_MAIN( s.clear() );
+
+				LF();
+
+				OUTPUT_VALUE( s.capacity() );
 
 				LF();
 
