@@ -200,7 +200,10 @@ namespace std_string_view_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ 복사를 요청한 구간의 끝이 원본 문자열의 최대 길이를 넘어서도 문제 없다." << r2tm::linefeed2;
+				OUTPUT_NOTE( "복사를 요청한 구간의 끝이 원본 문자열의 최대 길이를 넘어서도 문제 없다." );
+
+				LF();
+
 				DECLARATION_MAIN( const auto other_view = view.substr( 12u, 20u ) );
 				OUTPUT_VALUE( other_view );
 			}
@@ -208,8 +211,11 @@ namespace std_string_view_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ string_view 의 size 를 offset 으로 지정해도 문제가 없다. 왜???" << r2tm::linefeed;
-				std::cout << r2tm::tab << "- offset 검사 코드를 보면 if (_Mysize < _Off) 조건으로 되어있다. 왜???" << r2tm::linefeed2;
+				OUTPUT_NOTE( "string_view 의 size 를 offset 으로 지정해도 문제가 없다. 왜???" );
+				OUTPUT_COMMENT( "offset 검사 코드를 보면 if (_Mysize < _Off) 조건으로 되어있다. 왜???" );
+
+				LF();
+
 				DECLARATION_MAIN( const auto other_view = view.substr( view.size(), 6u ) );
 				OUTPUT_VALUE( other_view );
 			}
@@ -217,14 +223,20 @@ namespace std_string_view_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ string_view 에 할당된 범위를 넘어선 지역에 sub_str 을 시도하면 문제가 생긴다." << r2tm::linefeed2;
+				OUTPUT_NOTE( "string_view 에 할당된 범위를 넘어선 지역에 sub_str 을 시도하면 문제가 생긴다." );
+
+				LF();
+
 				OUTPUT_CODE( const auto other_view = view.substr( view + 1, 6u ) );
 			}
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ 복사를 요청한 구간의 시작점이 원본 문자열의 범위를 넘어서면 문제가 생긴다." << r2tm::linefeed2;
+				OUTPUT_NOTE( "복사를 요청한 구간의 시작점이 원본 문자열의 범위를 넘어서면 문제가 생긴다." );
+
+				LF();
+
 				OUTPUT_CODE( const auto other_view = view.substr( view.size() + 1, 6u ) );
 			}
 
