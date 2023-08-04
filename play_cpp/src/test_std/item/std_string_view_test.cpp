@@ -117,9 +117,9 @@ namespace std_string_view_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ std::string_view 는 특별한 literal operator 를 가지고 있다." << r2tm::linefeed2;
-				std::cout << r2tm::tab << "> constexpr string_view operator \"\" sv(const char *_Str, size_t _Len) noexcept" << r2tm::linefeed;
-				std::cout << r2tm::tab << "> \"\" sv 는 constexpr string_view 를 만들어준다." << r2tm::linefeed;
+				OUTPUT_SUBJECT( "std::string_view 는 특별한 literal operator 를 가지고 있다." );
+				OUTPUT_COMMENT( "constexpr string_view operator \"\" sv(const char *_Str, size_t _Len) noexcept" );
+				OUTPUT_COMMENT( "\"\" sv 는 constexpr string_view 를 만들어준다." );
 			}
 
 			LS();
