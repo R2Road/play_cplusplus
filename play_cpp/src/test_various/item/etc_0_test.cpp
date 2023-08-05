@@ -23,7 +23,9 @@ namespace etc_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Use For" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Use For" );
+
+				LF();
 
 				DECLARATION_MAIN( const int num = 0b10110010101 ); // binary
 
@@ -43,7 +45,9 @@ namespace etc_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Use Bitset" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Use Bitset" );
+
+				LF();
 
 				DECLARATION_MAIN( const int num = 0b0011001 ); // binary
 				DECLARATION_MAIN( std::bitset<16u> b( num ) );
