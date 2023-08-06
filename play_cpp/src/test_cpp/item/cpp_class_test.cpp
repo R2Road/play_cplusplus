@@ -38,13 +38,30 @@ namespace cpp_class_test
 			DECLARATION_MAIN( S s );
 
 			LS();
+
 			{
+				OUTPUT_SUBJECT( "일반적인 호출 1" );
+
+				LF();
+
 				PROCESS_MAIN( s.Func() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "일반적인 호출 2" );
 
 				LF();
 
 				PROCESS_MAIN( s.S::Func() );
+			}
+
+			LS();
 				
+			{
+				OUTPUT_SUBJECT( "함수 포인터를 이용" );
+
 				LF();
 
 				DECLARATION_MAIN( auto f = &S::Func );
