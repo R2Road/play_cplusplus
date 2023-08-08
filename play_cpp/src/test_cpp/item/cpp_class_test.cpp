@@ -93,10 +93,13 @@ namespace cpp_class_test
 
 			LS();
 
-			DECLARATION_MAIN( DECLARATION_MAIN( struct S
+			DECLARATION_MAIN( struct S
 			{
 				int a = 123; int b = 234;
-			} ); );
+			} );
+
+			LS();
+
 			DECLARATION_MAIN( S s );
 
 			LS();
