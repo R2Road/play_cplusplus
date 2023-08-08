@@ -254,7 +254,7 @@ do {																						\
 
 #define	OUTPUT_NOTE( str )																	\
 do {																						\
-	printf( "\t"  "\x1B[91m"  "+ NOTE : "  "%s"  "\033[0m"  "\n", str );					\
+	printf( "\t"  "\x1B[91m"  "[ NOTE ] "  "%s"  "\033[0m"  "\n", str );					\
 } while( false )
 
 #define	OUTPUT_SUBJECT( str )																\
@@ -282,3 +282,7 @@ do {																						\
 do {																						\
 	r2tm::PrintFile( file_path, min, max );													\
 } while( false )
+
+#define OUTPUT_SOURCE_READY		int src_begin, src_end = -1
+#define OUTPUT_SOURCE_BEGIN		do { src_begin = __LINE__ + 1; } while( false )
+#define OUTPUT_SOURCE_END		do { src_end = __LINE__ - 1; r2tm::PrintFile( __FILE__, src_begin, src_end ); } while( false )

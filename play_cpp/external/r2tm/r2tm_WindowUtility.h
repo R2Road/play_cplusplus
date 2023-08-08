@@ -9,12 +9,23 @@ namespace r2tm
 	public:
 		struct CursorPoint
 		{
-			short x = 0;
-			short y = 0;
+			short x;
+			short y;
+
+			CursorPoint() : x( 0 ), y( 0 )
+			{}
+			CursorPoint( const short _x, const short _y ) : x( _x ), y( _y )
+			{}
 
 			CursorPoint operator+( const CursorPoint& other ) const
 			{
 				return CursorPoint{ x + other.x, y + other.y };
+			}
+
+			void operator+=( const CursorPoint& other )
+			{
+				x += other.x;
+				y += other.y;
 			}
 		};
 
