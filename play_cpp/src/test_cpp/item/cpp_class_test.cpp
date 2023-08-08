@@ -64,8 +64,8 @@ namespace cpp_class_test
 
 				LF();
 
-				DECLARATION_MAIN( auto f = &S::Func );
-				PROCESS_MAIN( ( s.*f )( ) );
+				DECLARATION_MAIN( auto m = &S::Func );
+				PROCESS_MAIN( ( s.*m )( ) );
 			}
 
 			LS();
@@ -93,11 +93,11 @@ namespace cpp_class_test
 
 			LS();
 
-			DECLARATION_MAIN( DECLARATION_MAIN( struct TC
+			DECLARATION_MAIN( DECLARATION_MAIN( struct S
 			{
 				int a = 123; int b = 234;
 			} ); );
-			DECLARATION_MAIN( TC tc );
+			DECLARATION_MAIN( S s );
 
 			LS();
 
@@ -106,7 +106,7 @@ namespace cpp_class_test
 
 				LF();
 
-				OUTPUT_VALUE( tc.b );
+				OUTPUT_VALUE( s.b );
 			}
 
 			LS();
@@ -116,7 +116,7 @@ namespace cpp_class_test
 
 				LF();
 
-				OUTPUT_VALUE( tc.TC::b );
+				OUTPUT_VALUE( s.S::b );
 			}
 
 			LS();
@@ -126,8 +126,8 @@ namespace cpp_class_test
 
 				LF();
 
-				DECLARATION_MAIN( auto f = &TC::b );
-				OUTPUT_VALUE( ( tc.*f ) );
+				DECLARATION_MAIN( auto p = &S::b );
+				OUTPUT_VALUE( ( s.*p ) );
 			}
 
 			LS();
