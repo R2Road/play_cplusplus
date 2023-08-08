@@ -343,22 +343,25 @@ namespace cpp_class_test
 
 			LF();
 
-			DECLARATION_MAIN( using TC = cpp_class_test_helper_member_adress::TestClass );
-			DECLARATION_MAIN( TC tc );
+			DECLARATION_MAIN( using C = cpp_class_test_helper_member_adress::TestClass );
+			DECLARATION_MAIN( C c );
 
 			LS();
 
 			{
-				OUTPUT_VALUE( &tc );
+				OUTPUT_VALUE( &c );
 			}
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Member Adress" << r2tm::linefeed2;
-				OUTPUT_VALUE( &tc.a );
-				OUTPUT_VALUE( &tc.b );
-				OUTPUT_VALUE( &tc.c );
+				OUTPUT_SUBJECT( "Member Adress" );
+
+				LF();
+
+				OUTPUT_VALUE( &c.a );
+				OUTPUT_VALUE( &c.b );
+				OUTPUT_VALUE( &c.c );
 			}
 
 			LS();
@@ -386,34 +389,40 @@ namespace cpp_class_test
 
 			LF();
 
-			DECLARATION_MAIN( using TC = cpp_class_test_helper_member_adress::TestClass );
-			DECLARATION_MAIN( TC tc );
+			DECLARATION_MAIN( using C = cpp_class_test_helper_member_adress::TestClass );
+			DECLARATION_MAIN( C c );
 
 			LS();
 
 			{
-				OUTPUT_VALUE( &tc );
+				OUTPUT_VALUE( &c );
 			}
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Method Adress 1" << r2tm::linefeed2;
-				OUTPUT_VALUE( &TC::Func1 );
-				OUTPUT_VALUE( &TC::Func2 );
+				OUTPUT_SUBJECT( "Method Adress 1" );
+
+				LF();
+
+				OUTPUT_VALUE( &C::Func1 );
+				OUTPUT_VALUE( &C::Func2 );
 			}
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Method Adress 2" << r2tm::linefeed2;
-				DECLARATION_MAIN( void ( TC::*f1_ptr )( ) = &TC::Func1 );
+				OUTPUT_SUBJECT( "Method Adress 2" );
+
+				LF();
+
+				DECLARATION_MAIN( void ( C::*f1_ptr )( ) = &C::Func1 );
 				DECLARATION_MAIN( auto f1_void = (void*&)f1_ptr );
 				OUTPUT_VALUE( f1_void );
 
 				LF();
 
-				DECLARATION_MAIN( void ( TC::*f2_ptr )( ) = &TC::Func2 );
+				DECLARATION_MAIN( void ( C::*f2_ptr )( ) = &C::Func2 );
 				DECLARATION_MAIN( auto f2_void = (void*&)f2_ptr );
 				OUTPUT_VALUE( f2_void );
 			}
