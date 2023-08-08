@@ -286,3 +286,5 @@ do {																						\
 #define OUTPUT_SOURCE_READY		int src_begin, src_end = -1
 #define OUTPUT_SOURCE_BEGIN		do { src_begin = __LINE__ + 1; } while( false )
 #define OUTPUT_SOURCE_END		do { src_end = __LINE__ - 1; r2tm::PrintFile( __FILE__, src_begin, src_end ); } while( false )
+
+#define OUTPUT_SOURCE_READY_N_BEGIN		OUTPUT_SOURCE_READY; OUTPUT_SOURCE_BEGIN
