@@ -89,6 +89,10 @@ namespace cpp_class_test
 		{
 			LS();
 
+			OUTPUT_NOTE( "Class Member에 접근하는 방법" );
+
+			LS();
+
 			DECLARATION_MAIN( DECLARATION_MAIN( struct TC
 			{
 				int a = 123; int b = 234;
@@ -98,11 +102,32 @@ namespace cpp_class_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "일반적인 접근 1" );
+
+				LF();
+
 				OUTPUT_VALUE( tc.b );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "일반적인 접근 2" );
 
 				LF();
 
 				OUTPUT_VALUE( tc.TC::b );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "멤버 포인터를 이용" );
+
+				LF();
+
+				DECLARATION_MAIN( auto f = &TC::b );
+				OUTPUT_VALUE( ( tc.*f ) );
 			}
 
 			LS();
