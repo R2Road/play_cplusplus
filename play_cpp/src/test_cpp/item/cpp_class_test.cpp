@@ -28,10 +28,13 @@ namespace cpp_class_test
 
 			LS();
 
-			DECLARATION_MAIN( struct S
+			OUTPUT_SOURCE_READY;
+			OUTPUT_SOURCE_BEGIN;
+			struct S
 			{
 				void Func() { printf( "\t" "> " "[Call] Func" "\n" ); }
-			} );
+			};
+			OUTPUT_SOURCE_END;
 
 			LS();
 
