@@ -98,7 +98,8 @@ namespace cpp_class_test
 			OUTPUT_SOURCE_READY_N_BEGIN;
 			struct S
 			{
-				int a = 123; int b = 234;
+				int a = 123;
+				int b = 234;
 			};
 			OUTPUT_SOURCE_END;
 
