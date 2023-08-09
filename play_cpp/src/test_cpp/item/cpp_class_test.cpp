@@ -28,8 +28,7 @@ namespace cpp_class_test
 
 			LS();
 
-			OUTPUT_SOURCE_READY;
-			OUTPUT_SOURCE_BEGIN;
+			OUTPUT_SOURCE_READY_N_BEGIN;
 			struct S
 			{
 				void Func() { printf( "\t" "> " "[Call] Func" "\n" ); }
@@ -96,10 +95,12 @@ namespace cpp_class_test
 
 			LS();
 
-			DECLARATION_MAIN( struct S
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			struct S
 			{
 				int a = 123; int b = 234;
-			} );
+			};
+			OUTPUT_SOURCE_END;
 
 			LS();
 
