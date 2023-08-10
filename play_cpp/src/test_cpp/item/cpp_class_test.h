@@ -32,24 +32,7 @@ namespace cpp_class_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class PrivateInheritance_1 : public r2tm::iItem
-	{
-	public:
-		r2tm::TitleFunctionT GetTitleFunction() const override;
-		r2tm::DoFunctionT GetDoFunction() const override;
-	};
-	class PrivateInheritance_2 : public r2tm::iItem
-	{
-	public:
-		r2tm::TitleFunctionT GetTitleFunction() const override;
-		r2tm::DoFunctionT GetDoFunction() const override;
-	};
-	class PrivateInheritance_iEnum : public r2tm::iItem
-	{
-	public:
-		r2tm::TitleFunctionT GetTitleFunction() const override;
-		r2tm::DoFunctionT GetDoFunction() const override;
-	};
+
 
 	class ImplicitTypeConversion : public r2tm::iItem
 	{
@@ -64,7 +47,6 @@ namespace cpp_class_test
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
-
 
 
 
