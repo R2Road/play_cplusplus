@@ -61,7 +61,7 @@ namespace cpp_class_test
 			}
 
 			LS();
-				
+
 			{
 				OUTPUT_SUBJECT( "함수 포인터를 이용" );
 
@@ -248,10 +248,10 @@ namespace cpp_class_test
 
 				OUTPUT_SOURCE_READY_N_BEGIN;
 				cpp_class_test_helper_braces_2::TS_1<int> ts_1{ 1, 2 };
-
 				cpp_class_test_helper_braces_2::TS_2<int> ts_2{ 1, 2 };
-
 				cpp_class_test_helper_braces_2::TS_3<int> ts_3{ 1, 2 };
+				cpp_class_test_helper_braces_2::TS_4<int> ts_4_1{};
+				cpp_class_test_helper_braces_2::TS_4<int> ts_4_2{ 1, 2 };
 				OUTPUT_SOURCE_END;
 			}
 
