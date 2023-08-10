@@ -1,4 +1,5 @@
 #include "cpp_class_test.h"
+#include "cpp_class_test_helper_braces_2.hpp"
 #include "cpp_class_test_helper_member_adress.hpp"
 #include "cpp_class_test_helper_offset_singleton.hpp"
 
@@ -223,13 +224,6 @@ namespace cpp_class_test
 
 
 
-	template<typename T>
-	struct TS
-	{
-		int a;
-		int b;
-	};
-
 	r2tm::TitleFunctionT Braces_2::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -243,13 +237,21 @@ namespace cpp_class_test
 		{
 			LS();
 
+			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_braces_2.hpp" );
+
+			LS();
+
 			{
-				OUTPUT_NOTE( "template class : 불가능" );
+				OUTPUT_NOTE( "template class : 왜 잘돼?" );
 
 				LF();
 
 				OUTPUT_SOURCE_READY_N_BEGIN;
-				//TS ts{ 1, 2 };
+				cpp_class_test_helper_braces_2::TS_1<int> ts_1{ 1, 2 };
+
+				cpp_class_test_helper_braces_2::TS_2<int> ts_2{ 1, 2 };
+
+				cpp_class_test_helper_braces_2::TS_3<int> ts_3{ 1, 2 };
 				OUTPUT_SOURCE_END;
 			}
 
