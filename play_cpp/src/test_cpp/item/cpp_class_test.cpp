@@ -146,6 +146,14 @@ namespace cpp_class_test
 
 
 
+	template<typename T>
+	class CC
+	{
+	public:
+		int a;
+		int b;
+	};
+
 	r2tm::TitleFunctionT Braces::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -160,30 +168,89 @@ namespace cpp_class_test
 			LS();
 
 			{
-				class TestClass1
+				OUTPUT_SUBJECT( "public member를 가진 class : 가능" );
+
+				LF();
+
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				class C
 				{
 				public:
 					int a;
 					int b;
 				};
-
-				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed;
-
-				std::cout << r2tm::tab2 << "class TestClass1" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "{" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "public:" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "int a;" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "int b;" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "}" << r2tm::linefeed;
+				OUTPUT_SOURCE_END;
 
 
 				LF();
 
+				OUTPUT_SOURCE_BEGIN;
+				C c{ 1, 2 };
+				OUTPUT_SOURCE_END;
+			}
 
-				TestClass1 t1{ 1, 2 };
+			LS();
 
-				std::cout << r2tm::tab << "+ Variable" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "TestClass1 t1{ 1, 2 }" << r2tm::linefeed;
+			{
+				OUTPUT_SUBJECT( "사용자 정의 생성자를 가진 class : 가능" );
+
+				LF();
+
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				class C
+				{
+				public:
+					C( int _a, int _b ) : a( _a ), b( _b ) {}
+
+					int a;
+					int b;
+				};
+				OUTPUT_SOURCE_END;
+
+
+				LF();
+
+				OUTPUT_SOURCE_BEGIN;
+				C c{ 1, 2 };
+				OUTPUT_SOURCE_END;
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "사용자 정의 explicit 생성자를 가진 class : 가능" );
+
+				LF();
+
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				class C
+				{
+				public:
+					explicit C( int _a, int _b ) : a( _a ), b( _b ) {}
+
+					int a;
+					int b;
+				};
+				OUTPUT_SOURCE_END;
+
+
+				LF();
+
+				OUTPUT_SOURCE_BEGIN;
+				C c{ 1, 2 };
+				OUTPUT_SOURCE_END;
+			}
+
+			LS();
+
+			{
+				OUTPUT_NOTE( "template class : 불가능" );
+
+				LF();
+
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				//CC c{ 1, 2 };
+				OUTPUT_SOURCE_END;
 			}
 
 			LS();
