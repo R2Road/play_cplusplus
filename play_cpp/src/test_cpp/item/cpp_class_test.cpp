@@ -146,13 +146,6 @@ namespace cpp_class_test
 
 
 
-	template<typename T>
-	struct TS
-	{
-		int a;
-		int b;
-	};
-
 	r2tm::TitleFunctionT Braces::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -222,6 +215,32 @@ namespace cpp_class_test
 				OUTPUT_SOURCE_END;
 			}
 
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	template<typename T>
+	struct TS
+	{
+		int a;
+		int b;
+	};
+
+	r2tm::TitleFunctionT Braces_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Braces 2";
+		};
+	}
+	r2tm::DoFunctionT Braces_2::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
 			LS();
 
 			{
@@ -320,12 +339,12 @@ namespace cpp_class_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
-}
 
 
 
-namespace cpp_class_test
-{
+
+
+
 	r2tm::TitleFunctionT ImplicitTypeConversion::GetTitleFunction() const
 	{
 		return []()->const char*
