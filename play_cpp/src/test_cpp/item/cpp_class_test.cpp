@@ -147,14 +147,14 @@ namespace cpp_class_test
 
 
 
-	r2tm::TitleFunctionT Braces::GetTitleFunction() const
+	r2tm::TitleFunctionT Braces_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Class : Braces";
+			return "Class : Braces 1";
 		};
 	}
-	r2tm::DoFunctionT Braces::GetDoFunction() const
+	r2tm::DoFunctionT Braces_1::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

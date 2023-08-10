@@ -18,7 +18,7 @@ namespace cpp_class_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Braces : public r2tm::iItem
+	class Braces_1 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

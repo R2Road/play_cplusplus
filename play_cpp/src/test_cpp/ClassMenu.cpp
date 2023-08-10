@@ -24,7 +24,7 @@ r2tm::WriteFunctionT ClassMenu::GetWriteFunction() const
 	{
 		ret->AddItem( '1', cpp_class_test::Method() );
 		ret->AddItem( '2', cpp_class_test::MemberValue() );
-		ret->AddItem( '3', cpp_class_test::Braces() );
+		ret->AddItem( '3', cpp_class_test::Braces_1() );
 		ret->AddItem( '4', cpp_class_test::Braces_2() );
 		ret->AddItem( '5', cpp_class_test::PrintName() );
 		ret->AddItem( '6', cpp_class_test::ImplicitTypeConversion() );
