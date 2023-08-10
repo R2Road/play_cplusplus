@@ -147,9 +147,8 @@ namespace cpp_class_test
 
 
 	template<typename T>
-	class CC
+	struct TS
 	{
-	public:
 		int a;
 		int b;
 	};
@@ -173,14 +172,13 @@ namespace cpp_class_test
 				LF();
 
 				OUTPUT_SOURCE_READY_N_BEGIN;
-				class C
+				struct S
 				{
-				public:
 					int a;
 					int b;
 				};
 
-				C c{ 1, 2 };
+				S s{ 1, 2 };
 				OUTPUT_SOURCE_END;
 			}
 
@@ -192,16 +190,15 @@ namespace cpp_class_test
 				LF();
 
 				OUTPUT_SOURCE_READY_N_BEGIN;
-				class C
+				struct S
 				{
-				public:
-					C( int _a, int _b ) : a( _a ), b( _b ) {}
+					S( int _a, int _b ) : a( _a ), b( _b ) {}
 
 					int a;
 					int b;
 				};
 
-				C c{ 1, 2 };
+				S s{ 1, 2 };
 				OUTPUT_SOURCE_END;
 			}
 
@@ -213,16 +210,15 @@ namespace cpp_class_test
 				LF();
 
 				OUTPUT_SOURCE_READY_N_BEGIN;
-				class C
+				struct S
 				{
-				public:
-					explicit C( int _a, int _b ) : a( _a ), b( _b ) {}
+					explicit S( int _a, int _b ) : a( _a ), b( _b ) {}
 
 					int a;
 					int b;
 				};
 
-				C c{ 1, 2 };
+				S s{ 1, 2 };
 				OUTPUT_SOURCE_END;
 			}
 
@@ -234,7 +230,7 @@ namespace cpp_class_test
 				LF();
 
 				OUTPUT_SOURCE_READY_N_BEGIN;
-				//CC c{ 1, 2 };
+				//TS ts{ 1, 2 };
 				OUTPUT_SOURCE_END;
 			}
 
