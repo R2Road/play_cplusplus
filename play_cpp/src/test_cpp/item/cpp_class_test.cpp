@@ -1,5 +1,4 @@
 #include "cpp_class_test.h"
-#include "cpp_class_test_helper_braces_2.hpp"
 #include "cpp_class_test_helper_member_adress.hpp"
 #include "cpp_class_test_helper_offset_singleton.hpp"
 
@@ -237,21 +236,55 @@ namespace cpp_class_test
 		{
 			LS();
 
-			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_braces_2.hpp" );
-
-			LS();
 
 			{
-				OUTPUT_NOTE( "template class : 왜 잘돼?" );
+				OUTPUT_SUBJECT( "인자 없는 생성자 + 사용자 정의 explicit 생성자를 가진 class : 가능" );
 
 				LF();
 
 				OUTPUT_SOURCE_READY_N_BEGIN;
-				cpp_class_test_helper_braces_2::TS_1<int> ts_1{ 1, 2 };
-				cpp_class_test_helper_braces_2::TS_2<int> ts_2{ 1, 2 };
-				cpp_class_test_helper_braces_2::TS_3<int> ts_3{ 1, 2 };
-				cpp_class_test_helper_braces_2::TS_4<int> ts_4_1{};
-				cpp_class_test_helper_braces_2::TS_4<int> ts_4_2{ 1, 2 };
+				struct S
+				{
+					S() : a( 0 ), b( 0 ) {}
+					explicit S( int _a, int _b ) : a( _a ), b( _b ) {}
+
+					int a;
+					int b;
+				};
+
+				S s1{};
+				S s2{ 1, 2 };
+				OUTPUT_SOURCE_END;
+			}
+
+			LS();
+
+			{
+				OUTPUT_NOTE( "멤버가 explicit 생성자를 가지고 있으면 문제가 생긴다." );
+
+				LF();
+
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				struct S
+				{
+					S() : a( 0 ), b( 0 ) {}
+					explicit S( int _a, int _b ) : a( _a ), b( _b ) {}
+					// 이 위의 explicit 가 붙으면 initialize-list 적용 안됨
+
+					int a;
+					int b;
+				};
+
+				struct SS
+				{
+					//SS() : a( 0,  0 ) {}
+					//explicit SS( S _a ) : a( _a ) {}
+
+					S a;
+				};
+
+				SS s1{};
+				//SS s2{ { 1, 2 } }; // <= Error
 				OUTPUT_SOURCE_END;
 			}
 
