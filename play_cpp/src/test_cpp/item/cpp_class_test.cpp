@@ -179,12 +179,7 @@ namespace cpp_class_test
 					int a;
 					int b;
 				};
-				OUTPUT_SOURCE_END;
 
-
-				LF();
-
-				OUTPUT_SOURCE_BEGIN;
 				C c{ 1, 2 };
 				OUTPUT_SOURCE_END;
 			}
@@ -205,12 +200,7 @@ namespace cpp_class_test
 					int a;
 					int b;
 				};
-				OUTPUT_SOURCE_END;
 
-
-				LF();
-
-				OUTPUT_SOURCE_BEGIN;
 				C c{ 1, 2 };
 				OUTPUT_SOURCE_END;
 			}
@@ -231,12 +221,7 @@ namespace cpp_class_test
 					int a;
 					int b;
 				};
-				OUTPUT_SOURCE_END;
 
-
-				LF();
-
-				OUTPUT_SOURCE_BEGIN;
 				C c{ 1, 2 };
 				OUTPUT_SOURCE_END;
 			}
