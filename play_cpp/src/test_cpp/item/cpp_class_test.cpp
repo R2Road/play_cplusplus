@@ -293,6 +293,63 @@ namespace cpp_class_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Braces_3::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Braces 3";
+		};
+	}
+	r2tm::DoFunctionT Braces_3::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_NOTE( "멤버가 explicit 생성자를 가지고 있으면 문제가 생긴다." );
+			OUTPUT_NOTE( "그러면 멤버에" );
+			OUTPUT_NOTE( "std::initialize_list 를 인자로 받는 생성자를 추가하면 되는게 아닐까." );
+
+			LS();
+
+			{
+				OUTPUT_SOURCE_READY;
+				OUTPUT_SOURCE_BEGIN;
+				struct S
+				{
+					S() : a( 0 ), b( 0 ) {}
+					S( const std::initializer_list<int>& l ) :
+						  a( *( l.begin() ) )
+						, b( *( l.begin() + 1 ) )
+					{}
+					explicit S( int _a, int _b ) : a( _a ), b( _b ) {}
+
+					int a;
+					int b;
+				};
+
+				struct SS
+				{
+					S s;
+				};
+
+				SS ss{ { 1, 2 } }; // <= Working
+				OUTPUT_SOURCE_END;
+
+				LF();
+
+				OUTPUT_VALUE( ss.s.a );
+				OUTPUT_VALUE( ss.s.b );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
 
 
