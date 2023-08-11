@@ -260,7 +260,7 @@ namespace cpp_class_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "멤버가 explicit 생성자를 가지고 있으면 문제가 생긴다." );
+				OUTPUT_NOTE( "멤버가 explicit 생성자를 가지고 있으면 문제가 생긴다.	" );
 
 				LF();
 
@@ -393,33 +393,27 @@ namespace cpp_class_test
 		{
 			LS();
 
+			OUTPUT_SUBJECT( "암시적 타입 변환" );
+
+			LS();
+
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			class TestClass1
 			{
-				class TestClass1
-				{
-				public:
-					operator int() const { return 100; }
-				};
+			public:
+				operator int() const { return 100; }
+			};
+			OUTPUT_SOURCE_END;
 
-				{
-					std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
+			LS();
 
-					std::cout << r2tm::tab2 << "class TestClass1" << r2tm::linefeed;
-					std::cout << r2tm::tab2 << "{" << r2tm::linefeed;
-					std::cout << r2tm::tab2 << "public:" << r2tm::linefeed;
-					std::cout << r2tm::tab3 << "operator int() const { return 100; }" << r2tm::linefeed;
-					std::cout << r2tm::tab2 << "}" << r2tm::linefeed2;
-				}
+			{
+				DECLARATION_MAIN( TestClass1 tc1 );
+				DECLARATION_MAIN( int i = tc1 );
 
-				LS();
+				LF();
 
-				{
-					DECLARATION_MAIN( TestClass1 tc1 );
-					DECLARATION_MAIN( int i = tc1 );
-
-					LF();
-
-					OUTPUT_VALUE( i );
-				}
+				OUTPUT_VALUE( i );
 			}
 
 			LS();
