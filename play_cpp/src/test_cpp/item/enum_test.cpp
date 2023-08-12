@@ -22,6 +22,10 @@ namespace enum_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "Classic" );
+
+				LF();
+
 				DECLARATION_MAIN( enum eTestOldEnum {} );
 
 				LF();
@@ -33,6 +37,10 @@ namespace enum_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "enum class" );
+
+				LF();
+
 				DECLARATION_MAIN( enum class eTestNewEnum {} );
 
 				LF();
@@ -44,6 +52,10 @@ namespace enum_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "enum class + type" );
+
+				LF();
+
 				DECLARATION_MAIN( enum class eTestNewEnum : char {} );
 
 				LF();
