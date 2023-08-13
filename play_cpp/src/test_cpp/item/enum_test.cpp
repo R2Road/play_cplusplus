@@ -85,12 +85,24 @@ namespace enum_test
 		{
 			LS();
 
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			enum class eTestEnum : uint32_t
 			{
-				DECLARATION_MAIN( enum class eTestEnum : uint32_t { one = 1 } );
+				one = 1
+			};
+			OUTPUT_SOURCE_END;
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "enum 의 범위에 없는 값을 강제 변환" );
 
 				LF();
 
 				DECLARATION_MAIN( const eTestEnum te_1 = static_cast<eTestEnum>( 0 ) );
+
+				LF();
+
 				DECLARATION_MAIN( eTestEnum te_2 );
 				PROCESS_MAIN( te_2 = te_1 );
 			}
@@ -98,7 +110,7 @@ namespace enum_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ enum 의 범위에 없는 값을 강제 변환해서 넣어도 어떤 문제도 발생하지 않는다." << r2tm::linefeed;
+				OUTPUT_NOTE( "enum 범위에 없는 값을 강제 변환해서 넣어도 어떤 문제도 발생하지 않는다." );
 			}
 
 			LS();
