@@ -21,6 +21,10 @@ namespace enum_test
 		{
 			LS();
 
+			OUTPUT_NOTE( "enum의 기본형은 int" );
+
+			LS();
+
 			{
 				OUTPUT_SUBJECT( "Classic" );
 
@@ -31,6 +35,9 @@ namespace enum_test
 				LF();
 
 				OUTPUT_VALUE( std::is_enum<eTestOldEnum>::value );
+
+				LF();
+
 				OUTPUT_VALUE( typeid( std::underlying_type<eTestOldEnum>::type ).name() );
 			}
 
@@ -46,6 +53,9 @@ namespace enum_test
 				LF();
 
 				OUTPUT_VALUE( std::is_enum<eTestNewEnum>::value );
+
+				LF();
+
 				OUTPUT_VALUE( typeid( std::underlying_type<eTestNewEnum>::type ).name() );
 			}
 
@@ -61,6 +71,9 @@ namespace enum_test
 				LF();
 
 				OUTPUT_VALUE( std::is_enum<eTestNewEnum>::value );
+
+				LF();
+
 				OUTPUT_VALUE( typeid( std::underlying_type<eTestNewEnum>::type ).name() );
 			}
 
