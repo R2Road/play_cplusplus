@@ -1,4 +1,5 @@
 #include "enum_test.h"
+#include "enum_test_convert_with_template.hpp"
 
 #include <typeinfo> // typeid
 #include <type_traits>
@@ -131,16 +132,8 @@ namespace enum_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
-}
 
 
-namespace enum_test
-{
-	template<typename EnumT>
-	constexpr auto Enum2Value( EnumT e )
-	{
-		return static_cast<std::underlying_type_t<EnumT>>( e );
-	}
 
 	r2tm::TitleFunctionT ConvertWithTemplate::GetTitleFunction() const
 	{
@@ -155,54 +148,48 @@ namespace enum_test
 		{
 			LS();
 
-			std::cout << r2tm::tab << "template<typename EnumT>" << r2tm::linefeed;
-			std::cout << r2tm::tab << "constexpr auto Enum2Value( EnumT e )" << r2tm::linefeed;
-			std::cout << r2tm::tab << "{" << r2tm::linefeed;
-			std::cout << r2tm::tab2 << "return static_cast<std::underlying_type_t<EnumT>>( e );" << r2tm::linefeed;
-			std::cout << r2tm::tab << "}" << r2tm::linefeed;
+			OUTPUT_FILE( "src/test_cpp/item/enum_test_convert_with_template.hpp" );
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "enum eOldEnum" << r2tm::linefeed;
-				std::cout << r2tm::tab << "{" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "one" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << ", two" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << ", three" << r2tm::linefeed;
-				std::cout << r2tm::tab << "}" << r2tm::linefeed << r2tm::linefeed;
-
+				OUTPUT_SOURCE_READY_N_BEGIN;
 				enum eOldEnum
 				{
-					one
+					  one
 					, two
 					, three
 				};
+				OUTPUT_SOURCE_END;
 
-				std::cout << r2tm::tab << "+ " << "Enum2Value( eOldEnum::three )" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "- " << Enum2Value( eOldEnum::three ) << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "- " << typeid( Enum2Value( eOldEnum::three ) ).name() << r2tm::linefeed;
+				LF();
+
+				EXPECT_EQ( 2, enum_test_convert_with_template::Enum2Value( eOldEnum::three ) );
+
+				LF();
+
+				OUTPUT_VALUE( typeid( enum_test_convert_with_template::Enum2Value( eOldEnum::three ) ).name() );
 			}
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "enum class eNewEnum : short" << r2tm::linefeed;
-				std::cout << r2tm::tab << "{" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "hana" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << ", dul" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << ", set" << r2tm::linefeed;
-				std::cout << r2tm::tab << "}" << r2tm::linefeed << r2tm::linefeed;
-
+				OUTPUT_SOURCE_READY_N_BEGIN;
 				enum class eNewEnum : short
 				{
-					hana
+					  hana
 					, dul
 					, set
 				};
+				OUTPUT_SOURCE_END;
 
-				std::cout << r2tm::tab << "+ " << "Enum2Value( eNewEnum::dul )" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "- " << Enum2Value( eNewEnum::dul ) << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "- " << typeid( Enum2Value( eNewEnum::dul ) ).name() << r2tm::linefeed;
+				LF();
+
+				EXPECT_EQ( 1, enum_test_convert_with_template::Enum2Value( eNewEnum::dul ) );
+
+				LF();
+
+				OUTPUT_VALUE( typeid( enum_test_convert_with_template::Enum2Value( eNewEnum::dul ) ).name() );
 			}
 
 			LS();

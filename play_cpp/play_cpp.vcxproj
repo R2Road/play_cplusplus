@@ -266,6 +266,7 @@
     <ClInclude Include="src\test_cpp\item\cpp_lambda_test__helper__size_3.hpp" />
     <ClInclude Include="src\test_cpp\item\cpp_namespace_test.h" />
     <ClInclude Include="src\test_cpp\item\enum_test.h" />
+    <ClInclude Include="src\test_cpp\item\enum_test_convert_with_template.hpp" />
     <ClInclude Include="src\test_cpp\item\korean_test.h" />
     <ClInclude Include="src\test_cpp\item\cpp_lambda_test.h" />
     <ClInclude Include="src\test_cpp\item\locale_test.h" />
