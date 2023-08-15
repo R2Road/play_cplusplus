@@ -150,6 +150,10 @@ namespace enum_test
 
 			OUTPUT_FILE( "src/test_cpp/item/enum_test_convert_with_template.hpp" );
 
+			LF();
+
+			DECLARATION_MAIN( using namespace enum_test_convert_with_template );
+
 			LS();
 
 			{
@@ -164,11 +168,11 @@ namespace enum_test
 
 				LF();
 
-				EXPECT_EQ( 2, enum_test_convert_with_template::Enum2Value( eOldEnum::three ) );
+				EXPECT_EQ( 2, Enum2Value( eOldEnum::three ) );
 
 				LF();
 
-				OUTPUT_VALUE( typeid( enum_test_convert_with_template::Enum2Value( eOldEnum::three ) ).name() );
+				OUTPUT_VALUE( typeid( Enum2Value( eOldEnum::three ) ).name() );
 			}
 
 			LS();
@@ -185,11 +189,11 @@ namespace enum_test
 
 				LF();
 
-				EXPECT_EQ( 1, enum_test_convert_with_template::Enum2Value( eNewEnum::dul ) );
+				EXPECT_EQ( 1, Enum2Value( eNewEnum::dul ) );
 
 				LF();
 
-				OUTPUT_VALUE( typeid( enum_test_convert_with_template::Enum2Value( eNewEnum::dul ) ).name() );
+				OUTPUT_VALUE( typeid( Enum2Value( eNewEnum::dul ) ).name() );
 			}
 
 			LS();
