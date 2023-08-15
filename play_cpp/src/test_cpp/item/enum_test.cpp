@@ -202,15 +202,10 @@ namespace enum_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
-}
 
 
 
-namespace enum_test
-{
-#define MAKE_ENUM( enum_name, ... ) enum enum_name { __VA_ARGS__ };
-
-	MAKE_ENUM( eMakeEnumTest, One, Two, Three, Max4MakeEnumTest );
+#include "enum_test_make_enum_with_macro.hpp"
 
 	r2tm::TitleFunctionT MakeEnumWithMacro::GetTitleFunction() const
 	{
@@ -225,26 +220,29 @@ namespace enum_test
 		{
 			LS();
 
-			std::cout << r2tm::tab << "+ Ref" << r2tm::linefeed2;
-			std::cout << r2tm::tab2 << "https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings" << r2tm::linefeed;
+			OUTPUT_SUBJECT( "REF" );
+			OUTPUT_COMMENT(
+				"https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings"
+			);
+
+			LS();
+			
+			OUTPUT_FILE( "src/test_cpp/item/enum_test_make_enum_with_macro.hpp" );
+
+			LS();
+
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			MAKE_ENUM( eMakeEnumTest, One, Two, Three, Max );
+			OUTPUT_SOURCE_END;
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "#define MAKE_ENUM( enum_name, ... ) enum enum_name { __VA_ARGS__, __COUNT };" << r2tm::linefeed2;
+				OUTPUT_STRING( "+ Output" );
 
-				std::cout << r2tm::tab << "MAKE_ENUM( eMakeEnumTest, One, Two, Three, Max4MakeEnumTest );" << r2tm::linefeed;
-			}
+				LF();
 
-			LS();
-
-			{
-				std::cout << r2tm::tab << "+ " << "Output" << r2tm::linefeed2;
-
-				for( int i = 0; i <= eMakeEnumTest::Max4MakeEnumTest; ++i )
-				{
-					printf( "%d\n", i );
-				}
+				PROCESS_MAIN( for( int i = 0; eMakeEnumTest::Max >= i; ++i ) { printf( "%d\n", i ); } );
 			}
 
 			LS();

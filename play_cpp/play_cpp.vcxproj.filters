@@ -1184,6 +1184,9 @@
     <ClInclude Include="src\test_cpp\item\enum_test_convert_with_template.hpp">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
+    <ClInclude Include="src\test_cpp\item\enum_test_make_enum_with_macro.hpp">
+      <Filter>test_cpp\item</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\test_cpp\item\enum_test_xmacro_2.def">
