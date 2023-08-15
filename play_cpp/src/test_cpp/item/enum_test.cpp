@@ -1,5 +1,4 @@
 #include "enum_test.h"
-#include "enum_test_convert_with_template.hpp"
 
 #include <typeinfo> // typeid
 #include <type_traits>
@@ -134,6 +133,8 @@ namespace enum_test
 	}
 
 
+
+#include "enum_test_convert_with_template.hpp"
 
 	r2tm::TitleFunctionT ConvertWithTemplate::GetTitleFunction() const
 	{
