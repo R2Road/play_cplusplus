@@ -340,12 +340,8 @@ namespace enum_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ " << "Output" << r2tm::linefeed2;
-
-				for( int i = 0; i <= enum_test_xmacro_2::eTestEnum4XM2::XM2_Max; ++i )
-				{
-					printf( "%d : %s\n", i, enum_test_xmacro_2::STR_TestEnum4XM2[i] );
-				}
+				using namespace enum_test_xmacro_2;
+				PROCESS_MAIN( for( int i = 0; i <= eTestEnum4XM2::XM2_Max; ++i ) { printf( "%d : %s\n", i, STR_TestEnum4XM2[i] ); } );
 			}
 
 			LS();
