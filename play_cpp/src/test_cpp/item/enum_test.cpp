@@ -341,7 +341,7 @@ namespace enum_test
 
 			{
 				using namespace enum_test_xmacro_2;
-				PROCESS_MAIN( for( int i = 0; i <= eTestEnum4XM2::XM2_Max; ++i ) { printf( "%d : %s\n", i, STR_TestEnum4XM2[i] ); } );
+				PROCESS_MAIN( for( int i = 0; i <= eXM2::XM2_Max; ++i ) { printf( "%d : %s\n", i, STR_XM2[i] ); } );
 			}
 
 			LS();
