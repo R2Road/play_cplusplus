@@ -346,6 +346,12 @@ namespace enum_test
 
 			LS();
 
+			{
+				OUTPUT_NOTE( "데이터 파일을 분리해서 include 로 처리한다." );
+			}
+
+			LS();
+
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
