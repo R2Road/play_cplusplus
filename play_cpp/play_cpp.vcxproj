@@ -268,6 +268,7 @@
     <ClInclude Include="src\test_cpp\item\enum_test.h" />
     <ClInclude Include="src\test_cpp\item\enum_test_convert_with_template.hpp" />
     <ClInclude Include="src\test_cpp\item\enum_test_make_enum_with_macro.hpp" />
+    <ClInclude Include="src\test_cpp\item\enum_test_xmacro_1.hpp" />
     <ClInclude Include="src\test_cpp\item\korean_test.h" />
     <ClInclude Include="src\test_cpp\item\cpp_lambda_test.h" />
     <ClInclude Include="src\test_cpp\item\locale_test.h" />

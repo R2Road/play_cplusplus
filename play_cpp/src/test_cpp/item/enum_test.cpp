@@ -250,30 +250,10 @@ namespace enum_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
-}
 
 
 
-namespace enum_test
-{
-#define X_ENUMS				\
-		X( XM1_First ),		\
-		X( XM1_Second ),	\
-		X( XM1_Third ),		\
-		X( XM1_Max ),
-
-	enum eTestEnum4XM1
-	{
-#define X( e ) e
-		X_ENUMS
-#undef X
-	};
-
-	const char* STR_TestEnum4XM1[] = {
-#define X( e ) #e
-		X_ENUMS
-#undef X
-	};
+#include "enum_test_xmacro_1.hpp"
 
 	r2tm::TitleFunctionT XMacro_1::GetTitleFunction() const
 	{
@@ -288,46 +268,32 @@ namespace enum_test
 		{
 			LS();
 
-			std::cout << r2tm::tab << "+ Ref" << r2tm::linefeed2;
-			std::cout << r2tm::tab2 << "https://en.wikipedia.org/wiki/X_Macro" << r2tm::linefeed;
-			std::cout << r2tm::tab2 << "https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings" << r2tm::linefeed;
+			OUTPUT_SUBJECT( "REF" );
+			OUTPUT_COMMENT(
+				"https://en.wikipedia.org/wiki/X_Macro"
+			);
+			OUTPUT_COMMENT(
+				"https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings"
+			);
+
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "#define X_ENUMS" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "X( XM1_First )," << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "X( XM1_Second )," << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "X( XM1_Third )," << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "X( XM1_Max )," << r2tm::linefeed;
-
-				LF();
-
-				std::cout << r2tm::tab << "enum eTestEnum4XM1" << r2tm::linefeed;
-				std::cout << r2tm::tab << "{" << r2tm::linefeed;
-				std::cout << r2tm::tab << "#define X( e ) e" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "X_ENUMS" << r2tm::linefeed;
-				std::cout << r2tm::tab << "#undef X" << r2tm::linefeed;
-				std::cout << r2tm::tab << "};" << r2tm::linefeed;
-
-				LF();
-
-				std::cout << r2tm::tab << "const char* STR_TestEnum4XM1[] = {" << r2tm::linefeed;
-				std::cout << r2tm::tab << "#define X( e ) #e" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "X_ENUMS" << r2tm::linefeed;
-				std::cout << r2tm::tab << "#undef X" << r2tm::linefeed;
-				std::cout << r2tm::tab << "};" << r2tm::linefeed;
+				OUTPUT_FILE( "src/test_cpp/item/enum_test_xmacro_1.hpp" );
 			}
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ " << "Output" << r2tm::linefeed2;
+				using namespace enum_test_xmacro_1;
+				PROCESS_MAIN( for( int i = 0; i <= eTestEnum4XM1::XM1_Max; ++i ) { printf( "%d : %s\n", i, STR_TestEnum4XM1[i] ); } );
+			}
 
-				for( int i = 0; i <= eTestEnum4XM1::XM1_Max; ++i )
-				{
-					printf( "%d : %s\n", i, STR_TestEnum4XM1[i] );
-				}
+			LS();
+
+			{
+				OUTPUT_NOTE( "#define X 와 #undef X 를 활용 다양한 코드를 생성해낸다." );
 			}
 
 			LS();
