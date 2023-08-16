@@ -7,14 +7,14 @@ namespace enum_test_xmacro_1
 		X( XM1_Third ),		\
 		X( XM1_Max ),
 
-	enum eTestEnum4XM1
+	enum eXM1
 	{
 #define X( e ) e
 		X_ENUMS
 #undef X
 	};
 
-	const char* STR_TestEnum4XM1[] = {
+	const char* STR_XM1[] = {
 #define X( e ) #e
 		X_ENUMS
 #undef X
