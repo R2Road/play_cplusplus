@@ -301,24 +301,10 @@ namespace enum_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
-}
 
 
 
-namespace enum_test
-{
-	enum eTestEnum4XM2
-	{
-#define X( e ) e,
-		#include "enum_test_xmacro_2.def"
-#undef X
-	};
-
-	const char* STR_TestEnum4XM2[] = {
-#define X( e ) #e,
-		#include "enum_test_xmacro_2.def"
-#undef X
-	};
+#include "enum_test_xmacro_2.hpp"
 
 	r2tm::TitleFunctionT XMacro_2::GetTitleFunction() const
 	{
@@ -333,9 +319,13 @@ namespace enum_test
 		{
 			LS();
 
-			std::cout << r2tm::tab << "+ Ref" << r2tm::linefeed2;
-			std::cout << r2tm::tab2 << "https://en.wikipedia.org/wiki/X_Macro" << r2tm::linefeed;
-			std::cout << r2tm::tab2 << "https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings" << r2tm::linefeed;
+			OUTPUT_SUBJECT( "REF" );
+			OUTPUT_COMMENT(
+				"https://en.wikipedia.org/wiki/X_Macro"
+			);
+			OUTPUT_COMMENT(
+				"https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings"
+			);
 
 			LS();
 
@@ -344,20 +334,7 @@ namespace enum_test
 
 				LF();
 
-				std::cout << r2tm::tab << "enum eTestEnum4XM2" << r2tm::linefeed;
-				std::cout << r2tm::tab << "{" << r2tm::linefeed;
-				std::cout << r2tm::tab << "#define X( e ) e" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "#include \"enum_test_xmacro_2.def\"" << r2tm::linefeed;
-				std::cout << r2tm::tab << "#undef X" << r2tm::linefeed;
-				std::cout << r2tm::tab << "};" << r2tm::linefeed;
-
-				LF();
-
-				std::cout << r2tm::tab << "const char* STR_TestEnum4MX[] = {" << r2tm::linefeed;
-				std::cout << r2tm::tab << "#define X( e ) #e" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "#include \"enum_test_xmacro_2.def\"" << r2tm::linefeed;
-				std::cout << r2tm::tab << "#undef X" << r2tm::linefeed;
-				std::cout << r2tm::tab << "};" << r2tm::linefeed;
+				OUTPUT_FILE( "src/test_cpp/item/enum_test_xmacro_2.hpp" );
 			}
 
 			LS();
@@ -365,9 +342,9 @@ namespace enum_test
 			{
 				std::cout << r2tm::tab << "+ " << "Output" << r2tm::linefeed2;
 
-				for( int i = 0; i <= eTestEnum4XM2::XM2_Max; ++i )
+				for( int i = 0; i <= enum_test_xmacro_2::eTestEnum4XM2::XM2_Max; ++i )
 				{
-					printf( "%d : %s\n", i, STR_TestEnum4XM2[i] );
+					printf( "%d : %s\n", i, enum_test_xmacro_2::STR_TestEnum4XM2[i] );
 				}
 			}
 
