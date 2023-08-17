@@ -57,6 +57,13 @@ namespace std_thread_test
 
 				OUTPUT_VALUE( t.get_id() );
 				OUTPUT_VALUE( ( t.joinable() ? "O" : "X" ) );
+
+				LF();
+
+				OUTPUT_CODE( t.join() );
+				OUTPUT_NOTE( "빈 std::thread에 join 함수를 호출하면..." );
+				OUTPUT_COMMENT( "예외가 발생한다." );
+				OUTPUT_COMMENT( "터지지는 안는다." );
 			}
 
 			LS();
