@@ -23,6 +23,7 @@ r2tm::WriteFunctionT MazeGenerationMenu::GetWriteFunction() const
 	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', algorithm_maze_test::Basic() );
+		ret->AddItem( '2', algorithm_maze_test::Test() );
 
 
 		ret->AddLineFeed();
