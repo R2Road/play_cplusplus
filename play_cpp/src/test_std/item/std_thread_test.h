@@ -4,6 +4,13 @@
 
 namespace std_thread_test
 {
+	class Declaration_1 : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
 	class Basic : public r2tm::iItem
 	{
 	public:

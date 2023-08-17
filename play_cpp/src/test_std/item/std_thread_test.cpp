@@ -33,14 +33,14 @@ namespace std_thread_test
 		}
 	}
 
-	r2tm::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Declaration_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Basic";
+			return "Declaration 1";
 		};
 	}
-	r2tm::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Declaration_1::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -61,11 +61,33 @@ namespace std_thread_test
 				LF();
 
 				OUTPUT_CODE( t.join() );
+			}
+
+			LS();
+
+			{
 				OUTPUT_NOTE( "빈 std::thread에 join 함수를 호출하면..." );
 				OUTPUT_COMMENT( "예외가 발생한다." );
 				OUTPUT_COMMENT( "터지지는 안는다." );
 			}
 
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+	r2tm::TitleFunctionT Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Basic";
+		};
+	}
+	r2tm::DoFunctionT Basic::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
 			LS();
 
 			{
