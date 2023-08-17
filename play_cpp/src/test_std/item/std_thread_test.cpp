@@ -47,12 +47,16 @@ namespace std_thread_test
 			LS();
 
 			{
-				std::thread t1;
+				OUTPUT_SUBJECT( "기본 생성자" );
 
-				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "std::thread t1;" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- ID : " << t1.get_id() << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2tm::linefeed;
+				LF();
+
+				DECLARATION_MAIN( std::thread t );
+
+				LF();
+
+				OUTPUT_VALUE( t.get_id() );
+				OUTPUT_VALUE( ( t.joinable() ? "O" : "X" ) );
 			}
 
 			LS();
