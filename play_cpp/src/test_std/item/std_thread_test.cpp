@@ -13,26 +13,6 @@
 
 namespace std_thread_test
 {
-	void thread_func_1()
-	{
-		std::this_thread::sleep_for( std::chrono::milliseconds( 10 ) );
-
-		for( auto i = 0; 8 > i; ++i )
-		{
-			std::cout << "thread_func_1 : " << i << r2tm::linefeed;
-		}
-	}
-
-	void thread_func_2()
-	{
-		std::this_thread::sleep_for( std::chrono::milliseconds( 10 ) );
-
-		for( auto i = 0; 8 > i; ++i )
-		{
-			std::cout << "thread_func_2 : " << i << r2tm::linefeed;
-		}
-	}
-
 	r2tm::TitleFunctionT Declaration_1::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -182,6 +162,26 @@ namespace std_thread_test
 
 namespace std_thread_test
 {
+	void thread_func_1()
+	{
+		std::this_thread::sleep_for( std::chrono::milliseconds( 10 ) );
+
+		for( auto i = 0; 8 > i; ++i )
+		{
+			std::cout << "thread_func_1 : " << i << r2tm::linefeed;
+		}
+	}
+
+	void thread_func_2()
+	{
+		std::this_thread::sleep_for( std::chrono::milliseconds( 10 ) );
+
+		for( auto i = 0; 8 > i; ++i )
+		{
+			std::cout << "thread_func_2 : " << i << r2tm::linefeed;
+		}
+	}
+
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
