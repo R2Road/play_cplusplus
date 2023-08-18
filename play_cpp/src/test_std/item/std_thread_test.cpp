@@ -82,73 +82,67 @@ namespace std_thread_test
 			LS();
 
 			{
-				std::thread test_thread( empty_thread_func, 3 );
-				test_thread.join();
+				OUTPUT_SUBJECT( "Declaration With Function" );
 
-				std::cout << r2tm::tab << "+ Declaration With Function" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "void empty_thread_func( int ) {}" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "std::thread test_thread( empty_thread_func, 3 );" << r2tm::linefeed2;
+				LF();
+
+				DECLARATION_MAIN( std::thread test_thread( empty_thread_func, 3 ) );
+				PROCESS_MAIN( test_thread.join() );
 			}
 
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "Declaration With Function Object" );
+
+				LF();
+
+				OUTPUT_SOURCE_READY_N_BEGIN;
 				class ThreadTestClass
 				{
 				public:
 					ThreadTestClass( int ) {}
 					void operator()() const {}
 				};
+				OUTPUT_SOURCE_END;
 
-				std::thread test_thread{ ThreadTestClass( 3 ) };
-				test_thread.join();
+				LF();
 
-				std::cout << r2tm::tab << "+ Declaration With Function Object" << r2tm::linefeed2;
-
-				std::cout << r2tm::tab2 << "class ThreadTestClass" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "{" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "public:" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "ThreadTestClass( int ) {}" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "void operator()() const {}" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "}" << r2tm::linefeed2;
-
-				std::cout << r2tm::tab2 << "std::thread test_thread{ ThreadTestClass( 3 ) };" << r2tm::linefeed2;
+				DECLARATION_MAIN( std::thread test_thread{ ThreadTestClass( 3 ) } );
+				PROCESS_MAIN( test_thread.join() );
 			}
 
 			LS();
 
 			{
-				std::thread test_thread( []( int, int ) {}, 3, 4 );
-				test_thread.join();
+				OUTPUT_SUBJECT( "Declaration With Lambda" );
 
-				std::cout << r2tm::tab << "+ Declaration With Lambda" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "std::thread test_thread( []() {}, 3, 4 );" << r2tm::linefeed2;
+				LF();
+
+				DECLARATION_MAIN( std::thread test_thread( []( int, int ) {}, 3, 4 ) );
+				PROCESS_MAIN( test_thread.join() );
 			}
 
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "Declaration With Class Method" );
+
+				LF();
+
+				OUTPUT_SOURCE_READY_N_BEGIN;
 				class ThreadTestClass
 				{
 				public:
 					void process() const {}
 				};
+				OUTPUT_SOURCE_END;
 
-				ThreadTestClass thread_test_class;
+				LF();
 
-				std::thread test_thread( &ThreadTestClass::process, &thread_test_class );
-				test_thread.join();
-
-				std::cout << r2tm::tab << "+ Declaration With Class Method" << r2tm::linefeed2;
-
-				std::cout << r2tm::tab2 << "class ThreadTestClass" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "{" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "public:" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "void process() const {}" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "}" << r2tm::linefeed2;
-
-				std::cout << r2tm::tab2 << "ThreadTestClass thread_test_class;" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "std::thread test_thread( &ThreadTestClass::process, &thread_test_class );" << r2tm::linefeed2;
+				DECLARATION_MAIN( ThreadTestClass thread_test_class );
+				DECLARATION_MAIN( std::thread test_thread( &ThreadTestClass::process, &thread_test_class ) );
+				PROCESS_MAIN( test_thread.join() );
 			}
 
 			LS();
