@@ -131,14 +131,14 @@ namespace std_thread_test
 {
 	void empty_thread_func( int ) {}
 
-	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
+	r2tm::TitleFunctionT Declaration_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Declaration";
+			return "Declaration 2";
 		};
 	}
-	r2tm::DoFunctionT Declaration::GetDoFunction() const
+	r2tm::DoFunctionT Declaration_2::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

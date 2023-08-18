@@ -24,7 +24,7 @@ r2tm::WriteFunctionT STDThreadMenu::GetWriteFunction() const
 	{
 		ret->AddItem( '1', std_thread_test::Declaration_1() );
 		ret->AddItem( '2', std_thread_test::Basic() );
-		ret->AddItem( '3', std_thread_test::Declaration() );
+		ret->AddItem( '3', std_thread_test::Declaration_2() );
 		ret->AddItem( '4', std_thread_test::CopyAssaignment() );
 		ret->AddItem( '5', std_thread_test::WaitProcess_SleepFor() );
 		ret->AddItem( '6', std_thread_test::WaitProcess_Yield() );
