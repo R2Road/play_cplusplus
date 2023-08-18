@@ -66,7 +66,8 @@ namespace std_thread_test
 
 namespace std_thread_test
 {
-	void empty_thread_func( int ) {}
+	void empty_thread_func_1() {}
+	void empty_thread_func_2( int ) {}
 
 	r2tm::TitleFunctionT Declaration_2::GetTitleFunction() const
 	{
@@ -82,18 +83,29 @@ namespace std_thread_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Declaration With Function" );
+				OUTPUT_SUBJECT( "Function" );
 
 				LF();
 
-				DECLARATION_MAIN( std::thread test_thread( empty_thread_func, 3 ) );
+				DECLARATION_MAIN( std::thread test_thread( empty_thread_func_1 ) );
 				PROCESS_MAIN( test_thread.join() );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Declaration With Function Object" );
+				OUTPUT_SUBJECT( "Function" );
+
+				LF();
+
+				DECLARATION_MAIN( std::thread test_thread( empty_thread_func_2, 3 ) );
+				PROCESS_MAIN( test_thread.join() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Function Object" );
 
 				LF();
 
@@ -115,7 +127,7 @@ namespace std_thread_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Declaration With Lambda" );
+				OUTPUT_SUBJECT( "Lambda" );
 
 				LF();
 
@@ -126,7 +138,7 @@ namespace std_thread_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Declaration With Class Method" );
+				OUTPUT_SUBJECT( "Class + Method" );
 
 				LF();
 
