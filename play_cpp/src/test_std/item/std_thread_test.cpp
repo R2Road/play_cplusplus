@@ -80,49 +80,6 @@ namespace std_thread_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
-
-	r2tm::TitleFunctionT Basic::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Basic";
-		};
-	}
-	r2tm::DoFunctionT Basic::GetDoFunction() const
-	{
-		return []()->r2tm::eDoLeaveAction
-		{
-			LS();
-
-			{
-				std::thread t1( thread_func_1 );
-				std::thread t2( thread_func_2 );
-
-				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "std::thread t1( thread_func_1 );" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- ID : " << t1.get_id() << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "std::thread t2( thread_func_2 );" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- ID : " << t2.get_id() << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- Joinable : " << ( t2.joinable() ? "O" : "X" ) << r2tm::linefeed2;
-
-				LF();
-
-				std::cout << r2tm::tab << "+ Wait 4 Thread End" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "t1.join();" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "t2.join();" << r2tm::linefeed;
-
-				LS();
-
-				t1.join();
-				t2.join();
-			}
-
-			LS();
-
-			return r2tm::eDoLeaveAction::Pause;
-		};
-	}
 }
 
 
@@ -212,6 +169,54 @@ namespace std_thread_test
 
 				std::cout << r2tm::tab2 << "ThreadTestClass thread_test_class;" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "std::thread test_thread( &ThreadTestClass::process, &thread_test_class );" << r2tm::linefeed2;
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+}
+
+
+
+namespace std_thread_test
+{
+	r2tm::TitleFunctionT Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Basic";
+		};
+	}
+	r2tm::DoFunctionT Basic::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				std::thread t1( thread_func_1 );
+				std::thread t2( thread_func_2 );
+
+				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
+				std::cout << r2tm::tab2 << "std::thread t1( thread_func_1 );" << r2tm::linefeed;
+				std::cout << r2tm::tab3 << "- ID : " << t1.get_id() << r2tm::linefeed;
+				std::cout << r2tm::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2tm::linefeed2;
+				std::cout << r2tm::tab2 << "std::thread t2( thread_func_2 );" << r2tm::linefeed;
+				std::cout << r2tm::tab3 << "- ID : " << t2.get_id() << r2tm::linefeed;
+				std::cout << r2tm::tab3 << "- Joinable : " << ( t2.joinable() ? "O" : "X" ) << r2tm::linefeed2;
+
+				LF();
+
+				std::cout << r2tm::tab << "+ Wait 4 Thread End" << r2tm::linefeed2;
+				std::cout << r2tm::tab2 << "t1.join();" << r2tm::linefeed;
+				std::cout << r2tm::tab2 << "t2.join();" << r2tm::linefeed;
+
+				LS();
+
+				t1.join();
+				t2.join();
 			}
 
 			LS();
