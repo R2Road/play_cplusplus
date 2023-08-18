@@ -46,26 +46,30 @@ namespace std_thread_test
 		{
 			LS();
 
+			OUTPUT_SUBJECT( "기본 생성자" );
+
+			LS();
+
+			DECLARATION_MAIN( std::thread t );
+
+			LS();
+
 			{
-				OUTPUT_SUBJECT( "기본 생성자" );
-
-				LF();
-
-				DECLARATION_MAIN( std::thread t );
-
-				LF();
-
+				EXPECT_EQ( std::thread::id(), t.get_id() );
 				OUTPUT_VALUE( t.get_id() );
-				OUTPUT_VALUE( ( t.joinable() ? "O" : "X" ) );
 
 				LF();
 
-				OUTPUT_CODE( t.join() );
+				EXPECT_FALSE( t.joinable() );
 			}
 
 			LS();
 
 			{
+				OUTPUT_CODE( t.join() );
+
+				LF();
+
 				OUTPUT_NOTE( "빈 std::thread에 join 함수를 호출하면..." );
 				OUTPUT_COMMENT( "예외가 발생한다." );
 				OUTPUT_COMMENT( "터지지는 안는다." );
