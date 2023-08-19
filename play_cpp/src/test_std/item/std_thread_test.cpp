@@ -87,8 +87,8 @@ namespace std_thread_test
 
 				LF();
 
-				DECLARATION_MAIN( std::thread test_thread( empty_thread_func_1 ) );
-				PROCESS_MAIN( test_thread.join() );
+				DECLARATION_MAIN( std::thread t( empty_thread_func_1 ) );
+				PROCESS_MAIN( t.join() );
 			}
 
 			LS();
@@ -98,8 +98,8 @@ namespace std_thread_test
 
 				LF();
 
-				DECLARATION_MAIN( std::thread test_thread( empty_thread_func_2, 3 ) );
-				PROCESS_MAIN( test_thread.join() );
+				DECLARATION_MAIN( std::thread t( empty_thread_func_2, 3 ) );
+				PROCESS_MAIN( t.join() );
 			}
 
 			LS();
@@ -110,18 +110,17 @@ namespace std_thread_test
 				LF();
 
 				OUTPUT_SOURCE_READY_N_BEGIN;
-				class ThreadTestClass
+				struct S
 				{
-				public:
-					ThreadTestClass( int ) {}
+					S( int ) {}
 					void operator()() const {}
 				};
 				OUTPUT_SOURCE_END;
 
 				LF();
 
-				DECLARATION_MAIN( std::thread test_thread{ ThreadTestClass( 3 ) } );
-				PROCESS_MAIN( test_thread.join() );
+				DECLARATION_MAIN( std::thread t{ S( 3 ) } );
+				PROCESS_MAIN( t.join() );
 			}
 
 			LS();
@@ -131,8 +130,8 @@ namespace std_thread_test
 
 				LF();
 
-				DECLARATION_MAIN( std::thread test_thread( []( int, int ) {}, 3, 4 ) );
-				PROCESS_MAIN( test_thread.join() );
+				DECLARATION_MAIN( std::thread t( []( int, int ) {}, 3, 4 ) );
+				PROCESS_MAIN( t.join() );
 			}
 
 			LS();
@@ -143,18 +142,17 @@ namespace std_thread_test
 				LF();
 
 				OUTPUT_SOURCE_READY_N_BEGIN;
-				class ThreadTestClass
+				struct S
 				{
-				public:
 					void process() const {}
 				};
 				OUTPUT_SOURCE_END;
 
 				LF();
 
-				DECLARATION_MAIN( ThreadTestClass thread_test_class );
-				DECLARATION_MAIN( std::thread test_thread( &ThreadTestClass::process, &thread_test_class ) );
-				PROCESS_MAIN( test_thread.join() );
+				DECLARATION_MAIN( S s );
+				DECLARATION_MAIN( std::thread t( &S::process, &s ) );
+				PROCESS_MAIN( t.join() );
 			}
 
 			LS();
