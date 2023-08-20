@@ -115,6 +115,25 @@ namespace std_thread_test
 
 			LS();
 
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Declaration_3::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Declaration 3";
+		};
+	}
+	r2tm::DoFunctionT Declaration_3::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
 			{
 				OUTPUT_SUBJECT( "Function Object" );
 
