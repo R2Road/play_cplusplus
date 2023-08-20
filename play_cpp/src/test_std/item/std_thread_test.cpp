@@ -105,6 +105,17 @@ namespace std_thread_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "Lambda" );
+
+				LF();
+
+				DECLARATION_MAIN( std::thread t( []( int, int ) {}, 3, 4 ) );
+				PROCESS_MAIN( t.join() );
+			}
+
+			LS();
+
+			{
 				OUTPUT_SUBJECT( "Function Object" );
 
 				LF();
@@ -120,17 +131,6 @@ namespace std_thread_test
 				LF();
 
 				DECLARATION_MAIN( std::thread t{ S( 3 ) } );
-				PROCESS_MAIN( t.join() );
-			}
-
-			LS();
-
-			{
-				OUTPUT_SUBJECT( "Lambda" );
-
-				LF();
-
-				DECLARATION_MAIN( std::thread t( []( int, int ) {}, 3, 4 ) );
 				PROCESS_MAIN( t.join() );
 			}
 
