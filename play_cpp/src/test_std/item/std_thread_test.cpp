@@ -78,12 +78,14 @@ namespace std_thread_test
 		{
 			LS();
 
+			using namespace std_thread_test_helper_declaration2;
+
 			{
 				OUTPUT_SUBJECT( "Function" );
 
 				LF();
 
-				DECLARATION_MAIN( std::thread t( std_thread_test_helper_declaration2::empty_func_1 ) );
+				DECLARATION_MAIN( std::thread t( empty_func_1 ) );
 				PROCESS_MAIN( t.join() );
 			}
 
@@ -94,7 +96,7 @@ namespace std_thread_test
 
 				LF();
 
-				DECLARATION_MAIN( std::thread t( std_thread_test_helper_declaration2::empty_func_2, 3 ) );
+				DECLARATION_MAIN( std::thread t( empty_func_2, 3 ) );
 				PROCESS_MAIN( t.join() );
 			}
 
