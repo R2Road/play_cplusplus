@@ -219,28 +219,14 @@ namespace std_thread_test
 		{
 			LS();
 
+			DECLARATION_MAIN( std::thread t1( thread_func_1 ) );
+			DECLARATION_MAIN( std::thread t2( thread_func_2 ) );
+
+			LS();
+
 			{
-				std::thread t1( thread_func_1 );
-				std::thread t2( thread_func_2 );
-
-				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "std::thread t1( thread_func_1 );" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- ID : " << t1.get_id() << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "std::thread t2( thread_func_2 );" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- ID : " << t2.get_id() << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- Joinable : " << ( t2.joinable() ? "O" : "X" ) << r2tm::linefeed2;
-
-				LF();
-
-				std::cout << r2tm::tab << "+ Wait 4 Thread End" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "t1.join();" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "t2.join();" << r2tm::linefeed;
-
-				LS();
-
-				t1.join();
-				t2.join();
+				PROCESS_MAIN( t1.join() );
+				PROCESS_MAIN( t2.join() );
 			}
 
 			LS();
