@@ -78,7 +78,10 @@ namespace std_thread_test
 		{
 			LS();
 
+			OUTPUT_FILE( "src/test_std/item/std_thread_test_helper_declaration2.hpp" );
 			using namespace std_thread_test_helper_declaration2;
+
+			LS();
 
 			{
 				OUTPUT_SUBJECT( "Function" );
