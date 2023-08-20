@@ -60,14 +60,10 @@ namespace std_thread_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
-}
 
 
 
-namespace std_thread_test
-{
-	void empty_thread_func_1() {}
-	void empty_thread_func_2( int ) {}
+#include "std_thread_test_helper_declaration2.hpp"
 
 	r2tm::TitleFunctionT Declaration_2::GetTitleFunction() const
 	{
@@ -87,7 +83,7 @@ namespace std_thread_test
 
 				LF();
 
-				DECLARATION_MAIN( std::thread t( empty_thread_func_1 ) );
+				DECLARATION_MAIN( std::thread t( std_thread_test_helper_declaration2::empty_thread_func_1 ) );
 				PROCESS_MAIN( t.join() );
 			}
 
@@ -98,7 +94,7 @@ namespace std_thread_test
 
 				LF();
 
-				DECLARATION_MAIN( std::thread t( empty_thread_func_2, 3 ) );
+				DECLARATION_MAIN( std::thread t( std_thread_test_helper_declaration2::empty_thread_func_2, 3 ) );
 				PROCESS_MAIN( t.join() );
 			}
 

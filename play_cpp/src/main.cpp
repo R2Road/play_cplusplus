@@ -24,6 +24,8 @@ int main()
 	//
 	r2tm::WindowUtility::Move( 0, 0 );
 
+	r2tm::WindowUtility::QuickEditEnable( false );
+
 	//
 	// Setup
 	//
