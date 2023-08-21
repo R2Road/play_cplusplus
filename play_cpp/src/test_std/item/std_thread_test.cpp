@@ -163,6 +163,10 @@ namespace std_thread_test
 				LF();
 
 				DECLARATION_MAIN( std::thread t{ S( 3 ) } );
+				OUTPUT_VALUE( t.get_id() );
+
+				LF();
+
 				PROCESS_MAIN( t.join() );
 			}
 
@@ -184,6 +188,10 @@ namespace std_thread_test
 
 				DECLARATION_MAIN( S s );
 				DECLARATION_MAIN( std::thread t( &S::process, &s ) );
+				OUTPUT_VALUE( t.get_id() );
+
+				LF();
+
 				PROCESS_MAIN( t.join() );
 			}
 
