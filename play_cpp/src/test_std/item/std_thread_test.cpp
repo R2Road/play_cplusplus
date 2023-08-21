@@ -89,6 +89,10 @@ namespace std_thread_test
 				LF();
 
 				DECLARATION_MAIN( std::thread t( empty_func_1 ) );
+				OUTPUT_VALUE( t.get_id() );
+
+				LF();
+
 				PROCESS_MAIN( t.join() );
 			}
 
@@ -100,6 +104,10 @@ namespace std_thread_test
 				LF();
 
 				DECLARATION_MAIN( std::thread t( empty_func_2, 3 ) );
+				OUTPUT_VALUE( t.get_id() );
+
+				LF();
+
 				PROCESS_MAIN( t.join() );
 			}
 
@@ -111,6 +119,10 @@ namespace std_thread_test
 				LF();
 
 				DECLARATION_MAIN( std::thread t( []( int, int ) {}, 3, 4 ) );
+				OUTPUT_VALUE( t.get_id() );
+
+				LF();
+
 				PROCESS_MAIN( t.join() );
 			}
 
