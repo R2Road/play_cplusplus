@@ -349,27 +349,22 @@ namespace std_thread_test
 		{
 			LS();
 
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			std::thread test_thread( []()
+				{
+					printf( "\t\tstart thread \n" );
+
+					std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );
+
+					printf( "\t\tend thread \n" );
+				}
+			);
+			OUTPUT_SOURCE_END;
+
+			LS();
+
 			{
-				std::cout << r2tm::tab2 << "std::thread test_thread( []()" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "{" << r2tm::linefeed;
-				std::cout << r2tm::tab4 << "printf( \"\\t\\tstart thread \\n\" );" << r2tm::linefeed2;
-				std::cout << r2tm::tab4 << "std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );" << r2tm::linefeed2;
-				std::cout << r2tm::tab4 << "printf( \"\\t\\tend thread \\n\" );" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "}" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << ");" << r2tm::linefeed;
-
-				LF();
-
-				std::thread test_thread( []()
-					{
-						printf( "\t\tstart thread \n" );
-
-						std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );
-
-						printf( "\t\tend thread \n" );
-					}
-				);
-				test_thread.join();
+				PROCESS_MAIN( test_thread.join() );
 			}
 
 			LS();
