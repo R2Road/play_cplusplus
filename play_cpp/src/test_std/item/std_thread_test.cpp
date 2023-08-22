@@ -273,46 +273,54 @@ namespace std_thread_test
 		{
 			LS();
 
+			OUTPUT_SOURCE_READY_N_BEGIN;
 			std::thread t1;
 			std::thread t2(
 				[]( int, int )
 				{
-					std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );
+					std::this_thread::sleep_for(
+						std::chrono::milliseconds( 100 )
+					);
 				}, 3, 4
 			);
+			OUTPUT_SOURCE_END;
+
+			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
+				OUTPUT_VALUE( t1.get_id() );
+				EXPECT_FALSE( t1.joinable() );
 
-				std::cout << r2tm::tab2 << "std::thread t1;" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- ID : " << t1.get_id() << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2tm::linefeed2;
+				LF();
 
-				std::cout << r2tm::tab2 << "std::thread t2(" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "[]( int, int )" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "{" << r2tm::linefeed;
-				std::cout << r2tm::tab4 << "std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "}, 3, 4" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << ");" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- ID : " << t2.get_id() << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- Joinable : " << ( t2.joinable() ? "O" : "X" ) << r2tm::linefeed;
+				OUTPUT_VALUE( t2.get_id() );
+				EXPECT_TRUE( t2.joinable() );
 			}
 
 			LS();
 
 			{
-				t1 = std::move( t2 );
+				OUTPUT_SUBJECT( "Assign" );
 
-				std::cout << r2tm::tab << "+ Assignment" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "t1 = std::move( t2 );" << r2tm::linefeed2;
+				LF();
 
-				std::cout << r2tm::tab2 << "t1" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- ID : " << t1.get_id() << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- Joinable : " << ( t1.joinable() ? "O" : "X" ) << r2tm::linefeed2;
+				PROCESS_MAIN( t1 = std::move( t2 ) );
 
-				std::cout << r2tm::tab2 << "t2" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- ID : " << t2.get_id() << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "- Joinable : " << ( t2.joinable() ? "O" : "X" ) << r2tm::linefeed;
+				LF();
+
+				OUTPUT_NOTE( "Move ¸¸ °¡´É" );
+			}
+
+			LS();
+
+			{
+				OUTPUT_VALUE( t1.get_id() );
+				EXPECT_TRUE( t1.joinable() );
+
+				LF();
+
+				OUTPUT_VALUE( t2.get_id() );
+				EXPECT_FALSE( t2.joinable() );
 			}
 
 			t1.join();
