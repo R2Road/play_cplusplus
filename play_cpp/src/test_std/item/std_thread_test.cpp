@@ -395,40 +395,41 @@ namespace std_thread_test
 		{
 			LS();
 
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			auto thread_process = []()
 			{
-				std::cout << r2tm::tab2 << "auto thread_process = []()" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "{" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "for( int count = 0; 10 > count; ++count )" << r2tm::linefeed2;
-				std::cout << r2tm::tab3 << "{" << r2tm::linefeed;
-				std::cout << r2tm::tab4 << "printf( \"\\t\\t\" \"thread %x : yield % d\" \"\\n\", std::this_thread::get_id(), count );" << r2tm::linefeed2;
-				std::cout << r2tm::tab4 << "std::this_thread::yield();" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "}" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "}" << r2tm::linefeed;
-
-				LF();
-
-				auto thread_process = []()
+				for( int count = 0; 100 > count; ++count )
 				{
-					for( int count = 0; 10 > count; ++count )
-					{
-						printf( "\t\t" "thread %x : yield %d" "\n", std::this_thread::get_id(), count );
-						std::this_thread::yield();
-					}
-				};
+					printf(
+						  "\t\t" "thread %x : yield %d" "\n"
+						, std::this_thread::get_id()
+						, count
+					);
+					std::this_thread::yield();
+				}
+			};
+			OUTPUT_SOURCE_END;
 
-				std::thread test_thread_1( thread_process );
-				std::thread test_thread_2( thread_process );
-				std::thread test_thread_3( thread_process );
-				std::thread test_thread_4( thread_process );
+			LS();
 
-				test_thread_1.join();
-				test_thread_2.join();
-				test_thread_3.join();
-				test_thread_4.join();
-
+			{
+				DECLARATION_MAIN( std::thread test_thread_1( thread_process ) );
+				DECLARATION_MAIN( std::thread test_thread_2( thread_process ) );
+				DECLARATION_MAIN( std::thread test_thread_3( thread_process ) );
+				DECLARATION_MAIN( std::thread test_thread_4( thread_process ) );
 
 				LF();
-				std::cout << r2tm::tab2 << "Note : 양보 받을 놈이 없으면 아무 소용 없다." << r2tm::linefeed;
+
+				PROCESS_MAIN( test_thread_1.join() );
+				PROCESS_MAIN( test_thread_2.join() );
+				PROCESS_MAIN( test_thread_3.join() );
+				PROCESS_MAIN( test_thread_4.join() );
+			}
+			
+			LS();
+
+			{
+				OUTPUT_NOTE( "양보 받을 놈이 없으면 아무 소용 없다." );
 			}
 
 			LS();
