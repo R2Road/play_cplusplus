@@ -349,12 +349,16 @@ namespace std_thread_test
 		{
 			LS();
 
+			DECLARATION_MAIN( std::thread t );
+
+			LS();
+
 			OUTPUT_SOURCE_READY_N_BEGIN;
-			std::thread test_thread( []()
+			t = std::thread( []()
 				{
 					printf( "\t\tstart thread \n" );
 
-					std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );
+					std::this_thread::sleep_for( std::chrono::milliseconds( 10 ) );
 
 					printf( "\t\tend thread \n" );
 				}
@@ -364,7 +368,7 @@ namespace std_thread_test
 			LS();
 
 			{
-				PROCESS_MAIN( test_thread.join() );
+				PROCESS_MAIN( t.join() );
 			}
 
 			LS();
