@@ -413,17 +413,17 @@ namespace std_thread_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::thread test_thread_1( thread_process ) );
-				DECLARATION_MAIN( std::thread test_thread_2( thread_process ) );
-				DECLARATION_MAIN( std::thread test_thread_3( thread_process ) );
-				DECLARATION_MAIN( std::thread test_thread_4( thread_process ) );
+				DECLARATION_MAIN( std::thread t1( thread_process ) );
+				DECLARATION_MAIN( std::thread t2( thread_process ) );
+				DECLARATION_MAIN( std::thread t3( thread_process ) );
+				DECLARATION_MAIN( std::thread t4( thread_process ) );
 
 				LF();
 
-				PROCESS_MAIN( test_thread_1.join() );
-				PROCESS_MAIN( test_thread_2.join() );
-				PROCESS_MAIN( test_thread_3.join() );
-				PROCESS_MAIN( test_thread_4.join() );
+				PROCESS_MAIN( t1.join() );
+				PROCESS_MAIN( t2.join() );
+				PROCESS_MAIN( t3.join() );
+				PROCESS_MAIN( t4.join() );
 			}
 			
 			LS();
