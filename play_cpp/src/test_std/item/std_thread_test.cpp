@@ -434,7 +434,8 @@ namespace std_thread_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "양보 받을 놈이 없으면 아무 소용 없다." );
+				OUTPUT_NOTE( "양보 받을 thread 가 없다면 아무 일도 일어나지 않는다." );
+				OUTPUT_NOTE( "...라고 reference에 써있다." );
 			}
 
 			LS();
