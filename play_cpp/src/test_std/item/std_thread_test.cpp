@@ -1,6 +1,7 @@
 #include "std_thread_test.h"
 
 #include <conio.h>
+#include <ctime> // time.h : c // time(), clock()
 #include <chrono>
 #include <sstream>
 #include <thread>
@@ -398,12 +399,16 @@ namespace std_thread_test
 			OUTPUT_SOURCE_READY_N_BEGIN;
 			auto thread_process = []()
 			{
+				time_t t;
+
 				for( int count = 0; 100 > count; ++count )
 				{
+					t = time( NULL );
 					printf(
-						  "\t\t" "thread %x : yield %d" "\n"
+						  "\t\t" "thread %x : yield %d" "%lld" "\n"
 						, std::this_thread::get_id()
 						, count
+						, t
 					);
 					std::this_thread::yield();
 				}
