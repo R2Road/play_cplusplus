@@ -204,14 +204,14 @@ namespace std_thread_test
 
 
 
-	r2tm::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Demo::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Basic";
+			return "Demo";
 		};
 	}
-	r2tm::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Demo::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
