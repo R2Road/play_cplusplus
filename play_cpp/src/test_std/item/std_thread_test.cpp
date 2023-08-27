@@ -201,31 +201,8 @@ namespace std_thread_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
-}
 
 
-
-namespace std_thread_test
-{
-	void thread_func_1()
-	{
-		std::this_thread::sleep_for( std::chrono::milliseconds( 10 ) );
-
-		for( auto i = 0; 8 > i; ++i )
-		{
-			std::cout << "thread_func_1 : " << i << r2tm::linefeed;
-		}
-	}
-
-	void thread_func_2()
-	{
-		std::this_thread::sleep_for( std::chrono::milliseconds( 10 ) );
-
-		for( auto i = 0; 8 > i; ++i )
-		{
-			std::cout << "thread_func_2 : " << i << r2tm::linefeed;
-		}
-	}
 
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
@@ -240,8 +217,28 @@ namespace std_thread_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::thread t1( thread_func_1 ) );
-			DECLARATION_MAIN( std::thread t2( thread_func_2 ) );
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			struct S
+			{
+				S( int ) {}
+				void operator()() const
+				{
+					for( int count = 0; 10 > count; ++count )
+					{
+						printf(
+							"\t\t" "thread %x : %d" "\n"
+							, std::this_thread::get_id()
+							, count
+						);
+					}
+				}
+			};
+			OUTPUT_SOURCE_END;
+
+			LS();
+
+			DECLARATION_MAIN( std::thread t1( S( 3 ) ) );
+			DECLARATION_MAIN( std::thread t2( S( 3 ) ) );
 
 			LS();
 
