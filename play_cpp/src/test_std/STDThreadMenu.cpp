@@ -26,18 +26,23 @@ r2tm::WriteFunctionT STDThreadMenu::GetWriteFunction() const
 		ret->AddItem( '2', std_thread_test::Declaration_2() );
 		ret->AddItem( '3', std_thread_test::Declaration_3() );
 		ret->AddItem( '4', std_thread_test::Demo() );
-		ret->AddItem( '5', std_thread_test::CopyAssaignment() );
-		ret->AddItem( '6', std_thread_test::WaitProcess_SleepFor() );
-		ret->AddItem( '7', std_thread_test::WaitProcess_Yield() );
-		ret->AddItem( '8', std_thread_test::ThisThread_SleepFor() );
 
 
-		ret->AddSplit();
+		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', std_atomic_test::IsLockFree() );
-		ret->AddItem( 'w', std_atomic_test::LockFreeTest1() );
-		ret->AddItem( 'e', std_atomic_test::LockFreeTest2() );
+		ret->AddItem( 'q', std_thread_test::CopyAssaignment() );
+		ret->AddItem( 'w', std_thread_test::WaitProcess_SleepFor() );
+		ret->AddItem( 'e', std_thread_test::WaitProcess_Yield() );
+		ret->AddItem( 'r', std_thread_test::ThisThread_SleepFor() );
+
+
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'a', std_atomic_test::IsLockFree() );
+		ret->AddItem( 's', std_atomic_test::LockFreeTest1() );
+		ret->AddItem( 'd', std_atomic_test::LockFreeTest2() );
 
 
 		ret->AddSplit();
