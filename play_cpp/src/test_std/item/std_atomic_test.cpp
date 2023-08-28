@@ -46,7 +46,7 @@ namespace std_atomic_test
 	{
 		return []()->const char*
 		{
-			return "Is Lock Free";
+			return "<std::atomic> : Is Lock Free";
 		};
 	}
 	r2tm::DoFunctionT IsLockFree::GetDoFunction() const
@@ -89,7 +89,7 @@ namespace std_atomic_test
 	{
 		return []()->const char*
 		{
-			return "Lock Free Test 1";
+			return "<std::atomic> : Lock Free Test 1";
 		};
 	}
 	r2tm::DoFunctionT LockFreeTest1::GetDoFunction() const
@@ -142,7 +142,7 @@ namespace std_atomic_test
 	{
 		return []()->const char*
 		{
-			return "Lock Free Test 2";
+			return "<std::atomic> : Lock Free Test 2";
 		};
 	}
 	r2tm::DoFunctionT LockFreeTest2::GetDoFunction() const
