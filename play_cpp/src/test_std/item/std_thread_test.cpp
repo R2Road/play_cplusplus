@@ -156,14 +156,13 @@ namespace std_thread_test
 				OUTPUT_SOURCE_READY_N_BEGIN;
 				struct S
 				{
-					S( int ) {}
 					void operator()() const {}
 				};
 				OUTPUT_SOURCE_END;
 
 				LF();
 
-				DECLARATION_MAIN( std::thread t{ S( 3 ) } );
+				DECLARATION_MAIN( std::thread t{ S() } );
 				OUTPUT_VALUE( t.get_id() );
 
 				LF();
