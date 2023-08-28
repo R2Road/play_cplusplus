@@ -251,12 +251,9 @@ namespace std_thread_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
-}
 
 
 
-namespace std_thread_test
-{
 	r2tm::TitleFunctionT CopyAssaignment::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -327,12 +324,9 @@ namespace std_thread_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
-}
 
 
 
-namespace std_thread_test
-{
 	r2tm::TitleFunctionT WaitProcess_SleepFor::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -380,12 +374,9 @@ namespace std_thread_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
-}
 
 
 
-namespace std_thread_test
-{
 	r2tm::TitleFunctionT WaitProcess_Yield::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -446,12 +437,9 @@ namespace std_thread_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
-}
 
 
 
-namespace std_thread_test
-{
 	r2tm::TitleFunctionT ThisThread_SleepFor::GetTitleFunction() const
 	{
 		return []()->const char*
