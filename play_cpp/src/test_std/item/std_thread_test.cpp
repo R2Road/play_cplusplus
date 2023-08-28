@@ -348,19 +348,26 @@ namespace std_thread_test
 
 			DECLARATION_MAIN( std::thread t );
 
-			LS();
+			LF();
 
 			OUTPUT_SOURCE_READY_N_BEGIN;
-			t = std::thread( []()
-				{
-					printf( "\t\tstart thread \n" );
+			const auto l = []()
+			{
+				time_t t = 0;
+				
+				t = time( NULL );
+				printf( "\t\t" "start thread : %lld" "\n", t );
 
-					std::this_thread::sleep_for( std::chrono::milliseconds( 10 ) );
+				std::this_thread::sleep_for( std::chrono::milliseconds( 2000 ) );
 
-					printf( "\t\tend thread \n" );
-				}
-			);
+				t = time( NULL );
+				printf( "\t\t" "  end thread : %lld" "\n", t );
+			};
 			OUTPUT_SOURCE_END;
+
+			LS();
+
+			PROCESS_MAIN( t = std::thread( l ) );
 
 			LS();
 
