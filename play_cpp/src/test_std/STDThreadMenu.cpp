@@ -28,7 +28,9 @@ r2tm::WriteFunctionT STDThreadMenu::GetWriteFunction() const
 		ret->AddItem( '4', std_thread_test::Demo() );
 
 
+
 		ret->AddLineFeed();
+
 
 
 		ret->AddItem( 'q', std_thread_test::CopyAssaignment() );
@@ -37,7 +39,9 @@ r2tm::WriteFunctionT STDThreadMenu::GetWriteFunction() const
 		ret->AddItem( 'r', std_thread_test::ThisThread_SleepFor() );
 
 
+
 		ret->AddLineFeed();
+
 
 
 		ret->AddItem( 'a', std_atomic_test::IsLockFree() );
@@ -45,7 +49,9 @@ r2tm::WriteFunctionT STDThreadMenu::GetWriteFunction() const
 		ret->AddItem( 'd', std_atomic_test::LockFreeTest2() );
 
 
+
 		ret->AddSplit();
+
 
 
 		ret->AddMenu( 27, STDMenu() );
