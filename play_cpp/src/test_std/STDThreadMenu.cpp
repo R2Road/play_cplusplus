@@ -36,7 +36,6 @@ r2tm::WriteFunctionT STDThreadMenu::GetWriteFunction() const
 		ret->AddItem( 'q', std_thread_test::CopyAssaignment() );
 		ret->AddItem( 'w', std_thread_test::WaitProcess_SleepFor() );
 		ret->AddItem( 'e', std_thread_test::WaitProcess_Yield() );
-		ret->AddItem( 'r', std_thread_test::ThisThread_SleepFor() );
 
 
 

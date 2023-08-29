@@ -361,12 +361,29 @@ namespace std_thread_test
 
 			LS();
 
-			PROCESS_MAIN( t = std::thread( l ) );
+			{
+				PROCESS_MAIN( t = std::thread( l ) );
+				PROCESS_MAIN( t.join() );
+			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( t.join() );
+				DECLARATION_MAIN( r2tm::StopWatch stop_watch );
+
+				LF();
+
+				PROCESS_MAIN( stop_watch.Start() );
+				PROCESS_MAIN( std::this_thread::sleep_for( std::chrono::milliseconds( -100 ) ) );
+				PROCESS_MAIN( stop_watch.Stop() );
+
+				LF();
+
+				PROCESS_MAIN( stop_watch.PrintElapsedTime_All() );
+
+				LF2();
+
+				OUTPUT_NOTE( "음수 값을 넣어도 문제는 발생하지 않는다." );
 			}
 
 			LS();
@@ -430,45 +447,6 @@ namespace std_thread_test
 			{
 				OUTPUT_NOTE( "양보 받을 thread 가 없다면 아무 일도 일어나지 않는다." );
 				OUTPUT_NOTE( "...라고 reference에 써있다." );
-			}
-
-			LS();
-
-			return r2tm::eDoLeaveAction::Pause;
-		};
-	}
-
-
-
-	r2tm::TitleFunctionT ThisThread_SleepFor::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "ThisThread : SleepFor";
-		};
-	}
-	r2tm::DoFunctionT ThisThread_SleepFor::GetDoFunction() const
-	{
-		return []()->r2tm::eDoLeaveAction
-		{
-			LS();
-
-			{
-				std::cout << r2tm::tab << clm( r2tm::eColor::FG_Green ) << "# 음수 값을 넣어도 문제는 발생하지 않는다." << clm() << r2tm::linefeed;
-			}
-
-			LS();
-
-			{
-				DECLARATION_MAIN( r2tm::StopWatch stop_watch );
-
-				PROCESS_MAIN( stop_watch.Start() );
-				PROCESS_MAIN( std::this_thread::sleep_for( std::chrono::milliseconds( -100 ) ) );
-				PROCESS_MAIN( stop_watch.Stop() );
-
-				LF();
-
-				stop_watch.PrintElapsedTime_All();
 			}
 
 			LS();
