@@ -38,7 +38,7 @@ namespace std_atomic_test
 
 			std::cout << r2tm::tab2 << "std::atomic<" << typeid( T ).name() << "> atm;" << r2tm::linefeed;
 			std::cout << r2tm::tab3 << "- type size : " << sizeof( T ) << " byte" << r2tm::linefeed;
-			std::cout << r2tm::tab3 << "- atm.is_lock_free() : " << ( atm.is_lock_free() ? "O" : "X" ) << r2tm::linefeed2;
+			std::cout << r2tm::tab3 << "- atm.is_lock_free() : " << ( atm.is_lock_free() ? "true" : "false" ) << r2tm::linefeed2;
 		}		
 	};
 
