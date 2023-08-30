@@ -8,24 +8,6 @@
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
 
-struct TestStruct1
-{
-	int i;
-};
-
-struct TestStruct2
-{
-	int i;
-	float f;
-};
-
-struct TestStruct3
-{
-	int i;
-	float f;
-	bool b;
-};
-
 namespace std_atomic_test
 {
 	template<typename T>
@@ -36,9 +18,11 @@ namespace std_atomic_test
 		{
 			std::atomic<T> atm;
 
-			std::cout << r2tm::tab2 << "std::atomic<" << typeid( T ).name() << "> atm;" << r2tm::linefeed;
-			std::cout << r2tm::tab3 << "- type size : " << sizeof( T ) << " byte" << r2tm::linefeed;
-			std::cout << r2tm::tab3 << "- atm.is_lock_free() : " << ( atm.is_lock_free() ? "true" : "false" ) << r2tm::linefeed2;
+			std::cout
+				<< r2tm::tab  << "std::atomic<" << typeid( T ).name() << ">"
+				<< r2tm::tab2 << "size : " << sizeof( std::atomic<T> ) << " byte"
+				<< r2tm::tab2 << "atm.is_lock_free() : " << ( atm.is_lock_free() ? "true" : "false" )
+				<< r2tm::linefeed;
 		}		
 	};
 
@@ -56,7 +40,9 @@ namespace std_atomic_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Test 1" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Primitive Type" );
+
+				LF();
 
 				IsLockFreePrinter<bool>().Print();
 				IsLockFreePrinter<char>().Print();
@@ -71,12 +57,51 @@ namespace std_atomic_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Test 2" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "User Defined Type 1" );
 
-				IsLockFreePrinter<TestStruct1>().Print();
+				LF();
 
-				std::cout << r2tm::tab << "# 멤버가 2개 이상인 struct 의 atomic을 만들면 어쩔때는 static assert가 걸리고 어쩔때는 안걸린다." << r2tm::linefeed;
-				std::cout << r2tm::tab << "# vs2017에 버그가 있는듯." << r2tm::linefeed2;
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				struct S
+				{
+					int i;
+				};
+				OUTPUT_SOURCE_END;
+
+				LF();
+
+				IsLockFreePrinter<S>().Print();
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "User Defined Type 2" );
+
+				LF();
+
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				struct S
+				{
+					int i;
+					float f;
+				};
+				OUTPUT_SOURCE_END;
+
+				LF();
+
+				OUTPUT_CODE( IsLockFreePrinter<S>().Print() );
+
+				LF();
+
+				OUTPUT_NOTE( "Not Working." );
+			}
+
+			LS();
+
+			{
+				OUTPUT_NOTE( "멤버가 2개 이상인 struct 의 atomic을 만들면 static assert가 걸렸다 말았다 한다." );
+				OUTPUT_NOTE( "vs2017에 버그가 있는듯." );
 			}
 
 			LS();
