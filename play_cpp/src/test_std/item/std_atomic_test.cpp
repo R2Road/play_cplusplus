@@ -10,6 +10,83 @@
 
 namespace std_atomic_test
 {
+	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "<std::atomic> : Declaration";
+		};
+	}
+	r2tm::DoFunctionT Declaration::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "기본 생성자" );
+
+				LF();
+
+				{
+					DECLARATION_MAIN( std::atomic<bool> a );
+					OUTPUT_SIZE( a );
+					OUTPUT_BINARIES( &a, 1 );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( std::atomic<char> a );
+					OUTPUT_SIZE( a );
+					OUTPUT_BINARIES( &a, 1 );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( std::atomic<int> a );
+					OUTPUT_SIZE( a );
+					OUTPUT_BINARIES( &a, 1 );
+				}
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "초기값 할당 가능" );
+
+				LF();
+
+				{
+					DECLARATION_MAIN( std::atomic<int64_t> a( 7 ) );
+					OUTPUT_SIZE( a );
+					OUTPUT_BINARIES( &a, 1 );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( std::atomic<void*> a = nullptr );
+					OUTPUT_SIZE( a );
+					OUTPUT_BINARIES( &a, 1 );
+				}
+			}
+
+			LS();
+
+			OUTPUT_NOTE( "Primitive Type 가능" );
+			OUTPUT_NOTE( "Primitive Type 1개를 멤버로 가지는 Type 가능" );
+			OUTPUT_NOTE( "크기 변화는 없다" );
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	template<typename T>
 	class IsLockFreePrinter
 	{
@@ -20,7 +97,6 @@ namespace std_atomic_test
 
 			std::cout
 				<< r2tm::tab  << "std::atomic<" << typeid( T ).name() << ">"
-				<< r2tm::tab2 << "size : " << sizeof( std::atomic<T> ) << " byte"
 				<< r2tm::tab2 << "atm.is_lock_free() : " << ( atm.is_lock_free() ? "true" : "false" )
 				<< r2tm::linefeed;
 		}		

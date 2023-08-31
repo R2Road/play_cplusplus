@@ -43,9 +43,10 @@ r2tm::WriteFunctionT STDThreadMenu::GetWriteFunction() const
 
 
 
-		ret->AddItem( 'a', std_atomic_test::IsLockFree() );
-		ret->AddItem( 's', std_atomic_test::LockFreeTest1() );
-		ret->AddItem( 'd', std_atomic_test::LockFreeTest2() );
+		ret->AddItem( 'a', std_atomic_test::Declaration() );
+		ret->AddItem( 's', std_atomic_test::IsLockFree() );
+		ret->AddItem( 'd', std_atomic_test::LockFreeTest1() );
+		ret->AddItem( 'f', std_atomic_test::LockFreeTest2() );
 
 
 
