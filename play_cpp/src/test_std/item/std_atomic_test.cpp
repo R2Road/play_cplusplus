@@ -149,7 +149,8 @@ namespace std_atomic_test
 
 			LS();
 
-			OUTPUT_NOTE( "멤버가 2개 이상인 struct 의 atomic을 만들면 static assert가 걸렸다 말았다 한다." );
+			OUTPUT_NOTE( "멤버가 2개 이상인 struct 의 atomic을 만들면" );
+			OUTPUT_NOTE( "static assert가 걸렸다 말았다 한다." );
 			OUTPUT_NOTE( "vs2017에 버그가 있는듯." );
 
 			LS();
