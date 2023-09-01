@@ -23,6 +23,11 @@ namespace std_atomic_test
 		{
 			LS();
 
+			OUTPUT_NOTE( "Primitive Type 가능" );
+			OUTPUT_NOTE( "크기 변화는 없다" );
+
+			LS();
+
 			{
 				OUTPUT_SUBJECT( "기본 생성자" );
 
@@ -75,9 +80,77 @@ namespace std_atomic_test
 
 			LS();
 
-			OUTPUT_NOTE( "Primitive Type 가능" );
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Declaration_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "<std::atomic> : Declaration 2";
+		};
+	}
+	r2tm::DoFunctionT Declaration_2::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
 			OUTPUT_NOTE( "Primitive Type 1개를 멤버로 가지는 Type 가능" );
-			OUTPUT_NOTE( "크기 변화는 없다" );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "User Defined Type 1" );
+
+				LF();
+
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				struct S
+				{
+					int i;
+				};
+				OUTPUT_SOURCE_END;
+
+				LF();
+
+				DECLARATION_MAIN( std::atomic<S> a );
+				OUTPUT_SIZE( a );
+				OUTPUT_BINARIES( &a, 1 );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "User Defined Type 2" );
+
+				LF();
+
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				struct S
+				{
+					int i;
+					float f;
+				};
+				OUTPUT_SOURCE_END;
+
+				LF();
+
+				OUTPUT_CODE( std::atomic<S> a );
+
+				LF();
+
+				OUTPUT_NOTE( "Not Working" );
+				OUTPUT_NOTE( "static_assert 에 의한 C2338 발생" );
+			}
+
+			LS();
+
+			OUTPUT_NOTE( "멤버가 2개 이상인 struct 의 atomic을 만들면 static assert가 걸렸다 말았다 한다." );
+			OUTPUT_NOTE( "vs2017에 버그가 있는듯." );
 
 			LS();
 
@@ -147,37 +220,6 @@ namespace std_atomic_test
 				LF();
 
 				IsLockFreePrinter<S>().Print();
-			}
-
-			LS();
-
-			{
-				OUTPUT_SUBJECT( "User Defined Type 2" );
-
-				LF();
-
-				OUTPUT_SOURCE_READY_N_BEGIN;
-				struct S
-				{
-					int i;
-					float f;
-				};
-				OUTPUT_SOURCE_END;
-
-				LF();
-
-				OUTPUT_CODE( IsLockFreePrinter<S>().Print() );
-
-				LF();
-
-				OUTPUT_NOTE( "Not Working." );
-			}
-
-			LS();
-
-			{
-				OUTPUT_NOTE( "멤버가 2개 이상인 struct 의 atomic을 만들면 static assert가 걸렸다 말았다 한다." );
-				OUTPUT_NOTE( "vs2017에 버그가 있는듯." );
 			}
 
 			LS();
