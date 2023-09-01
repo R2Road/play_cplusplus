@@ -10,14 +10,14 @@
 
 namespace std_atomic_test
 {
-	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
+	r2tm::TitleFunctionT Declaration_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "<std::atomic> : Declaration";
+			return "<std::atomic> : Declaration 1";
 		};
 	}
-	r2tm::DoFunctionT Declaration::GetDoFunction() const
+	r2tm::DoFunctionT Declaration_1::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
