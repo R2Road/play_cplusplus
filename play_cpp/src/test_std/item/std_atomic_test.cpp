@@ -161,21 +161,6 @@ namespace std_atomic_test
 
 
 
-	template<typename T>
-	class IsLockFreePrinter
-	{
-	public:
-		void Print()
-		{
-			std::atomic<T> atm;
-
-			std::cout
-				<< r2tm::tab  << "std::atomic<" << typeid( T ).name() << ">"
-				<< r2tm::tab2 << "atm.is_lock_free() : " << ( atm.is_lock_free() ? "true" : "false" )
-				<< r2tm::linefeed;
-		}		
-	};
-
 	r2tm::TitleFunctionT IsLockFree::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -194,14 +179,14 @@ namespace std_atomic_test
 
 				LF();
 
-				IsLockFreePrinter<bool>().Print();
-				IsLockFreePrinter<char>().Print();
-				IsLockFreePrinter<short>().Print();
-				IsLockFreePrinter<int>().Print();
-				IsLockFreePrinter<float>().Print();
-				IsLockFreePrinter<double>().Print();
-				IsLockFreePrinter<int64_t>().Print();
-				IsLockFreePrinter<void*>().Print();
+				OUTPUT_VALUE( std::atomic<bool>().is_lock_free() );
+				OUTPUT_VALUE( std::atomic<char>().is_lock_free() );
+				OUTPUT_VALUE( std::atomic<short>().is_lock_free() );
+				OUTPUT_VALUE( std::atomic<int>().is_lock_free() );
+				OUTPUT_VALUE( std::atomic<float>().is_lock_free() );
+				OUTPUT_VALUE( std::atomic<double>().is_lock_free() );
+				OUTPUT_VALUE( std::atomic<int64_t>().is_lock_free() );
+				OUTPUT_VALUE( std::atomic<void*>().is_lock_free() );
 			}
 
 			LS();
@@ -220,7 +205,7 @@ namespace std_atomic_test
 
 				LF();
 
-				IsLockFreePrinter<S>().Print();
+				OUTPUT_VALUE( std::atomic<S>().is_lock_free() );
 			}
 
 			LS();
