@@ -231,25 +231,28 @@ namespace std_atomic_test
 
 			LS();
 
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			const auto l = [&n]( int index, int attmpt )
 			{
-				std::cout << r2tm::tab << "+ thread x 5 : 100000 time ++n" << r2tm::linefeed2;
-				auto thread_process = [&n]( int index, int attmpt )
+				printf( "\t\tThread Start : %d\n", index );
+
+				for( int i = 0; attmpt > i; ++i )
 				{
-					printf( "\t\tThread Start : %d\n", index );
+					++n;
+				}
 
-					for( int i = 0; attmpt > i; ++i )
-					{
-						++n;
-					}
+				printf( "\t\tThread End : %d\n", index );
+			};
+			OUTPUT_SOURCE_END;
 
-					printf( "\t\tThread End : %d\n", index );
-				};				
+			LS();
 
-				std::thread test_thread_1( thread_process, 1, 100000 );
-				std::thread test_thread_2( thread_process, 2, 100000 );
-				std::thread test_thread_3( thread_process, 3, 100000 );
-				std::thread test_thread_4( thread_process, 4, 100000 );
-				std::thread test_thread_5( thread_process, 5, 100000 );
+			{
+				DECLARATION_MAIN( std::thread test_thread_1( l, 1, 100000 ) );
+				DECLARATION_MAIN( std::thread test_thread_2( l, 2, 100000 ) );
+				DECLARATION_MAIN( std::thread test_thread_3( l, 3, 100000 ) );
+				DECLARATION_MAIN( std::thread test_thread_4( l, 4, 100000 ) );
+				DECLARATION_MAIN( std::thread test_thread_5( l, 5, 100000 ) );
 				test_thread_1.join();
 				test_thread_2.join();
 				test_thread_3.join();
@@ -260,6 +263,7 @@ namespace std_atomic_test
 			LS();
 
 			EXPECT_NE( 100000 * 5, n );
+			OUTPUT_VALUE( n );
 
 			LS();
 
