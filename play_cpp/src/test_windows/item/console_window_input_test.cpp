@@ -117,7 +117,13 @@ namespace console_window_input_test
 							break;
 
 						case MOUSE_EVENT: // mouse input
-							std::cout << "MOUSE_EVENT" << r2tm::linefeed;
+							std::cout << "================== MOUSE_EVENT ==================" << r2tm::linefeed;
+							OUTPUT_VALUE( input_records[i].Event.MouseEvent.dwMousePosition.X );
+							OUTPUT_VALUE( input_records[i].Event.MouseEvent.dwMousePosition.Y );
+							OUTPUT_VALUE( input_records[i].Event.MouseEvent.dwButtonState );
+							OUTPUT_VALUE( input_records[i].Event.MouseEvent.dwControlKeyState );
+							OUTPUT_VALUE( input_records[i].Event.MouseEvent.dwEventFlags );
+							std::cout << "===============================================" << r2tm::linefeed;
 							break;
 
 						case WINDOW_BUFFER_SIZE_EVENT: // scrn buf. resizing
