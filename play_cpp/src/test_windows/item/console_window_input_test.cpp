@@ -329,12 +329,15 @@ namespace console_window_input_test
 		{
 			LS();
 
-			std::cout << "[ESC] Exit" << r2tm::linefeed;
-			std::cout << "[SPACE] Do" << r2tm::linefeed;
+			OUTPUT_STRING( "[ ESC ] Exit" );
+			OUTPUT_STRING( "[SPACE] Do" );
 
 			LS();
 
-			std::cout << r2tm::tab << "+ Key Info : VK_SPACE" << r2tm::linefeed << r2tm::linefeed3;
+			//
+			// Key Info 출력용 공간
+			//
+			std::cout << r2tm::linefeed2;
 
 			LS();
 
@@ -353,8 +356,8 @@ namespace console_window_input_test
 					//
 					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 9 } );
 					printf_s(
-						"\t\t" "Key State : %c \n"
-						"\t\t" "Key Value : hex : %8x \n"
+						"\t" "[Space] Key State : %c \n"
+						"\t" "[Space] Key Value : hex : %8x \n"
 						, ( key_value & 0x8000 ? 'O' : 'X' )
 						, key_value
 					);
@@ -364,6 +367,7 @@ namespace console_window_input_test
 					//
 					if( GetKeyState( VK_ESCAPE ) & 0x8000 )
 					{
+						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 14 } );
 						break;
 					}
 				}
