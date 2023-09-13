@@ -187,18 +187,14 @@ namespace console_window_input_test
 		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
-			std::cout << "[ESC] Exit" << r2tm::linefeed;
-			std::cout << "[SPACE] Do" << r2tm::linefeed;
+
+			OUTPUT_STRING( "[ ESC ] Exit" );
+			OUTPUT_STRING( "[SPACE] Do" );
 
 			LS();
 
-			std::cout << "+ Message" << r2tm::linefeed2;
-			std::cout << "pause 없이 메뉴를 전환하는 경우 메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." << r2tm::linefeed;
-			std::cout << "키 반응성이 중요한 프로그램을 만든다면 이 녀석은 쓰지 않는게 좋겠다." << r2tm::linefeed;
-
-			LS();
-
-			std::cout << r2tm::tab << "+ Key Info : VK_SPACE" << r2tm::linefeed3;
+			OUTPUT_NOTE( "pause 없이 메뉴를 전환하는 경우..." );
+			OUTPUT_NOTE( "메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." );
 
 			LS();
 
