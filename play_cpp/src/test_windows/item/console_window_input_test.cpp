@@ -30,43 +30,48 @@ namespace console_window_input_test
 		{
 			LS();
 
-			HANDLE hStdInputHandle = GetStdHandle( STD_INPUT_HANDLE );
-			DWORD last_console_mode;
-
-			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
-			std::cout << r2tm::tab2 << "HANDLE hStdInputHandle = GetStdHandle( STD_INPUT_HANDLE );" << r2tm::linefeed;
-			std::cout << r2tm::tab2 << "DWORD last_console_mode;" << r2tm::linefeed;
+			DECLARATION_MAIN( HANDLE hStdInputHandle = GetStdHandle( STD_INPUT_HANDLE ) );
+			DECLARATION_MAIN( DWORD last_console_mode );
 
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "Backup Console Mode" );
+
+				LF();
+
+				OUTPUT_SOURCE_READY_N_BEGIN;
 				if( !GetConsoleMode( hStdInputHandle, &last_console_mode ) )
 				{
-					assert( false && "GetConsoleMode( hStdInputHandle, &last_console_mode )" );
+					assert( false );
 				}
-
-				std::cout << r2tm::tab << "+ Backup Console Mode" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "GetConsoleMode( hStdInputHandle, &last_console_mode )" << r2tm::linefeed2;
+				OUTPUT_SOURCE_END;
 				
 				LF();
+
 				ShowCurrentConsoleMode();
 			}
 
 			LS();
 
 			{
-				const DWORD new_console_mode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT;
-				if( !SetConsoleMode( hStdInputHandle, new_console_mode ) )
-				{
-					assert( false && "SetConsoleMode( hStdInputHandle, new_console_mode )" );
-				}
-
-				std::cout << r2tm::tab << "+ Change Console Mode" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "const DWORD new_console_mode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT;" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "SetConsoleMode( hStdInputHandle, new_console_mode )" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "> " << new_console_mode << r2tm::linefeed;
+				OUTPUT_SUBJECT( "Change Console Mode" );
 
 				LF();
+
+				DECLARATION_MAIN( const DWORD new_console_mode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT );
+
+				LF();
+
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				if( !SetConsoleMode( hStdInputHandle, new_console_mode ) )
+				{
+					assert( false );
+				}
+				OUTPUT_SOURCE_END;
+
+				LF();
+
 				ShowCurrentConsoleMode();
 			}
 
@@ -149,7 +154,7 @@ namespace console_window_input_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "Press Any Key : Rollback" << r2tm::linefeed;
+				OUTPUT_NOTE( "Press Any Key : Rollback" );
 				_getch();
 
 				//
@@ -158,6 +163,7 @@ namespace console_window_input_test
 				SetConsoleMode( hStdInputHandle, last_console_mode );
 				
 				LF();
+
 				ShowCurrentConsoleMode();
 			}
 
