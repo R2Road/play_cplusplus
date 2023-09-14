@@ -188,13 +188,18 @@ namespace console_window_input_test
 		{
 			LS();
 
-			OUTPUT_STRING( "[ ESC ] Exit" );
-			OUTPUT_STRING( "[SPACE] Do" );
+			OUTPUT_NOTE( "pause 없이 메뉴를 전환하는 경우..." );
+			OUTPUT_NOTE( "메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." );
 
 			LS();
 
-			OUTPUT_NOTE( "pause 없이 메뉴를 전환하는 경우..." );
-			OUTPUT_NOTE( "메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." );
+			OUTPUT_NOTE( "1st 4bit : Toggle Info : 키 누를 때마다 변화 0001 > 0000 > 0001 > 0000 ...." );
+			OUTPUT_NOTE( "2nd 4bit : Current Key State : 눌리면 1000" );
+
+			LS();
+
+			OUTPUT_STRING( "[ ESC ] Exit" );
+			OUTPUT_STRING( "[SPACE] Do" );
 
 			LS();
 
@@ -211,10 +216,10 @@ namespace console_window_input_test
 					//
 					// View
 					//
-					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 15 } );
+					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 19 } );
 					printf_s(
 						"\t\t" "Key State : %c \n"
-						"\t\t" "Key Value : hex : %8x \n"
+						"\t\t" "Key Value : hex : %8x \n\n"
 						, ( key_value & 0x8000 ? 'O' : 'X' )
 						, key_value
 					);
