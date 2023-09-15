@@ -4,6 +4,6 @@
 
 namespace play_cpp_utility
 {
-	std::string MakeOutPutPath( const char* file_name );
-	std::string MakeSFXPath( const char* file_name );
+	std::string BuildOutPutPath( const char* file_name );
+	std::string BuildSFXPath( const char* file_name );
 }

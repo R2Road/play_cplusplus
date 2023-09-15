@@ -4,7 +4,7 @@
 
 namespace play_cpp_utility
 {
-	std::string MakeOutPutPath( const char* file_name )
+	std::string BuildOutPutPath( const char* file_name )
 	{
 		std::string temp_string =
 #if defined( _WIN64 )
@@ -23,7 +23,7 @@ namespace play_cpp_utility
 		return temp_string;
 	}
 
-	std::string MakeSFXPath( const char* file_name )
+	std::string BuildSFXPath( const char* file_name )
 	{
 		std::string ret = ( std::filesystem::current_path() / "resources" / "sound" / "sfx" / file_name ).string();
 		return ret;

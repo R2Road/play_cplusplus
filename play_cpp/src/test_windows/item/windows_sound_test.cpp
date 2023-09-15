@@ -39,14 +39,14 @@ namespace windows_sound_test
 				{
 				case '1':
 				{
-					const std::string sfx_path = play_cpp_utility::MakeSFXPath( "rpg_sounds_kenney_bookopen.wav" );
+					const std::string sfx_path = play_cpp_utility::BuildSFXPath( "rpg_sounds_kenney_bookopen.wav" );
 					PlaySoundA( sfx_path.c_str(), NULL, SND_FILENAME | SND_ASYNC );
 				}
 				break;
 
 				case '2':
 				{
-					const std::string sfx_path = play_cpp_utility::MakeSFXPath( "rpg_sounds_kenney_handlecoins2.wav" );
+					const std::string sfx_path = play_cpp_utility::BuildSFXPath( "rpg_sounds_kenney_handlecoins2.wav" );
 					PlaySoundA( sfx_path.c_str(), NULL, SND_FILENAME | SND_ASYNC );
 				}
 				break;
