@@ -188,7 +188,7 @@
     <ClCompile Include="src\test_windows\item\windows_time_test.cpp" />
     <ClCompile Include="src\test_windows\WindowsMenu.cpp" />
     <ClCompile Include="src\utility\r2utility_CharacterBuffer.cpp" />
-    <ClCompile Include="src\utility\r2utility_FileUtil.cpp" />
+    <ClCompile Include="src\utility\play_cpp_utility_FileUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="external\r2tm\r2tm_ColorModifier.h" />
@@ -396,7 +396,7 @@
     <ClInclude Include="src\test_windows\item\windows_time_test.h" />
     <ClInclude Include="src\test_windows\WindowsMenu.h" />
     <ClInclude Include="src\utility\r2utility_CharacterBuffer.h" />
-    <ClInclude Include="src\utility\r2utility_FileUtil.h" />
+    <ClInclude Include="src\utility\play_cpp_utility_FileUtil.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\test_cpp\item\enum_test_xmacro_2.def" />
