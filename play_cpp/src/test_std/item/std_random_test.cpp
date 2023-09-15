@@ -8,7 +8,7 @@
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
-#include "utility/play_cpp_utility_FileUtil.h"
+#include "utility/play_cpp_utility_PathBuilder.h"
 
 
 namespace std_random_test
