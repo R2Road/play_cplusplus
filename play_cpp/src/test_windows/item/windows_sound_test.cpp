@@ -4,6 +4,7 @@
 #include <Windows.h>
 #pragma comment( lib, "winmm.lib" )
 
+#include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
 
 #include "utility/r2utility_FileUtil.h"
@@ -23,9 +24,9 @@ namespace windows_sound_test
 		{
 			LS();
 
-			std::cout << "[ESC]" " Exit" << r2tm::linefeed;
-			std::cout << "[1]" " Play SFX 1" << r2tm::linefeed;
-			std::cout << "[2]" " Play SFX 2" << r2tm::linefeed;
+			OUTPUT_STRING( "[ESC]"  " "  "Exit" );
+			OUTPUT_STRING( "[ 1 ]"  " "  "Play SFX 1" );
+			OUTPUT_STRING( "[ 2 ]"  " "  "Play SFX 2" );
 
 			LS();
 
@@ -72,9 +73,9 @@ namespace windows_sound_test
 		{
 			LS();
 
-			std::cout << "[ESC]" " Exit" << r2tm::linefeed;
-			std::cout << "[1]" " Play Beep" << r2tm::linefeed;
-			std::cout << "[2]" " Play Beep" << r2tm::linefeed;
+			OUTPUT_STRING( "[ESC]"  " "  "Exit" );
+			OUTPUT_STRING( "[ 1 ]"  " "  "Play Beep" );
+			OUTPUT_STRING( "[ 2 ]"  " "  "Play Beep" );
 
 			LS();
 
