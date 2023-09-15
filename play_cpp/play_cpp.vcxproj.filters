@@ -76,9 +76,6 @@
     <ClCompile Include="src\algorithm\r2algorithm_astar_PathBuilder.cpp">
       <Filter>algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\utility\r2utility_CharacterBuffer.cpp">
-      <Filter>utility</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_algorithm\item\algorithm_astar_test.cpp">
       <Filter>test_algorithm\item</Filter>
     </ClCompile>
@@ -578,6 +575,9 @@
     <ClCompile Include="src\utility\play_cpp_utility_PathBuilder.cpp">
       <Filter>utility</Filter>
     </ClCompile>
+    <ClCompile Include="src\utility\play_cpp_utility_CharacterBuffer.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -585,9 +585,6 @@
     </ClInclude>
     <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h">
       <Filter>algorithm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\utility\r2utility_CharacterBuffer.h">
-      <Filter>utility</Filter>
     </ClInclude>
     <ClInclude Include="src\test_algorithm\item\algorithm_astar_test.h">
       <Filter>test_algorithm\item</Filter>
@@ -1194,6 +1191,9 @@
       <Filter>test_std\item</Filter>
     </ClInclude>
     <ClInclude Include="src\utility\play_cpp_utility_PathBuilder.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\play_cpp_utility_CharacterBuffer.h">
       <Filter>utility</Filter>
     </ClInclude>
   </ItemGroup>

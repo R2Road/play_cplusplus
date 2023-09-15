@@ -187,7 +187,7 @@
     <ClCompile Include="src\test_windows\item\windows_sound_test.cpp" />
     <ClCompile Include="src\test_windows\item\windows_time_test.cpp" />
     <ClCompile Include="src\test_windows\WindowsMenu.cpp" />
-    <ClCompile Include="src\utility\r2utility_CharacterBuffer.cpp" />
+    <ClCompile Include="src\utility\play_cpp_utility_CharacterBuffer.cpp" />
     <ClCompile Include="src\utility\play_cpp_utility_PathBuilder.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -395,7 +395,7 @@
     <ClInclude Include="src\test_windows\item\windows_sound_test.h" />
     <ClInclude Include="src\test_windows\item\windows_time_test.h" />
     <ClInclude Include="src\test_windows\WindowsMenu.h" />
-    <ClInclude Include="src\utility\r2utility_CharacterBuffer.h" />
+    <ClInclude Include="src\utility\play_cpp_utility_CharacterBuffer.h" />
     <ClInclude Include="src\utility\play_cpp_utility_PathBuilder.h" />
   </ItemGroup>
   <ItemGroup>

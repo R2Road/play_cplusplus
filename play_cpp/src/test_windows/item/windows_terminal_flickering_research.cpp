@@ -5,7 +5,7 @@
 
 #include "r2tm/r2tm_ostream.h"
 
-#include "utility/r2utility_CharacterBuffer.h"
+#include "utility/play_cpp_utility_CharacterBuffer.h"
 
 namespace windows_terminal_flickering_research
 {
