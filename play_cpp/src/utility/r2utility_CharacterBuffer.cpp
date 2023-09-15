@@ -2,7 +2,7 @@
 
 #include <cassert>
 
-namespace r2utility
+namespace play_cpp_utility
 {
 	CharacterBuffer::CharacterBuffer( const uint32_t width, const uint32_t height ) :
 		mGridIndexConverter( static_cast<int>( width ), static_cast<int>( height ) )

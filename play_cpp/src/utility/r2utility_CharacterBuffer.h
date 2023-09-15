@@ -6,7 +6,7 @@
 #include "r2/r2_GridIndexConverter.h"
 #include "r2/r2_RectInt.h"
 
-namespace r2utility
+namespace play_cpp_utility
 {
 	class CharacterBuffer
 	{

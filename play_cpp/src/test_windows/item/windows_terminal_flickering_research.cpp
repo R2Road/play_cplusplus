@@ -20,7 +20,7 @@ namespace windows_terminal_flickering_research
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			r2utility::CharacterBuffer visible_resource( 19, 19 );
+			play_cpp_utility::CharacterBuffer visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
 
 			bool process = true;
@@ -81,7 +81,7 @@ namespace windows_terminal_flickering_research
 			std::cout << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed;
 			LS();
 
-			r2utility::CharacterBuffer visible_resource( 19, 19 );
+			play_cpp_utility::CharacterBuffer visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
@@ -134,7 +134,7 @@ namespace windows_terminal_flickering_research
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			r2utility::CharacterBuffer visible_resource( 19, 19 );
+			play_cpp_utility::CharacterBuffer visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
 
 			bool process = true;
@@ -181,7 +181,7 @@ namespace windows_terminal_flickering_research
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			r2utility::CharacterBuffer character_buffer( 100, 40 );
+			play_cpp_utility::CharacterBuffer character_buffer( 100, 40 );
 			character_buffer.FillAll( 'c' );
 
 			bool process = true;
@@ -225,7 +225,7 @@ namespace windows_terminal_flickering_research
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			r2utility::CharacterBuffer character_buffer( 100, 40 );
+			play_cpp_utility::CharacterBuffer character_buffer( 100, 40 );
 			character_buffer.FillAll( 'c' );
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
@@ -266,10 +266,10 @@ namespace windows_terminal_flickering_research
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			r2utility::CharacterBuffer character_buffer_1( 100, 40 );
+			play_cpp_utility::CharacterBuffer character_buffer_1( 100, 40 );
 			character_buffer_1.FillAll( 'c' );
 
-			r2utility::CharacterBuffer character_buffer_2( 100, 40 );
+			play_cpp_utility::CharacterBuffer character_buffer_2( 100, 40 );
 			character_buffer_2.FillAll( 'a' );
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
