@@ -85,7 +85,7 @@ namespace
 {
 	const char* GetFilePath()
 	{
-		static std::string temp_string = r2utility::MakeOutPutPath( "random_test_Status.dat" );
+		static std::string temp_string = play_cpp_utility::MakeOutPutPath( "random_test_Status.dat" );
 		return temp_string.c_str();
 	}
 }

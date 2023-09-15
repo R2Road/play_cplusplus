@@ -185,7 +185,7 @@ namespace various_debug_test
 
 	const char* GetSimpleLogFilePath()
 	{
-		static std::string temp_string = r2utility::MakeOutPutPath( "debug_test__simple_log.txt" );
+		static std::string temp_string = play_cpp_utility::MakeOutPutPath( "debug_test__simple_log.txt" );
 		return temp_string.c_str();
 	}
 	r2tm::TitleFunctionT SimpleLog::GetTitleFunction() const
