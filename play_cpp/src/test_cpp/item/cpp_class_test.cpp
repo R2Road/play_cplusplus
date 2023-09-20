@@ -354,12 +354,7 @@ namespace cpp_class_test
 
 
 
-class TestClass1 {};
-
-namespace
-{
-	class TestClass2 {};
-}
+#include "cpp_class_test_print_name.hpp"
 
 namespace cpp_class_test
 {
@@ -376,54 +371,56 @@ namespace cpp_class_test
 		{
 			LS();
 
-			{
-				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "class TestClass1 {};" << r2tm::linefeed;
+			OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_print_name.hpp" );
 
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Class" );
 
 				LF();
 
-				OUTPUT_VALUE( typeid( TestClass1 ).name() );
+				OUTPUT_VALUE( typeid( PrintNameTest_Class1 ).name() );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( TestClass1 test_class );
+				OUTPUT_SUBJECT( "Object" );
 
 				LF();
 
-				OUTPUT_VALUE( typeid( test_class ).name() );
+				DECLARATION_MAIN( PrintNameTest_Class1 c );
+
+				LF();
+
+				OUTPUT_VALUE( typeid( c ).name() );
 			}
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "namespace" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "{" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "class TestClass2 {};" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "}" << r2tm::linefeed;
-
+				OUTPUT_SUBJECT( "Unnamed Namespace" );
 
 				LF();
 
-				OUTPUT_VALUE( typeid( TestClass2 ).name() );
+				OUTPUT_VALUE( typeid( PrintNameTest_TestClass2 ).name() );
 			}
 
 			LS();
 			
 			{
-				class TestClass3 {};
-
-				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "class TestClass3 {};" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "...In this space" << r2tm::linefeed;
-
+				OUTPUT_SUBJECT( "This Place" );
 
 				LF();
 
-				OUTPUT_VALUE( typeid( TestClass3 ).name() );
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				class PrintNameTest_TestClass3 {};
+				OUTPUT_SOURCE_END;
+
+				LF();
+
+				OUTPUT_VALUE( typeid( PrintNameTest_TestClass2 ).name() );
 			}
 
 			LS();
