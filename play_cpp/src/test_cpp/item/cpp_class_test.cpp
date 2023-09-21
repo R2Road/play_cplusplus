@@ -646,10 +646,10 @@ namespace cpp_class_test
 			LS();
 
 			{
-				DECLARATION_MAIN( class A {}; class B {}; );
-
-				OUTPUT_CODE( ( class C : public A, public B {}; ) );
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				class A {}; class B {};
 				class C : public A, public B {};
+				OUTPUT_SOURCE_END;
 
 				LF();
 
@@ -670,10 +670,10 @@ namespace cpp_class_test
 			LS();
 
 			{
-				DECLARATION_MAIN( class A {}; class B {}; class C {}; );
-
-				OUTPUT_CODE( ( class D : public A, public B, public C {}; ) );
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				class A {}; class B {}; class C {};
 				class D : public A, public B, public C {};
+				OUTPUT_SOURCE_END;
 
 				LF();
 
