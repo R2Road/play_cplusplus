@@ -53,9 +53,10 @@ r2tm::WriteFunctionT ClassMenu::GetWriteFunction() const
 		ret->AddItem( 's', cpp_class_test::MemberAdress_Method() );
 		ret->AddItem( 'd', cpp_class_test::Offset_SingleInheritance() );
 		ret->AddItem( 'f', cpp_class_test::Offset_MultipleInheritance() );
-		ret->AddItem( 'g', cpp_class_test::Offset_Singleton() );
-		ret->AddItem( 'h', cpp_class_test::Size_And_Byte() );
-		ret->AddItem( 'j', cpp_class_test::Size_With_Enum() );
+		ret->AddItem( 'g', cpp_class_test::Offset_MultipleInheritance_2() );
+		ret->AddItem( 'h', cpp_class_test::Offset_Singleton() );
+		ret->AddItem( 'j', cpp_class_test::Size_And_Byte() );
+		ret->AddItem( 'k', cpp_class_test::Size_With_Enum() );
 
 
 

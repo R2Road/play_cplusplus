@@ -669,6 +669,25 @@ namespace cpp_class_test
 
 			LS();
 
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Offset_MultipleInheritance_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Offset : Multiple Inheritance 2";
+		};
+	}
+	r2tm::DoFunctionT Offset_MultipleInheritance_2::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
 			{
 				OUTPUT_SOURCE_READY_N_BEGIN;
 				class A {}; class B {}; class C {};
