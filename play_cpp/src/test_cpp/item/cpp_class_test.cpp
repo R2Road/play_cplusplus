@@ -632,14 +632,14 @@ namespace cpp_class_test
 
 
 
-	r2tm::TitleFunctionT Offset_MultipleInheritance::GetTitleFunction() const
+	r2tm::TitleFunctionT Offset_MultipleInheritance_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Class : Offset : Multiple Inheritance";
+			return "Class : Offset : Multiple Inheritance 1";
 		};
 	}
-	r2tm::DoFunctionT Offset_MultipleInheritance::GetDoFunction() const
+	r2tm::DoFunctionT Offset_MultipleInheritance_1::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

@@ -85,7 +85,7 @@ namespace cpp_class_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Offset_MultipleInheritance : public r2tm::iItem
+	class Offset_MultipleInheritance_1 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
