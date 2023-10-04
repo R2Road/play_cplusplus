@@ -688,14 +688,14 @@ namespace cpp_class_test
 		{
 			LS();
 
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			class A {}; class B {}; class C {};
+			class D : public A, public B, public C {};
+			OUTPUT_SOURCE_END;
+
+			LS();
+
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
-				class A {}; class B {}; class C {};
-				class D : public A, public B, public C {};
-				OUTPUT_SOURCE_END;
-
-				LF();
-
 				DECLARATION_MAIN( const auto pD = (D*)1 );
 				OUTPUT_VALUE( pD );
 
