@@ -603,9 +603,16 @@ namespace cpp_class_test
 		{
 			LS();
 
-			DECLARATION_MAIN( class A {}; );
-			DECLARATION_MAIN( class B : public A {} );
-			DECLARATION_MAIN( class C : public B {} );
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			class A
+			{};
+
+			class B : public A
+			{};
+
+			class C : public B
+			{};
+			OUTPUT_SOURCE_END;
 
 			LS();
 
