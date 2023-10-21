@@ -653,8 +653,14 @@ namespace cpp_class_test
 			LS();
 
 			OUTPUT_SOURCE_READY_N_BEGIN;
-			class A {}; class B {};
-			class C : public A, public B {};
+			class A
+			{};
+
+			class B
+			{};
+
+			class C : public A, public B
+			{};
 			OUTPUT_SOURCE_END;
 
 			LS();
