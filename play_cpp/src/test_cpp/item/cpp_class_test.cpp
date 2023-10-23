@@ -790,14 +790,14 @@ namespace cpp_class_test
 
 
 
-	r2tm::TitleFunctionT Size_And_Byte::GetTitleFunction() const
+	r2tm::TitleFunctionT Size_And_Byte_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Class : Size And Byte";
+			return "Class : Size And Byte 1";
 		};
 	}
-	r2tm::DoFunctionT Size_And_Byte::GetDoFunction() const
+	r2tm::DoFunctionT Size_And_Byte_1::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -825,6 +825,25 @@ namespace cpp_class_test
 				OUTPUT_BINARY( C1() );
 			}
 
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Size_And_Byte::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Size And Byte";
+		};
+	}
+	r2tm::DoFunctionT Size_And_Byte::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
 			LS();
 
 			{

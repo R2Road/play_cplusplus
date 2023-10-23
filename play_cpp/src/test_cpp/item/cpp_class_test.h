@@ -108,6 +108,13 @@ namespace cpp_class_test
 
 
 
+	class Size_And_Byte_1 : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
 	class Size_And_Byte : public r2tm::iItem
 	{
 	public:
