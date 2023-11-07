@@ -855,6 +855,10 @@ namespace cpp_class_test
 				DECLARATION_MAIN( class C2 : public C1 { int a; } );
 				OUTPUT_VALUE( sizeof( C2 ) );
 				OUTPUT_BINARY( C2() );
+
+				LF();
+
+				OUTPUT_COMMENT( "기본 클래스가 메모리를 차지하지 않는다." );
 			}
 
 			LS();
