@@ -122,6 +122,13 @@ namespace cpp_class_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
+	class Size_And_Byte_3 : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
 	class Size_With_Enum : public r2tm::iItem
 	{
 	public:

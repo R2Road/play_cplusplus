@@ -64,7 +64,8 @@ r2tm::WriteFunctionT ClassMenu::GetWriteFunction() const
 
 		ret->AddItem( 'z', cpp_class_test::Size_And_Byte_1() );
 		ret->AddItem( 'x', cpp_class_test::Size_And_Byte_2() );
-		ret->AddItem( 'c', cpp_class_test::Size_With_Enum() );
+		ret->AddItem( 'c', cpp_class_test::Size_And_Byte_3() );
+		ret->AddItem( 'v', cpp_class_test::Size_With_Enum() );
 
 
 

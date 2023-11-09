@@ -902,6 +902,25 @@ namespace cpp_class_test
 
 			LS();
 
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Size_And_Byte_3::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Class : Size And Byte 3";
+		};
+	}
+	r2tm::DoFunctionT Size_And_Byte_3::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
 			{
 				DECLARATION_MAIN( class C1 { public: virtual ~C1() {} int i = -1; int j = -2; } );
 				DECLARATION_MAIN( class C2 : public C1 { int a = -3; } );
@@ -922,6 +941,7 @@ namespace cpp_class_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
 
 
 	class C_has_StaticConstexprInt { static constexpr int etest = 1; };
