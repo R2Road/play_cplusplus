@@ -852,7 +852,7 @@ namespace cpp_class_test
 				LF();
 
 				DECLARATION_MAIN( class C1 {} );
-				DECLARATION_MAIN( class C2 : public C1 { int a; } );
+				DECLARATION_MAIN( class C2 : public C1 { int i; } );
 				OUTPUT_VALUE( sizeof( C2 ) );
 				OUTPUT_BINARY( C2() );
 
@@ -869,7 +869,7 @@ namespace cpp_class_test
 				LF();
 
 				DECLARATION_MAIN( class C1 { int i; } );
-				DECLARATION_MAIN( class C2 : public C1 { int a; } );
+				DECLARATION_MAIN( class C2 : public C1 { int i; } );
 				OUTPUT_VALUE( sizeof( C2 ) );
 				OUTPUT_BINARY( C2() );
 			}
