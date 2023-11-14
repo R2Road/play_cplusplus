@@ -29,7 +29,7 @@ namespace c_file_test
 				DECLARATION_MAIN( FILE* fp = nullptr );
 				EXPECT_EQ( 0, fopen_s( &fp, "resources/c_file_test_openandclose_1.txt", "rb" ) );
 
-				LF();
+				SS();
 
 				OUTPUT_SUBJECT( "Close" );
 
