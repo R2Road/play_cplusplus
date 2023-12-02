@@ -1,6 +1,7 @@
 #include "cpp_class_test.h"
 #include "cpp_class_test_helper_member_adress.hpp"
 #include "cpp_class_test_helper_offset_singleton.hpp"
+#include "cpp_class_test_helper_size_with_enum.hpp"
 
 #include <iterator>
 #include <numeric>
@@ -944,8 +945,6 @@ namespace cpp_class_test
 
 
 
-	class C_has_StaticConstexprInt { static constexpr int etest = 1; };
-
 	r2tm::TitleFunctionT Size_With_Enum::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -971,6 +970,10 @@ namespace cpp_class_test
 			LS();
 
 			{
+				OUTPUT_FILE( "src/test_cpp/item/cpp_class_test_helper_size_with_enum.hpp" );
+
+				LF();
+
 				OUTPUT_VALUE( sizeof( C_has_StaticConstexprInt ) );
 			}
 
