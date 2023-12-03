@@ -963,7 +963,15 @@ namespace cpp_class_test
 			LS();
 
 			{
-				DECLARATION_MAIN( class C { enum { etest = 1 }; } );
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				class C
+				{
+					enum { etest = 1 };
+				};
+				OUTPUT_SOURCE_END;
+
+				LF();
+
 				OUTPUT_VALUE( sizeof( C ) );
 			}
 
