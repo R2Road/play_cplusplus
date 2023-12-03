@@ -239,7 +239,8 @@ namespace cpp_class_test
 
 
 			{
-				OUTPUT_SUBJECT( "인자 없는 생성자 + 사용자 정의 explicit 생성자를 가진 class : 가능" );
+				OUTPUT_SUBJECT( "가능 : 인자 없는 생성자" );
+				OUTPUT_SUBJECT( "가능 : 사용자 정의 explicit 생성자를 가진 class" );
 
 				LF();
 
@@ -743,7 +744,10 @@ namespace cpp_class_test
 
 				LF();
 
-				DECLARATION_MAIN( const auto offset = reinterpret_cast<int64_t>( pD ) - reinterpret_cast<int64_t>( pC ) );
+				DECLARATION_MAIN( const auto offset =
+						reinterpret_cast<int64_t>( pD )
+					-	reinterpret_cast<int64_t>( pC )
+				);
 				OUTPUT_VALUE( offset );
 
 				LF();
