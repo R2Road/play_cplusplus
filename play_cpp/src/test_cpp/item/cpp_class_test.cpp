@@ -813,7 +813,13 @@ namespace cpp_class_test
 
 				LF();
 
-				DECLARATION_MAIN( class C1 {} );
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				class C1
+				{};
+				OUTPUT_SOURCE_END;
+
+				LF();
+
 				OUTPUT_VALUE( sizeof( C1 ) );
 				OUTPUT_BINARY( C1() );
 			}
@@ -825,7 +831,15 @@ namespace cpp_class_test
 
 				LF();
 
-				DECLARATION_MAIN( class C1 { int a; } );
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				class C1
+				{
+					int a;
+				};
+				OUTPUT_SOURCE_END;
+
+				LF();
+
 				OUTPUT_VALUE( sizeof( C1 ) );
 				OUTPUT_BINARY( C1() );
 			}
