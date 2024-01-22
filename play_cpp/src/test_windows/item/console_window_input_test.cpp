@@ -7,6 +7,7 @@
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_WindowUtility.h"
 
 namespace console_window_input_test
 {
@@ -29,6 +30,11 @@ namespace console_window_input_test
 		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
+
+			//
+			// Mouse Input을 받아 오려면 Quick Edit를 꺼야한다.
+			//
+			PROCESS_MAIN( r2tm::WindowUtility::QuickEditEnable( false ) );
 
 			DECLARATION_MAIN( HANDLE hStdInputHandle = GetStdHandle( STD_INPUT_HANDLE ) );
 			DECLARATION_MAIN( DWORD last_console_mode );
@@ -166,6 +172,10 @@ namespace console_window_input_test
 
 				ShowCurrentConsoleMode();
 			}
+
+			LS();
+
+			PROCESS_MAIN( r2tm::WindowUtility::QuickEditEnable( true ) );
 
 			LS();
 
