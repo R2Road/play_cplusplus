@@ -19,7 +19,7 @@ namespace r2tm
 
 			CursorPoint operator+( const CursorPoint& other ) const
 			{
-				return CursorPoint{ x + other.x, y + other.y };
+				return CursorPoint( x + other.x, y + other.y );
 			}
 
 			void operator+=( const CursorPoint& other )

@@ -121,10 +121,12 @@ namespace r2tm
 				//
 				// 다른 해결책이 있을까?
 				//
-				auto do_func = i.DoFunction;
+				const auto do_func = i.DoFunction;
 				return do_func();
 			}
 		}
+
+		std::cout << "# " << "Item Not Found" " #" << r2tm::linefeed2;
 
 		return eDoLeaveAction::Pause;
 	}

@@ -14,9 +14,8 @@ namespace r2tm
 	};
 
 	using TitleFunctionT = std::function<const char*( )>;
-
+	using DescriptionFunctionT = std::function<const char*( )>;
 	using DoFunctionT = std::function<eDoLeaveAction()>;
 
-	using DescriptionFunctionT = std::function<const char*( )>;
 	using WriteFunctionT = std::function<void( MenuProcessor* )>;
 }

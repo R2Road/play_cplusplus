@@ -89,7 +89,7 @@ namespace r2tm
 	}
 	void WindowUtility::MoveCursorPoint( const CursorPoint new_cursor_point )
 	{
-		const CursorPoint fixed_new_cursor_point{ ( 0 > new_cursor_point.x ? 0 : new_cursor_point.x ), ( 0 > new_cursor_point.y ? 0 : new_cursor_point.y ) };
+		const CursorPoint fixed_new_cursor_point{ short( 0 > new_cursor_point.x ? 0 : new_cursor_point.x ), short( 0 > new_cursor_point.y ? 0 : new_cursor_point.y ) };
 		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ fixed_new_cursor_point.x, fixed_new_cursor_point.y } );
 	}
 	void WindowUtility::MoveCursorPoint( const short x, const short y )
@@ -101,7 +101,7 @@ namespace r2tm
 	{
 		const auto last_cursor_point = GetCursorPoint();
 
-		const CursorPoint fixed_new_cursor_point{ ( 0 > new_cursor_point.x ? 0 : new_cursor_point.x ), ( 0 > new_cursor_point.y ? 0 : new_cursor_point.y ) };
+		const CursorPoint fixed_new_cursor_point{ short( 0 > new_cursor_point.x ? 0 : new_cursor_point.x ), short( 0 > new_cursor_point.y ? 0 : new_cursor_point.y ) };
 		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ fixed_new_cursor_point.x, fixed_new_cursor_point.y } );
 
 
@@ -114,8 +114,19 @@ namespace r2tm
 			DWORD out_result;
 			for( short i = 0, end = last_cursor_point.y - fixed_new_cursor_point.y; end > i; ++i )
 			{
-				FillConsoleOutputCharacterA( hStdout, ' ', cs_buffer_info.dwSize.X, COORD{ 0, fixed_new_cursor_point.y + i }, &out_result );
-				FillConsoleOutputAttribute( hStdout, eColor::BG_Black | eColor::FG_White, cs_buffer_info.dwSize.X, COORD{ 0, fixed_new_cursor_point.y + i }, &out_result );
+				FillConsoleOutputCharacterA(
+						hStdout
+					,	' '
+					,	cs_buffer_info.dwSize.X, COORD{ short( 0 ), short( fixed_new_cursor_point.y + i ) }
+					,	&out_result
+				);
+				FillConsoleOutputAttribute(
+						hStdout
+					,	eColor::BG_Black | eColor::FG_White
+					,	cs_buffer_info.dwSize.X
+					,	COORD{ short( 0 ), short( fixed_new_cursor_point.y + i ) }
+					,	&out_result
+				);
 			}
 		}
 	}

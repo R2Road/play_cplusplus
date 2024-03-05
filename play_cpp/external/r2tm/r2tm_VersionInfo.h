@@ -26,7 +26,7 @@ namespace r2tm
 		const char VersionNumber_1 = '1';
 		const char VersionNumber_2 = '0';
 		const char VersionNumber_3 = '7';
-		const char VersionNumber_4 = '4';
+		const char VersionNumber_4 = '5';
 
 		const char String4Version[16] = { 'r', '2', 't', 'm', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '.', VersionNumber_4, '\0' };
 
@@ -39,6 +39,7 @@ namespace r2tm
 			"\n"	"[o] " "update    struct     : r2tm::WindowUtility::CursorPoint - 생성자 추가, 연산자 +, += 추가"
 			"\n"	"[o] " "update    inspector  : Add - OUTPUT_SOURCE_READY, OUTPUT_SOURCE_BEGIN, OUTPUT_SOURCE_END"
 			"\n"	"[o] " "update    inspector  : Add - OUTPUT_SOURCE_READY_N_BEGIN"
+			"\n"	"[o] " "update    inspector  : DECLARATION_MAIN, DECLARATION_SUB - 문자 출력을 먼저 하고 코드 실행"
 			"\n"	"[ ] " "..."
 		;
 

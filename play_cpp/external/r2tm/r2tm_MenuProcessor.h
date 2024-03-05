@@ -39,8 +39,12 @@ namespace r2tm
 
 		using ItemContainerT = std::vector<ItemInfo>;
 
+
+
 	public:
 		MenuProcessor( Director& director );
+
+
 
 		//
 		//
@@ -51,10 +55,14 @@ namespace r2tm
 
 		eDoLeaveAction Do( const int key_code );
 
+
+
 		//
 		//
 		//
 		void Reset( const TitleFunctionT& title_function, const DescriptionFunctionT& description_function, const WriteFunctionT& write_function );
+
+
 
 		//
 		//
@@ -76,6 +84,8 @@ namespace r2tm
 		void AddMessage( const char* const message, const int message_color_code, const int background_color_code );
 		void AddMessage( const char* const message, const int message_color_code );
 		void AddMessage( const char* const message );
+
+
 
 	protected:
 		Director& mDirector;
