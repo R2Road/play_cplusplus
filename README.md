@@ -12,7 +12,7 @@
   - C++ 17
 
 - editor
-  - Visual Studio Community 2017 15.9.27
+  - Visual Studio Community 2022 17.9.2
 
 - external library
   - [vld]( https://kinddragon.github.io/vld/ )
