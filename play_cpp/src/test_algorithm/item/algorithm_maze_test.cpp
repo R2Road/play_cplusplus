@@ -115,7 +115,7 @@ namespace algorithm_maze_test
 			{
 				PROCESS_MAIN( grid.Reset( 19, 19 ) );
 
-				PROCESS_MAIN( current_point.Set( grid.GetWidth() / 2, grid.GetHeight() / 2 ) );
+				PROCESS_MAIN( current_point.Set( static_cast<int>( grid.GetWidth() / 2 ), static_cast< int >( grid.GetHeight() / 2 ) ) );
 				PROCESS_MAIN( grid.Set( current_point.GetX(), current_point.GetY(), 1 ) );
 
 				LF();

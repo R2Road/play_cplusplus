@@ -45,23 +45,23 @@ namespace
 
 		for( const auto p : path )
 		{
-			r2tm::WindowUtility::MoveCursorPoint( {
+			r2tm::WindowUtility::MoveCursorPoint(
 				pivot_point.x + static_cast<short>( p.GetX() * 2 )
 				, pivot_point.y + static_cast<short>( p.GetY() )
-			} );
+			);
 
 			std::cout << '*';
 		}
 
-		r2tm::WindowUtility::MoveCursorPoint( {
+		r2tm::WindowUtility::MoveCursorPoint(
 				pivot_point.x + static_cast<short>( entry_point.GetX() * 2 )
 				, pivot_point.y + static_cast<short>( entry_point.GetY() )
-		} );
+		);
 		std::cout << '1';
-		r2tm::WindowUtility::MoveCursorPoint( {
+		r2tm::WindowUtility::MoveCursorPoint(
 				pivot_point.x + static_cast<short>( exit_point.GetX() * 2 )
 				, pivot_point.y + static_cast<short>( exit_point.GetY() )
-		} );
+		);
 		std::cout << '2';
 	}
 
@@ -71,23 +71,23 @@ namespace
 
 		for( const auto p : path )
 		{
-			r2tm::WindowUtility::MoveCursorPoint( {
+			r2tm::WindowUtility::MoveCursorPoint(
 				pivot_point.x + static_cast<short>( p.GetX() * 2 )
 				, pivot_point.y + static_cast<short>( p.GetY() )
-				} );
+				);
 
 			std::cout << '*';
 		}
 
-		r2tm::WindowUtility::MoveCursorPoint( {
+		r2tm::WindowUtility::MoveCursorPoint(
 				pivot_point.x + static_cast<short>( entry_point.GetX() * 2 )
 				, pivot_point.y + static_cast<short>( entry_point.GetY() )
-			} );
+			);
 		std::cout << '1';
-		r2tm::WindowUtility::MoveCursorPoint( {
+		r2tm::WindowUtility::MoveCursorPoint(
 				pivot_point.x + static_cast<short>( exit_point.GetX() * 2 )
 				, pivot_point.y + static_cast<short>( exit_point.GetY() )
-			} );
+			);
 		std::cout << '2';
 	}
 }
@@ -129,7 +129,7 @@ namespace algorithm_astar_test
 				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
-			r2tm::WindowUtility::MoveCursorPoint( { 0, 26 } );
+			r2tm::WindowUtility::MoveCursorPoint( 0, 26 );
 			stop_watch.PrintElapsedTime_All();
 			LF();
 

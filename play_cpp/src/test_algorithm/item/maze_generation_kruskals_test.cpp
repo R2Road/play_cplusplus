@@ -70,14 +70,14 @@ namespace maze_generation_kruskals_test
 		{
 			for( int x = 0; grid.GetHeight() > x; ++x )
 			{
-				const r2tm::WindowUtility::CursorPoint my_pivot_point = {
+				const r2tm::WindowUtility::CursorPoint my_pivot_point(
 					pivot_point.x + static_cast<short>( x * 5 ) + 2
 					, pivot_point.y + static_cast<short>( y * 3 ) + 1
-				};
-				r2tm::WindowUtility::MoveCursorPoint( { my_pivot_point.x - 1, my_pivot_point.y } );
+				);
+				r2tm::WindowUtility::MoveCursorPoint( my_pivot_point.x - 1, my_pivot_point.y );
 				std::cout << "@@@";
 
-				r2tm::WindowUtility::MoveCursorPoint( { my_pivot_point.x - 1, my_pivot_point.y } );
+				r2tm::WindowUtility::MoveCursorPoint( my_pivot_point.x - 1, my_pivot_point.y );
 				std::cout << sets.Get( x, y ).GetRoot()->GetIndex();
 
 				r2::Direction4 dir4;
@@ -89,11 +89,11 @@ namespace maze_generation_kruskals_test
 
 						if( ( r2::Direction4::eState::Right | r2::Direction4::eState::Left ) & dir4.GetState() )
 						{
-							current_point = { my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() * 2 ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) };
+							current_point = r2tm::WindowUtility::CursorPoint( my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() * 2 ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) );
 						}
 						else
 						{
-							current_point = { my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) };
+							current_point = r2tm::WindowUtility::CursorPoint( my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) );
 						}
 
 						r2tm::WindowUtility::MoveCursorPoint( current_point );
