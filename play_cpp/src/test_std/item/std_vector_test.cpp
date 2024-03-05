@@ -309,8 +309,6 @@ namespace std_vector_test
 			DECLARATION_MAIN( std::vector<bool> container );
 			OUTPUT_VALUE( container.capacity() );
 			OUTPUT_VALUE( container._Myvec.capacity() );
-			OUTPUT_VALUE( container._Myvec._Myfirst() );
-			OUTPUT_VALUE( container._Myvec._Myend() );
 			OUTPUT_VALUE( container.begin()._Myptr );
 
 			LS();
@@ -322,8 +320,7 @@ namespace std_vector_test
 
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container._Myvec.capacity() );
-				OUTPUT_VALUE( container._Myvec._Myfirst() );
-				OUTPUT_VALUE( container._Myvec._Myend() );
+				OUTPUT_BINARIES( &container._Myvec.front(), 1 );
 				OUTPUT_VALUE( container.begin()._Myptr );
 			}
 
@@ -336,8 +333,35 @@ namespace std_vector_test
 
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container._Myvec.capacity() );
-				OUTPUT_VALUE( container._Myvec._Myfirst() );
-				OUTPUT_VALUE( container._Myvec._Myend() );
+				OUTPUT_BINARIES( &container._Myvec.front(), 2 );
+				OUTPUT_VALUE( container.begin()._Myptr );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( container.clear() );
+				PROCESS_MAIN( for( std::size_t i = 0; i < 32; ++i ) { container.push_back( true ); } );
+
+
+				LF();
+
+				OUTPUT_VALUE( container.capacity() );
+				OUTPUT_VALUE( container._Myvec.capacity() );
+				OUTPUT_BINARIES( &container._Myvec.front(), 2 );
+				OUTPUT_VALUE( container.begin()._Myptr );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( container.push_back( 1 ) );
+
+				LF();
+
+				OUTPUT_VALUE( container.capacity() );
+				OUTPUT_VALUE( container._Myvec.capacity() );
+				OUTPUT_BINARIES( &container._Myvec.front(), 2 );
 				OUTPUT_VALUE( container.begin()._Myptr );
 			}
 
