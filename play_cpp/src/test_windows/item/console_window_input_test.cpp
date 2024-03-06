@@ -288,26 +288,6 @@ namespace console_window_input_test
 						);
 					}
 
-					{
-						tagPOINT p1;
-						GetCursorPos( &p1 );
-
-						tagPOINT p2 = p1;
-						HWND hwnd = GetConsoleWindow();
-						ScreenToClient( hwnd, &p2 ); // 마우스 좌표 현재 윈도우 좌표로 변환
-
-						printf_s(
-							"\t\t" "Mouse X : %d \n"
-							"\t\t" "Mouse Y : %d \n"
-							"\t\t" "Fixed Mouse X : %d \n"
-							"\t\t" "Fixed Mouse Y : %d \n\n"
-							, p1.x
-							, p1.y
-							, p2.x
-							, p2.y
-						);
-					}
-
 					//
 					// Font Size, Window Size
 					//
@@ -343,6 +323,26 @@ namespace console_window_input_test
 							, bi.dwSize.Y * inf.dwFontSize.Y
 							, rc.right
 							, rc.bottom
+						);
+					}
+
+					{
+						tagPOINT p1;
+						GetCursorPos( &p1 );
+
+						tagPOINT p2 = p1;
+						HWND hwnd = GetConsoleWindow();
+						ScreenToClient( hwnd, &p2 ); // 마우스 좌표 현재 윈도우 좌표로 변환
+
+						printf_s(
+							"\t\t" "Mouse X : %d \n"
+							"\t\t" "Mouse Y : %d \n"
+							"\t\t" "Fixed Mouse X : %d \n"
+							"\t\t" "Fixed Mouse Y : %d \n\n"
+							, p1.x
+							, p1.y
+							, p2.x
+							, p2.y
 						);
 					}
 
