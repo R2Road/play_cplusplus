@@ -198,6 +198,11 @@ namespace console_window_input_test
 		{
 			LS();
 
+			//
+			// Mouse Input을 받아 오려면 Quick Edit를 꺼야한다.
+			//
+			PROCESS_MAIN( r2tm::WindowUtility::QuickEditEnable( false ) );
+
 			OUTPUT_NOTE( "pause 없이 메뉴를 전환하는 경우..." );
 			OUTPUT_NOTE( "메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." );
 
@@ -208,8 +213,9 @@ namespace console_window_input_test
 
 			LS();
 
-			OUTPUT_STRING( "[ ESC ] Exit" );
-			OUTPUT_STRING( "[SPACE] Do" );
+			OUTPUT_STRING( "[   ESC   ] Exit" );
+			OUTPUT_STRING( "[  SPACE  ] Do" );
+			OUTPUT_STRING( "[MOUSE L/R] Do" );
 
 			LS();
 
@@ -218,21 +224,69 @@ namespace console_window_input_test
 
 				while( 1 )
 				{
-					//
-					// Process
-					//
-					key_value = GetKeyState( VK_SPACE );
+					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 21 } );
 
 					//
-					// View
+					// Space
 					//
-					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 19 } );
-					printf_s(
-						"\t\t" "Key State : %c \n"
-						"\t\t" "Key Value : hex : %8x \n\n"
-						, ( key_value & 0x8000 ? 'O' : 'X' )
-						, key_value
-					);
+					{
+						//
+						// Process
+						//
+						key_value = GetKeyState( VK_SPACE );
+
+						//
+						// View
+						//
+						printf_s(
+							"\t\t" "Key State : %c \n"
+							"\t\t" "Key Value : hex : %8x \n\n"
+							, ( key_value & 0x8000 ? 'O' : 'X' )
+							, key_value
+						);
+					}
+
+					LF;
+
+					//
+					// Mouse : L
+					//
+					{
+						//
+						// Process
+						//
+						key_value = GetKeyState( VK_LBUTTON );
+
+						//
+						// View
+						//
+						printf_s(
+							"\t\t" "Key State : %c \n"
+							"\t\t" "Key Value : hex : %8x \n\n"
+							, ( key_value & 0x8000 ? 'O' : 'X' )
+							, key_value
+						);
+					}
+
+					//
+					// Mouse : R
+					//
+					{
+						//
+						// Process
+						//
+						key_value = GetKeyState( VK_RBUTTON );
+
+						//
+						// View
+						//
+						printf_s(
+							"\t\t" "Key State : %c \n"
+							"\t\t" "Key Value : hex : %8x \n\n"
+							, ( key_value & 0x8000 ? 'O' : 'X' )
+							, key_value
+						);
+					}
 
 					//
 					// ESC
@@ -243,6 +297,12 @@ namespace console_window_input_test
 					}
 				}
 			}
+
+			LS();
+
+			PROCESS_MAIN( r2tm::WindowUtility::QuickEditEnable( true ) );
+
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
