@@ -239,8 +239,8 @@ namespace console_window_input_test
 						// View
 						//
 						printf_s(
-							"\t\t" "Key State : %c \n"
-							"\t\t" "Key Value : hex : %8x \n\n"
+							"\t\t" "Space Key State : %c \n"
+							"\t\t" "Space Key Value : hex : %8x \n\n"
 							, ( key_value & 0x8000 ? 'O' : 'X' )
 							, key_value
 						);
@@ -261,8 +261,8 @@ namespace console_window_input_test
 						// View
 						//
 						printf_s(
-							"\t\t" "Key State : %c \n"
-							"\t\t" "Key Value : hex : %8x \n\n"
+							"\t\t" "Mouse L Key State : %c \n"
+							"\t\t" "Mouse L Key Value : hex : %8x \n\n"
 							, ( key_value & 0x8000 ? 'O' : 'X' )
 							, key_value
 						);
@@ -281,28 +281,37 @@ namespace console_window_input_test
 						// View
 						//
 						printf_s(
-							"\t\t" "Key State : %c \n"
-							"\t\t" "Key Value : hex : %8x \n\n"
+							"\t\t" "Mouse R Key State : %c \n"
+							"\t\t" "Mouse R Key Value : hex : %8x \n\n"
 							, ( key_value & 0x8000 ? 'O' : 'X' )
 							, key_value
 						);
 					}
 
 					{
-						tagPOINT p;
-						GetCursorPos( &p );
+						tagPOINT p1;
+						GetCursorPos( &p1 );
+
+						tagPOINT p2 = p1;
+						HWND hwnd = GetConsoleWindow();
+						ScreenToClient( hwnd, &p2 ); // 마우스 좌표 현재 윈도우 좌표로 변환
 
 						printf_s(
-							"\t\t" "Key State : %d \n"
-							"\t\t" "Key Value : %d \n\n"
-							, p.x
-							, p.y
+							"\t\t" "Mouse X : %d \n"
+							"\t\t" "Mouse Y : %d \n"
+							"\t\t" "Fixed Mouse X : %d \n"
+							"\t\t" "Fixed Mouse Y : %d \n\n"
+							, p1.x
+							, p1.y
+							, p2.x
+							, p2.y
 						);
 					}
 
 					{
 						//
 						// REF : https://stackoverflow.com/questions/40004772/how-to-print-sentence-in-the-position-of-the-mouse-cursor-in-vc-win32-applicat
+						// > 여기 코드를 그대로 쓰면 반올림 때문에 문제가 있다.
 						//
 
 						POINT p;
@@ -319,14 +328,47 @@ namespace console_window_input_test
 						GetClientRect( hwnd, &rc ); // 윈도우 Rect 가져오기
 
 						COORD coord = { 0, 0 };
-						coord.X = MulDiv( p.x, inf.srWindow.Right, rc.right ); // ( p.x / rc.right ) * inf.srWindow.Right 로 코드를 작성하면 이해하기 좋다
-						coord.Y = MulDiv( p.y, inf.srWindow.Bottom, rc.bottom ); // 그러나 먼저 곱하나 늦게 곱하나 결과는 같다.( 헷갈리지 말자 )
+						coord.X = ( p.x * inf.srWindow.Right ) / rc.right; // ( p.x / rc.right ) * inf.srWindow.Right 로 코드를 작성하면 이해하기 좋다
+						coord.Y = ( p.y * inf.srWindow.Bottom ) / rc.bottom; // 그러나 먼저 곱하나 늦게 곱하나 결과는 같다.( 헷갈리지 말자 )
 
 						printf_s(
-							"\t\t" "Key State : %d \n"
-							"\t\t" "Key Value : %d \n\n"
+							"\t\t" "Size X : %d \n"
+							"\t\t" "Size Y : %d \n"
+							"\t\t" "Max X : %d \n"
+							"\t\t" "Max Y : %d \n"
+							"\t\t" "Cursor X : %d \n"
+							"\t\t" "Cursor Y : %d \n"
+							"         1         2         3         4         5         6         7         8         9         0         1 \n"
+							"012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890\n\n"
+							, inf.dwSize.X
+							, inf.dwSize.Y
+							, inf.dwMaximumWindowSize.X
+							, inf.dwMaximumWindowSize.Y
 							, coord.X
 							, coord.Y
+						);
+					}
+
+
+					{
+						HANDLE hout = GetStdHandle( STD_OUTPUT_HANDLE );
+						CONSOLE_FONT_INFO inf;
+						GetCurrentConsoleFont( hout, false, &inf );
+
+						CONSOLE_SCREEN_BUFFER_INFO bi;
+						GetConsoleScreenBufferInfo( hout, &bi );
+
+						printf_s(
+							"\t\t" "Font Size   : %d \n"
+							"\t\t" "Font Width  : %d \n"
+							"\t\t" "Font Height : %d \n"
+							"\t\t" "Expected Text Area Width  : %d \n"
+							"\t\t" "Expected Text Area Height : %d \n\n"
+							, inf.nFont
+							, inf.dwFontSize.X
+							, inf.dwFontSize.Y
+							, bi.dwSize.X * inf.dwFontSize.X
+							, bi.dwSize.Y * inf.dwFontSize.Y
 						);
 					}
 
