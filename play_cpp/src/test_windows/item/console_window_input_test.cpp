@@ -308,10 +308,50 @@ namespace console_window_input_test
 						);
 					}
 
+					//
+					// Font Size, Window Size
+					//
+					{
+						HANDLE hout = GetStdHandle( STD_OUTPUT_HANDLE );
+						CONSOLE_FONT_INFO inf;
+						GetCurrentConsoleFont( hout, false, &inf );
+
+						CONSOLE_SCREEN_BUFFER_INFO bi;
+						GetConsoleScreenBufferInfo( hout, &bi );
+
+						HWND hwnd = GetConsoleWindow();
+						RECT rc;
+						GetClientRect( hwnd, &rc ); // 윈도우 Rect 가져오기
+
+						printf_s(
+							"\t\t" "Font Size   : %d \n"
+							"\t\t" "Font Width  : %d \n"
+							"\t\t" "Font Height : %d \n"
+							"\t\t" "Text Amount H  : %d \n"
+							"\t\t" "Text Amount V  : %d \n"
+							"\t\t" "Expected Text Area Width  : %d \n"
+							"\t\t" "Expected Text Area Height : %d \n"
+							"\t\t" "Window Width  : %d \n"
+							"\t\t" "Window Height : %d \n"
+							"\n"
+							, inf.nFont
+							, inf.dwFontSize.X
+							, inf.dwFontSize.Y
+							, bi.dwMaximumWindowSize.X
+							, bi.dwMaximumWindowSize.Y
+							, bi.dwSize.X * inf.dwFontSize.X
+							, bi.dwSize.Y * inf.dwFontSize.Y
+							, rc.right
+							, rc.bottom
+						);
+					}
+
 					{
 						//
 						// REF : https://stackoverflow.com/questions/40004772/how-to-print-sentence-in-the-position-of-the-mouse-cursor-in-vc-win32-applicat
-						// > 여기 코드를 그대로 쓰면 반올림 때문에 문제가 있다.
+						// > 위 링크의 코드를 그대로 쓰면 아래의 문제가 있다.
+						// > MulDiv 함수 사용에 따른 반올림 문제
+						// > GetClientRect 함수 사용으로 실제 Text Area 와 Window Area 의 오차 문제
 						//
 
 						POINT p;
@@ -321,54 +361,29 @@ namespace console_window_input_test
 						ScreenToClient( hwnd, &p ); // 마우스 좌표 현재 윈도우 좌표로 변환
 
 						HANDLE hout = GetStdHandle( STD_OUTPUT_HANDLE );
-						CONSOLE_SCREEN_BUFFER_INFO inf;
-						GetConsoleScreenBufferInfo( hout, &inf ); // 현재 콘솔의 가로 세로가 몇개의 문자로 채워지는지 등의 정보
+						CONSOLE_SCREEN_BUFFER_INFO bi;
+						GetConsoleScreenBufferInfo( hout, &bi ); // 현재 콘솔의 가로 세로가 몇개의 문자로 채워지는지 등의 정보
 
-						RECT rc;
-						GetClientRect( hwnd, &rc ); // 윈도우 Rect 가져오기
+						CONSOLE_FONT_INFO fi;
+						GetCurrentConsoleFont( hout, false, &fi );
+
+						RECT rc = {};
+						rc.right = bi.dwSize.X * fi.dwFontSize.X;
+						rc.bottom = bi.dwSize.Y * fi.dwFontSize.Y;
 
 						COORD coord = { 0, 0 };
-						coord.X = ( p.x * inf.srWindow.Right ) / rc.right; // ( p.x / rc.right ) * inf.srWindow.Right 로 코드를 작성하면 이해하기 좋다
-						coord.Y = ( p.y * inf.srWindow.Bottom ) / rc.bottom; // 그러나 먼저 곱하나 늦게 곱하나 결과는 같다.( 헷갈리지 말자 )
+						coord.X = ( p.x * bi.srWindow.Right ) / rc.right;
+						coord.Y = ( p.y * bi.srWindow.Bottom ) / rc.bottom;
 
 						printf_s(
-							"\t\t" "Size X : %d \n"
-							"\t\t" "Size Y : %d \n"
-							"\t\t" "Max X : %d \n"
-							"\t\t" "Max Y : %d \n"
 							"\t\t" "Cursor X : %d \n"
 							"\t\t" "Cursor Y : %d \n"
+							"\n"
 							"         1         2         3         4         5         6         7         8         9         0         1 \n"
-							"012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890\n\n"
-							, inf.dwSize.X
-							, inf.dwSize.Y
-							, inf.dwMaximumWindowSize.X
-							, inf.dwMaximumWindowSize.Y
+							"012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890\n"
+							"\n"
 							, coord.X
 							, coord.Y
-						);
-					}
-
-
-					{
-						HANDLE hout = GetStdHandle( STD_OUTPUT_HANDLE );
-						CONSOLE_FONT_INFO inf;
-						GetCurrentConsoleFont( hout, false, &inf );
-
-						CONSOLE_SCREEN_BUFFER_INFO bi;
-						GetConsoleScreenBufferInfo( hout, &bi );
-
-						printf_s(
-							"\t\t" "Font Size   : %d \n"
-							"\t\t" "Font Width  : %d \n"
-							"\t\t" "Font Height : %d \n"
-							"\t\t" "Expected Text Area Width  : %d \n"
-							"\t\t" "Expected Text Area Height : %d \n\n"
-							, inf.nFont
-							, inf.dwFontSize.X
-							, inf.dwFontSize.Y
-							, bi.dwSize.X * inf.dwFontSize.X
-							, bi.dwSize.Y * inf.dwFontSize.Y
 						);
 					}
 
