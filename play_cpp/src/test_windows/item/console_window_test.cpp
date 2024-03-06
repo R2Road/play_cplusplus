@@ -108,6 +108,13 @@ namespace console_window_test
 				DECLARATION_MAIN( const auto height = static_cast<int>( csbi.srWindow.Bottom - csbi.srWindow.Top + 1 ) );
 				OUTPUT_VALUE( width );
 				OUTPUT_VALUE( height );
+
+				LF();
+
+				printf_s(
+					"         1         2         3         4         5         6         7         8         9         0         1         2\n"
+					"0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890\n\n"
+				);
 			}
 
 			LS();
