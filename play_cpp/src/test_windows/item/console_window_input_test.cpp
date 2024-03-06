@@ -368,22 +368,37 @@ namespace console_window_input_test
 						GetCurrentConsoleFont( hout, false, &fi );
 
 						RECT rc = {};
-						rc.right = bi.dwSize.X * fi.dwFontSize.X;
-						rc.bottom = bi.dwSize.Y * fi.dwFontSize.Y;
+						rc.right = bi.dwMaximumWindowSize.X * fi.dwFontSize.X;
+						rc.bottom = bi.dwMaximumWindowSize.Y * fi.dwFontSize.Y;
 
+						//
+						// 커서 좌표 만드는 방법 1
+						//
 						COORD coord = { 0, 0 };
-						coord.X = ( p.x * bi.srWindow.Right ) / rc.right;
-						coord.Y = ( p.y * bi.srWindow.Bottom ) / rc.bottom;
+						coord.X = ( p.x / fi.dwFontSize.X );
+						coord.Y = ( p.y / fi.dwFontSize.Y );
+
+						//
+						// 커서 좌표 만드는 방법 2
+						//
+						int fx = ( int )( ( ( float )p.x / ( float )rc.right ) * bi.dwMaximumWindowSize.X );
+						int fy = ( int )( ( ( float )p.y / ( float )rc.bottom ) * bi.dwMaximumWindowSize.Y );
 
 						printf_s(
 							"\t\t" "Cursor X : %d \n"
 							"\t\t" "Cursor Y : %d \n"
+							"\t\t" "Cursor X2 : %d \n"
+							"\t\t" "Cursor Y2 : %d \n"
+							"\t\t" "fx : %f \n"
 							"\n"
-							"         1         2         3         4         5         6         7         8         9         0         1 \n"
+							"##########1#########2#########3#########4#########5#########6#########7#########8#########9#########0#########1\n"
 							"012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890\n"
 							"\n"
 							, coord.X
 							, coord.Y
+							, fx
+							, fy
+							, ( ( float )p.x / ( float )rc.right )
 						);
 					}
 
