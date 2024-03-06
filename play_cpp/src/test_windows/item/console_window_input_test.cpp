@@ -184,7 +184,28 @@ namespace console_window_input_test
 	}
 
 
+	// REF : https://stackoverflow.com/questions/40004772/how-to-print-sentence-in-the-position-of-the-mouse-cursor-in-vc-win32-applicat
+	COORD getxy()
+	{
+		POINT p;
+		GetCursorPos( &p ); // 마우스 좌표 가져오기
 
+		HWND hwnd = GetConsoleWindow();
+		ScreenToClient( hwnd, &p ); // 마우스 좌표 현재 윈도우 좌표로 변환
+
+		HANDLE hout = GetStdHandle( STD_OUTPUT_HANDLE );
+		CONSOLE_SCREEN_BUFFER_INFO inf;
+		GetConsoleScreenBufferInfo( hout, &inf ); // 현재 콘솔의 가로 세로가 몇개의 문자로 채워지는지 등의 정보
+
+		RECT rc;
+		GetClientRect( hwnd, &rc ); // 윈도우 Rect 가져오기
+
+		COORD coord = { 0, 0 };
+		coord.X = MulDiv( p.x, inf.srWindow.Right, rc.right ); // ( p.x / rc.right ) * inf.srWindow.Right 로 코드를 작성하면 이해하기 좋다
+		coord.Y = MulDiv( p.y, inf.srWindow.Bottom, rc.bottom ); // 그러나 먼저 곱하나 늦게 곱하나 결과는 같다.( 헷갈리지 말자 )
+
+		return coord;
+	}
 	r2tm::TitleFunctionT WindowInput_GetKeyState::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -285,6 +306,29 @@ namespace console_window_input_test
 							"\t\t" "Key Value : hex : %8x \n\n"
 							, ( key_value & 0x8000 ? 'O' : 'X' )
 							, key_value
+						);
+					}
+
+					{
+						tagPOINT p;
+						GetCursorPos( &p );
+
+						printf_s(
+							"\t\t" "Key State : %d \n"
+							"\t\t" "Key Value : %d \n\n"
+							, p.x
+							, p.y
+						);
+					}
+
+					{
+						COORD coord = getxy();
+
+						printf_s(
+							"\t\t" "Key State : %d \n"
+							"\t\t" "Key Value : %d \n\n"
+							, coord.X
+							, coord.Y
 						);
 					}
 
