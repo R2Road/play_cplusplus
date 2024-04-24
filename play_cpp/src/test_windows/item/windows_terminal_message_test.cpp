@@ -8,7 +8,7 @@
 
 #include "r2tm/r2tm_ostream.h"
 
-namespace console_window_message_test
+namespace windows_terminal_message_test
 {
 	BOOL WINAPI CtrlHandler( DWORD fdwCtrlType )
 	{
@@ -107,10 +107,12 @@ namespace console_window_message_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
-}
 
-namespace console_window_message_test
-{
+
+
+
+
+
 	HHOOK g_hook_keyboard = NULL;
 	HHOOK g_hook_mouse = NULL;
 

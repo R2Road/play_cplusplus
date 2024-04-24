@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace console_window_message_test
+namespace windows_terminal_message_test
 {
 	class ConsoleControlHandler : public r2tm::iItem
 	{

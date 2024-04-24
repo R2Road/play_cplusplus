@@ -49,8 +49,8 @@ r2tm::WriteFunctionT WindowsMenu::GetWriteFunction() const
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'u', console_window_message_test::ConsoleControlHandler() );
-		ret->AddItem( 'i', console_window_message_test::MessageHook() );
+		ret->AddItem( 'u', windows_terminal_message_test::ConsoleControlHandler() );
+		ret->AddItem( 'i', windows_terminal_message_test::MessageHook() );
 
 
 		ret->AddLineFeed();
