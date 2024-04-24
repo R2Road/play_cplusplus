@@ -11,18 +11,18 @@
 // https://docs.microsoft.com/en-us/windows/console/console-reference
 
 
-r2tm::TitleFunctionT ConsoleTextColorMenu::GetTitleFunction() const
+r2tm::TitleFunctionT WindowsTerminalFondAndTextColorMenu::GetTitleFunction() const
 {
 	return []()->const char*
 	{
-		return "Console Text Color";
+		return "Windows Terminal : Font And Text Color";
 	};
 }
-r2tm::DescriptionFunctionT ConsoleTextColorMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT WindowsTerminalFondAndTextColorMenu::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT ConsoleTextColorMenu::GetWriteFunction() const
+r2tm::WriteFunctionT WindowsTerminalFondAndTextColorMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* ret )
 	{
