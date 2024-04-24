@@ -1,4 +1,4 @@
-#include "console_window_input_test.h"
+#include "windows_terminal_input_test.h"
 
 #include <assert.h>
 #include <conio.h> // _kbhit(), _getch()
