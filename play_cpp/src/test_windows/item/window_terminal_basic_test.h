@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace window_terminal_basic_test
+namespace windows_terminal_basic_test
 {
 	class BufferInfo : public r2tm::iItem
 	{

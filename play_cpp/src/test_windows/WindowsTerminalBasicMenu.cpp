@@ -24,43 +24,43 @@ r2tm::WriteFunctionT WindowsTerminalBasicMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* ret )
 	{
-		ret->AddItem( '1', window_terminal_basic_test::BufferInfo() );
+		ret->AddItem( '1', windows_terminal_basic_test::BufferInfo() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( '2', window_terminal_basic_test::ChangeWindowSize() );
-		ret->AddItem( '3', window_terminal_basic_test::FullScreen() );
-		ret->AddItem( '4', window_terminal_basic_test::Focus() );
-
-
-		ret->AddLineFeed();
-		ret->AddLineFeed();
-
-
-		ret->AddItem( 'q', window_terminal_basic_test::WindowPosition() );
+		ret->AddItem( '2', windows_terminal_basic_test::ChangeWindowSize() );
+		ret->AddItem( '3', windows_terminal_basic_test::FullScreen() );
+		ret->AddItem( '4', windows_terminal_basic_test::Focus() );
 
 
 		ret->AddLineFeed();
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'a', window_terminal_basic_test::ChangeWindowName() );
-		ret->AddItem( 's', window_terminal_basic_test::HideTitleBar() );
-		ret->AddItem( 'd', window_terminal_basic_test::HideScrollBar() );
-		ret->AddItem( 'f', window_terminal_basic_test::DisableMaximize() );
-		ret->AddItem( 'g', window_terminal_basic_test::LockWindowResizingByDragging() );
-		ret->AddItem( 'h', window_terminal_basic_test::MenuItem() );
+		ret->AddItem( 'q', windows_terminal_basic_test::WindowPosition() );
 
 
 		ret->AddLineFeed();
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'z', window_terminal_basic_test::CursorMove() );
-		ret->AddItem( 'x', window_terminal_basic_test::CursorVisibility() );
-		ret->AddItem( 'c', window_terminal_basic_test::QuickEdit() );
+		ret->AddItem( 'a', windows_terminal_basic_test::ChangeWindowName() );
+		ret->AddItem( 's', windows_terminal_basic_test::HideTitleBar() );
+		ret->AddItem( 'd', windows_terminal_basic_test::HideScrollBar() );
+		ret->AddItem( 'f', windows_terminal_basic_test::DisableMaximize() );
+		ret->AddItem( 'g', windows_terminal_basic_test::LockWindowResizingByDragging() );
+		ret->AddItem( 'h', windows_terminal_basic_test::MenuItem() );
+
+
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'z', windows_terminal_basic_test::CursorMove() );
+		ret->AddItem( 'x', windows_terminal_basic_test::CursorVisibility() );
+		ret->AddItem( 'c', windows_terminal_basic_test::QuickEdit() );
 
 
 		ret->AddSplit();

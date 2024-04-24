@@ -14,7 +14,7 @@
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_WindowUtility.h"
 
-namespace window_terminal_basic_test
+namespace windows_terminal_basic_test
 {
 	r2tm::TitleFunctionT BufferInfo::GetTitleFunction() const
 	{
