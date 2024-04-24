@@ -1,4 +1,4 @@
-#include "console_window_test.h"
+#include "window_terminal_basic_test.h"
 
 #include <bitset>
 #include <conio.h>
