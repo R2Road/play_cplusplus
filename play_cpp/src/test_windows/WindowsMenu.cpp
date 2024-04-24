@@ -10,7 +10,7 @@
 #include "item/windows_terminal_font_test.h"
 
 #include "ConsoleTextColorMenu.h"
-#include "ConsoleWindowMenu.h"
+#include "WindowsTerminalBasicMenu.h"
 #include "FlickeringResearchMenu.h"
 #include "RootMenu.h"
 
