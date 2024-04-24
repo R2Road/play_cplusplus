@@ -9,18 +9,18 @@
 // # REF
 // https://docs.microsoft.com/en-us/windows/console/console-reference
 
-r2tm::TitleFunctionT ConsoleWindowMenu::GetTitleFunction() const
+r2tm::TitleFunctionT WindowsTerminalBasicMenu::GetTitleFunction() const
 {
 	return []()->const char*
 	{
-		return "Basic";
+		return "Windows Terminal : Basic";
 	};
 }
-r2tm::DescriptionFunctionT ConsoleWindowMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT WindowsTerminalBasicMenu::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT ConsoleWindowMenu::GetWriteFunction() const
+r2tm::WriteFunctionT WindowsTerminalBasicMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* ret )
 	{

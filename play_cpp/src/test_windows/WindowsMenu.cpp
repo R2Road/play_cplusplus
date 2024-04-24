@@ -32,7 +32,7 @@ r2tm::WriteFunctionT WindowsMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* ret )
 	{
-		ret->AddMenu( '1', ConsoleWindowMenu() );
+		ret->AddMenu( '1', WindowsTerminalBasicMenu() );
 		ret->AddMenu( '2', ConsoleTextColorMenu() );
 
 

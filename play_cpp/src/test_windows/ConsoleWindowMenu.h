@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iMenu.h"
 
-class ConsoleWindowMenu : public r2tm::iMenu
+class WindowsTerminalBasicMenu : public r2tm::iMenu
 {
 public:
 	r2tm::TitleFunctionT GetTitleFunction() const override;
