@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_Director.h"
 
-#include "item/window_terminal_basic_test.h"
+#include "item/windows_terminal_basic_test.h"
 
 #include "WindowsMenu.h"
 
