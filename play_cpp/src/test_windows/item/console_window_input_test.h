@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace console_window_input_test
+namespace windows_terminal_input_test
 {
 	class WindowInput_ReadConsoleInput : public r2tm::iItem
 	{

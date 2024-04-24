@@ -40,10 +40,10 @@ r2tm::WriteFunctionT WindowsMenu::GetWriteFunction() const
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'e', console_window_input_test::WindowInput_ReadConsoleInput() );
-		ret->AddItem( 'r', console_window_input_test::WindowInput_GetKeyState() );
-		ret->AddItem( 't', console_window_input_test::WindowInput_GetKeyboardState() );
-		ret->AddItem( 'y', console_window_input_test::WindowInput_GetAsyncKeyStates() );
+		ret->AddItem( 'e', windows_terminal_input_test::WindowInput_ReadConsoleInput() );
+		ret->AddItem( 'r', windows_terminal_input_test::WindowInput_GetKeyState() );
+		ret->AddItem( 't', windows_terminal_input_test::WindowInput_GetKeyboardState() );
+		ret->AddItem( 'y', windows_terminal_input_test::WindowInput_GetAsyncKeyStates() );
 
 
 		ret->AddLineFeed();
