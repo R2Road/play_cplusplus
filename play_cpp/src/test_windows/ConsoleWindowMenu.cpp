@@ -13,7 +13,7 @@ r2tm::TitleFunctionT ConsoleWindowMenu::GetTitleFunction() const
 {
 	return []()->const char*
 	{
-		return "Console Window";
+		return "Basic";
 	};
 }
 r2tm::DescriptionFunctionT ConsoleWindowMenu::GetDescriptionFunction() const
@@ -24,43 +24,43 @@ r2tm::WriteFunctionT ConsoleWindowMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* ret )
 	{
-		ret->AddItem( '1', console_window_test::BufferInfo() );
+		ret->AddItem( '1', window_terminal_basic_test::BufferInfo() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( '2', console_window_test::ChangeWindowSize() );
-		ret->AddItem( '3', console_window_test::FullScreen() );
-		ret->AddItem( '4', console_window_test::Focus() );
-
-
-		ret->AddLineFeed();
-		ret->AddLineFeed();
-
-
-		ret->AddItem( 'q', console_window_test::WindowPosition() );
+		ret->AddItem( '2', window_terminal_basic_test::ChangeWindowSize() );
+		ret->AddItem( '3', window_terminal_basic_test::FullScreen() );
+		ret->AddItem( '4', window_terminal_basic_test::Focus() );
 
 
 		ret->AddLineFeed();
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'a', console_window_test::ChangeWindowName() );
-		ret->AddItem( 's', console_window_test::HideTitleBar() );
-		ret->AddItem( 'd', console_window_test::HideScrollBar() );
-		ret->AddItem( 'f', console_window_test::DisableMaximize() );
-		ret->AddItem( 'g', console_window_test::LockWindowResizingByDragging() );
-		ret->AddItem( 'h', console_window_test::MenuItem() );
+		ret->AddItem( 'q', window_terminal_basic_test::WindowPosition() );
 
 
 		ret->AddLineFeed();
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'z', console_window_test::CursorMove() );
-		ret->AddItem( 'x', console_window_test::CursorVisibility() );
-		ret->AddItem( 'c', console_window_test::QuickEdit() );
+		ret->AddItem( 'a', window_terminal_basic_test::ChangeWindowName() );
+		ret->AddItem( 's', window_terminal_basic_test::HideTitleBar() );
+		ret->AddItem( 'd', window_terminal_basic_test::HideScrollBar() );
+		ret->AddItem( 'f', window_terminal_basic_test::DisableMaximize() );
+		ret->AddItem( 'g', window_terminal_basic_test::LockWindowResizingByDragging() );
+		ret->AddItem( 'h', window_terminal_basic_test::MenuItem() );
+
+
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'z', window_terminal_basic_test::CursorMove() );
+		ret->AddItem( 'x', window_terminal_basic_test::CursorVisibility() );
+		ret->AddItem( 'c', window_terminal_basic_test::QuickEdit() );
 
 
 		ret->AddSplit();
