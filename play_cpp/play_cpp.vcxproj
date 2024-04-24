@@ -173,7 +173,7 @@
     <ClCompile Include="src\test_various\MathMenu.cpp" />
     <ClCompile Include="src\test_various\RandomMenu.cpp" />
     <ClCompile Include="src\test_various\TimeMenu.cpp" />
-    <ClCompile Include="src\test_windows\ConsoleTextColorMenu.cpp" />
+    <ClCompile Include="src\test_windows\WindowsTerminalFondAndTextColorMenu.cpp" />
     <ClCompile Include="src\test_windows\WindowsTerminalBasicMenu.cpp" />
     <ClCompile Include="src\test_windows\FlickeringResearchMenu.cpp" />
     <ClCompile Include="src\test_windows\item\windows_screen_buffer_test.cpp" />
@@ -383,7 +383,7 @@
     <ClInclude Include="src\test_various\MathMenu.h" />
     <ClInclude Include="src\test_various\RandomMenu.h" />
     <ClInclude Include="src\test_various\TimeMenu.h" />
-    <ClInclude Include="src\test_windows\ConsoleTextColorMenu.h" />
+    <ClInclude Include="src\test_windows\WindowsTerminalFondAndTextColorMenu.h" />
     <ClInclude Include="src\test_windows\WindowsTerminalBasicMenu.h" />
     <ClInclude Include="src\test_windows\FlickeringResearchMenu.h" />
     <ClInclude Include="src\test_windows\item\windows_screen_buffer_test.h" />

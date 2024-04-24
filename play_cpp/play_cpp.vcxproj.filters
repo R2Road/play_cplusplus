@@ -125,7 +125,7 @@
     <ClCompile Include="src\test_windows\item\windows_terminal_basic_test.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_windows\ConsoleTextColorMenu.cpp">
+    <ClCompile Include="src\test_windows\WindowsTerminalFondAndTextColorMenu.cpp">
       <Filter>test_windows</Filter>
     </ClCompile>
     <ClCompile Include="src\test_windows\WindowsTerminalBasicMenu.cpp">
@@ -635,7 +635,7 @@
     <ClInclude Include="src\test_windows\item\windows_terminal_basic_test.h">
       <Filter>test_windows\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_windows\ConsoleTextColorMenu.h">
+    <ClInclude Include="src\test_windows\WindowsTerminalFondAndTextColorMenu.h">
       <Filter>test_windows</Filter>
     </ClInclude>
     <ClInclude Include="src\test_windows\WindowsTerminalBasicMenu.h">

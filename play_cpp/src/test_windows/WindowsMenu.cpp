@@ -8,7 +8,7 @@
 #include "item/windows_sound_test.h"
 #include "item/windows_terminal_dc_test.h"
 
-#include "ConsoleTextColorMenu.h"
+#include "WindowsTerminalFondAndTextColorMenu.h"
 #include "WindowsTerminalBasicMenu.h"
 #include "FlickeringResearchMenu.h"
 #include "RootMenu.h"
