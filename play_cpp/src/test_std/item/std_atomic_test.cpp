@@ -319,6 +319,7 @@ namespace std_atomic_test
 			LS();
 
 			EXPECT_EQ( 100000 * 5, n );
+			OUTPUT_VALUE( n );
 
 			LS();
 

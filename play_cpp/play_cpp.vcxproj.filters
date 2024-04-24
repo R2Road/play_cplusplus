@@ -119,7 +119,7 @@
     <ClCompile Include="src\test_windows\item\console_window_input_test.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_windows\item\console_window_message_test.cpp">
+    <ClCompile Include="src\test_windows\item\windows_terminal_message_test.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_windows\item\console_window_test.cpp">
@@ -629,7 +629,7 @@
     <ClInclude Include="src\test_windows\item\console_window_input_test.h">
       <Filter>test_windows\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_windows\item\console_window_message_test.h">
+    <ClInclude Include="src\test_windows\item\windows_terminal_message_test.h">
       <Filter>test_windows\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_windows\item\console_window_test.h">

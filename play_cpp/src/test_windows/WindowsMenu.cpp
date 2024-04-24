@@ -3,7 +3,7 @@
 #include "r2tm/r2tm_Director.h"
 
 #include "item/console_window_input_test.h"
-#include "item/console_window_message_test.h"
+#include "item/windows_terminal_message_test.h"
 #include "item/windows_screen_buffer_test.h"
 #include "item/windows_sound_test.h"
 #include "item/windows_terminal_dc_test.h"

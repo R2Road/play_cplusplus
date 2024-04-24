@@ -1,4 +1,4 @@
-#include "console_window_message_test.h"
+#include "windows_terminal_message_test.h"
 
 #include <assert.h>
 #include <conio.h>
