@@ -7,7 +7,6 @@
 #include "item/windows_screen_buffer_test.h"
 #include "item/windows_sound_test.h"
 #include "item/windows_terminal_dc_test.h"
-#include "item/windows_terminal_font_test.h"
 
 #include "ConsoleTextColorMenu.h"
 #include "WindowsTerminalBasicMenu.h"
@@ -70,11 +69,9 @@ r2tm::WriteFunctionT WindowsMenu::GetWriteFunction() const
 
 
 		ret->AddMenu( 'z', FlickeringResearchMenu() );
-		ret->AddItem( 'x', windows_terminal_font_test::FontInfo() );
-		ret->AddItem( 'c', windows_terminal_font_test::FontChange() );
-		ret->AddItem( 'v', windows_terminal_dc_test::Pixel() );
-		ret->AddItem( 'b', windows_sound_test::PlaySoundTest() );
-		ret->AddItem( 'n', windows_sound_test::BeepTest() );
+		ret->AddItem( 'x', windows_terminal_dc_test::Pixel() );
+		ret->AddItem( 'c', windows_sound_test::PlaySoundTest() );
+		ret->AddItem( 'v', windows_sound_test::BeepTest() );
 
 
 		ret->AddSplit();
