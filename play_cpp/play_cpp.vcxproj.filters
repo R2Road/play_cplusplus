@@ -371,7 +371,7 @@
     <ClCompile Include="src\test_template\item\template_practice_part_01_test.cpp">
       <Filter>test_template\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_template\item\variadic_template_test.cpp">
+    <ClCompile Include="src\test_template\item\template_variadic_test.cpp">
       <Filter>test_template\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_template\TemplateMenu.cpp">
@@ -896,7 +896,7 @@
     <ClInclude Include="src\test_template\item\template_practice_part_01_test.h">
       <Filter>test_template\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_template\item\variadic_template_test.h">
+    <ClInclude Include="src\test_template\item\template_variadic_test.h">
       <Filter>test_template\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_template\VariadicTemplateMenu.h">

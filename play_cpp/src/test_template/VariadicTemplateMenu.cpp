@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_Director.h"
 
-#include "test_template/item/variadic_template_test.h"
+#include "test_template/item/template_variadic_test.h"
 
 #include "TemplateMenu.h"
 
