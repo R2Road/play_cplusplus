@@ -356,3 +356,61 @@ namespace template_variadic_test
 		};
 	}
 }
+
+
+
+namespace
+{
+	template<typename RETURN_T, typename ... ARGS_T>
+	class VariadicFunctor
+	{
+	public:
+		using F = std::function<RETURN_T(ARGS_T...)>;
+
+		void Add( const F& f )
+		{
+			f( 1, 2.f, "test" );
+		}
+	};
+}
+namespace template_variadic_test
+{
+	r2tm::TitleFunctionT Test::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Test";
+		};
+	}
+	r2tm::DoFunctionT Test::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				VariadicFunctor<int, int, float, const char*> f;
+
+				class C
+				{
+				public:
+					int Do( int i, float f, const char* s ) const
+					{
+						OUTPUT_VALUE( i );
+						OUTPUT_VALUE( f );
+						OUTPUT_VALUE( s );
+
+						return i;
+					}
+				} c;
+
+				f.Add( [c2 = &c]( int i, float f, const char* s )->int
+				{
+					return c2->Do( i, f, s );
+				} );
+			}
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+}

@@ -27,6 +27,13 @@ r2tm::WriteFunctionT TemplateVariadicMenu::GetWriteFunction() const
 		ret->AddItem( '4', template_variadic_test::SubtractValues() );
 
 
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'a', template_variadic_test::Test() );
+
+
 		ret->AddSplit();
 
 
