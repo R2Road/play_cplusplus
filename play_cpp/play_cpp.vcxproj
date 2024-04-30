@@ -164,7 +164,7 @@
     <ClCompile Include="src\test_template\TemplateMenu.cpp" />
     <ClCompile Include="src\test_template\TemplateMetaProgrammingMenu.cpp" />
     <ClCompile Include="src\test_template\TemplatePracticeMenu.cpp" />
-    <ClCompile Include="src\test_template\VariadicTemplateMenu.cpp" />
+    <ClCompile Include="src\test_template\TemplateVariadicMenu.cpp" />
     <ClCompile Include="src\test_various\DebugMenu.cpp" />
     <ClCompile Include="src\test_various\ETCMenu.cpp" />
     <ClCompile Include="src\test_various\item\etc_0_test.cpp" />
@@ -374,7 +374,7 @@
     <ClInclude Include="src\test_template\TemplateMenu.h" />
     <ClInclude Include="src\test_template\TemplateMetaProgrammingMenu.h" />
     <ClInclude Include="src\test_template\TemplatePracticeMenu.h" />
-    <ClInclude Include="src\test_template\VariadicTemplateMenu.h" />
+    <ClInclude Include="src\test_template\TemplateVariadicMenu.h" />
     <ClInclude Include="src\test_various\DebugMenu.h" />
     <ClInclude Include="src\test_various\ETCMenu.h" />
     <ClInclude Include="src\test_various\item\etc_0_test.h" />

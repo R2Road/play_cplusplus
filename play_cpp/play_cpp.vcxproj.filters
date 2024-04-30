@@ -383,7 +383,7 @@
     <ClCompile Include="src\test_template\TemplatePracticeMenu.cpp">
       <Filter>test_template</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_template\VariadicTemplateMenu.cpp">
+    <ClCompile Include="src\test_template\TemplateVariadicMenu.cpp">
       <Filter>test_template</Filter>
     </ClCompile>
     <ClCompile Include="src\test_std\STDStringViewMenu.cpp">
@@ -899,7 +899,7 @@
     <ClInclude Include="src\test_template\item\template_variadic_test.h">
       <Filter>test_template\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_template\VariadicTemplateMenu.h">
+    <ClInclude Include="src\test_template\TemplateVariadicMenu.h">
       <Filter>test_template</Filter>
     </ClInclude>
     <ClInclude Include="src\test_template\TemplateMenu.h">

@@ -8,7 +8,7 @@
 
 #include "TemplateMetaProgrammingMenu.h"
 #include "TemplatePracticeMenu.h"
-#include "VariadicTemplateMenu.h"
+#include "TemplateVariadicMenu.h"
 
 #include "RootMenu.h"
 
