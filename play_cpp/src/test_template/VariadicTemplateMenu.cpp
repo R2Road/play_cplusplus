@@ -21,10 +21,10 @@ r2tm::WriteFunctionT VariadicTemplateMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* ret )
 	{
-		ret->AddItem( '1', variadic_template_test::SizeOfArgs() );
-		ret->AddItem( '2', variadic_template_test::PrintValues() );
-		ret->AddItem( '3', variadic_template_test::SumValues() );
-		ret->AddItem( '4', variadic_template_test::SubtractValues() );
+		ret->AddItem( '1', template_variadic_test::SizeOfArgs() );
+		ret->AddItem( '2', template_variadic_test::PrintValues() );
+		ret->AddItem( '3', template_variadic_test::SumValues() );
+		ret->AddItem( '4', template_variadic_test::SubtractValues() );
 
 
 		ret->AddSplit();

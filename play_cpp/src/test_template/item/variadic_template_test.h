@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace variadic_template_test
+namespace template_variadic_test
 {
 	class SizeOfArgs : public r2tm::iItem
 	{
