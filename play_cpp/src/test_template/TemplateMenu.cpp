@@ -54,7 +54,7 @@ r2tm::WriteFunctionT TemplateMenu::GetWriteFunction() const
 
 
 
-		ret->AddMenu( 'a', VariadicTemplateMenu() );
+		ret->AddMenu( 'a', TemplateVariadicMenu() );
 		ret->AddMenu( 's', TemplateMetaProgrammingMenu() );
 		ret->AddMenu( 'd', TemplatePracticeMenu() );
 

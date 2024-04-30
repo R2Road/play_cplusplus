@@ -6,18 +6,18 @@
 
 #include "TemplateMenu.h"
 
-r2tm::TitleFunctionT VariadicTemplateMenu::GetTitleFunction() const
+r2tm::TitleFunctionT TemplateVariadicMenu::GetTitleFunction() const
 {
 	return []()->const char*
 	{
-		return "Variadic Template";
+		return "Variadic";
 	};
 }
-r2tm::DescriptionFunctionT VariadicTemplateMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT TemplateVariadicMenu::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT VariadicTemplateMenu::GetWriteFunction() const
+r2tm::WriteFunctionT TemplateVariadicMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* ret )
 	{
