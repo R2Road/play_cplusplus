@@ -371,6 +371,15 @@ namespace
 		{
 			f( 1, 2.f, "test" );
 		}
+
+		template<typename OWNER_T>
+		void Add( OWNER_T* o, RETURN_T( OWNER_T::*c )( ARGS_T ... ) )
+		{
+			[o, c]( ARGS_T ... args )->RETURN_T
+			{
+				return ( o->*c )( args ... );
+			}( 1, 2.f, "test2" );
+		}
 	};
 }
 namespace template_variadic_test
@@ -394,7 +403,7 @@ namespace template_variadic_test
 				class C
 				{
 				public:
-					int Do( int i, float f, const char* s ) const
+					int Do( int i, float f, const char* s )
 					{
 						OUTPUT_VALUE( i );
 						OUTPUT_VALUE( f );
@@ -408,6 +417,8 @@ namespace template_variadic_test
 				{
 					return c2->Do( i, f, s );
 				} );
+
+				f.Add( &c, &C::Do );
 			}
 
 			return r2tm::eDoLeaveAction::Pause;
