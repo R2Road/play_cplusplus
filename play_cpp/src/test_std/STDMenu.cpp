@@ -12,6 +12,7 @@
 
 
 #include "RootMenu.h"
+#include "STDCinMenu.h"
 #include "STDContainerMenu.h"
 #include "STDCoutMenu.h"
 #include "STDFileSystemMenu.h"
@@ -41,11 +42,12 @@ r2tm::WriteFunctionT STDMenu::GetWriteFunction() const
 	{
 		ret->AddItem( '1', std_system_test::Demo() );
 		ret->AddMenu( '2', STDCoutMenu() );
-		ret->AddMenu( '3', STDFileSystemMenu() );
-		ret->AddMenu( '4', STDFstreamMenu() );
-		ret->AddMenu( '5', STDOptionalMenu() );
-		ret->AddMenu( '6', STDStringMenu() );
-		ret->AddMenu( '7', STDStringViewMenu() );
+		ret->AddMenu( '3', STDCinMenu() );
+		ret->AddMenu( '4', STDFileSystemMenu() );
+		ret->AddMenu( '5', STDFstreamMenu() );
+		ret->AddMenu( '6', STDOptionalMenu() );
+		ret->AddMenu( '7', STDStringMenu() );
+		ret->AddMenu( '8', STDStringViewMenu() );
 
 
 

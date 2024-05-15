@@ -578,6 +578,12 @@
     <ClCompile Include="src\utility\play_cpp_utility_CharacterBuffer.cpp">
       <Filter>utility</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_std\item\std_cin_test.cpp">
+      <Filter>test_std\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_std\STDCinMenu.cpp">
+      <Filter>test_std</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1201,6 +1207,12 @@
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\cpp_class_test_helper_size_with_enum.hpp">
       <Filter>test_cpp\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\item\std_cin_test.h">
+      <Filter>test_std\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_std\STDCinMenu.h">
+      <Filter>test_std</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

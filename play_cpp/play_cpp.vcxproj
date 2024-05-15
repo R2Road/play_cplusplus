@@ -110,6 +110,7 @@
     <ClCompile Include="src\test_performance\item\performance_container_iteration_test.cpp" />
     <ClCompile Include="src\test_performance\PerformanceMenu.cpp" />
     <ClCompile Include="src\test_std\item\std_algorithm_test.cpp" />
+    <ClCompile Include="src\test_std\item\std_cin_test.cpp" />
     <ClCompile Include="src\test_std\item\std_functional_hash_test.cpp" />
     <ClCompile Include="src\test_std\item\std_memory_align_test.cpp" />
     <ClCompile Include="src\test_std\item\std_array_test.cpp" />
@@ -141,6 +142,7 @@
     <ClCompile Include="src\test_std\item\std_variant_test.cpp" />
     <ClCompile Include="src\test_std\item\std_vector_test.cpp" />
     <ClCompile Include="src\test_std\STDAlignMenu.cpp" />
+    <ClCompile Include="src\test_std\STDCinMenu.cpp" />
     <ClCompile Include="src\test_std\STDContainerMenu.cpp" />
     <ClCompile Include="src\test_std\STDCoutMenu.cpp" />
     <ClCompile Include="src\test_std\STDFileSystemMenu.cpp" />
@@ -311,6 +313,7 @@
     <ClInclude Include="src\test_performance\item\performance_container_iteration_test.h" />
     <ClInclude Include="src\test_performance\PerformanceMenu.h" />
     <ClInclude Include="src\test_std\item\std_algorithm_test.h" />
+    <ClInclude Include="src\test_std\item\std_cin_test.h" />
     <ClInclude Include="src\test_std\item\std_functional_hash_test.h" />
     <ClInclude Include="src\test_std\item\std_functional_hash_test_helper_cstring.hpp" />
     <ClInclude Include="src\test_std\item\std_memory_align_test.h" />
@@ -348,6 +351,7 @@
     <ClInclude Include="src\test_std\item\std_variant_test.h" />
     <ClInclude Include="src\test_std\item\std_vector_test.h" />
     <ClInclude Include="src\test_std\STDAlignMenu.h" />
+    <ClInclude Include="src\test_std\STDCinMenu.h" />
     <ClInclude Include="src\test_std\STDContainerMenu.h" />
     <ClInclude Include="src\test_std\STDCoutMenu.h" />
     <ClInclude Include="src\test_std\STDFileSystemMenu.h" />
