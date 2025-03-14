@@ -20,6 +20,7 @@
 #include "test_various/RandomMenu.h"
 #include "test_various/TimeMenu.h"
 #include "test_windows/WindowsMenu.h"
+#include "test_cpu/Menu_CPU.h"
 
 r2tm::TitleFunctionT RootMenu::GetTitleFunction() const
 {
@@ -90,6 +91,7 @@ r2tm::WriteFunctionT RootMenu::GetWriteFunction() const
 		ret->AddMenu( 'z', AlgorithmMenu() );
 		ret->AddMenu( 'x', HobbyMenu() );
 		ret->AddMenu( 'c', PerformanceMenu() );
+		ret->AddMenu( 'v', Menu_CPU() );
 
 
 
