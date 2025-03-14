@@ -4,7 +4,7 @@
 
 namespace test_cpu_basic
 {
-	class Test : public r2tm::iItem
+	class CacheInformation : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
