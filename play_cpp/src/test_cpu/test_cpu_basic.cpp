@@ -41,19 +41,31 @@ namespace test_cpu_basic
 		{
 			LS();
 
-			LPFN_GLPI glpi = ( LPFN_GLPI )GetProcAddress( GetModuleHandle( TEXT( "kernel32" ) ), "GetLogicalProcessorInformation" );
+			LPFN_GetLogicalProcessorInformation glpi = ( LPFN_GetLogicalProcessorInformation )GetProcAddress( GetModuleHandle( TEXT( "kernel32" ) ), "GetLogicalProcessorInformation" );
 
 			if( nullptr == glpi )
 				return r2tm::eDoLeaveAction::Pause;
 
+			//
+			// ù ���ڷ� 0�� �ָ� ������ ������ ���� �ʿ��� �޸� ũ�⸦ ��ȯ �Ѵ�.
+			//
 			DWORD buffer_bytes = 0;
-			int cache_size = 0;
-
 			glpi( 0, &buffer_bytes );
-			std::size_t size = buffer_bytes / sizeof( SYSTEM_LOGICAL_PROCESSOR_INFORMATION );
+
+			//
+			// �޸� �Ҵ�.
+			//
+			const std::size_t size = buffer_bytes / sizeof( SYSTEM_LOGICAL_PROCESSOR_INFORMATION );
 			SYSTEM_LOGICAL_PROCESSOR_INFORMATION* buffer = new SYSTEM_LOGICAL_PROCESSOR_INFORMATION[size];
+
+			//
+			// ���� ȹ��.
+			//
 			glpi( buffer, &buffer_bytes );
 
+			//
+			// ���
+			//
 			for( std::size_t i = 0; size > i; ++i )
 			{
 				if( buffer[i].Relationship == _LOGICAL_PROCESSOR_RELATIONSHIP::RelationCache )
@@ -68,6 +80,9 @@ namespace test_cpu_basic
 				}
 			}
 
+			//
+			//
+			//
 			delete[] buffer;
 
 			LS();
