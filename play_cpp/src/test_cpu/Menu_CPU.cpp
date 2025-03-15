@@ -21,7 +21,8 @@ r2tm::WriteFunctionT Menu_CPU::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* ret )
 	{
-		ret->AddItem( '1', test_cpu_basic::CacheInformation() );
+		ret->AddItem( '1', test_cpu_basic::CoreInformation() );
+		ret->AddItem( '2', test_cpu_basic::CacheInformation() );
 
 
 		ret->AddSplit();

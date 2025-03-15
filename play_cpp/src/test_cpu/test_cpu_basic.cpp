@@ -7,10 +7,72 @@
 
 // REF : https://learn.microsoft.com/ko-kr/windows/win32/api/sysinfoapi/nf-sysinfoapi-getlogicalprocessorinformation
 #include <windows.h>
-typedef BOOL( WINAPI* LPFN_GLPI )( PSYSTEM_LOGICAL_PROCESSOR_INFORMATION, PDWORD );
+typedef BOOL( WINAPI* LPFN_GetLogicalProcessorInformation )( PSYSTEM_LOGICAL_PROCESSOR_INFORMATION, PDWORD );
 
 namespace test_cpu_basic
 {
+	r2tm::TitleFunctionT CoreInformation::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Core Information";
+		};
+	}
+	r2tm::DoFunctionT CoreInformation::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			LPFN_GetLogicalProcessorInformation glpi = ( LPFN_GetLogicalProcessorInformation )GetProcAddress( GetModuleHandle( TEXT( "kernel32" ) ), "GetLogicalProcessorInformation" );
+
+			if( nullptr == glpi )
+				return r2tm::eDoLeaveAction::Pause;
+
+			//
+			// Ã¹ ÀÎÀÚ·Î 0À» ÁÖ¸é Á¤º¸¸¦ ¾ò¾î¿À±â À§ÇØ ÇÊ¿äÇÑ ¸Þ¸ð¸® Å©±â¸¦ ¹ÝÈ¯ ÇÑ´Ù.
+			//
+			DWORD buffer_bytes = 0;
+			glpi( 0, &buffer_bytes );
+
+			//
+			// ¸Þ¸ð¸® ÇÒ´ç.
+			//
+			const std::size_t size = buffer_bytes / sizeof( SYSTEM_LOGICAL_PROCESSOR_INFORMATION );
+			SYSTEM_LOGICAL_PROCESSOR_INFORMATION* buffer = new SYSTEM_LOGICAL_PROCESSOR_INFORMATION[size];
+
+			//
+			// Á¤º¸ È¹µæ.
+			//
+			glpi( buffer, &buffer_bytes );
+
+			//
+			// Ãâ·Â
+			//
+			for( std::size_t i = 0; size > i; ++i )
+			{
+				if( buffer[i].Relationship == _LOGICAL_PROCESSOR_RELATIONSHIP::RelationProcessorCore )
+				{
+					printf( "Processor Mask : %10d | Flags : %2d\n"
+						, buffer[i].ProcessorMask
+						, buffer[i].ProcessorCore.Flags
+					);
+				}
+			}
+
+			//
+			//
+			//
+			delete[] buffer;
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	const char* Convert_CacheType2String( _PROCESSOR_CACHE_TYPE type )
 	{
 		switch( type )
@@ -47,24 +109,24 @@ namespace test_cpu_basic
 				return r2tm::eDoLeaveAction::Pause;
 
 			//
-			// Ã¹ ï¿½ï¿½ï¿½Ú·ï¿½ 0ï¿½ï¿½ ï¿½Ö¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½Þ¸ï¿½ Å©ï¿½â¸¦ ï¿½ï¿½È¯ ï¿½Ñ´ï¿½.
+			// Ã¹ ÀÎÀÚ·Î 0À» ÁÖ¸é Á¤º¸¸¦ ¾ò¾î¿À±â À§ÇØ ÇÊ¿äÇÑ ¸Þ¸ð¸® Å©±â¸¦ ¹ÝÈ¯ ÇÑ´Ù.
 			//
 			DWORD buffer_bytes = 0;
 			glpi( 0, &buffer_bytes );
 
 			//
-			// ï¿½Þ¸ï¿½ ï¿½Ò´ï¿½.
+			// ¸Þ¸ð¸® ÇÒ´ç.
 			//
 			const std::size_t size = buffer_bytes / sizeof( SYSTEM_LOGICAL_PROCESSOR_INFORMATION );
 			SYSTEM_LOGICAL_PROCESSOR_INFORMATION* buffer = new SYSTEM_LOGICAL_PROCESSOR_INFORMATION[size];
 
 			//
-			// ï¿½ï¿½ï¿½ï¿½ È¹ï¿½ï¿½.
+			// Á¤º¸ È¹µæ.
 			//
 			glpi( buffer, &buffer_bytes );
 
 			//
-			// ï¿½ï¿½ï¿½
+			// Ãâ·Â
 			//
 			for( std::size_t i = 0; size > i; ++i )
 			{
