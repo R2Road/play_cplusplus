@@ -47,7 +47,7 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Flip" );
+				OUTPUT_SUBJECT( "Flip : ~" );
 
 				LF();
 
@@ -59,7 +59,7 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Shift : Left" );
+				OUTPUT_SUBJECT( "Shift : Left : <<" );
 
 				LF();
 
@@ -71,7 +71,7 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Shift : Right" );
+				OUTPUT_SUBJECT( "Shift : Right : >>" );
 
 				LF();
 
