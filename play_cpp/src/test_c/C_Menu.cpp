@@ -4,7 +4,6 @@
 
 #include "item/c_array_test.h"
 #include "item/c_atexit_test.h"
-#include "item/c_operator_ternary_test.h"
 #include "item/c_printf_test.h"
 #include "item/c_macro_test.h"
 #include "item/c_memset_test.h"
@@ -15,6 +14,7 @@
 
 #include "BitOperationMenu.h"
 #include "C_FileMenu.h"
+#include "OperatorMenu.h"
 #include "PointerMenu.h"
 #include "UnionMenu.h"
 #include "RootMenu.h"
@@ -35,12 +35,10 @@ r2tm::WriteFunctionT C_Menu::GetWriteFunction() const
 	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', c_array_test::Init() );
-		ret->AddItem( '2', c_operator_ternary_test::Basic() );
-		ret->AddItem( '3', c_operator_ternary_test::Comma() );
-		ret->AddItem( '4', c_operator_ternary_test::Void() );
-		ret->AddItem( '5', c_struct_test::ByteAlignment() );
-		ret->AddItem( '6', c_struct_test::PragmaPack() );
-		ret->AddItem( '7', c_struct_test::Array_Size_0() );
+		ret->AddMenu( '2', OperatorMenu() );
+		ret->AddItem( '3', c_struct_test::ByteAlignment() );
+		ret->AddItem( '4', c_struct_test::PragmaPack() );
+		ret->AddItem( '5', c_struct_test::Array_Size_0() );
 		
 
 

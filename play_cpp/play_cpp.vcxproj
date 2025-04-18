@@ -106,6 +106,7 @@
     <ClCompile Include="src\test_c\item\c_time_test.cpp" />
     <ClCompile Include="src\test_c\item\c_pointer_test.cpp" />
     <ClCompile Include="src\test_c\item\c_union_test.cpp" />
+    <ClCompile Include="src\test_c\OperatorMenu.cpp" />
     <ClCompile Include="src\test_c\PointerMenu.cpp" />
     <ClCompile Include="src\test_c\UnionMenu.cpp" />
     <ClCompile Include="src\test_performance\item\performance_1_test.cpp" />
@@ -311,6 +312,7 @@
     <ClInclude Include="src\test_c\item\c_union_test_helper_unnamedunion_with_struct.hpp" />
     <ClInclude Include="src\test_c\item\c_union_test_helper_unnamedunion_with_vector3.hpp" />
     <ClInclude Include="src\test_c\item\c_union_test_helper_unnamedunion_with_vector3_2.hpp" />
+    <ClInclude Include="src\test_c\OperatorMenu.h" />
     <ClInclude Include="src\test_c\PointerMenu.h" />
     <ClInclude Include="src\test_c\UnionMenu.h" />
     <ClInclude Include="src\test_performance\item\performance_1_test.h" />

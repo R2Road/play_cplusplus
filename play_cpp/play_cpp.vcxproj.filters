@@ -593,6 +593,9 @@
     <ClCompile Include="src\test_cpu\test_cpu_basic.cpp">
       <Filter>test_cpu</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_c\OperatorMenu.cpp">
+      <Filter>test_c</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1228,6 +1231,9 @@
     </ClInclude>
     <ClInclude Include="src\test_cpu\test_cpu_basic.h">
       <Filter>test_cpu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_c\OperatorMenu.h">
+      <Filter>test_c</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
