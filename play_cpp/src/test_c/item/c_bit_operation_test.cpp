@@ -88,6 +88,74 @@ namespace c_bit_operation_test
 
 
 
+	r2tm::TitleFunctionT Operator_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Operator_2";
+		};
+	}
+	r2tm::DoFunctionT Operator_2::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( const int pivot = 0b100000001 ); // binary
+			PrintBinary( pivot );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "OR : | : 합치기" );
+
+				LF();
+
+				PrintBinary( pivot );
+				OUTPUT_CODE( pivot | 0b000111000 );
+				PrintBinary( pivot | 0b000111000 );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "AND : & : 중복 추출" );
+
+				LF();
+
+				PrintBinary( pivot );
+				OUTPUT_CODE( pivot & 0b100000000 );
+				PrintBinary( pivot & 0b100000000 );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "XOR : ^ : 같은 자리에 1 과 0 이 배치되면 1 그 외 0" );
+
+				LF();
+
+				PrintBinary( pivot );
+
+				LF();
+
+				OUTPUT_CODE( pivot ^ 0b000000000 );
+				PrintBinary( pivot ^ 0b000000000 );
+
+				LF();
+
+				OUTPUT_CODE( pivot ^ 0b111111111 );
+				PrintBinary( pivot ^ 0b111111111 );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT Complement::GetTitleFunction() const
 	{
 		return []()->const char*

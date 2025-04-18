@@ -22,9 +22,10 @@ r2tm::WriteFunctionT BitOperationMenu::GetWriteFunction() const
 	return[]( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', c_bit_operation_test::Operator() );
-		ret->AddItem( '2', c_bit_operation_test::Complement() );
-		ret->AddItem( '3', c_bit_operation_test::Add_Remove_Toggle() );
-		ret->AddItem( '4', c_bit_operation_test::Mask() );
+		ret->AddItem( '2', c_bit_operation_test::Operator_2() );
+		ret->AddItem( '3', c_bit_operation_test::Complement() );
+		ret->AddItem( '4', c_bit_operation_test::Add_Remove_Toggle() );
+		ret->AddItem( '5', c_bit_operation_test::Mask() );
 
 
 
