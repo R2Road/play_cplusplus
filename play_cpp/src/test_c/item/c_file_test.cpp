@@ -170,6 +170,69 @@ namespace c_file_test
 
 
 
+	r2tm::TitleFunctionT GetFormat::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "C File : Get Format";
+		};
+	}
+	r2tm::DoFunctionT GetFormat::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_SUBJECT( "fscanf는 줄을 무시하고 읽는다." );
+
+			LS();
+
+			OUTPUT_FILE( "resources/c_file_test_getformat_1.txt" );
+
+			LS();
+
+			DECLARATION_MAIN( int a = 0 );
+			DECLARATION_MAIN( int b = 0 );
+			DECLARATION_MAIN( int last = 0 );
+
+			DECLARATION_MAIN( FILE * fp = nullptr );
+
+			LS();
+
+			EXPECT_EQ( 0, fopen_s( &fp, "resources/c_file_test_getformat_1.txt", "rb" ) );
+
+			LS();
+
+			{
+				PROCESS_MAIN( fscanf_s( fp, "%d%d %d", &a, &b, &last ); printf( "%d %d    %d \n", a, b, last ); );
+
+				LF();
+
+				PROCESS_MAIN( a = 0; b = 0; last = 0 );
+				PROCESS_MAIN( fscanf_s( fp, "%d%d %d", &a, &b, &last ); printf( "%d %d    %d \n", a, b, last ); );
+
+				LF();
+
+				PROCESS_MAIN( a = 0; b = 0; last = 0 );
+				PROCESS_MAIN( fscanf_s( fp, "%d%d %d", &a, &b, &last ); printf( "%d %d    %d \n", a, b, last ); );
+
+				LF();
+
+				PROCESS_MAIN( while( !feof( fp ) ){ fscanf_s( fp, "%d%d %d", &a, &b, &last ); printf( "%d %d    %d \n", a, b, last ); } );
+			}
+
+			LS();
+
+			PROCESS_MAIN( fclose( fp ) );
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT FileGenerate::GetTitleFunction() const
 	{
 		return []()->const char*

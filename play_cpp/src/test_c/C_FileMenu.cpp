@@ -24,6 +24,7 @@ r2tm::WriteFunctionT C_FileMenu::GetWriteFunction() const
 		ret->AddItem( '1', c_file_test::OpenAndClose() );
 		ret->AddItem( '2', c_file_test::GetCharacter() );
 		ret->AddItem( '3', c_file_test::GetLine() );
+		ret->AddItem( '4', c_file_test::GetFormat() );
 
 
 
