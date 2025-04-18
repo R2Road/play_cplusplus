@@ -596,6 +596,9 @@
     <ClCompile Include="src\test_c\OperatorMenu.cpp">
       <Filter>test_c</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_c\item\c_operator_priority_test.cpp">
+      <Filter>test_c\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1234,6 +1237,9 @@
     </ClInclude>
     <ClInclude Include="src\test_c\OperatorMenu.h">
       <Filter>test_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_c\item\c_operator_priority_test.h">
+      <Filter>test_c\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
