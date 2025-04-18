@@ -29,11 +29,13 @@ namespace c_operator_priority_test
 
 				OUTPUT_VALUE( ( 2 * 1 + 1 ) );
 				EXPECT_EQ( ( 2 * 1 + 1 ), ( ( 2 * 1 ) + 1 ) );
+				EXPECT_NE( ( 2 * 1 + 1 ), ( 2 * ( 1 + 1 ) ) );
 
 				LF();
 
 				OUTPUT_VALUE( ( 1 + 1 * 2 ) );
 				EXPECT_EQ( ( 1 + 1 * 2 ), ( 1 + ( 1 * 2 ) ) );
+				EXPECT_NE( ( 1 + 1 * 2 ), ( ( 1 + 1 ) * 2 ) );
 			}
 
 			LS();
