@@ -421,7 +421,7 @@ namespace etc_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "-1e+4 = 1 * 10 * 10 * 10 * 10" );
+				OUTPUT_NOTE( "-1e+4 = -1 * 10 * 10 * 10 * 10" );
 
 				LF();
 
