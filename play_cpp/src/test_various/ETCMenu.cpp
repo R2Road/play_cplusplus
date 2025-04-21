@@ -29,6 +29,14 @@ r2tm::WriteFunctionT ETCMenu::GetWriteFunction() const
 		ret->AddItem( '5', etc_test::CircularReference() );
 
 
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'q', etc_test::E() );
+
+
 		ret->AddSplit();
 
 

@@ -382,4 +382,56 @@ namespace etc_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT E::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "E";
+		};
+	}
+	r2tm::DoFunctionT E::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUTPUT_NOTE( "1e+4 = 1 * 10 * 10 * 10 * 10" );
+
+				LF();
+
+				DECLARATION_MAIN( const double e = 1e+4 );
+				OUTPUT_VALUE( e );
+			}
+
+			LS();
+
+			{
+				OUTPUT_NOTE( "1e-4 = 1 * ( 1/10 ) * ( 1/10 ) * ( 1/10 ) * ( 1/10 )" );
+
+				LF();
+
+				DECLARATION_MAIN( const double e = 1e-4 );
+				OUTPUT_VALUE( e );
+			}
+
+			LS();
+
+			{
+				OUTPUT_NOTE( "-1e+4 = 1 * 10 * 10 * 10 * 10" );
+
+				LF();
+
+				DECLARATION_MAIN( const double e = -1e+4 );
+				OUTPUT_VALUE( e );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
