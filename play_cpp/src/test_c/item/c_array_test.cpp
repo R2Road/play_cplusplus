@@ -38,6 +38,20 @@ namespace c_array_test
 			LS();
 
 			{
+				int array[5] = { 0 };
+				std::cout << r2tm::tab << "int array[10] = { 0 };" << r2tm::linefeed2;
+
+				std::cout << r2tm::tab << "Print :";
+				for( auto i : array )
+				{
+					std::cout << " " << i;
+				}
+				LF();
+			}
+
+			LS();
+
+			{
 				int array[5] = { 0, };
 				std::cout << r2tm::tab << "int array[10] = { 0, };" << r2tm::linefeed2;
 
