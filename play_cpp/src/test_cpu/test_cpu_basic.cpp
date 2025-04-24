@@ -53,9 +53,9 @@ namespace test_cpu_basic
 			{
 				if( buffer[i].Relationship == _LOGICAL_PROCESSOR_RELATIONSHIP::RelationProcessorCore )
 				{
-					printf( "Processor Mask : %10llu | Flags : %2u\n"
+					printf( "Processor Mask : %10llu | Flags : %2d\n"
 						, buffer[i].ProcessorMask
-						, buffer[i].ProcessorCore.Flags
+						, (int)buffer[i].ProcessorCore.Flags
 					);
 				}
 			}
