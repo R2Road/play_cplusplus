@@ -1,9 +1,5 @@
 #include "c_array_test.h"
 
-#include <list>
-#include <numeric> // std::iota
-#include <stdint.h>
-
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
 
