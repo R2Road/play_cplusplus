@@ -9,6 +9,16 @@
 
 namespace c_array_test
 {
+	void print_array( const int length, const int array[] )
+	{
+		std::cout << r2tm::tab << "Print :";
+		for( int i = 0; length > i; ++i )
+		{
+			std::cout << " " << array[i];
+		}
+		LF();
+	}
+
 	r2tm::TitleFunctionT Init::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -22,74 +32,66 @@ namespace c_array_test
 		{
 			LS();
 
+			DECLARATION_MAIN( const int length = 5 );
+
+			LS();
+
 			{
-				DECLARATION_MAIN( int array[5] );
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				int array[length];
+				OUTPUT_SOURCE_END;
 
 				LF();
 
-				std::cout << r2tm::tab << "Print :";
-				for( auto i : array )
-				{
-					std::cout << " " << i;
-				}
-				LF();
+				print_array( length, array );
 			}
 
 			LS();
 
 			{
-				int array[5] = { 0 };
-				std::cout << r2tm::tab << "int array[10] = { 0 };" << r2tm::linefeed2;
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const int array[length] = { 0 };
+				OUTPUT_SOURCE_END;
 
-				std::cout << r2tm::tab << "Print :";
-				for( auto i : array )
-				{
-					std::cout << " " << i;
-				}
 				LF();
+
+				print_array( length, array );
 			}
 
 			LS();
 
 			{
-				int array[5] = { 0, };
-				std::cout << r2tm::tab << "int array[10] = { 0, };" << r2tm::linefeed2;
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const int array[5] = { 0, };
+				OUTPUT_SOURCE_END;
 
-				std::cout << r2tm::tab << "Print :";
-				for( auto i : array )
-				{
-					std::cout << " " << i;
-				}
 				LF();
+
+				print_array( length, array );
 			}
 
 			LS();
 
 			{
-				int array[5] = { '\0', };
-				std::cout << r2tm::tab << "int array[10] = { \'\\0\', };" << r2tm::linefeed2;
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const int array[5] = { '\0', };
+				OUTPUT_SOURCE_END;
 
-				std::cout << r2tm::tab << "Print :";
-				for( auto i : array )
-				{
-					std::cout << " " << i;
-				}
 				LF();
+
+				print_array( length, array );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( int array[5] = {} );
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const int array[5] = {};
+				OUTPUT_SOURCE_END;
 
 				LF();
 
-				std::cout << r2tm::tab << "Print :";
-				for( auto i : array )
-				{
-					std::cout << " " << i;
-				}
-				LF();
+				print_array( length, array );
 			}
 
 			LS();
