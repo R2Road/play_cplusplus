@@ -54,7 +54,8 @@ r2tm::WriteFunctionT C_Menu::GetWriteFunction() const
 
 		ret->AddItem( 'q', c_sizeof_test::Basic() );
 		ret->AddItem( 'w', c_memset_test::Basic() );
-		ret->AddItem( 'e', c_macro_test::ToString() );
+		ret->AddItem( 'e', c_memset_test::Size() );
+		ret->AddItem( 'r', c_macro_test::ToString() );
 
 
 		ret->AddLineFeed();
