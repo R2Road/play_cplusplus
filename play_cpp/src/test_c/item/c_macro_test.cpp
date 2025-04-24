@@ -7,6 +7,8 @@
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
 
+#pragma warning( disable : 4189 ) // 참조 되지 않은 변수 존재
+
 namespace c_macro_test
 {
 #define MACRO2STRING( x ) #x
