@@ -8,7 +8,7 @@
 
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 #include "r2/r2_Assert.h"
 #include "r2/r2_Direction4.h"
@@ -64,20 +64,20 @@ namespace maze_generation_kruskals_test
 
 	void PrintGrid( const r2::Grid<int>& grid, const r2::Grid<Node>& sets )
 	{
-		const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
+		const auto pivot_point = r2tm::WindowsUtility::GetCursorPoint();
 
 		for( int y = 0; grid.GetHeight() > y; ++y )
 		{
 			for( int x = 0; grid.GetHeight() > x; ++x )
 			{
-				const r2tm::WindowUtility::CursorPoint my_pivot_point(
+				const r2tm::WindowsUtility::CursorPoint my_pivot_point(
 					pivot_point.x + static_cast<short>( x * 5 ) + 2
 					, pivot_point.y + static_cast<short>( y * 3 ) + 1
 				);
-				r2tm::WindowUtility::MoveCursorPoint( my_pivot_point.x - 1, my_pivot_point.y );
+				r2tm::WindowsUtility::MoveCursorPoint( my_pivot_point.x - 1, my_pivot_point.y );
 				std::cout << "@@@";
 
-				r2tm::WindowUtility::MoveCursorPoint( my_pivot_point.x - 1, my_pivot_point.y );
+				r2tm::WindowsUtility::MoveCursorPoint( my_pivot_point.x - 1, my_pivot_point.y );
 				std::cout << sets.Get( x, y ).GetRoot()->GetIndex();
 
 				r2::Direction4 dir4;
@@ -85,19 +85,19 @@ namespace maze_generation_kruskals_test
 				{
 					if( grid.Get( x, y ) & dir4.GetState() )
 					{
-						r2tm::WindowUtility::CursorPoint current_point;
+						r2tm::WindowsUtility::CursorPoint current_point;
 
 						if( ( r2::Direction4::eState::Right | r2::Direction4::eState::Left ) & dir4.GetState() )
 						{
-							current_point = r2tm::WindowUtility::CursorPoint( my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() * 2 ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) );
+							current_point = r2tm::WindowsUtility::CursorPoint( my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() * 2 ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) );
 						}
 						else
 						{
-							current_point = r2tm::WindowUtility::CursorPoint( my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) );
+							current_point = r2tm::WindowsUtility::CursorPoint( my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) );
 						}
 
-						r2tm::WindowUtility::MoveCursorPoint( current_point );
-						r2tm::WindowUtility::FillColor( current_point, r2tm::WindowUtility::eColor::BG_Aqua );
+						r2tm::WindowsUtility::MoveCursorPoint( current_point );
+						r2tm::WindowsUtility::FillColor( current_point, r2tm::WindowsUtility::eColor::BG_Aqua );
 					}
 				}
 			}
@@ -186,10 +186,10 @@ namespace maze_generation_kruskals_test
 
 			LS();
 
-			const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
+			const auto pivot_point = r2tm::WindowsUtility::GetCursorPoint();
 
 			{
-				r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+				r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point );
 				std::cout << r2tm::tab << "+ Grid" << r2tm::linefeed2;
 
 				PrintGrid( grid, sets );
@@ -200,7 +200,7 @@ namespace maze_generation_kruskals_test
 			LS();
 
 			{
-				r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+				r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point );
 				std::cout << r2tm::tab << "+ Make Edges" << r2tm::linefeed2;
 
 				edges.reserve( grid.GetSize() * 2u );
@@ -228,16 +228,16 @@ namespace maze_generation_kruskals_test
 			LS();
 
 			{
-				r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+				r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point );
 				std::cout << r2tm::tab << "+ Connect" << r2tm::linefeed2;
 
-				const auto pivot_point_4_connect = r2tm::WindowUtility::GetCursorPoint();
+				const auto pivot_point_4_connect = r2tm::WindowsUtility::GetCursorPoint();
 
 				r2::PointInt next_point;
 				r2::Direction4 current_dir;
 				for( const auto& e : edges )
 				{
-					r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point_4_connect );
+					r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point_4_connect );
 
 					next_point = e.point + r2::Direction4( e.dir ).GetPoint();
 
@@ -275,7 +275,7 @@ namespace maze_generation_kruskals_test
 					}
 				}
 
-				r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point_4_connect );
+				r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point_4_connect );
 				PrintGrid( grid, sets );
 				std::cout << r2tm::linefeed2;
 			}

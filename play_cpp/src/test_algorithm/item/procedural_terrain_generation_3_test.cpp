@@ -5,7 +5,7 @@
 
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 #include "r2/r2_Grid.h"
 #include "r2/r2_Random.h"
@@ -102,7 +102,7 @@ namespace procedural_terrain_generation_3_test
 
 			LS();
 
-			const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
+			const auto pivot_point = r2tm::WindowsUtility::GetCursorPoint();
 
 			{
 				std::cout << r2tm::tab << "+ Make Seed" << r2tm::linefeed2;
@@ -127,7 +127,7 @@ namespace procedural_terrain_generation_3_test
 			LF();
 			std::cout << "> Next Step";
 			_getch();
-			r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+			r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 			{
 				std::cout << r2tm::tab << "+ Make Terranin [Immortal] : ( 80 <= cell.weight && 80 <= r2::Random::GetInt( 0, 100 ) )" << r2tm::linefeed2;
@@ -153,7 +153,7 @@ namespace procedural_terrain_generation_3_test
 			LF();
 			std::cout << "> Next Step";
 			_getch();
-			r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+			r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 			{
 				std::cout << r2tm::tab << "+ Terranin View : If [ Wall_Normal ] : [ 350 < Neighbor Sum : Wall_Normal ] else [ Normal ]" << r2tm::linefeed2;
@@ -186,7 +186,7 @@ namespace procedural_terrain_generation_3_test
 			LF();
 			std::cout << "> Next Step";
 			_getch();
-			r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+			r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 			{
 				std::cout << r2tm::tab << "+ Terranin View : If [ Normal ] : [ 450 < Neighbor Sum : Wall_Normal ] else [ Normal ]" << r2tm::linefeed2;
@@ -219,7 +219,7 @@ namespace procedural_terrain_generation_3_test
 			
 			for( int i = 0; 5 > i; ++i )
 			{
-				r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+				r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 				std::cout << r2tm::tab << "+ Repeat x " << i << r2tm::linefeed2;
 

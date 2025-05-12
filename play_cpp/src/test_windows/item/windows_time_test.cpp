@@ -6,7 +6,7 @@
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 #include "r2/r2_FPSTimer.h"
 
@@ -38,13 +38,13 @@ namespace window_time_test
 
 			{
 				r2::FPSTimer fps_timer( 30 );
-				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
+				const auto pivot_point = r2tm::WindowsUtility::GetCursorPoint();
 				do
 				{
 
 					if( fps_timer.Update() )
 					{
-						r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+						r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 						{
 							PROCESS_MAIN( GetLocalTime( &local_time ) );

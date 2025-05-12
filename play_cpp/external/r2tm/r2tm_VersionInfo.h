@@ -15,53 +15,64 @@ namespace r2tm
 		const char* const String4VersionRule =
 					"### Version Rule ###"
 			"\n"
-			"\n"	"> " "1.0.0.0"  " : "  "완성?"
-			"\n"	"> " "0.1.0.0"  " : "  "하위 버전 숫자가 10에 도달"
-			"\n"	"> " "0.0.1.0"  " : "  "Road 완료"
-			"\n"	"> " "0.0.0.1"  " : "  "사용자가 변경 사항을 몰라도 되는 변화"
+			"\n"	"> " "1.0.0.0.0"  " : "  "완성?"
+			"\n"	"> " "0.1.0.0.0"  " : "  "Road 완료"
+			"\n"	"> " "0.0.1.0.0"  " : "  "Road 작업 목록 1개 완료"
+			"\n"	"> " "0.0.0.1.0"  " : "  "버그 수정.기존 기능 개선"
+			"\n"	"> " "0.0.0.0.1"  " : "  "사용자가 변경 사항을 몰라도 되는 변화"
 		;
 
 
 
 		const char VersionNumber_1 = '1';
-		const char VersionNumber_2 = '0';
-		const char VersionNumber_3 = '7';
-		const char VersionNumber_4 = '5';
+		const char VersionNumber_2 = '7';
+		const char VersionNumber_3 = '1';
+		const char VersionNumber_4 = '4';
+		const char VersionNumber_5 = '2';
 
-		const char String4Version[16] = { 'r', '2', 't', 'm', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '.', VersionNumber_4, '\0' };
+		const char String4Version[18] = { 'r', '2', 't', 'm', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '.', VersionNumber_4, '.', VersionNumber_5, '\0' };
 
 
 
-		const char* const String4Road2Version_1_0_8 =
-					"### Road 2 Version 1.0.8 ###"
+		const char* const String4Road2Version_1_8_0_0_0 =
+					"### Road 2 Version 1.8.0.0.0 ###"
 			"\n"
 			"\n"	"[o] " "update    function   : r2tm::Inspector - OUTPUT_NOTE"
-			"\n"	"[o] " "update    struct     : r2tm::WindowUtility::CursorPoint - 생성자 추가, 연산자 +, += 추가"
+			"\n"	"[o] " "update    struct     : r2tm::WindowsUtility::CursorPoint - 생성자 추가, 연산자 +, += 추가"
 			"\n"	"[o] " "update    inspector  : Add - OUTPUT_SOURCE_READY, OUTPUT_SOURCE_BEGIN, OUTPUT_SOURCE_END"
 			"\n"	"[o] " "update    inspector  : Add - OUTPUT_SOURCE_READY_N_BEGIN"
 			"\n"	"[o] " "update    inspector  : DECLARATION_MAIN, DECLARATION_SUB - 문자 출력을 먼저 하고 코드 실행"
+			"\n"	"[o] " "update    inspector  : EXPECT_FALSE, EXPECT_NE - 눈에 잘 보이는 색상으로 변경"
+			"\n"	"[o] " "add class            : r2tm::CacheCleaner"
+			"\n"	"[o] " "add method           : r2tm::SwtopWatch > Reset"
+			"\n"	"[o] " "add method           : r2tm::SwtopWatch > PrintAverageTime_MilliSeconds, MicroSeconds, NanoSeconds, All"
+			"\n"	"[o] " "update class         : r2tm::CacheCleaner : Add > 복사 생성자 추가, 대입 연산자 제거"
+			"\n"	"[o] " "update inspector     : OUTPUT_SUBJECT: 출력 문자 변경  '+' > '#'"
+			"\n"	"[o] " "update class         : enum r2tm::eColor > enum class 적용"
+			"\n"	"[o] " "add method           : r2tm::ColorModifier > GetColor"
+			"\n"	"[o] " "add method           : r2tm::StopWatch > GetAccumulateTime, GetAccumulateCount"
 			"\n"	"[ ] " "..."
 		;
 
-		const char* const String4Road2Version_1_0_7 =
-					"### Road 2 Version 1.0.7 ###"
+		const char* const String4Road2Version_1_7_0_0_0 =
+					"### Road 2 Version 1.7.0.0.0 ###"
 			"\n"
-			"\n"	"[o] " "add method           : r2tm::WindowUtility::FillString"
+			"\n"	"[o] " "add method           : r2tm::WindowsUtility::FillString"
 			"\n"	"[o] " "update inspector     : Add - OUTPUT_STRING"
 			"\n"	"[o] " "update inspector     : OUTPUT_SIZE - 크기 뒤에 byte 문자열 출력"
 			"\n"	"[o] " "rename method        : r2tm::StopWatch - PrintMinAndMaxTime_NanoSeconds"
 			"\n"	"[o] " "add    method        : r2tm::StopWatch - PrintMinAndMaxTime_MilliSeconds"
 			"\n"	"[o] " "add    method        : r2tm::StopWatch - PrintMinAndMaxTime_MicroSeconds"
 			"\n"	"[o] " "update menuprocessor : 키, 메세지 텍스트의 백그라운드 색상 설정"
-			"\n"	"[o] " "overload    method   : r2tm::WindowUtility - FillString"
-			"\n"	"[o] " "overload    method   : r2tm::WindowUtility - MoveCursorPoint"
-			"\n"	"[o] " "overload    method   : r2tm::WindowUtility - FillCharacter"
-			"\n"	"[o] " "overload    method   : r2tm::WindowUtility - FillColor"
-			"\n"	"[o] " "overload    method   : r2tm::WindowUtility - MoveCursorPointWithClearBuffer"
+			"\n"	"[o] " "overload    method   : r2tm::WindowsUtility - FillString"
+			"\n"	"[o] " "overload    method   : r2tm::WindowsUtility - MoveCursorPoint"
+			"\n"	"[o] " "overload    method   : r2tm::WindowsUtility - FillCharacter"
+			"\n"	"[o] " "overload    method   : r2tm::WindowsUtility - FillColor"
+			"\n"	"[o] " "overload    method   : r2tm::WindowsUtility - MoveCursorPointWithClearBuffer"
 		;
 
-		const char* const String4Road2Version_1_0_6 =
-					"### Road 2 Version 1.0.6 ###"
+		const char* const String4Road2Version_1_6_0_0_0 =
+					"### Road 2 Version 1.6.0.0.0 ###"
 			"\n"
 			"\n"	"[o] " "update inspector : Add - OUTPUT_SUBJECT"
 			"\n"	"[o] " "update inspector : Add - OUTPUT_SIZE"
@@ -70,22 +81,22 @@ namespace r2tm
 			"\n"	"[o] " "update inspector : Apply Color - OUTPUT_NOTE, OUTPUT_SUBJECT, OUTPUT_COMMENT, OUTPUT_CODE"
 		;
 
-		const char* const String4Road2Version_1_0_5 =
-					"### Road 2 Version 1.0.5 ###"
+		const char* const String4Road2Version_1_5_0_0_0 =
+					"### Road 2 Version 1.5.0.0.0 ###"
 			"\n"
 			"\n"	"[o] " "update inspector : EXPECT_GT, EXPECT_LT, EXPECT_GE, EXPECT_LE - 실패시 값 출력"
 			"\n"	"[o] " "Split Menu And MenuProcessor"
 		;
 		
-		const char* const String4Road2Version_1_0_4 =
-					"### Road 2 Version 1.0.4 ###"
+		const char* const String4Road2Version_1_4_0_0_0 =
+					"### Road 2 Version 1.4.0.0.0 ###"
 			"\n"
 			"\n"	"[o] " "update method : apply const - r2tm::iItem::GetDoFunction"
 			"\n"	"[o] " "remove class : r2tm::SingleTon"
 		;
 		
-		const char* const String4Road2Version_1_0_3 =
-					"### Road 2 Version 1.0.3 ###"
+		const char* const String4Road2Version_1_3_0_0_0 =
+					"### Road 2 Version 1.3.0.0.0 ###"
 			"\n"
 			"\n"	"[o] " "update inspector : EXPECT_EQ, EXPECT_NE - 실패시 값 출력"
 			"\n"	"[o] " "update inspector : OUTPUT_BINARY - 가시성 개선"
@@ -96,25 +107,25 @@ namespace r2tm
 			"\n"	"[o] " "update inspector : Add - OUTPUT_FILE_RANGE"
 		;
 		
-		const char* const String4Road2Version_1_0_2 =
-					"### Road 2 Version 1.0.2 ###"
+		const char* const String4Road2Version_1_2_0_0_0 =
+					"### Road 2 Version 1.2.0.0.0 ###"
 			"\n"
-			"\n"	"[o] " "add method : r2tm::WindowUtility::ScrollBarVisible"
-			"\n"	"[o] " "add method : r2tm::WindowUtility::MaximizeButtonEnable"
-			"\n"	"[o] " "add method : r2tm::WindowUtility::ResizingByDraggingEnable"
-			"\n"	"[o] " "add method : r2tm::WindowUtility::QuickEditEnable"
+			"\n"	"[o] " "add method : r2tm::WindowsUtility::ScrollBarVisible"
+			"\n"	"[o] " "add method : r2tm::WindowsUtility::MaximizeButtonEnable"
+			"\n"	"[o] " "add method : r2tm::WindowsUtility::ResizingByDraggingEnable"
+			"\n"	"[o] " "add method : r2tm::WindowsUtility::QuickEditEnable"
 		;
 		
-		const char* const String4Road2Version_1_0_1 =
-					"### Road 2 Version 1.0.1 ###"
+		const char* const String4Road2Version_1_1_0_0_0 =
+					"### Road 2 Version 1.1.0.0.0 ###"
 			"\n"
 			"\n"	"[o] " "add class : r2tm::StopWatch"
 			"\n"	"[o] " "update method : r2tm::Menu::AddItem - Item 제목에 컬러 적용"
 			"\n"	"[o] " "update method : r2tm::Menu::Do - 메뉴 제목의 # 을 사용자가 입력하지 않아도 되도록 조정"
 		;
 
-		const char* const String4Road2Version_1_0_0 =
-					"### Road 2 Version 1.0.0 ###"
+		const char* const String4Road2Version_1_0_0_0_0 =
+					"### Road 2 Version 1.0.0.0.0 ###"
 			"\n"
 			"\n"	"[o] " "Director, Menu, Item"
 			"\n"	"[o] " "Inspector"
@@ -124,7 +135,7 @@ namespace r2tm
 
 
 
-		const char* const String4Road2NextVersion = String4Road2Version_1_0_8;
+		const char* const String4Road2NextVersion = String4Road2Version_1_8_0_0_0;
 
 	} VersionInfo;
 }

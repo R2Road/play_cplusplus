@@ -12,7 +12,7 @@
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 namespace windows_terminal_basic_test
 {
@@ -191,10 +191,10 @@ namespace windows_terminal_basic_test
 			std::cout << "[Any Key] End" << r2tm::linefeed2;
 
 			const HWND hwnd = GetConsoleWindow();
-			const auto last_cursor_point = r2tm::WindowUtility::GetCursorPoint();
+			const auto last_cursor_point = r2tm::WindowsUtility::GetCursorPoint();
 			while( true )
 			{
-				r2tm::WindowUtility::MoveCursorPoint( last_cursor_point );
+				r2tm::WindowsUtility::MoveCursorPoint( last_cursor_point );
 
 				if( hwnd == GetForegroundWindow() )
 				{

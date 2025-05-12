@@ -19,12 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="external\r2tm\r2tm_CacheCleaner.cpp" />
     <ClCompile Include="external\r2tm\r2tm_Director.cpp" />
     <ClCompile Include="external\r2tm\r2tm_MenuProcessor.cpp" />
     <ClCompile Include="external\r2tm\r2tm_PrintBinary.cpp" />
     <ClCompile Include="external\r2tm\r2tm_PrintFile.cpp" />
     <ClCompile Include="external\r2tm\r2tm_StopWatch.cpp" />
-    <ClCompile Include="external\r2tm\r2tm_WindowUtility.cpp" />
+    <ClCompile Include="external\r2tm\r2tm_WindowsUtility.cpp" />
     <ClCompile Include="external\r2\r2_Direction4.cpp" />
     <ClCompile Include="external\r2\r2_Direction8.cpp" />
     <ClCompile Include="external\r2\r2_FPSTimer.cpp" />
@@ -197,6 +198,8 @@
     <ClCompile Include="src\utility\play_cpp_utility_PathBuilder.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="external\r2tm\r2tm_CacheCleaner.h" />
+    <ClInclude Include="external\r2tm\r2tm_Color.h" />
     <ClInclude Include="external\r2tm\r2tm_ColorModifier.h" />
     <ClInclude Include="external\r2tm\r2tm_Director.h" />
     <ClInclude Include="external\r2tm\r2tm_iItem.h" />
@@ -209,7 +212,7 @@
     <ClInclude Include="external\r2tm\r2tm_PrintFile.h" />
     <ClInclude Include="external\r2tm\r2tm_StopWatch.h" />
     <ClInclude Include="external\r2tm\r2tm_VersionInfo.h" />
-    <ClInclude Include="external\r2tm\r2tm_WindowUtility.h" />
+    <ClInclude Include="external\r2tm\r2tm_WindowsUtility.h" />
     <ClInclude Include="external\r2\r2_ListBasedOnArray.h" />
     <ClInclude Include="external\r2\r2_Assert.h" />
     <ClInclude Include="external\r2\r2_Direction4.h" />

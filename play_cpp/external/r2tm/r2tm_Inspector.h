@@ -36,7 +36,7 @@ do {																							\
 do {																							\
 	if( !( condition ) )																		\
 	{																							\
-		printf( "\x1B[34m" "[PASS]" "\033[0m" " EXPECT_FALSE( %s )\n", #condition );			\
+		printf( "\x1B[94m" "[PASS]" "\033[0m" " EXPECT_FALSE( %s )\n", #condition );			\
 	}																							\
 	else																						\
 	{																							\
@@ -64,7 +64,7 @@ do {																											\
 do {																											\
 	if( ( condition_1 ) != ( condition_2 ) )																	\
 	{																											\
-		printf( "\x1B[34m" "[PASS]" "\033[0m" " EXPECT_NE( %s != %s )\n", #condition_1, #condition_2 );			\
+		printf( "\x1B[94m" "[PASS]" "\033[0m" " EXPECT_NE( %s != %s )\n", #condition_1, #condition_2 );			\
 	}																											\
 	else																										\
 	{																											\
@@ -259,7 +259,7 @@ do {																						\
 
 #define	OUTPUT_SUBJECT( str )																\
 do {																						\
-	printf( "\t"  "\x1B[92m"  "+ "  "%s"  "\033[0m"  "\n", str );							\
+	printf( "\t"  "\x1B[92m"  "# "  "%s"  "\033[0m"  "\n", str );							\
 } while( false )
 
 #define	OUTPUT_COMMENT( str )																\

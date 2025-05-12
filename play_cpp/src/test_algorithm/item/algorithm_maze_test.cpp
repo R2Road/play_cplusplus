@@ -9,7 +9,7 @@
 #include "r2/r2_Grid.h"
 #include "r2/r2_PointInt.h"
 
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 #include "test_algorithm/AlgorithmHelper.h"
 
 namespace algorithm_maze_test
@@ -44,7 +44,7 @@ namespace algorithm_maze_test
 
 				LF();
 
-				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
+				const auto pivot_point = r2tm::WindowsUtility::GetCursorPoint();
 				int stay_count = 0;
 				while( 4 >= stay_count )
 				{
@@ -66,7 +66,7 @@ namespace algorithm_maze_test
 					//
 					// Output
 					//
-					r2tm::WindowUtility::MoveCursorPoint( pivot_point );
+					r2tm::WindowsUtility::MoveCursorPoint( pivot_point );
 					AlgorithmHelper::PrintGrid( grid );
 					LF();
 
@@ -120,7 +120,7 @@ namespace algorithm_maze_test
 
 				LF();
 
-				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
+				const auto pivot_point = r2tm::WindowsUtility::GetCursorPoint();
 				int rotate_count = 0;
 				int move_length = 1;
 				int current_length = 1;
@@ -157,7 +157,7 @@ namespace algorithm_maze_test
 					//
 					// Output
 					//
-					r2tm::WindowUtility::MoveCursorPoint( pivot_point );
+					r2tm::WindowsUtility::MoveCursorPoint( pivot_point );
 					AlgorithmHelper::PrintGrid( grid );
 					LF();
 

@@ -7,7 +7,7 @@
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 namespace windows_terminal_input_test
 {
@@ -34,7 +34,7 @@ namespace windows_terminal_input_test
 			//
 			// Mouse Input을 받아 오려면 Quick Edit를 꺼야한다.
 			//
-			PROCESS_MAIN( r2tm::WindowUtility::QuickEditEnable( false ) );
+			PROCESS_MAIN( r2tm::WindowsUtility::QuickEditEnable( false ) );
 
 			DECLARATION_MAIN( HANDLE hStdInputHandle = GetStdHandle( STD_INPUT_HANDLE ) );
 			DECLARATION_MAIN( DWORD last_console_mode );
@@ -175,7 +175,7 @@ namespace windows_terminal_input_test
 
 			LS();
 
-			PROCESS_MAIN( r2tm::WindowUtility::QuickEditEnable( true ) );
+			PROCESS_MAIN( r2tm::WindowsUtility::QuickEditEnable( true ) );
 
 			LS();
 
@@ -201,7 +201,7 @@ namespace windows_terminal_input_test
 			//
 			// Mouse Input을 받아 오려면 Quick Edit를 꺼야한다.
 			//
-			PROCESS_MAIN( r2tm::WindowUtility::QuickEditEnable( false ) );
+			PROCESS_MAIN( r2tm::WindowsUtility::QuickEditEnable( false ) );
 
 			OUTPUT_NOTE( "pause 없이 메뉴를 전환하는 경우..." );
 			OUTPUT_NOTE( "메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." );
@@ -414,7 +414,7 @@ namespace windows_terminal_input_test
 
 			LS();
 
-			PROCESS_MAIN( r2tm::WindowUtility::QuickEditEnable( true ) );
+			PROCESS_MAIN( r2tm::WindowsUtility::QuickEditEnable( true ) );
 
 			LS();
 

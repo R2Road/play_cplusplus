@@ -1,7 +1,7 @@
 #include "algorithm_astar_test.h"
 
 #include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 #include "algorithm/r2algorithm_astar_Constant.h"
 #include "algorithm/r2algorithm_astar_PathBuilder.h"
@@ -41,11 +41,11 @@ namespace
 
 	void ShowPath( const r2::PointInt entry_point, const r2::PointInt exit_point, const std::list<r2::PointInt>& path )
 	{
-		const r2tm::WindowUtility::CursorPoint pivot_point{ 0, 4 };
+		const r2tm::WindowsUtility::CursorPoint pivot_point{ 0, 4 };
 
 		for( const auto p : path )
 		{
-			r2tm::WindowUtility::MoveCursorPoint(
+			r2tm::WindowsUtility::MoveCursorPoint(
 				pivot_point.x + static_cast<short>( p.GetX() * 2 )
 				, pivot_point.y + static_cast<short>( p.GetY() )
 			);
@@ -53,12 +53,12 @@ namespace
 			std::cout << '*';
 		}
 
-		r2tm::WindowUtility::MoveCursorPoint(
+		r2tm::WindowsUtility::MoveCursorPoint(
 				pivot_point.x + static_cast<short>( entry_point.GetX() * 2 )
 				, pivot_point.y + static_cast<short>( entry_point.GetY() )
 		);
 		std::cout << '1';
-		r2tm::WindowUtility::MoveCursorPoint(
+		r2tm::WindowsUtility::MoveCursorPoint(
 				pivot_point.x + static_cast<short>( exit_point.GetX() * 2 )
 				, pivot_point.y + static_cast<short>( exit_point.GetY() )
 		);
@@ -67,11 +67,11 @@ namespace
 
 	void ShowPath( const r2::PointInt entry_point, const r2::PointInt exit_point, const std::vector<r2::PointInt>& path )
 	{
-		const r2tm::WindowUtility::CursorPoint pivot_point{ 0, 4 };
+		const r2tm::WindowsUtility::CursorPoint pivot_point{ 0, 4 };
 
 		for( const auto p : path )
 		{
-			r2tm::WindowUtility::MoveCursorPoint(
+			r2tm::WindowsUtility::MoveCursorPoint(
 				pivot_point.x + static_cast<short>( p.GetX() * 2 )
 				, pivot_point.y + static_cast<short>( p.GetY() )
 				);
@@ -79,12 +79,12 @@ namespace
 			std::cout << '*';
 		}
 
-		r2tm::WindowUtility::MoveCursorPoint(
+		r2tm::WindowsUtility::MoveCursorPoint(
 				pivot_point.x + static_cast<short>( entry_point.GetX() * 2 )
 				, pivot_point.y + static_cast<short>( entry_point.GetY() )
 			);
 		std::cout << '1';
-		r2tm::WindowUtility::MoveCursorPoint(
+		r2tm::WindowsUtility::MoveCursorPoint(
 				pivot_point.x + static_cast<short>( exit_point.GetX() * 2 )
 				, pivot_point.y + static_cast<short>( exit_point.GetY() )
 			);
@@ -129,7 +129,7 @@ namespace algorithm_astar_test
 				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
-			r2tm::WindowUtility::MoveCursorPoint( 0, 26 );
+			r2tm::WindowsUtility::MoveCursorPoint( 0, 26 );
 			stop_watch.PrintElapsedTime_All();
 			LF();
 
@@ -174,7 +174,7 @@ namespace algorithm_astar_test
 				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
-			r2tm::WindowUtility::MoveCursorPoint( { 0, 26 } );
+			r2tm::WindowsUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
 			LF();
 
@@ -220,7 +220,7 @@ namespace algorithm_astar_test
 				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
-			r2tm::WindowUtility::MoveCursorPoint( { 0, 26 } );
+			r2tm::WindowsUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
 			LF();
 
@@ -266,7 +266,7 @@ namespace algorithm_astar_test
 				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
-			r2tm::WindowUtility::MoveCursorPoint( { 0, 26 } );
+			r2tm::WindowsUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
 			std::cout << r2tm::linefeed2;
 
@@ -316,7 +316,7 @@ namespace algorithm_astar_test
 				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
-			r2tm::WindowUtility::MoveCursorPoint( { 0, 26 } );
+			r2tm::WindowsUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
 			LF();
 
@@ -364,7 +364,7 @@ namespace algorithm_astar_test
 				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
-			r2tm::WindowUtility::MoveCursorPoint( { 0, 26 } );
+			r2tm::WindowsUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
 			LF();
 
@@ -412,7 +412,7 @@ namespace algorithm_astar_test
 				ShowPath( ENTRY_POINT, EXIT_POINT, result_path );
 			}
 
-			r2tm::WindowUtility::MoveCursorPoint( { 0, 26 } );
+			r2tm::WindowsUtility::MoveCursorPoint( { 0, 26 } );
 			stop_watch.PrintElapsedTime_All();
 			LF();
 

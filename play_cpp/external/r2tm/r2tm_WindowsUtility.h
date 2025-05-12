@@ -1,10 +1,17 @@
+/*######################################################
+#
+# + Summary
+#   > Windows.h 를 사용하는 Utility 모음.
+#
+######################################################*/
+
 #pragma once
 
 #include <stdint.h>
 
 namespace r2tm
 {
-	class WindowUtility
+	class WindowsUtility
 	{
 	public:
 		struct CursorPoint
@@ -120,6 +127,10 @@ namespace r2tm
 
 
 		static void RequestSleep( const uint32_t milli_seconds );
+
+
+
+		static int GetCPUCacheSize();
 
 	};
 }

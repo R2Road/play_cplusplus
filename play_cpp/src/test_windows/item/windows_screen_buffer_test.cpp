@@ -8,7 +8,7 @@
 
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 namespace windows_screen_buffer_test
 {
@@ -197,7 +197,7 @@ namespace windows_screen_buffer_test
 			LS();
 			
 			{
-				const auto cursor_point = r2tm::WindowUtility::GetCursorPoint();
+				const auto cursor_point = r2tm::WindowsUtility::GetCursorPoint();
 				WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), { cursor_point.x, cursor_point.y }, &ret );
 
 				std::cout << r2tm::linefeed2;
@@ -213,7 +213,7 @@ namespace windows_screen_buffer_test
 			LS();
 
 			{
-				const auto cursor_point = r2tm::WindowUtility::GetCursorPoint();
+				const auto cursor_point = r2tm::WindowsUtility::GetCursorPoint();
 				WriteConsoleOutputCharacterW( hStdout, wstr, static_cast<DWORD>( wcslen( wstr ) ), { cursor_point.x, cursor_point.y }, &ret );
 
 				std::cout << r2tm::linefeed2;

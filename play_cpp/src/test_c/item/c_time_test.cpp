@@ -7,7 +7,7 @@
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 namespace c_time_test
 {
@@ -183,10 +183,10 @@ namespace c_time_test
 
 			std::cout << "[ANY KEY] Exit" << r2tm::linefeed2;
 
-			const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
+			const auto pivot_point = r2tm::WindowsUtility::GetCursorPoint();
 			while( true )
 			{
-				r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+				r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 				PROCESS_MAIN( current_clock = clock() );
 				PROCESS_MAIN( current_sec = current_clock / CLOCKS_PER_SEC );

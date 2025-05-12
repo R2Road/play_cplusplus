@@ -6,7 +6,7 @@
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 namespace std_chrono_test
 {
@@ -244,14 +244,14 @@ namespace std_chrono_test
 			std::chrono::milliseconds current_time;
 			std::chrono::milliseconds last_time = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::steady_clock::now() - steady_start_time_point );
 
-			const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
+			const auto pivot_point = r2tm::WindowsUtility::GetCursorPoint();
 			while( true )
 			{
 				current_time = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::steady_clock::now() - steady_start_time_point );
 
 				if( last_time.count() + 32 < current_time.count() ) // 30fps
 				{
-					r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+					r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 					LS();
 

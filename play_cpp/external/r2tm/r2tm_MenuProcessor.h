@@ -3,6 +3,7 @@
 #include <string_view>
 #include <vector>
 
+#include "r2tm_Color.h"
 #include "r2tm_MenuConstant.h"
 
 namespace r2tm
@@ -18,8 +19,8 @@ namespace r2tm
 		{
 			ItemInfo(
 				const char key_code
-				, const int message_color_code
-				, const int background_color_code
+				, const r2tm::eColor message_color_code
+				, const r2tm::eColor background_color_code
 				, const TitleFunctionT& title_function
 				, const DoFunctionT& do_function
 			) :
@@ -31,8 +32,8 @@ namespace r2tm
 			{}
 
 			char KeyCode;
-			int MessageColorCode;
-			int BackgroundColorCode;
+			r2tm::eColor MessageColorCode;
+			r2tm::eColor BackgroundColorCode;
 			TitleFunctionT TitleFunction;
 			DoFunctionT DoFunction;
 		};
@@ -67,13 +68,13 @@ namespace r2tm
 		//
 		//
 		//
-		void AddItem( const char key_code, const int message_color_code, const int background_color_code, const TitleFunctionT& func_title, const DoFunctionT& func_do );
-		void AddItem( const char key_code, const int message_color_code, const TitleFunctionT& func_title, const DoFunctionT& func_do );
+		void AddItem( const char key_code, const r2tm::eColor message_color_code, const r2tm::eColor background_color_code, const TitleFunctionT& func_title, const DoFunctionT& func_do );
+		void AddItem( const char key_code, const r2tm::eColor message_color_code, const TitleFunctionT& func_title, const DoFunctionT& func_do );
 		void AddItem( const char key_code, const TitleFunctionT& func_title, const DoFunctionT& func_do );
 		void AddItem( const char key_code, const iItem& item_obj );
 
-		void AddExit( const char key_code, const int message_color_code, const int background_color_code );
-		void AddExit( const char key_code, const int message_color_code );
+		void AddExit( const char key_code, const r2tm::eColor message_color_code, const r2tm::eColor background_color_code );
+		void AddExit( const char key_code, const r2tm::eColor message_color_code );
 		void AddExit( const char key_code );
 
 		void AddMenu( const char key_code, const iMenu& menu_obj );
@@ -81,8 +82,8 @@ namespace r2tm
 		void AddLineFeed();
 		void AddSplit();
 
-		void AddMessage( const char* const message, const int message_color_code, const int background_color_code );
-		void AddMessage( const char* const message, const int message_color_code );
+		void AddMessage( const char* const message, const r2tm::eColor message_color_code, const r2tm::eColor background_color_code );
+		void AddMessage( const char* const message, const r2tm::eColor message_color_code );
 		void AddMessage( const char* const message );
 
 
