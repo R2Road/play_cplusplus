@@ -19,15 +19,15 @@ r2tm::DescriptionFunctionT Menu_CPU::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT Menu_CPU::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', test_cpu_basic::CoreInformation() );
-		ret->AddItem( '2', test_cpu_basic::CacheInformation() );
+		mp->AddItem( '1', test_cpu_basic::CoreInformation() );
+		mp->AddItem( '2', test_cpu_basic::CacheInformation() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, RootMenu() );
+		mp->AddMenu( 27, RootMenu() );
 	};
 }

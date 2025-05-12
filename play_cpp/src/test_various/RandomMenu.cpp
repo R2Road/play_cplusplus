@@ -20,22 +20,22 @@ r2tm::DescriptionFunctionT RandomMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT RandomMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', c_random_test::Rand() );
+		mp->AddItem( '1', c_random_test::Rand() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'q', std_random_test::Basic() );
-		ret->AddItem( 'w', std_random_test::StatusSaveAndLoad() );
-		ret->AddItem( 'e', std_random_test::DiscreateDistribution() );
+		mp->AddItem( 'q', std_random_test::Basic() );
+		mp->AddItem( 'w', std_random_test::StatusSaveAndLoad() );
+		mp->AddItem( 'e', std_random_test::DiscreateDistribution() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, RootMenu() );
+		mp->AddMenu( 27, RootMenu() );
 	};
 }

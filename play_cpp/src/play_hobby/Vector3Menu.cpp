@@ -19,22 +19,22 @@ r2tm::DescriptionFunctionT Vector3Menu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT Vector3Menu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( 'a', play_vector3::Declaration() );
-		ret->AddItem( 's', play_vector3::OperatorPlus() );
-		ret->AddItem( 'd', play_vector3::OperatorPlusEqual() );
-		ret->AddItem( 'f', play_vector3::OperatorMinus() );
-		ret->AddItem( 'g', play_vector3::OperatorMinusEqual() );
-		ret->AddItem( 'h', play_vector3::OperatorMultiply_With_Scalar() );
-		ret->AddItem( 'j', play_vector3::OperatorMultiplyEqual_With_Scalar() );
+		mp->AddItem( 'a', play_vector3::Declaration() );
+		mp->AddItem( 's', play_vector3::OperatorPlus() );
+		mp->AddItem( 'd', play_vector3::OperatorPlusEqual() );
+		mp->AddItem( 'f', play_vector3::OperatorMinus() );
+		mp->AddItem( 'g', play_vector3::OperatorMinusEqual() );
+		mp->AddItem( 'h', play_vector3::OperatorMultiply_With_Scalar() );
+		mp->AddItem( 'j', play_vector3::OperatorMultiplyEqual_With_Scalar() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, HobbyMenu() );
+		mp->AddMenu( 27, HobbyMenu() );
 	};
 }

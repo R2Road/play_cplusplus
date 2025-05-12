@@ -33,24 +33,24 @@ r2tm::DescriptionFunctionT MemoryPoolMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT MemoryPoolMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', play_memory_pool::MemoryBlock_Declaration() );
-		ret->AddItem( '2', play_memory_pool::MemoryBlock_New_FundamentalType() );
-		ret->AddItem( '3', play_memory_pool::MemoryBlock_Check_FundamentalType() );
-		ret->AddItem( '4', play_memory_pool::MemoryBlock_New_UserDefinedType() );
+		mp->AddItem( '1', play_memory_pool::MemoryBlock_Declaration() );
+		mp->AddItem( '2', play_memory_pool::MemoryBlock_New_FundamentalType() );
+		mp->AddItem( '3', play_memory_pool::MemoryBlock_Check_FundamentalType() );
+		mp->AddItem( '4', play_memory_pool::MemoryBlock_New_UserDefinedType() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'q', play_memory_pool::MemoryPool_Declaration() );
-		ret->AddItem( 'w', play_memory_pool::MemoryPool_New() );
+		mp->AddItem( 'q', play_memory_pool::MemoryPool_Declaration() );
+		mp->AddItem( 'w', play_memory_pool::MemoryPool_New() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, HobbyMenu() );
+		mp->AddMenu( 27, HobbyMenu() );
 	};
 }

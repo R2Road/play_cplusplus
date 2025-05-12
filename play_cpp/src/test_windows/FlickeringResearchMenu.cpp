@@ -19,19 +19,19 @@ r2tm::DescriptionFunctionT FlickeringResearchMenu::GetDescriptionFunction() cons
 }
 r2tm::WriteFunctionT FlickeringResearchMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', windows_terminal_flickering_research::OneByOne() );
-		ret->AddItem( '2', windows_terminal_flickering_research::OneByOne_WithOut_CLS() );
-		ret->AddItem( '3', windows_terminal_flickering_research::LineByLine() );
-		ret->AddItem( '4', windows_terminal_flickering_research::PageByPage() );
-		ret->AddItem( '5', windows_terminal_flickering_research::PageByPage_WithOut_CLS_1() );
-		ret->AddItem( '6', windows_terminal_flickering_research::PageByPage_WithOut_CLS_2() );
+		mp->AddItem( '1', windows_terminal_flickering_research::OneByOne() );
+		mp->AddItem( '2', windows_terminal_flickering_research::OneByOne_WithOut_CLS() );
+		mp->AddItem( '3', windows_terminal_flickering_research::LineByLine() );
+		mp->AddItem( '4', windows_terminal_flickering_research::PageByPage() );
+		mp->AddItem( '5', windows_terminal_flickering_research::PageByPage_WithOut_CLS_1() );
+		mp->AddItem( '6', windows_terminal_flickering_research::PageByPage_WithOut_CLS_2() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, WindowsMenu() );
+		mp->AddMenu( 27, WindowsMenu() );
 	};
 }

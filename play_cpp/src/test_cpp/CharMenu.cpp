@@ -21,23 +21,23 @@ r2tm::DescriptionFunctionT CharMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT CharMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', char_test::Basic() );
-		ret->AddItem( '2', char_test::Encoding() );
-		ret->AddItem( '3', locale_test::Basic() );
-		ret->AddItem( '4', char_test::RawStringLiteral() );
+		mp->AddItem( '1', char_test::Basic() );
+		mp->AddItem( '2', char_test::Encoding() );
+		mp->AddItem( '3', locale_test::Basic() );
+		mp->AddItem( '4', char_test::RawStringLiteral() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'z', korean_test::Basic() );
+		mp->AddItem( 'z', korean_test::Basic() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, CPP_Menu() );
+		mp->AddMenu( 27, CPP_Menu() );
 	};
 }

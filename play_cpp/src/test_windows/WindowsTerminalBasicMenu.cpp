@@ -22,50 +22,50 @@ r2tm::DescriptionFunctionT WindowsTerminalBasicMenu::GetDescriptionFunction() co
 }
 r2tm::WriteFunctionT WindowsTerminalBasicMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', windows_terminal_basic_test::BufferInfo() );
+		mp->AddItem( '1', windows_terminal_basic_test::BufferInfo() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( '2', windows_terminal_basic_test::ChangeWindowSize() );
-		ret->AddItem( '3', windows_terminal_basic_test::FullScreen() );
-		ret->AddItem( '4', windows_terminal_basic_test::Focus() );
+		mp->AddItem( '2', windows_terminal_basic_test::ChangeWindowSize() );
+		mp->AddItem( '3', windows_terminal_basic_test::FullScreen() );
+		mp->AddItem( '4', windows_terminal_basic_test::Focus() );
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'q', windows_terminal_basic_test::WindowPosition() );
+		mp->AddItem( 'q', windows_terminal_basic_test::WindowPosition() );
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'a', windows_terminal_basic_test::ChangeWindowName() );
-		ret->AddItem( 's', windows_terminal_basic_test::HideTitleBar() );
-		ret->AddItem( 'd', windows_terminal_basic_test::HideScrollBar() );
-		ret->AddItem( 'f', windows_terminal_basic_test::DisableMaximize() );
-		ret->AddItem( 'g', windows_terminal_basic_test::LockWindowResizingByDragging() );
-		ret->AddItem( 'h', windows_terminal_basic_test::MenuItem() );
+		mp->AddItem( 'a', windows_terminal_basic_test::ChangeWindowName() );
+		mp->AddItem( 's', windows_terminal_basic_test::HideTitleBar() );
+		mp->AddItem( 'd', windows_terminal_basic_test::HideScrollBar() );
+		mp->AddItem( 'f', windows_terminal_basic_test::DisableMaximize() );
+		mp->AddItem( 'g', windows_terminal_basic_test::LockWindowResizingByDragging() );
+		mp->AddItem( 'h', windows_terminal_basic_test::MenuItem() );
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'z', windows_terminal_basic_test::CursorMove() );
-		ret->AddItem( 'x', windows_terminal_basic_test::CursorVisibility() );
-		ret->AddItem( 'c', windows_terminal_basic_test::QuickEdit() );
+		mp->AddItem( 'z', windows_terminal_basic_test::CursorMove() );
+		mp->AddItem( 'x', windows_terminal_basic_test::CursorVisibility() );
+		mp->AddItem( 'c', windows_terminal_basic_test::QuickEdit() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, WindowsMenu() );
+		mp->AddMenu( 27, WindowsMenu() );
 	};
 }

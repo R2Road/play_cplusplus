@@ -20,41 +20,41 @@ r2tm::DescriptionFunctionT STDThreadMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT STDThreadMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', std_thread_test::Declaration_1() );
-		ret->AddItem( '2', std_thread_test::Declaration_2() );
-		ret->AddItem( '3', std_thread_test::Declaration_3() );
-		ret->AddItem( '4', std_thread_test::Demo() );
+		mp->AddItem( '1', std_thread_test::Declaration_1() );
+		mp->AddItem( '2', std_thread_test::Declaration_2() );
+		mp->AddItem( '3', std_thread_test::Declaration_3() );
+		mp->AddItem( '4', std_thread_test::Demo() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', std_thread_test::CopyAssaignment() );
-		ret->AddItem( 'w', std_thread_test::WaitProcess_SleepFor() );
-		ret->AddItem( 'e', std_thread_test::WaitProcess_Yield() );
+		mp->AddItem( 'q', std_thread_test::CopyAssaignment() );
+		mp->AddItem( 'w', std_thread_test::WaitProcess_SleepFor() );
+		mp->AddItem( 'e', std_thread_test::WaitProcess_Yield() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'a', std_atomic_test::Declaration_1() );
-		ret->AddItem( 's', std_atomic_test::Declaration_2() );
-		ret->AddItem( 'd', std_atomic_test::IsLockFree() );
-		ret->AddItem( 'f', std_atomic_test::LockFreeTest1() );
-		ret->AddItem( 'g', std_atomic_test::LockFreeTest2() );
+		mp->AddItem( 'a', std_atomic_test::Declaration_1() );
+		mp->AddItem( 's', std_atomic_test::Declaration_2() );
+		mp->AddItem( 'd', std_atomic_test::IsLockFree() );
+		mp->AddItem( 'f', std_atomic_test::LockFreeTest1() );
+		mp->AddItem( 'g', std_atomic_test::LockFreeTest2() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, STDMenu() );
+		mp->AddMenu( 27, STDMenu() );
 	};
 }

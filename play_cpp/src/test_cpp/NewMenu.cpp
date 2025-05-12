@@ -19,18 +19,18 @@ r2tm::DescriptionFunctionT NewMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT NewMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', cpp_new_test::Basic() );
-		ret->AddItem( '2', cpp_new_test::Array() );
-		ret->AddItem( '3', cpp_new_test::PlacementNew() );
+		mp->AddItem( '1', cpp_new_test::Basic() );
+		mp->AddItem( '2', cpp_new_test::Array() );
+		mp->AddItem( '3', cpp_new_test::PlacementNew() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, CPP_Menu() );
+		mp->AddMenu( 27, CPP_Menu() );
 	};
 }

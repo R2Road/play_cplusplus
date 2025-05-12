@@ -19,33 +19,33 @@ r2tm::DescriptionFunctionT STDCoutMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT STDCoutMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', std_cout_test::Basic() );
-		ret->AddItem( '2', std_cout_test::FMTStatus() );
-		ret->AddItem( '3', std_cout_test::NumberFormat_1() );
-		ret->AddItem( '4', std_cout_test::NumberFormat_2() );
-		ret->AddItem( '5', std_cout_test::NumberFormat_3() );
-		ret->AddItem( '6', std_cout_test::NumberFormat_4() );
+		mp->AddItem( '1', std_cout_test::Basic() );
+		mp->AddItem( '2', std_cout_test::FMTStatus() );
+		mp->AddItem( '3', std_cout_test::NumberFormat_1() );
+		mp->AddItem( '4', std_cout_test::NumberFormat_2() );
+		mp->AddItem( '5', std_cout_test::NumberFormat_3() );
+		mp->AddItem( '6', std_cout_test::NumberFormat_4() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'q', std_cout_test::Align() );
-		ret->AddItem( 'w', std_cout_test::Flag() );
-		ret->AddItem( 'e', std_cout_test::BoolAlpha() );
+		mp->AddItem( 'q', std_cout_test::Align() );
+		mp->AddItem( 'w', std_cout_test::Flag() );
+		mp->AddItem( 'e', std_cout_test::BoolAlpha() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'a', std_cout_test::UserDefinedType() );
+		mp->AddItem( 'a', std_cout_test::UserDefinedType() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, STDMenu() );
+		mp->AddMenu( 27, STDMenu() );
 	};
 }

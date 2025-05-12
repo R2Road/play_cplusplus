@@ -19,16 +19,16 @@ r2tm::DescriptionFunctionT STDCinMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT STDCinMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', std_cin_test::InputLimit() );
+		mp->AddItem( '1', std_cin_test::InputLimit() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, STDMenu() );
+		mp->AddMenu( 27, STDMenu() );
 	};
 }

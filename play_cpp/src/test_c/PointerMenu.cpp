@@ -19,26 +19,26 @@ r2tm::DescriptionFunctionT PointerMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT PointerMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', c_pointer_test::Basic() );
-		ret->AddItem( '2', c_pointer_test::Offset() );
-		ret->AddItem( '3', c_pointer_test::Pointer2Index() );
-		ret->AddItem( '4', c_pointer_test::ConstPointer() );
+		mp->AddItem( '1', c_pointer_test::Basic() );
+		mp->AddItem( '2', c_pointer_test::Offset() );
+		mp->AddItem( '3', c_pointer_test::Pointer2Index() );
+		mp->AddItem( '4', c_pointer_test::ConstPointer() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', c_pointer_test::CharacterPointer_Length_0() );
+		mp->AddItem( 'q', c_pointer_test::CharacterPointer_Length_0() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, C_Menu() );
+		mp->AddMenu( 27, C_Menu() );
 	};
 }

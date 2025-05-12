@@ -19,47 +19,47 @@ r2tm::DescriptionFunctionT BitOperationMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT BitOperationMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', c_bit_operation_test::Operator() );
-		ret->AddItem( '2', c_bit_operation_test::Operator_2() );
-		ret->AddItem( '3', c_bit_operation_test::Complement() );
-		ret->AddItem( '4', c_bit_operation_test::Add_Remove_Toggle() );
-		ret->AddItem( '5', c_bit_operation_test::Mask() );
+		mp->AddItem( '1', c_bit_operation_test::Operator() );
+		mp->AddItem( '2', c_bit_operation_test::Operator_2() );
+		mp->AddItem( '3', c_bit_operation_test::Complement() );
+		mp->AddItem( '4', c_bit_operation_test::Add_Remove_Toggle() );
+		mp->AddItem( '5', c_bit_operation_test::Mask() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( '6', c_bit_operation_test::Operator_XOR() );
-		ret->AddItem( '7', c_bit_operation_test::XOR_Swap() );
+		mp->AddItem( '6', c_bit_operation_test::Operator_XOR() );
+		mp->AddItem( '7', c_bit_operation_test::XOR_Swap() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', c_bit_operation_test::Plus_1() );
-		ret->AddItem( 'w', c_bit_operation_test::Plus_2() );
-		ret->AddItem( 'e', c_bit_operation_test::Minus_1() );
-		ret->AddItem( 'r', c_bit_operation_test::Minus_2() );
+		mp->AddItem( 'q', c_bit_operation_test::Plus_1() );
+		mp->AddItem( 'w', c_bit_operation_test::Plus_2() );
+		mp->AddItem( 'e', c_bit_operation_test::Minus_1() );
+		mp->AddItem( 'r', c_bit_operation_test::Minus_2() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'a', c_bit_operation_test::ETC_1() );
+		mp->AddItem( 'a', c_bit_operation_test::ETC_1() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, C_Menu() );
+		mp->AddMenu( 27, C_Menu() );
 	};
 }

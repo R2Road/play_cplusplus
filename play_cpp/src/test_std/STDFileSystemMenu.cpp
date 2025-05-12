@@ -19,46 +19,46 @@ r2tm::DescriptionFunctionT STDFileSystemMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT STDFileSystemMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', std_filesystem_test::DirectoryPath() );
-		ret->AddItem( '2', std_filesystem_test::DirectoryIterator() );
-		ret->AddItem( '3', std_filesystem_test::RecursiveDirectoryIterator() );
+		mp->AddItem( '1', std_filesystem_test::DirectoryPath() );
+		mp->AddItem( '2', std_filesystem_test::DirectoryIterator() );
+		mp->AddItem( '3', std_filesystem_test::RecursiveDirectoryIterator() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', std_filesystem_test::PathOperation_1() );
-		ret->AddItem( 'w', std_filesystem_test::PathOperation_2() );
-		ret->AddItem( 'e', std_filesystem_test::PathOperation_3() );
-		ret->AddItem( 'r', std_filesystem_test::PathOperation_4() );
+		mp->AddItem( 'q', std_filesystem_test::PathOperation_1() );
+		mp->AddItem( 'w', std_filesystem_test::PathOperation_2() );
+		mp->AddItem( 'e', std_filesystem_test::PathOperation_3() );
+		mp->AddItem( 'r', std_filesystem_test::PathOperation_4() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'a', std_filesystem_test::Exist() );
-		ret->AddItem( 's', std_filesystem_test::Directory_Make_Delete() );
-		ret->AddItem( 'd', std_filesystem_test::Directories_Make() );
+		mp->AddItem( 'a', std_filesystem_test::Exist() );
+		mp->AddItem( 's', std_filesystem_test::Directory_Make_Delete() );
+		mp->AddItem( 'd', std_filesystem_test::Directories_Make() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'z', std_filesystem_test::FileStatus() );
+		mp->AddItem( 'z', std_filesystem_test::FileStatus() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, STDMenu() );
+		mp->AddMenu( 27, STDMenu() );
 	};
 }

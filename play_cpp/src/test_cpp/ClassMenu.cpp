@@ -20,58 +20,58 @@ r2tm::DescriptionFunctionT ClassMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT ClassMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', cpp_class_test::Method() );
-		ret->AddItem( '2', cpp_class_test::MemberValue() );
-		ret->AddItem( '3', cpp_class_test::Braces_1() );
-		ret->AddItem( '4', cpp_class_test::Braces_2() );
-		ret->AddItem( '5', cpp_class_test::Braces_3() );
-		ret->AddItem( '6', cpp_class_test::PrintName() );
-		ret->AddItem( '7', cpp_class_test::ImplicitTypeConversion() );
+		mp->AddItem( '1', cpp_class_test::Method() );
+		mp->AddItem( '2', cpp_class_test::MemberValue() );
+		mp->AddItem( '3', cpp_class_test::Braces_1() );
+		mp->AddItem( '4', cpp_class_test::Braces_2() );
+		mp->AddItem( '5', cpp_class_test::Braces_3() );
+		mp->AddItem( '6', cpp_class_test::PrintName() );
+		mp->AddItem( '7', cpp_class_test::ImplicitTypeConversion() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', cpp_class_private_inheritance_test::VirtualInterface() );
-		ret->AddItem( 'w', cpp_class_private_inheritance_test::PureVirtualInterface() );
-		ret->AddItem( 'e', cpp_class_private_inheritance_test::Demo1() );
-		ret->AddItem( 'r', cpp_class_private_inheritance_test::Using() );
-		ret->AddItem( 't', cpp_class_private_inheritance_test::PrivateInheritance_iEnum() );
-		ret->AddItem( 'y', cpp_class_private_inheritance_test::NoneVirtualInterface() );
+		mp->AddItem( 'q', cpp_class_private_inheritance_test::VirtualInterface() );
+		mp->AddItem( 'w', cpp_class_private_inheritance_test::PureVirtualInterface() );
+		mp->AddItem( 'e', cpp_class_private_inheritance_test::Demo1() );
+		mp->AddItem( 'r', cpp_class_private_inheritance_test::Using() );
+		mp->AddItem( 't', cpp_class_private_inheritance_test::PrivateInheritance_iEnum() );
+		mp->AddItem( 'y', cpp_class_private_inheritance_test::NoneVirtualInterface() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'a', cpp_class_test::MemberAdress_Value() );
-		ret->AddItem( 's', cpp_class_test::MemberAdress_Method() );
-		ret->AddItem( 'd', cpp_class_test::Offset_SingleInheritance() );
-		ret->AddItem( 'f', cpp_class_test::Offset_MultipleInheritance_1() );
-		ret->AddItem( 'g', cpp_class_test::Offset_MultipleInheritance_2() );
-		ret->AddItem( 'h', cpp_class_test::Offset_Singleton() );
+		mp->AddItem( 'a', cpp_class_test::MemberAdress_Value() );
+		mp->AddItem( 's', cpp_class_test::MemberAdress_Method() );
+		mp->AddItem( 'd', cpp_class_test::Offset_SingleInheritance() );
+		mp->AddItem( 'f', cpp_class_test::Offset_MultipleInheritance_1() );
+		mp->AddItem( 'g', cpp_class_test::Offset_MultipleInheritance_2() );
+		mp->AddItem( 'h', cpp_class_test::Offset_Singleton() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'z', cpp_class_test::Size_And_Byte_1() );
-		ret->AddItem( 'x', cpp_class_test::Size_And_Byte_2() );
-		ret->AddItem( 'c', cpp_class_test::Size_And_Byte_3() );
-		ret->AddItem( 'v', cpp_class_test::Size_With_Enum() );
+		mp->AddItem( 'z', cpp_class_test::Size_And_Byte_1() );
+		mp->AddItem( 'x', cpp_class_test::Size_And_Byte_2() );
+		mp->AddItem( 'c', cpp_class_test::Size_And_Byte_3() );
+		mp->AddItem( 'v', cpp_class_test::Size_With_Enum() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, CPP_Menu() );
+		mp->AddMenu( 27, CPP_Menu() );
 	};
 }

@@ -23,53 +23,53 @@ r2tm::DescriptionFunctionT STDFunctionalMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT STDFunctionalMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', std_functional_invoke_test::Basic() );
+		mp->AddItem( '1', std_functional_invoke_test::Basic() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( '6', std_functional_mem_fn_test::Basic() );
+		mp->AddItem( '6', std_functional_mem_fn_test::Basic() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', std_function_test::Basic() );
+		mp->AddItem( 'q', std_function_test::Basic() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'w', std_function_test::Equality_FunctionPointer_1() );
-		ret->AddItem( 'e', std_function_test::Equality_FunctionPointer_2() );
-		ret->AddItem( 'r', std_function_test::Equality_FunctionPointer_3() );
-		ret->AddItem( 't', std_function_2_test::Equality_STDBind_1() );
-		ret->AddItem( 'y', std_function_test::Equality_Lambda_1() );
+		mp->AddItem( 'w', std_function_test::Equality_FunctionPointer_1() );
+		mp->AddItem( 'e', std_function_test::Equality_FunctionPointer_2() );
+		mp->AddItem( 'r', std_function_test::Equality_FunctionPointer_3() );
+		mp->AddItem( 't', std_function_2_test::Equality_STDBind_1() );
+		mp->AddItem( 'y', std_function_test::Equality_Lambda_1() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'a', std_functional_hash_test::Basic() );
-		ret->AddItem( 's', std_functional_hash_test::CString() );
+		mp->AddItem( 'a', std_functional_hash_test::Basic() );
+		mp->AddItem( 's', std_functional_hash_test::CString() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, STDMenu() );
+		mp->AddMenu( 27, STDMenu() );
 	};
 }

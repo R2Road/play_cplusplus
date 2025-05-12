@@ -19,33 +19,33 @@ r2tm::DescriptionFunctionT EnumMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT EnumMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', enum_test::Basic() );
-		ret->AddItem( '2', enum_test::Cast() );
+		mp->AddItem( '1', enum_test::Basic() );
+		mp->AddItem( '2', enum_test::Cast() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', enum_test::ConvertWithTemplate() );
+		mp->AddItem( 'q', enum_test::ConvertWithTemplate() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'a', enum_test::MakeEnumWithMacro() );
-		ret->AddItem( 's', enum_test::XMacro_1() );
-		ret->AddItem( 'd', enum_test::XMacro_2() );
+		mp->AddItem( 'a', enum_test::MakeEnumWithMacro() );
+		mp->AddItem( 's', enum_test::XMacro_1() );
+		mp->AddItem( 'd', enum_test::XMacro_2() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, CPP_Menu() );
+		mp->AddMenu( 27, CPP_Menu() );
 	};
 }

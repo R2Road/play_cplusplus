@@ -26,52 +26,52 @@ r2tm::DescriptionFunctionT AlgorithmMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT AlgorithmMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', algorithm_selection_sort_test::Case1() );
-		ret->AddItem( '2', algorithm_selection_sort_test::Case2() );
+		mp->AddItem( '1', algorithm_selection_sort_test::Case1() );
+		mp->AddItem( '2', algorithm_selection_sort_test::Case2() );
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
-		ret->AddItem( '3', algorithm_bubble_sort_test::Basic() );
+		mp->AddItem( '3', algorithm_bubble_sort_test::Basic() );
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
-		ret->AddItem( '4', algorithm_insertion_sort_test::Basic() );
-
-
-		ret->AddSplit();
+		mp->AddItem( '4', algorithm_insertion_sort_test::Basic() );
 
 
-		ret->AddItem( 'w', algorithm_astar_test::Basic() );
-		ret->AddItem( 'e', algorithm_astar_test::Use_STDListSplice() );
-		ret->AddItem( 'r', algorithm_astar_test::Use_STDListSplice_STDVectorResultPath() );
-		ret->AddItem( 't', algorithm_astar_test::Use_STDListSplice_DecreaseCloseList_STDVectorResultPath() );
-		ret->AddItem( 'y', algorithm_astar_test::Use_CostMap_STDListSplice_STDVectorResultPath() );
-		ret->AddItem( 'u', algorithm_astar_test::Use_TinyCostMap_STDListSplice_STDVectorResultPath() );
-		ret->AddItem( 'i', algorithm_astar_test::Use_ArrayBasedList_TinyCostMap_STDVectorResultPath() );
-
-		ret->AddLineFeed();
-
-		ret->AddItem( 'o', algorithm_astar_test::PerformanceTest() );
+		mp->AddSplit();
 
 
-		ret->AddSplit();
+		mp->AddItem( 'w', algorithm_astar_test::Basic() );
+		mp->AddItem( 'e', algorithm_astar_test::Use_STDListSplice() );
+		mp->AddItem( 'r', algorithm_astar_test::Use_STDListSplice_STDVectorResultPath() );
+		mp->AddItem( 't', algorithm_astar_test::Use_STDListSplice_DecreaseCloseList_STDVectorResultPath() );
+		mp->AddItem( 'y', algorithm_astar_test::Use_CostMap_STDListSplice_STDVectorResultPath() );
+		mp->AddItem( 'u', algorithm_astar_test::Use_TinyCostMap_STDListSplice_STDVectorResultPath() );
+		mp->AddItem( 'i', algorithm_astar_test::Use_ArrayBasedList_TinyCostMap_STDVectorResultPath() );
+
+		mp->AddLineFeed();
+
+		mp->AddItem( 'o', algorithm_astar_test::PerformanceTest() );
 
 
-		ret->AddItem( 'a', algorithm_etc_test::DJB2() );
+		mp->AddSplit();
 
 
-		ret->AddSplit();
+		mp->AddItem( 'a', algorithm_etc_test::DJB2() );
 
 
-		ret->AddMenu( 'z', MazeGenerationMenu() );
-		ret->AddMenu( 'x', ProceduralTerrainGenerationMenu() );
+		mp->AddSplit();
 
 
-		ret->AddSplit();
+		mp->AddMenu( 'z', MazeGenerationMenu() );
+		mp->AddMenu( 'x', ProceduralTerrainGenerationMenu() );
 
 
-		ret->AddMenu( 27, RootMenu() );
+		mp->AddSplit();
+
+
+		mp->AddMenu( 27, RootMenu() );
 	};
 }

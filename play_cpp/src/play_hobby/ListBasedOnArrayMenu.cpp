@@ -19,29 +19,29 @@ r2tm::DescriptionFunctionT ListBasedOnArrayMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT ListBasedOnArrayMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', play_list_based_on_array::Basic() );
-		ret->AddItem( '2', play_list_based_on_array::PushFront() );
-		ret->AddItem( '3', play_list_based_on_array::IteratorOperator_Indirection_StructureDereference() );
-		ret->AddItem( '4', play_list_based_on_array::EndIterator() );
-		ret->AddItem( '5', play_list_based_on_array::BeginIterator() );
+		mp->AddItem( '1', play_list_based_on_array::Basic() );
+		mp->AddItem( '2', play_list_based_on_array::PushFront() );
+		mp->AddItem( '3', play_list_based_on_array::IteratorOperator_Indirection_StructureDereference() );
+		mp->AddItem( '4', play_list_based_on_array::EndIterator() );
+		mp->AddItem( '5', play_list_based_on_array::BeginIterator() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', play_list_based_on_array::Clear() );
-		ret->AddItem( 'w', play_list_based_on_array::PushBack() );
-		ret->AddItem( 'e', play_list_based_on_array::Erase() );
-		ret->AddItem( 'r', play_list_based_on_array::RBegin_REnd() );
+		mp->AddItem( 'q', play_list_based_on_array::Clear() );
+		mp->AddItem( 'w', play_list_based_on_array::PushBack() );
+		mp->AddItem( 'e', play_list_based_on_array::Erase() );
+		mp->AddItem( 'r', play_list_based_on_array::RBegin_REnd() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, HobbyMenu() );
+		mp->AddMenu( 27, HobbyMenu() );
 	};
 }

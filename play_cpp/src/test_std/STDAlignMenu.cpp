@@ -19,16 +19,16 @@ r2tm::DescriptionFunctionT STDAlignMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT STDAlignMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', std_memory_align_test::Basic() );
-		ret->AddItem( '2', std_memory_align_test::Bound() );
-		ret->AddItem( '3', std_memory_align_test::Play() );
+		mp->AddItem( '1', std_memory_align_test::Basic() );
+		mp->AddItem( '2', std_memory_align_test::Bound() );
+		mp->AddItem( '3', std_memory_align_test::Play() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, STDMemoryMenu() );
+		mp->AddMenu( 27, STDMemoryMenu() );
 	};
 }

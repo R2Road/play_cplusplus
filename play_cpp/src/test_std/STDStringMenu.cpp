@@ -19,32 +19,32 @@ r2tm::DescriptionFunctionT STDStringMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT STDStringMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', std_string_test::Declaration() );
-		ret->AddItem( '2', std_string_test::Operator_Equal() );
-		ret->AddItem( '3', std_string_test::Memory_1() );
-		ret->AddItem( '4', std_string_test::Memory_2() );
-		ret->AddItem( '5', std_string_test::Move() );
+		mp->AddItem( '1', std_string_test::Declaration() );
+		mp->AddItem( '2', std_string_test::Operator_Equal() );
+		mp->AddItem( '3', std_string_test::Memory_1() );
+		mp->AddItem( '4', std_string_test::Memory_2() );
+		mp->AddItem( '5', std_string_test::Move() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', std_string_test::Find_1() );
-		ret->AddItem( 'w', std_string_test::Find_2() );
-		ret->AddItem( 'e', std_string_test::Find_And_Split_1() );
-		ret->AddItem( 'r', std_string_test::Find_And_Split_2() );
-		ret->AddItem( 't', std_string_test::Line_Count() );
+		mp->AddItem( 'q', std_string_test::Find_1() );
+		mp->AddItem( 'w', std_string_test::Find_2() );
+		mp->AddItem( 'e', std_string_test::Find_And_Split_1() );
+		mp->AddItem( 'r', std_string_test::Find_And_Split_2() );
+		mp->AddItem( 't', std_string_test::Line_Count() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, STDMenu() );
+		mp->AddMenu( 27, STDMenu() );
 	};
 }

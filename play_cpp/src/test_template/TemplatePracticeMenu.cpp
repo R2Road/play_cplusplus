@@ -19,15 +19,15 @@ r2tm::DescriptionFunctionT TemplatePracticeMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT TemplatePracticeMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', template_practice_part_01_test::BufferWithTemplate() );
-		ret->AddItem( '2', template_practice_part_01_test::VaridicMax() );
+		mp->AddItem( '1', template_practice_part_01_test::BufferWithTemplate() );
+		mp->AddItem( '2', template_practice_part_01_test::VaridicMax() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, TemplateMenu() );
+		mp->AddMenu( 27, TemplateMenu() );
 	};
 }

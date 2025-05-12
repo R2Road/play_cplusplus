@@ -32,52 +32,52 @@ r2tm::DescriptionFunctionT C_Menu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT C_Menu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', c_array_test::Init() );
-		ret->AddMenu( '2', OperatorMenu() );
-		ret->AddItem( '3', c_struct_test::ByteAlignment() );
-		ret->AddItem( '4', c_struct_test::PragmaPack() );
-		ret->AddItem( '5', c_struct_test::Array_Size_0() );
+		mp->AddItem( '1', c_array_test::Init() );
+		mp->AddMenu( '2', OperatorMenu() );
+		mp->AddItem( '3', c_struct_test::ByteAlignment() );
+		mp->AddItem( '4', c_struct_test::PragmaPack() );
+		mp->AddItem( '5', c_struct_test::Array_Size_0() );
 		
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( '9', c_printf_test::Basic() );
-		ret->AddItem( '0', c_printf_test::ShowNumbers() );
+		mp->AddItem( '9', c_printf_test::Basic() );
+		mp->AddItem( '0', c_printf_test::ShowNumbers() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'q', c_sizeof_test::Basic() );
-		ret->AddItem( 'w', c_memset_test::Basic() );
-		ret->AddItem( 'e', c_memset_test::Size() );
-		ret->AddItem( 'r', c_macro_test::ToString() );
+		mp->AddItem( 'q', c_sizeof_test::Basic() );
+		mp->AddItem( 'w', c_memset_test::Basic() );
+		mp->AddItem( 'e', c_memset_test::Size() );
+		mp->AddItem( 'r', c_macro_test::ToString() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddMenu( 'a', PointerMenu() );
-		ret->AddMenu( 's', BitOperationMenu() );
-		ret->AddMenu( 'd', UnionMenu() );
-		ret->AddItem( 'f', c_system_test::Pause() );
-		ret->AddItem( 'g', c_atexit_test::Basic() );
+		mp->AddMenu( 'a', PointerMenu() );
+		mp->AddMenu( 's', BitOperationMenu() );
+		mp->AddMenu( 'd', UnionMenu() );
+		mp->AddItem( 'f', c_system_test::Pause() );
+		mp->AddItem( 'g', c_atexit_test::Basic() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddMenu( 'z', C_FileMenu() );
+		mp->AddMenu( 'z', C_FileMenu() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, RootMenu() );
+		mp->AddMenu( 27, RootMenu() );
 	};
 }

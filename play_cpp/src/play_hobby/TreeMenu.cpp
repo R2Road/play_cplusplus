@@ -19,15 +19,15 @@ r2tm::DescriptionFunctionT TreeMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT TreeMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret ) {
-		ret->AddItem( '1', play_tree::Basic() );
+	return[]( r2tm::MenuProcessor* mp ) {
+		mp->AddItem( '1', play_tree::Basic() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, HobbyMenu() );
+		mp->AddMenu( 27, HobbyMenu() );
 	};
 }

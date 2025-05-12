@@ -19,28 +19,28 @@ r2tm::DescriptionFunctionT STDFstreamMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT STDFstreamMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', std_fstream_test::OpenAndClose() );
-		ret->AddItem( '2', std_fstream_test::GetCharacter() );
-		ret->AddItem( '3', std_fstream_test::GetLine1() );
-		ret->AddItem( '4', std_fstream_test::GetLine2() );
-		ret->AddItem( '5', std_fstream_test::GetBlank2Blank() );
+		mp->AddItem( '1', std_fstream_test::OpenAndClose() );
+		mp->AddItem( '2', std_fstream_test::GetCharacter() );
+		mp->AddItem( '3', std_fstream_test::GetLine1() );
+		mp->AddItem( '4', std_fstream_test::GetLine2() );
+		mp->AddItem( '5', std_fstream_test::GetBlank2Blank() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', std_fstream_test::FileGenerate() );
+		mp->AddItem( 'q', std_fstream_test::FileGenerate() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, STDMenu() );
+		mp->AddMenu( 27, STDMenu() );
 	};
 }

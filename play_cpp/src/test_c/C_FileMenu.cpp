@@ -19,27 +19,27 @@ r2tm::DescriptionFunctionT C_FileMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT C_FileMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', c_file_test::OpenAndClose() );
-		ret->AddItem( '2', c_file_test::GetCharacter() );
-		ret->AddItem( '3', c_file_test::GetLine() );
-		ret->AddItem( '4', c_file_test::GetFormat() );
+		mp->AddItem( '1', c_file_test::OpenAndClose() );
+		mp->AddItem( '2', c_file_test::GetCharacter() );
+		mp->AddItem( '3', c_file_test::GetLine() );
+		mp->AddItem( '4', c_file_test::GetFormat() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', c_file_test::FileGenerate() );
+		mp->AddItem( 'q', c_file_test::FileGenerate() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, C_Menu() );
+		mp->AddMenu( 27, C_Menu() );
 	};
 }

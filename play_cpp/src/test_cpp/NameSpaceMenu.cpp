@@ -19,17 +19,17 @@ r2tm::DescriptionFunctionT NameSpaceMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT NameSpaceMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', cpp_namespace_test::Basic() );
-		ret->AddItem( '2', cpp_namespace_test::Alias() );
+		mp->AddItem( '1', cpp_namespace_test::Basic() );
+		mp->AddItem( '2', cpp_namespace_test::Alias() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, CPP_Menu() );
+		mp->AddMenu( 27, CPP_Menu() );
 	};
 }

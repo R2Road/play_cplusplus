@@ -20,25 +20,25 @@ r2tm::DescriptionFunctionT OperatorMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT OperatorMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', c_operator_priority_test::Basic() );
+		mp->AddItem( '1', c_operator_priority_test::Basic() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', c_operator_ternary_test::Basic() );
-		ret->AddItem( 'w', c_operator_ternary_test::Comma() );
-		ret->AddItem( 'e', c_operator_ternary_test::Void() );
+		mp->AddItem( 'q', c_operator_ternary_test::Basic() );
+		mp->AddItem( 'w', c_operator_ternary_test::Comma() );
+		mp->AddItem( 'e', c_operator_ternary_test::Void() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, C_Menu() );
+		mp->AddMenu( 27, C_Menu() );
 	};
 }

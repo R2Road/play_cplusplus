@@ -19,16 +19,16 @@ r2tm::DescriptionFunctionT STDOptionalMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT STDOptionalMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', std_optional_test::Basic() );
-		ret->AddItem( '2', std_optional_test::Constructor() );
-		ret->AddItem( '3', std_optional_test::Reference() );
+		mp->AddItem( '1', std_optional_test::Basic() );
+		mp->AddItem( '2', std_optional_test::Constructor() );
+		mp->AddItem( '3', std_optional_test::Reference() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, STDMenu() );
+		mp->AddMenu( 27, STDMenu() );
 	};
 }

@@ -21,22 +21,22 @@ r2tm::DescriptionFunctionT ProceduralTerrainGenerationMenu::GetDescriptionFuncti
 }
 r2tm::WriteFunctionT ProceduralTerrainGenerationMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', procedural_terrain_generation_1_test::Basic() );
-		ret->AddItem( '2', procedural_terrain_generation_1_test::Test_1() );
+		mp->AddItem( '1', procedural_terrain_generation_1_test::Basic() );
+		mp->AddItem( '2', procedural_terrain_generation_1_test::Test_1() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( '3', procedural_terrain_generation_2_test::Bone() );
-		ret->AddItem( '4', procedural_terrain_generation_3_test::Weights() );
+		mp->AddItem( '3', procedural_terrain_generation_2_test::Bone() );
+		mp->AddItem( '4', procedural_terrain_generation_3_test::Weights() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, AlgorithmMenu() );
+		mp->AddMenu( 27, AlgorithmMenu() );
 	};
 }

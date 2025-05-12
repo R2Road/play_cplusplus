@@ -22,40 +22,40 @@ r2tm::DescriptionFunctionT STDMemoryMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT STDMemoryMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', std_memory_unique_ptr_test::Basic() );
-		ret->AddItem( '2', std_memory_unique_ptr_test::Size() );
-		ret->AddItem( '3', std_memory_unique_ptr_test::Binary() );
-		ret->AddItem( '4', std_memory_unique_ptr_test::Deleter() );
-		ret->AddItem( '5', std_memory_unique_ptr_test::TemplateDeleter() );
-		ret->AddItem( '6', std_memory_unique_ptr_test::FowardDeclaration() );
+		mp->AddItem( '1', std_memory_unique_ptr_test::Basic() );
+		mp->AddItem( '2', std_memory_unique_ptr_test::Size() );
+		mp->AddItem( '3', std_memory_unique_ptr_test::Binary() );
+		mp->AddItem( '4', std_memory_unique_ptr_test::Deleter() );
+		mp->AddItem( '5', std_memory_unique_ptr_test::TemplateDeleter() );
+		mp->AddItem( '6', std_memory_unique_ptr_test::FowardDeclaration() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', std_memory_shared_ptr_test::Basic() );
-		ret->AddItem( 'w', std_memory_shared_ptr_test::Size() );
-		ret->AddItem( 'e', std_memory_shared_ptr_test::Binary() );
-		ret->AddItem( 'r', std_memory_shared_ptr_test::MakeShared_And_Memory() );
+		mp->AddItem( 'q', std_memory_shared_ptr_test::Basic() );
+		mp->AddItem( 'w', std_memory_shared_ptr_test::Size() );
+		mp->AddItem( 'e', std_memory_shared_ptr_test::Binary() );
+		mp->AddItem( 'r', std_memory_shared_ptr_test::MakeShared_And_Memory() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddMenu( 'z', STDAlignMenu() );
+		mp->AddMenu( 'z', STDAlignMenu() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, STDMenu() );
+		mp->AddMenu( 27, STDMenu() );
 	};
 }

@@ -19,24 +19,24 @@ r2tm::DescriptionFunctionT TemplateVariadicMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT TemplateVariadicMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', template_variadic_test::SizeOfArgs() );
-		ret->AddItem( '2', template_variadic_test::PrintValues() );
-		ret->AddItem( '3', template_variadic_test::SumValues() );
-		ret->AddItem( '4', template_variadic_test::SubtractValues() );
+		mp->AddItem( '1', template_variadic_test::SizeOfArgs() );
+		mp->AddItem( '2', template_variadic_test::PrintValues() );
+		mp->AddItem( '3', template_variadic_test::SumValues() );
+		mp->AddItem( '4', template_variadic_test::SubtractValues() );
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'a', template_variadic_test::Test() );
+		mp->AddItem( 'a', template_variadic_test::Test() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, TemplateMenu() );
+		mp->AddMenu( 27, TemplateMenu() );
 	};
 }

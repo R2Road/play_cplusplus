@@ -20,22 +20,22 @@ r2tm::DescriptionFunctionT MazeGenerationMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT MazeGenerationMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', algorithm_maze_test::Basic() );
-		ret->AddItem( '2', algorithm_maze_test::Test() );
+		mp->AddItem( '1', algorithm_maze_test::Basic() );
+		mp->AddItem( '2', algorithm_maze_test::Test() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'q', maze_generation_kruskals_test::ViewTest() );
-		ret->AddItem( 'w', maze_generation_kruskals_test::Basic() );
+		mp->AddItem( 'q', maze_generation_kruskals_test::ViewTest() );
+		mp->AddItem( 'w', maze_generation_kruskals_test::Basic() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, AlgorithmMenu() );
+		mp->AddMenu( 27, AlgorithmMenu() );
 	};
 }

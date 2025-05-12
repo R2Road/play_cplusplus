@@ -24,33 +24,33 @@ r2tm::DescriptionFunctionT WindowsTerminalFondAndTextColorMenu::GetDescriptionFu
 }
 r2tm::WriteFunctionT WindowsTerminalFondAndTextColorMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', windows_terminal_font_test::FontInfo() );
-		ret->AddItem( '2', windows_terminal_font_test::FontChange() );
+		mp->AddItem( '1', windows_terminal_font_test::FontInfo() );
+		mp->AddItem( '2', windows_terminal_font_test::FontChange() );
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'q', windows_terminal_text_color_test::ColorTable() );
-		ret->AddItem( 'w', windows_terminal_text_color_test::TextColor1() );
-		ret->AddItem( 'e', windows_terminal_text_color_test::TextColor2() );
-		ret->AddItem( 'r', windows_terminal_text_color_test::AdjustColorTable() );
+		mp->AddItem( 'q', windows_terminal_text_color_test::ColorTable() );
+		mp->AddItem( 'w', windows_terminal_text_color_test::TextColor1() );
+		mp->AddItem( 'e', windows_terminal_text_color_test::TextColor2() );
+		mp->AddItem( 'r', windows_terminal_text_color_test::AdjustColorTable() );
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'a', windows_terminal_text_color_test::ColorTable2() );
-		ret->AddItem( 's', windows_terminal_text_color_test::TextColor3() );
+		mp->AddItem( 'a', windows_terminal_text_color_test::ColorTable2() );
+		mp->AddItem( 's', windows_terminal_text_color_test::TextColor3() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, WindowsMenu() );
+		mp->AddMenu( 27, WindowsMenu() );
 	};
 }

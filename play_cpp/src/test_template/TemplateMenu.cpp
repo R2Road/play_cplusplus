@@ -25,45 +25,45 @@ r2tm::DescriptionFunctionT TemplateMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT TemplateMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', template_basic_test::MemberVariable() );
-		ret->AddItem( '2', template_basic_test::Function_ReturnValue() );
-		ret->AddItem( '3', template_basic_test::Function_Object() );
-		ret->AddItem( '4', template_basic_test::RemovePointer() );
+		mp->AddItem( '1', template_basic_test::MemberVariable() );
+		mp->AddItem( '2', template_basic_test::Function_ReturnValue() );
+		mp->AddItem( '3', template_basic_test::Function_Object() );
+		mp->AddItem( '4', template_basic_test::RemovePointer() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( '6', template_practice_test_02::Basic() );
+		mp->AddItem( '6', template_practice_test_02::Basic() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', template_specialization_test::Basic() );
+		mp->AddItem( 'q', template_specialization_test::Basic() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddMenu( 'a', TemplateVariadicMenu() );
-		ret->AddMenu( 's', TemplateMetaProgrammingMenu() );
-		ret->AddMenu( 'd', TemplatePracticeMenu() );
+		mp->AddMenu( 'a', TemplateVariadicMenu() );
+		mp->AddMenu( 's', TemplateMetaProgrammingMenu() );
+		mp->AddMenu( 'd', TemplatePracticeMenu() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, RootMenu() );
+		mp->AddMenu( 27, RootMenu() );
 	};
 }

@@ -17,11 +17,11 @@ r2tm::DescriptionFunctionT MathMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT MathMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, RootMenu() );
+		mp->AddMenu( 27, RootMenu() );
 	};
 }

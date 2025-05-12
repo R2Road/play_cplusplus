@@ -54,51 +54,51 @@ r2tm::DescriptionFunctionT RootMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT RootMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', various_console_input_test::KeyCodeView() );
-		ret->AddMenu( '2', WindowsMenu() );
+		mp->AddItem( '1', various_console_input_test::KeyCodeView() );
+		mp->AddMenu( '2', WindowsMenu() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddMenu( 'q', C_Menu() );
-		ret->AddMenu( 'w', CPP_Menu() );
-		ret->AddMenu( 'e', STDMenu() );
-		ret->AddMenu( 'r', TemplateMenu() );
-		ret->AddMenu( 't', TimeMenu() );
-		ret->AddMenu( 'y', RandomMenu() );
-		ret->AddMenu( 'u', DebugMenu() );
+		mp->AddMenu( 'q', C_Menu() );
+		mp->AddMenu( 'w', CPP_Menu() );
+		mp->AddMenu( 'e', STDMenu() );
+		mp->AddMenu( 'r', TemplateMenu() );
+		mp->AddMenu( 't', TimeMenu() );
+		mp->AddMenu( 'y', RandomMenu() );
+		mp->AddMenu( 'u', DebugMenu() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddMenu( 'a', ETCMenu() );
-		ret->AddMenu( 's', MathMenu() );
+		mp->AddMenu( 'a', ETCMenu() );
+		mp->AddMenu( 's', MathMenu() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddMenu( 'z', AlgorithmMenu() );
-		ret->AddMenu( 'x', HobbyMenu() );
-		ret->AddMenu( 'c', PerformanceMenu() );
-		ret->AddMenu( 'v', Menu_CPU() );
+		mp->AddMenu( 'z', AlgorithmMenu() );
+		mp->AddMenu( 'x', HobbyMenu() );
+		mp->AddMenu( 'c', PerformanceMenu() );
+		mp->AddMenu( 'v', Menu_CPU() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddExit( 27 );
+		mp->AddExit( 27 );
 	};
 }

@@ -19,19 +19,19 @@ r2tm::DescriptionFunctionT STDNumericMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT STDNumericMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', std_numeric_test::Min() );
-		ret->AddItem( '2', std_numeric_test::Max() );
-		ret->AddItem( '3', std_numeric_test::Accumulate_Number() );
-		ret->AddItem( '4', std_numeric_test::Accumulate_String() );
-		ret->AddItem( '5', std_numeric_test::Partial_Sum() );
-		ret->AddItem( '6', std_numeric_test::FillSequenceNumber() );
+		mp->AddItem( '1', std_numeric_test::Min() );
+		mp->AddItem( '2', std_numeric_test::Max() );
+		mp->AddItem( '3', std_numeric_test::Accumulate_Number() );
+		mp->AddItem( '4', std_numeric_test::Accumulate_String() );
+		mp->AddItem( '5', std_numeric_test::Partial_Sum() );
+		mp->AddItem( '6', std_numeric_test::FillSequenceNumber() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, STDMenu() );
+		mp->AddMenu( 27, STDMenu() );
 	};
 }

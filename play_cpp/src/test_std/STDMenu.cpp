@@ -38,60 +38,60 @@ r2tm::DescriptionFunctionT STDMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT STDMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', std_system_test::Demo() );
-		ret->AddMenu( '2', STDCoutMenu() );
-		ret->AddMenu( '3', STDCinMenu() );
-		ret->AddMenu( '4', STDFileSystemMenu() );
-		ret->AddMenu( '5', STDFstreamMenu() );
-		ret->AddMenu( '6', STDOptionalMenu() );
-		ret->AddMenu( '7', STDStringMenu() );
-		ret->AddMenu( '8', STDStringViewMenu() );
+		mp->AddItem( '1', std_system_test::Demo() );
+		mp->AddMenu( '2', STDCoutMenu() );
+		mp->AddMenu( '3', STDCinMenu() );
+		mp->AddMenu( '4', STDFileSystemMenu() );
+		mp->AddMenu( '5', STDFstreamMenu() );
+		mp->AddMenu( '6', STDOptionalMenu() );
+		mp->AddMenu( '7', STDStringMenu() );
+		mp->AddMenu( '8', STDStringViewMenu() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( '8', std_tuple_test::Basic() );
-		ret->AddItem( '9', std_variant_test::Basic() );
+		mp->AddItem( '8', std_tuple_test::Basic() );
+		mp->AddItem( '9', std_variant_test::Basic() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddMenu( 'q', STDFunctionalMenu() );
+		mp->AddMenu( 'q', STDFunctionalMenu() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'a', std_regex_test::Basic() );
-		ret->AddItem( 's', std_algorithm_test::Shuffle() );
+		mp->AddItem( 'a', std_regex_test::Basic() );
+		mp->AddItem( 's', std_algorithm_test::Shuffle() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddMenu( 'z', STDMemoryMenu() );
-		ret->AddMenu( 'x', STDNumericMenu() );
-		ret->AddMenu( 'c', STDContainerMenu() );
-		ret->AddMenu( 'v', STDThreadMenu() );
+		mp->AddMenu( 'z', STDMemoryMenu() );
+		mp->AddMenu( 'x', STDNumericMenu() );
+		mp->AddMenu( 'c', STDContainerMenu() );
+		mp->AddMenu( 'v', STDThreadMenu() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, RootMenu() );
+		mp->AddMenu( 27, RootMenu() );
 	};
 }

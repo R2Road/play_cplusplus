@@ -20,27 +20,27 @@ r2tm::DescriptionFunctionT AlignMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT AlignMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', cpp_alignof_test::PrimitiveType() );
-		ret->AddItem( '2', cpp_alignof_test::STDContainer() );
-		ret->AddItem( '3', cpp_alignof_test::Struct() );
-		ret->AddItem( '4', cpp_alignof_test::MixedStruct() );
+		mp->AddItem( '1', cpp_alignof_test::PrimitiveType() );
+		mp->AddItem( '2', cpp_alignof_test::STDContainer() );
+		mp->AddItem( '3', cpp_alignof_test::Struct() );
+		mp->AddItem( '4', cpp_alignof_test::MixedStruct() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', cpp_align_test::AlignAs() );
+		mp->AddItem( 'q', cpp_align_test::AlignAs() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, CPP_Menu() );
+		mp->AddMenu( 27, CPP_Menu() );
 	};
 }

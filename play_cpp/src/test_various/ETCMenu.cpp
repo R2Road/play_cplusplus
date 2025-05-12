@@ -19,27 +19,27 @@ r2tm::DescriptionFunctionT ETCMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT ETCMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', etc_test::ShowBinary() );
-		ret->AddItem( '2', etc_test::LifeTimeTest() );
-		ret->AddItem( '3', etc_test::STDFunctionImplement() );
-		ret->AddItem( '4', etc_test::Braces_PrimitiveType() );
+		mp->AddItem( '1', etc_test::ShowBinary() );
+		mp->AddItem( '2', etc_test::LifeTimeTest() );
+		mp->AddItem( '3', etc_test::STDFunctionImplement() );
+		mp->AddItem( '4', etc_test::Braces_PrimitiveType() );
 
-		ret->AddItem( '5', etc_test::CircularReference() );
-
-
-
-		ret->AddLineFeed();
+		mp->AddItem( '5', etc_test::CircularReference() );
 
 
 
-		ret->AddItem( 'q', etc_test::E() );
+		mp->AddLineFeed();
 
 
-		ret->AddSplit();
+
+		mp->AddItem( 'q', etc_test::E() );
 
 
-		ret->AddMenu( 27, RootMenu() );
+		mp->AddSplit();
+
+
+		mp->AddMenu( 27, RootMenu() );
 	};
 }

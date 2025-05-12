@@ -19,16 +19,16 @@ r2tm::DescriptionFunctionT PropertyMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT PropertyMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', play_property::Functor() );
+		mp->AddItem( '1', play_property::Functor() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, HobbyMenu() );
+		mp->AddMenu( 27, HobbyMenu() );
 	};
 }

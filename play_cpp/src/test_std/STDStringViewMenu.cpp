@@ -19,20 +19,20 @@ r2tm::DescriptionFunctionT STDStringViewMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT STDStringViewMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', std_string_view_test::Declaration() );
-		ret->AddItem( '2', std_string_view_test::Iteration() );
-		ret->AddItem( '3', std_string_view_test::Literal_Operator_sv() );
-		ret->AddItem( '4', std_string_view_test::Remove() );
-		ret->AddItem( '5', std_string_view_test::SubStr() );
+		mp->AddItem( '1', std_string_view_test::Declaration() );
+		mp->AddItem( '2', std_string_view_test::Iteration() );
+		mp->AddItem( '3', std_string_view_test::Literal_Operator_sv() );
+		mp->AddItem( '4', std_string_view_test::Remove() );
+		mp->AddItem( '5', std_string_view_test::SubStr() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, STDMenu() );
+		mp->AddMenu( 27, STDMenu() );
 	};
 }

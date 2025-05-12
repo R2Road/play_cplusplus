@@ -29,54 +29,54 @@ r2tm::DescriptionFunctionT WindowsMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT WindowsMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddMenu( '1', WindowsTerminalBasicMenu() );
-		ret->AddMenu( '2', WindowsTerminalFondAndTextColorMenu() );
+		mp->AddMenu( '1', WindowsTerminalBasicMenu() );
+		mp->AddMenu( '2', WindowsTerminalFondAndTextColorMenu() );
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'e', windows_terminal_input_test::WindowInput_ReadConsoleInput() );
-		ret->AddItem( 'r', windows_terminal_input_test::WindowInput_GetKeyState() );
-		ret->AddItem( 't', windows_terminal_input_test::WindowInput_GetKeyboardState() );
-		ret->AddItem( 'y', windows_terminal_input_test::WindowInput_GetAsyncKeyStates() );
+		mp->AddItem( 'e', windows_terminal_input_test::WindowInput_ReadConsoleInput() );
+		mp->AddItem( 'r', windows_terminal_input_test::WindowInput_GetKeyState() );
+		mp->AddItem( 't', windows_terminal_input_test::WindowInput_GetKeyboardState() );
+		mp->AddItem( 'y', windows_terminal_input_test::WindowInput_GetAsyncKeyStates() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'u', windows_terminal_message_test::ConsoleControlHandler() );
-		ret->AddItem( 'i', windows_terminal_message_test::MessageHook() );
+		mp->AddItem( 'u', windows_terminal_message_test::ConsoleControlHandler() );
+		mp->AddItem( 'i', windows_terminal_message_test::MessageHook() );
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'a', windows_screen_buffer_test::FillBuffer() );
-		ret->AddItem( 's', windows_screen_buffer_test::Write2Buffer_WriteConsole() );
-		ret->AddItem( 'd', windows_screen_buffer_test::Write2Buffer_WriteConsoleOutput() );
-		ret->AddItem( 'f', windows_screen_buffer_test::DoubleBuffering() );
-		ret->AddItem( 'g', windows_screen_buffer_test::ReadConsoleOutputTest() );
-		ret->AddItem( 'h', windows_screen_buffer_test::ETCTest() );
+		mp->AddItem( 'a', windows_screen_buffer_test::FillBuffer() );
+		mp->AddItem( 's', windows_screen_buffer_test::Write2Buffer_WriteConsole() );
+		mp->AddItem( 'd', windows_screen_buffer_test::Write2Buffer_WriteConsoleOutput() );
+		mp->AddItem( 'f', windows_screen_buffer_test::DoubleBuffering() );
+		mp->AddItem( 'g', windows_screen_buffer_test::ReadConsoleOutputTest() );
+		mp->AddItem( 'h', windows_screen_buffer_test::ETCTest() );
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddMenu( 'z', FlickeringResearchMenu() );
-		ret->AddItem( 'x', windows_terminal_dc_test::Pixel() );
-		ret->AddItem( 'c', windows_sound_test::PlaySoundTest() );
-		ret->AddItem( 'v', windows_sound_test::BeepTest() );
+		mp->AddMenu( 'z', FlickeringResearchMenu() );
+		mp->AddItem( 'x', windows_terminal_dc_test::Pixel() );
+		mp->AddItem( 'c', windows_sound_test::PlaySoundTest() );
+		mp->AddItem( 'v', windows_sound_test::BeepTest() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, RootMenu() );
+		mp->AddMenu( 27, RootMenu() );
 	};
 }

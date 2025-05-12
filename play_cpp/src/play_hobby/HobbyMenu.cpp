@@ -27,51 +27,51 @@ r2tm::DescriptionFunctionT HobbyMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT HobbyMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', play_infinite_number::Declaration() );
-		ret->AddItem( '2', play_infinite_number::Operator_Plus() );
+		mp->AddItem( '1', play_infinite_number::Declaration() );
+		mp->AddItem( '2', play_infinite_number::Operator_Plus() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( '9', play_spin_lock::Basic() );
+		mp->AddItem( '9', play_spin_lock::Basic() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddMenu( 'q', TreeMenu() );
-		ret->AddMenu( 'w', PropertyMenu() );
+		mp->AddMenu( 'q', TreeMenu() );
+		mp->AddMenu( 'w', PropertyMenu() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'a', play_serialize::Basic() );
-		ret->AddItem( 's', play_serialize::Copy() );
+		mp->AddItem( 'a', play_serialize::Basic() );
+		mp->AddItem( 's', play_serialize::Copy() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddMenu( 'z', ListBasedOnArrayMenu() );
-		ret->AddMenu( 'x', Vector3Menu() );
-		ret->AddMenu( 'c', MemoryPoolMenu() );
+		mp->AddMenu( 'z', ListBasedOnArrayMenu() );
+		mp->AddMenu( 'x', Vector3Menu() );
+		mp->AddMenu( 'c', MemoryPoolMenu() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, RootMenu() );
+		mp->AddMenu( 27, RootMenu() );
 	};
 }

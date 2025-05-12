@@ -29,38 +29,38 @@ r2tm::DescriptionFunctionT CPP_Menu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT CPP_Menu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* ret )
+	return[]( r2tm::MenuProcessor* mp )
 	{
-		ret->AddMenu( '1', ClassMenu() );
-		ret->AddMenu( '2', NameSpaceMenu() );
+		mp->AddMenu( '1', ClassMenu() );
+		mp->AddMenu( '2', NameSpaceMenu() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddMenu( '6', CharMenu() );
-		ret->AddMenu( '7', AlignMenu() );
-		ret->AddMenu( '8', EnumMenu() );
+		mp->AddMenu( '6', CharMenu() );
+		mp->AddMenu( '7', AlignMenu() );
+		mp->AddMenu( '8', EnumMenu() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddMenu( 'q', NewMenu() );
-		ret->AddMenu( 'w', LambdaMenu() );
-		ret->AddItem( 'e', using_test::Basic() );
+		mp->AddMenu( 'q', NewMenu() );
+		mp->AddMenu( 'w', LambdaMenu() );
+		mp->AddItem( 'e', using_test::Basic() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'a', cpp_structured_binding_test::Basic() );
-		ret->AddItem( 'b', number_test::Prefix() );
+		mp->AddItem( 'a', cpp_structured_binding_test::Basic() );
+		mp->AddItem( 'b', number_test::Prefix() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, RootMenu() );
+		mp->AddMenu( 27, RootMenu() );
 	};
 }
