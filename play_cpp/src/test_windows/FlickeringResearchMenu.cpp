@@ -1,6 +1,6 @@
 #include "FlickeringResearchMenu.h"
 
-#include "r2tm/r2tm_Director.h"
+#include "r2tm/r2tm_MenuProcessor.h"
 
 #include "item/windows_terminal_flickering_research.h"
 

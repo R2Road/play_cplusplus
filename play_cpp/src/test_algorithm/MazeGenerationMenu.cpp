@@ -1,6 +1,6 @@
 #include "MazeGenerationMenu.h"
 
-#include "r2tm/r2tm_Director.h"
+#include "r2tm/r2tm_MenuProcessor.h"
 
 #include "test_algorithm/item/algorithm_maze_test.h"
 #include "test_algorithm/item/maze_generation_kruskals_test.h"
