@@ -20,29 +20,96 @@ namespace std_array_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
+			OUTPUT_SOURCE_READY;
+
 			LS();
 
-			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
-
 			{
-				std::array<int, 3u> test_array;
-				std::cout << r2tm::tab2 << "std::array<int, 3u> test_array;" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Declaration" );
+
+				LF();
+
+				{
+					OUTPUT_SOURCE_BEGIN;
+					std::array<int, 3u> test_array;
+					OUTPUT_SOURCE_END;
+				}
+
+				LF();
+
+				{
+					OUTPUT_SOURCE_BEGIN;
+					std::array<int, 3u> test_array{ { 1, 2, 3 } };
+					OUTPUT_SOURCE_END;
+				}
+
+				LF();
+
+				{
+					OUTPUT_SOURCE_BEGIN;
+					std::array<int, 3u> test_array = { 1, 2, 3 };
+					OUTPUT_SOURCE_END;
+				}
+
+				LF();
+
+				{
+					OUTPUT_SOURCE_BEGIN;
+					std::array aa{ 1, 2, 3 };
+					OUTPUT_SOURCE_END;
+					std::cout << r2tm::tab2 << "* Note : Since c++17" << r2tm::linefeed;
+				}
 			}
 
-			{
-				std::array<int, 3u> test_array{ { 1, 2, 3 } };
-				std::cout << r2tm::tab2 << "std::array<int, 3u> test_array{ { 1, 2, 3 } };" << r2tm::linefeed2;
-			}
+			LS();
 
 			{
-				std::array<int, 3u> test_array = { 1, 2, 3 };
-				std::cout << r2tm::tab2 << "std::array<int, 3u> test_array = { 1, 2, 3 };" << r2tm::linefeed2;
-			}
+				OUTPUT_SUBJECT( "struct" );
 
-			{
-				std::array aa{ 1, 2, 3 };
-				std::cout << r2tm::tab2 << "std::array aa{ 1, 2, 3 };" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "* Note : Since c++17" << r2tm::linefeed;
+				LF();
+
+				DECLARATION_MAIN( struct S { int i = 0; int j = 0; } );
+
+				LF();
+
+				OUTPUT_SOURCE_BEGIN;
+				using A = std::array<S, 2u>;
+				OUTPUT_SOURCE_END;
+
+				SS();
+
+				{
+
+					LF();
+
+					OUTPUT_SOURCE_BEGIN;
+					const A a( { { { 1, 2 }, { 3, 4 } } } );
+					OUTPUT_SOURCE_END;
+
+					LF();
+
+					for( const auto& i : a )
+					{
+						std::cout << "   " << i.i << "   " << i.j;
+					}
+				}
+
+				LF();
+
+				{
+					OUTPUT_SOURCE_BEGIN;
+					const A b = { { { 5, 6 }, { 7, 8 } } };
+					OUTPUT_SOURCE_END;
+
+					LF();
+
+					for( const auto& i : b )
+					{
+						std::cout << "   " << i.i << "   " << i.j;
+					}
+				}
+
+				LF();
 			}
 
 			LS();
