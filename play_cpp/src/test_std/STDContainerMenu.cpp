@@ -26,7 +26,7 @@ r2tm::WriteFunctionT STDContainerMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', std_array_test::Basic() );
+		mp->AddItem( '1', std_array_test::Declaration() );
 		mp->AddItem( '2', std_array_test::Fill() );
 		mp->AddItem( '3', std_array_test::Copy() );
 

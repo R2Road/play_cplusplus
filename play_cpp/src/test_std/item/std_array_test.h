@@ -4,7 +4,7 @@
 
 namespace std_array_test
 {
-	class Basic : public r2tm::iItem
+	class Declaration : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

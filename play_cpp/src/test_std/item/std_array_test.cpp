@@ -9,14 +9,14 @@
 
 namespace std_array_test
 {
-	r2tm::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "std::array : Declaration";
 		};
 	}
-	r2tm::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Declaration::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
