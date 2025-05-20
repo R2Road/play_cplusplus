@@ -180,4 +180,51 @@ namespace template_basic_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	template<typename T, T N>
+	class ConstantContainer
+	{
+	public:
+		using CT = T;
+
+		const CT operator()() const { return N; }
+	};
+	r2tm::TitleFunctionT Constant::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Basic : Constant";
+		};
+	}
+	r2tm::DoFunctionT Constant::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				ConstantContainer<int, 2> c;
+
+				OUTPUT_VALUE( c() );
+
+			}
+
+			LS();
+
+			{
+				//ConstantContainer<float, 2.2> c;
+
+				LF();
+
+				OUTPUT_NOTE( "error C7592: 'float' 형식의 비형식 템플릿 매개 변수에는 최소한 '/std:c++20'이(가) 필요합니다." );
+
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
