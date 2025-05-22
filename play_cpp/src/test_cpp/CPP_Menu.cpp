@@ -16,6 +16,8 @@
 #include "CharMenu.h"
 #include "RootMenu.h"
 
+#include "item/cpp_braces.h"
+
 r2tm::TitleFunctionT CPP_Menu::GetTitleFunction() const
 {
 	return []()->const char*
@@ -33,6 +35,7 @@ r2tm::WriteFunctionT CPP_Menu::GetWriteFunction() const
 	{
 		mp->AddMenu( '1', ClassMenu() );
 		mp->AddMenu( '2', NameSpaceMenu() );
+		mp->AddItem( '3', cpp_braces::Braces_PrimitiveType() );
 
 
 		mp->AddLineFeed();

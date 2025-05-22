@@ -602,6 +602,9 @@
     <ClCompile Include="external\r2tm\r2tm_WindowsUtility.cpp">
       <Filter>_external\r2tm</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_cpp\item\cpp_braces.cpp">
+      <Filter>test_cpp\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1249,6 +1252,9 @@
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_WindowsUtility.h">
       <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_cpp\item\cpp_braces.h">
+      <Filter>test_cpp\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

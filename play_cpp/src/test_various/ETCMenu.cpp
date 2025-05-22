@@ -24,7 +24,6 @@ r2tm::WriteFunctionT ETCMenu::GetWriteFunction() const
 		mp->AddItem( '1', etc_test::ShowBinary() );
 		mp->AddItem( '2', etc_test::LifeTimeTest() );
 		mp->AddItem( '3', etc_test::STDFunctionImplement() );
-		mp->AddItem( '4', etc_test::Braces_PrimitiveType() );
 
 		mp->AddItem( '5', etc_test::CircularReference() );
 
