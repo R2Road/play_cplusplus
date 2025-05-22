@@ -22,6 +22,9 @@ namespace cpp_braces
 
 			{
 				DECLARATION_MAIN( int i{} );
+
+				LF();
+
 				OUTPUT_VALUE( i );
 			}
 
@@ -29,6 +32,9 @@ namespace cpp_braces
 
 			{
 				DECLARATION_MAIN( int i = 123 );
+
+				LF();
+
 				PROCESS_MAIN( i = {} );
 				OUTPUT_VALUE( i );
 			}
@@ -37,7 +43,13 @@ namespace cpp_braces
 
 			{
 				DECLARATION_MAIN( std::shared_ptr<int> i = std::make_shared<int>( 123 ) );
+
+				LF();
+
 				EXPECT_NE( nullptr, i );
+
+				LF();
+
 				PROCESS_MAIN( i = {} );
 				EXPECT_EQ( nullptr, i );
 			}
