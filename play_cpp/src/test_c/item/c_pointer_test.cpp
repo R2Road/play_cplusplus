@@ -284,4 +284,84 @@ namespace c_pointer_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT MemberAddress::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Member Address";
+		};
+	}
+	r2tm::DoFunctionT MemberAddress::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN(
+				struct S
+				{
+					int i = 0;
+					int j = 0;
+				}
+			);
+
+			LF();
+
+			DECLARATION_MAIN( S* s = new S );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "본체 주소" );
+
+				LF();
+
+				OUTPUT_VALUE( s );
+				OUTPUT_VALUE( ( int64_t )s);
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "첫 멤버의 주소는 본체의 주소와 같다." );
+
+				LF();
+
+				OUTPUT_VALUE( &s->i );
+				OUTPUT_VALUE( ( int64_t )( &s->i ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "첫 멤버 주소 + 첫 멤버 크기" );
+
+				LF();
+
+				OUTPUT_VALUE( &s->j );
+				OUTPUT_VALUE( ( int64_t )( &s->j ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "멤버의 거리" );
+
+				LF();
+
+				OUTPUT_VALUE( ( int64_t )( &s->j ) - ( int64_t )( &s->i ) );
+			}
+
+			LS();
+
+			PROCESS_MAIN( delete s );
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

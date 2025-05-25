@@ -40,4 +40,13 @@ namespace c_pointer_test
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
+
+
+
+	class MemberAddress : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
 }

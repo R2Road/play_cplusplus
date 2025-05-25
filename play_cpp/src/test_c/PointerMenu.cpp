@@ -33,6 +33,7 @@ r2tm::WriteFunctionT PointerMenu::GetWriteFunction() const
 
 
 		mp->AddItem( 'q', c_pointer_test::CharacterPointer_Length_0() );
+		mp->AddItem( 'w', c_pointer_test::MemberAddress() );
 
 
 
