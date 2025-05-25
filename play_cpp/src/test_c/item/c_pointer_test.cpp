@@ -364,4 +364,84 @@ namespace c_pointer_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT StackAddress::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Stack Address";
+		};
+	}
+	r2tm::DoFunctionT StackAddress::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN(
+				struct S
+				{
+					int i = 0;
+					int j = 0;
+				}
+			);
+
+			LF();
+
+			DECLARATION_MAIN( S stack_s );
+			DECLARATION_MAIN( S* heap_s = new S );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Stack S" );
+
+				LF();
+
+				OUTPUT_VALUE( &stack_s );
+				OUTPUT_VALUE( ( int64_t )( &stack_s ) );
+
+				LF();
+
+				OUTPUT_VALUE( &stack_s.i );
+				OUTPUT_VALUE( ( int64_t )( &stack_s.i ) );
+
+				LF();
+
+				OUTPUT_VALUE( &stack_s.j );
+				OUTPUT_VALUE( ( int64_t )( &stack_s.j ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Heap S" );
+
+				LF();
+
+				OUTPUT_VALUE( heap_s );
+				OUTPUT_VALUE( ( int64_t )heap_s );
+
+				LF();
+
+				OUTPUT_VALUE( &heap_s->i );
+				OUTPUT_VALUE( ( int64_t )( &heap_s->i ) );
+
+				LF();
+
+				OUTPUT_VALUE( &heap_s->j );
+				OUTPUT_VALUE( ( int64_t )( &heap_s->j ) );
+			}
+
+			LS();
+
+			PROCESS_MAIN( delete heap_s );
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
