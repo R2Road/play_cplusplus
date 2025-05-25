@@ -1,5 +1,6 @@
 #include "template_basic_test.h"
 #include "template_basic_test_helper.hpp"
+#include "template_basic_test___parentheses___helper.hpp"
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
@@ -220,6 +221,37 @@ namespace template_basic_test
 
 				OUTPUT_NOTE( "error C7592: 'float' 형식의 비형식 템플릿 매개 변수에는 최소한 '/std:c++20'이(가) 필요합니다." );
 
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Parentheses::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Basic : ()";
+		};
+	}
+	r2tm::DoFunctionT Parentheses::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUTPUT_FILE( "src/test_template/item/template_basic_test___parentheses___helper.hpp" );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( Do_ParenthesesHelper() );
 			}
 
 			LS();

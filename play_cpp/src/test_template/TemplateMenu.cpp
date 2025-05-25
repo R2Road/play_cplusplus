@@ -32,6 +32,7 @@ r2tm::WriteFunctionT TemplateMenu::GetWriteFunction() const
 		mp->AddItem( '3', template_basic_test::Function_Object() );
 		mp->AddItem( '4', template_basic_test::RemovePointer() );
 		mp->AddItem( '5', template_basic_test::Constant() );
+		mp->AddItem( '6', template_basic_test::Parentheses() );
 
 
 
@@ -39,7 +40,7 @@ r2tm::WriteFunctionT TemplateMenu::GetWriteFunction() const
 
 
 
-		mp->AddItem( '6', template_practice_test_02::Basic() );
+		mp->AddItem( '7', template_practice_test_02::Basic() );
 
 
 
