@@ -45,4 +45,11 @@ namespace etc_test
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
+
+	class Init_Class_Array : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
 }

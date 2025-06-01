@@ -1,5 +1,6 @@
 #include "etc_0_test.h"
 
+#include <array>
 #include <bitset>
 #include <memory>
 #include <stdint.h>
@@ -427,6 +428,70 @@ namespace etc_test
 
 				DECLARATION_MAIN( const double e = -1e+4 );
 				OUTPUT_VALUE( e );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Init_Class_Array::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Init Class Array";
+		};
+	}
+	r2tm::DoFunctionT Init_Class_Array::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_SUBJECT( "class 멤버인 배열은 {} 로 초기화 한다." );
+			OUTPUT_SUBJECT( "신기한데... o_o" );
+
+			LS();
+
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			class C
+			{
+			public:
+				using FunctionT = std::function<int( int* const properties )>;
+
+				static int Function1( int* const ) { return 11; }
+				static int Function2( int* const ) { return 22; }
+				static int Function3( int* const ) { return 33; }
+
+				C() : mA{ 1, 2, 3 }, mF{ Function1, Function2, Function3 }
+				{}
+
+				std::array<int, 3> mA;
+				FunctionT mF[3];
+			};
+
+
+			OUTPUT_SOURCE_END;
+
+			LS();
+
+			{
+				DECLARATION_MAIN( C c );
+
+				LF();
+
+				EXPECT_EQ( 1, c.mA[0] );
+				EXPECT_EQ( 2, c.mA[1] );
+				EXPECT_EQ( 3, c.mA[2] );
+
+				LF();
+
+				EXPECT_EQ( 11, c.mF[0]( nullptr ) );
+				EXPECT_EQ( 22, c.mF[1]( nullptr ) );
+				EXPECT_EQ( 33, c.mF[2]( nullptr ) );
 			}
 
 			LS();
