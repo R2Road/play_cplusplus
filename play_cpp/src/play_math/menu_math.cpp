@@ -4,18 +4,18 @@
 
 #include "RootMenu.h"
 
-r2tm::TitleFunctionT MathMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Math::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Math";
 	};
 }
-r2tm::DescriptionFunctionT MathMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Math::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT MathMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
