@@ -608,6 +608,9 @@
     <ClCompile Include="src\play_math\menu_math.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
+    <ClCompile Include="src\play_math\test_angle.cpp">
+      <Filter>play_math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1260,6 +1263,9 @@
       <Filter>test_template\item</Filter>
     </ClInclude>
     <ClInclude Include="src\play_math\menu_math.h">
+      <Filter>play_math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_math\test_angle.h">
       <Filter>play_math</Filter>
     </ClInclude>
   </ItemGroup>
