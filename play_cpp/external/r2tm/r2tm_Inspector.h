@@ -154,12 +154,12 @@ inline bool epsilon_equal( const double v1, const double v2 )
 do {																											\
 	if( epsilon_equal( condition_1, condition_2 ) )																\
 	{																											\
-		printf( "\x1B[92m" "[PASS]" "\033[0m" " EXPECT_EQ( %s == %s )\n", #condition_1, #condition_2 );			\
+		printf( "\x1B[92m" "[PASS]" "\033[0m" " EXPECT_EP_EQ( %s == %s )\n", #condition_1, #condition_2 );		\
 	}																											\
 	else																										\
 	{																											\
 		R2TM_DEBUG_BREAK;																						\
-		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_EQ( %s == %s )\n", #condition_1, #condition_2 );		\
+		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_EP_EQ( %s == %s )\n", #condition_1, #condition_2 );	\
 		OUTPUT_VALUE( ( condition_1 ) );																		\
 		OUTPUT_VALUE( ( condition_2 ) );																		\
 	}																											\
@@ -169,12 +169,12 @@ do {																											\
 do {																											\
 	if( !epsilon_equal( condition_1, condition_2 ) )															\
 	{																											\
-		printf( "\x1B[94m" "[PASS]" "\033[0m" " EXPECT_NE( %s != %s )\n", #condition_1, #condition_2 );			\
+		printf( "\x1B[94m" "[PASS]" "\033[0m" " EXPECT_EP_NE( %s != %s )\n", #condition_1, #condition_2 );		\
 	}																											\
 	else																										\
 	{																											\
 		R2TM_DEBUG_BREAK;																						\
-		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_NE( %s != %s )\n", #condition_1, #condition_2 );		\
+		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_EP_NE( %s != %s )\n", #condition_1, #condition_2 );	\
 		OUTPUT_VALUE( ( condition_1 ) );																		\
 		OUTPUT_VALUE( ( condition_2 ) );																		\
 	}																											\
