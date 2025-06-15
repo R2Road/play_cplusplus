@@ -30,7 +30,10 @@ namespace r2tm
 			printf( "\n" );
 		}
 
-		fclose( fp );
+		if( nullptr != fp )
+		{
+			fclose( fp );
+		}
 
 		printf( "\x1B[90m" "[/FILE]" "\033[0m" "\n" );
 	}
@@ -66,7 +69,10 @@ namespace r2tm
 			}
 		}
 
-		fclose( fp );
+		if( nullptr != fp )
+		{
+			fclose( fp );
+		}
 
 		printf( "\x1B[90m" "[/FILE]" "\033[0m" "\n" );
 	}

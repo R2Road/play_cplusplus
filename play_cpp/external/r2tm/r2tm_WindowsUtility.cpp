@@ -235,10 +235,17 @@ namespace r2tm
 	{
 		int ret = 0;
 
-		LPFN_GetLogicalProcessorInformation glpi = ( LPFN_GetLogicalProcessorInformation )GetProcAddress( GetModuleHandle( TEXT( "kernel32" ) ), "GetLogicalProcessorInformation" );
-
-		if( nullptr == glpi )
+		const auto handle = GetModuleHandle( TEXT( "kernel32" ) );
+		if( NULL == handle )
+		{
 			return ret;
+		}
+
+		LPFN_GetLogicalProcessorInformation glpi = ( LPFN_GetLogicalProcessorInformation )GetProcAddress( handle, "GetLogicalProcessorInformation" );
+		if( NULL == glpi )
+		{
+			return ret;
+		}
 
 		//
 		// 첫 인자로 0을 주면 정보를 얻어오기 위해 필요한 메모리 크기를 반환 한다.

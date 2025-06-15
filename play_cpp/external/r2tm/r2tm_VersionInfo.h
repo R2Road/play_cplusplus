@@ -26,9 +26,9 @@ namespace r2tm
 
 		const char VersionNumber_1 = '1';
 		const char VersionNumber_2 = '7';
-		const char VersionNumber_3 = '1';
-		const char VersionNumber_4 = '4';
-		const char VersionNumber_5 = '2';
+		const char VersionNumber_3 = '3';
+		const char VersionNumber_4 = '1';
+		const char VersionNumber_5 = '0';
 
 		const char String4Version[18] = { 'r', '2', 't', 'm', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '.', VersionNumber_4, '.', VersionNumber_5, '\0' };
 
@@ -51,6 +51,9 @@ namespace r2tm
 			"\n"	"[o] " "update class         : enum r2tm::eColor > enum class 적용"
 			"\n"	"[o] " "add method           : r2tm::ColorModifier > GetColor"
 			"\n"	"[o] " "add method           : r2tm::StopWatch > GetAccumulateTime, GetAccumulateCount"
+			"\n"	"[o] " "update inspector     : Add - WAIT_ANY_KEY"
+			"\n"	"[o] " "update inspector     : r2tm::PrintBinary : 매개 변수 타입 변경 : 값 > 참조"
+			"\n"	"[o] " "update    inspector  : Add - EXPECT_EP_EQ, EXPECT_EP_NE"
 			"\n"	"[ ] " "..."
 		;
 
@@ -131,11 +134,27 @@ namespace r2tm
 			"\n"	"[o] " "Inspector"
 			"\n"	"[o] " "Window Utility"
 			"\n"	"[o] " "Color Modifier"
+			"\n"	"[o] " "Color Modifier"
 		;
 
 
 
 		const char* const String4Road2NextVersion = String4Road2Version_1_8_0_0_0;
+
+
+
+		enum { VERSION_HISTORY_COUNT = 9 };
+		const char* VersionHistory[VERSION_HISTORY_COUNT] = {
+			  String4Road2Version_1_0_0_0_0
+			, String4Road2Version_1_1_0_0_0
+			, String4Road2Version_1_2_0_0_0
+			, String4Road2Version_1_3_0_0_0
+			, String4Road2Version_1_4_0_0_0
+			, String4Road2Version_1_5_0_0_0
+			, String4Road2Version_1_6_0_0_0
+			, String4Road2Version_1_7_0_0_0
+			, String4Road2Version_1_8_0_0_0
+		};
 
 	} VersionInfo;
 }

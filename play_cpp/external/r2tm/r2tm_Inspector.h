@@ -139,6 +139,51 @@ do {																											\
 
 
 //
+// Epsilon EQ
+//
+inline bool epsilon_equal( const float v1, const float v2 )
+{
+	return ( 0.00001f > std::abs( v1 - v2 ) );
+}
+inline bool epsilon_equal( const double v1, const double v2 )
+{
+	return ( 0.0000000001 > std::abs( v1 - v2 ) );
+}
+
+#define	EXPECT_EP_EQ( condition_1, condition_2 )																\
+do {																											\
+	if( epsilon_equal( condition_1, condition_2 ) )																\
+	{																											\
+		printf( "\x1B[92m" "[PASS]" "\033[0m" " EXPECT_EQ( %s == %s )\n", #condition_1, #condition_2 );			\
+	}																											\
+	else																										\
+	{																											\
+		R2TM_DEBUG_BREAK;																						\
+		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_EQ( %s == %s )\n", #condition_1, #condition_2 );		\
+		OUTPUT_VALUE( ( condition_1 ) );																		\
+		OUTPUT_VALUE( ( condition_2 ) );																		\
+	}																											\
+} while( false )
+
+#define	EXPECT_EP_NE( condition_1, condition_2 )																\
+do {																											\
+	if( !epsilon_equal( condition_1, condition_2 ) )															\
+	{																											\
+		printf( "\x1B[94m" "[PASS]" "\033[0m" " EXPECT_NE( %s != %s )\n", #condition_1, #condition_2 );			\
+	}																											\
+	else																										\
+	{																											\
+		R2TM_DEBUG_BREAK;																						\
+		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_NE( %s != %s )\n", #condition_1, #condition_2 );		\
+		OUTPUT_VALUE( ( condition_1 ) );																		\
+		OUTPUT_VALUE( ( condition_2 ) );																		\
+	}																											\
+} while( false )
+
+
+
+
+//
 // Important Process Code
 //
 #define	PROCESS_MAIN( condition )															\
@@ -288,3 +333,14 @@ do {																						\
 #define OUTPUT_SOURCE_END		do { src_end = __LINE__ - 1; r2tm::PrintFile( __FILE__, src_begin, src_end ); } while( false )
 
 #define OUTPUT_SOURCE_READY_N_BEGIN		OUTPUT_SOURCE_READY; OUTPUT_SOURCE_BEGIN
+
+
+
+
+//
+// INPUT
+//
+#define WAIT_ANY_KEY	    																\
+do {																						\
+	while( _getch() ) break;																\
+} while( false )
