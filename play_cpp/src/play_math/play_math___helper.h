@@ -60,6 +60,16 @@ namespace play_math
 		);
 	}
 
+	inline Vec3 vec3_normalize( const Vec3& v )
+	{
+		const float l = vec3_length( v );
+		return Vec3(
+			  ( v.x / l )
+			, ( v.y / l )
+			, ( v.z / l )
+		);
+	}
+
 
 
 
