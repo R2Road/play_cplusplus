@@ -215,6 +215,7 @@
     <ClInclude Include="external\r2tm\r2tm_StopWatch.h" />
     <ClInclude Include="external\r2tm\r2tm_VersionInfo.h" />
     <ClInclude Include="external\r2tm\r2tm_WindowsUtility.h" />
+    <ClInclude Include="external\r2\r2helper_STDPrinter4Vector4.h" />
     <ClInclude Include="external\r2\r2_ListBasedOnArray.h" />
     <ClInclude Include="external\r2\r2_Assert.h" />
     <ClInclude Include="external\r2\r2_Direction4.h" />
@@ -228,6 +229,8 @@
     <ClInclude Include="external\r2\r2_Rect.h" />
     <ClInclude Include="external\r2\r2_RectInt.h" />
     <ClInclude Include="external\r2\r2_Size.h" />
+    <ClInclude Include="external\r2\r2_Vector4.h" />
+    <ClInclude Include="external\r2\r2_VersionInfo.h" />
     <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h" />
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h" />
     <ClInclude Include="src\play_hobby\HobbyMenu.h" />

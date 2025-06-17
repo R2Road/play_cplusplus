@@ -1,15 +1,18 @@
 #pragma once
 
 #include <chrono>
+#include <stdint.h>
 
 namespace r2
 {
 	class FPSTimer
 	{
 	public:
-		FPSTimer( const std::size_t frame_count = 30u );
+		using FrameCountT = uint32_t;
 
-		void SetFPS( const std::size_t frame_count );
+		FPSTimer( const FrameCountT frame_count = 30u );
+
+		void SetFPS( const FrameCountT frame_count );
 		float GetElapsedTime() const { return mElapsedTime; }
 
 		void Reset();

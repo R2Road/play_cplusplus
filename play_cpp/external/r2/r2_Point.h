@@ -1,7 +1,19 @@
+//
+// # Version Rule
+// - 1.0.0 : 사용 가능
+// - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
+// - 0.0.1 : 자잘한 변화
+//
+// # Last Update		: 2023.08.04 PM.05.30
+// # Version			: 1.0.0
+//
+
 #pragma once
 
-#include <algorithm>
 #include <cmath>
+#include <stdint.h>
+
+#include "r2_TypeTraits.h"
 
 namespace r2
 {
@@ -9,9 +21,29 @@ namespace r2
 	class Point
 	{
 	public:
-		using ValueT = T;
-		using MyT = Point<T>;
+		static_assert(
+			   r2::is_same_v<T, char>
+			|| r2::is_same_v<T, unsigned char>
 
+			|| r2::is_same_v<T, int16_t>
+			|| r2::is_same_v<T, uint16_t>
+
+			|| r2::is_same_v<T, int32_t>
+			|| r2::is_same_v<T, uint32_t>
+
+			|| r2::is_same_v<T, int64_t>
+			|| r2::is_same_v<T, uint64_t>
+		);
+		using ValueT = T;
+		using MyT = r2::Point<ValueT>;
+
+		using LinearT = std::size_t;
+
+
+
+		//
+		//
+		//
 		static const MyT& GetZERO()
 		{
 			static const MyT ZERO( 0, 0 );
@@ -23,56 +55,69 @@ namespace r2
 			return MINUS_ONE;
 		}
 
+
+
+		//
+		//
+		//
 		Point() : mX( 0 ), mY( 0 )
+		{}
+		explicit Point( const ValueT x, const ValueT y ) : mX( x ), mY( y )
+		{}
+
+
+
+		//
+		//
+		//
+		inline bool operator==( const MyT& right ) const
 		{
-			static_assert(
-				std::is_same<int, ValueT>::value
-				, "r2r::Point - Not Allowed Type"
-			);
+			return Equal( right.mX, right.mY );
 		}
-		Point( const ValueT x, const ValueT y ) : mX( x ), mY( y )
+		inline bool operator!=( const MyT& right ) const
 		{
-			static_assert(
-				std::is_same<int, ValueT>::value
-				, "r2r::Point - Not Allowed Type"
-			);
+			return !Equal( right.mX, right.mY );
 		}
 
-		bool operator==( const MyT& right ) const
-		{
-			return right.mX == mX && right.mY == mY;
-		}
-		bool operator!=( const MyT& right ) const
-		{
-			return !( *this == right );
-		}
-		bool operator<( const MyT& right ) const
+		inline bool operator<( const MyT& right ) const
 		{
 			return ( mY < right.mY )
 				? true
 				: ( mY == right.mY ? mX < right.mX : false );
 		}
-		MyT operator-( const MyT& right ) const
+
+		inline MyT operator-( const MyT& right ) const
 		{
 			return MyT( mX - right.mX, mY - right.mY );
 		}
-		MyT operator+( const MyT& right ) const
+		inline MyT operator+( const MyT& right ) const
 		{
 			return MyT( mX + right.mX, mY + right.mY );
 		}
-		MyT operator+=( const MyT& right )
+
+		inline MyT& operator+=( const MyT& right )
 		{
-			mX += right.mX;
-			mY += right.mY;
+			Plus( right.mX, right.mY );
 			return *this;
 		}
-		MyT operator-=( const MyT& right )
+		inline MyT& operator-=( const MyT& right )
 		{
-			mX -= right.mX;
-			mY -= right.mY;
+			Minus( right.mX, right.mY );
 			return *this;
 		}
 
+
+
+		inline bool Equal( const ValueT x, const ValueT y ) const
+		{
+			return ( x == mX && y == mY );
+		}
+
+
+
+		//
+		//
+		//
 		inline void SetZero()
 		{
 			mX = MyT::GetZERO().mX;
@@ -88,44 +133,87 @@ namespace r2
 			mX = x;
 			mY = y;
 		}
-		inline void SetX( const ValueT x ) { mX = x; }
-		inline void SetY( const ValueT y ) { mY = y; }
-		inline void Add( const ValueT add_x, const ValueT add_y )
+		inline void SetX( const ValueT x )
 		{
-			mX += add_x;
-			mY += add_y;
+			mX = x;
+		}
+		inline void SetY( const ValueT y )
+		{
+			mY = y;
+		}
+		inline ValueT GetX() const
+		{
+			return mX;
+		}
+		inline ValueT GetY() const
+		{
+			return mY;
 		}
 
-		inline ValueT GetX() const { return mX; }
-		inline ValueT GetY() const { return mY; }
 
-		inline bool Equals( const MyT& point ) const
+
+		//
+		//
+		//
+		inline void Plus( const ValueT x, const ValueT y )
 		{
-			return point.mX == mX && point.mY == mY;
+			mX += x;
+			mY += y;
 		}
-		inline ValueT Distance( const MyT& target ) const
+		inline void PlusX( const ValueT x )
 		{
-			return Distance( target.mX, target.mY );
+			mX += x;
 		}
-		inline ValueT Distance( const ValueT x, const ValueT y ) const
+		inline void PlusY( const ValueT y )
+		{
+			mY += y;
+		}
+		inline void Minus( const ValueT x, const ValueT y )
+		{
+			mX -= x;
+			mY -= y;
+		}
+		inline void MinusX( const ValueT x )
+		{
+			mX -= x;
+		}
+		inline void MinusY( const ValueT y )
+		{
+			mY -= y;
+		}
+
+
+
+		//
+		//
+		//
+		inline LinearT Distance( const ValueT x, const ValueT y ) const
 		{
 			return std::abs( mX - x ) + std::abs( mY - y );
 		}
-		inline ValueT Distance_DiagonalIsOne( const MyT& target ) const
+		inline LinearT Distance( const MyT& target ) const
 		{
-			const ValueT tempX = std::abs( mX - target.mX );
-			const ValueT tempY = std::abs( mY - target.mY );
+			return Distance( target.mX, target.mY );
+		}
+		inline LinearT Distance_DiagonalIsOne( const MyT& target ) const
+		{
+			const LinearT tempX = std::abs( mX - target.mX );
+			const LinearT tempY = std::abs( mY - target.mY );
 			return (
-				tempX >= tempY
-				? ( tempX + tempY ) - tempY
-				: ( tempX + tempY ) - tempX
+				  tempX >= tempY
+				? tempX
+				: tempY
 			);
 		}
 
-		inline ValueT Length() const
+
+
+		inline LinearT Length() const
 		{
 			return std::abs( mX ) + std::abs( mY );
 		}
+
+
 
 	private:
 		ValueT mX;

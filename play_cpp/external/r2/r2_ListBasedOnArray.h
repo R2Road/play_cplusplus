@@ -1,216 +1,134 @@
-#include <array>
-#include <memory>
+//
+// # Version Rule
+// - 1.0.0 : 사용 가능
+// - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
+// - 0.0.1 : 자잘한 변화
+//
+// # Last Update		: 2023.05.07 AM.08.18
+// # Version			: 1.0.0
+//
 
-#include "r2/r2_Assert.h"
+#pragma once
+
+#include "r2_Node4ListAllocatorBasedOnArray.h"
+#include "r2_Node4ListIterator.h"
+
+#include "r2_Assert.h"
 
 namespace r2
 {
-	template<typename T>
-	struct ListNode
-	{
-		using ValueT = T;
-		using MyT = ListNode<ValueT>;
+	//
+	// # Warning
+	//
+	// ValueT 로 std::shared_ptr 등을 사용하고 있다면 NodeCleaner 를 ListNodeCleaner_ClearValue 로 설정.
+	//
 
-		ValueT MyValue;
-		MyT* pPrev = nullptr;
-		MyT* pNext = nullptr;
-	};
-
-	template<typename T>
-	class ListIterator
-	{
-	public:
-		using ValueT = T;
-		using NodeT = ListNode<ValueT>;
-
-		ListIterator( NodeT* target_node ) : mTargetNode( target_node )
-		{}
-
-		ListIterator& operator++()
-		{
-			mTargetNode = mTargetNode->pNext;
-			return ( *this );
-		}
-		ListIterator& operator--()
-		{
-			mTargetNode = mTargetNode->pPrev;
-			return ( *this );
-		}
-
-		bool operator==( const ListIterator& other ) const
-		{
-			return mTargetNode == other.mTargetNode;
-		}
-		bool operator!=( const ListIterator& other ) const
-		{
-			return !operator==( other );
-		}
-
-		ValueT& operator*() const
-		{
-			return mTargetNode->MyValue;
-		}
-		ValueT* operator->() const
-		{
-			return std::addressof( *( *this ) ); // call : operator*()
-		}
-
-		NodeT* mTargetNode;
-	};
-
-	template<typename T>
-	class ListReverseIterator
-	{
-	public:
-		using ValueT = T;
-		using NodeT = ListNode<ValueT>;
-
-		ListReverseIterator( NodeT* target_node ) : mTargetNode( target_node )
-		{}
-
-		ListReverseIterator& operator++()
-		{
-			mTargetNode = mTargetNode->pPrev;
-			return ( *this );
-		}
-		ListReverseIterator& operator--()
-		{
-			mTargetNode = mTargetNode->pNext;
-			return ( *this );
-		}
-
-		bool operator==( const ListReverseIterator& other ) const
-		{
-			return mTargetNode == other.mTargetNode;
-		}
-		bool operator!=( const ListReverseIterator& other ) const
-		{
-			return !operator==( other );
-		}
-
-		ValueT& operator*() const
-		{
-			return mTargetNode->MyValue;
-		}
-		ValueT* operator->() const
-		{
-			return std::addressof( *( *this ) ); // call : operator*()
-		}
-
-		NodeT* mTargetNode;
-	};
-
-	template<typename T, uint32_t N>
+	template<typename T, uint32_t N, typename NodeCleaner = Node4ListCleaner_StayValue<T>>
 	class ListBasedOnArray
 	{
 	public:
 		using ValueT = T;
 		using SizeT = uint32_t;
 
-		using NodeT = ListNode<ValueT>;
-		using ContainerT = std::array<NodeT, N + 1u>; // N + Head
+		using NodeT = Node4List<ValueT>;
+		using AllocatorT = Node4ListAllocatorBasedOnArray<ValueT, N + 1u, NodeCleaner>; // N + Head
 
-		using IteratorT = ListIterator<ValueT>;
-		//using iterator = ListIterator<ValueT>; // ...dev rule?
-		using ReverseIteratorT = ListReverseIterator<ValueT>;
+		using IteratorT = Node4ListIterator<ValueT>;
+		//using iterator = Node4ListIterator<ValueT>; // ...dev rule?
+		using ConstIteratorT = Node4ListConstIterator<ValueT>;
+		using ReverseIteratorT = Node4ListReverseIterator<ValueT>;
+		using ConstReverseIteratorT = Node4ListConstReverseIterator<ValueT>;
 
-		ListBasedOnArray() : mContainer(), mHead4Rest( nullptr ), mSize4Rest( 0u ), mEnd4Live( nullptr ), mSize( 0u )
+
+
+		ListBasedOnArray() : mAllocator(), mEndNode( nullptr ), mSize( 0u )
 		{
 			Clear();
 		}
 
+
+
 		//
 		// Iteration
 		//
-		IteratorT begin() { return IteratorT( mEnd4Live->pNext ); }
-		IteratorT end() { return IteratorT( mEnd4Live ); }
-		ReverseIteratorT rbegin() const { return ReverseIteratorT( mEnd4Live->pPrev ); }
-		ReverseIteratorT rend() const { return ReverseIteratorT( mEnd4Live ); }
+		IteratorT begin()
+		{
+			return IteratorT( mEndNode->pNext );
+		}
+		IteratorT end()
+		{
+			return IteratorT( mEndNode );
+		}
+		ConstIteratorT begin() const
+		{
+			return ConstIteratorT( mEndNode->pNext );
+		}
+		ConstIteratorT end() const
+		{
+			return ConstIteratorT( mEndNode );
+		}
+		ConstIteratorT cbegin() const
+		{
+			return begin();
+		}
+		ConstIteratorT cend() const
+		{
+			return end();
+		}
 
+		ReverseIteratorT rbegin()
+		{
+			return ReverseIteratorT( mEndNode->pPrev );
+		}
+		ReverseIteratorT rend()
+		{
+			return ReverseIteratorT( mEndNode );
+		}
+		ConstReverseIteratorT rbegin() const
+		{
+			return ConstReverseIteratorT( mEndNode->pPrev );
+		}
+		ConstReverseIteratorT rend() const
+		{
+			return ConstReverseIteratorT( mEndNode );
+		}
+		ConstReverseIteratorT crbegin() const
+		{
+			return rbegin();
+		}
+		ConstReverseIteratorT crend() const
+		{
+			return rend();
+		}
+
+
+
+		//
+		//
+		//
 		void Clear()
 		{
 			//
-			// Cleanup
+			// Clear
 			//
-			for( auto& n : mContainer )
-			{
-				n.pPrev = nullptr;
-				n.pNext = nullptr;
-			}
-
-			//
-			// 4 Rest
-			//
-			mHead4Rest = &( *mContainer.begin() );
-			if( 1 < mContainer.size() )
-			{
-				auto current_node = mHead4Rest;
-
-				auto cur = mContainer.begin();
-				++cur;
-				for( auto end = mContainer.end(); end != cur; ++cur )
-				{
-					cur->pPrev = current_node;
-					current_node->pNext = &( *cur );
-
-					current_node = current_node->pNext;
-				}
-			}
-			mSize4Rest = static_cast<uint32_t>( mContainer.size() );
+			mAllocator.Clear();
 
 			//
 			// 4 Live
 			//
-			mEnd4Live = mHead4Rest;
-			mHead4Rest = mHead4Rest->pNext;
+			mEndNode = mAllocator.Pop();
 
-			mEnd4Live->pPrev = mEnd4Live;
-			mEnd4Live->pNext = mEnd4Live;
-
-			--mSize4Rest;
+			mEndNode->pPrev = mEndNode;
+			mEndNode->pNext = mEndNode;
 
 			mSize = 0u;
 		}
 
-	private:
-		NodeT* GetRestNode()
-		{
-			R2ASSERT( nullptr != mHead4Rest, "Empty : ListBasedOnArray::GetRestNode()" );
 
-			NodeT* ret = mHead4Rest;
 
-			if( nullptr != ret )
-			{
-				mHead4Rest = ret->pNext;
-			}
-
-			--mSize4Rest;
-
-			return ret;
-		}
-		void Rest( NodeT* rest_node )
-		{
-			rest_node->pPrev = nullptr;
-			rest_node->pNext = nullptr;
-
-			if( nullptr == mHead4Rest )
-			{
-				mHead4Rest = rest_node;
-			}
-			else
-			{
-				rest_node->pNext = mHead4Rest;
-				mHead4Rest = rest_node;
-			}
-
-			++mSize4Rest;
-		}
-
-	public:
-		SizeT GetRestNodeCount() const
-		{
-			return mSize4Rest;
-		}
+		//
+		//
+		//
 		SizeT Size() const
 		{
 			return mSize;
@@ -219,77 +137,122 @@ namespace r2
 		{
 			return ( 0u == mSize );
 		}
-
-		void PushFront( const ValueT new_value )
+		SizeT GetRestNodeCount() const
 		{
-			if( 0 == GetRestNodeCount() )
-			{
-				return;
-			}
-
-			auto new_front_node = GetRestNode();
-			new_front_node->MyValue = new_value;
-
-			// Prev
-			mEnd4Live->pNext->pPrev = new_front_node;
-
-			// New
-			new_front_node->pPrev = mEnd4Live;
-			new_front_node->pNext = mEnd4Live->pNext;
-
-			// NExt
-			mEnd4Live->pNext = new_front_node;
-
-			++mSize;
+			return mAllocator.Size();
 		}
-		void PushBack( const ValueT new_value )
+
+
+
+		//
+		//
+		//
+		void PushFront( const ValueT& value )
 		{
-			if( 0 == GetRestNodeCount() )
+			Insert( begin(), value );
+		}
+		void PushBack( const ValueT& value )
+		{
+			Insert( end(), value );
+		}
+		IteratorT Insert( IteratorT pivot, const ValueT& value )
+		{
+			if( mAllocator.Empty() )
 			{
-				return;
+				return end();
 			}
 
-			auto new_back_node = GetRestNode();
-			new_back_node->MyValue = new_value;
+			auto node = mAllocator.Pop();
+			node->MyValue = value;
 
-			// Prev
-			mEnd4Live->pPrev->pNext = new_back_node;
+			//
+			// ### pivot 의 앞에 새 노드를 배치한다.
+			//
 
-			// New
-			new_back_node->pPrev = mEnd4Live->pPrev;
-			new_back_node->pNext = mEnd4Live;
+			//
+			// 새 노드의 전, 후 설정
+			//
+			node->pPrev = pivot.mTargetNode->pPrev;
+			node->pNext = pivot.mTargetNode;
 
-			// Next
-			mEnd4Live->pPrev = new_back_node;
+			//
+			// 이전 노드와 새 노드 연결
+			//
+			node->pPrev->pNext = node;
 
+			//
+			// Pivot Node 와 새 노드 연결
+			//
+			pivot.mTargetNode->pPrev = node;
+
+			//
+			//
+			//
 			++mSize;
+
+			return IteratorT( pivot.mTargetNode->pPrev );
+		}
+		void PopFront()
+		{
+			Erase( begin() );
+		}
+		void PopBack()
+		{
+			Erase( --end() );
 		}
 		IteratorT Erase( IteratorT target )
 		{
-			if( mEnd4Live == target.mTargetNode )
+			if( end() == target )
 			{
-				return IteratorT( mEnd4Live );
+				return end();
 			}
 
-			auto pPrev = target.mTargetNode->pPrev;
-			auto pNext = target.mTargetNode->pNext;
+			auto node = target;
+			++node;
 
-			pPrev->pNext = pNext;
-			pNext->pPrev = pPrev;
+			//
+			// 다음 노드와 이전 노드 연결
+			//
+			node.mTargetNode->pPrev = target.mTargetNode->pPrev;
 
+			//
+			// 이전 노드와 다음 노드 연결
+			//
+			target.mTargetNode->pPrev->pNext = node.mTargetNode;
+
+			//
+			//
+			//
+			mAllocator.Push( target.mTargetNode );
+
+			//
+			//
+			//
 			--mSize;
 
-			Rest( target.mTargetNode );
-
-			return IteratorT( pNext );
+			return node;
 		}
 
-	private:
-		ContainerT mContainer;
-		NodeT* mHead4Rest;
-		SizeT mSize4Rest;
 
-		NodeT* mEnd4Live;
+
+		//
+		// Get Value
+		//
+		const ValueT& Front() const
+		{
+			return mEndNode->pNext->MyValue;
+		}
+		const ValueT& Back() const
+		{
+			return mEndNode->pPrev->MyValue;
+		}
+
+
+
+	private:
+		AllocatorT mAllocator;
+
+		NodeT* mEndNode;
 		SizeT mSize;
 	};
 }

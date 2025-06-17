@@ -13,6 +13,16 @@ namespace r2
 		return random_engine;
 	}
 
+
+
+	char Random::GetChar( const char min, const char max )
+	{
+		std::uniform_int_distribution<> dist( std::min( min, max ), std::max( min, max ) );
+		return static_cast<char>( dist( GetRandomEngine() ) );
+	}
+
+
+
 	int Random::GetInt( const int min, const int max )
 	{
 		std::uniform_int_distribution<> dist( std::min( min, max ), std::max( min, max ) );
@@ -27,11 +37,27 @@ namespace r2
 		return GetInt( 0, 100 );
 	}
 
+
+
+	unsigned int Random::GetUInt( const unsigned int min, const unsigned int max )
+	{
+		std::uniform_int_distribution<> dist( std::min( min, max ), std::max( min, max ) );
+		return static_cast<unsigned int>( dist( GetRandomEngine() ) );
+	}
+
+
+
 	float Random::GetFloat( const float min, const float max )
 	{
 		std::uniform_real_distribution<> dist( std::min( min, max ), std::max( min, max ) );
 		return static_cast<float>( dist( GetRandomEngine() ) );
 	}
+	float Random::GetFloat_0To100()
+	{
+		return GetFloat( 0.f, 100.f );
+	}
+
+
 
 	bool Random::GetBool()
 	{

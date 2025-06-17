@@ -4,7 +4,7 @@
 
 namespace r2
 {
-	FPSTimer::FPSTimer( const std::size_t frame_count ) :
+	FPSTimer::FPSTimer( const FrameCountT frame_count ) :
 		mFPS( 0ll )
 		, mPivotTimePoint()
 		, mCurrentTime()
@@ -15,7 +15,7 @@ namespace r2
 		SetFPS( frame_count );
 	}
 
-	void FPSTimer::SetFPS( const std::size_t frame_count )
+	void FPSTimer::SetFPS( const FrameCountT frame_count )
 	{
 		assert( 0 < frame_count );
 

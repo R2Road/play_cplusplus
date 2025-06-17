@@ -1271,6 +1271,15 @@
     <ClInclude Include="src\play_math\play_math___helper.h">
       <Filter>play_math</Filter>
     </ClInclude>
+    <ClInclude Include="external\r2\r2_Vector4.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_VersionInfo.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2helper_STDPrinter4Vector4.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\test_cpp\item\enum_test_xmacro_2.def">

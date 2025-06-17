@@ -2,6 +2,8 @@
 
 #include <string>
 
+#include "r2/r2_VersionInfo.h"
+
 #include "r2tm/r2tm_MenuProcessor.h"
 #include "r2tm/r2tm_VersionInfo.h"
 
@@ -30,7 +32,8 @@ r2tm::TitleFunctionT RootMenu::GetTitleFunction() const
 			std::string( "Root" )
 			+ " : " + "<" + "C++17" + ">"
 			+ ", " + "<" + "MS C/C++ : " + std::to_string( _MSC_VER ) + ">"
-			+ ", " + "<" + r2tm::VersionInfo.String4Version + ">";
+			+ ", " + "<" + r2tm::VersionInfo.String4Version + ">"
+			+ ", " + "<" + r2::VersionInfo.String4Version + ">";
 		return ret.c_str();
 	};
 }
