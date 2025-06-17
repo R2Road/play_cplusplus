@@ -92,6 +92,83 @@ namespace play_math_vector
 
 
 
+	r2tm::TitleFunctionT Normalize::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Vector : Normalize";
+		};
+	}
+	r2tm::DoFunctionT Normalize::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			OUTPUT_SOURCE_READY;
+
+			LS();
+
+			OUTPUT_SUBJECT( "벡터의 정규화" );
+			OUTPUT_COMMENT( "벡터의 방향은 유지 하면서 길이를 1로 만든다." );
+			OUTPUT_COMMENT( "벡터의 각 성분을 길이로 나눈다." );
+
+			LS();
+
+			OUTPUT_SOURCE_BEGIN;
+			const auto L = []( r2::Vector4 v )->float
+			{
+				return std::sqrt(
+					  ( v.x * v.x )
+					+ ( v.y * v.y )
+					+ ( v.z * v.z )
+				);
+			};
+
+			const auto N = [L]( r2::Vector4 v )->r2::Vector4
+			{
+				const float l = L( v );
+				return r2::Vector4(
+					  ( v.x / l )
+					, ( v.y / l )
+					, ( v.z / l )
+					, 0.f
+				);
+			};
+			OUTPUT_SOURCE_END;
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Demo" );
+
+				LF();
+
+				DECLARATION_MAIN( const r2::Vector4 v( 2.f, 2.f, 2.f, 0.f ) );
+				DECLARATION_MAIN( const auto v_n = N( v ) );
+				DECLARATION_MAIN( const auto length = L( v ) );
+
+				LF();
+
+				EXPECT_EQ( v_n.x, v.x / length );
+				EXPECT_EQ( v_n.y, v.y / length );
+				EXPECT_EQ( v_n.z, v.z / length );
+
+				SS();
+
+				OUTPUT_VALUE( v_n );
+
+				LF();
+
+				OUTPUT_VALUE( length );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT Dot_Product_1::GetTitleFunction() const
 	{
 		return []()->const char*

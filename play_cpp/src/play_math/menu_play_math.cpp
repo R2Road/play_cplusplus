@@ -33,7 +33,8 @@ r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
 
 
 		mp->AddItem( 'q', play_math_vector::Length() );
-		mp->AddItem( 'w', play_math_vector::Dot_Product_1() );
+		mp->AddItem( 'w', play_math_vector::Normalize() );
+		mp->AddItem( 'e', play_math_vector::Dot_Product_1() );
 
 
 
