@@ -331,4 +331,86 @@ namespace play_math_vector
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Angle_Between_Two_Vectors::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Vector : Angle Between Two Vectors";
+		};
+	}
+	r2tm::DoFunctionT Angle_Between_Two_Vectors::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			OUTPUT_SOURCE_READY;
+
+			LS();
+
+			OUTPUT_SUBJECT( "두 벡터의 각은 내적을 이용해 구한다." );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "내적의 기하학적 정리" );
+				OUTPUT_COMMENT( "A dot B = ||A|| * ||B|| * cos(θ)" );
+				OUTPUT_COMMENT( "\t" "||A|| = 벡터 A 의 크기" );
+				OUTPUT_COMMENT( "\t" "벡터의 크기 = sqrt( x^2 + y^2 + z^2 )" );
+
+				LF();
+
+				OUTPUT_SUBJECT( "각을 구하기 위한 공식 변환" );
+				OUTPUT_COMMENT( "cos(θ) = ( A dot B ) / ( ||A|| * ||B|| )" );
+				OUTPUT_COMMENT( "θ = arccosine( ( A dot B ) / ( ||A|| * ||B|| ) )" );
+				OUTPUT_COMMENT( "\t" "arccosine/acos = cos의 역함수" );
+			}
+
+			LS();
+
+			OUTPUT_SOURCE_BEGIN;
+			const auto A = []( const Vec3& v1, const Vec3& v2 )->float
+			{
+				return std::acos(
+					  vec3_dot( v1, v2 )
+					/ ( vec3_length( v1 ) * vec3_length( v2 ) )
+				);
+			};
+			OUTPUT_SOURCE_END;
+
+			LS();
+
+			{
+				EXPECT_EP_EQ( 45, Rad2Deg( A( Vec3( 0, 1, 0 ), Vec3( 1, 1, 0 ) ) ) );
+
+				LF();
+
+				EXPECT_EP_EQ( 90, Rad2Deg( A( Vec3( 0, 1, 0 ), Vec3( 1, 0, 0 ) ) ) );
+
+				LF();
+
+				EXPECT_EP_EQ( 135, Rad2Deg( A( Vec3( 0, 1, 0 ), Vec3( 1, -1, 0 ) ) ) );
+
+				LF();
+
+				EXPECT_EP_EQ( 180, Rad2Deg( A( Vec3( 0, 10, 0 ), Vec3( 0, -10, 0 ) ) ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "0 ~ 180도 사이로 나온다." );
+
+				LF();
+
+				EXPECT_EP_NE( 270, Rad2Deg( A( Vec3( 0, 1, 0 ), Vec3( -1, 0, 0 ) ) ) );
+				EXPECT_EP_EQ( 90, Rad2Deg( A( Vec3( 0, 1, 0 ), Vec3( -1, 0, 0 ) ) ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

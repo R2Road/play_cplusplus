@@ -36,6 +36,7 @@ r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
 		mp->AddItem( 'w', play_math_vector::Normalize() );
 		mp->AddItem( 'e', play_math_vector::Dot_Product_1() );
 		mp->AddItem( 'r', play_math_vector::Dot_Product_2() );
+		mp->AddItem( 't', play_math_vector::Angle_Between_Two_Vectors() );
 
 
 
