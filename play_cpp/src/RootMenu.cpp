@@ -42,17 +42,17 @@ r2tm::DescriptionFunctionT RootMenu::GetDescriptionFunction() const
 	return []()->const char*
 	{
 		return
-			"> In Progress : ..."
+			"> o : complete             ~ : in-progress"
 
 		"\n"
 
-		"\n"	"> To do : My Int"
-		"\n"	"> To do : Regex"
-		"\n"	"> To do : Encoding"
-		"\n"	"> To do : Infinite Number"
-		"\n"	"> To do : Thread"
-		"\n"	"> To do : Memory Pool"
-		"\n"	"> To do : Spin-Lock";
+		"\n"	"[ ] " "My Int"
+		"\n"	"[ ] " "Regex"
+		"\n"	"[ ] " "Encoding"
+		"\n"	"[ ] " "Infinite Number"
+		"\n"	"[ ] " "Thread"
+		"\n"	"[ ] " "Memory Pool"
+		"\n"	"[ ] " "Spin-Lock";
 	};
 }
 r2tm::WriteFunctionT RootMenu::GetWriteFunction() const
