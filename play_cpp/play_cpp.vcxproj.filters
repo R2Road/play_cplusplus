@@ -605,7 +605,7 @@
     <ClCompile Include="src\test_cpp\item\cpp_braces.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_math\menu_math.cpp">
+    <ClCompile Include="src\play_math\menu_play_math.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
     <ClCompile Include="src\play_math\test_angle.cpp">
@@ -1262,7 +1262,7 @@
     <ClInclude Include="src\test_template\item\template_basic_test___parentheses___helper.hpp">
       <Filter>test_template\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\menu_math.h">
+    <ClInclude Include="src\play_math\menu_play_math.h">
       <Filter>play_math</Filter>
     </ClInclude>
     <ClInclude Include="src\play_math\test_angle.h">

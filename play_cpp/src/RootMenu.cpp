@@ -8,7 +8,7 @@
 #include "test_various/item/various_console_input_test.h"
 
 #include "play_hobby/HobbyMenu.h"
-#include "play_math/menu_math.h"
+#include "play_math/menu_play_math.h"
 #include "test_algorithm/AlgorithmMenu.h"
 #include "test_c/C_Menu.h"
 #include "test_cpp/CPP_Menu.h"
