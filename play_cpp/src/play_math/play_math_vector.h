@@ -4,6 +4,13 @@
 
 namespace play_math_vector
 {
+	class Length : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
 	class Dot_Product : public r2tm::iItem
 	{
 	public:
