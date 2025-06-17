@@ -273,4 +273,100 @@ namespace play_math_vector
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Dot_Product_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Vector : Dot Product 2 : Projection";
+		};
+	}
+	r2tm::DoFunctionT Dot_Product_2::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			OUTPUT_SOURCE_READY;
+
+			LS();
+
+			OUTPUT_SOURCE_BEGIN;
+			const auto L = []( r2::Vector4 v )->float
+			{
+				return std::sqrt(
+					  ( v.x * v.x )
+					+ ( v.y * v.y )
+					+ ( v.z * v.z )
+				);
+			};
+
+			const auto DOT = []( r2::Vector4 v1, r2::Vector4 v2 )->float
+			{
+
+				return (
+					  ( v1.x * v2.x )
+					+ ( v1.y * v2.y )
+					+ ( v1.z * v2.z )
+				);
+			};
+			OUTPUT_SOURCE_END;
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "단위 벡터에 투영" );
+
+				LF();
+
+				DECLARATION_MAIN( const r2::Vector4 v_y( 0.f, 1.f, 0.f, 0.f ) );
+
+				LF();
+
+				EXPECT_EP_EQ( 1.f, DOT( v_y, r2::Vector4( 0.f, 1.f, 0.f, 0.f ) ) );
+				EXPECT_EP_EQ( 0.8f, DOT( v_y, r2::Vector4( 0.f, 0.8f, 0.f, 0.f ) ) );
+				EXPECT_EP_EQ( 0.4f, DOT( v_y, r2::Vector4( 0.f, 0.4f, 0.f, 0.f ) ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "임의의 벡터에 투영한 값은 그대로 사용은 어렵다." );
+
+				LF();
+
+				DECLARATION_MAIN( const r2::Vector4 v_p( 5.f, 5.f, 5.f, 0.f ) );
+
+				LF();
+
+				EXPECT_EP_EQ( 15.f, DOT( v_p, r2::Vector4( 1.f, 1.f, 1.f, 0.f ) ) );
+				EXPECT_EP_EQ( 30.f, DOT( v_p, r2::Vector4( 2.f, 2.f, 2.f, 0.f ) ) );
+
+				SS();
+
+				OUTPUT_SUBJECT( "기준 벡터 길이의 제곱값과 나눠서 비율을 구한다." );
+
+				LF();
+
+				DECLARATION_MAIN( const float l = L( v_p ) );
+				EXPECT_EP_EQ( 0.2f, DOT( v_p, r2::Vector4( 1.f, 1.f, 1.f, 0.f ) ) / ( l * l ) );
+
+				SS();
+
+				OUTPUT_SUBJECT( "약간의 연산을 더해 투영된 벡터를 구한다." );
+
+				LF();
+
+				DECLARATION_MAIN( const float d = DOT( v_p, r2::Vector4( 0.f, 1.f, 0.f, 0.f ) ) );
+				DECLARATION_MAIN( const float rate = d / ( l * l ) );
+				DECLARATION_MAIN( const auto v_2 = v_p * rate );
+
+				EXPECT_EP_EQ( d, DOT( v_p, v_2 ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
