@@ -248,7 +248,7 @@ namespace windows_terminal_input_test
 						);
 					}
 
-					LF;
+					LF();
 
 					//
 					// Mouse : L
