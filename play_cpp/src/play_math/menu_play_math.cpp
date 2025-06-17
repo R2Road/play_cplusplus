@@ -5,6 +5,7 @@
 #include "menu_root.h"
 
 #include "play_math_basic.h"
+#include "play_math_vector.h"
 
 r2tm::TitleFunctionT Menu_Math::GetTitleFunction() const
 {
@@ -24,6 +25,14 @@ r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
 		mp->AddItem( '1', play_math_basic::Degree2Radian() );
 		mp->AddItem( '2', play_math_basic::Radian2Degree() );
 		mp->AddItem( '3', play_math_basic::Sine_Addition() );
+
+
+
+		mp->AddLineFeed();
+
+
+
+		mp->AddItem( 'q', play_math_vector::Dot_Product() );
 
 
 
