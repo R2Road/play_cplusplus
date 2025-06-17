@@ -52,7 +52,8 @@ r2tm::DescriptionFunctionT RootMenu::GetDescriptionFunction() const
 		"\n"	"[ ] " "Infinite Number"
 		"\n"	"[ ] " "Thread"
 		"\n"	"[ ] " "Memory Pool"
-		"\n"	"[ ] " "Spin-Lock";
+		"\n"	"[ ] " "Spin-Lock"
+		"\n"	"[~] " "Math";
 	};
 }
 r2tm::WriteFunctionT RootMenu::GetWriteFunction() const
