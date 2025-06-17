@@ -120,8 +120,8 @@ namespace play_list_based_on_array
 		{
 			LS();
 
-			r2::ListNode<r2::PointInt> node{ { 11, 12 }, nullptr, nullptr };
-			r2::ListIterator<r2::PointInt> itr( &node );
+			r2::Node4List<r2::PointInt> node{ r2::PointInt{ 11, 12 }, nullptr, nullptr };
+			r2::Node4ListIterator<r2::PointInt> itr( &node );
 
 			{
 				std::cout << "+ Declaration" << r2tm::linefeed2;

@@ -6,7 +6,7 @@
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_WindowsUtility.h"
 
-#include "r2/r2_Grid.h"
+#include "r2/r2_GridBasedOnVector.h"
 #include "r2/r2_Random.h"
 
 #include "test_algorithm/AlgorithmHelper.h"
@@ -19,7 +19,7 @@ namespace procedural_terrain_generation_1_test
 		Wall,
 	};
 
-	int GetNeighborCount( const r2::Grid<eTerrainType>& grid, const int px, const int py, const int allowed_range )
+	int GetNeighborCount( const r2::GridBasedOnVector<std::size_t, eTerrainType>& grid, const int px, const int py, const int allowed_range )
 	{
 		int count = 0;
 
@@ -59,7 +59,7 @@ namespace procedural_terrain_generation_1_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			r2::Grid<eTerrainType> grid;
+			r2::GridBasedOnVector<std::size_t, eTerrainType> grid;
 			grid.Reset( 40, 40 );
 
 			LS();
@@ -86,7 +86,7 @@ namespace procedural_terrain_generation_1_test
 			_getch();
 			r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
-			r2::Grid<int> grid2;
+			r2::GridBasedOnVector<std::size_t, int> grid2;
 			grid2.Reset( 40, 40 );
 
 			{
@@ -109,7 +109,7 @@ namespace procedural_terrain_generation_1_test
 			_getch();
 			r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
-			r2::Grid<eTerrainType> grid3;
+			r2::GridBasedOnVector<std::size_t, eTerrainType> grid3;
 			grid3.Reset( 40, 40 );
 
 			{
@@ -157,9 +157,9 @@ namespace procedural_terrain_generation_1_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			r2::Grid<eTerrainType> grid_seed;
+			r2::GridBasedOnVector<std::size_t, eTerrainType> grid_seed;
 			grid_seed.Reset( 40, 40 );
-			r2::Grid<eTerrainType> grid_terrain;
+			r2::GridBasedOnVector<std::size_t, eTerrainType> grid_terrain;
 			grid_terrain.Reset( 40, 40 );
 
 			LS();

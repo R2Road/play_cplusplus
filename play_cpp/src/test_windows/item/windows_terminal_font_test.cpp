@@ -2,6 +2,8 @@
 
 #include <conio.h> // _kbhit(), _getch()
 #include <cwchar>
+
+#define NOMINMAX
 #include <Windows.h> // HDC
 
 #include "r2tm/r2tm_ostream.h"

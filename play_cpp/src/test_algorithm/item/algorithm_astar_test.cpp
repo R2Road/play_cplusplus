@@ -6,7 +6,7 @@
 #include "algorithm/r2algorithm_astar_Constant.h"
 #include "algorithm/r2algorithm_astar_PathBuilder.h"
 
-#include "r2/r2_Grid.h"
+#include "r2/r2_GridBasedOnVector.h"
 #include "r2/r2_Point.h"
 
 #include "r2tm/r2tm_StopWatch.h"

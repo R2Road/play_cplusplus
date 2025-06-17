@@ -1,6 +1,8 @@
 #include "windows_terminal_flickering_research.h"
 
 #include <conio.h> // _kbhit(), _getch()
+
+#define NOMINMAX
 #include <Windows.h> // HANDLE, COORD, SetConsoleCursorPosition()
 
 #include "r2tm/r2tm_ostream.h"

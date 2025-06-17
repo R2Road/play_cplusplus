@@ -3,6 +3,8 @@
 #include <bitset>
 #include <conio.h>
 #include <stdio.h>
+
+#define NOMINMAX
 #include <Windows.h>
 #include <wincon.h> // BACKGROUND_RED
 

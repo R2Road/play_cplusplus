@@ -6,7 +6,7 @@
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_WindowsUtility.h"
 
-#include "r2/r2_Grid.h"
+#include "r2/r2_GridBasedOnVector.h"
 #include "r2/r2_Random.h"
 
 #include "test_algorithm/AlgorithmHelper.h"
@@ -26,7 +26,7 @@ namespace procedural_terrain_generation_2_test
 		int weight = 0;
 	};
 
-	int GetNeighborCount( const r2::Grid<Cell>& grid, const int px, const int py, const int allowed_range )
+	int GetNeighborCount( const r2::GridBasedOnVector<std::size_t, Cell>& grid, const int px, const int py, const int allowed_range )
 	{
 		int count = 0;
 
@@ -50,7 +50,7 @@ namespace procedural_terrain_generation_2_test
 
 		return count;
 	}
-	int GetNeighborCount( const r2::Grid<eTerrainType>& grid, const int px, const int py, const int allowed_range )
+	int GetNeighborCount( const r2::GridBasedOnVector<std::size_t, eTerrainType>& grid, const int px, const int py, const int allowed_range )
 	{
 		int count = 0;
 
@@ -96,9 +96,9 @@ namespace procedural_terrain_generation_2_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			r2::Grid<Cell> grid_seed;
+			r2::GridBasedOnVector<std::size_t, Cell> grid_seed;
 			grid_seed.Reset( 40, 40 );
-			r2::Grid<eTerrainType> grid_terrain;
+			r2::GridBasedOnVector<std::size_t, eTerrainType> grid_terrain;
 			grid_terrain.Reset( 40, 40 );
 
 			LS();

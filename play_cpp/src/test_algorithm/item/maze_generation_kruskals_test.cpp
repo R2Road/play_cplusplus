@@ -12,7 +12,7 @@
 
 #include "r2/r2_Assert.h"
 #include "r2/r2_Direction4.h"
-#include "r2/r2_Grid.h"
+#include "r2/r2_GridBasedOnVector.h"
 
 namespace maze_generation_kruskals_test
 {
@@ -62,7 +62,7 @@ namespace maze_generation_kruskals_test
 		int mIndex;
 	};
 
-	void PrintGrid( const r2::Grid<int>& grid, const r2::Grid<Node>& sets )
+	void PrintGrid( const r2::GridBasedOnVector<std::size_t, int>& grid, const r2::GridBasedOnVector<std::size_t, Node>& sets )
 	{
 		const auto pivot_point = r2tm::WindowsUtility::GetCursorPoint();
 
@@ -119,12 +119,15 @@ namespace maze_generation_kruskals_test
 		{
 			LS();
 
-			DECLARATION_MAIN( r2::Grid<int> grid( 2, 2, r2::Direction4::eState::None ) );
+			using Grid = r2::GridBasedOnVector<std::size_t, int>;
+			using Sets = r2::GridBasedOnVector<std::size_t, Node>;
+
+			DECLARATION_MAIN( Grid grid( 2, 2, r2::Direction4::eState::None ) );
 			PROCESS_MAIN( grid.Set( 1, 0, r2::Direction4::eState::Up | r2::Direction4::eState::Down ) );
 			PROCESS_MAIN( grid.Set( 1, 1, r2::Direction4::eState::Left | r2::Direction4::eState::Right ) );
 			PROCESS_MAIN( grid.Set( 0, 1, r2::Direction4::eState::Left | r2::Direction4::eState::Right | r2::Direction4::eState::Up ) );
 
-			DECLARATION_MAIN( r2::Grid<Node> sets( 2, 2, Node{} ) );
+			DECLARATION_MAIN( Sets sets( 2, 2, Node{} ) );
 
 			LS();
 
@@ -168,10 +171,13 @@ namespace maze_generation_kruskals_test
 
 			LS();
 
+			using Grid = r2::GridBasedOnVector<std::size_t, int>;
+			using Sets = r2::GridBasedOnVector<std::size_t, Node>;
+
 			DECLARATION_MAIN( const int width = 3 );
 			DECLARATION_MAIN( const int height = 3 );
-			DECLARATION_MAIN( r2::Grid<int> grid( width, height, r2::Direction4::eState::None ) );
-			DECLARATION_MAIN( r2::Grid<Node> sets( width, height, Node{} ) );
+			DECLARATION_MAIN( Grid grid( width, height, r2::Direction4::eState::None ) );
+			DECLARATION_MAIN( Sets sets( width, height, Node{} ) );
 			{
 				int temp_index = 0;
 				for( auto& n : sets ) { n.SetIndex( temp_index ); ++temp_index; }
@@ -210,11 +216,11 @@ namespace maze_generation_kruskals_test
 					{
 						if( x > 0 )
 						{
-							edges.push_back( { { x, y }, r2::Direction4::eState::Left } );
+							edges.push_back( { r2::PointInt{ x, y }, r2::Direction4::eState::Left } );
 						}
 						if( y > 0 )
 						{
-							edges.push_back( { { x, y }, r2::Direction4::eState::Down } );
+							edges.push_back( { r2::PointInt{ x, y }, r2::Direction4::eState::Down } );
 						}
 					}
 				}

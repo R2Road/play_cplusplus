@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 
-#include "r2/r2_Grid.h"
+#include "r2/r2_GridBasedOnVector.h"
 #include "r2/r2_PointInt.h"
 
 namespace r2algorithm_astar
@@ -13,7 +13,7 @@ namespace r2algorithm_astar
 	constexpr uint32_t WORLD_MAP_WIDTH = 19u;
 	constexpr uint32_t WORLD_MAP_HEIGHT = 19u;
 
-	using WorldMapT = r2::Grid<int8_t>;
+	using WorldMapT = r2::GridBasedOnVector<std::size_t, int8_t>;
 	const WorldMapT WORLD_MAP( WORLD_MAP_WIDTH, WORLD_MAP_HEIGHT, {
 		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 		1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,

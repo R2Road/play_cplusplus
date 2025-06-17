@@ -1,6 +1,8 @@
 #include "windows_sound_test.h"
 
 #include <conio.h>
+
+#define NOMINMAX
 #include <Windows.h>
 #pragma comment( lib, "winmm.lib" )
 

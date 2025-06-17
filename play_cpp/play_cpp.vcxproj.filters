@@ -308,30 +308,6 @@
     <ClCompile Include="src\test_cpp\item\number_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction4.cpp">
-      <Filter>_external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction8.cpp">
-      <Filter>_external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_GridIndexConverter.cpp">
-      <Filter>_external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_PointInt.cpp">
-      <Filter>_external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Random.cpp">
-      <Filter>_external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_RectInt.cpp">
-      <Filter>_external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Size.cpp">
-      <Filter>_external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_FPSTimer.cpp">
-      <Filter>_external\r2</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_c\item\c_random_test.cpp">
       <Filter>test_c\item</Filter>
     </ClCompile>
@@ -611,6 +587,27 @@
     <ClCompile Include="src\play_math\play_math_basic.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
+    <ClCompile Include="external\r2\r2_Direction4.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Direction8.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_FPSTimer.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_PointInt.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Random.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_RectInt.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Size.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -845,42 +842,6 @@
     <ClInclude Include="src\test_cpp\item\number_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_Assert.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction4.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction8.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Grid.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_GridIndexConverter.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Point.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_PointInt.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Random.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Rect.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_RectInt.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Size.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_FPSTimer.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_c\item\c_random_test.h">
       <Filter>test_c\item</Filter>
     </ClInclude>
@@ -889,9 +850,6 @@
     </ClInclude>
     <ClInclude Include="src\test_c\PointerMenu.h">
       <Filter>test_c</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_ListBasedOnArray.h">
-      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="src\test_c\item\c_memset_test.h">
       <Filter>test_c\item</Filter>
@@ -1271,6 +1229,51 @@
     <ClInclude Include="src\play_math\play_math___helper.h">
       <Filter>play_math</Filter>
     </ClInclude>
+    <ClInclude Include="external\r2\r2_Assert.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction4.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction8.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Epsilon.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_FPSTimer.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_GridIndexConverter.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_ListBasedOnArray.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_NoneCopyable.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Point.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_PointInt.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Random.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Rect.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_RectInt.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Size.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_TypeTraits.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
     <ClInclude Include="external\r2\r2_Vector4.h">
       <Filter>_external\r2</Filter>
     </ClInclude>
@@ -1278,6 +1281,21 @@
       <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2helper_STDPrinter4Vector4.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_GridBasedOnVector.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_RectIterator.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Node4ListAllocatorBasedOnArray.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Node4List.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Node4ListIterator.h">
       <Filter>_external\r2</Filter>
     </ClInclude>
   </ItemGroup>

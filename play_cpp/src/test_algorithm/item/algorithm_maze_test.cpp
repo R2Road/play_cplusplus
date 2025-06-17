@@ -6,7 +6,7 @@
 #include "r2tm/r2tm_Inspector.h"
 
 #include "r2/r2_Direction4.h"
-#include "r2/r2_Grid.h"
+#include "r2/r2_GridBasedOnVector.h"
 #include "r2/r2_PointInt.h"
 
 #include "r2tm/r2tm_WindowsUtility.h"
@@ -31,10 +31,12 @@ namespace algorithm_maze_test
 
 			LS();
 
+			using Grid = r2::GridBasedOnVector<std::size_t, int>;
+
 			DECLARATION_MAIN( r2::Direction4 current_direction );
 			DECLARATION_MAIN( r2::PointInt current_point( 0, 0 ) );
 			DECLARATION_MAIN( r2::PointInt next_point( 0, 0 ) );
-			DECLARATION_MAIN( r2::Grid<int> grid );
+			DECLARATION_MAIN( Grid grid );
 
 			LS();
 
@@ -105,10 +107,12 @@ namespace algorithm_maze_test
 
 			LS();
 
+			using Grid = r2::GridBasedOnVector<std::size_t, int>;
+
 			DECLARATION_MAIN( r2::Direction4 current_direction );
 			DECLARATION_MAIN( r2::PointInt current_point( 0, 0 ) );
 			DECLARATION_MAIN( r2::PointInt next_point( 0, 0 ) );
-			DECLARATION_MAIN( r2::Grid<int> grid );
+			DECLARATION_MAIN( Grid grid );
 
 			LS();
 
@@ -128,7 +132,7 @@ namespace algorithm_maze_test
 				{
 
 					next_point = current_point;
-					next_point.Add( current_direction.GetPoint().GetX(), current_direction.GetPoint().GetY() );
+					next_point.Plus( current_direction.GetPoint().GetX(), current_direction.GetPoint().GetY() );
 					if( !grid.IsIn( next_point.GetX(), next_point.GetY() ) )
 					{
 						break;

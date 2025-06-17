@@ -4,6 +4,8 @@
 #include <conio.h> // _kbhit(), _getch()
 #include <cstring>
 #include <wchar.h>
+
+#define NOMINMAX
 #include <Windows.h>
 
 #include "r2tm/r2tm_ostream.h"

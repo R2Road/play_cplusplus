@@ -6,6 +6,8 @@
 #include "r2tm/r2tm_StopWatch.h"
 
 // REF : https://learn.microsoft.com/ko-kr/windows/win32/api/sysinfoapi/nf-sysinfoapi-getlogicalprocessorinformation
+
+#define NOMINMAX
 #include <windows.h>
 typedef BOOL( WINAPI* LPFN_GetLogicalProcessorInformation )( PSYSTEM_LOGICAL_PROCESSOR_INFORMATION, PDWORD );
 

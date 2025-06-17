@@ -4,6 +4,8 @@
 #include <chrono>
 #include <filesystem>
 #include <fstream>
+
+#define NOMINMAX
 #include <Windows.h>
 
 #include "r2/r2_Assert.h"

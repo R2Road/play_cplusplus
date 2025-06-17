@@ -5,7 +5,7 @@
 
 #include "r2algorithm_astar_Constant.h"
 #include "r2/r2_PointInt.h"
-#include "r2/r2_Grid.h"
+#include "r2/r2_GridBasedOnVector.h"
 #include "r2/r2_ListBasedOnArray.h"
 
 namespace r2algorithm_astar
@@ -192,7 +192,7 @@ namespace r2algorithm_astar
 		void Clear();
 		void Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::vector<r2::PointInt>* out_result_path );
 
-		r2::Grid<Node4AStar> cost_map;
+		r2::GridBasedOnVector<std::size_t, Node4AStar> cost_map;
 	};
 	class AStarPathBuilder_Use_TinyCostMap_STDListSplice_STDVectorResultPath
 	{
@@ -203,7 +203,7 @@ namespace r2algorithm_astar
 		void Clear();
 		void Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::vector<r2::PointInt>* out_result_path );
 
-		r2::Grid<TinyNode4AStar> cost_map;
+		r2::GridBasedOnVector<std::size_t, TinyNode4AStar> cost_map;
 	};
 
 	class AStarPathBuilder_Use_ArrayBasedList_TinyCostMap_STDVectorResultPath
@@ -215,7 +215,7 @@ namespace r2algorithm_astar
 		void Clear();
 		void Build( const r2::PointInt entry_point, const r2::PointInt exit_point, const WorldMapT& grid, std::vector<r2::PointInt>* out_result_path );
 
-		r2::Grid<TinyNode4AStar> cost_map;
+		r2::GridBasedOnVector<std::size_t, TinyNode4AStar> cost_map;
 
 		using TargetContainerT = r2::ListBasedOnArray<r2::PointInt, WORLD_MAP_WIDTH * WORLD_MAP_HEIGHT >;
 		TargetContainerT open_list;

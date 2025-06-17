@@ -1,6 +1,8 @@
 #include "windows_time_test.h"
 
 #include <conio.h>
+
+#define NOMINMAX
 #include <windows.h>
 #pragma comment(lib, "winmm.lib") // for timeGetTime()
 

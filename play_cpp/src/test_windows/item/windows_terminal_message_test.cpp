@@ -4,6 +4,7 @@
 #include <conio.h>
 #define  STRICT
 #define  WIN32_LEAN_AND_MEAN
+#define  NOMINMAX
 #include <windows.h>
 
 #include "r2tm/r2tm_ostream.h"

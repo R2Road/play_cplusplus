@@ -3,6 +3,8 @@
 #include <assert.h>
 #include <conio.h> // _kbhit(), _getch()
 #include <stdio.h>
+
+#define NOMINMAX
 #include <windows.h>
 
 #include "r2tm/r2tm_Inspector.h"

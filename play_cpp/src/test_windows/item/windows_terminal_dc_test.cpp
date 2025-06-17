@@ -1,6 +1,8 @@
 #include "windows_terminal_dc_test.h"
 
 #include <conio.h> // _kbhit(), _getch()
+
+#define NOMINMAX
 #include <Windows.h> // HDC
 
 #include "r2tm/r2tm_ostream.h"

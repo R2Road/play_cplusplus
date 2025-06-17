@@ -38,7 +38,7 @@ namespace play_cpp_utility
 		void FillAll( const char c );
 
 	private:
-		const r2::GridIndexConverter mGridIndexConverter;
+		const r2::GridIndexConverter<uint32_t> mGridIndexConverter;
 		ContainerT mChars;
 	};
 }
