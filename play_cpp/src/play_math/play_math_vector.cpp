@@ -2,8 +2,6 @@
 #include "play_math___helper.h"
 using namespace play_math;
 
-#include "r2/r2helper_STDPrinter4Vector4.h"
-
 namespace play_math_vector
 {
 	r2tm::TitleFunctionT Length::GetTitleFunction() const
@@ -42,7 +40,7 @@ namespace play_math_vector
 			LS();
 
 			OUTPUT_SOURCE_BEGIN;
-			const auto L = []( r2::Vector4 v )->float
+			const auto L = []( Vec3 v )->float
 			{
 				return std::sqrt(
 					  ( v.x * v.x )
@@ -59,9 +57,9 @@ namespace play_math_vector
 
 				LF();
 
-				EXPECT_EP_EQ( std::sqrt( 4.f ), L( r2::Vector4( 2.f, 0.f, 0.f, 0.f ) ) );
-				EXPECT_EP_EQ( std::sqrt( 4.f ), L( r2::Vector4( 0.f, 2.f, 0.f, 0.f ) ) );
-				EXPECT_EP_EQ( std::sqrt( 4.f ), L( r2::Vector4( 0.f, 0.f, 2.f, 0.f ) ) );
+				EXPECT_EP_EQ( std::sqrt( 4.f ), L( Vec3( 2.f, 0.f, 0.f ) ) );
+				EXPECT_EP_EQ( std::sqrt( 4.f ), L( Vec3( 0.f, 2.f, 0.f ) ) );
+				EXPECT_EP_EQ( std::sqrt( 4.f ), L( Vec3( 0.f, 0.f, 2.f ) ) );
 			}
 
 			LS();
@@ -71,7 +69,7 @@ namespace play_math_vector
 
 				LF();
 
-				EXPECT_EP_EQ( std::sqrt( 8.f ), L( r2::Vector4( 2.f, 2.f, 0.f, 0.f ) ) );
+				EXPECT_EP_EQ( std::sqrt( 8.f ), L( Vec3( 2.f, 2.f, 0.f ) ) );
 			}
 
 			LS();
@@ -81,7 +79,7 @@ namespace play_math_vector
 
 				LF();
 
-				EXPECT_EP_EQ( std::sqrt( 12.f ), L( r2::Vector4( 2.f, 2.f, 2.f, 0.f ) ) );
+				EXPECT_EP_EQ( std::sqrt( 12.f ), L( Vec3( 2.f, 2.f, 2.f ) ) );
 			}
 
 			LS();
@@ -114,7 +112,7 @@ namespace play_math_vector
 			LS();
 
 			OUTPUT_SOURCE_BEGIN;
-			const auto L = []( r2::Vector4 v )->float
+			const auto L = []( Vec3 v )->float
 			{
 				return std::sqrt(
 					  ( v.x * v.x )
@@ -123,14 +121,13 @@ namespace play_math_vector
 				);
 			};
 
-			const auto N = [L]( r2::Vector4 v )->r2::Vector4
+			const auto N = [L]( Vec3 v )->Vec3
 			{
 				const float l = L( v );
-				return r2::Vector4(
+				return Vec3(
 					  ( v.x / l )
 					, ( v.y / l )
 					, ( v.z / l )
-					, 0.f
 				);
 			};
 			OUTPUT_SOURCE_END;
@@ -142,7 +139,7 @@ namespace play_math_vector
 
 				LF();
 
-				DECLARATION_MAIN( const r2::Vector4 v( 2.f, 2.f, 2.f, 0.f ) );
+				DECLARATION_MAIN( const Vec3 v( 2.f, 2.f, 2.f ) );
 				DECLARATION_MAIN( const auto v_n = N( v ) );
 				DECLARATION_MAIN( const auto length = L( v ) );
 
@@ -195,21 +192,20 @@ namespace play_math_vector
 			LS();
 
 			OUTPUT_SOURCE_BEGIN;
-			const auto DOT = []( r2::Vector4 v1, r2::Vector4 v2 )->float
+			const auto DOT = []( Vec3 v1, Vec3 v2 )->float
 			{
 
 				return (
 					  ( v1.x * v2.x )
 					+ ( v1.y * v2.y )
 					+ ( v1.z * v2.z )
-					+ ( v1.w * v2.w )
 				);
 			};
 			OUTPUT_SOURCE_END;
 
 			LS();
 
-			DECLARATION_MAIN( const r2::Vector4 v_y( 0.f, 1.f, 0.f, 0.f ) );
+			DECLARATION_MAIN( const Vec3 v_y( 0.f, 1.f, 0.f ) );
 
 			LS();
 
@@ -229,7 +225,7 @@ namespace play_math_vector
 
 				LF();
 
-				DECLARATION_MAIN( const float r = DOT( v_y, r2::Vector4( 1.f, 0.f, 0.f, 0.f ) ) );
+				DECLARATION_MAIN( const float r = DOT( v_y, Vec3( 1.f, 0.f, 0.f ) ) );
 				EXPECT_EP_EQ( 0.f, r );
 			}
 
@@ -240,7 +236,7 @@ namespace play_math_vector
 
 				LF();
 
-				DECLARATION_MAIN( const float r = DOT( v_y, r2::Vector4( -1.f, 0.f, 0.f, 0.f ) ) );
+				DECLARATION_MAIN( const float r = DOT( v_y, Vec3( -1.f, 0.f, 0.f ) ) );
 				EXPECT_EP_EQ( 0.f, r );
 			}
 
@@ -251,7 +247,7 @@ namespace play_math_vector
 
 				LF();
 
-				DECLARATION_MAIN( const float r = DOT( v_y, r2::Vector4( 0.f, -1.f, 0.f, 0.f ) ) );
+				DECLARATION_MAIN( const float r = DOT( v_y, Vec3( 0.f, -1.f, 0.f ) ) );
 				EXPECT_EP_EQ( -1.f, r );
 			}
 
@@ -262,10 +258,10 @@ namespace play_math_vector
 
 				LF();
 
-				EXPECT_EP_EQ( 0.3f, DOT( v_y, r2::Vector4( 0.3f, 0.3f, 0.f, 0.f ) ) );
-				EXPECT_EP_EQ( -0.3f, DOT( v_y, r2::Vector4( 0.3f, -0.3f, 0.f, 0.f ) ) );
-				EXPECT_EP_EQ( 0.3f, DOT( v_y, r2::Vector4( -0.3f, 0.3f, 0.f, 0.f ) ) );
-				EXPECT_EP_EQ( -0.3f, DOT( v_y, r2::Vector4( -0.3f, -0.3f, 0.f, 0.f ) ) );
+				EXPECT_EP_EQ( 0.3f, DOT( v_y, Vec3( 0.3f, 0.3f, 0.f ) ) );
+				EXPECT_EP_EQ( -0.3f, DOT( v_y, Vec3( 0.3f, -0.3f, 0.f ) ) );
+				EXPECT_EP_EQ( 0.3f, DOT( v_y, Vec3( -0.3f, 0.3f, 0.f ) ) );
+				EXPECT_EP_EQ( -0.3f, DOT( v_y, Vec3( -0.3f, -0.3f, 0.f ) ) );
 			}
 
 			LS();
@@ -292,7 +288,7 @@ namespace play_math_vector
 			LS();
 
 			OUTPUT_SOURCE_BEGIN;
-			const auto L = []( r2::Vector4 v )->float
+			const auto L = []( Vec3 v )->float
 			{
 				return std::sqrt(
 					  ( v.x * v.x )
@@ -301,7 +297,7 @@ namespace play_math_vector
 				);
 			};
 
-			const auto DOT = []( r2::Vector4 v1, r2::Vector4 v2 )->float
+			const auto DOT = []( Vec3 v1, Vec3 v2 )->float
 			{
 
 				return (
@@ -319,13 +315,13 @@ namespace play_math_vector
 
 				LF();
 
-				DECLARATION_MAIN( const r2::Vector4 v_y( 0.f, 1.f, 0.f, 0.f ) );
+				DECLARATION_MAIN( const Vec3 v_y( 0.f, 1.f, 0.f ) );
 
 				LF();
 
-				EXPECT_EP_EQ( 1.f, DOT( v_y, r2::Vector4( 0.f, 1.f, 0.f, 0.f ) ) );
-				EXPECT_EP_EQ( 0.8f, DOT( v_y, r2::Vector4( 0.f, 0.8f, 0.f, 0.f ) ) );
-				EXPECT_EP_EQ( 0.4f, DOT( v_y, r2::Vector4( 0.f, 0.4f, 0.f, 0.f ) ) );
+				EXPECT_EP_EQ( 1.f, DOT( v_y, Vec3( 0.f, 1.f, 0.f ) ) );
+				EXPECT_EP_EQ( 0.8f, DOT( v_y, Vec3( 0.f, 0.8f, 0.f ) ) );
+				EXPECT_EP_EQ( 0.4f, DOT( v_y, Vec3( 0.f, 0.4f, 0.f ) ) );
 			}
 
 			LS();
@@ -335,12 +331,12 @@ namespace play_math_vector
 
 				LF();
 
-				DECLARATION_MAIN( const r2::Vector4 v_p( 5.f, 5.f, 5.f, 0.f ) );
+				DECLARATION_MAIN( const Vec3 v_p( 5.f, 5.f, 5.f ) );
 
 				LF();
 
-				EXPECT_EP_EQ( 15.f, DOT( v_p, r2::Vector4( 1.f, 1.f, 1.f, 0.f ) ) );
-				EXPECT_EP_EQ( 30.f, DOT( v_p, r2::Vector4( 2.f, 2.f, 2.f, 0.f ) ) );
+				EXPECT_EP_EQ( 15.f, DOT( v_p, Vec3( 1.f, 1.f, 1.f ) ) );
+				EXPECT_EP_EQ( 30.f, DOT( v_p, Vec3( 2.f, 2.f, 2.f ) ) );
 
 				SS();
 
@@ -349,7 +345,7 @@ namespace play_math_vector
 				LF();
 
 				DECLARATION_MAIN( const float l = L( v_p ) );
-				EXPECT_EP_EQ( 0.2f, DOT( v_p, r2::Vector4( 1.f, 1.f, 1.f, 0.f ) ) / ( l * l ) );
+				EXPECT_EP_EQ( 0.2f, DOT( v_p, Vec3( 1.f, 1.f, 1.f ) ) / ( l * l ) );
 
 				SS();
 
@@ -357,7 +353,7 @@ namespace play_math_vector
 
 				LF();
 
-				DECLARATION_MAIN( const float d = DOT( v_p, r2::Vector4( 0.f, 1.f, 0.f, 0.f ) ) );
+				DECLARATION_MAIN( const float d = DOT( v_p, Vec3( 0.f, 1.f, 0.f ) ) );
 				DECLARATION_MAIN( const float rate = d / ( l * l ) );
 				DECLARATION_MAIN( const auto v_2 = v_p * rate );
 

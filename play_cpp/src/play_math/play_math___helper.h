@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iomanip>
+
 #define _USE_MATH_DEFINES
 #include <math.h>
 
@@ -24,4 +26,51 @@ namespace play_math
 		static const float t = 180.f / R_PI;
 		return ( radian * t );
 	};
+
+
+
+
+
+
+	struct Vec3
+	{
+		Vec3() : x( 0.f ), y( 0.f ), z( 0.f )
+		{}
+		explicit Vec3( const float new_x, const float new_y, const float new_z ) :
+			x( new_x )
+			, y( new_y )
+			, z( new_z )
+		{}
+
+		float x = 0.f;
+		float y = 0.f;
+		float z = 0.f;
+	};
+	inline Vec3 operator*( const Vec3& v1, const float scalar )
+	{
+		return Vec3{ v1.x * scalar, v1.y * scalar, v1.z * scalar };
+	}
+
+
+
+
+
+
+	inline std::ostream& operator<<( std::ostream& o, const Vec3& v )
+	{
+		static const int w = 10;
+
+		return o
+			<< std::left
+
+			<< "\t"
+
+			<< std::setw( w ) << v.x
+			<< "   "
+			<< std::setw( w ) << v.y
+			<< "   "
+			<< std::setw( w ) << v.z
+
+			<< std::right;
+	}
 }
