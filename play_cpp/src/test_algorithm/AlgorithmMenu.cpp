@@ -11,7 +11,7 @@
 
 #include "MazeGenerationMenu.h"
 #include "ProceduralTerrainGenerationMenu.h"
-#include "RootMenu.h"
+#include "menu_root.h"
 
 r2tm::TitleFunctionT AlgorithmMenu::GetTitleFunction() const
 {

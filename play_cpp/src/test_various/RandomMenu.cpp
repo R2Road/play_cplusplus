@@ -5,7 +5,7 @@
 #include "test_c/item/c_random_test.h"
 #include "test_std/item/std_random_test.h"
 
-#include "RootMenu.h"
+#include "menu_root.h"
 
 r2tm::TitleFunctionT RandomMenu::GetTitleFunction() const
 {

@@ -12,7 +12,7 @@
 #include "TreeMenu.h"
 #include "Vector3Menu.h"
 
-#include "RootMenu.h"
+#include "menu_root.h"
 
 r2tm::TitleFunctionT HobbyMenu::GetTitleFunction() const
 {

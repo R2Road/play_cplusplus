@@ -52,7 +52,7 @@
     <ClCompile Include="src\play_hobby\Vector3Menu.cpp" />
     <ClCompile Include="src\play_math\menu_play_math.cpp" />
     <ClCompile Include="src\play_math\play_math_basic.cpp" />
-    <ClCompile Include="src\RootMenu.cpp" />
+    <ClCompile Include="src\menu_root.cpp" />
     <ClCompile Include="src\test_algorithm\AlgorithmHelper.cpp" />
     <ClCompile Include="src\test_algorithm\item\algorithm_astar_test.cpp" />
     <ClCompile Include="src\test_algorithm\item\algorithm_bubble_sort_test.cpp" />
@@ -250,7 +250,7 @@
     <ClInclude Include="src\play_math\menu_play_math.h" />
     <ClInclude Include="src\play_math\play_math___helper.h" />
     <ClInclude Include="src\play_math\play_math_basic.h" />
-    <ClInclude Include="src\RootMenu.h" />
+    <ClInclude Include="src\menu_root.h" />
     <ClInclude Include="src\test_algorithm\AlgorithmHelper.h" />
     <ClInclude Include="src\test_algorithm\item\algorithm_astar_test.h" />
     <ClInclude Include="src\test_algorithm\item\algorithm_bubble_sort_test.h" />
