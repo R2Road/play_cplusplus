@@ -11,7 +11,7 @@ namespace play_math_vector
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Dot_Product : public r2tm::iItem
+	class Dot_Product_1 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

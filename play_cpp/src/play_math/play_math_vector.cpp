@@ -92,14 +92,14 @@ namespace play_math_vector
 
 
 
-	r2tm::TitleFunctionT Dot_Product::GetTitleFunction() const
+	r2tm::TitleFunctionT Dot_Product_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Vector : Dot Product";
+			return "Vector : Dot Product 1";
 		};
 	}
-	r2tm::DoFunctionT Dot_Product::GetDoFunction() const
+	r2tm::DoFunctionT Dot_Product_1::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
