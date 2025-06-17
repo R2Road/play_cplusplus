@@ -1,9 +1,9 @@
-#include "test_angle.h"
+#include "play_math_basic.h"
 #include "play_math___helper.h"
 
 using namespace play_math;
 
-namespace test_angle
+namespace play_math_basic
 {
 	r2tm::TitleFunctionT Degree2Radian::GetTitleFunction() const
 	{

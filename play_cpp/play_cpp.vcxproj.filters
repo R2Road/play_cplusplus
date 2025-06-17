@@ -608,7 +608,7 @@
     <ClCompile Include="src\play_math\menu_play_math.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_math\test_angle.cpp">
+    <ClCompile Include="src\play_math\play_math_basic.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1265,7 +1265,7 @@
     <ClInclude Include="src\play_math\menu_play_math.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\test_angle.h">
+    <ClInclude Include="src\play_math\play_math_basic.h">
       <Filter>play_math</Filter>
     </ClInclude>
     <ClInclude Include="src\play_math\play_math___helper.h">

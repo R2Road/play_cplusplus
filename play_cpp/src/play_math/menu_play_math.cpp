@@ -4,13 +4,13 @@
 
 #include "RootMenu.h"
 
-#include "test_angle.h"
+#include "play_math_basic.h"
 
 r2tm::TitleFunctionT Menu_Math::GetTitleFunction() const
 {
 	return []()->const char*
 	{
-		return "Math";
+		return "Play Math";
 	};
 }
 r2tm::DescriptionFunctionT Menu_Math::GetDescriptionFunction() const
@@ -21,9 +21,9 @@ r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', test_angle::Degree2Radian() );
-		mp->AddItem( '2', test_angle::Radian2Degree() );
-		mp->AddItem( '3', test_angle::Sine_Addition() );
+		mp->AddItem( '1', play_math_basic::Degree2Radian() );
+		mp->AddItem( '2', play_math_basic::Radian2Degree() );
+		mp->AddItem( '3', play_math_basic::Sine_Addition() );
 
 
 

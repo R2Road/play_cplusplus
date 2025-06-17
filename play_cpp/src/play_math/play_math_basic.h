@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace test_angle
+namespace play_math_basic
 {
 	class Degree2Radian : public r2tm::iItem
 	{
