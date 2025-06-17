@@ -122,15 +122,11 @@ namespace test_angle
 
 			LS();
 
-			OUTPUT_SOURCE_BEGIN;
 			const auto D2R = []( float degree )->float
 			{
 				static const float t = R_PI / 180.f;
 				return ( degree * t );
 			};
-			OUTPUT_SOURCE_END;
-
-			LS();
 
 			{
 				OUTPUT_SUBJECT( "Sine은 일반적인 뎃셈이 작동하지 않는다." );
