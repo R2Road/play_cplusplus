@@ -78,6 +78,6 @@ r2tm::WriteFunctionT C_Menu::GetWriteFunction() const
 		mp->AddSplit();
 
 
-		mp->AddMenu( 27, RootMenu() );
+		mp->AddMenu( 27, Menu_Root() );
 	};
 }

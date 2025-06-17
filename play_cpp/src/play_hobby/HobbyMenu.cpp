@@ -72,6 +72,6 @@ r2tm::WriteFunctionT HobbyMenu::GetWriteFunction() const
 		mp->AddSplit();
 
 
-		mp->AddMenu( 27, RootMenu() );
+		mp->AddMenu( 27, Menu_Root() );
 	};
 }

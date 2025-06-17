@@ -66,6 +66,6 @@ r2tm::WriteFunctionT TemplateMenu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 27, RootMenu() );
+		mp->AddMenu( 27, Menu_Root() );
 	};
 }

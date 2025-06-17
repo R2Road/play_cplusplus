@@ -24,7 +24,7 @@
 #include "test_windows/WindowsMenu.h"
 #include "test_cpu/Menu_CPU.h"
 
-r2tm::TitleFunctionT RootMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Root::GetTitleFunction() const
 {
 	return []()->const char*
 	{
@@ -37,7 +37,7 @@ r2tm::TitleFunctionT RootMenu::GetTitleFunction() const
 		return ret.c_str();
 	};
 }
-r2tm::DescriptionFunctionT RootMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Root::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
@@ -56,7 +56,7 @@ r2tm::DescriptionFunctionT RootMenu::GetDescriptionFunction() const
 		"\n"	"[~] " "Math";
 	};
 }
-r2tm::WriteFunctionT RootMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{

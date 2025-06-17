@@ -31,6 +31,6 @@ r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 27, RootMenu() );
+		mp->AddMenu( 27, Menu_Root() );
 	};
 }
