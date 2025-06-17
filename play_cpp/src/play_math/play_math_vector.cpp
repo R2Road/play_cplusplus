@@ -274,22 +274,6 @@ namespace play_math_vector
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			OUTPUT_SOURCE_READY;
-
-			LS();
-
-			OUTPUT_SOURCE_BEGIN;
-			const auto DOT = []( Vec3 v1, Vec3 v2 )->float
-			{
-
-				return (
-					  ( v1.x * v2.x )
-					+ ( v1.y * v2.y )
-					+ ( v1.z * v2.z )
-				);
-			};
-			OUTPUT_SOURCE_END;
-
 			LS();
 
 			{
@@ -301,9 +285,9 @@ namespace play_math_vector
 
 				LF();
 
-				EXPECT_EP_EQ( 1.f, DOT( v_y, Vec3( 0.f, 1.f, 0.f ) ) );
-				EXPECT_EP_EQ( 0.8f, DOT( v_y, Vec3( 0.f, 0.8f, 0.f ) ) );
-				EXPECT_EP_EQ( 0.4f, DOT( v_y, Vec3( 0.f, 0.4f, 0.f ) ) );
+				EXPECT_EP_EQ( 1.f, vec3_dot( v_y, Vec3( 0.f, 1.f, 0.f ) ) );
+				EXPECT_EP_EQ( 0.8f, vec3_dot( v_y, Vec3( 0.f, 0.8f, 0.f ) ) );
+				EXPECT_EP_EQ( 0.4f, vec3_dot( v_y, Vec3( 0.f, 0.4f, 0.f ) ) );
 			}
 
 			LS();
@@ -317,8 +301,8 @@ namespace play_math_vector
 
 				LF();
 
-				EXPECT_EP_EQ( 15.f, DOT( v_p, Vec3( 1.f, 1.f, 1.f ) ) );
-				EXPECT_EP_EQ( 30.f, DOT( v_p, Vec3( 2.f, 2.f, 2.f ) ) );
+				EXPECT_EP_EQ( 15.f, vec3_dot( v_p, Vec3( 1.f, 1.f, 1.f ) ) );
+				EXPECT_EP_EQ( 30.f, vec3_dot( v_p, Vec3( 2.f, 2.f, 2.f ) ) );
 
 				SS();
 
@@ -327,7 +311,7 @@ namespace play_math_vector
 				LF();
 
 				DECLARATION_MAIN( const float l = vec3_length( v_p ) );
-				EXPECT_EP_EQ( 0.2f, DOT( v_p, Vec3( 1.f, 1.f, 1.f ) ) / ( l * l ) );
+				EXPECT_EP_EQ( 0.2f, vec3_dot( v_p, Vec3( 1.f, 1.f, 1.f ) ) / ( l * l ) );
 
 				SS();
 
@@ -335,11 +319,11 @@ namespace play_math_vector
 
 				LF();
 
-				DECLARATION_MAIN( const float d = DOT( v_p, Vec3( 0.f, 1.f, 0.f ) ) );
+				DECLARATION_MAIN( const float d = vec3_dot( v_p, Vec3( 0.f, 1.f, 0.f ) ) );
 				DECLARATION_MAIN( const float rate = d / ( l * l ) );
 				DECLARATION_MAIN( const auto v_2 = v_p * rate );
 
-				EXPECT_EP_EQ( d, DOT( v_p, v_2 ) );
+				EXPECT_EP_EQ( d, vec3_dot( v_p, v_2 ) );
 			}
 
 			LS();
