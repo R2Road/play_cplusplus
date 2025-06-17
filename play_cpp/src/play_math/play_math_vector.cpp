@@ -112,18 +112,9 @@ namespace play_math_vector
 			LS();
 
 			OUTPUT_SOURCE_BEGIN;
-			const auto L = []( Vec3 v )->float
+			const auto N = []( Vec3 v )->Vec3
 			{
-				return std::sqrt(
-					  ( v.x * v.x )
-					+ ( v.y * v.y )
-					+ ( v.z * v.z )
-				);
-			};
-
-			const auto N = [L]( Vec3 v )->Vec3
-			{
-				const float l = L( v );
+				const float l = vec3_length( v );
 				return Vec3(
 					  ( v.x / l )
 					, ( v.y / l )
@@ -141,7 +132,7 @@ namespace play_math_vector
 
 				DECLARATION_MAIN( const Vec3 v( 2.f, 2.f, 2.f ) );
 				DECLARATION_MAIN( const auto v_n = N( v ) );
-				DECLARATION_MAIN( const auto length = L( v ) );
+				DECLARATION_MAIN( const auto length = vec3_length( v ) );
 
 				LF();
 
@@ -288,15 +279,6 @@ namespace play_math_vector
 			LS();
 
 			OUTPUT_SOURCE_BEGIN;
-			const auto L = []( Vec3 v )->float
-			{
-				return std::sqrt(
-					  ( v.x * v.x )
-					+ ( v.y * v.y )
-					+ ( v.z * v.z )
-				);
-			};
-
 			const auto DOT = []( Vec3 v1, Vec3 v2 )->float
 			{
 
@@ -344,7 +326,7 @@ namespace play_math_vector
 
 				LF();
 
-				DECLARATION_MAIN( const float l = L( v_p ) );
+				DECLARATION_MAIN( const float l = vec3_length( v_p ) );
 				EXPECT_EP_EQ( 0.2f, DOT( v_p, Vec3( 1.f, 1.f, 1.f ) ) / ( l * l ) );
 
 				SS();
