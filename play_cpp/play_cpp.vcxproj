@@ -245,6 +245,7 @@
     <ClInclude Include="src\play_hobby\TreeMenu.h" />
     <ClInclude Include="src\play_hobby\Vector3Menu.h" />
     <ClInclude Include="src\play_math\menu_math.h" />
+    <ClInclude Include="src\play_math\play_math___helper.h" />
     <ClInclude Include="src\play_math\test_angle.h" />
     <ClInclude Include="src\RootMenu.h" />
     <ClInclude Include="src\test_algorithm\AlgorithmHelper.h" />

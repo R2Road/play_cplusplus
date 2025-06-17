@@ -1268,6 +1268,9 @@
     <ClInclude Include="src\play_math\test_angle.h">
       <Filter>play_math</Filter>
     </ClInclude>
+    <ClInclude Include="src\play_math\play_math___helper.h">
+      <Filter>play_math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\test_cpp\item\enum_test_xmacro_2.def">

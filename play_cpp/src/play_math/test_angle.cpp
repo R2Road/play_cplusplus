@@ -1,18 +1,10 @@
 #include "test_angle.h"
+#include "play_math___helper.h"
 
-#define _USE_MATH_DEFINES
-#include <math.h>
-
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+using namespace play_math;
 
 namespace test_angle
 {
-	const float R_PI = static_cast<float>( M_PI );
-	const float R_2PI = R_PI * 2;
-	const float R_PI_2 = static_cast<float>( M_PI_2 );
-	const float R_PI_4 = static_cast<float>( M_PI_4 );
-
 	r2tm::TitleFunctionT Degree2Radian::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -122,21 +114,15 @@ namespace test_angle
 
 			LS();
 
-			const auto D2R = []( float degree )->float
-			{
-				static const float t = R_PI / 180.f;
-				return ( degree * t );
-			};
-
 			{
 				OUTPUT_SUBJECT( "Sine은 일반적인 뎃셈이 작동하지 않는다." );
 
 				LF();
 
 				OUTPUT_SOURCE_BEGIN;
-				const auto S = [D2R]( float degree )->float
+				const auto S = []( float degree )->float
 				{
-					return std::sin( D2R( degree ) );
+					return std::sin( Deg2Rad( degree ) );
 				};
 				OUTPUT_SOURCE_END;
 
@@ -167,10 +153,10 @@ namespace test_angle
 				LF();
 
 				OUTPUT_SOURCE_BEGIN;
-				const auto S = [D2R]( float degree1, float degree2 )->float
+				const auto S = []( float degree1, float degree2 )->float
 				{
-					const float rad1 = D2R( degree1 );
-					const float rad2 = D2R( degree2 );
+					const float rad1 = Deg2Rad( degree1 );
+					const float rad2 = Deg2Rad( degree2 );
 
 					return ( std::sin( rad1 ) * std::cos( rad2 ) )
 						+ ( std::cos( rad1 ) * std::sin( rad2 ) );
@@ -183,11 +169,11 @@ namespace test_angle
 
 				LF();
 
-				OUTPUT_VALUE( std::sin( D2R( 70 ) ) );
+				OUTPUT_VALUE( std::sin( Deg2Rad( 70 ) ) );
 
 				LF();
 
-				EXPECT_EP_EQ( S( 30, 40 ), std::sin( D2R( 70 ) ) );
+				EXPECT_EP_EQ( S( 30, 40 ), std::sin( Deg2Rad( 70 ) ) );
 			}
 
 			LS();
