@@ -256,7 +256,7 @@
     <ClInclude Include="src\play_hobby\Vector3Menu.h" />
     <ClInclude Include="src\play_math\menu_play_math.h" />
     <ClInclude Include="src\play_math\play_math_vector.h" />
-    <ClInclude Include="src\play_math\play_math___helper.h" />
+    <ClInclude Include="src\play_math\play_math___helper_vector3.h" />
     <ClInclude Include="src\play_math\play_math_basic.h" />
     <ClInclude Include="src\menu_root.h" />
     <ClInclude Include="src\play_math\play_math___helper_common.h" />

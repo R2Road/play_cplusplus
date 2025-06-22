@@ -1229,7 +1229,7 @@
     <ClInclude Include="src\play_math\play_math_basic.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math___helper.h">
+    <ClInclude Include="src\play_math\play_math___helper_vector3.h">
       <Filter>play_math</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Assert.h">

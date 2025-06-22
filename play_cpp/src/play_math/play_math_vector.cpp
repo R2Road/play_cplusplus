@@ -1,5 +1,5 @@
 #include "play_math_vector.h"
-#include "play_math___helper.h"
+#include "play_math___helper_vector3.h"
 using namespace play_math;
 
 #include "r2tm/r2tm_Inspector.h"
