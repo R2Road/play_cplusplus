@@ -1,7 +1,5 @@
 #pragma once
 
-#include "play_math___helper_common.h"
-
 namespace play_math
 {
 	struct Vec3

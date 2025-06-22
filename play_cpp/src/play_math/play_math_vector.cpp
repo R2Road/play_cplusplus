@@ -1,4 +1,5 @@
 #include "play_math_vector.h"
+#include "play_math___helper_common.h"
 #include "play_math___helper_vector3.h"
 using namespace play_math;
 
