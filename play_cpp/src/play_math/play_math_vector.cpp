@@ -196,16 +196,12 @@ namespace play_math_vector
 
 			LS();
 
-			DECLARATION_MAIN( const Vec3 v_y( 0.f, 1.f, 0.f ) );
-
-			LS();
-
 			{
 				OUTPUT_SUBJECT( "같은 벡터" );
 
 				LF();
 
-				DECLARATION_MAIN( const float r = DOT( v_y, v_y ) );
+				DECLARATION_MAIN( const float r = DOT( VEC3_Y, VEC3_Y ) );
 				EXPECT_EP_EQ( 1.f, r );
 			}
 
@@ -216,7 +212,7 @@ namespace play_math_vector
 
 				LF();
 
-				DECLARATION_MAIN( const float r = DOT( v_y, Vec3( 1.f, 0.f, 0.f ) ) );
+				DECLARATION_MAIN( const float r = DOT( VEC3_Y, Vec3( 1.f, 0.f, 0.f ) ) );
 				EXPECT_EP_EQ( 0.f, r );
 			}
 
@@ -227,7 +223,7 @@ namespace play_math_vector
 
 				LF();
 
-				DECLARATION_MAIN( const float r = DOT( v_y, Vec3( -1.f, 0.f, 0.f ) ) );
+				DECLARATION_MAIN( const float r = DOT( VEC3_Y, Vec3( -1.f, 0.f, 0.f ) ) );
 				EXPECT_EP_EQ( 0.f, r );
 			}
 
@@ -238,7 +234,7 @@ namespace play_math_vector
 
 				LF();
 
-				DECLARATION_MAIN( const float r = DOT( v_y, Vec3( 0.f, -1.f, 0.f ) ) );
+				DECLARATION_MAIN( const float r = DOT( VEC3_Y, Vec3( 0.f, -1.f, 0.f ) ) );
 				EXPECT_EP_EQ( -1.f, r );
 			}
 
@@ -249,10 +245,10 @@ namespace play_math_vector
 
 				LF();
 
-				EXPECT_EP_EQ( 0.3f, DOT( v_y, Vec3( 0.3f, 0.3f, 0.f ) ) );
-				EXPECT_EP_EQ( -0.3f, DOT( v_y, Vec3( 0.3f, -0.3f, 0.f ) ) );
-				EXPECT_EP_EQ( 0.3f, DOT( v_y, Vec3( -0.3f, 0.3f, 0.f ) ) );
-				EXPECT_EP_EQ( -0.3f, DOT( v_y, Vec3( -0.3f, -0.3f, 0.f ) ) );
+				EXPECT_EP_EQ( 0.3f, DOT( VEC3_Y, Vec3( 0.3f, 0.3f, 0.f ) ) );
+				EXPECT_EP_EQ( -0.3f, DOT( VEC3_Y, Vec3( 0.3f, -0.3f, 0.f ) ) );
+				EXPECT_EP_EQ( 0.3f, DOT( VEC3_Y, Vec3( -0.3f, 0.3f, 0.f ) ) );
+				EXPECT_EP_EQ( -0.3f, DOT( VEC3_Y, Vec3( -0.3f, -0.3f, 0.f ) ) );
 			}
 
 			LS();
@@ -281,13 +277,9 @@ namespace play_math_vector
 
 				LF();
 
-				DECLARATION_MAIN( const Vec3 v_y( 0.f, 1.f, 0.f ) );
-
-				LF();
-
-				EXPECT_EP_EQ( 1.f, vec3_dot( v_y, Vec3( 0.f, 1.f, 0.f ) ) );
-				EXPECT_EP_EQ( 0.8f, vec3_dot( v_y, Vec3( 0.f, 0.8f, 0.f ) ) );
-				EXPECT_EP_EQ( 0.4f, vec3_dot( v_y, Vec3( 0.f, 0.4f, 0.f ) ) );
+				EXPECT_EP_EQ( 1.f, vec3_dot( VEC3_Y, Vec3( 0.f, 1.f, 0.f ) ) );
+				EXPECT_EP_EQ( 0.8f, vec3_dot( VEC3_Y, Vec3( 0.f, 0.8f, 0.f ) ) );
+				EXPECT_EP_EQ( 0.4f, vec3_dot( VEC3_Y, Vec3( 0.f, 0.4f, 0.f ) ) );
 			}
 
 			LS();
@@ -319,7 +311,7 @@ namespace play_math_vector
 
 				LF();
 
-				DECLARATION_MAIN( const float d = vec3_dot( v_p, Vec3( 0.f, 1.f, 0.f ) ) );
+				DECLARATION_MAIN( const float d = vec3_dot( v_p, VEC3_Y ) );
 				DECLARATION_MAIN( const float rate = d / ( l * l ) );
 				DECLARATION_MAIN( const auto v_2 = v_p * rate );
 
@@ -406,6 +398,85 @@ namespace play_math_vector
 
 				EXPECT_EP_NE( 270, Rad2Deg( A( Vec3( 0, 1, 0 ), Vec3( -1, 0, 0 ) ) ) );
 				EXPECT_EP_EQ( 90, Rad2Deg( A( Vec3( 0, 1, 0 ), Vec3( -1, 0, 0 ) ) ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Angle_Between_Two_Unit_Vectors::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Vector : Angle Between Two Unit Vectors";
+		};
+	}
+	r2tm::DoFunctionT Angle_Between_Two_Unit_Vectors::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			OUTPUT_SOURCE_READY;
+
+			LS();
+
+			OUTPUT_SUBJECT( "두 단위 벡터의 각을 구하는 계산은 단순해진다." );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "내적의 기하학적 정리" );
+				OUTPUT_COMMENT( "A dot B = ||A|| * ||B|| * cos(θ)" );
+
+				LF();
+
+				OUTPUT_SUBJECT( "각을 구하기 위한 공식 변환" );
+				OUTPUT_COMMENT( "cos(θ) = ( A dot B ) / ( ||A|| * ||B|| )" );
+				OUTPUT_COMMENT( "θ = arccosine( ( A dot B ) / ( ||A|| * ||B|| ) )" );
+				OUTPUT_COMMENT( "θ = arccosine( ( A dot B ) / ( 1 * 1 ) )" );
+				OUTPUT_COMMENT( "θ = arccosine( ( A dot B ) / 1 )" );
+				OUTPUT_COMMENT( "θ = arccosine( ( A dot B ) )" );
+			}
+
+			LS();
+
+			OUTPUT_SOURCE_BEGIN;
+			const auto A = []( const Vec3& u_v1, const Vec3& u_v2 )->float
+			{
+				return std::acos( vec3_dot( u_v1, u_v2 ) );
+			};
+			OUTPUT_SOURCE_END;
+
+			LS();
+
+			{
+				EXPECT_EP_EQ( 45, Rad2Deg( A( vec3_normalize( 0, 3, 0 ), vec3_normalize( 3, 3, 0 ) ) ) );
+
+				LF();
+
+				EXPECT_EP_EQ( 90, Rad2Deg( A( vec3_normalize( 0, 3, 0 ), vec3_normalize( 3, 0, 0 ) ) ) );
+
+				LF();
+
+				EXPECT_EP_EQ( 135, Rad2Deg( A( vec3_normalize( 0, 3, 0 ), vec3_normalize( 3, -3, 0 ) ) ) );
+
+				LF();
+
+				EXPECT_EP_EQ( 180, Rad2Deg( A( vec3_normalize( 0, 30, 0 ), vec3_normalize( 0, -30, 0 ) ) ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "0 ~ 180도 사이로 나온다." );
+
+				LF();
+
+				EXPECT_EP_NE( 270, Rad2Deg( A( vec3_normalize( 0, 3, 0 ), vec3_normalize( -3, 0, 0 ) ) ) );
+				EXPECT_EP_EQ( 90, Rad2Deg( A( vec3_normalize( 0, 3, 0 ), vec3_normalize( -3, 0, 0 ) ) ) );
 			}
 
 			LS();

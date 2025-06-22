@@ -46,6 +46,8 @@ namespace play_math
 		float y = 0.f;
 		float z = 0.f;
 	};
+	const Vec3 VEC3_Y( 0.f, 1.f, 0.f );
+
 	inline Vec3 operator*( const Vec3& v1, const float scalar )
 	{
 		return Vec3{ v1.x * scalar, v1.y * scalar, v1.z * scalar };
@@ -59,6 +61,14 @@ namespace play_math
 			+ ( v.z * v.z )
 		);
 	}
+	inline float vec3_length( const float x, const float y, const float z )
+	{
+		return std::sqrt(
+			  ( x * x )
+			+ ( y * y )
+			+ ( z * z )
+		);
+	}
 
 	inline Vec3 vec3_normalize( const Vec3& v )
 	{
@@ -67,6 +77,15 @@ namespace play_math
 			  ( v.x / l )
 			, ( v.y / l )
 			, ( v.z / l )
+		);
+	}
+	inline Vec3 vec3_normalize( const float x, const float y, const float z )
+	{
+		const float l = vec3_length( x, y, z );
+		return Vec3(
+			  ( x / l )
+			, ( y / l )
+			, ( z / l )
 		);
 	}
 
