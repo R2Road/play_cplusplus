@@ -1,9 +1,5 @@
 #pragma once
 
-#include <iomanip>
-
-#include "r2tm/r2tm_ostream.h"
-
 #include "play_math___helper_common.h"
 
 namespace play_math
@@ -74,12 +70,16 @@ namespace play_math
 			+ ( v1.z * v2.z )
 		);
 	};
+}
 
 
 
+#include <iomanip>
 
+#include "r2tm/r2tm_ostream.h"
 
-
+namespace play_math
+{
 	inline std::ostream& operator<<( std::ostream& o, const Vec3& v )
 	{
 		static const int w = 10;
