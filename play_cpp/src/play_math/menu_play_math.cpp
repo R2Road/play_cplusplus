@@ -5,6 +5,7 @@
 #include "menu_root.h"
 
 #include "play_math_basic.h"
+#include "play_math_matrix.h"
 #include "play_math_vector.h"
 
 r2tm::TitleFunctionT Menu_Math::GetTitleFunction() const
@@ -38,6 +39,14 @@ r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
 		mp->AddItem( 'r', play_math_vector::Dot_Product_2() );
 		mp->AddItem( 't', play_math_vector::Angle_Between_Two_Vectors() );
 		mp->AddItem( 'y', play_math_vector::Angle_Between_Two_Unit_Vectors() );
+
+
+
+		mp->AddLineFeed();
+
+
+
+		mp->AddItem( 'a', play_math_matrix::RotationX() );
 
 
 

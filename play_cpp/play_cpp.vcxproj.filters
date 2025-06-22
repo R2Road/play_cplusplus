@@ -611,6 +611,9 @@
     <ClCompile Include="src\play_math\play_math_vector.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
+    <ClCompile Include="src\play_math\play_math_matrix.cpp">
+      <Filter>play_math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1305,6 +1308,12 @@
       <Filter>play_math</Filter>
     </ClInclude>
     <ClInclude Include="src\play_math\play_math___helper_common.h">
+      <Filter>play_math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_math\play_math___helper_vector2.h">
+      <Filter>play_math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_math\play_math_matrix.h">
       <Filter>play_math</Filter>
     </ClInclude>
   </ItemGroup>

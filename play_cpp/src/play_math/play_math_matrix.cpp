@@ -1,0 +1,95 @@
+#include "play_math_matrix.h"
+#include "play_math___helper_common.h"
+#include "play_math___helper_vector2.h"
+using namespace play_math;
+
+#include "r2tm/r2tm_Inspector.h"
+
+namespace play_math_matrix
+{
+	r2tm::TitleFunctionT RotationX::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Matrix : Rotation X";
+		};
+	}
+	r2tm::DoFunctionT RotationX::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			OUTPUT_SOURCE_READY;
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "데카르트 좌표계" );
+				OUTPUT_COMMENT( "점의 위치를 x, y 와 같이 수평 수직 거리로 표현" );
+
+				LF();
+
+				OUTPUT_SUBJECT( "극좌표계" );
+				OUTPUT_COMMENT( "한 점의 위치를 거리와 양의 x축 으로부터의 거리로 표현" );
+			}
+
+			LF();
+
+			OUTPUT_SUBJECT( "2차원 벡터 회전 공식 유도 과정" );
+			OUTPUT_COMMENT( "P의 좌표가 ( x, y )" );
+			OUTPUT_COMMENT( "원점에서 P 까지의 거리 r" );
+			OUTPUT_COMMENT( "x축과 P가 이루는 각도 θ" );
+			OUTPUT_COMMENT( "x = r * cos(θ)" );
+			OUTPUT_COMMENT( "y = r * sin(θ)" );
+
+			LF();
+
+			OUTPUT_COMMENT( "P를 θ` 만큼 회전" );
+			OUTPUT_COMMENT( "x` = r * cos(θ + θ`)" );
+			OUTPUT_COMMENT( "y` = r * sin(θ + θ`)" );
+			OUTPUT_COMMENT( "\t" "삼각함수의 덧셈 정리 적용" );
+			OUTPUT_COMMENT( "\t" "cos( A + B ) = ( cos(A) * cos(B) ) - ( sin(A) * sin(B) )" );
+			OUTPUT_COMMENT( "\t" "sin( A + B ) = ( sin(A) * cos(B) ) + ( cos(A) * sin(B) )" );
+			OUTPUT_COMMENT( "x` = r * ( ( cos(θ) * cos(θ`) ) - ( sin(θ) * sin(θ`) ) )" );
+			OUTPUT_COMMENT( "y` = r * ( ( sin(θ) * cos(θ`) ) + ( cos(θ) * sin(θ`) ) )" );
+
+			LF();
+
+			OUTPUT_COMMENT( "x` = ( r * cos(θ) * cos(θ`) ) - ( r * sin(θ) * sin(θ`) )" );
+			OUTPUT_COMMENT( "y` = ( r * sin(θ) * cos(θ`) ) + ( r * cos(θ) * sin(θ`) )" );
+
+			LF();
+
+			OUTPUT_COMMENT( "x` = ( x * cos(θ`) ) - ( y * sin(θ`) )" );
+			OUTPUT_COMMENT( "y` = ( y * cos(θ`) ) + ( x * sin(θ`) )" );
+
+			LF();
+
+			OUTPUT_SUBJECT( "행렬 변환" );
+			OUTPUT_COMMENT( "cos(θ`), -sin(θ`)" );
+			OUTPUT_COMMENT( "sin(θ`), cos(θ`)" );
+
+			LS();
+
+			OUTPUT_SOURCE_BEGIN;
+			const auto RX = []( Vec2 v, float radian )->Vec2
+			{
+				return Vec2(
+					  ( v.x * std::cos( radian ) ) - ( v.y * std::sin( radian ) )
+					, ( v.x * std::sin( radian ) ) + ( v.y * std::cos( radian ) )
+				);
+			};
+			OUTPUT_SOURCE_END;
+
+			LS();
+
+			{
+				EXPECT_EP_EQ( -1.f, RX( VEC2_Y, Deg2Rad( 90 ) ).x );
+				EXPECT_EP_EQ( 0.f, RX( VEC2_Y, Deg2Rad( 90 ) ).y );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+}
