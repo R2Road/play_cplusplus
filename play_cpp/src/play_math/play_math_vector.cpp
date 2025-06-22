@@ -2,6 +2,8 @@
 #include "play_math___helper.h"
 using namespace play_math;
 
+#include "r2tm/r2tm_Inspector.h"
+
 namespace play_math_vector
 {
 	r2tm::TitleFunctionT Length::GetTitleFunction() const

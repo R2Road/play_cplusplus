@@ -1,7 +1,9 @@
 #include "play_math_basic.h"
-#include "play_math___helper.h"
-
+#include "play_math___helper_common.h"
 using namespace play_math;
+
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
 
 namespace play_math_basic
 {

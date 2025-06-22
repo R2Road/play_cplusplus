@@ -259,6 +259,7 @@
     <ClInclude Include="src\play_math\play_math___helper.h" />
     <ClInclude Include="src\play_math\play_math_basic.h" />
     <ClInclude Include="src\menu_root.h" />
+    <ClInclude Include="src\play_math\play_math___helper_common.h" />
     <ClInclude Include="src\test_algorithm\AlgorithmHelper.h" />
     <ClInclude Include="src\test_algorithm\item\algorithm_astar_test.h" />
     <ClInclude Include="src\test_algorithm\item\algorithm_bubble_sort_test.h" />
