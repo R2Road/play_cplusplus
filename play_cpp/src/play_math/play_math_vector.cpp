@@ -423,7 +423,7 @@ namespace play_math_vector
 
 			LS();
 
-			OUTPUT_SUBJECT( "두 단위 벡터의 각을 구하는 계산은 단순해진다." );
+			OUTPUT_SUBJECT( "두 단위 벡터의 각 계산은 단순해진다." );
 
 			LS();
 
