@@ -13,7 +13,7 @@ r2tm::TitleFunctionT Menu_Math::GetTitleFunction() const
 {
 	return []()->const char*
 	{
-		return "Play Math";
+		return "Math";
 	};
 }
 r2tm::DescriptionFunctionT Menu_Math::GetDescriptionFunction() const
