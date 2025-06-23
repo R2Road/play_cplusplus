@@ -8,14 +8,14 @@ using namespace play_math;
 
 namespace play_math_vector2_transform
 {
-	r2tm::TitleFunctionT RotationX__Vector2__Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT RotationX__Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Matrix : Rotation X : Vector2 - Basic";
+			return "Vector2 : Rotation X - Basic";
 		};
 	}
-	r2tm::DoFunctionT RotationX__Vector2__Basic::GetDoFunction() const
+	r2tm::DoFunctionT RotationX__Basic::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -89,14 +89,14 @@ namespace play_math_vector2_transform
 
 
 
-	r2tm::TitleFunctionT RotationX__Vector2::GetTitleFunction() const
+	r2tm::TitleFunctionT RotationX::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Matrix : Rotation X : Vector2";
+			return "Vector2 : Rotation X";
 		};
 	}
-	r2tm::DoFunctionT RotationX__Vector2::GetDoFunction() const
+	r2tm::DoFunctionT RotationX::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
