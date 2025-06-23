@@ -50,6 +50,7 @@ r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
 		mp->AddItem( 'a', play_math_vector2_transform::Rotation_X__Basic() );
 		mp->AddItem( 's', play_math_vector2_transform::Rotation_X() );
 		mp->AddItem( 'd', play_math_vector3_transform::Rotation_XZ() );
+		mp->AddItem( 'f', play_math_vector3_transform::Rotation_Y() );
 
 
 
