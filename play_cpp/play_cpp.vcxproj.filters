@@ -1316,6 +1316,9 @@
     <ClInclude Include="src\play_math\play_math_matrix.h">
       <Filter>play_math</Filter>
     </ClInclude>
+    <ClInclude Include="src\play_math\play_math___helper_matrix22.h">
+      <Filter>play_math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\test_cpp\item\enum_test_xmacro_2.def">
