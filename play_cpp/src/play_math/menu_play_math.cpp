@@ -41,6 +41,7 @@ r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
 		mp->AddItem( 'r', play_math_vector3::Dot_Product_2() );
 		mp->AddItem( 't', play_math_vector3::Angle_Between_Two_Vectors() );
 		mp->AddItem( 'y', play_math_vector3::Angle_Between_Two_Unit_Vectors() );
+		mp->AddItem( 'u', play_math_vector3::Cross_Product() );
 
 
 

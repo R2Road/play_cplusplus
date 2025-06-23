@@ -487,4 +487,90 @@ namespace play_math_vector3
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Cross_Product::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Vector3 : Cross Product";
+		};
+	}
+	r2tm::DoFunctionT Cross_Product::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_SUBJECT( "외적의 오른손 법칙" );
+			OUTPUT_COMMENT( "오른손의 엄지를 제외한 4 손가락으로 첫 벡터 방향을 가리킨다." );
+			OUTPUT_COMMENT( "엄지는 수직으로" );
+			OUTPUT_COMMENT( "4 손가락을 두번째 벡터 방향으로 구부린다.( 이 과정에서 축 회전이 필요 )" );
+			OUTPUT_COMMENT( "엄지의 방향이 결과 벡터" );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "같은 벡터" );
+
+				LF();
+
+				DECLARATION_MAIN( const Vec3 v1( 0.f, 1.f, 0.f ) );
+				DECLARATION_MAIN( const auto v3 = vec3_cross( v1, v1 ) );
+
+				LF();
+
+				EXPECT_EQ( Vec3(), v3 );
+
+				LF();
+
+				OUTPUT_VALUE( v3 );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "X축 x Y축" );
+
+				LF();
+
+				DECLARATION_MAIN( const Vec3 v1( 1.f, 0.f, 0.f ) );
+				DECLARATION_MAIN( const Vec3 v2( 0.f, 1.f, 0.f ) );
+				DECLARATION_MAIN( const auto v3 = vec3_cross( v1, v2 ) );
+
+				LF();
+
+				EXPECT_EQ( Vec3( 0, 0, 1 ), v3 );
+
+				LF();
+
+				OUTPUT_VALUE( v3 );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Y축 x X축" );
+
+				LF();
+
+				DECLARATION_MAIN( const Vec3 v1( 0.f, 1.f, 0.f ) );
+				DECLARATION_MAIN( const Vec3 v2( 1.f, 0.f, 0.f ) );
+				DECLARATION_MAIN( const auto v3 = vec3_cross( v1, v2 ) );
+
+				LF();
+
+				EXPECT_EQ( Vec3( 0, 0, -1 ), v3 );
+
+				LF();
+
+				OUTPUT_VALUE( v3 );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
