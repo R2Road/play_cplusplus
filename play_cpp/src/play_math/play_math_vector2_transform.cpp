@@ -1,4 +1,4 @@
-#include "play_math_matrix.h"
+#include "play_math_vector2_transform.h"
 #include "play_math___helper_common.h"
 #include "play_math___helper_vector2.h"
 #include "play_math___helper_matrix22.h"
@@ -6,7 +6,7 @@ using namespace play_math;
 
 #include "r2tm/r2tm_Inspector.h"
 
-namespace play_math_matrix
+namespace play_math_vector2_transform
 {
 	r2tm::TitleFunctionT RotationX__Vector2__Basic::GetTitleFunction() const
 	{

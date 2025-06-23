@@ -611,7 +611,7 @@
     <ClCompile Include="src\play_math\play_math_vector3.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_math\play_math_matrix.cpp">
+    <ClCompile Include="src\play_math\play_math_vector2_transform.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1313,7 +1313,7 @@
     <ClInclude Include="src\play_math\play_math___helper_vector2.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math_matrix.h">
+    <ClInclude Include="src\play_math\play_math_vector2_transform.h">
       <Filter>play_math</Filter>
     </ClInclude>
     <ClInclude Include="src\play_math\play_math___helper_matrix22.h">

@@ -5,7 +5,7 @@
 #include "menu_root.h"
 
 #include "play_math_basic.h"
-#include "play_math_matrix.h"
+#include "play_math_vector2_transform.h"
 #include "play_math_vector3.h"
 
 r2tm::TitleFunctionT Menu_Math::GetTitleFunction() const
@@ -46,8 +46,8 @@ r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'a', play_math_matrix::RotationX__Vector2__Basic() );
-		mp->AddItem( 's', play_math_matrix::RotationX__Vector2() );
+		mp->AddItem( 'a', play_math_vector2_transform::RotationX__Vector2__Basic() );
+		mp->AddItem( 's', play_math_vector2_transform::RotationX__Vector2() );
 
 
 
