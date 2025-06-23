@@ -1,5 +1,7 @@
 #pragma once
 
+#include "r2/r2_Epsilon.h"
+
 namespace play_math
 {
 	struct Vec3
@@ -17,6 +19,11 @@ namespace play_math
 		float z = 0.f;
 	};
 	const Vec3 VEC3_Y( 0.f, 1.f, 0.f );
+
+	inline bool operator==( const Vec3& v1, const Vec3 v2 )
+	{
+		return ( r2::epsilon_equal( v1.x, v2.x ) && r2::epsilon_equal( v1.y, v2.y ) && r2::epsilon_equal( v1.z, v2.z ) );
+	}
 
 	inline Vec3 operator*( const Vec3& v1, const float scalar )
 	{
