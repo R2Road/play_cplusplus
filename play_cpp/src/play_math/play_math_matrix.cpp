@@ -29,7 +29,7 @@ namespace play_math_matrix
 				LF();
 
 				OUTPUT_SUBJECT( "극좌표계" );
-				OUTPUT_COMMENT( "한 점의 위치를 거리와 양의 x축 으로부터의 거리로 표현" );
+				OUTPUT_COMMENT( "한 점의 위치를 거리와 양의 x축 으로부터의 각으로 표현" );
 			}
 
 			LF();
