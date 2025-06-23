@@ -83,8 +83,7 @@ namespace play_math_matrix
 			LS();
 
 			{
-				EXPECT_EP_EQ( -1.f, RX( VEC2_Y, Deg2Rad( 90 ) ).x );
-				EXPECT_EP_EQ( 0.f, RX( VEC2_Y, Deg2Rad( 90 ) ).y );
+				EXPECT_EQ( Vec2( -1.f, 0.f ), RX( VEC2_Y, Deg2Rad( 90 ) ) );
 			}
 
 			LS();
