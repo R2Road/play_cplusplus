@@ -4,7 +4,7 @@
 
 namespace play_math_matrix
 {
-	class RotationX : public r2tm::iItem
+	class RotationX__Vector2__Basic : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

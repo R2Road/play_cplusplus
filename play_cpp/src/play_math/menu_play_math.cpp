@@ -46,7 +46,7 @@ r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'a', play_math_matrix::RotationX() );
+		mp->AddItem( 'a', play_math_matrix::RotationX__Vector2__Basic() );
 
 
 

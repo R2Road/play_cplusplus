@@ -7,14 +7,14 @@ using namespace play_math;
 
 namespace play_math_matrix
 {
-	r2tm::TitleFunctionT RotationX::GetTitleFunction() const
+	r2tm::TitleFunctionT RotationX__Vector2__Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Matrix : Rotation X";
+			return "Matrix : Rotation X : Vector2 - Basic";
 		};
 	}
-	r2tm::DoFunctionT RotationX::GetDoFunction() const
+	r2tm::DoFunctionT RotationX__Vector2__Basic::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
