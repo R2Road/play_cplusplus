@@ -1,17 +1,17 @@
-#include "play_math_vector.h"
+#include "play_math_vector3.h"
 #include "play_math___helper_common.h"
 #include "play_math___helper_vector3.h"
 using namespace play_math;
 
 #include "r2tm/r2tm_Inspector.h"
 
-namespace play_math_vector
+namespace play_math_vector3
 {
 	r2tm::TitleFunctionT Length::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Vector : Length";
+			return "Vector3 : Length";
 		};
 	}
 	r2tm::DoFunctionT Length::GetDoFunction() const
@@ -97,7 +97,7 @@ namespace play_math_vector
 	{
 		return []()->const char*
 		{
-			return "Vector : Normalize";
+			return "Vector3 : Normalize";
 		};
 	}
 	r2tm::DoFunctionT Normalize::GetDoFunction() const
@@ -164,7 +164,7 @@ namespace play_math_vector
 	{
 		return []()->const char*
 		{
-			return "Vector : Dot Product 1";
+			return "Vector3 : Dot Product 1";
 		};
 	}
 	r2tm::DoFunctionT Dot_Product_1::GetDoFunction() const
@@ -266,7 +266,7 @@ namespace play_math_vector
 	{
 		return []()->const char*
 		{
-			return "Vector : Dot Product 2 : Projection";
+			return "Vector3 : Dot Product 2 : Projection";
 		};
 	}
 	r2tm::DoFunctionT Dot_Product_2::GetDoFunction() const
@@ -333,7 +333,7 @@ namespace play_math_vector
 	{
 		return []()->const char*
 		{
-			return "Vector : Angle Between Two Vectors";
+			return "Vector3 : Angle Between Two Vectors";
 		};
 	}
 	r2tm::DoFunctionT Angle_Between_Two_Vectors::GetDoFunction() const
@@ -415,7 +415,7 @@ namespace play_math_vector
 	{
 		return []()->const char*
 		{
-			return "Vector : Angle Between Two Unit Vectors";
+			return "Vector3 : Angle Between Two Unit Vectors";
 		};
 	}
 	r2tm::DoFunctionT Angle_Between_Two_Unit_Vectors::GetDoFunction() const

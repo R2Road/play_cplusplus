@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace play_math_vector
+namespace play_math_vector3
 {
 	class Length : public r2tm::iItem
 	{
