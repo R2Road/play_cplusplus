@@ -21,6 +21,7 @@ namespace play_math
 	const Vec3 VEC3_X( 1.f, 0.f, 0.f );
 	const Vec3 VEC3_Y( 0.f, 1.f, 0.f );
 	const Vec3 VEC3_Z( 0.f, 0.f, 1.f );
+	const Vec3 VEC3_0( 0.f, 0.f, 0.f );
 
 	inline bool operator==( const Vec3& v1, const Vec3 v2 )
 	{

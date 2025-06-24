@@ -499,28 +499,48 @@ namespace play_math_vector3
 		{
 			LS();
 
+			OUTPUT_SUBJECT( "외적이란?" );
+			OUTPUT_COMMENT( "두 벡터를 바탕으로 두 벡터 모두에 수직인 새로운 벡터를 생성." );
+
+			LF();
+
 			OUTPUT_SUBJECT( "외적의 오른손 법칙" );
 			OUTPUT_COMMENT( "오른손의 엄지를 제외한 4 손가락으로 첫 벡터 방향을 가리킨다." );
 			OUTPUT_COMMENT( "엄지는 수직으로" );
 			OUTPUT_COMMENT( "4 손가락을 두번째 벡터 방향으로 구부린다.( 이 과정에서 축 회전이 필요 )" );
 			OUTPUT_COMMENT( "엄지의 방향이 결과 벡터" );
 
+			LF();
+
+			OUTPUT_SUBJECT( "교환 법칙이 성립하지 않는다." );
+
+			LF();
+
+			OUTPUT_SUBJECT( "외적의 대수적 정의" );
+			OUTPUT_COMMENT( "A x B = ( AyBz - AzBy, AzBx - AxBz, AxBy - AyBx )" );
+
 			LS();
+
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			const auto CROSS = []( Vec3 v1, Vec3 v2 )->Vec3
+			{
+				return Vec3(
+					  ( v1.y * v2.z ) - ( v1.z * v2.y )
+					, ( v1.z * v2.x ) - ( v1.x * v2.z )
+					, ( v1.x * v2.y ) - ( v1.y * v2.x )
+				);
+			};
+			OUTPUT_SOURCE_END;
+
+			LS();
+
 
 			{
 				OUTPUT_SUBJECT( "Y x Y" );
 
 				LF();
 
-				DECLARATION_MAIN( const auto v = vec3_cross( VEC3_Y, VEC3_Y ) );
-
-				LF();
-
-				EXPECT_EQ( Vec3(), v );
-
-				LF();
-
-				OUTPUT_VALUE( v );
+				EXPECT_EQ( VEC3_0, CROSS( VEC3_Y, VEC3_Y ) );
 			}
 
 			LS();
@@ -530,33 +550,17 @@ namespace play_math_vector3
 
 				LF();
 
-				DECLARATION_MAIN( const auto v = vec3_cross( VEC3_X, VEC3_Y ) );
-
-				LF();
-
-				EXPECT_EQ( VEC3_Z, v );
-
-				LF();
-
-				OUTPUT_VALUE( v );
+				EXPECT_EQ( VEC3_Z, CROSS( VEC3_X, VEC3_Y ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Y x X" );
+				OUTPUT_SUBJECT( "Y x X : 교환 법칙 확인" );
 
 				LF();
 
-				DECLARATION_MAIN( const auto v = vec3_cross( VEC3_Y, VEC3_X ) );
-
-				LF();
-
-				EXPECT_EQ( -VEC3_Z, v );
-
-				LF();
-
-				OUTPUT_VALUE( v );
+				EXPECT_EQ( -VEC3_Z, CROSS( VEC3_Y, VEC3_X ) );
 			}
 
 			LS();
