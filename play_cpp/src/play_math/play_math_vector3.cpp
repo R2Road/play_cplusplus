@@ -309,9 +309,10 @@ namespace play_math_vector3
 
 			{
 				OUTPUT_SUBJECT( "스칼라 투영" );
-				OUTPUT_COMMENT( "벡터 A가 벡터 B 방향으로 가지는 길이를 나타내는 스칼라 값" );
-				OUTPUT_COMMENT( "벡터 A의 끝점에서 벡터 B에 내린 수선의 발 까지의 거리" );
-				OUTPUT_COMMENT( "compbA = ||A|| * cos(θ)" );
+				OUTPUT_COMMENT( "벡터 B가 벡터 A 방향으로 가지는 길이를 나타내는 스칼라 값" );
+				OUTPUT_COMMENT( "벡터 B의 끝점에서 벡터 A에 수선을 내렸을 때 A에 드리운 그림자의 길이" );
+				OUTPUT_COMMENT( "compbA = ||B|| * cos(θ)" );
+				OUTPUT_COMMENT( "\t" "θ = A 와 B의 각도" );
 
 				LF();
 
@@ -326,20 +327,26 @@ namespace play_math_vector3
 				LF();
 
 				OUTPUT_SUBJECT( "적용" );
-				OUTPUT_COMMENT( "compbA = ||A|| * ( ( A dot B ) / ( ||A|| * ||B|| ) )" );
-				OUTPUT_COMMENT( "compbA = ( A dot B ) / ||B||" );
+				OUTPUT_COMMENT( "compbA = ||B|| * ( ( A dot B ) / ( ||A|| * ||B|| ) )" );
+				OUTPUT_COMMENT( "compbA = ( A dot B ) / ||A||" );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "단위 벡터에 투영" );
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const auto C = []( Vec3 v1, Vec3 v2 )->float
+				{
+
+					return ( vec3_dot( v1, v2 ) / vec3_length( v1 ) );
+				};
+				OUTPUT_SOURCE_END;
 
 				LF();
 
-				EXPECT_EP_EQ( 1.f, vec3_dot( VEC3_Y, Vec3( 0.f, 1.f, 0.f ) ) );
-				EXPECT_EP_EQ( 0.8f, vec3_dot( VEC3_Y, Vec3( 0.f, 0.8f, 0.f ) ) );
-				EXPECT_EP_EQ( 0.4f, vec3_dot( VEC3_Y, Vec3( 0.f, 0.4f, 0.f ) ) );
+				EXPECT_EP_EQ( 1.f, C( Vec3( 0.f, 10.f, 0.f ), Vec3( 0.f, 1.f, 0.f ) ) );
+				EXPECT_EP_EQ( 0.8f, C( Vec3( 0.f, 10.f, 0.f ), Vec3( 0.f, 0.8f, 0.f ) ) );
+				EXPECT_EP_EQ( 0.4f, C( Vec3( 0.f, 10.f, 0.f ), Vec3( 0.f, 0.4f, 0.f ) ) );
 			}
 
 			LS();
