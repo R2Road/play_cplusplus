@@ -294,14 +294,14 @@ namespace play_math_vector3
 
 
 
-	r2tm::TitleFunctionT Dot_Product__Projection::GetTitleFunction() const
+	r2tm::TitleFunctionT Dot_Product__Scalar_Projection::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Vector3 : Dot Product : Projection";
+			return "Vector3 : Dot Product : Scalar Projection";
 		};
 	}
-	r2tm::DoFunctionT Dot_Product__Projection::GetDoFunction() const
+	r2tm::DoFunctionT Dot_Product__Scalar_Projection::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
