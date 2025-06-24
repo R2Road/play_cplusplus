@@ -55,7 +55,7 @@ namespace play_math_rendering_pipeline
 
 				LF();
 
-				DECLARATION_MAIN( const Vec4 cam_forward = vec4_normalize( init_eye - init_center ) );
+				DECLARATION_MAIN( Vec4 cam_forward = vec4_normalize( init_eye - init_center ) );
 				OUTPUT_VALUE( cam_forward );
 
 				LF();
@@ -64,7 +64,7 @@ namespace play_math_rendering_pipeline
 
 				LF();
 
-				DECLARATION_MAIN( const Vec4 cam_right = vec4_normalize( vec4_cross( init_up, cam_forward ) ) );
+				DECLARATION_MAIN( Vec4 cam_right = vec4_normalize( vec4_cross( init_up, cam_forward ) ) );
 				OUTPUT_VALUE( cam_right );
 
 				LF();
@@ -73,7 +73,7 @@ namespace play_math_rendering_pipeline
 
 				LF();
 
-				DECLARATION_MAIN( const Vec4 cam_up = vec4_cross( cam_forward, cam_right ) );
+				DECLARATION_MAIN( Vec4 cam_up = vec4_cross( cam_forward, cam_right ) );
 				OUTPUT_VALUE( cam_up );
 			}
 
