@@ -18,6 +18,7 @@ namespace play_math
 		float y = 0.f;
 		float z = 0.f;
 	};
+	const Vec3 VEC3_X( 1.f, 0.f, 0.f );
 	const Vec3 VEC3_Y( 0.f, 1.f, 0.f );
 	const Vec3 VEC3_Z( 0.f, 0.f, 1.f );
 
@@ -29,6 +30,11 @@ namespace play_math
 	inline Vec3 operator*( const Vec3& v1, const float scalar )
 	{
 		return Vec3{ v1.x * scalar, v1.y * scalar, v1.z * scalar };
+	}
+
+	inline Vec3 operator-( const Vec3& v )
+	{
+		return Vec3{ -v.x, -v.y, -v.z };
 	}
 
 	inline float vec3_length( const Vec3& v )

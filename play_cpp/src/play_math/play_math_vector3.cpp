@@ -200,45 +200,41 @@ namespace play_math_vector3
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "°°Àº º¤ÅÍ" );
+				OUTPUT_SUBJECT( "Y x Y" );
 
 				LF();
 
-				DECLARATION_MAIN( const float r = DOT( VEC3_Y, VEC3_Y ) );
-				EXPECT_EP_EQ( 1.f, r );
+				EXPECT_EP_EQ( 1.f, DOT( VEC3_Y, VEC3_Y ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "¼öÁ÷ º¤ÅÍ 1" );
+				OUTPUT_SUBJECT( "Y x X" );
 
 				LF();
 
-				DECLARATION_MAIN( const float r = DOT( VEC3_Y, Vec3( 1.f, 0.f, 0.f ) ) );
-				EXPECT_EP_EQ( 0.f, r );
+				EXPECT_EP_EQ( 0.f, DOT( VEC3_Y, VEC3_X ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "¼öÁ÷ º¤ÅÍ 2" );
+				OUTPUT_SUBJECT( "Y x -X" );
 
 				LF();
 
-				DECLARATION_MAIN( const float r = DOT( VEC3_Y, Vec3( -1.f, 0.f, 0.f ) ) );
-				EXPECT_EP_EQ( 0.f, r );
+				EXPECT_EP_EQ( 0.f, DOT( VEC3_Y, -VEC3_X ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "µÚÁýÈù º¤ÅÍ" );
+				OUTPUT_SUBJECT( "Y x -Y" );
 
 				LF();
 
-				DECLARATION_MAIN( const float r = DOT( VEC3_Y, Vec3( 0.f, -1.f, 0.f ) ) );
-				EXPECT_EP_EQ( -1.f, r );
+				EXPECT_EP_EQ( -1.f, DOT( VEC3_Y, -VEC3_Y ) );
 			}
 
 			LS();
@@ -512,60 +508,55 @@ namespace play_math_vector3
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "°°Àº º¤ÅÍ" );
+				OUTPUT_SUBJECT( "Y x Y" );
 
 				LF();
 
-				DECLARATION_MAIN( const Vec3 v1( 0.f, 1.f, 0.f ) );
-				DECLARATION_MAIN( const auto v3 = vec3_cross( v1, v1 ) );
+				DECLARATION_MAIN( const auto v = vec3_cross( VEC3_Y, VEC3_Y ) );
 
 				LF();
 
-				EXPECT_EQ( Vec3(), v3 );
+				EXPECT_EQ( Vec3(), v );
 
 				LF();
 
-				OUTPUT_VALUE( v3 );
+				OUTPUT_VALUE( v );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "XÃà x YÃà" );
+				OUTPUT_SUBJECT( "X x Y" );
 
 				LF();
 
-				DECLARATION_MAIN( const Vec3 v1( 1.f, 0.f, 0.f ) );
-				DECLARATION_MAIN( const Vec3 v2( 0.f, 1.f, 0.f ) );
-				DECLARATION_MAIN( const auto v3 = vec3_cross( v1, v2 ) );
+				DECLARATION_MAIN( const auto v = vec3_cross( VEC3_X, VEC3_Y ) );
 
 				LF();
 
-				EXPECT_EQ( Vec3( 0, 0, 1 ), v3 );
+				EXPECT_EQ( VEC3_Z, v );
 
 				LF();
 
-				OUTPUT_VALUE( v3 );
+				OUTPUT_VALUE( v );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "YÃà x XÃà" );
+				OUTPUT_SUBJECT( "Y x X" );
 
 				LF();
 
-				DECLARATION_MAIN( const Vec3 v1( 0.f, 1.f, 0.f ) );
-				DECLARATION_MAIN( const Vec3 v2( 1.f, 0.f, 0.f ) );
-				DECLARATION_MAIN( const auto v3 = vec3_cross( v1, v2 ) );
+				DECLARATION_MAIN( const auto v = vec3_cross( VEC3_Y, VEC3_X ) );
 
 				LF();
 
-				EXPECT_EQ( Vec3( 0, 0, -1 ), v3 );
+				EXPECT_EQ( -VEC3_Z, v );
 
 				LF();
 
-				OUTPUT_VALUE( v3 );
+				OUTPUT_VALUE( v );
 			}
 
 			LS();
