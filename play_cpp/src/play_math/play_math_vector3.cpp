@@ -188,7 +188,6 @@ namespace play_math_vector3
 			OUTPUT_SOURCE_BEGIN;
 			const auto DOT = []( Vec3 v1, Vec3 v2 )->float
 			{
-
 				return (
 					  ( v1.x * v2.x )
 					+ ( v1.y * v2.y )
