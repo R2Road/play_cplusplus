@@ -221,6 +221,27 @@ namespace play_math_vector3
 
 			LS();
 
+			{
+				OUTPUT_SUBJECT( "교환 법칙 성립" );
+
+				LF();
+
+				EXPECT_EP_EQ( -1.f, DOT( VEC3_Y, -VEC3_Y ) );
+				EXPECT_EP_EQ( -1.f, DOT( -VEC3_Y, VEC3_Y ) );
+
+				LF();
+
+				EXPECT_EP_EQ( 0.f, DOT( VEC3_Y, VEC3_X ) );
+				EXPECT_EP_EQ( 0.f, DOT( VEC3_X, VEC3_Y ) );
+
+				LF();
+
+				EXPECT_EP_EQ( 0.f, DOT( VEC3_Y, -VEC3_X ) );
+				EXPECT_EP_EQ( 0.f, DOT( -VEC3_X, VEC3_Y ) );
+			}
+
+			LS();
+
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
