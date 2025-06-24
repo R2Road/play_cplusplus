@@ -272,6 +272,31 @@ namespace play_math_vector3
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "스칼라 투영" );
+				OUTPUT_COMMENT( "벡터 A가 벡터 B 방향으로 가지는 길이를 나타내는 스칼라 값" );
+				OUTPUT_COMMENT( "벡터 A의 끝점에서 벡터 B에 내린 수선의 발 까지의 거리" );
+				OUTPUT_COMMENT( "compbA = ||A|| * cos(θ)" );
+
+				LF();
+
+				OUTPUT_SUBJECT( "내적의 기하학적 정리" );
+				OUTPUT_COMMENT( "A dot B = ||A|| * ||B|| * cos(θ)" );
+
+				LF();
+
+				OUTPUT_SUBJECT( "cos(θ) 를 기준으로 공식 변환" );
+				OUTPUT_COMMENT( "cos(θ) = ( A dot B ) / ( ||A|| * ||B|| )" );
+
+				LF();
+
+				OUTPUT_SUBJECT( "적용" );
+				OUTPUT_COMMENT( "compbA = ||A|| * ( ( A dot B ) / ( ||A|| * ||B|| ) )" );
+				OUTPUT_COMMENT( "compbA = ( A dot B ) / ||B||" );
+			}
+
+			LS();
+
+			{
 				OUTPUT_SUBJECT( "단위 벡터에 투영" );
 
 				LF();
