@@ -552,7 +552,7 @@ namespace play_math_vector3
 				OUTPUT_COMMENT( "еш = arccosine( ( A dot B ) / ( ||A|| * ||B|| ) )" );
 				OUTPUT_COMMENT( "еш = arccosine( ( A dot B ) / ( 1 * 1 ) )" );
 				OUTPUT_COMMENT( "еш = arccosine( ( A dot B ) / 1 )" );
-				OUTPUT_COMMENT( "еш = arccosine( ( A dot B ) )" );
+				OUTPUT_COMMENT( "еш = arccosine( A dot B )" );
 			}
 
 			LS();
