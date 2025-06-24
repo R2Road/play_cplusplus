@@ -36,17 +36,17 @@ namespace play_math_rendering_pipeline
 			LF();
 
 			OUTPUT_COMMENT( "카메라 위치" );
-			DECLARATION_MAIN( const Vec4 init_eye( 0, 0, 10, 0 ) );
+			DECLARATION_MAIN( const Vec4 init_eye( 0, 0, 10, 1 ) );
 
 			LF();
 
 			OUTPUT_COMMENT( "카메라 목표" );
-			DECLARATION_MAIN( const Vec4 init_center( 0, 0, 0, 0 ) );
+			DECLARATION_MAIN( const Vec4 init_center( 0, 0, 0, 1 ) );
 
 			LF();
 
 			OUTPUT_COMMENT( "카메라 머리 위 방향" );
-			DECLARATION_MAIN( const Vec4 init_up( 0, 1, 0, 0 ) );
+			DECLARATION_MAIN( const Vec4 init_up( 0, 1, 0, 1 ) );
 
 			LS();
 
@@ -102,9 +102,9 @@ namespace play_math_rendering_pipeline
 
 			LS();
 
-			DECLARATION_MAIN( const Vec4 init_eye( 0, 0, 10, 0 ) );
-			DECLARATION_MAIN( const Vec4 init_center( 10, 0, 0, 0 ) );
-			DECLARATION_MAIN( const Vec4 init_up( 0, 1, 0, 0 ) );
+			DECLARATION_MAIN( const Vec4 init_eye( 0, 0, 10, 1 ) );
+			DECLARATION_MAIN( const Vec4 init_center( 10, 0, 0, 1 ) );
+			DECLARATION_MAIN( const Vec4 init_up( 0, 1, 0, 1 ) );
 
 			LS();
 
