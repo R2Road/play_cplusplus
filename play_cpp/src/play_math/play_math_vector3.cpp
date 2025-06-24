@@ -358,7 +358,6 @@ namespace play_math_vector3
 				OUTPUT_SOURCE_READY_N_BEGIN;
 				const auto C = []( Vec3 v1, Vec3 v2 )->float
 				{
-
 					return ( vec3_dot( v1, v2 ) / vec3_length( v1 ) );
 				};
 				OUTPUT_SOURCE_END;
@@ -366,8 +365,8 @@ namespace play_math_vector3
 				LF();
 
 				EXPECT_EP_EQ( 1.f, C( Vec3( 0.f, 10.f, 0.f ), Vec3( 0.f, 1.f, 0.f ) ) );
-				EXPECT_EP_EQ( 0.8f, C( Vec3( 0.f, 10.f, 0.f ), Vec3( 0.f, 0.8f, 0.f ) ) );
-				EXPECT_EP_EQ( 0.4f, C( Vec3( 0.f, 10.f, 0.f ), Vec3( 0.f, 0.4f, 0.f ) ) );
+				EXPECT_EP_EQ( 2.f, C( Vec3( 0.f, 10.f, 0.f ), Vec3( 0.f, 2.f, 0.f ) ) );
+				EXPECT_EP_EQ( 4.f, C( Vec3( 0.f, 10.f, 0.f ), Vec3( 0.f, 4.f, 0.f ) ) );
 			}
 
 			LS();
