@@ -62,6 +62,7 @@ r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
 
 
 
+		mp->AddMessage( "REF : https://learnopengl.com/Getting-started/Camera", r2tm::eColor::FG_LightGreen );
 		mp->AddItem( 'z', play_math_rendering_pipeline::ViewMatrix_Step1() );
 		mp->AddItem( 'x', play_math_rendering_pipeline::ViewMatrix_Step2() );
 		mp->AddItem( 'c', play_math_rendering_pipeline::ViewMatrix_Step3() );
