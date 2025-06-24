@@ -38,10 +38,11 @@ r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
 		mp->AddItem( 'q', play_math_vector3::Length() );
 		mp->AddItem( 'w', play_math_vector3::Normalize() );
 		mp->AddItem( 'e', play_math_vector3::Dot_Product_1() );
-		mp->AddItem( 'r', play_math_vector3::Dot_Product__Projection() );
-		mp->AddItem( 't', play_math_vector3::Angle_Between_Two_Vectors() );
-		mp->AddItem( 'y', play_math_vector3::Angle_Between_Two_Unit_Vectors() );
-		mp->AddItem( 'u', play_math_vector3::Cross_Product() );
+		mp->AddItem( 'r', play_math_vector3::Dot_Product_2() );
+		mp->AddItem( 't', play_math_vector3::Dot_Product__Projection() );
+		mp->AddItem( 'y', play_math_vector3::Angle_Between_Two_Vectors() );
+		mp->AddItem( 'u', play_math_vector3::Angle_Between_Two_Unit_Vectors() );
+		mp->AddItem( 'i', play_math_vector3::Cross_Product() );
 
 
 

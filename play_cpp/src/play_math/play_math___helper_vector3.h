@@ -76,11 +76,21 @@ namespace play_math
 
 	inline float vec3_dot( const Vec3& v1, const Vec3& v2 )
 	{
-
 		return (
 			  ( v1.x * v2.x )
 			+ ( v1.y * v2.y )
 			+ ( v1.z * v2.z )
+		);
+	};
+
+	inline float vec3_normalize_dot( const Vec3& v1, const Vec3& v2 )
+	{
+		const Vec3 nv1 = vec3_normalize( v1 );
+		const Vec3 nv2 = vec3_normalize( v2 );
+		return (
+			  ( nv1.x * nv2.x )
+			+ ( nv1.y * nv2.y )
+			+ ( nv1.z * nv2.z )
 		);
 	};
 

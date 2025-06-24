@@ -221,15 +221,63 @@ namespace play_math_vector3
 
 			LS();
 
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Dot_Product_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Vector3 : Dot Product 2";
+		};
+	}
+	r2tm::DoFunctionT Dot_Product_2::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
 			{
-				OUTPUT_SUBJECT( "대각선" );
+				OUTPUT_SUBJECT( "내적의 대수적 정의" );
+				OUTPUT_COMMENT( "A dot B = AxBx + AyBy + AzBz + AwBw" );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "지향성 판단을 원한다면 단위 벡터를 사용해라." );
+
+				SS();
+
+				OUTPUT_COMMENT( "단위 벡터가 아닌 경우" );
 
 				LF();
 
-				EXPECT_EP_EQ( 0.3f, DOT( VEC3_Y, Vec3( 0.3f, 0.3f, 0.f ) ) );
-				EXPECT_EP_EQ( -0.3f, DOT( VEC3_Y, Vec3( 0.3f, -0.3f, 0.f ) ) );
-				EXPECT_EP_EQ( 0.3f, DOT( VEC3_Y, Vec3( -0.3f, 0.3f, 0.f ) ) );
-				EXPECT_EP_EQ( -0.3f, DOT( VEC3_Y, Vec3( -0.3f, -0.3f, 0.f ) ) );
+				EXPECT_EP_EQ( 100.f, vec3_dot( Vec3( 0.f, 10.f, 0.f ), Vec3( 10.f, 10.f, 0.f ) ) );
+				EXPECT_EP_EQ( 300.f, vec3_dot( Vec3( 0.f, 10.f, 0.f ), Vec3( 30.f, 30.f, 0.f ) ) );
+
+				SS();
+
+				OUTPUT_COMMENT( "단위 벡터인 경우" );
+
+				LF();
+
+				EXPECT_EP_EQ( 0.7071f, vec3_normalize_dot( Vec3( 0.f, 10.f, 0.f ), Vec3( 10.f, 10.f, 0.f ) ) );
+				EXPECT_EP_EQ( 0.7071f, vec3_normalize_dot( Vec3( 0.f, 10.f, 0.f ), Vec3( 30.f, 30.f, 0.f ) ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "기준 벡터가 단위 벡터 라면 내적의 결과는 투영된 벡터의 길이" );
+
+				LF();
+
+				EXPECT_EP_EQ( 10.f, vec3_dot( VEC3_Y, Vec3( 10.f, 10.f, 0.f ) ) );
+				EXPECT_EP_EQ( 30.f, vec3_dot( VEC3_Y, Vec3( 30.f, 30.f, 0.f ) ) );
 			}
 
 			LS();
