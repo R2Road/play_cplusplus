@@ -40,9 +40,10 @@ r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
 		mp->AddItem( 'e', play_math_vector3::Dot_Product_1() );
 		mp->AddItem( 'r', play_math_vector3::Dot_Product_2() );
 		mp->AddItem( 't', play_math_vector3::Dot_Product__Scalar_Projection() );
-		mp->AddItem( 'y', play_math_vector3::Angle_Between_Two_Vectors() );
-		mp->AddItem( 'u', play_math_vector3::Angle_Between_Two_Unit_Vectors() );
-		mp->AddItem( 'i', play_math_vector3::Cross_Product() );
+		mp->AddItem( 'y', play_math_vector3::Dot_Product__Vector_Projection() );
+		mp->AddItem( 'u', play_math_vector3::Angle_Between_Two_Vectors() );
+		mp->AddItem( 'i', play_math_vector3::Angle_Between_Two_Unit_Vectors() );
+		mp->AddItem( 'o', play_math_vector3::Cross_Product() );
 
 
 

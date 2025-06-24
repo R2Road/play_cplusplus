@@ -372,38 +372,66 @@ namespace play_math_vector3
 
 			LS();
 
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Dot_Product__Vector_Projection::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Vector3 : Dot Product : Vector Projection";
+		};
+	}
+	r2tm::DoFunctionT Dot_Product__Vector_Projection::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
 			{
-				OUTPUT_SUBJECT( "임의의 벡터에 투영한 값은 그대로 사용은 어렵다." );
+				OUTPUT_SUBJECT( "벡터 투영" );
+				OUTPUT_COMMENT( "스칼라 투영의 길이를 가지면서" );
+				OUTPUT_COMMENT( "기준 벡터와 같은 방향을 향하는 벡터" );
 
 				LF();
 
-				DECLARATION_MAIN( const Vec3 v_p( 5.f, 5.f, 5.f ) );
+				OUTPUT_SUBJECT( "공식 유도" );
+				OUTPUT_COMMENT( "1. 벡터의 길이" );
+				OUTPUT_COMMENT( "\t" "스칼라 투영으로 얻을 수 있다." );
+				OUTPUT_COMMENT( "\t" "compbA = ( A dot B ) / ||A||" );
+				OUTPUT_COMMENT( "2. 벡터의 방향" );
+				OUTPUT_COMMENT( "\t" "기준 벡터를 단위 벡터로 만들면 된다." );
+				OUTPUT_COMMENT( "\t" "NA = A / ||A||" );
+				OUTPUT_COMMENT( "3. NA * 길이" );
+				OUTPUT_COMMENT( "\t" "projaB = ( ( A dot B ) / ||A|| ) * ( A / ||A|| )" );
+				OUTPUT_COMMENT( "\t" "projaB = ( ( A dot B ) / ||A|| ) * ( 1 / ||A|| ) * A" );
+				OUTPUT_COMMENT( "\t" "projaB = ( ( A dot B ) / ( ||A|| * ||A|| ) ) * A" );
 
 				LF();
 
-				EXPECT_EP_EQ( 15.f, vec3_dot( v_p, Vec3( 1.f, 1.f, 1.f ) ) );
-				EXPECT_EP_EQ( 30.f, vec3_dot( v_p, Vec3( 2.f, 2.f, 2.f ) ) );
+				OUTPUT_SUBJECT( "projaB = ( A dot B / ||A||^2 ) * A" );
 
-				SS();
+			}
 
-				OUTPUT_SUBJECT( "기준 벡터 길이의 제곱값과 나눠서 비율을 구한다." );
+			LS();
+
+			{
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const auto C = []( Vec3 v1, Vec3 v2 )->Vec3
+				{
+					const auto l = vec3_length( v1 );
+					return v1 * ( vec3_dot( v1, v2 ) / ( l * l ) );
+				};
+				OUTPUT_SOURCE_END;
 
 				LF();
 
-				DECLARATION_MAIN( const float l = vec3_length( v_p ) );
-				EXPECT_EP_EQ( 0.2f, vec3_dot( v_p, Vec3( 1.f, 1.f, 1.f ) ) / ( l * l ) );
-
-				SS();
-
-				OUTPUT_SUBJECT( "약간의 연산을 더해 투영된 벡터를 구한다." );
-
-				LF();
-
-				DECLARATION_MAIN( const float d = vec3_dot( v_p, VEC3_Y ) );
-				DECLARATION_MAIN( const float rate = d / ( l * l ) );
-				DECLARATION_MAIN( const auto v_2 = v_p * rate );
-
-				EXPECT_EP_EQ( d, vec3_dot( v_p, v_2 ) );
+				EXPECT_EQ( Vec3( 0.f, 1.f, 0.f ), C( Vec3( 0.f, 10.f, 0.f ), Vec3( 10.f, 1.f, 0.f ) ) );
+				EXPECT_EQ( Vec3( 0.f, 2.f, 0.f ), C( Vec3( 0.f, 10.f, 0.f ), Vec3( 10.f, 2.f, 0.f ) ) );
+				EXPECT_EQ( Vec3( 0.f, 4.f, 0.f ), C( Vec3( 0.f, 10.f, 0.f ), Vec3( 10.f, 4.f, 0.f ) ) );
 			}
 
 			LS();
