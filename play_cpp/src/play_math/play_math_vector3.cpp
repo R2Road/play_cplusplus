@@ -240,14 +240,14 @@ namespace play_math_vector3
 
 
 
-	r2tm::TitleFunctionT Dot_Product_2::GetTitleFunction() const
+	r2tm::TitleFunctionT Dot_Product__Projection::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Vector3 : Dot Product 2 : Projection";
+			return "Vector3 : Dot Product : Projection";
 		};
 	}
-	r2tm::DoFunctionT Dot_Product_2::GetDoFunction() const
+	r2tm::DoFunctionT Dot_Product__Projection::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
