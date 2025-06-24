@@ -159,4 +159,105 @@ namespace play_math_rendering_pipeline
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT ViewMatrix_Step3::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "View Matrix : Step 3";
+		};
+	}
+	r2tm::DoFunctionT ViewMatrix_Step3::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			OUTPUT_SOURCE_READY;
+
+			LS();
+
+			OUTPUT_SUBJECT( "View 행렬 구성" );
+
+			LS();
+
+			DECLARATION_MAIN( const Vec4 init_eye( 0, 0, 10, 0 ) );
+			DECLARATION_MAIN( const Vec4 init_center( 10, 0, 0, 0 ) );
+			DECLARATION_MAIN( const Vec4 init_up( 0, 1, 0, 0 ) );
+			DECLARATION_MAIN( Vec4 cam_forward = vec4_normalize( init_eye - init_center ) );
+			DECLARATION_MAIN( Vec4 cam_right = vec4_normalize( vec4_cross( init_up, cam_forward ) ) );
+			DECLARATION_MAIN( Vec4 cam_up = vec4_cross( cam_forward, cam_right ) );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Rotation Matrix : Camera Rotation의 전치" );
+
+				LF();
+
+				OUTPUT_SOURCE_BEGIN;
+				const Mat44 cam_mat4(
+					  cam_right.x    , cam_right.y    , cam_right.z    , 0.f
+					, cam_up.x       , cam_up.y       , cam_up.z       , 0.f
+					, cam_forward.x  , cam_forward.y  , cam_forward.z  , 0.f
+					, 0.f            , 0.f            , 0.f            , 1.f
+				);
+				OUTPUT_SOURCE_END;
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Translate Matrix : Camera Position의 음수 값" );
+
+				LF();
+
+				OUTPUT_SOURCE_BEGIN;
+				const Mat44 view_translate_mat4(
+					  0.f, 0.f, 0.f, -init_eye.x
+					, 0.f, 0.f, 0.f, -init_eye.y
+					, 0.f, 0.f, 0.f, -init_eye.z
+					, 0.f, 0.f, 0.f, 1.f
+				);
+				OUTPUT_SOURCE_END;
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Final Matrix" );
+				OUTPUT_COMMENT( "-vec4_dot( cam_right, init_eye )" );
+				OUTPUT_COMMENT( "카메라의 회전된 로컬 축을 기준으로 eye 위치를 반대 방향으로 이동" );
+
+				LF();
+
+				OUTPUT_SOURCE_BEGIN;
+				const Mat44 view_final_mat4(
+					  cam_right.x    , cam_right.y    , cam_right.z    , -vec4_dot( cam_right, init_eye )
+					, cam_up.x       , cam_up.y       , cam_up.z       , -vec4_dot( cam_up, init_eye )
+					, cam_forward.x  , cam_forward.y  , cam_forward.z  , -vec4_dot( cam_forward, init_eye )
+					, 0.f            , 0.f            , 0.f            , 1.f
+				);
+				OUTPUT_SOURCE_END;
+
+				LF();
+
+				OUTPUT_VALUE( view_final_mat4 );
+
+
+				SS();
+
+
+				OUTPUT_SUBJECT( "Demo" );
+
+				LF();
+
+				OUTPUT_VALUE( view_final_mat4 * Vec4( 0, 0, 0, 1 ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
