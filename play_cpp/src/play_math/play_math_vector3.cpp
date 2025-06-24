@@ -265,8 +265,14 @@ namespace play_math_vector3
 
 				LF();
 
-				EXPECT_EP_EQ( 0.7071f, vec3_normalize_dot( Vec3( 0.f, 10.f, 0.f ), Vec3( 10.f, 10.f, 0.f ) ) );
-				EXPECT_EP_EQ( 0.7071f, vec3_normalize_dot( Vec3( 0.f, 10.f, 0.f ), Vec3( 30.f, 30.f, 0.f ) ) );
+				EXPECT_EP_EQ( 0.7071f, vec3_normalize_dot(
+					  Vec3( 0.f, 10.f, 0.f )
+					, Vec3( 10.f, 10.f, 0.f )
+				) );
+				EXPECT_EP_EQ( 0.7071f, vec3_normalize_dot(
+					  Vec3( 0.f, 10.f, 0.f )
+					, Vec3( 30.f, 30.f, 0.f )
+				) );
 			}
 
 			LS();
