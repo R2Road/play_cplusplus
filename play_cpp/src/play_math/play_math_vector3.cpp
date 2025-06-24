@@ -200,47 +200,29 @@ namespace play_math_vector3
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Y x Y" );
+				OUTPUT_SUBJECT( "( Y x Y ), ( Y x -Y ) : 앞/뒤 방향 알 수 있다 : 수평에 1" );
 
 				LF();
 
 				EXPECT_EP_EQ( 1.f, DOT( VEC3_Y, VEC3_Y ) );
-			}
-
-			LS();
-
-			{
-				OUTPUT_SUBJECT( "Y x X" );
-
-				LF();
-
-				EXPECT_EP_EQ( 0.f, DOT( VEC3_Y, VEC3_X ) );
-			}
-
-			LS();
-
-			{
-				OUTPUT_SUBJECT( "Y x -X" );
-
-				LF();
-
-				EXPECT_EP_EQ( 0.f, DOT( VEC3_Y, -VEC3_X ) );
-			}
-
-			LS();
-
-			{
-				OUTPUT_SUBJECT( "Y x -Y" );
-
-				LF();
-
 				EXPECT_EP_EQ( -1.f, DOT( VEC3_Y, -VEC3_Y ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "대각선 확인" );
+				OUTPUT_SUBJECT( "( Y x X ), ( Y x -X ) : 좌/우 방향 알 수 없다. : 수직에 0" );
+
+				LF();
+
+				EXPECT_EP_EQ( 0.f, DOT( VEC3_Y, VEC3_X ) );
+				EXPECT_EP_EQ( 0.f, DOT( VEC3_Y, -VEC3_X ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "대각선" );
 
 				LF();
 
