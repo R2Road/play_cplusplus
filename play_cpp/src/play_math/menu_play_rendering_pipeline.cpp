@@ -40,6 +40,7 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 		mp->AddItem( 'q', play_math_rendering_pipeline::ProjectionMatrix_Orthographic_Step1() );
 		mp->AddItem( 'w', play_math_rendering_pipeline::ProjectionMatrix_Orthographic_Step2() );
 		mp->AddItem( 'e', play_math_rendering_pipeline::ProjectionMatrix_Frustum_Step1() );
+		mp->AddItem( 'r', play_math_rendering_pipeline::ProjectionMatrix_Frustum_Step2() );
 
 
 
