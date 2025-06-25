@@ -434,4 +434,83 @@ namespace play_math_rendering_pipeline
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+	
+
+
+	r2tm::TitleFunctionT ProjectionMatrix_Frustum_Step1::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Projection Matrix : Frustum : Step 1";
+		};
+	}
+	r2tm::DoFunctionT ProjectionMatrix_Frustum_Step1::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_SUBJECT( "REF : frustumRH_NO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
+
+			LF();
+
+			OUTPUT_SUBJECT( "Perspective : 원근 투영" );
+			OUTPUT_COMMENT( "-1 ~ +1 : 로 표현되는 좌표계로 변환     |     fov 없는 원근 투영     |     더 낮은 수준에서 원근 투영을 제어 할 때 사용" );
+
+			LS();
+
+			DECLARATION_MAIN( const int viewport_w = 400 );
+			DECLARATION_MAIN( const int viewport_h = 300 );
+			DECLARATION_MAIN( const float l = -viewport_w / 2 );
+			DECLARATION_MAIN( const float r = viewport_w / 2 );
+			DECLARATION_MAIN( const float b = -viewport_h / 2 );
+			DECLARATION_MAIN( const float t = viewport_h / 2 );
+			DECLARATION_MAIN( const float near = 10.f );
+			DECLARATION_MAIN( const float far = 100.f );
+
+			LS();
+
+			{
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const Mat44 projection_mat4(
+					  ( 2 * near ) / ( r - l )  , 0.f                       , ( r + l ) / ( r - l )             , 0.f
+					, 0.f                       , ( 2 * near ) / ( t - b )  , ( t + b ) / ( t - b )             , 0.f
+					, 0.f                       , 0.f                       , -( far + near ) / ( far - near )  , -( 2 * far * near ) / ( far - near )
+					, 0.f                       , 0.f                       , -1.f                              , 0.f
+				);
+				OUTPUT_SOURCE_END;
+
+				LF();
+
+				OUTPUT_VALUE( projection_mat4 );
+
+				LF();
+
+				OUTPUT_SUBJECT( "행렬과 벡터를 곱하고 나온 결과 벡터의 각 성분을 결과 벡터의 w 값으로 나누어야 원근 조정이 완료된다." );
+				OUTPUT_SUBJECT( "이 과정은 보통 파이프라인 에서 알아서 처리 하기 때문에 유저에겐 보이지 않는다고 한다." );
+
+				
+				SS();
+
+
+				{
+					DECLARATION_MAIN( auto v = projection_mat4 * Vec4( 0, 0, far, 1 ) );
+					OUTPUT_VALUE( v );
+					PROCESS_MAIN( v /= v.w );
+					OUTPUT_VALUE( v );
+					EXPECT_EP_EQ( 0.f, v.x );
+					EXPECT_EP_EQ( 0.f, v.y );
+					EXPECT_EP_NE( 1.f, v.z );
+
+					LF();
+
+					OUTPUT_NOTE( "부동 소수점 오차 + 비선형 매핑의 정밀도 문제로 인해서 z = far 일때 변환된 z = 1 이 되지 않는다.     |     near 값을 0으로 넣으면 z = 1 이 된다." );
+				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

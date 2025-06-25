@@ -39,6 +39,7 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 		mp->AddMessage( "REF : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl", r2tm::eColor::FG_LightGreen );
 		mp->AddItem( 'q', play_math_rendering_pipeline::ProjectionMatrix_Orthographic_Step1() );
 		mp->AddItem( 'w', play_math_rendering_pipeline::ProjectionMatrix_Orthographic_Step2() );
+		mp->AddItem( 'e', play_math_rendering_pipeline::ProjectionMatrix_Frustum_Step1() );
 
 
 
