@@ -6,7 +6,7 @@ namespace r2tm
 {
 	const char* GetLine( FILE* fp )
 	{
-		static char buffer[100];
+		static char buffer[400];
 		fgets( buffer, sizeof( buffer ), fp );
 
 		return buffer;

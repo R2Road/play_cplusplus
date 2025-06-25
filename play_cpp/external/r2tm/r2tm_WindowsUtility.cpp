@@ -1,6 +1,5 @@
 #include "r2tm_WindowsUtility.h"
 
-#define NOMINMAX
 #include <Windows.h>
 
 namespace r2tm
