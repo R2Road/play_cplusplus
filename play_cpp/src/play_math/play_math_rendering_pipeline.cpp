@@ -284,7 +284,8 @@ namespace play_math_rendering_pipeline
 			LS();
 
 			OUTPUT_SUBJECT( "Orthographic : 직교 투영" );
-			OUTPUT_SUBJECT( "-1 ~ +1 : 로 표현되는 좌표계로 변환" );
+			OUTPUT_COMMENT( "-1 ~ +1 : 로 표현되는 좌표계로 변환" );
+			OUTPUT_COMMENT( "Z 범위만 0 ~ 1" );
 
 			LS();
 
@@ -305,6 +306,8 @@ namespace play_math_rendering_pipeline
 			LS();
 
 			{
+				// https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl
+
 				OUTPUT_SOURCE_READY_N_BEGIN;
 				const Mat44 projection_mat4(
 					  2 / ( right - left )  , 0.f                   , 0.f                             , -( right + left ) / ( right - left )
