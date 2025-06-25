@@ -66,7 +66,7 @@ r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
 		mp->AddItem( 'z', play_math_rendering_pipeline::ViewMatrix_Step1() );
 		mp->AddItem( 'x', play_math_rendering_pipeline::ViewMatrix_Step2() );
 		mp->AddItem( 'c', play_math_rendering_pipeline::ViewMatrix_Step3() );
-		mp->AddItem( 'v', play_math_rendering_pipeline::ProjectionMatrix_Step1() );
+		mp->AddItem( 'v', play_math_rendering_pipeline::ProjectionMatrix_Orthographic_Step1() );
 
 
 

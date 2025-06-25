@@ -25,7 +25,7 @@ namespace play_math_rendering_pipeline
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class ProjectionMatrix_Step1 : public r2tm::iItem
+	class ProjectionMatrix_Orthographic_Step1 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

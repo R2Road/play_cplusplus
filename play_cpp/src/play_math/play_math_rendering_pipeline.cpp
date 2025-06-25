@@ -270,14 +270,14 @@ namespace play_math_rendering_pipeline
 
 
 
-	r2tm::TitleFunctionT ProjectionMatrix_Step1::GetTitleFunction() const
+	r2tm::TitleFunctionT ProjectionMatrix_Orthographic_Step1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Projection Matrix : Step 1";
+			return "Projection Matrix : Orthographic : Step 1";
 		};
 	}
-	r2tm::DoFunctionT ProjectionMatrix_Step1::GetDoFunction() const
+	r2tm::DoFunctionT ProjectionMatrix_Orthographic_Step1::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
