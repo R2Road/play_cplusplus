@@ -22,6 +22,7 @@ namespace play_math
 	};
 	const Vec4 VEC4_Y( 0.f, 1.f, 0.f, 1.f );
 	const Vec4 VEC4_Z( 0.f, 0.f, 1.f, 1.f );
+	const Vec4 VEC4_0( 0.f, 0.f, 0.f, 1.f );
 
 
 

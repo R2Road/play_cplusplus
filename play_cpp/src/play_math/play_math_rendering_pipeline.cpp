@@ -267,4 +267,83 @@ namespace play_math_rendering_pipeline
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT ProjectionMatrix_Step1::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Projection Matrix : Step 1";
+		};
+	}
+	r2tm::DoFunctionT ProjectionMatrix_Step1::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_SUBJECT( "Orthographic : 직교 투영" );
+			OUTPUT_SUBJECT( "-1 ~ +1 : 로 표현되는 좌표계로 변환" );
+
+			LS();
+
+			DECLARATION_MAIN( const int viewport_w = 400 );
+			DECLARATION_MAIN( const int viewport_h = 300 );
+
+			LF();
+
+			OUTPUT_SUBJECT( "left = 0, bottom = 0 으로 설정하면" );
+			OUTPUT_SUBJECT( "0, 0, 0 좌표는 viewport 왼쪽 하단 끝 -1, -1 으로 배치된다." );
+			DECLARATION_MAIN( const float left = -viewport_w / 2 );
+			DECLARATION_MAIN( const float right = viewport_w / 2 );
+			DECLARATION_MAIN( const float bottom = -viewport_h / 2 );
+			DECLARATION_MAIN( const float top = viewport_h / 2 );
+			DECLARATION_MAIN( const float near_plane = 0.1f ); // 가까운 절단면
+			DECLARATION_MAIN( const float far_plane = 100.f ); // 먼 절단면
+
+			LS();
+
+			{
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const Mat44 projection_mat4(
+					  2 / ( right - left )  , 0.f                   , 0.f                             , -( right + left ) / ( right - left )
+					, 0.f                   , 2 / ( top - bottom )  , 0.f                             , -( top + bottom ) / ( top - bottom )
+					, 0.f                   , 0.f                   , 1 / ( far_plane - near_plane )  , -near_plane / ( far_plane - near_plane )
+					, 0.f                   , 0.f                   , 0.f                             , 1.f
+				);
+				OUTPUT_SOURCE_END;
+
+				LF();
+
+				OUTPUT_VALUE( projection_mat4 );
+
+				
+				SS();
+
+
+				EXPECT_EP_EQ( 0, ( projection_mat4 * VEC4_0 ).x );
+				EXPECT_EP_EQ( 0, ( projection_mat4 * VEC4_0 ).y );
+
+				LF();
+
+				EXPECT_EP_EQ( 1, ( projection_mat4 * Vec4( viewport_w / 2, viewport_h / 2, 0, 1 ) ).x );
+				EXPECT_EP_EQ( 1, ( projection_mat4 * Vec4( viewport_w / 2, viewport_h / 2, 0, 1 ) ).y );
+
+				LF();
+
+				EXPECT_EP_EQ( -1, ( projection_mat4 * Vec4( -viewport_w / 2, -viewport_h / 2, 0, 1 ) ).x );
+				EXPECT_EP_EQ( -1, ( projection_mat4 * Vec4( -viewport_w / 2, -viewport_h / 2, 0, 1 ) ).y );
+
+				LF();
+
+				EXPECT_EP_EQ( 0, ( projection_mat4 * Vec4( 0, 0, near_plane, 1 ) ).z );
+				EXPECT_EP_EQ( 1, ( projection_mat4 * Vec4( 0, 0, far_plane, 1 ) ).z );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
