@@ -26,13 +26,6 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 	return[]( r2tm::MenuProcessor* mp )
 	{
 		mp->AddMessage( "REF : https://learnopengl.com/Getting-started/Camera", r2tm::eColor::FG_LightGreen );
-
-
-
-		mp->AddLineFeed();
-
-
-
 		mp->AddItem( '1', play_math_rendering_pipeline::ViewMatrix_Step1() );
 		mp->AddItem( '2', play_math_rendering_pipeline::ViewMatrix_Step2() );
 		mp->AddItem( '3', play_math_rendering_pipeline::ViewMatrix_Step3() );
@@ -43,6 +36,7 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 
 
 
+		mp->AddMessage( "REF : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl", r2tm::eColor::FG_LightGreen );
 		mp->AddItem( 'q', play_math_rendering_pipeline::ProjectionMatrix_Orthographic_Step1() );
 		mp->AddItem( 'w', play_math_rendering_pipeline::ProjectionMatrix_Orthographic_Step2() );
 
