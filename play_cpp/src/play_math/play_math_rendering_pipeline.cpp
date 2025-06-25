@@ -22,7 +22,7 @@ namespace play_math_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "View Matrix 를 만들이 위해서 우선 기준 벡터가 필요하다." );
+				OUTPUT_SUBJECT( "View Matrix 구성을 위해 기준 벡터가 필요하다." );
 				OUTPUT_COMMENT( "cam_eye     : 카메라 위치" );
 				OUTPUT_COMMENT( "cam_forward : 카메라가 보는 방향" );
 				OUTPUT_COMMENT( "cam_right   : 카메라가 보는 방향의 오른쪽 방향" );
@@ -31,7 +31,7 @@ namespace play_math_rendering_pipeline
 
 			LS();
 
-			OUTPUT_SUBJECT( "보통 사용자가 알고 있을 정보로 시작." );
+			OUTPUT_SUBJECT( "사용자가 알고 있을 정보로 시작." );
 
 			LF();
 
