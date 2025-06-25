@@ -601,4 +601,88 @@ namespace play_math_rendering_pipeline
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+	
+
+
+	r2tm::TitleFunctionT ProjectionMatrix_Perspective_Step1::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Projection Matrix : Perspective : Step 1";
+		};
+	}
+	r2tm::DoFunctionT ProjectionMatrix_Perspective_Step1::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "fov를 사용하는 원근 투영( Perspective Projection )의 기초" );
+				OUTPUT_COMMENT( "-1 ~ +1 : 로 표현되는 좌표계로 변환     |     fovY : 수직 시야각     |     aspect : 뷰포트의 너비 / 높이" );
+			}
+
+			LS();
+
+			DECLARATION_MAIN( const int viewport_w = 400 );
+			DECLARATION_MAIN( const int viewport_h = 200 );
+			DECLARATION_MAIN( const float fovY = Deg2Rad( 90.f ) );
+			DECLARATION_MAIN( const float aspect = viewport_w / viewport_h );
+			DECLARATION_MAIN( const float near = 0.1f );
+			DECLARATION_MAIN( const float far = 100.f );
+
+			LF();
+
+			OUTPUT_VALUE( fovY );
+			OUTPUT_VALUE( aspect );
+
+			LS();
+
+			{
+				DECLARATION_MAIN( const float top = near * std::tan( fovY / 2 ) );
+				OUTPUT_VALUE( top );
+				
+				LF();
+
+				DECLARATION_MAIN( const float bottom = -top );
+				OUTPUT_VALUE( bottom );
+
+				LF();
+
+				DECLARATION_MAIN( const float right = top * aspect );
+				OUTPUT_VALUE( right );
+
+				LF();
+
+				DECLARATION_MAIN( const float left = -right );
+				OUTPUT_VALUE( left );
+			}
+
+			LS();
+
+			{
+				DECLARATION_MAIN( const float top = far * std::tan( fovY / 2 ) );
+				OUTPUT_VALUE( top );
+
+				LF();
+
+				DECLARATION_MAIN( const float bottom = -top );
+				OUTPUT_VALUE( bottom );
+
+				LF();
+
+				DECLARATION_MAIN( const float right = top * aspect );
+				OUTPUT_VALUE( right );
+
+				LF();
+
+				DECLARATION_MAIN( const float left = -right );
+				OUTPUT_VALUE( left );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

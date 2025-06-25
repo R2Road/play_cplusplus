@@ -44,6 +44,14 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 
 
 
+		mp->AddLineFeed();
+
+
+
+		mp->AddItem( 'a', play_math_rendering_pipeline::ProjectionMatrix_Perspective_Step1() );
+
+
+
 		mp->AddSplit();
 
 
