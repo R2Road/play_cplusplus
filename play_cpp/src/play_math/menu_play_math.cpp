@@ -8,7 +8,7 @@
 #include "play_math_vector2_transform.h"
 #include "play_math_vector3.h"
 #include "play_math_vector3_transform.h"
-#include "play_math_rendering_pipeline.h"
+#include "menu_play_rendering_pipeline.h"
 
 r2tm::TitleFunctionT Menu_Math::GetTitleFunction() const
 {
@@ -62,12 +62,7 @@ r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
 
 
 
-		mp->AddMessage( "REF : https://learnopengl.com/Getting-started/Camera", r2tm::eColor::FG_LightGreen );
-		mp->AddItem( 'z', play_math_rendering_pipeline::ViewMatrix_Step1() );
-		mp->AddItem( 'x', play_math_rendering_pipeline::ViewMatrix_Step2() );
-		mp->AddItem( 'c', play_math_rendering_pipeline::ViewMatrix_Step3() );
-		mp->AddItem( 'v', play_math_rendering_pipeline::ProjectionMatrix_Orthographic_Step1() );
-		mp->AddItem( 'b', play_math_rendering_pipeline::ProjectionMatrix_Orthographic_Step2() );
+		mp->AddMenu( 'z', Menu_Play_Rendering_Pipeline() );
 
 
 

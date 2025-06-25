@@ -50,6 +50,7 @@
     <ClCompile Include="src\play_hobby\TreeMenu.cpp" />
     <ClCompile Include="src\play_hobby\Vector3Menu.cpp" />
     <ClCompile Include="src\play_math\menu_play_math.cpp" />
+    <ClCompile Include="src\play_math\menu_play_rendering_pipeline.cpp" />
     <ClCompile Include="src\play_math\play_math_basic.cpp" />
     <ClCompile Include="src\menu_root.cpp" />
     <ClCompile Include="src\play_math\play_math_rendering_pipeline.cpp" />
@@ -258,6 +259,7 @@
     <ClInclude Include="src\play_hobby\TreeMenu.h" />
     <ClInclude Include="src\play_hobby\Vector3Menu.h" />
     <ClInclude Include="src\play_math\menu_play_math.h" />
+    <ClInclude Include="src\play_math\menu_play_rendering_pipeline.h" />
     <ClInclude Include="src\play_math\play_math_rendering_pipeline.h" />
     <ClInclude Include="src\play_math\play_math_vector2_transform.h" />
     <ClInclude Include="src\play_math\play_math_vector3.h" />
