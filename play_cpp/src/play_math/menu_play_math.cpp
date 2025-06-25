@@ -10,18 +10,18 @@
 #include "play_math_vector3_transform.h"
 #include "menu_play_rendering_pipeline.h"
 
-r2tm::TitleFunctionT Menu_Math::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Play_Math::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Math";
 	};
 }
-r2tm::DescriptionFunctionT Menu_Math::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Play_Math::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT Menu_Math::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Play_Math::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{

@@ -52,6 +52,6 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 27, Menu_Math() );
+		mp->AddMenu( 27, Menu_Play_Math() );
 	};
 }

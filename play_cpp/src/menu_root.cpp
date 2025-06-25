@@ -83,7 +83,7 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 'a', Menu_Math() );
+		mp->AddMenu( 'a', Menu_Play_Math() );
 		mp->AddMenu( 's', ETCMenu() );
 
 
