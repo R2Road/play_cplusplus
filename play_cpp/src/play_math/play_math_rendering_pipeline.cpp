@@ -19,6 +19,11 @@ namespace play_math_rendering_pipeline
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
+
+			LS();
+
+			OUTPUT_SUBJECT( "View Matrix 구성을 위한 준비" );
+
 			LS();
 
 			{
@@ -98,7 +103,7 @@ namespace play_math_rendering_pipeline
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "현재 카메라 행렬 구성해보기" );
+			OUTPUT_SUBJECT( "Camera Matrix 구성해보기" );
 
 			LS();
 
