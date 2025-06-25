@@ -283,12 +283,14 @@ namespace play_math_rendering_pipeline
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "REF : " "https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
+			{
+				OUTPUT_SUBJECT( "REF : orthoRH_NO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
 
-			LS();
+				LF();
 
-			OUTPUT_SUBJECT( "Orthographic : 직교 투영" );
-			OUTPUT_COMMENT( "-1 ~ +1 : 로 표현되는 좌표계로 변환" );
+				OUTPUT_SUBJECT( "Orthographic : 직교 투영" );
+				OUTPUT_COMMENT( "-1 ~ +1 : 로 표현되는 좌표계로 변환" );
+			}
 
 			LS();
 
@@ -366,13 +368,15 @@ namespace play_math_rendering_pipeline
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "REF : " "https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
+			{
+				OUTPUT_SUBJECT( "REF : orthoRH_ZO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
 
-			LS();
+				LF();
 
-			OUTPUT_SUBJECT( "Orthographic : 직교 투영" );
-			OUTPUT_COMMENT( "-1 ~ +1 : 로 표현되는 좌표계로 변환" );
-			OUTPUT_COMMENT( "Z 범위만 0 ~ 1" );
+				OUTPUT_SUBJECT( "Orthographic : 직교 투영" );
+				OUTPUT_COMMENT( "-1 ~ +1 : 로 표현되는 좌표계로 변환" );
+				OUTPUT_COMMENT( "Z 범위만 0 ~ 1" );
+			}
 
 			LS();
 
@@ -450,12 +454,14 @@ namespace play_math_rendering_pipeline
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "REF : frustumRH_NO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
+			{
+				OUTPUT_SUBJECT( "REF : frustumRH_NO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
 
-			LF();
+				LF();
 
-			OUTPUT_SUBJECT( "Perspective : 원근 투영" );
-			OUTPUT_COMMENT( "-1 ~ +1 : 로 표현되는 좌표계로 변환     |     fov 없는 원근 투영     |     더 낮은 수준에서 원근 투영을 제어 할 때 사용" );
+				OUTPUT_SUBJECT( "Perspective : 원근 투영" );
+				OUTPUT_COMMENT( "-1 ~ +1 : 로 표현되는 좌표계로 변환     |     fov 없는 원근 투영     |     더 낮은 수준에서 원근 투영을 제어 할 때 사용" );
+			}
 
 			LS();
 
