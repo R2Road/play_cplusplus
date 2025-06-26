@@ -49,6 +49,7 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 
 
 		mp->AddItem( 'a', play_math_rendering_pipeline::ProjectionMatrix_Perspective_Step1() );
+		mp->AddItem( 's', play_math_rendering_pipeline::ProjectionMatrix_Perspective_Step2() );
 
 
 
