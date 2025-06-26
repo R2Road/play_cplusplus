@@ -59,6 +59,7 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 
 
 		mp->AddItem( 'z', play_math_rendering_pipeline::Viewport_Matrix_Step1() );
+		mp->AddItem( 'x', play_math_rendering_pipeline::Viewport_Matrix_Step2() );
 
 
 
