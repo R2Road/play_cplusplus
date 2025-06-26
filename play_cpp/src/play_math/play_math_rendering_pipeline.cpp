@@ -540,8 +540,7 @@ namespace play_math_rendering_pipeline
 				LF();
 
 				OUTPUT_SUBJECT( "frustumRH_ZO" );
-				OUTPUT_COMMENT( "Perspective : 원근 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환     |     fov 없는 원근 투영     |     더 낮은 수준에서 원근 투영을 제어 할 때 사용" );
-				OUTPUT_COMMENT( "Z = 0 ~ 1" );
+				OUTPUT_COMMENT( "Perspective : 원근 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환, z = 0 ~ 1     |     fov 없는 원근 투영     |     더 낮은 수준에서 원근 투영을 제어 할 때 사용" );
 			}
 
 			LS();
