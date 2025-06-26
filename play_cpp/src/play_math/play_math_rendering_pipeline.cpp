@@ -841,4 +841,89 @@ namespace play_math_rendering_pipeline
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Viewport_Matrix_Step1::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Viewport Matrix : Step 1";
+		};
+	}
+	r2tm::DoFunctionT Viewport_Matrix_Step1::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Screen 좌표로 변환" );
+				OUTPUT_SUBJECT( "x, y : 스크린 좌표로 변환     |     z = -1 ~ 1 범위의 z를 지정한 범위로 변환" );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const float viewport_w = 400;
+				const float viewport_h = 300;
+				const float near = 0.f;
+				const float far = 100.f;
+
+				const Mat44 viewport_mat4(
+					  viewport_w / 2.f  , 0.f               , 0.f                   , viewport_w / 2.f
+					, 0.f               , viewport_h / 2.f  , 0.f                   , viewport_h / 2.f
+					, 0.f               , 0.f               , ( far - near ) / 2.f  , ( near + far ) / 2.f
+					, 0.f               , 0.f               , 0.f                   , 1.f
+				);
+				OUTPUT_SOURCE_END;
+
+				LF();
+
+				OUTPUT_VALUE( viewport_mat4 );
+
+
+				SS();
+
+				{
+					OUTPUT_SUBJECT( "가운데" );
+					DECLARATION_MAIN( const auto v = viewport_mat4 * Vec4( 0, 0, 0, 1 ) );
+					EXPECT_EP_EQ( 200.f, v.x );
+					EXPECT_EP_EQ( 150.f, v.y );
+				}
+
+				LF();
+
+				{
+					OUTPUT_SUBJECT( "왼 + 위" );
+					DECLARATION_MAIN( const auto v = viewport_mat4 * Vec4( 1, 1, 0, 1 ) );
+					EXPECT_EP_EQ( 400.f, v.x );
+					EXPECT_EP_EQ( 300.f, v.y );
+				}
+
+				LF();
+
+				{
+					OUTPUT_SUBJECT( "0, 0" );
+					DECLARATION_MAIN( const auto v = viewport_mat4 * Vec4( -1, -1, 0, 1 ) );
+					EXPECT_EP_EQ( 0.f, v.x );
+					EXPECT_EP_EQ( 0.f, v.y );
+				}
+
+				LF();
+
+				{
+					OUTPUT_SUBJECT( "" );
+					EXPECT_EP_EQ( 0.f, ( viewport_mat4 * Vec4( 0, 0, -1, 1 ) ).z );
+					EXPECT_EP_EQ( 50.f, ( viewport_mat4 * Vec4( 0, 0, 0, 1 ) ).z );
+					EXPECT_EP_EQ( 100.f, ( viewport_mat4 * Vec4( 0, 0, 1, 1 ) ).z );
+				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
