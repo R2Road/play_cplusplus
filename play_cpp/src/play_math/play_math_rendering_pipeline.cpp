@@ -918,6 +918,13 @@ namespace play_math_rendering_pipeline
 					EXPECT_EP_EQ( 0.f, ( viewport_mat4 * Vec4( 0, 0, -1, 1 ) ).z );
 					EXPECT_EP_EQ( 50.f, ( viewport_mat4 * Vec4( 0, 0, 0, 1 ) ).z );
 					EXPECT_EP_EQ( 100.f, ( viewport_mat4 * Vec4( 0, 0, 1, 1 ) ).z );
+				}
+
+				LF();
+
+				{
+					OUTPUT_SUBJECT( "잘못된 범위" );
+					EXPECT_EP_EQ( -50.f, ( viewport_mat4 * Vec4( 0, 0, -2, 1 ) ).z );
 					EXPECT_EP_EQ( 150.f, ( viewport_mat4 * Vec4( 0, 0, 2, 1 ) ).z );
 				}
 			}
