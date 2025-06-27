@@ -76,6 +76,9 @@
     <Filter Include="play_math">
       <UniqueIdentifier>{c659f76d-8c3d-41fb-8967-27080960e8cf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="play_rendering_pipeline">
+      <UniqueIdentifier>{06d475be-ec77-489e-b188-1e30a440c7c0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -617,11 +620,11 @@
     <ClCompile Include="src\play_math\play_math_vector3_transform.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_math\play_math_rendering_pipeline.cpp">
-      <Filter>play_math</Filter>
+    <ClCompile Include="src\play_rendering_pipeline\menu_play_rendering_pipeline.cpp">
+      <Filter>play_rendering_pipeline</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_math\menu_play_rendering_pipeline.cpp">
-      <Filter>play_math</Filter>
+    <ClCompile Include="src\play_rendering_pipeline\play_math_rendering_pipeline.cpp">
+      <Filter>play_rendering_pipeline</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1334,17 +1337,17 @@
     <ClInclude Include="src\play_math\play_math___helper_matrix33.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math_rendering_pipeline.h">
-      <Filter>play_math</Filter>
-    </ClInclude>
     <ClInclude Include="src\play_math\play_math___helper_vector4.h">
       <Filter>play_math</Filter>
     </ClInclude>
     <ClInclude Include="src\play_math\play_math___helper_matrix44.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\menu_play_rendering_pipeline.h">
-      <Filter>play_math</Filter>
+    <ClInclude Include="src\play_rendering_pipeline\play_math_rendering_pipeline.h">
+      <Filter>play_rendering_pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_rendering_pipeline\menu_play_rendering_pipeline.h">
+      <Filter>play_rendering_pipeline</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

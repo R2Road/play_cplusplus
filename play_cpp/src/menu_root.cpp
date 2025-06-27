@@ -11,7 +11,7 @@
 
 #include "play_hobby/HobbyMenu.h"
 #include "play_math/menu_play_math.h"
-#include "play_math/menu_play_rendering_pipeline.h"
+#include "play_rendering_pipeline/menu_play_rendering_pipeline.h"
 #include "test_algorithm/AlgorithmMenu.h"
 #include "test_c/C_Menu.h"
 #include "test_cpp/CPP_Menu.h"

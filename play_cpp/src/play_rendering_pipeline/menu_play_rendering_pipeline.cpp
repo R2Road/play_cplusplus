@@ -4,10 +4,6 @@
 
 #include "menu_root.h"
 
-#include "play_math_basic.h"
-#include "play_math_vector2_transform.h"
-#include "play_math_vector3.h"
-#include "play_math_vector3_transform.h"
 #include "play_math_rendering_pipeline.h"
 
 r2tm::TitleFunctionT Menu_Play_Rendering_Pipeline::GetTitleFunction() const
@@ -60,6 +56,14 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 
 		mp->AddItem( 'z', play_math_rendering_pipeline::Viewport_Matrix_Step1() );
 		mp->AddItem( 'x', play_math_rendering_pipeline::Viewport_Matrix_Step2() );
+
+
+
+		mp->AddLineFeed();
+
+
+
+		mp->AddItem( 'z', play_math_rendering_pipeline::Viewport_Matrix_Step1() );
 
 
 
