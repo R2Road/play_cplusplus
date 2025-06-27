@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_MenuProcessor.h"
 
-#include "menu_play_math.h"
+#include "menu_root.h"
 
 #include "play_math_basic.h"
 #include "play_math_vector2_transform.h"
@@ -67,6 +67,6 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 27, Menu_Play_Math() );
+		mp->AddMenu( 27, Menu_Root() );
 	};
 }

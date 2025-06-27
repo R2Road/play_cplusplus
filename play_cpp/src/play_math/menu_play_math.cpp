@@ -8,7 +8,6 @@
 #include "play_math_vector2_transform.h"
 #include "play_math_vector3.h"
 #include "play_math_vector3_transform.h"
-#include "menu_play_rendering_pipeline.h"
 
 r2tm::TitleFunctionT Menu_Play_Math::GetTitleFunction() const
 {
@@ -55,14 +54,6 @@ r2tm::WriteFunctionT Menu_Play_Math::GetWriteFunction() const
 		mp->AddItem( 's', play_math_vector2_transform::Rotation_X() );
 		mp->AddItem( 'd', play_math_vector3_transform::Rotation_XZ() );
 		mp->AddItem( 'f', play_math_vector3_transform::Rotation_Y() );
-
-
-
-		mp->AddLineFeed();
-
-
-
-		mp->AddMenu( 'z', Menu_Play_Rendering_Pipeline() );
 
 
 

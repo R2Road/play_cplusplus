@@ -11,6 +11,7 @@
 
 #include "play_hobby/HobbyMenu.h"
 #include "play_math/menu_play_math.h"
+#include "play_math/menu_play_rendering_pipeline.h"
 #include "test_algorithm/AlgorithmMenu.h"
 #include "test_c/C_Menu.h"
 #include "test_cpp/CPP_Menu.h"
@@ -84,7 +85,8 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 
 
 		mp->AddMenu( 'a', Menu_Play_Math() );
-		mp->AddMenu( 's', ETCMenu() );
+		mp->AddMenu( 's', Menu_Play_Rendering_Pipeline() );
+		mp->AddMenu( 'd', ETCMenu() );
 
 
 
