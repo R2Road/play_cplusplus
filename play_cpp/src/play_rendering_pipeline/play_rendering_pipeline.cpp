@@ -1026,4 +1026,116 @@ namespace play_rendering_pipeline
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Composition::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Composition";
+		};
+	}
+	r2tm::DoFunctionT Composition::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( const Vec4 init_eye( 0, 0, 10, 1 ) );
+			DECLARATION_MAIN( const Vec4 init_center( 10, 0, 0, 1 ) );
+			DECLARATION_MAIN( const Vec4 init_up( 0, 1, 0, 1 ) );
+
+			LS();
+
+			DECLARATION_MAIN( Vec4 p = Vec4( 0, 0, 0, 1 ) );
+
+			LS();
+
+			{
+				const Vec4 cam_forward = vec4_normalize( init_eye - init_center );
+				const Vec4 cam_right = vec4_normalize( vec4_cross( init_up, cam_forward ) );
+				const Vec4 cam_up = vec4_cross( cam_forward, cam_right );
+
+				const Mat44 view_mat4(
+					  cam_right.x    , cam_right.y    , cam_right.z    , -vec4_dot( cam_right, init_eye )
+					, cam_up.x       , cam_up.y       , cam_up.z       , -vec4_dot( cam_up, init_eye )
+					, cam_forward.x  , cam_forward.y  , cam_forward.z  , -vec4_dot( cam_forward, init_eye )
+					, 0.f            , 0.f            , 0.f            , 1.f
+				);
+
+				OUTPUT_SUBJECT( "View 행렬 구성" );
+
+				LF();
+
+				OUTPUT_VALUE( p );
+				PROCESS_MAIN( p = view_mat4 * p );
+				OUTPUT_VALUE( p );
+			}
+
+			LS();
+
+			DECLARATION_MAIN( const float viewport_w = 400 );
+			DECLARATION_MAIN( const float viewport_h = 300 );
+			DECLARATION_MAIN( const float near = 1.f );
+			DECLARATION_MAIN( const float far = 100.f );
+
+			LS();
+
+			{
+				const float fovY = Deg2Rad( 90.f );
+				const float aspect = viewport_w / viewport_h;
+				const float tanHalfFovY = std::tan( fovY / 2 );
+
+				const Mat44 projection_mat4(
+					  1 / ( aspect * tanHalfFovY )  , 0.f              , 0.f                               , 0.f
+					, 0.f                           , 1 / tanHalfFovY  , 0.f                               , 0.f
+					, 0.f                           , 0.f              , -( far + near ) / ( far - near )  , -( 2 * far * near ) / ( far - near )
+					, 0.f                           , 0.f              , -1.f                              , 0.f
+				);
+
+				OUTPUT_SUBJECT( "Projection 행렬 구성" );
+				OUTPUT_COMMENT( "perspectiveRH_NO     |     -1 ~ +1 : 로 표현되는 좌표계로 변환     |     fovY : 수직 시야각     |     aspect : 뷰포트의 너비 / 높이" );
+
+				LF();
+
+				OUTPUT_VALUE( projection_mat4 );
+				
+				LF();
+
+				PROCESS_MAIN( p = projection_mat4 * p );
+				OUTPUT_VALUE( p );
+				PROCESS_MAIN( p /= p.w );
+				OUTPUT_VALUE( p );
+			}
+
+			LS();
+
+			DECLARATION_MAIN( const float viewport_near = 0.f );
+			DECLARATION_MAIN( const float viewport_far = 1.f );
+
+			LS();
+
+			{
+				const Mat44 viewport_mat4(
+					  viewport_w / 2.f  , 0.f               , 0.f                                     , viewport_w / 2.f
+					, 0.f               , viewport_h / 2.f  , 0.f                                     , viewport_h / 2.f
+					, 0.f               , 0.f               , ( viewport_far - viewport_near ) / 2.f  , ( viewport_near + viewport_far ) / 2.f
+					, 0.f               , 0.f               , 0.f                                     , 1.f
+				);
+
+				OUTPUT_SUBJECT( "Viewport 행렬 구성" );
+				OUTPUT_COMMENT( "x, y : 스크린 좌표로 변환     |     z = -1 ~ 1 범위의 z를 지정한 범위로 변환" );
+
+				LF();
+
+				PROCESS_MAIN( p = viewport_mat4 * p );
+				OUTPUT_VALUE( p );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

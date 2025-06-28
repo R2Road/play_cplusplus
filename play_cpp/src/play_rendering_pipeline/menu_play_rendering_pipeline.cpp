@@ -52,6 +52,14 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 
 
 
+		mp->AddLineFeed();
+
+
+
+		mp->AddItem( 'z', play_rendering_pipeline::Composition() );
+
+
+
 		mp->AddSplit();
 
 
