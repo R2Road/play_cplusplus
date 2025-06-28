@@ -201,7 +201,7 @@ namespace play_rendering_pipeline
 				LF();
 
 				OUTPUT_SOURCE_BEGIN;
-				const Mat44 cam_mat4(
+				const Mat44 view_rotation_mat4(
 					  cam_right.x    , cam_right.y    , cam_right.z    , 0.f
 					, cam_up.x       , cam_up.y       , cam_up.z       , 0.f
 					, cam_forward.x  , cam_forward.y  , cam_forward.z  , 0.f
