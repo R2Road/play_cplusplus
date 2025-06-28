@@ -57,6 +57,14 @@ r2tm::WriteFunctionT Menu_Play_Math::GetWriteFunction() const
 
 
 
+		mp->AddLineFeed();
+
+
+
+		mp->AddItem( 'z', play_math_vector3_transform::Need() );
+
+
+
 		mp->AddSplit();
 
 

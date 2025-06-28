@@ -179,4 +179,68 @@ namespace play_math_vector3_transform
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Need::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Need : 기억할 필요가 있는 값들";
+		};
+	}
+	r2tm::DoFunctionT Need::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "대각선 벡터의 길이" );
+
+				LF();
+
+				OUTPUT_VALUE( vec3_length( Vec3( 1, 1, 0 ) ) );
+
+				LF();
+
+				OUTPUT_VALUE( vec3_length( Vec3( 1, 1, 1 ) ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "단위 벡터가 45도 회전했을 때의 위치" );
+
+				LF();
+
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const auto B = []( const float radian )->Mat33
+				{
+					return Mat33(
+						  std::cos( radian )  , 0, std::sin( radian )
+						, 0                   , 1, 0
+						, -std::sin( radian ) , 0, std::cos( radian )
+					);
+				};
+				OUTPUT_SOURCE_END;
+
+				LF();
+
+				OUTPUT_VALUE( ( B( Deg2Rad( 45.f ) ) * VEC3_Z ) );
+
+				LF();
+
+				OUTPUT_VALUE( std::cos( Deg2Rad( 45.f ) ) );
+
+				LF();
+
+				OUTPUT_VALUE( std::sin( Deg2Rad( 45.f ) ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
