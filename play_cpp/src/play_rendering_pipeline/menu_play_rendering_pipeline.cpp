@@ -47,23 +47,8 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 		mp->AddItem( 'a', play_math_rendering_pipeline::ProjectionMatrix_Perspective_Step1() );
 		mp->AddItem( 's', play_math_rendering_pipeline::ProjectionMatrix_Perspective_Step2() );
 		mp->AddItem( 'd', play_math_rendering_pipeline::ProjectionMatrix_Perspective_Step3() );
-
-
-
-		mp->AddLineFeed();
-
-
-
-		mp->AddItem( 'z', play_math_rendering_pipeline::Viewport_Matrix_Step1() );
-		mp->AddItem( 'x', play_math_rendering_pipeline::Viewport_Matrix_Step2() );
-
-
-
-		mp->AddLineFeed();
-
-
-
-		mp->AddItem( 'z', play_math_rendering_pipeline::Viewport_Matrix_Step1() );
+		mp->AddItem( 'f', play_math_rendering_pipeline::Viewport_Matrix_Step1() );
+		mp->AddItem( 'g', play_math_rendering_pipeline::Viewport_Matrix_Step2() );
 
 
 
