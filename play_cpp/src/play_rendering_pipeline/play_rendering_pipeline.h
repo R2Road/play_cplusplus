@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace play_math_rendering_pipeline
+namespace play_rendering_pipeline
 {
 	class ViewMatrix_Step1 : public r2tm::iItem
 	{

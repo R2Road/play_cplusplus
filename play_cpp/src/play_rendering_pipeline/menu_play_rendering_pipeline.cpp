@@ -4,7 +4,7 @@
 
 #include "menu_root.h"
 
-#include "play_math_rendering_pipeline.h"
+#include "play_rendering_pipeline.h"
 
 r2tm::TitleFunctionT Menu_Play_Rendering_Pipeline::GetTitleFunction() const
 {
@@ -22,9 +22,9 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 	return[]( r2tm::MenuProcessor* mp )
 	{
 		mp->AddMessage( "REF : https://learnopengl.com/Getting-started/Camera", r2tm::eColor::FG_LightGreen );
-		mp->AddItem( '1', play_math_rendering_pipeline::ViewMatrix_Step1() );
-		mp->AddItem( '2', play_math_rendering_pipeline::ViewMatrix_Step2() );
-		mp->AddItem( '3', play_math_rendering_pipeline::ViewMatrix_Step3() );
+		mp->AddItem( '1', play_rendering_pipeline::ViewMatrix_Step1() );
+		mp->AddItem( '2', play_rendering_pipeline::ViewMatrix_Step2() );
+		mp->AddItem( '3', play_rendering_pipeline::ViewMatrix_Step3() );
 
 
 
@@ -33,10 +33,10 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 
 
 		mp->AddMessage( "REF : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl", r2tm::eColor::FG_LightGreen );
-		mp->AddItem( 'q', play_math_rendering_pipeline::ProjectionMatrix_Orthographic_Step1() );
-		mp->AddItem( 'w', play_math_rendering_pipeline::ProjectionMatrix_Orthographic_Step2() );
-		mp->AddItem( 'e', play_math_rendering_pipeline::ProjectionMatrix_Frustum_Step1() );
-		mp->AddItem( 'r', play_math_rendering_pipeline::ProjectionMatrix_Frustum_Step2() );
+		mp->AddItem( 'q', play_rendering_pipeline::ProjectionMatrix_Orthographic_Step1() );
+		mp->AddItem( 'w', play_rendering_pipeline::ProjectionMatrix_Orthographic_Step2() );
+		mp->AddItem( 'e', play_rendering_pipeline::ProjectionMatrix_Frustum_Step1() );
+		mp->AddItem( 'r', play_rendering_pipeline::ProjectionMatrix_Frustum_Step2() );
 
 
 
@@ -44,11 +44,11 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'a', play_math_rendering_pipeline::ProjectionMatrix_Perspective_Step1() );
-		mp->AddItem( 's', play_math_rendering_pipeline::ProjectionMatrix_Perspective_Step2() );
-		mp->AddItem( 'd', play_math_rendering_pipeline::ProjectionMatrix_Perspective_Step3() );
-		mp->AddItem( 'f', play_math_rendering_pipeline::Viewport_Matrix_Step1() );
-		mp->AddItem( 'g', play_math_rendering_pipeline::Viewport_Matrix_Step2() );
+		mp->AddItem( 'a', play_rendering_pipeline::ProjectionMatrix_Perspective_Step1() );
+		mp->AddItem( 's', play_rendering_pipeline::ProjectionMatrix_Perspective_Step2() );
+		mp->AddItem( 'd', play_rendering_pipeline::ProjectionMatrix_Perspective_Step3() );
+		mp->AddItem( 'f', play_rendering_pipeline::Viewport_Matrix_Step1() );
+		mp->AddItem( 'g', play_rendering_pipeline::Viewport_Matrix_Step2() );
 
 
 

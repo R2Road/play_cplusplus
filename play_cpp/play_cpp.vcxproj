@@ -56,7 +56,7 @@
     <ClCompile Include="src\play_math\play_math_vector3.cpp" />
     <ClCompile Include="src\play_math\play_math_vector3_transform.cpp" />
     <ClCompile Include="src\play_rendering_pipeline\menu_play_rendering_pipeline.cpp" />
-    <ClCompile Include="src\play_rendering_pipeline\play_math_rendering_pipeline.cpp" />
+    <ClCompile Include="src\play_rendering_pipeline\play_rendering_pipeline.cpp" />
     <ClCompile Include="src\test_algorithm\AlgorithmHelper.cpp" />
     <ClCompile Include="src\test_algorithm\item\algorithm_astar_test.cpp" />
     <ClCompile Include="src\test_algorithm\item\algorithm_bubble_sort_test.cpp" />
@@ -272,7 +272,7 @@
     <ClInclude Include="src\play_math\play_math___helper_common.h" />
     <ClInclude Include="src\play_math\play_math___helper_vector4.h" />
     <ClInclude Include="src\play_rendering_pipeline\menu_play_rendering_pipeline.h" />
-    <ClInclude Include="src\play_rendering_pipeline\play_math_rendering_pipeline.h" />
+    <ClInclude Include="src\play_rendering_pipeline\play_rendering_pipeline.h" />
     <ClInclude Include="src\test_algorithm\AlgorithmHelper.h" />
     <ClInclude Include="src\test_algorithm\item\algorithm_astar_test.h" />
     <ClInclude Include="src\test_algorithm\item\algorithm_bubble_sort_test.h" />

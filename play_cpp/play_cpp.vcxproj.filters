@@ -623,7 +623,7 @@
     <ClCompile Include="src\play_rendering_pipeline\menu_play_rendering_pipeline.cpp">
       <Filter>play_rendering_pipeline</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_rendering_pipeline\play_math_rendering_pipeline.cpp">
+    <ClCompile Include="src\play_rendering_pipeline\play_rendering_pipeline.cpp">
       <Filter>play_rendering_pipeline</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1343,7 +1343,7 @@
     <ClInclude Include="src\play_math\play_math___helper_matrix44.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_rendering_pipeline\play_math_rendering_pipeline.h">
+    <ClInclude Include="src\play_rendering_pipeline\play_rendering_pipeline.h">
       <Filter>play_rendering_pipeline</Filter>
     </ClInclude>
     <ClInclude Include="src\play_rendering_pipeline\menu_play_rendering_pipeline.h">

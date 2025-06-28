@@ -1,4 +1,4 @@
-#include "play_math_rendering_pipeline.h"
+#include "play_rendering_pipeline.h"
 #include "play_math/play_math___helper_common.h"
 #include "play_math/play_math___helper_vector4.h"
 #include "play_math/play_math___helper_matrix44.h"
@@ -6,7 +6,7 @@ using namespace play_math;
 
 #include "r2tm/r2tm_Inspector.h"
 
-namespace play_math_rendering_pipeline
+namespace play_rendering_pipeline
 {
 	r2tm::TitleFunctionT ViewMatrix_Step1::GetTitleFunction() const
 	{
