@@ -1064,11 +1064,10 @@ namespace play_rendering_pipeline
 					, 0.f            , 0.f            , 0.f            , 1.f
 				);
 
-				OUTPUT_SUBJECT( "View 행렬 구성" );
+				OUTPUT_SUBJECT( "View 행렬 적용" );
 
 				LF();
 
-				OUTPUT_VALUE( p );
 				PROCESS_MAIN( p = view_mat4 * p );
 				OUTPUT_VALUE( p );
 			}
@@ -1094,13 +1093,9 @@ namespace play_rendering_pipeline
 					, 0.f                           , 0.f              , -1.f                              , 0.f
 				);
 
-				OUTPUT_SUBJECT( "Projection 행렬 구성" );
+				OUTPUT_SUBJECT( "Projection 행렬 적용" );
 				OUTPUT_COMMENT( "perspectiveRH_NO     |     -1 ~ +1 : 로 표현되는 좌표계로 변환     |     fovY : 수직 시야각     |     aspect : 뷰포트의 너비 / 높이" );
 
-				LF();
-
-				OUTPUT_VALUE( projection_mat4 );
-				
 				LF();
 
 				PROCESS_MAIN( p = projection_mat4 * p );
@@ -1124,7 +1119,7 @@ namespace play_rendering_pipeline
 					, 0.f               , 0.f               , 0.f                                     , 1.f
 				);
 
-				OUTPUT_SUBJECT( "Viewport 행렬 구성" );
+				OUTPUT_SUBJECT( "Viewport 행렬 적용" );
 				OUTPUT_COMMENT( "x, y : 스크린 좌표로 변환     |     z = -1 ~ 1 범위의 z를 지정한 범위로 변환" );
 
 				LF();
