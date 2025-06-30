@@ -1133,4 +1133,106 @@ namespace play_rendering_pipeline
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT ProjectionMatrix_Z_Range::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Projection Matrix : Z Range";
+		};
+	}
+	r2tm::DoFunctionT ProjectionMatrix_Z_Range::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "테스트 조건 : perspectiveRH_ZO" );
+				OUTPUT_COMMENT( "Perspective : 원근 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환, z = 0 ~ 1     |     fovY : 수직 시야각     |     aspect : 뷰포트의 너비 / 높이" );
+			}
+
+			LS();
+
+			{
+				const float viewport_w = 400;
+				const float viewport_h = 300;
+				const float fovY = Deg2Rad( 90.f );
+				const float aspect = viewport_w / viewport_h;
+				DECLARATION_MAIN( const float near = 10.f );
+				DECLARATION_MAIN( const float far = 100.f );
+
+				const float tanHalfFovY = std::tan( fovY / 2 );
+
+				const Mat44 projection_mat4(
+					1 / ( aspect * tanHalfFovY ), 0.f, 0.f, 0.f
+					, 0.f, 1 / tanHalfFovY, 0.f, 0.f
+					, 0.f, 0.f, far / ( near - far ), -( far * near ) / ( far - near )
+					, 0.f, 0.f, -1.f, 0.f
+				);
+
+
+				SS();
+
+				OUTPUT_NOTE( "위치에 따른 Z 값이 일관 되지 않는다." );
+				OUTPUT_NOTE( "가까운 쪽의 범위가 넓고 먼쪽의 범위가 좁다." );
+				OUTPUT_NOTE( "비선형 매핑" );
+
+				SS();
+
+				{
+					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -near, 1 ) );
+					OUTPUT_VALUE( ( v / v.w ) );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.3f, 1 ) );
+					OUTPUT_VALUE( v / v.w );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.5f, 1 ) );
+					OUTPUT_VALUE( v / v.w );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.8f, 1 ) );
+					OUTPUT_VALUE( v / v.w );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.9f, 1 ) );
+					OUTPUT_VALUE( v / v.w );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.95f, 1 ) );
+					OUTPUT_VALUE( v / v.w );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
+					OUTPUT_VALUE( v / v.w );
+				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

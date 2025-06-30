@@ -41,6 +41,10 @@ namespace play_math
 		return Vec4{ v1.x * scalar, v1.y * scalar, v1.z * scalar, v1.w };
 	}
 
+	inline Vec4 operator/( const Vec4& v1, const float scalar )
+	{
+		return Vec4{ v1.x / scalar, v1.y / scalar, v1.z / scalar, v1.w / scalar };
+	}
 	inline void operator/=( Vec4& v1, const float scalar )
 	{
 		v1.x /= scalar;
