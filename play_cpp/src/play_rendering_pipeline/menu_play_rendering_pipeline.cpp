@@ -37,6 +37,9 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 		mp->AddItem( 'w', play_rendering_pipeline::ProjectionMatrix_Orthographic_Step2() );
 		mp->AddItem( 'e', play_rendering_pipeline::ProjectionMatrix_Frustum_Step1() );
 		mp->AddItem( 'r', play_rendering_pipeline::ProjectionMatrix_Frustum_Step2() );
+		mp->AddItem( 't', play_rendering_pipeline::ProjectionMatrix_Perspective_Step1() );
+		mp->AddItem( 'y', play_rendering_pipeline::ProjectionMatrix_Perspective_Step2() );
+		mp->AddItem( 'u', play_rendering_pipeline::ProjectionMatrix_Perspective_Step3() );
 
 
 
@@ -44,11 +47,8 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'a', play_rendering_pipeline::ProjectionMatrix_Perspective_Step1() );
-		mp->AddItem( 's', play_rendering_pipeline::ProjectionMatrix_Perspective_Step2() );
-		mp->AddItem( 'd', play_rendering_pipeline::ProjectionMatrix_Perspective_Step3() );
-		mp->AddItem( 'f', play_rendering_pipeline::Viewport_Matrix_Step1() );
-		mp->AddItem( 'g', play_rendering_pipeline::Viewport_Matrix_Step2() );
+		mp->AddItem( 'a', play_rendering_pipeline::Viewport_Matrix_Step1() );
+		mp->AddItem( 's', play_rendering_pipeline::Viewport_Matrix_Step2() );
 
 
 
