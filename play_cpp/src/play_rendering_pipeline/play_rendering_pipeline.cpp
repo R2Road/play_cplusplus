@@ -1259,10 +1259,10 @@ namespace play_rendering_pipeline
 				const float tanHalfFovY = std::tan( fovY / 2 );
 
 				const Mat44 projection_mat4(
-					1 / ( aspect * tanHalfFovY ), 0.f, 0.f, 0.f
-					, 0.f, 1 / tanHalfFovY, 0.f, 0.f
-					, 0.f, 0.f, far / ( near - far ), -( far * near ) / ( far - near )
-					, 0.f, 0.f, -1.f, 0.f
+					  1 / ( aspect * tanHalfFovY )  , 0.f              , 0.f                   , 0.f
+					, 0.f                           , 1 / tanHalfFovY  , 0.f                   , 0.f
+					, 0.f                           , 0.f              , far / ( near - far )  , -( far * near ) / ( far - near )
+					, 0.f                           , 0.f              , -1.f                  , 0.f
 				);
 
 
