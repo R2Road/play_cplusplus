@@ -299,8 +299,7 @@ namespace play_rendering_pipeline
 
 			LF();
 
-			OUTPUT_SUBJECT( "left = 0, bottom = 0 으로 설정하면" );
-			OUTPUT_SUBJECT( "0, 0, 0 좌표는 viewport 왼쪽 하단 끝 -1, -1 으로 배치된다." );
+			OUTPUT_SUBJECT( "left = 0, bottom = 0 으로 설정하면     |     0, 0, 0 좌표는 viewport 왼쪽 하단 끝 -1, -1 으로 배치된다." );
 			DECLARATION_MAIN( const float left = -viewport_w / 2 );
 			DECLARATION_MAIN( const float right = viewport_w / 2 );
 			DECLARATION_MAIN( const float bottom = -viewport_h / 2 );
@@ -319,9 +318,6 @@ namespace play_rendering_pipeline
 					, 0.f                   , 0.f                   , 0.f                             , 1.f
 				);
 				OUTPUT_SOURCE_END;
-
-				LF();
-
 				OUTPUT_VALUE( projection_mat4 );
 
 				
@@ -345,6 +341,16 @@ namespace play_rendering_pipeline
 
 				EXPECT_EP_EQ( -1, ( projection_mat4 * Vec4( 0, 0, near_plane, 1 ) ).z );
 				EXPECT_EP_EQ( 1, ( projection_mat4 * Vec4( 0, 0, far_plane, 1 ) ).z );
+
+				LF();
+
+				EXPECT_EP_NE( -1, ( projection_mat4 * Vec4( 0, 0, -near_plane, 1 ) ).z );
+				EXPECT_EP_NE( 1, ( projection_mat4 * Vec4( 0, 0, -far_plane, 1 ) ).z );
+
+				LF();
+
+				OUTPUT_NOTE( "이 행렬은 벡터의 z 값이 양수 일 때만 정상 작동한다." );
+				OUTPUT_NOTE( "실제로 사용한다면 카메라가 양수 방향 z축을 바라보고 있어야 한다." );
 			}
 
 			LS();
@@ -384,8 +390,7 @@ namespace play_rendering_pipeline
 
 			LF();
 
-			OUTPUT_SUBJECT( "left = 0, bottom = 0 으로 설정하면" );
-			OUTPUT_SUBJECT( "0, 0, 0 좌표는 viewport 왼쪽 하단 끝 -1, -1 으로 배치된다." );
+			OUTPUT_SUBJECT( "left = 0, bottom = 0 으로 설정하면     |     0, 0, 0 좌표는 viewport 왼쪽 하단 끝 -1, -1 으로 배치된다." );
 			DECLARATION_MAIN( const float left = -viewport_w / 2 );
 			DECLARATION_MAIN( const float right = viewport_w / 2 );
 			DECLARATION_MAIN( const float bottom = -viewport_h / 2 );
@@ -404,9 +409,6 @@ namespace play_rendering_pipeline
 					, 0.f                   , 0.f                   , 0.f                             , 1.f
 				);
 				OUTPUT_SOURCE_END;
-
-				LF();
-
 				OUTPUT_VALUE( projection_mat4 );
 
 
@@ -430,6 +432,11 @@ namespace play_rendering_pipeline
 
 				EXPECT_EP_EQ( 0, ( projection_mat4 * Vec4( 0, 0, near_plane, 1 ) ).z );
 				EXPECT_EP_EQ( 1, ( projection_mat4 * Vec4( 0, 0, far_plane, 1 ) ).z );
+				EXPECT_EP_EQ( -1, ( projection_mat4 * Vec4( 0, 0, -far_plane, 1 ) ).z );
+
+				LF();
+
+				OUTPUT_NOTE( "-far_plane을 인자로 줬을때 -1로 변환 되지 않는 이유 = 비선형 매핑 + 부동 소수점 오차" );
 			}
 
 			LS();
