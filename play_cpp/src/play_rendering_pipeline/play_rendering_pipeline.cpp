@@ -1127,14 +1127,14 @@ namespace play_rendering_pipeline
 
 
 
-	r2tm::TitleFunctionT ProjectionMatrix_Z_Range::GetTitleFunction() const
+	r2tm::TitleFunctionT ProjectionMatrix_Perspective_Z_Range::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Projection Matrix : Z Range";
+			return "Projection Matrix : Perspective : Z Range";
 		};
 	}
-	r2tm::DoFunctionT ProjectionMatrix_Z_Range::GetDoFunction() const
+	r2tm::DoFunctionT ProjectionMatrix_Perspective_Z_Range::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

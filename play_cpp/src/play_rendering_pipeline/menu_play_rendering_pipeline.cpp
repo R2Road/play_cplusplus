@@ -57,7 +57,7 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 
 
 		mp->AddItem( 'z', play_rendering_pipeline::Composition() );
-		mp->AddItem( 'x', play_rendering_pipeline::ProjectionMatrix_Z_Range() );
+		mp->AddItem( 'x', play_rendering_pipeline::ProjectionMatrix_Perspective_Z_Range() );
 
 
 
