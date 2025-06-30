@@ -1127,6 +1127,107 @@ namespace play_rendering_pipeline
 
 
 
+	r2tm::TitleFunctionT ProjectionMatrix_Orthographic_Z_Range::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Projection Matrix : Orthographic : Z Range";
+		};
+	}
+	r2tm::DoFunctionT ProjectionMatrix_Orthographic_Z_Range::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "테스트 조건 : orthoRH_ZO" );
+				OUTPUT_COMMENT( "Orthographic : 직교 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환     |     Z 범위만 0 ~ 1" );
+			}
+
+			LS();
+
+			{
+				const int viewport_w = 400;
+				const int viewport_h = 300;
+				const float left = -viewport_w / 2;
+				const float right = viewport_w / 2;
+				const float bottom = -viewport_h / 2;
+				const float top = viewport_h / 2;
+				DECLARATION_MAIN( const float near = 0.1f ); // 가까운 절단면
+				DECLARATION_MAIN( const float far = 100.f ); // 먼 절단면
+
+				const Mat44 projection_mat4(
+					  2 / ( right - left )  , 0.f                   , 0.f                 , -( right + left ) / ( right - left )
+					, 0.f                   , 2 / ( top - bottom )  , 0.f                 , -( top + bottom ) / ( top - bottom )
+					, 0.f                   , 0.f                   , 1 / ( far - near )  , -near / ( far - near )
+					, 0.f                   , 0.f                   , 0.f                 , 1.f
+				);
+
+
+				SS();
+
+				OUTPUT_NOTE( "직교 투영 == 선형 매핑" );
+
+				SS();
+
+
+				{
+					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, near, 1 ) );
+					OUTPUT_VALUE( ( v / v.w ) );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.3f, 1 ) );
+					OUTPUT_VALUE( v / v.w );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.5f, 1 ) );
+					OUTPUT_VALUE( v / v.w );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.8f, 1 ) );
+					OUTPUT_VALUE( v / v.w );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.9f, 1 ) );
+					OUTPUT_VALUE( v / v.w );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.95f, 1 ) );
+					OUTPUT_VALUE( v / v.w );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far, 1 ) );
+					OUTPUT_VALUE( v / v.w );
+				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT ProjectionMatrix_Perspective_Z_Range::GetTitleFunction() const
 	{
 		return []()->const char*

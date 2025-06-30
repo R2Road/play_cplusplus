@@ -95,6 +95,13 @@ namespace play_rendering_pipeline
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
+	class ProjectionMatrix_Orthographic_Z_Range : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
 	class ProjectionMatrix_Perspective_Z_Range : public r2tm::iItem
 	{
 	public:
