@@ -499,17 +499,13 @@ namespace play_rendering_pipeline
 
 
 				{
-					DECLARATION_MAIN( auto v = projection_mat4 * Vec4( 0, 0, far, 1 ) );
+					DECLARATION_MAIN( auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
 					OUTPUT_VALUE( v );
 					PROCESS_MAIN( v /= v.w );
 					OUTPUT_VALUE( v );
 					EXPECT_EP_EQ( 0.f, v.x );
 					EXPECT_EP_EQ( 0.f, v.y );
-					EXPECT_EP_NE( 1.f, v.z );
-
-					LF();
-
-					OUTPUT_NOTE( "부동 소수점 오차 + 비선형 매핑의 정밀도 문제로 인해서 z = far 일때 변환된 z = 1 이 되지 않는다.     |     near 값을 0으로 넣으면 z = 1 이 된다." );
+					EXPECT_EP_EQ( 1.f, v.z );
 				}
 			}
 
@@ -580,17 +576,13 @@ namespace play_rendering_pipeline
 
 
 				{
-					DECLARATION_MAIN( auto v = projection_mat4 * Vec4( 0, 0, far, 1 ) );
+					DECLARATION_MAIN( auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
 					OUTPUT_VALUE( v );
 					PROCESS_MAIN( v /= v.w );
 					OUTPUT_VALUE( v );
 					EXPECT_EP_EQ( 0.f, v.x );
 					EXPECT_EP_EQ( 0.f, v.y );
-					EXPECT_EP_NE( 1.f, v.z );
-
-					LF();
-
-					OUTPUT_NOTE( "부동 소수점 오차 + 비선형 매핑의 정밀도 문제로 인해서 z = far 일때 변환된 z = 1 이 되지 않는다.     |     near 값을 0으로 넣으면 z = 1 이 된다." );
+					EXPECT_EP_EQ( 1.f, v.z );
 				}
 			}
 
@@ -743,17 +735,13 @@ namespace play_rendering_pipeline
 
 
 				{
-					DECLARATION_MAIN( auto v = projection_mat4 * Vec4( 0, 0, far, 1 ) );
+					DECLARATION_MAIN( auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
 					OUTPUT_VALUE( v );
 					PROCESS_MAIN( v /= v.w );
 					OUTPUT_VALUE( v );
 					EXPECT_EP_EQ( 0.f, v.x );
 					EXPECT_EP_EQ( 0.f, v.y );
-					EXPECT_EP_NE( 1.f, v.z );
-
-					LF();
-
-					OUTPUT_NOTE( "부동 소수점 오차 + 비선형 매핑의 정밀도 문제로 인해서 z = far 일때 변환된 z = 1 이 되지 않는다.     |     near 값을 0으로 넣으면 z = 1 이 된다." );
+					EXPECT_EP_EQ( 1.f, v.z );
 				}
 			}
 
@@ -822,17 +810,13 @@ namespace play_rendering_pipeline
 
 
 				{
-					DECLARATION_MAIN( auto v = projection_mat4 * Vec4( 0, 0, far, 1 ) );
+					DECLARATION_MAIN( auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
 					OUTPUT_VALUE( v );
 					PROCESS_MAIN( v /= v.w );
 					OUTPUT_VALUE( v );
 					EXPECT_EP_EQ( 0.f, v.x );
 					EXPECT_EP_EQ( 0.f, v.y );
-					EXPECT_EP_NE( 1.f, v.z );
-
-					LF();
-
-					OUTPUT_NOTE( "부동 소수점 오차 + 비선형 매핑의 정밀도 문제로 인해서 z = far 일때 변환된 z = 1 이 되지 않는다.     |     near 값을 0으로 넣으면 z = 1 이 된다." );
+					EXPECT_EP_EQ( 1.f, v.z );
 				}
 			}
 
