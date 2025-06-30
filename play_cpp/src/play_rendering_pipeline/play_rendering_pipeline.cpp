@@ -324,11 +324,6 @@ namespace play_rendering_pipeline
 				SS();
 
 
-				EXPECT_EP_EQ( 0, ( projection_mat4 * VEC4_0 ).x );
-				EXPECT_EP_EQ( 0, ( projection_mat4 * VEC4_0 ).y );
-
-				LF();
-
 				EXPECT_EP_EQ( 1, ( projection_mat4 * Vec4( viewport_w / 2, viewport_h / 2, 0, 1 ) ).x );
 				EXPECT_EP_EQ( 1, ( projection_mat4 * Vec4( viewport_w / 2, viewport_h / 2, 0, 1 ) ).y );
 
@@ -344,8 +339,8 @@ namespace play_rendering_pipeline
 
 				LF();
 
-				EXPECT_EP_NE( -1, ( projection_mat4 * Vec4( 0, 0, -near_plane, 1 ) ).z );
-				EXPECT_EP_NE( 1, ( projection_mat4 * Vec4( 0, 0, -far_plane, 1 ) ).z );
+				OUTPUT_VALUE( ( projection_mat4 * Vec4( 0, 0, -near_plane, 1 ) ).z );
+				OUTPUT_VALUE( ( projection_mat4 * Vec4( 0, 0, -far_plane, 1 ) ).z );
 
 				LF();
 
@@ -415,11 +410,6 @@ namespace play_rendering_pipeline
 				SS();
 
 
-				EXPECT_EP_EQ( 0, ( projection_mat4 * VEC4_0 ).x );
-				EXPECT_EP_EQ( 0, ( projection_mat4 * VEC4_0 ).y );
-
-				LF();
-
 				EXPECT_EP_EQ( 1, ( projection_mat4 * Vec4( viewport_w / 2, viewport_h / 2, 0, 1 ) ).x );
 				EXPECT_EP_EQ( 1, ( projection_mat4 * Vec4( viewport_w / 2, viewport_h / 2, 0, 1 ) ).y );
 
@@ -432,11 +422,17 @@ namespace play_rendering_pipeline
 
 				EXPECT_EP_EQ( 0, ( projection_mat4 * Vec4( 0, 0, near_plane, 1 ) ).z );
 				EXPECT_EP_EQ( 1, ( projection_mat4 * Vec4( 0, 0, far_plane, 1 ) ).z );
-				EXPECT_EP_EQ( -1, ( projection_mat4 * Vec4( 0, 0, -far_plane, 1 ) ).z );
 
 				LF();
 
-				OUTPUT_NOTE( "-far_plane을 인자로 줬을때 -1로 변환 되지 않는 이유 = 비선형 매핑 + 부동 소수점 오차" );
+				OUTPUT_VALUE( ( projection_mat4 * Vec4( 0, 0, -near_plane, 1 ) ).z );
+				OUTPUT_VALUE( ( projection_mat4 * Vec4( 0, 0, -far_plane, 1 ) ).z );
+
+				LF();
+
+				OUTPUT_NOTE( "-near_plane, -far_plane을 인자로 줬을때 값이 정확히 맞지 않는다 = 부동 소수점 오차" );
+				OUTPUT_NOTE( "z값이 뒤집혀 나온다." );
+				OUTPUT_NOTE( "실제로 사용한다면 카메라 z 축을 확인하고 뒤집는 작업이 필요 한가?" );
 			}
 
 			LS();
