@@ -21,6 +21,9 @@
 
 ## ( '_')y-~
 <p float:left;">
+<img src="https://github.com/R2Road/play_cplusplus/blob/main/wiki/play_rendering_pipeline_20250701.gif"></img>
+</p>
+<p float:left;">
 <img src="https://github.com/R2Road/cplusplus_playground/blob/main/wiki/algorithm_astar_test_20220131_2.png"></img>
 </p>
 <p float:left;">
