@@ -53,6 +53,10 @@ namespace play_math
 		v1.w /= scalar;
 	}
 
+	inline Vec4 operator+( const Vec4& v1, const Vec4& v2 )
+	{
+		return Vec4{ v1.x + v2.x, v1.y + v2.y, v1.z + v2.z, 1.f };
+	}
 	inline Vec4 operator-( const Vec4& v1, const Vec4& v2 )
 	{
 		return Vec4{ v1.x - v2.x, v1.y - v2.y, v1.z - v2.z, 1.f };

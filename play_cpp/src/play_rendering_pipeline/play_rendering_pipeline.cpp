@@ -1,10 +1,16 @@
 #include "play_rendering_pipeline.h"
+
+#include <conio.h>
+
 #include "play_math/play_math___helper_common.h"
 #include "play_math/play_math___helper_vector4.h"
 #include "play_math/play_math___helper_matrix44.h"
 using namespace play_math;
 
 #include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_WindowsUtility.h"
+
+#include "r2/r2_FPSTimer.h"
 
 namespace play_rendering_pipeline
 {
@@ -1316,6 +1322,186 @@ namespace play_rendering_pipeline
 					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
 					OUTPUT_VALUE( v / v.w );
 				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+	
+
+	r2tm::TitleFunctionT Demo::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Demo : Rendering Pipeline";
+		};
+	}
+	r2tm::DoFunctionT Demo::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			const Vec4 init_eye( 0, 0, 10, 1 );
+			const Vec4 init_center( 0, 0, 0, 1 );
+			const Vec4 init_up( 0, 1, 0, 1 );
+
+			
+
+			const Vec4 cam_forward = vec4_normalize( init_eye - init_center );
+			const Vec4 cam_right = vec4_normalize( vec4_cross( init_up, cam_forward ) );
+			const Vec4 cam_up = vec4_cross( cam_forward, cam_right );
+
+			const Mat44 view_mat4(
+				  cam_right.x    , cam_right.y    , cam_right.z    , -vec4_dot( cam_right, init_eye )
+				, cam_up.x       , cam_up.y       , cam_up.z       , -vec4_dot( cam_up, init_eye )
+				, cam_forward.x  , cam_forward.y  , cam_forward.z  , -vec4_dot( cam_forward, init_eye )
+				, 0.f            , 0.f            , 0.f            , 1.f
+			);
+
+			
+
+			const float viewport_w = 60;
+			const float viewport_h = 30;
+			const float near = 1.f;
+			const float far = 100.f;
+
+			const float fovY = Deg2Rad( 90.f );
+			const float aspect = viewport_w / viewport_h;
+			const float tanHalfFovY = std::tan( fovY / 2 );
+
+			const Mat44 projection_mat4(
+				  1 / ( aspect * tanHalfFovY )  , 0.f              , 0.f                               , 0.f
+				, 0.f                           , 1 / tanHalfFovY  , 0.f                               , 0.f
+				, 0.f                           , 0.f              , -( far + near ) / ( far - near )  , -( 2 * far * near ) / ( far - near )
+				, 0.f                           , 0.f              , -1.f                              , 0.f
+			);
+
+			
+
+			const float viewport_near = 0.f;
+			const float viewport_far = 1.f;
+
+			const Mat44 viewport_mat4(
+				  viewport_w / 2.f  , 0.f               , 0.f                                     , viewport_w / 2.f
+				, 0.f               , viewport_h / 2.f  , 0.f                                     , viewport_h / 2.f
+				, 0.f               , 0.f               , ( viewport_far - viewport_near ) / 2.f  , ( viewport_near + viewport_far ) / 2.f
+				, 0.f               , 0.f               , 0.f                                     , 1.f
+			);
+
+			
+
+			const auto RY = []( const float degree )->Mat44
+			{
+				//
+				//  c,  -,  s,  -
+				//  -,  -,  -,  -
+				// -s,  -,  c,  -
+				//  -,  -,  -,  -
+				//
+
+				const float radian = Deg2Rad( degree );
+
+				Mat44 ret;
+
+				// diagonal
+				ret._11 = std::cos( radian );
+				ret._33 = std::cos( radian );
+
+				ret._13 = std::sin( radian );
+				ret._31 = -std::sin( radian );
+
+				return ret;
+			};
+
+
+			{
+				OUTPUT_SUBJECT( "½ÃÀÛ" );
+
+				const int v_size = 3;
+				const Vec4 vs[v_size] = {
+					  Vec4{ 0, -4, 0, 1 }
+					, Vec4{ 6, 3, 0, 1 }
+					, Vec4{ -6, 3, 0, 1 }
+				};
+				Vec4 fixed_vs[v_size];
+
+
+				const auto pivot = r2tm::WindowsUtility::GetCursorPoint();
+
+				r2::FPSTimer timer( 30 );
+				float accumulate_time = 0.f;
+				do
+				{
+					if( timer.Update() )
+					{
+						accumulate_time += ( timer.GetElapsedTime() * 0.5 );
+						accumulate_time -= ( int )accumulate_time;
+
+						r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot );
+
+						for( int i = 0; v_size > i; ++i )
+						{
+							// setup
+							auto& v = fixed_vs[i] = vs[i];
+
+							// Model Rotation
+							v = RY( 360 * accumulate_time ) * v;
+
+							v = view_mat4 * v;
+
+							v = projection_mat4 * v;
+							v /= v.w;
+
+							v = viewport_mat4 * v;
+						}
+
+						// Draw : vs
+						{
+							Vec4 s;
+							Vec4 e;
+							Vec4 d;
+							for( int i = 0; v_size > i; ++i )
+							{
+								s = fixed_vs[i];
+								e = ( i + 1 == v_size ? fixed_vs[0] : fixed_vs[i + 1] );
+
+								d = e - s;
+
+								int divider = int( std::abs( d.x ) > std::abs( d.y ) ? std::abs( d.x ) : std::abs( d.y ) );
+								d.x /= divider;
+								d.y /= divider;
+
+								for( int j = 0; divider > j; ++j )
+								{
+									auto v = s + ( d * j );
+
+									r2tm::WindowsUtility::FillCharacter( { pivot.x + ( short )v.x, pivot.y + ( short )v.y }, 'c' );
+								}
+							}
+						}
+
+						// Draw : 0, 0
+						{
+							auto v = view_mat4 * VEC4_0;
+
+							v = projection_mat4 * v;
+							v /= v.w;
+
+							v = viewport_mat4 * v;
+
+							r2tm::WindowsUtility::FillCharacter( { pivot.x + ( short )v.x, pivot.y + ( short )v.y }, '0', r2tm::WindowsUtility::eColor::FG_Green );
+						}
+
+						r2tm::WindowsUtility::MoveCursorPoint( { 0, pivot.y + ( short )viewport_h } );
+						
+						LS();
+					}
+
+				} while( !_kbhit() );
 			}
 
 			LS();
