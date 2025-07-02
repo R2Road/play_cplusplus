@@ -5,6 +5,7 @@
 #include "menu_root.h"
 
 #include "play_math_basic.h"
+#include "play_math_numbers.h"
 #include "play_math_vector2_transform.h"
 #include "play_math_vector3.h"
 #include "play_math_vector3_transform.h"
@@ -24,7 +25,7 @@ r2tm::WriteFunctionT Menu_Play_Math::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', play_math_vector3_transform::Need() );
+		mp->AddItem( '1', play_math_numbers::_1() );
 
 
 
