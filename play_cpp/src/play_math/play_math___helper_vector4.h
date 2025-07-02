@@ -40,6 +40,10 @@ namespace play_math
 	{
 		return Vec4{ v1.x * scalar, v1.y * scalar, v1.z * scalar, v1.w };
 	}
+	inline Vec4 operator*( const Vec4& v1, const int scalar )
+	{
+		return ( v1 * static_cast<float>( scalar ) );
+	}
 
 	inline Vec4 operator/( const Vec4& v1, const float scalar )
 	{

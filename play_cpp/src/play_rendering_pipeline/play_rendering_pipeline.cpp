@@ -1438,7 +1438,7 @@ namespace play_rendering_pipeline
 				{
 					if( timer.Update() )
 					{
-						accumulate_time += ( timer.GetElapsedTime() * 0.5 );
+						accumulate_time += ( timer.GetElapsedTime() * 0.5f );
 						accumulate_time -= ( int )accumulate_time;
 
 						r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot );
