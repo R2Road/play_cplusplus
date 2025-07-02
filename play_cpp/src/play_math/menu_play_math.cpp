@@ -24,9 +24,17 @@ r2tm::WriteFunctionT Menu_Play_Math::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', play_math_basic::Degree2Radian() );
-		mp->AddItem( '2', play_math_basic::Radian2Degree() );
-		mp->AddItem( '3', play_math_basic::Sine_Addition() );
+		mp->AddItem( '1', play_math_vector3_transform::Need() );
+
+
+
+		mp->AddLineFeed();
+
+
+
+		mp->AddItem( '2', play_math_basic::Degree2Radian() );
+		mp->AddItem( '3', play_math_basic::Radian2Degree() );
+		mp->AddItem( '4', play_math_basic::Sine_Addition() );
 
 
 
@@ -54,14 +62,6 @@ r2tm::WriteFunctionT Menu_Play_Math::GetWriteFunction() const
 		mp->AddItem( 's', play_math_vector2_transform::Rotation_X() );
 		mp->AddItem( 'd', play_math_vector3_transform::Rotation_XZ() );
 		mp->AddItem( 'f', play_math_vector3_transform::Rotation_Y() );
-
-
-
-		mp->AddLineFeed();
-
-
-
-		mp->AddItem( 'z', play_math_vector3_transform::Need() );
 
 
 
