@@ -102,6 +102,14 @@ namespace play_math
 			, ( v1.x * v2.y ) - ( v1.y * v2.x )
 		};
 	}
+
+	inline float vec3_angle( const Vec3& v1, const Vec3& v2 )
+	{
+		return std::acos(
+			  vec3_dot( v1, v2 )
+			/ ( vec3_length( v1 ) * vec3_length( v2 ) )
+		);
+	}
 }
 
 

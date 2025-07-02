@@ -76,7 +76,19 @@ namespace play_math_numbers
 
 				LF();
 
-				OUTPUT_VALUE( ( RX( Deg2Rad( 45.f ) ) * RY( Deg2Rad( 45.f ) ) ) * VEC3_Z );
+				DECLARATION_MAIN( Vec3 v );
+
+				LF();
+
+				PROCESS_MAIN( v = RY( Deg2Rad( 45.f ) ) * VEC3_Z );
+				OUTPUT_VALUE( Rad2Deg( vec3_angle( v, VEC3_Z ) ) );
+				OUTPUT_VALUE( v );
+
+				LF();
+
+				PROCESS_MAIN( v = RX( Deg2Rad( 45.f ) ) * v );
+				OUTPUT_VALUE( Rad2Deg( vec3_angle( v, VEC3_Z ) ) );
+				OUTPUT_VALUE( v );
 			}
 
 			LS();
