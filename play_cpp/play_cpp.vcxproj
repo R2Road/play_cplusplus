@@ -53,6 +53,7 @@
     <ClCompile Include="src\play_math\play_math_basic.cpp" />
     <ClCompile Include="src\menu_root.cpp" />
     <ClCompile Include="src\play_math\play_math_numbers.cpp" />
+    <ClCompile Include="src\play_math\play_math_quaternion.cpp" />
     <ClCompile Include="src\play_math\play_math_vector2_transform.cpp" />
     <ClCompile Include="src\play_math\play_math_vector3.cpp" />
     <ClCompile Include="src\play_math\play_math_vector3_transform.cpp" />
@@ -261,12 +262,14 @@
     <ClInclude Include="src\play_hobby\Vector3Menu.h" />
     <ClInclude Include="src\play_math\menu_play_math.h" />
     <ClInclude Include="src\play_math\play_math_numbers.h" />
+    <ClInclude Include="src\play_math\play_math_quaternion.h" />
     <ClInclude Include="src\play_math\play_math_vector2_transform.h" />
     <ClInclude Include="src\play_math\play_math_vector3.h" />
     <ClInclude Include="src\play_math\play_math_vector3_transform.h" />
     <ClInclude Include="src\play_math\play_math___helper_matrix22.h" />
     <ClInclude Include="src\play_math\play_math___helper_matrix33.h" />
     <ClInclude Include="src\play_math\play_math___helper_matrix44.h" />
+    <ClInclude Include="src\play_math\play_math___helper_quaternion.h" />
     <ClInclude Include="src\play_math\play_math___helper_vector2.h" />
     <ClInclude Include="src\play_math\play_math___helper_vector3.h" />
     <ClInclude Include="src\play_math\play_math_basic.h" />

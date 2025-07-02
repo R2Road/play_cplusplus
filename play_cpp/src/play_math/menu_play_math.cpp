@@ -6,6 +6,7 @@
 
 #include "play_math_basic.h"
 #include "play_math_numbers.h"
+#include "play_math_quaternion.h"
 #include "play_math_vector2_transform.h"
 #include "play_math_vector3.h"
 #include "play_math_vector3_transform.h"
@@ -63,6 +64,14 @@ r2tm::WriteFunctionT Menu_Play_Math::GetWriteFunction() const
 		mp->AddItem( 's', play_math_vector2_transform::Rotation_X() );
 		mp->AddItem( 'd', play_math_vector3_transform::Rotation_XZ() );
 		mp->AddItem( 'f', play_math_vector3_transform::Rotation_Y() );
+
+
+
+		mp->AddLineFeed();
+
+
+
+		mp->AddItem( 'z', play_math_quaternion::Rotation() );
 
 
 
