@@ -195,6 +195,24 @@ namespace play_math_vector3_transform
 		{
 			LS();
 
+			const auto RY = []( const float radian )->Mat33
+			{
+				return Mat33(
+						std::cos( radian )  , 0, std::sin( radian )
+					, 0                   , 1, 0
+					, -std::sin( radian ) , 0, std::cos( radian )
+				);
+			};
+
+			const auto RX = []( const float radian )->Mat33
+			{
+				return Mat33(
+						1, 0                 , 0
+					, 0, std::cos( radian ), -std::sin( radian )
+					, 0, std::sin( radian ), std::cos( radian )
+				);
+			};
+
 			{
 				OUTPUT_SUBJECT( "대각선 벡터의 길이" );
 
@@ -214,20 +232,7 @@ namespace play_math_vector3_transform
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
-				const auto B = []( const float radian )->Mat33
-				{
-					return Mat33(
-						  std::cos( radian )  , 0, std::sin( radian )
-						, 0                   , 1, 0
-						, -std::sin( radian ) , 0, std::cos( radian )
-					);
-				};
-				OUTPUT_SOURCE_END;
-
-				LF();
-
-				OUTPUT_VALUE( ( B( Deg2Rad( 45.f ) ) * VEC3_Z ) );
+				OUTPUT_VALUE( ( RY( Deg2Rad( 45.f ) ) * VEC3_Z ) );
 
 				LF();
 
@@ -236,6 +241,16 @@ namespace play_math_vector3_transform
 				LF();
 
 				OUTPUT_VALUE( std::sin( Deg2Rad( 45.f ) ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "단위 벡터가 45도, 45도 회전했을 때의 위치" );
+
+				LF();
+
+				OUTPUT_VALUE( ( RX( Deg2Rad( 45.f ) ) * RY( Deg2Rad( 45.f ) ) ) * VEC3_Z );
 			}
 
 			LS();
