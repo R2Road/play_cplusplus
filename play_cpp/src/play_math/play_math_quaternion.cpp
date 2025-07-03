@@ -45,14 +45,14 @@ namespace play_math_quaternion
 				};
 				OUTPUT_SOURCE_END;
 
-				LF();
+				SS();
 
 				EXPECT_EP_EQ( 1, L( Quat( 1, 0, 0, 0 ) ) );
 				EXPECT_EP_EQ( 1, L( Quat( 0, 1, 0, 0 ) ) );
 				EXPECT_EP_EQ( 1, L( Quat( 0, 0, 1, 0 ) ) );
 				EXPECT_EP_EQ( 1, L( Quat( 0, 0, 0, 1 ) ) );
 
-				LF();
+				SS();
 
 				EXPECT_EP_EQ( 2, L( Quat( 1, 1, 1, 1 ) ) );
 			}
