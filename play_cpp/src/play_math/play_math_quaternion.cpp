@@ -147,19 +147,9 @@ namespace play_math_quaternion
 
 			{
 				OUTPUT_SOURCE_READY_N_BEGIN;
-				const auto L = []( Quat q )->float
+				const auto N = []( Quat q )->Quat
 				{
-					return sqrt(
-						  ( q.w * q.w )
-						+ ( q.x * q.x )
-						+ ( q.y * q.y )
-						+ ( q.z * q.z )
-					);
-				};
-
-				const auto N = [L]( Quat q )->Quat
-				{
-					const float length = L( q );
+					const float length = quat_length( q );
 
 					return Quat(
 						  q.w / length
@@ -184,12 +174,12 @@ namespace play_math_quaternion
 
 					LF();
 
-					EXPECT_EP_EQ( 2, L( q ) );
+					EXPECT_EP_EQ( 2, quat_length( q ) );
 					EXPECT_EQ( Quat( 0.5f, 0.5f, 0.5f, 0.5f ), N( q ) );
 
 					LF();
 
-					EXPECT_EP_EQ( 1, L( N( q ) ) );
+					EXPECT_EP_EQ( 1, quat_length( N( q ) ) );
 				}
 			}
 
@@ -317,18 +307,13 @@ namespace play_math_quaternion
 						, pv.z * std::sin( radian / 2.f )
 					);
 				};
-
-				const auto I = []( Quat q )->Quat
-				{
-					return Quat( q.w, -q.x, -q.y, -q.z );
-				};
 				OUTPUT_SOURCE_END;
 
 				LF();
 
 				{
 					DECLARATION_MAIN( const Quat q = B( VEC3_X, 45.f ) );
-					DECLARATION_MAIN( const Quat iq = I( q ) );
+					DECLARATION_MAIN( const Quat iq = quat_inverse( q ) );
 					OUTPUT_VALUE( ( q * VEC3_Y ) * iq );
 				}
 
@@ -336,7 +321,7 @@ namespace play_math_quaternion
 
 				{
 					DECLARATION_MAIN( const Quat q = B( VEC3_Y, 45.f ) );
-					DECLARATION_MAIN( const Quat iq = I( q ) );
+					DECLARATION_MAIN( const Quat iq = quat_inverse( q ) );
 					OUTPUT_VALUE( ( q * VEC3_Z ) * iq );
 				}
 
@@ -344,7 +329,7 @@ namespace play_math_quaternion
 
 				{
 					DECLARATION_MAIN( const Quat q = B( VEC3_Z, 45.f ) );
-					DECLARATION_MAIN( const Quat iq = I( q ) );
+					DECLARATION_MAIN( const Quat iq = quat_inverse( q ) );
 					OUTPUT_VALUE( ( q * VEC3_X ) * iq );
 				}
 			}

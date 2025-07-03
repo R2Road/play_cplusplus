@@ -51,6 +51,16 @@ namespace play_math
 	{
 		return Quat( q.w, -q.x, -q.y, -q.z );
 	}
+
+	inline float quat_length( const Quat& q )
+	{
+		return sqrt(
+			  ( q.w * q.w )
+			+ ( q.x * q.x )
+			+ ( q.y * q.y )
+			+ ( q.z * q.z )
+		);
+	}
 }
 
 
