@@ -276,7 +276,7 @@ namespace play_math_quaternion
 
 				LF();
 
-				OUTPUT_SUBJECT( "쿼터니언의 곱" );
+				OUTPUT_SUBJECT( "쿼터니언 A * B" );
 				OUTPUT_COMMENT( "A * B = ( A.w + A.xi + A.yj + A.zk ) * ( B.w2 + B.xi + B.yj + B.zk )" );
 				OUTPUT_COMMENT( "위 식을 전개후 정리하면 아래의 식이 나온다." );
 
@@ -344,12 +344,12 @@ namespace play_math_quaternion
 
 			OUTPUT_SUBJECT( "연산 과정" );
 			OUTPUT_COMMENT( "1. 벡터를 Pure Quaternion 으로 변환" );
-			OUTPUT_COMMENT( "   > "   "Pquat = ( 0, x, y, z )" );
-			OUTPUT_COMMENT( "   > "   "Pquat = p" );
+			OUTPUT_COMMENT( "     "   "Pquat = ( 0, x, y, z )" );
+			OUTPUT_COMMENT( "     "   "Pquat = p" );
 			OUTPUT_COMMENT( "2. 곱 : 샌드위치 곱" );
-			OUTPUT_COMMENT( "   > "   "q = 회전 정의 단위 쿼터니언" );
-			OUTPUT_COMMENT( "   > "   "qi = q의 역" );
-			OUTPUT_COMMENT( "   > "   "p` = q * p * qi" );
+			OUTPUT_COMMENT( "     "   "q = 회전 정의 단위 쿼터니언" );
+			OUTPUT_COMMENT( "     "   "qi = q의 역" );
+			OUTPUT_COMMENT( "     "   "p` = q * p * qi" );
 
 			LS();
 
@@ -368,25 +368,33 @@ namespace play_math_quaternion
 				};
 				OUTPUT_SOURCE_END;
 
-				LF();
-
-				{
-					DECLARATION_MAIN( const Quat q = B( VEC3_X, 45.f ) );
-					OUTPUT_VALUE( ( q * VEC3_Y ) * quat_inverse( q ) );
-				}
-
-				LF();
-
-				{
-					DECLARATION_MAIN( const Quat q = B( VEC3_Y, 45.f ) );
-					OUTPUT_VALUE( ( q * VEC3_Z ) * quat_inverse( q ) );
-				}
-
-				LF();
+				SS();
 
 				{
 					DECLARATION_MAIN( const Quat q = B( VEC3_Z, 45.f ) );
+					OUTPUT_VALUE( ( q * VEC3_X ) );
 					OUTPUT_VALUE( ( q * VEC3_X ) * quat_inverse( q ) );
+				}
+
+				SS();
+
+				{
+					DECLARATION_MAIN( const Quat q = B( VEC3_X, 90.f ) );
+					EXPECT_EQ( Quat( 0, 0, 0, 1 ), ( q * VEC3_Y ) * quat_inverse( q ) );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( const Quat q = B( VEC3_Y, 90.f ) );
+					EXPECT_EQ( Quat( 0, 1, 0, 0 ), ( q * VEC3_Z ) * quat_inverse( q ) );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( const Quat q = B( VEC3_Z, 90.f ) );
+					EXPECT_EQ( Quat( 0, 0, 1, 0 ), ( q * VEC3_X ) * quat_inverse( q ) );
 				}
 			}
 
