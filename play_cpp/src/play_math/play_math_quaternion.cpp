@@ -270,13 +270,9 @@ namespace play_math_quaternion
 
 			LF();
 
-			OUTPUT_SUBJECT( "Quaternion 과 Vector3 의 곱 : 벡터의 회전" );
-			OUTPUT_COMMENT( "1. 벡터를 Pure Quaternion 으로 변환" );
-			OUTPUT_COMMENT( "   > "   "Pquat = ( 0, x, y, z )" );
-			OUTPUT_COMMENT( "   > "   "Pquat = p" );
-			OUTPUT_COMMENT( "2. 곱" );
-			OUTPUT_COMMENT( "   > "   "p` = q * p * q^-1" );
-			OUTPUT_COMMENT( "   > "   "p` = ( 회전 정의 단위 쿼터니언 ) * p * ( 회전 정의 단위 쿼터니언의 역 )" );
+			OUTPUT_SUBJECT( "쿼터니언 구성 식" );
+			OUTPUT_COMMENT( "k = 회전 축" );
+			OUTPUT_COMMENT( "q = { cos( θ / 2 ), k.x * sin( θ / 2 ), k.y * sin( θ / 2 ), k.z * sin( θ / 2 ) }" );
 
 			LF();
 
@@ -288,9 +284,14 @@ namespace play_math_quaternion
 
 			LF();
 
-			OUTPUT_SUBJECT( "Quaternion 회전 공식" );
-			OUTPUT_COMMENT( "k = 회전 축" );
-			OUTPUT_COMMENT( "q = { cos( θ / 2 ), k.x * sin( θ / 2 ), k.y * sin( θ / 2 ), k.z * sin( θ / 2 ) }" );
+			OUTPUT_SUBJECT( "Quaternion 과 Vector3 의 곱 : 벡터의 회전" );
+			OUTPUT_COMMENT( "1. 벡터를 Pure Quaternion 으로 변환" );
+			OUTPUT_COMMENT( "   > "   "Pquat = ( 0, x, y, z )" );
+			OUTPUT_COMMENT( "   > "   "Pquat = p" );
+			OUTPUT_COMMENT( "2. 곱" );
+			OUTPUT_COMMENT( "   > "   "q = 회전 정의 단위 쿼터니언" );
+			OUTPUT_COMMENT( "   > "   "qi = q의 역" );
+			OUTPUT_COMMENT( "   > "   "p` = q * p * qi" );
 
 			LS();
 
@@ -313,24 +314,21 @@ namespace play_math_quaternion
 
 				{
 					DECLARATION_MAIN( const Quat q = B( VEC3_X, 45.f ) );
-					DECLARATION_MAIN( const Quat iq = quat_inverse( q ) );
-					OUTPUT_VALUE( ( q * VEC3_Y ) * iq );
+					OUTPUT_VALUE( ( q * VEC3_Y ) * quat_inverse( q ) );
 				}
 
 				LF();
 
 				{
 					DECLARATION_MAIN( const Quat q = B( VEC3_Y, 45.f ) );
-					DECLARATION_MAIN( const Quat iq = quat_inverse( q ) );
-					OUTPUT_VALUE( ( q * VEC3_Z ) * iq );
+					OUTPUT_VALUE( ( q * VEC3_Z ) * quat_inverse( q ) );
 				}
 
 				LF();
 
 				{
 					DECLARATION_MAIN( const Quat q = B( VEC3_Z, 45.f ) );
-					DECLARATION_MAIN( const Quat iq = quat_inverse( q ) );
-					OUTPUT_VALUE( ( q * VEC3_X ) * iq );
+					OUTPUT_VALUE( ( q * VEC3_X ) * quat_inverse( q ) );
 				}
 			}
 
