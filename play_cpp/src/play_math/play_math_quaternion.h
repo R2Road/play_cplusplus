@@ -45,4 +45,11 @@ namespace play_math_quaternion
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
+
+	class Convert_2_Matrix : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
 }

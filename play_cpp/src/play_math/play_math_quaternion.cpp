@@ -2,6 +2,7 @@
 #include "play_math___helper_common.h"
 #include "play_math___helper_quaternion.h"
 #include "play_math___helper_vector3.h"
+#include "play_math___helper_matrix44.h"
 using namespace play_math;
 
 #include "r2tm/r2tm_Inspector.h"
@@ -395,6 +396,81 @@ namespace play_math_quaternion
 				{
 					DECLARATION_MAIN( const Quat q = B( VEC3_Z, 90.f ) );
 					EXPECT_EQ( Quat( 0, 0, 1, 0 ), ( q * VEC3_X ) * quat_inverse( q ) );
+				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Convert_2_Matrix::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Quaternion : Convert_2_Matrix";
+		};
+	}
+	r2tm::DoFunctionT Convert_2_Matrix::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_SUBJECT( "쿼터니언을 행렬로 변환" );
+
+			LS();
+
+			{
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const auto B = []( Vec4 pv, float degree )->Quat
+				{
+					const auto radian = Deg2Rad( degree );
+
+					return Quat(
+						std::cos( radian / 2.f )
+						, pv.x * std::sin( radian / 2.f )
+						, pv.y * std::sin( radian / 2.f )
+						, pv.z * std::sin( radian / 2.f )
+					);
+				};
+
+				const auto C = []( Quat q )->Mat44
+				{
+					return Mat44(
+						  1 - ( 2 *  q.y * q.y ) - ( 2 * q.z * q.z )  , ( 2 * q.x * q.y ) - ( 2 * q.z * q.w )      , ( 2 * q.x * q.z ) + ( 2 * q.y * q.w )      , 0
+						, ( 2 * q.x * q.y ) + ( 2 * q.z * q.w )       , 1 - ( 2 * q.x * q.x ) - ( 2 * q.z * q.z )  , ( 2 * q.y * q.z ) - ( 2 * q.x * q.w )      , 0
+						, ( 2 * q.x * q.z ) - ( 2 * q.y * q.w )       , ( 2 * q.y * q.z ) + ( 2 * q.x * q.w )      , 1 - ( 2 * q.x * q.x ) - ( 2 * q.y * q.y )  , 0
+						, 0                                           , 0                                          , 0                                          , 1
+					);
+				};
+				OUTPUT_SOURCE_END;
+
+				SS();
+
+				{
+					DECLARATION_MAIN( const Quat q = B( VEC4_X, 90.f ) );
+					DECLARATION_MAIN( const Mat44 m = C( q ) );
+					EXPECT_EQ( VEC4_Z, m * VEC4_Y );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( const Quat q = B( VEC4_Y, 90.f ) );
+					DECLARATION_MAIN( const Mat44 m = C( q ) );
+					EXPECT_EQ( VEC4_X, m * VEC4_Z );
+				}
+
+				LF();
+
+				{
+					DECLARATION_MAIN( const Quat q = B( VEC4_Z, 90.f ) );
+					DECLARATION_MAIN( const Mat44 m = C( q ) );
+					EXPECT_EQ( VEC4_Y, m * VEC4_X );
 				}
 			}
 
