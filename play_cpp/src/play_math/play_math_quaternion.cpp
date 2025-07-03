@@ -253,6 +253,71 @@ namespace play_math_quaternion
 
 
 
+	r2tm::TitleFunctionT Multiply::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Quaternion : Multiply";
+		};
+	}
+	r2tm::DoFunctionT Multiply::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "REF : qua<T, Q>::operator*=( qua<U, Q> const& r ) : https://github.com/g-truc/glm/blob/master/glm/detail/type_quat.inl" );
+
+				LF();
+
+				OUTPUT_SUBJECT( "쿼터니언의 대수적 정의" );
+				OUTPUT_COMMENT( "q = w + xi + yj + zk" );
+
+				LF();
+
+				OUTPUT_SUBJECT( "쿼터니언의 곱" );
+				OUTPUT_COMMENT( "A * B = ( A.w + A.xi + A.yj + A.zk ) * ( B.w2 + B.xi + B.yj + B.zk )" );
+				OUTPUT_COMMENT( "위 식을 전개후 정리하면 아래의 식이 나온다." );
+
+				LF();
+
+				OUTPUT_SUBJECT( "식" );
+				OUTPUT_COMMENT( "w = ( A.w * B.w ) - ( A.x * B.x ) - ( A.y * B.y ) - ( A.z * B.z )" );
+				OUTPUT_COMMENT( "x = ( A.w * B.x ) + ( A.x * B.w ) + ( A.y * B.z ) - ( A.z * B.y )" );
+				OUTPUT_COMMENT( "y = ( A.w * B.y ) + ( A.y * B.w ) + ( A.z * B.x ) - ( A.x * B.z )" );
+				OUTPUT_COMMENT( "z = ( A.w * B.z ) + ( A.z * B.w ) + ( A.x * B.y ) - ( A.y * B.x )" );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const auto M = []( Quat a, Quat b )->Quat
+				{
+					return Quat(
+						  ( a.w * b.w ) - ( a.x * b.x ) - ( a.y * b.y ) - ( a.z * b.z )
+						, ( a.w * b.x ) + ( a.x * b.w ) + ( a.y * b.z ) - ( a.z * b.y )
+						, ( a.w * b.y ) + ( a.y * b.w ) + ( a.z * b.x ) - ( a.x * b.z )
+						, ( a.w * b.z ) + ( a.z * b.w ) + ( a.x * b.y ) - ( a.y * b.x )
+					);
+				};
+				OUTPUT_SOURCE_END;
+
+				SS();
+
+				EXPECT_EQ( Quat( -2, 2, 2, 2 ), M( Quat( 1, 1, 1, 1 ), Quat( 1, 1, 1, 1 ) ) );
+				EXPECT_EQ( Quat( -28, 4, 6, 8 ), M( Quat( 1, 2, 3, 4 ), Quat( 1, 2, 3, 4 ) ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT Rotation::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -266,21 +331,9 @@ namespace play_math_quaternion
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "REF : qua<T, Q>::operator*=( qua<U, Q> const& r ) : https://github.com/g-truc/glm/blob/master/glm/detail/type_quat.inl" );
-
-			LF();
-
 			OUTPUT_SUBJECT( "쿼터니언 구성 식" );
 			OUTPUT_COMMENT( "k = 회전 축" );
 			OUTPUT_COMMENT( "q = { cos( θ / 2 ), k.x * sin( θ / 2 ), k.y * sin( θ / 2 ), k.z * sin( θ / 2 ) }" );
-
-			LF();
-
-			OUTPUT_SUBJECT( "Quaternion의 곱셈 규칙" );
-			OUTPUT_COMMENT( "w = ( A.w * B.w ) - ( A.x * B.x ) - ( A.y * B.y ) - ( A.z * B.z )" );
-			OUTPUT_COMMENT( "x = ( A.w * B.x ) + ( A.x * B.w ) + ( A.y * B.z ) - ( A.z * B.y )" );
-			OUTPUT_COMMENT( "y = ( A.w * B.y ) + ( A.y * B.w ) + ( A.z * B.x ) - ( A.x * B.z )" );
-			OUTPUT_COMMENT( "z = ( A.w * B.z ) + ( A.z * B.w ) + ( A.x * B.y ) - ( A.y * B.x )" );
 
 			LF();
 
