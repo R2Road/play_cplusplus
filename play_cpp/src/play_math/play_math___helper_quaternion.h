@@ -22,6 +22,16 @@ namespace play_math
 		float z;
 	};
 
+	inline bool operator==( const Quat& a, const Quat& b )
+	{
+		return (
+			   r2::epsilon_equal( a.w, b.w )
+			&& r2::epsilon_equal( a.x, b.x )
+			&& r2::epsilon_equal( a.y, b.y )
+			&& r2::epsilon_equal( a.z, b.z )
+		);
+	}
+
 	inline Quat operator*( const Quat& a, const Quat& b )
 	{
 		return Quat(

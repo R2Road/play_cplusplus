@@ -65,6 +65,80 @@ namespace play_math_quaternion
 
 
 
+	r2tm::TitleFunctionT Normalize::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Quaternion : Normalize";
+		};
+	}
+	r2tm::DoFunctionT Normalize::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_SUBJECT( "쿼터니언의 정규화" );
+			OUTPUT_COMMENT( "쿼터니언의 각 성분을 길이로 나눈다." );
+
+			LS();
+
+			{
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const auto L = []( Quat q )->float
+				{
+					return sqrt(
+						  ( q.w * q.w )
+						+ ( q.x * q.x )
+						+ ( q.y * q.y )
+						+ ( q.z * q.z )
+					);
+				};
+
+				const auto N = [L]( Quat q )->Quat
+				{
+					const float length = L( q );
+
+					return Quat(
+						  q.w / length
+						, q.x / length
+						, q.y / length
+						, q.z / length
+					);
+				};
+				OUTPUT_SOURCE_END;
+
+				SS();
+
+				EXPECT_EQ( Quat( 1, 0, 0, 0 ), N( Quat( 1, 0, 0, 0 ) ) );
+				EXPECT_EQ( Quat( 0, 1, 0, 0 ), N( Quat( 0, 1, 0, 0 ) ) );
+				EXPECT_EQ( Quat( 0, 0, 1, 0 ), N( Quat( 0, 0, 1, 0 ) ) );
+				EXPECT_EQ( Quat( 0, 0, 0, 1 ), N( Quat( 0, 0, 0, 1 ) ) );
+
+				SS();
+
+				{
+					DECLARATION_MAIN( const Quat q( 1, 1, 1, 1 ) );
+
+					LF();
+
+					EXPECT_EP_EQ( 2, L( q ) );
+					EXPECT_EQ( Quat( 0.5f, 0.5f, 0.5f, 0.5f ), N( q ) );
+
+					LF();
+
+					EXPECT_EP_EQ( 1, L( N( q ) ) );
+				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT Rotation::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -86,11 +160,6 @@ namespace play_math_quaternion
 			OUTPUT_COMMENT( "4원수" );
 			OUTPUT_COMMENT( "실수부 + 3개의 허수부 = w + x, y, z" );
 			OUTPUT_COMMENT( "회전에만 사용" );
-
-			LF();
-
-			OUTPUT_SUBJECT( "단위 쿼터니언 : Unit Quaternion" );
-			OUTPUT_COMMENT( "크기가 1인 Quaternion" );
 
 			LF();
 
