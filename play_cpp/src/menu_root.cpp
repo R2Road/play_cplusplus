@@ -61,8 +61,7 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', various_console_input_test::KeyCodeView() );
-		mp->AddMenu( '2', WindowsMenu() );
+		mp->AddMenu( '1', WindowsMenu() );
 
 
 
@@ -98,6 +97,14 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 		mp->AddMenu( 'x', HobbyMenu() );
 		mp->AddMenu( 'c', PerformanceMenu() );
 		mp->AddMenu( 'v', Menu_CPU() );
+
+
+
+		mp->AddLineFeed();
+
+
+
+		mp->AddItem( 32, various_console_input_test::KeyCodeView() );
 
 
 
