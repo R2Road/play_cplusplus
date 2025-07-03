@@ -26,6 +26,7 @@ namespace play_math_quaternion
 			OUTPUT_COMMENT( "4원수" );
 			OUTPUT_COMMENT( "실수부 + 3개의 허수부 = w + x, y, z" );
 			OUTPUT_COMMENT( "회전에만 사용" );
+			OUTPUT_COMMENT( "일반적으로 길이가 1 이다." );
 
 			LF();
 
@@ -190,6 +191,68 @@ namespace play_math_quaternion
 
 					EXPECT_EP_EQ( 1, L( N( q ) ) );
 				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Inverse::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Quaternion : Inverse";
+		};
+	}
+	r2tm::DoFunctionT Inverse::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_SUBJECT( "쿼터니언의 역 : Inverse Quaternion" );
+			OUTPUT_COMMENT( "회전을 되돌리는 쿼터니언" );
+
+			LF();
+
+			OUTPUT_SUBJECT( "식" );
+			OUTPUT_COMMENT( "qc = 켤레 쿼터니언, 허수부의 부호만 반대로 바꾼 쿼터니언" );
+			OUTPUT_COMMENT( "qi = qc / ( ||q||^2 )" );
+			OUTPUT_COMMENT( "qi = qc / ( sqrt( w^2 + x^2 + y^2 + z^2 )^2 )" );
+			OUTPUT_COMMENT( "qi = qc / ( w^2 + x^2 + y^2 + z^2 )" );
+			OUTPUT_COMMENT( "qi = {" );
+			OUTPUT_COMMENT( "    " "   w / ( w^2 + x^2 + y^2 + z^2 )" );
+			OUTPUT_COMMENT( "    " ", -x / ( w^2 + x^2 + y^2 + z^2 )" );
+			OUTPUT_COMMENT( "    " ", -y / ( w^2 + x^2 + y^2 + z^2 )" );
+			OUTPUT_COMMENT( "    " ", -z / ( w^2 + x^2 + y^2 + z^2 )" );
+			OUTPUT_COMMENT( "}" );
+			LF();
+
+			OUTPUT_SUBJECT( "적용" );
+			OUTPUT_COMMENT( "일반적으로 회전을 표현하는 쿼터니언은 길이가 1 이다." );
+			OUTPUT_COMMENT( "qi = qc / ( ||q||^2 )" );
+			OUTPUT_COMMENT( "qi = qc / ( 1^2 )" );
+			OUTPUT_COMMENT( "qi = qc / 1" );
+			OUTPUT_COMMENT( "qi = qc" );
+			OUTPUT_COMMENT( "qi = { w, -x, -y, -z }" );
+
+			LS();
+
+			{
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const auto I = []( Quat q )->Quat
+				{
+					return Quat( q.w, -q.x, -q.y, -q.z );
+				};
+				OUTPUT_SOURCE_END;
+
+				SS();
+
+				EXPECT_EQ( Quat( 1, -2, -3, -4 ), I( Quat( 1, 2, 3, 4 ) ) );
 			}
 
 			LS();
