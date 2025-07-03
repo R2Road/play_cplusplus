@@ -7,7 +7,7 @@
 #include "r2tm/r2tm_MenuProcessor.h"
 #include "r2tm/r2tm_VersionInfo.h"
 
-#include "test_various/item/various_console_input_test.h"
+#include "test_various/test_key.h"
 
 #include "play_hobby/HobbyMenu.h"
 #include "play_math/menu_play_math.h"

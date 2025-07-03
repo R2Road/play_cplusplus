@@ -185,9 +185,9 @@
     <ClCompile Include="src\test_various\DebugMenu.cpp" />
     <ClCompile Include="src\test_various\ETCMenu.cpp" />
     <ClCompile Include="src\test_various\item\etc_0_test.cpp" />
-    <ClCompile Include="src\test_various\item\various_console_input_test.cpp" />
     <ClCompile Include="src\test_various\item\various_debug_test.cpp" />
     <ClCompile Include="src\test_various\RandomMenu.cpp" />
+    <ClCompile Include="src\test_various\test_key.cpp" />
     <ClCompile Include="src\test_various\TimeMenu.cpp" />
     <ClCompile Include="src\test_windows\WindowsTerminalFondAndTextColorMenu.cpp" />
     <ClCompile Include="src\test_windows\WindowsTerminalBasicMenu.cpp" />
@@ -432,9 +432,9 @@
     <ClInclude Include="src\test_various\DebugMenu.h" />
     <ClInclude Include="src\test_various\ETCMenu.h" />
     <ClInclude Include="src\test_various\item\etc_0_test.h" />
-    <ClInclude Include="src\test_various\item\various_console_input_test.h" />
     <ClInclude Include="src\test_various\item\various_debug_test.h" />
     <ClInclude Include="src\test_various\RandomMenu.h" />
+    <ClInclude Include="src\test_various\test_key.h" />
     <ClInclude Include="src\test_various\TimeMenu.h" />
     <ClInclude Include="src\test_windows\WindowsTerminalFondAndTextColorMenu.h" />
     <ClInclude Include="src\test_windows\WindowsTerminalBasicMenu.h" />
