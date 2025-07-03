@@ -61,7 +61,8 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
-		mp->AddMenu( '1', WindowsMenu() );
+		mp->AddMenu( '1', Menu_Play_Math() );
+		mp->AddMenu( '2', Menu_Play_Rendering_Pipeline() );
 
 
 
@@ -69,22 +70,21 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 'q', C_Menu() );
-		mp->AddMenu( 'w', CPP_Menu() );
-		mp->AddMenu( 'e', STDMenu() );
-		mp->AddMenu( 'r', TemplateMenu() );
-		mp->AddMenu( 't', TimeMenu() );
-		mp->AddMenu( 'y', RandomMenu() );
-		mp->AddMenu( 'u', DebugMenu() );
+		mp->AddMenu( 'q', WindowsMenu() );
+		mp->AddMenu( 'w', C_Menu() );
+		mp->AddMenu( 'e', CPP_Menu() );
+		mp->AddMenu( 'r', STDMenu() );
+		mp->AddMenu( 't', TemplateMenu() );
+		mp->AddMenu( 'y', TimeMenu() );
+		mp->AddMenu( 'u', RandomMenu() );
+		mp->AddMenu( 'i', DebugMenu() );
 
 
 
 		mp->AddLineFeed();
 
 
-
-		mp->AddMenu( 'a', Menu_Play_Math() );
-		mp->AddMenu( 's', Menu_Play_Rendering_Pipeline() );
+		
 		mp->AddMenu( 'd', ETCMenu() );
 
 
