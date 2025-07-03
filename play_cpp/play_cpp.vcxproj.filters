@@ -632,6 +632,9 @@
     <ClCompile Include="src\play_math\play_math_quaternion.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_Input.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1363,6 +1366,9 @@
     </ClInclude>
     <ClInclude Include="src\play_math\play_math___helper_quaternion.h">
       <Filter>play_math</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_Input.h">
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

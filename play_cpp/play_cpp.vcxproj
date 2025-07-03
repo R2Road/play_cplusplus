@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="external\r2tm\r2tm_CacheCleaner.cpp" />
     <ClCompile Include="external\r2tm\r2tm_Director.cpp" />
+    <ClCompile Include="external\r2tm\r2tm_Input.cpp" />
     <ClCompile Include="external\r2tm\r2tm_MenuProcessor.cpp" />
     <ClCompile Include="external\r2tm\r2tm_PrintBinary.cpp" />
     <ClCompile Include="external\r2tm\r2tm_PrintFile.cpp" />
@@ -212,6 +213,7 @@
     <ClInclude Include="external\r2tm\r2tm_Director.h" />
     <ClInclude Include="external\r2tm\r2tm_iItem.h" />
     <ClInclude Include="external\r2tm\r2tm_iMenu.h" />
+    <ClInclude Include="external\r2tm\r2tm_Input.h" />
     <ClInclude Include="external\r2tm\r2tm_Inspector.h" />
     <ClInclude Include="external\r2tm\r2tm_MenuConstant.h" />
     <ClInclude Include="external\r2tm\r2tm_MenuProcessor.h" />
