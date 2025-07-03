@@ -9,6 +9,67 @@ using namespace play_math;
 
 namespace play_math_quaternion
 {
+	r2tm::TitleFunctionT Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Quaternion : Basic";
+		};
+	}
+	r2tm::DoFunctionT Basic::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_SUBJECT( "쿼터니언 개요 : Quaternion" );
+			OUTPUT_COMMENT( "4원수" );
+			OUTPUT_COMMENT( "실수부 + 3개의 허수부 = w + x, y, z" );
+			OUTPUT_COMMENT( "회전에만 사용" );
+
+			LF();
+
+			OUTPUT_SUBJECT( "성분 설명" );
+			OUTPUT_COMMENT( "w" );
+			OUTPUT_COMMENT( "    " "스칼라 또는 실수부" );
+			OUTPUT_COMMENT( "    " "회전의 크기와 관련된 정보" );
+			OUTPUT_COMMENT( "    " "1일 때 회전량 최소. 0일 때 회전량 최대( 180 )" );
+			OUTPUT_COMMENT( "x, y, z" );
+			OUTPUT_COMMENT( "    " "허수부" );
+			OUTPUT_COMMENT( "    " "회전축의 방향을 나타낸다" );
+			OUTPUT_COMMENT( "    " "회전 각도의 절반의 사인 값(sin(θ/2))에 해당 축의 단위 벡터 성분을 곱한 값" );
+
+			LF();
+
+			OUTPUT_SUBJECT( "정리" );
+			OUTPUT_COMMENT( "k = 회전축" );
+			OUTPUT_COMMENT( "q = ( cos( θ / 2 ), k * sin( θ / 2 ) )" );
+			OUTPUT_COMMENT( "q = ( w, v )" );
+			OUTPUT_COMMENT( "q = ( w, x, y, z )" );
+			OUTPUT_COMMENT( "회전 축의 방향과 회전 각도를 4차원 벡터의 형태로 표현한 것." );
+
+			LS();
+
+			{
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				struct Quaternion
+				{
+					float w;    // 스칼라
+					float x;    // 허수부
+					float y;    // 허수부
+					float z;    // 허수부
+				};
+				OUTPUT_SOURCE_END;
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT Length::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -153,13 +214,6 @@ namespace play_math_quaternion
 			LS();
 
 			OUTPUT_SUBJECT( "REF : qua<T, Q>::operator*=( qua<U, Q> const& r ) : https://github.com/g-truc/glm/blob/master/glm/detail/type_quat.inl" );
-
-			LF();
-
-			OUTPUT_SUBJECT( "쿼터니언 개요 : Quaternion" );
-			OUTPUT_COMMENT( "4원수" );
-			OUTPUT_COMMENT( "실수부 + 3개의 허수부 = w + x, y, z" );
-			OUTPUT_COMMENT( "회전에만 사용" );
 
 			LF();
 
