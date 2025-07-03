@@ -1,8 +1,9 @@
 #include "various_console_input_test.h"
 
-#include <conio.h> // _kbhit(), _getch()
-
+#include "r2tm/r2tm_ColorModifier.h"
+#include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 namespace various_console_input_test
 {
@@ -19,18 +20,37 @@ namespace various_console_input_test
 		{
 			LS();
 
-			std::cout << "[ESC] End" << r2tm::linefeed;
+			{
+				OUTPUT_SUBJECT( "[   ESC   ] End" );
+				OUTPUT_SUBJECT( "[ Any Key ] ..." );
+			}
 
 			LS();
 
-			int input = 0;
-			do
 			{
-				input = _getch();
+				const auto start_point = r2tm::WindowsUtility::GetCursorPoint();
+				r2tm::WindowsUtility::CursorPoint current_point;
 
-				std::cout << "Key : " << input << r2tm::linefeed;
+				const short line_limit = start_point.y + 30;
 
-			} while( 27 != input );
+				int input = 0;
+				do
+				{
+
+					current_point = r2tm::WindowsUtility::GetCursorPoint();
+					if( line_limit < current_point.y )
+					{
+						r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( start_point );
+					}
+
+					std::cout << "> ";
+
+					input = GET_KEY;
+
+					std::cout << "Key : " << clm( r2tm::eColor::FG_LightYellow ) << input << clm() << r2tm::linefeed;
+
+				} while( 27 != input ); // ESC
+			}
 
 			LS();
 
