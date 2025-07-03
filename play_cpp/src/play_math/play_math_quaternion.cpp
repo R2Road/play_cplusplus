@@ -331,17 +331,22 @@ namespace play_math_quaternion
 		{
 			LS();
 
+			OUTPUT_SUBJECT( "º¤ÅÍÀÇ È¸Àü == Quaternion °ú VectorÀÇ °ö °³¿ä" );
+			OUTPUT_COMMENT( "»÷µåÀ§Ä¡ °ö" );
+
+			LF();
+
 			OUTPUT_SUBJECT( "ÄõÅÍ´Ï¾ð ±¸¼º ½Ä" );
 			OUTPUT_COMMENT( "k = È¸Àü Ãà" );
 			OUTPUT_COMMENT( "q = { cos( ¥è / 2 ), k.x * sin( ¥è / 2 ), k.y * sin( ¥è / 2 ), k.z * sin( ¥è / 2 ) }" );
 
 			LF();
 
-			OUTPUT_SUBJECT( "Quaternion °ú Vector3 ÀÇ °ö : º¤ÅÍÀÇ È¸Àü" );
+			OUTPUT_SUBJECT( "¿¬»ê °úÁ¤" );
 			OUTPUT_COMMENT( "1. º¤ÅÍ¸¦ Pure Quaternion À¸·Î º¯È¯" );
 			OUTPUT_COMMENT( "   > "   "Pquat = ( 0, x, y, z )" );
 			OUTPUT_COMMENT( "   > "   "Pquat = p" );
-			OUTPUT_COMMENT( "2. °ö" );
+			OUTPUT_COMMENT( "2. °ö : »÷µåÀ§Ä¡ °ö" );
 			OUTPUT_COMMENT( "   > "   "q = È¸Àü Á¤ÀÇ ´ÜÀ§ ÄõÅÍ´Ï¾ð" );
 			OUTPUT_COMMENT( "   > "   "qi = qÀÇ ¿ª" );
 			OUTPUT_COMMENT( "   > "   "p` = q * p * qi" );
