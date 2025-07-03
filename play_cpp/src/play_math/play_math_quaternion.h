@@ -4,6 +4,13 @@
 
 namespace play_math_quaternion
 {
+	class Length : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
 	class Rotation : public r2tm::iItem
 	{
 	public:

@@ -9,6 +9,62 @@ using namespace play_math;
 
 namespace play_math_quaternion
 {
+	r2tm::TitleFunctionT Length::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Quaternion : Length";
+		};
+	}
+	r2tm::DoFunctionT Length::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_SUBJECT( "쿼터니언의 길이 계산" );
+			OUTPUT_COMMENT( "기본 개념은 Vector 의 길이 계산과 동일." );
+
+			LF();
+
+			OUTPUT_SUBJECT( "계산 공식" );
+			OUTPUT_COMMENT( "쿼터니언의 길이 = sqrt( w^2 + x^2 + y^2 + z^2 )" );
+
+			LS();
+
+			{
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const auto L = []( Quat q )->float
+				{
+					return sqrt(
+						  ( q.w * q.w )
+						+ ( q.x * q.x )
+						+ ( q.y * q.y )
+						+ ( q.z * q.z )
+					);
+				};
+				OUTPUT_SOURCE_END;
+
+				LF();
+
+				EXPECT_EP_EQ( 1, L( Quat( 1, 0, 0, 0 ) ) );
+				EXPECT_EP_EQ( 1, L( Quat( 0, 1, 0, 0 ) ) );
+				EXPECT_EP_EQ( 1, L( Quat( 0, 0, 1, 0 ) ) );
+				EXPECT_EP_EQ( 1, L( Quat( 0, 0, 0, 1 ) ) );
+
+				LF();
+
+				EXPECT_EP_EQ( 2, L( Quat( 1, 1, 1, 1 ) ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT Rotation::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -35,7 +91,6 @@ namespace play_math_quaternion
 
 			OUTPUT_SUBJECT( "단위 쿼터니언 : Unit Quaternion" );
 			OUTPUT_COMMENT( "크기가 1인 Quaternion" );
-			OUTPUT_COMMENT( "쿼터니언의 길이 = sqrt( w^2 + x^2 + y^2 + z^2 )" );
 
 			LF();
 

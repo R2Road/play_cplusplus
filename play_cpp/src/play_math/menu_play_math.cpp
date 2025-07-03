@@ -71,7 +71,8 @@ r2tm::WriteFunctionT Menu_Play_Math::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'z', play_math_quaternion::Rotation() );
+		mp->AddItem( 'z', play_math_quaternion::Length() );
+		mp->AddItem( 'x', play_math_quaternion::Rotation() );
 
 
 
