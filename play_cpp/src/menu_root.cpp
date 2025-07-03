@@ -45,16 +45,21 @@ r2tm::DescriptionFunctionT Menu_Root::GetDescriptionFunction() const
 		return
 			"> o : complete             ~ : in-progress"
 
-		"\n"
+			"\n"
 
-		"\n"	"[ ] " "My Int"
-		"\n"	"[ ] " "Regex"
-		"\n"	"[ ] " "Encoding"
-		"\n"	"[ ] " "Infinite Number"
-		"\n"	"[ ] " "Thread"
-		"\n"	"[ ] " "Memory Pool"
-		"\n"	"[ ] " "Spin-Lock"
-		"\n"	"[~] " "Math";
+			"\n"	"[ ] " "My Int"
+			"\n"	"[ ] " "Regex"
+			"\n"	"[ ] " "Encoding"
+			"\n"	"[ ] " "Infinite Number"
+			"\n"	"[ ] " "Thread"
+			"\n"	"[ ] " "Memory Pool"
+			"\n"	"[ ] " "Spin-Lock"
+
+			"\n"
+
+			"\n"	"[o] " "Math"
+			"\n"	"[o] " "Rendering Pipeline"
+		;
 	};
 }
 r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
