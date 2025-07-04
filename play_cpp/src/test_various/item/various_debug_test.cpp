@@ -15,13 +15,6 @@
 
 namespace various_debug_test
 {
-#define ShowCodeInfo()	\
-{	\
-	std::cout << "File : " << __FILE__ << r2tm::linefeed;		\
-	std::cout << "Func : " << __FUNCTION__ << r2tm::linefeed;	\
-	std::cout << "Line : " << __LINE__ << r2tm::linefeed;		\
-}
-
 	r2tm::TitleFunctionT PredefinedMacro::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -36,7 +29,14 @@ namespace various_debug_test
 			LS();
 
 			{
-				OUTPUT_FILE_RANGE( "src/test_various/item/various_debug_test.cpp", 15, 20 );
+				OUTPUT_SOURCE_READY_N_BEGIN;
+#define ShowCodeInfo()                                          \
+{                                                               \
+	std::cout << "File : " << __FILE__ << r2tm::linefeed;		\
+	std::cout << "Func : " << __FUNCTION__ << r2tm::linefeed;	\
+	std::cout << "Line : " << __LINE__ << r2tm::linefeed;		\
+}
+				OUTPUT_SOURCE_END;
 			}
 
 			LS();
@@ -110,14 +110,26 @@ namespace various_debug_test
 		{
 			LS();
 
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			const auto P = []()->void
 			{
-				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "assert( 1 > 2 && \"What The Fuck\" );" << r2tm::linefeed;
+				assert( 1 > 2 && "What The Fuck" );
+			};
+			OUTPUT_SOURCE_END;
 
-				LS();
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "키 누르면 위 람다 실행" );
+
+				LF();
+
+				WAIT_ANY_KEY;
+
+				PROCESS_MAIN( P() );
 			}
 
-			assert( 1 > 2 && "What The Fuck" );
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -138,8 +150,23 @@ namespace various_debug_test
 		{
 			LS();
 
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			const auto P = []()->void
 			{
-				PROCESS_MAIN( __debugbreak() );
+				__debugbreak();
+			};
+			OUTPUT_SOURCE_END;
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "키 누르면 위 람다 실행" );
+
+				LF();
+
+				WAIT_ANY_KEY;
+
+				PROCESS_MAIN( P() );
 			}
 
 			LS();
