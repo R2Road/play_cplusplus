@@ -1,8 +1,8 @@
-#include "DebugMenu.h"
+#include "menu_debug.h"
 
 #include "r2tm/r2tm_MenuProcessor.h"
 
-#include "item/various_debug_test.h"
+#include "play_debug.h"
 
 #include "menu_root.h"
 

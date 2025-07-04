@@ -79,6 +79,9 @@
     <Filter Include="play_rendering_pipeline">
       <UniqueIdentifier>{06d475be-ec77-489e-b188-1e30a440c7c0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="play_debug">
+      <UniqueIdentifier>{6bc67ae8-eabb-48a4-b109-1c7cbdf03d56}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -437,12 +440,6 @@
     <ClCompile Include="src\test_std\item\std_atomic_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_various\DebugMenu.cpp">
-      <Filter>test_various</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_various\item\various_debug_test.cpp">
-      <Filter>test_various\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\item\cpp_new_test.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
@@ -634,6 +631,12 @@
     </ClCompile>
     <ClCompile Include="src\test_various\test_key.cpp">
       <Filter>test_various</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_debug\menu_debug.cpp">
+      <Filter>play_debug</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_debug\play_debug.cpp">
+      <Filter>play_debug</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1037,12 +1040,6 @@
     <ClInclude Include="src\test_std\item\std_atomic_test.h">
       <Filter>test_std\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_various\DebugMenu.h">
-      <Filter>test_various</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_various\item\various_debug_test.h">
-      <Filter>test_various\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\item\cpp_new_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
@@ -1369,6 +1366,12 @@
     </ClInclude>
     <ClInclude Include="src\test_various\test_key.h">
       <Filter>test_various</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_debug\menu_debug.h">
+      <Filter>play_debug</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_debug\play_debug.h">
+      <Filter>play_debug</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

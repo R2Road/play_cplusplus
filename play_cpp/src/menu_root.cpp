@@ -9,6 +9,7 @@
 
 #include "test_various/test_key.h"
 
+#include "play_debug/menu_debug.h"
 #include "play_hobby/HobbyMenu.h"
 #include "play_math/menu_play_math.h"
 #include "play_rendering_pipeline/menu_play_rendering_pipeline.h"
@@ -18,7 +19,6 @@
 #include "test_performance/PerformanceMenu.h"
 #include "test_std/STDMenu.h"
 #include "test_template/TemplateMenu.h"
-#include "test_various/DebugMenu.h"
 #include "test_various/ETCMenu.h"
 #include "test_various/RandomMenu.h"
 #include "test_various/TimeMenu.h"
