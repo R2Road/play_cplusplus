@@ -37,17 +37,15 @@ namespace test_key
 				do
 				{
 
+					input = GET_KEY;
+
 					current_point = r2tm::WindowsUtility::GetCursorPoint();
-					if( line_limit < current_point.y )
+					if( line_limit <= current_point.y )
 					{
 						r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( start_point );
 					}
 
-					std::cout << "> ";
-
-					input = GET_KEY;
-
-					std::cout << "Key : " << clm( r2tm::eColor::FG_LightYellow ) << input << clm() << r2tm::linefeed;
+					std::cout << "> Key : " << clm( r2tm::eColor::FG_LightYellow ) << input << clm() << r2tm::linefeed;
 
 				} while( 27 != input ); // ESC
 			}
