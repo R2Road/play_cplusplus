@@ -2,9 +2,9 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace various_console_input_test
+namespace test_key
 {
-	class KeyCodeView : public r2tm::iItem
+	class View : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

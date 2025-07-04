@@ -5,16 +5,16 @@
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_WindowsUtility.h"
 
-namespace various_console_input_test
+namespace test_key
 {
-	r2tm::TitleFunctionT KeyCodeView::GetTitleFunction() const
+	r2tm::TitleFunctionT View::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Key Code View";
 		};
 	}
-	r2tm::DoFunctionT KeyCodeView::GetDoFunction() const
+	r2tm::DoFunctionT View::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

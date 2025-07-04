@@ -109,7 +109,7 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 
 
 
-		mp->AddItem( 32, various_console_input_test::KeyCodeView() );
+		mp->AddItem( 32, test_key::View() );
 
 
 
