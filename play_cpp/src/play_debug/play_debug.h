@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace various_debug_test
+namespace play_debug
 {
 	class PredefinedMacro : public r2tm::iItem
 	{

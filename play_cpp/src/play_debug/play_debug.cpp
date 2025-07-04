@@ -13,7 +13,7 @@
 #include "r2tm/r2tm_Inspector.h"
 #include "utility/play_cpp_utility_PathBuilder.h"
 
-namespace various_debug_test
+namespace play_debug
 {
 	r2tm::TitleFunctionT PredefinedMacro::GetTitleFunction() const
 	{

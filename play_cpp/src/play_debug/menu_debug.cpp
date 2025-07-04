@@ -21,12 +21,12 @@ r2tm::WriteFunctionT DebugMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', various_debug_test::PredefinedMacro() );
-		mp->AddItem( '2', various_debug_test::OutPutDebugString() );
-		mp->AddItem( '3', various_debug_test::Assertion() );
-		mp->AddItem( '4', various_debug_test::DebugBreak() );
-		mp->AddItem( '5', various_debug_test::MyAssertion() );
-		mp->AddItem( '6', various_debug_test::SimpleLog() );
+		mp->AddItem( '1', play_debug::PredefinedMacro() );
+		mp->AddItem( '2', play_debug::OutPutDebugString() );
+		mp->AddItem( '3', play_debug::Assertion() );
+		mp->AddItem( '4', play_debug::DebugBreak() );
+		mp->AddItem( '5', play_debug::MyAssertion() );
+		mp->AddItem( '6', play_debug::SimpleLog() );
 
 
 
