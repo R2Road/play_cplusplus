@@ -82,7 +82,7 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 		mp->AddMenu( 't', TemplateMenu() );
 		mp->AddMenu( 'y', TimeMenu() );
 		mp->AddMenu( 'u', RandomMenu() );
-		mp->AddMenu( 'i', DebugMenu() );
+		mp->AddMenu( 'i', Menu_Debug() );
 
 
 

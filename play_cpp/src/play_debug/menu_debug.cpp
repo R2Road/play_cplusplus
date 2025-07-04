@@ -6,18 +6,18 @@
 
 #include "menu_root.h"
 
-r2tm::TitleFunctionT DebugMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Debug::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Debug";
 	};
 }
-r2tm::DescriptionFunctionT DebugMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Debug::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT DebugMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Debug::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
