@@ -5,7 +5,7 @@
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_WindowsUtility.h"
 
-namespace test_key
+namespace key_viewer
 {
 	r2tm::TitleFunctionT View::GetTitleFunction() const
 	{

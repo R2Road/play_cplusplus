@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace test_key
+namespace key_viewer
 {
 	class View : public r2tm::iItem
 	{
