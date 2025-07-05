@@ -29,8 +29,6 @@ namespace key_viewer
 
 			{
 				const auto start_point = r2tm::WindowsUtility::GetCursorPoint();
-				r2tm::WindowsUtility::CursorPoint current_point;
-
 				const short line_limit = start_point.y + 30;
 
 				r2tm::WindowsUtility::MoveCursorPoint( start_point.x, line_limit );
@@ -43,8 +41,7 @@ namespace key_viewer
 
 					input = GET_KEY;
 
-					current_point = r2tm::WindowsUtility::GetCursorPoint();
-					if( line_limit <= current_point.y )
+					if( line_limit <= r2tm::WindowsUtility::GetCursorPoint().y )
 					{
 						r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( start_point );
 					}
