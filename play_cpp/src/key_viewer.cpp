@@ -11,7 +11,7 @@ namespace key_viewer
 	{
 		return []()->const char*
 		{
-			return "Key Code View";
+			return "Key View";
 		};
 	}
 	r2tm::DoFunctionT View::GetDoFunction() const
