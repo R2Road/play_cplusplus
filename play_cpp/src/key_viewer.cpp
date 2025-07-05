@@ -33,6 +33,10 @@ namespace key_viewer
 
 				const short line_limit = start_point.y + 30;
 
+				r2tm::WindowsUtility::MoveCursorPoint( start_point.x, line_limit );
+				LS();
+				r2tm::WindowsUtility::MoveCursorPoint( start_point );
+
 				int input = 0;
 				do
 				{
