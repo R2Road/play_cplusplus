@@ -1333,14 +1333,14 @@ namespace play_rendering_pipeline
 
 	
 
-	r2tm::TitleFunctionT Demo::GetTitleFunction() const
+	r2tm::TitleFunctionT Demo_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Demo : Rendering Pipeline";
+			return "Demo 1 : Rendering Pipeline : Rotation with Matrix";
 		};
 	}
-	r2tm::DoFunctionT Demo::GetDoFunction() const
+	r2tm::DoFunctionT Demo_1::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

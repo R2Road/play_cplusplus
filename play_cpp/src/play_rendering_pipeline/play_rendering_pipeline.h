@@ -109,7 +109,7 @@ namespace play_rendering_pipeline
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Demo : public r2tm::iItem
+	class Demo_1 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
