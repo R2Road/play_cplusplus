@@ -1505,8 +1505,6 @@ namespace play_rendering_pipeline
 				} while( !_kbhit() );
 			}
 
-			LS();
-
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
@@ -1690,8 +1688,6 @@ namespace play_rendering_pipeline
 
 				} while( !_kbhit() );
 			}
-
-			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
