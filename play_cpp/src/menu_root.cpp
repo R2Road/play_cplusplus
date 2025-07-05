@@ -7,7 +7,7 @@
 #include "r2tm/r2tm_MenuProcessor.h"
 #include "r2tm/r2tm_VersionInfo.h"
 
-#include "test_various/test_key.h"
+#include "key_viewer.h"
 
 #include "play_cpu/menu_cpu.h"
 #include "play_debug/menu_debug.h"
