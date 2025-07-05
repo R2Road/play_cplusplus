@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace test_cpu_basic
+namespace play_cpu_basic
 {
 	class CoreInformation : public r2tm::iItem
 	{

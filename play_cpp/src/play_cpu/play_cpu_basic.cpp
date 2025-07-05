@@ -11,7 +11,7 @@
 #include <windows.h>
 typedef BOOL( WINAPI* LPFN_GetLogicalProcessorInformation )( PSYSTEM_LOGICAL_PROCESSOR_INFORMATION, PDWORD );
 
-namespace test_cpu_basic
+namespace play_cpu_basic
 {
 	r2tm::TitleFunctionT CoreInformation::GetTitleFunction() const
 	{
