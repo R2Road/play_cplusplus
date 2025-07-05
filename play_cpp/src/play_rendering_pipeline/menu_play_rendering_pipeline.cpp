@@ -66,7 +66,8 @@ r2tm::WriteFunctionT Menu_Play_Rendering_Pipeline::GetWriteFunction() const
 
 
 
-		mp->AddItem( 32, play_rendering_pipeline::Demo() );
+		mp->AddItem( 'b', play_rendering_pipeline::Demo());
+		mp->AddItem( 'n', play_rendering_pipeline::Demo_2() );
 
 
 

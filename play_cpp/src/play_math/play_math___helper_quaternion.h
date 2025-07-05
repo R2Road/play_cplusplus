@@ -2,6 +2,7 @@
 
 #include "r2/r2_Epsilon.h"
 #include "play_math/play_math___helper_vector3.h"
+#include "play_math/play_math___helper_vector4.h"
 
 namespace play_math
 {
@@ -45,6 +46,10 @@ namespace play_math
 	inline Quat operator*( const Quat& a, const Vec3& v )
 	{
 		return ( a * Quat( 0, v.x, v.y, v.z ) );
+	}
+	inline Quat operator*( const Quat& a, const Vec4& v )
+	{
+		return ( a * Vec3( v.x, v.y, v.z ) );
 	}
 
 	inline Quat quat_inverse( const Quat& q )
