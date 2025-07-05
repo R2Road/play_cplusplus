@@ -36,6 +36,8 @@
     <ClCompile Include="external\r2\r2_Size.cpp" />
     <ClCompile Include="src\algorithm\r2algorithm_astar_PathBuilder.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\play_cpu\menu_cpu.cpp" />
+    <ClCompile Include="src\play_cpu\play_cpu_basic.cpp" />
     <ClCompile Include="src\play_debug\menu_debug.cpp" />
     <ClCompile Include="src\play_debug\play_debug.cpp" />
     <ClCompile Include="src\play_hobby\HobbyMenu.cpp" />
@@ -99,8 +101,6 @@
     <ClCompile Include="src\test_cpp\LambdaMenu.cpp" />
     <ClCompile Include="src\test_cpp\NameSpaceMenu.cpp" />
     <ClCompile Include="src\test_cpp\NewMenu.cpp" />
-    <ClCompile Include="src\test_cpu\Menu_CPU.cpp" />
-    <ClCompile Include="src\test_cpu\test_cpu_basic.cpp" />
     <ClCompile Include="src\test_c\BitOperationMenu.cpp" />
     <ClCompile Include="src\test_c\C_FileMenu.cpp" />
     <ClCompile Include="src\test_c\C_Menu.cpp" />
@@ -248,6 +248,8 @@
     <ClInclude Include="external\r2\r2_VersionInfo.h" />
     <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h" />
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h" />
+    <ClInclude Include="src\play_cpu\menu_cpu.h" />
+    <ClInclude Include="src\play_cpu\play_cpu_basic.h" />
     <ClInclude Include="src\play_debug\menu_debug.h" />
     <ClInclude Include="src\play_debug\play_debug.h" />
     <ClInclude Include="src\play_hobby\HobbyMenu.h" />
@@ -333,8 +335,6 @@
     <ClInclude Include="src\test_cpp\LambdaMenu.h" />
     <ClInclude Include="src\test_cpp\NameSpaceMenu.h" />
     <ClInclude Include="src\test_cpp\NewMenu.h" />
-    <ClInclude Include="src\test_cpu\Menu_CPU.h" />
-    <ClInclude Include="src\test_cpu\test_cpu_basic.h" />
     <ClInclude Include="src\test_c\BitOperationMenu.h" />
     <ClInclude Include="src\test_c\C_FileMenu.h" />
     <ClInclude Include="src\test_c\C_Menu.h" />

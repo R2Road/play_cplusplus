@@ -1,8 +1,8 @@
-#include "Menu_CPU.h"
+#include "menu_cpu.h"
 
 #include "r2tm/r2tm_MenuProcessor.h"
 
-#include "test_cpu_basic.h"
+#include "play_cpu_basic.h"
 
 #include "menu_root.h"
 

@@ -70,9 +70,6 @@
     <Filter Include="_external\r2tm">
       <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test_cpu">
-      <UniqueIdentifier>{ccdab92a-10c1-4cf6-857e-4a1c22fbecba}</UniqueIdentifier>
-    </Filter>
     <Filter Include="play_math">
       <UniqueIdentifier>{c659f76d-8c3d-41fb-8967-27080960e8cf}</UniqueIdentifier>
     </Filter>
@@ -81,6 +78,9 @@
     </Filter>
     <Filter Include="play_debug">
       <UniqueIdentifier>{6bc67ae8-eabb-48a4-b109-1c7cbdf03d56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="play_cpu">
+      <UniqueIdentifier>{ccdab92a-10c1-4cf6-857e-4a1c22fbecba}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -542,12 +542,6 @@
     <ClCompile Include="src\test_std\STDCinMenu.cpp">
       <Filter>test_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpu\Menu_CPU.cpp">
-      <Filter>test_cpu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpu\test_cpu_basic.cpp">
-      <Filter>test_cpu</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_c\OperatorMenu.cpp">
       <Filter>test_c</Filter>
     </ClCompile>
@@ -637,6 +631,12 @@
     </ClCompile>
     <ClCompile Include="src\play_debug\play_debug.cpp">
       <Filter>play_debug</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpu\menu_cpu.cpp">
+      <Filter>play_cpu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpu\play_cpu_basic.cpp">
+      <Filter>play_cpu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1178,12 +1178,6 @@
     <ClInclude Include="src\test_std\STDCinMenu.h">
       <Filter>test_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpu\Menu_CPU.h">
-      <Filter>test_cpu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpu\test_cpu_basic.h">
-      <Filter>test_cpu</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_c\OperatorMenu.h">
       <Filter>test_c</Filter>
     </ClInclude>
@@ -1372,6 +1366,12 @@
     </ClInclude>
     <ClInclude Include="src\play_debug\play_debug.h">
       <Filter>play_debug</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpu\menu_cpu.h">
+      <Filter>play_cpu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpu\play_cpu_basic.h">
+      <Filter>play_cpu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

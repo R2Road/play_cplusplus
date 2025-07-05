@@ -1,4 +1,4 @@
-#include "test_cpu_basic.h"
+#include "play_cpu_basic.h"
 
 #include "r2tm/r2tm_inspector.h"
 #include "r2tm/r2tm_ostream.h"

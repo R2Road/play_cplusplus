@@ -9,6 +9,7 @@
 
 #include "test_various/test_key.h"
 
+#include "play_cpu/menu_cpu.h"
 #include "play_debug/menu_debug.h"
 #include "play_hobby/HobbyMenu.h"
 #include "play_math/menu_play_math.h"
@@ -23,7 +24,6 @@
 #include "test_various/RandomMenu.h"
 #include "test_various/TimeMenu.h"
 #include "test_windows/WindowsMenu.h"
-#include "test_cpu/Menu_CPU.h"
 
 r2tm::TitleFunctionT Menu_Root::GetTitleFunction() const
 {
