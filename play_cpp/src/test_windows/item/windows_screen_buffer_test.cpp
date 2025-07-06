@@ -92,25 +92,13 @@ namespace windows_screen_buffer_test
 		{
 			LS();
 
-			{
-				HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
-				const char* str = "*************WriteConsole Test*************";
+			DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
+			DECLARATION_MAIN( const char* str = "*************WriteConsole Test*************\n" );
 
-				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "const char* str = \"*************WriteConsole Test*************\";" << r2tm::linefeed;
+			LF();
 
-				LS();
-
-				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "WriteConsoleA( hStdout, str, sizeof( str ), nullptr, nullptr );" << r2tm::linefeed;
-
-				LS();
-
-				WriteConsoleA( hStdout, str, static_cast<DWORD>( strlen( str ) ), nullptr, nullptr ); // 64bit size_t == typedef unsigned __int64 size_t; 
-
-				LF();
-			}
+			// 64bit size_t == typedef unsigned __int64 size_t; 
+			PROCESS_MAIN( WriteConsoleA( hStdout, str, static_cast<DWORD>( strlen( str ) ), nullptr, nullptr ) );
 
 			LS();
 
@@ -133,41 +121,24 @@ namespace windows_screen_buffer_test
 		{
 			LS();
 
-			HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );
-			COORD topLeft = { 0, 0 };
+			DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
+			DECLARATION_MAIN( COORD topLeft( { 0, 0 } ) );
+
+			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE );" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "COORD topLeft = { 0, 0 };" << r2tm::linefeed;
+				DECLARATION_MAIN( DWORD ret );
+				DECLARATION_MAIN( const char* str = "*************WriteConsole Test*************" );
+				PROCESS_MAIN( WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), topLeft, &ret ) );
 			}
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "DWORD ret;" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "const char* str = \"*************WriteConsole Test*************\";" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), topLeft, &ret );" << r2tm::linefeed;
-
-				DWORD ret;
-				const char* str = "*************WriteConsole Test*************";
-				WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), topLeft, &ret );
-			}
-
-			LS();
-
-			{
-				std::cout << r2tm::tab << "+ Process" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "DWORD ret;" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "WORD colors[10];" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "std::fill_n( colors, 10, FOREGROUND_GREEN | BACKGROUND_BLUE );" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "WriteConsoleOutputAttribute( hStdout, colors, static_cast<DWORD>( sizeof( colors ) / sizeof( DWORD ) ), topLeft, &ret );" << r2tm::linefeed;
-
-				DWORD ret;
-				WORD colors[10];
-				std::fill_n( colors, 10, static_cast<WORD>( FOREGROUND_GREEN | BACKGROUND_BLUE ) );
-				WriteConsoleOutputAttribute( hStdout, colors, static_cast<DWORD>( sizeof( colors ) / sizeof( DWORD ) ), topLeft, &ret );
+				DECLARATION_MAIN( DWORD ret );
+				DECLARATION_MAIN( WORD colors[10] );
+				PROCESS_MAIN( std::fill_n( colors, 10, static_cast<WORD>( FOREGROUND_GREEN | BACKGROUND_BLUE ) ) );
+				PROCESS_MAIN( WriteConsoleOutputAttribute( hStdout, colors, static_cast<DWORD>( sizeof( colors ) / sizeof( DWORD ) ), topLeft, &ret ) );
 			}
 
 			LS();
@@ -232,7 +203,7 @@ namespace windows_screen_buffer_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "# ReadConsoleOutputCharacterW 를 활용해 가져온 문자열은 인코딩이 필요한 것 같다." << r2tm::linefeed;
+				OUTPUT_COMMENT( "ReadConsoleOutputCharacterW 를 활용해 가져온 문자열은 인코딩이 필요한 것 같다." );
 			}
 
 			LS();
@@ -258,8 +229,8 @@ namespace windows_screen_buffer_test
 
 			{
 				DECLARATION_MAIN( char buffer[111] = { '0' } );
-				memset( buffer, 'A', sizeof( buffer ) );
-				buffer[110] = '\0';
+				PROCESS_MAIN( memset( buffer, 'A', sizeof( buffer ) ) );
+				PROCESS_MAIN( buffer[110] = '\0' );
 				PROCESS_MAIN( std::cout << buffer );
 
 				LF();
@@ -269,8 +240,8 @@ namespace windows_screen_buffer_test
 
 			{
 				DECLARATION_MAIN( char buffer[111] = { '0' } );
-				memset( buffer, 'a', sizeof( buffer ) );
-				buffer[110] = '\0';
+				PROCESS_MAIN( memset( buffer, 'a', sizeof( buffer ) ) );
+				PROCESS_MAIN( buffer[110] = '\0' );
 				PROCESS_MAIN( std::cout << buffer );
 
 				LF();
