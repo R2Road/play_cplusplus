@@ -1462,23 +1462,23 @@ namespace play_rendering_pipeline
 
 						// Draw : vs
 						{
-							Vec4 s;
-							Vec4 e;
-							Vec4 d;
+							Vec4 v_start;
+							Vec4 v_end;
+							Vec4 v_dir;
 							for( int i = 0; v_size > i; ++i )
 							{
-								s = fixed_vs[i];
-								e = ( i + 1 == v_size ? fixed_vs[0] : fixed_vs[i + 1] );
+								v_start = fixed_vs[i];
+								v_end = ( i + 1 == v_size ? fixed_vs[0] : fixed_vs[i + 1] );
 
-								d = e - s;
+								v_dir = v_end - v_start;
 
-								int divider = int( std::abs( d.x ) > std::abs( d.y ) ? std::abs( d.x ) : std::abs( d.y ) );
-								d.x /= divider;
-								d.y /= divider;
+								int divider = int( std::abs( v_dir.x ) > std::abs( v_dir.y ) ? std::abs( v_dir.x ) : std::abs( v_dir.y ) );
+								v_dir.x /= divider;
+								v_dir.y /= divider;
 
 								for( int j = 0; divider > j; ++j )
 								{
-									auto v = s + ( d * j );
+									auto v = v_start + ( v_dir * j );
 
 									r2tm::WindowsUtility::FillCharacter( pivot + r2tm::WindowsUtility::CursorPoint( ( short )v.x, ( short )v.y ), 'c' );
 								}
