@@ -1444,24 +1444,24 @@ namespace play_rendering_pipeline
 
 						r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot );
 
-						for( int i = 0; v_size > i; ++i )
-						{
-							// setup
-							auto& v = fixed_vs[i] = vs[i];
-
-							// Model Rotation
-							v = RY( 360 * accumulate_time ) * v;
-
-							v = view_mat4 * v;
-
-							v = projection_mat4 * v;
-							v /= v.w;
-
-							v = viewport_mat4 * v;
-						}
-
 						// Draw : vs
 						{
+							for( int i = 0; v_size > i; ++i )
+							{
+								// setup
+								auto& v = fixed_vs[i] = vs[i];
+
+								// Model Rotation
+								v = RY( 360 * accumulate_time ) * v;
+
+								v = view_mat4 * v;
+
+								v = projection_mat4 * v;
+								v /= v.w;
+
+								v = viewport_mat4 * v;
+							}
+
 							Vec4 v_start;
 							Vec4 v_end;
 							Vec4 v_dir;
@@ -1619,24 +1619,24 @@ namespace play_rendering_pipeline
 
 						r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot );
 
-						for( int i = 0; v_size > i; ++i )
-						{
-							// setup
-							auto& v = fixed_vs[i] = vs[i];
-
-							// Model Rotation
-							v = R( v, 360 * accumulate_time );
-
-							v = view_mat4 * v;
-
-							v = projection_mat4 * v;
-							v /= v.w;
-
-							v = viewport_mat4 * v;
-						}
-
 						// Draw : vs
 						{
+							for( int i = 0; v_size > i; ++i )
+							{
+								// setup
+								auto& v = fixed_vs[i] = vs[i];
+
+								// Model Rotation
+								v = R( v, 360 * accumulate_time );
+
+								v = view_mat4 * v;
+
+								v = projection_mat4 * v;
+								v /= v.w;
+
+								v = viewport_mat4 * v;
+							}
+
 							Vec4 v_start;
 							Vec4 v_end;
 							Vec4 v_dir;
