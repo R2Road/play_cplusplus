@@ -1480,7 +1480,7 @@ namespace play_rendering_pipeline
 								{
 									auto v = s + ( d * j );
 
-									r2tm::WindowsUtility::FillCharacter( { pivot.x + ( short )v.x, pivot.y + ( short )v.y }, 'c' );
+									r2tm::WindowsUtility::FillCharacter( pivot + r2tm::WindowsUtility::CursorPoint( ( short )v.x, ( short )v.y ), 'c' );
 								}
 							}
 						}
@@ -1494,10 +1494,10 @@ namespace play_rendering_pipeline
 
 							v = viewport_mat4 * v;
 
-							r2tm::WindowsUtility::FillCharacter( { pivot.x + ( short )v.x, pivot.y + ( short )v.y }, '0', r2tm::WindowsUtility::eColor::FG_Green );
+							r2tm::WindowsUtility::FillCharacter( pivot + r2tm::WindowsUtility::CursorPoint( ( short )v.x, ( short )v.y ), '0', r2tm::WindowsUtility::eColor::FG_Green );
 						}
 
-						r2tm::WindowsUtility::MoveCursorPoint( { 0, pivot.y + ( short )viewport_h } );
+						r2tm::WindowsUtility::MoveCursorPoint( r2tm::WindowsUtility::CursorPoint( 0, pivot.y + ( short )viewport_h ) );
 						
 						LS();
 					}
@@ -1664,7 +1664,7 @@ namespace play_rendering_pipeline
 										continue;
 									}
 
-									r2tm::WindowsUtility::FillCharacter( { pivot.x + ( short )v.x, pivot.y + ( short )v.y }, 'c' );
+									r2tm::WindowsUtility::FillCharacter( pivot + r2tm::WindowsUtility::CursorPoint( ( short )v.x, ( short )v.y ), 'c' );
 								}
 							}
 						}
@@ -1678,10 +1678,10 @@ namespace play_rendering_pipeline
 
 							v = viewport_mat4 * v;
 
-							r2tm::WindowsUtility::FillCharacter( { pivot.x + ( short )v.x, pivot.y + ( short )v.y }, '0', r2tm::WindowsUtility::eColor::FG_Green );
+							r2tm::WindowsUtility::FillCharacter( pivot + r2tm::WindowsUtility::CursorPoint( ( short )v.x, ( short )v.y ), '0', r2tm::WindowsUtility::eColor::FG_Green );
 						}
 
-						r2tm::WindowsUtility::MoveCursorPoint( { 0, pivot.y + ( short )viewport_h } );
+						r2tm::WindowsUtility::MoveCursorPoint( r2tm::WindowsUtility::CursorPoint( 0, pivot.y + ( short )viewport_h ) );
 						
 						LS();
 					}
