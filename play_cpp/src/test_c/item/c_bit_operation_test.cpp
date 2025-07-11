@@ -857,27 +857,38 @@ namespace c_bit_operation_test
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "최상위 비트가 1 일 때 >> 연산을 수행하면 이전 비트가 유지된다." );
-
-			LS();
-
 			{
-				DECLARATION_MAIN( const char c = 0b10000000 );
-				OUTPUT_BINARY( c );
+				DECLARATION_MAIN( const int i = -1 );
+				OUTPUT_BINARY( i );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( const char c = 0b00000001 );
-				OUTPUT_BINARY( ( char )( c << 4 ) );
+				DECLARATION_MAIN( const int i = 1 );
+				OUTPUT_BINARY( i << 4 );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( const char c = 0b10000000 );
-				OUTPUT_BINARY( ( char )( c >> 4 ) );
+				OUTPUT_SUBJECT( "부호가 있는 type의 최상위 비트가 1 일 때 >> 연산을 수행하면 이전 비트가 유지된다." );
+
+				LF();
+
+				DECLARATION_MAIN( const int i = -1 );
+				OUTPUT_BINARY( i >> 4 );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "부호가 없는 type의 최상위 비트가 1 일 때 >> 연산을 수행하면 이전 비트는 초기화 된다." );
+
+				LF();
+
+				DECLARATION_MAIN( const unsigned int i = -1 );
+				OUTPUT_BINARY( i >> 4 );
 			}
 
 			LS();
