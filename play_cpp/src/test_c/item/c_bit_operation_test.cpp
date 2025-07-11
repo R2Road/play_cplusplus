@@ -496,53 +496,6 @@ namespace c_bit_operation_test
 
 
 
-	r2tm::TitleFunctionT ETC_1::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "ETC_1";
-		};
-	}
-	r2tm::DoFunctionT ETC_1::GetDoFunction() const
-	{
-		return []()->r2tm::eDoLeaveAction
-		{
-			LS();
-
-			{
-				DECLARATION_MAIN( const char max_c = std::numeric_limits<char>::max() );
-				PrintBinary( max_c );
-
-				LF();
-
-				DECLARATION_MAIN( const int i_1 = max_c );
-				PrintBinary( i_1 );
-
-				LF();
-
-				DECLARATION_MAIN( const int i_2 = max_c );
-				PrintBinary( i_2 );
-
-				LF();
-
-				DECLARATION_MAIN( const int i_3 = i_1 + i_2 );
-				PrintBinary( i_3 );
-			}
-
-			LS();
-
-			{
-				std::cout << r2tm::tab << "+ 최상위 1 bit 를 비워둘 수 있다면 최대 값 끼리 더해도 문제 없다." << r2tm::linefeed;
-			}
-
-			LS();
-
-			return r2tm::eDoLeaveAction::Pause;
-		};
-	}
-
-
-
 	r2tm::TitleFunctionT Plus_1::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -834,6 +787,53 @@ namespace c_bit_operation_test
 				PROCESS_MAIN( borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
 				OUTPUT_VALUE( borrow );
 				OUTPUT_BINARY( borrow );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT ETC_1::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "ETC_1";
+		};
+	}
+	r2tm::DoFunctionT ETC_1::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				DECLARATION_MAIN( const char max_c = std::numeric_limits<char>::max() );
+				PrintBinary( max_c );
+
+				LF();
+
+				DECLARATION_MAIN( const int i_1 = max_c );
+				PrintBinary( i_1 );
+
+				LF();
+
+				DECLARATION_MAIN( const int i_2 = max_c );
+				PrintBinary( i_2 );
+
+				LF();
+
+				DECLARATION_MAIN( const int i_3 = i_1 + i_2 );
+				PrintBinary( i_3 );
+			}
+
+			LS();
+
+			{
+				std::cout << r2tm::tab << "+ 최상위 1 bit 를 비워둘 수 있다면 최대 값 끼리 더해도 문제 없다." << r2tm::linefeed;
 			}
 
 			LS();
