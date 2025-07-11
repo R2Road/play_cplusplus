@@ -841,4 +841,48 @@ namespace c_bit_operation_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT ETC_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "ETC 2";
+		};
+	}
+	r2tm::DoFunctionT ETC_2::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_SUBJECT( "최상위 비트가 1 일 때 >> 연산을 수행하면 이전 비트가 유지된다." );
+
+			LS();
+
+			{
+				DECLARATION_MAIN( const char c = 0b10000000 );
+				OUTPUT_BINARY( c );
+			}
+
+			LS();
+
+			{
+				DECLARATION_MAIN( const char c = 0b00000001 );
+				OUTPUT_BINARY( ( char )( c << 4 ) );
+			}
+
+			LS();
+
+			{
+				DECLARATION_MAIN( const char c = 0b10000000 );
+				OUTPUT_BINARY( ( char )( c >> 4 ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

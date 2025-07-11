@@ -54,6 +54,7 @@ r2tm::WriteFunctionT BitOperationMenu::GetWriteFunction() const
 
 
 		mp->AddItem( 'a', c_bit_operation_test::ETC_1() );
+		mp->AddItem( 's', c_bit_operation_test::ETC_2() );
 
 
 
