@@ -35,6 +35,7 @@ r2tm::WriteFunctionT ETCMenu::GetWriteFunction() const
 
 		mp->AddItem( 'q', etc_test::E() );
 		mp->AddItem( 'w', etc_test::Init_Class_Array() );
+		mp->AddItem( 'e', etc_test::Float_Binary() );
 
 
 		mp->AddSplit();

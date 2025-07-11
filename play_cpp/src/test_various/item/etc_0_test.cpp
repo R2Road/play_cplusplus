@@ -2,6 +2,7 @@
 
 #include <array>
 #include <bitset>
+#include <iomanip>
 #include <memory>
 #include <stdint.h>
 
@@ -498,5 +499,90 @@ namespace etc_test
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
+	}
+
+
+
+	r2tm::TitleFunctionT Float_Binary::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Float Binary";
+		};
+	}
+	r2tm::DoFunctionT Float_Binary::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+			{
+				LS();
+
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const auto F = []( const float f )->void
+				{
+					static const int w = 8;
+
+					const unsigned mask = -1;
+					const unsigned int* up = reinterpret_cast<const unsigned int*>( &f );
+					std::cout << r2tm::tab << std::left
+
+						<< "값 : " << f << r2tm::linefeed
+						<< "부호 : " << std::setw( w ) << ( ( *up >> 31 ) & 1 )
+						<< "     "
+						<< "지수 : " << std::setw( w ) << ( ( ( *up << 1 ) >> 24 ) & ( mask >> 24 ) )
+						<< "     "
+						<< "가수 : " << std::setw( w ) << ( ( ( *up << 9 ) >> 9 ) & ( mask >> 9 ) )
+
+						<< std::right;
+
+					r2tm::PrintBinary( f );
+					r2tm::PrintBinary( ( *up >> 31 ) & 1 );
+					r2tm::PrintBinary( ( ( *up << 1 ) >> 24 ) & ( mask >> 24 ) );
+					r2tm::PrintBinary( ( ( *up << 9 ) >> 9 ) & ( mask >> 9 ) );
+					LF();
+				};
+				OUTPUT_SOURCE_END;
+
+				LS();
+
+				{
+					OUTPUT_BINARY( 0.f );
+				}
+
+				LS();
+
+				{
+					F( 1.f );
+
+					LF();
+
+					F( 2.f );
+
+					LF();
+
+					F( 3.f );
+
+					LF();
+
+					F( -1.f );
+				}
+
+				LS();
+
+				{
+					F( 0.1f );
+
+					LF();
+
+					F( 0.01f );
+
+					LF();
+
+					F( 0.00001f );
+				}
+
+				LS();
+
+				return r2tm::eDoLeaveAction::Pause;
+			};
 	}
 }
