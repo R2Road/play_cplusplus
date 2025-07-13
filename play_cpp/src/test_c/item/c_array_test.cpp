@@ -123,7 +123,7 @@ namespace c_array_test
 
 				SS();
 
-				OUTPUT_VALUE( ( int64_t )&a );
+				OUTPUT_VALUE( ( int64_t )a );
 
 				SS();
 
