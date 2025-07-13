@@ -1,5 +1,6 @@
 #include "c_array_test.h"
 
+#include "r2tm/r2tm_ColorModifier.h"
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
 
@@ -115,29 +116,50 @@ namespace c_array_test
 
 			LS();
 
-			DECLARATION_MAIN( const int w = 3 );
-			DECLARATION_MAIN( const int h = 2 );
-			DECLARATION_MAIN( int a[w][h] = {} );
-
-			LS();
-
-			OUTPUT_VALUE( ( int64_t )&a );
-
-			LS();
-
 			{
+				DECLARATION_MAIN( const int w = 3 );
+				DECLARATION_MAIN( const int h = 2 );
+				DECLARATION_MAIN( int a[w][h] = {} );
+
+				SS();
+
+				OUTPUT_VALUE( ( int64_t )&a );
+
+				SS();
+
 				for( int x = 0; w > x; ++x )
 				{
 					for( int y = 0; h > y; ++y )
 					{
 						std::cout
-							<< "x : " << x
+							<< "   a"
+							<< "[" << x << "]"
+							<< "[" << y << "]"
 							<< "    "
-							<< "y : " << y
+							<< "address : " << ( int64_t )&a[x][y]
 							<< "    "
-							<< "address : " << (int64_t)& a[x][y]
+							<< "offset  : " << clm( r2tm::eColor::FG_LightYellow ) << ( ( int64_t )&a[x][y] - ( int64_t )&a ) << clm()
 							<< r2tm::linefeed
 						;
+					}
+				}
+
+				SS();
+
+				for( int y = 0; h > y; ++y )
+				{
+					for( int x = 0; w > x; ++x )
+					{
+						std::cout
+							<< "   a"
+							<< "[" << x << "]"
+							<< "[" << y << "]"
+							<< "    "
+							<< "address : " << ( int64_t )&a[x][y]
+							<< "    "
+							<< "offset  : " << clm( r2tm::eColor::FG_LightYellow ) << ( ( int64_t )&a[x][y] - ( int64_t )&a ) << clm()
+							<< r2tm::linefeed
+							;
 					}
 				}
 			}
