@@ -233,6 +233,18 @@ do {																						\
 
 
 //
+// Output Address
+//
+#define	OUTPUT_ADDRESS( condition )															\
+do {																						\
+	printf( "[ADDRESS]" " %s" "\n", #condition );											\
+	std::cout << "\t> " << ( &condition ) << "\n";											\
+} while( false )
+
+
+
+
+//
 // Output Binary
 //
 #define	OUTPUT_BINARY( condition )															\

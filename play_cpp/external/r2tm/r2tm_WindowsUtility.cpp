@@ -87,6 +87,21 @@ namespace r2tm
 
 		return CursorPoint{ csbi.dwCursorPosition.X, csbi.dwCursorPosition.Y };
 	}
+	short WindowsUtility::GetCursorX()
+	{
+		CONSOLE_SCREEN_BUFFER_INFO csbi{};
+		GetConsoleScreenBufferInfo( GetStdHandle( STD_OUTPUT_HANDLE ), &csbi );
+
+		return csbi.dwCursorPosition.X;
+	}
+	short WindowsUtility::GetCursorY()
+	{
+		CONSOLE_SCREEN_BUFFER_INFO csbi{};
+		GetConsoleScreenBufferInfo( GetStdHandle( STD_OUTPUT_HANDLE ), &csbi );
+
+		return csbi.dwCursorPosition.Y;
+	}
+
 	void WindowsUtility::MoveCursorPoint( const CursorPoint new_cursor_point )
 	{
 		const CursorPoint fixed_new_cursor_point{ short( 0 > new_cursor_point.x ? 0 : new_cursor_point.x ), short( 0 > new_cursor_point.y ? 0 : new_cursor_point.y ) };

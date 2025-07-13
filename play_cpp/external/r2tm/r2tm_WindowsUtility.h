@@ -92,6 +92,8 @@ namespace r2tm
 
 
 		static CursorPoint GetCursorPoint();
+		static short GetCursorX();
+		static short GetCursorY();
 		static void MoveCursorPoint( const CursorPoint new_cursor_point );
 		static void MoveCursorPoint( const short x, const short y );
 		static void MoveCursorPointWithClearBuffer( const CursorPoint new_cursor_point );

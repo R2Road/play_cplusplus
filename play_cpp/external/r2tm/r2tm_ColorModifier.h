@@ -17,7 +17,7 @@ namespace r2tm
 
 		ColorModifier() : mColor( DEFAULT_COLOR )
 		{}
-		ColorModifier( const eColor color ) : mColor( color )
+		explicit ColorModifier( const eColor color ) : mColor( color )
 		{}
 
 		eColor GetColor() const

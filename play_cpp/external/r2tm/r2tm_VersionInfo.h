@@ -26,7 +26,7 @@ namespace r2tm
 
 		const char VersionNumber_1 = '1';
 		const char VersionNumber_2 = '7';
-		const char VersionNumber_3 = '6';
+		const char VersionNumber_3 = '8';
 		const char VersionNumber_4 = '0';
 		const char VersionNumber_5 = '0';
 
@@ -43,14 +43,14 @@ namespace r2tm
 			"\n"	"[o] " "update    inspector  : Add - OUTPUT_SOURCE_READY_N_BEGIN"
 			"\n"	"[o] " "update    inspector  : DECLARATION_MAIN, DECLARATION_SUB - 문자 출력을 먼저 하고 코드 실행"
 			"\n"	"[o] " "update    inspector  : EXPECT_FALSE, EXPECT_NE - 눈에 잘 보이는 색상으로 변경"
-			"\n"	"[o] " "add class            : r2tm::CacheCleaner"
-			"\n"	"[o] " "add method           : r2tm::SwtopWatch > Reset"
-			"\n"	"[o] " "add method           : r2tm::SwtopWatch > PrintAverageTime_MilliSeconds, MicroSeconds, NanoSeconds, All"
-			"\n"	"[o] " "update class         : r2tm::CacheCleaner : Add > 복사 생성자 추가, 대입 연산자 제거"
-			"\n"	"[o] " "update     inspector : OUTPUT_SUBJECT: 출력 문자 변경  '+' > '#'"
-			"\n"	"[o] " "update class         : enum r2tm::eColor > enum class 적용"
-			"\n"	"[o] " "add method           : r2tm::ColorModifier > GetColor"
-			"\n"	"[o] " "add method           : r2tm::StopWatch > GetAccumulateTime, GetAccumulateCount"
+			"\n"	"[o] " "add       class      : r2tm::CacheCleaner"
+			"\n"	"[o] " "add       method     : r2tm::SwtopWatch > Reset"
+			"\n"	"[o] " "add       method     : r2tm::SwtopWatch > PrintAverageTime_MilliSeconds, MicroSeconds, NanoSeconds, All"
+			"\n"	"[o] " "update    class      : r2tm::CacheCleaner : Add > 복사 생성자 추가, 대입 연산자 제거"
+			"\n"	"[o] " "update    inspector  : OUTPUT_SUBJECT: 출력 문자 변경  '+' > '#'"
+			"\n"	"[o] " "update    class      : enum r2tm::eColor > enum class 적용"
+			"\n"	"[o] " "add       method     : r2tm::ColorModifier > GetColor"
+			"\n"	"[o] " "add       method     : r2tm::StopWatch > GetAccumulateTime, GetAccumulateCount"
 			"\n"	"[o] " "update    inspector  : Add - WAIT_ANY_KEY"
 			"\n"	"[o] " "update    inspector  : r2tm::PrintBinary : 매개 변수 타입 변경 : 값 > 참조"
 			"\n"	"[o] " "update    inspector  : Add - EXPECT_EP_EQ, EXPECT_EP_NE"
@@ -58,6 +58,8 @@ namespace r2tm
 			"\n"	"[o] " "update    inspector  : Add - KB_HIT"
 			"\n"	"[o] " "update    inspector  : Input 관련 파일 분리 : r2tm_Input"
 			"\n"	"[o] " "update    inspector  : Add - GET_KEY"
+			"\n"	"[o] " "add       method     : r2tm::WindowsUtility::GetCursorX, GetCursorY"
+			"\n"	"[o] " "update    inspector  : Add - OUTPUT_ADDRESS"
 			"\n"	"[ ] " "..."
 		;
 
@@ -134,10 +136,11 @@ namespace r2tm
 		const char* const String4Road2Version_1_0_0_0_0 =
 					"### Road 2 Version 1.0.0.0.0 ###"
 			"\n"
-			"\n"	"[o] " "Director, Menu, Item"
+			"\n"	"[o] " "Director"
+			"\n"	"[o] " "Menu"
+			"\n"	"[o] " "Item"
 			"\n"	"[o] " "Inspector"
 			"\n"	"[o] " "Window Utility"
-			"\n"	"[o] " "Color Modifier"
 			"\n"	"[o] " "Color Modifier"
 		;
 
