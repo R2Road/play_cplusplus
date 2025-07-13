@@ -95,4 +95,68 @@ namespace c_array_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Address::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "array : Address";
+		};
+	}
+	r2tm::DoFunctionT Address::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_SUBJECT( "배열은 열 우선으로 메모리가 배치된다." );
+
+			LS();
+
+			DECLARATION_MAIN( const int w = 3 );
+			DECLARATION_MAIN( const int h = 2 );
+			DECLARATION_MAIN( int a[w][h] = {} );
+
+			LS();
+
+			OUTPUT_VALUE( ( int64_t )&a );
+
+			LS();
+
+			{
+				for( int x = 0; w > x; ++x )
+				{
+					for( int y = 0; h > y; ++y )
+					{
+						std::cout
+							<< "x : " << x
+							<< "    "
+							<< "y : " << y
+							<< "    "
+							<< "address : " << (int64_t)& a[x][y]
+							<< r2tm::linefeed
+						;
+					}
+				}
+			}
+
+			LS();
+
+			{
+				OUTPUT_NOTE( "배열에 접근하는 방식에 따라서" );
+				OUTPUT_NOTE( "cache hit 에 유리하도록 선언/접근 방식을 조절하자." );
+
+				LF();
+
+				OUTPUT_CODE( int a[w][h] );
+				OUTPUT_CODE( int a[h][w] );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

@@ -35,10 +35,11 @@ r2tm::WriteFunctionT C_Menu::GetWriteFunction() const
 	return[]( r2tm::MenuProcessor* mp )
 	{
 		mp->AddItem( '1', c_array_test::Init() );
-		mp->AddMenu( '2', OperatorMenu() );
-		mp->AddItem( '3', c_struct_test::ByteAlignment() );
-		mp->AddItem( '4', c_struct_test::PragmaPack() );
-		mp->AddItem( '5', c_struct_test::Array_Size_0() );
+		mp->AddItem( '2', c_array_test::Address() );
+		mp->AddMenu( '3', OperatorMenu() );
+		mp->AddItem( '4', c_struct_test::ByteAlignment() );
+		mp->AddItem( '5', c_struct_test::PragmaPack() );
+		mp->AddItem( '6', c_struct_test::Array_Size_0() );
 		
 
 
