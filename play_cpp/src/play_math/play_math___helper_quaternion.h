@@ -60,6 +60,15 @@ namespace play_math
 		return Quat( q.w, -q.x, -q.y, -q.z );
 	}
 
+	inline Quat operator*( const Quat& q, const Vec3& v )
+	{
+		return ( q * Quat( v ) ) * quat_inverse( q );
+	}
+	inline Quat operator*( const Quat& q, const Vec4& v )
+	{
+		return ( q * Vec3( v.x, v.y, v.z ) );
+	}
+
 	inline float quat_length( const Quat& q )
 	{
 		return sqrt(
