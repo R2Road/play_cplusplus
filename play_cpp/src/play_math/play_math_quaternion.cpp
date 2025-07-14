@@ -380,22 +380,24 @@ namespace play_math_quaternion
 				SS();
 
 				{
-					DECLARATION_MAIN( const Quat q = B( VEC3_X, 90.f ) );
-					EXPECT_EQ( Quat( 0, 0, 0, 1 ), ( q * Quat( VEC3_Y ) ) * quat_inverse( q ) );
-				}
+					{
+						DECLARATION_MAIN( const Quat q = B( VEC3_X, 90.f ) );
+						EXPECT_EQ( Quat( 0, 0, 0, 1 ), ( q * Quat( VEC3_Y ) ) * quat_inverse( q ) );
+					}
 
-				LF();
+					LF();
 
-				{
-					DECLARATION_MAIN( const Quat q = B( VEC3_Y, 90.f ) );
-					EXPECT_EQ( Quat( 0, 1, 0, 0 ), ( q * Quat( VEC3_Z ) ) * quat_inverse( q ) );
-				}
+					{
+						DECLARATION_MAIN( const Quat q = B( VEC3_Y, 90.f ) );
+						EXPECT_EQ( Quat( 0, 1, 0, 0 ), ( q * Quat( VEC3_Z ) ) * quat_inverse( q ) );
+					}
 
-				LF();
+					LF();
 
-				{
-					DECLARATION_MAIN( const Quat q = B( VEC3_Z, 90.f ) );
-					EXPECT_EQ( Quat( 0, 0, 1, 0 ), ( q * Quat( VEC3_X ) ) * quat_inverse( q ) );
+					{
+						DECLARATION_MAIN( const Quat q = B( VEC3_Z, 90.f ) );
+						EXPECT_EQ( Quat( 0, 0, 1, 0 ), ( q * Quat( VEC3_X ) ) * quat_inverse( q ) );
+					}
 				}
 
 				SS();
