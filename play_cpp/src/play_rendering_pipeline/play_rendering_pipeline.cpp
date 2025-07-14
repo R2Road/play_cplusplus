@@ -1588,7 +1588,7 @@ namespace play_rendering_pipeline
 				//
 				// Rotation
 				//
-				const Quat ret = ( q * v ) * quat_inverse( q );
+				const Quat ret = ( q * Quat( v ) ) * quat_inverse( q );
 
 				return Vec4( ret.x, ret.y, ret.z, 1 );
 			};

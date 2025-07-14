@@ -16,6 +16,18 @@ namespace play_math
 			, y( new_y )
 			, z( new_z )
 		{}
+		explicit Quat( const Vec3 v ) :
+			  w( 0 )
+			, x( v.x )
+			, y( v.y )
+			, z( v.z )
+		{}
+		explicit Quat( const Vec4 v ) :
+			w( 0 )
+			, x( v.x )
+			, y( v.y )
+			, z( v.z )
+		{}
 
 		float w;
 		float x;
@@ -41,15 +53,6 @@ namespace play_math
 			, ( a.w * b.y ) + ( a.y * b.w ) + ( a.z * b.x ) - ( a.x * b.z )
 			, ( a.w * b.z ) + ( a.z * b.w ) + ( a.x * b.y ) - ( a.y * b.x )
 		);
-	}
-
-	inline Quat operator*( const Quat& a, const Vec3& v )
-	{
-		return ( a * Quat( 0, v.x, v.y, v.z ) );
-	}
-	inline Quat operator*( const Quat& a, const Vec4& v )
-	{
-		return ( a * Vec3( v.x, v.y, v.z ) );
 	}
 
 	inline Quat quat_inverse( const Quat& q )
