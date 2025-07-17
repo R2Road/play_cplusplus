@@ -680,6 +680,16 @@ namespace play_math_vector3
 
 			LS();
 
+			{
+				OUTPUT_SUBJECT( "단위 벡터가 아닌 경우" );
+
+				LF();
+
+				EXPECT_EQ( -VEC3_Z, CROSS( Vec3( 0, 10, 0 ), Vec3( 20, 0, 0 ) ));
+			}
+
+			LS();
+
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
