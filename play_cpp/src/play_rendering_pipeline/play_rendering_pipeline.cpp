@@ -63,7 +63,7 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Forward" );
+				OUTPUT_SUBJECT( "Forward : Z-axis" );
 
 				LF();
 
@@ -72,7 +72,7 @@ namespace play_rendering_pipeline
 
 				LF();
 
-				OUTPUT_SUBJECT( "Right" );
+				OUTPUT_SUBJECT( "Right : X-axis" );
 
 				LF();
 
@@ -81,7 +81,7 @@ namespace play_rendering_pipeline
 
 				LF();
 
-				OUTPUT_SUBJECT( "Up" );
+				OUTPUT_SUBJECT( "Up : Y-axis" );
 
 				LF();
 
