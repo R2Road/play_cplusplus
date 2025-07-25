@@ -1,5 +1,4 @@
 #include "c_union_test.h"
-#include "c_union_test_helper_unnamedunion_with_struct.hpp"
 
 #include <string>
 
@@ -283,12 +282,19 @@ namespace c_union_test
 
 			LS();
 
-			OUTPUT_FILE( "src/test_c/item/c_union_test_helper_unnamedunion_with_struct.hpp" );
-
-			LS();
-
 			{
-				DECLARATION_MAIN( c_union_test_helper_unnamedunion_with_struct::TestStruct s );
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				struct
+				{
+					bool b;
+
+					union
+					{
+						int i;
+						long long ll;
+					};
+				} s;
+				OUTPUT_SOURCE_END;
 
 				LF();
 

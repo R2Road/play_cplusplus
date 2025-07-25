@@ -960,9 +960,6 @@
     <ClInclude Include="src\test_c\item\c_union_test.h">
       <Filter>test_c\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_c\item\c_union_test_helper_unnamedunion_with_struct.hpp">
-      <Filter>test_c\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_c\UnionMenu.h">
       <Filter>test_c</Filter>
     </ClInclude>
