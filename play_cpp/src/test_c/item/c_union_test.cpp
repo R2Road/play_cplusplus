@@ -373,7 +373,7 @@ namespace c_union_test
 		{
 			LS();
 
-			OUTPUT_NOTE( "Warning 없이 MS 전용 기능을 흉내내보자." );
+			OUTPUT_SUBJECT( "Warning 없이 MS 전용 기능을 흉내내보자." );
 
 			LS();
 
@@ -414,6 +414,10 @@ namespace c_union_test
 
 			LS();
 
+			OUTPUT_NOTE( "operator[] 를 재정의 하는 것이 적절한 선택 같다." );
+
+			LS();
+
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
@@ -433,7 +437,7 @@ namespace c_union_test
 		{
 			LS();
 
-			OUTPUT_NOTE( "Warning 없이 MS 전용 기능을 흉내내보자." );
+			OUTPUT_SUBJECT( "Warning 없이 MS 전용 기능을 흉내내보자." );
 
 			LS();
 
@@ -476,6 +480,11 @@ namespace c_union_test
 				OUTPUT_VALUE( &v[1] );
 				OUTPUT_VALUE( &v[2] );
 			}
+
+			LS();
+
+			OUTPUT_NOTE( "operator[] 안에서 reinterpret_cast 를 쓰는 것 보다는 switch를 쓰는 것이 괜찮아 보인다." );
+			OUTPUT_NOTE( "REF : https://github.com/g-truc/glm/blob/master/glm/detail/type_vec4.inl" );
 
 			LS();
 
