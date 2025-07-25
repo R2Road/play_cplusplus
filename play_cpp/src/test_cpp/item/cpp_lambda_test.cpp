@@ -1,5 +1,4 @@
 #include "cpp_lambda_test.h"
-#include "cpp_lambda_test__helper__size_3.hpp"
 
 #include <functional>
 #include <memory>
@@ -600,11 +599,37 @@ namespace cpp_lambda_test
 
 				LF();
 
-				OUTPUT_FILE( "src/test_cpp/item/cpp_lambda_test__helper__size_3.hpp" );
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				struct
+				{
+					int i = 0;
+					void Do() {
+
+						OUTPUT_VALUE( this );
+						OUTPUT_BINARY( this );
+
+						LF();
+
+						auto l = [this, j = 255ll]()
+						{
+							( this->i );
+							OUTPUT_VALUE( this );
+						};
+						OUTPUT_SIZE( l );
+
+						LF();
+
+						OUTPUT_BINARY( l );
+
+						LF();
+
+						PROCESS_MAIN( l() );
+					}
+				} s;
+				OUTPUT_SOURCE_END;
 
 				LF();
 
-				DECLARATION_MAIN( cpp_lambda_test__helper__size_3::S s );
 				PROCESS_MAIN( s.Do() );
 			}
 
