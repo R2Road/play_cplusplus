@@ -37,6 +37,7 @@ r2tm::WriteFunctionT UnionMenu::GetWriteFunction() const
 		mp->AddItem( 'e', c_union_test::Unnamed_Union_With_Vector3_2() );
 		mp->AddItem( 'r', c_union_test::Unnamed_Union_With_Vector3_3() );
 		mp->AddItem( 't', c_union_test::Unnamed_Union_With_Vector3_4() );
+		mp->AddItem( 'y', c_union_test::Unnamed_Union_With_Vector3_5() );
 
 
 

@@ -491,4 +491,62 @@ namespace c_union_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Unnamed_Union_With_Vector3_5::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Union : Unnamed Union with Vector3 5";
+		};
+	}
+	r2tm::DoFunctionT Unnamed_Union_With_Vector3_5::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_SUBJECT( "다소의 난잡함을 감수하면 적절한 편의성에 도달 할 수 있다." );
+
+			LS();
+
+			{
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				struct
+				{
+					union{
+						float x;
+						float r;
+					};
+					union{
+						float y;
+						float g;
+					};
+					union{
+						float z;
+						float b;
+					};
+				} v;
+				OUTPUT_SOURCE_END;
+				OUTPUT_VALUE( sizeof( v ) );
+
+				LF();
+
+				EXPECT_EQ( &v.r, &v.x );
+				EXPECT_EQ( &v.g, &v.y );
+				EXPECT_EQ( &v.b, &v.z );
+
+				LF();
+
+				OUTPUT_VALUE( &v.r );
+				OUTPUT_VALUE( &v.g );
+				OUTPUT_VALUE( &v.b );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
