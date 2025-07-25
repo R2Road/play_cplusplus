@@ -414,6 +414,29 @@ namespace c_union_test
 
 			LS();
 
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Unnamed_Union_With_Vector3_4::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Union : Unnamed Union with Vector3 4";
+		};
+	}
+	r2tm::DoFunctionT Unnamed_Union_With_Vector3_4::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_NOTE( "Warning 없이 MS 전용 기능을 흉내내보자." );
+
+			LS();
+
 			{
 				OUTPUT_SOURCE_READY_N_BEGIN;
 				struct
