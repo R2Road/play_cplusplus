@@ -317,7 +317,7 @@ namespace c_union_test
 		{
 			LS();
 
-			OUTPUT_NOTE( "Warning 없이 MS 전용 기능을 흉내내보자." );
+			OUTPUT_SUBJECT( "Warning 없이 MS 전용 기능을 흉내내보자." );
 
 			LS();
 
@@ -347,6 +347,10 @@ namespace c_union_test
 				OUTPUT_VALUE( &v.y );
 				OUTPUT_VALUE( &v.z );
 			}
+
+			LS();
+
+			OUTPUT_NOTE( "이건 아닌 것 같다. 크기가 증가하는 것은 용납할 수 없다." );
 
 			LS();
 
