@@ -1,6 +1,5 @@
 #include "c_union_test.h"
 #include "c_union_test_helper_unnamedunion_with_struct.hpp"
-#include "c_union_test_helper_unnamedunion_with_vector3.hpp"
 
 #include <string>
 
@@ -277,12 +276,28 @@ namespace c_union_test
 
 			LS();
 
-			OUTPUT_FILE( "src/test_c/item/c_union_test_helper_unnamedunion_with_vector3.hpp" );
-
-			LS();
-
 			{
-				DECLARATION_MAIN( c_union_test_helper_unnamedunion_with_vector3::Vector3 v );
+				OUTPUT_SOURCE_READY_N_BEGIN;
+#pragma warning( push )
+#pragma warning( disable : 4201 )
+
+				struct
+				{
+					union
+					{
+						float r[3];
+
+						struct
+						{
+							float x;
+							float y;
+							float z;
+						};
+					};
+				} v;
+
+#pragma warning( pop )
+				OUTPUT_SOURCE_END;
 
 				LF();
 
