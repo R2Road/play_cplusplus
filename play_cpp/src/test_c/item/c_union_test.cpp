@@ -422,6 +422,9 @@ namespace c_union_test
 					}
 				} v;
 				OUTPUT_SOURCE_END;
+
+				LF();
+
 				OUTPUT_VALUE( sizeof( v ) );
 
 				LF();
@@ -491,6 +494,9 @@ namespace c_union_test
 					}
 				} v;
 				OUTPUT_SOURCE_END;
+
+				LF();
+
 				OUTPUT_VALUE( sizeof( v ) );
 
 				LF();
@@ -554,6 +560,9 @@ namespace c_union_test
 					};
 				} v;
 				OUTPUT_SOURCE_END;
+
+				LF();
+
 				OUTPUT_VALUE( sizeof( v ) );
 
 				LF();
