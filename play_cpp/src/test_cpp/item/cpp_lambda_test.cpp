@@ -604,8 +604,6 @@ namespace cpp_lambda_test
 				{
 					int i = 0;
 					void Do() {
-
-						OUTPUT_VALUE( this );
 						OUTPUT_BINARY( this );
 
 						LF();
@@ -616,9 +614,6 @@ namespace cpp_lambda_test
 							OUTPUT_VALUE( this );
 						};
 						OUTPUT_SIZE( l );
-
-						LF();
-
 						OUTPUT_BINARY( l );
 
 						LF();
