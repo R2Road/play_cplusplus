@@ -21,7 +21,12 @@ namespace c_union_test
 		{
 			LS();
 
-			DECLARATION_MAIN( union U { int32_t a; int64_t b; } );
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			union U {
+				int32_t a;
+				int64_t b;
+			};
+			OUTPUT_SOURCE_END;
 
 			LS();
 
@@ -58,7 +63,12 @@ namespace c_union_test
 			LS();
 
 			{
-				DECLARATION_MAIN( union { int32_t a = 0; int64_t b; } u );
+				OUTPUT_SOURCE_BEGIN;
+				union {
+					int32_t a = 0;
+					int64_t b;
+				} u;
+				OUTPUT_SOURCE_END;
 
 				LF();
 
@@ -102,9 +112,12 @@ namespace c_union_test
 		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
-
-			DECLARATION_MAIN( union U { char c; int64_t i64; } );
-			DECLARATION_MAIN( U u );
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			union {
+				char c;
+				int64_t i64;
+			} u;
+			OUTPUT_SOURCE_END;
 
 			LS();
 
@@ -153,7 +166,15 @@ namespace c_union_test
 		{
 			LS();
 
-			DECLARATION_MAIN( union U { char c; int64_t i64; } );
+			OUTPUT_SOURCE_READY_N_BEGIN;
+			union U {
+				char c;
+				int64_t i64;
+			};
+			OUTPUT_SOURCE_END;
+
+			LS();
+
 			DECLARATION_MAIN( U u_1 );
 			DECLARATION_MAIN( U u_2 );
 
