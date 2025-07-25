@@ -222,13 +222,40 @@ namespace c_union_test
 		{
 			LS();
 
-			OUTPUT_NOTE( "Not Working" );
+			{
+				OUTPUT_SUBJECT( "Not Working" );
+
+				LF();
+
+				OUTPUT_CODE( union U { char c; std::string s = ""; } );
+				OUTPUT_CODE( U u_1 );
+			}
 
 			LS();
 
 			{
-				OUTPUT_CODE( union U { char c; std::string s = ""; } );
-				OUTPUT_CODE( U u_1 );
+				OUTPUT_SUBJECT( "Working" );
+
+				LF();
+
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				class A
+				{
+					int i = 0;
+				};
+
+				union U {
+					char c;
+					A a;
+				};
+				OUTPUT_SOURCE_END;
+
+				LF();
+
+				OUTPUT_SUBJECT( "공용체 안에 기본 제공 타입 이외의 것이 들어가려면..." );
+				OUTPUT_COMMENT( "금지 : 사용자 정의 생성자/소멸자" );
+				OUTPUT_COMMENT( "금지 : 사용자 정의 복사 생성자/이동 생성자/대입 연산자" );
+				OUTPUT_COMMENT( "금지 : 가상 함수/가상 기본 클래스" );
 			}
 
 			LS();
