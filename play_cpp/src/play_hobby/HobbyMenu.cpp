@@ -10,7 +10,6 @@
 #include "MemoryPoolMenu.h"
 #include "PropertyMenu.h"
 #include "TreeMenu.h"
-#include "Vector3Menu.h"
 
 #include "menu_root.h"
 
@@ -65,8 +64,7 @@ r2tm::WriteFunctionT HobbyMenu::GetWriteFunction() const
 
 
 		mp->AddMenu( 'z', ListBasedOnArrayMenu() );
-		mp->AddMenu( 'x', Vector3Menu() );
-		mp->AddMenu( 'c', MemoryPoolMenu() );
+		mp->AddMenu( 'x', MemoryPoolMenu() );
 
 
 		mp->AddSplit();
