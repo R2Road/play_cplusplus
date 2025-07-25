@@ -41,7 +41,7 @@ namespace template_basic_test
 
 	int FN_R_0() { puts( "int FN_R_0()" ); return 0; }
 
-	int FN_R_2( int x, int y ) { puts( "int FN_R_0()" ); return x + y; }
+	int FN_R_2( int x, int y ) { puts( "int FN_R_2()" ); return x + y; }
 
 	template<typename Ret, typename ... Param>
 	class FunctionTest_01
