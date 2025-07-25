@@ -373,28 +373,81 @@ namespace c_union_test
 
 			LS();
 
-			DECLARATION_MAIN( struct { float x; float y; float z; } v );
-			OUTPUT_VALUE( sizeof( v ) );
+			{
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				struct
+				{
+					float x;
+					float y;
+					float z;
+
+					const float& operator[]( int i ) const
+					{
+						if( 3 <= i )
+						{
+							static float dummy = 0.f;
+							return dummy;
+						}
+
+						return reinterpret_cast<const float*>( this )[i];
+					}
+				} v;
+				OUTPUT_SOURCE_END;
+				OUTPUT_VALUE( sizeof( v ) );
+
+				LF();
+
+				EXPECT_EQ( &v[0], &v.x );
+				EXPECT_EQ( &v[1], &v.y );
+				EXPECT_EQ( &v[2], &v.z );
+
+				LF();
+
+				OUTPUT_VALUE( &v[0] );
+				OUTPUT_VALUE( &v[1] );
+				OUTPUT_VALUE( &v[2] );
+			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( float* f = (float*)&v );
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				struct
+				{
+					float x;
+					float y;
+					float z;
+
+					const float& operator[]( int i ) const
+					{
+						switch( i )
+						{
+						case 0:
+							return x;
+						case 1:
+							return y;
+						case 2:
+							return z;
+						default:
+							static float dummy = 0.f;
+							return dummy;
+						}
+					}
+				} v;
+				OUTPUT_SOURCE_END;
+				OUTPUT_VALUE( sizeof( v ) );
 
 				LF();
 
-				EXPECT_EQ( &f[0], &v.x );
-				EXPECT_EQ( &f[1], &v.y );
-				EXPECT_EQ( &f[2], &v.z );
+				EXPECT_EQ( &v[0], &v.x );
+				EXPECT_EQ( &v[1], &v.y );
+				EXPECT_EQ( &v[2], &v.z );
 
 				LF();
 
-				OUTPUT_VALUE( &f[0] );
-				OUTPUT_VALUE( &f[1] );
-				OUTPUT_VALUE( &f[2] );
-				OUTPUT_VALUE( &v.x );
-				OUTPUT_VALUE( &v.y );
-				OUTPUT_VALUE( &v.z );
+				OUTPUT_VALUE( &v[0] );
+				OUTPUT_VALUE( &v[1] );
+				OUTPUT_VALUE( &v[2] );
 			}
 
 			LS();
