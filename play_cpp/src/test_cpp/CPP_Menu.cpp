@@ -1,6 +1,6 @@
 #include "CPP_Menu.h"
 
-#include "r2tm/r2tm_MenuProcessor.h"
+#include "r2tm/r2tm_menu_processor.hpp"
 
 #include "item/cpp_structured_binding_test.h"
 #include "item/number_test.h"

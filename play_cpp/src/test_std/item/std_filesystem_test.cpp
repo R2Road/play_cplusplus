@@ -4,8 +4,8 @@
 #include <filesystem>
 #include <stdlib.h>
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace std_filesystem_test
 {
@@ -27,7 +27,7 @@ namespace std_filesystem_test
 
 				LF();
 
-				DECLARATION_MAIN( const std::filesystem::path p = std::filesystem::current_path() );
+				DECL_MAIN( const std::filesystem::path p = std::filesystem::current_path() );
 				OUTPUT_VALUE( p );
 			}
 
@@ -38,7 +38,7 @@ namespace std_filesystem_test
 
 				LF();
 
-				DECLARATION_MAIN( std::filesystem::path p = std::filesystem::temp_directory_path() );
+				DECL_MAIN( std::filesystem::path p = std::filesystem::temp_directory_path() );
 				OUTPUT_VALUE( p );
 			}
 
@@ -67,7 +67,7 @@ namespace std_filesystem_test
 
 			LF();
 
-			DECLARATION_MAIN( const std::filesystem::path p = std::filesystem::current_path() );
+			DECL_MAIN( const std::filesystem::path p = std::filesystem::current_path() );
 			OUTPUT_VALUE( p );
 
 			LS();
@@ -77,7 +77,7 @@ namespace std_filesystem_test
 
 				LF();
 
-				DECLARATION_MAIN( std::filesystem::directory_iterator itr( p ) );
+				DECL_MAIN( std::filesystem::directory_iterator itr( p ) );
 
 				std::cout << r2tm::tab << "for( auto i : itr ) ..." << r2tm::linefeed;
 				
@@ -111,7 +111,7 @@ namespace std_filesystem_test
 		{
 			LS();
 
-			DECLARATION_MAIN( const auto target_path = std::filesystem::current_path() / "src" );
+			DECL_MAIN( const auto target_path = std::filesystem::current_path() / "src" );
 			OUTPUT_VALUE( target_path );
 
 			LS();
@@ -172,11 +172,11 @@ namespace std_filesystem_test
 
 				LF();
 
-				DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
+				DECL_MAIN( std::filesystem::path p = std::filesystem::current_path() );
 
 				LF();
 
-				PROCESS_MAIN( p.append( "test.txt" ) );
+				PROC_MAIN( p.append( "test.txt" ) );
 
 				LF();
 
@@ -190,11 +190,11 @@ namespace std_filesystem_test
 
 				LF();
 
-				DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
+				DECL_MAIN( std::filesystem::path p = std::filesystem::current_path() );
 
 				LF();
 
-				PROCESS_MAIN( p = p / "test.txt" );
+				PROC_MAIN( p = p / "test.txt" );
 
 				LF();
 
@@ -208,11 +208,11 @@ namespace std_filesystem_test
 
 				LF();
 
-				DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
+				DECL_MAIN( std::filesystem::path p = std::filesystem::current_path() );
 
 				LF();
 
-				PROCESS_MAIN( p /= "test.txt" );
+				PROC_MAIN( p /= "test.txt" );
 
 				LF();
 
@@ -246,7 +246,7 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::filesystem::path p );
+				DECL_MAIN( std::filesystem::path p );
 
 				LF();
 
@@ -257,7 +257,7 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::filesystem::path p = "123.txt" );
+				DECL_MAIN( std::filesystem::path p = "123.txt" );
 
 				LF();
 
@@ -268,7 +268,7 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::filesystem::path p = "aaa\\bbb" );
+				DECL_MAIN( std::filesystem::path p = "aaa\\bbb" );
 
 				LF();
 
@@ -302,7 +302,7 @@ namespace std_filesystem_test
 
 				LF();
 
-				DECLARATION_MAIN( auto p = std::filesystem::current_path() / "test.txt" );
+				DECL_MAIN( auto p = std::filesystem::current_path() / "test.txt" );
 
 				LF();
 
@@ -310,7 +310,7 @@ namespace std_filesystem_test
 
 				LF();
 
-				PROCESS_MAIN( p.remove_filename() );
+				PROC_MAIN( p.remove_filename() );
 
 				LF();
 
@@ -324,7 +324,7 @@ namespace std_filesystem_test
 
 				LF();
 
-				DECLARATION_MAIN( auto p = std::filesystem::current_path() / "test.txt" );
+				DECL_MAIN( auto p = std::filesystem::current_path() / "test.txt" );
 
 				LF();
 
@@ -332,7 +332,7 @@ namespace std_filesystem_test
 
 				LF();
 
-				PROCESS_MAIN( p._Remove_filename_and_separator() );
+				PROC_MAIN( p._Remove_filename_and_separator() );
 
 				LF();
 
@@ -360,7 +360,7 @@ namespace std_filesystem_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
+			DECL_MAIN( std::filesystem::path p = std::filesystem::current_path() );
 			OUTPUT_VALUE( p );
 
 			LS();
@@ -370,12 +370,12 @@ namespace std_filesystem_test
 
 				LF();
 
-				PROCESS_MAIN( p /= "test.txt" );
+				PROC_MAIN( p /= "test.txt" );
 				OUTPUT_VALUE( p );
 
 				LF();
 
-				PROCESS_MAIN( p.replace_extension( "json" ) );
+				PROC_MAIN( p.replace_extension( "json" ) );
 				OUTPUT_VALUE( p );
 			}
 
@@ -390,7 +390,7 @@ namespace std_filesystem_test
 
 				LF();
 
-				PROCESS_MAIN( p.replace_filename( "new_filename" ) );
+				PROC_MAIN( p.replace_filename( "new_filename" ) );
 				OUTPUT_VALUE( p );
 			}
 
@@ -419,7 +419,7 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				DECLARATION_SUB( std::filesystem::path p );
+				DECL_SUB( std::filesystem::path p );
 
 				LF();
 
@@ -433,7 +433,7 @@ namespace std_filesystem_test
 
 				LF();
 
-				DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
+				DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
 				OUTPUT_VALUE( p );
 
 				LF();
@@ -448,8 +448,8 @@ namespace std_filesystem_test
 
 				LF();
 
-				DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
-				PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
+				DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
+				PROC_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
 				OUTPUT_VALUE( p );
 
 				LF();
@@ -478,8 +478,8 @@ namespace std_filesystem_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
-			PROCESS_MAIN( p /= "Directory_Make_Delete" );
+			DECL_MAIN( std::filesystem::path p = std::filesystem::current_path() );
+			PROC_MAIN( p /= "Directory_Make_Delete" );
 
 			LS();
 
@@ -555,8 +555,8 @@ namespace std_filesystem_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::filesystem::path pivot_path = std::filesystem::current_path() );
-			PROCESS_MAIN( pivot_path /= "temp" );
+			DECL_MAIN( std::filesystem::path pivot_path = std::filesystem::current_path() );
+			PROC_MAIN( pivot_path /= "temp" );
 
 			LS();
 
@@ -565,10 +565,10 @@ namespace std_filesystem_test
 
 				LF();
 
-				DECLARATION_MAIN( std::filesystem::path p = pivot_path );
-				PROCESS_MAIN( p /= "a" );
-				PROCESS_MAIN( p /= "b" );
-				PROCESS_MAIN( p /= "c" );
+				DECL_MAIN( std::filesystem::path p = pivot_path );
+				PROC_MAIN( p /= "a" );
+				PROC_MAIN( p /= "b" );
+				PROC_MAIN( p /= "c" );
 
 
 				EXPECT_TRUE( std::filesystem::create_directories( p ) );
@@ -635,8 +635,8 @@ namespace std_filesystem_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::filesystem::path p = std::filesystem::current_path() );
-			PROCESS_MAIN( p /= "play_cpp.sln" );
+			DECL_MAIN( std::filesystem::path p = std::filesystem::current_path() );
+			PROC_MAIN( p /= "play_cpp.sln" );
 
 			LS();
 

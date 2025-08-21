@@ -1,6 +1,6 @@
 #include "template_meta_programming_03_test.h"
 
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace
 {

@@ -4,8 +4,8 @@
 #include <memory>
 #include <utility>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace cpp_lambda_test
 {
@@ -29,21 +29,21 @@ namespace cpp_lambda_test
 			LS();
 
 			{
-				DECLARATION_MAIN( auto l = []() {}; );
-				PROCESS_MAIN( l() );
+				DECL_MAIN( auto l = []() {}; );
+				PROC_MAIN( l() );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( auto l = []()->int { return 1; }; );
+				DECL_MAIN( auto l = []()->int { return 1; }; );
 				OUTPUT_VALUE( l() );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( auto l = []( const int i )->int { return i; }; );
+				DECL_MAIN( auto l = []( const int i )->int { return i; }; );
 				OUTPUT_VALUE( l( 3 ) );
 			}
 
@@ -69,12 +69,12 @@ namespace cpp_lambda_test
 			LS();
 
 			{
-				DECLARATION_MAIN( int i = 888 );
-				DECLARATION_MAIN( auto l = [i]() { printf( "i : %d", i ); } );
+				DECL_MAIN( int i = 888 );
+				DECL_MAIN( auto l = [i]() { printf( "i : %d", i ); } );
 
 				LF();
 
-				PROCESS_MAIN( l() );
+				PROC_MAIN( l() );
 			}
 
 			LS();
@@ -411,28 +411,28 @@ namespace cpp_lambda_test
 			LS();
 
 			{
-				DECLARATION_MAIN( auto l = []() {} );
+				DECL_MAIN( auto l = []() {} );
 				OUTPUT_VALUE( sizeof( l ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( auto l = []() { int i = 0; i = 1; } );
+				DECL_MAIN( auto l = []() { int i = 0; i = 1; } );
 				OUTPUT_VALUE( sizeof( l ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( auto l = [i = 0]() {} );
+				DECL_MAIN( auto l = [i = 0]() {} );
 				OUTPUT_VALUE( sizeof( l ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( auto l = [ll = 0ll]() {} );
+				DECL_MAIN( auto l = [ll = 0ll]() {} );
 				OUTPUT_VALUE( sizeof( l ) );
 			}
 
@@ -458,30 +458,30 @@ namespace cpp_lambda_test
 			LS();
 
 			{
-				DECLARATION_MAIN( int64_t i = 1 );
-				DECLARATION_MAIN( int64_t j = 255 );
+				DECL_MAIN( int64_t i = 1 );
+				DECL_MAIN( int64_t j = 255 );
 				( i ); ( j ); // warning 力芭
-				DECLARATION_MAIN( auto l = [=]() {} );
+				DECL_MAIN( auto l = [=]() {} );
 				OUTPUT_VALUE( sizeof( l ) );
 
 				LF();
 
-				PROCESS_MAIN( l() );
+				PROC_MAIN( l() );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( int64_t i = 1 );
-				DECLARATION_MAIN( int64_t j = 255 );
+				DECL_MAIN( int64_t i = 1 );
+				DECL_MAIN( int64_t j = 255 );
 				( j ); // warning 力芭
-				DECLARATION_MAIN( auto l = [=]() { std::cout << i << r2tm::linefeed; } );
+				DECL_MAIN( auto l = [=]() { std::cout << i << r2tm::linefeed; } );
 				OUTPUT_VALUE( sizeof( l ) );
 				OUTPUT_BINARY( l );
 
 				LF();
 
-				PROCESS_MAIN( l() );
+				PROC_MAIN( l() );
 			}
 
 			LS();
@@ -491,15 +491,15 @@ namespace cpp_lambda_test
 
 				LF();
 
-				DECLARATION_MAIN( int64_t i = 1 );
-				DECLARATION_MAIN( int64_t j = 255 );
-				DECLARATION_MAIN( auto l = [=]() { std::cout << i << j << r2tm::linefeed; } );
+				DECL_MAIN( int64_t i = 1 );
+				DECL_MAIN( int64_t j = 255 );
+				DECL_MAIN( auto l = [=]() { std::cout << i << j << r2tm::linefeed; } );
 				OUTPUT_VALUE( sizeof( l ) );
 				OUTPUT_BINARY( l );
 
 				LF();
 
-				PROCESS_MAIN( l() );
+				PROC_MAIN( l() );
 			}
 
 			LS();
@@ -523,35 +523,35 @@ namespace cpp_lambda_test
 		{
 			LS();
 
-			DECLARATION_MAIN( struct S { int i = 1; int j = 255; int arr[10]; } );
+			DECL_MAIN( struct S { int i = 1; int j = 255; int arr[10]; } );
 
 			LS();
 
 			{
-				DECLARATION_MAIN( S s1 );
-				DECLARATION_MAIN( S s2 );
+				DECL_MAIN( S s1 );
+				DECL_MAIN( S s2 );
 				( s1 ); ( s2 ); // warning 力芭
-				DECLARATION_MAIN( auto l = [&]() {} );
+				DECL_MAIN( auto l = [&]() {} );
 				OUTPUT_VALUE( sizeof( l ) );
 
 				LF();
 
-				PROCESS_MAIN( l() );
+				PROC_MAIN( l() );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( S s1 );
-				DECLARATION_MAIN( S s2 );
+				DECL_MAIN( S s1 );
+				DECL_MAIN( S s2 );
 				( s2 ); // warning 力芭
-				DECLARATION_MAIN( auto l = [&]() { std::cout << s1.i << r2tm::linefeed; } );
+				DECL_MAIN( auto l = [&]() { std::cout << s1.i << r2tm::linefeed; } );
 				OUTPUT_VALUE( sizeof( l ) );
 				OUTPUT_BINARY( l );
 
 				LF();
 
-				PROCESS_MAIN( l() );
+				PROC_MAIN( l() );
 			}
 
 			LS();
@@ -561,15 +561,15 @@ namespace cpp_lambda_test
 
 				LF();
 
-				DECLARATION_MAIN( S s1 );
-				DECLARATION_MAIN( S s2 );
-				DECLARATION_MAIN( auto l = [&]() { std::cout << s1.i << s2.j << r2tm::linefeed; } );
+				DECL_MAIN( S s1 );
+				DECL_MAIN( S s2 );
+				DECL_MAIN( auto l = [&]() { std::cout << s1.i << s2.j << r2tm::linefeed; } );
 				OUTPUT_VALUE( sizeof( l ) );
 				OUTPUT_BINARY( l );
 
 				LF();
 
-				PROCESS_MAIN( l() );
+				PROC_MAIN( l() );
 			}
 
 			LS();
@@ -618,14 +618,14 @@ namespace cpp_lambda_test
 
 						LF();
 
-						PROCESS_MAIN( l() );
+						PROC_MAIN( l() );
 					}
 				} s;
 				OUTPUT_SOURCE_END;
 
 				LF();
 
-				PROCESS_MAIN( s.Do() );
+				PROC_MAIN( s.Do() );
 			}
 
 			LS();
@@ -662,48 +662,48 @@ namespace cpp_lambda_test
 			LS();
 
 			{
-				DECLARATION_MAIN( auto l = []() {} );
+				DECL_MAIN( auto l = []() {} );
 				OUTPUT_VALUE( sizeof( l ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( std::function<void()> f = []() {} );
+				DECL_MAIN( std::function<void()> f = []() {} );
 				OUTPUT_VALUE( sizeof( f ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( auto l = [ll = 10ll]() {} );
+				DECL_MAIN( auto l = [ll = 10ll]() {} );
 				OUTPUT_VALUE( sizeof( l ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( std::function<void()> f = [ll = 10ll]() {} );
+				DECL_MAIN( std::function<void()> f = [ll = 10ll]() {} );
 				OUTPUT_VALUE( sizeof( f ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( std::function<void()> f = LocalFunction );
+				DECL_MAIN( std::function<void()> f = LocalFunction );
 				OUTPUT_VALUE( sizeof( f ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( struct S
+				DECL_MAIN( struct S
 				{
 					int i[100];
 					void f() {}
 				} );
-				DECLARATION_MAIN( S s );
-				DECLARATION_MAIN( std::function<void()> f = std::bind( &S::f, &s ) );
+				DECL_MAIN( S s );
+				DECL_MAIN( std::function<void()> f = std::bind( &S::f, &s ) );
 				OUTPUT_VALUE( sizeof( f ) );
 			}
 

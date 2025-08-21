@@ -1,9 +1,9 @@
 #include "play_cpu_basic.h"
 
-#include "r2tm/r2tm_inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
-#include "r2tm/r2tm_StopWatch.h"
+#include "r2tm/r2tm_stop_watch.hpp"
 
 // REF : https://learn.microsoft.com/ko-kr/windows/win32/api/sysinfoapi/nf-sysinfoapi-getlogicalprocessorinformation
 

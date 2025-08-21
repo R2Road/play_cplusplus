@@ -2,8 +2,8 @@
 #include "template_basic_test_helper.hpp"
 #include "template_basic_test___parentheses___helper.hpp"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace template_basic_test
 {
@@ -25,8 +25,8 @@ namespace template_basic_test
 			LS();
 
 			{
-				DECLARATION_MAIN( MemberVariableTest_01<int> m );
-				PROCESS_MAIN( m.t = 111 );
+				DECL_MAIN( MemberVariableTest_01<int> m );
+				PROC_MAIN( m.t = 111 );
 				OUTPUT_VALUE( m.t );
 			}
 
@@ -35,8 +35,8 @@ namespace template_basic_test
 			{
 				MemberVariableTest_02<int, float> m;
 				std::cout << "MemberVariableTest_02<int, float> m\n";
-				PROCESS_MAIN( m.t1 = 111 );
-				PROCESS_MAIN( m.t2 = 222 );
+				PROC_MAIN( m.t1 = 111 );
+				PROC_MAIN( m.t2 = 222 );
 				OUTPUT_VALUE( m.t1 );
 				OUTPUT_VALUE( m.t2 );
 			}
@@ -72,14 +72,14 @@ namespace template_basic_test
 
 				LF();
 
-				DECLARATION_MAIN( int i = Template_Fn_R_<int>() );
+				DECL_MAIN( int i = Template_Fn_R_<int>() );
 				( i );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( int i = Template_Fn_R_R1( 123 ) );
+				DECL_MAIN( int i = Template_Fn_R_R1( 123 ) );
 				( i );
 				std::cout << "\t" "> " "함수 인자 타입과 반환값의 타입이 같다면 인자에서 타입이 정해지므로 타입 추론에 성공한다." << r2tm::linefeed;
 
@@ -119,22 +119,22 @@ namespace template_basic_test
 			LS();
 
 			{
-				DECLARATION_MAIN( FunctionTest_01 FT( FN_V_0 ) );
-				PROCESS_MAIN( FT() );
+				DECL_MAIN( FunctionTest_01 FT( FN_V_0 ) );
+				PROC_MAIN( FT() );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( FunctionTest_01 FT( FN_R_0 ) );
-				PROCESS_MAIN( FT() );
+				DECL_MAIN( FunctionTest_01 FT( FN_R_0 ) );
+				PROC_MAIN( FT() );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( FunctionTest_01 FT( FN_R_2 ) );
-				PROCESS_MAIN( FT( 3, 5 ) );
+				DECL_MAIN( FunctionTest_01 FT( FN_R_2 ) );
+				PROC_MAIN( FT( 3, 5 ) );
 			}
 
 			LS();
@@ -251,7 +251,7 @@ namespace template_basic_test
 			LS();
 
 			{
-				PROCESS_MAIN( Do_ParenthesesHelper() );
+				PROC_MAIN( Do_ParenthesesHelper() );
 			}
 
 			LS();

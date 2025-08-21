@@ -68,7 +68,7 @@ namespace r2tm
 			"\n"	"[o] " "add       method     : r2tm::WindowsUtility::GetCursorX, GetCursorY"
 			"\n"	"[o] " "update    inspector  : Add - OUTPUT_ADDRESS"
 			"\n"	"[o] " "update    inspector  : 출력 문자열 조정 - ex) DECLARATION > DECL"
-			"\n"	"[o] " "update    inspector  : Macro 이름 조정 - ex) DECLARATION_MAIN > DECL_MAIN"
+			"\n"	"[o] " "update    inspector  : Macro 이름 조정 - ex) DECL_MAIN > DECL_MAIN"
 			"\n"	"[o] " "전체 소스파일중 헤더파일의 확장자를 h 에서 hpp로 변경"
 		;
 

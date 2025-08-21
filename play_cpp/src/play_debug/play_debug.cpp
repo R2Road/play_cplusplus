@@ -9,8 +9,8 @@
 #include <Windows.h>
 
 #include "r2/r2_Assert.h"
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 #include "utility/play_cpp_utility_PathBuilder.h"
 
 namespace play_debug
@@ -46,7 +46,7 @@ namespace play_debug
 
 				LF();
 
-				PROCESS_MAIN( ShowCodeInfo() );
+				PROC_MAIN( ShowCodeInfo() );
 			}
 
 			LS();
@@ -75,7 +75,7 @@ namespace play_debug
 
 				LF();
 
-				PROCESS_MAIN( OutputDebugStringW( L"What The Fuck" ) );
+				PROC_MAIN( OutputDebugStringW( L"What The Fuck" ) );
 			}
 
 			LS();
@@ -126,7 +126,7 @@ namespace play_debug
 
 				WAIT_ANY_KEY;
 
-				PROCESS_MAIN( P() );
+				PROC_MAIN( P() );
 			}
 
 			LS();
@@ -166,7 +166,7 @@ namespace play_debug
 
 				WAIT_ANY_KEY;
 
-				PROCESS_MAIN( P() );
+				PROC_MAIN( P() );
 			}
 
 			LS();
@@ -195,12 +195,12 @@ namespace play_debug
 			LS();
 
 			{
-				DECLARATION_MAIN( int a = 1 );
-				DECLARATION_MAIN( int b = 2 );
+				DECL_MAIN( int a = 1 );
+				DECL_MAIN( int b = 2 );
 
 				LF();
 
-				PROCESS_MAIN( R2ASSERT( a > b, "What The Fuck" ) );
+				PROC_MAIN( R2ASSERT( a > b, "What The Fuck" ) );
 
 			}
 
@@ -234,8 +234,8 @@ namespace play_debug
 
 			LF();
 
-			DECLARATION_MAIN( const char* const file_path = GetSimpleLogFilePath() );
-			DECLARATION_MAIN( std::ofstream log_stream( file_path ) );
+			DECL_MAIN( const char* const file_path = GetSimpleLogFilePath() );
+			DECL_MAIN( std::ofstream log_stream( file_path ) );
 
 			LS();
 
@@ -243,8 +243,8 @@ namespace play_debug
 
 			LF();
 
-			DECLARATION_MAIN( std::streambuf * const orig = std::cerr.rdbuf() );
-			PROCESS_MAIN( std::cerr.rdbuf( log_stream.rdbuf() ) );
+			DECL_MAIN( std::streambuf * const orig = std::cerr.rdbuf() );
+			PROC_MAIN( std::cerr.rdbuf( log_stream.rdbuf() ) );
 
 			LS();
 
@@ -253,12 +253,12 @@ namespace play_debug
 
 				LF();
 
-				PROCESS_MAIN( std::cerr << "[Test] " );
-				PROCESS_MAIN( std::cerr << std::chrono::system_clock::now().time_since_epoch().count() );
-				PROCESS_MAIN( std::cerr << std::endl );
-				PROCESS_MAIN( std::cerr << "std::cerr" );
-				PROCESS_MAIN( std::cerr << std::endl );
-				PROCESS_MAIN( std::cerr << "redirection 2 file" );
+				PROC_MAIN( std::cerr << "[Test] " );
+				PROC_MAIN( std::cerr << std::chrono::system_clock::now().time_since_epoch().count() );
+				PROC_MAIN( std::cerr << std::endl );
+				PROC_MAIN( std::cerr << "std::cerr" );
+				PROC_MAIN( std::cerr << std::endl );
+				PROC_MAIN( std::cerr << "redirection 2 file" );
 			}
 
 			LS();
@@ -268,8 +268,8 @@ namespace play_debug
 
 				LF();
 
-				PROCESS_MAIN( std::cerr.set_rdbuf( orig ) );
-				PROCESS_MAIN( log_stream.close() );
+				PROC_MAIN( std::cerr.set_rdbuf( orig ) );
+				PROC_MAIN( log_stream.close() );
 			}
 
 			LS();

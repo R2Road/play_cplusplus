@@ -1,7 +1,7 @@
 #include "c_struct_test.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace c_struct_test
 {
@@ -19,7 +19,7 @@ namespace c_struct_test
 			LS();
 
 			{
-				DECLARATION_MAIN( struct C { char c1; } );
+				DECL_MAIN( struct C { char c1; } );
 				OUTPUT_VALUE( sizeof( C ) );
 				OUTPUT_BINARY( C() );
 			}
@@ -27,7 +27,7 @@ namespace c_struct_test
 			LS();
 
 			{
-				DECLARATION_MAIN( struct C_C { char c1; char c2; } );
+				DECL_MAIN( struct C_C { char c1; char c2; } );
 				OUTPUT_VALUE( sizeof( C_C ) );
 				OUTPUT_BINARY( C_C() );
 			}
@@ -35,7 +35,7 @@ namespace c_struct_test
 			LS();
 
 			{
-				DECLARATION_MAIN( struct C_C_I { char c1 = -1; char c2 = -2; int i1 = -3; } );
+				DECL_MAIN( struct C_C_I { char c1 = -1; char c2 = -2; int i1 = -3; } );
 				OUTPUT_VALUE( sizeof( C_C_I ) );
 				OUTPUT_BINARY( C_C_I() );
 			}
@@ -43,7 +43,7 @@ namespace c_struct_test
 			LS();
 
 			{
-				DECLARATION_MAIN( struct I_C_I { int i1 = -1; char c1 = -2; int i2 = -3; } );
+				DECL_MAIN( struct I_C_I { int i1 = -1; char c1 = -2; int i2 = -3; } );
 				OUTPUT_VALUE( sizeof( I_C_I ) );
 				OUTPUT_BINARY( I_C_I() );
 			}
@@ -51,7 +51,7 @@ namespace c_struct_test
 			LS();
 
 			{
-				DECLARATION_MAIN( struct I_C_LL { int i1 = -1; char c1 = -2; long long ll1 = -3; } );
+				DECL_MAIN( struct I_C_LL { int i1 = -1; char c1 = -2; long long ll1 = -3; } );
 				OUTPUT_VALUE( sizeof( I_C_LL ) );
 				OUTPUT_BINARY( I_C_LL() );
 			}
@@ -59,7 +59,7 @@ namespace c_struct_test
 			LS();
 
 			{
-				DECLARATION_MAIN( struct I_C_LL_I { int i1 = -1; char c1 = -2; long long ll1 = -3; int i2 = -4; } );
+				DECL_MAIN( struct I_C_LL_I { int i1 = -1; char c1 = -2; long long ll1 = -3; int i2 = -4; } );
 				OUTPUT_VALUE( sizeof( I_C_LL_I ) );
 				OUTPUT_BINARY( I_C_LL_I() );
 			}
@@ -95,31 +95,31 @@ namespace c_struct_test
 
 				LF();
 
-				DECLARATION_MAIN( struct C { char c; }; );
+				DECL_MAIN( struct C { char c; }; );
 				OUTPUT_VALUE( sizeof( C ) );
 				OUTPUT_BINARY( C() );
 
 				LF();
 
-				DECLARATION_MAIN( struct I { int i; }; );
+				DECL_MAIN( struct I { int i; }; );
 				OUTPUT_VALUE( sizeof( I ) );
 				OUTPUT_BINARY( I() );
 
 				LF();
 
-				DECLARATION_MAIN( struct C_C { char c; char c2; }; );
+				DECL_MAIN( struct C_C { char c; char c2; }; );
 				OUTPUT_VALUE( sizeof( C_C ) );
 				OUTPUT_BINARY( C_C() );
 
 				LF();
 
-				DECLARATION_MAIN( struct C_I { char c; int i; }; );
+				DECL_MAIN( struct C_I { char c; int i; }; );
 				OUTPUT_VALUE( sizeof( C_I ) );
 				OUTPUT_BINARY( C_I() );
 
 				LF();
 
-				DECLARATION_MAIN( struct LL_I_C { long long ll; int i; char c; }; );
+				DECL_MAIN( struct LL_I_C { long long ll; int i; char c; }; );
 				OUTPUT_VALUE( sizeof( LL_I_C ) );
 				OUTPUT_BINARY( LL_I_C() );
 #pragma pack( pop )
@@ -133,31 +133,31 @@ namespace c_struct_test
 
 				LF();
 
-				DECLARATION_MAIN( struct C { char c; }; );
+				DECL_MAIN( struct C { char c; }; );
 				OUTPUT_VALUE( sizeof( C ) );
 				OUTPUT_BINARY( C() );
 
 				LF();
 
-				DECLARATION_MAIN( struct I { int i; }; );
+				DECL_MAIN( struct I { int i; }; );
 				OUTPUT_VALUE( sizeof( I ) );
 				OUTPUT_BINARY( I() );
 
 				LF();
 
-				DECLARATION_MAIN( struct C_C { char c; char c2; }; );
+				DECL_MAIN( struct C_C { char c; char c2; }; );
 				OUTPUT_VALUE( sizeof( C_C ) );
 				OUTPUT_BINARY( C_C() );
 
 				LF();
 
-				DECLARATION_MAIN( struct C_I { char c; int i; }; );
+				DECL_MAIN( struct C_I { char c; int i; }; );
 				OUTPUT_VALUE( sizeof( C_I ) );
 				OUTPUT_BINARY( C_I() );
 
 				LF();
 
-				DECLARATION_MAIN( struct LL_I_C { long long ll; int i; char c; }; );
+				DECL_MAIN( struct LL_I_C { long long ll; int i; char c; }; );
 				OUTPUT_VALUE( sizeof( LL_I_C ) );
 				OUTPUT_BINARY( LL_I_C() );
 #pragma pack( pop )
@@ -187,7 +187,7 @@ namespace c_struct_test
 			{
 #pragma warning( push )
 #pragma warning( disable : 4200 )
-				DECLARATION_MAIN( struct Case_1 { int i; int arr[0]; } );
+				DECL_MAIN( struct Case_1 { int i; int arr[0]; } );
 
 				LF();
 
@@ -201,7 +201,7 @@ namespace c_struct_test
 			{
 #pragma warning( push )
 #pragma warning( disable : 4200 )
-				DECLARATION_MAIN( struct Case_2 { int i; int arr[]; } );
+				DECL_MAIN( struct Case_2 { int i; int arr[]; } );
 
 				LF();
 
@@ -213,7 +213,7 @@ namespace c_struct_test
 			LS();
 
 			{
-				DECLARATION_MAIN( struct Case_2 { int i; int arr[1]; } );
+				DECL_MAIN( struct Case_2 { int i; int arr[1]; } );
 
 				LF();
 
@@ -229,15 +229,15 @@ namespace c_struct_test
 
 #pragma warning( push )
 #pragma warning( disable : 4200 )
-				DECLARATION_MAIN( struct Dummy { int i; int arr[0]; } );
+				DECL_MAIN( struct Dummy { int i; int arr[0]; } );
 
 				LF();
 
-				DECLARATION_MAIN( Dummy* dp = ( Dummy* )malloc( sizeof( Dummy ) + ( sizeof( int ) * 4 ) ) );
-				PROCESS_MAIN( dp->arr[0] = 1 );
-				PROCESS_MAIN( dp->arr[1] = 2 );
-				PROCESS_MAIN( dp->arr[2] = 3 );
-				PROCESS_MAIN( dp->arr[3] = 4 );
+				DECL_MAIN( Dummy* dp = ( Dummy* )malloc( sizeof( Dummy ) + ( sizeof( int ) * 4 ) ) );
+				PROC_MAIN( dp->arr[0] = 1 );
+				PROC_MAIN( dp->arr[1] = 2 );
+				PROC_MAIN( dp->arr[2] = 3 );
+				PROC_MAIN( dp->arr[3] = 4 );
 
 				LF();
 
@@ -248,7 +248,7 @@ namespace c_struct_test
 
 				LF();
 
-				PROCESS_MAIN( free( dp ) );
+				PROC_MAIN( free( dp ) );
 #pragma warning( pop )
 			}
 

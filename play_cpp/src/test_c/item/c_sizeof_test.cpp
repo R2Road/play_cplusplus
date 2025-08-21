@@ -1,7 +1,7 @@
 #include "c_sizeof_test.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 #pragma warning( disable : 4189 ) // 참조 되지 않은 변수 존재
 
@@ -29,32 +29,32 @@ namespace c_sizeof_test
 			LS();
 
 			{
-				DECLARATION_MAIN( const char buffer[10] = { 0 } );
+				DECL_MAIN( const char buffer[10] = { 0 } );
 				OUTPUT_VALUE( sizeof( buffer ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( const int buffer[10] = { 0 } );
+				DECL_MAIN( const int buffer[10] = { 0 } );
 				OUTPUT_VALUE( sizeof( buffer ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( const double buffer[10] = { 0 } );
+				DECL_MAIN( const double buffer[10] = { 0 } );
 				OUTPUT_VALUE( sizeof( buffer ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( const char buffer[10] = { 0 } );
+				DECL_MAIN( const char buffer[10] = { 0 } );
 
 				LF();
 
-				DECLARATION_MAIN( const char* cb = buffer );
+				DECL_MAIN( const char* cb = buffer );
 				OUTPUT_VALUE( sizeof( cb ) );
 
 				LF();
@@ -65,7 +65,7 @@ namespace c_sizeof_test
 			LS();
 
 			{
-				DECLARATION_MAIN( struct Dummy {} dummy; );
+				DECL_MAIN( struct Dummy {} dummy; );
 				OUTPUT_VALUE( sizeof( dummy ) );
 
 				LF();

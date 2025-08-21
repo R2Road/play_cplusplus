@@ -2,8 +2,8 @@
 
 #include <memory>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace std_memory_align_test
 {
@@ -40,16 +40,16 @@ namespace std_memory_align_test
 
 			LS();
 
-			DECLARATION_MAIN( int i = 1 );
-			DECLARATION_MAIN( void* pb = &i );
-			DECLARATION_MAIN( std::size_t space = sizeof( i ) );
-			DECLARATION_MAIN( void* presult = nullptr );
+			DECL_MAIN( int i = 1 );
+			DECL_MAIN( void* pb = &i );
+			DECL_MAIN( std::size_t space = sizeof( i ) );
+			DECL_MAIN( void* presult = nullptr );
 			PrintResult( pb, presult, space );
 
 			LS();
 
 			{
-				PROCESS_MAIN( presult = std::align( alignof( char ), sizeof( char ), pb, space ) );
+				PROC_MAIN( presult = std::align( alignof( char ), sizeof( char ), pb, space ) );
 				EXPECT_TRUE( presult );
 				PrintResult( pb, presult, space );
 			}
@@ -59,11 +59,11 @@ namespace std_memory_align_test
 			{
 				std::cout << r2tm::tab << "+ Move" << r2tm::linefeed2;
 
-				DECLARATION_MAIN( char* cp = static_cast<char*>( pb ) );
-				PROCESS_MAIN( cp += sizeof( char ) );
-				PROCESS_MAIN( pb = cp );
-				PROCESS_MAIN( space -= sizeof( char ) );
-				PROCESS_MAIN( presult = nullptr );
+				DECL_MAIN( char* cp = static_cast<char*>( pb ) );
+				PROC_MAIN( cp += sizeof( char ) );
+				PROC_MAIN( pb = cp );
+				PROC_MAIN( space -= sizeof( char ) );
+				PROC_MAIN( presult = nullptr );
 
 				PrintResult( pb, presult, space );
 			}
@@ -71,7 +71,7 @@ namespace std_memory_align_test
 			LS();
 
 			{
-				PROCESS_MAIN( presult = std::align( alignof( char ), sizeof( char ), pb, space ) );
+				PROC_MAIN( presult = std::align( alignof( char ), sizeof( char ), pb, space ) );
 				EXPECT_TRUE( presult );
 				PrintResult( pb, presult, space );
 			}
@@ -79,7 +79,7 @@ namespace std_memory_align_test
 			LS();
 
 			{
-				PROCESS_MAIN( presult = std::align( alignof( int ), sizeof( char ), pb, space ) );
+				PROC_MAIN( presult = std::align( alignof( int ), sizeof( char ), pb, space ) );
 				EXPECT_FALSE( presult );
 				PrintResult( pb, presult, space );
 			}
@@ -105,23 +105,23 @@ namespace std_memory_align_test
 		{
 			LS();
 
-			DECLARATION_MAIN( char buffer[10] = { 0 } );
-			DECLARATION_MAIN( void* pb = buffer );
-			DECLARATION_MAIN( std::size_t space = sizeof( buffer ) );
-			DECLARATION_MAIN( void* presult = nullptr );
+			DECL_MAIN( char buffer[10] = { 0 } );
+			DECL_MAIN( void* pb = buffer );
+			DECL_MAIN( std::size_t space = sizeof( buffer ) );
+			DECL_MAIN( void* presult = nullptr );
 			PrintResult( pb, presult, space );
 
 			LS();
 
 			{
-				PROCESS_MAIN( pb = &buffer[1] );
-				PROCESS_MAIN( space = sizeof( buffer ) - sizeof( char ) );
-				PROCESS_MAIN( presult = nullptr );
+				PROC_MAIN( pb = &buffer[1] );
+				PROC_MAIN( space = sizeof( buffer ) - sizeof( char ) );
+				PROC_MAIN( presult = nullptr );
 				PrintResult( pb, presult, space );
 
 				LF();
 
-				PROCESS_MAIN( presult = std::align( alignof( char ), sizeof( char ), pb, space ) );
+				PROC_MAIN( presult = std::align( alignof( char ), sizeof( char ), pb, space ) );
 				PrintResult( pb, presult, space );
 				std::cout << r2tm::tab << "Bound > " << ( static_cast<char*>( pb ) - &buffer[1] ) << r2tm::linefeed;
 			}
@@ -129,14 +129,14 @@ namespace std_memory_align_test
 			LS();
 
 			{
-				PROCESS_MAIN( pb = &buffer[1] );
-				PROCESS_MAIN( space = sizeof( buffer ) - sizeof( char ) );
-				PROCESS_MAIN( presult = nullptr );
+				PROC_MAIN( pb = &buffer[1] );
+				PROC_MAIN( space = sizeof( buffer ) - sizeof( char ) );
+				PROC_MAIN( presult = nullptr );
 				PrintResult( pb, presult, space );
 
 				LF();
 
-				PROCESS_MAIN( presult = std::align( alignof( int ), sizeof( char ), pb, space ) );
+				PROC_MAIN( presult = std::align( alignof( int ), sizeof( char ), pb, space ) );
 				PrintResult( pb, presult, space );
 				std::cout << r2tm::tab << "Bound > " << ( static_cast<char*>( pb ) - &buffer[1] ) << r2tm::linefeed;
 			}
@@ -144,14 +144,14 @@ namespace std_memory_align_test
 			LS();
 
 			{
-				PROCESS_MAIN( pb = &buffer[1] );
-				PROCESS_MAIN( space = sizeof( buffer ) - sizeof( char ) );
-				PROCESS_MAIN( presult = nullptr );
+				PROC_MAIN( pb = &buffer[1] );
+				PROC_MAIN( space = sizeof( buffer ) - sizeof( char ) );
+				PROC_MAIN( presult = nullptr );
 				PrintResult( pb, presult, space );
 
 				LF();
 
-				PROCESS_MAIN( presult = std::align( alignof( double ), sizeof( char ), pb, space ) );
+				PROC_MAIN( presult = std::align( alignof( double ), sizeof( char ), pb, space ) );
 				PrintResult( pb, presult, space );
 				std::cout << r2tm::tab << "Bound > " << ( static_cast<char*>( pb ) - &buffer[1] ) << r2tm::linefeed;
 			}
@@ -181,17 +181,17 @@ namespace std_memory_align_test
 
 			LS();
 
-			DECLARATION_MAIN( char buffer[] = "---------" );
-			DECLARATION_MAIN( void* pt = buffer );
+			DECL_MAIN( char buffer[] = "---------" );
+			DECL_MAIN( void* pt = buffer );
 
 			LF();
 
-			DECLARATION_MAIN( std::size_t space = sizeof( buffer ) - 1u );
+			DECL_MAIN( std::size_t space = sizeof( buffer ) - 1u );
 			std::cout << r2tm::tab << "> \\0 Á¦¿Ü" << r2tm::linefeed;
 
 			LF();
 
-			DECLARATION_MAIN( void* presult = nullptr );
+			DECL_MAIN( void* presult = nullptr );
 
 			LS();
 
@@ -205,7 +205,7 @@ namespace std_memory_align_test
 			{
 				while( true )
 				{
-					PROCESS_MAIN( presult = std::align( alignof( int ), sizeof( char ), pt, space ) );
+					PROC_MAIN( presult = std::align( alignof( int ), sizeof( char ), pt, space ) );
 					std::cout << r2tm::tab << "> " << ( presult ? "success" : "failed" ) << r2tm::linefeed;
 					if( !presult )
 					{

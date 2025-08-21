@@ -2,8 +2,8 @@
 
 #include <string>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace
 {
@@ -69,8 +69,8 @@ namespace play_infinite_number
 			LS();
 
 			{
-				DECLARATION_MAIN( InfiniteNumber infinite_number );
-				PROCESS_MAIN( infinite_number = 1999 );
+				DECL_MAIN( InfiniteNumber infinite_number );
+				PROC_MAIN( infinite_number = 1999 );
 
 				LF();
 
@@ -80,7 +80,7 @@ namespace play_infinite_number
 			LS();
 
 			{
-				DECLARATION_MAIN( InfiniteNumber m( 123 ) );
+				DECL_MAIN( InfiniteNumber m( 123 ) );
 				EXPECT_EQ( 123, m );
 			}
 
@@ -106,7 +106,7 @@ namespace play_infinite_number
 			LS();
 
 			{
-				DECLARATION_MAIN( auto m = InfiniteNumber( 100 ) + InfiniteNumber( 23 ) );
+				DECL_MAIN( auto m = InfiniteNumber( 100 ) + InfiniteNumber( 23 ) );
 				EXPECT_EQ( 123ll, m );
 			}
 

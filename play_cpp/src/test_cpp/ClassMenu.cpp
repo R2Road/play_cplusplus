@@ -1,6 +1,6 @@
 #include "ClassMenu.h"
 
-#include "r2tm/r2tm_MenuProcessor.h"
+#include "r2tm/r2tm_menu_processor.hpp"
 
 #include "item/cpp_class_test.h"
 #include "item/cpp_class_private_inheritance_test.h"

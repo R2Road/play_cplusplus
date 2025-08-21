@@ -6,8 +6,8 @@
 #include <string>
 #include <map>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 #include "utility/play_cpp_utility_PathBuilder.h"
 
 
@@ -27,9 +27,9 @@ namespace std_random_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::random_device rd );
-				DECLARATION_MAIN( std::default_random_engine random_engine( rd() ) );
-				DECLARATION_MAIN( std::uniform_int_distribution<int> dist( 0, 2 ) );
+				DECL_MAIN( std::random_device rd );
+				DECL_MAIN( std::default_random_engine random_engine( rd() ) );
+				DECL_MAIN( std::uniform_int_distribution<int> dist( 0, 2 ) );
 
 				LF();
 
@@ -51,9 +51,9 @@ namespace std_random_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::random_device rd );
-				DECLARATION_MAIN( std::default_random_engine random_engine( rd() ) );
-				DECLARATION_MAIN( std::uniform_real_distribution<float> dist( 0.f, 0.1f ) );
+				DECL_MAIN( std::random_device rd );
+				DECL_MAIN( std::default_random_engine random_engine( rd() ) );
+				DECL_MAIN( std::uniform_real_distribution<float> dist( 0.f, 0.1f ) );
 
 				LF();
 
@@ -104,17 +104,17 @@ namespace std_random_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::random_device rd );
-			DECLARATION_MAIN( std::mt19937 random_engine( rd() ) );
-			DECLARATION_MAIN( std::uniform_int_distribution<int> dist( 0, 999 ) );
+			DECL_MAIN( std::random_device rd );
+			DECL_MAIN( std::mt19937 random_engine( rd() ) );
+			DECL_MAIN( std::uniform_int_distribution<int> dist( 0, 999 ) );
 
 			LF();
 			std::cout << r2tm::tab << "+ Save : Current Random Status" << r2tm::linefeed2;
 
 			{
 				std::cout << "File Path : " << GetFilePath() << r2tm::linefeed;
-				DECLARATION_MAIN( std::ofstream fs( GetFilePath() ) );
-				PROCESS_MAIN( fs << random_engine );
+				DECL_MAIN( std::ofstream fs( GetFilePath() ) );
+				PROC_MAIN( fs << random_engine );
 			}
 
 			LS();
@@ -129,10 +129,10 @@ namespace std_random_test
 			{
 				std::cout << r2tm::tab << "+ Load x 1" << r2tm::linefeed2;
 
-				DECLARATION_MAIN( std::ifstream ifs( GetFilePath() ) );
-				DECLARATION_MAIN( std::mt19937 loaded_random_engine );
-				PROCESS_MAIN( ifs >> loaded_random_engine );
-				DECLARATION_MAIN( std::uniform_int_distribution<int> dist_2( 0, 999 ) );
+				DECL_MAIN( std::ifstream ifs( GetFilePath() ) );
+				DECL_MAIN( std::mt19937 loaded_random_engine );
+				PROC_MAIN( ifs >> loaded_random_engine );
+				DECL_MAIN( std::uniform_int_distribution<int> dist_2( 0, 999 ) );
 
 				LF();
 
@@ -147,10 +147,10 @@ namespace std_random_test
 			{
 				std::cout << r2tm::tab << "+ Load x 2" << r2tm::linefeed2;
 
-				DECLARATION_MAIN( std::ifstream ifs( GetFilePath() ) );
-				DECLARATION_MAIN( std::mt19937 loaded_random_engine );
-				PROCESS_MAIN( ifs >> loaded_random_engine );
-				DECLARATION_MAIN( std::uniform_int_distribution<int> dist_2( 0, 999 ) );
+				DECL_MAIN( std::ifstream ifs( GetFilePath() ) );
+				DECL_MAIN( std::mt19937 loaded_random_engine );
+				PROC_MAIN( ifs >> loaded_random_engine );
+				DECL_MAIN( std::uniform_int_distribution<int> dist_2( 0, 999 ) );
 
 				LF();
 
@@ -184,9 +184,9 @@ namespace std_random_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::random_device rd );
-			DECLARATION_MAIN( std::mt19937 random_engine( rd() ) );
-			DECLARATION_MAIN( std::discrete_distribution<> dist( { 5, 10, 30, 50, 5 } ) );
+			DECL_MAIN( std::random_device rd );
+			DECL_MAIN( std::mt19937 random_engine( rd() ) );
+			DECL_MAIN( std::discrete_distribution<> dist( { 5, 10, 30, 50, 5 } ) );
 
 			LS();
 

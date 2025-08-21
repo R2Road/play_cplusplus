@@ -3,8 +3,8 @@
 #include <string>
 #include <tuple>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace std_tuple_test
 {
@@ -27,7 +27,7 @@ namespace std_tuple_test
 
 				LF();
 
-				DECLARATION_MAIN( T t );
+				DECL_MAIN( T t );
 
 				LF();
 
@@ -46,7 +46,7 @@ namespace std_tuple_test
 
 				LF();
 
-				DECLARATION_MAIN( T t( { 2, "park", true } ) );
+				DECL_MAIN( T t( { 2, "park", true } ) );
 
 				LF();
 
@@ -60,7 +60,7 @@ namespace std_tuple_test
 
 
 			{
-				DECLARATION_MAIN( auto t = std::make_tuple( 10, "Kim", 'c' ) );
+				DECL_MAIN( auto t = std::make_tuple( 10, "Kim", 'c' ) );
 
 				LF();
 

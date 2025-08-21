@@ -4,8 +4,8 @@
 #include <numeric> // std::iota
 #include <stdint.h>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 #pragma warning( disable : 4189 ) // 참조 되지 않은 변수 존재
 
@@ -32,7 +32,7 @@ namespace c_macro_test
 			LS();
 
 			{
-				DECLARATION_MAIN( const int test_int = 3456 );
+				DECL_MAIN( const int test_int = 3456 );
 
 				LF();
 

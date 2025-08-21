@@ -1,8 +1,8 @@
 #include "template_practice_test_02.h"
 #include "template_practice_test_02_helper_basic.hpp"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace template_practice_test_02
 {
@@ -23,12 +23,12 @@ namespace template_practice_test_02
 
 			LS();
 
-			DECLARATION_MAIN( FuncContainer f );
-			PROCESS_MAIN( f.def( "F1_A0", FN_V_A0 ) );
-			PROCESS_MAIN( f.def( "F2_A0", FN_V_A0 ) );
-			PROCESS_MAIN( f.def( "F3_A1", FN_V_A1 ) );
-			PROCESS_MAIN( f.def( "F4_A1", FN_V_A1 ) );
-			PROCESS_MAIN( f.def( "F5_A3", FN_V_A3 ) );
+			DECL_MAIN( FuncContainer f );
+			PROC_MAIN( f.def( "F1_A0", FN_V_A0 ) );
+			PROC_MAIN( f.def( "F2_A0", FN_V_A0 ) );
+			PROC_MAIN( f.def( "F3_A1", FN_V_A1 ) );
+			PROC_MAIN( f.def( "F4_A1", FN_V_A1 ) );
+			PROC_MAIN( f.def( "F5_A3", FN_V_A3 ) );
 
 			LS();
 
@@ -37,8 +37,8 @@ namespace template_practice_test_02
 
 				LF();
 
-				PROCESS_MAIN( f.Call<void>( "F1_A0" ) );
-				PROCESS_MAIN( f.Call<void>( "F5_A3", 100, 200, 300 ) );
+				PROC_MAIN( f.Call<void>( "F1_A0" ) );
+				PROC_MAIN( f.Call<void>( "F5_A3", 100, 200, 300 ) );
 			}
 
 			LS();
@@ -48,8 +48,8 @@ namespace template_practice_test_02
 
 				LF();
 
-				PROCESS_MAIN( f.Call<void>( "F5_A3", 100, 200, 300, 400 ) );
-				PROCESS_MAIN( f.Call<void>( "F5_A3" ) );
+				PROC_MAIN( f.Call<void>( "F5_A3", 100, 200, 300, 400 ) );
+				PROC_MAIN( f.Call<void>( "F5_A3" ) );
 			}
 
 			LS();

@@ -3,8 +3,8 @@
 #include <string>
 #include <string_view>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 using namespace std::string_view_literals; // for sv
 
@@ -28,7 +28,7 @@ namespace std_string_view_test
 
 				LF();
 
-				DECLARATION_MAIN( const std::string_view view );
+				DECL_MAIN( const std::string_view view );
 				EXPECT_TRUE( view.empty() );
 			}
 
@@ -39,7 +39,7 @@ namespace std_string_view_test
 
 				LF();
 
-				DECLARATION_MAIN( const std::string_view view = "" );
+				DECL_MAIN( const std::string_view view = "" );
 				EXPECT_TRUE( view.empty() );
 			}
 
@@ -50,7 +50,7 @@ namespace std_string_view_test
 				
 				LF();
 
-				DECLARATION_MAIN( const std::string_view view = "String View Test_1" );
+				DECL_MAIN( const std::string_view view = "String View Test_1" );
 				OUTPUT_VALUE( view );
 			}
 
@@ -61,8 +61,8 @@ namespace std_string_view_test
 
 				LF();
 
-				DECLARATION_MAIN( const std::string str = "String View Test_2" );
-				DECLARATION_MAIN( const std::string_view view = str );
+				DECL_MAIN( const std::string str = "String View Test_2" );
+				DECL_MAIN( const std::string_view view = str );
 				OUTPUT_VALUE( view );
 			}
 
@@ -87,12 +87,12 @@ namespace std_string_view_test
 		{
 			LS();
 
-			DECLARATION_MAIN( const std::string_view view = "test 3" );
+			DECL_MAIN( const std::string_view view = "test 3" );
 
 			LS();
 
 			{
-				PROCESS_MAIN( for( const auto& c : view ) { OUTPUT_VALUE( c ); } );
+				PROC_MAIN( for( const auto& c : view ) { OUTPUT_VALUE( c ); } );
 			}
 
 			LS();
@@ -125,7 +125,7 @@ namespace std_string_view_test
 			LS();
 
 			{
-				DECLARATION_MAIN( auto view = "String View Test_4"sv );
+				DECL_MAIN( auto view = "String View Test_4"sv );
 				OUTPUT_VALUE( view );
 			}
 
@@ -150,20 +150,20 @@ namespace std_string_view_test
 		{
 			LS();
 
-			DECLARATION_MAIN( auto view = "String View Test_12345"sv );
+			DECL_MAIN( auto view = "String View Test_12345"sv );
 			OUTPUT_VALUE( view );
 
 			LS();
 
 			{
-				PROCESS_MAIN( view.remove_prefix( 3u ) );
+				PROC_MAIN( view.remove_prefix( 3u ) );
 				OUTPUT_VALUE( view );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( view.remove_suffix( 4u ) );
+				PROC_MAIN( view.remove_suffix( 4u ) );
 				OUTPUT_VALUE( view );
 			}
 
@@ -188,12 +188,12 @@ namespace std_string_view_test
 		{
 			LS();
 
-			DECLARATION_MAIN( auto view = "String View Test_7"sv );
+			DECL_MAIN( auto view = "String View Test_7"sv );
 
 			LS();
 
 			{
-				DECLARATION_MAIN( const auto other_view = view.substr( 12u, 16u ) );
+				DECL_MAIN( const auto other_view = view.substr( 12u, 16u ) );
 				OUTPUT_VALUE( other_view );
 			}
 
@@ -204,7 +204,7 @@ namespace std_string_view_test
 
 				LF();
 
-				DECLARATION_MAIN( const auto other_view = view.substr( 12u, 20u ) );
+				DECL_MAIN( const auto other_view = view.substr( 12u, 20u ) );
 				OUTPUT_VALUE( other_view );
 			}
 
@@ -216,7 +216,7 @@ namespace std_string_view_test
 
 				LF();
 
-				DECLARATION_MAIN( const auto other_view = view.substr( view.size(), 6u ) );
+				DECL_MAIN( const auto other_view = view.substr( view.size(), 6u ) );
 				OUTPUT_VALUE( other_view );
 			}
 

@@ -6,9 +6,9 @@
 #include <random>
 #include <vector>
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 #include "r2/r2_Assert.h"
 #include "r2/r2_Direction4.h"
@@ -122,12 +122,12 @@ namespace maze_generation_kruskals_test
 			using Grid = r2::GridBasedOnVector<std::size_t, int>;
 			using Sets = r2::GridBasedOnVector<std::size_t, Node>;
 
-			DECLARATION_MAIN( Grid grid( 2, 2, r2::Direction4::eState::None ) );
-			PROCESS_MAIN( grid.Set( 1, 0, r2::Direction4::eState::Up | r2::Direction4::eState::Down ) );
-			PROCESS_MAIN( grid.Set( 1, 1, r2::Direction4::eState::Left | r2::Direction4::eState::Right ) );
-			PROCESS_MAIN( grid.Set( 0, 1, r2::Direction4::eState::Left | r2::Direction4::eState::Right | r2::Direction4::eState::Up ) );
+			DECL_MAIN( Grid grid( 2, 2, r2::Direction4::eState::None ) );
+			PROC_MAIN( grid.Set( 1, 0, r2::Direction4::eState::Up | r2::Direction4::eState::Down ) );
+			PROC_MAIN( grid.Set( 1, 1, r2::Direction4::eState::Left | r2::Direction4::eState::Right ) );
+			PROC_MAIN( grid.Set( 0, 1, r2::Direction4::eState::Left | r2::Direction4::eState::Right | r2::Direction4::eState::Up ) );
 
-			DECLARATION_MAIN( Sets sets( 2, 2, Node{} ) );
+			DECL_MAIN( Sets sets( 2, 2, Node{} ) );
 
 			LS();
 
@@ -174,10 +174,10 @@ namespace maze_generation_kruskals_test
 			using Grid = r2::GridBasedOnVector<std::size_t, int>;
 			using Sets = r2::GridBasedOnVector<std::size_t, Node>;
 
-			DECLARATION_MAIN( const int width = 3 );
-			DECLARATION_MAIN( const int height = 3 );
-			DECLARATION_MAIN( Grid grid( width, height, r2::Direction4::eState::None ) );
-			DECLARATION_MAIN( Sets sets( width, height, Node{} ) );
+			DECL_MAIN( const int width = 3 );
+			DECL_MAIN( const int height = 3 );
+			DECL_MAIN( Grid grid( width, height, r2::Direction4::eState::None ) );
+			DECL_MAIN( Sets sets( width, height, Node{} ) );
 			{
 				int temp_index = 0;
 				for( auto& n : sets ) { n.SetIndex( temp_index ); ++temp_index; }
@@ -188,7 +188,7 @@ namespace maze_generation_kruskals_test
 				r2::PointInt point;
 				r2::Direction4::eState dir;
 			};
-			DECLARATION_MAIN( std::vector<Edge> edges );
+			DECL_MAIN( std::vector<Edge> edges );
 
 			LS();
 

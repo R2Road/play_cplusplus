@@ -5,8 +5,8 @@
 #include "play_math___helper_matrix44.h"
 using namespace play_math;
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace play_math_quaternion
 {
@@ -171,7 +171,7 @@ namespace play_math_quaternion
 				SS();
 
 				{
-					DECLARATION_MAIN( const Quat q( 1, 1, 1, 1 ) );
+					DECL_MAIN( const Quat q( 1, 1, 1, 1 ) );
 
 					LF();
 
@@ -372,7 +372,7 @@ namespace play_math_quaternion
 				SS();
 
 				{
-					DECLARATION_MAIN( const Quat q = B( VEC3_Z, 45.f ) );
+					DECL_MAIN( const Quat q = B( VEC3_Z, 45.f ) );
 					OUTPUT_VALUE( ( q * Quat( VEC3_X ) ) );
 					OUTPUT_VALUE( ( q * Quat( VEC3_X ) ) * quat_inverse( q ) );
 				}
@@ -381,21 +381,21 @@ namespace play_math_quaternion
 
 				{
 					{
-						DECLARATION_MAIN( const Quat q = B( VEC3_X, 90.f ) );
+						DECL_MAIN( const Quat q = B( VEC3_X, 90.f ) );
 						EXPECT_EQ( Quat( 0, 0, 0, 1 ), ( q * Quat( VEC3_Y ) ) * quat_inverse( q ) );
 					}
 
 					LF();
 
 					{
-						DECLARATION_MAIN( const Quat q = B( VEC3_Y, 90.f ) );
+						DECL_MAIN( const Quat q = B( VEC3_Y, 90.f ) );
 						EXPECT_EQ( Quat( 0, 1, 0, 0 ), ( q * Quat( VEC3_Z ) ) * quat_inverse( q ) );
 					}
 
 					LF();
 
 					{
-						DECLARATION_MAIN( const Quat q = B( VEC3_Z, 90.f ) );
+						DECL_MAIN( const Quat q = B( VEC3_Z, 90.f ) );
 						EXPECT_EQ( Quat( 0, 0, 1, 0 ), ( q * Quat( VEC3_X ) ) * quat_inverse( q ) );
 					}
 				}
@@ -404,21 +404,21 @@ namespace play_math_quaternion
 
 				{
 					{
-						DECLARATION_MAIN( const Quat q = B( VEC3_X, 90.f ) );
+						DECL_MAIN( const Quat q = B( VEC3_X, 90.f ) );
 						EXPECT_EQ( Quat( 0, 0, 0, 1 ), ( q * VEC3_Y ) );
 					}
 
 					LF();
 
 					{
-						DECLARATION_MAIN( const Quat q = B( VEC3_Y, 90.f ) );
+						DECL_MAIN( const Quat q = B( VEC3_Y, 90.f ) );
 						EXPECT_EQ( Quat( 0, 1, 0, 0 ), ( q * VEC3_Z ) );
 					}
 
 					LF();
 
 					{
-						DECLARATION_MAIN( const Quat q = B( VEC3_Z, 90.f ) );
+						DECL_MAIN( const Quat q = B( VEC3_Z, 90.f ) );
 						EXPECT_EQ( Quat( 0, 0, 1, 0 ), ( q * VEC3_X ) );
 					}
 				}
@@ -477,24 +477,24 @@ namespace play_math_quaternion
 				SS();
 
 				{
-					DECLARATION_MAIN( const Quat q = B( VEC4_X, 90.f ) );
-					DECLARATION_MAIN( const Mat44 m = C( q ) );
+					DECL_MAIN( const Quat q = B( VEC4_X, 90.f ) );
+					DECL_MAIN( const Mat44 m = C( q ) );
 					EXPECT_EQ( VEC4_Z, m * VEC4_Y );
 				}
 
 				LF();
 
 				{
-					DECLARATION_MAIN( const Quat q = B( VEC4_Y, 90.f ) );
-					DECLARATION_MAIN( const Mat44 m = C( q ) );
+					DECL_MAIN( const Quat q = B( VEC4_Y, 90.f ) );
+					DECL_MAIN( const Mat44 m = C( q ) );
 					EXPECT_EQ( VEC4_X, m * VEC4_Z );
 				}
 
 				LF();
 
 				{
-					DECLARATION_MAIN( const Quat q = B( VEC4_Z, 90.f ) );
-					DECLARATION_MAIN( const Mat44 m = C( q ) );
+					DECL_MAIN( const Quat q = B( VEC4_Z, 90.f ) );
+					DECL_MAIN( const Mat44 m = C( q ) );
 					EXPECT_EQ( VEC4_Y, m * VEC4_X );
 				}
 			}

@@ -2,8 +2,8 @@
 
 #include <string>
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace std_string_test
 {
@@ -25,7 +25,7 @@ namespace std_string_test
 
 				LF();
 
-				DECLARATION_MAIN( const std::string s );
+				DECL_MAIN( const std::string s );
 				OUTPUT_VALUE( sizeof( s ) );
 
 				LF();
@@ -45,7 +45,7 @@ namespace std_string_test
 
 				LF();
 
-				DECLARATION_MAIN( const std::string s( "1234" ) );
+				DECL_MAIN( const std::string s( "1234" ) );
 				OUTPUT_VALUE( s );
 
 				LF();
@@ -60,7 +60,7 @@ namespace std_string_test
 
 				LF();
 
-				DECLARATION_MAIN( const std::string s( "1234567890123456" ) );
+				DECL_MAIN( const std::string s( "1234567890123456" ) );
 				OUTPUT_VALUE( s );
 
 				LF();
@@ -75,7 +75,7 @@ namespace std_string_test
 
 				LF();
 
-				DECLARATION_MAIN( const std::string s( 4, 'a' ) );
+				DECL_MAIN( const std::string s( 4, 'a' ) );
 				OUTPUT_VALUE( s );
 			}
 
@@ -105,8 +105,8 @@ namespace std_string_test
 
 				LF();
 
-				DECLARATION_MAIN( const std::string s_1 );
-				DECLARATION_MAIN( const std::string s_2 );
+				DECL_MAIN( const std::string s_1 );
+				DECL_MAIN( const std::string s_2 );
 				EXPECT_EQ( s_1, s_2 );
 			}
 
@@ -117,8 +117,8 @@ namespace std_string_test
 
 				LF();
 
-				DECLARATION_MAIN( const std::string s_1( " " ) );
-				DECLARATION_MAIN( const std::string s_2( " " ) );
+				DECL_MAIN( const std::string s_1( " " ) );
+				DECL_MAIN( const std::string s_2( " " ) );
 				EXPECT_EQ( s_1, s_2 );
 
 				LF();
@@ -134,14 +134,14 @@ namespace std_string_test
 
 				LF();
 
-				DECLARATION_MAIN( std::string s_1( "              " ) );
-				DECLARATION_MAIN( std::string s_2( "                         " ) );
+				DECL_MAIN( std::string s_1( "              " ) );
+				DECL_MAIN( std::string s_2( "                         " ) );
 				EXPECT_NE( s_1, s_2 );
 
 				LF();
 
-				PROCESS_MAIN( s_1.clear() );
-				PROCESS_MAIN( s_2.clear() );
+				PROC_MAIN( s_1.clear() );
+				PROC_MAIN( s_2.clear() );
 
 				LF();
 
@@ -183,7 +183,7 @@ namespace std_string_test
 
 			LS();
 
-			DECLARATION_MAIN( std::string s );
+			DECL_MAIN( std::string s );
 
 			LS();
 
@@ -207,7 +207,7 @@ namespace std_string_test
 
 				LF();
 
-				PROCESS_MAIN( s.resize( 15, 0b01111111 ) );
+				PROC_MAIN( s.resize( 15, 0b01111111 ) );
 
 				LF();
 
@@ -240,7 +240,7 @@ namespace std_string_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::string s );
+			DECL_MAIN( std::string s );
 
 			LS();
 
@@ -260,7 +260,7 @@ namespace std_string_test
 
 				LF();
 
-				PROCESS_MAIN( s = "1234567890123456" );
+				PROC_MAIN( s = "1234567890123456" );
 
 				LF();
 
@@ -279,7 +279,7 @@ namespace std_string_test
 
 				LF();
 
-				PROCESS_MAIN( s.clear() );
+				PROC_MAIN( s.clear() );
 
 				LF();
 
@@ -322,8 +322,8 @@ namespace std_string_test
 
 				LF();
 
-				DECLARATION_MAIN( std::string s_1( "123456789012345" ) );
-				DECLARATION_MAIN( std::string s_2( "234567890123456" ) );
+				DECL_MAIN( std::string s_1( "123456789012345" ) );
+				DECL_MAIN( std::string s_2( "234567890123456" ) );
 
 				LF();
 
@@ -332,7 +332,7 @@ namespace std_string_test
 
 				LF();
 
-				PROCESS_MAIN( s_1 = std::move( s_2 ) );
+				PROC_MAIN( s_1 = std::move( s_2 ) );
 				OUTPUT_VALUE( s_1 );
 				OUTPUT_VALUE( s_2 );
 
@@ -349,8 +349,8 @@ namespace std_string_test
 
 				LF();
 
-				DECLARATION_MAIN( std::string s_1( "1234567890123456" ) );
-				DECLARATION_MAIN( std::string s_2( "2345678901234567" ) );
+				DECL_MAIN( std::string s_1( "1234567890123456" ) );
+				DECL_MAIN( std::string s_2( "2345678901234567" ) );
 
 				LF();
 
@@ -359,7 +359,7 @@ namespace std_string_test
 
 				LF();
 
-				PROCESS_MAIN( s_1 = std::move( s_2 ) );
+				PROC_MAIN( s_1 = std::move( s_2 ) );
 				OUTPUT_VALUE( s_1 );
 				OUTPUT_VALUE( s_2 );
 
@@ -390,7 +390,7 @@ namespace std_string_test
 		{
 			LS();
 
-			DECLARATION_MAIN( const std::string key_string = "\n" );
+			DECL_MAIN( const std::string key_string = "\n" );
 			OUTPUT_VALUE( key_string.size() );
 
 			LS();
@@ -432,41 +432,41 @@ namespace std_string_test
 		{
 			LS();
 
-			DECLARATION_MAIN( const std::string key_string = "\n" );
+			DECL_MAIN( const std::string key_string = "\n" );
 			OUTPUT_VALUE( key_string.size() );
 
 			LF();
 
-			DECLARATION_MAIN( const std::string orig_string = "\n\n012345\n6789abcd\n\nefghij\nklmnopqrstu\n\n\nvwxyz\n" );
+			DECL_MAIN( const std::string orig_string = "\n\n012345\n6789abcd\n\nefghij\nklmnopqrstu\n\n\nvwxyz\n" );
 			OUTPUT_VALUE( orig_string.size() );
 
 			LF();
 
-			DECLARATION_MAIN( std::size_t pivot_pos = 0u );
-			DECLARATION_MAIN( std::size_t find_pos = 0u );
+			DECL_MAIN( std::size_t pivot_pos = 0u );
+			DECL_MAIN( std::size_t find_pos = 0u );
 
 			LS();
 
 			{
-				PROCESS_MAIN( find_pos = orig_string.find( key_string, pivot_pos ) );
+				PROC_MAIN( find_pos = orig_string.find( key_string, pivot_pos ) );
 				OUTPUT_VALUE( find_pos );
-				PROCESS_MAIN( pivot_pos = find_pos + key_string.size() );
+				PROC_MAIN( pivot_pos = find_pos + key_string.size() );
 				OUTPUT_VALUE( pivot_pos );
 				OUTPUT_VALUE( orig_string[pivot_pos] );
 
 				SS();
 
-				PROCESS_MAIN( find_pos = orig_string.find( key_string, pivot_pos ) );
+				PROC_MAIN( find_pos = orig_string.find( key_string, pivot_pos ) );
 				OUTPUT_VALUE( find_pos );
-				PROCESS_MAIN( pivot_pos = find_pos + key_string.size() );
+				PROC_MAIN( pivot_pos = find_pos + key_string.size() );
 				OUTPUT_VALUE( pivot_pos );
 				OUTPUT_VALUE( orig_string[pivot_pos] );
 
 				SS();
 
-				PROCESS_MAIN( find_pos = orig_string.find( key_string, pivot_pos ) );
+				PROC_MAIN( find_pos = orig_string.find( key_string, pivot_pos ) );
 				OUTPUT_VALUE( find_pos );
-				PROCESS_MAIN( pivot_pos = find_pos + key_string.size() );
+				PROC_MAIN( pivot_pos = find_pos + key_string.size() );
 				OUTPUT_VALUE( pivot_pos );
 				OUTPUT_VALUE( orig_string[pivot_pos] );
 			}
@@ -557,28 +557,28 @@ namespace std_string_test
 		{
 			LS();
 
-			DECLARATION_MAIN( const std::string key_string = "\n" );
+			DECL_MAIN( const std::string key_string = "\n" );
 			OUTPUT_VALUE( key_string.size() );
 
 			LS();
 
-			PROCESS_MAIN( StringSplit( "", key_string ) );
+			PROC_MAIN( StringSplit( "", key_string ) );
 
 			LS();
 
-			PROCESS_MAIN( StringSplit( " ", key_string ) );
+			PROC_MAIN( StringSplit( " ", key_string ) );
 
 			LS();
 
-			PROCESS_MAIN( StringSplit( "\n ", key_string ) );
+			PROC_MAIN( StringSplit( "\n ", key_string ) );
 
 			LS();
 
-			PROCESS_MAIN( StringSplit( " \n", key_string ) );
+			PROC_MAIN( StringSplit( " \n", key_string ) );
 
 			LS();
 
-			PROCESS_MAIN( StringSplit( "\n \n", key_string ) );
+			PROC_MAIN( StringSplit( "\n \n", key_string ) );
 
 			LS();
 
@@ -599,16 +599,16 @@ namespace std_string_test
 		{
 			LS();
 
-			DECLARATION_MAIN( const std::string key_string = "\n" );
+			DECL_MAIN( const std::string key_string = "\n" );
 			OUTPUT_VALUE( key_string.size() );
 
 			LS();
 
-			PROCESS_MAIN( StringSplit( "\n" "\n" "1" "\n" "23" "\n" "\n" "efg" "\n" " " "\n" "vwx" "\n", key_string ) );
+			PROC_MAIN( StringSplit( "\n" "\n" "1" "\n" "23" "\n" "\n" "efg" "\n" " " "\n" "vwx" "\n", key_string ) );
 
 			LS();
 
-			PROCESS_MAIN( StringSplit( "\n" "\n" "123" "\n" "456" "\n" "\n" "789" "\n" "\n" "\n" "defg", key_string ) );
+			PROC_MAIN( StringSplit( "\n" "\n" "123" "\n" "456" "\n" "\n" "789" "\n" "\n" "\n" "defg", key_string ) );
 
 			LS();
 

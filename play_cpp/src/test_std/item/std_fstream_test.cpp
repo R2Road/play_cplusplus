@@ -4,8 +4,8 @@
 #include <fstream>
 #include <string>
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace std_fstream_test
 {
@@ -27,7 +27,7 @@ namespace std_fstream_test
 
 				LF();
 
-				DECLARATION_MAIN( std::ifstream ifs( "", std::ios::in ) );
+				DECL_MAIN( std::ifstream ifs( "", std::ios::in ) );
 
 				LF();
 
@@ -36,13 +36,13 @@ namespace std_fstream_test
 
 				LF();
 
-				PROCESS_MAIN( ifs.close() );
+				PROC_MAIN( ifs.close() );
 			}
 
 			LS();
 
-			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
-			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
+			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
+			PROC_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
 			OUTPUT_VALUE( p );
 
 			LS();
@@ -56,7 +56,7 @@ namespace std_fstream_test
 
 				LF();
 
-				DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
+				DECL_MAIN( std::ifstream ifs( p, std::ios::in ) );
 
 				LF();
 
@@ -65,7 +65,7 @@ namespace std_fstream_test
 
 				LF();
 
-				PROCESS_MAIN( ifs.close() );
+				PROC_MAIN( ifs.close() );
 
 				LF();
 
@@ -84,8 +84,8 @@ namespace std_fstream_test
 
 				LF();
 
-				DECLARATION_MAIN( std::ifstream ifs );
-				PROCESS_MAIN( ifs.open( p ) );
+				DECL_MAIN( std::ifstream ifs );
+				PROC_MAIN( ifs.open( p ) );
 
 				LF();
 
@@ -94,7 +94,7 @@ namespace std_fstream_test
 
 				LF();
 
-				PROCESS_MAIN( ifs.close() );
+				PROC_MAIN( ifs.close() );
 			}
 
 			LS();
@@ -118,14 +118,14 @@ namespace std_fstream_test
 		{
 			LS();
 
-			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
-			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
+			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
+			PROC_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
 			OUTPUT_VALUE( p );
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
 			LS();
 
-			DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
+			DECL_MAIN( std::ifstream ifs( p, std::ios::in ) );
 			EXPECT_FALSE( ifs.fail() );
 
 			LS();
@@ -147,14 +147,14 @@ namespace std_fstream_test
 
 				LF();
 
-				PROCESS_MAIN( while( !ifs.eof() ) { std::cout << static_cast<char>( ifs.get() ); } );
+				PROC_MAIN( while( !ifs.eof() ) { std::cout << static_cast<char>( ifs.get() ); } );
 
 				LF();
 			}
 
 			LS();
 
-			PROCESS_MAIN( ifs.close() );
+			PROC_MAIN( ifs.close() );
 
 			LS();
 
@@ -177,15 +177,15 @@ namespace std_fstream_test
 		{
 			LS();
 
-			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
-			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
+			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
+			PROC_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
 			OUTPUT_VALUE( p );
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
 			LS();
 
-			DECLARATION_MAIN( std::string buffer );
-			DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
+			DECL_MAIN( std::string buffer );
+			DECL_MAIN( std::ifstream ifs( p, std::ios::in ) );
 
 			LS();
 
@@ -194,9 +194,9 @@ namespace std_fstream_test
 
 				LF();
 
-				PROCESS_MAIN( std::getline( ifs, buffer ); std::cout << buffer << r2tm::linefeed );
-				PROCESS_MAIN( std::getline( ifs, buffer ); std::cout << buffer << r2tm::linefeed );
-				PROCESS_MAIN( std::getline( ifs, buffer ); std::cout << buffer << r2tm::linefeed );
+				PROC_MAIN( std::getline( ifs, buffer ); std::cout << buffer << r2tm::linefeed );
+				PROC_MAIN( std::getline( ifs, buffer ); std::cout << buffer << r2tm::linefeed );
+				PROC_MAIN( std::getline( ifs, buffer ); std::cout << buffer << r2tm::linefeed );
 			}
 
 			LS();
@@ -206,13 +206,13 @@ namespace std_fstream_test
 
 				LF();
 
-				PROCESS_MAIN( while( ifs.good() ) { std::getline( ifs, buffer ); std::cout << buffer << r2tm::linefeed; } );
+				PROC_MAIN( while( ifs.good() ) { std::getline( ifs, buffer ); std::cout << buffer << r2tm::linefeed; } );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( ifs.close() );
+				PROC_MAIN( ifs.close() );
 			}
 
 			LS();
@@ -236,15 +236,15 @@ namespace std_fstream_test
 		{
 			LS();
 
-			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
-			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
+			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
+			PROC_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
 			OUTPUT_VALUE( p );
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
 			LS();
 
-			DECLARATION_MAIN( char buffer[100] );
-			DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
+			DECL_MAIN( char buffer[100] );
+			DECL_MAIN( std::ifstream ifs( p, std::ios::in ) );
 
 			LS();
 
@@ -253,9 +253,9 @@ namespace std_fstream_test
 
 				LF();
 
-				PROCESS_MAIN( ifs.getline( buffer, 100 ); std::cout << buffer << r2tm::linefeed );
-				PROCESS_MAIN( ifs.getline( buffer, 100 ); std::cout << buffer << r2tm::linefeed );
-				PROCESS_MAIN( ifs.getline( buffer, 100 ); std::cout << buffer << r2tm::linefeed );
+				PROC_MAIN( ifs.getline( buffer, 100 ); std::cout << buffer << r2tm::linefeed );
+				PROC_MAIN( ifs.getline( buffer, 100 ); std::cout << buffer << r2tm::linefeed );
+				PROC_MAIN( ifs.getline( buffer, 100 ); std::cout << buffer << r2tm::linefeed );
 			}
 
 			LS();
@@ -265,13 +265,13 @@ namespace std_fstream_test
 
 				LF();
 
-				PROCESS_MAIN( while( ifs ) { ifs.getline( buffer, 100 ); std::cout << buffer << r2tm::linefeed; } );
+				PROC_MAIN( while( ifs ) { ifs.getline( buffer, 100 ); std::cout << buffer << r2tm::linefeed; } );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( ifs.close() );
+				PROC_MAIN( ifs.close() );
 			}
 
 			LS();
@@ -295,15 +295,15 @@ namespace std_fstream_test
 		{
 			LS();
 
-			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
-			PROCESS_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
+			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
+			PROC_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
 			OUTPUT_VALUE( p );
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
 			LS();
 
-			DECLARATION_MAIN( std::string buffer );
-			DECLARATION_MAIN( std::ifstream ifs( p, std::ios::in ) );
+			DECL_MAIN( std::string buffer );
+			DECL_MAIN( std::ifstream ifs( p, std::ios::in ) );
 
 			LS();
 
@@ -312,9 +312,9 @@ namespace std_fstream_test
 
 				LF();
 
-				PROCESS_MAIN( ifs >> buffer; std::cout << buffer << r2tm::linefeed );
-				PROCESS_MAIN( ifs >> buffer; std::cout << buffer << r2tm::linefeed );
-				PROCESS_MAIN( ifs >> buffer; std::cout << buffer << r2tm::linefeed );
+				PROC_MAIN( ifs >> buffer; std::cout << buffer << r2tm::linefeed );
+				PROC_MAIN( ifs >> buffer; std::cout << buffer << r2tm::linefeed );
+				PROC_MAIN( ifs >> buffer; std::cout << buffer << r2tm::linefeed );
 			}
 
 			LS();
@@ -324,13 +324,13 @@ namespace std_fstream_test
 
 				LF();
 
-				PROCESS_MAIN( while( ifs >> buffer ) { std::cout << buffer << r2tm::linefeed; } );
+				PROC_MAIN( while( ifs >> buffer ) { std::cout << buffer << r2tm::linefeed; } );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( ifs.close() );
+				PROC_MAIN( ifs.close() );
 			}
 
 			LS();
@@ -354,8 +354,8 @@ namespace std_fstream_test
 		{
 			LS();
 
-			DECLARATION_SUB( std::filesystem::path p = std::filesystem::current_path() );
-			PROCESS_SUB( p.append( "resources" ).append( "temp.txt" ) );
+			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
+			PROC_SUB( p.append( "resources" ).append( "temp.txt" ) );
 			OUTPUT_VALUE( p );
 
 			LS();
@@ -370,7 +370,7 @@ namespace std_fstream_test
 
 			LS();
 
-			DECLARATION_MAIN( std::ofstream fs );
+			DECL_MAIN( std::ofstream fs );
 			EXPECT_FALSE( fs.fail() );
 
 			LS();
@@ -380,13 +380,13 @@ namespace std_fstream_test
 
 				LF();
 
-				PROCESS_MAIN( fs.open( p, std::ios::out ) );
+				PROC_MAIN( fs.open( p, std::ios::out ) );
 				EXPECT_TRUE( fs.is_open() );
 
 
 				LF();
 
-				PROCESS_MAIN( fs.close() );
+				PROC_MAIN( fs.close() );
 			}
 
 			LS();
@@ -406,7 +406,7 @@ namespace std_fstream_test
 
 				LF();
 
-				PROCESS_MAIN( std::filesystem::remove_all( p ) );
+				PROC_MAIN( std::filesystem::remove_all( p ) );
 			}
 
 			LS();

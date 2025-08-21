@@ -8,9 +8,9 @@
 #define NOMINMAX
 #include <Windows.h>
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 namespace windows_screen_buffer_test
 {
@@ -92,13 +92,13 @@ namespace windows_screen_buffer_test
 		{
 			LS();
 
-			DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
-			DECLARATION_MAIN( const char* str = "*************WriteConsole Test*************\n" );
+			DECL_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
+			DECL_MAIN( const char* str = "*************WriteConsole Test*************\n" );
 
 			LF();
 
 			// 64bit size_t == typedef unsigned __int64 size_t; 
-			PROCESS_MAIN( WriteConsoleA( hStdout, str, static_cast<DWORD>( strlen( str ) ), nullptr, nullptr ) );
+			PROC_MAIN( WriteConsoleA( hStdout, str, static_cast<DWORD>( strlen( str ) ), nullptr, nullptr ) );
 
 			LS();
 
@@ -121,24 +121,24 @@ namespace windows_screen_buffer_test
 		{
 			LS();
 
-			DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
-			DECLARATION_MAIN( COORD topLeft( { 0, 0 } ) );
+			DECL_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
+			DECL_MAIN( COORD topLeft( { 0, 0 } ) );
 
 			LS();
 
 			{
-				DECLARATION_MAIN( DWORD ret );
-				DECLARATION_MAIN( const char* str = "*************WriteConsole Test*************" );
-				PROCESS_MAIN( WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), topLeft, &ret ) );
+				DECL_MAIN( DWORD ret );
+				DECL_MAIN( const char* str = "*************WriteConsole Test*************" );
+				PROC_MAIN( WriteConsoleOutputCharacterA( hStdout, str, static_cast<DWORD>( strlen( str ) ), topLeft, &ret ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( DWORD ret );
-				DECLARATION_MAIN( WORD colors[10] );
-				PROCESS_MAIN( std::fill_n( colors, 10, static_cast<WORD>( FOREGROUND_GREEN | BACKGROUND_BLUE ) ) );
-				PROCESS_MAIN( WriteConsoleOutputAttribute( hStdout, colors, static_cast<DWORD>( sizeof( colors ) / sizeof( DWORD ) ), topLeft, &ret ) );
+				DECL_MAIN( DWORD ret );
+				DECL_MAIN( WORD colors[10] );
+				PROC_MAIN( std::fill_n( colors, 10, static_cast<WORD>( FOREGROUND_GREEN | BACKGROUND_BLUE ) ) );
+				PROC_MAIN( WriteConsoleOutputAttribute( hStdout, colors, static_cast<DWORD>( sizeof( colors ) / sizeof( DWORD ) ), topLeft, &ret ) );
 			}
 
 			LS();
@@ -162,10 +162,10 @@ namespace windows_screen_buffer_test
 		{
 			LS();
 
-			DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
-			DECLARATION_MAIN( DWORD ret = 0; );
-			DECLARATION_MAIN( const char str[21] = "한글출력테스트팔구십" );
-			DECLARATION_MAIN( const wchar_t wstr[21] = L"한글출력테스트일이십" );
+			DECL_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
+			DECL_MAIN( DWORD ret = 0; );
+			DECL_MAIN( const char str[21] = "한글출력테스트팔구십" );
+			DECL_MAIN( const wchar_t wstr[21] = L"한글출력테스트일이십" );
 
 			LS();
 			
@@ -175,12 +175,12 @@ namespace windows_screen_buffer_test
 
 				std::cout << r2tm::linefeed2;
 
-				DECLARATION_MAIN( char buffer[100] = { 0 } );
-				PROCESS_MAIN( ReadConsoleOutputCharacterA( hStdout, buffer, 10, { cursor_point.x, cursor_point.y }, &ret ) );
+				DECL_MAIN( char buffer[100] = { 0 } );
+				PROC_MAIN( ReadConsoleOutputCharacterA( hStdout, buffer, 10, { cursor_point.x, cursor_point.y }, &ret ) );
 
 				std::cout << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << buffer );
+				PROC_MAIN( std::cout << buffer );
 			}
 
 			LS();
@@ -191,13 +191,13 @@ namespace windows_screen_buffer_test
 
 				std::cout << r2tm::linefeed2;
 
-				DECLARATION_MAIN( wchar_t buffer[100] = { 0 } );
-				PROCESS_MAIN( ReadConsoleOutputCharacterW( hStdout, buffer, 10, { cursor_point.x, cursor_point.y }, &ret ) );
+				DECL_MAIN( wchar_t buffer[100] = { 0 } );
+				PROC_MAIN( ReadConsoleOutputCharacterW( hStdout, buffer, 10, { cursor_point.x, cursor_point.y }, &ret ) );
 
 				std::cout << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::wcout.imbue( std::locale( "kor" ) ) );
-				PROCESS_MAIN( std::wcout << buffer );
+				PROC_MAIN( std::wcout.imbue( std::locale( "kor" ) ) );
+				PROC_MAIN( std::wcout << buffer );
 			}
 
 			LS();
@@ -228,10 +228,10 @@ namespace windows_screen_buffer_test
 			LS();
 
 			{
-				DECLARATION_MAIN( char buffer[111] = { '0' } );
-				PROCESS_MAIN( memset( buffer, 'A', sizeof( buffer ) ) );
-				PROCESS_MAIN( buffer[110] = '\0' );
-				PROCESS_MAIN( std::cout << buffer );
+				DECL_MAIN( char buffer[111] = { '0' } );
+				PROC_MAIN( memset( buffer, 'A', sizeof( buffer ) ) );
+				PROC_MAIN( buffer[110] = '\0' );
+				PROC_MAIN( std::cout << buffer );
 
 				LF();
 			}
@@ -239,10 +239,10 @@ namespace windows_screen_buffer_test
 			LS();
 
 			{
-				DECLARATION_MAIN( char buffer[111] = { '0' } );
-				PROCESS_MAIN( memset( buffer, 'a', sizeof( buffer ) ) );
-				PROCESS_MAIN( buffer[110] = '\0' );
-				PROCESS_MAIN( std::cout << buffer );
+				DECL_MAIN( char buffer[111] = { '0' } );
+				PROC_MAIN( memset( buffer, 'a', sizeof( buffer ) ) );
+				PROC_MAIN( buffer[110] = '\0' );
+				PROC_MAIN( std::cout << buffer );
 
 				LF();
 			}
@@ -250,8 +250,8 @@ namespace windows_screen_buffer_test
 			LS();
 
 			{
-				DECLARATION_MAIN( char buffer[111] = "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한" );
-				PROCESS_MAIN( std::cout << buffer );
+				DECL_MAIN( char buffer[111] = "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한글한글한글" "한글한글한" );
+				PROC_MAIN( std::cout << buffer );
 
 				LF();
 			}

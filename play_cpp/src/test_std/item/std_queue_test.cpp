@@ -2,8 +2,8 @@
 
 #include <queue>
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace std_queue_test
 {
@@ -27,7 +27,7 @@ namespace std_queue_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::queue<int> q );
+				DECL_MAIN( std::queue<int> q );
 
 				LF();
 
@@ -42,7 +42,7 @@ namespace std_queue_test
 
 				LF();
 
-				DECLARATION_MAIN( std::queue<int> q( { 1, 2, 3 } ) );
+				DECL_MAIN( std::queue<int> q( { 1, 2, 3 } ) );
 
 				LF();
 
@@ -77,7 +77,7 @@ namespace std_queue_test
 
 				LF();
 
-				DECLARATION_MAIN( std::queue<int> q );
+				DECL_MAIN( std::queue<int> q );
 
 				LF();
 
@@ -88,7 +88,7 @@ namespace std_queue_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::queue<int> q( { 1 } ) );
+				DECL_MAIN( std::queue<int> q( { 1 } ) );
 
 				LF();
 
@@ -104,7 +104,7 @@ namespace std_queue_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::queue<int> q( { 1, 2, 3 } ) );
+				DECL_MAIN( std::queue<int> q( { 1, 2, 3 } ) );
 
 				LF();
 
@@ -138,14 +138,14 @@ namespace std_queue_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::queue<int> q );
+			DECL_MAIN( std::queue<int> q );
 			EXPECT_EQ( 0, q.size() );
 			EXPECT_TRUE( q.empty() );
 
 			LS();
 
 			{
-				PROCESS_MAIN( q.push( 1 ) );
+				PROC_MAIN( q.push( 1 ) );
 
 				LF();
 
@@ -161,7 +161,7 @@ namespace std_queue_test
 			LS();
 
 			{
-				PROCESS_MAIN( q.push( 2 ) );
+				PROC_MAIN( q.push( 2 ) );
 
 				LF();
 
@@ -177,7 +177,7 @@ namespace std_queue_test
 			LS();
 
 			{
-				PROCESS_MAIN( q.pop() );
+				PROC_MAIN( q.pop() );
 
 				LF();
 
@@ -193,7 +193,7 @@ namespace std_queue_test
 			LS();
 
 			{
-				PROCESS_MAIN( q.pop() );
+				PROC_MAIN( q.pop() );
 
 				LF();
 
@@ -241,7 +241,7 @@ namespace std_queue_test
 
 			LS();
 
-			DECLARATION_MAIN( std::queue<int> q( { 1, 2, 3 } ) );
+			DECL_MAIN( std::queue<int> q( { 1, 2, 3 } ) );
 
 			LS();
 

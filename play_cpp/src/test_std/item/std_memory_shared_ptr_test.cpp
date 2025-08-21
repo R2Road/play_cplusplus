@@ -3,8 +3,8 @@
 
 #include <memory>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace std_memory_shared_ptr_test
 {
@@ -22,7 +22,7 @@ namespace std_memory_shared_ptr_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::shared_ptr<int> sp );
+				DECL_MAIN( std::shared_ptr<int> sp );
 				OUTPUT_CODE( *sp );
 				OUTPUT_COMMENT( "Not Working" );
 			}
@@ -30,7 +30,7 @@ namespace std_memory_shared_ptr_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::shared_ptr<int> sp( new int( 10 ) ) );
+				DECL_MAIN( std::shared_ptr<int> sp( new int( 10 ) ) );
 				OUTPUT_VALUE( *sp );
 			}
 
@@ -41,14 +41,14 @@ namespace std_memory_shared_ptr_test
 
 				LF();
 
-				DECLARATION_MAIN( std::shared_ptr<int> sp1( new int( 10 ) ) );
-				DECLARATION_MAIN( const std::shared_ptr<int> sp2 = sp1 );
+				DECL_MAIN( std::shared_ptr<int> sp1( new int( 10 ) ) );
+				DECL_MAIN( const std::shared_ptr<int> sp2 = sp1 );
 				OUTPUT_CODE( sp2 = nullptr );
 				OUTPUT_COMMENT( "지정된 pointer 변경 불가." );
 
 				LF();
 
-				PROCESS_MAIN( *sp2 = 11 );
+				PROC_MAIN( *sp2 = 11 );
 				OUTPUT_VALUE( *sp2 );
 				OUTPUT_COMMENT( "값 변경 가능" );
 			}
@@ -60,7 +60,7 @@ namespace std_memory_shared_ptr_test
 
 				LF();
 
-				DECLARATION_MAIN( std::shared_ptr<const int> sp( new int( 10 ) ) );
+				DECL_MAIN( std::shared_ptr<const int> sp( new int( 10 ) ) );
 				OUTPUT_VALUE( *sp );
 
 				LF();
@@ -76,7 +76,7 @@ namespace std_memory_shared_ptr_test
 
 				LF();
 
-				DECLARATION_MAIN( auto sp = std::make_shared<int>( 10 ) );
+				DECL_MAIN( auto sp = std::make_shared<int>( 10 ) );
 				OUTPUT_VALUE( sizeof( sp ) );
 				OUTPUT_VALUE( *sp );
 			}
@@ -103,14 +103,14 @@ namespace std_memory_shared_ptr_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::shared_ptr<int> sp );
+				DECL_MAIN( std::shared_ptr<int> sp );
 				OUTPUT_VALUE( sizeof( sp ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( std::shared_ptr<int> sp( new int( 10 ) ) );
+				DECL_MAIN( std::shared_ptr<int> sp( new int( 10 ) ) );
 				OUTPUT_VALUE( sizeof( sp ) );
 			}
 
@@ -136,20 +136,20 @@ namespace std_memory_shared_ptr_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::shared_ptr<int> sp );
+				DECL_MAIN( std::shared_ptr<int> sp );
 				OUTPUT_BINARY( sp );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( std::shared_ptr<int> sp( new int( 3 ) ) );
+				DECL_MAIN( std::shared_ptr<int> sp( new int( 3 ) ) );
 				OUTPUT_BINARY( sp.get() );
 				OUTPUT_BINARY( sp );
 
 				LF();
 
-				PROCESS_MAIN( sp.reset( new int( 3 ) ) );
+				PROC_MAIN( sp.reset( new int( 3 ) ) );
 				OUTPUT_BINARY( sp.get() );
 				OUTPUT_BINARY( sp );
 			}
@@ -181,40 +181,40 @@ namespace std_memory_shared_ptr_test
 
 			LS();
 
-			DECLARATION_MAIN( auto sp = std::make_shared<int>( 255 ) );
+			DECL_MAIN( auto sp = std::make_shared<int>( 255 ) );
 
 			LS();
 
-			DECLARATION_MAIN( int32_t* p = (int32_t* )sp.get() );
-			PROCESS_MAIN( p -= 2 );
+			DECL_MAIN( int32_t* p = (int32_t* )sp.get() );
+			PROC_MAIN( p -= 2 );
 			OUTPUT_BINARIES( p, 3 );
 
 			LS();
 
 			{
-				DECLARATION_MAIN( auto tp_1 = sp );
+				DECL_MAIN( auto tp_1 = sp );
 				OUTPUT_BINARIES( p, 3 );
 
 				LF();
 
-				DECLARATION_MAIN( auto tp_2 = sp );
+				DECL_MAIN( auto tp_2 = sp );
 				OUTPUT_BINARIES( p, 3 );
 
 				LF();
 
-				PROCESS_MAIN( tp_2.reset() );
+				PROC_MAIN( tp_2.reset() );
 				OUTPUT_BINARIES( p, 3 );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( std::weak_ptr<int> wp_1 = sp );
+				DECL_MAIN( std::weak_ptr<int> wp_1 = sp );
 				OUTPUT_BINARIES( p, 3 );
 
 				LF();
 
-				PROCESS_MAIN( wp_1.reset() );
+				PROC_MAIN( wp_1.reset() );
 				OUTPUT_BINARIES( p, 3 );
 			}
 

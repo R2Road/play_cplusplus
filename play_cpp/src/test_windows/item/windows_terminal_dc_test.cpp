@@ -5,7 +5,7 @@
 #define NOMINMAX
 #include <Windows.h> // HDC
 
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace windows_terminal_dc_test
 {

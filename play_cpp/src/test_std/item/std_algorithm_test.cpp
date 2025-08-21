@@ -5,8 +5,8 @@
 #include <random>
 #include <vector>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace std_algorithm_test
 {
@@ -31,7 +31,7 @@ namespace std_algorithm_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::vector<int> container( { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 } ) );
+			DECL_MAIN( std::vector<int> container( { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 } ) );
 
 			LF();
 
@@ -40,12 +40,12 @@ namespace std_algorithm_test
 			LS();
 
 			{
-				DECLARATION_SUB( const auto seed = (unsigned int)std::chrono::system_clock::now().time_since_epoch().count() );
-				DECLARATION_SUB( std::default_random_engine random_engine( seed ) );
+				DECL_SUB( const auto seed = (unsigned int)std::chrono::system_clock::now().time_since_epoch().count() );
+				DECL_SUB( std::default_random_engine random_engine( seed ) );
 
 				LF();
 
-				PROCESS_MAIN( std::shuffle( container.begin(), container.end(), random_engine ) );
+				PROC_MAIN( std::shuffle( container.begin(), container.end(), random_engine ) );
 
 				LF();
 

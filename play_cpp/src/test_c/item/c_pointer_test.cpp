@@ -1,7 +1,7 @@
 #include "c_pointer_test.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace c_pointer_test
 {
@@ -19,8 +19,8 @@ namespace c_pointer_test
 			LS();
 
 			{
-				DECLARATION_MAIN( const int i = 123 );
-				DECLARATION_MAIN( const int* ip = &i );
+				DECL_MAIN( const int i = 123 );
+				DECL_MAIN( const int* ip = &i );
 
 				LF();
 
@@ -54,7 +54,7 @@ namespace c_pointer_test
 		{
 			LS();
 
-			DECLARATION_MAIN( int ip[3] );
+			DECL_MAIN( int ip[3] );
 
 			LS();
 
@@ -94,8 +94,8 @@ namespace c_pointer_test
 			LS();
 			
 			{
-				DECLARATION_MAIN( const auto t1 = reinterpret_cast<std::size_t>( ip ) );
-				DECLARATION_MAIN( const auto t2 = reinterpret_cast<std::size_t>( ip + 1 ) );
+				DECL_MAIN( const auto t1 = reinterpret_cast<std::size_t>( ip ) );
+				DECL_MAIN( const auto t2 = reinterpret_cast<std::size_t>( ip + 1 ) );
 				OUTPUT_VALUE( t1 );
 				OUTPUT_VALUE( t2 );
 
@@ -130,11 +130,11 @@ namespace c_pointer_test
 			LS();
 
 			{
-				DECLARATION_MAIN( int i = 0 );
-				DECLARATION_MAIN( int* pi = &i );
-				DECLARATION_MAIN( int32_t i32 = (int32_t)( &i ) );
-				DECLARATION_MAIN( int64_t i64_1 = (int64_t)( &i ) );
-				DECLARATION_MAIN( int64_t i64_2 = reinterpret_cast<int64_t>( &i ) );
+				DECL_MAIN( int i = 0 );
+				DECL_MAIN( int* pi = &i );
+				DECL_MAIN( int32_t i32 = (int32_t)( &i ) );
+				DECL_MAIN( int64_t i64_1 = (int64_t)( &i ) );
+				DECL_MAIN( int64_t i64_2 = reinterpret_cast<int64_t>( &i ) );
 
 				std::cout << r2tm::linefeed2;
 
@@ -238,7 +238,7 @@ namespace c_pointer_test
 		{
 			LS();
 
-			DECLARATION_MAIN( const char* empty_string = "" );
+			DECL_MAIN( const char* empty_string = "" );
 
 			LS();
 
@@ -250,7 +250,7 @@ namespace c_pointer_test
 			LS();
 
 			{
-				DECLARATION_MAIN( const char* other_empty_string = "" );
+				DECL_MAIN( const char* other_empty_string = "" );
 
 				LF();
 
@@ -266,10 +266,10 @@ namespace c_pointer_test
 
 				LF();
 
-				DECLARATION_MAIN( const char* space_x1_string_1 = " " );
-				DECLARATION_MAIN( const char* space_x1_string_2 = " " );
-				DECLARATION_MAIN( const char* space_x2_string_1 = "  " );
-				DECLARATION_MAIN( const char* space_x2_string_2 = "  " );
+				DECL_MAIN( const char* space_x1_string_1 = " " );
+				DECL_MAIN( const char* space_x1_string_2 = " " );
+				DECL_MAIN( const char* space_x2_string_1 = "  " );
+				DECL_MAIN( const char* space_x2_string_2 = "  " );
 
 				LF();
 
@@ -300,7 +300,7 @@ namespace c_pointer_test
 		{
 			LS();
 
-			DECLARATION_MAIN(
+			DECL_MAIN(
 				struct S
 				{
 					int i = 0;
@@ -310,7 +310,7 @@ namespace c_pointer_test
 
 			LF();
 
-			DECLARATION_MAIN( S* s = new S );
+			DECL_MAIN( S* s = new S );
 
 			LS();
 
@@ -357,7 +357,7 @@ namespace c_pointer_test
 
 			LS();
 
-			PROCESS_MAIN( delete s );
+			PROC_MAIN( delete s );
 
 			LS();
 
@@ -380,7 +380,7 @@ namespace c_pointer_test
 		{
 			LS();
 
-			DECLARATION_MAIN(
+			DECL_MAIN(
 				struct S
 				{
 					int i = 0;
@@ -390,8 +390,8 @@ namespace c_pointer_test
 
 			LF();
 
-			DECLARATION_MAIN( S stack_s );
-			DECLARATION_MAIN( S* heap_s = new S );
+			DECL_MAIN( S stack_s );
+			DECL_MAIN( S* heap_s = new S );
 
 			LS();
 
@@ -437,7 +437,7 @@ namespace c_pointer_test
 
 			LS();
 
-			PROCESS_MAIN( delete heap_s );
+			PROC_MAIN( delete heap_s );
 
 			LS();
 

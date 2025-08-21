@@ -5,8 +5,8 @@
 #include <locale>
 #include <string>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace char_test
 {
@@ -121,11 +121,11 @@ namespace char_test
 			LS();
 
 			{
-				DECLARATION_MAIN( const char* str = R"(Test)" );
+				DECL_MAIN( const char* str = R"(Test)" );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << str << r2tm::linefeed );
+				PROC_MAIN( std::cout << str << r2tm::linefeed );
 			}
 
 			LS();
@@ -152,9 +152,9 @@ Test \t )";
 
 				LF();
 
-				DECLARATION_MAIN( const char* str = R"delimeter(Embedded)" pre)delimeter" );
+				DECL_MAIN( const char* str = R"delimeter(Embedded)" pre)delimeter" );
 
-				PROCESS_MAIN( std::cout << str << r2tm::linefeed );
+				PROC_MAIN( std::cout << str << r2tm::linefeed );
 			}
 
 			LS();

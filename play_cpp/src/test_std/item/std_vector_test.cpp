@@ -2,8 +2,8 @@
 
 #include <vector>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace std_vector_test
 {
@@ -29,14 +29,14 @@ namespace std_vector_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::vector<int> container( { 2, 3 } ) );
+			DECL_MAIN( std::vector<int> container( { 2, 3 } ) );
 			std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 
 			LS();
 
 			{
 				EXPECT_EQ( 2u, container.capacity() );
-				PROCESS_MAIN( container.resize( 2u ) );
+				PROC_MAIN( container.resize( 2u ) );
 				EXPECT_EQ( 2u, container.capacity() );
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 			}
@@ -45,7 +45,7 @@ namespace std_vector_test
 
 			{
 				EXPECT_EQ( 2u, container.capacity() );
-				PROCESS_MAIN( container.resize( 4u ) );
+				PROC_MAIN( container.resize( 4u ) );
 				EXPECT_EQ( 4u, container.capacity() );
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 
@@ -58,7 +58,7 @@ namespace std_vector_test
 
 			{
 				EXPECT_EQ( 4u, container.capacity() );
-				PROCESS_MAIN( container.resize( 0 ) );
+				PROC_MAIN( container.resize( 0 ) );
 				EXPECT_EQ( 4u, container.capacity() );
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 			}
@@ -67,7 +67,7 @@ namespace std_vector_test
 
 			{
 				EXPECT_EQ( 4u, container.capacity() );
-				PROCESS_MAIN( container.resize( 10 ) );
+				PROC_MAIN( container.resize( 10 ) );
 				EXPECT_EQ( 10u, container.capacity() );
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 			}
@@ -98,35 +98,35 @@ namespace std_vector_test
 
 			LS();
 
-			DECLARATION_MAIN( std::vector<int> container( { 1, 2, 3, 4 } ) );
+			DECL_MAIN( std::vector<int> container( { 1, 2, 3, 4 } ) );
 			OUTPUT_VALUE( container.size() );
 			OUTPUT_VALUE( container.capacity() );
 			OUTPUT_VALUE( container.data() );
 
 			LS();
 			{
-				PROCESS_MAIN( container.resize( 4 ) );
+				PROC_MAIN( container.resize( 4 ) );
 				OUTPUT_VALUE( container.size() );
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
 				std::cout << r2tm::linefeed2;
 
-				PROCESS_MAIN( container.resize( 2 ) );
+				PROC_MAIN( container.resize( 2 ) );
 				OUTPUT_VALUE( container.size() );
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
 				std::cout << r2tm::linefeed2;
 
-				PROCESS_MAIN( container.resize( 4 ) );
+				PROC_MAIN( container.resize( 4 ) );
 				OUTPUT_VALUE( container.size() );
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
 				std::cout << r2tm::linefeed2;
 
-				PROCESS_MAIN( container.resize( 10 ) );
+				PROC_MAIN( container.resize( 10 ) );
 				OUTPUT_VALUE( container.size() );
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
@@ -153,7 +153,7 @@ namespace std_vector_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::vector<int> container( { 2, 3 } ) );
+			DECL_MAIN( std::vector<int> container( { 2, 3 } ) );
 			OUTPUT_VALUE( container.size() );
 			OUTPUT_VALUE( container.capacity() );
 			OUTPUT_VALUE( container.data() );
@@ -165,7 +165,7 @@ namespace std_vector_test
 			LS();
 
 			{
-				PROCESS_MAIN( container.clear() );
+				PROC_MAIN( container.clear() );
 				OUTPUT_VALUE( container.size() );
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
@@ -178,7 +178,7 @@ namespace std_vector_test
 			LS();
 
 			{
-				PROCESS_MAIN( container.resize( 2u ) );
+				PROC_MAIN( container.resize( 2u ) );
 				OUTPUT_VALUE( container.size() );
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
@@ -213,28 +213,28 @@ namespace std_vector_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::vector<int> container( { 2, 3 } ) );
+			DECL_MAIN( std::vector<int> container( { 2, 3 } ) );
 			OUTPUT_VALUE( container.capacity() );
 			OUTPUT_VALUE( container.data() );
 
 			LS();
 
 			{
-				PROCESS_MAIN( container.reserve( 1u ) );
+				PROC_MAIN( container.reserve( 1u ) );
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
 				LF();
 
-				PROCESS_MAIN( container.reserve( 2u ) );
+				PROC_MAIN( container.reserve( 2u ) );
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
 
 				LF();
 
-				PROCESS_MAIN( container.reserve( 4u ) );
+				PROC_MAIN( container.reserve( 4u ) );
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
 				OUTPUT_VALUE( container.capacity() );
 				OUTPUT_VALUE( container.data() );
@@ -265,7 +265,7 @@ namespace std_vector_test
 		{
 			LS();
 
-			DECLARATION_MAIN( class TestClass
+			DECL_MAIN( class TestClass
 			{
 			public:
 				TestClass( int ) {}
@@ -273,7 +273,7 @@ namespace std_vector_test
 
 			LS();
 
-			DECLARATION_MAIN( std::vector<TestClass> container );
+			DECL_MAIN( std::vector<TestClass> container );
 
 			LS();
 
@@ -306,7 +306,7 @@ namespace std_vector_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::vector<bool> container );
+			DECL_MAIN( std::vector<bool> container );
 			OUTPUT_VALUE( container.capacity() );
 			OUTPUT_VALUE( container._Myvec.capacity() );
 			OUTPUT_VALUE( container.begin()._Myptr );
@@ -314,7 +314,7 @@ namespace std_vector_test
 			LS();
 
 			{
-				PROCESS_MAIN( container.push_back( 1 ) );
+				PROC_MAIN( container.push_back( 1 ) );
 
 				LF();
 
@@ -327,7 +327,7 @@ namespace std_vector_test
 			LS();
 
 			{
-				PROCESS_MAIN( container.reserve( 33 ) );
+				PROC_MAIN( container.reserve( 33 ) );
 
 				LF();
 
@@ -340,8 +340,8 @@ namespace std_vector_test
 			LS();
 
 			{
-				PROCESS_MAIN( container.clear() );
-				PROCESS_MAIN( for( std::size_t i = 0; i < 32; ++i ) { container.push_back( true ); } );
+				PROC_MAIN( container.clear() );
+				PROC_MAIN( for( std::size_t i = 0; i < 32; ++i ) { container.push_back( true ); } );
 
 
 				LF();
@@ -355,7 +355,7 @@ namespace std_vector_test
 			LS();
 
 			{
-				PROCESS_MAIN( container.push_back( 1 ) );
+				PROC_MAIN( container.push_back( 1 ) );
 
 				LF();
 
@@ -386,8 +386,8 @@ namespace std_vector_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::vector<int> container_1( { 1, 2, 3 } ) );
-			DECLARATION_MAIN( std::vector<int> container_2( { 10, 20, 30 } ) );
+			DECL_MAIN( std::vector<int> container_1( { 1, 2, 3 } ) );
+			DECL_MAIN( std::vector<int> container_2( { 10, 20, 30 } ) );
 
 			LS();
 
@@ -420,7 +420,7 @@ namespace std_vector_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::vector<int> container_1( { 1, 2, 3 } ) );
+			DECL_MAIN( std::vector<int> container_1( { 1, 2, 3 } ) );
 
 			LS();
 
@@ -429,7 +429,7 @@ namespace std_vector_test
 				OUTPUT_CODE( auto cur = container_1.end() );
 				OUTPUT_CODE( ( *cur ) );
 #else
-				DECLARATION_MAIN( auto cur = container_1.end() );
+				DECL_MAIN( auto cur = container_1.end() );
 				OUTPUT_VALUE( ( *cur ) );
 #endif
 				LF();
@@ -444,8 +444,8 @@ namespace std_vector_test
 				OUTPUT_CODE( auto cur = container_1.end() );
 				OUTPUT_CODE( ++cur );
 #else
-				DECLARATION_MAIN( auto cur = container_1.end() );
-				PROCESS_MAIN( ++cur );
+				DECL_MAIN( auto cur = container_1.end() );
+				PROC_MAIN( ++cur );
 
 				OUTPUT_VALUE( ( *cur ) );
 #endif
@@ -457,8 +457,8 @@ namespace std_vector_test
 			LS();
 
 			{
-				DECLARATION_MAIN( auto cur = container_1.end() );
-				PROCESS_MAIN( --cur );
+				DECL_MAIN( auto cur = container_1.end() );
+				PROC_MAIN( --cur );
 				OUTPUT_VALUE( ( *cur ) );
 			}
 
@@ -483,8 +483,8 @@ namespace std_vector_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::vector<int> v_1( { 1, 2, 3 } ) );
-			DECLARATION_MAIN( std::vector<int> v_2( { 3, 4, 5 } ) );
+			DECL_MAIN( std::vector<int> v_1( { 1, 2, 3 } ) );
+			DECL_MAIN( std::vector<int> v_2( { 3, 4, 5 } ) );
 
 			LS();
 
@@ -494,7 +494,7 @@ namespace std_vector_test
 
 				LF();
 
-				PROCESS_MAIN( v_1 = std::move( v_2 ) );
+				PROC_MAIN( v_1 = std::move( v_2 ) );
 				OUTPUT_VALUE( v_1 );
 				OUTPUT_VALUE( v_2 );
 

@@ -2,8 +2,8 @@
 
 #include <cstring>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace c_memset_test
 {
@@ -20,40 +20,40 @@ namespace c_memset_test
 		{
 			LS();
 
-			DECLARATION_MAIN( const uint32_t buffer_size = 6 );
-			DECLARATION_MAIN( char buffer[buffer_size] = { 0 } );
+			DECL_MAIN( const uint32_t buffer_size = 6 );
+			DECL_MAIN( char buffer[buffer_size] = { 0 } );
 			OUTPUT_BINARIES( buffer, buffer_size );
 
 			LS();
 
 			{
-				PROCESS_MAIN( memset( buffer, 1, 1 ) );
+				PROC_MAIN( memset( buffer, 1, 1 ) );
 				OUTPUT_BINARIES( buffer, buffer_size );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( memset( buffer, 2, sizeof( buffer ) ) );
+				PROC_MAIN( memset( buffer, 2, sizeof( buffer ) ) );
 				OUTPUT_BINARIES( buffer, buffer_size );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( memset( buffer, -1, sizeof( buffer ) / 2 ) );
+				PROC_MAIN( memset( buffer, -1, sizeof( buffer ) / 2 ) );
 				OUTPUT_BINARIES( buffer, buffer_size );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( memset( buffer, 255, sizeof( buffer ) ) );
+				PROC_MAIN( memset( buffer, 255, sizeof( buffer ) ) );
 				OUTPUT_BINARIES( buffer, buffer_size );
 
 				LF();
 
-				PROCESS_MAIN( memset( buffer, 258, sizeof( buffer ) ) );
+				PROC_MAIN( memset( buffer, 258, sizeof( buffer ) ) );
 				OUTPUT_BINARIES( buffer, buffer_size );
 
 				LF();
@@ -89,21 +89,21 @@ namespace c_memset_test
 
 			LS();
 
-			DECLARATION_MAIN( const uint32_t buffer_size = 6 );
-			DECLARATION_MAIN( int buffer[buffer_size] = { 0 } );
+			DECL_MAIN( const uint32_t buffer_size = 6 );
+			DECL_MAIN( int buffer[buffer_size] = { 0 } );
 			OUTPUT_BINARIES( buffer, buffer_size );
 
 			LS();
 
 			{
-				PROCESS_MAIN( memset( buffer, 1, 1 ) );
+				PROC_MAIN( memset( buffer, 1, 1 ) );
 				OUTPUT_BINARIES( buffer, buffer_size );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( memset( buffer, 2, sizeof( buffer ) ) );
+				PROC_MAIN( memset( buffer, 2, sizeof( buffer ) ) );
 				OUTPUT_BINARIES( buffer, buffer_size );
 			}
 

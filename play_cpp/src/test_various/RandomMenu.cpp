@@ -1,6 +1,6 @@
 #include "RandomMenu.h"
 
-#include "r2tm/r2tm_MenuProcessor.h"
+#include "r2tm/r2tm_menu_processor.hpp"
 
 #include "test_c/item/c_random_test.h"
 #include "test_std/item/std_random_test.h"

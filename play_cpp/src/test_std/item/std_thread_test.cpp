@@ -6,9 +6,9 @@
 #include <sstream>
 #include <thread>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_StopWatch.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_stop_watch.hpp"
 
 #pragma warning( disable : 4477 ) // for "%x" and std::this_thread::get_id()
 
@@ -31,7 +31,7 @@ namespace std_thread_test
 
 			LS();
 
-			DECLARATION_MAIN( std::thread t );
+			DECL_MAIN( std::thread t );
 
 			LS();
 
@@ -89,12 +89,12 @@ namespace std_thread_test
 
 				LF();
 
-				DECLARATION_MAIN( std::thread t( empty_func_1 ) );
+				DECL_MAIN( std::thread t( empty_func_1 ) );
 				OUTPUT_VALUE( t.get_id() );
 
 				LF();
 
-				PROCESS_MAIN( t.join() );
+				PROC_MAIN( t.join() );
 			}
 
 			LS();
@@ -104,12 +104,12 @@ namespace std_thread_test
 
 				LF();
 
-				DECLARATION_MAIN( std::thread t( empty_func_2, 3 ) );
+				DECL_MAIN( std::thread t( empty_func_2, 3 ) );
 				OUTPUT_VALUE( t.get_id() );
 
 				LF();
 
-				PROCESS_MAIN( t.join() );
+				PROC_MAIN( t.join() );
 			}
 
 			LS();
@@ -119,12 +119,12 @@ namespace std_thread_test
 
 				LF();
 
-				DECLARATION_MAIN( std::thread t( []( int, int ) {}, 3, 4 ) );
+				DECL_MAIN( std::thread t( []( int, int ) {}, 3, 4 ) );
 				OUTPUT_VALUE( t.get_id() );
 
 				LF();
 
-				PROCESS_MAIN( t.join() );
+				PROC_MAIN( t.join() );
 			}
 
 			LS();
@@ -162,12 +162,12 @@ namespace std_thread_test
 
 				LF();
 
-				DECLARATION_MAIN( std::thread t{ S() } );
+				DECL_MAIN( std::thread t{ S() } );
 				OUTPUT_VALUE( t.get_id() );
 
 				LF();
 
-				PROCESS_MAIN( t.join() );
+				PROC_MAIN( t.join() );
 			}
 
 			LS();
@@ -186,13 +186,13 @@ namespace std_thread_test
 
 				LF();
 
-				DECLARATION_MAIN( S s );
-				DECLARATION_MAIN( std::thread t( &S::process, &s ) );
+				DECL_MAIN( S s );
+				DECL_MAIN( std::thread t( &S::process, &s ) );
 				OUTPUT_VALUE( t.get_id() );
 
 				LF();
 
-				PROCESS_MAIN( t.join() );
+				PROC_MAIN( t.join() );
 			}
 
 			LS();
@@ -236,14 +236,14 @@ namespace std_thread_test
 
 			LS();
 
-			DECLARATION_MAIN( std::thread t1( S( 3 ) ) );
-			DECLARATION_MAIN( std::thread t2( S( 3 ) ) );
+			DECL_MAIN( std::thread t1( S( 3 ) ) );
+			DECL_MAIN( std::thread t2( S( 3 ) ) );
 
 			LS();
 
 			{
-				PROCESS_MAIN( t1.join() );
-				PROCESS_MAIN( t2.join() );
+				PROC_MAIN( t1.join() );
+				PROC_MAIN( t2.join() );
 			}
 
 			LS();
@@ -298,7 +298,7 @@ namespace std_thread_test
 
 				LF();
 
-				PROCESS_MAIN( t1 = std::move( t2 ) );
+				PROC_MAIN( t1 = std::move( t2 ) );
 
 				LF();
 
@@ -340,7 +340,7 @@ namespace std_thread_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::thread t );
+			DECL_MAIN( std::thread t );
 
 			LF();
 
@@ -362,24 +362,24 @@ namespace std_thread_test
 			LS();
 
 			{
-				PROCESS_MAIN( t = std::thread( l ) );
-				PROCESS_MAIN( t.join() );
+				PROC_MAIN( t = std::thread( l ) );
+				PROC_MAIN( t.join() );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( r2tm::StopWatch stop_watch );
+				DECL_MAIN( r2tm::StopWatch stop_watch );
 
 				LF();
 
-				PROCESS_MAIN( stop_watch.Start() );
-				PROCESS_MAIN( std::this_thread::sleep_for( std::chrono::milliseconds( -100 ) ) );
-				PROCESS_MAIN( stop_watch.Stop() );
+				PROC_MAIN( stop_watch.Start() );
+				PROC_MAIN( std::this_thread::sleep_for( std::chrono::milliseconds( -100 ) ) );
+				PROC_MAIN( stop_watch.Stop() );
 
 				LF();
 
-				PROCESS_MAIN( stop_watch.PrintElapsedTime_All() );
+				PROC_MAIN( stop_watch.PrintElapsedTime_All() );
 
 				LF2();
 
@@ -429,17 +429,17 @@ namespace std_thread_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::thread t1( thread_process ) );
-				DECLARATION_MAIN( std::thread t2( thread_process ) );
-				DECLARATION_MAIN( std::thread t3( thread_process ) );
-				DECLARATION_MAIN( std::thread t4( thread_process ) );
+				DECL_MAIN( std::thread t1( thread_process ) );
+				DECL_MAIN( std::thread t2( thread_process ) );
+				DECL_MAIN( std::thread t3( thread_process ) );
+				DECL_MAIN( std::thread t4( thread_process ) );
 
 				LF();
 
-				PROCESS_MAIN( t1.join() );
-				PROCESS_MAIN( t2.join() );
-				PROCESS_MAIN( t3.join() );
-				PROCESS_MAIN( t4.join() );
+				PROC_MAIN( t1.join() );
+				PROC_MAIN( t2.join() );
+				PROC_MAIN( t3.join() );
+				PROC_MAIN( t4.join() );
 			}
 			
 			LS();

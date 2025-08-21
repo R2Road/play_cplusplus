@@ -1,7 +1,7 @@
 #include "play_property.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace play_property
 {
@@ -32,20 +32,20 @@ namespace play_property
 		{
 			LS();
 
-			DECLARATION_MAIN( struct InvokerFunctorTestStruct
+			DECL_MAIN( struct InvokerFunctorTestStruct
 			{
 				void Func() { printf( "\t" "> " "[Call] Func" "\n" ); }
 			} );
 
 			LS();
 
-			DECLARATION_MAIN( InvokerFunctorTestStruct ts );
+			DECL_MAIN( InvokerFunctorTestStruct ts );
 
 			LS();
 
 			{
 				invoke_functor f( &InvokerFunctorTestStruct::Func );
-				PROCESS_MAIN( f.Do( &ts ) );
+				PROC_MAIN( f.Do( &ts ) );
 			}
 
 			LS();

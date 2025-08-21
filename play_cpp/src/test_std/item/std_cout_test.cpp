@@ -2,8 +2,8 @@
 
 #include <iomanip> // Manipulator : 조작자, 조정자
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace std_cout_test
 {
@@ -21,15 +21,15 @@ namespace std_cout_test
 			LS();
 
 			{
-				PROCESS_MAIN( std::cout << "1234" "5678" "90" );
+				PROC_MAIN( std::cout << "1234" "5678" "90" );
 
 				std::cout << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout.write( "1234" "5678" "90", 6 ) );
+				PROC_MAIN( std::cout.write( "1234" "5678" "90", 6 ) );
 
 				std::cout << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout.write( "1234", 6 ) );
+				PROC_MAIN( std::cout.write( "1234", 6 ) );
 				LF();
 				std::cout << r2tm::tab << "+ 출력할 문자의 숫자가 문자열의 길이를 넘어가도 터지지 않는다." << r2tm::linefeed;
 				std::cout << r2tm::tab << "+ 내부에 예외 처리를 위한 try-catch 구문이 있다." << r2tm::linefeed;
@@ -64,15 +64,15 @@ namespace std_cout_test
 
 			std::cout << r2tm::tab << "+ Status Save" << r2tm::linefeed2;
 
-			DECLARATION_MAIN( std::ios last_fmt( nullptr ) );
-			PROCESS_MAIN( last_fmt.copyfmt( std::cout ) );
+			DECL_MAIN( std::ios last_fmt( nullptr ) );
+			PROC_MAIN( last_fmt.copyfmt( std::cout ) );
 
 			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Format" << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << std::hex; );
+				PROC_MAIN( std::cout << std::hex; );
 			}
 
 			LS();
@@ -80,7 +80,7 @@ namespace std_cout_test
 			{
 				std::cout << r2tm::tab << "+ Test 1" << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << 10 << r2tm::linefeed );
+				PROC_MAIN( std::cout << 10 << r2tm::linefeed );
 			}
 
 			LS();
@@ -88,7 +88,7 @@ namespace std_cout_test
 			{
 				std::cout << r2tm::tab << "+ Status Rollback" << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout.copyfmt( last_fmt ) );
+				PROC_MAIN( std::cout.copyfmt( last_fmt ) );
 			}
 
 			LS();
@@ -96,7 +96,7 @@ namespace std_cout_test
 			{
 				std::cout << r2tm::tab << "+ Test 2" << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << 10 << r2tm::linefeed );
+				PROC_MAIN( std::cout << 10 << r2tm::linefeed );
 			}
 
 			LS();
@@ -120,17 +120,17 @@ namespace std_cout_test
 		{
 			LS();
 
-			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
-			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
+			DECL_SUB( std::ios last_fmt( nullptr ) );
+			PROC_SUB( last_fmt.copyfmt( std::cout ) );
 
 			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::oct, hex, dec" << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << std::oct << 10 << r2tm::linefeed );
-				PROCESS_MAIN( std::cout << std::hex << 10 << r2tm::linefeed );
-				PROCESS_MAIN( std::cout << std::dec << 10 << r2tm::linefeed );
+				PROC_MAIN( std::cout << std::oct << 10 << r2tm::linefeed );
+				PROC_MAIN( std::cout << std::hex << 10 << r2tm::linefeed );
+				PROC_MAIN( std::cout << std::dec << 10 << r2tm::linefeed );
 			}
 
 			LS();
@@ -138,19 +138,19 @@ namespace std_cout_test
 			{
 				std::cout << r2tm::tab << "+ std::showbase" << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << std::showbase );
+				PROC_MAIN( std::cout << std::showbase );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << std::oct << 10 << r2tm::linefeed );
-				PROCESS_MAIN( std::cout << std::hex << 10 << r2tm::linefeed );
-				PROCESS_MAIN( std::cout << std::dec << 10 << r2tm::linefeed );
+				PROC_MAIN( std::cout << std::oct << 10 << r2tm::linefeed );
+				PROC_MAIN( std::cout << std::hex << 10 << r2tm::linefeed );
+				PROC_MAIN( std::cout << std::dec << 10 << r2tm::linefeed );
 			}
 
 			LS();
 
 			{
-				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
+				PROC_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
 			LS();
@@ -174,27 +174,27 @@ namespace std_cout_test
 		{
 			LS();
 
-			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
-			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
+			DECL_SUB( std::ios last_fmt( nullptr ) );
+			PROC_SUB( last_fmt.copyfmt( std::cout ) );
 
 			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::showpos : show positive : 10진수 양수에 + 를 표시 한다." << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << std::showpos );
+				PROC_MAIN( std::cout << std::showpos );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << 10 << r2tm::linefeed );
+				PROC_MAIN( std::cout << 10 << r2tm::linefeed );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << std::noshowpos );
+				PROC_MAIN( std::cout << std::noshowpos );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << 10 << r2tm::linefeed );
+				PROC_MAIN( std::cout << 10 << r2tm::linefeed );
 			}
 
 			LS();
@@ -202,26 +202,26 @@ namespace std_cout_test
 			{
 				std::cout << r2tm::tab << "+ std::uppercase : 16진수의 영문자를 대문자 표기로 바꾼다." << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << std::showbase );
-				PROCESS_MAIN( std::cout << std::uppercase );
+				PROC_MAIN( std::cout << std::showbase );
+				PROC_MAIN( std::cout << std::uppercase );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << std::hex << 10 << r2tm::linefeed );
+				PROC_MAIN( std::cout << std::hex << 10 << r2tm::linefeed );
 
 				std::cout << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << std::nouppercase );
+				PROC_MAIN( std::cout << std::nouppercase );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << std::hex << 10 << r2tm::linefeed );
+				PROC_MAIN( std::cout << std::hex << 10 << r2tm::linefeed );
 			}
 
 			LS();
 
 			{
-				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
+				PROC_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
 			LS();
@@ -245,31 +245,31 @@ namespace std_cout_test
 		{
 			LS();
 
-			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
-			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
+			DECL_SUB( std::ios last_fmt( nullptr ) );
+			PROC_SUB( last_fmt.copyfmt( std::cout ) );
 
 			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::showpoint" << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << std::showpoint );
+				PROC_MAIN( std::cout << std::showpoint );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << 10.f << r2tm::linefeed );
-				PROCESS_MAIN( std::cout << 11.2f << r2tm::linefeed );
+				PROC_MAIN( std::cout << 10.f << r2tm::linefeed );
+				PROC_MAIN( std::cout << 11.2f << r2tm::linefeed );
 
 
 				std::cout << r2tm::linefeed2;
 
 
-				PROCESS_MAIN( std::cout << std::noshowpoint );
+				PROC_MAIN( std::cout << std::noshowpoint );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << 10.f << r2tm::linefeed );
-				PROCESS_MAIN( std::cout << 11.2f << r2tm::linefeed );
+				PROC_MAIN( std::cout << 10.f << r2tm::linefeed );
+				PROC_MAIN( std::cout << 11.2f << r2tm::linefeed );
 			}
 
 			LS();
@@ -277,29 +277,29 @@ namespace std_cout_test
 			{
 				std::cout << r2tm::tab << "+ std::setprecision" << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << std::setprecision( 10 ) );
+				PROC_MAIN( std::cout << std::setprecision( 10 ) );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << 1110.f << r2tm::linefeed );
-				PROCESS_MAIN( std::cout << 123.45f << r2tm::linefeed );
+				PROC_MAIN( std::cout << 1110.f << r2tm::linefeed );
+				PROC_MAIN( std::cout << 123.45f << r2tm::linefeed );
 
 
 				std::cout << r2tm::linefeed2;
 
 
-				PROCESS_MAIN( std::cout << std::setprecision( 5 ) );
+				PROC_MAIN( std::cout << std::setprecision( 5 ) );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << 1110.f << r2tm::linefeed );
-				PROCESS_MAIN( std::cout << 123.45f << r2tm::linefeed );
+				PROC_MAIN( std::cout << 1110.f << r2tm::linefeed );
+				PROC_MAIN( std::cout << 123.45f << r2tm::linefeed );
 			}
 
 			LS();
 
 			{
-				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
+				PROC_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
 			LS();
@@ -323,8 +323,8 @@ namespace std_cout_test
 		{
 			LS();
 
-			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
-			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
+			DECL_SUB( std::ios last_fmt( nullptr ) );
+			PROC_SUB( last_fmt.copyfmt( std::cout ) );
 
 			LS();
 
@@ -333,30 +333,30 @@ namespace std_cout_test
 
 				std::cout << r2tm::tab << "+ std::fixed" << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << std::fixed );
-				PROCESS_MAIN( std::cout << std::setprecision( 4 ) );
+				PROC_MAIN( std::cout << std::fixed );
+				PROC_MAIN( std::cout << std::setprecision( 4 ) );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << 10.f << r2tm::linefeed );
-				PROCESS_MAIN( std::cout << 11.2f << r2tm::linefeed );
+				PROC_MAIN( std::cout << 10.f << r2tm::linefeed );
+				PROC_MAIN( std::cout << 11.2f << r2tm::linefeed );
 
 
 				std::cout << r2tm::linefeed2;
 
 
-				PROCESS_MAIN( std::cout << std::defaultfloat );
+				PROC_MAIN( std::cout << std::defaultfloat );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << 10.f << r2tm::linefeed );
-				PROCESS_MAIN( std::cout << 11.2f << r2tm::linefeed );
+				PROC_MAIN( std::cout << 10.f << r2tm::linefeed );
+				PROC_MAIN( std::cout << 11.2f << r2tm::linefeed );
 			}
 
 			LS();
 
 			{
-				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
+				PROC_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
 			LS();
@@ -380,30 +380,30 @@ namespace std_cout_test
 		{
 			LS();
 
-			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
-			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
+			DECL_SUB( std::ios last_fmt( nullptr ) );
+			PROC_SUB( last_fmt.copyfmt( std::cout ) );
 
 			LS();
 
 			{
-				PROCESS_MAIN( std::cout << std::setw( 20 ) << std::right << "align right" << r2tm::linefeed2 );
-				PROCESS_MAIN( std::cout << std::setw( 20 ) << std::left << "align left" << r2tm::linefeed2 );
-				PROCESS_MAIN( std::cout << std::setw( 20 ) << std::internal << std::showpos << 1234 << r2tm::linefeed );
+				PROC_MAIN( std::cout << std::setw( 20 ) << std::right << "align right" << r2tm::linefeed2 );
+				PROC_MAIN( std::cout << std::setw( 20 ) << std::left << "align left" << r2tm::linefeed2 );
+				PROC_MAIN( std::cout << std::setw( 20 ) << std::internal << std::showpos << 1234 << r2tm::linefeed );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( std::cout << std::setfill( 'x' ) << std::setw( 20 ) << std::right << "1234" << r2tm::linefeed2 );
-				PROCESS_MAIN( std::cout << std::setfill( 'x' ) << std::setw( 20 ) << std::left << "1234" << r2tm::linefeed2 );
-				PROCESS_MAIN( std::cout << std::setfill( 'x' ) << std::setw( 20 ) << std::internal << std::showpos << 1234 << r2tm::linefeed );
+				PROC_MAIN( std::cout << std::setfill( 'x' ) << std::setw( 20 ) << std::right << "1234" << r2tm::linefeed2 );
+				PROC_MAIN( std::cout << std::setfill( 'x' ) << std::setw( 20 ) << std::left << "1234" << r2tm::linefeed2 );
+				PROC_MAIN( std::cout << std::setfill( 'x' ) << std::setw( 20 ) << std::internal << std::showpos << 1234 << r2tm::linefeed );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( std::cout << "1234" << "5678" << r2tm::linefeed2 );
-				PROCESS_MAIN( std::cout << std::setw( 20 ) << "1234" << "5678" << r2tm::linefeed );
+				PROC_MAIN( std::cout << "1234" << "5678" << r2tm::linefeed2 );
+				PROC_MAIN( std::cout << std::setw( 20 ) << "1234" << "5678" << r2tm::linefeed );
 			}
 
 			LS();
@@ -416,7 +416,7 @@ namespace std_cout_test
 			LS();
 
 			{
-				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
+				PROC_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
 			LS();
@@ -440,38 +440,38 @@ namespace std_cout_test
 		{
 			LS();
 
-			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
-			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
+			DECL_SUB( std::ios last_fmt( nullptr ) );
+			PROC_SUB( last_fmt.copyfmt( std::cout ) );
 
 			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::setiosflags" << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << std::setiosflags( std::ios::fixed ) );
-				PROCESS_MAIN( std::cout << std::setprecision( 4 ) );
+				PROC_MAIN( std::cout << std::setiosflags( std::ios::fixed ) );
+				PROC_MAIN( std::cout << std::setprecision( 4 ) );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << 10.f << r2tm::linefeed );
-				PROCESS_MAIN( std::cout << 11.2f << r2tm::linefeed );
+				PROC_MAIN( std::cout << 10.f << r2tm::linefeed );
+				PROC_MAIN( std::cout << 11.2f << r2tm::linefeed );
 
 
 				std::cout << r2tm::linefeed2;
 
 
-				PROCESS_MAIN( std::cout << std::resetiosflags( std::ios::fixed ) );
+				PROC_MAIN( std::cout << std::resetiosflags( std::ios::fixed ) );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << 10.f << r2tm::linefeed );
-				PROCESS_MAIN( std::cout << 11.2f << r2tm::linefeed );
+				PROC_MAIN( std::cout << 10.f << r2tm::linefeed );
+				PROC_MAIN( std::cout << 11.2f << r2tm::linefeed );
 			}
 
 			LS();
 
 			{
-				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
+				PROC_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
 			LS();
@@ -495,20 +495,20 @@ namespace std_cout_test
 		{
 			LS();
 
-			DECLARATION_SUB( std::ios last_fmt( nullptr ) );
-			PROCESS_SUB( last_fmt.copyfmt( std::cout ) );
+			DECL_SUB( std::ios last_fmt( nullptr ) );
+			PROC_SUB( last_fmt.copyfmt( std::cout ) );
 
 			LS();
 
 			{
 				std::cout << r2tm::tab << "+ std::boolalpha" << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << std::boolalpha );
+				PROC_MAIN( std::cout << std::boolalpha );
 
 				std::cout << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << true << r2tm::linefeed );
-				PROCESS_MAIN( std::cout << false << r2tm::linefeed );
+				PROC_MAIN( std::cout << true << r2tm::linefeed );
+				PROC_MAIN( std::cout << false << r2tm::linefeed );
 			}
 
 			LS();
@@ -516,18 +516,18 @@ namespace std_cout_test
 			{
 				std::cout << r2tm::tab << "+ std::noboolalpha" << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << std::noboolalpha );
+				PROC_MAIN( std::cout << std::noboolalpha );
 
 				std::cout << r2tm::linefeed2;
 
-				PROCESS_MAIN( std::cout << true << r2tm::linefeed );
-				PROCESS_MAIN( std::cout << false << r2tm::linefeed );
+				PROC_MAIN( std::cout << true << r2tm::linefeed );
+				PROC_MAIN( std::cout << false << r2tm::linefeed );
 			}
 
 			LS();
 
 			{
-				PROCESS_SUB( std::cout.copyfmt( last_fmt ) );
+				PROC_SUB( std::cout.copyfmt( last_fmt ) );
 			}
 
 			LS();
@@ -560,7 +560,7 @@ namespace std_cout_test
 			LS();
 
 			{
-				PROCESS_MAIN( std::cout << A() );
+				PROC_MAIN( std::cout << A() );
 			}
 
 			LS();

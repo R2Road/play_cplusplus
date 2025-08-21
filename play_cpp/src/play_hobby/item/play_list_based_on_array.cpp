@@ -2,8 +2,8 @@
 
 #include "r2/r2_ListBasedOnArray.h"
 #include "r2/r2_PointInt.h"
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace play_list_based_on_array
 {

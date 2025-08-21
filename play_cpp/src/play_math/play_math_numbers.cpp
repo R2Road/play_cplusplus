@@ -4,7 +4,7 @@
 #include "play_math___helper_matrix33.h"
 using namespace play_math;
 
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace play_math_numbers
 {
@@ -76,17 +76,17 @@ namespace play_math_numbers
 
 				LF();
 
-				DECLARATION_MAIN( Vec3 v );
+				DECL_MAIN( Vec3 v );
 
 				LF();
 
-				PROCESS_MAIN( v = RY( Deg2Rad( 45.f ) ) * VEC3_Z );
+				PROC_MAIN( v = RY( Deg2Rad( 45.f ) ) * VEC3_Z );
 				OUTPUT_VALUE( Rad2Deg( vec3_angle( v, VEC3_Z ) ) );
 				OUTPUT_VALUE( v );
 
 				LF();
 
-				PROCESS_MAIN( v = RX( Deg2Rad( 45.f ) ) * v );
+				PROC_MAIN( v = RX( Deg2Rad( 45.f ) ) * v );
 				OUTPUT_VALUE( Rad2Deg( vec3_angle( v, VEC3_Z ) ) );
 				OUTPUT_VALUE( v );
 			}

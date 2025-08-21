@@ -6,8 +6,8 @@
 #include <Windows.h>
 #pragma comment( lib, "winmm.lib" )
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 #include "utility/play_cpp_utility_PathBuilder.h"
 

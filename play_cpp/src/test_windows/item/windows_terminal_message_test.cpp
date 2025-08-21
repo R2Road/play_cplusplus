@@ -7,7 +7,7 @@
 #define  NOMINMAX
 #include <windows.h>
 
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace windows_terminal_message_test
 {

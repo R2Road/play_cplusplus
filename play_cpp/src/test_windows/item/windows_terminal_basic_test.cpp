@@ -10,9 +10,9 @@
 // Windows.h 와 wincon.h 의 include 순서를 바꾸면 빌드에 문제가 생긴다.
 // - c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\winnt.h(173): fatal error C1189: #error:  "No Target Architecture"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 namespace windows_terminal_basic_test
 {
@@ -29,8 +29,8 @@ namespace windows_terminal_basic_test
 		{
 			LS();
 
-			DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
-			DECLARATION_MAIN( CONSOLE_SCREEN_BUFFER_INFO console_screen_buffer_info );
+			DECL_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
+			DECL_MAIN( CONSOLE_SCREEN_BUFFER_INFO console_screen_buffer_info );
 
 			LS();
 
@@ -98,14 +98,14 @@ namespace windows_terminal_basic_test
 			LS();
 
 			{
-				DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
-				DECLARATION_MAIN( CONSOLE_SCREEN_BUFFER_INFO csbi );
+				DECL_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
+				DECL_MAIN( CONSOLE_SCREEN_BUFFER_INFO csbi );
 
 				LF();
 
-				PROCESS_MAIN( GetConsoleScreenBufferInfo( hStdout, &csbi ) );
-				DECLARATION_MAIN( const auto width = static_cast<int>( csbi.srWindow.Right - csbi.srWindow.Left + 1 ) );
-				DECLARATION_MAIN( const auto height = static_cast<int>( csbi.srWindow.Bottom - csbi.srWindow.Top + 1 ) );
+				PROC_MAIN( GetConsoleScreenBufferInfo( hStdout, &csbi ) );
+				DECL_MAIN( const auto width = static_cast<int>( csbi.srWindow.Right - csbi.srWindow.Left + 1 ) );
+				DECL_MAIN( const auto height = static_cast<int>( csbi.srWindow.Bottom - csbi.srWindow.Top + 1 ) );
 				OUTPUT_VALUE( width );
 				OUTPUT_VALUE( height );
 
@@ -153,7 +153,7 @@ namespace windows_terminal_basic_test
 			LS();
 
 			{
-				PROCESS_MAIN( SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 ) );
+				PROC_MAIN( SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 ) );
 			}
 
 			LS();
@@ -164,7 +164,7 @@ namespace windows_terminal_basic_test
 			LS();
 
 			{
-				PROCESS_MAIN( SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 ) );
+				PROC_MAIN( SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 ) );
 			}
 
 			LS();
@@ -232,15 +232,15 @@ namespace windows_terminal_basic_test
 		{
 			LS();
 
-			DECLARATION_MAIN( HWND hWnd = GetConsoleWindow() );
-			DECLARATION_MAIN( RECT last_window_rect );
+			DECL_MAIN( HWND hWnd = GetConsoleWindow() );
+			DECL_MAIN( RECT last_window_rect );
 
 			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Backup" << r2tm::linefeed2;
 
-				PROCESS_MAIN( GetWindowRect( hWnd, &last_window_rect ) );
+				PROC_MAIN( GetWindowRect( hWnd, &last_window_rect ) );
 
 				std::cout << r2tm::tab
 					<< "X : " << last_window_rect.left << "     "
@@ -262,22 +262,22 @@ namespace windows_terminal_basic_test
 			{
 				std::cout << r2tm::tab << "+ Move To Center" << r2tm::linefeed;
 
-				DECLARATION_MAIN( const int system_center_x = GetSystemMetrics( SM_CXSCREEN ) / 2 );
-				DECLARATION_MAIN( const int system_center_y = GetSystemMetrics( SM_CYSCREEN ) / 2 );
+				DECL_MAIN( const int system_center_x = GetSystemMetrics( SM_CXSCREEN ) / 2 );
+				DECL_MAIN( const int system_center_y = GetSystemMetrics( SM_CYSCREEN ) / 2 );
 				OUTPUT_VALUE( system_center_x );
 				OUTPUT_VALUE( system_center_y );
 
-				DECLARATION_MAIN( const int window_width = ( last_window_rect.right - last_window_rect.left ) );
-				DECLARATION_MAIN( const int window_height = ( last_window_rect.bottom - last_window_rect.top ) );
+				DECL_MAIN( const int window_width = ( last_window_rect.right - last_window_rect.left ) );
+				DECL_MAIN( const int window_height = ( last_window_rect.bottom - last_window_rect.top ) );
 				OUTPUT_VALUE( window_width );
 				OUTPUT_VALUE( window_height );
 
-				DECLARATION_MAIN( const int posx = system_center_x - ( window_width / 2 ) );
-				DECLARATION_MAIN( const int posy = system_center_y - ( window_height / 2 ) );
+				DECL_MAIN( const int posx = system_center_x - ( window_width / 2 ) );
+				DECL_MAIN( const int posy = system_center_y - ( window_height / 2 ) );
 				OUTPUT_VALUE( posx );
 				OUTPUT_VALUE( posy );
 
-				PROCESS_MAIN( MoveWindow( hWnd, posx, posy, window_width, window_height, TRUE ) );
+				PROC_MAIN( MoveWindow( hWnd, posx, posy, window_width, window_height, TRUE ) );
 
 				LF();
 
@@ -330,8 +330,8 @@ namespace windows_terminal_basic_test
 
 			std::cout << r2tm::tab << " + Last Window Name" << r2tm::linefeed2;
 
-			DECLARATION_MAIN( char last_window_name_string[MAX_PATH] );
-			PROCESS_MAIN( GetConsoleTitleA( last_window_name_string, MAX_PATH ) );
+			DECL_MAIN( char last_window_name_string[MAX_PATH] );
+			PROC_MAIN( GetConsoleTitleA( last_window_name_string, MAX_PATH ) );
 
 			LF();
 
@@ -342,8 +342,8 @@ namespace windows_terminal_basic_test
 			{
 				std::cout << r2tm::tab << " + Change Window Name" << r2tm::linefeed2;
 
-				DECLARATION_MAIN( const char* window_name_string = "console_test : ChangeWindowName" );
-				PROCESS_MAIN( SetConsoleTitleA( window_name_string ) );
+				DECL_MAIN( const char* window_name_string = "console_test : ChangeWindowName" );
+				PROC_MAIN( SetConsoleTitleA( window_name_string ) );
 			}
 
 			LS();
@@ -378,14 +378,14 @@ namespace windows_terminal_basic_test
 		{
 			LS();
 
-			DECLARATION_MAIN( LONG last_window_style = 0 );
+			DECL_MAIN( LONG last_window_style = 0 );
 
 			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Backup" << r2tm::linefeed2;
 
-				PROCESS_MAIN( last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE ) );
+				PROC_MAIN( last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE ) );
 
 				LF();
 
@@ -397,9 +397,9 @@ namespace windows_terminal_basic_test
 			{
 				std::cout << r2tm::tab << "+ Lock" << r2tm::linefeed2;
 
-				DECLARATION_MAIN( LONG new_window_style = last_window_style );
-				PROCESS_MAIN( new_window_style &= ~( WS_BORDER | WS_CAPTION | WS_THICKFRAME ) );
-				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style ) );
+				DECL_MAIN( LONG new_window_style = last_window_style );
+				PROC_MAIN( new_window_style &= ~( WS_BORDER | WS_CAPTION | WS_THICKFRAME ) );
+				PROC_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style ) );
 
 				LF();
 
@@ -419,7 +419,7 @@ namespace windows_terminal_basic_test
 			// Rollback
 			//
 			{
-				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, last_window_style ) );
+				PROC_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, last_window_style ) );
 			}
 
 			LS();
@@ -450,7 +450,7 @@ namespace windows_terminal_basic_test
 			{
 				std::cout << r2tm::tab << "+ Hide" << r2tm::linefeed2;
 
-				PROCESS_MAIN( ShowScrollBar( GetConsoleWindow(), SB_VERT, 0 ) );
+				PROC_MAIN( ShowScrollBar( GetConsoleWindow(), SB_VERT, 0 ) );
 			}
 
 			LS();
@@ -466,7 +466,7 @@ namespace windows_terminal_basic_test
 			{
 				std::cout << r2tm::tab << "+ Show" << r2tm::linefeed2;
 
-				PROCESS_MAIN( ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 ) );
+				PROC_MAIN( ShowScrollBar( GetConsoleWindow(), SB_VERT, 1 ) );
 			}
 
 			LS();
@@ -490,14 +490,14 @@ namespace windows_terminal_basic_test
 		{
 			LS();
 
-			DECLARATION_MAIN( LONG last_window_style = 0 );
+			DECL_MAIN( LONG last_window_style = 0 );
 
 			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Backup" << r2tm::linefeed2;
 
-				PROCESS_MAIN( last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE ) );
+				PROC_MAIN( last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE ) );
 				OUTPUT_BINARY( last_window_style );
 			}
 
@@ -506,16 +506,16 @@ namespace windows_terminal_basic_test
 			{
 				std::cout << r2tm::tab << "+ Lock" << r2tm::linefeed2;
 
-				DECLARATION_MAIN( LONG new_window_style = last_window_style );
-				PROCESS_MAIN( new_window_style &= ~( WS_MAXIMIZEBOX) );
-				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style ) );
+				DECL_MAIN( LONG new_window_style = last_window_style );
+				PROC_MAIN( new_window_style &= ~( WS_MAXIMIZEBOX) );
+				PROC_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style ) );
 				OUTPUT_BINARY( new_window_style );
 
 				LF();
 
 				std::cout << r2tm::tab << "+ 아래 코드를 쓴 경우들이 있어서 남겨둔다. 상황에 따라 갱신에 사용되는 것 같다." << r2tm::linefeed2;
 
-				PROCESS_MAIN( SetWindowPos( GetConsoleWindow(), NULL, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_FRAMECHANGED ) );
+				PROC_MAIN( SetWindowPos( GetConsoleWindow(), NULL, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_FRAMECHANGED ) );
 			}
 
 			LS();
@@ -529,7 +529,7 @@ namespace windows_terminal_basic_test
 			// Rollback
 			//
 			{
-				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, last_window_style ) );
+				PROC_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, last_window_style ) );
 			}
 
 			LS();
@@ -553,14 +553,14 @@ namespace windows_terminal_basic_test
 		{
 			LS();
 
-			DECLARATION_MAIN( LONG last_window_style = 0 );
+			DECL_MAIN( LONG last_window_style = 0 );
 
 			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Backup" << r2tm::linefeed2;
 
-				PROCESS_MAIN( last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE ) );
+				PROC_MAIN( last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE ) );
 				OUTPUT_BINARY( last_window_style );
 			}
 
@@ -569,9 +569,9 @@ namespace windows_terminal_basic_test
 			{
 				std::cout << r2tm::tab << "+ Lock" << r2tm::linefeed2;
 
-				DECLARATION_MAIN( LONG new_window_style = last_window_style );
-				PROCESS_MAIN( new_window_style &= ~( WS_SIZEBOX ) );
-				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style ) );
+				DECL_MAIN( LONG new_window_style = last_window_style );
+				PROC_MAIN( new_window_style &= ~( WS_SIZEBOX ) );
+				PROC_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style ) );
 				OUTPUT_BINARY( new_window_style );
 			}
 
@@ -586,7 +586,7 @@ namespace windows_terminal_basic_test
 			// Rollback
 			//
 			{
-				PROCESS_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, last_window_style ) );
+				PROC_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, last_window_style ) );
 			}
 
 			LS();
@@ -611,7 +611,7 @@ namespace windows_terminal_basic_test
 			LS();
 
 			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
-			DECLARATION_MAIN( HMENU hmenu = GetSystemMenu( GetConsoleWindow(), FALSE ) );
+			DECL_MAIN( HMENU hmenu = GetSystemMenu( GetConsoleWindow(), FALSE ) );
 
 			LS();
 
@@ -624,7 +624,7 @@ namespace windows_terminal_basic_test
 
 			{
 				std::cout << r2tm::tab << "+ Process : Close Button Grayed" << r2tm::linefeed2;
-				PROCESS_MAIN( EnableMenuItem( hmenu, SC_CLOSE, MF_GRAYED ) );
+				PROC_MAIN( EnableMenuItem( hmenu, SC_CLOSE, MF_GRAYED ) );
 			}
 
 			LS();
@@ -640,7 +640,7 @@ namespace windows_terminal_basic_test
 				//
 				// Rollback
 				//
-				PROCESS_MAIN( EnableMenuItem( hmenu, SC_CLOSE, MF_ENABLED ) );
+				PROC_MAIN( EnableMenuItem( hmenu, SC_CLOSE, MF_ENABLED ) );
 			}
 
 			LS();
@@ -664,10 +664,10 @@ namespace windows_terminal_basic_test
 		{
 			LS();
 
-			DECLARATION_MAIN( HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE ) );
-			DECLARATION_MAIN( COORD pos );
-			PROCESS_MAIN( pos.X = 20 );
-			PROCESS_MAIN( pos.Y = 30 );
+			DECL_MAIN( HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE ) );
+			DECL_MAIN( COORD pos );
+			PROC_MAIN( pos.X = 20 );
+			PROC_MAIN( pos.Y = 30 );
 
 			LS();
 
@@ -677,7 +677,7 @@ namespace windows_terminal_basic_test
 
 			LS();
 
-			PROCESS_MAIN( SetConsoleCursorPosition( stdHandle, pos ) );
+			PROC_MAIN( SetConsoleCursorPosition( stdHandle, pos ) );
 
 			{
 				int input = 0;
@@ -727,17 +727,17 @@ namespace windows_terminal_basic_test
 		{
 			LS();
 
-			DECLARATION_MAIN( HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE ) );
-			DECLARATION_MAIN( CONSOLE_CURSOR_INFO cursorInfo );
+			DECL_MAIN( HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE ) );
+			DECL_MAIN( CONSOLE_CURSOR_INFO cursorInfo );
 
 			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Hide" << r2tm::linefeed2;
 
-				PROCESS_MAIN( GetConsoleCursorInfo( stdHandle, &cursorInfo ) );
-				PROCESS_MAIN( cursorInfo.bVisible = false );
-				PROCESS_MAIN( SetConsoleCursorInfo( stdHandle, &cursorInfo ) );
+				PROC_MAIN( GetConsoleCursorInfo( stdHandle, &cursorInfo ) );
+				PROC_MAIN( cursorInfo.bVisible = false );
+				PROC_MAIN( SetConsoleCursorInfo( stdHandle, &cursorInfo ) );
 			}
 
 			LS();
@@ -749,9 +749,9 @@ namespace windows_terminal_basic_test
 			{
 				std::cout << r2tm::tab << "+ Show" << r2tm::linefeed2;
 
-				PROCESS_MAIN( GetConsoleCursorInfo( stdHandle, &cursorInfo ) );
-				PROCESS_MAIN( cursorInfo.bVisible = true );
-				PROCESS_MAIN( SetConsoleCursorInfo( stdHandle, &cursorInfo ) );
+				PROC_MAIN( GetConsoleCursorInfo( stdHandle, &cursorInfo ) );
+				PROC_MAIN( cursorInfo.bVisible = true );
+				PROC_MAIN( SetConsoleCursorInfo( stdHandle, &cursorInfo ) );
 			}
 
 			LS();
@@ -784,14 +784,14 @@ namespace windows_terminal_basic_test
 
 			LS();
 
-			DECLARATION_MAIN( DWORD last_console_mode = 0 );
+			DECL_MAIN( DWORD last_console_mode = 0 );
 
 			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Backup" << r2tm::linefeed2;
 
-				PROCESS_MAIN( GetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), &last_console_mode ) );
+				PROC_MAIN( GetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), &last_console_mode ) );
 				OUTPUT_BINARY( last_console_mode );
 			}
 
@@ -800,11 +800,11 @@ namespace windows_terminal_basic_test
 			{
 				std::cout << r2tm::tab << "+ Disable" << r2tm::linefeed2;
 
-				DECLARATION_MAIN( DWORD new_console_mode = last_console_mode );
-				PROCESS_MAIN( new_console_mode |= ENABLE_EXTENDED_FLAGS );
+				DECL_MAIN( DWORD new_console_mode = last_console_mode );
+				PROC_MAIN( new_console_mode |= ENABLE_EXTENDED_FLAGS );
 				OUTPUT_BINARY( new_console_mode );
-				PROCESS_MAIN( new_console_mode &= ~( ENABLE_QUICK_EDIT_MODE ) );
-				PROCESS_MAIN( SetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), new_console_mode ) );
+				PROC_MAIN( new_console_mode &= ~( ENABLE_QUICK_EDIT_MODE ) );
+				PROC_MAIN( SetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), new_console_mode ) );
 				OUTPUT_BINARY( new_console_mode );
 			}
 
@@ -819,7 +819,7 @@ namespace windows_terminal_basic_test
 			// Rollback
 			//
 			{
-				PROCESS_MAIN( SetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), last_console_mode ) );
+				PROC_MAIN( SetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), last_console_mode ) );
 			}
 
 			LS();

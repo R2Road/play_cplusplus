@@ -1,7 +1,7 @@
 #include "algorithm_astar_test.h"
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 #include "algorithm/r2algorithm_astar_Constant.h"
 #include "algorithm/r2algorithm_astar_PathBuilder.h"
@@ -9,7 +9,7 @@
 #include "r2/r2_GridBasedOnVector.h"
 #include "r2/r2_Point.h"
 
-#include "r2tm/r2tm_StopWatch.h"
+#include "r2tm/r2tm_stop_watch.hpp"
 
 using namespace r2algorithm_astar;
 

@@ -1,7 +1,7 @@
 #include "c_operator_priority_test.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 #pragma warning( disable : 4127 )
 

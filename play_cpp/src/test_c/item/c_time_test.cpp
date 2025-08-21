@@ -5,9 +5,9 @@
 #include <errno.h>
 #include <time.h>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 namespace c_time_test
 {
@@ -31,7 +31,7 @@ namespace c_time_test
 			LS();
 
 			{
-				DECLARATION_MAIN( time_t tt );
+				DECL_MAIN( time_t tt );
 
 				LF();
 
@@ -63,15 +63,15 @@ namespace c_time_test
 		{
 			LS();
 
-			DECLARATION_MAIN( time_t tt );
-			DECLARATION_MAIN( tm time_infos );
-			DECLARATION_MAIN( errno_t er );
+			DECL_MAIN( time_t tt );
+			DECL_MAIN( tm time_infos );
+			DECL_MAIN( errno_t er );
 
 			LS();
 
 			{
-				PROCESS_MAIN( time( &tt ) );
-				PROCESS_MAIN( er = localtime_s( &time_infos, &tt ) );
+				PROC_MAIN( time( &tt ) );
+				PROC_MAIN( er = localtime_s( &time_infos, &tt ) );
 				EXPECT_EQ( 0, er );
 			}
 
@@ -113,13 +113,13 @@ namespace c_time_test
 			LS();
 
 			{
-				DECLARATION_MAIN( char str[128] );
-				DECLARATION_MAIN( time_t tt );
+				DECL_MAIN( char str[128] );
+				DECL_MAIN( time_t tt );
 
 				LF();
 
-				PROCESS_MAIN( time( &tt ) );
-				PROCESS_MAIN( ctime_s( str, sizeof( str ), &tt ) );
+				PROC_MAIN( time( &tt ) );
+				PROC_MAIN( ctime_s( str, sizeof( str ), &tt ) );
 
 				LF();
 				
@@ -129,15 +129,15 @@ namespace c_time_test
 			LS();
 
 			{
-				DECLARATION_MAIN( char str[128] );
-				DECLARATION_MAIN( time_t tt );
-				DECLARATION_MAIN( struct tm time_infos );
+				DECL_MAIN( char str[128] );
+				DECL_MAIN( time_t tt );
+				DECL_MAIN( struct tm time_infos );
 
 				LF();
 
-				PROCESS_MAIN( time( &tt ) );
-				PROCESS_MAIN( localtime_s( &time_infos, &tt ) );
-				PROCESS_MAIN( asctime_s( str, sizeof( str ), &time_infos ) );
+				PROC_MAIN( time( &tt ) );
+				PROC_MAIN( localtime_s( &time_infos, &tt ) );
+				PROC_MAIN( asctime_s( str, sizeof( str ), &time_infos ) );
 
 				LF();
 
@@ -171,8 +171,8 @@ namespace c_time_test
 		{
 			LS();
 
-			DECLARATION_MAIN( clock_t current_clock = 0 );
-			DECLARATION_MAIN( clock_t current_sec = 0 );
+			DECL_MAIN( clock_t current_clock = 0 );
+			DECL_MAIN( clock_t current_sec = 0 );
 
 			LS();
 
@@ -188,8 +188,8 @@ namespace c_time_test
 			{
 				r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
-				PROCESS_MAIN( current_clock = clock() );
-				PROCESS_MAIN( current_sec = current_clock / CLOCKS_PER_SEC );
+				PROC_MAIN( current_clock = clock() );
+				PROC_MAIN( current_sec = current_clock / CLOCKS_PER_SEC );
 
 				std::cout << r2tm::tab << "current_clock : " << current_clock << r2tm::tab2 << "current_sec : " << current_sec << r2tm::linefeed;
 

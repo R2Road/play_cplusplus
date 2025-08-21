@@ -126,7 +126,7 @@ namespace play_math
 
 #include <iomanip>
 
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace play_math
 {

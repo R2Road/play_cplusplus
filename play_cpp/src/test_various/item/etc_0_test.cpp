@@ -6,8 +6,8 @@
 #include <memory>
 #include <stdint.h>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace etc_test
 {
@@ -29,7 +29,7 @@ namespace etc_test
 
 				LF();
 
-				DECLARATION_MAIN( const int num = 0b10110010101 ); // binary
+				DECL_MAIN( const int num = 0b10110010101 ); // binary
 
 				LF();
 
@@ -51,8 +51,8 @@ namespace etc_test
 
 				LF();
 
-				DECLARATION_MAIN( const int num = 0b0011001 ); // binary
-				DECLARATION_MAIN( std::bitset<16u> b( num ) );
+				DECL_MAIN( const int num = 0b0011001 ); // binary
+				DECL_MAIN( std::bitset<16u> b( num ) );
 
 				LF();
 
@@ -130,7 +130,7 @@ namespace etc_test
 
 				LF();
 
-				DECLARATION_MAIN( LifeTime lt = f3() );
+				DECL_MAIN( LifeTime lt = f3() );
 			}
 
 			LS();
@@ -140,15 +140,15 @@ namespace etc_test
 
 				LF();
 
-				DECLARATION_MAIN( LifeTime lt = f3() );
+				DECL_MAIN( LifeTime lt = f3() );
 
 				LF();
 
-				DECLARATION_MAIN( auto l = [ lt = std::move( lt ) ]() {} );
+				DECL_MAIN( auto l = [ lt = std::move( lt ) ]() {} );
 
 				LF();
 
-				DECLARATION_MAIN( auto l2 = l );
+				DECL_MAIN( auto l2 = l );
 			}
 
 			LS();
@@ -261,24 +261,24 @@ namespace etc_test
 			LS();
 
 			{
-				DECLARATION_MAIN( int i{} );
+				DECL_MAIN( int i{} );
 				OUTPUT_VALUE( i );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( int i = 123 );
-				PROCESS_MAIN( i = {} );
+				DECL_MAIN( int i = 123 );
+				PROC_MAIN( i = {} );
 				OUTPUT_VALUE( i );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( std::shared_ptr<int> i = std::make_shared<int>( 123 ) );
+				DECL_MAIN( std::shared_ptr<int> i = std::make_shared<int>( 123 ) );
 				EXPECT_NE( nullptr, i );
-				PROCESS_MAIN( i = {} );
+				PROC_MAIN( i = {} );
 				EXPECT_EQ( nullptr, i );
 			}
 
@@ -303,7 +303,7 @@ namespace etc_test
 		{
 			LS();
 
-			DECLARATION_MAIN( struct A
+			DECL_MAIN( struct A
 			{
 				std::shared_ptr<A> self;
 			} );
@@ -315,8 +315,8 @@ namespace etc_test
 
 				LF();
 
-				DECLARATION_MAIN( auto a = std::make_shared<A>() );
-				PROCESS_MAIN( a->self = a );
+				DECL_MAIN( auto a = std::make_shared<A>() );
+				PROC_MAIN( a->self = a );
 
 				LF();
 
@@ -332,13 +332,13 @@ namespace etc_test
 
 				LF();
 
-				DECLARATION_MAIN( auto a = std::make_shared<A>() );
-				DECLARATION_MAIN( auto b = std::make_shared<A>() );
+				DECL_MAIN( auto a = std::make_shared<A>() );
+				DECL_MAIN( auto b = std::make_shared<A>() );
 
 				LF();
 
-				PROCESS_MAIN( a->self = b );
-				PROCESS_MAIN( b->self = a );
+				PROC_MAIN( a->self = b );
+				PROC_MAIN( b->self = a );
 
 				LF();
 
@@ -358,15 +358,15 @@ namespace etc_test
 
 				LF();
 
-				DECLARATION_MAIN( auto a = std::make_shared<A>() );
-				DECLARATION_MAIN( auto b = std::make_shared<A>() );
-				DECLARATION_MAIN( auto c = std::make_shared<A>() );
+				DECL_MAIN( auto a = std::make_shared<A>() );
+				DECL_MAIN( auto b = std::make_shared<A>() );
+				DECL_MAIN( auto c = std::make_shared<A>() );
 
 				LF();
 
-				PROCESS_MAIN( a->self = b );
-				PROCESS_MAIN( b->self = c );
-				PROCESS_MAIN( c->self = a );
+				PROC_MAIN( a->self = b );
+				PROC_MAIN( b->self = c );
+				PROC_MAIN( c->self = a );
 
 				LF();
 
@@ -405,7 +405,7 @@ namespace etc_test
 
 				LF();
 
-				DECLARATION_MAIN( const double e = 1e+4 );
+				DECL_MAIN( const double e = 1e+4 );
 				OUTPUT_VALUE( e );
 			}
 
@@ -416,7 +416,7 @@ namespace etc_test
 
 				LF();
 
-				DECLARATION_MAIN( const double e = 1e-4 );
+				DECL_MAIN( const double e = 1e-4 );
 				OUTPUT_VALUE( e );
 			}
 
@@ -427,7 +427,7 @@ namespace etc_test
 
 				LF();
 
-				DECLARATION_MAIN( const double e = -1e+4 );
+				DECL_MAIN( const double e = -1e+4 );
 				OUTPUT_VALUE( e );
 			}
 
@@ -480,7 +480,7 @@ namespace etc_test
 			LS();
 
 			{
-				DECLARATION_MAIN( C c );
+				DECL_MAIN( C c );
 
 				LF();
 

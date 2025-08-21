@@ -3,7 +3,7 @@
 #include "play_math___helper_vector3.h"
 using namespace play_math;
 
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace play_math_vector3
 {
@@ -133,9 +133,9 @@ namespace play_math_vector3
 
 				LF();
 
-				DECLARATION_MAIN( const Vec3 v( 2.f, 2.f, 2.f ) );
-				DECLARATION_MAIN( const auto v_n = N( v ) );
-				DECLARATION_MAIN( const auto length = vec3_length( v ) );
+				DECL_MAIN( const Vec3 v( 2.f, 2.f, 2.f ) );
+				DECL_MAIN( const auto v_n = N( v ) );
+				DECL_MAIN( const auto length = vec3_length( v ) );
 
 				LF();
 

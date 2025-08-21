@@ -2,14 +2,14 @@
 
 #include <conio.h> // _kbhit(), _getch()
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 #include "r2/r2_Direction4.h"
 #include "r2/r2_GridBasedOnVector.h"
 #include "r2/r2_PointInt.h"
 
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_windows_utility.hpp"
 #include "test_algorithm/AlgorithmHelper.h"
 
 namespace algorithm_maze_test
@@ -33,16 +33,16 @@ namespace algorithm_maze_test
 
 			using Grid = r2::GridBasedOnVector<std::size_t, int>;
 
-			DECLARATION_MAIN( r2::Direction4 current_direction );
-			DECLARATION_MAIN( r2::PointInt current_point( 0, 0 ) );
-			DECLARATION_MAIN( r2::PointInt next_point( 0, 0 ) );
-			DECLARATION_MAIN( Grid grid );
+			DECL_MAIN( r2::Direction4 current_direction );
+			DECL_MAIN( r2::PointInt current_point( 0, 0 ) );
+			DECL_MAIN( r2::PointInt next_point( 0, 0 ) );
+			DECL_MAIN( Grid grid );
 
 			LS();
 
 			{
-				PROCESS_MAIN( grid.Reset( 19, 19 ) );
-				PROCESS_MAIN( grid.Set( current_point.GetX(), current_point.GetY(), true ) );
+				PROC_MAIN( grid.Reset( 19, 19 ) );
+				PROC_MAIN( grid.Set( current_point.GetX(), current_point.GetY(), true ) );
 
 				LF();
 
@@ -109,18 +109,18 @@ namespace algorithm_maze_test
 
 			using Grid = r2::GridBasedOnVector<std::size_t, int>;
 
-			DECLARATION_MAIN( r2::Direction4 current_direction );
-			DECLARATION_MAIN( r2::PointInt current_point( 0, 0 ) );
-			DECLARATION_MAIN( r2::PointInt next_point( 0, 0 ) );
-			DECLARATION_MAIN( Grid grid );
+			DECL_MAIN( r2::Direction4 current_direction );
+			DECL_MAIN( r2::PointInt current_point( 0, 0 ) );
+			DECL_MAIN( r2::PointInt next_point( 0, 0 ) );
+			DECL_MAIN( Grid grid );
 
 			LS();
 
 			{
-				PROCESS_MAIN( grid.Reset( 19, 19 ) );
+				PROC_MAIN( grid.Reset( 19, 19 ) );
 
-				PROCESS_MAIN( current_point.Set( static_cast<int>( grid.GetWidth() / 2 ), static_cast< int >( grid.GetHeight() / 2 ) ) );
-				PROCESS_MAIN( grid.Set( current_point.GetX(), current_point.GetY(), 1 ) );
+				PROC_MAIN( current_point.Set( static_cast<int>( grid.GetWidth() / 2 ), static_cast< int >( grid.GetHeight() / 2 ) ) );
+				PROC_MAIN( grid.Set( current_point.GetX(), current_point.GetY(), 1 ) );
 
 				LF();
 

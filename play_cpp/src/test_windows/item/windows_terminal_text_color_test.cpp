@@ -8,8 +8,8 @@
 #include <Windows.h>
 #include <wincon.h> // BACKGROUND_RED
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace windows_terminal_text_color_test
 {
@@ -393,18 +393,18 @@ namespace windows_terminal_text_color_test
 			LS();
 
 			{
-				DECLARATION_MAIN( const char* header = "\033[" );
-				DECLARATION_MAIN( const char* tail = "m" );
-				DECLARATION_MAIN( const short fg_color = 31 );
-				DECLARATION_MAIN( const short bg_color = 44 );
+				DECL_MAIN( const char* header = "\033[" );
+				DECL_MAIN( const char* tail = "m" );
+				DECL_MAIN( const short fg_color = 31 );
+				DECL_MAIN( const short bg_color = 44 );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << header << fg_color << ";" << bg_color << tail << "Change Color with std::cout" << header << "0" << tail << r2tm::linefeed );
+				PROC_MAIN( std::cout << header << fg_color << ";" << bg_color << tail << "Change Color with std::cout" << header << "0" << tail << r2tm::linefeed );
 
 				LF();
 
-				PROCESS_MAIN( std::cout << header << fg_color << tail << header << bg_color << tail << "Change Color with std::cout" << header << "0" << tail << r2tm::linefeed );
+				PROC_MAIN( std::cout << header << fg_color << tail << header << bg_color << tail << "Change Color with std::cout" << header << "0" << tail << r2tm::linefeed );
 			}
 
 			LS();

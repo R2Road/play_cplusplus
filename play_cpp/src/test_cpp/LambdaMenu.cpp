@@ -1,6 +1,6 @@
 #include "LambdaMenu.h"
 
-#include "r2tm/r2tm_MenuProcessor.h"
+#include "r2tm/r2tm_menu_processor.hpp"
 
 #include "test_cpp/item/cpp_lambda_test.h"
 

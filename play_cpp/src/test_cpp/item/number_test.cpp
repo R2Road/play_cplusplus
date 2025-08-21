@@ -1,7 +1,7 @@
 #include "number_test.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace number_test
 {
@@ -23,7 +23,7 @@ namespace number_test
 
 				LF();
 
-				DECLARATION_MAIN( const int num = 0b0011111 );
+				DECL_MAIN( const int num = 0b0011111 );
 
 				LF();
 
@@ -37,7 +37,7 @@ namespace number_test
 
 				LF();
 
-				DECLARATION_MAIN( const int num = 037 );
+				DECL_MAIN( const int num = 037 );
 
 				LF();
 
@@ -51,7 +51,7 @@ namespace number_test
 
 				LF();
 
-				DECLARATION_MAIN( const int num = 31 );
+				DECL_MAIN( const int num = 31 );
 
 				LF();
 
@@ -65,7 +65,7 @@ namespace number_test
 
 				LF();
 
-				DECLARATION_MAIN( const int num = 0x1f );
+				DECL_MAIN( const int num = 0x1f );
 
 				LF();
 

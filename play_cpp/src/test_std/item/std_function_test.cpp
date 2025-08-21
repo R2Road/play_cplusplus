@@ -2,8 +2,8 @@
 
 #include <functional>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace
 {
@@ -39,7 +39,7 @@ namespace std_function_test
 			LS();
 			
 			{
-				DECLARATION_MAIN( std::function<void()> f );
+				DECL_MAIN( std::function<void()> f );
 				EXPECT_TRUE( nullptr == f );
 				EXPECT_FALSE( f );
 			}
@@ -47,7 +47,7 @@ namespace std_function_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::function<void()> f = TestFunction_1 );
+				DECL_MAIN( std::function<void()> f = TestFunction_1 );
 				EXPECT_TRUE( nullptr != f );
 				EXPECT_TRUE( f );
 			}
@@ -55,7 +55,7 @@ namespace std_function_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::function<void()> f = []() {} );
+				DECL_MAIN( std::function<void()> f = []() {} );
 				EXPECT_TRUE( nullptr != f );
 				EXPECT_TRUE( f );
 			}
@@ -63,7 +63,7 @@ namespace std_function_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::function<void()> f = std::bind( LocalFunction, 10 ) );
+				DECL_MAIN( std::function<void()> f = std::bind( LocalFunction, 10 ) );
 				EXPECT_TRUE( nullptr != f );
 				EXPECT_TRUE( f );
 			}
@@ -71,23 +71,23 @@ namespace std_function_test
 			LS();
 
 			{
-				DECLARATION_MAIN( struct S { void Do( int ) {} } );
-				DECLARATION_MAIN( S s );
-				DECLARATION_MAIN( std::function<void( S&, int )> f = &S::Do );
+				DECL_MAIN( struct S { void Do( int ) {} } );
+				DECL_MAIN( S s );
+				DECL_MAIN( std::function<void( S&, int )> f = &S::Do );
 				EXPECT_TRUE( nullptr != f );
 				EXPECT_TRUE( f );
 
 				LF();
 
-				PROCESS_MAIN( f( s, 1 ) );
+				PROC_MAIN( f( s, 1 ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( struct S { int i = 1234; } );
-				DECLARATION_MAIN( S s );
-				DECLARATION_MAIN( std::function<int( S& )> f = &S::i );
+				DECL_MAIN( struct S { int i = 1234; } );
+				DECL_MAIN( S s );
+				DECL_MAIN( std::function<int( S& )> f = &S::i );
 				EXPECT_TRUE( nullptr != f );
 				EXPECT_TRUE( f );
 
@@ -99,14 +99,14 @@ namespace std_function_test
 			LS();
 
 			{
-				DECLARATION_MAIN( struct S { int operator()() { return 0; } } );
-				DECLARATION_MAIN( std::function<int()> f = S() );
+				DECL_MAIN( struct S { int operator()() { return 0; } } );
+				DECL_MAIN( std::function<int()> f = S() );
 				EXPECT_TRUE( nullptr != f );
 				EXPECT_TRUE( f );
 
 				LF();
 
-				PROCESS_MAIN( f() );
+				PROC_MAIN( f() );
 			}
 
 			LS();

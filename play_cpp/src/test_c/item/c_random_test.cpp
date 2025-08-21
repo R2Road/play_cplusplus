@@ -2,8 +2,8 @@
 
 #include <cstdlib> // rand, srand
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 
 namespace c_random_test
@@ -36,7 +36,7 @@ namespace c_random_test
 			LS();
 
 			{
-				PROCESS_MAIN( srand( 1 ) );
+				PROC_MAIN( srand( 1 ) );
 
 				LF();
 

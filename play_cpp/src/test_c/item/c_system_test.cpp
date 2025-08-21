@@ -2,8 +2,8 @@
 
 #include <stdlib.h>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace c_system_test
 {
@@ -21,7 +21,7 @@ namespace c_system_test
 			LS();
 
 			{
-				PROCESS_MAIN( system( "pause" ) );
+				PROC_MAIN( system( "pause" ) );
 			}
 
 			LS();

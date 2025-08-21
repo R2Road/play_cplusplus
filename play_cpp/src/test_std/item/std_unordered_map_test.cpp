@@ -4,8 +4,8 @@ using namespace std_unordered_map_test_helper_cstring;
 
 #include <unordered_map>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace std_unordered_map_test
 {
@@ -26,15 +26,15 @@ namespace std_unordered_map_test
 
 			LS();
 
-			DECLARATION_MAIN( UM4CStringT container );
+			DECL_MAIN( UM4CStringT container );
 
 			LF();
 
 			{
-				PROCESS_MAIN( container.insert( std::make_pair( CStringNSize{ "1", 1 }, 123 ) ) );
-				PROCESS_MAIN( container.insert( std::make_pair( CStringNSize{ "2", 1 }, 234 ) ) );
-				PROCESS_MAIN( container.insert( std::make_pair( CStringNSize{ "3", 1 }, 345 ) ) );
-				PROCESS_MAIN( container.insert( std::make_pair( CStringNSize{ "4", 1 }, 456 ) ) );
+				PROC_MAIN( container.insert( std::make_pair( CStringNSize{ "1", 1 }, 123 ) ) );
+				PROC_MAIN( container.insert( std::make_pair( CStringNSize{ "2", 1 }, 234 ) ) );
+				PROC_MAIN( container.insert( std::make_pair( CStringNSize{ "3", 1 }, 345 ) ) );
+				PROC_MAIN( container.insert( std::make_pair( CStringNSize{ "4", 1 }, 456 ) ) );
 
 				LF();
 
@@ -47,14 +47,14 @@ namespace std_unordered_map_test
 			LS();
 
 			{
-				DECLARATION_MAIN( const auto itr = container.find( CStringNSize{ "1", 1 } ) );
+				DECL_MAIN( const auto itr = container.find( CStringNSize{ "1", 1 } ) );
 				OUTPUT_VALUE( itr->second );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( const auto itr = container.find( CStringNSize{ "4", 1 } ) );
+				DECL_MAIN( const auto itr = container.find( CStringNSize{ "4", 1 } ) );
 				OUTPUT_VALUE( itr->second );
 			}
 

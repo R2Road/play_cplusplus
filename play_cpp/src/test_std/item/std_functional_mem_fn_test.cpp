@@ -3,8 +3,8 @@
 
 #include <functional>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace std_functional_mem_fn_test
 {
@@ -133,24 +133,24 @@ namespace std_functional_mem_fn_test
 
 			LS();
 
-			DECLARATION_MAIN( TestStruct t );
-			PROCESS_MAIN( t.a = 123 );
+			DECL_MAIN( TestStruct t );
+			PROC_MAIN( t.a = 123 );
 
 			LS();
 
 			{
-				DECLARATION_MAIN( auto do_fn =  std::mem_fn( &TestStruct::Do ) );
+				DECL_MAIN( auto do_fn =  std::mem_fn( &TestStruct::Do ) );
 				OUTPUT_VALUE( sizeof( do_fn ) );
 
 				LF();
 
-				PROCESS_MAIN( do_fn( &t ) );
+				PROC_MAIN( do_fn( &t ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( auto do_mv = std::mem_fn( &TestStruct::a ) );
+				DECL_MAIN( auto do_mv = std::mem_fn( &TestStruct::a ) );
 				OUTPUT_VALUE( sizeof( do_mv ) );
 
 				LF();

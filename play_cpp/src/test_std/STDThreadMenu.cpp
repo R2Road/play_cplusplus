@@ -1,6 +1,6 @@
 #include "STDThreadMenu.h"
 
-#include "r2tm/r2tm_MenuProcessor.h"
+#include "r2tm/r2tm_menu_processor.hpp"
 
 #include "test_std/item/std_atomic_test.h"
 #include "test_std/item/std_thread_test.h"

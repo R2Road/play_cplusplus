@@ -2,8 +2,8 @@
 
 #include <numeric>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace
 {
@@ -41,7 +41,7 @@ namespace c_bit_operation_test
 		{
 			LS();
 
-			DECLARATION_MAIN( const int pivot = 0b100000001 ); // binary
+			DECL_MAIN( const int pivot = 0b100000001 ); // binary
 			PrintBinary( pivot );
 
 			LS();
@@ -101,7 +101,7 @@ namespace c_bit_operation_test
 		{
 			LS();
 
-			DECLARATION_MAIN( const int pivot = 0b100000001 ); // binary
+			DECL_MAIN( const int pivot = 0b100000001 ); // binary
 			PrintBinary( pivot );
 
 			LS();
@@ -178,12 +178,12 @@ namespace c_bit_operation_test
 
 			LS();
 
-			DECLARATION_MAIN( const int pivot = 0b1000000001 ); // binary
+			DECL_MAIN( const int pivot = 0b1000000001 ); // binary
 			PrintBinary( pivot );
 
 			LF();
 
-			DECLARATION_MAIN( int num = pivot );
+			DECL_MAIN( int num = pivot );
 
 			LS();
 
@@ -192,7 +192,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				PROCESS_MAIN( num = ~num );
+				PROC_MAIN( num = ~num );
 				PrintBinary( num );
 			}
 
@@ -203,7 +203,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				PROCESS_MAIN( num += 1 );
+				PROC_MAIN( num += 1 );
 				PrintBinary( num );
 			}
 
@@ -236,7 +236,7 @@ namespace c_bit_operation_test
 		{
 			LS();
 
-			DECLARATION_MAIN( unsigned int num = 0b1000000001 ); // binary
+			DECL_MAIN( unsigned int num = 0b1000000001 ); // binary
 			PrintBinary( num );
 
 			LS();
@@ -258,7 +258,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				PROCESS_MAIN( num |= ( 1 << 2 ) );
+				PROC_MAIN( num |= ( 1 << 2 ) );
 				PrintBinary( num );
 			}
 
@@ -269,7 +269,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				PROCESS_MAIN( num &= ~( 1 << 2 ) );
+				PROC_MAIN( num &= ~( 1 << 2 ) );
 				PrintBinary( num );
 			}
 
@@ -280,12 +280,12 @@ namespace c_bit_operation_test
 
 				LF();
 
-				PROCESS_MAIN( num ^= ( 1 << 2 ) );
+				PROC_MAIN( num ^= ( 1 << 2 ) );
 				PrintBinary( num );
 
 				LF();
 
-				PROCESS_MAIN( num ^= ( 1 << 2 ) );
+				PROC_MAIN( num ^= ( 1 << 2 ) );
 				PrintBinary( num );
 			}
 
@@ -310,16 +310,16 @@ namespace c_bit_operation_test
 		{
 			LS();
 
-			DECLARATION_MAIN( const unsigned int num = 0b0011011000 );
+			DECL_MAIN( const unsigned int num = 0b0011011000 );
 			PrintBinary( num );
-			DECLARATION_MAIN( unsigned int mask = 0 );
+			DECL_MAIN( unsigned int mask = 0 );
 			PrintBinary( mask );
 
 			LF();
 
-			DECLARATION_MAIN( const unsigned int target_pos = 3 );
-			DECLARATION_MAIN( const unsigned int target_range = 5 );
-			DECLARATION_MAIN( const unsigned int bit_length = sizeof( num ) * 8 );
+			DECL_MAIN( const unsigned int target_pos = 3 );
+			DECL_MAIN( const unsigned int target_range = 5 );
+			DECL_MAIN( const unsigned int bit_length = sizeof( num ) * 8 );
 
 			LS();
 
@@ -328,7 +328,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				PROCESS_MAIN( mask = std::numeric_limits<unsigned int>::max() );
+				PROC_MAIN( mask = std::numeric_limits<unsigned int>::max() );
 				PrintBinary( mask );
 				
 				LF2();
@@ -337,7 +337,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				PROCESS_MAIN( mask >>= ( bit_length - target_range ) );
+				PROC_MAIN( mask >>= ( bit_length - target_range ) );
 				PrintBinary( mask );
 				
 				LF2();
@@ -346,7 +346,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				PROCESS_MAIN( mask <<= target_pos );
+				PROC_MAIN( mask <<= target_pos );
 				PrintBinary( mask );
 				
 				LF2();
@@ -355,7 +355,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				DECLARATION_MAIN( unsigned int result = num & mask );
+				DECL_MAIN( unsigned int result = num & mask );
 				PrintBinary( result );
 				
 				LF2();
@@ -364,7 +364,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				PROCESS_MAIN( result >>= target_pos );
+				PROC_MAIN( result >>= target_pos );
 				PrintBinary( result );
 			}
 
@@ -389,50 +389,50 @@ namespace c_bit_operation_test
 		{
 			LS();
 
-			DECLARATION_MAIN( char result = 0 );
+			DECL_MAIN( char result = 0 );
 
 			LS();
 
 			{
-				DECLARATION_MAIN( const char b_1 = 0b00000000 );
-				DECLARATION_MAIN( const char b_2 = 0b00000000 );
-				PROCESS_MAIN( result = b_1 ^ b_2 );
+				DECL_MAIN( const char b_1 = 0b00000000 );
+				DECL_MAIN( const char b_2 = 0b00000000 );
+				PROC_MAIN( result = b_1 ^ b_2 );
 				OUTPUT_BINARY( result );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( const char b_1 = 0b00000011 );
-				DECLARATION_MAIN( const char b_2 = 0b00000000 );
-				PROCESS_MAIN( result = b_1 ^ b_2 );
+				DECL_MAIN( const char b_1 = 0b00000011 );
+				DECL_MAIN( const char b_2 = 0b00000000 );
+				PROC_MAIN( result = b_1 ^ b_2 );
 				OUTPUT_BINARY( result );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( const char b_1 = 0b00000011 );
-				DECLARATION_MAIN( const char b_2 = 0b00001100 );
-				PROCESS_MAIN( result = b_1 ^ b_2 );
+				DECL_MAIN( const char b_1 = 0b00000011 );
+				DECL_MAIN( const char b_2 = 0b00001100 );
+				PROC_MAIN( result = b_1 ^ b_2 );
 				OUTPUT_BINARY( result );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( const char b_1 = 0b00000111 );
-				DECLARATION_MAIN( const char b_2 = 0b00001110 );
-				PROCESS_MAIN( result = b_1 ^ b_2 );
+				DECL_MAIN( const char b_1 = 0b00000111 );
+				DECL_MAIN( const char b_2 = 0b00001110 );
+				PROC_MAIN( result = b_1 ^ b_2 );
 				OUTPUT_BINARY( result );
 
 				LF();
 
-				PROCESS_MAIN( result = b_1 );
+				PROC_MAIN( result = b_1 );
 				OUTPUT_BINARY( result );
-				PROCESS_MAIN( result ^= b_2 );
+				PROC_MAIN( result ^= b_2 );
 				OUTPUT_BINARY( result );
-				PROCESS_MAIN( result ^= b_2 );
+				PROC_MAIN( result ^= b_2 );
 				OUTPUT_BINARY( result );
 			}
 
@@ -458,14 +458,14 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				DECLARATION_MAIN( int a = 123 );
+				DECL_MAIN( int a = 123 );
 				PrintBinary( a );
-				DECLARATION_MAIN( int b = 456 );
+				DECL_MAIN( int b = 456 );
 				PrintBinary( b );
 
 				std::cout << r2tm::linefeed2;
 
-				PROCESS_MAIN( a = a ^ b );
+				PROC_MAIN( a = a ^ b );
 				OUTPUT_VALUE( a );
 				PrintBinary( a );
 				OUTPUT_VALUE( b );
@@ -473,7 +473,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				PROCESS_MAIN( b = b ^ a );
+				PROC_MAIN( b = b ^ a );
 				OUTPUT_VALUE( a );
 				PrintBinary( a );
 				OUTPUT_VALUE( b );
@@ -481,7 +481,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				PROCESS_MAIN( a = a ^ b );
+				PROC_MAIN( a = a ^ b );
 				OUTPUT_VALUE( a );
 				PrintBinary( a );
 				OUTPUT_VALUE( b );
@@ -513,8 +513,8 @@ namespace c_bit_operation_test
 
 			LS();
 
-			DECLARATION_MAIN( const short t_1 = 1 );
-			DECLARATION_MAIN( const short t_2 = 5 );
+			DECL_MAIN( const short t_1 = 1 );
+			DECL_MAIN( const short t_2 = 5 );
 			OUTPUT_BINARY( t_1 );
 			OUTPUT_BINARY( t_2 );
 
@@ -525,7 +525,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				DECLARATION_MAIN( const short sum = t_1 ^ t_2 );
+				DECL_MAIN( const short sum = t_1 ^ t_2 );
 				OUTPUT_VALUE( sum );
 				OUTPUT_BINARY( sum );
 			}
@@ -537,13 +537,13 @@ namespace c_bit_operation_test
 
 				LF();
 
-				DECLARATION_MAIN( const short temp = ( t_1 & t_2 ) );
+				DECL_MAIN( const short temp = ( t_1 & t_2 ) );
 				OUTPUT_VALUE( temp );
 				OUTPUT_BINARY( temp );
 
 				LF();
 
-				DECLARATION_MAIN( const short carry = ( temp << 1 ) );
+				DECL_MAIN( const short carry = ( temp << 1 ) );
 				OUTPUT_VALUE( carry );
 				OUTPUT_BINARY( carry );
 			}
@@ -555,7 +555,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				DECLARATION_MAIN( const short result = ( ( t_1 ^ t_2 ) + ( ( t_1 & t_2 ) << 1 ) ) );
+				DECL_MAIN( const short result = ( ( t_1 ^ t_2 ) + ( ( t_1 & t_2 ) << 1 ) ) );
 				OUTPUT_VALUE( result );
 				OUTPUT_BINARY( result );
 			}
@@ -585,15 +585,15 @@ namespace c_bit_operation_test
 
 			LS();
 
-			DECLARATION_MAIN( short t_1 = 1 );
-			DECLARATION_MAIN( short t_2 = 3 );
+			DECL_MAIN( short t_1 = 1 );
+			DECL_MAIN( short t_2 = 3 );
 			OUTPUT_BINARY( t_1 );
 			OUTPUT_BINARY( t_2 );
 
 			LF();
 
-			DECLARATION_MAIN( short sum = 0 );
-			DECLARATION_MAIN( short carry = 0 );
+			DECL_MAIN( short sum = 0 );
+			DECL_MAIN( short carry = 0 );
 
 			LS();
 
@@ -602,13 +602,13 @@ namespace c_bit_operation_test
 
 				LF();
 
-				PROCESS_MAIN( sum = t_1 ^ t_2 );
+				PROC_MAIN( sum = t_1 ^ t_2 );
 				OUTPUT_VALUE( sum );
 				OUTPUT_BINARY( sum );
 
 				LF();
 
-				PROCESS_MAIN( carry = ( ( t_1 & t_2 ) << 1 ) );
+				PROC_MAIN( carry = ( ( t_1 & t_2 ) << 1 ) );
 				OUTPUT_VALUE( carry );
 				OUTPUT_BINARY( carry );
 			}
@@ -616,8 +616,8 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				PROCESS_MAIN( t_1 = sum );
-				PROCESS_MAIN( t_2 = carry );
+				PROC_MAIN( t_1 = sum );
+				PROC_MAIN( t_2 = carry );
 			}
 
 			LS();
@@ -627,13 +627,13 @@ namespace c_bit_operation_test
 
 				LF();
 
-				PROCESS_MAIN( sum = t_1 ^ t_2 );
+				PROC_MAIN( sum = t_1 ^ t_2 );
 				OUTPUT_VALUE( sum );
 				OUTPUT_BINARY( sum );
 
 				LF();
 
-				PROCESS_MAIN( carry = ( ( t_1 & t_2 ) << 1 ) );
+				PROC_MAIN( carry = ( ( t_1 & t_2 ) << 1 ) );
 				OUTPUT_VALUE( carry );
 				OUTPUT_BINARY( carry );
 			}
@@ -663,8 +663,8 @@ namespace c_bit_operation_test
 
 			LS();
 
-			DECLARATION_MAIN( const short t_1 = 4 );
-			DECLARATION_MAIN( const short t_2 = 1 );
+			DECL_MAIN( const short t_1 = 4 );
+			DECL_MAIN( const short t_2 = 1 );
 			OUTPUT_BINARY( t_1 );
 			OUTPUT_BINARY( t_2 );
 
@@ -675,7 +675,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				DECLARATION_MAIN( const short sub = t_1 ^ t_2 );
+				DECL_MAIN( const short sub = t_1 ^ t_2 );
 				OUTPUT_VALUE( sub );
 				OUTPUT_BINARY( sub );
 			}
@@ -694,7 +694,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				DECLARATION_MAIN( const short borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
+				DECL_MAIN( const short borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
 				OUTPUT_VALUE( borrow );
 				OUTPUT_BINARY( borrow );
 			}
@@ -706,7 +706,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				DECLARATION_MAIN( const short result = ( ( t_1 ^ t_2 ) - ( ( ( ~t_1 ) & t_2 ) << 1 ) ) );
+				DECL_MAIN( const short result = ( ( t_1 ^ t_2 ) - ( ( ( ~t_1 ) & t_2 ) << 1 ) ) );
 				OUTPUT_VALUE( result );
 				OUTPUT_BINARY( result );
 			}
@@ -736,15 +736,15 @@ namespace c_bit_operation_test
 
 			LS();
 
-			DECLARATION_MAIN( short t_1 = 2 );
-			DECLARATION_MAIN( short t_2 = 1 );
+			DECL_MAIN( short t_1 = 2 );
+			DECL_MAIN( short t_2 = 1 );
 			OUTPUT_BINARY( t_1 );
 			OUTPUT_BINARY( t_2 );
 
 			LS();
 
-			DECLARATION_MAIN( short sub = 0 );
-			DECLARATION_MAIN( short borrow = 0 );
+			DECL_MAIN( short sub = 0 );
+			DECL_MAIN( short borrow = 0 );
 
 			LS();
 
@@ -753,13 +753,13 @@ namespace c_bit_operation_test
 
 				LF();
 
-				PROCESS_MAIN( sub = t_1 ^ t_2 );
+				PROC_MAIN( sub = t_1 ^ t_2 );
 				OUTPUT_VALUE( sub );
 				OUTPUT_BINARY( sub );
 
 				LF();
 
-				PROCESS_MAIN( borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
+				PROC_MAIN( borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
 				OUTPUT_VALUE( borrow );
 				OUTPUT_BINARY( borrow );
 			}
@@ -767,8 +767,8 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				PROCESS_MAIN( t_1 = sub );
-				PROCESS_MAIN( t_2 = borrow );
+				PROC_MAIN( t_1 = sub );
+				PROC_MAIN( t_2 = borrow );
 			}
 
 			LS();
@@ -778,13 +778,13 @@ namespace c_bit_operation_test
 
 				LF();
 
-				PROCESS_MAIN( sub = t_1 ^ t_2 );
+				PROC_MAIN( sub = t_1 ^ t_2 );
 				OUTPUT_VALUE( sub );
 				OUTPUT_BINARY( sub );
 
 				LF();
 
-				PROCESS_MAIN( borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
+				PROC_MAIN( borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
 				OUTPUT_VALUE( borrow );
 				OUTPUT_BINARY( borrow );
 			}
@@ -811,22 +811,22 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				DECLARATION_MAIN( const char max_c = std::numeric_limits<char>::max() );
+				DECL_MAIN( const char max_c = std::numeric_limits<char>::max() );
 				PrintBinary( max_c );
 
 				LF();
 
-				DECLARATION_MAIN( const int i_1 = max_c );
+				DECL_MAIN( const int i_1 = max_c );
 				PrintBinary( i_1 );
 
 				LF();
 
-				DECLARATION_MAIN( const int i_2 = max_c );
+				DECL_MAIN( const int i_2 = max_c );
 				PrintBinary( i_2 );
 
 				LF();
 
-				DECLARATION_MAIN( const int i_3 = i_1 + i_2 );
+				DECL_MAIN( const int i_3 = i_1 + i_2 );
 				PrintBinary( i_3 );
 			}
 
@@ -858,14 +858,14 @@ namespace c_bit_operation_test
 			LS();
 
 			{
-				DECLARATION_MAIN( const int i = -1 );
+				DECL_MAIN( const int i = -1 );
 				OUTPUT_BINARY( i );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( const int i = 1 );
+				DECL_MAIN( const int i = 1 );
 				OUTPUT_BINARY( i << 4 );
 			}
 
@@ -876,7 +876,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				DECLARATION_MAIN( const int i = -1 );
+				DECL_MAIN( const int i = -1 );
 				OUTPUT_BINARY( i >> 4 );
 			}
 
@@ -887,7 +887,7 @@ namespace c_bit_operation_test
 
 				LF();
 
-				DECLARATION_MAIN( const unsigned int i = -1 );
+				DECL_MAIN( const unsigned int i = -1 );
 				OUTPUT_BINARY( i >> 4 );
 			}
 

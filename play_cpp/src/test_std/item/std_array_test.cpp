@@ -2,8 +2,8 @@
 
 #include <array>
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 #pragma warning( disable : 4101 )
 
@@ -68,7 +68,7 @@ namespace std_array_test
 
 				LF();
 
-				DECLARATION_MAIN( struct S { int i = 0; int j = 0; } );
+				DECL_MAIN( struct S { int i = 0; int j = 0; } );
 
 				LF();
 
@@ -229,17 +229,17 @@ namespace std_array_test
 			std::cout << "using TestArrayT = std::array<int, 3u>;" << r2tm::linefeed2;
 
 			{
-				DECLARATION_MAIN( TestArrayT array_1 );
-				PROCESS_MAIN( array_1.fill( 2 ) );
+				DECL_MAIN( TestArrayT array_1 );
+				PROC_MAIN( array_1.fill( 2 ) );
 
 				LF();
 
-				DECLARATION_MAIN( TestArrayT array_2 );
+				DECL_MAIN( TestArrayT array_2 );
 				printer( array_2 );
 
 				LF();
 
-				PROCESS_MAIN( array_2 = array_1 );
+				PROC_MAIN( array_2 = array_1 );
 				printer( array_2 );
 			}
 

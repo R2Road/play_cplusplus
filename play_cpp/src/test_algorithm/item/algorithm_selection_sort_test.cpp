@@ -2,8 +2,8 @@
 
 #include <array>
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_StopWatch.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_stop_watch.hpp"
 
 template<class _Elem, class _Traits, class ContainerT>
 std::basic_ostream<_Elem, _Traits>& operator << ( std::basic_ostream<_Elem, _Traits>& _Ostr, const ContainerT& container )

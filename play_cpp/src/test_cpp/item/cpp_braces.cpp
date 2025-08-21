@@ -2,8 +2,8 @@
 
 #include <memory>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace cpp_braces
 {
@@ -21,7 +21,7 @@ namespace cpp_braces
 			LS();
 
 			{
-				DECLARATION_MAIN( int i{} );
+				DECL_MAIN( int i{} );
 
 				LF();
 
@@ -31,18 +31,18 @@ namespace cpp_braces
 			LS();
 
 			{
-				DECLARATION_MAIN( int i = 123 );
+				DECL_MAIN( int i = 123 );
 
 				LF();
 
-				PROCESS_MAIN( i = {} );
+				PROC_MAIN( i = {} );
 				OUTPUT_VALUE( i );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( std::shared_ptr<int> i = std::make_shared<int>( 123 ) );
+				DECL_MAIN( std::shared_ptr<int> i = std::make_shared<int>( 123 ) );
 
 				LF();
 
@@ -50,7 +50,7 @@ namespace cpp_braces
 
 				LF();
 
-				PROCESS_MAIN( i = {} );
+				PROC_MAIN( i = {} );
 				EXPECT_EQ( nullptr, i );
 			}
 

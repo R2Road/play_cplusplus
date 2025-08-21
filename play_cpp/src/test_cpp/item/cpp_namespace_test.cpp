@@ -1,7 +1,7 @@
 #include "cpp_namespace_test.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace cpp_namespace_test
 {
@@ -52,7 +52,7 @@ namespace cpp_namespace_test
 			LS();
 
 			{
-				DECLARATION_MAIN( cpp_namespace_test::A::B::C::T t );
+				DECL_MAIN( cpp_namespace_test::A::B::C::T t );
 				OUTPUT_VALUE( t.Do() );
 			}
 
@@ -85,12 +85,12 @@ namespace cpp_namespace_test
 
 			LS();
 
-			DECLARATION_MAIN( namespace alias_test = cpp_namespace_test::A::B::C; );
+			DECL_MAIN( namespace alias_test = cpp_namespace_test::A::B::C; );
 
 			LS();
 
 			{
-				DECLARATION_MAIN( alias_test::T t );
+				DECL_MAIN( alias_test::T t );
 				OUTPUT_VALUE( t.Do() );
 			}
 

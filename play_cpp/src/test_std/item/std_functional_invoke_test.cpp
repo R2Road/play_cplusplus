@@ -3,8 +3,8 @@
 
 #include <functional>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace std_functional_invoke_test
 {
@@ -26,21 +26,21 @@ namespace std_functional_invoke_test
 			LS();
 
 			{
-				PROCESS_MAIN( std::invoke( Do, 2 ) );
+				PROC_MAIN( std::invoke( Do, 2 ) );
 
 				LF();
 
-				PROCESS_MAIN( std::invoke( do_lam, 3 ) );
+				PROC_MAIN( std::invoke( do_lam, 3 ) );
 
 				LF();
 
-				DECLARATION_MAIN( S1 s_1 );
-				PROCESS_MAIN( std::invoke( &S1::Do, s_1, 123 ) );
-				PROCESS_MAIN( std::invoke( &S1::Do, &s_1, 234 ) );
+				DECL_MAIN( S1 s_1 );
+				PROC_MAIN( std::invoke( &S1::Do, s_1, 123 ) );
+				PROC_MAIN( std::invoke( &S1::Do, &s_1, 234 ) );
 
 				LF();
 
-				DECLARATION_MAIN( S2 s_2 );
+				DECL_MAIN( S2 s_2 );
 				OUTPUT_VALUE( std::invoke( &S2::n, &s_2 ) );
 			}
 

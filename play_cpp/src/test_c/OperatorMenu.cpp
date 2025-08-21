@@ -1,6 +1,6 @@
 #include "OperatorMenu.h"
 
-#include "r2tm/r2tm_MenuProcessor.h"
+#include "r2tm/r2tm_menu_processor.hpp"
 
 #include "item/c_operator_priority_test.h"
 #include "item/c_operator_ternary_test.h"

@@ -5,8 +5,8 @@
 #include <type_traits>
 #include <numeric>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace r2
 {
@@ -93,8 +93,8 @@ namespace play_memory_pool
 		{
 			LS();
 
-			DECLARATION_MAIN( const uint32_t memory_block_size = 64u );
-			DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
+			DECL_MAIN( const uint32_t memory_block_size = 64u );
+			DECL_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
 
 			LF();
 
@@ -136,8 +136,8 @@ namespace play_memory_pool
 		{
 			LS();
 
-			DECLARATION_MAIN( const uint32_t memory_block_size = 64u );
-			DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
+			DECL_MAIN( const uint32_t memory_block_size = 64u );
+			DECL_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
 
 			LF();
 
@@ -154,8 +154,8 @@ namespace play_memory_pool
 			LS();
 
 			{
-				DECLARATION_MAIN( auto temp = memory_block.New<long long>() );
-				PROCESS_MAIN( memset( temp, 1, sizeof( long long ) ) );
+				DECL_MAIN( auto temp = memory_block.New<long long>() );
+				PROC_MAIN( memset( temp, 1, sizeof( long long ) ) );
 
 				LF();
 
@@ -165,8 +165,8 @@ namespace play_memory_pool
 			LS();
 
 			{
-				DECLARATION_MAIN( auto temp = memory_block.New<long>() );
-				PROCESS_MAIN( memset( temp, 2, sizeof( long ) ) );
+				DECL_MAIN( auto temp = memory_block.New<long>() );
+				PROC_MAIN( memset( temp, 2, sizeof( long ) ) );
 			
 				LF();
 
@@ -176,13 +176,13 @@ namespace play_memory_pool
 			LS();
 
 			{
-				DECLARATION_MAIN( auto temp = memory_block.New<char>() );
-				PROCESS_MAIN( memset( temp, 3, sizeof( char ) ) );
+				DECL_MAIN( auto temp = memory_block.New<char>() );
+				PROC_MAIN( memset( temp, 3, sizeof( char ) ) );
 			}
 
 			{
-				DECLARATION_MAIN( auto temp = memory_block.New<char>() );
-				PROCESS_MAIN( memset( temp, 4, sizeof( char ) ) );
+				DECL_MAIN( auto temp = memory_block.New<char>() );
+				PROC_MAIN( memset( temp, 4, sizeof( char ) ) );
 
 				LF();
 
@@ -191,8 +191,8 @@ namespace play_memory_pool
 
 			LS();
 			{
-				DECLARATION_MAIN( auto temp = memory_block.New<int>() );
-				PROCESS_MAIN( memset( temp, 5, sizeof( int ) ) );
+				DECL_MAIN( auto temp = memory_block.New<int>() );
+				PROC_MAIN( memset( temp, 5, sizeof( int ) ) );
 			
 				LF();
 
@@ -221,8 +221,8 @@ namespace play_memory_pool
 		{
 			LS();
 
-			DECLARATION_MAIN( const uint32_t memory_block_size = 16u );
-			DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
+			DECL_MAIN( const uint32_t memory_block_size = 16u );
+			DECL_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
 
 			LF();
 
@@ -234,13 +234,13 @@ namespace play_memory_pool
 			LS();
 
 			{
-				DECLARATION_MAIN( auto temp = memory_block.New<long long>() );
-				PROCESS_MAIN( memset( temp, 1, sizeof( long long ) ) );
+				DECL_MAIN( auto temp = memory_block.New<long long>() );
+				PROC_MAIN( memset( temp, 1, sizeof( long long ) ) );
 				OUTPUT_BINARY( *temp );
 
 				LF();
 
-				PROCESS_MAIN( *temp = std::numeric_limits<long long>::max() );
+				PROC_MAIN( *temp = std::numeric_limits<long long>::max() );
 				OUTPUT_BINARY( *temp );
 
 				LF();
@@ -251,13 +251,13 @@ namespace play_memory_pool
 			LS();
 
 			{
-				DECLARATION_MAIN( auto temp = memory_block.New<int>() );
-				PROCESS_MAIN( memset( temp, 1, sizeof( int ) ) );
+				DECL_MAIN( auto temp = memory_block.New<int>() );
+				PROC_MAIN( memset( temp, 1, sizeof( int ) ) );
 				OUTPUT_BINARY( *temp );
 
 				LF();
 
-				PROCESS_MAIN( *temp = std::numeric_limits<int>::max() );
+				PROC_MAIN( *temp = std::numeric_limits<int>::max() );
 				OUTPUT_BINARY( *temp );
 
 				LF();
@@ -287,8 +287,8 @@ namespace play_memory_pool
 		{
 			LS();
 
-			DECLARATION_MAIN( const uint32_t memory_block_size = 64u );
-			DECLARATION_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
+			DECL_MAIN( const uint32_t memory_block_size = 64u );
+			DECL_MAIN( r2::MemoryBlock<memory_block_size> memory_block );
 
 			LF();
 
@@ -305,11 +305,11 @@ namespace play_memory_pool
 			LS();
 
 			{
-				DECLARATION_MAIN( struct TestStruct1 { double d1; double d2; char c1; } );
+				DECL_MAIN( struct TestStruct1 { double d1; double d2; char c1; } );
 
-				DECLARATION_MAIN( auto temp = memory_block.New<TestStruct1>() );
-				PROCESS_MAIN( memset( temp, 1, sizeof( TestStruct1 ) ) );
-				PROCESS_MAIN( temp->c1 = 2 );
+				DECL_MAIN( auto temp = memory_block.New<TestStruct1>() );
+				PROC_MAIN( memset( temp, 1, sizeof( TestStruct1 ) ) );
+				PROC_MAIN( temp->c1 = 2 );
 
 				LF();
 
@@ -339,7 +339,7 @@ namespace play_memory_pool
 			LS();
 
 			{
-				DECLARATION_MAIN( r2::MemoryPool memory_pool );
+				DECL_MAIN( r2::MemoryPool memory_pool );
 			}
 
 			LS();
@@ -364,7 +364,7 @@ namespace play_memory_pool
 		{
 			LS();
 
-			DECLARATION_MAIN( r2::MemoryPool pool );
+			DECL_MAIN( r2::MemoryPool pool );
 
 			LS();
 

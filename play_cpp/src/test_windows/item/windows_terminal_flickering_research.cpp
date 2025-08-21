@@ -5,7 +5,7 @@
 #define NOMINMAX
 #include <Windows.h> // HANDLE, COORD, SetConsoleCursorPosition()
 
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_ostream.hpp"
 
 #include "utility/play_cpp_utility_CharacterBuffer.h"
 

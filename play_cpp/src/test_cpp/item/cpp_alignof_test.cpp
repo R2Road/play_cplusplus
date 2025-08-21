@@ -5,8 +5,8 @@
 #include <unordered_map>
 #include <vector>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace cpp_alignof_test
 {

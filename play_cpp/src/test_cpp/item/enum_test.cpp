@@ -3,8 +3,8 @@
 #include <typeinfo> // typeid
 #include <type_traits>
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace enum_test
 {
@@ -30,7 +30,7 @@ namespace enum_test
 
 				LF();
 
-				DECLARATION_MAIN( enum eTestOldEnum {} );
+				DECL_MAIN( enum eTestOldEnum {} );
 
 				LF();
 
@@ -48,7 +48,7 @@ namespace enum_test
 
 				LF();
 
-				DECLARATION_MAIN( enum class eTestNewEnum {} );
+				DECL_MAIN( enum class eTestNewEnum {} );
 
 				LF();
 
@@ -66,7 +66,7 @@ namespace enum_test
 
 				LF();
 
-				DECLARATION_MAIN( enum class eTestNewEnum : char {} );
+				DECL_MAIN( enum class eTestNewEnum : char {} );
 
 				LF();
 
@@ -112,12 +112,12 @@ namespace enum_test
 
 				LF();
 
-				DECLARATION_MAIN( const eTestEnum te_1 = static_cast<eTestEnum>( 0 ) );
+				DECL_MAIN( const eTestEnum te_1 = static_cast<eTestEnum>( 0 ) );
 
 				LF();
 
-				DECLARATION_MAIN( eTestEnum te_2 );
-				PROCESS_MAIN( te_2 = te_1 );
+				DECL_MAIN( eTestEnum te_2 );
+				PROC_MAIN( te_2 = te_1 );
 			}
 
 			LS();
@@ -153,7 +153,7 @@ namespace enum_test
 
 			LF();
 
-			DECLARATION_MAIN( using namespace enum_test_convert_with_template );
+			DECL_MAIN( using namespace enum_test_convert_with_template );
 
 			LS();
 
@@ -242,7 +242,7 @@ namespace enum_test
 
 				LF();
 
-				PROCESS_MAIN( for( int i = 0; eMakeEnumTest::Max >= i; ++i ) { printf( "%d\n", i ); } );
+				PROC_MAIN( for( int i = 0; eMakeEnumTest::Max >= i; ++i ) { printf( "%d\n", i ); } );
 			}
 
 			LS();
@@ -287,7 +287,7 @@ namespace enum_test
 
 			{
 				using namespace enum_test_xmacro_1;
-				PROCESS_MAIN( for( int i = 0; i <= eXM1::XM1_Max; ++i ) { printf( "%d : %s\n", i, STR_XM1[i] ); } );
+				PROC_MAIN( for( int i = 0; i <= eXM1::XM1_Max; ++i ) { printf( "%d : %s\n", i, STR_XM1[i] ); } );
 			}
 
 			LS();
@@ -341,7 +341,7 @@ namespace enum_test
 
 			{
 				using namespace enum_test_xmacro_2;
-				PROCESS_MAIN( for( int i = 0; i <= eXM2::XM2_Max; ++i ) { printf( "%d : %s\n", i, STR_XM2[i] ); } );
+				PROC_MAIN( for( int i = 0; i <= eXM2::XM2_Max; ++i ) { printf( "%d : %s\n", i, STR_XM2[i] ); } );
 			}
 
 			LS();

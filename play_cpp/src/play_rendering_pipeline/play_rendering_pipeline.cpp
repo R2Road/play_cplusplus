@@ -8,8 +8,8 @@
 #include "play_math/play_math___helper_matrix44.h"
 using namespace play_math;
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 #include "r2/r2_FPSTimer.h"
 
@@ -48,17 +48,17 @@ namespace play_rendering_pipeline
 			LF();
 
 			OUTPUT_COMMENT( "카메라 위치" );
-			DECLARATION_MAIN( const Vec4 init_eye( 0, 0, 10, 1 ) );
+			DECL_MAIN( const Vec4 init_eye( 0, 0, 10, 1 ) );
 
 			LF();
 
 			OUTPUT_COMMENT( "카메라 목표" );
-			DECLARATION_MAIN( const Vec4 init_center( 0, 0, 0, 1 ) );
+			DECL_MAIN( const Vec4 init_center( 0, 0, 0, 1 ) );
 
 			LF();
 
 			OUTPUT_COMMENT( "카메라 머리 위 방향" );
-			DECLARATION_MAIN( const Vec4 init_up( 0, 1, 0, 1 ) );
+			DECL_MAIN( const Vec4 init_up( 0, 1, 0, 1 ) );
 
 			LS();
 
@@ -67,7 +67,7 @@ namespace play_rendering_pipeline
 
 				LF();
 
-				DECLARATION_MAIN( Vec4 cam_forward = vec4_normalize( init_eye - init_center ) );
+				DECL_MAIN( Vec4 cam_forward = vec4_normalize( init_eye - init_center ) );
 				OUTPUT_VALUE( cam_forward );
 
 				LF();
@@ -76,7 +76,7 @@ namespace play_rendering_pipeline
 
 				LF();
 
-				DECLARATION_MAIN( Vec4 cam_right = vec4_normalize( vec4_cross( init_up, cam_forward ) ) );
+				DECL_MAIN( Vec4 cam_right = vec4_normalize( vec4_cross( init_up, cam_forward ) ) );
 				OUTPUT_VALUE( cam_right );
 
 				LF();
@@ -85,7 +85,7 @@ namespace play_rendering_pipeline
 
 				LF();
 
-				DECLARATION_MAIN( Vec4 cam_up = vec4_cross( cam_forward, cam_right ) );
+				DECL_MAIN( Vec4 cam_up = vec4_cross( cam_forward, cam_right ) );
 				OUTPUT_VALUE( cam_up );
 			}
 
@@ -114,9 +114,9 @@ namespace play_rendering_pipeline
 
 			LS();
 
-			DECLARATION_MAIN( const Vec4 init_eye( 0, 0, 10, 1 ) );
-			DECLARATION_MAIN( const Vec4 init_center( 10, 0, 0, 1 ) );
-			DECLARATION_MAIN( const Vec4 init_up( 0, 1, 0, 1 ) );
+			DECL_MAIN( const Vec4 init_eye( 0, 0, 10, 1 ) );
+			DECL_MAIN( const Vec4 init_center( 10, 0, 0, 1 ) );
+			DECL_MAIN( const Vec4 init_up( 0, 1, 0, 1 ) );
 
 			LS();
 
@@ -125,9 +125,9 @@ namespace play_rendering_pipeline
 
 				LF();
 
-				DECLARATION_MAIN( Vec4 cam_forward = vec4_normalize( init_eye - init_center ) );
-				DECLARATION_MAIN( Vec4 cam_right = vec4_normalize( vec4_cross( init_up, cam_forward ) ) );
-				DECLARATION_MAIN( Vec4 cam_up = vec4_cross( cam_forward, cam_right ) );
+				DECL_MAIN( Vec4 cam_forward = vec4_normalize( init_eye - init_center ) );
+				DECL_MAIN( Vec4 cam_right = vec4_normalize( vec4_cross( init_up, cam_forward ) ) );
+				DECL_MAIN( Vec4 cam_up = vec4_cross( cam_forward, cam_right ) );
 
 
 				SS();
@@ -154,8 +154,8 @@ namespace play_rendering_pipeline
 				SS();
 
 
-				DECLARATION_MAIN( Vec4 cam_vec4( 0, 0, 10, 1 ) );
-				PROCESS_MAIN( cam_vec4 = cam_mat4 * cam_vec4 );
+				DECL_MAIN( Vec4 cam_vec4( 0, 0, 10, 1 ) );
+				PROC_MAIN( cam_vec4 = cam_mat4 * cam_vec4 );
 
 				LF();
 
@@ -193,12 +193,12 @@ namespace play_rendering_pipeline
 
 			LS();
 
-			DECLARATION_MAIN( const Vec4 init_eye( 0, 0, 10, 1 ) );
-			DECLARATION_MAIN( const Vec4 init_center( 10, 0, 0, 1 ) );
-			DECLARATION_MAIN( const Vec4 init_up( 0, 1, 0, 1 ) );
-			DECLARATION_MAIN( Vec4 cam_forward = vec4_normalize( init_eye - init_center ) );
-			DECLARATION_MAIN( Vec4 cam_right = vec4_normalize( vec4_cross( init_up, cam_forward ) ) );
-			DECLARATION_MAIN( Vec4 cam_up = vec4_cross( cam_forward, cam_right ) );
+			DECL_MAIN( const Vec4 init_eye( 0, 0, 10, 1 ) );
+			DECL_MAIN( const Vec4 init_center( 10, 0, 0, 1 ) );
+			DECL_MAIN( const Vec4 init_up( 0, 1, 0, 1 ) );
+			DECL_MAIN( Vec4 cam_forward = vec4_normalize( init_eye - init_center ) );
+			DECL_MAIN( Vec4 cam_right = vec4_normalize( vec4_cross( init_up, cam_forward ) ) );
+			DECL_MAIN( Vec4 cam_up = vec4_cross( cam_forward, cam_right ) );
 
 			LS();
 
@@ -301,18 +301,18 @@ namespace play_rendering_pipeline
 
 			LS();
 
-			DECLARATION_MAIN( const int viewport_w = 400 );
-			DECLARATION_MAIN( const int viewport_h = 300 );
+			DECL_MAIN( const int viewport_w = 400 );
+			DECL_MAIN( const int viewport_h = 300 );
 
 			LF();
 
 			OUTPUT_SUBJECT( "left = 0, bottom = 0 으로 설정하면     |     0, 0, 0 좌표는 viewport 왼쪽 하단 끝 -1, -1 으로 배치된다." );
-			DECLARATION_MAIN( const float left = -viewport_w / 2 );
-			DECLARATION_MAIN( const float right = viewport_w / 2 );
-			DECLARATION_MAIN( const float bottom = -viewport_h / 2 );
-			DECLARATION_MAIN( const float top = viewport_h / 2 );
-			DECLARATION_MAIN( const float near_plane = 0.1f ); // 가까운 절단면
-			DECLARATION_MAIN( const float far_plane = 100.f ); // 먼 절단면
+			DECL_MAIN( const float left = -viewport_w / 2 );
+			DECL_MAIN( const float right = viewport_w / 2 );
+			DECL_MAIN( const float bottom = -viewport_h / 2 );
+			DECL_MAIN( const float top = viewport_h / 2 );
+			DECL_MAIN( const float near_plane = 0.1f ); // 가까운 절단면
+			DECL_MAIN( const float far_plane = 100.f ); // 먼 절단면
 
 			LS();
 
@@ -387,18 +387,18 @@ namespace play_rendering_pipeline
 
 			LS();
 
-			DECLARATION_MAIN( const int viewport_w = 400 );
-			DECLARATION_MAIN( const int viewport_h = 300 );
+			DECL_MAIN( const int viewport_w = 400 );
+			DECL_MAIN( const int viewport_h = 300 );
 
 			LF();
 
 			OUTPUT_SUBJECT( "left = 0, bottom = 0 으로 설정하면     |     0, 0, 0 좌표는 viewport 왼쪽 하단 끝 -1, -1 으로 배치된다." );
-			DECLARATION_MAIN( const float left = -viewport_w / 2 );
-			DECLARATION_MAIN( const float right = viewport_w / 2 );
-			DECLARATION_MAIN( const float bottom = -viewport_h / 2 );
-			DECLARATION_MAIN( const float top = viewport_h / 2 );
-			DECLARATION_MAIN( const float near_plane = 0.1f ); // 가까운 절단면
-			DECLARATION_MAIN( const float far_plane = 100.f ); // 먼 절단면
+			DECL_MAIN( const float left = -viewport_w / 2 );
+			DECL_MAIN( const float right = viewport_w / 2 );
+			DECL_MAIN( const float bottom = -viewport_h / 2 );
+			DECL_MAIN( const float top = viewport_h / 2 );
+			DECL_MAIN( const float near_plane = 0.1f ); // 가까운 절단면
+			DECL_MAIN( const float far_plane = 100.f ); // 먼 절단면
 
 			LS();
 
@@ -474,14 +474,14 @@ namespace play_rendering_pipeline
 
 			LS();
 
-			DECLARATION_MAIN( const int viewport_w = 400 );
-			DECLARATION_MAIN( const int viewport_h = 300 );
-			DECLARATION_MAIN( const float l = -viewport_w / 2 );
-			DECLARATION_MAIN( const float r = viewport_w / 2 );
-			DECLARATION_MAIN( const float b = -viewport_h / 2 );
-			DECLARATION_MAIN( const float t = viewport_h / 2 );
-			DECLARATION_MAIN( const float near = 10.f );
-			DECLARATION_MAIN( const float far = 100.f );
+			DECL_MAIN( const int viewport_w = 400 );
+			DECL_MAIN( const int viewport_h = 300 );
+			DECL_MAIN( const float l = -viewport_w / 2 );
+			DECL_MAIN( const float r = viewport_w / 2 );
+			DECL_MAIN( const float b = -viewport_h / 2 );
+			DECL_MAIN( const float t = viewport_h / 2 );
+			DECL_MAIN( const float near = 10.f );
+			DECL_MAIN( const float far = 100.f );
 
 			LS();
 
@@ -509,9 +509,9 @@ namespace play_rendering_pipeline
 
 
 				{
-					DECLARATION_MAIN( auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
+					DECL_MAIN( auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
 					OUTPUT_VALUE( v );
-					PROCESS_MAIN( v /= v.w );
+					PROC_MAIN( v /= v.w );
 					OUTPUT_VALUE( v );
 					EXPECT_EP_EQ( 0.f, v.x );
 					EXPECT_EP_EQ( 0.f, v.y );
@@ -551,14 +551,14 @@ namespace play_rendering_pipeline
 
 			LS();
 
-			DECLARATION_MAIN( const int viewport_w = 400 );
-			DECLARATION_MAIN( const int viewport_h = 300 );
-			DECLARATION_MAIN( const float l = -viewport_w / 2 );
-			DECLARATION_MAIN( const float r = viewport_w / 2 );
-			DECLARATION_MAIN( const float b = -viewport_h / 2 );
-			DECLARATION_MAIN( const float t = viewport_h / 2 );
-			DECLARATION_MAIN( const float near = 10.f );
-			DECLARATION_MAIN( const float far = 100.f );
+			DECL_MAIN( const int viewport_w = 400 );
+			DECL_MAIN( const int viewport_h = 300 );
+			DECL_MAIN( const float l = -viewport_w / 2 );
+			DECL_MAIN( const float r = viewport_w / 2 );
+			DECL_MAIN( const float b = -viewport_h / 2 );
+			DECL_MAIN( const float t = viewport_h / 2 );
+			DECL_MAIN( const float near = 10.f );
+			DECL_MAIN( const float far = 100.f );
 
 			LS();
 
@@ -586,9 +586,9 @@ namespace play_rendering_pipeline
 
 
 				{
-					DECLARATION_MAIN( auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
+					DECL_MAIN( auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
 					OUTPUT_VALUE( v );
-					PROCESS_MAIN( v /= v.w );
+					PROC_MAIN( v /= v.w );
 					OUTPUT_VALUE( v );
 					EXPECT_EP_EQ( 0.f, v.x );
 					EXPECT_EP_EQ( 0.f, v.y );
@@ -624,12 +624,12 @@ namespace play_rendering_pipeline
 
 			LS();
 
-			DECLARATION_MAIN( const int viewport_w = 400 );
-			DECLARATION_MAIN( const int viewport_h = 200 );
-			DECLARATION_MAIN( const float fovY = Deg2Rad( 90.f ) );
-			DECLARATION_MAIN( const float aspect = viewport_w / viewport_h );
-			DECLARATION_MAIN( const float near = 0.1f );
-			DECLARATION_MAIN( const float far = 100.f );
+			DECL_MAIN( const int viewport_w = 400 );
+			DECL_MAIN( const int viewport_h = 200 );
+			DECL_MAIN( const float fovY = Deg2Rad( 90.f ) );
+			DECL_MAIN( const float aspect = viewport_w / viewport_h );
+			DECL_MAIN( const float near = 0.1f );
+			DECL_MAIN( const float far = 100.f );
 
 			LF();
 
@@ -639,44 +639,44 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				DECLARATION_MAIN( const float top = near * std::tan( fovY / 2 ) );
+				DECL_MAIN( const float top = near * std::tan( fovY / 2 ) );
 				OUTPUT_VALUE( top );
 				
 				LF();
 
-				DECLARATION_MAIN( const float bottom = -top );
+				DECL_MAIN( const float bottom = -top );
 				OUTPUT_VALUE( bottom );
 
 				LF();
 
-				DECLARATION_MAIN( const float right = top * aspect );
+				DECL_MAIN( const float right = top * aspect );
 				OUTPUT_VALUE( right );
 
 				LF();
 
-				DECLARATION_MAIN( const float left = -right );
+				DECL_MAIN( const float left = -right );
 				OUTPUT_VALUE( left );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( const float top = far * std::tan( fovY / 2 ) );
+				DECL_MAIN( const float top = far * std::tan( fovY / 2 ) );
 				OUTPUT_VALUE( top );
 
 				LF();
 
-				DECLARATION_MAIN( const float bottom = -top );
+				DECL_MAIN( const float bottom = -top );
 				OUTPUT_VALUE( bottom );
 
 				LF();
 
-				DECLARATION_MAIN( const float right = top * aspect );
+				DECL_MAIN( const float right = top * aspect );
 				OUTPUT_VALUE( right );
 
 				LF();
 
-				DECLARATION_MAIN( const float left = -right );
+				DECL_MAIN( const float left = -right );
 				OUTPUT_VALUE( left );
 			}
 
@@ -745,9 +745,9 @@ namespace play_rendering_pipeline
 
 
 				{
-					DECLARATION_MAIN( auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
+					DECL_MAIN( auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
 					OUTPUT_VALUE( v );
-					PROCESS_MAIN( v /= v.w );
+					PROC_MAIN( v /= v.w );
 					OUTPUT_VALUE( v );
 					EXPECT_EP_EQ( 0.f, v.x );
 					EXPECT_EP_EQ( 0.f, v.y );
@@ -820,9 +820,9 @@ namespace play_rendering_pipeline
 
 
 				{
-					DECLARATION_MAIN( auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
+					DECL_MAIN( auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
 					OUTPUT_VALUE( v );
-					PROCESS_MAIN( v /= v.w );
+					PROC_MAIN( v /= v.w );
 					OUTPUT_VALUE( v );
 					EXPECT_EP_EQ( 0.f, v.x );
 					EXPECT_EP_EQ( 0.f, v.y );
@@ -882,7 +882,7 @@ namespace play_rendering_pipeline
 
 				{
 					OUTPUT_SUBJECT( "가운데" );
-					DECLARATION_MAIN( const auto v = viewport_mat4 * Vec4( 0, 0, 0, 1 ) );
+					DECL_MAIN( const auto v = viewport_mat4 * Vec4( 0, 0, 0, 1 ) );
 					EXPECT_EP_EQ( 200.f, v.x );
 					EXPECT_EP_EQ( 150.f, v.y );
 				}
@@ -891,7 +891,7 @@ namespace play_rendering_pipeline
 
 				{
 					OUTPUT_SUBJECT( "왼 + 위" );
-					DECLARATION_MAIN( const auto v = viewport_mat4 * Vec4( 1, 1, 0, 1 ) );
+					DECL_MAIN( const auto v = viewport_mat4 * Vec4( 1, 1, 0, 1 ) );
 					EXPECT_EP_EQ( 400.f, v.x );
 					EXPECT_EP_EQ( 300.f, v.y );
 				}
@@ -900,7 +900,7 @@ namespace play_rendering_pipeline
 
 				{
 					OUTPUT_SUBJECT( "0, 0" );
-					DECLARATION_MAIN( const auto v = viewport_mat4 * Vec4( -1, -1, 0, 1 ) );
+					DECL_MAIN( const auto v = viewport_mat4 * Vec4( -1, -1, 0, 1 ) );
 					EXPECT_EP_EQ( 0.f, v.x );
 					EXPECT_EP_EQ( 0.f, v.y );
 				}
@@ -975,7 +975,7 @@ namespace play_rendering_pipeline
 
 				{
 					OUTPUT_SUBJECT( "가운데" );
-					DECLARATION_MAIN( const auto v = viewport_mat4 * Vec4( 0, 0, 0, 1 ) );
+					DECL_MAIN( const auto v = viewport_mat4 * Vec4( 0, 0, 0, 1 ) );
 					EXPECT_EP_EQ( 200.f, v.x );
 					EXPECT_EP_EQ( 150.f, v.y );
 				}
@@ -984,7 +984,7 @@ namespace play_rendering_pipeline
 
 				{
 					OUTPUT_SUBJECT( "왼 + 위" );
-					DECLARATION_MAIN( const auto v = viewport_mat4 * Vec4( 1, 1, 0, 1 ) );
+					DECL_MAIN( const auto v = viewport_mat4 * Vec4( 1, 1, 0, 1 ) );
 					EXPECT_EP_EQ( 400.f, v.x );
 					EXPECT_EP_EQ( 300.f, v.y );
 				}
@@ -993,7 +993,7 @@ namespace play_rendering_pipeline
 
 				{
 					OUTPUT_SUBJECT( "0, 0" );
-					DECLARATION_MAIN( const auto v = viewport_mat4 * Vec4( -1, -1, 0, 1 ) );
+					DECL_MAIN( const auto v = viewport_mat4 * Vec4( -1, -1, 0, 1 ) );
 					EXPECT_EP_EQ( 0.f, v.x );
 					EXPECT_EP_EQ( 0.f, v.y );
 				}
@@ -1036,13 +1036,13 @@ namespace play_rendering_pipeline
 		{
 			LS();
 
-			DECLARATION_MAIN( const Vec4 init_eye( 0, 0, 10, 1 ) );
-			DECLARATION_MAIN( const Vec4 init_center( 10, 0, 0, 1 ) );
-			DECLARATION_MAIN( const Vec4 init_up( 0, 1, 0, 1 ) );
+			DECL_MAIN( const Vec4 init_eye( 0, 0, 10, 1 ) );
+			DECL_MAIN( const Vec4 init_center( 10, 0, 0, 1 ) );
+			DECL_MAIN( const Vec4 init_up( 0, 1, 0, 1 ) );
 
 			LS();
 
-			DECLARATION_MAIN( Vec4 p = Vec4( 0, 0, 0, 1 ) );
+			DECL_MAIN( Vec4 p = Vec4( 0, 0, 0, 1 ) );
 
 			LS();
 
@@ -1062,16 +1062,16 @@ namespace play_rendering_pipeline
 
 				LF();
 
-				PROCESS_MAIN( p = view_mat4 * p );
+				PROC_MAIN( p = view_mat4 * p );
 				OUTPUT_VALUE( p );
 			}
 
 			LS();
 
-			DECLARATION_MAIN( const float viewport_w = 400 );
-			DECLARATION_MAIN( const float viewport_h = 300 );
-			DECLARATION_MAIN( const float near = 1.f );
-			DECLARATION_MAIN( const float far = 100.f );
+			DECL_MAIN( const float viewport_w = 400 );
+			DECL_MAIN( const float viewport_h = 300 );
+			DECL_MAIN( const float near = 1.f );
+			DECL_MAIN( const float far = 100.f );
 
 			LS();
 
@@ -1092,16 +1092,16 @@ namespace play_rendering_pipeline
 
 				LF();
 
-				PROCESS_MAIN( p = projection_mat4 * p );
+				PROC_MAIN( p = projection_mat4 * p );
 				OUTPUT_VALUE( p );
-				PROCESS_MAIN( p /= p.w );
+				PROC_MAIN( p /= p.w );
 				OUTPUT_VALUE( p );
 			}
 
 			LS();
 
-			DECLARATION_MAIN( const float viewport_near = 0.f );
-			DECLARATION_MAIN( const float viewport_far = 1.f );
+			DECL_MAIN( const float viewport_near = 0.f );
+			DECL_MAIN( const float viewport_far = 1.f );
 
 			LS();
 
@@ -1118,7 +1118,7 @@ namespace play_rendering_pipeline
 
 				LF();
 
-				PROCESS_MAIN( p = viewport_mat4 * p );
+				PROC_MAIN( p = viewport_mat4 * p );
 				OUTPUT_VALUE( p );
 			}
 
@@ -1157,8 +1157,8 @@ namespace play_rendering_pipeline
 				const float right = viewport_w / 2;
 				const float bottom = -viewport_h / 2;
 				const float top = viewport_h / 2;
-				DECLARATION_MAIN( const float near = 0.1f ); // 가까운 절단면
-				DECLARATION_MAIN( const float far = 100.f ); // 먼 절단면
+				DECL_MAIN( const float near = 0.1f ); // 가까운 절단면
+				DECL_MAIN( const float far = 100.f ); // 먼 절단면
 
 				const Mat44 projection_mat4(
 					  2 / ( right - left )  , 0.f                   , 0.f                 , -( right + left ) / ( right - left )
@@ -1176,49 +1176,49 @@ namespace play_rendering_pipeline
 
 
 				{
-					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, near, 1 ) );
+					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, near, 1 ) );
 					OUTPUT_VALUE( ( v / v.w ) );
 				}
 
 				LF();
 
 				{
-					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.3f, 1 ) );
+					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.3f, 1 ) );
 					OUTPUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
-					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.5f, 1 ) );
+					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.5f, 1 ) );
 					OUTPUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
-					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.8f, 1 ) );
+					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.8f, 1 ) );
 					OUTPUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
-					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.9f, 1 ) );
+					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.9f, 1 ) );
 					OUTPUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
-					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.95f, 1 ) );
+					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.95f, 1 ) );
 					OUTPUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
-					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far, 1 ) );
+					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far, 1 ) );
 					OUTPUT_VALUE( v / v.w );
 				}
 			}
@@ -1256,8 +1256,8 @@ namespace play_rendering_pipeline
 				const float viewport_h = 300;
 				const float fovY = Deg2Rad( 90.f );
 				const float aspect = viewport_w / viewport_h;
-				DECLARATION_MAIN( const float near = 10.f );
-				DECLARATION_MAIN( const float far = 100.f );
+				DECL_MAIN( const float near = 10.f );
+				DECL_MAIN( const float far = 100.f );
 
 				const float tanHalfFovY = std::tan( fovY / 2 );
 
@@ -1278,49 +1278,49 @@ namespace play_rendering_pipeline
 				SS();
 
 				{
-					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -near, 1 ) );
+					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -near, 1 ) );
 					OUTPUT_VALUE( ( v / v.w ) );
 				}
 
 				LF();
 
 				{
-					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.3f, 1 ) );
+					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.3f, 1 ) );
 					OUTPUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
-					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.5f, 1 ) );
+					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.5f, 1 ) );
 					OUTPUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
-					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.8f, 1 ) );
+					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.8f, 1 ) );
 					OUTPUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
-					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.9f, 1 ) );
+					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.9f, 1 ) );
 					OUTPUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
-					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.95f, 1 ) );
+					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.95f, 1 ) );
 					OUTPUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
-					DECLARATION_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
+					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
 					OUTPUT_VALUE( v / v.w );
 				}
 			}

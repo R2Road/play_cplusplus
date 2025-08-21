@@ -5,8 +5,8 @@
 #include <memory>
 #include <utility>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace std_memory_unique_ptr_test
 {
@@ -24,20 +24,20 @@ namespace std_memory_unique_ptr_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::unique_ptr<int> up( new int( 3 ) ) );
+				DECL_MAIN( std::unique_ptr<int> up( new int( 3 ) ) );
 				OUTPUT_VALUE( *up );
 
 				LF();
 
 				EXPECT_NE( nullptr, up );
-				PROCESS_MAIN( up.reset() );
+				PROC_MAIN( up.reset() );
 				EXPECT_EQ( nullptr, up );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( std::unique_ptr<int> up1( new int( 3 ) ) );
+				DECL_MAIN( std::unique_ptr<int> up1( new int( 3 ) ) );
 
 				LF();
 
@@ -47,7 +47,7 @@ namespace std_memory_unique_ptr_test
 
 				LF();
 
-				DECLARATION_MAIN( auto up4 = std::move( up1 ) );
+				DECL_MAIN( auto up4 = std::move( up1 ) );
 				EXPECT_EQ( nullptr, up1 );
 				EXPECT_NE( nullptr, up4 );
 				OUTPUT_COMMENT( "move °¡´É" );
@@ -60,8 +60,8 @@ namespace std_memory_unique_ptr_test
 
 				LF();
 
-				DECLARATION_MAIN( auto up1( std::make_unique<int>( 3 ) ) );
-				DECLARATION_MAIN( std::unique_ptr<int> up2( up1.release() ) );
+				DECL_MAIN( auto up1( std::make_unique<int>( 3 ) ) );
+				DECL_MAIN( std::unique_ptr<int> up2( up1.release() ) );
 
 				LF();
 
@@ -72,7 +72,7 @@ namespace std_memory_unique_ptr_test
 			LS();
 
 			{
-				DECLARATION_MAIN( auto up( std::make_unique<int>( 3 ) ) );
+				DECL_MAIN( auto up( std::make_unique<int>( 3 ) ) );
 				OUTPUT_VALUE( *up );
 			}
 
@@ -98,14 +98,14 @@ namespace std_memory_unique_ptr_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::unique_ptr<int> up );
+				DECL_MAIN( std::unique_ptr<int> up );
 				OUTPUT_VALUE( sizeof( up ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( std::unique_ptr<int> up( new int( 3 ) ) );
+				DECL_MAIN( std::unique_ptr<int> up( new int( 3 ) ) );
 				OUTPUT_VALUE( sizeof( up ) );
 			}
 
@@ -131,14 +131,14 @@ namespace std_memory_unique_ptr_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::unique_ptr<int> up );
+				DECL_MAIN( std::unique_ptr<int> up );
 				OUTPUT_BINARIES( (uint8_t*)&up, sizeof( up ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( std::unique_ptr<int> up( new int( 3 ) ) );
+				DECL_MAIN( std::unique_ptr<int> up( new int( 3 ) ) );
 				OUTPUT_BINARY( up.get() );
 				OUTPUT_BINARIES( (uint8_t*)&up, sizeof( up ) );
 			}
@@ -168,7 +168,7 @@ namespace std_memory_unique_ptr_test
 
 			LS();
 
-			DECLARATION_MAIN( struct Deleter { void operator()( int* p ) { delete p; puts( "Deleter::operator()" ); } } );
+			DECL_MAIN( struct Deleter { void operator()( int* p ) { delete p; puts( "Deleter::operator()" ); } } );
 
 			LS();
 
@@ -178,12 +178,12 @@ namespace std_memory_unique_ptr_test
 
 				LF();
 
-				DECLARATION_MAIN( U up( new int( 3 ) ) );
+				DECL_MAIN( U up( new int( 3 ) ) );
 				OUTPUT_VALUE( *up );
 
 				LF();
 
-				PROCESS_MAIN( up.reset() );
+				PROC_MAIN( up.reset() );
 			}
 
 			LS();
@@ -212,12 +212,12 @@ namespace std_memory_unique_ptr_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std_memory_unique_ptr_test_helper_template_deleter::U<int> up( new int( 3 ) ) );
+				DECL_MAIN( std_memory_unique_ptr_test_helper_template_deleter::U<int> up( new int( 3 ) ) );
 				OUTPUT_VALUE( *up );
 
 				LF();
 
-				PROCESS_MAIN( up.reset() );
+				PROC_MAIN( up.reset() );
 			}
 
 			LS();
@@ -250,7 +250,7 @@ namespace std_memory_unique_ptr_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std_memory_unique_ptr_test_helper_forward_declaration::Processor p );
+				DECL_MAIN( std_memory_unique_ptr_test_helper_forward_declaration::Processor p );
 			}
 
 			LS();

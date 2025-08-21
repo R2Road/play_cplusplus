@@ -2,8 +2,8 @@
 
 #include <cstdlib>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace std_system_test
 {
@@ -21,7 +21,7 @@ namespace std_system_test
 			LS();
 
 			{
-				PROCESS_MAIN( std::system( "dir /w" ) );
+				PROC_MAIN( std::system( "dir /w" ) );
 			}
 
 			LS();

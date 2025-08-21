@@ -9,8 +9,8 @@
 #include <numeric>
 #include <string>
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace cpp_class_private_inheritance_test
 {
@@ -32,22 +32,22 @@ namespace cpp_class_private_inheritance_test
 			LS();
 
 			{
-				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_virtual_interface::VP_Private t );
-				PROCESS_MAIN( t.DoProcess() );
+				DECL_MAIN( cpp_class_private_inheritance_test_helper_virtual_interface::VP_Private t );
+				PROC_MAIN( t.DoProcess() );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_virtual_interface::VP_Protected t );
-				PROCESS_MAIN( t.DoProcess() );
+				DECL_MAIN( cpp_class_private_inheritance_test_helper_virtual_interface::VP_Protected t );
+				PROC_MAIN( t.DoProcess() );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_virtual_interface::VP_Public t );
-				PROCESS_MAIN( t.DoProcess() );
+				DECL_MAIN( cpp_class_private_inheritance_test_helper_virtual_interface::VP_Public t );
+				PROC_MAIN( t.DoProcess() );
 			}
 
 			LS();
@@ -76,22 +76,22 @@ namespace cpp_class_private_inheritance_test
 			LS();
 
 			{
-				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_pure_virtual_interface::PVP_Private t );
-				PROCESS_MAIN( t.DoProcess() );
+				DECL_MAIN( cpp_class_private_inheritance_test_helper_pure_virtual_interface::PVP_Private t );
+				PROC_MAIN( t.DoProcess() );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_pure_virtual_interface::PVP_Protected t );
-				PROCESS_MAIN( t.DoProcess() );
+				DECL_MAIN( cpp_class_private_inheritance_test_helper_pure_virtual_interface::PVP_Protected t );
+				PROC_MAIN( t.DoProcess() );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_pure_virtual_interface::PVP_Public t );
-				PROCESS_MAIN( t.DoProcess() );
+				DECL_MAIN( cpp_class_private_inheritance_test_helper_pure_virtual_interface::PVP_Public t );
+				PROC_MAIN( t.DoProcess() );
 			}
 
 			LS();
@@ -120,9 +120,9 @@ namespace cpp_class_private_inheritance_test
 			LS();
 
 			{
-				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_demo1::T t );
-				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_demo1::iPublic* pt = &t );
-				PROCESS_MAIN( pt->Do() );
+				DECL_MAIN( cpp_class_private_inheritance_test_helper_demo1::T t );
+				DECL_MAIN( cpp_class_private_inheritance_test_helper_demo1::iPublic* pt = &t );
+				PROC_MAIN( pt->Do() );
 			}
 
 			LS();
@@ -146,18 +146,18 @@ namespace cpp_class_private_inheritance_test
 		{
 			LS();
 
-			DECLARATION_MAIN( class iPrivate
+			DECL_MAIN( class iPrivate
 			{
 			public:
 				void Do() {}
 				int i = 10;
 			} );
 
-			DECLARATION_MAIN( class T1 : private iPrivate
+			DECL_MAIN( class T1 : private iPrivate
 			{
 			} );
 
-			DECLARATION_MAIN( class T2 : private iPrivate
+			DECL_MAIN( class T2 : private iPrivate
 			{
 			public:
 				using iPrivate::Do;
@@ -176,7 +176,7 @@ namespace cpp_class_private_inheritance_test
 			LS();
 
 			{
-				PROCESS_MAIN( T2().Do() );
+				PROC_MAIN( T2().Do() );
 				OUTPUT_VALUE( T2().i );
 			}
 
@@ -215,7 +215,7 @@ namespace cpp_class_private_inheritance_test
 
 				LF();
 
-				DECLARATION_MAIN( cpp_class_private_inheritance_test_helper_ienum::T t );
+				DECL_MAIN( cpp_class_private_inheritance_test_helper_ienum::T t );
 				OUTPUT_VALUE( t.Do() );
 			}
 
@@ -249,14 +249,14 @@ namespace cpp_class_private_inheritance_test
 			LS();
 
 			{
-				DECLARATION_MAIN( cpp_class_test_helper_nvi::D1 d1 );
+				DECL_MAIN( cpp_class_test_helper_nvi::D1 d1 );
 				OUTPUT_VALUE( d1.Do() );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( cpp_class_test_helper_nvi::D2 d2 );
+				DECL_MAIN( cpp_class_test_helper_nvi::D2 d2 );
 				OUTPUT_VALUE( d2.Do() );
 			}
 

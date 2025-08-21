@@ -2,8 +2,8 @@
 
 #include <iomanip> // Manipulator : 조작자, 조정자
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace std_cin_test
 {
@@ -21,8 +21,8 @@ namespace std_cin_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::string s );
-				PROCESS_MAIN( std::cin >> std::setw( 10 ) >> s );
+				DECL_MAIN( std::string s );
+				PROC_MAIN( std::cin >> std::setw( 10 ) >> s );
 
 				LF();
 

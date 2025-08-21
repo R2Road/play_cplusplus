@@ -1,6 +1,6 @@
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_ColorModifier.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_color_modifier.hpp"
 
 template<typename T>
 class ST
@@ -24,7 +24,7 @@ public:
 
 		LF();
 
-		DECLARATION_MAIN( auto offset = int64_t( (T*)1 ) - int64_t( ( ST<T>* )( T* )1 ) );
+		DECL_MAIN( auto offset = int64_t( (T*)1 ) - int64_t( ( ST<T>* )( T* )1 ) );
 		OUTPUT_VALUE( this + offset );
 
 		std::cout << clm( r2tm::eColor::FG_Green );

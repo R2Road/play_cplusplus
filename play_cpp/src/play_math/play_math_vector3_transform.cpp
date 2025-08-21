@@ -4,7 +4,7 @@
 #include "play_math___helper_matrix33.h"
 using namespace play_math;
 
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace play_math_vector3_transform
 {

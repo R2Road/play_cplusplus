@@ -5,8 +5,8 @@
 #include <thread>
 #include <type_traits>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace std_atomic_test
 {
@@ -34,7 +34,7 @@ namespace std_atomic_test
 				LF();
 
 				{
-					DECLARATION_MAIN( std::atomic<bool> a );
+					DECL_MAIN( std::atomic<bool> a );
 					OUTPUT_SIZE( a );
 					OUTPUT_BINARIES( &a, 1 );
 				}
@@ -42,7 +42,7 @@ namespace std_atomic_test
 				LF();
 
 				{
-					DECLARATION_MAIN( std::atomic<char> a );
+					DECL_MAIN( std::atomic<char> a );
 					OUTPUT_SIZE( a );
 					OUTPUT_BINARIES( &a, 1 );
 				}
@@ -50,7 +50,7 @@ namespace std_atomic_test
 				LF();
 
 				{
-					DECLARATION_MAIN( std::atomic<int> a );
+					DECL_MAIN( std::atomic<int> a );
 					OUTPUT_SIZE( a );
 					OUTPUT_BINARIES( &a, 1 );
 				}
@@ -64,7 +64,7 @@ namespace std_atomic_test
 				LF();
 
 				{
-					DECLARATION_MAIN( std::atomic<int64_t> a( 7 ) );
+					DECL_MAIN( std::atomic<int64_t> a( 7 ) );
 					OUTPUT_SIZE( a );
 					OUTPUT_BINARIES( &a, 1 );
 				}
@@ -72,7 +72,7 @@ namespace std_atomic_test
 				LF();
 
 				{
-					DECLARATION_MAIN( std::atomic<void*> a = nullptr );
+					DECL_MAIN( std::atomic<void*> a = nullptr );
 					OUTPUT_SIZE( a );
 					OUTPUT_BINARIES( &a, 1 );
 				}
@@ -117,7 +117,7 @@ namespace std_atomic_test
 
 				LF();
 
-				DECLARATION_MAIN( std::atomic<S> a );
+				DECL_MAIN( std::atomic<S> a );
 				OUTPUT_SIZE( a );
 				OUTPUT_BINARIES( &a, 1 );
 			}
@@ -227,7 +227,7 @@ namespace std_atomic_test
 		{
 			LS();
 
-			DECLARATION_MAIN( int n = 0 );
+			DECL_MAIN( int n = 0 );
 
 			LS();
 
@@ -248,11 +248,11 @@ namespace std_atomic_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::thread test_thread_1( l, 1, 100000 ) );
-				DECLARATION_MAIN( std::thread test_thread_2( l, 2, 100000 ) );
-				DECLARATION_MAIN( std::thread test_thread_3( l, 3, 100000 ) );
-				DECLARATION_MAIN( std::thread test_thread_4( l, 4, 100000 ) );
-				DECLARATION_MAIN( std::thread test_thread_5( l, 5, 100000 ) );
+				DECL_MAIN( std::thread test_thread_1( l, 1, 100000 ) );
+				DECL_MAIN( std::thread test_thread_2( l, 2, 100000 ) );
+				DECL_MAIN( std::thread test_thread_3( l, 3, 100000 ) );
+				DECL_MAIN( std::thread test_thread_4( l, 4, 100000 ) );
+				DECL_MAIN( std::thread test_thread_5( l, 5, 100000 ) );
 				test_thread_1.join();
 				test_thread_2.join();
 				test_thread_3.join();
@@ -284,7 +284,7 @@ namespace std_atomic_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::atomic_int32_t n = 0 );
+			DECL_MAIN( std::atomic_int32_t n = 0 );
 
 			LS();
 

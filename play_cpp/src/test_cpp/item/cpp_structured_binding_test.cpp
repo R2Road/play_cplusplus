@@ -4,8 +4,8 @@
 #include <tuple>
 #include <utility> // pair
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace
 {
@@ -39,8 +39,8 @@ namespace cpp_structured_binding_test
 
 				LF();
 
-				DECLARATION_MAIN( int arr[3] );
-				PROCESS_MAIN( arr[0] = 1; arr[1] = 2; arr[2] = 3; );
+				DECL_MAIN( int arr[3] );
+				PROC_MAIN( arr[0] = 1; arr[1] = 2; arr[2] = 3; );
 				auto[a, b, c] = arr;
 				std::cout << "auto[a, b, c] = arr;" << r2tm::linefeed;
 
@@ -77,7 +77,7 @@ namespace cpp_structured_binding_test
 
 				LF();
 
-				DECLARATION_MAIN( struct T
+				DECL_MAIN( struct T
 				{
 					int i = 1;
 					char c = 'a';
@@ -86,7 +86,7 @@ namespace cpp_structured_binding_test
 
 				LF();
 
-				DECLARATION_MAIN( T t );
+				DECL_MAIN( T t );
 
 				auto[i, c, f] = t;
 				std::cout << "auto[i, c, f] = t;" << r2tm::linefeed;
@@ -105,7 +105,7 @@ namespace cpp_structured_binding_test
 
 				LF();
 
-				DECLARATION_MAIN( auto temp_pair = std::make_pair( 2, 'b' ) );
+				DECL_MAIN( auto temp_pair = std::make_pair( 2, 'b' ) );
 
 				auto[a, b] = temp_pair;
 				std::cout << "auto[a, b] = temp_pair;" << r2tm::linefeed;
@@ -123,7 +123,7 @@ namespace cpp_structured_binding_test
 
 				LF();
 
-				DECLARATION_MAIN( auto temp_tuple = std::make_tuple( 3, 'c', 6.28f ) );
+				DECL_MAIN( auto temp_tuple = std::make_tuple( 3, 'c', 6.28f ) );
 
 				auto[a, b, c] = temp_tuple;
 				std::cout << "auto[a, b, c] = temp_tuple;" << r2tm::linefeed;

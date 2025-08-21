@@ -4,7 +4,7 @@
 #include "play_math___helper_matrix22.h"
 using namespace play_math;
 
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace play_math_vector2_transform
 {
@@ -127,7 +127,7 @@ namespace play_math_vector2_transform
 			LS();
 
 			{
-				DECLARATION_MAIN( const Mat22 R = B( Deg2Rad( 90.f ) ) );
+				DECL_MAIN( const Mat22 R = B( Deg2Rad( 90.f ) ) );
 
 				LF();
 
@@ -137,7 +137,7 @@ namespace play_math_vector2_transform
 			LS();
 
 			{
-				DECLARATION_MAIN( const Mat22 R = B( Deg2Rad( 180.f ) ) );
+				DECL_MAIN( const Mat22 R = B( Deg2Rad( 180.f ) ) );
 
 				LF();
 
@@ -146,7 +146,7 @@ namespace play_math_vector2_transform
 
 			LS();
 			{
-				DECLARATION_MAIN( const Mat22 R = B( Deg2Rad( 270.f ) ) );
+				DECL_MAIN( const Mat22 R = B( Deg2Rad( 270.f ) ) );
 
 				LF();
 

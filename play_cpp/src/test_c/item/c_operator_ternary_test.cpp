@@ -1,7 +1,7 @@
 #include "c_operator_ternary_test.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace c_operator_ternary_test
 {
@@ -25,7 +25,7 @@ namespace c_operator_ternary_test
 
 				LF();
 
-				PROCESS_MAIN( ( true ? void_func() : void_func() ) );
+				PROC_MAIN( ( true ? void_func() : void_func() ) );
 			}
 
 			LS();
@@ -55,12 +55,12 @@ namespace c_operator_ternary_test
 			LS();
 
 			{
-				DECLARATION_MAIN( int i = 0 );
-				DECLARATION_MAIN( int j = 0 );
+				DECL_MAIN( int i = 0 );
+				DECL_MAIN( int j = 0 );
 
 				LF();
 
-				PROCESS_MAIN( (
+				PROC_MAIN( (
 					false
 					? ++i, ++j
 					: ++i
@@ -73,7 +73,7 @@ namespace c_operator_ternary_test
 
 				LF();
 
-				PROCESS_MAIN( (
+				PROC_MAIN( (
 					true
 					? ++i, ++j
 					: ++i
@@ -111,12 +111,12 @@ namespace c_operator_ternary_test
 			LS();
 
 			{
-				DECLARATION_MAIN( std::function<void()> Do = []() {} );
+				DECL_MAIN( std::function<void()> Do = []() {} );
 
 				LF();
 
-				PROCESS_MAIN( 1 == 1 ? Do() : void() );
-				PROCESS_MAIN( 1 == 2 ? Do() : void() );
+				PROC_MAIN( 1 == 1 ? Do() : void() );
+				PROC_MAIN( 1 == 2 ? Do() : void() );
 			}
 
 			LS();

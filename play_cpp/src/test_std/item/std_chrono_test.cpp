@@ -4,9 +4,9 @@
 #include <chrono>
 #include <ctime> // time.h : c // time(), clock()
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 namespace std_chrono_test
 {
@@ -31,16 +31,16 @@ namespace std_chrono_test
 
 			LS();
 
-			DECLARATION_SUB( char str[128] );
+			DECL_SUB( char str[128] );
 
 			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Epoch( 시간의 시작점 )" << r2tm::linefeed2;
 
-				DECLARATION_MAIN( const auto sc_default = std::chrono::time_point<std::chrono::system_clock>{} );
-				DECLARATION_MAIN( auto epoch_time = std::chrono::system_clock::to_time_t( sc_default ) );
-				PROCESS_MAIN( ctime_s( str, sizeof( str ), &epoch_time ) );
+				DECL_MAIN( const auto sc_default = std::chrono::time_point<std::chrono::system_clock>{} );
+				DECL_MAIN( auto epoch_time = std::chrono::system_clock::to_time_t( sc_default ) );
+				PROC_MAIN( ctime_s( str, sizeof( str ), &epoch_time ) );
 
 				LF();
 
@@ -77,14 +77,14 @@ namespace std_chrono_test
 
 			LS();
 
-			DECLARATION_MAIN( std::chrono::system_clock::time_point tp = std::chrono::system_clock::now() );
+			DECL_MAIN( std::chrono::system_clock::time_point tp = std::chrono::system_clock::now() );
 
 			LS();
 
 			{
-				DECLARATION_MAIN( char str[128] );
-				DECLARATION_MAIN( auto today_time = std::chrono::system_clock::to_time_t( tp ) );
-				PROCESS_MAIN( ctime_s( str, sizeof( str ), &today_time ) );
+				DECL_MAIN( char str[128] );
+				DECL_MAIN( auto today_time = std::chrono::system_clock::to_time_t( tp ) );
+				PROC_MAIN( ctime_s( str, sizeof( str ), &today_time ) );
 				OUTPUT_VALUE( str );
 			}
 
@@ -142,7 +142,7 @@ namespace std_chrono_test
 
 			LS();
 
-			DECLARATION_MAIN( std::chrono::steady_clock::time_point tp = std::chrono::steady_clock::now() );
+			DECL_MAIN( std::chrono::steady_clock::time_point tp = std::chrono::steady_clock::now() );
 
 			LS();
 
@@ -188,34 +188,34 @@ namespace std_chrono_test
 			LS();
 
 			{
-				DECLARATION_MAIN( const std::chrono::steady_clock::duration d( 30000000 ) );
+				DECL_MAIN( const std::chrono::steady_clock::duration d( 30000000 ) );
 				OUTPUT_VALUE( d.count() );
 			}
 
 			LS();
 
-			DECLARATION_MAIN( const std::chrono::steady_clock::duration d( std::chrono::nanoseconds( 30000000 ) ) );
+			DECL_MAIN( const std::chrono::steady_clock::duration d( std::chrono::nanoseconds( 30000000 ) ) );
 			OUTPUT_VALUE( d.count() );
 
 			LF();
 
 			{
-				DECLARATION_MAIN( const auto nns = std::chrono::duration_cast<std::chrono::nanoseconds>( d ) );
+				DECL_MAIN( const auto nns = std::chrono::duration_cast<std::chrono::nanoseconds>( d ) );
 				OUTPUT_VALUE( nns.count() );
 
 				LF();
 
-				DECLARATION_MAIN( const auto mcs = std::chrono::duration_cast<std::chrono::microseconds>( d ) );
+				DECL_MAIN( const auto mcs = std::chrono::duration_cast<std::chrono::microseconds>( d ) );
 				OUTPUT_VALUE( mcs.count() );
 
 				LF();
 
-				DECLARATION_MAIN( const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>( d ) );
+				DECL_MAIN( const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>( d ) );
 				OUTPUT_VALUE( ms.count() );
 
 				LF();
 
-				DECLARATION_MAIN( const auto sec = std::chrono::duration_cast<std::chrono::seconds>( d ) );
+				DECL_MAIN( const auto sec = std::chrono::duration_cast<std::chrono::seconds>( d ) );
 				OUTPUT_VALUE( sec.count() );
 			}
 

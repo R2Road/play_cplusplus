@@ -2,8 +2,8 @@
 
 #include <string>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace c_union_test
 {
@@ -34,7 +34,7 @@ namespace c_union_test
 
 				LF();
 
-				DECLARATION_MAIN( U u );
+				DECL_MAIN( U u );
 
 				LF();
 
@@ -45,7 +45,7 @@ namespace c_union_test
 			LS();
 
 			{
-				DECLARATION_MAIN( U u );
+				DECL_MAIN( U u );
 
 				LF();
 
@@ -55,7 +55,7 @@ namespace c_union_test
 
 				LF();
 
-				PROCESS_MAIN( u.a = 0 );
+				PROC_MAIN( u.a = 0 );
 				OUTPUT_VALUE( u.a );
 			}
 
@@ -121,7 +121,7 @@ namespace c_union_test
 			LS();
 
 			{
-				PROCESS_MAIN( u.i64 = -1ll );
+				PROC_MAIN( u.i64 = -1ll );
 				OUTPUT_BINARY( u );
 			}
 
@@ -133,14 +133,14 @@ namespace c_union_test
 
 				LF();
 
-				PROCESS_MAIN( u.c = 0 );
+				PROC_MAIN( u.c = 0 );
 				OUTPUT_BINARY( u );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( u.i64 = 255 );
+				PROC_MAIN( u.i64 = 255 );
 				OUTPUT_BINARY( u );
 			}
 
@@ -174,29 +174,29 @@ namespace c_union_test
 
 			LS();
 
-			DECLARATION_MAIN( U u_1 );
-			DECLARATION_MAIN( U u_2 );
+			DECL_MAIN( U u_1 );
+			DECL_MAIN( U u_2 );
 
 			LS();
 
 			{
-				PROCESS_MAIN( u_1.i64 = -1ll );
-				PROCESS_MAIN( u_1.c = 0 );
+				PROC_MAIN( u_1.i64 = -1ll );
+				PROC_MAIN( u_1.c = 0 );
 				OUTPUT_BINARY( u_1 );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( u_2.i64 = 0 );
-				PROCESS_MAIN( u_2.c = -1 );
+				PROC_MAIN( u_2.i64 = 0 );
+				PROC_MAIN( u_2.c = -1 );
 				OUTPUT_BINARY( u_2 );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( u_1 = u_2 );
+				PROC_MAIN( u_1 = u_2 );
 				OUTPUT_BINARY( u_1 );
 			}
 

@@ -1,8 +1,8 @@
 #include "template_specialization_test.h"
 #include "template_specialization_test_helper_basic.hpp"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace template_specialization_test
 {
@@ -24,15 +24,15 @@ namespace template_specialization_test
 			LS();
 
 			{
-				PROCESS_MAIN( TemplateFunc( int( 1 ) ) );
+				PROC_MAIN( TemplateFunc( int( 1 ) ) );
 
 				LF();
 
-				PROCESS_MAIN( TemplateFunc( uint8_t( 1 ) ) );
+				PROC_MAIN( TemplateFunc( uint8_t( 1 ) ) );
 
 				LF();
 
-				PROCESS_MAIN( TemplateFunc( int64_t( 1 ) ) );
+				PROC_MAIN( TemplateFunc( int64_t( 1 ) ) );
 			}
 
 			LS();

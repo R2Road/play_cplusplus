@@ -1,6 +1,6 @@
 #include "ProceduralTerrainGenerationMenu.h"
 
-#include "r2tm/r2tm_MenuProcessor.h"
+#include "r2tm/r2tm_menu_processor.hpp"
 
 #include "test_algorithm/item/procedural_terrain_generation_1_test.h"
 #include "test_algorithm/item/procedural_terrain_generation_2_test.h"

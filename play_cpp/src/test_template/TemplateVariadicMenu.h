@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2tm/r2tm_iMenu.h"
+#include "r2tm/r2tm_interface_menu.hpp"
 
 class TemplateVariadicMenu : public r2tm::iMenu
 {

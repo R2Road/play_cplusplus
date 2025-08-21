@@ -1,8 +1,8 @@
 #include "c_array_test.h"
 
-#include "r2tm/r2tm_ColorModifier.h"
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_color_modifier.hpp"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace c_array_test
 {
@@ -29,7 +29,7 @@ namespace c_array_test
 		{
 			LS();
 
-			DECLARATION_MAIN( const int length = 5 );
+			DECL_MAIN( const int length = 5 );
 
 			LS();
 
@@ -117,9 +117,9 @@ namespace c_array_test
 			LS();
 
 			{
-				DECLARATION_MAIN( const int w = 3 );
-				DECLARATION_MAIN( const int h = 2 );
-				DECLARATION_MAIN( int a[w][h] = {} );
+				DECL_MAIN( const int w = 3 );
+				DECL_MAIN( const int h = 2 );
+				DECL_MAIN( int a[w][h] = {} );
 
 				SS();
 

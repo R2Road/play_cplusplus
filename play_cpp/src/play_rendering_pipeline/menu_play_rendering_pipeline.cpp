@@ -1,6 +1,6 @@
 #include "menu_play_rendering_pipeline.h"
 
-#include "r2tm/r2tm_MenuProcessor.h"
+#include "r2tm/r2tm_menu_processor.hpp"
 
 #include "menu_root.h"
 

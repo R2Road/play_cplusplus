@@ -3,8 +3,8 @@
 #include <stdio.h>
 #include <sys/stat.h>
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace c_file_test
 {
@@ -26,7 +26,7 @@ namespace c_file_test
 
 				LF();
 
-				DECLARATION_MAIN( FILE* fp = nullptr );
+				DECL_MAIN( FILE* fp = nullptr );
 				EXPECT_EQ( 0, fopen_s( &fp, "resources/c_file_test_openandclose_1.txt", "rb" ) );
 
 				SS();
@@ -35,7 +35,7 @@ namespace c_file_test
 
 				LF();
 
-				PROCESS_MAIN( fclose( fp ) );
+				PROC_MAIN( fclose( fp ) );
 
 				SS();
 
@@ -43,7 +43,7 @@ namespace c_file_test
 
 				LF();
 
-				PROCESS_MAIN( fclose( fp ) );
+				PROC_MAIN( fclose( fp ) );
 			}
 
 			LS();
@@ -81,31 +81,31 @@ namespace c_file_test
 
 			LS();
 
-			DECLARATION_MAIN( FILE* fp = nullptr );
+			DECL_MAIN( FILE* fp = nullptr );
 			EXPECT_EQ( 0, fopen_s( &fp, "resources/c_file_test_openandclose_1.txt", "rb" ) );
 
 			LS();
 
 			{
-				PROCESS_MAIN( printf( "%c \n", fgetc( fp ) ) );
+				PROC_MAIN( printf( "%c \n", fgetc( fp ) ) );
 
 				LF();
 
-				PROCESS_MAIN( printf( "%c \n", fgetc( fp ) ) );
+				PROC_MAIN( printf( "%c \n", fgetc( fp ) ) );
 
 				LF();
 
-				PROCESS_MAIN( printf( "%c \n", fgetc( fp ) ) );
+				PROC_MAIN( printf( "%c \n", fgetc( fp ) ) );
 
 				SS();
 
-				PROCESS_MAIN( while( !feof( fp ) ) printf( "%c", fgetc( fp ) ) );
+				PROC_MAIN( while( !feof( fp ) ) printf( "%c", fgetc( fp ) ) );
 				LF();
 			}
 
 			LS();
 
-			PROCESS_MAIN( fclose( fp ) );
+			PROC_MAIN( fclose( fp ) );
 
 			LS();
 
@@ -132,35 +132,35 @@ namespace c_file_test
 
 			LS();
 
-			DECLARATION_MAIN( FILE* fp = nullptr );
+			DECL_MAIN( FILE* fp = nullptr );
 			EXPECT_EQ( 0, fopen_s( &fp, "resources/c_file_test_openandclose_1.txt", "rb" ) );
 
 			LF();
 
-			DECLARATION_MAIN( char temp[256] );
+			DECL_MAIN( char temp[256] );
 
 			LS();
 
 			{
-				PROCESS_MAIN( fgets( temp, sizeof( temp ), fp ); printf( "%s \n", temp ); );
+				PROC_MAIN( fgets( temp, sizeof( temp ), fp ); printf( "%s \n", temp ); );
 
 				LF();
 
-				PROCESS_MAIN( fgets( temp, sizeof( temp ), fp ); printf( "%s \n", temp ); );
+				PROC_MAIN( fgets( temp, sizeof( temp ), fp ); printf( "%s \n", temp ); );
 
 				LF();
 
-				PROCESS_MAIN( fgets( temp, sizeof( temp ), fp ); printf( "%s \n", temp ); );
+				PROC_MAIN( fgets( temp, sizeof( temp ), fp ); printf( "%s \n", temp ); );
 			
 				SS();
 
-				PROCESS_MAIN( while( !feof( fp ) ) { fgets( temp, sizeof( temp ), fp ); printf( "%s", temp ); } );
+				PROC_MAIN( while( !feof( fp ) ) { fgets( temp, sizeof( temp ), fp ); printf( "%s", temp ); } );
 				LF();
 			}
 
 			LS();
 
-			PROCESS_MAIN( fclose( fp ) );
+			PROC_MAIN( fclose( fp ) );
 
 			LS();
 
@@ -191,11 +191,11 @@ namespace c_file_test
 
 			LS();
 
-			DECLARATION_MAIN( int a = 0 );
-			DECLARATION_MAIN( int b = 0 );
-			DECLARATION_MAIN( int last = 0 );
+			DECL_MAIN( int a = 0 );
+			DECL_MAIN( int b = 0 );
+			DECL_MAIN( int last = 0 );
 
-			DECLARATION_MAIN( FILE * fp = nullptr );
+			DECL_MAIN( FILE * fp = nullptr );
 
 			LS();
 
@@ -204,26 +204,26 @@ namespace c_file_test
 			LS();
 
 			{
-				PROCESS_MAIN( fscanf_s( fp, "%d%d %d", &a, &b, &last ); printf( "%d %d    %d \n", a, b, last ); );
+				PROC_MAIN( fscanf_s( fp, "%d%d %d", &a, &b, &last ); printf( "%d %d    %d \n", a, b, last ); );
 
 				LF();
 
-				PROCESS_MAIN( a = 0; b = 0; last = 0 );
-				PROCESS_MAIN( fscanf_s( fp, "%d%d %d", &a, &b, &last ); printf( "%d %d    %d \n", a, b, last ); );
+				PROC_MAIN( a = 0; b = 0; last = 0 );
+				PROC_MAIN( fscanf_s( fp, "%d%d %d", &a, &b, &last ); printf( "%d %d    %d \n", a, b, last ); );
 
 				LF();
 
-				PROCESS_MAIN( a = 0; b = 0; last = 0 );
-				PROCESS_MAIN( fscanf_s( fp, "%d%d %d", &a, &b, &last ); printf( "%d %d    %d \n", a, b, last ); );
+				PROC_MAIN( a = 0; b = 0; last = 0 );
+				PROC_MAIN( fscanf_s( fp, "%d%d %d", &a, &b, &last ); printf( "%d %d    %d \n", a, b, last ); );
 
 				LF();
 
-				PROCESS_MAIN( while( !feof( fp ) ){ fscanf_s( fp, "%d%d %d", &a, &b, &last ); printf( "%d %d    %d \n", a, b, last ); } );
+				PROC_MAIN( while( !feof( fp ) ){ fscanf_s( fp, "%d%d %d", &a, &b, &last ); printf( "%d %d    %d \n", a, b, last ); } );
 			}
 
 			LS();
 
-			PROCESS_MAIN( fclose( fp ) );
+			PROC_MAIN( fclose( fp ) );
 
 			LS();
 
@@ -246,7 +246,7 @@ namespace c_file_test
 		{
 			LS();
 
-			DECLARATION_MAIN( const char* path = "resources/temp_4_c_file_test__file_generate.txt" );
+			DECL_MAIN( const char* path = "resources/temp_4_c_file_test__file_generate.txt" );
 
 			LS();
 
@@ -255,7 +255,7 @@ namespace c_file_test
 
 				LF();
 
-				DECLARATION_MAIN( struct stat s = { 0 } );
+				DECL_MAIN( struct stat s = { 0 } );
 				EXPECT_NE( 0, stat( path, &s ) );
 			}
 
@@ -266,12 +266,12 @@ namespace c_file_test
 
 				LF();
 
-				DECLARATION_MAIN( FILE* fp = nullptr );
+				DECL_MAIN( FILE* fp = nullptr );
 				EXPECT_EQ( 0, fopen_s( &fp, path, "w" ) );
 
 				LF();
 
-				PROCESS_MAIN( fclose( fp ) );
+				PROC_MAIN( fclose( fp ) );
 
 				LF();
 
@@ -279,7 +279,7 @@ namespace c_file_test
 
 				LF();
 
-				DECLARATION_MAIN( struct stat s = { 0 } );
+				DECL_MAIN( struct stat s = { 0 } );
 				EXPECT_EQ( 0, stat( path, &s ) );
 			}
 
@@ -298,7 +298,7 @@ namespace c_file_test
 
 				LF();
 
-				DECLARATION_MAIN( struct stat s = { 0 } );
+				DECL_MAIN( struct stat s = { 0 } );
 				EXPECT_NE( 0, stat( path, &s ) );
 			}
 

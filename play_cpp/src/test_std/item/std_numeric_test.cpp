@@ -4,8 +4,8 @@
 #include <numeric>
 #include <string>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace std_numeric_test
 {
@@ -32,7 +32,7 @@ namespace std_numeric_test
 
 				LF();
 
-				DECLARATION_MAIN( const int a = 1 << ( ( sizeof( int ) * 8 ) - 1 ) );
+				DECL_MAIN( const int a = 1 << ( ( sizeof( int ) * 8 ) - 1 ) );
 				OUTPUT_VALUE( a );
 				OUTPUT_BINARY( a );
 
@@ -73,17 +73,17 @@ namespace std_numeric_test
 
 				LF();
 
-				DECLARATION_MAIN( int a = -1 );
+				DECL_MAIN( int a = -1 );
 				OUTPUT_BINARY( a );
 
 				LF();
 
-				DECLARATION_MAIN( const int mask = 1 << ( ( sizeof( int ) * 8 ) - 1 ) );
+				DECL_MAIN( const int mask = 1 << ( ( sizeof( int ) * 8 ) - 1 ) );
 				OUTPUT_BINARY( mask );
 
 				LF();
 
-				PROCESS_MAIN( a ^= mask );
+				PROC_MAIN( a ^= mask );
 				OUTPUT_VALUE( a );
 				OUTPUT_BINARY( a );
 
@@ -99,8 +99,8 @@ namespace std_numeric_test
 
 				LF();
 
-				DECLARATION_MAIN( int a = -1 );
-				PROCESS_MAIN( a = a >> 1 );
+				DECL_MAIN( int a = -1 );
+				PROC_MAIN( a = a >> 1 );
 
 				LF();
 
@@ -134,8 +134,8 @@ namespace std_numeric_test
 
 				LF();
 
-				DECLARATION_MAIN( const std::vector<int> v( { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 } ) );
-				DECLARATION_MAIN( const int result = std::accumulate( v.begin(), v.end(), 0 ) );
+				DECL_MAIN( const std::vector<int> v( { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 } ) );
+				DECL_MAIN( const int result = std::accumulate( v.begin(), v.end(), 0 ) );
 
 				LF();
 
@@ -149,8 +149,8 @@ namespace std_numeric_test
 
 				LF();
 
-				DECLARATION_MAIN( const std::vector<int> v( { 5, 10, 25 } ) );
-				DECLARATION_MAIN( const int result = std::accumulate( v.begin(), v.end(), 100, std::minus<int>() ) );
+				DECL_MAIN( const std::vector<int> v( { 5, 10, 25 } ) );
+				DECL_MAIN( const int result = std::accumulate( v.begin(), v.end(), 100, std::minus<int>() ) );
 
 				LF();
 
@@ -164,8 +164,8 @@ namespace std_numeric_test
 
 				LF();
 
-				DECLARATION_MAIN( std::vector<int> v( { 2, 10, 4 } ) );
-				DECLARATION_MAIN( const int result = std::accumulate( v.begin(), v.end(), 2, std::multiplies<int>() ) );
+				DECL_MAIN( std::vector<int> v( { 2, 10, 4 } ) );
+				DECL_MAIN( const int result = std::accumulate( v.begin(), v.end(), 2, std::multiplies<int>() ) );
 
 				LF();
 
@@ -351,12 +351,12 @@ namespace std_numeric_test
 		{
 			LS();
 
-			DECLARATION_MAIN( std::list<int> temp_list( 10, 0 ) );
+			DECL_MAIN( std::list<int> temp_list( 10, 0 ) );
 
 			LS();
 
 			{
-				PROCESS_MAIN( std::iota( temp_list.begin(), temp_list.end(), 11 ) ); // fill : 0, 1, 2, 3, 4 ......
+				PROC_MAIN( std::iota( temp_list.begin(), temp_list.end(), 11 ) ); // fill : 0, 1, 2, 3, 4 ......
 			}
 
 			LS();

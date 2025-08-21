@@ -3,8 +3,8 @@
 #include <new>
 #include <string_view>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace cpp_new_test
 {
@@ -22,7 +22,7 @@ namespace cpp_new_test
 			LS();
 
 			{
-				DECLARATION_MAIN( int* i = new int );
+				DECL_MAIN( int* i = new int );
 
 				LF();
 
@@ -31,13 +31,13 @@ namespace cpp_new_test
 
 				LF();
 
-				PROCESS_MAIN( delete i );
+				PROC_MAIN( delete i );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( int* i = new int( 1 ) );
+				DECL_MAIN( int* i = new int( 1 ) );
 				EXPECT_EQ( 1, *i );
 
 				LF();
@@ -47,13 +47,13 @@ namespace cpp_new_test
 
 				LF();
 
-				PROCESS_MAIN( delete i );
+				PROC_MAIN( delete i );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( int* i = new ( std::nothrow ) int( 2 ) );
+				DECL_MAIN( int* i = new ( std::nothrow ) int( 2 ) );
 				EXPECT_EQ( 2, *i );
 
 				LF();
@@ -63,7 +63,7 @@ namespace cpp_new_test
 
 				LF();
 
-				PROCESS_MAIN( delete i );
+				PROC_MAIN( delete i );
 			}
 
 			LS();
@@ -88,13 +88,13 @@ namespace cpp_new_test
 			LS();
 
 			{
-				DECLARATION_MAIN( int* i = new int[10] );
+				DECL_MAIN( int* i = new int[10] );
 				OUTPUT_VALUE( *i );
 				OUTPUT_VALUE( i[1] );
 
 				LF();
 
-				PROCESS_MAIN( delete[] i );
+				PROC_MAIN( delete[] i );
 			}
 
 			LS();
@@ -116,24 +116,24 @@ namespace cpp_new_test
 
 				LF();
 
-				PROCESS_MAIN( delete[] i );
+				PROC_MAIN( delete[] i );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( char* str = new char[7] );
+				DECL_MAIN( char* str = new char[7] );
 				OUTPUT_VALUE( str );
 
 				LF();
 
-				PROCESS_MAIN( delete[] str );
+				PROC_MAIN( delete[] str );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( char* str = new char[7]{ "abc" } );
+				DECL_MAIN( char* str = new char[7]{ "abc" } );
 				EXPECT_EQ( std::string_view( "abc" ), str );
 				EXPECT_EQ( 0, str[3] );
 				EXPECT_EQ( '\0', str[3] );
@@ -144,7 +144,7 @@ namespace cpp_new_test
 
 				LF();
 
-				PROCESS_MAIN( delete[] str );
+				PROC_MAIN( delete[] str );
 			}
 
 			LS();
@@ -169,27 +169,27 @@ namespace cpp_new_test
 			LS();
 
 			{
-				DECLARATION_MAIN( int i = 123 );
-				DECLARATION_MAIN( float* fp = new (&i) float );
+				DECL_MAIN( int i = 123 );
+				DECL_MAIN( float* fp = new (&i) float );
 
 				OUTPUT_VALUE( *fp );
 
 				LF();
 
-				PROCESS_MAIN( *fp = 3.14f );
+				PROC_MAIN( *fp = 3.14f );
 				OUTPUT_VALUE( *fp );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( int i = 65 );
+				DECL_MAIN( int i = 65 );
 				OUTPUT_VALUE( i );
 				OUTPUT_BINARY( i );
 
 				LF();
 
-				DECLARATION_MAIN( char* cp = new ( &i ) char );
+				DECL_MAIN( char* cp = new ( &i ) char );
 				OUTPUT_VALUE( *cp );
 				OUTPUT_BINARY( *cp );
 			}

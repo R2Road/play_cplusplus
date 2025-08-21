@@ -2,7 +2,7 @@
 
 #include <variant>
 
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_ostream.hpp"
 
 
 namespace std_variant_test

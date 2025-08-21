@@ -1,6 +1,6 @@
 #include "menu_cpu.h"
 
-#include "r2tm/r2tm_MenuProcessor.h"
+#include "r2tm/r2tm_menu_processor.hpp"
 
 #include "play_cpu_basic.h"
 

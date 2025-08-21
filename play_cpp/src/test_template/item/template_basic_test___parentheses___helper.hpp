@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace template_basic_test
 {

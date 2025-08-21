@@ -4,8 +4,8 @@
 
 #include "r2/r2_VersionInfo.h"
 
-#include "r2tm/r2tm_MenuProcessor.h"
-#include "r2tm/r2tm_VersionInfo.h"
+#include "r2tm/r2tm_menu_processor.hpp"
+#include "r2tm/r2tm_version_info.hpp"
 
 #include "key_viewer.h"
 

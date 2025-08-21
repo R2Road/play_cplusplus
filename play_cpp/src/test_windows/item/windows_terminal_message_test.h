@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2tm/r2tm_iItem.h"
+#include "r2tm/r2tm_interface_item.hpp"
 
 namespace windows_terminal_message_test
 {

@@ -2,8 +2,8 @@
 
 #include <stdlib.h>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 #include "r2/r2_Assert.h"
 
@@ -51,7 +51,7 @@ namespace c_atexit_test
 
 				LF();
 
-				DECLARATION_MAIN( auto l = []() { R2ASSERT( false, "Lambda : test_atexit" ); } );
+				DECL_MAIN( auto l = []() { R2ASSERT( false, "Lambda : test_atexit" ); } );
 
 				EXPECT_EQ( 0, atexit( l ) );
 			}
@@ -63,7 +63,7 @@ namespace c_atexit_test
 
 				LF();
 
-				DECLARATION_MAIN( struct S
+				DECL_MAIN( struct S
 				{
 					static void Do()
 					{

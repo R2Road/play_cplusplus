@@ -1,6 +1,6 @@
 #include "C_Menu.h"
 
-#include "r2tm/r2tm_MenuProcessor.h"
+#include "r2tm/r2tm_menu_processor.hpp"
 
 #include "item/c_array_test.h"
 #include "item/c_atexit_test.h"

@@ -4,7 +4,7 @@
 
 #include "r2/r2_GridBasedOnVector.h"
 
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_ostream.hpp"
 
 class AlgorithmHelper
 {

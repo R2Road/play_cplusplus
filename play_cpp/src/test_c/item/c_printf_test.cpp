@@ -2,8 +2,8 @@
 
 #include <stdio.h>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace c_printf_test
 {
@@ -21,7 +21,7 @@ namespace c_printf_test
 			LS();
 
 			{
-				PROCESS_MAIN( printf( "\t" "1111111" "2222222" "3333333" "   %d" "\n", 456789 ) );
+				PROC_MAIN( printf( "\t" "1111111" "2222222" "3333333" "   %d" "\n", 456789 ) );
 			}
 
 			LS();
@@ -45,7 +45,7 @@ namespace c_printf_test
 		{
 			LS();
 
-			DECLARATION_MAIN( const int num = 0xde81 );
+			DECL_MAIN( const int num = 0xde81 );
 
 			LS();
 
@@ -54,7 +54,7 @@ namespace c_printf_test
 
 				LF();
 
-				PROCESS_MAIN( printf( "\t> " "%o" "\n", num ) );
+				PROC_MAIN( printf( "\t> " "%o" "\n", num ) );
 			}
 
 			LS();
@@ -64,7 +64,7 @@ namespace c_printf_test
 
 				LF();
 
-				PROCESS_MAIN( printf( "\t> " "%d" "\n", num ) );
+				PROC_MAIN( printf( "\t> " "%d" "\n", num ) );
 			}
 
 			LS();
@@ -74,7 +74,7 @@ namespace c_printf_test
 
 				LF();
 
-				PROCESS_MAIN( printf( "\t> " "%x" "\n", num ) );
+				PROC_MAIN( printf( "\t> " "%x" "\n", num ) );
 			}
 
 			LS();

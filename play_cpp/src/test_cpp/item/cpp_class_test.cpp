@@ -7,8 +7,8 @@
 #include <numeric>
 #include <string>
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace cpp_class_test
 {
@@ -38,7 +38,7 @@ namespace cpp_class_test
 
 			LS();
 
-			DECLARATION_MAIN( S s );
+			DECL_MAIN( S s );
 
 			LS();
 
@@ -47,7 +47,7 @@ namespace cpp_class_test
 
 				LF();
 
-				PROCESS_MAIN( s.Func() );
+				PROC_MAIN( s.Func() );
 			}
 
 			LS();
@@ -57,7 +57,7 @@ namespace cpp_class_test
 
 				LF();
 
-				PROCESS_MAIN( s.S::Func() );
+				PROC_MAIN( s.S::Func() );
 			}
 
 			LS();
@@ -67,8 +67,8 @@ namespace cpp_class_test
 
 				LF();
 
-				DECLARATION_MAIN( auto m = &S::Func );
-				PROCESS_MAIN( ( s.*m )( ) );
+				DECL_MAIN( auto m = &S::Func );
+				PROC_MAIN( ( s.*m )( ) );
 			}
 
 			LS();
@@ -106,7 +106,7 @@ namespace cpp_class_test
 
 			LS();
 
-			DECLARATION_MAIN( S s );
+			DECL_MAIN( S s );
 
 			LS();
 
@@ -135,7 +135,7 @@ namespace cpp_class_test
 
 				LF();
 
-				DECLARATION_MAIN( auto p = &S::b );
+				DECL_MAIN( auto p = &S::b );
 				OUTPUT_VALUE( ( s.*p ) );
 			}
 
@@ -392,7 +392,7 @@ namespace cpp_class_test
 
 				LF();
 
-				DECLARATION_MAIN( PrintNameTest_Class1 c );
+				DECL_MAIN( PrintNameTest_Class1 c );
 
 				LF();
 
@@ -464,8 +464,8 @@ namespace cpp_class_test
 			LS();
 
 			{
-				DECLARATION_MAIN( TestClass1 tc1 );
-				DECLARATION_MAIN( int i = tc1 );
+				DECL_MAIN( TestClass1 tc1 );
+				DECL_MAIN( int i = tc1 );
 
 				LF();
 
@@ -500,8 +500,8 @@ namespace cpp_class_test
 
 			LF();
 
-			DECLARATION_MAIN( using C = cpp_class_test_helper_member_adress::TestClass );
-			DECLARATION_MAIN( C c );
+			DECL_MAIN( using C = cpp_class_test_helper_member_adress::TestClass );
+			DECL_MAIN( C c );
 
 			LS();
 
@@ -546,8 +546,8 @@ namespace cpp_class_test
 
 			LF();
 
-			DECLARATION_MAIN( using C = cpp_class_test_helper_member_adress::TestClass );
-			DECLARATION_MAIN( C c );
+			DECL_MAIN( using C = cpp_class_test_helper_member_adress::TestClass );
+			DECL_MAIN( C c );
 
 			LS();
 
@@ -573,14 +573,14 @@ namespace cpp_class_test
 
 				LF();
 
-				DECLARATION_MAIN( void ( C::*f1_ptr )( ) = &C::Func1 );
-				DECLARATION_MAIN( auto f1_void = (void*&)f1_ptr );
+				DECL_MAIN( void ( C::*f1_ptr )( ) = &C::Func1 );
+				DECL_MAIN( auto f1_void = (void*&)f1_ptr );
 				OUTPUT_VALUE( f1_void );
 
 				LF();
 
-				DECLARATION_MAIN( void ( C::*f2_ptr )( ) = &C::Func2 );
-				DECLARATION_MAIN( auto f2_void = (void*&)f2_ptr );
+				DECL_MAIN( void ( C::*f2_ptr )( ) = &C::Func2 );
+				DECL_MAIN( auto f2_void = (void*&)f2_ptr );
 				OUTPUT_VALUE( f2_void );
 			}
 
@@ -619,17 +619,17 @@ namespace cpp_class_test
 			LS();
 
 			{
-				DECLARATION_MAIN( const auto pC = (C*)1 );
+				DECL_MAIN( const auto pC = (C*)1 );
 				OUTPUT_VALUE( pC );
 
 				LF();
 
-				DECLARATION_MAIN( const auto pA = (A*)pC );
+				DECL_MAIN( const auto pA = (A*)pC );
 				OUTPUT_VALUE( pA );
 
 				LF();
 
-				DECLARATION_MAIN( const auto pB = (B*)pC );
+				DECL_MAIN( const auto pB = (B*)pC );
 				OUTPUT_VALUE( pB );
 			}
 
@@ -668,17 +668,17 @@ namespace cpp_class_test
 			LS();
 
 			{
-				DECLARATION_MAIN( const auto pC = (C*)1 );
+				DECL_MAIN( const auto pC = (C*)1 );
 				OUTPUT_VALUE( pC );
 
 				LF();
 
-				DECLARATION_MAIN( const auto pA = (A*)pC );
+				DECL_MAIN( const auto pA = (A*)pC );
 				OUTPUT_VALUE( pA );
 
 				LF();
 
-				DECLARATION_MAIN( const auto pB = (B*)pC );
+				DECL_MAIN( const auto pB = (B*)pC );
 				OUTPUT_VALUE( pB );
 			}
 
@@ -720,22 +720,22 @@ namespace cpp_class_test
 			LS();
 
 			{
-				DECLARATION_MAIN( const auto pD = (D*)1 );
+				DECL_MAIN( const auto pD = (D*)1 );
 				OUTPUT_VALUE( pD );
 
 				LF();
 
-				DECLARATION_MAIN( const auto pA = (A*)pD );
+				DECL_MAIN( const auto pA = (A*)pD );
 				OUTPUT_VALUE( pA );
 
 				LF();
 
-				DECLARATION_MAIN( const auto pB = (B*)pD );
+				DECL_MAIN( const auto pB = (B*)pD );
 				OUTPUT_VALUE( pB );
 
 				LF();
 
-				DECLARATION_MAIN( const auto pC = (C*)pD );
+				DECL_MAIN( const auto pC = (C*)pD );
 				OUTPUT_VALUE( pC );
 
 				LF();
@@ -744,7 +744,7 @@ namespace cpp_class_test
 
 				LF();
 
-				DECLARATION_MAIN( const auto offset =
+				DECL_MAIN( const auto offset =
 						reinterpret_cast<int64_t>( pD )
 					-	reinterpret_cast<int64_t>( pC )
 				);
@@ -752,7 +752,7 @@ namespace cpp_class_test
 
 				LF();
 
-				DECLARATION_MAIN( const auto pCastWithOffset = reinterpret_cast<D*>( pC + offset ) );
+				DECL_MAIN( const auto pCastWithOffset = reinterpret_cast<D*>( pC + offset ) );
 				OUTPUT_VALUE( pCastWithOffset );
 			}
 
@@ -781,7 +781,7 @@ namespace cpp_class_test
 
 			LS();
 
-			DECLARATION_MAIN( A_B_ST abst );
+			DECL_MAIN( A_B_ST abst );
 
 			LS();
 
@@ -870,8 +870,8 @@ namespace cpp_class_test
 
 				LF();
 
-				DECLARATION_MAIN( class C1 {} );
-				DECLARATION_MAIN( class C2 : public C1 { int i; } );
+				DECL_MAIN( class C1 {} );
+				DECL_MAIN( class C2 : public C1 { int i; } );
 				OUTPUT_VALUE( sizeof( C2 ) );
 				OUTPUT_BINARY( C2() );
 
@@ -887,8 +887,8 @@ namespace cpp_class_test
 
 				LF();
 
-				DECLARATION_MAIN( class C1 { int i; } );
-				DECLARATION_MAIN( class C2 : public C1 { int i; } );
+				DECL_MAIN( class C1 { int i; } );
+				DECL_MAIN( class C2 : public C1 { int i; } );
 				OUTPUT_VALUE( sizeof( C2 ) );
 				OUTPUT_BINARY( C2() );
 			}
@@ -900,8 +900,8 @@ namespace cpp_class_test
 
 				LF();
 
-				DECLARATION_MAIN( class C1 { public: virtual ~C1() {} } );
-				DECLARATION_MAIN( class C2 : public C1 {} );
+				DECL_MAIN( class C1 { public: virtual ~C1() {} } );
+				DECL_MAIN( class C2 : public C1 {} );
 				OUTPUT_VALUE( sizeof( C2 ) );
 				OUTPUT_BINARY( C2() );
 			}
@@ -913,8 +913,8 @@ namespace cpp_class_test
 
 				LF();
 
-				DECLARATION_MAIN( class C1 { public: virtual ~C1(){} } );
-				DECLARATION_MAIN( class C2 : public C1 { int a = -1; } );
+				DECL_MAIN( class C1 { public: virtual ~C1(){} } );
+				DECL_MAIN( class C2 : public C1 { int a = -1; } );
 				OUTPUT_VALUE( sizeof( C2 ) );
 				OUTPUT_BINARY( C2() );
 			}
@@ -941,15 +941,15 @@ namespace cpp_class_test
 			LS();
 
 			{
-				DECLARATION_MAIN( class C1 { public: virtual ~C1() {} int i = -1; int j = -2; } );
-				DECLARATION_MAIN( class C2 : public C1 { int a = -3; } );
+				DECL_MAIN( class C1 { public: virtual ~C1() {} int i = -1; int j = -2; } );
+				DECL_MAIN( class C2 : public C1 { int a = -3; } );
 				OUTPUT_VALUE( sizeof( C2 ) );
 				OUTPUT_VALUE( sizeof( C1 ) );
 				OUTPUT_BINARY( C2() );
 
 				LF();
 
-				DECLARATION_MAIN( C1 c1 );
+				DECL_MAIN( C1 c1 );
 				OUTPUT_VALUE( &c1 );
 				OUTPUT_VALUE( &c1.i );
 				OUTPUT_VALUE( &c1.j );
