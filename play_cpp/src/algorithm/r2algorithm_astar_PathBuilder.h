@@ -4,9 +4,9 @@
 #include <vector>
 
 #include "r2algorithm_astar_Constant.h"
-#include "r2/r2_PointInt.h"
-#include "r2/r2_GridBasedOnVector.h"
-#include "r2/r2_ListBasedOnArray.h"
+#include "r2/r2_point_int.hpp"
+#include "r2/r2_grid_based_on_vector.hpp"
+#include "r2/r2_list_based_on_array.hpp"
 
 namespace r2algorithm_astar
 {

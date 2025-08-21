@@ -5,7 +5,7 @@
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 
-#include "r2/r2_Assert.h"
+#include "r2/r2_assert.hpp"
 
 namespace c_atexit_test
 {

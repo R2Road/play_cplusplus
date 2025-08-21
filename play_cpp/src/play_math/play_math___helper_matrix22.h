@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2/r2_Epsilon.h"
+#include "r2/r2_epsilon.hpp"
 
 namespace play_math
 {

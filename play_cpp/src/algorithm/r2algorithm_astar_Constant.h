@@ -2,8 +2,8 @@
 
 #include <stdint.h>
 
-#include "r2/r2_GridBasedOnVector.h"
-#include "r2/r2_PointInt.h"
+#include "r2/r2_grid_based_on_vector.hpp"
+#include "r2/r2_point_int.hpp"
 
 namespace r2algorithm_astar
 {

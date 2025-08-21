@@ -11,7 +11,7 @@ using namespace play_math;
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
 
-#include "r2/r2_FPSTimer.h"
+#include "r2/r2_fps_timer.hpp"
 
 namespace play_rendering_pipeline
 {

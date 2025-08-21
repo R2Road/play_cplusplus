@@ -10,7 +10,7 @@
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
 
-#include "r2/r2_FPSTimer.h"
+#include "r2/r2_fps_timer.hpp"
 
 namespace window_time_test
 {

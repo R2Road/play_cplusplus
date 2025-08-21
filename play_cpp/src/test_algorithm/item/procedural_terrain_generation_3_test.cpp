@@ -7,8 +7,8 @@
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
 
-#include "r2/r2_GridBasedOnVector.h"
-#include "r2/r2_Random.h"
+#include "r2/r2_grid_based_on_vector.hpp"
+#include "r2/r2_random.hpp"
 
 #include "test_algorithm/AlgorithmHelper.h"
 

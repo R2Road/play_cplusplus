@@ -1,9 +1,10 @@
 #include "play_list_based_on_array.h"
 
-#include "r2/r2_ListBasedOnArray.h"
-#include "r2/r2_PointInt.h"
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_inspector.hpp"
+
+#include "r2/r2_list_based_on_array.hpp"
+#include "r2/r2_point_int.hpp"
 
 namespace play_list_based_on_array
 {
@@ -120,8 +121,8 @@ namespace play_list_based_on_array
 		{
 			LS();
 
-			r2::Node4List<r2::PointInt> node{ r2::PointInt{ 11, 12 }, nullptr, nullptr };
-			r2::Node4ListIterator<r2::PointInt> itr( &node );
+			r2::ListNode<r2::PointInt> node{ r2::PointInt{ 11, 12 }, nullptr, nullptr };
+			r2::ListNodeIterator<r2::PointInt> itr( &node );
 
 			{
 				std::cout << "+ Declaration" << r2tm::linefeed2;

@@ -6,8 +6,8 @@
 #include "r2tm/r2tm_inspector.hpp"
 
 #include "r2/r2_Direction4.h"
-#include "r2/r2_GridBasedOnVector.h"
-#include "r2/r2_PointInt.h"
+#include "r2/r2_grid_based_on_vector.hpp"
+#include "r2/r2_point_int.hpp"
 
 #include "r2tm/r2tm_windows_utility.hpp"
 #include "test_algorithm/AlgorithmHelper.h"

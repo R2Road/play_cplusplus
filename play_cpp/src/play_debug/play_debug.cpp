@@ -8,7 +8,7 @@
 #define NOMINMAX
 #include <Windows.h>
 
-#include "r2/r2_Assert.h"
+#include "r2/r2_assert.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_inspector.hpp"
 #include "utility/play_cpp_utility_PathBuilder.h"
@@ -190,7 +190,7 @@ namespace play_debug
 		{
 			LS();
 
-			OUTPUT_FILE( "external/r2/r2_Assert.h" );
+			OUTPUT_FILE( "external/r2/r2_assert.hpp" );
 
 			LS();
 

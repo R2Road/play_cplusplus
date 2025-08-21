@@ -10,9 +10,9 @@
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
 
-#include "r2/r2_Assert.h"
+#include "r2/r2_assert.hpp"
 #include "r2/r2_Direction4.h"
-#include "r2/r2_GridBasedOnVector.h"
+#include "r2/r2_grid_based_on_vector.hpp"
 
 namespace maze_generation_kruskals_test
 {
