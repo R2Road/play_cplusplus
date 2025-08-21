@@ -13,7 +13,7 @@
 #include <cmath>
 #include <stdint.h>
 
-#include "r2_TypeTraits.h"
+#include "r2_type_traits.hpp"
 
 namespace r2
 {

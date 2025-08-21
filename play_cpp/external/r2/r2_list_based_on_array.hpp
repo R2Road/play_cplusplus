@@ -10,10 +10,10 @@
 
 #pragma once
 
-#include "r2_Node4ListAllocatorBasedOnArray.h"
-#include "r2_Node4ListIterator.h"
+#include "r2_list_node_allocator_based_on_array.hpp"
+#include "r2_list_node_iterator.hpp"
 
-#include "r2_Assert.h"
+#include "r2_assert.hpp"
 
 namespace r2
 {
@@ -23,21 +23,21 @@ namespace r2
 	// ValueT 로 std::shared_ptr 등을 사용하고 있다면 NodeCleaner 를 ListNodeCleaner_ClearValue 로 설정.
 	//
 
-	template<typename T, uint32_t N, typename NodeCleaner = Node4ListCleaner_StayValue<T>>
+	template<typename T, uint32_t N, typename NodeCleaner = ListNodeCleaner_StayValue<T>>
 	class ListBasedOnArray
 	{
 	public:
 		using ValueT = T;
 		using SizeT = uint32_t;
 
-		using NodeT = Node4List<ValueT>;
-		using AllocatorT = Node4ListAllocatorBasedOnArray<ValueT, N + 1u, NodeCleaner>; // N + Head
+		using NodeT = ListNode<ValueT>;
+		using AllocatorT = ListNodeAllocatorBasedOnArray<ValueT, N + 1u, NodeCleaner>; // N + Head
 
-		using IteratorT = Node4ListIterator<ValueT>;
-		//using iterator = Node4ListIterator<ValueT>; // ...dev rule?
-		using ConstIteratorT = Node4ListConstIterator<ValueT>;
-		using ReverseIteratorT = Node4ListReverseIterator<ValueT>;
-		using ConstReverseIteratorT = Node4ListConstReverseIterator<ValueT>;
+		using IteratorT = ListNodeIterator<ValueT>;
+		//using iterator = ListNodeIterator<ValueT>; // ...dev rule?
+		using ConstIteratorT = ListNodeConstIterator<ValueT>;
+		using ReverseIteratorT = ListNodeReverseIterator<ValueT>;
+		using ConstReverseIteratorT = GridNodeConstReverseIterator<ValueT>;
 
 
 

@@ -10,8 +10,8 @@
 
 #pragma once
 
-#include "r2_Assert.h"
-#include "r2_RemovePointer.h"
+#include "r2_assert.hpp"
+#include "r2_remove_pointer.hpp"
 
 namespace r2
 {

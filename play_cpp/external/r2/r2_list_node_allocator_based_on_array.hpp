@@ -12,8 +12,8 @@
 
 #include <array>
 
-#include "r2_Assert.h"
-#include "r2_Node4List.h"
+#include "r2_assert.hpp"
+#include "r2_list_node.hpp"
 
 namespace r2
 {
@@ -23,19 +23,19 @@ namespace r2
 	// ValueT 로 std::shared_ptr 등을 사용하고 있다면 Cleaner 를 ClearValue 로 설정.
 	//
 
-	template<typename T, uint32_t N, typename NodeCleaner = Node4ListCleaner_StayValue<T>>
-	class Node4ListAllocatorBasedOnArray
+	template<typename T, uint32_t N, typename NodeCleaner = ListNodeCleaner_StayValue<T>>
+	class ListNodeAllocatorBasedOnArray
 	{
 	public:
 		using ValueT = T;
 		using SizeT = uint32_t;
 
-		using NodeT = Node4List<ValueT>;
+		using NodeT = ListNode<ValueT>;
 		using ContainerT = std::array<NodeT, N>;
 
 
 
-		Node4ListAllocatorBasedOnArray() : mContainer(), mNodeCleaner(), mHead( nullptr ), mSize( 0u )
+		ListNodeAllocatorBasedOnArray() : mContainer(), mNodeCleaner(), mHead( nullptr ), mSize( 0u )
 		{
 			Clear();
 		}
@@ -101,7 +101,7 @@ namespace r2
 		//
 		NodeT* Pop()
 		{
-			R2ASSERT( nullptr != mHead, "Empty : Node4ListAllocatorBasedOnArray::Pop()" );
+			R2ASSERT( nullptr != mHead, "Empty : ListNodeAllocatorBasedOnArray::Pop()" );
 
 			NodeT* ret = mHead;
 

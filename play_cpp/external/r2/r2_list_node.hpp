@@ -13,10 +13,10 @@
 namespace r2
 {
 	template<typename T>
-	struct Node4List
+	struct ListNode
 	{
 		using ValueT = T;
-		using MyT = Node4List<ValueT>;
+		using MyT = ListNode<ValueT>;
 
 		ValueT MyValue = {};
 		MyT* pPrev = nullptr;
@@ -24,10 +24,10 @@ namespace r2
 	};
 
 	template<typename T>
-	class Node4ListCleaner_ClearValue
+	class ListNodeCleaner_ClearValue
 	{
 	public:
-		void operator()( Node4List<T>* node )
+		void operator()( ListNode<T>* node )
 		{
 			node->pNext = nullptr;
 			node->pPrev = nullptr;
@@ -36,10 +36,10 @@ namespace r2
 	};
 
 	template<typename T>
-	class Node4ListCleaner_StayValue
+	class ListNodeCleaner_StayValue
 	{
 	public:
-		void operator()( Node4List<T>* node )
+		void operator()( ListNode<T>* node )
 		{
 			node->pNext = nullptr;
 			node->pPrev = nullptr;

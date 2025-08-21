@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2_Rect.h"
+#include "r2_rect.hpp"
 
 namespace r2
 {

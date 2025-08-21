@@ -13,10 +13,10 @@
 #include <algorithm>
 #include <cmath>
 
-#include "r2_Point.h"
-#include "r2_Size.h"
-#include "r2_RectIterator.h"
-#include "r2_TypeTraits.h"
+#include "r2_point.hpp"
+#include "r2_size.hpp"
+#include "r2_rect_iterator.hpp"
+#include "r2_type_traits.hpp"
 
 namespace r2
 {

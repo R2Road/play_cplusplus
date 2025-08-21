@@ -12,8 +12,8 @@
 
 #include <vector>
 
-#include "r2_GridIndexConverter.h"
-#include "r2_Point.h"
+#include "r2_grid_index_converter.hpp"
+#include "r2_point.hpp"
 
 namespace r2
 {

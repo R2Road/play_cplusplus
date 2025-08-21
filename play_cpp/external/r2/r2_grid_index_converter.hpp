@@ -12,7 +12,7 @@
 
 #include <limits> // std::numeric_limits
 
-#include "r2_Point.h"
+#include "r2_point.hpp"
 
 namespace r2
 {

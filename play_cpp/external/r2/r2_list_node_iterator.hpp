@@ -2,30 +2,30 @@
 
 #include <memory>
 
-#include "r2_Node4List.h"
+#include "r2_list_node.hpp"
 
 namespace r2
 {
 	template<typename T>
-	class Node4ListIterator
+	class ListNodeIterator
 	{
 	public:
 		using ValueT = T;
-		using NodeT = Node4List<ValueT>;
+		using NodeT = ListNode<ValueT>;
 
 
 
-		Node4ListIterator( NodeT* target_node ) : mTargetNode( target_node )
+		ListNodeIterator( NodeT* target_node ) : mTargetNode( target_node )
 		{}
 
 
 
-		Node4ListIterator& operator++()
+		ListNodeIterator& operator++()
 		{
 			mTargetNode = mTargetNode->pNext;
 			return ( *this );
 		}
-		Node4ListIterator& operator--()
+		ListNodeIterator& operator--()
 		{
 			mTargetNode = mTargetNode->pPrev;
 			return ( *this );
@@ -33,11 +33,11 @@ namespace r2
 
 
 
-		bool operator==( const Node4ListIterator& other ) const
+		bool operator==( const ListNodeIterator& other ) const
 		{
 			return mTargetNode == other.mTargetNode;
 		}
-		bool operator!=( const Node4ListIterator& other ) const
+		bool operator!=( const ListNodeIterator& other ) const
 		{
 			return !operator==( other );
 		}
@@ -61,25 +61,25 @@ namespace r2
 
 
 	template<typename T>
-	class Node4ListConstIterator
+	class ListNodeConstIterator
 	{
 	public:
 		using ValueT = T;
-		using NodeT = Node4List<ValueT>;
+		using NodeT = ListNode<ValueT>;
 
 
 
-		Node4ListConstIterator( const NodeT* target_node ) : mTargetNode( target_node )
+		ListNodeConstIterator( const NodeT* target_node ) : mTargetNode( target_node )
 		{}
 
 
 
-		Node4ListConstIterator& operator++()
+		ListNodeConstIterator& operator++()
 		{
 			mTargetNode = mTargetNode->pNext;
 			return ( *this );
 		}
-		Node4ListConstIterator& operator--()
+		ListNodeConstIterator& operator--()
 		{
 			mTargetNode = mTargetNode->pPrev;
 			return ( *this );
@@ -87,11 +87,11 @@ namespace r2
 
 
 
-		bool operator==( const Node4ListConstIterator& other ) const
+		bool operator==( const ListNodeConstIterator& other ) const
 		{
 			return mTargetNode == other.mTargetNode;
 		}
-		bool operator!=( const Node4ListConstIterator& other ) const
+		bool operator!=( const ListNodeConstIterator& other ) const
 		{
 			return !operator==( other );
 		}
@@ -115,25 +115,25 @@ namespace r2
 
 
 	template<typename T>
-	class Node4ListReverseIterator
+	class ListNodeReverseIterator
 	{
 	public:
 		using ValueT = T;
-		using NodeT = Node4List<ValueT>;
+		using NodeT = ListNode<ValueT>;
 
 
 
-		Node4ListReverseIterator( NodeT* target_node ) : mTargetNode( target_node )
+		ListNodeReverseIterator( NodeT* target_node ) : mTargetNode( target_node )
 		{}
 
 
 
-		Node4ListReverseIterator& operator++()
+		ListNodeReverseIterator& operator++()
 		{
 			mTargetNode = mTargetNode->pPrev;
 			return ( *this );
 		}
-		Node4ListReverseIterator& operator--()
+		ListNodeReverseIterator& operator--()
 		{
 			mTargetNode = mTargetNode->pNext;
 			return ( *this );
@@ -141,11 +141,11 @@ namespace r2
 
 
 
-		bool operator==( const Node4ListReverseIterator& other ) const
+		bool operator==( const ListNodeReverseIterator& other ) const
 		{
 			return mTargetNode == other.mTargetNode;
 		}
-		bool operator!=( const Node4ListReverseIterator& other ) const
+		bool operator!=( const ListNodeReverseIterator& other ) const
 		{
 			return !operator==( other );
 		}
@@ -169,25 +169,25 @@ namespace r2
 
 
 	template<typename T>
-	class Node4ListConstReverseIterator
+	class GridNodeConstReverseIterator
 	{
 	public:
 		using ValueT = T;
-		using NodeT = Node4List<ValueT>;
+		using NodeT = ListNode<ValueT>;
 
 
 
-		Node4ListConstReverseIterator( const NodeT* target_node ) : mTargetNode( target_node )
+		GridNodeConstReverseIterator( const NodeT* target_node ) : mTargetNode( target_node )
 		{}
 
 
 
-		Node4ListConstReverseIterator& operator++()
+		GridNodeConstReverseIterator& operator++()
 		{
 			mTargetNode = mTargetNode->pPrev;
 			return ( *this );
 		}
-		Node4ListConstReverseIterator& operator--()
+		GridNodeConstReverseIterator& operator--()
 		{
 			mTargetNode = mTargetNode->pNext;
 			return ( *this );
@@ -195,11 +195,11 @@ namespace r2
 
 
 
-		bool operator==( const Node4ListConstReverseIterator& other ) const
+		bool operator==( const GridNodeConstReverseIterator& other ) const
 		{
 			return mTargetNode == other.mTargetNode;
 		}
-		bool operator!=( const Node4ListConstReverseIterator& other ) const
+		bool operator!=( const GridNodeConstReverseIterator& other ) const
 		{
 			return !operator==( other );
 		}

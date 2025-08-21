@@ -1,4 +1,4 @@
-#include "r2_FPSTimer.h"
+#include "r2_fps_timer.hpp"
 
 #include <cassert>
 

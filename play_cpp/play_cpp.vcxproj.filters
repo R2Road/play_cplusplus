@@ -551,27 +551,6 @@
     <ClCompile Include="src\play_math\play_math_basic.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction4.cpp">
-      <Filter>_external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction8.cpp">
-      <Filter>_external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_FPSTimer.cpp">
-      <Filter>_external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_PointInt.cpp">
-      <Filter>_external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Random.cpp">
-      <Filter>_external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_RectInt.cpp">
-      <Filter>_external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Size.cpp">
-      <Filter>_external\r2</Filter>
-    </ClCompile>
     <ClCompile Include="src\play_math\play_math_vector3.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
@@ -629,6 +608,24 @@
     </ClCompile>
     <ClCompile Include="external\r2tm\r2tm_windows_utility.cpp">
       <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Direction4.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Direction8.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_fps_timer.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_point_int.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_random.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_rect_int.cpp">
+      <Filter>_external\r2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1173,75 +1170,6 @@
     <ClInclude Include="src\play_math\play_math___helper_vector3.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_Assert.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction4.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction8.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Epsilon.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_FPSTimer.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_GridIndexConverter.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_ListBasedOnArray.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_NoneCopyable.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Point.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_PointInt.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Random.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Rect.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_RectInt.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Size.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_TypeTraits.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Vector4.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_VersionInfo.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2helper_STDPrinter4Vector4.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_GridBasedOnVector.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_RectIterator.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Node4ListAllocatorBasedOnArray.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Node4List.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Node4ListIterator.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="src\play_math\play_math_vector3.h">
       <Filter>play_math</Filter>
     </ClInclude>
@@ -1344,6 +1272,78 @@
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_windows_utility.hpp">
       <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_assert.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction4.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction8.h">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_epsilon.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_fps_timer.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_grid_based_on_vector.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_grid_index_converter.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_list_based_on_array.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_list_node.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_list_node_allocator_based_on_array.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_list_node_iterator.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_none_copyable.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_point.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_point_int.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_random.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_rect.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_rect_int.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_rect_iterator.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_remove_pointer.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_size.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_type_traits.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_vector4.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_version_info.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2printer_std_vector4.hpp">
+      <Filter>_external\r2</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
