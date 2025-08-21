@@ -1,4 +1,4 @@
-#include "r2tm_WindowsUtility.h"
+#include "r2tm_windows_utility.hpp"
 
 #include <Windows.h>
 

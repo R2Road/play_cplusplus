@@ -19,14 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="external\r2tm\r2tm_CacheCleaner.cpp" />
-    <ClCompile Include="external\r2tm\r2tm_Director.cpp" />
-    <ClCompile Include="external\r2tm\r2tm_Input.cpp" />
-    <ClCompile Include="external\r2tm\r2tm_MenuProcessor.cpp" />
-    <ClCompile Include="external\r2tm\r2tm_PrintBinary.cpp" />
-    <ClCompile Include="external\r2tm\r2tm_PrintFile.cpp" />
-    <ClCompile Include="external\r2tm\r2tm_StopWatch.cpp" />
-    <ClCompile Include="external\r2tm\r2tm_WindowsUtility.cpp" />
+    <ClCompile Include="external\r2tm\r2tm_cache_cleaner.cpp" />
+    <ClCompile Include="external\r2tm\r2tm_director.cpp" />
+    <ClCompile Include="external\r2tm\r2tm_input.cpp" />
+    <ClCompile Include="external\r2tm\r2tm_menu_processor.cpp" />
+    <ClCompile Include="external\r2tm\r2tm_print_binary.cpp" />
+    <ClCompile Include="external\r2tm\r2tm_print_file.cpp" />
+    <ClCompile Include="external\r2tm\r2tm_stop_watch.cpp" />
+    <ClCompile Include="external\r2tm\r2tm_windows_utility.cpp" />
     <ClCompile Include="external\r2\r2_Direction4.cpp" />
     <ClCompile Include="external\r2\r2_Direction8.cpp" />
     <ClCompile Include="external\r2\r2_FPSTimer.cpp" />
@@ -205,22 +205,22 @@
     <ClCompile Include="src\utility\play_cpp_utility_PathBuilder.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="external\r2tm\r2tm_CacheCleaner.h" />
-    <ClInclude Include="external\r2tm\r2tm_Color.h" />
-    <ClInclude Include="external\r2tm\r2tm_ColorModifier.h" />
-    <ClInclude Include="external\r2tm\r2tm_Director.h" />
-    <ClInclude Include="external\r2tm\r2tm_iItem.h" />
-    <ClInclude Include="external\r2tm\r2tm_iMenu.h" />
-    <ClInclude Include="external\r2tm\r2tm_Input.h" />
-    <ClInclude Include="external\r2tm\r2tm_Inspector.h" />
-    <ClInclude Include="external\r2tm\r2tm_MenuConstant.h" />
-    <ClInclude Include="external\r2tm\r2tm_MenuProcessor.h" />
-    <ClInclude Include="external\r2tm\r2tm_ostream.h" />
-    <ClInclude Include="external\r2tm\r2tm_PrintBinary.h" />
-    <ClInclude Include="external\r2tm\r2tm_PrintFile.h" />
-    <ClInclude Include="external\r2tm\r2tm_StopWatch.h" />
-    <ClInclude Include="external\r2tm\r2tm_VersionInfo.h" />
-    <ClInclude Include="external\r2tm\r2tm_WindowsUtility.h" />
+    <ClInclude Include="external\r2tm\r2tm_cache_cleaner.hpp" />
+    <ClInclude Include="external\r2tm\r2tm_color.hpp" />
+    <ClInclude Include="external\r2tm\r2tm_color_modifier.hpp" />
+    <ClInclude Include="external\r2tm\r2tm_director.hpp" />
+    <ClInclude Include="external\r2tm\r2tm_input.hpp" />
+    <ClInclude Include="external\r2tm\r2tm_inspector.hpp" />
+    <ClInclude Include="external\r2tm\r2tm_interface_item.hpp" />
+    <ClInclude Include="external\r2tm\r2tm_interface_menu.hpp" />
+    <ClInclude Include="external\r2tm\r2tm_menu_constant.hpp" />
+    <ClInclude Include="external\r2tm\r2tm_menu_processor.hpp" />
+    <ClInclude Include="external\r2tm\r2tm_ostream.hpp" />
+    <ClInclude Include="external\r2tm\r2tm_print_binary.hpp" />
+    <ClInclude Include="external\r2tm\r2tm_print_file.hpp" />
+    <ClInclude Include="external\r2tm\r2tm_stop_watch.hpp" />
+    <ClInclude Include="external\r2tm\r2tm_version_info.hpp" />
+    <ClInclude Include="external\r2tm\r2tm_windows_utility.hpp" />
     <ClInclude Include="external\r2\r2helper_STDPrinter4Vector4.h" />
     <ClInclude Include="external\r2\r2_Assert.h" />
     <ClInclude Include="external\r2\r2_Direction4.h" />

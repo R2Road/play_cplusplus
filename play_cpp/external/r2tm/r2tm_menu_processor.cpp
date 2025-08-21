@@ -1,11 +1,11 @@
-#include "r2tm_MenuProcessor.h"
+#include "r2tm_menu_processor.hpp"
 
 #include <cctype> // std::toupper
 
-#include "r2tm_ColorModifier.h"
-#include "r2tm_iItem.h"
-#include "r2tm_iMenu.h"
-#include "r2tm_ostream.h"
+#include "r2tm_color_modifier.hpp"
+#include "r2tm_interface_item.hpp"
+#include "r2tm_interface_menu.hpp"
+#include "r2tm_ostream.hpp"
 
 
 namespace

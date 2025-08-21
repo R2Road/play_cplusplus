@@ -7,4 +7,6 @@ namespace r2tm
 	int GetKey();
 
 	int KeyboardHit();
+
+	void ClearInput();
 }

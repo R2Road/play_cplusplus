@@ -3,8 +3,8 @@
 #include <string_view>
 #include <vector>
 
-#include "r2tm_Color.h"
-#include "r2tm_MenuConstant.h"
+#include "r2tm_color.hpp"
+#include "r2tm_menu_constant.hpp"
 
 namespace r2tm
 {

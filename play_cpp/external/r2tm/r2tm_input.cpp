@@ -1,4 +1,4 @@
-#include "r2tm_Input.h"
+#include "r2tm_input.hpp"
 
 #include <conio.h>
 
@@ -20,5 +20,16 @@ namespace r2tm
 	int KeyboardHit()
 	{
 		return _kbhit();
+	}
+
+	void ClearInput()
+	{
+#pragma warning( push )
+#pragma warning( disable : 6031 )
+		while( _kbhit() )
+		{
+			_getch();
+		}
+#pragma warning( pop )
 	}
 }

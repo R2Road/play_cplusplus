@@ -1,4 +1,4 @@
-#include "r2tm_PrintBinary.h"
+#include "r2tm_print_binary.hpp"
 
 namespace r2tm
 {

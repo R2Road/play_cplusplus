@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "r2tm_Color.h"
+#include "r2tm_color.hpp"
 
 namespace r2tm
 {

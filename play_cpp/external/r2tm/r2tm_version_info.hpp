@@ -24,15 +24,22 @@ namespace r2tm
 
 
 
-		const char VersionNumber_1 = '1';
-		const char VersionNumber_2 = '7';
-		const char VersionNumber_3 = '8';
+		const char VersionNumber_1 = '2';
+		const char VersionNumber_2 = '0';
+		const char VersionNumber_3 = '1';
 		const char VersionNumber_4 = '0';
 		const char VersionNumber_5 = '0';
 
 		const char String4Version[18] = { 'r', '2', 't', 'm', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '.', VersionNumber_4, '.', VersionNumber_5, '\0' };
 
 
+
+		const char* const String4Road2Version_2_1_0_0_0 =
+			"### Road 2 Version 2.1.0.0.0 ###"
+			"\n"
+			"\n"	"[o] " "update    inspector  : Add - CLEAR_INPUT"
+			"\n"	"[ ] " "update    struct     : ..."
+		;
 
 		const char* const String4Road2Version_1_8_0_0_0 =
 					"### Road 2 Version 1.8.0.0.0 ###"
@@ -41,7 +48,7 @@ namespace r2tm
 			"\n"	"[o] " "update    struct     : r2tm::WindowsUtility::CursorPoint - 생성자 추가, 연산자 +, += 추가"
 			"\n"	"[o] " "update    inspector  : Add - OUTPUT_SOURCE_READY, OUTPUT_SOURCE_BEGIN, OUTPUT_SOURCE_END"
 			"\n"	"[o] " "update    inspector  : Add - OUTPUT_SOURCE_READY_N_BEGIN"
-			"\n"	"[o] " "update    inspector  : DECLARATION_MAIN, DECLARATION_SUB - 문자 출력을 먼저 하고 코드 실행"
+			"\n"	"[o] " "update    inspector  : DECL_MAIN, DECL_SUB - 문자 출력을 먼저 하고 코드 실행"
 			"\n"	"[o] " "update    inspector  : EXPECT_FALSE, EXPECT_NE - 눈에 잘 보이는 색상으로 변경"
 			"\n"	"[o] " "add       class      : r2tm::CacheCleaner"
 			"\n"	"[o] " "add       method     : r2tm::SwtopWatch > Reset"
@@ -60,7 +67,9 @@ namespace r2tm
 			"\n"	"[o] " "update    inspector  : Add - GET_KEY"
 			"\n"	"[o] " "add       method     : r2tm::WindowsUtility::GetCursorX, GetCursorY"
 			"\n"	"[o] " "update    inspector  : Add - OUTPUT_ADDRESS"
-			"\n"	"[ ] " "..."
+			"\n"	"[o] " "update    inspector  : 출력 문자열 조정 - ex) DECLARATION > DECL"
+			"\n"	"[o] " "update    inspector  : Macro 이름 조정 - ex) DECLARATION_MAIN > DECL_MAIN"
+			"\n"	"[o] " "전체 소스파일중 헤더파일의 확장자를 h 에서 hpp로 변경"
 		;
 
 		const char* const String4Road2Version_1_7_0_0_0 =
@@ -146,11 +155,7 @@ namespace r2tm
 
 
 
-		const char* const String4Road2NextVersion = String4Road2Version_1_8_0_0_0;
-
-
-
-		enum { VERSION_HISTORY_COUNT = 9 };
+		enum { VERSION_HISTORY_COUNT = 10 };
 		const char* VersionHistory[VERSION_HISTORY_COUNT] = {
 			  String4Road2Version_1_0_0_0_0
 			, String4Road2Version_1_1_0_0_0
@@ -161,7 +166,12 @@ namespace r2tm
 			, String4Road2Version_1_6_0_0_0
 			, String4Road2Version_1_7_0_0_0
 			, String4Road2Version_1_8_0_0_0
+			, String4Road2Version_2_1_0_0_0
 		};
+
+
+
+		const char* const String4Road2NextVersion = VersionHistory[VERSION_HISTORY_COUNT - 1];
 
 	} VersionInfo;
 }

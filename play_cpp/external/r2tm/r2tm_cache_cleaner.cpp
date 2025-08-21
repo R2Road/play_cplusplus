@@ -1,8 +1,8 @@
-#include "r2tm_CacheCleaner.h"
+#include "r2tm_cache_cleaner.hpp"
 
 #include <cstring>
 
-#include "r2tm_WindowsUtility.h"
+#include "r2tm_windows_utility.hpp"
 
 namespace r2tm
 {

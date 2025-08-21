@@ -1,8 +1,8 @@
-#include "r2tm_Director.h"
+#include "r2tm_director.hpp"
 
 #include <conio.h>
 
-#include "r2tm_iMenu.h"
+#include "r2tm_interface_menu.hpp"
 
 namespace r2tm
 {

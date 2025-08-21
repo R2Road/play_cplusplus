@@ -542,27 +542,6 @@
     <ClCompile Include="src\test_c\item\c_operator_priority_test.cpp">
       <Filter>test_c\item</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_CacheCleaner.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_Director.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_MenuProcessor.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_PrintBinary.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_PrintFile.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_StopWatch.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_WindowsUtility.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\item\cpp_braces.cpp">
       <Filter>test_cpp\item</Filter>
     </ClCompile>
@@ -614,9 +593,6 @@
     <ClCompile Include="src\play_math\play_math_quaternion.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_Input.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
     <ClCompile Include="src\play_debug\menu_debug.cpp">
       <Filter>play_debug</Filter>
     </ClCompile>
@@ -630,6 +606,30 @@
       <Filter>play_cpu</Filter>
     </ClCompile>
     <ClCompile Include="src\key_viewer.cpp" />
+    <ClCompile Include="external\r2tm\r2tm_cache_cleaner.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_director.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_input.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_menu_processor.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_print_binary.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_print_file.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_stop_watch.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_windows_utility.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1158,51 +1158,6 @@
     <ClInclude Include="src\test_c\item\c_operator_priority_test.h">
       <Filter>test_c\item</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_CacheCleaner.h">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_Color.h">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_ColorModifier.h">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_Director.h">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_iItem.h">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_iMenu.h">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_Inspector.h">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_MenuConstant.h">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_MenuProcessor.h">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_ostream.h">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_PrintBinary.h">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_PrintFile.h">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_StopWatch.h">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_VersionInfo.h">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_WindowsUtility.h">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\item\cpp_braces.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
@@ -1329,9 +1284,6 @@
     <ClInclude Include="src\play_math\play_math___helper_quaternion.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_Input.h">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
     <ClInclude Include="src\play_debug\menu_debug.h">
       <Filter>play_debug</Filter>
     </ClInclude>
@@ -1345,6 +1297,54 @@
       <Filter>play_cpu</Filter>
     </ClInclude>
     <ClInclude Include="src\key_viewer.h" />
+    <ClInclude Include="external\r2tm\r2tm_cache_cleaner.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_color.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_color_modifier.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_director.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_input.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_inspector.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_interface_item.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_interface_menu.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_menu_constant.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_menu_processor.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_ostream.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_print_binary.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_print_file.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_stop_watch.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_version_info.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_windows_utility.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\test_cpp\item\enum_test_xmacro_2.def">

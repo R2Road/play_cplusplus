@@ -1,8 +1,8 @@
-#include "r2tm_StopWatch.h"
+#include "r2tm_stop_watch.hpp"
 
 #include <numeric>
 
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace r2tm
 {
