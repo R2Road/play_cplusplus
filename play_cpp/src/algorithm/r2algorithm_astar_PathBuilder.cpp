@@ -1,6 +1,6 @@
 #include "r2algorithm_astar_PathBuilder.h"
 
-#include "r2/r2_Direction8.h"
+#include "r2/r2_direction8_bitwise.hpp"
 
 namespace
 {
@@ -59,11 +59,11 @@ namespace r2algorithm_astar
 			}
 
 			// Collect Open List
-			r2::Direction8 dir8;
+			r2::Direction8Bitwise dir8;
 			r2::PointInt temp_point;
-			for( int i = 0; 8 > i; ++i, dir8.Rotate( true, 1 ) )
+			for( int i = 0; 8 > i; ++i, dir8.Rotate( true ) )
 			{
-				temp_point = current_node.GetPoint() + dir8.GetPoint();
+				temp_point = current_node.GetPoint() + r2::PointInt( dir8.GetX(), dir8.GetY() );
 
 				if( !grid.IsIn( temp_point.GetX(), temp_point.GetY() ) )
 				{
@@ -165,11 +165,11 @@ namespace r2algorithm_astar
 			}
 
 			// Collect Open List
-			r2::Direction8 dir8;
+			r2::Direction8Bitwise dir8;
 			r2::PointInt temp_point;
-			for( int i = 0; 8 > i; ++i, dir8.Rotate( true, 1 ) )
+			for( int i = 0; 8 > i; ++i, dir8.Rotate( true ) )
 			{
-				temp_point = current_node.GetPoint() + dir8.GetPoint();
+				temp_point = current_node.GetPoint() + r2::PointInt( dir8.GetX(), dir8.GetY() );
 
 				if( !grid.IsIn( temp_point.GetX(), temp_point.GetY() ) )
 				{
@@ -273,11 +273,11 @@ namespace r2algorithm_astar
 			}
 
 			// Collect Open List
-			r2::Direction8 dir8;
+			r2::Direction8Bitwise dir8;
 			r2::PointInt temp_point;
-			for( int i = 0; 8 > i; ++i, dir8.Rotate( true, 1 ) )
+			for( int i = 0; 8 > i; ++i, dir8.Rotate( true ) )
 			{
-				temp_point = current_node.GetPoint() + dir8.GetPoint();
+				temp_point = current_node.GetPoint() + r2::PointInt( dir8.GetX(), dir8.GetY() );
 
 				if( !grid.IsIn( temp_point.GetX(), temp_point.GetY() ) )
 				{
@@ -382,11 +382,11 @@ namespace r2algorithm_astar
 			}
 
 			// Collect Open List
-			r2::Direction8 dir8;
+			r2::Direction8Bitwise dir8;
 			r2::PointInt temp_point;
-			for( int i = 0; 8 > i; ++i, dir8.Rotate( true, 1 ) )
+			for( int i = 0; 8 > i; ++i, dir8.Rotate( true ) )
 			{
-				temp_point = current_node.GetPoint() + dir8.GetPoint();
+				temp_point = current_node.GetPoint() + r2::PointInt( dir8.GetX(), dir8.GetY() );
 
 				if( !grid.IsIn( temp_point.GetX(), temp_point.GetY() ) )
 				{
@@ -499,11 +499,11 @@ namespace r2algorithm_astar
 			}
 
 			// Collect Open List
-			r2::Direction8 dir8;
+			r2::Direction8Bitwise dir8;
 			r2::PointInt temp_point;
-			for( int i = 0; 8 > i; ++i, dir8.Rotate( true, 1 ) )
+			for( int i = 0; 8 > i; ++i, dir8.Rotate( true ) )
 			{
-				temp_point = current_point + dir8.GetPoint();
+				temp_point = current_point + r2::PointInt( dir8.GetX(), dir8.GetY() );
 
 				if( !grid.IsIn( temp_point.GetX(), temp_point.GetY() ) )
 				{
@@ -600,11 +600,11 @@ namespace r2algorithm_astar
 			}
 
 			// Collect Open List
-			r2::Direction8 dir8;
+			r2::Direction8Bitwise dir8;
 			r2::PointInt temp_point;
-			for( int i = 0; 8 > i; ++i, dir8.Rotate( true, 1 ) )
+			for( int i = 0; 8 > i; ++i, dir8.Rotate( true ) )
 			{
-				temp_point = current_point + dir8.GetPoint();
+				temp_point = current_point + r2::PointInt( dir8.GetX(), dir8.GetY() );
 
 				if( !grid.IsIn( temp_point.GetX(), temp_point.GetY() ) )
 				{
@@ -702,11 +702,11 @@ namespace r2algorithm_astar
 			}
 
 			// Collect Open List
-			r2::Direction8 dir8;
+			r2::Direction8Bitwise dir8;
 			r2::PointInt temp_point;
-			for( int i = 0; 8 > i; ++i, dir8.Rotate( true, 1 ) )
+			for( int i = 0; 8 > i; ++i, dir8.Rotate( true ) )
 			{
-				temp_point = current_point + dir8.GetPoint();
+				temp_point = current_point + r2::PointInt( dir8.GetX(), dir8.GetY() );
 
 				if( !grid.IsIn( temp_point.GetX(), temp_point.GetY() ) )
 				{

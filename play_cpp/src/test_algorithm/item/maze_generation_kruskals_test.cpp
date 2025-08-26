@@ -11,8 +11,10 @@
 #include "r2tm/r2tm_windows_utility.hpp"
 
 #include "r2/r2_assert.hpp"
-#include "r2/r2_Direction4.h"
+#include "r2/r2_direction4_bitwise.hpp"
 #include "r2/r2_grid_based_on_vector.hpp"
+#include "r2/r2_point_int.hpp"
+#include "r2/r2ext_direction4_bitwise_with_point.hpp"
 
 namespace maze_generation_kruskals_test
 {
@@ -80,20 +82,20 @@ namespace maze_generation_kruskals_test
 				r2tm::WindowsUtility::MoveCursorPoint( my_pivot_point.x - 1, my_pivot_point.y );
 				std::cout << sets.Get( x, y ).GetRoot()->GetIndex();
 
-				r2::Direction4 dir4;
+				r2::Direction4Bitwise dir4( r2::Direction4Bitwise::eState::Up );
 				for( int i = 0; 4 > i; ++i, dir4.Rotate( true ) )
 				{
-					if( grid.Get( x, y ) & dir4.GetState() )
+					if( grid.Get( x, y ) & static_cast<int>( dir4.GetState() ) )
 					{
 						r2tm::WindowsUtility::CursorPoint current_point;
 
-						if( ( r2::Direction4::eState::Right | r2::Direction4::eState::Left ) & dir4.GetState() )
+						if( ( static_cast<int>( r2::Direction4Bitwise::eState::Right ) | static_cast<int>( r2::Direction4Bitwise::eState::Left ) ) & static_cast<int>( dir4.GetState() ) )
 						{
-							current_point = r2tm::WindowsUtility::CursorPoint( my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() * 2 ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) );
+							current_point = r2tm::WindowsUtility::CursorPoint( my_pivot_point.x + static_cast<short>( dir4.GetX() * 2 ), my_pivot_point.y + static_cast<short>( dir4.GetY() ) );
 						}
 						else
 						{
-							current_point = r2tm::WindowsUtility::CursorPoint( my_pivot_point.x + static_cast<short>( dir4.GetPoint().GetX() ), my_pivot_point.y + static_cast<short>( dir4.GetPoint().GetY() ) );
+							current_point = r2tm::WindowsUtility::CursorPoint( my_pivot_point.x + static_cast<short>( dir4.GetX() ), my_pivot_point.y + static_cast<short>( dir4.GetY() ) );
 						}
 
 						r2tm::WindowsUtility::MoveCursorPoint( current_point );
@@ -122,10 +124,10 @@ namespace maze_generation_kruskals_test
 			using Grid = r2::GridBasedOnVector<std::size_t, int>;
 			using Sets = r2::GridBasedOnVector<std::size_t, Node>;
 
-			DECL_MAIN( Grid grid( 2, 2, r2::Direction4::eState::None ) );
-			PROC_MAIN( grid.Set( 1, 0, r2::Direction4::eState::Up | r2::Direction4::eState::Down ) );
-			PROC_MAIN( grid.Set( 1, 1, r2::Direction4::eState::Left | r2::Direction4::eState::Right ) );
-			PROC_MAIN( grid.Set( 0, 1, r2::Direction4::eState::Left | r2::Direction4::eState::Right | r2::Direction4::eState::Up ) );
+			DECL_MAIN( Grid grid( 2, 2, static_cast<int>( r2::Direction4Bitwise::eState::NONE ) ) );
+			PROC_MAIN( grid.Set( 1, 0, static_cast<int>( r2::Direction4Bitwise::eState::Up ) | static_cast<int>( r2::Direction4Bitwise::eState::Down ) ) );
+			PROC_MAIN( grid.Set( 1, 1, static_cast<int>( r2::Direction4Bitwise::eState::Left ) | static_cast<int>( r2::Direction4Bitwise::eState::Right ) ) );
+			PROC_MAIN( grid.Set( 0, 1, static_cast<int>( r2::Direction4Bitwise::eState::Left ) | static_cast<int>( r2::Direction4Bitwise::eState::Right ) | static_cast<int>( r2::Direction4Bitwise::eState::Up ) ) );
 
 			DECL_MAIN( Sets sets( 2, 2, Node{} ) );
 
@@ -176,7 +178,7 @@ namespace maze_generation_kruskals_test
 
 			DECL_MAIN( const int width = 3 );
 			DECL_MAIN( const int height = 3 );
-			DECL_MAIN( Grid grid( width, height, r2::Direction4::eState::None ) );
+			DECL_MAIN( Grid grid( width, height, static_cast<int>( r2::Direction4Bitwise::eState::NONE ) ) );
 			DECL_MAIN( Sets sets( width, height, Node{} ) );
 			{
 				int temp_index = 0;
@@ -186,7 +188,7 @@ namespace maze_generation_kruskals_test
 			struct Edge
 			{
 				r2::PointInt point;
-				r2::Direction4::eState dir;
+				r2::Direction4Bitwise::eState dir;
 			};
 			DECL_MAIN( std::vector<Edge> edges );
 
@@ -216,11 +218,11 @@ namespace maze_generation_kruskals_test
 					{
 						if( x > 0 )
 						{
-							edges.push_back( { r2::PointInt{ x, y }, r2::Direction4::eState::Left } );
+							edges.push_back( { r2::PointInt{ x, y }, r2::Direction4Bitwise::eState::Left } );
 						}
 						if( y > 0 )
 						{
-							edges.push_back( { r2::PointInt{ x, y }, r2::Direction4::eState::Down } );
+							edges.push_back( { r2::PointInt{ x, y }, r2::Direction4Bitwise::eState::Down } );
 						}
 					}
 				}
@@ -240,12 +242,12 @@ namespace maze_generation_kruskals_test
 				const auto pivot_point_4_connect = r2tm::WindowsUtility::GetCursorPoint();
 
 				r2::PointInt next_point;
-				r2::Direction4 current_dir;
+				r2::Direction4Bitwise current_dir( r2::Direction4Bitwise::eState::Up );
 				for( const auto& e : edges )
 				{
 					r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point_4_connect );
 
-					next_point = e.point + r2::Direction4( e.dir ).GetPoint();
+					next_point = e.point + r2::dir2point<int>( e.dir );
 
 					auto& current_node = sets.Get( e.point.GetX(), e.point.GetY() );
 					auto& next_node = sets.Get( next_point.GetX(), next_point.GetY() );
@@ -263,7 +265,7 @@ namespace maze_generation_kruskals_test
 					//
 					// Direction
 					//
-					grid.Get( e.point.GetX(), e.point.GetY() ) |= e.dir;
+					grid.Get( e.point.GetX(), e.point.GetY() ) |= static_cast<int>( e.dir );
 
 					//
 					//  Reverse Direction
@@ -271,7 +273,7 @@ namespace maze_generation_kruskals_test
 					current_dir.SetState( e.dir );
 					current_dir.Rotate( true );
 					current_dir.Rotate( true );
-					grid.Get( next_point.GetX(), next_point.GetY() ) |= current_dir.GetState();
+					grid.Get( next_point.GetX(), next_point.GetY() ) |= static_cast<int>( current_dir.GetState() );
 
 					PrintGrid( grid, sets );
 					std::cout << r2tm::linefeed2;

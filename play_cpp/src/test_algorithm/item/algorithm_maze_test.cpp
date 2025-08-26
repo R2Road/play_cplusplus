@@ -5,7 +5,7 @@
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_inspector.hpp"
 
-#include "r2/r2_Direction4.h"
+#include "r2/r2_direction4_bitwise.hpp"
 #include "r2/r2_grid_based_on_vector.hpp"
 #include "r2/r2_point_int.hpp"
 
@@ -33,7 +33,7 @@ namespace algorithm_maze_test
 
 			using Grid = r2::GridBasedOnVector<std::size_t, int>;
 
-			DECL_MAIN( r2::Direction4 current_direction );
+			DECL_MAIN( r2::Direction4Bitwise current_direction( r2::Direction4Bitwise::eState::Up ) );
 			DECL_MAIN( r2::PointInt current_point( 0, 0 ) );
 			DECL_MAIN( r2::PointInt next_point( 0, 0 ) );
 			DECL_MAIN( Grid grid );
@@ -50,7 +50,7 @@ namespace algorithm_maze_test
 				int stay_count = 0;
 				while( 4 >= stay_count )
 				{
-					next_point = current_point + current_direction.GetPoint();
+					next_point = current_point + r2::PointInt( current_direction.GetX(), current_direction.GetY() );
 
 					if( !grid.IsIn( next_point.GetX(), next_point.GetY() ) ||  0 < grid.Get( next_point.GetX(), next_point.GetY() ) )
 					{
@@ -109,7 +109,7 @@ namespace algorithm_maze_test
 
 			using Grid = r2::GridBasedOnVector<std::size_t, int>;
 
-			DECL_MAIN( r2::Direction4 current_direction );
+			DECL_MAIN( r2::Direction4Bitwise current_direction( r2::Direction4Bitwise::eState::Up ) );
 			DECL_MAIN( r2::PointInt current_point( 0, 0 ) );
 			DECL_MAIN( r2::PointInt next_point( 0, 0 ) );
 			DECL_MAIN( Grid grid );
@@ -132,7 +132,7 @@ namespace algorithm_maze_test
 				{
 
 					next_point = current_point;
-					next_point.Plus( current_direction.GetPoint().GetX(), current_direction.GetPoint().GetY() );
+					next_point.Plus( current_direction.GetX(), current_direction.GetY() );
 					if( !grid.IsIn( next_point.GetX(), next_point.GetY() ) )
 					{
 						break;
