@@ -609,10 +609,7 @@
     <ClCompile Include="external\r2tm\r2tm_windows_utility.cpp">
       <Filter>_external\r2tm</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction4.cpp">
-      <Filter>_external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction8.cpp">
+    <ClCompile Include="external\r2\r2_direction8_bitwise_state.cpp">
       <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_fps_timer.cpp">
@@ -625,6 +622,15 @@
       <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_rect_int.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_direction4_bitwise.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_direction4_bitwise_state.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_direction8_bitwise.cpp">
       <Filter>_external\r2</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1273,13 +1279,10 @@
     <ClInclude Include="external\r2tm\r2tm_windows_utility.hpp">
       <Filter>_external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_assert.hpp">
+    <ClInclude Include="external\r2\r2_direction8_bitwise.hpp">
       <Filter>_external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction4.h">
-      <Filter>_external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction8.h">
+    <ClInclude Include="external\r2\r2_direction8_bitwise_state.hpp">
       <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_epsilon.hpp">
@@ -1342,7 +1345,28 @@
     <ClInclude Include="external\r2\r2_version_info.hpp">
       <Filter>_external\r2</Filter>
     </ClInclude>
+    <ClInclude Include="external\r2\r2ext_direction4_bitwise_with_point.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2ext_direction8_bitwise_with_point.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2printer_std_direction4_bitwise.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2printer_std_direction8_bitwise.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_vector4.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_assert.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_direction4_bitwise.hpp">
+      <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_direction4_bitwise_state.hpp">
       <Filter>_external\r2</Filter>
     </ClInclude>
   </ItemGroup>
