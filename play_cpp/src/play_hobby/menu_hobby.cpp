@@ -28,6 +28,7 @@ r2tm::WriteFunctionT Menu_Hobby::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
+		mp->AddMessage( "작업중", r2tm::eColor::FG_LightYellow );
 		mp->AddMenu( '1', Menu_InfiniteNumber() );
 
 
@@ -36,16 +37,11 @@ r2tm::WriteFunctionT Menu_Hobby::GetWriteFunction() const
 
 
 
-		mp->AddItem( '9', play_spin_lock::Basic() );
-
-
-
-		mp->AddLineFeed();
-
-
-
-		mp->AddMenu( 'q', Menu_Tree() );
-		mp->AddMenu( 'w', Menu_Property() );
+		mp->AddMessage( "대기", r2tm::eColor::FG_LightGreen );
+		mp->AddItem( 'q', play_spin_lock::Basic() );
+		mp->AddMenu( 'w', Menu_Tree() );
+		mp->AddMenu( 'e', Menu_Property() );
+		mp->AddMenu( 'r', Menu_MemoryPool() );
 
 
 
@@ -62,11 +58,13 @@ r2tm::WriteFunctionT Menu_Hobby::GetWriteFunction() const
 
 
 
+		mp->AddMessage( "완료", r2tm::eColor::FG_LightGreen );
 		mp->AddMenu( 'z', Menu_ListBasedOnArray() );
-		mp->AddMenu( 'x', Menu_MemoryPool() );
+
 
 
 		mp->AddSplit();
+
 
 
 		mp->AddMenu( 27, Menu_Root() );
