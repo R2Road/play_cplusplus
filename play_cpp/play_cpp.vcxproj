@@ -43,6 +43,7 @@
     <ClCompile Include="src\play_debug\menu_debug.cpp" />
     <ClCompile Include="src\play_debug\play_debug.cpp" />
     <ClCompile Include="src\play_hobby\menu_hobby.cpp" />
+    <ClCompile Include="src\play_hobby\menu_infinite_number.cpp" />
     <ClCompile Include="src\play_hobby\menu_list_based_on_array.cpp" />
     <ClCompile Include="src\play_hobby\menu_memory_pool.cpp" />
     <ClCompile Include="src\play_hobby\play_infinite_number.cpp" />
@@ -260,6 +261,7 @@
     <ClInclude Include="src\play_debug\menu_debug.h" />
     <ClInclude Include="src\play_debug\play_debug.h" />
     <ClInclude Include="src\play_hobby\menu_hobby.hpp" />
+    <ClInclude Include="src\play_hobby\menu_infinite_number.hpp" />
     <ClInclude Include="src\play_hobby\menu_list_based_on_array.hpp" />
     <ClInclude Include="src\play_hobby\menu_memory_pool.hpp" />
     <ClInclude Include="src\play_hobby\play_infinite_number.hpp" />

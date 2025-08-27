@@ -2,10 +2,10 @@
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
-#include "play_infinite_number.hpp"
 #include "play_serialize.hpp"
 #include "play_spin_lock.hpp"
 
+#include "menu_infinite_number.hpp"
 #include "menu_list_based_on_array.hpp"
 #include "menu_memory_pool.hpp"
 #include "menu_property.hpp"
@@ -28,8 +28,7 @@ r2tm::WriteFunctionT Menu_Hobby::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', play_infinite_number::Declaration() );
-		mp->AddItem( '2', play_infinite_number::Operator_Plus() );
+		mp->AddMenu( '1', Menu_InfiniteNumber() );
 
 
 
