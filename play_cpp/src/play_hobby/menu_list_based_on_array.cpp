@@ -1,23 +1,23 @@
-#include "ListBasedOnArrayMenu.h"
+#include "menu_list_based_on_array.hpp"
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
-#include "item/play_list_based_on_array.h"
+#include "play_list_based_on_array.hpp"
 
-#include "HobbyMenu.h"
+#include "menu_hobby.hpp"
 
-r2tm::TitleFunctionT ListBasedOnArrayMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_ListBasedOnArray::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "List Based On Array";
 	};
 }
-r2tm::DescriptionFunctionT ListBasedOnArrayMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_ListBasedOnArray::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT ListBasedOnArrayMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_ListBasedOnArray::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
@@ -42,6 +42,6 @@ r2tm::WriteFunctionT ListBasedOnArrayMenu::GetWriteFunction() const
 		mp->AddSplit();
 
 
-		mp->AddMenu( 27, HobbyMenu() );
+		mp->AddMenu( 27, Menu_Hobby() );
 	};
 }

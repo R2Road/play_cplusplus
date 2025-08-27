@@ -1,19 +1,19 @@
-#include "MemoryPoolMenu.h"
+#include "menu_memory_pool.hpp"
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
-#include "item/play_memory_pool.h"
+#include "play_memory_pool.hpp"
 
-#include "HobbyMenu.h"
+#include "menu_hobby.hpp"
 
-r2tm::TitleFunctionT MemoryPoolMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_MemoryPool::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Memory Pool Menu ( Researching... )";
 	};
 }
-r2tm::DescriptionFunctionT MemoryPoolMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_MemoryPool::GetDescriptionFunction() const
 {
 	return []()->const char* { return
 		"memory pool Àº Å©°Ô..."
@@ -31,7 +31,7 @@ r2tm::DescriptionFunctionT MemoryPoolMenu::GetDescriptionFunction() const
 		;
 	};
 }
-r2tm::WriteFunctionT MemoryPoolMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_MemoryPool::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
@@ -51,6 +51,6 @@ r2tm::WriteFunctionT MemoryPoolMenu::GetWriteFunction() const
 		mp->AddSplit();
 
 
-		mp->AddMenu( 27, HobbyMenu() );
+		mp->AddMenu( 27, Menu_Hobby() );
 	};
 }

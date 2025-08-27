@@ -58,9 +58,6 @@
     <Filter Include="play_hobby">
       <UniqueIdentifier>{3c5e3fee-a097-460f-9772-dbfd7cefa3ae}</UniqueIdentifier>
     </Filter>
-    <Filter Include="play_hobby\item">
-      <UniqueIdentifier>{406a41e2-4122-4715-929d-62249886c0d7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="_external">
       <UniqueIdentifier>{a891eacb-842e-4a80-99c7-6a74d9149233}</UniqueIdentifier>
     </Filter>
@@ -446,19 +443,19 @@
     <ClCompile Include="src\test_cpp\NameSpaceMenu.cpp">
       <Filter>test_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\HobbyMenu.cpp">
+    <ClCompile Include="src\play_hobby\menu_hobby.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\ListBasedOnArrayMenu.cpp">
+    <ClCompile Include="src\play_hobby\menu_list_based_on_array.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\MemoryPoolMenu.cpp">
+    <ClCompile Include="src\play_hobby\menu_memory_pool.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\PropertyMenu.cpp">
+    <ClCompile Include="src\play_hobby\menu_property.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\TreeMenu.cpp">
+    <ClCompile Include="src\play_hobby\menu_tree.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
     <ClCompile Include="src\test_std\item\std_functional_mem_fn_test.cpp">
@@ -484,27 +481,6 @@
     </ClCompile>
     <ClCompile Include="src\test_std\item\std_memory_align_test.cpp">
       <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\play_hobby\item\play_memory_pool.cpp">
-      <Filter>play_hobby\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\play_hobby\item\play_serialize.cpp">
-      <Filter>play_hobby\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\play_hobby\item\play_spin_lock.cpp">
-      <Filter>play_hobby\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\play_hobby\item\play_list_based_on_array.cpp">
-      <Filter>play_hobby\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\play_hobby\item\play_tree.cpp">
-      <Filter>play_hobby\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\play_hobby\item\play_infinite_number.cpp">
-      <Filter>play_hobby\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\play_hobby\item\play_property.cpp">
-      <Filter>play_hobby\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_std\item\std_queue_test.cpp">
       <Filter>test_std\item</Filter>
@@ -632,6 +608,27 @@
     </ClCompile>
     <ClCompile Include="external\r2\r2_direction8_bitwise.cpp">
       <Filter>_external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_hobby\play_infinite_number.cpp">
+      <Filter>play_hobby</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_hobby\play_list_based_on_array.cpp">
+      <Filter>play_hobby</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_hobby\play_memory_pool.cpp">
+      <Filter>play_hobby</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_hobby\play_property.cpp">
+      <Filter>play_hobby</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_hobby\play_serialize.cpp">
+      <Filter>play_hobby</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_hobby\play_spin_lock.cpp">
+      <Filter>play_hobby</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_hobby\play_tree.cpp">
+      <Filter>play_hobby</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1032,19 +1029,19 @@
     <ClInclude Include="src\test_cpp\NameSpaceMenu.h">
       <Filter>test_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\HobbyMenu.h">
+    <ClInclude Include="src\play_hobby\menu_hobby.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\ListBasedOnArrayMenu.h">
+    <ClInclude Include="src\play_hobby\menu_list_based_on_array.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\MemoryPoolMenu.h">
+    <ClInclude Include="src\play_hobby\menu_memory_pool.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\PropertyMenu.h">
+    <ClInclude Include="src\play_hobby\menu_property.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\TreeMenu.h">
+    <ClInclude Include="src\play_hobby\menu_tree.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
     <ClInclude Include="src\test_std\item\std_functional_mem_fn_test_helper.hpp">
@@ -1076,27 +1073,6 @@
     </ClInclude>
     <ClInclude Include="src\test_std\item\std_memory_align_test.h">
       <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\play_hobby\item\play_memory_pool.h">
-      <Filter>play_hobby\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\play_hobby\item\play_serialize.h">
-      <Filter>play_hobby\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\play_hobby\item\play_spin_lock.h">
-      <Filter>play_hobby\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\play_hobby\item\play_list_based_on_array.h">
-      <Filter>play_hobby\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\play_hobby\item\play_tree.h">
-      <Filter>play_hobby\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\play_hobby\item\play_infinite_number.h">
-      <Filter>play_hobby\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\play_hobby\item\play_property.h">
-      <Filter>play_hobby\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_std\item\std_queue_test.h">
       <Filter>test_std\item</Filter>
@@ -1368,6 +1344,27 @@
     </ClInclude>
     <ClInclude Include="external\r2\r2_direction4_bitwise_state.hpp">
       <Filter>_external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_hobby\play_infinite_number.hpp">
+      <Filter>play_hobby</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_hobby\play_list_based_on_array.hpp">
+      <Filter>play_hobby</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_hobby\play_memory_pool.hpp">
+      <Filter>play_hobby</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_hobby\play_property.hpp">
+      <Filter>play_hobby</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_hobby\play_serialize.hpp">
+      <Filter>play_hobby</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_hobby\play_spin_lock.hpp">
+      <Filter>play_hobby</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_hobby\play_tree.hpp">
+      <Filter>play_hobby</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

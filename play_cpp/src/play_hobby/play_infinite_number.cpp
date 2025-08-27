@@ -1,4 +1,4 @@
-#include "play_infinite_number.h"
+#include "play_infinite_number.hpp"
 
 #include <string>
 

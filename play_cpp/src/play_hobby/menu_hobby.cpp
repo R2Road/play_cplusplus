@@ -1,30 +1,30 @@
-#include "HobbyMenu.h"
+#include "menu_hobby.hpp"
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
-#include "item/play_infinite_number.h"
-#include "item/play_serialize.h"
-#include "item/play_spin_lock.h"
+#include "play_infinite_number.hpp"
+#include "play_serialize.hpp"
+#include "play_spin_lock.hpp"
 
-#include "ListBasedOnArrayMenu.h"
-#include "MemoryPoolMenu.h"
-#include "PropertyMenu.h"
-#include "TreeMenu.h"
+#include "menu_list_based_on_array.hpp"
+#include "menu_memory_pool.hpp"
+#include "menu_property.hpp"
+#include "menu_tree.hpp"
 
 #include "menu_root.h"
 
-r2tm::TitleFunctionT HobbyMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Hobby::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Hobby";
 	};
 }
-r2tm::DescriptionFunctionT HobbyMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Hobby::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT HobbyMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Hobby::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
@@ -45,8 +45,8 @@ r2tm::WriteFunctionT HobbyMenu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 'q', TreeMenu() );
-		mp->AddMenu( 'w', PropertyMenu() );
+		mp->AddMenu( 'q', Menu_Tree() );
+		mp->AddMenu( 'w', Menu_Property() );
 
 
 
@@ -63,8 +63,8 @@ r2tm::WriteFunctionT HobbyMenu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 'z', ListBasedOnArrayMenu() );
-		mp->AddMenu( 'x', MemoryPoolMenu() );
+		mp->AddMenu( 'z', Menu_ListBasedOnArray() );
+		mp->AddMenu( 'x', Menu_MemoryPool() );
 
 
 		mp->AddSplit();

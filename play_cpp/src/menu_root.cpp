@@ -11,7 +11,7 @@
 
 #include "play_cpu/menu_cpu.h"
 #include "play_debug/menu_debug.h"
-#include "play_hobby/HobbyMenu.h"
+#include "play_hobby/menu_hobby.hpp"
 #include "play_math/menu_play_math.h"
 #include "play_rendering_pipeline/menu_play_rendering_pipeline.h"
 #include "test_algorithm/AlgorithmMenu.h"
@@ -66,8 +66,7 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
-		mp->AddMenu( '1', Menu_Play_Math() );
-		mp->AddMenu( '2', Menu_Play_Rendering_Pipeline() );
+		mp->AddMessage( "작업중", r2tm::eColor::FG_LightYellow );
 
 
 
@@ -75,6 +74,7 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 
 
 
+		mp->AddMessage( "완료", r2tm::eColor::FG_LightGreen );
 		mp->AddMenu( 'q', WindowsMenu() );
 		mp->AddMenu( 'w', C_Menu() );
 		mp->AddMenu( 'e', CPP_Menu() );
@@ -90,6 +90,8 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 
 
 		
+		mp->AddMenu( 'a', Menu_Play_Math() );
+		mp->AddMenu( 's', Menu_Play_Rendering_Pipeline() );
 		mp->AddMenu( 'd', ETCMenu() );
 
 
@@ -99,7 +101,7 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 
 
 		mp->AddMenu( 'z', AlgorithmMenu() );
-		mp->AddMenu( 'x', HobbyMenu() );
+		mp->AddMenu( 'x', Menu_Hobby() );
 		mp->AddMenu( 'c', PerformanceMenu() );
 		mp->AddMenu( 'v', Menu_CPU() );
 

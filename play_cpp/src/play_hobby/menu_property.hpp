@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_menu.hpp"
 
-class ListBasedOnArrayMenu : public r2tm::iMenu
+class Menu_Property : public r2tm::iMenu
 {
 public:
 	r2tm::TitleFunctionT GetTitleFunction() const override;

@@ -1,4 +1,4 @@
-#include "play_list_based_on_array.h"
+#include "play_list_based_on_array.hpp"
 
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_inspector.hpp"

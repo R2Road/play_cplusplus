@@ -1,4 +1,4 @@
-#include "play_tree.h"
+#include "play_tree.hpp"
 
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
