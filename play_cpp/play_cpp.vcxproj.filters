@@ -633,6 +633,9 @@
     <ClCompile Include="src\play_hobby\menu_infinite_number.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
+    <ClCompile Include="src\play_hobby\menu_serialize.cpp">
+      <Filter>play_hobby</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -1370,6 +1373,9 @@
       <Filter>play_hobby</Filter>
     </ClInclude>
     <ClInclude Include="src\play_hobby\menu_infinite_number.hpp">
+      <Filter>play_hobby</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_hobby\menu_serialize.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
   </ItemGroup>

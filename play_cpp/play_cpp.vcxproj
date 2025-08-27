@@ -46,6 +46,7 @@
     <ClCompile Include="src\play_hobby\menu_infinite_number.cpp" />
     <ClCompile Include="src\play_hobby\menu_list_based_on_array.cpp" />
     <ClCompile Include="src\play_hobby\menu_memory_pool.cpp" />
+    <ClCompile Include="src\play_hobby\menu_serialize.cpp" />
     <ClCompile Include="src\play_hobby\play_infinite_number.cpp" />
     <ClCompile Include="src\play_hobby\play_list_based_on_array.cpp" />
     <ClCompile Include="src\play_hobby\play_memory_pool.cpp" />
@@ -264,6 +265,7 @@
     <ClInclude Include="src\play_hobby\menu_infinite_number.hpp" />
     <ClInclude Include="src\play_hobby\menu_list_based_on_array.hpp" />
     <ClInclude Include="src\play_hobby\menu_memory_pool.hpp" />
+    <ClInclude Include="src\play_hobby\menu_serialize.hpp" />
     <ClInclude Include="src\play_hobby\play_infinite_number.hpp" />
     <ClInclude Include="src\play_hobby\play_list_based_on_array.hpp" />
     <ClInclude Include="src\play_hobby\play_memory_pool.hpp" />

@@ -2,13 +2,13 @@
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
-#include "play_serialize.hpp"
 #include "play_spin_lock.hpp"
 
 #include "menu_infinite_number.hpp"
 #include "menu_list_based_on_array.hpp"
 #include "menu_memory_pool.hpp"
 #include "menu_property.hpp"
+#include "menu_serialize.hpp"
 #include "menu_tree.hpp"
 
 #include "menu_root.h"
@@ -42,15 +42,7 @@ r2tm::WriteFunctionT Menu_Hobby::GetWriteFunction() const
 		mp->AddMenu( 'w', Menu_Tree() );
 		mp->AddMenu( 'e', Menu_Property() );
 		mp->AddMenu( 'r', Menu_MemoryPool() );
-
-
-
-		mp->AddLineFeed();
-
-
-
-		mp->AddItem( 'a', play_serialize::Basic() );
-		mp->AddItem( 's', play_serialize::Copy() );
+		mp->AddMenu( 't', Menu_Serialize() );
 
 
 
