@@ -40,8 +40,16 @@ r2tm::WriteFunctionT Menu_InfiniteNumber::GetWriteFunction() const
 
 
 
-		mp->AddItem( '1', play_infinite_number::Declaration() );
-		mp->AddItem( '2', play_infinite_number::Operator_Plus() );
+		mp->AddItem( '1', play_infinite_number::_999() );
+
+
+
+		mp->AddLineFeed();
+
+
+
+		mp->AddItem( 'q', play_infinite_number::Declaration() );
+		mp->AddItem( 'w', play_infinite_number::Operator_Plus() );
 
 
 

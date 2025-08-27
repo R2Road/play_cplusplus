@@ -55,6 +55,68 @@ namespace
 
 namespace play_infinite_number
 {
+	r2tm::TitleFunctionT _999::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Infinite Number : _999";
+		};
+	}
+	r2tm::DoFunctionT _999::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "short의 범위" );
+
+				LF();
+
+				OUTPUT_VALUE( std::numeric_limits<short>::min() );
+				OUTPUT_VALUE( std::numeric_limits<short>::max() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "999 + 999 의 결과로 다음 자릿수에는 1이 추가 된다." );
+				OUTPUT_SUBJECT( "캐리값 처리에 편리하다." );
+
+				LF();
+
+				DECL_MAIN( const short s_1 = 999 );
+				DECL_MAIN( const short s_2 = 999 );
+
+				LF();
+
+				OUTPUT_VALUE( s_1 + s_2 );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "기대 하고 있는 출력 방식" );
+
+				LF();
+
+				DECL_MAIN( const short s_1 = 999 );
+				DECL_MAIN( const short s_2 = 999 );
+				DECL_MAIN( const short s_3 = 999 );
+
+				LF();
+
+				PROC_MAIN( std::cout << s_1 << "," << s_2 << "," << s_3 << r2tm::linefeed );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
