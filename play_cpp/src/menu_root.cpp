@@ -67,6 +67,7 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 	return[]( r2tm::MenuProcessor* mp )
 	{
 		mp->AddMessage( "ÀÛ¾÷Áß", r2tm::eColor::FG_LightYellow );
+		mp->AddMenu( '1', Menu_Hobby() );
 
 
 
@@ -101,9 +102,8 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 
 
 		mp->AddMenu( 'z', AlgorithmMenu() );
-		mp->AddMenu( 'x', Menu_Hobby() );
-		mp->AddMenu( 'c', PerformanceMenu() );
-		mp->AddMenu( 'v', Menu_CPU() );
+		mp->AddMenu( 'x', PerformanceMenu() );
+		mp->AddMenu( 'c', Menu_CPU() );
 
 
 
