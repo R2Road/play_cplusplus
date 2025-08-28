@@ -302,7 +302,7 @@
     <ClInclude Include="src\play_math\play_math___helper_vector2.h" />
     <ClInclude Include="src\play_math\play_math___helper_vector3.h" />
     <ClInclude Include="src\play_math\play_math_basic.h" />
-    <ClInclude Include="src\menu_root.h" />
+    <ClInclude Include="src\menu_root.hpp" />
     <ClInclude Include="src\play_math\play_math___helper_common.h" />
     <ClInclude Include="src\play_math\play_math___helper_vector4.h" />
     <ClInclude Include="src\play_rendering_pipeline\menu_play_rendering_pipeline.h" />

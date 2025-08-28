@@ -4,7 +4,7 @@
 
 #include "play_cpu_basic.h"
 
-#include "menu_root.h"
+#include "menu_root.hpp"
 
 r2tm::TitleFunctionT Menu_CPU::GetTitleFunction() const
 {

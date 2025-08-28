@@ -4,7 +4,7 @@
 
 #include "play_debug.h"
 
-#include "menu_root.h"
+#include "menu_root.hpp"
 
 r2tm::TitleFunctionT Menu_Debug::GetTitleFunction() const
 {

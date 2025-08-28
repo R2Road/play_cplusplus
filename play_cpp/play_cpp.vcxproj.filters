@@ -653,7 +653,7 @@
     <ClInclude Include="src\test_cpp\item\locale_test.h">
       <Filter>test_cpp\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu_root.h" />
+    <ClInclude Include="src\menu_root.hpp" />
     <ClInclude Include="src\test_windows\item\windows_sound_test.h">
       <Filter>test_windows\item</Filter>
     </ClInclude>

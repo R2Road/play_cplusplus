@@ -14,7 +14,7 @@
 
 #include "ClassMenu.h"
 #include "CharMenu.h"
-#include "menu_root.h"
+#include "menu_root.hpp"
 
 #include "item/cpp_braces.h"
 

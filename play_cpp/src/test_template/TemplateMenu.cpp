@@ -10,7 +10,7 @@
 #include "TemplatePracticeMenu.h"
 #include "TemplateVariadicMenu.h"
 
-#include "menu_root.h"
+#include "menu_root.hpp"
 
 r2tm::TitleFunctionT TemplateMenu::GetTitleFunction() const
 {

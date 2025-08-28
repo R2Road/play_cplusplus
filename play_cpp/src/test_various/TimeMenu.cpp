@@ -6,7 +6,7 @@
 #include "test_std/item/std_chrono_test.h"
 #include "test_windows/item/windows_time_test.h"
 
-#include "menu_root.h"
+#include "menu_root.hpp"
 
 r2tm::TitleFunctionT TimeMenu::GetTitleFunction() const
 {

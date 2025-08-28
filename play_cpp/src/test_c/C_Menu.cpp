@@ -17,7 +17,7 @@
 #include "OperatorMenu.h"
 #include "PointerMenu.h"
 #include "UnionMenu.h"
-#include "menu_root.h"
+#include "menu_root.hpp"
 
 r2tm::TitleFunctionT C_Menu::GetTitleFunction() const
 {

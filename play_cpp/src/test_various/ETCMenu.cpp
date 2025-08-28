@@ -4,7 +4,7 @@
 
 #include "item/etc_0_test.h"
 
-#include "menu_root.h"
+#include "menu_root.hpp"
 
 r2tm::TitleFunctionT ETCMenu::GetTitleFunction() const
 {

@@ -5,7 +5,7 @@
 #include "item/performance_1_test.h"
 #include "item/performance_container_iteration_test.h"
 
-#include "menu_root.h"
+#include "menu_root.hpp"
 
 r2tm::TitleFunctionT PerformanceMenu::GetTitleFunction() const
 {

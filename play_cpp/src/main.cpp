@@ -5,7 +5,7 @@
 #include "r2tm/r2tm_director.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
 
-#include "menu_root.h"
+#include "menu_root.hpp"
 
 int main()
 {

@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
-#include "menu_root.h"
+#include "menu_root.hpp"
 
 #include "play_rendering_pipeline.h"
 
