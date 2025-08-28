@@ -121,31 +121,27 @@ namespace char_test
 			LS();
 
 			{
-				DECL_MAIN( const char* str = R"(Test)" );
-
-				LF();
-
-				PROC_MAIN( std::cout << str << r2tm::linefeed );
-			}
-
-			LS();
-
-			{
 				OUTPUT_NOTE( "escape 문자들이 무시되고 입력된 그대로 출력된다." );
 
 				LF();
 
-				const char* str = R"(Test
-Test \n
-Test \t )";
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const char* str = R"(
+                                Test
+                                Test \n
+                                Test \t
+				)";
+				OUTPUT_SOURCE_END;
 
-				std::cout << str << r2tm::linefeed;
+				LF();
+
+				OUTPUT_VALUE( str );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "Delimeter는 따옴표 사용이 문제가 되는 경우( www 주소를 다룬다거나 )에..." );
+				OUTPUT_NOTE( "delimeter : 따옴표 사용이 문제가 되는 경우( www 주소를 다룬다거나 )에..." );
 				OUTPUT_NOTE( "명확하게 구분지어 주기 위해 사용한다." );
 				OUTPUT_NOTE( "앞 뒤 같은 문자열로 맞춰주면 된다." );
 				OUTPUT_NOTE( "최대 16자." );
@@ -154,7 +150,9 @@ Test \t )";
 
 				DECL_MAIN( const char* str = R"delimeter(Embedded)" pre)delimeter" );
 
-				PROC_MAIN( std::cout << str << r2tm::linefeed );
+				LF();
+
+				OUTPUT_VALUE( str );
 			}
 
 			LS();
