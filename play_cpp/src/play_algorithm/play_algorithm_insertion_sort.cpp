@@ -1,11 +1,11 @@
-#include "algorithm_insertion_sort_test.h"
+#include "play_algorithm_insertion_sort.hpp"
 
 #include <array>
 
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_stop_watch.hpp"
 
-namespace algorithm_insertion_sort_test
+namespace play_algorithm_insertion_sort
 {
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{

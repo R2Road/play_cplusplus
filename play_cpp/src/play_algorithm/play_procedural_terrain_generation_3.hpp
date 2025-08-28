@@ -2,9 +2,9 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace algorithm_etc_test
+namespace play_procedural_terrain_generation_3
 {
-	class DJB2 : public r2tm::iItem
+	class Weights : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

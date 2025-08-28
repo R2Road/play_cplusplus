@@ -4,17 +4,11 @@
     <Filter Include="test_cpp">
       <UniqueIdentifier>{77a45f2c-1f22-46b3-9c35-5ee34c38a7b9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test_algorithm">
-      <UniqueIdentifier>{c256e4fc-5074-43ac-9a3c-e7ac60bb99b5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="algorithm">
       <UniqueIdentifier>{bb464bee-2936-45c5-9434-19d5decd9078}</UniqueIdentifier>
     </Filter>
     <Filter Include="utility">
       <UniqueIdentifier>{b470e37a-ab48-4294-91e6-d840afb5ce71}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test_algorithm\item">
-      <UniqueIdentifier>{3f71f778-8bc1-425a-9453-6777ea0b1376}</UniqueIdentifier>
     </Filter>
     <Filter Include="test_cpp\item">
       <UniqueIdentifier>{afef003b-bbc9-4b3d-9500-41ffccb176cd}</UniqueIdentifier>
@@ -79,29 +73,14 @@
     <Filter Include="play_cpu">
       <UniqueIdentifier>{ccdab92a-10c1-4cf6-857e-4a1c22fbecba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="play_algorithm">
+      <UniqueIdentifier>{8318de03-f18b-4d49-a782-ffe43002b1aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\algorithm\r2algorithm_astar_PathBuilder.cpp">
       <Filter>algorithm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\item\algorithm_astar_test.cpp">
-      <Filter>test_algorithm\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\item\algorithm_bubble_sort_test.cpp">
-      <Filter>test_algorithm\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\item\algorithm_etc_test.cpp">
-      <Filter>test_algorithm\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\item\algorithm_insertion_sort_test.cpp">
-      <Filter>test_algorithm\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\item\algorithm_maze_test.cpp">
-      <Filter>test_algorithm\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\item\algorithm_selection_sort_test.cpp">
-      <Filter>test_algorithm\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_cpp\item\char_test.cpp">
       <Filter>test_cpp\item</Filter>
@@ -151,9 +130,6 @@
     </ClCompile>
     <ClCompile Include="src\test_performance\PerformanceMenu.cpp">
       <Filter>test_performancee</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\AlgorithmMenu.cpp">
-      <Filter>test_algorithm</Filter>
     </ClCompile>
     <ClCompile Include="src\test_cpp\EnumMenu.cpp">
       <Filter>test_cpp</Filter>
@@ -236,29 +212,8 @@
     <ClCompile Include="src\test_std\item\std_vector_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_algorithm\AlgorithmHelper.cpp">
-      <Filter>test_algorithm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\item\procedural_terrain_generation_1_test.cpp">
-      <Filter>test_algorithm\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\item\procedural_terrain_generation_2_test.cpp">
-      <Filter>test_algorithm\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\item\procedural_terrain_generation_3_test.cpp">
-      <Filter>test_algorithm\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_cpp\ClassMenu.cpp">
       <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\ProceduralTerrainGenerationMenu.cpp">
-      <Filter>test_algorithm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\MazeGenerationMenu.cpp">
-      <Filter>test_algorithm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_algorithm\item\maze_generation_kruskals_test.cpp">
-      <Filter>test_algorithm\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_c\item\c_file_test.cpp">
       <Filter>test_c\item</Filter>
@@ -636,6 +591,48 @@
     <ClCompile Include="src\play_hobby\menu_serialize.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
+    <ClCompile Include="src\play_algorithm\algorithm_helper.cpp">
+      <Filter>play_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_algorithm\menu_algorithm.cpp">
+      <Filter>play_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_algorithm\menu_maze_generation.cpp">
+      <Filter>play_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_algorithm\menu_procedural_terrain_generation.cpp">
+      <Filter>play_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_algorithm\play_algorithm_astar.cpp">
+      <Filter>play_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_algorithm\play_algorithm_bubble_sort.cpp">
+      <Filter>play_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_algorithm\play_algorithm_etc.cpp">
+      <Filter>play_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_algorithm\play_algorithm_insertion_sort.cpp">
+      <Filter>play_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_algorithm\play_algorithm_maze.cpp">
+      <Filter>play_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_algorithm\play_algorithm_selection_sort.cpp">
+      <Filter>play_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_algorithm\play_maze_generation_kruskals.cpp">
+      <Filter>play_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_algorithm\play_procedural_terrain_generation_1.cpp">
+      <Filter>play_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_algorithm\play_procedural_terrain_generation_2.cpp">
+      <Filter>play_algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_algorithm\play_procedural_terrain_generation_3.cpp">
+      <Filter>play_algorithm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -643,24 +640,6 @@
     </ClInclude>
     <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h">
       <Filter>algorithm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\item\algorithm_astar_test.h">
-      <Filter>test_algorithm\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\item\algorithm_bubble_sort_test.h">
-      <Filter>test_algorithm\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\item\algorithm_etc_test.h">
-      <Filter>test_algorithm\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\item\algorithm_insertion_sort_test.h">
-      <Filter>test_algorithm\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\item\algorithm_maze_test.h">
-      <Filter>test_algorithm\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\item\algorithm_selection_sort_test.h">
-      <Filter>test_algorithm\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\item\char_test.h">
       <Filter>test_cpp\item</Filter>
@@ -710,9 +689,6 @@
     </ClInclude>
     <ClInclude Include="src\test_performance\PerformanceMenu.h">
       <Filter>test_performancee</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\AlgorithmMenu.h">
-      <Filter>test_algorithm</Filter>
     </ClInclude>
     <ClInclude Include="src\test_cpp\EnumMenu.h">
       <Filter>test_cpp</Filter>
@@ -795,29 +771,8 @@
     <ClInclude Include="src\test_std\item\std_vector_test.h">
       <Filter>test_std\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_algorithm\AlgorithmHelper.h">
-      <Filter>test_algorithm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\item\procedural_terrain_generation_1_test.h">
-      <Filter>test_algorithm\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\item\procedural_terrain_generation_2_test.h">
-      <Filter>test_algorithm\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\item\procedural_terrain_generation_3_test.h">
-      <Filter>test_algorithm\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_cpp\ClassMenu.h">
       <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\ProceduralTerrainGenerationMenu.h">
-      <Filter>test_algorithm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\MazeGenerationMenu.h">
-      <Filter>test_algorithm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_algorithm\item\maze_generation_kruskals_test.h">
-      <Filter>test_algorithm\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_c\item\c_file_test.h">
       <Filter>test_c\item</Filter>
@@ -1377,6 +1332,48 @@
     </ClInclude>
     <ClInclude Include="src\play_hobby\menu_serialize.hpp">
       <Filter>play_hobby</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_algorithm\algorithm_helper.hpp">
+      <Filter>play_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_algorithm\menu_algorithm.hpp">
+      <Filter>play_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_algorithm\menu_maze_generation.hpp">
+      <Filter>play_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_algorithm\menu_procedural_terrain_generation.hpp">
+      <Filter>play_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_algorithm\play_algorithm_astar.hpp">
+      <Filter>play_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_algorithm\play_algorithm_bubble_sort.hpp">
+      <Filter>play_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_algorithm\play_algorithm_etc.hpp">
+      <Filter>play_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_algorithm\play_algorithm_insertion_sort.hpp">
+      <Filter>play_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_algorithm\play_algorithm_maze.hpp">
+      <Filter>play_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_algorithm\play_algorithm_selection_sort.hpp">
+      <Filter>play_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_algorithm\play_maze_generation_kruskals.hpp">
+      <Filter>play_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_algorithm\play_procedural_terrain_generation_1.hpp">
+      <Filter>play_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_algorithm\play_procedural_terrain_generation_2.hpp">
+      <Filter>play_algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_algorithm\play_procedural_terrain_generation_3.hpp">
+      <Filter>play_algorithm</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

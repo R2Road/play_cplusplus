@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace procedural_terrain_generation_2_test
+namespace play_procedural_terrain_generation_2
 {
 	class Bone : public r2tm::iItem
 	{

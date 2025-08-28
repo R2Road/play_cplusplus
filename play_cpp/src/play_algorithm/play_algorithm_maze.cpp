@@ -1,18 +1,18 @@
-#include "algorithm_maze_test.h"
+#include "play_algorithm_maze.hpp"
 
 #include <conio.h> // _kbhit(), _getch()
 
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 #include "r2/r2_direction4_bitwise.hpp"
 #include "r2/r2_grid_based_on_vector.hpp"
 #include "r2/r2_point_int.hpp"
 
-#include "r2tm/r2tm_windows_utility.hpp"
-#include "test_algorithm/AlgorithmHelper.h"
+#include "algorithm_helper.hpp"
 
-namespace algorithm_maze_test
+namespace play_algorithm_maze
 {
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{

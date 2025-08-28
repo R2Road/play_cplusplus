@@ -1,11 +1,11 @@
-#include "algorithm_bubble_sort_test.h"
+#include "play_algorithm_bubble_sort.hpp"
 
 #include <array>
 
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_stop_watch.hpp"
 
-namespace algorithm_bubble_sort_test
+namespace play_algorithm_bubble_sort
 {
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{

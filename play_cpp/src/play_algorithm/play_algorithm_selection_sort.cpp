@@ -1,4 +1,4 @@
-#include "algorithm_selection_sort_test.h"
+#include "play_algorithm_selection_sort.hpp"
 
 #include <array>
 
@@ -16,7 +16,7 @@ std::basic_ostream<_Elem, _Traits>& operator << ( std::basic_ostream<_Elem, _Tra
 	return ( _Ostr );
 }
 
-namespace algorithm_selection_sort_test
+namespace play_algorithm_selection_sort
 {
 	r2tm::TitleFunctionT Case1::GetTitleFunction() const
 	{

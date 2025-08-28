@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_menu.hpp"
 
-class MazeGenerationMenu : public r2tm::iMenu
+class Menu_MazeGeneration : public r2tm::iMenu
 {
 public:
 	r2tm::TitleFunctionT GetTitleFunction() const override;

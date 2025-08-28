@@ -2,15 +2,8 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace maze_generation_kruskals_test
+namespace play_algorithm_insertion_sort
 {
-	class ViewTest : public r2tm::iItem
-	{
-	public:
-		r2tm::TitleFunctionT GetTitleFunction() const override;
-		r2tm::DoFunctionT GetDoFunction() const override;
-	};
-
 	class Basic : public r2tm::iItem
 	{
 	public:

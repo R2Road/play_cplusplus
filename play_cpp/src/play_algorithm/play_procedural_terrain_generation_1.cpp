@@ -1,4 +1,4 @@
-#include "procedural_terrain_generation_1_test.h"
+#include "play_procedural_terrain_generation_1.hpp"
 
 #include <conio.h>
 
@@ -9,9 +9,9 @@
 #include "r2/r2_grid_based_on_vector.hpp"
 #include "r2/r2_random.hpp"
 
-#include "test_algorithm/AlgorithmHelper.h"
+#include "algorithm_helper.hpp"
 
-namespace procedural_terrain_generation_1_test
+namespace play_procedural_terrain_generation_1
 {
 	enum class eTerrainType
 	{

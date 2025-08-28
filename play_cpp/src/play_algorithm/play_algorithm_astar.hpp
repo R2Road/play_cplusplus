@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace algorithm_astar_test
+namespace play_algorithm_astar
 {
 	class Basic : public r2tm::iItem
 	{

@@ -1,4 +1,4 @@
-#include "algorithm_etc_test.h"
+#include "play_algorithm_etc.hpp"
 
 #include "r2tm/r2tm_ostream.hpp"
 
@@ -7,7 +7,7 @@
 // http://www.cse.yorku.ca/~oz/hash.html
 //
 
-namespace algorithm_etc_test
+namespace play_algorithm_etc
 {
 	unsigned long djb2_hash( const char* str )
 	{

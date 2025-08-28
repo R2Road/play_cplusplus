@@ -1,4 +1,4 @@
-#include "algorithm_astar_test.h"
+#include "play_algorithm_astar.hpp"
 
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
@@ -92,7 +92,7 @@ namespace
 	}
 }
 
-namespace algorithm_astar_test
+namespace play_algorithm_astar
 {
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{

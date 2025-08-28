@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace algorithm_bubble_sort_test
+namespace play_algorithm_bubble_sort
 {
 	class Basic : public r2tm::iItem
 	{

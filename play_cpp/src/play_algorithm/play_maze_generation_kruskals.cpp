@@ -1,4 +1,4 @@
-#include "maze_generation_kruskals_test.h"
+#include "play_maze_generation_kruskals.hpp"
 
 #include <algorithm>
 #include <conio.h>
@@ -16,7 +16,7 @@
 #include "r2/r2_point_int.hpp"
 #include "r2/r2ext_direction4_bitwise_with_point.hpp"
 
-namespace maze_generation_kruskals_test
+namespace play_maze_generation_kruskals
 {
 	class Node
 	{

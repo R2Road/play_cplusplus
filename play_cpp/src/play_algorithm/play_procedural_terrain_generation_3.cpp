@@ -1,6 +1,7 @@
-#include "procedural_terrain_generation_2_test.h"
+#include "play_procedural_terrain_generation_3.hpp"
 
 #include <conio.h>
+#include <iomanip>
 
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_inspector.hpp"
@@ -9,9 +10,9 @@
 #include "r2/r2_grid_based_on_vector.hpp"
 #include "r2/r2_random.hpp"
 
-#include "test_algorithm/AlgorithmHelper.h"
+#include "algorithm_helper.hpp"
 
-namespace procedural_terrain_generation_2_test
+namespace play_procedural_terrain_generation_3
 {
 	enum class eTerrainType
 	{
@@ -24,9 +25,11 @@ namespace procedural_terrain_generation_2_test
 	{
 		eTerrainType type = eTerrainType::Normal;
 		int weight = 0;
+
+		friend std::ostream& operator<<( std::ostream& os, const Cell c ) { os << c.weight / 10; return os; }
 	};
 
-	int GetNeighborCount( const r2::GridBasedOnVector<std::size_t, Cell>& grid, const int px, const int py, const int allowed_range )
+	int GetNeighborSum( const r2::GridBasedOnVector<std::size_t, Cell>& grid, const int px, const int py, const int allowed_range )
 	{
 		int count = 0;
 
@@ -44,7 +47,7 @@ namespace procedural_terrain_generation_2_test
 					continue;
 				}
 
-				count += ( grid.Get( x, y ).type != eTerrainType::Normal ? 1 : 0 );
+				count += grid.Get( x, y ).weight;
 			}
 		}
 
@@ -74,10 +77,6 @@ namespace procedural_terrain_generation_2_test
 
 		return count;
 	}
-	std::function<char( Cell )> seed_evaluator = []( Cell c )
-	{
-		return ( 0 == c.weight ? '0' : char( 48 + c.weight ) );
-	};
 	std::function<char( eTerrainType )> terrain_type_evaluator = []( eTerrainType t )
 	{
 		return eTerrainType::Wall_Immortal == t ? '+' : ( eTerrainType::Wall_Normal == t ? '=' : ' ' );
@@ -85,14 +84,14 @@ namespace procedural_terrain_generation_2_test
 	
 	
 	
-	r2tm::TitleFunctionT Bone::GetTitleFunction() const
+	r2tm::TitleFunctionT Weights::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "PROCEDURAL TERRAIN GENERATION 2 : Bone";
+			return "PROCEDURAL TERRAIN GENERATION 3 : Weights";
 		};
 	}
-	r2tm::DoFunctionT Bone::GetDoFunction() const
+	r2tm::DoFunctionT Weights::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -115,13 +114,13 @@ namespace procedural_terrain_generation_2_test
 						const auto weight = r2::Random::GetInt( 0, 99 );
 
 						grid_seed.Set( x, y, weight >= 50
-							? Cell{ eTerrainType::Normal, weight / 10 }
-							: Cell{ eTerrainType::Wall_Normal, weight / 10 }
+							? Cell{ eTerrainType::Normal, weight }
+							: Cell{ eTerrainType::Wall_Normal, weight }
 						);
 					}
 				}
 
-				AlgorithmHelper::PrintGrid( grid_seed, seed_evaluator );
+				AlgorithmHelper::PrintGrid( grid_seed );
 				LF();
 			}
 
@@ -131,7 +130,7 @@ namespace procedural_terrain_generation_2_test
 			r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 			{
-				std::cout << r2tm::tab << "+ Make Terranin [Immortal] : ( 9 <= grid_seed.Get( x, y ) && 80 <= r2::Random::GetInt( 0, 100 ) )" << r2tm::linefeed2;
+				std::cout << r2tm::tab << "+ Make Terranin [Immortal] : ( 80 <= cell.weight && 80 <= r2::Random::GetInt( 0, 100 ) )" << r2tm::linefeed2;
 
 				for( int y = 0; grid_seed.GetHeight() > y; ++y )
 				{
@@ -139,7 +138,7 @@ namespace procedural_terrain_generation_2_test
 					{
 						const auto cell = grid_seed.Get( x, y );
 
-						if( 8 <= cell.weight && 80 <= r2::Random::GetInt( 0, 100 ) )
+						if( 80 <= cell.weight && 80 <= r2::Random::GetInt( 0, 100 ) )
 						{
 							grid_seed.Set( x, y, Cell{ eTerrainType::Wall_Immortal, cell.weight } );
 							grid_terrain.Set( x, y, eTerrainType::Wall_Immortal );
@@ -157,15 +156,18 @@ namespace procedural_terrain_generation_2_test
 			r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 			{
-				std::cout << r2tm::tab << "+ Terranin View : If [ Wall_Normal ] : [ 3 < Neighbor Wall : Wall_Normal ] else [ Normal ]" << r2tm::linefeed2;
+				std::cout << r2tm::tab << "+ Terranin View : If [ Wall_Normal ] : [ 350 < Neighbor Sum : Wall_Normal ] else [ Normal ]" << r2tm::linefeed2;
 
+				int neighbor_count = 0;
 				for( int y = 0; grid_seed.GetHeight() > y; ++y )
 				{
 					for( int x = 0; grid_seed.GetWidth() > x; ++x )
 					{
+						neighbor_count = GetNeighborSum( grid_seed, x, y, 1 );
+
 						if( eTerrainType::Wall_Normal == grid_seed.Get( x, y ).type )
 						{
-							if( 3 < GetNeighborCount( grid_seed, x, y, 1 ) )
+							if( 350 < GetNeighborSum( grid_seed, x, y, 1 ) )
 							{
 								grid_terrain.Set( x, y, eTerrainType::Wall_Normal );
 							}
@@ -187,7 +189,7 @@ namespace procedural_terrain_generation_2_test
 			r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 			{
-				std::cout << r2tm::tab << "+ Terranin View : If [ Normal ] : [ 4 < Neighbor Wall_Normal : Wall_Normal ] else [ Normal ]" << r2tm::linefeed2;
+				std::cout << r2tm::tab << "+ Terranin View : If [ Normal ] : [ 450 < Neighbor Sum : Wall_Normal ] else [ Normal ]" << r2tm::linefeed2;
 
 				for( int y = 0; grid_seed.GetHeight() > y; ++y )
 				{
@@ -195,7 +197,7 @@ namespace procedural_terrain_generation_2_test
 					{
 						if( eTerrainType::Normal == grid_seed.Get( x, y ).type )
 						{
-							if( 4 < GetNeighborCount( grid_seed, x, y, 1 ) )
+							if( 450 < GetNeighborSum( grid_seed, x, y, 1 ) )
 							{
 								grid_terrain.Set( x, y, eTerrainType::Wall_Normal );
 							}
@@ -221,14 +223,17 @@ namespace procedural_terrain_generation_2_test
 
 				std::cout << r2tm::tab << "+ Repeat x " << i << r2tm::linefeed2;
 
+				int neighbor_count = 0;
 				for( int y = 0; grid_terrain.GetHeight() > y; ++y )
 				{
 					for( int x = 0; grid_terrain.GetWidth() > x; ++x )
 					{
+						neighbor_count = GetNeighborCount( grid_terrain, x, y, 1 );
+
 						if( eTerrainType::Wall_Normal == grid_terrain.Get( x, y ) )
 						{
-							// Core : Suggest [3], 4
-							if( 3 >= GetNeighborCount( grid_terrain, x, y, 1 ) )
+							// Core : Suggest [2]
+							if( 2 >= GetNeighborCount( grid_terrain, x, y, 1 ) )
 							{
 								grid_terrain.Set( x, y, eTerrainType::Normal );
 							}
@@ -236,8 +241,8 @@ namespace procedural_terrain_generation_2_test
 						// 이 코드를 제거 해도 괜찮게 나온다.
 						else if( eTerrainType::Normal == grid_terrain.Get( x, y ) )
 						{
-							// Core : Suggest 4, [5]
-							if( 5 < GetNeighborCount( grid_terrain, x, y, 1 ) )
+							// Core : Suggest 5, [6]
+							if( 6 < GetNeighborCount( grid_terrain, x, y, 1 ) )
 							{
 								grid_terrain.Set( x, y, eTerrainType::Wall_Normal );
 							}
