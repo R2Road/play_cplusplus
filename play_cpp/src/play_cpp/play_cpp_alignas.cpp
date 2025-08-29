@@ -1,6 +1,7 @@
 #include "play_cpp_alignas.hpp"
 
 #include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 #pragma warning( disable : 4324 )
 
@@ -20,64 +21,67 @@ namespace play_cpp_alignas
 			LS();
 
 			{
-				std::cout << "\t" << "struct alignas( 32 ) EmptyStruct {};" << r2tm::linefeed << r2tm::linefeed;
+				OUTPUT_SOURCE_READY_N_BEGIN;
 				struct alignas( 32 ) EmptyStruct {};
+				OUTPUT_SOURCE_END;
 
-				std::cout << "\t" << "+ align of EmptyStruct : " << alignof( EmptyStruct ) << r2tm::linefeed;
-				std::cout << "\t\t" << "- size of EmptyStruct : " << sizeof( EmptyStruct ) << r2tm::linefeed << r2tm::linefeed;
+				LF();
+
+				OUTPUT_VALUE( alignof( EmptyStruct ) );
+				OUTPUT_SIZE( EmptyStruct );
 			}
 
 			LS();
 
 			{
-				std::cout << "\t" << "struct alignas( 8 ) CharIntFloatStruct" << r2tm::linefeed;
-				std::cout << "\t" << "{" << r2tm::linefeed;
-				std::cout << "\t\t" << "char c;" << r2tm::linefeed;
-				std::cout << "\t\t" << "int i;" << r2tm::linefeed;
-				std::cout << "\t\t" << "float f;" << r2tm::linefeed;
-				std::cout << "\t" << "}" << r2tm::linefeed << r2tm::linefeed;
+				OUTPUT_SOURCE_READY_N_BEGIN;
 				struct alignas( 8 ) CharIntFloatStruct
 				{
 					char c;
 					int i;
 					float f;
 				};
+				OUTPUT_SOURCE_END;
 
-				std::cout << "\t" << "+ align of CharIntFloatStruct : " << alignof( CharIntFloatStruct ) << r2tm::linefeed;
-				std::cout << "\t\t" << "- size of CharIntFloatStruct : " << sizeof( CharIntFloatStruct ) << r2tm::linefeed << r2tm::linefeed;
+				LF();
+
+				OUTPUT_VALUE( alignof( CharIntFloatStruct ) );
+				OUTPUT_SIZE( CharIntFloatStruct );
 			}
 
 			LS();
 
 			{
-				std::cout << "\t" << "struct alignas( 0 ) IntStruct" << r2tm::linefeed;
-				std::cout << "\t" << "{" << r2tm::linefeed;
-				std::cout << "\t\t" << "int i;" << r2tm::linefeed;
-				std::cout << "\t" << "}" << r2tm::linefeed << r2tm::linefeed;
+				OUTPUT_SOURCE_READY_N_BEGIN;
 				struct alignas( 0 ) IntStruct
 				{
 					int i;
 				};
+				OUTPUT_SOURCE_END;
 
-				std::cout << "\t" << "+ align of IntStruct : " << alignof( IntStruct ) << r2tm::linefeed;
-				std::cout << "\t\t" << "- size of IntStruct : " << sizeof( IntStruct ) << r2tm::linefeed << r2tm::linefeed;
+				LF();
 
-				std::cout << "\t" << "+ Ignore 0" << r2tm::linefeed << r2tm::linefeed;
+				OUTPUT_VALUE( alignof( IntStruct ) );
+				OUTPUT_SIZE( IntStruct );
+
+				LF();
+
+				OUTPUT_NOTE( "Ignore 0" );
 			}
 
 			LS();
 
 			{
-				std::cout << "\t" << "struct alignas( 1 ) IntStruct" << r2tm::linefeed;
-				std::cout << "\t" << "{" << r2tm::linefeed;
-				std::cout << "\t\t" << "int i;" << r2tm::linefeed;
-				std::cout << "\t" << "}" << r2tm::linefeed << r2tm::linefeed;
+				OUTPUT_SOURCE_READY_N_BEGIN;
 				//struct alignas( 1 ) IntStruct
 				//{
 				//	int i;
 				//};
+				OUTPUT_SOURCE_END;
 
-				std::cout << "\t" << "+ 1 is Error : At Least A Default Size Is Required" << r2tm::linefeed << r2tm::linefeed;
+				LF();
+
+				OUTPUT_NOTE( "1 is Error : At Least A Default Size Is Required" );
 			}
 
 			LS();
