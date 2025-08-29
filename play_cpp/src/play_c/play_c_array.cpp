@@ -143,9 +143,9 @@ namespace play_c_array
 			LS();
 
 			{
-				DECL_MAIN( const int w = 3 );
-				DECL_MAIN( const int h = 2 );
-				DECL_MAIN( int a[w][h] = {} );
+				DECL_MAIN( constexpr int w = 3 );
+				DECL_MAIN( constexpr int h = 2 );
+				DECL_MAIN( constexpr int a[w][h] = {} );
 
 				SS();
 
