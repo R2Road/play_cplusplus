@@ -29,66 +29,92 @@ namespace play_c_array
 		{
 			LS();
 
-			DECL_MAIN( const int length = 5 );
+			OUTPUT_SUBJECT( "array 초기화는 쉽게 {} 로 하기로 하자." );
+
+			LF();
+
+			DECL_SUB( constexpr int length = 5 );
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
-				int array[length];
-				OUTPUT_SOURCE_END;
+				{
+					OUTPUT_SUBJECT( "선언만" );
 
-				LF();
+					LF();
 
-				print_array( length, array );
-			}
+					OUTPUT_SOURCE_READY_N_BEGIN;
+					int array[length];
+					OUTPUT_SOURCE_END;
 
-			LS();
+					LF();
 
-			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
-				const int array[length] = { 0 };
-				OUTPUT_SOURCE_END;
+					print_array( length, array );
+				}
 
-				LF();
+				SS();
 
-				print_array( length, array );
-			}
+				{
+					OUTPUT_SUBJECT( "{ 0 }" );
 
-			LS();
+					LF();
 
-			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
-				const int array[5] = { 0, };
-				OUTPUT_SOURCE_END;
+					OUTPUT_SOURCE_READY_N_BEGIN;
+					const int array[length] = { 0 };
+					OUTPUT_SOURCE_END;
 
-				LF();
+					LF();
 
-				print_array( length, array );
-			}
+					print_array( length, array );
+				}
 
-			LS();
+				SS();
 
-			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
-				const int array[5] = { '\0', };
-				OUTPUT_SOURCE_END;
+				{
+					OUTPUT_SUBJECT( "{ 0, }" );
 
-				LF();
+					LF();
 
-				print_array( length, array );
-			}
+					OUTPUT_SOURCE_READY_N_BEGIN;
+					const int array[5] = { 0, };
+					OUTPUT_SOURCE_END;
 
-			LS();
+					LF();
 
-			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
-				const int array[5] = {};
-				OUTPUT_SOURCE_END;
+					print_array( length, array );
+				}
 
-				LF();
+				SS();
 
-				print_array( length, array );
+				{
+					OUTPUT_SUBJECT( "{ " "\'\\0\', }" );
+
+					LF();
+
+					OUTPUT_SOURCE_READY_N_BEGIN;
+					const int array[5] = { '\0', };
+					OUTPUT_SOURCE_END;
+
+					LF();
+
+					print_array( length, array );
+				}
+
+				SS();
+
+				{
+					OUTPUT_SUBJECT( "{}" );
+
+					LF();
+
+					OUTPUT_SOURCE_READY_N_BEGIN;
+					const int array[5] = {};
+					OUTPUT_SOURCE_END;
+
+					LF();
+
+					print_array( length, array );
+				}
 			}
 
 			LS();
