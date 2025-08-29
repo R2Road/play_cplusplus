@@ -111,37 +111,42 @@ namespace play_c_union
 		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
+
+			OUTPUT_SUBJECT( "다뤄지는 type 의 크기 만큼만 메모리에 접근한다." );
+
+			LS();
+
 			OUTPUT_SOURCE_READY_N_BEGIN;
 			union {
 				char c;
-				int64_t i64;
+				int64_t i64 = -1ll;
 			} u;
 			OUTPUT_SOURCE_END;
 
 			LS();
 
 			{
-				PROC_MAIN( u.i64 = -1ll );
-				OUTPUT_BINARY( u );
-			}
+				{
+					OUTPUT_BINARY( u );
+				}
 
-			LS();
+				SS();
 
-			{
-				OUTPUT_SUBJECT( "다뤄지는 type 의 크기 만큼만 메모리에 접근한다." );
-				OUTPUT_SUBJECT( "char type에 0 을 대입하면 8bit만 0 이 할당된다." );
+				{
+					OUTPUT_COMMENT( "char type에 0 을 대입하면 8bit만 0 이 할당된다." );
 
-				LF();
+					LF();
 
-				PROC_MAIN( u.c = 0 );
-				OUTPUT_BINARY( u );
-			}
+					PROC_MAIN( u.c = 0 );
+					OUTPUT_BINARY( u );
+				}
 
-			LS();
+				SS();
 
-			{
-				PROC_MAIN( u.i64 = 255 );
-				OUTPUT_BINARY( u );
+				{
+					PROC_MAIN( u.i64 = 255 );
+					OUTPUT_BINARY( u );
+				}
 			}
 
 			LS();
@@ -163,6 +168,10 @@ namespace play_c_union
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
+			LS();
+
+			OUTPUT_SUBJECT( "공용체의 대입은 전체 메모리 복사이다." );
+
 			LS();
 
 			OUTPUT_SOURCE_READY_N_BEGIN;
