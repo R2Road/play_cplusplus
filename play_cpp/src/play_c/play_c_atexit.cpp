@@ -27,17 +27,23 @@ namespace play_c_atexit
 		{
 			LS();
 
-			OUTPUT_NOTE( "프로그램이 종료될 때 등록한 함수가 작동된다." );
-			OUTPUT_NOTE( "반환값 : 성공 = 0, 실패 = 다른 값" );
+			{
+				OUTPUT_NOTE( "프로그램이 종료될 때 등록한 함수가 작동된다." );
+				OUTPUT_NOTE( "반환값 : 성공 = 0, 실패 = 다른 값" );
+
+				LF();
+
+				OUTPUT_NOTE( "늦게 추가한 함수가 먼저 작동한다. : Stack" );
+			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "Function" );
+				OUTPUT_SUBJECT( "Function" );
 
 				LF();
 
-				OUTPUT_FILE_RANGE( "src/test_c/item/play_c_atexit.cpp", 12, 15 );
+				OUTPUT_FILE_RANGE( __FILE__, 12, 15 );
 
 				LF();
 
@@ -47,11 +53,18 @@ namespace play_c_atexit
 			LS();
 
 			{
-				OUTPUT_NOTE( "Lambda" );
+				OUTPUT_SUBJECT( "Lambda" );
 
 				LF();
 
-				DECL_MAIN( auto l = []() { R2ASSERT( false, "Lambda : test_atexit" ); } );
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				const auto l = []()
+				{
+					R2ASSERT( false, "Lambda : test_atexit" );
+				};
+				OUTPUT_SOURCE_END;
+
+				LF();
 
 				EXPECT_EQ( 0, atexit( l ) );
 			}
@@ -59,17 +72,21 @@ namespace play_c_atexit
 			LS();
 
 			{
-				OUTPUT_NOTE( "Static Method" );
+				OUTPUT_SUBJECT( "Static Method" );
 
 				LF();
 
-				DECL_MAIN( struct S
+				OUTPUT_SOURCE_READY_N_BEGIN;
+				struct S
 				{
 					static void Do()
 					{
 						R2ASSERT( false, "Static Method : test_atexit" );
 					}
-				} );
+				};
+				OUTPUT_SOURCE_END;
+
+				LF();
 
 				EXPECT_EQ( 0, atexit( S::Do ) );
 			}
