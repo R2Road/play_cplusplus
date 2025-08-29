@@ -1,17 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="test_cpp">
-      <UniqueIdentifier>{77a45f2c-1f22-46b3-9c35-5ee34c38a7b9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="algorithm">
       <UniqueIdentifier>{bb464bee-2936-45c5-9434-19d5decd9078}</UniqueIdentifier>
     </Filter>
     <Filter Include="utility">
       <UniqueIdentifier>{b470e37a-ab48-4294-91e6-d840afb5ce71}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test_cpp\item">
-      <UniqueIdentifier>{afef003b-bbc9-4b3d-9500-41ffccb176cd}</UniqueIdentifier>
     </Filter>
     <Filter Include="test_windows">
       <UniqueIdentifier>{8067c90e-f3a8-481b-9de8-239c1fd0385a}</UniqueIdentifier>
@@ -76,30 +70,18 @@
     <Filter Include="play_algorithm">
       <UniqueIdentifier>{8318de03-f18b-4d49-a782-ffe43002b1aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="play_cpp">
+      <UniqueIdentifier>{77a45f2c-1f22-46b3-9c35-5ee34c38a7b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\algorithm\r2algorithm_astar_PathBuilder.cpp">
       <Filter>algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\char_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\enum_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\korean_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\locale_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\menu_root.cpp" />
     <ClCompile Include="src\test_windows\item\windows_sound_test.cpp">
       <Filter>test_windows\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\CharMenu.cpp">
-      <Filter>test_cpp</Filter>
     </ClCompile>
     <ClCompile Include="src\test_windows\item\windows_time_test.cpp">
       <Filter>test_windows\item</Filter>
@@ -130,18 +112,6 @@
     </ClCompile>
     <ClCompile Include="src\test_performance\PerformanceMenu.cpp">
       <Filter>test_performancee</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\EnumMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\LambdaMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\NewMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\using_test.cpp">
-      <Filter>test_cpp\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_std\STDContainerMenu.cpp">
       <Filter>test_std</Filter>
@@ -212,9 +182,6 @@
     <ClCompile Include="src\test_std\item\std_vector_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\ClassMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_c\item\c_file_test.cpp">
       <Filter>test_c\item</Filter>
     </ClCompile>
@@ -236,9 +203,6 @@
     <ClCompile Include="src\test_std\STDAlignMenu.cpp">
       <Filter>test_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\AlignMenu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_c\item\c_sizeof_test.cpp">
       <Filter>test_c\item</Filter>
     </ClCompile>
@@ -257,14 +221,8 @@
     <ClCompile Include="src\test_c\C_Menu.cpp">
       <Filter>test_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\CPP_Menu.cpp">
-      <Filter>test_cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_c\item\c_printf_test.cpp">
       <Filter>test_c\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\number_test.cpp">
-      <Filter>test_cpp\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_c\item\c_random_test.cpp">
       <Filter>test_c\item</Filter>
@@ -356,18 +314,6 @@
     <ClCompile Include="src\test_template\item\template_basic_test.cpp">
       <Filter>test_template\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\cpp_alignof_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\cpp_alignas_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\cpp_class_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\cpp_class_private_inheritance_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_std\item\std_memory_unique_ptr_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
@@ -380,23 +326,8 @@
     <ClCompile Include="src\test_std\item\std_bitset_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_cpp\item\cpp_lambda_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\cpp_namespace_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\cpp_structured_binding_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_std\item\std_atomic_test.cpp">
       <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\cpp_new_test.cpp">
-      <Filter>test_cpp\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\NameSpaceMenu.cpp">
-      <Filter>test_cpp</Filter>
     </ClCompile>
     <ClCompile Include="src\play_hobby\menu_hobby.cpp">
       <Filter>play_hobby</Filter>
@@ -472,9 +403,6 @@
     </ClCompile>
     <ClCompile Include="src\test_c\item\c_operator_priority_test.cpp">
       <Filter>test_c\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_cpp\item\cpp_braces.cpp">
-      <Filter>test_cpp\item</Filter>
     </ClCompile>
     <ClCompile Include="src\play_math\menu_play_math.cpp">
       <Filter>play_math</Filter>
@@ -633,6 +561,75 @@
     <ClCompile Include="src\play_algorithm\play_procedural_terrain_generation_3.cpp">
       <Filter>play_algorithm</Filter>
     </ClCompile>
+    <ClCompile Include="src\play_cpp\menu_align.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\menu_char.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\menu_class.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\menu_cpp.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\menu_enum.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\menu_lambda.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\menu_namespace.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\menu_new.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\play_cpp_alignas.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\play_cpp_alignof.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\play_cpp_braces.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\play_cpp_char.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\play_cpp_class.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\play_cpp_class_private_inheritance.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\play_cpp_enum.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\play_cpp_korean.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\play_cpp_lambda.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\play_cpp_locale.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\play_cpp_namespace.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\play_cpp_new.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\play_cpp_number.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\play_cpp_structured_binding.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_cpp\play_cpp_using.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -641,24 +638,9 @@
     <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h">
       <Filter>algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\char_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\enum_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\korean_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\locale_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\menu_root.hpp" />
     <ClInclude Include="src\test_windows\item\windows_sound_test.h">
       <Filter>test_windows\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\CharMenu.h">
-      <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\test_windows\item\windows_time_test.h">
       <Filter>test_windows\item</Filter>
@@ -689,18 +671,6 @@
     </ClInclude>
     <ClInclude Include="src\test_performance\PerformanceMenu.h">
       <Filter>test_performancee</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\EnumMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\LambdaMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\NewMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\using_test.h">
-      <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_std\STDContainerMenu.h">
       <Filter>test_std</Filter>
@@ -771,9 +741,6 @@
     <ClInclude Include="src\test_std\item\std_vector_test.h">
       <Filter>test_std\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\ClassMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_c\item\c_file_test.h">
       <Filter>test_c\item</Filter>
     </ClInclude>
@@ -795,9 +762,6 @@
     <ClInclude Include="src\test_std\STDAlignMenu.h">
       <Filter>test_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\AlignMenu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_c\item\c_sizeof_test.h">
       <Filter>test_c\item</Filter>
     </ClInclude>
@@ -816,14 +780,8 @@
     <ClInclude Include="src\test_c\C_Menu.h">
       <Filter>test_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\CPP_Menu.h">
-      <Filter>test_cpp</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_c\item\c_printf_test.h">
       <Filter>test_c\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\number_test.h">
-      <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_c\item\c_random_test.h">
       <Filter>test_c\item</Filter>
@@ -924,39 +882,6 @@
     <ClInclude Include="src\test_template\item\template_basic_test_helper.hpp">
       <Filter>test_template\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_alignof_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_alignas_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_class_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_class_test_helper_member_adress.hpp">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_class_test_helper_nvi.hpp">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_class_test_helper_offset_singleton.hpp">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test_helper_ienum.hpp">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test_helper_pure_virtual_interface.hpp">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test_helper_virtual_interface.hpp">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_class_private_inheritance_test_helper_demo1.hpp">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_std\item\std_memory_unique_ptr_test.h">
       <Filter>test_std\item</Filter>
     </ClInclude>
@@ -972,23 +897,8 @@
     <ClInclude Include="src\test_std\item\std_bitset_test.h">
       <Filter>test_std\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_lambda_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_namespace_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_structured_binding_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_std\item\std_atomic_test.h">
       <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_new_test.h">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\NameSpaceMenu.h">
-      <Filter>test_cpp</Filter>
     </ClInclude>
     <ClInclude Include="src\play_hobby\menu_hobby.hpp">
       <Filter>play_hobby</Filter>
@@ -1059,18 +969,6 @@
     <ClInclude Include="src\test_std\item\std_system_test.h">
       <Filter>test_std\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_cpp\item\enum_test_convert_with_template.hpp">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\enum_test_make_enum_with_macro.hpp">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\enum_test_xmacro_1.hpp">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\enum_test_xmacro_2.hpp">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_std\item\std_thread_test_helper_declaration2.hpp">
       <Filter>test_std\item</Filter>
     </ClInclude>
@@ -1079,12 +977,6 @@
     </ClInclude>
     <ClInclude Include="src\utility\play_cpp_utility_CharacterBuffer.h">
       <Filter>utility</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_class_test_print_name.hpp">
-      <Filter>test_cpp\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_class_test_helper_size_with_enum.hpp">
-      <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_std\item\std_cin_test.h">
       <Filter>test_std\item</Filter>
@@ -1097,9 +989,6 @@
     </ClInclude>
     <ClInclude Include="src\test_c\item\c_operator_priority_test.h">
       <Filter>test_c\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_cpp\item\cpp_braces.h">
-      <Filter>test_cpp\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_template\item\template_basic_test___parentheses___helper.hpp">
       <Filter>test_template\item</Filter>
@@ -1375,10 +1264,118 @@
     <ClInclude Include="src\play_algorithm\play_procedural_terrain_generation_3.hpp">
       <Filter>play_algorithm</Filter>
     </ClInclude>
+    <ClInclude Include="src\play_cpp\menu_align.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\menu_char.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\menu_class.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\menu_cpp.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\menu_enum.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\menu_lambda.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\menu_namespace.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\menu_new.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_alignas.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_alignof.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_braces.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_char.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_class.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_class_helper___member_adress.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_class_helper___nvi.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_class_helper___offset_singleton.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_class_helper___size_with_enum.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_class_helper___print_name.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_class_private_inheritance.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_class_private_inheritance_helper___demo1.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_class_private_inheritance_helper___ienum.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_class_private_inheritance_helper___pure_virtual_interface.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_class_private_inheritance_helper___virtual_interface.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_enum.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_enum_helper___convert_with_template.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_enum_helper___make_enum_with_macro.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_enum_helper___xmacro_1.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_enum_helper___xmacro_2.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_korean.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_lambda.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_locale.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_namespace.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_new.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_number.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_structured_binding.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_cpp\play_cpp_using.hpp">
+      <Filter>play_cpp</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\test_cpp\item\enum_test_xmacro_2.def">
-      <Filter>test_cpp\item</Filter>
+    <None Include="src\play_cpp\play_cpp_enum_helper___xmacro_2.def">
+      <Filter>play_cpp</Filter>
     </None>
   </ItemGroup>
 </Project>
