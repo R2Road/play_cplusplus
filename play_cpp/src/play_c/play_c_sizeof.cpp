@@ -29,48 +29,54 @@ namespace play_c_sizeof
 			LS();
 
 			{
-				DECL_MAIN( const char buffer[10] = { 0 } );
-				OUTPUT_VALUE( sizeof( buffer ) );
+				OUTPUT_SUBJECT( "sizeof 에 배열을 넣으면 배열의 전체 메모리 크기를 반환." );
+
+				LF();
+
+				{
+					DECL_MAIN( const char buffer[10] = { 0 } );
+					OUTPUT_VALUE( sizeof( buffer ) );
+				}
+
+				SS();
+
+				{
+					DECL_MAIN( const int buffer[10] = { 0 } );
+					OUTPUT_VALUE( sizeof( buffer ) );
+				}
+
+				SS();
+
+				{
+					DECL_MAIN( const double buffer[10] = { 0 } );
+					OUTPUT_VALUE( sizeof( buffer ) );
+				}
 			}
 
 			LS();
 
 			{
-				DECL_MAIN( const int buffer[10] = { 0 } );
-				OUTPUT_VALUE( sizeof( buffer ) );
-			}
+				OUTPUT_SUBJECT( "sizeof 에 pointer 를 넣으면 pointer 자체의 크기를 반환한다." );
 
-			LS();
+				LF();
 
-			{
-				DECL_MAIN( const double buffer[10] = { 0 } );
-				OUTPUT_VALUE( sizeof( buffer ) );
-			}
-
-			LS();
-
-			{
 				DECL_MAIN( const char buffer[10] = { 0 } );
 
 				LF();
 
 				DECL_MAIN( const char* cb = buffer );
 				OUTPUT_VALUE( sizeof( cb ) );
-
-				LF();
-
-				OUTPUT_NOTE( "sizeof 에 pointer 를 넣으면 pointer 자체의 크기를 반환한다." );
 			}
 
 			LS();
 
 			{
-				DECL_MAIN( struct Dummy {} dummy; );
-				OUTPUT_VALUE( sizeof( dummy ) );
+				OUTPUT_SUBJECT( "sizeof 의 최소 반환값은 1 " );
 
 				LF();
 
-				OUTPUT_NOTE( "sizeof 의 반환값은 최소 1 이다.." );
+				DECL_MAIN( struct Dummy {} dummy; );
+				OUTPUT_VALUE( sizeof( dummy ) );
 			}
 
 			LS();
