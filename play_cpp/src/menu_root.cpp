@@ -10,13 +10,13 @@
 #include "key_viewer.h"
 
 #include "play_algorithm/menu_algorithm.hpp"
+#include "play_c/menu_c.hpp"
 #include "play_cpp/menu_cpp.hpp"
 #include "play_cpu/menu_cpu.h"
 #include "play_debug/menu_debug.h"
 #include "play_hobby/menu_hobby.hpp"
 #include "play_math/menu_play_math.h"
 #include "play_rendering_pipeline/menu_play_rendering_pipeline.h"
-#include "test_c/C_Menu.h"
 #include "test_performance/PerformanceMenu.h"
 #include "test_std/STDMenu.h"
 #include "test_template/TemplateMenu.h"
@@ -77,7 +77,7 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 
 		mp->AddMessage( "¿Ï·á", r2tm::eColor::FG_LightGreen );
 		mp->AddMenu( 'q', WindowsMenu() );
-		mp->AddMenu( 'w', C_Menu() );
+		mp->AddMenu( 'w', Menu_C() );
 		mp->AddMenu( 'e', Menu_CPP() );
 		mp->AddMenu( 'r', STDMenu() );
 		mp->AddMenu( 't', TemplateMenu() );

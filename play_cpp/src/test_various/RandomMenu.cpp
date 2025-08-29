@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
-#include "test_c/item/c_random_test.h"
+#include "play_c/play_c_random.hpp"
 #include "test_std/item/std_random_test.h"
 
 #include "menu_root.hpp"
@@ -22,7 +22,7 @@ r2tm::WriteFunctionT RandomMenu::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', c_random_test::Rand() );
+		mp->AddItem( '1', play_c_random::Rand() );
 
 
 		mp->AddLineFeed();

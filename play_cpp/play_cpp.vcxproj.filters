@@ -25,12 +25,6 @@
     <Filter Include="test_std\item">
       <UniqueIdentifier>{3e075bee-01f0-40df-a7cb-d0b6b5f09418}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test_c">
-      <UniqueIdentifier>{5e31479a-288d-46e3-8a1d-85fb424f6364}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test_c\item">
-      <UniqueIdentifier>{217ec678-6f35-4c58-914a-ed108f613964}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test_various">
       <UniqueIdentifier>{b19241a3-88bd-445e-80a0-e5851f32d0b1}</UniqueIdentifier>
     </Filter>
@@ -72,6 +66,9 @@
     </Filter>
     <Filter Include="play_cpp">
       <UniqueIdentifier>{77a45f2c-1f22-46b3-9c35-5ee34c38a7b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="play_c">
+      <UniqueIdentifier>{5e31479a-288d-46e3-8a1d-85fb424f6364}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -182,9 +179,6 @@
     <ClCompile Include="src\test_std\item\std_vector_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_c\item\c_file_test.cpp">
-      <Filter>test_c\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_std\STDOptionalMenu.cpp">
       <Filter>test_std</Filter>
     </ClCompile>
@@ -203,12 +197,6 @@
     <ClCompile Include="src\test_std\STDAlignMenu.cpp">
       <Filter>test_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_c\item\c_sizeof_test.cpp">
-      <Filter>test_c\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\item\c_time_test.cpp">
-      <Filter>test_c\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_various\TimeMenu.cpp">
       <Filter>test_various</Filter>
     </ClCompile>
@@ -218,41 +206,8 @@
     <ClCompile Include="src\test_various\item\etc_0_test.cpp">
       <Filter>test_various\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_c\C_Menu.cpp">
-      <Filter>test_c</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\item\c_printf_test.cpp">
-      <Filter>test_c\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\item\c_random_test.cpp">
-      <Filter>test_c\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_various\RandomMenu.cpp">
       <Filter>test_various</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\PointerMenu.cpp">
-      <Filter>test_c</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\item\c_memset_test.cpp">
-      <Filter>test_c\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\item\c_pointer_test.cpp">
-      <Filter>test_c\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\item\c_array_test.cpp">
-      <Filter>test_c\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\item\c_bit_operation_test.cpp">
-      <Filter>test_c\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\BitOperationMenu.cpp">
-      <Filter>test_c</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\item\c_operator_ternary_test.cpp">
-      <Filter>test_c\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\item\c_macro_test.cpp">
-      <Filter>test_c\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_template\item\template_meta_programming_01_test.cpp">
       <Filter>test_template\item</Filter>
@@ -290,26 +245,11 @@
     <ClCompile Include="src\test_template\item\template_specialization_test.cpp">
       <Filter>test_template\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_c\item\c_struct_test.cpp">
-      <Filter>test_c\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\item\c_system_test.cpp">
-      <Filter>test_c\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\item\c_atexit_test.cpp">
-      <Filter>test_c\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_std\STDFunctionalMenu.cpp">
       <Filter>test_std</Filter>
     </ClCompile>
     <ClCompile Include="src\test_template\item\template_practice_test_02.cpp">
       <Filter>test_template\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\item\c_union_test.cpp">
-      <Filter>test_c\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\UnionMenu.cpp">
-      <Filter>test_c</Filter>
     </ClCompile>
     <ClCompile Include="src\test_template\item\template_basic_test.cpp">
       <Filter>test_template\item</Filter>
@@ -377,9 +317,6 @@
     <ClCompile Include="src\test_std\item\std_functional_hash_test.cpp">
       <Filter>test_std\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_c\C_FileMenu.cpp">
-      <Filter>test_c</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_std\STDFstreamMenu.cpp">
       <Filter>test_std</Filter>
     </ClCompile>
@@ -397,12 +334,6 @@
     </ClCompile>
     <ClCompile Include="src\test_std\STDCinMenu.cpp">
       <Filter>test_std</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\OperatorMenu.cpp">
-      <Filter>test_c</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_c\item\c_operator_priority_test.cpp">
-      <Filter>test_c\item</Filter>
     </ClCompile>
     <ClCompile Include="src\play_math\menu_play_math.cpp">
       <Filter>play_math</Filter>
@@ -630,6 +561,72 @@
     <ClCompile Include="src\play_cpp\play_cpp_using.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="src\play_c\menu_c.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\menu_c_bit_operation.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\menu_c_file.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\menu_c_operator.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\menu_c_pointer.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\menu_c_union.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\play_c_array.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\play_c_atexit.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\play_c_bit_operation.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\play_c_file.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\play_c_macro.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\play_c_memset.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\play_c_operator_priority.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\play_c_operator_ternary.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\play_c_pointer.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\play_c_printf.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\play_c_random.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\play_c_sizeof.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\play_c_struct.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\play_c_system.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\play_c_time.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_c\play_c_union.cpp">
+      <Filter>play_c</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -741,9 +738,6 @@
     <ClInclude Include="src\test_std\item\std_vector_test.h">
       <Filter>test_std\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_c\item\c_file_test.h">
-      <Filter>test_c\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_std\STDOptionalMenu.h">
       <Filter>test_std</Filter>
     </ClInclude>
@@ -762,12 +756,6 @@
     <ClInclude Include="src\test_std\STDAlignMenu.h">
       <Filter>test_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_c\item\c_sizeof_test.h">
-      <Filter>test_c\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\item\c_time_test.h">
-      <Filter>test_c\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_various\TimeMenu.h">
       <Filter>test_various</Filter>
     </ClInclude>
@@ -777,41 +765,8 @@
     <ClInclude Include="src\test_various\item\etc_0_test.h">
       <Filter>test_various\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_c\C_Menu.h">
-      <Filter>test_c</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\item\c_printf_test.h">
-      <Filter>test_c\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\item\c_random_test.h">
-      <Filter>test_c\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_various\RandomMenu.h">
       <Filter>test_various</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\PointerMenu.h">
-      <Filter>test_c</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\item\c_memset_test.h">
-      <Filter>test_c\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\item\c_pointer_test.h">
-      <Filter>test_c\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\item\c_array_test.h">
-      <Filter>test_c\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\item\c_bit_operation_test.h">
-      <Filter>test_c\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\BitOperationMenu.h">
-      <Filter>test_c</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\item\c_operator_ternary_test.h">
-      <Filter>test_c\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\item\c_macro_test.h">
-      <Filter>test_c\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_template\item\template_meta_programming_01_test.h">
       <Filter>test_template\item</Filter>
@@ -849,15 +804,6 @@
     <ClInclude Include="src\test_template\item\template_specialization_test.h">
       <Filter>test_template\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_c\item\c_struct_test.h">
-      <Filter>test_c\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\item\c_system_test.h">
-      <Filter>test_c\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\item\c_atexit_test.h">
-      <Filter>test_c\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_std\STDFunctionalMenu.h">
       <Filter>test_std</Filter>
     </ClInclude>
@@ -869,12 +815,6 @@
     </ClInclude>
     <ClInclude Include="src\test_template\item\template_practice_test_02_helper_basic.hpp">
       <Filter>test_template\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\item\c_union_test.h">
-      <Filter>test_c\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\UnionMenu.h">
-      <Filter>test_c</Filter>
     </ClInclude>
     <ClInclude Include="src\test_template\item\template_basic_test.h">
       <Filter>test_template\item</Filter>
@@ -960,9 +900,6 @@
     <ClInclude Include="src\test_std\item\std_unordered_map_test_helper_cstring.hpp">
       <Filter>test_std\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_c\C_FileMenu.h">
-      <Filter>test_c</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_std\STDFstreamMenu.h">
       <Filter>test_std</Filter>
     </ClInclude>
@@ -983,12 +920,6 @@
     </ClInclude>
     <ClInclude Include="src\test_std\STDCinMenu.h">
       <Filter>test_std</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\OperatorMenu.h">
-      <Filter>test_c</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_c\item\c_operator_priority_test.h">
-      <Filter>test_c\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_template\item\template_basic_test___parentheses___helper.hpp">
       <Filter>test_template\item</Filter>
@@ -1371,6 +1302,72 @@
     </ClInclude>
     <ClInclude Include="src\play_cpp\play_cpp_using.hpp">
       <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\menu_c.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\menu_c_bit_operation.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\menu_c_file.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\menu_c_operator.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\menu_c_pointer.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\menu_c_union.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\play_c_array.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\play_c_atexit.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\play_c_bit_operation.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\play_c_file.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\play_c_macro.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\play_c_memset.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\play_c_operator_priority.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\play_c_operator_ternary.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\play_c_pointer.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\play_c_printf.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\play_c_random.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\play_c_sizeof.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\play_c_struct.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\play_c_system.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\play_c_time.hpp">
+      <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_c\play_c_union.hpp">
+      <Filter>play_c</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
