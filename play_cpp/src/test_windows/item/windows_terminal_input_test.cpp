@@ -44,16 +44,16 @@ namespace windows_terminal_input_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Backup Console Mode" );
+				OUT_SUBJECT( "Backup Console Mode" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				if( !GetConsoleMode( hStdInputHandle, &last_console_mode ) )
 				{
 					assert( false );
 				}
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 				
 				LF();
 
@@ -63,7 +63,7 @@ namespace windows_terminal_input_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Change Console Mode" );
+				OUT_SUBJECT( "Change Console Mode" );
 
 				LF();
 
@@ -71,12 +71,12 @@ namespace windows_terminal_input_test
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				if( !SetConsoleMode( hStdInputHandle, new_console_mode ) )
 				{
 					assert( false );
 				}
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
@@ -131,11 +131,11 @@ namespace windows_terminal_input_test
 
 						case MOUSE_EVENT: // mouse input
 							std::cout << "================== MOUSE_EVENT ==================" << r2tm::linefeed;
-							OUTPUT_VALUE( input_records[i].Event.MouseEvent.dwMousePosition.X );
-							OUTPUT_VALUE( input_records[i].Event.MouseEvent.dwMousePosition.Y );
-							OUTPUT_VALUE( input_records[i].Event.MouseEvent.dwButtonState );
-							OUTPUT_VALUE( input_records[i].Event.MouseEvent.dwControlKeyState );
-							OUTPUT_VALUE( input_records[i].Event.MouseEvent.dwEventFlags );
+							OUT_VALUE( input_records[i].Event.MouseEvent.dwMousePosition.X );
+							OUT_VALUE( input_records[i].Event.MouseEvent.dwMousePosition.Y );
+							OUT_VALUE( input_records[i].Event.MouseEvent.dwButtonState );
+							OUT_VALUE( input_records[i].Event.MouseEvent.dwControlKeyState );
+							OUT_VALUE( input_records[i].Event.MouseEvent.dwEventFlags );
 							std::cout << "===============================================" << r2tm::linefeed;
 							break;
 
@@ -162,7 +162,7 @@ namespace windows_terminal_input_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "Press Any Key : Rollback" );
+				OUT_NOTE( "Press Any Key : Rollback" );
 				_getch();
 
 				//
@@ -205,19 +205,19 @@ namespace windows_terminal_input_test
 			//
 			PROC_MAIN( r2tm::WindowsUtility::QuickEditEnable( false ) );
 
-			OUTPUT_NOTE( "pause 없이 메뉴를 전환하는 경우..." );
-			OUTPUT_NOTE( "메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." );
+			OUT_NOTE( "pause 없이 메뉴를 전환하는 경우..." );
+			OUT_NOTE( "메세지 큐에 남아있던 값들이 다른 Test 를 실행 시킬 수 있다." );
 
 			LS();
 
-			OUTPUT_NOTE( "1st 4bit : Toggle Info : 키 누를 때마다 변화 0001 > 0000 > 0001 > 0000 ...." );
-			OUTPUT_NOTE( "2nd 4bit : Current Key State : 눌리면 1000" );
+			OUT_NOTE( "1st 4bit : Toggle Info : 키 누를 때마다 변화 0001 > 0000 > 0001 > 0000 ...." );
+			OUT_NOTE( "2nd 4bit : Current Key State : 눌리면 1000" );
 
 			LS();
 
-			OUTPUT_STRING( "[   ESC   ] Exit" );
-			OUTPUT_STRING( "[  SPACE  ] Do" );
-			OUTPUT_STRING( "[MOUSE L/R] Do" );
+			OUT_STRING( "[   ESC   ] Exit" );
+			OUT_STRING( "[  SPACE  ] Do" );
+			OUT_STRING( "[MOUSE L/R] Do" );
 
 			LS();
 
@@ -439,13 +439,13 @@ namespace windows_terminal_input_test
 		{
 			LS();
 
-			OUTPUT_STRING( "[ ESC ] Exit" );
-			OUTPUT_STRING( "[SPACE] Do" );
+			OUT_STRING( "[ ESC ] Exit" );
+			OUT_STRING( "[SPACE] Do" );
 
 			LS();
 
-			OUTPUT_NOTE( "1st 4bit : Toggle Info : 키 누를 때마다 변화 0001 > 0000 > 0001 > 0000 ...." );
-			OUTPUT_NOTE( "2nd 4bit : Current Key State : 눌리면 1000" );
+			OUT_NOTE( "1st 4bit : Toggle Info : 키 누를 때마다 변화 0001 > 0000 > 0001 > 0000 ...." );
+			OUT_NOTE( "2nd 4bit : Current Key State : 눌리면 1000" );
 
 			LS();
 
@@ -517,8 +517,8 @@ namespace windows_terminal_input_test
 		{
 			LS();
 
-			OUTPUT_STRING( "[ ESC ] Exit" );
-			OUTPUT_STRING( "[SPACE] Do" );
+			OUT_STRING( "[ ESC ] Exit" );
+			OUT_STRING( "[SPACE] Do" );
 
 			LS();
 

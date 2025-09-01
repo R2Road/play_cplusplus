@@ -35,7 +35,7 @@ namespace std_algorithm_test
 
 			LF();
 
-			OUTPUT_VALUE( container );
+			OUT_VALUE( container );
 
 			LS();
 
@@ -49,7 +49,7 @@ namespace std_algorithm_test
 
 				LF();
 
-				OUTPUT_VALUE( container );
+				OUT_VALUE( container );
 			}
 
 			LS();

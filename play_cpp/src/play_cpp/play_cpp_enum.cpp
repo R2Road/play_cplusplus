@@ -21,12 +21,12 @@ namespace play_cpp_enum
 		{
 			LS();
 
-			OUTPUT_NOTE( "enum의 기본형은 int" );
+			OUT_NOTE( "enum의 기본형은 int" );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Classic" );
+				OUT_SUBJECT( "Classic" );
 
 				LF();
 
@@ -34,17 +34,17 @@ namespace play_cpp_enum
 
 				LF();
 
-				OUTPUT_VALUE( std::is_enum<eTestOldEnum>::value );
+				OUT_VALUE( std::is_enum<eTestOldEnum>::value );
 
 				LF();
 
-				OUTPUT_VALUE( typeid( std::underlying_type<eTestOldEnum>::type ).name() );
+				OUT_VALUE( typeid( std::underlying_type<eTestOldEnum>::type ).name() );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "enum class" );
+				OUT_SUBJECT( "enum class" );
 
 				LF();
 
@@ -52,17 +52,17 @@ namespace play_cpp_enum
 
 				LF();
 
-				OUTPUT_VALUE( std::is_enum<eTestNewEnum>::value );
+				OUT_VALUE( std::is_enum<eTestNewEnum>::value );
 
 				LF();
 
-				OUTPUT_VALUE( typeid( std::underlying_type<eTestNewEnum>::type ).name() );
+				OUT_VALUE( typeid( std::underlying_type<eTestNewEnum>::type ).name() );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "enum class + type" );
+				OUT_SUBJECT( "enum class + type" );
 
 				LF();
 
@@ -70,11 +70,11 @@ namespace play_cpp_enum
 
 				LF();
 
-				OUTPUT_VALUE( std::is_enum<eTestNewEnum>::value );
+				OUT_VALUE( std::is_enum<eTestNewEnum>::value );
 
 				LF();
 
-				OUTPUT_VALUE( typeid( std::underlying_type<eTestNewEnum>::type ).name() );
+				OUT_VALUE( typeid( std::underlying_type<eTestNewEnum>::type ).name() );
 			}
 
 			LS();
@@ -98,17 +98,17 @@ namespace play_cpp_enum
 		{
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			enum class eTestEnum : uint32_t
 			{
 				one = 1
 			};
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "enum 의 범위에 없는 값을 강제 변환" );
+				OUT_SUBJECT( "enum 의 범위에 없는 값을 강제 변환" );
 
 				LF();
 
@@ -123,7 +123,7 @@ namespace play_cpp_enum
 			LS();
 
 			{
-				OUTPUT_NOTE( "enum 범위에 없는 값을 강제 변환해서 넣어도 어떤 문제도 발생하지 않는다." );
+				OUT_NOTE( "enum 범위에 없는 값을 강제 변환해서 넣어도 어떤 문제도 발생하지 않는다." );
 			}
 
 			LS();
@@ -149,7 +149,7 @@ namespace play_cpp_enum
 		{
 			LS();
 
-			OUTPUT_FILE( "src/play_cpp/play_cpp_enum_helper___convert_with_template.hpp" );
+			OUT_FILE( "src/play_cpp/play_cpp_enum_helper___convert_with_template.hpp" );
 
 			LF();
 
@@ -158,14 +158,14 @@ namespace play_cpp_enum
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				enum eOldEnum
 				{
 					  one
 					, two
 					, three
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
@@ -173,20 +173,20 @@ namespace play_cpp_enum
 
 				LF();
 
-				OUTPUT_VALUE( typeid( Enum2Value( eOldEnum::three ) ).name() );
+				OUT_VALUE( typeid( Enum2Value( eOldEnum::three ) ).name() );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				enum class eNewEnum : short
 				{
 					  hana
 					, dul
 					, set
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
@@ -194,7 +194,7 @@ namespace play_cpp_enum
 
 				LF();
 
-				OUTPUT_VALUE( typeid( Enum2Value( eNewEnum::dul ) ).name() );
+				OUT_VALUE( typeid( Enum2Value( eNewEnum::dul ) ).name() );
 			}
 
 			LS();
@@ -220,25 +220,25 @@ namespace play_cpp_enum
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "REF" );
-			OUTPUT_COMMENT(
+			OUT_SUBJECT( "REF" );
+			OUT_COMMENT(
 				"https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings"
 			);
 
 			LS();
 			
-			OUTPUT_FILE( "src/play_cpp/play_cpp_enum_helper___make_enum_with_macro.hpp" );
+			OUT_FILE( "src/play_cpp/play_cpp_enum_helper___make_enum_with_macro.hpp" );
 
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			MAKE_ENUM( eMakeEnumTest, One, Two, Three, Max );
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
 			{
-				OUTPUT_STRING( "+ Output" );
+				OUT_STRING( "+ Output" );
 
 				LF();
 
@@ -268,11 +268,11 @@ namespace play_cpp_enum
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "REF" );
-			OUTPUT_COMMENT(
+			OUT_SUBJECT( "REF" );
+			OUT_COMMENT(
 				"https://en.wikipedia.org/wiki/X_Macro"
 			);
-			OUTPUT_COMMENT(
+			OUT_COMMENT(
 				"https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings"
 			);
 
@@ -280,7 +280,7 @@ namespace play_cpp_enum
 			LS();
 
 			{
-				OUTPUT_FILE( "src/play_cpp/play_cpp_enum_helper___xmacro_1.hpp" );
+				OUT_FILE( "src/play_cpp/play_cpp_enum_helper___xmacro_1.hpp" );
 			}
 
 			LS();
@@ -293,7 +293,7 @@ namespace play_cpp_enum
 			LS();
 
 			{
-				OUTPUT_NOTE( "#define X 와 #undef X 를 활용 다양한 코드를 생성해낸다." );
+				OUT_NOTE( "#define X 와 #undef X 를 활용 다양한 코드를 생성해낸다." );
 			}
 
 			LS();
@@ -319,22 +319,22 @@ namespace play_cpp_enum
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "REF" );
-			OUTPUT_COMMENT(
+			OUT_SUBJECT( "REF" );
+			OUT_COMMENT(
 				"https://en.wikipedia.org/wiki/X_Macro"
 			);
-			OUTPUT_COMMENT(
+			OUT_COMMENT(
 				"https://stackoverflow.com/questions/207976/how-to-easily-map-c-enums-to-strings"
 			);
 
 			LS();
 
 			{
-				OUTPUT_FILE( "src/play_cpp/play_cpp_enum_helper___xmacro_2.def" );
+				OUT_FILE( "src/play_cpp/play_cpp_enum_helper___xmacro_2.def" );
 
 				LF();
 
-				OUTPUT_FILE( "src/play_cpp/play_cpp_enum_helper___xmacro_2.hpp" );
+				OUT_FILE( "src/play_cpp/play_cpp_enum_helper___xmacro_2.hpp" );
 			}
 
 			LS();
@@ -347,7 +347,7 @@ namespace play_cpp_enum
 			LS();
 
 			{
-				OUTPUT_NOTE( "데이터 파일을 분리해서 include 로 처리한다." );
+				OUT_NOTE( "데이터 파일을 분리해서 include 로 처리한다." );
 			}
 
 			LS();

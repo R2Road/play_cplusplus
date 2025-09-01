@@ -35,7 +35,7 @@ namespace play_cpp_structured_binding
 			LS();
 
 			{
-				OUTPUT_NOTE( "array" );
+				OUT_NOTE( "array" );
 
 				LF();
 
@@ -46,15 +46,15 @@ namespace play_cpp_structured_binding
 
 				LF();
 
-				OUTPUT_VALUE( a );
-				OUTPUT_VALUE( b );
-				OUTPUT_VALUE( c );
+				OUT_VALUE( a );
+				OUT_VALUE( b );
+				OUT_VALUE( c );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "std::array" );
+				OUT_NOTE( "std::array" );
 
 				LF();
 
@@ -65,15 +65,15 @@ namespace play_cpp_structured_binding
 
 				LF();
 
-				OUTPUT_VALUE( a );
-				OUTPUT_VALUE( b );
-				OUTPUT_VALUE( c );
+				OUT_VALUE( a );
+				OUT_VALUE( b );
+				OUT_VALUE( c );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "struct" );
+				OUT_NOTE( "struct" );
 
 				LF();
 
@@ -93,15 +93,15 @@ namespace play_cpp_structured_binding
 
 				LF();
 
-				OUTPUT_VALUE( i );
-				OUTPUT_VALUE( c );
-				OUTPUT_VALUE( f );
+				OUT_VALUE( i );
+				OUT_VALUE( c );
+				OUT_VALUE( f );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "with Pair" );
+				OUT_NOTE( "with Pair" );
 
 				LF();
 
@@ -112,14 +112,14 @@ namespace play_cpp_structured_binding
 
 				LF();
 
-				OUTPUT_VALUE( a );
-				OUTPUT_VALUE( b );
+				OUT_VALUE( a );
+				OUT_VALUE( b );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "with Tuple" );
+				OUT_NOTE( "with Tuple" );
 
 				LF();
 
@@ -130,15 +130,15 @@ namespace play_cpp_structured_binding
 
 				LF();
 
-				OUTPUT_VALUE( a );
-				OUTPUT_VALUE( b );
-				OUTPUT_VALUE( c );
+				OUT_VALUE( a );
+				OUT_VALUE( b );
+				OUT_VALUE( c );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "with Function x 1" );
+				OUT_NOTE( "with Function x 1" );
 
 				LF();
 
@@ -147,14 +147,14 @@ namespace play_cpp_structured_binding
 
 				LF();
 
-				OUTPUT_VALUE( a );
-				OUTPUT_VALUE( b );
+				OUT_VALUE( a );
+				OUT_VALUE( b );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "with Function x 2" );
+				OUT_NOTE( "with Function x 2" );
 
 				LF();
 
@@ -163,9 +163,9 @@ namespace play_cpp_structured_binding
 
 				LF();
 
-				OUTPUT_VALUE( a );
-				OUTPUT_VALUE( b );
-				OUTPUT_VALUE( c );
+				OUT_VALUE( a );
+				OUT_VALUE( b );
+				OUT_VALUE( c );
 			}
 			
 			LS();

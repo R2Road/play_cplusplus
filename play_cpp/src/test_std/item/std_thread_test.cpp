@@ -27,7 +27,7 @@ namespace std_thread_test
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "기본 생성자" );
+			OUT_SUBJECT( "기본 생성자" );
 
 			LS();
 
@@ -37,7 +37,7 @@ namespace std_thread_test
 
 			{
 				EXPECT_EQ( std::thread::id(), t.get_id() );
-				OUTPUT_VALUE( t.get_id() );
+				OUT_VALUE( t.get_id() );
 
 				LF();
 
@@ -47,13 +47,13 @@ namespace std_thread_test
 			LS();
 
 			{
-				OUTPUT_CODE( t.join() );
+				OUT_CODE( t.join() );
 
 				LF();
 
-				OUTPUT_NOTE( "빈 std::thread에 join 함수를 호출하면..." );
-				OUTPUT_COMMENT( "예외가 발생한다." );
-				OUTPUT_COMMENT( "터지지는 안는다." );
+				OUT_NOTE( "빈 std::thread에 join 함수를 호출하면..." );
+				OUT_COMMENT( "예외가 발생한다." );
+				OUT_COMMENT( "터지지는 안는다." );
 			}
 
 			LS();
@@ -79,18 +79,18 @@ namespace std_thread_test
 		{
 			LS();
 
-			OUTPUT_FILE( "src/test_std/item/std_thread_test_helper_declaration2.hpp" );
+			OUT_FILE( "src/test_std/item/std_thread_test_helper_declaration2.hpp" );
 			using namespace std_thread_test_helper_declaration2;
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Function" );
+				OUT_SUBJECT( "Function" );
 
 				LF();
 
 				DECL_MAIN( std::thread t( empty_func_1 ) );
-				OUTPUT_VALUE( t.get_id() );
+				OUT_VALUE( t.get_id() );
 
 				LF();
 
@@ -100,12 +100,12 @@ namespace std_thread_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Function" );
+				OUT_SUBJECT( "Function" );
 
 				LF();
 
 				DECL_MAIN( std::thread t( empty_func_2, 3 ) );
-				OUTPUT_VALUE( t.get_id() );
+				OUT_VALUE( t.get_id() );
 
 				LF();
 
@@ -115,12 +115,12 @@ namespace std_thread_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Lambda" );
+				OUT_SUBJECT( "Lambda" );
 
 				LF();
 
 				DECL_MAIN( std::thread t( []( int, int ) {}, 3, 4 ) );
-				OUTPUT_VALUE( t.get_id() );
+				OUT_VALUE( t.get_id() );
 
 				LF();
 
@@ -149,21 +149,21 @@ namespace std_thread_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Function Object" );
+				OUT_SUBJECT( "Function Object" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				struct S
 				{
 					void operator()() const {}
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
 				DECL_MAIN( std::thread t{ S() } );
-				OUTPUT_VALUE( t.get_id() );
+				OUT_VALUE( t.get_id() );
 
 				LF();
 
@@ -173,22 +173,22 @@ namespace std_thread_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Class + Method" );
+				OUT_SUBJECT( "Class + Method" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				struct S
 				{
 					void process() const {}
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
 				DECL_MAIN( S s );
 				DECL_MAIN( std::thread t( &S::process, &s ) );
-				OUTPUT_VALUE( t.get_id() );
+				OUT_VALUE( t.get_id() );
 
 				LF();
 
@@ -216,7 +216,7 @@ namespace std_thread_test
 		{
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			struct S
 			{
 				S( int ) {}
@@ -232,7 +232,7 @@ namespace std_thread_test
 					}
 				}
 			};
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
@@ -267,7 +267,7 @@ namespace std_thread_test
 		{
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			std::thread t1;
 			std::thread t2(
 				[]( int, int )
@@ -277,24 +277,24 @@ namespace std_thread_test
 					);
 				}, 3, 4
 			);
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
 			{
-				OUTPUT_VALUE( t1.get_id() );
+				OUT_VALUE( t1.get_id() );
 				EXPECT_FALSE( t1.joinable() );
 
 				LF();
 
-				OUTPUT_VALUE( t2.get_id() );
+				OUT_VALUE( t2.get_id() );
 				EXPECT_TRUE( t2.joinable() );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Assign" );
+				OUT_SUBJECT( "Assign" );
 
 				LF();
 
@@ -302,18 +302,18 @@ namespace std_thread_test
 
 				LF();
 
-				OUTPUT_NOTE( "Move 만 가능" );
+				OUT_NOTE( "Move 만 가능" );
 			}
 
 			LS();
 
 			{
-				OUTPUT_VALUE( t1.get_id() );
+				OUT_VALUE( t1.get_id() );
 				EXPECT_TRUE( t1.joinable() );
 
 				LF();
 
-				OUTPUT_VALUE( t2.get_id() );
+				OUT_VALUE( t2.get_id() );
 				EXPECT_FALSE( t2.joinable() );
 			}
 
@@ -344,7 +344,7 @@ namespace std_thread_test
 
 			LF();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			const auto l = []()
 			{
 				time_t t = 0;
@@ -357,7 +357,7 @@ namespace std_thread_test
 				t = time( NULL );
 				printf( "\t\t" "  end thread : %lld" "\n", t );
 			};
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
@@ -383,7 +383,7 @@ namespace std_thread_test
 
 				LF2();
 
-				OUTPUT_NOTE( "음수 값을 넣어도 문제는 발생하지 않는다." );
+				OUT_NOTE( "음수 값을 넣어도 문제는 발생하지 않는다." );
 			}
 
 			LS();
@@ -407,7 +407,7 @@ namespace std_thread_test
 		{
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			auto thread_process = []()
 			{
 				time_t t;
@@ -424,7 +424,7 @@ namespace std_thread_test
 					std::this_thread::yield();
 				}
 			};
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
@@ -445,8 +445,8 @@ namespace std_thread_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "양보 받을 thread 가 없다면 아무 일도 일어나지 않는다." );
-				OUTPUT_NOTE( "...라고 reference에 써있다." );
+				OUT_NOTE( "양보 받을 thread 가 없다면 아무 일도 일어나지 않는다." );
+				OUT_NOTE( "...라고 reference에 써있다." );
 			}
 
 			LS();

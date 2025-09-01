@@ -25,16 +25,16 @@ namespace play_cpp_class
 		{
 			LS();
 
-			OUTPUT_NOTE( "Class Method 를 호출하는법." );
+			OUT_NOTE( "Class Method 를 호출하는법." );
 
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			struct S
 			{
 				void Func() { printf( "\t" "> " "[Call] Func" "\n" ); }
 			};
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
@@ -43,7 +43,7 @@ namespace play_cpp_class
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "일반적인 호출 1" );
+				OUT_SUBJECT( "일반적인 호출 1" );
 
 				LF();
 
@@ -53,7 +53,7 @@ namespace play_cpp_class
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "일반적인 호출 2" );
+				OUT_SUBJECT( "일반적인 호출 2" );
 
 				LF();
 
@@ -63,7 +63,7 @@ namespace play_cpp_class
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "함수 포인터를 이용" );
+				OUT_SUBJECT( "함수 포인터를 이용" );
 
 				LF();
 
@@ -92,17 +92,17 @@ namespace play_cpp_class
 		{
 			LS();
 
-			OUTPUT_NOTE( "Class Member에 접근하는 방법" );
+			OUT_NOTE( "Class Member에 접근하는 방법" );
 
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			struct S
 			{
 				int a = 123;
 				int b = 234;
 			};
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
@@ -111,32 +111,32 @@ namespace play_cpp_class
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "일반적인 접근 1" );
+				OUT_SUBJECT( "일반적인 접근 1" );
 
 				LF();
 
-				OUTPUT_VALUE( s.b );
+				OUT_VALUE( s.b );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "일반적인 접근 2" );
+				OUT_SUBJECT( "일반적인 접근 2" );
 
 				LF();
 
-				OUTPUT_VALUE( s.S::b );
+				OUT_VALUE( s.S::b );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "멤버 포인터를 이용" );
+				OUT_SUBJECT( "멤버 포인터를 이용" );
 
 				LF();
 
 				DECL_MAIN( auto p = &S::b );
-				OUTPUT_VALUE( ( s.*p ) );
+				OUT_VALUE( ( s.*p ) );
 			}
 
 			LS();
@@ -161,11 +161,11 @@ namespace play_cpp_class
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "public member를 가진 class : 가능" );
+				OUT_SUBJECT( "public member를 가진 class : 가능" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				struct S
 				{
 					int a;
@@ -173,17 +173,17 @@ namespace play_cpp_class
 				};
 
 				S s{ 1, 2 };
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "사용자 정의 생성자를 가진 class : 가능" );
+				OUT_SUBJECT( "사용자 정의 생성자를 가진 class : 가능" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				struct S
 				{
 					S( int _a, int _b ) : a( _a ), b( _b ) {}
@@ -193,17 +193,17 @@ namespace play_cpp_class
 				};
 
 				S s{ 1, 2 };
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "사용자 정의 explicit 생성자를 가진 class : 가능" );
+				OUT_SUBJECT( "사용자 정의 explicit 생성자를 가진 class : 가능" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				struct S
 				{
 					explicit S( int _a, int _b ) : a( _a ), b( _b ) {}
@@ -213,7 +213,7 @@ namespace play_cpp_class
 				};
 
 				S s{ 1, 2 };
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 			}
 
 			LS();
@@ -239,12 +239,12 @@ namespace play_cpp_class
 
 
 			{
-				OUTPUT_SUBJECT( "가능 : 인자 없는 생성자" );
-				OUTPUT_SUBJECT( "가능 : 사용자 정의 explicit 생성자를 가진 class" );
+				OUT_SUBJECT( "가능 : 인자 없는 생성자" );
+				OUT_SUBJECT( "가능 : 사용자 정의 explicit 생성자를 가진 class" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				struct S
 				{
 					S() : a( 0 ), b( 0 ) {}
@@ -256,17 +256,17 @@ namespace play_cpp_class
 
 				S s1{};
 				S s2{ 1, 2 };
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "멤버가 explicit 생성자를 가지고 있으면 문제가 생긴다.	" );
+				OUT_NOTE( "멤버가 explicit 생성자를 가지고 있으면 문제가 생긴다.	" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				struct S
 				{
 					S() : a( 0 ), b( 0 ) {}
@@ -287,7 +287,7 @@ namespace play_cpp_class
 
 				SS s1{};
 				//SS s2{ { 1, 2 } }; // <= Error
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 			}
 
 			LS();
@@ -311,15 +311,15 @@ namespace play_cpp_class
 		{
 			LS();
 
-			OUTPUT_NOTE( "멤버가 explicit 생성자를 가지고 있으면 문제가 생긴다." );
-			OUTPUT_NOTE( "그러면 멤버에" );
-			OUTPUT_NOTE( "std::initialize_list 를 인자로 받는 생성자를 추가하면 되는게 아닐까." );
+			OUT_NOTE( "멤버가 explicit 생성자를 가지고 있으면 문제가 생긴다." );
+			OUT_NOTE( "그러면 멤버에" );
+			OUT_NOTE( "std::initialize_list 를 인자로 받는 생성자를 추가하면 되는게 아닐까." );
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY;
-				OUTPUT_SOURCE_BEGIN;
+				OUT_SOURCE_READY;
+				OUT_SOURCE_BEGIN;
 				struct S
 				{
 					S() : a( 0 ), b( 0 ) {}
@@ -339,12 +339,12 @@ namespace play_cpp_class
 				};
 
 				SS ss{ { 1, 2 } }; // <= Working
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( ss.s.a );
-				OUTPUT_VALUE( ss.s.b );
+				OUT_VALUE( ss.s.a );
+				OUT_VALUE( ss.s.b );
 			}
 
 			LS();
@@ -373,22 +373,22 @@ namespace play_cpp_class
 		{
 			LS();
 
-			OUTPUT_FILE( "src/play_cpp/play_cpp_class_helper___print_name.hpp" );
+			OUT_FILE( "src/play_cpp/play_cpp_class_helper___print_name.hpp" );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Class" );
+				OUT_SUBJECT( "Class" );
 
 				LF();
 
-				OUTPUT_VALUE( typeid( PrintNameTest_Class1 ).name() );
+				OUT_VALUE( typeid( PrintNameTest_Class1 ).name() );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Object" );
+				OUT_SUBJECT( "Object" );
 
 				LF();
 
@@ -396,33 +396,33 @@ namespace play_cpp_class
 
 				LF();
 
-				OUTPUT_VALUE( typeid( c ).name() );
+				OUT_VALUE( typeid( c ).name() );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Unnamed Namespace" );
+				OUT_SUBJECT( "Unnamed Namespace" );
 
 				LF();
 
-				OUTPUT_VALUE( typeid( PrintNameTest_TestClass2 ).name() );
+				OUT_VALUE( typeid( PrintNameTest_TestClass2 ).name() );
 			}
 
 			LS();
 			
 			{
-				OUTPUT_SUBJECT( "This Place" );
+				OUT_SUBJECT( "This Place" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				class PrintNameTest_TestClass3 {};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( typeid( PrintNameTest_TestClass2 ).name() );
+				OUT_VALUE( typeid( PrintNameTest_TestClass2 ).name() );
 			}
 
 			LS();
@@ -449,17 +449,17 @@ namespace play_cpp_class
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "암시적 타입 변환" );
+			OUT_SUBJECT( "암시적 타입 변환" );
 
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			class TestClass1
 			{
 			public:
 				operator int() const { return 100; }
 			};
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
@@ -469,7 +469,7 @@ namespace play_cpp_class
 
 				LF();
 
-				OUTPUT_VALUE( i );
+				OUT_VALUE( i );
 			}
 
 			LS();
@@ -496,7 +496,7 @@ namespace play_cpp_class
 		{
 			LS();
 
-			OUTPUT_FILE( "src/play_cpp/play_cpp_class_helper___member_adress.hpp" );
+			OUT_FILE( "src/play_cpp/play_cpp_class_helper___member_adress.hpp" );
 
 			LF();
 
@@ -506,19 +506,19 @@ namespace play_cpp_class
 			LS();
 
 			{
-				OUTPUT_VALUE( &c );
+				OUT_VALUE( &c );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Member Adress" );
+				OUT_SUBJECT( "Member Adress" );
 
 				LF();
 
-				OUTPUT_VALUE( &c.a );
-				OUTPUT_VALUE( &c.b );
-				OUTPUT_VALUE( &c.c );
+				OUT_VALUE( &c.a );
+				OUT_VALUE( &c.b );
+				OUT_VALUE( &c.c );
 			}
 
 			LS();
@@ -542,7 +542,7 @@ namespace play_cpp_class
 		{
 			LS();
 
-			OUTPUT_FILE( "src/play_cpp/play_cpp_class_helper___member_adress.hpp" );
+			OUT_FILE( "src/play_cpp/play_cpp_class_helper___member_adress.hpp" );
 
 			LF();
 
@@ -552,36 +552,36 @@ namespace play_cpp_class
 			LS();
 
 			{
-				OUTPUT_VALUE( &c );
+				OUT_VALUE( &c );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Method Adress 1" );
+				OUT_SUBJECT( "Method Adress 1" );
 
 				LF();
 
-				OUTPUT_VALUE( &C::Func1 );
-				OUTPUT_VALUE( &C::Func2 );
+				OUT_VALUE( &C::Func1 );
+				OUT_VALUE( &C::Func2 );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Method Adress 2" );
+				OUT_SUBJECT( "Method Adress 2" );
 
 				LF();
 
 				DECL_MAIN( void ( C::*f1_ptr )( ) = &C::Func1 );
 				DECL_MAIN( auto f1_void = (void*&)f1_ptr );
-				OUTPUT_VALUE( f1_void );
+				OUT_VALUE( f1_void );
 
 				LF();
 
 				DECL_MAIN( void ( C::*f2_ptr )( ) = &C::Func2 );
 				DECL_MAIN( auto f2_void = (void*&)f2_ptr );
-				OUTPUT_VALUE( f2_void );
+				OUT_VALUE( f2_void );
 			}
 
 			LS();
@@ -605,7 +605,7 @@ namespace play_cpp_class
 		{
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			class A
 			{};
 
@@ -614,23 +614,23 @@ namespace play_cpp_class
 
 			class C : public B
 			{};
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
 			{
 				DECL_MAIN( const auto pC = (C*)1 );
-				OUTPUT_VALUE( pC );
+				OUT_VALUE( pC );
 
 				LF();
 
 				DECL_MAIN( const auto pA = (A*)pC );
-				OUTPUT_VALUE( pA );
+				OUT_VALUE( pA );
 
 				LF();
 
 				DECL_MAIN( const auto pB = (B*)pC );
-				OUTPUT_VALUE( pB );
+				OUT_VALUE( pB );
 			}
 
 			LS();
@@ -654,7 +654,7 @@ namespace play_cpp_class
 		{
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			class A
 			{};
 
@@ -663,23 +663,23 @@ namespace play_cpp_class
 
 			class C : public A, public B
 			{};
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
 			{
 				DECL_MAIN( const auto pC = (C*)1 );
-				OUTPUT_VALUE( pC );
+				OUT_VALUE( pC );
 
 				LF();
 
 				DECL_MAIN( const auto pA = (A*)pC );
-				OUTPUT_VALUE( pA );
+				OUT_VALUE( pA );
 
 				LF();
 
 				DECL_MAIN( const auto pB = (B*)pC );
-				OUTPUT_VALUE( pB );
+				OUT_VALUE( pB );
 			}
 
 			LS();
@@ -703,7 +703,7 @@ namespace play_cpp_class
 		{
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			class A
 			{};
 
@@ -715,32 +715,32 @@ namespace play_cpp_class
 
 			class D : public A, public B, public C
 			{};
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
 			{
 				DECL_MAIN( const auto pD = (D*)1 );
-				OUTPUT_VALUE( pD );
+				OUT_VALUE( pD );
 
 				LF();
 
 				DECL_MAIN( const auto pA = (A*)pD );
-				OUTPUT_VALUE( pA );
+				OUT_VALUE( pA );
 
 				LF();
 
 				DECL_MAIN( const auto pB = (B*)pD );
-				OUTPUT_VALUE( pB );
+				OUT_VALUE( pB );
 
 				LF();
 
 				DECL_MAIN( const auto pC = (C*)pD );
-				OUTPUT_VALUE( pC );
+				OUT_VALUE( pC );
 
 				LF();
 
-				OUTPUT_VALUE( dynamic_cast<C*>( pD ) );
+				OUT_VALUE( dynamic_cast<C*>( pD ) );
 
 				LF();
 
@@ -748,12 +748,12 @@ namespace play_cpp_class
 						reinterpret_cast<int64_t>( pD )
 					-	reinterpret_cast<int64_t>( pC )
 				);
-				OUTPUT_VALUE( offset );
+				OUT_VALUE( offset );
 
 				LF();
 
 				DECL_MAIN( const auto pCastWithOffset = reinterpret_cast<D*>( pC + offset ) );
-				OUTPUT_VALUE( pCastWithOffset );
+				OUT_VALUE( pCastWithOffset );
 			}
 
 			LS();
@@ -777,7 +777,7 @@ namespace play_cpp_class
 		{
 			LS();
 
-			OUTPUT_FILE( "src/play_cpp/play_cpp_class_helper___offset_singleton.hpp" );
+			OUT_FILE( "src/play_cpp/play_cpp_class_helper___offset_singleton.hpp" );
 
 			LS();
 
@@ -785,7 +785,7 @@ namespace play_cpp_class
 
 			LS();
 
-			OUTPUT_VALUE( &abst );
+			OUT_VALUE( &abst );
 
 			LS();
 
@@ -809,39 +809,39 @@ namespace play_cpp_class
 			LS();
 
 			{
-				OUTPUT_NOTE( "type 의 최소 크기 : 1 byte" );
+				OUT_NOTE( "type 의 최소 크기 : 1 byte" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				class C1
 				{};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( sizeof( C1 ) );
-				OUTPUT_BINARY( C1() );
+				OUT_VALUE( sizeof( C1 ) );
+				OUT_BINARY( C1() );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "member 변수의 크기" );
+				OUT_NOTE( "member 변수의 크기" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				class C1
 				{
 					int a;
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( sizeof( C1 ) );
-				OUTPUT_BINARY( C1() );
+				OUT_VALUE( sizeof( C1 ) );
+				OUT_BINARY( C1() );
 			}
 
 			LS();
@@ -866,57 +866,57 @@ namespace play_cpp_class
 			LS();
 
 			{
-				OUTPUT_NOTE( "공백 class 최적화" );
+				OUT_NOTE( "공백 class 최적화" );
 
 				LF();
 
 				DECL_MAIN( class C1 {} );
 				DECL_MAIN( class C2 : public C1 { int i; } );
-				OUTPUT_VALUE( sizeof( C2 ) );
-				OUTPUT_BINARY( C2() );
+				OUT_VALUE( sizeof( C2 ) );
+				OUT_BINARY( C2() );
 
 				LF();
 
-				OUTPUT_COMMENT( "기본 클래스가 메모리를 차지하지 않는다." );
+				OUT_COMMENT( "기본 클래스가 메모리를 차지하지 않는다." );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "각 member 변수의 크기의 총합" );
+				OUT_NOTE( "각 member 변수의 크기의 총합" );
 
 				LF();
 
 				DECL_MAIN( class C1 { int i; } );
 				DECL_MAIN( class C2 : public C1 { int i; } );
-				OUTPUT_VALUE( sizeof( C2 ) );
-				OUTPUT_BINARY( C2() );
+				OUT_VALUE( sizeof( C2 ) );
+				OUT_BINARY( C2() );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "virtual table의 크기" );
+				OUT_NOTE( "virtual table의 크기" );
 
 				LF();
 
 				DECL_MAIN( class C1 { public: virtual ~C1() {} } );
 				DECL_MAIN( class C2 : public C1 {} );
-				OUTPUT_VALUE( sizeof( C2 ) );
-				OUTPUT_BINARY( C2() );
+				OUT_VALUE( sizeof( C2 ) );
+				OUT_BINARY( C2() );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "virtual table 의 영향으로 결정된 byte 정렬" );
+				OUT_NOTE( "virtual table 의 영향으로 결정된 byte 정렬" );
 
 				LF();
 
 				DECL_MAIN( class C1 { public: virtual ~C1(){} } );
 				DECL_MAIN( class C2 : public C1 { int a = -1; } );
-				OUTPUT_VALUE( sizeof( C2 ) );
-				OUTPUT_BINARY( C2() );
+				OUT_VALUE( sizeof( C2 ) );
+				OUT_BINARY( C2() );
 			}
 
 			LS();
@@ -943,16 +943,16 @@ namespace play_cpp_class
 			{
 				DECL_MAIN( class C1 { public: virtual ~C1() {} int i = -1; int j = -2; } );
 				DECL_MAIN( class C2 : public C1 { int a = -3; } );
-				OUTPUT_VALUE( sizeof( C2 ) );
-				OUTPUT_VALUE( sizeof( C1 ) );
-				OUTPUT_BINARY( C2() );
+				OUT_VALUE( sizeof( C2 ) );
+				OUT_VALUE( sizeof( C1 ) );
+				OUT_BINARY( C2() );
 
 				LF();
 
 				DECL_MAIN( C1 c1 );
-				OUTPUT_VALUE( &c1 );
-				OUTPUT_VALUE( &c1.i );
-				OUTPUT_VALUE( &c1.j );
+				OUT_VALUE( &c1 );
+				OUT_VALUE( &c1.i );
+				OUT_VALUE( &c1.j );
 			}
 
 			LS();
@@ -976,31 +976,31 @@ namespace play_cpp_class
 		{
 			LS();
 
-			OUTPUT_NOTE( "enum 과 static constexpr 은 비슷한 의도로 사용 가능하다." );
+			OUT_NOTE( "enum 과 static constexpr 은 비슷한 의도로 사용 가능하다." );
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				class C
 				{
 					enum { etest = 1 };
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( sizeof( C ) );
+				OUT_VALUE( sizeof( C ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_FILE( "src/play_cpp/play_cpp_class_helper___size_with_enum.hpp" );
+				OUT_FILE( "src/play_cpp/play_cpp_class_helper___size_with_enum.hpp" );
 
 				LF();
 
-				OUTPUT_VALUE( sizeof( C_has_StaticConstexprInt ) );
+				OUT_VALUE( sizeof( C_has_StaticConstexprInt ) );
 			}
 
 			LS();

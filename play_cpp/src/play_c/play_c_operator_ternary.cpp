@@ -21,7 +21,7 @@ namespace play_c_operator_ternary
 			LS();
 
 			{
-				OUTPUT_NOTE( "반환값이 없어도 된다." );
+				OUT_NOTE( "반환값이 없어도 된다." );
 
 				LF();
 
@@ -49,8 +49,8 @@ namespace play_c_operator_ternary
 		{
 			LS();
 
-			OUTPUT_NOTE( "삼항 연산자의 실행식은 쉼표로 구분해 여러개 넣을 수 있다." );
-			OUTPUT_NOTE( "이걸 20년 만에 알았네. 2022.05.18" );
+			OUT_NOTE( "삼항 연산자의 실행식은 쉼표로 구분해 여러개 넣을 수 있다." );
+			OUT_NOTE( "이걸 20년 만에 알았네. 2022.05.18" );
 
 			LS();
 
@@ -68,8 +68,8 @@ namespace play_c_operator_ternary
 
 				LF();
 
-				OUTPUT_VALUE( i );
-				OUTPUT_VALUE( j );
+				OUT_VALUE( i );
+				OUT_VALUE( j );
 
 				LF();
 
@@ -81,8 +81,8 @@ namespace play_c_operator_ternary
 
 				LF();
 
-				OUTPUT_VALUE( i );
-				OUTPUT_VALUE( j );
+				OUT_VALUE( i );
+				OUT_VALUE( j );
 			}
 
 			LS();
@@ -106,7 +106,7 @@ namespace play_c_operator_ternary
 		{
 			LS();
 
-			OUTPUT_NOTE( "삼항 연산자에서 반환값 없는 함수를 호출하는 경우 void() 를 넣을 수 있다." );
+			OUT_NOTE( "삼항 연산자에서 반환값 없는 함수를 호출하는 경우 void() 를 넣을 수 있다." );
 
 			LS();
 

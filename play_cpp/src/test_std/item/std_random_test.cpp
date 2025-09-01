@@ -33,7 +33,7 @@ namespace std_random_test
 
 				LF();
 
-				OUTPUT_VALUE( dist( random_engine ) );
+				OUT_VALUE( dist( random_engine ) );
 
 				LF();
 
@@ -45,7 +45,7 @@ namespace std_random_test
 
 				LF();
 
-				OUTPUT_NOTE( "Contained Min and Max" );
+				OUT_NOTE( "Contained Min and Max" );
 			}
 
 			LS();
@@ -57,7 +57,7 @@ namespace std_random_test
 
 				LF();
 
-				OUTPUT_VALUE( dist( random_engine ) );
+				OUT_VALUE( dist( random_engine ) );
 
 				LF();
 
@@ -69,7 +69,7 @@ namespace std_random_test
 
 				LF();
 
-				OUTPUT_NOTE( "Contained Min" );;
+				OUT_NOTE( "Contained Min" );;
 			}
 
 			LS();
@@ -121,7 +121,7 @@ namespace std_random_test
 
 			for( int i = 0; 3 > i; ++i )
 			{
-				OUTPUT_VALUE( dist( random_engine ) );
+				OUT_VALUE( dist( random_engine ) );
 			}
 
 			LS();
@@ -138,7 +138,7 @@ namespace std_random_test
 
 				for( int i = 0; 3 > i; ++i )
 				{
-					OUTPUT_VALUE( dist_2( loaded_random_engine ) );
+					OUT_VALUE( dist_2( loaded_random_engine ) );
 				}
 			}
 
@@ -156,7 +156,7 @@ namespace std_random_test
 
 				for( int i = 0; 3 > i; ++i )
 				{
-					OUTPUT_VALUE( dist_2( loaded_random_engine ) );
+					OUT_VALUE( dist_2( loaded_random_engine ) );
 				}
 			}
 

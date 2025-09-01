@@ -40,39 +40,39 @@ namespace play_math_numbers
 			};
 
 			{
-				OUTPUT_SUBJECT( "대각선 벡터의 길이" );
+				OUT_SUBJECT( "대각선 벡터의 길이" );
 
 				LF();
 
-				OUTPUT_VALUE( vec3_length( Vec3( 1, 1, 0 ) ) );
+				OUT_VALUE( vec3_length( Vec3( 1, 1, 0 ) ) );
 
 				LF();
 
-				OUTPUT_VALUE( vec3_length( Vec3( 1, 1, 1 ) ) );
+				OUT_VALUE( vec3_length( Vec3( 1, 1, 1 ) ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "단위 벡터가 45도 회전했을 때의 위치" );
+				OUT_SUBJECT( "단위 벡터가 45도 회전했을 때의 위치" );
 
 				LF();
 
-				OUTPUT_VALUE( ( RY( Deg2Rad( 45.f ) ) * VEC3_Z ) );
+				OUT_VALUE( ( RY( Deg2Rad( 45.f ) ) * VEC3_Z ) );
 
 				LF();
 
-				OUTPUT_VALUE( std::cos( Deg2Rad( 45.f ) ) );
+				OUT_VALUE( std::cos( Deg2Rad( 45.f ) ) );
 
 				LF();
 
-				OUTPUT_VALUE( std::sin( Deg2Rad( 45.f ) ) );
+				OUT_VALUE( std::sin( Deg2Rad( 45.f ) ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "단위 벡터가 45도, 45도 회전했을 때의 위치" );
+				OUT_SUBJECT( "단위 벡터가 45도, 45도 회전했을 때의 위치" );
 
 				LF();
 
@@ -81,14 +81,14 @@ namespace play_math_numbers
 				LF();
 
 				PROC_MAIN( v = RY( Deg2Rad( 45.f ) ) * VEC3_Z );
-				OUTPUT_VALUE( Rad2Deg( vec3_angle( v, VEC3_Z ) ) );
-				OUTPUT_VALUE( v );
+				OUT_VALUE( Rad2Deg( vec3_angle( v, VEC3_Z ) ) );
+				OUT_VALUE( v );
 
 				LF();
 
 				PROC_MAIN( v = RX( Deg2Rad( 45.f ) ) * v );
-				OUTPUT_VALUE( Rad2Deg( vec3_angle( v, VEC3_Z ) ) );
-				OUTPUT_VALUE( v );
+				OUT_VALUE( Rad2Deg( vec3_angle( v, VEC3_Z ) ) );
+				OUT_VALUE( v );
 			}
 
 			LS();

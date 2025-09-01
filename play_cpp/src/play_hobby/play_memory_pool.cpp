@@ -100,12 +100,12 @@ namespace play_memory_pool
 
 			{
 				EXPECT_EQ( memory_block_size, memory_block.size );
-				OUTPUT_VALUE( memory_block.size );
+				OUT_VALUE( memory_block.size );
 
 				LF();
 
 				EXPECT_EQ( memory_block.pb, memory_block.buffer );
-				OUTPUT_VALUE( memory_block.pb );
+				OUT_VALUE( memory_block.pb );
 			}
 
 			LS();
@@ -143,12 +143,12 @@ namespace play_memory_pool
 
 			{
 				EXPECT_EQ( memory_block_size, memory_block.size );
-				OUTPUT_VALUE( memory_block.size );
+				OUT_VALUE( memory_block.size );
 
 				LF();
 
 				EXPECT_EQ( memory_block.pb, memory_block.buffer );
-				OUTPUT_VALUE( memory_block.pb );
+				OUT_VALUE( memory_block.pb );
 			}
 
 			LS();
@@ -236,16 +236,16 @@ namespace play_memory_pool
 			{
 				DECL_MAIN( auto temp = memory_block.New<long long>() );
 				PROC_MAIN( memset( temp, 1, sizeof( long long ) ) );
-				OUTPUT_BINARY( *temp );
+				OUT_BINARY( *temp );
 
 				LF();
 
 				PROC_MAIN( *temp = std::numeric_limits<long long>::max() );
-				OUTPUT_BINARY( *temp );
+				OUT_BINARY( *temp );
 
 				LF();
 
-				OUTPUT_BINARIES( memory_block.buffer, memory_block.size );
+				OUT_BINARIES( memory_block.buffer, memory_block.size );
 			}
 
 			LS();
@@ -253,16 +253,16 @@ namespace play_memory_pool
 			{
 				DECL_MAIN( auto temp = memory_block.New<int>() );
 				PROC_MAIN( memset( temp, 1, sizeof( int ) ) );
-				OUTPUT_BINARY( *temp );
+				OUT_BINARY( *temp );
 
 				LF();
 
 				PROC_MAIN( *temp = std::numeric_limits<int>::max() );
-				OUTPUT_BINARY( *temp );
+				OUT_BINARY( *temp );
 
 				LF();
 
-				OUTPUT_BINARIES( memory_block.buffer, memory_block.size );
+				OUT_BINARIES( memory_block.buffer, memory_block.size );
 			}
 
 			LS();
@@ -294,12 +294,12 @@ namespace play_memory_pool
 
 			{
 				EXPECT_EQ( memory_block_size, memory_block.size );
-				OUTPUT_VALUE( memory_block.size );
+				OUT_VALUE( memory_block.size );
 
 				LF();
 
 				EXPECT_EQ( memory_block.pb, memory_block.buffer );
-				OUTPUT_VALUE( memory_block.pb );
+				OUT_VALUE( memory_block.pb );
 			}
 
 			LS();

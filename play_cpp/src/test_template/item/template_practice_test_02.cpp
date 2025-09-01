@@ -19,7 +19,7 @@ namespace template_practice_test_02
 		{
 			LS();
 
-			OUTPUT_FILE( "src/test_template/item/template_practice_test_02_helper_basic.hpp" );
+			OUT_FILE( "src/test_template/item/template_practice_test_02_helper_basic.hpp" );
 
 			LS();
 
@@ -33,7 +33,7 @@ namespace template_practice_test_02
 			LS();
 
 			{
-				OUTPUT_NOTE( "정상적인 인자 설정으로 함수 호출 시도" );
+				OUT_NOTE( "정상적인 인자 설정으로 함수 호출 시도" );
 
 				LF();
 
@@ -44,7 +44,7 @@ namespace template_practice_test_02
 			LS();
 
 			{
-				OUTPUT_NOTE( "잘못된 인자 설정으로 함수 호출 시도" );
+				OUT_NOTE( "잘못된 인자 설정으로 함수 호출 시도" );
 
 				LF();
 

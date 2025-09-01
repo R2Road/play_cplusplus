@@ -21,62 +21,62 @@ namespace std_string_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "인자 없는 생성자" );
+				OUT_SUBJECT( "인자 없는 생성자" );
 
 				LF();
 
 				DECL_MAIN( const std::string s );
-				OUTPUT_VALUE( sizeof( s ) );
+				OUT_VALUE( sizeof( s ) );
 
 				LF();
 
-				OUTPUT_VALUE( s );
+				OUT_VALUE( s );
 
 				LF();
 
-				OUTPUT_VALUE( s.capacity() );
-				OUTPUT_BINARY( s );
+				OUT_VALUE( s.capacity() );
+				OUT_BINARY( s );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "문자열을 인자로 받는 생성자" );
+				OUT_SUBJECT( "문자열을 인자로 받는 생성자" );
 
 				LF();
 
 				DECL_MAIN( const std::string s( "1234" ) );
-				OUTPUT_VALUE( s );
+				OUT_VALUE( s );
 
 				LF();
 
-				OUTPUT_VALUE( s.capacity() );
+				OUT_VALUE( s.capacity() );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "문자열을 인자로 받는 생성자 : capacity over" );
+				OUT_SUBJECT( "문자열을 인자로 받는 생성자 : capacity over" );
 
 				LF();
 
 				DECL_MAIN( const std::string s( "1234567890123456" ) );
-				OUTPUT_VALUE( s );
+				OUT_VALUE( s );
 
 				LF();
 
-				OUTPUT_VALUE( s.capacity() );
+				OUT_VALUE( s.capacity() );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "문자와 길이를 인자로 받는 생성자" );
+				OUT_SUBJECT( "문자와 길이를 인자로 받는 생성자" );
 
 				LF();
 
 				DECL_MAIN( const std::string s( 4, 'a' ) );
-				OUTPUT_VALUE( s );
+				OUT_VALUE( s );
 			}
 
 			LS();
@@ -101,7 +101,7 @@ namespace std_string_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "빈 std::string 은 같은 것으로 간주된다." );
+				OUT_SUBJECT( "빈 std::string 은 같은 것으로 간주된다." );
 
 				LF();
 
@@ -113,7 +113,7 @@ namespace std_string_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "같은 문자열이니까 같다." );
+				OUT_SUBJECT( "같은 문자열이니까 같다." );
 
 				LF();
 
@@ -123,14 +123,14 @@ namespace std_string_test
 
 				LF();
 
-				OUTPUT_VALUE( (void*)s_1.c_str() );
-				OUTPUT_VALUE( (void*)s_2.c_str() );
+				OUT_VALUE( (void*)s_1.c_str() );
+				OUT_VALUE( (void*)s_2.c_str() );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "다른 문자열을 저장했더라도 clear() 를 호출하면 같은 것으로 판단된다." );
+				OUT_SUBJECT( "다른 문자열을 저장했더라도 clear() 를 호출하면 같은 것으로 판단된다." );
 
 				LF();
 
@@ -149,13 +149,13 @@ namespace std_string_test
 
 				LF();
 
-				OUTPUT_VALUE( (void*)s_1.c_str() );
-				OUTPUT_VALUE( (void*)s_2.c_str() );
+				OUT_VALUE( (void*)s_1.c_str() );
+				OUT_VALUE( (void*)s_2.c_str() );
 			}
 
 			LS();
 
-			OUTPUT_NOTE( "할당된 메모리의 주소, capacity 등이 operator== 의 결과에 영향을 주지 않는다." );
+			OUT_NOTE( "할당된 메모리의 주소, capacity 등이 operator== 의 결과에 영향을 주지 않는다." );
 
 			LS();
 
@@ -178,8 +178,8 @@ namespace std_string_test
 		{
 			LS();
 
-			OUTPUT_NOTE( "최초 생성시 heap에서 메모리를 할당 받지 않는다." );
-			OUTPUT_NOTE( "member buffer 를 사용한다." );
+			OUT_NOTE( "최초 생성시 heap에서 메모리를 할당 받지 않는다." );
+			OUT_NOTE( "member buffer 를 사용한다." );
 
 			LS();
 
@@ -188,22 +188,22 @@ namespace std_string_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Heap 에서 메모리를 할당 받기 전 버퍼의 크기" );
+				OUT_SUBJECT( "Heap 에서 메모리를 할당 받기 전 버퍼의 크기" );
 
 				LF();
 
-				OUTPUT_VALUE( s.capacity() );
+				OUT_VALUE( s.capacity() );
 
 				LF();
 
-				OUTPUT_VALUE( (void*)s.c_str() );
-				OUTPUT_BINARY( s );
+				OUT_VALUE( (void*)s.c_str() );
+				OUT_BINARY( s );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "단일 값으로 채워넣어 기본 버퍼로 사용되는 Local Variable의 변화를 확인해보자." );
+				OUT_SUBJECT( "단일 값으로 채워넣어 기본 버퍼로 사용되는 Local Variable의 변화를 확인해보자." );
 
 				LF();
 
@@ -211,12 +211,12 @@ namespace std_string_test
 
 				LF();
 
-				OUTPUT_VALUE( s.capacity() );
+				OUT_VALUE( s.capacity() );
 
 				LF();
 
-				OUTPUT_VALUE( (void*)s.c_str() );
-				OUTPUT_BINARY( s );
+				OUT_VALUE( (void*)s.c_str() );
+				OUT_BINARY( s );
 			}
 
 			LS();
@@ -245,18 +245,18 @@ namespace std_string_test
 			LS();
 
 			{
-				OUTPUT_VALUE( s.capacity() );
+				OUT_VALUE( s.capacity() );
 
 				LF();
 
-				OUTPUT_VALUE( (void*)s.c_str() );
-				OUTPUT_BINARY( s );
+				OUT_VALUE( (void*)s.c_str() );
+				OUT_BINARY( s );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "member buffer의 크기를 넘는 문자열을 할당하면 heap 에서 메모리를 할당 받는다." );
+				OUT_SUBJECT( "member buffer의 크기를 넘는 문자열을 할당하면 heap 에서 메모리를 할당 받는다." );
 
 				LF();
 
@@ -264,18 +264,18 @@ namespace std_string_test
 
 				LF();
 
-				OUTPUT_VALUE( s.capacity() );
+				OUT_VALUE( s.capacity() );
 
 				LF();
 
-				OUTPUT_VALUE( (void*)s.c_str() );
-				OUTPUT_BINARY( s );
+				OUT_VALUE( (void*)s.c_str() );
+				OUT_BINARY( s );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "clear() 를 호출해도 member buffer를 사용하게 되지는 않는다. 되돌리는 방법이 없을까?" );
+				OUT_SUBJECT( "clear() 를 호출해도 member buffer를 사용하게 되지는 않는다. 되돌리는 방법이 없을까?" );
 
 				LF();
 
@@ -283,12 +283,12 @@ namespace std_string_test
 
 				LF();
 
-				OUTPUT_VALUE( s.capacity() );
+				OUT_VALUE( s.capacity() );
 
 				LF();
 
-				OUTPUT_VALUE( (void*)s.c_str() );
-				OUTPUT_BINARY( s );
+				OUT_VALUE( (void*)s.c_str() );
+				OUT_BINARY( s );
 			}
 
 			LS();
@@ -312,13 +312,13 @@ namespace std_string_test
 		{
 			LS();
 
-			OUTPUT_NOTE( "짧은 문자열의 경우 move가 작동하지 않는다." );
-			OUTPUT_NOTE( "xstring 의 ""_Assign_rv_contents_with_alloc_always_equal"" 함수 참조" );
+			OUT_NOTE( "짧은 문자열의 경우 move가 작동하지 않는다." );
+			OUT_NOTE( "xstring 의 ""_Assign_rv_contents_with_alloc_always_equal"" 함수 참조" );
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "move : X" );
+				OUT_NOTE( "move : X" );
 
 				LF();
 
@@ -327,25 +327,25 @@ namespace std_string_test
 
 				LF();
 
-				OUTPUT_VALUE( (void*)s_1.c_str() );
-				OUTPUT_VALUE( (void*)s_2.c_str() );
+				OUT_VALUE( (void*)s_1.c_str() );
+				OUT_VALUE( (void*)s_2.c_str() );
 
 				LF();
 
 				PROC_MAIN( s_1 = std::move( s_2 ) );
-				OUTPUT_VALUE( s_1 );
-				OUTPUT_VALUE( s_2 );
+				OUT_VALUE( s_1 );
+				OUT_VALUE( s_2 );
 
 				LF();
 
-				OUTPUT_VALUE( (void*)s_1.c_str() );
-				OUTPUT_VALUE( (void*)s_2.c_str() );
+				OUT_VALUE( (void*)s_1.c_str() );
+				OUT_VALUE( (void*)s_2.c_str() );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "move : O" );
+				OUT_NOTE( "move : O" );
 
 				LF();
 
@@ -354,19 +354,19 @@ namespace std_string_test
 
 				LF();
 
-				OUTPUT_VALUE( (void*)s_1.c_str() );
-				OUTPUT_VALUE( (void*)s_2.c_str() );
+				OUT_VALUE( (void*)s_1.c_str() );
+				OUT_VALUE( (void*)s_2.c_str() );
 
 				LF();
 
 				PROC_MAIN( s_1 = std::move( s_2 ) );
-				OUTPUT_VALUE( s_1 );
-				OUTPUT_VALUE( s_2 );
+				OUT_VALUE( s_1 );
+				OUT_VALUE( s_2 );
 
 				LF();
 
-				OUTPUT_VALUE( (void*)s_1.c_str() );
-				OUTPUT_VALUE( (void*)s_2.c_str() );
+				OUT_VALUE( (void*)s_1.c_str() );
+				OUT_VALUE( (void*)s_2.c_str() );
 			}
 
 			LS();
@@ -391,24 +391,24 @@ namespace std_string_test
 			LS();
 
 			DECL_MAIN( const std::string key_string = "\n" );
-			OUTPUT_VALUE( key_string.size() );
+			OUT_VALUE( key_string.size() );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "실패 결과 확인" );
+				OUT_SUBJECT( "실패 결과 확인" );
 
 				LF();
 
-				OUTPUT_VALUE( std::string().find( key_string, 0 ) );
+				OUT_VALUE( std::string().find( key_string, 0 ) );
 
 				LF();
 
-				OUTPUT_VALUE( std::string::npos );
+				OUT_VALUE( std::string::npos );
 
 				LF();
 
-				OUTPUT_NOTE( "결과 비교는 std::string::npos 를 활용하자." );
+				OUT_NOTE( "결과 비교는 std::string::npos 를 활용하자." );
 			}
 
 			LS();
@@ -433,12 +433,12 @@ namespace std_string_test
 			LS();
 
 			DECL_MAIN( const std::string key_string = "\n" );
-			OUTPUT_VALUE( key_string.size() );
+			OUT_VALUE( key_string.size() );
 
 			LF();
 
 			DECL_MAIN( const std::string orig_string = "\n\n012345\n6789abcd\n\nefghij\nklmnopqrstu\n\n\nvwxyz\n" );
-			OUTPUT_VALUE( orig_string.size() );
+			OUT_VALUE( orig_string.size() );
 
 			LF();
 
@@ -449,26 +449,26 @@ namespace std_string_test
 
 			{
 				PROC_MAIN( find_pos = orig_string.find( key_string, pivot_pos ) );
-				OUTPUT_VALUE( find_pos );
+				OUT_VALUE( find_pos );
 				PROC_MAIN( pivot_pos = find_pos + key_string.size() );
-				OUTPUT_VALUE( pivot_pos );
-				OUTPUT_VALUE( orig_string[pivot_pos] );
+				OUT_VALUE( pivot_pos );
+				OUT_VALUE( orig_string[pivot_pos] );
 
 				SS();
 
 				PROC_MAIN( find_pos = orig_string.find( key_string, pivot_pos ) );
-				OUTPUT_VALUE( find_pos );
+				OUT_VALUE( find_pos );
 				PROC_MAIN( pivot_pos = find_pos + key_string.size() );
-				OUTPUT_VALUE( pivot_pos );
-				OUTPUT_VALUE( orig_string[pivot_pos] );
+				OUT_VALUE( pivot_pos );
+				OUT_VALUE( orig_string[pivot_pos] );
 
 				SS();
 
 				PROC_MAIN( find_pos = orig_string.find( key_string, pivot_pos ) );
-				OUTPUT_VALUE( find_pos );
+				OUT_VALUE( find_pos );
 				PROC_MAIN( pivot_pos = find_pos + key_string.size() );
-				OUTPUT_VALUE( pivot_pos );
-				OUTPUT_VALUE( orig_string[pivot_pos] );
+				OUT_VALUE( pivot_pos );
+				OUT_VALUE( orig_string[pivot_pos] );
 			}
 
 			LS();
@@ -487,7 +487,7 @@ namespace std_string_test
 			return;
 		}
 
-		OUTPUT_VALUE( str.size() );
+		OUT_VALUE( str.size() );
 
 		LF();
 
@@ -558,7 +558,7 @@ namespace std_string_test
 			LS();
 
 			DECL_MAIN( const std::string key_string = "\n" );
-			OUTPUT_VALUE( key_string.size() );
+			OUT_VALUE( key_string.size() );
 
 			LS();
 
@@ -600,7 +600,7 @@ namespace std_string_test
 			LS();
 
 			DECL_MAIN( const std::string key_string = "\n" );
-			OUTPUT_VALUE( key_string.size() );
+			OUT_VALUE( key_string.size() );
 
 			LS();
 
@@ -659,31 +659,31 @@ namespace std_string_test
 			LS();
 
 			{
-				OUTPUT_VALUE( CalculateLineCount( "" ) );
+				OUT_VALUE( CalculateLineCount( "" ) );
 
 				LF();
 
-				OUTPUT_VALUE( CalculateLineCount( " " ) );
+				OUT_VALUE( CalculateLineCount( " " ) );
 
 				LF();
 
-				OUTPUT_VALUE( CalculateLineCount( "\n" " " ) );
+				OUT_VALUE( CalculateLineCount( "\n" " " ) );
 
 				LF();
 
-				OUTPUT_VALUE( CalculateLineCount( " " "\n" ) );
+				OUT_VALUE( CalculateLineCount( " " "\n" ) );
 
 				LF();
 
-				OUTPUT_VALUE( CalculateLineCount( "\n" " " "\n" ) );
+				OUT_VALUE( CalculateLineCount( "\n" " " "\n" ) );
 
 				LF();
 
-				OUTPUT_VALUE( CalculateLineCount( "\n" "\n" "ab" "\n" "cd" "\n" "\n" "ef" "\n" "gh" "\n" "\n" "\n" "ijk" "\n" ) );
+				OUT_VALUE( CalculateLineCount( "\n" "\n" "ab" "\n" "cd" "\n" "\n" "ef" "\n" "gh" "\n" "\n" "\n" "ijk" "\n" ) );
 
 				LF();
 
-				OUTPUT_VALUE( CalculateLineCount( "\n" "\n" "ab" "\n" "cd" "\n" "\n" "ef" "\n" "gh" "\n" "\n" "\n" "i" ) );
+				OUT_VALUE( CalculateLineCount( "\n" "\n" "ab" "\n" "cd" "\n" "\n" "ef" "\n" "gh" "\n" "\n" "\n" "i" ) );
 			}
 
 			LS();

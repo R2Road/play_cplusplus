@@ -39,29 +39,29 @@ namespace windows_terminal_basic_test
 			LS();
 
 			{
-				OUTPUT_VALUE( console_screen_buffer_info.dwCursorPosition.X );
-				OUTPUT_VALUE( console_screen_buffer_info.dwCursorPosition.Y );
+				OUT_VALUE( console_screen_buffer_info.dwCursorPosition.X );
+				OUT_VALUE( console_screen_buffer_info.dwCursorPosition.Y );
 
 				LF();
 
-				OUTPUT_VALUE( console_screen_buffer_info.dwMaximumWindowSize.X );
-				OUTPUT_VALUE( console_screen_buffer_info.dwMaximumWindowSize.Y );
+				OUT_VALUE( console_screen_buffer_info.dwMaximumWindowSize.X );
+				OUT_VALUE( console_screen_buffer_info.dwMaximumWindowSize.Y );
 
 				LF();
 
-				OUTPUT_VALUE( console_screen_buffer_info.dwSize.X );
-				OUTPUT_VALUE( console_screen_buffer_info.dwSize.Y );
+				OUT_VALUE( console_screen_buffer_info.dwSize.X );
+				OUT_VALUE( console_screen_buffer_info.dwSize.Y );
 
 				LF();
 
-				OUTPUT_VALUE( console_screen_buffer_info.srWindow.Left );
-				OUTPUT_VALUE( console_screen_buffer_info.srWindow.Top );
-				OUTPUT_VALUE( console_screen_buffer_info.srWindow.Right );
-				OUTPUT_VALUE( console_screen_buffer_info.srWindow.Bottom );
+				OUT_VALUE( console_screen_buffer_info.srWindow.Left );
+				OUT_VALUE( console_screen_buffer_info.srWindow.Top );
+				OUT_VALUE( console_screen_buffer_info.srWindow.Right );
+				OUT_VALUE( console_screen_buffer_info.srWindow.Bottom );
 
 				LF();
 
-				OUTPUT_VALUE( console_screen_buffer_info.wAttributes );
+				OUT_VALUE( console_screen_buffer_info.wAttributes );
 			}
 
 			LS();
@@ -106,8 +106,8 @@ namespace windows_terminal_basic_test
 				PROC_MAIN( GetConsoleScreenBufferInfo( hStdout, &csbi ) );
 				DECL_MAIN( const auto width = static_cast<int>( csbi.srWindow.Right - csbi.srWindow.Left + 1 ) );
 				DECL_MAIN( const auto height = static_cast<int>( csbi.srWindow.Bottom - csbi.srWindow.Top + 1 ) );
-				OUTPUT_VALUE( width );
-				OUTPUT_VALUE( height );
+				OUT_VALUE( width );
+				OUT_VALUE( height );
 
 				LF();
 
@@ -253,8 +253,8 @@ namespace windows_terminal_basic_test
 
 			{
 				std::cout << r2tm::tab << "+ System Display Info" << r2tm::linefeed2;
-				OUTPUT_VALUE( GetSystemMetrics( SM_CXSCREEN ) );
-				OUTPUT_VALUE( GetSystemMetrics( SM_CYSCREEN ) );
+				OUT_VALUE( GetSystemMetrics( SM_CXSCREEN ) );
+				OUT_VALUE( GetSystemMetrics( SM_CYSCREEN ) );
 			}
 
 			LS();
@@ -264,18 +264,18 @@ namespace windows_terminal_basic_test
 
 				DECL_MAIN( const int system_center_x = GetSystemMetrics( SM_CXSCREEN ) / 2 );
 				DECL_MAIN( const int system_center_y = GetSystemMetrics( SM_CYSCREEN ) / 2 );
-				OUTPUT_VALUE( system_center_x );
-				OUTPUT_VALUE( system_center_y );
+				OUT_VALUE( system_center_x );
+				OUT_VALUE( system_center_y );
 
 				DECL_MAIN( const int window_width = ( last_window_rect.right - last_window_rect.left ) );
 				DECL_MAIN( const int window_height = ( last_window_rect.bottom - last_window_rect.top ) );
-				OUTPUT_VALUE( window_width );
-				OUTPUT_VALUE( window_height );
+				OUT_VALUE( window_width );
+				OUT_VALUE( window_height );
 
 				DECL_MAIN( const int posx = system_center_x - ( window_width / 2 ) );
 				DECL_MAIN( const int posy = system_center_y - ( window_height / 2 ) );
-				OUTPUT_VALUE( posx );
-				OUTPUT_VALUE( posy );
+				OUT_VALUE( posx );
+				OUT_VALUE( posy );
 
 				PROC_MAIN( MoveWindow( hWnd, posx, posy, window_width, window_height, TRUE ) );
 
@@ -335,7 +335,7 @@ namespace windows_terminal_basic_test
 
 			LF();
 
-			OUTPUT_VALUE( last_window_name_string );
+			OUT_VALUE( last_window_name_string );
 
 			LS();
 
@@ -389,7 +389,7 @@ namespace windows_terminal_basic_test
 
 				LF();
 
-				OUTPUT_BINARY( last_window_style );
+				OUT_BINARY( last_window_style );
 			}
 
 			LS();
@@ -403,7 +403,7 @@ namespace windows_terminal_basic_test
 
 				LF();
 
-				OUTPUT_BINARY( new_window_style );
+				OUT_BINARY( new_window_style );
 			}
 
 			LS();
@@ -498,7 +498,7 @@ namespace windows_terminal_basic_test
 				std::cout << r2tm::tab << "+ Backup" << r2tm::linefeed2;
 
 				PROC_MAIN( last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE ) );
-				OUTPUT_BINARY( last_window_style );
+				OUT_BINARY( last_window_style );
 			}
 
 			LS();
@@ -509,7 +509,7 @@ namespace windows_terminal_basic_test
 				DECL_MAIN( LONG new_window_style = last_window_style );
 				PROC_MAIN( new_window_style &= ~( WS_MAXIMIZEBOX) );
 				PROC_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style ) );
-				OUTPUT_BINARY( new_window_style );
+				OUT_BINARY( new_window_style );
 
 				LF();
 
@@ -561,7 +561,7 @@ namespace windows_terminal_basic_test
 				std::cout << r2tm::tab << "+ Backup" << r2tm::linefeed2;
 
 				PROC_MAIN( last_window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE ) );
-				OUTPUT_BINARY( last_window_style );
+				OUT_BINARY( last_window_style );
 			}
 
 			LS();
@@ -572,7 +572,7 @@ namespace windows_terminal_basic_test
 				DECL_MAIN( LONG new_window_style = last_window_style );
 				PROC_MAIN( new_window_style &= ~( WS_SIZEBOX ) );
 				PROC_MAIN( SetWindowLong( GetConsoleWindow(), GWL_STYLE, new_window_style ) );
-				OUTPUT_BINARY( new_window_style );
+				OUT_BINARY( new_window_style );
 			}
 
 			LS();
@@ -792,7 +792,7 @@ namespace windows_terminal_basic_test
 				std::cout << r2tm::tab << "+ Backup" << r2tm::linefeed2;
 
 				PROC_MAIN( GetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), &last_console_mode ) );
-				OUTPUT_BINARY( last_console_mode );
+				OUT_BINARY( last_console_mode );
 			}
 
 			LS();
@@ -802,10 +802,10 @@ namespace windows_terminal_basic_test
 
 				DECL_MAIN( DWORD new_console_mode = last_console_mode );
 				PROC_MAIN( new_console_mode |= ENABLE_EXTENDED_FLAGS );
-				OUTPUT_BINARY( new_console_mode );
+				OUT_BINARY( new_console_mode );
 				PROC_MAIN( new_console_mode &= ~( ENABLE_QUICK_EDIT_MODE ) );
 				PROC_MAIN( SetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), new_console_mode ) );
-				OUTPUT_BINARY( new_console_mode );
+				OUT_BINARY( new_console_mode );
 			}
 
 			LS();

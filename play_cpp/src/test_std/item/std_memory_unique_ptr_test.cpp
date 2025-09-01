@@ -25,7 +25,7 @@ namespace std_memory_unique_ptr_test
 
 			{
 				DECL_MAIN( std::unique_ptr<int> up( new int( 3 ) ) );
-				OUTPUT_VALUE( *up );
+				OUT_VALUE( *up );
 
 				LF();
 
@@ -41,22 +41,22 @@ namespace std_memory_unique_ptr_test
 
 				LF();
 
-				OUTPUT_CODE( auto up2 = test_up );
-				OUTPUT_CODE( auto up3( test_up ) );
-				OUTPUT_COMMENT( "복사, 대입 불가" );
+				OUT_CODE( auto up2 = test_up );
+				OUT_CODE( auto up3( test_up ) );
+				OUT_COMMENT( "복사, 대입 불가" );
 
 				LF();
 
 				DECL_MAIN( auto up4 = std::move( up1 ) );
 				EXPECT_EQ( nullptr, up1 );
 				EXPECT_NE( nullptr, up4 );
-				OUTPUT_COMMENT( "move 가능" );
+				OUT_COMMENT( "move 가능" );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "release() 는 보유한 포인터를 반환하고 자신을 초기화 한다." );
+				OUT_NOTE( "release() 는 보유한 포인터를 반환하고 자신을 초기화 한다." );
 
 				LF();
 
@@ -73,7 +73,7 @@ namespace std_memory_unique_ptr_test
 
 			{
 				DECL_MAIN( auto up( std::make_unique<int>( 3 ) ) );
-				OUTPUT_VALUE( *up );
+				OUT_VALUE( *up );
 			}
 
 			LS();
@@ -99,14 +99,14 @@ namespace std_memory_unique_ptr_test
 
 			{
 				DECL_MAIN( std::unique_ptr<int> up );
-				OUTPUT_VALUE( sizeof( up ) );
+				OUT_VALUE( sizeof( up ) );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( std::unique_ptr<int> up( new int( 3 ) ) );
-				OUTPUT_VALUE( sizeof( up ) );
+				OUT_VALUE( sizeof( up ) );
 			}
 
 			LS();
@@ -132,15 +132,15 @@ namespace std_memory_unique_ptr_test
 
 			{
 				DECL_MAIN( std::unique_ptr<int> up );
-				OUTPUT_BINARIES( (uint8_t*)&up, sizeof( up ) );
+				OUT_BINARIES( (uint8_t*)&up, sizeof( up ) );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( std::unique_ptr<int> up( new int( 3 ) ) );
-				OUTPUT_BINARY( up.get() );
-				OUTPUT_BINARIES( (uint8_t*)&up, sizeof( up ) );
+				OUT_BINARY( up.get() );
+				OUT_BINARIES( (uint8_t*)&up, sizeof( up ) );
 			}
 
 			LS();
@@ -164,7 +164,7 @@ namespace std_memory_unique_ptr_test
 		{
 			LS();
 
-			OUTPUT_NOTE( "memory pool 이나 caching 등을 활용하고 있다면 삭제자를 지정해서 쓰면 된다." );
+			OUT_NOTE( "memory pool 이나 caching 등을 활용하고 있다면 삭제자를 지정해서 쓰면 된다." );
 
 			LS();
 
@@ -179,7 +179,7 @@ namespace std_memory_unique_ptr_test
 				LF();
 
 				DECL_MAIN( U up( new int( 3 ) ) );
-				OUTPUT_VALUE( *up );
+				OUT_VALUE( *up );
 
 				LF();
 
@@ -207,13 +207,13 @@ namespace std_memory_unique_ptr_test
 		{
 			LS();
 
-			OUTPUT_FILE( "src/test_std/item/std_memory_unique_ptr_test_helper_template_deleter.hpp" );
+			OUT_FILE( "src/test_std/item/std_memory_unique_ptr_test_helper_template_deleter.hpp" );
 
 			LS();
 
 			{
 				DECL_MAIN( std_memory_unique_ptr_test_helper_template_deleter::U<int> up( new int( 3 ) ) );
-				OUTPUT_VALUE( *up );
+				OUT_VALUE( *up );
 
 				LF();
 
@@ -241,11 +241,11 @@ namespace std_memory_unique_ptr_test
 		{
 			LS();
 
-			OUTPUT_FILE( "src/test_std/item/std_memory_unique_ptr_test_helper_forward_declaration.h" );
+			OUT_FILE( "src/test_std/item/std_memory_unique_ptr_test_helper_forward_declaration.h" );
 
 			LS();
 
-			OUTPUT_FILE( "src/test_std/item/std_memory_unique_ptr_test_helper_forward_declaration.cpp" );
+			OUT_FILE( "src/test_std/item/std_memory_unique_ptr_test_helper_forward_declaration.cpp" );
 
 			LS();
 

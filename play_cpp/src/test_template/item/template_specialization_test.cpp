@@ -19,7 +19,7 @@ namespace template_specialization_test
 		{
 			LS();
 
-			OUTPUT_FILE( "src/test_template/item/template_specialization_test_helper_basic.hpp" );
+			OUT_FILE( "src/test_template/item/template_specialization_test_helper_basic.hpp" );
 
 			LS();
 

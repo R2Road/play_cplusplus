@@ -20,48 +20,48 @@ namespace play_c_struct
 
 			{
 				DECL_MAIN( struct C { char c1; } );
-				OUTPUT_VALUE( sizeof( C ) );
-				OUTPUT_BINARY( C() );
+				OUT_VALUE( sizeof( C ) );
+				OUT_BINARY( C() );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( struct C_C { char c1; char c2; } );
-				OUTPUT_VALUE( sizeof( C_C ) );
-				OUTPUT_BINARY( C_C() );
+				OUT_VALUE( sizeof( C_C ) );
+				OUT_BINARY( C_C() );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( struct C_C_I { char c1 = -1; char c2 = -2; int i1 = -3; } );
-				OUTPUT_VALUE( sizeof( C_C_I ) );
-				OUTPUT_BINARY( C_C_I() );
+				OUT_VALUE( sizeof( C_C_I ) );
+				OUT_BINARY( C_C_I() );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( struct I_C_I { int i1 = -1; char c1 = -2; int i2 = -3; } );
-				OUTPUT_VALUE( sizeof( I_C_I ) );
-				OUTPUT_BINARY( I_C_I() );
+				OUT_VALUE( sizeof( I_C_I ) );
+				OUT_BINARY( I_C_I() );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( struct I_C_LL { int i1 = -1; char c1 = -2; long long ll1 = -3; } );
-				OUTPUT_VALUE( sizeof( I_C_LL ) );
-				OUTPUT_BINARY( I_C_LL() );
+				OUT_VALUE( sizeof( I_C_LL ) );
+				OUT_BINARY( I_C_LL() );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( struct I_C_LL_I { int i1 = -1; char c1 = -2; long long ll1 = -3; int i2 = -4; } );
-				OUTPUT_VALUE( sizeof( I_C_LL_I ) );
-				OUTPUT_BINARY( I_C_LL_I() );
+				OUT_VALUE( sizeof( I_C_LL_I ) );
+				OUT_BINARY( I_C_LL_I() );
 			}
 
 			LS();
@@ -85,43 +85,43 @@ namespace play_c_struct
 		{
 			LS();
 
-			OUTPUT_NOTE( "Byte Alignment 의 기준을 조정한다." );
+			OUT_NOTE( "Byte Alignment 의 기준을 조정한다." );
 
 			LS();
 
 			{
 #pragma pack( push, 1 )
-				OUTPUT_NOTE( "#pragma pack( push, 1 )" );
+				OUT_NOTE( "#pragma pack( push, 1 )" );
 
 				LF();
 
 				DECL_MAIN( struct C { char c; }; );
-				OUTPUT_VALUE( sizeof( C ) );
-				OUTPUT_BINARY( C() );
+				OUT_VALUE( sizeof( C ) );
+				OUT_BINARY( C() );
 
 				LF();
 
 				DECL_MAIN( struct I { int i; }; );
-				OUTPUT_VALUE( sizeof( I ) );
-				OUTPUT_BINARY( I() );
+				OUT_VALUE( sizeof( I ) );
+				OUT_BINARY( I() );
 
 				LF();
 
 				DECL_MAIN( struct C_C { char c; char c2; }; );
-				OUTPUT_VALUE( sizeof( C_C ) );
-				OUTPUT_BINARY( C_C() );
+				OUT_VALUE( sizeof( C_C ) );
+				OUT_BINARY( C_C() );
 
 				LF();
 
 				DECL_MAIN( struct C_I { char c; int i; }; );
-				OUTPUT_VALUE( sizeof( C_I ) );
-				OUTPUT_BINARY( C_I() );
+				OUT_VALUE( sizeof( C_I ) );
+				OUT_BINARY( C_I() );
 
 				LF();
 
 				DECL_MAIN( struct LL_I_C { long long ll; int i; char c; }; );
-				OUTPUT_VALUE( sizeof( LL_I_C ) );
-				OUTPUT_BINARY( LL_I_C() );
+				OUT_VALUE( sizeof( LL_I_C ) );
+				OUT_BINARY( LL_I_C() );
 #pragma pack( pop )
 			}
 
@@ -129,37 +129,37 @@ namespace play_c_struct
 
 			{
 #pragma pack( push, 4 )
-				OUTPUT_NOTE( "#pragma pack( push, 4 )" );
+				OUT_NOTE( "#pragma pack( push, 4 )" );
 
 				LF();
 
 				DECL_MAIN( struct C { char c; }; );
-				OUTPUT_VALUE( sizeof( C ) );
-				OUTPUT_BINARY( C() );
+				OUT_VALUE( sizeof( C ) );
+				OUT_BINARY( C() );
 
 				LF();
 
 				DECL_MAIN( struct I { int i; }; );
-				OUTPUT_VALUE( sizeof( I ) );
-				OUTPUT_BINARY( I() );
+				OUT_VALUE( sizeof( I ) );
+				OUT_BINARY( I() );
 
 				LF();
 
 				DECL_MAIN( struct C_C { char c; char c2; }; );
-				OUTPUT_VALUE( sizeof( C_C ) );
-				OUTPUT_BINARY( C_C() );
+				OUT_VALUE( sizeof( C_C ) );
+				OUT_BINARY( C_C() );
 
 				LF();
 
 				DECL_MAIN( struct C_I { char c; int i; }; );
-				OUTPUT_VALUE( sizeof( C_I ) );
-				OUTPUT_BINARY( C_I() );
+				OUT_VALUE( sizeof( C_I ) );
+				OUT_BINARY( C_I() );
 
 				LF();
 
 				DECL_MAIN( struct LL_I_C { long long ll; int i; char c; }; );
-				OUTPUT_VALUE( sizeof( LL_I_C ) );
-				OUTPUT_BINARY( LL_I_C() );
+				OUT_VALUE( sizeof( LL_I_C ) );
+				OUT_BINARY( LL_I_C() );
 #pragma pack( pop )
 			}
 
@@ -191,8 +191,8 @@ namespace play_c_struct
 
 				LF();
 
-				OUTPUT_NOTE( "struct 안에 길이가 0 인 배열이 선언된다." );
-				OUTPUT_NOTE( "warning 4200 : ( 비표준 확장이 사용됨: 구조체/공용 구조체의 배열 크기가 0입니다. )" );
+				OUT_NOTE( "struct 안에 길이가 0 인 배열이 선언된다." );
+				OUT_NOTE( "warning 4200 : ( 비표준 확장이 사용됨: 구조체/공용 구조체의 배열 크기가 0입니다. )" );
 #pragma warning( pop )
 			}
 
@@ -205,8 +205,8 @@ namespace play_c_struct
 
 				LF();
 
-				OUTPUT_NOTE( "struct 안에 길이가 지정되지 않은 배열이 선언된다." );
-				OUTPUT_NOTE( "warning 4200 : ( 비표준 확장이 사용됨: 구조체/공용 구조체의 배열 크기가 0입니다. )" );
+				OUT_NOTE( "struct 안에 길이가 지정되지 않은 배열이 선언된다." );
+				OUT_NOTE( "warning 4200 : ( 비표준 확장이 사용됨: 구조체/공용 구조체의 배열 크기가 0입니다. )" );
 #pragma warning( pop )
 			}
 
@@ -217,13 +217,13 @@ namespace play_c_struct
 
 				LF();
 
-				OUTPUT_NOTE( "안전하게 길이를 1 로 지정하자" );
+				OUT_NOTE( "안전하게 길이를 1 로 지정하자" );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "활용 예" );
+				OUT_NOTE( "활용 예" );
 
 				LF();
 
@@ -241,10 +241,10 @@ namespace play_c_struct
 
 				LF();
 
-				OUTPUT_VALUE( dp->arr[0] );
-				OUTPUT_VALUE( dp->arr[1] );
-				OUTPUT_VALUE( dp->arr[2] );
-				OUTPUT_VALUE( dp->arr[3] );
+				OUT_VALUE( dp->arr[0] );
+				OUT_VALUE( dp->arr[1] );
+				OUT_VALUE( dp->arr[2] );
+				OUT_VALUE( dp->arr[3] );
 
 				LF();
 

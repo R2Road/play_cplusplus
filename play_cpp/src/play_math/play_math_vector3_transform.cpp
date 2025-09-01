@@ -21,29 +21,29 @@ namespace play_math_vector3_transform
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "2차원 좌표 회전 공식" );
-			OUTPUT_COMMENT( "x` = ( x * cos(θ`) ) - ( y * sin(θ`) )" );
-			OUTPUT_COMMENT( "y` = ( y * cos(θ`) ) + ( x * sin(θ`) )" );
+			OUT_SUBJECT( "2차원 좌표 회전 공식" );
+			OUT_COMMENT( "x` = ( x * cos(θ`) ) - ( y * sin(θ`) )" );
+			OUT_COMMENT( "y` = ( y * cos(θ`) ) + ( x * sin(θ`) )" );
 
 			LF();
 
-			OUTPUT_SUBJECT( "행렬 변환" );
-			OUTPUT_COMMENT( "cos(θ`), -sin(θ`)" );
-			OUTPUT_COMMENT( "sin(θ`), cos(θ`)" );
+			OUT_SUBJECT( "행렬 변환" );
+			OUT_COMMENT( "cos(θ`), -sin(θ`)" );
+			OUT_COMMENT( "sin(θ`), cos(θ`)" );
 
 			LF();
 
-			OUTPUT_SUBJECT( "3차원 확장 변환" );
-			OUTPUT_COMMENT( "기준 축을 제외한 나머지 축에 2차원 회전 적용" );
+			OUT_SUBJECT( "3차원 확장 변환" );
+			OUT_COMMENT( "기준 축을 제외한 나머지 축에 2차원 회전 적용" );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Z축 회전" );
+				OUT_SUBJECT( "Z축 회전" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const auto B = []( const float radian )->Mat33
 				{
 					return Mat33(
@@ -52,7 +52,7 @@ namespace play_math_vector3_transform
 						, 0                 , 0                    , 1
 					);
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
@@ -63,11 +63,11 @@ namespace play_math_vector3_transform
 			LS();
 			
 			{
-				OUTPUT_SUBJECT( "X축 회전" );
+				OUT_SUBJECT( "X축 회전" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const auto B = []( const float radian )->Mat33
 				{
 					return Mat33(
@@ -76,7 +76,7 @@ namespace play_math_vector3_transform
 						, 0, std::sin( radian ), std::cos( radian )
 					);
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
@@ -105,35 +105,35 @@ namespace play_math_vector3_transform
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "오른손 좌표계 회전의 대전제" );
-			OUTPUT_COMMENT( "X축 회전은 Y축이 Z축 방향으로 이동" );
-			OUTPUT_COMMENT( "Y축 회전은 Z축이 X축 방향으로 이동" );
-			OUTPUT_COMMENT( "Z축 회전은 X축이 Y축 방향으로 이동" );
+			OUT_SUBJECT( "오른손 좌표계 회전의 대전제" );
+			OUT_COMMENT( "X축 회전은 Y축이 Z축 방향으로 이동" );
+			OUT_COMMENT( "Y축 회전은 Z축이 X축 방향으로 이동" );
+			OUT_COMMENT( "Z축 회전은 X축이 Y축 방향으로 이동" );
 
 			LF();
 
-			OUTPUT_SUBJECT( "Y축 회전은 위의 대전제에 맞추려면 공식의 조정이 요구된다." );
+			OUT_SUBJECT( "Y축 회전은 위의 대전제에 맞추려면 공식의 조정이 요구된다." );
 
 			LF();
 
-			OUTPUT_SUBJECT( "기존 공식" );
-			OUTPUT_COMMENT( "cos(θ`), -sin(θ`)" );
-			OUTPUT_COMMENT( "sin(θ`),  cos(θ`)" );
+			OUT_SUBJECT( "기존 공식" );
+			OUT_COMMENT( "cos(θ`), -sin(θ`)" );
+			OUT_COMMENT( "sin(θ`),  cos(θ`)" );
 
 			LF();
 
-			OUTPUT_SUBJECT( "조정된 공식" );
-			OUTPUT_COMMENT( " cos(θ`), sin(θ`)" );
-			OUTPUT_COMMENT( "-sin(θ`), cos(θ`)" );
+			OUT_SUBJECT( "조정된 공식" );
+			OUT_COMMENT( " cos(θ`), sin(θ`)" );
+			OUT_COMMENT( "-sin(θ`), cos(θ`)" );
 
 			LS();
 			
 			{
-				OUTPUT_SUBJECT( "기존 공식 : 반대 방향으로 회전" );
+				OUT_SUBJECT( "기존 공식 : 반대 방향으로 회전" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const auto B = []( const float radian )->Mat33
 				{
 					return Mat33(
@@ -142,7 +142,7 @@ namespace play_math_vector3_transform
 						, std::sin( radian ) , 0, std::cos( radian )
 					);
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
@@ -153,11 +153,11 @@ namespace play_math_vector3_transform
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "조정된 공식" );
+				OUT_SUBJECT( "조정된 공식" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const auto B = []( const float radian )->Mat33
 				{
 					return Mat33(
@@ -166,7 +166,7 @@ namespace play_math_vector3_transform
 						, -std::sin( radian ) , 0, std::cos( radian )
 					);
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 

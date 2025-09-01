@@ -21,8 +21,8 @@ namespace key_viewer
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "[   ESC   ] End" );
-				OUTPUT_SUBJECT( "[ Any Key ] ..." );
+				OUT_SUBJECT( "[   ESC   ] End" );
+				OUT_SUBJECT( "[ Any Key ] ..." );
 			}
 
 			LS();

@@ -36,7 +36,7 @@ namespace std_list_test
 		{
 			LS();
 
-			OUTPUT_NOTE( "insert를 지시한 iterator의 앞에 삽입된다." );
+			OUT_NOTE( "insert를 지시한 iterator의 앞에 삽입된다." );
 
 			LS();
 
@@ -46,16 +46,16 @@ namespace std_list_test
 
 			{
 				DECL_MAIN( auto itr = ( ++l.begin() ) );
-				OUTPUT_VALUE( ( *itr ) );
+				OUT_VALUE( ( *itr ) );
 
 				LF();
 
 				DECL_MAIN( auto result_itr = l.insert( itr, 4 ) );
-				OUTPUT_VALUE( result_itr );
+				OUT_VALUE( result_itr );
 
 				LF();
 
-				OUTPUT_VALUE( l );
+				OUT_VALUE( l );
 			}
 
 			LS();
@@ -85,13 +85,13 @@ namespace std_list_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "splice는 list의 node를 메모리 할당 없이 통째로 옮긴다." );
+				OUT_NOTE( "splice는 list의 node를 메모리 할당 없이 통째로 옮긴다." );
 
 				LF();
 
 				DECL_MAIN( auto target_itr = container_1.begin() );
-				OUTPUT_VALUE( ( *target_itr ) );
-				OUTPUT_VALUE( &( *target_itr ) );
+				OUT_VALUE( ( *target_itr ) );
+				OUT_VALUE( &( *target_itr ) );
 
 				LF();
 
@@ -101,18 +101,18 @@ namespace std_list_test
 
 				LF();
 
-				OUTPUT_VALUE( &( *container_2.begin() ) );
+				OUT_VALUE( &( *container_2.begin() ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "이동을 지정한 iterator 의 앞에 삽입된다." );
+				OUT_NOTE( "이동을 지정한 iterator 의 앞에 삽입된다." );
 
 				LF();
 
 				DECL_MAIN( auto target_itr = std::find( container_1.begin(), container_1.end(), 3 ) );
-				OUTPUT_VALUE( ( *target_itr ) );
+				OUT_VALUE( ( *target_itr ) );
 
 				LF();
 
@@ -123,7 +123,7 @@ namespace std_list_test
 				LF();
 
 				PROC_MAIN( target_itr = std::find( container_1.begin(), container_1.end(), 2 ) );
-				OUTPUT_VALUE( ( *target_itr ) );
+				OUT_VALUE( ( *target_itr ) );
 
 				LF();
 
@@ -135,12 +135,12 @@ namespace std_list_test
 			LS();
 
 			{
-				OUTPUT_CODE( container_2.splice( container_2.end(), container_1, container_1.end() ) );
+				OUT_CODE( container_2.splice( container_2.end(), container_1, container_1.end() ) );
 
 				LF();
 
-				OUTPUT_NOTE( "end() iterator 를 이동하려 들면 터진다." );
-				OUTPUT_NOTE( "Debug Mode Not Working, Release Mode Working" );
+				OUT_NOTE( "end() iterator 를 이동하려 들면 터진다." );
+				OUT_NOTE( "Debug Mode Not Working, Release Mode Working" );
 			}
 
 			LS();
@@ -170,12 +170,12 @@ namespace std_list_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "Splice : target ~ end" );
+				OUT_NOTE( "Splice : target ~ end" );
 
 				LF();
 
 				DECL_MAIN( auto target_itr = std::find( container_1.begin(), container_1.end(), 4 ) );
-				OUTPUT_VALUE( ( *target_itr ) );
+				OUT_VALUE( ( *target_itr ) );
 
 				LF();
 
@@ -187,15 +187,15 @@ namespace std_list_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "Splice : target ~ next" );
+				OUT_NOTE( "Splice : target ~ next" );
 
 				LF();
 
 				DECL_MAIN( auto target_itr = std::find( container_1.begin(), container_1.end(), 1 ) );
 				DECL_MAIN( auto next_itr = target_itr );
 				PROC_MAIN( ++next_itr );
-				OUTPUT_VALUE( ( *target_itr ) );
-				OUTPUT_VALUE( ( *next_itr ) );
+				OUT_VALUE( ( *target_itr ) );
+				OUT_VALUE( ( *next_itr ) );
 
 				LF();
 
@@ -207,7 +207,7 @@ namespace std_list_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "범위 이동의 경우 마지막 요소는 이동 대상에 포함되지 않는다." );
+				OUT_NOTE( "범위 이동의 경우 마지막 요소는 이동 대상에 포함되지 않는다." );
 			}
 
 			LS();
@@ -237,7 +237,7 @@ namespace std_list_test
 
 			{
 				DECL_MAIN( auto target = ( ++l.begin() ) );
-				OUTPUT_VALUE( target );
+				OUT_VALUE( target );
 
 				LF();
 
@@ -246,17 +246,17 @@ namespace std_list_test
 				LF();
 
 				EXPECT_EQ( 3, *target );
-				OUTPUT_VALUE( l );
+				OUT_VALUE( l );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "end() iterator 의 삭제는 시도하지 말자." );
+				OUT_NOTE( "end() iterator 의 삭제는 시도하지 말자." );
 
 				LF();
 
-				OUTPUT_CODE( l.erase( l.end() ) );
+				OUT_CODE( l.erase( l.end() ) );
 			}
 
 			LS();
@@ -287,7 +287,7 @@ namespace std_list_test
 
 			{
 #if defined( DEBUG ) || defined( _DEBUG )
-				OUTPUT_CODE( container_2.erase( container_1.begin() ) );
+				OUT_CODE( container_2.erase( container_1.begin() ) );
 #else
 				PROC_MAIN( container_2.erase( container_1.begin() ) );
 
@@ -299,8 +299,8 @@ namespace std_list_test
 
 				LF();
 
-				OUTPUT_NOTE( "남의 iterator 라도 삭제 처리는 된다." );
-				OUTPUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
+				OUT_NOTE( "남의 iterator 라도 삭제 처리는 된다." );
+				OUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
 			}
 
 			LS();
@@ -332,32 +332,32 @@ namespace std_list_test
 				DECL_MAIN( auto cur = container_1.end(); );
 
 #if defined( DEBUG ) || defined( _DEBUG )
-				OUTPUT_CODE( auto v = *cur );
+				OUT_CODE( auto v = *cur );
 #else
 				DECL_MAIN( auto v = *cur );
-				OUTPUT_VALUE( v );
+				OUT_VALUE( v );
 #endif
 				LF();
 
-				OUTPUT_NOTE( "end() iterator의 값을 사용 할 수 있다." );
-				OUTPUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
+				OUT_NOTE( "end() iterator의 값을 사용 할 수 있다." );
+				OUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
 			}
 
 			LS();
 
 			{
 #if defined( DEBUG ) || defined( _DEBUG )
-				OUTPUT_CODE( auto cur = container_1.end() );
-				OUTPUT_CODE( ++cur );
+				OUT_CODE( auto cur = container_1.end() );
+				OUT_CODE( ++cur );
 #else
 				DECL_MAIN( auto cur = container_1.end() );
 				PROC_MAIN( ++cur );
-				OUTPUT_VALUE( *cur );
+				OUT_VALUE( *cur );
 #endif
 				LF();
 
-				OUTPUT_NOTE( "++end() 는 begin() 이다." );
-				OUTPUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
+				OUT_NOTE( "++end() 는 begin() 이다." );
+				OUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
 			}
 
 			LS();
@@ -365,20 +365,20 @@ namespace std_list_test
 			{
 				DECL_MAIN( auto cur = container_1.end() );
 				PROC_MAIN( --cur );
-				OUTPUT_VALUE( *cur );
+				OUT_VALUE( *cur );
 
 				LF();
 
-				OUTPUT_NOTE( "--end() 는 작동한다." );
+				OUT_NOTE( "--end() 는 작동한다." );
 			}
 
 			LS();
 
 			{
 #if defined( DEBUG ) || defined( _DEBUG )
-				OUTPUT_CODE( std::list<int> container_2 );
-				OUTPUT_CODE( auto itr = container_2.end() );
-				OUTPUT_CODE( EXPECT_EQ( container_2.end(), ( --itr ) ) );
+				OUT_CODE( std::list<int> container_2 );
+				OUT_CODE( auto itr = container_2.end() );
+				OUT_CODE( EXPECT_EQ( container_2.end(), ( --itr ) ) );
 #else
 				DECL_MAIN( std::list<int> container_2 );
 				DECL_MAIN( auto itr = container_2.end() );
@@ -387,9 +387,9 @@ namespace std_list_test
 
 				LF();
 
-				OUTPUT_NOTE( "빈 컨테이너의 --end() 는 end() 이다." );
-				OUTPUT_NOTE( "빈 컨테이너는 Debug 모드에서 Container Size 검사에 실패한다." );
-				OUTPUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
+				OUT_NOTE( "빈 컨테이너의 --end() 는 end() 이다." );
+				OUT_NOTE( "빈 컨테이너는 Debug 모드에서 Container Size 검사에 실패한다." );
+				OUT_NOTE( "Not Working In Debug Mode : _STL_VERIFY" );
 			}
 
 			LS();

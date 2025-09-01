@@ -44,7 +44,7 @@ namespace std_chrono_test
 
 				LF();
 
-				OUTPUT_VALUE( str );
+				OUT_VALUE( str );
 				
 			}
 
@@ -85,33 +85,33 @@ namespace std_chrono_test
 				DECL_MAIN( char str[128] );
 				DECL_MAIN( auto today_time = std::chrono::system_clock::to_time_t( tp ) );
 				PROC_MAIN( ctime_s( str, sizeof( str ), &today_time ) );
-				OUTPUT_VALUE( str );
+				OUT_VALUE( str );
 			}
 
 			LS();
 
 			{
-				OUTPUT_VALUE( std::chrono::system_clock::to_time_t( tp ) );
+				OUT_VALUE( std::chrono::system_clock::to_time_t( tp ) );
 
 				LF();
 
-				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::hours>( tp.time_since_epoch() ).count() );
+				OUT_VALUE( std::chrono::duration_cast<std::chrono::hours>( tp.time_since_epoch() ).count() );
 
 				LF();
 
-				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::minutes>( tp.time_since_epoch() ).count() );
+				OUT_VALUE( std::chrono::duration_cast<std::chrono::minutes>( tp.time_since_epoch() ).count() );
 
 				LF();
 
-				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::seconds>( tp.time_since_epoch() ).count() );
+				OUT_VALUE( std::chrono::duration_cast<std::chrono::seconds>( tp.time_since_epoch() ).count() );
 
 				LF();
 
-				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::milliseconds>( tp.time_since_epoch() ).count() );
+				OUT_VALUE( std::chrono::duration_cast<std::chrono::milliseconds>( tp.time_since_epoch() ).count() );
 
 				LF();
 
-				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::nanoseconds>( tp.time_since_epoch() ).count() );
+				OUT_VALUE( std::chrono::duration_cast<std::chrono::nanoseconds>( tp.time_since_epoch() ).count() );
 			}
 
 			LS();
@@ -147,23 +147,23 @@ namespace std_chrono_test
 			LS();
 
 			{
-				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::hours>( tp.time_since_epoch() ).count() );
+				OUT_VALUE( std::chrono::duration_cast<std::chrono::hours>( tp.time_since_epoch() ).count() );
 
 				LF();
 
-				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::minutes>( tp.time_since_epoch() ).count() );
+				OUT_VALUE( std::chrono::duration_cast<std::chrono::minutes>( tp.time_since_epoch() ).count() );
 
 				LF();
 
-				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::seconds>( tp.time_since_epoch() ).count() );
+				OUT_VALUE( std::chrono::duration_cast<std::chrono::seconds>( tp.time_since_epoch() ).count() );
 
 				LF();
 
-				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::milliseconds>( tp.time_since_epoch() ).count() );
+				OUT_VALUE( std::chrono::duration_cast<std::chrono::milliseconds>( tp.time_since_epoch() ).count() );
 
 				LF();
 
-				OUTPUT_VALUE( std::chrono::duration_cast<std::chrono::nanoseconds>( tp.time_since_epoch() ).count() );
+				OUT_VALUE( std::chrono::duration_cast<std::chrono::nanoseconds>( tp.time_since_epoch() ).count() );
 			}
 
 			LS();
@@ -189,34 +189,34 @@ namespace std_chrono_test
 
 			{
 				DECL_MAIN( const std::chrono::steady_clock::duration d( 30000000 ) );
-				OUTPUT_VALUE( d.count() );
+				OUT_VALUE( d.count() );
 			}
 
 			LS();
 
 			DECL_MAIN( const std::chrono::steady_clock::duration d( std::chrono::nanoseconds( 30000000 ) ) );
-			OUTPUT_VALUE( d.count() );
+			OUT_VALUE( d.count() );
 
 			LF();
 
 			{
 				DECL_MAIN( const auto nns = std::chrono::duration_cast<std::chrono::nanoseconds>( d ) );
-				OUTPUT_VALUE( nns.count() );
+				OUT_VALUE( nns.count() );
 
 				LF();
 
 				DECL_MAIN( const auto mcs = std::chrono::duration_cast<std::chrono::microseconds>( d ) );
-				OUTPUT_VALUE( mcs.count() );
+				OUT_VALUE( mcs.count() );
 
 				LF();
 
 				DECL_MAIN( const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>( d ) );
-				OUTPUT_VALUE( ms.count() );
+				OUT_VALUE( ms.count() );
 
 				LF();
 
 				DECL_MAIN( const auto sec = std::chrono::duration_cast<std::chrono::seconds>( d ) );
-				OUTPUT_VALUE( sec.count() );
+				OUT_VALUE( sec.count() );
 			}
 
 			LS();

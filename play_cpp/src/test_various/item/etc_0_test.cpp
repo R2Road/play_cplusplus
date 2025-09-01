@@ -25,7 +25,7 @@ namespace etc_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Use For" );
+				OUT_SUBJECT( "Use For" );
 
 				LF();
 
@@ -47,7 +47,7 @@ namespace etc_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Use Bitset" );
+				OUT_SUBJECT( "Use Bitset" );
 
 				LF();
 
@@ -56,7 +56,7 @@ namespace etc_test
 
 				LF();
 
-				OUTPUT_VALUE( b );
+				OUT_VALUE( b );
 			}
 
 			LS();
@@ -126,7 +126,7 @@ namespace etc_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "1. Create a Tool That Helps You Understand Object LifeTime" );
+				OUT_NOTE( "1. Create a Tool That Helps You Understand Object LifeTime" );
 
 				LF();
 
@@ -136,7 +136,7 @@ namespace etc_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "2. Study The Lambda!!" );
+				OUT_NOTE( "2. Study The Lambda!!" );
 
 				LF();
 
@@ -220,14 +220,14 @@ namespace etc_test
 
 			{
 				function<int( int, int)> func( f );
-				OUTPUT_VALUE( func( 1, 2 ) );
+				OUT_VALUE( func( 1, 2 ) );
 			}
 
 			LS();
 
 			{
 				function<int( int, int )> func( [z = 42]( int x, int y ) { return x + y + z; } );
-				OUTPUT_VALUE( func( 1, 2 ) );
+				OUT_VALUE( func( 1, 2 ) );
 			}
 
 			LS();
@@ -235,7 +235,7 @@ namespace etc_test
 			{
 				//class T { public: int Do( int x, int y ) { return x + y; } } t;
 				//function<int( int, int )> func( &T::Do );
-				//OUTPUT_VALUE( func( &t, 1, 2 ) );
+				//OUT_VALUE( func( &t, 1, 2 ) );
 			}
 
 			LS();
@@ -262,7 +262,7 @@ namespace etc_test
 
 			{
 				DECL_MAIN( int i{} );
-				OUTPUT_VALUE( i );
+				OUT_VALUE( i );
 			}
 
 			LS();
@@ -270,7 +270,7 @@ namespace etc_test
 			{
 				DECL_MAIN( int i = 123 );
 				PROC_MAIN( i = {} );
-				OUTPUT_VALUE( i );
+				OUT_VALUE( i );
 			}
 
 			LS();
@@ -311,7 +311,7 @@ namespace etc_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "자기 참조" );
+				OUT_NOTE( "자기 참조" );
 
 				LF();
 
@@ -320,15 +320,15 @@ namespace etc_test
 
 				LF();
 
-				OUTPUT_NOTE( "{} 를 벗어날 때 shared_ptr a 의 소멸자가 불린다." );
-				OUTPUT_NOTE( "ref count 가 2 라서 보유한 메모리에 delete 를 호출하지 않고 ref count 만 감소 시켜 1로 만든다." );
-				OUTPUT_NOTE( "A 의 소멸자가 불리지 않았기 때문에 self 는 그대로 남아있다." );
+				OUT_NOTE( "{} 를 벗어날 때 shared_ptr a 의 소멸자가 불린다." );
+				OUT_NOTE( "ref count 가 2 라서 보유한 메모리에 delete 를 호출하지 않고 ref count 만 감소 시켜 1로 만든다." );
+				OUT_NOTE( "A 의 소멸자가 불리지 않았기 때문에 self 는 그대로 남아있다." );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "상호 참조" );
+				OUT_NOTE( "상호 참조" );
 
 				LF();
 
@@ -342,19 +342,19 @@ namespace etc_test
 
 				LF();
 
-				OUTPUT_NOTE( "상호 참조가 되어 형태는 바뀌었지만 내용은 똑같다." );
+				OUT_NOTE( "상호 참조가 되어 형태는 바뀌었지만 내용은 똑같다." );
 
 				LF();
 
-				OUTPUT_NOTE( "{} 를 벗어날 때 shared_ptr a 의 소멸자가 불린다." );
-				OUTPUT_NOTE( "ref count 가 2 라서 보유한 메모리에 delete 를 호출하지 않고 ref count 만 감소 시켜 1로 만든다." );
-				OUTPUT_NOTE( "A 의 소멸자가 불리지 않았기 때문에 self 는 그대로 남아있다." );
+				OUT_NOTE( "{} 를 벗어날 때 shared_ptr a 의 소멸자가 불린다." );
+				OUT_NOTE( "ref count 가 2 라서 보유한 메모리에 delete 를 호출하지 않고 ref count 만 감소 시켜 1로 만든다." );
+				OUT_NOTE( "A 의 소멸자가 불리지 않았기 때문에 self 는 그대로 남아있다." );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "순환 참조" );
+				OUT_NOTE( "순환 참조" );
 
 				LF();
 
@@ -370,13 +370,13 @@ namespace etc_test
 
 				LF();
 
-				OUTPUT_NOTE( "순환 참조가 되어 형태는 바뀌었지만 내용은 똑같다." );
+				OUT_NOTE( "순환 참조가 되어 형태는 바뀌었지만 내용은 똑같다." );
 
 				LF();
 
-				OUTPUT_NOTE( "{} 를 벗어날 때 shared_ptr a 의 소멸자가 불린다." );
-				OUTPUT_NOTE( "ref count 가 2 라서 보유한 메모리에 delete 를 호출하지 않고 ref count 만 감소 시켜 1로 만든다." );
-				OUTPUT_NOTE( "A 의 소멸자가 불리지 않았기 때문에 self 는 그대로 남아있다." );
+				OUT_NOTE( "{} 를 벗어날 때 shared_ptr a 의 소멸자가 불린다." );
+				OUT_NOTE( "ref count 가 2 라서 보유한 메모리에 delete 를 호출하지 않고 ref count 만 감소 시켜 1로 만든다." );
+				OUT_NOTE( "A 의 소멸자가 불리지 않았기 때문에 self 는 그대로 남아있다." );
 			}
 
 			LS();
@@ -401,34 +401,34 @@ namespace etc_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "1e+4 = 1 * 10 * 10 * 10 * 10" );
+				OUT_NOTE( "1e+4 = 1 * 10 * 10 * 10 * 10" );
 
 				LF();
 
 				DECL_MAIN( const double e = 1e+4 );
-				OUTPUT_VALUE( e );
+				OUT_VALUE( e );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "1e-4 = 1 * ( 1/10 ) * ( 1/10 ) * ( 1/10 ) * ( 1/10 )" );
+				OUT_NOTE( "1e-4 = 1 * ( 1/10 ) * ( 1/10 ) * ( 1/10 ) * ( 1/10 )" );
 
 				LF();
 
 				DECL_MAIN( const double e = 1e-4 );
-				OUTPUT_VALUE( e );
+				OUT_VALUE( e );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "-1e+4 = -1 * 10 * 10 * 10 * 10" );
+				OUT_NOTE( "-1e+4 = -1 * 10 * 10 * 10 * 10" );
 
 				LF();
 
 				DECL_MAIN( const double e = -1e+4 );
-				OUTPUT_VALUE( e );
+				OUT_VALUE( e );
 			}
 
 			LS();
@@ -452,12 +452,12 @@ namespace etc_test
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "class 멤버인 배열은 {} 로 초기화 한다." );
-			OUTPUT_SUBJECT( "신기한데... o_o" );
+			OUT_SUBJECT( "class 멤버인 배열은 {} 로 초기화 한다." );
+			OUT_SUBJECT( "신기한데... o_o" );
 
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			class C
 			{
 			public:
@@ -475,7 +475,7 @@ namespace etc_test
 			};
 
 
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
@@ -516,7 +516,7 @@ namespace etc_test
 			{
 				LS();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const auto F = []( const float f )->void
 				{
 					static const int w = 8;
@@ -540,12 +540,12 @@ namespace etc_test
 					r2tm::PrintBinary( ( ( *up << 9 ) >> 9 ) & ( mask >> 9 ) );
 					LF();
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LS();
 
 				{
-					OUTPUT_BINARY( 0.f );
+					OUT_BINARY( 0.f );
 				}
 
 				LS();

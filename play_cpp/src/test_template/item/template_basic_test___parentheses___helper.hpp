@@ -20,6 +20,6 @@ namespace template_basic_test
 	{
 		ParenthesesHelper<int( int )> helper;
 
-		OUTPUT_VALUE( helper.i );
+		OUT_VALUE( helper.i );
 	}
 }

@@ -26,9 +26,9 @@ namespace windows_sound_test
 		{
 			LS();
 
-			OUTPUT_STRING( "[ESC]"  " "  "Exit" );
-			OUTPUT_STRING( "[ 1 ]"  " "  "Play SFX 1" );
-			OUTPUT_STRING( "[ 2 ]"  " "  "Play SFX 2" );
+			OUT_STRING( "[ESC]"  " "  "Exit" );
+			OUT_STRING( "[ 1 ]"  " "  "Play SFX 1" );
+			OUT_STRING( "[ 2 ]"  " "  "Play SFX 2" );
 
 			LS();
 
@@ -75,9 +75,9 @@ namespace windows_sound_test
 		{
 			LS();
 
-			OUTPUT_STRING( "[ESC]"  " "  "Exit" );
-			OUTPUT_STRING( "[ 1 ]"  " "  "Play Beep" );
-			OUTPUT_STRING( "[ 2 ]"  " "  "Play Beep" );
+			OUT_STRING( "[ESC]"  " "  "Exit" );
+			OUT_STRING( "[ 1 ]"  " "  "Play Beep" );
+			OUT_STRING( "[ 2 ]"  " "  "Play Beep" );
 
 			LS();
 

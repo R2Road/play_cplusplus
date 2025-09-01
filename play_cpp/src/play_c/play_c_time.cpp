@@ -25,7 +25,7 @@ namespace play_c_time
 			LS();
 
 			{
-				OUTPUT_VALUE( time( NULL ) );
+				OUT_VALUE( time( NULL ) );
 			}
 
 			LS();
@@ -35,11 +35,11 @@ namespace play_c_time
 
 				LF();
 
-				OUTPUT_VALUE( time( &tt ) );
+				OUT_VALUE( time( &tt ) );
 
 				LF();
 
-				OUTPUT_VALUE( tt );
+				OUT_VALUE( tt );
 			}
 
 			LS();
@@ -79,16 +79,16 @@ namespace play_c_time
 
 			{
 				std::cout << r2tm::tab << "+ 연, 월, 일" << r2tm::linefeed2;
-				OUTPUT_VALUE( time_infos.tm_year + 1900 );
-				OUTPUT_VALUE( time_infos.tm_mon + 1 );
-				OUTPUT_VALUE( time_infos.tm_mday );
+				OUT_VALUE( time_infos.tm_year + 1900 );
+				OUT_VALUE( time_infos.tm_mon + 1 );
+				OUT_VALUE( time_infos.tm_mday );
 
 				std::cout << r2tm::linefeed2;
 
 				std::cout << r2tm::tab << "+ 시, 분, 초" << r2tm::linefeed2;
-				OUTPUT_VALUE( time_infos.tm_hour );
-				OUTPUT_VALUE( time_infos.tm_min );
-				OUTPUT_VALUE( time_infos.tm_sec );
+				OUT_VALUE( time_infos.tm_hour );
+				OUT_VALUE( time_infos.tm_min );
+				OUT_VALUE( time_infos.tm_sec );
 			}
 
 			LS();
@@ -123,7 +123,7 @@ namespace play_c_time
 
 				LF();
 				
-				OUTPUT_VALUE( str );
+				OUT_VALUE( str );
 			}
 
 			LS();
@@ -141,7 +141,7 @@ namespace play_c_time
 
 				LF();
 
-				OUTPUT_VALUE( str );
+				OUT_VALUE( str );
 			}
 
 			LS();

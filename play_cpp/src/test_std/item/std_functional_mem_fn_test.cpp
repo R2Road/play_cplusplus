@@ -129,7 +129,7 @@ namespace std_functional_mem_fn_test
 		{
 			LS();
 
-			OUTPUT_FILE( "src/test_std/item/std_functional_mem_fn_test_helper.hpp" );
+			OUT_FILE( "src/test_std/item/std_functional_mem_fn_test_helper.hpp" );
 
 			LS();
 
@@ -140,7 +140,7 @@ namespace std_functional_mem_fn_test
 
 			{
 				DECL_MAIN( auto do_fn =  std::mem_fn( &TestStruct::Do ) );
-				OUTPUT_VALUE( sizeof( do_fn ) );
+				OUT_VALUE( sizeof( do_fn ) );
 
 				LF();
 
@@ -151,11 +151,11 @@ namespace std_functional_mem_fn_test
 
 			{
 				DECL_MAIN( auto do_mv = std::mem_fn( &TestStruct::a ) );
-				OUTPUT_VALUE( sizeof( do_mv ) );
+				OUT_VALUE( sizeof( do_mv ) );
 
 				LF();
 
-				OUTPUT_VALUE( do_mv( &t ) );
+				OUT_VALUE( do_mv( &t ) );
 			}
 
 			LS();

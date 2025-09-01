@@ -23,37 +23,37 @@ namespace play_math_quaternion
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "쿼터니언 개요 : Quaternion" );
-			OUTPUT_COMMENT( "4원수" );
-			OUTPUT_COMMENT( "실수부 + 3개의 허수부 = w + x, y, z" );
-			OUTPUT_COMMENT( "회전에만 사용" );
-			OUTPUT_COMMENT( "일반적으로 길이가 1 이다." );
+			OUT_SUBJECT( "쿼터니언 개요 : Quaternion" );
+			OUT_COMMENT( "4원수" );
+			OUT_COMMENT( "실수부 + 3개의 허수부 = w + x, y, z" );
+			OUT_COMMENT( "회전에만 사용" );
+			OUT_COMMENT( "일반적으로 길이가 1 이다." );
 
 			LF();
 
-			OUTPUT_SUBJECT( "성분 설명" );
-			OUTPUT_COMMENT( "w" );
-			OUTPUT_COMMENT( "    " "스칼라 또는 실수부" );
-			OUTPUT_COMMENT( "    " "회전의 크기와 관련된 정보" );
-			OUTPUT_COMMENT( "    " "1일 때 회전량 최소. 0일 때 회전량 최대( 180 )" );
-			OUTPUT_COMMENT( "x, y, z" );
-			OUTPUT_COMMENT( "    " "허수부" );
-			OUTPUT_COMMENT( "    " "회전축의 방향을 나타낸다" );
-			OUTPUT_COMMENT( "    " "회전 각도의 절반의 사인 값(sin(θ/2))에 해당 축의 단위 벡터 성분을 곱한 값" );
+			OUT_SUBJECT( "성분 설명" );
+			OUT_COMMENT( "w" );
+			OUT_COMMENT( "    " "스칼라 또는 실수부" );
+			OUT_COMMENT( "    " "회전의 크기와 관련된 정보" );
+			OUT_COMMENT( "    " "1일 때 회전량 최소. 0일 때 회전량 최대( 180 )" );
+			OUT_COMMENT( "x, y, z" );
+			OUT_COMMENT( "    " "허수부" );
+			OUT_COMMENT( "    " "회전축의 방향을 나타낸다" );
+			OUT_COMMENT( "    " "회전 각도의 절반의 사인 값(sin(θ/2))에 해당 축의 단위 벡터 성분을 곱한 값" );
 
 			LF();
 
-			OUTPUT_SUBJECT( "정리" );
-			OUTPUT_COMMENT( "k = 회전축" );
-			OUTPUT_COMMENT( "q = ( cos( θ / 2 ), k * sin( θ / 2 ) )" );
-			OUTPUT_COMMENT( "q = ( w, v )" );
-			OUTPUT_COMMENT( "q = ( w, x, y, z )" );
-			OUTPUT_COMMENT( "회전 축의 방향과 회전 각도를 4차원 벡터의 형태로 표현한 것." );
+			OUT_SUBJECT( "정리" );
+			OUT_COMMENT( "k = 회전축" );
+			OUT_COMMENT( "q = ( cos( θ / 2 ), k * sin( θ / 2 ) )" );
+			OUT_COMMENT( "q = ( w, v )" );
+			OUT_COMMENT( "q = ( w, x, y, z )" );
+			OUT_COMMENT( "회전 축의 방향과 회전 각도를 4차원 벡터의 형태로 표현한 것." );
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				struct Quaternion
 				{
 					float w;    // 스칼라
@@ -61,7 +61,7 @@ namespace play_math_quaternion
 					float y;    // 허수부
 					float z;    // 허수부
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 			}
 
 			LS();
@@ -85,18 +85,18 @@ namespace play_math_quaternion
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "쿼터니언의 길이 계산" );
-			OUTPUT_COMMENT( "기본 개념은 Vector 의 길이 계산과 동일." );
+			OUT_SUBJECT( "쿼터니언의 길이 계산" );
+			OUT_COMMENT( "기본 개념은 Vector 의 길이 계산과 동일." );
 
 			LF();
 
-			OUTPUT_SUBJECT( "계산 공식" );
-			OUTPUT_COMMENT( "쿼터니언의 길이 = sqrt( w^2 + x^2 + y^2 + z^2 )" );
+			OUT_SUBJECT( "계산 공식" );
+			OUT_COMMENT( "쿼터니언의 길이 = sqrt( w^2 + x^2 + y^2 + z^2 )" );
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const auto L = []( Quat q )->float
 				{
 					return sqrt(
@@ -106,7 +106,7 @@ namespace play_math_quaternion
 						+ ( q.z * q.z )
 					);
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				SS();
 
@@ -141,13 +141,13 @@ namespace play_math_quaternion
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "쿼터니언의 정규화" );
-			OUTPUT_COMMENT( "쿼터니언의 각 성분을 길이로 나눈다." );
+			OUT_SUBJECT( "쿼터니언의 정규화" );
+			OUT_COMMENT( "쿼터니언의 각 성분을 길이로 나눈다." );
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const auto N = []( Quat q )->Quat
 				{
 					const float length = quat_length( q );
@@ -159,7 +159,7 @@ namespace play_math_quaternion
 						, q.z / length
 					);
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				SS();
 
@@ -205,41 +205,41 @@ namespace play_math_quaternion
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "쿼터니언의 역 : Inverse Quaternion" );
-			OUTPUT_COMMENT( "회전을 되돌리는 쿼터니언" );
+			OUT_SUBJECT( "쿼터니언의 역 : Inverse Quaternion" );
+			OUT_COMMENT( "회전을 되돌리는 쿼터니언" );
 
 			LF();
 
-			OUTPUT_SUBJECT( "식" );
-			OUTPUT_COMMENT( "qc = 켤레 쿼터니언, 허수부의 부호만 반대로 바꾼 쿼터니언" );
-			OUTPUT_COMMENT( "qi = qc / ( ||q||^2 )" );
-			OUTPUT_COMMENT( "qi = qc / ( sqrt( w^2 + x^2 + y^2 + z^2 )^2 )" );
-			OUTPUT_COMMENT( "qi = qc / ( w^2 + x^2 + y^2 + z^2 )" );
-			OUTPUT_COMMENT( "qi = {" );
-			OUTPUT_COMMENT( "    " "   w / ( w^2 + x^2 + y^2 + z^2 )" );
-			OUTPUT_COMMENT( "    " ", -x / ( w^2 + x^2 + y^2 + z^2 )" );
-			OUTPUT_COMMENT( "    " ", -y / ( w^2 + x^2 + y^2 + z^2 )" );
-			OUTPUT_COMMENT( "    " ", -z / ( w^2 + x^2 + y^2 + z^2 )" );
-			OUTPUT_COMMENT( "}" );
+			OUT_SUBJECT( "식" );
+			OUT_COMMENT( "qc = 켤레 쿼터니언, 허수부의 부호만 반대로 바꾼 쿼터니언" );
+			OUT_COMMENT( "qi = qc / ( ||q||^2 )" );
+			OUT_COMMENT( "qi = qc / ( sqrt( w^2 + x^2 + y^2 + z^2 )^2 )" );
+			OUT_COMMENT( "qi = qc / ( w^2 + x^2 + y^2 + z^2 )" );
+			OUT_COMMENT( "qi = {" );
+			OUT_COMMENT( "    " "   w / ( w^2 + x^2 + y^2 + z^2 )" );
+			OUT_COMMENT( "    " ", -x / ( w^2 + x^2 + y^2 + z^2 )" );
+			OUT_COMMENT( "    " ", -y / ( w^2 + x^2 + y^2 + z^2 )" );
+			OUT_COMMENT( "    " ", -z / ( w^2 + x^2 + y^2 + z^2 )" );
+			OUT_COMMENT( "}" );
 			LF();
 
-			OUTPUT_SUBJECT( "적용" );
-			OUTPUT_COMMENT( "일반적으로 회전을 표현하는 쿼터니언은 길이가 1 이다." );
-			OUTPUT_COMMENT( "qi = qc / ( ||q||^2 )" );
-			OUTPUT_COMMENT( "qi = qc / ( 1^2 )" );
-			OUTPUT_COMMENT( "qi = qc / 1" );
-			OUTPUT_COMMENT( "qi = qc" );
-			OUTPUT_COMMENT( "qi = { w, -x, -y, -z }" );
+			OUT_SUBJECT( "적용" );
+			OUT_COMMENT( "일반적으로 회전을 표현하는 쿼터니언은 길이가 1 이다." );
+			OUT_COMMENT( "qi = qc / ( ||q||^2 )" );
+			OUT_COMMENT( "qi = qc / ( 1^2 )" );
+			OUT_COMMENT( "qi = qc / 1" );
+			OUT_COMMENT( "qi = qc" );
+			OUT_COMMENT( "qi = { w, -x, -y, -z }" );
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const auto I = []( Quat q )->Quat
 				{
 					return Quat( q.w, -q.x, -q.y, -q.z );
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				SS();
 
@@ -268,32 +268,32 @@ namespace play_math_quaternion
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "REF : qua<T, Q>::operator*=( qua<U, Q> const& r ) : https://github.com/g-truc/glm/blob/master/glm/detail/type_quat.inl" );
+				OUT_SUBJECT( "REF : qua<T, Q>::operator*=( qua<U, Q> const& r ) : https://github.com/g-truc/glm/blob/master/glm/detail/type_quat.inl" );
 
 				LF();
 
-				OUTPUT_SUBJECT( "쿼터니언의 대수적 정의" );
-				OUTPUT_COMMENT( "q = w + xi + yj + zk" );
+				OUT_SUBJECT( "쿼터니언의 대수적 정의" );
+				OUT_COMMENT( "q = w + xi + yj + zk" );
 
 				LF();
 
-				OUTPUT_SUBJECT( "쿼터니언 A * B" );
-				OUTPUT_COMMENT( "A * B = ( A.w + A.xi + A.yj + A.zk ) * ( B.w2 + B.xi + B.yj + B.zk )" );
-				OUTPUT_COMMENT( "위 식을 전개후 정리하면 아래의 식이 나온다." );
+				OUT_SUBJECT( "쿼터니언 A * B" );
+				OUT_COMMENT( "A * B = ( A.w + A.xi + A.yj + A.zk ) * ( B.w2 + B.xi + B.yj + B.zk )" );
+				OUT_COMMENT( "위 식을 전개후 정리하면 아래의 식이 나온다." );
 
 				LF();
 
-				OUTPUT_SUBJECT( "식" );
-				OUTPUT_COMMENT( "w = ( A.w * B.w ) - ( A.x * B.x ) - ( A.y * B.y ) - ( A.z * B.z )" );
-				OUTPUT_COMMENT( "x = ( A.w * B.x ) + ( A.x * B.w ) + ( A.y * B.z ) - ( A.z * B.y )" );
-				OUTPUT_COMMENT( "y = ( A.w * B.y ) + ( A.y * B.w ) + ( A.z * B.x ) - ( A.x * B.z )" );
-				OUTPUT_COMMENT( "z = ( A.w * B.z ) + ( A.z * B.w ) + ( A.x * B.y ) - ( A.y * B.x )" );
+				OUT_SUBJECT( "식" );
+				OUT_COMMENT( "w = ( A.w * B.w ) - ( A.x * B.x ) - ( A.y * B.y ) - ( A.z * B.z )" );
+				OUT_COMMENT( "x = ( A.w * B.x ) + ( A.x * B.w ) + ( A.y * B.z ) - ( A.z * B.y )" );
+				OUT_COMMENT( "y = ( A.w * B.y ) + ( A.y * B.w ) + ( A.z * B.x ) - ( A.x * B.z )" );
+				OUT_COMMENT( "z = ( A.w * B.z ) + ( A.z * B.w ) + ( A.x * B.y ) - ( A.y * B.x )" );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const auto M = []( Quat a, Quat b )->Quat
 				{
 					return Quat(
@@ -303,7 +303,7 @@ namespace play_math_quaternion
 						, ( a.w * b.z ) + ( a.z * b.w ) + ( a.x * b.y ) - ( a.y * b.x )
 					);
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				SS();
 
@@ -332,30 +332,30 @@ namespace play_math_quaternion
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "벡터의 회전 == Quaternion 과 Vector의 곱 개요" );
-			OUTPUT_COMMENT( "샌드위치 곱" );
+			OUT_SUBJECT( "벡터의 회전 == Quaternion 과 Vector의 곱 개요" );
+			OUT_COMMENT( "샌드위치 곱" );
 
 			LF();
 
-			OUTPUT_SUBJECT( "쿼터니언 구성 식" );
-			OUTPUT_COMMENT( "k = 회전 축" );
-			OUTPUT_COMMENT( "q = { cos( θ / 2 ), k.x * sin( θ / 2 ), k.y * sin( θ / 2 ), k.z * sin( θ / 2 ) }" );
+			OUT_SUBJECT( "쿼터니언 구성 식" );
+			OUT_COMMENT( "k = 회전 축" );
+			OUT_COMMENT( "q = { cos( θ / 2 ), k.x * sin( θ / 2 ), k.y * sin( θ / 2 ), k.z * sin( θ / 2 ) }" );
 
 			LF();
 
-			OUTPUT_SUBJECT( "연산 과정" );
-			OUTPUT_COMMENT( "1. 벡터를 Pure Quaternion 으로 변환" );
-			OUTPUT_COMMENT( "     "   "Pquat = ( 0, x, y, z )" );
-			OUTPUT_COMMENT( "     "   "Pquat = p" );
-			OUTPUT_COMMENT( "2. 곱 : 샌드위치 곱" );
-			OUTPUT_COMMENT( "     "   "q = 회전 정의 단위 쿼터니언" );
-			OUTPUT_COMMENT( "     "   "qi = q의 역" );
-			OUTPUT_COMMENT( "     "   "p` = q * p * qi" );
+			OUT_SUBJECT( "연산 과정" );
+			OUT_COMMENT( "1. 벡터를 Pure Quaternion 으로 변환" );
+			OUT_COMMENT( "     "   "Pquat = ( 0, x, y, z )" );
+			OUT_COMMENT( "     "   "Pquat = p" );
+			OUT_COMMENT( "2. 곱 : 샌드위치 곱" );
+			OUT_COMMENT( "     "   "q = 회전 정의 단위 쿼터니언" );
+			OUT_COMMENT( "     "   "qi = q의 역" );
+			OUT_COMMENT( "     "   "p` = q * p * qi" );
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const auto B = []( Vec3 pv, float degree )->Quat
 				{
 					const auto radian = Deg2Rad( degree );
@@ -367,14 +367,14 @@ namespace play_math_quaternion
 						, pv.z * std::sin( radian / 2.f )
 					);
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				SS();
 
 				{
 					DECL_MAIN( const Quat q = B( VEC3_Z, 45.f ) );
-					OUTPUT_VALUE( ( q * Quat( VEC3_X ) ) );
-					OUTPUT_VALUE( ( q * Quat( VEC3_X ) ) * quat_inverse( q ) );
+					OUT_VALUE( ( q * Quat( VEC3_X ) ) );
+					OUT_VALUE( ( q * Quat( VEC3_X ) ) * quat_inverse( q ) );
 				}
 
 				SS();
@@ -445,12 +445,12 @@ namespace play_math_quaternion
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "쿼터니언을 행렬로 변환" );
+			OUT_SUBJECT( "쿼터니언을 행렬로 변환" );
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const auto B = []( Vec4 pv, float degree )->Quat
 				{
 					const auto radian = Deg2Rad( degree );
@@ -472,7 +472,7 @@ namespace play_math_quaternion
 						, 0                                           , 0                                          , 0                                          , 1
 					);
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				SS();
 

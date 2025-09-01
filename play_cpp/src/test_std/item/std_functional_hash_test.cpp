@@ -23,13 +23,13 @@ namespace std_functional_hash_test
 			LS();
 
 			{
-				OUTPUT_VALUE( std::hash<int>{}( 1 ) );
+				OUT_VALUE( std::hash<int>{}( 1 ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_VALUE( std::hash<std::string>{}( "" ) );
+				OUT_VALUE( std::hash<std::string>{}( "" ) );
 			}
 
 			LS();
@@ -53,12 +53,12 @@ namespace std_functional_hash_test
 		{
 			LS();
 
-			OUTPUT_FILE( "src/test_std/item/std_functional_hash_test_helper_cstring.hpp" );
+			OUT_FILE( "src/test_std/item/std_functional_hash_test_helper_cstring.hpp" );
 
 			LS();
 
 			{
-				OUTPUT_VALUE( std_functional_hash_test_helper_cstring::Hash4CString{}( "asdf", 4 ) );
+				OUT_VALUE( std_functional_hash_test_helper_cstring::Hash4CString{}( "asdf", 4 ) );
 			}
 
 			LS();

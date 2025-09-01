@@ -29,20 +29,20 @@ namespace play_debug
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 #define ShowCodeInfo()                                          \
 {                                                               \
 	std::cout << "File : " << __FILE__ << r2tm::linefeed;		\
 	std::cout << "Func : " << __FUNCTION__ << r2tm::linefeed;	\
 	std::cout << "Line : " << __LINE__ << r2tm::linefeed;		\
 }
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Process" );
+				OUT_SUBJECT( "Process" );
 
 				LF();
 
@@ -71,7 +71,7 @@ namespace play_debug
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Visual Studio 의 ""출력창"" 에 메세지 출력" );
+				OUT_SUBJECT( "Visual Studio 의 ""출력창"" 에 메세지 출력" );
 
 				LF();
 
@@ -81,12 +81,12 @@ namespace play_debug
 			LS();
 
 			{
-				OUTPUT_NOTE( "Has Some Problem" );
+				OUT_NOTE( "Has Some Problem" );
 
 				LF();
 
-				OUTPUT_COMMENT( "C1189 : #include <debugapi.h>" );
-				OUTPUT_COMMENT( "use <Windows.h> instead <debugapi.h>" );
+				OUT_COMMENT( "C1189 : #include <debugapi.h>" );
+				OUT_COMMENT( "use <Windows.h> instead <debugapi.h>" );
 			}
 
 			LS();
@@ -110,17 +110,17 @@ namespace play_debug
 		{
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			const auto P = []()->void
 			{
 				assert( 1 > 2 && "What The Fuck" );
 			};
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "키 누르면 위 람다 실행" );
+				OUT_SUBJECT( "키 누르면 위 람다 실행" );
 
 				LF();
 
@@ -150,17 +150,17 @@ namespace play_debug
 		{
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			const auto P = []()->void
 			{
 				__debugbreak();
 			};
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "키 누르면 위 람다 실행" );
+				OUT_SUBJECT( "키 누르면 위 람다 실행" );
 
 				LF();
 
@@ -190,7 +190,7 @@ namespace play_debug
 		{
 			LS();
 
-			OUTPUT_FILE( "external/r2/r2_assert.hpp" );
+			OUT_FILE( "external/r2/r2_assert.hpp" );
 
 			LS();
 
@@ -230,7 +230,7 @@ namespace play_debug
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "File Open" );
+			OUT_SUBJECT( "File Open" );
 
 			LF();
 
@@ -239,7 +239,7 @@ namespace play_debug
 
 			LS();
 
-			OUTPUT_SUBJECT( "Redirection" );
+			OUT_SUBJECT( "Redirection" );
 
 			LF();
 
@@ -249,7 +249,7 @@ namespace play_debug
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Output Log" );
+				OUT_SUBJECT( "Output Log" );
 
 				LF();
 
@@ -264,7 +264,7 @@ namespace play_debug
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "End" );
+				OUT_SUBJECT( "End" );
 
 				LF();
 
@@ -275,7 +275,7 @@ namespace play_debug
 			LS();
 
 			{
-				OUTPUT_FILE( file_path );
+				OUT_FILE( file_path );
 			}
 
 			LS();

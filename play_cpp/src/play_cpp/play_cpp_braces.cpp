@@ -25,7 +25,7 @@ namespace play_cpp_braces
 
 				LF();
 
-				OUTPUT_VALUE( i );
+				OUT_VALUE( i );
 			}
 
 			LS();
@@ -36,7 +36,7 @@ namespace play_cpp_braces
 				LF();
 
 				PROC_MAIN( i = {} );
-				OUTPUT_VALUE( i );
+				OUT_VALUE( i );
 			}
 
 			LS();

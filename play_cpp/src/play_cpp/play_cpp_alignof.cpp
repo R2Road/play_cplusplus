@@ -24,29 +24,29 @@ namespace play_cpp_alignof
 			LS();
 
 			{
-				OUTPUT_VALUE( alignof( char ) );
-				OUTPUT_VALUE( sizeof( char ) );
+				OUT_VALUE( alignof( char ) );
+				OUT_VALUE( sizeof( char ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_VALUE( alignof( int ) );
-				OUTPUT_VALUE( sizeof( int ) );
+				OUT_VALUE( alignof( int ) );
+				OUT_VALUE( sizeof( int ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_VALUE( alignof( bool ) );
-				OUTPUT_VALUE( sizeof( bool ) );
+				OUT_VALUE( alignof( bool ) );
+				OUT_VALUE( sizeof( bool ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_VALUE( alignof( double ) );
-				OUTPUT_VALUE( sizeof( double ) );
+				OUT_VALUE( alignof( double ) );
+				OUT_VALUE( sizeof( double ) );
 			}
 
 			LS();
@@ -71,36 +71,36 @@ namespace play_cpp_alignof
 			LS();
 
 			{
-				OUTPUT_VALUE( alignof( std::list<char> ) );
-				OUTPUT_VALUE( sizeof( std::list<char> ) );
+				OUT_VALUE( alignof( std::list<char> ) );
+				OUT_VALUE( sizeof( std::list<char> ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_VALUE( alignof( std::list<int> ) );
-				OUTPUT_VALUE( sizeof( std::list<int> ) );
+				OUT_VALUE( alignof( std::list<int> ) );
+				OUT_VALUE( sizeof( std::list<int> ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_VALUE( alignof( std::vector<int> ) );
-				OUTPUT_VALUE( sizeof( std::vector<int> ) );
+				OUT_VALUE( alignof( std::vector<int> ) );
+				OUT_VALUE( sizeof( std::vector<int> ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_VALUE( alignof( std::unordered_map<int, int> ) );
-				OUTPUT_VALUE( sizeof( std::unordered_map<int, int> ) );
+				OUT_VALUE( alignof( std::unordered_map<int, int> ) );
+				OUT_VALUE( sizeof( std::unordered_map<int, int> ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_VALUE( alignof( std::deque<int> ) );
-				OUTPUT_VALUE( sizeof( std::deque<int> ) );
+				OUT_VALUE( alignof( std::deque<int> ) );
+				OUT_VALUE( sizeof( std::deque<int> ) );
 			}
 
 			LS();
@@ -159,38 +159,38 @@ namespace play_cpp_alignof
 
 			LS();
 
-			OUTPUT_FILE_RANGE( "src/play_cpp/play_cpp_alignof.cpp", 125, 158 );
+			OUT_FILE_RANGE( "src/play_cpp/play_cpp_alignof.cpp", 125, 158 );
 
 			LS();
 
 			{
-				OUTPUT_VALUE( alignof( EmptyStruct ) );
-				OUTPUT_VALUE( sizeof( EmptyStruct ) );
+				OUT_VALUE( alignof( EmptyStruct ) );
+				OUT_VALUE( sizeof( EmptyStruct ) );
 
 				LF();
 
-				OUTPUT_VALUE( alignof( IntFloatCharStruct ) );
-				OUTPUT_VALUE( sizeof( IntFloatCharStruct ) );
+				OUT_VALUE( alignof( IntFloatCharStruct ) );
+				OUT_VALUE( sizeof( IntFloatCharStruct ) );
 
 				LF();
 
-				OUTPUT_VALUE( alignof( CharCharCharStruct ) );
-				OUTPUT_VALUE( sizeof( CharCharCharStruct ) );
+				OUT_VALUE( alignof( CharCharCharStruct ) );
+				OUT_VALUE( sizeof( CharCharCharStruct ) );
 
 				LF();
 
-				OUTPUT_VALUE( alignof( CharDoubleStruct ) );
-				OUTPUT_VALUE( sizeof( CharDoubleStruct ) );
+				OUT_VALUE( alignof( CharDoubleStruct ) );
+				OUT_VALUE( sizeof( CharDoubleStruct ) );
 
 				LF();
 
-				OUTPUT_VALUE( alignof( CharBoolStruct ) );
-				OUTPUT_VALUE( sizeof( CharBoolStruct ) );
+				OUT_VALUE( alignof( CharBoolStruct ) );
+				OUT_VALUE( sizeof( CharBoolStruct ) );
 
 				LF();
 
-				OUTPUT_VALUE( alignof( CharIntDoubleStruct ) );
-				OUTPUT_VALUE( sizeof( CharIntDoubleStruct ) );
+				OUT_VALUE( alignof( CharIntDoubleStruct ) );
+				OUT_VALUE( sizeof( CharIntDoubleStruct ) );
 			}
 
 			LS();

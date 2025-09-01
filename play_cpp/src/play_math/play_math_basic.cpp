@@ -20,13 +20,13 @@ namespace play_math_basic
 		{
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			auto D2R = []( float degree )->float
 			{
 				static const float t = R_PI / 180.f;
 				return ( degree * t );
 			};
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
@@ -67,13 +67,13 @@ namespace play_math_basic
 		{
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			auto R2D = []( float radian )->float
 			{
 				static const float t = 180.f / R_PI;
 				return ( radian * t );
 			};
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
@@ -112,33 +112,33 @@ namespace play_math_basic
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			OUTPUT_SOURCE_READY;
+			OUT_SOURCE_READY;
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "SineÀº ÀÏ¹ÝÀûÀÎ µ«¼ÀÀÌ ÀÛµ¿ÇÏÁö ¾Ê´Â´Ù." );
+				OUT_SUBJECT( "SineÀº ÀÏ¹ÝÀûÀÎ µ«¼ÀÀÌ ÀÛµ¿ÇÏÁö ¾Ê´Â´Ù." );
 
 				LF();
 
-				OUTPUT_SOURCE_BEGIN;
+				OUT_SOURCE_BEGIN;
 				const auto S = []( float degree )->float
 				{
 					return std::sin( Deg2Rad( degree ) );
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( S( 30 ) );
+				OUT_VALUE( S( 30 ) );
 
 				LF();
 
-				OUTPUT_VALUE( S( 40 ) );
+				OUT_VALUE( S( 40 ) );
 
 				LF();
 
-				OUTPUT_VALUE( S( 70 ) );
+				OUT_VALUE( S( 70 ) );
 
 				LF();
 
@@ -148,13 +148,13 @@ namespace play_math_basic
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "SineÀÇ µ¡¼À Á¤¸®" );
-				OUTPUT_COMMENT( "Sin( A ) + Sin( B ) =" );
-				OUTPUT_COMMENT( "( Sin( A ) * Cos( B ) ) + ( Cos( A ) * Sin( B ) )" );
+				OUT_SUBJECT( "SineÀÇ µ¡¼À Á¤¸®" );
+				OUT_COMMENT( "Sin( A ) + Sin( B ) =" );
+				OUT_COMMENT( "( Sin( A ) * Cos( B ) ) + ( Cos( A ) * Sin( B ) )" );
 
 				LF();
 
-				OUTPUT_SOURCE_BEGIN;
+				OUT_SOURCE_BEGIN;
 				const auto S = []( float degree1, float degree2 )->float
 				{
 					const float rad1 = Deg2Rad( degree1 );
@@ -163,15 +163,15 @@ namespace play_math_basic
 					return ( std::sin( rad1 ) * std::cos( rad2 ) )
 						+ ( std::cos( rad1 ) * std::sin( rad2 ) );
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( S( 30, 40 ) );
+				OUT_VALUE( S( 30, 40 ) );
 
 				LF();
 
-				OUTPUT_VALUE( std::sin( Deg2Rad( 70 ) ) );
+				OUT_VALUE( std::sin( Deg2Rad( 70 ) ) );
 
 				LF();
 

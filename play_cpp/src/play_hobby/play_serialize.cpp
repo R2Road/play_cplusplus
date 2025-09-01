@@ -26,14 +26,14 @@ namespace play_serialize
 
 			{
 				DECL_MAIN( const auto size = sizeof( dummy ) );
-				OUTPUT_VALUE( size );
+				OUT_VALUE( size );
 
 				LF();
 
 				DECL_MAIN( uint8_t* up = reinterpret_cast<uint8_t*>( &dummy ) );
 				for( int i = 0; size > i; ++i )
 				{
-					OUTPUT_BINARY( *up );
+					OUT_BINARY( *up );
 					++up;
 				}
 			}
@@ -66,15 +66,15 @@ namespace play_serialize
 			LS();
 
 			{
-				OUTPUT_VALUE( dummy_2.a );
-				OUTPUT_VALUE( dummy_2.b );
+				OUT_VALUE( dummy_2.a );
+				OUT_VALUE( dummy_2.b );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( const auto size = sizeof( dummy_1 ) );
-				OUTPUT_VALUE( size );
+				OUT_VALUE( size );
 
 				LF();
 
@@ -113,8 +113,8 @@ namespace play_serialize
 			LS();
 
 			{
-				OUTPUT_VALUE( dummy_2.a );
-				OUTPUT_VALUE( dummy_2.b );
+				OUT_VALUE( dummy_2.a );
+				OUT_VALUE( dummy_2.b );
 			}
 
 			LS();

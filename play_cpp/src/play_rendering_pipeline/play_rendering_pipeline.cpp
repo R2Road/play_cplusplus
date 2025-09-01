@@ -29,64 +29,64 @@ namespace play_rendering_pipeline
 
 			LS();
 
-			OUTPUT_SUBJECT( "View Matrix 구성을 위한 준비" );
+			OUT_SUBJECT( "View Matrix 구성을 위한 준비" );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "View Matrix 구성을 위해 기준 벡터가 필요하다." );
-				OUTPUT_COMMENT( "cam_eye     : 카메라 위치" );
-				OUTPUT_COMMENT( "cam_forward : 카메라가 보는 방향" );
-				OUTPUT_COMMENT( "cam_right   : 카메라가 보는 방향의 오른쪽 방향" );
-				OUTPUT_COMMENT( "cam_up      : 카메라의 머리 위 방향" );
+				OUT_SUBJECT( "View Matrix 구성을 위해 기준 벡터가 필요하다." );
+				OUT_COMMENT( "cam_eye     : 카메라 위치" );
+				OUT_COMMENT( "cam_forward : 카메라가 보는 방향" );
+				OUT_COMMENT( "cam_right   : 카메라가 보는 방향의 오른쪽 방향" );
+				OUT_COMMENT( "cam_up      : 카메라의 머리 위 방향" );
 			}
 
 			LS();
 
-			OUTPUT_SUBJECT( "사용자가 알고 있을 정보로 시작." );
+			OUT_SUBJECT( "사용자가 알고 있을 정보로 시작." );
 
 			LF();
 
-			OUTPUT_COMMENT( "카메라 위치" );
+			OUT_COMMENT( "카메라 위치" );
 			DECL_MAIN( const Vec4 init_eye( 0, 0, 10, 1 ) );
 
 			LF();
 
-			OUTPUT_COMMENT( "카메라 목표" );
+			OUT_COMMENT( "카메라 목표" );
 			DECL_MAIN( const Vec4 init_center( 0, 0, 0, 1 ) );
 
 			LF();
 
-			OUTPUT_COMMENT( "카메라 머리 위 방향" );
+			OUT_COMMENT( "카메라 머리 위 방향" );
 			DECL_MAIN( const Vec4 init_up( 0, 1, 0, 1 ) );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Forward : Z-axis" );
+				OUT_SUBJECT( "Forward : Z-axis" );
 
 				LF();
 
 				DECL_MAIN( Vec4 cam_forward = vec4_normalize( init_eye - init_center ) );
-				OUTPUT_VALUE( cam_forward );
+				OUT_VALUE( cam_forward );
 
 				LF();
 
-				OUTPUT_SUBJECT( "Right : X-axis" );
+				OUT_SUBJECT( "Right : X-axis" );
 
 				LF();
 
 				DECL_MAIN( Vec4 cam_right = vec4_normalize( vec4_cross( init_up, cam_forward ) ) );
-				OUTPUT_VALUE( cam_right );
+				OUT_VALUE( cam_right );
 
 				LF();
 
-				OUTPUT_SUBJECT( "Up : Y-axis" );
+				OUT_SUBJECT( "Up : Y-axis" );
 
 				LF();
 
 				DECL_MAIN( Vec4 cam_up = vec4_cross( cam_forward, cam_right ) );
-				OUTPUT_VALUE( cam_up );
+				OUT_VALUE( cam_up );
 			}
 
 			LS();
@@ -110,7 +110,7 @@ namespace play_rendering_pipeline
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "Camera Matrix 구성해보기" );
+			OUT_SUBJECT( "Camera Matrix 구성해보기" );
 
 			LS();
 
@@ -121,7 +121,7 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Ready" );
+				OUT_SUBJECT( "Ready" );
 
 				LF();
 
@@ -133,22 +133,22 @@ namespace play_rendering_pipeline
 				SS();
 
 
-				OUTPUT_SUBJECT( "Camera Matrix" );
+				OUT_SUBJECT( "Camera Matrix" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const Mat44 cam_mat4(
 					  cam_right.x, cam_up.x, cam_forward.x, init_eye.x
 					, cam_right.y, cam_up.y, cam_forward.y, init_eye.y
 					, cam_right.z, cam_up.z, cam_forward.z, init_eye.z
 					, 0.f        , 0.f     , 0.f          , 1.f
 				);
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( cam_mat4 );
+				OUT_VALUE( cam_mat4 );
 
 
 				SS();
@@ -159,11 +159,11 @@ namespace play_rendering_pipeline
 
 				LF();
 
-				OUTPUT_VALUE( cam_vec4 );
+				OUT_VALUE( cam_vec4 );
 
 				LF();
 
-				OUTPUT_NOTE( "원점을 중심으로 45도 회전 후 이동해서 현재의 위치가 된다." );
+				OUT_NOTE( "원점을 중심으로 45도 회전 후 이동해서 현재의 위치가 된다." );
 			}
 
 			LS();
@@ -185,11 +185,11 @@ namespace play_rendering_pipeline
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			OUTPUT_SOURCE_READY;
+			OUT_SOURCE_READY;
 
 			LS();
 
-			OUTPUT_SUBJECT( "View 행렬 구성" );
+			OUT_SUBJECT( "View 행렬 구성" );
 
 			LS();
 
@@ -203,70 +203,70 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Rotation Matrix : Camera Rotation의 전치" );
+				OUT_SUBJECT( "Rotation Matrix : Camera Rotation의 전치" );
 
 				LF();
 
-				OUTPUT_SOURCE_BEGIN;
+				OUT_SOURCE_BEGIN;
 				const Mat44 view_rotation_mat4(
 					  cam_right.x    , cam_right.y    , cam_right.z    , 0.f
 					, cam_up.x       , cam_up.y       , cam_up.z       , 0.f
 					, cam_forward.x  , cam_forward.y  , cam_forward.z  , 0.f
 					, 0.f            , 0.f            , 0.f            , 1.f
 				);
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Translate Matrix : Camera Position의 음수 값" );
+				OUT_SUBJECT( "Translate Matrix : Camera Position의 음수 값" );
 
 				LF();
 
-				OUTPUT_SOURCE_BEGIN;
+				OUT_SOURCE_BEGIN;
 				const Mat44 view_translate_mat4(
 					  0.f, 0.f, 0.f, -init_eye.x
 					, 0.f, 0.f, 0.f, -init_eye.y
 					, 0.f, 0.f, 0.f, -init_eye.z
 					, 0.f, 0.f, 0.f, 1.f
 				);
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Final Matrix" );
-				OUTPUT_COMMENT( "-vec4_dot( cam_right, init_eye )" );
-				OUTPUT_COMMENT( "카메라의 회전된 로컬 축을 기준으로 eye 위치를 반대 방향으로 이동" );
+				OUT_SUBJECT( "Final Matrix" );
+				OUT_COMMENT( "-vec4_dot( cam_right, init_eye )" );
+				OUT_COMMENT( "카메라의 회전된 로컬 축을 기준으로 eye 위치를 반대 방향으로 이동" );
 
 				LF();
 
-				OUTPUT_SOURCE_BEGIN;
+				OUT_SOURCE_BEGIN;
 				const Mat44 view_final_mat4(
 					  cam_right.x    , cam_right.y    , cam_right.z    , -vec4_dot( cam_right, init_eye )
 					, cam_up.x       , cam_up.y       , cam_up.z       , -vec4_dot( cam_up, init_eye )
 					, cam_forward.x  , cam_forward.y  , cam_forward.z  , -vec4_dot( cam_forward, init_eye )
 					, 0.f            , 0.f            , 0.f            , 1.f
 				);
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( view_final_mat4 );
+				OUT_VALUE( view_final_mat4 );
 
 
 				SS();
 
 
-				OUTPUT_SUBJECT( "Demo" );
+				OUT_SUBJECT( "Demo" );
 
 				LF();
 
-				OUTPUT_VALUE( view_final_mat4 * init_eye );
-				OUTPUT_VALUE( view_final_mat4 * init_center );
-				OUTPUT_VALUE( view_final_mat4 * Vec4( 0, 0, 0, 1 ) );
+				OUT_VALUE( view_final_mat4 * init_eye );
+				OUT_VALUE( view_final_mat4 * init_center );
+				OUT_VALUE( view_final_mat4 * Vec4( 0, 0, 0, 1 ) );
 			}
 
 			LS();
@@ -291,12 +291,12 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "REF : orthoRH_NO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
+				OUT_SUBJECT( "REF : orthoRH_NO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
 
 				LF();
 
-				OUTPUT_SUBJECT( "orthoRH_NO" );
-				OUTPUT_COMMENT( "Orthographic : 직교 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환" );
+				OUT_SUBJECT( "orthoRH_NO" );
+				OUT_COMMENT( "Orthographic : 직교 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환" );
 			}
 
 			LS();
@@ -306,7 +306,7 @@ namespace play_rendering_pipeline
 
 			LF();
 
-			OUTPUT_SUBJECT( "left = 0, bottom = 0 으로 설정하면     |     0, 0, 0 좌표는 viewport 왼쪽 하단 끝 -1, -1 으로 배치된다." );
+			OUT_SUBJECT( "left = 0, bottom = 0 으로 설정하면     |     0, 0, 0 좌표는 viewport 왼쪽 하단 끝 -1, -1 으로 배치된다." );
 			DECL_MAIN( const float left = -viewport_w / 2 );
 			DECL_MAIN( const float right = viewport_w / 2 );
 			DECL_MAIN( const float bottom = -viewport_h / 2 );
@@ -317,15 +317,15 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const Mat44 projection_mat4(
 					  2 / ( right - left )  , 0.f                   , 0.f                             , -( right + left ) / ( right - left )
 					, 0.f                   , 2 / ( top - bottom )  , 0.f                             , -( top + bottom ) / ( top - bottom )
 					, 0.f                   , 0.f                   , 2 / ( far_plane - near_plane )  , -( far_plane + near_plane ) / ( far_plane - near_plane )
 					, 0.f                   , 0.f                   , 0.f                             , 1.f
 				);
-				OUTPUT_SOURCE_END;
-				OUTPUT_VALUE( projection_mat4 );
+				OUT_SOURCE_END;
+				OUT_VALUE( projection_mat4 );
 
 				
 				SS();
@@ -346,13 +346,13 @@ namespace play_rendering_pipeline
 
 				LF();
 
-				OUTPUT_VALUE( ( projection_mat4 * Vec4( 0, 0, -near_plane, 1 ) ).z );
-				OUTPUT_VALUE( ( projection_mat4 * Vec4( 0, 0, -far_plane, 1 ) ).z );
+				OUT_VALUE( ( projection_mat4 * Vec4( 0, 0, -near_plane, 1 ) ).z );
+				OUT_VALUE( ( projection_mat4 * Vec4( 0, 0, -far_plane, 1 ) ).z );
 
 				LF();
 
-				OUTPUT_NOTE( "이 행렬은 벡터의 z 값이 양수 일 때만 정상 작동한다." );
-				OUTPUT_NOTE( "실제로 사용한다면 카메라가 양수 방향 z축을 바라보고 있어야 한다." );
+				OUT_NOTE( "이 행렬은 벡터의 z 값이 양수 일 때만 정상 작동한다." );
+				OUT_NOTE( "실제로 사용한다면 카메라가 양수 방향 z축을 바라보고 있어야 한다." );
 			}
 
 			LS();
@@ -377,12 +377,12 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "REF : orthoRH_ZO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
+				OUT_SUBJECT( "REF : orthoRH_ZO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
 
 				LF();
 
-				OUTPUT_SUBJECT( "orthoRH_ZO" );
-				OUTPUT_COMMENT( "Orthographic : 직교 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환     |     Z 범위만 0 ~ 1" );
+				OUT_SUBJECT( "orthoRH_ZO" );
+				OUT_COMMENT( "Orthographic : 직교 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환     |     Z 범위만 0 ~ 1" );
 			}
 
 			LS();
@@ -392,7 +392,7 @@ namespace play_rendering_pipeline
 
 			LF();
 
-			OUTPUT_SUBJECT( "left = 0, bottom = 0 으로 설정하면     |     0, 0, 0 좌표는 viewport 왼쪽 하단 끝 -1, -1 으로 배치된다." );
+			OUT_SUBJECT( "left = 0, bottom = 0 으로 설정하면     |     0, 0, 0 좌표는 viewport 왼쪽 하단 끝 -1, -1 으로 배치된다." );
 			DECL_MAIN( const float left = -viewport_w / 2 );
 			DECL_MAIN( const float right = viewport_w / 2 );
 			DECL_MAIN( const float bottom = -viewport_h / 2 );
@@ -403,15 +403,15 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const Mat44 projection_mat4(
 					  2 / ( right - left )  , 0.f                   , 0.f                             , -( right + left ) / ( right - left )
 					, 0.f                   , 2 / ( top - bottom )  , 0.f                             , -( top + bottom ) / ( top - bottom )
 					, 0.f                   , 0.f                   , 1 / ( far_plane - near_plane )  , -near_plane / ( far_plane - near_plane )
 					, 0.f                   , 0.f                   , 0.f                             , 1.f
 				);
-				OUTPUT_SOURCE_END;
-				OUTPUT_VALUE( projection_mat4 );
+				OUT_SOURCE_END;
+				OUT_VALUE( projection_mat4 );
 
 
 				SS();
@@ -432,14 +432,14 @@ namespace play_rendering_pipeline
 
 				LF();
 
-				OUTPUT_VALUE( ( projection_mat4 * Vec4( 0, 0, -near_plane, 1 ) ).z );
-				OUTPUT_VALUE( ( projection_mat4 * Vec4( 0, 0, -far_plane, 1 ) ).z );
+				OUT_VALUE( ( projection_mat4 * Vec4( 0, 0, -near_plane, 1 ) ).z );
+				OUT_VALUE( ( projection_mat4 * Vec4( 0, 0, -far_plane, 1 ) ).z );
 
 				LF();
 
-				OUTPUT_NOTE( "-near_plane, -far_plane을 인자로 줬을때 값이 정확히 맞지 않는다 = 부동 소수점 오차" );
-				OUTPUT_NOTE( "z값이 뒤집혀 나온다." );
-				OUTPUT_NOTE( "실제로 사용한다면 카메라 z 축을 확인하고 뒤집는 작업이 필요 한가?" );
+				OUT_NOTE( "-near_plane, -far_plane을 인자로 줬을때 값이 정확히 맞지 않는다 = 부동 소수점 오차" );
+				OUT_NOTE( "z값이 뒤집혀 나온다." );
+				OUT_NOTE( "실제로 사용한다면 카메라 z 축을 확인하고 뒤집는 작업이 필요 한가?" );
 			}
 
 			LS();
@@ -464,12 +464,12 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "REF : frustumRH_NO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
+				OUT_SUBJECT( "REF : frustumRH_NO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
 
 				LF();
 
-				OUTPUT_SUBJECT( "frustumRH_NO" );
-				OUTPUT_COMMENT( "Perspective : 원근 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환     |     fov 없는 원근 투영     |     더 낮은 수준에서 원근 투영을 제어 할 때 사용" );
+				OUT_SUBJECT( "frustumRH_NO" );
+				OUT_COMMENT( "Perspective : 원근 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환     |     fov 없는 원근 투영     |     더 낮은 수준에서 원근 투영을 제어 할 때 사용" );
 			}
 
 			LS();
@@ -486,23 +486,23 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const Mat44 projection_mat4(
 					  ( 2 * near ) / ( r - l )  , 0.f                       , ( r + l ) / ( r - l )             , 0.f
 					, 0.f                       , ( 2 * near ) / ( t - b )  , ( t + b ) / ( t - b )             , 0.f
 					, 0.f                       , 0.f                       , -( far + near ) / ( far - near )  , -( 2 * far * near ) / ( far - near )
 					, 0.f                       , 0.f                       , -1.f                              , 0.f
 				);
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( projection_mat4 );
+				OUT_VALUE( projection_mat4 );
 
 				LF();
 
-				OUTPUT_SUBJECT( "행렬과 벡터를 곱하고 나온 결과 벡터의 각 성분을 결과 벡터의 w 값으로 나누어야 원근 조정이 완료된다." );
-				OUTPUT_SUBJECT( "이 과정은 보통 파이프라인 에서 알아서 처리 하기 때문에 유저에겐 보이지 않는다고 한다." );
+				OUT_SUBJECT( "행렬과 벡터를 곱하고 나온 결과 벡터의 각 성분을 결과 벡터의 w 값으로 나누어야 원근 조정이 완료된다." );
+				OUT_SUBJECT( "이 과정은 보통 파이프라인 에서 알아서 처리 하기 때문에 유저에겐 보이지 않는다고 한다." );
 
 				
 				SS();
@@ -510,9 +510,9 @@ namespace play_rendering_pipeline
 
 				{
 					DECL_MAIN( auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
-					OUTPUT_VALUE( v );
+					OUT_VALUE( v );
 					PROC_MAIN( v /= v.w );
-					OUTPUT_VALUE( v );
+					OUT_VALUE( v );
 					EXPECT_EP_EQ( 0.f, v.x );
 					EXPECT_EP_EQ( 0.f, v.y );
 					EXPECT_EP_EQ( 1.f, v.z );
@@ -541,12 +541,12 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "REF : frustumRH_ZO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
+				OUT_SUBJECT( "REF : frustumRH_ZO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
 
 				LF();
 
-				OUTPUT_SUBJECT( "frustumRH_ZO" );
-				OUTPUT_COMMENT( "Perspective : 원근 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환, z = 0 ~ 1     |     fov 없는 원근 투영     |     더 낮은 수준에서 원근 투영을 제어 할 때 사용" );
+				OUT_SUBJECT( "frustumRH_ZO" );
+				OUT_COMMENT( "Perspective : 원근 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환, z = 0 ~ 1     |     fov 없는 원근 투영     |     더 낮은 수준에서 원근 투영을 제어 할 때 사용" );
 			}
 
 			LS();
@@ -563,23 +563,23 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const Mat44 projection_mat4(
 					  ( 2 * near ) / ( r - l )  , 0.f                       , ( r + l ) / ( r - l )  , 0.f
 					, 0.f                       , ( 2 * near ) / ( t - b )  , ( t + b ) / ( t - b )  , 0.f
 					, 0.f                       , 0.f                       , far / ( near - far )   , -( far * near ) / ( far - near )
 					, 0.f                       , 0.f                       , -1.f                   , 0.f
 				);
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( projection_mat4 );
+				OUT_VALUE( projection_mat4 );
 
 				LF();
 
-				OUTPUT_SUBJECT( "행렬과 벡터를 곱하고 나온 결과 벡터의 각 성분을 결과 벡터의 w 값으로 나누어야 원근 조정이 완료된다." );
-				OUTPUT_SUBJECT( "이 과정은 보통 파이프라인 에서 알아서 처리 하기 때문에 유저에겐 보이지 않는다고 한다." );
+				OUT_SUBJECT( "행렬과 벡터를 곱하고 나온 결과 벡터의 각 성분을 결과 벡터의 w 값으로 나누어야 원근 조정이 완료된다." );
+				OUT_SUBJECT( "이 과정은 보통 파이프라인 에서 알아서 처리 하기 때문에 유저에겐 보이지 않는다고 한다." );
 
 				
 				SS();
@@ -587,9 +587,9 @@ namespace play_rendering_pipeline
 
 				{
 					DECL_MAIN( auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
-					OUTPUT_VALUE( v );
+					OUT_VALUE( v );
 					PROC_MAIN( v /= v.w );
-					OUTPUT_VALUE( v );
+					OUT_VALUE( v );
 					EXPECT_EP_EQ( 0.f, v.x );
 					EXPECT_EP_EQ( 0.f, v.y );
 					EXPECT_EP_EQ( 1.f, v.z );
@@ -618,8 +618,8 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "fov를 사용하는 원근 투영( Perspective Projection )의 기초" );
-				OUTPUT_COMMENT( "-1 ~ +1 : 로 표현되는 좌표계로 변환     |     fovY : 수직 시야각     |     aspect : 뷰포트의 너비 / 높이" );
+				OUT_SUBJECT( "fov를 사용하는 원근 투영( Perspective Projection )의 기초" );
+				OUT_COMMENT( "-1 ~ +1 : 로 표현되는 좌표계로 변환     |     fovY : 수직 시야각     |     aspect : 뷰포트의 너비 / 높이" );
 			}
 
 			LS();
@@ -633,51 +633,51 @@ namespace play_rendering_pipeline
 
 			LF();
 
-			OUTPUT_VALUE( fovY );
-			OUTPUT_VALUE( aspect );
+			OUT_VALUE( fovY );
+			OUT_VALUE( aspect );
 
 			LS();
 
 			{
 				DECL_MAIN( const float top = near * std::tan( fovY / 2 ) );
-				OUTPUT_VALUE( top );
+				OUT_VALUE( top );
 				
 				LF();
 
 				DECL_MAIN( const float bottom = -top );
-				OUTPUT_VALUE( bottom );
+				OUT_VALUE( bottom );
 
 				LF();
 
 				DECL_MAIN( const float right = top * aspect );
-				OUTPUT_VALUE( right );
+				OUT_VALUE( right );
 
 				LF();
 
 				DECL_MAIN( const float left = -right );
-				OUTPUT_VALUE( left );
+				OUT_VALUE( left );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( const float top = far * std::tan( fovY / 2 ) );
-				OUTPUT_VALUE( top );
+				OUT_VALUE( top );
 
 				LF();
 
 				DECL_MAIN( const float bottom = -top );
-				OUTPUT_VALUE( bottom );
+				OUT_VALUE( bottom );
 
 				LF();
 
 				DECL_MAIN( const float right = top * aspect );
-				OUTPUT_VALUE( right );
+				OUT_VALUE( right );
 
 				LF();
 
 				DECL_MAIN( const float left = -right );
-				OUTPUT_VALUE( left );
+				OUT_VALUE( left );
 			}
 
 			LS();
@@ -702,18 +702,18 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "REF : perspectiveRH_NO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
+				OUT_SUBJECT( "REF : perspectiveRH_NO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
 
 				LF();
 
-				OUTPUT_SUBJECT( "perspectiveRH_NO" );
-				OUTPUT_COMMENT( "Perspective : 원근 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환     |     fovY : 수직 시야각     |     aspect : 뷰포트의 너비 / 높이" );
+				OUT_SUBJECT( "perspectiveRH_NO" );
+				OUT_COMMENT( "Perspective : 원근 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환     |     fovY : 수직 시야각     |     aspect : 뷰포트의 너비 / 높이" );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const float viewport_w = 400;
 				const float viewport_h = 300;
 				const float fovY = Deg2Rad( 90.f );
@@ -729,16 +729,16 @@ namespace play_rendering_pipeline
 					, 0.f                           , 0.f              , -( far + near ) / ( far - near )  , -( 2 * far * near ) / ( far - near )
 					, 0.f                           , 0.f              , -1.f                              , 0.f
 				);
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( projection_mat4 );
+				OUT_VALUE( projection_mat4 );
 
 				LF();
 
-				OUTPUT_SUBJECT( "행렬과 벡터를 곱하고 나온 결과 벡터의 각 성분을 결과 벡터의 w 값으로 나누어야 원근 조정이 완료된다." );
-				OUTPUT_SUBJECT( "이 과정은 보통 파이프라인 에서 알아서 처리 하기 때문에 유저에겐 보이지 않는다고 한다." );
+				OUT_SUBJECT( "행렬과 벡터를 곱하고 나온 결과 벡터의 각 성분을 결과 벡터의 w 값으로 나누어야 원근 조정이 완료된다." );
+				OUT_SUBJECT( "이 과정은 보통 파이프라인 에서 알아서 처리 하기 때문에 유저에겐 보이지 않는다고 한다." );
 
 
 				SS();
@@ -746,9 +746,9 @@ namespace play_rendering_pipeline
 
 				{
 					DECL_MAIN( auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
-					OUTPUT_VALUE( v );
+					OUT_VALUE( v );
 					PROC_MAIN( v /= v.w );
-					OUTPUT_VALUE( v );
+					OUT_VALUE( v );
 					EXPECT_EP_EQ( 0.f, v.x );
 					EXPECT_EP_EQ( 0.f, v.y );
 					EXPECT_EP_EQ( 1.f, v.z );
@@ -777,18 +777,18 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "REF : perspectiveRH_ZO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
+				OUT_SUBJECT( "REF : perspectiveRH_ZO : https://github.com/g-truc/glm/blob/2d4c4b4dd31fde06cfffad7915c2b3006402322f/glm/ext/matrix_clip_space.inl" );
 
 				LF();
 
-				OUTPUT_SUBJECT( "perspectiveRH_ZO" );
-				OUTPUT_COMMENT( "Perspective : 원근 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환, z = 0 ~ 1     |     fovY : 수직 시야각     |     aspect : 뷰포트의 너비 / 높이" );
+				OUT_SUBJECT( "perspectiveRH_ZO" );
+				OUT_COMMENT( "Perspective : 원근 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환, z = 0 ~ 1     |     fovY : 수직 시야각     |     aspect : 뷰포트의 너비 / 높이" );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const float viewport_w = 400;
 				const float viewport_h = 300;
 				const float fovY = Deg2Rad( 90.f );
@@ -804,16 +804,16 @@ namespace play_rendering_pipeline
 					, 0.f                           , 0.f              , far / ( near - far )  , -( far * near ) / ( far - near )
 					, 0.f                           , 0.f              , -1.f                  , 0.f
 				);
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( projection_mat4 );
+				OUT_VALUE( projection_mat4 );
 
 				LF();
 
-				OUTPUT_SUBJECT( "행렬과 벡터를 곱하고 나온 결과 벡터의 각 성분을 결과 벡터의 w 값으로 나누어야 원근 조정이 완료된다." );
-				OUTPUT_SUBJECT( "이 과정은 보통 파이프라인 에서 알아서 처리 하기 때문에 유저에겐 보이지 않는다고 한다." );
+				OUT_SUBJECT( "행렬과 벡터를 곱하고 나온 결과 벡터의 각 성분을 결과 벡터의 w 값으로 나누어야 원근 조정이 완료된다." );
+				OUT_SUBJECT( "이 과정은 보통 파이프라인 에서 알아서 처리 하기 때문에 유저에겐 보이지 않는다고 한다." );
 
 
 				SS();
@@ -821,9 +821,9 @@ namespace play_rendering_pipeline
 
 				{
 					DECL_MAIN( auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
-					OUTPUT_VALUE( v );
+					OUT_VALUE( v );
 					PROC_MAIN( v /= v.w );
-					OUTPUT_VALUE( v );
+					OUT_VALUE( v );
 					EXPECT_EP_EQ( 0.f, v.x );
 					EXPECT_EP_EQ( 0.f, v.y );
 					EXPECT_EP_EQ( 1.f, v.z );
@@ -852,14 +852,14 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Screen 좌표로 변환" );
-				OUTPUT_SUBJECT( "x, y : 스크린 좌표로 변환     |     z = -1 ~ 1 범위의 z를 지정한 범위로 변환" );
+				OUT_SUBJECT( "Screen 좌표로 변환" );
+				OUT_SUBJECT( "x, y : 스크린 좌표로 변환     |     z = -1 ~ 1 범위의 z를 지정한 범위로 변환" );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const float viewport_w = 400;
 				const float viewport_h = 300;
 				const float near = 0.f;
@@ -871,17 +871,17 @@ namespace play_rendering_pipeline
 					, 0.f               , 0.f               , ( far - near ) / 2.f  , ( near + far ) / 2.f
 					, 0.f               , 0.f               , 0.f                   , 1.f
 				);
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( viewport_mat4 );
+				OUT_VALUE( viewport_mat4 );
 
 
 				SS();
 
 				{
-					OUTPUT_SUBJECT( "가운데" );
+					OUT_SUBJECT( "가운데" );
 					DECL_MAIN( const auto v = viewport_mat4 * Vec4( 0, 0, 0, 1 ) );
 					EXPECT_EP_EQ( 200.f, v.x );
 					EXPECT_EP_EQ( 150.f, v.y );
@@ -890,7 +890,7 @@ namespace play_rendering_pipeline
 				LF();
 
 				{
-					OUTPUT_SUBJECT( "왼 + 위" );
+					OUT_SUBJECT( "왼 + 위" );
 					DECL_MAIN( const auto v = viewport_mat4 * Vec4( 1, 1, 0, 1 ) );
 					EXPECT_EP_EQ( 400.f, v.x );
 					EXPECT_EP_EQ( 300.f, v.y );
@@ -899,7 +899,7 @@ namespace play_rendering_pipeline
 				LF();
 
 				{
-					OUTPUT_SUBJECT( "0, 0" );
+					OUT_SUBJECT( "0, 0" );
 					DECL_MAIN( const auto v = viewport_mat4 * Vec4( -1, -1, 0, 1 ) );
 					EXPECT_EP_EQ( 0.f, v.x );
 					EXPECT_EP_EQ( 0.f, v.y );
@@ -908,7 +908,7 @@ namespace play_rendering_pipeline
 				LF();
 
 				{
-					OUTPUT_SUBJECT( "" );
+					OUT_SUBJECT( "" );
 					EXPECT_EP_EQ( 0.f, ( viewport_mat4 * Vec4( 0, 0, -1, 1 ) ).z );
 					EXPECT_EP_EQ( 50.f, ( viewport_mat4 * Vec4( 0, 0, 0, 1 ) ).z );
 					EXPECT_EP_EQ( 100.f, ( viewport_mat4 * Vec4( 0, 0, 1, 1 ) ).z );
@@ -917,7 +917,7 @@ namespace play_rendering_pipeline
 				LF();
 
 				{
-					OUTPUT_SUBJECT( "잘못된 범위" );
+					OUT_SUBJECT( "잘못된 범위" );
 					EXPECT_EP_EQ( -50.f, ( viewport_mat4 * Vec4( 0, 0, -2, 1 ) ).z );
 					EXPECT_EP_EQ( 150.f, ( viewport_mat4 * Vec4( 0, 0, 2, 1 ) ).z );
 				}
@@ -945,14 +945,14 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Screen 좌표로 변환" );
-				OUTPUT_SUBJECT( "x, y : 스크린 좌표로 변환     |     z = 0 ~ 1 범위의 z를 지정한 범위로 변환" );
+				OUT_SUBJECT( "Screen 좌표로 변환" );
+				OUT_SUBJECT( "x, y : 스크린 좌표로 변환     |     z = 0 ~ 1 범위의 z를 지정한 범위로 변환" );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const float viewport_w = 400;
 				const float viewport_h = 300;
 				const float near = 0.f;
@@ -964,17 +964,17 @@ namespace play_rendering_pipeline
 					, 0.f               , 0.f               , ( far - near )  , near
 					, 0.f               , 0.f               , 0.f             , 1.f
 				);
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( viewport_mat4 );
+				OUT_VALUE( viewport_mat4 );
 
 
 				SS();
 
 				{
-					OUTPUT_SUBJECT( "가운데" );
+					OUT_SUBJECT( "가운데" );
 					DECL_MAIN( const auto v = viewport_mat4 * Vec4( 0, 0, 0, 1 ) );
 					EXPECT_EP_EQ( 200.f, v.x );
 					EXPECT_EP_EQ( 150.f, v.y );
@@ -983,7 +983,7 @@ namespace play_rendering_pipeline
 				LF();
 
 				{
-					OUTPUT_SUBJECT( "왼 + 위" );
+					OUT_SUBJECT( "왼 + 위" );
 					DECL_MAIN( const auto v = viewport_mat4 * Vec4( 1, 1, 0, 1 ) );
 					EXPECT_EP_EQ( 400.f, v.x );
 					EXPECT_EP_EQ( 300.f, v.y );
@@ -992,7 +992,7 @@ namespace play_rendering_pipeline
 				LF();
 
 				{
-					OUTPUT_SUBJECT( "0, 0" );
+					OUT_SUBJECT( "0, 0" );
 					DECL_MAIN( const auto v = viewport_mat4 * Vec4( -1, -1, 0, 1 ) );
 					EXPECT_EP_EQ( 0.f, v.x );
 					EXPECT_EP_EQ( 0.f, v.y );
@@ -1001,7 +1001,7 @@ namespace play_rendering_pipeline
 				LF();
 
 				{
-					OUTPUT_SUBJECT( "Z" );
+					OUT_SUBJECT( "Z" );
 					EXPECT_EP_EQ( 0.f, ( viewport_mat4 * Vec4( 0, 0, 0, 1 ) ).z );
 					EXPECT_EP_EQ( 100.f, ( viewport_mat4 * Vec4( 0, 0, 1, 1 ) ).z );
 				}
@@ -1009,7 +1009,7 @@ namespace play_rendering_pipeline
 				LF();
 
 				{
-					OUTPUT_SUBJECT( "잘못된 범위" );
+					OUT_SUBJECT( "잘못된 범위" );
 					EXPECT_EP_EQ( -100.f, ( viewport_mat4 * Vec4( 0, 0, -1, 1 ) ).z );
 					EXPECT_EP_EQ( 200.f, ( viewport_mat4 * Vec4( 0, 0, 2, 1 ) ).z );
 				}
@@ -1058,12 +1058,12 @@ namespace play_rendering_pipeline
 					, 0.f            , 0.f            , 0.f            , 1.f
 				);
 
-				OUTPUT_SUBJECT( "View 행렬 적용" );
+				OUT_SUBJECT( "View 행렬 적용" );
 
 				LF();
 
 				PROC_MAIN( p = view_mat4 * p );
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 			}
 
 			LS();
@@ -1087,15 +1087,15 @@ namespace play_rendering_pipeline
 					, 0.f                           , 0.f              , -1.f                              , 0.f
 				);
 
-				OUTPUT_SUBJECT( "Projection 행렬 적용" );
-				OUTPUT_COMMENT( "perspectiveRH_NO     |     -1 ~ +1 : 로 표현되는 좌표계로 변환     |     fovY : 수직 시야각     |     aspect : 뷰포트의 너비 / 높이" );
+				OUT_SUBJECT( "Projection 행렬 적용" );
+				OUT_COMMENT( "perspectiveRH_NO     |     -1 ~ +1 : 로 표현되는 좌표계로 변환     |     fovY : 수직 시야각     |     aspect : 뷰포트의 너비 / 높이" );
 
 				LF();
 
 				PROC_MAIN( p = projection_mat4 * p );
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 				PROC_MAIN( p /= p.w );
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 			}
 
 			LS();
@@ -1113,13 +1113,13 @@ namespace play_rendering_pipeline
 					, 0.f               , 0.f               , 0.f                                     , 1.f
 				);
 
-				OUTPUT_SUBJECT( "Viewport 행렬 적용" );
-				OUTPUT_COMMENT( "x, y : 스크린 좌표로 변환     |     z = -1 ~ 1 범위의 z를 지정한 범위로 변환" );
+				OUT_SUBJECT( "Viewport 행렬 적용" );
+				OUT_COMMENT( "x, y : 스크린 좌표로 변환     |     z = -1 ~ 1 범위의 z를 지정한 범위로 변환" );
 
 				LF();
 
 				PROC_MAIN( p = viewport_mat4 * p );
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 			}
 
 			LS();
@@ -1144,8 +1144,8 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "테스트 조건 : orthoRH_ZO" );
-				OUTPUT_COMMENT( "Orthographic : 직교 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환     |     Z 범위만 0 ~ 1" );
+				OUT_SUBJECT( "테스트 조건 : orthoRH_ZO" );
+				OUT_COMMENT( "Orthographic : 직교 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환     |     Z 범위만 0 ~ 1" );
 			}
 
 			LS();
@@ -1170,56 +1170,56 @@ namespace play_rendering_pipeline
 
 				SS();
 
-				OUTPUT_NOTE( "직교 투영 == 선형 매핑" );
+				OUT_NOTE( "직교 투영 == 선형 매핑" );
 
 				SS();
 
 
 				{
 					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, near, 1 ) );
-					OUTPUT_VALUE( ( v / v.w ) );
+					OUT_VALUE( ( v / v.w ) );
 				}
 
 				LF();
 
 				{
 					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.3f, 1 ) );
-					OUTPUT_VALUE( v / v.w );
+					OUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
 					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.5f, 1 ) );
-					OUTPUT_VALUE( v / v.w );
+					OUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
 					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.8f, 1 ) );
-					OUTPUT_VALUE( v / v.w );
+					OUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
 					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.9f, 1 ) );
-					OUTPUT_VALUE( v / v.w );
+					OUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
 					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far * 0.95f, 1 ) );
-					OUTPUT_VALUE( v / v.w );
+					OUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
 					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, far, 1 ) );
-					OUTPUT_VALUE( v / v.w );
+					OUT_VALUE( v / v.w );
 				}
 			}
 
@@ -1245,8 +1245,8 @@ namespace play_rendering_pipeline
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "테스트 조건 : perspectiveRH_ZO" );
-				OUTPUT_COMMENT( "Perspective : 원근 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환, z = 0 ~ 1     |     fovY : 수직 시야각     |     aspect : 뷰포트의 너비 / 높이" );
+				OUT_SUBJECT( "테스트 조건 : perspectiveRH_ZO" );
+				OUT_COMMENT( "Perspective : 원근 투영     |     -1 ~ +1 : 로 표현되는 좌표계로 변환, z = 0 ~ 1     |     fovY : 수직 시야각     |     aspect : 뷰포트의 너비 / 높이" );
 			}
 
 			LS();
@@ -1271,57 +1271,57 @@ namespace play_rendering_pipeline
 
 				SS();
 
-				OUTPUT_NOTE( "위치에 따른 Z 값이 일관 되지 않는다." );
-				OUTPUT_NOTE( "가까운 쪽의 범위가 넓고 먼쪽의 범위가 좁다." );
-				OUTPUT_NOTE( "비선형 매핑" );
+				OUT_NOTE( "위치에 따른 Z 값이 일관 되지 않는다." );
+				OUT_NOTE( "가까운 쪽의 범위가 넓고 먼쪽의 범위가 좁다." );
+				OUT_NOTE( "비선형 매핑" );
 
 				SS();
 
 				{
 					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -near, 1 ) );
-					OUTPUT_VALUE( ( v / v.w ) );
+					OUT_VALUE( ( v / v.w ) );
 				}
 
 				LF();
 
 				{
 					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.3f, 1 ) );
-					OUTPUT_VALUE( v / v.w );
+					OUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
 					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.5f, 1 ) );
-					OUTPUT_VALUE( v / v.w );
+					OUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
 					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.8f, 1 ) );
-					OUTPUT_VALUE( v / v.w );
+					OUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
 					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.9f, 1 ) );
-					OUTPUT_VALUE( v / v.w );
+					OUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
 					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far * 0.95f, 1 ) );
-					OUTPUT_VALUE( v / v.w );
+					OUT_VALUE( v / v.w );
 				}
 
 				LF();
 
 				{
 					DECL_MAIN( const auto v = projection_mat4 * Vec4( 0, 0, -far, 1 ) );
-					OUTPUT_VALUE( v / v.w );
+					OUT_VALUE( v / v.w );
 				}
 			}
 
@@ -1420,7 +1420,7 @@ namespace play_rendering_pipeline
 
 
 			{
-				OUTPUT_SUBJECT( "시작" );
+				OUT_SUBJECT( "시작" );
 
 				const int v_size = 3;
 				const Vec4 vs[v_size] = {
@@ -1595,7 +1595,7 @@ namespace play_rendering_pipeline
 
 
 			{
-				OUTPUT_SUBJECT( "시작" );
+				OUT_SUBJECT( "시작" );
 
 				const int v_size = 3;
 				const Vec4 vs[v_size] = {

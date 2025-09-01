@@ -15,17 +15,17 @@ public:
 		std::cout << "[START] ST::ST()" << r2tm::linefeed;
 		std::cout << clm();
 
-		OUTPUT_VALUE( this );
+		OUT_VALUE( this );
 
 		LF();
 
-		OUTPUT_VALUE( int64_t( (T*)1 ) );
-		OUTPUT_VALUE( int64_t( ( ST<T>* )( T* )1 ) );
+		OUT_VALUE( int64_t( (T*)1 ) );
+		OUT_VALUE( int64_t( ( ST<T>* )( T* )1 ) );
 
 		LF();
 
 		DECL_MAIN( auto offset = int64_t( (T*)1 ) - int64_t( ( ST<T>* )( T* )1 ) );
-		OUTPUT_VALUE( this + offset );
+		OUT_VALUE( this + offset );
 
 		std::cout << clm( r2tm::eColor::FG_Green );
 		std::cout << "[End]" << r2tm::linefeed2;

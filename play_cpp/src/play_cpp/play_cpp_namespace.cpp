@@ -43,17 +43,17 @@ namespace play_cpp_namespace
 		{
 			LS();
 
-			OUTPUT_NOTE( "C++ 17 부터는 namespace 를 붙여 쓸 수 있다." );
+			OUT_NOTE( "C++ 17 부터는 namespace 를 붙여 쓸 수 있다." );
 
 			LS();
 
-			OUTPUT_FILE_RANGE( "src/play_cpp/play_cpp_namespace.cpp", 6, 29 );
+			OUT_FILE_RANGE( "src/play_cpp/play_cpp_namespace.cpp", 6, 29 );
 
 			LS();
 
 			{
 				DECL_MAIN( play_cpp_namespace::A::B::C::T t );
-				OUTPUT_VALUE( t.Do() );
+				OUT_VALUE( t.Do() );
 			}
 
 			LS();
@@ -77,11 +77,11 @@ namespace play_cpp_namespace
 		{
 			LS();
 
-			OUTPUT_NOTE( "namespace 에 별칭 지정 가능" );
+			OUT_NOTE( "namespace 에 별칭 지정 가능" );
 
 			LS();
 
-			OUTPUT_FILE_RANGE( "src/play_cpp/play_cpp_namespace.cpp", 6, 29 );
+			OUT_FILE_RANGE( "src/play_cpp/play_cpp_namespace.cpp", 6, 29 );
 
 			LS();
 
@@ -91,7 +91,7 @@ namespace play_cpp_namespace
 
 			{
 				DECL_MAIN( alias_test::T t );
-				OUTPUT_VALUE( t.Do() );
+				OUT_VALUE( t.Do() );
 			}
 
 			LS();

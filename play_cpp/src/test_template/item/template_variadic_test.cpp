@@ -405,9 +405,9 @@ namespace template_variadic_test
 				public:
 					int Do( int i, float f, const char* s )
 					{
-						OUTPUT_VALUE( i );
-						OUTPUT_VALUE( f );
-						OUTPUT_VALUE( s );
+						OUT_VALUE( i );
+						OUT_VALUE( f );
+						OUT_VALUE( s );
 
 						return i;
 					}

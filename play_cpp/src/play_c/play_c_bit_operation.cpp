@@ -47,36 +47,36 @@ namespace play_c_bit_operation
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Flip : ~" );
+				OUT_SUBJECT( "Flip : ~" );
 
 				LF();
 
 				PrintBinary( pivot );
-				OUTPUT_CODE( ~pivot );
+				OUT_CODE( ~pivot );
 				PrintBinary( ~pivot );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Shift : Left : <<" );
+				OUT_SUBJECT( "Shift : Left : <<" );
 
 				LF();
 
 				PrintBinary( pivot );
-				OUTPUT_CODE( pivot << 1 );
+				OUT_CODE( pivot << 1 );
 				PrintBinary( pivot << 1 );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Shift : Right : >>" );
+				OUT_SUBJECT( "Shift : Right : >>" );
 
 				LF();
 
 				PrintBinary( pivot );
-				OUTPUT_CODE( pivot >> 1 );
+				OUT_CODE( pivot >> 1 );
 				PrintBinary( pivot >> 1 );
 			}
 
@@ -107,31 +107,31 @@ namespace play_c_bit_operation
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "OR : | : 합치기" );
+				OUT_SUBJECT( "OR : | : 합치기" );
 
 				LF();
 
 				PrintBinary( pivot );
-				OUTPUT_CODE( pivot | 0b000111000 );
+				OUT_CODE( pivot | 0b000111000 );
 				PrintBinary( pivot | 0b000111000 );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "AND : & : 중복 추출" );
+				OUT_SUBJECT( "AND : & : 중복 추출" );
 
 				LF();
 
 				PrintBinary( pivot );
-				OUTPUT_CODE( pivot & 0b100000000 );
+				OUT_CODE( pivot & 0b100000000 );
 				PrintBinary( pivot & 0b100000000 );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "XOR : ^ : 같은 자리에 1 과 0 이 배치되면 1 그 외 0" );
+				OUT_SUBJECT( "XOR : ^ : 같은 자리에 1 과 0 이 배치되면 1 그 외 0" );
 
 				LF();
 
@@ -139,12 +139,12 @@ namespace play_c_bit_operation
 
 				LF();
 
-				OUTPUT_CODE( pivot ^ 0b000000000 );
+				OUT_CODE( pivot ^ 0b000000000 );
 				PrintBinary( pivot ^ 0b000000000 );
 
 				LF();
 
-				OUTPUT_CODE( pivot ^ 0b111111111 );
+				OUT_CODE( pivot ^ 0b111111111 );
 				PrintBinary( pivot ^ 0b111111111 );
 			}
 
@@ -188,7 +188,7 @@ namespace play_c_bit_operation
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "1의 보수 : 0 과 1을 뒤집어 음수를 만든다" );
+				OUT_SUBJECT( "1의 보수 : 0 과 1을 뒤집어 음수를 만든다" );
 
 				LF();
 
@@ -199,7 +199,7 @@ namespace play_c_bit_operation
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "2의 보수 : 0 과 1을 뒤집고 + 1 해서 음수를 만든다" );
+				OUT_SUBJECT( "2의 보수 : 0 과 1을 뒤집고 + 1 해서 음수를 만든다" );
 
 				LF();
 
@@ -211,8 +211,8 @@ namespace play_c_bit_operation
 
 			{
 				EXPECT_EQ( num, -pivot );
-				OUTPUT_VALUE( num );
-				OUTPUT_VALUE( -pivot );
+				OUT_VALUE( num );
+				OUT_VALUE( -pivot );
 			}
 
 			LS();
@@ -242,7 +242,7 @@ namespace play_c_bit_operation
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Test Flag" );
+				OUT_SUBJECT( "Test Flag" );
 
 				LF();
 
@@ -254,7 +254,7 @@ namespace play_c_bit_operation
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Add Flag" );
+				OUT_SUBJECT( "Add Flag" );
 
 				LF();
 
@@ -265,7 +265,7 @@ namespace play_c_bit_operation
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Remove Flag" );
+				OUT_SUBJECT( "Remove Flag" );
 
 				LF();
 
@@ -276,7 +276,7 @@ namespace play_c_bit_operation
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Toggle Flag" );
+				OUT_SUBJECT( "Toggle Flag" );
 
 				LF();
 
@@ -324,7 +324,7 @@ namespace play_c_bit_operation
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "1로 채운다" );
+				OUT_SUBJECT( "1로 채운다" );
 
 				LF();
 
@@ -333,7 +333,7 @@ namespace play_c_bit_operation
 				
 				LF2();
 
-				OUTPUT_SUBJECT( "꺼내올 데이터 크기 만큼 남긴다" );
+				OUT_SUBJECT( "꺼내올 데이터 크기 만큼 남긴다" );
 
 				LF();
 
@@ -342,7 +342,7 @@ namespace play_c_bit_operation
 				
 				LF2();
 
-				OUTPUT_SUBJECT( "꺼내올 데이터 위치로 이동한다" );
+				OUT_SUBJECT( "꺼내올 데이터 위치로 이동한다" );
 
 				LF();
 
@@ -351,7 +351,7 @@ namespace play_c_bit_operation
 				
 				LF2();
 
-				OUTPUT_SUBJECT( "꺼낸다" );
+				OUT_SUBJECT( "꺼낸다" );
 
 				LF();
 
@@ -360,7 +360,7 @@ namespace play_c_bit_operation
 				
 				LF2();
 
-				OUTPUT_SUBJECT( "0번 bit 까지 이동시킨다" );
+				OUT_SUBJECT( "0번 bit 까지 이동시킨다" );
 
 				LF();
 
@@ -397,7 +397,7 @@ namespace play_c_bit_operation
 				DECL_MAIN( const char b_1 = 0b00000000 );
 				DECL_MAIN( const char b_2 = 0b00000000 );
 				PROC_MAIN( result = b_1 ^ b_2 );
-				OUTPUT_BINARY( result );
+				OUT_BINARY( result );
 			}
 
 			LS();
@@ -406,7 +406,7 @@ namespace play_c_bit_operation
 				DECL_MAIN( const char b_1 = 0b00000011 );
 				DECL_MAIN( const char b_2 = 0b00000000 );
 				PROC_MAIN( result = b_1 ^ b_2 );
-				OUTPUT_BINARY( result );
+				OUT_BINARY( result );
 			}
 
 			LS();
@@ -415,7 +415,7 @@ namespace play_c_bit_operation
 				DECL_MAIN( const char b_1 = 0b00000011 );
 				DECL_MAIN( const char b_2 = 0b00001100 );
 				PROC_MAIN( result = b_1 ^ b_2 );
-				OUTPUT_BINARY( result );
+				OUT_BINARY( result );
 			}
 
 			LS();
@@ -424,16 +424,16 @@ namespace play_c_bit_operation
 				DECL_MAIN( const char b_1 = 0b00000111 );
 				DECL_MAIN( const char b_2 = 0b00001110 );
 				PROC_MAIN( result = b_1 ^ b_2 );
-				OUTPUT_BINARY( result );
+				OUT_BINARY( result );
 
 				LF();
 
 				PROC_MAIN( result = b_1 );
-				OUTPUT_BINARY( result );
+				OUT_BINARY( result );
 				PROC_MAIN( result ^= b_2 );
-				OUTPUT_BINARY( result );
+				OUT_BINARY( result );
 				PROC_MAIN( result ^= b_2 );
-				OUTPUT_BINARY( result );
+				OUT_BINARY( result );
 			}
 
 			LS();
@@ -466,25 +466,25 @@ namespace play_c_bit_operation
 				std::cout << r2tm::linefeed2;
 
 				PROC_MAIN( a = a ^ b );
-				OUTPUT_VALUE( a );
+				OUT_VALUE( a );
 				PrintBinary( a );
-				OUTPUT_VALUE( b );
+				OUT_VALUE( b );
 				PrintBinary( b );
 
 				LF();
 
 				PROC_MAIN( b = b ^ a );
-				OUTPUT_VALUE( a );
+				OUT_VALUE( a );
 				PrintBinary( a );
-				OUTPUT_VALUE( b );
+				OUT_VALUE( b );
 				PrintBinary( b );
 
 				LF();
 
 				PROC_MAIN( a = a ^ b );
-				OUTPUT_VALUE( a );
+				OUT_VALUE( a );
 				PrintBinary( a );
-				OUTPUT_VALUE( b );
+				OUT_VALUE( b );
 				PrintBinary( b );
 			}
 
@@ -509,55 +509,55 @@ namespace play_c_bit_operation
 		{
 			LS();
 
-			OUTPUT_NOTE( "개념 잡기" );
+			OUT_NOTE( "개념 잡기" );
 
 			LS();
 
 			DECL_MAIN( const short t_1 = 1 );
 			DECL_MAIN( const short t_2 = 5 );
-			OUTPUT_BINARY( t_1 );
-			OUTPUT_BINARY( t_2 );
+			OUT_BINARY( t_1 );
+			OUT_BINARY( t_2 );
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "1단계 : 겹치지 않는 bit 만 뽑아낸다." );
+				OUT_NOTE( "1단계 : 겹치지 않는 bit 만 뽑아낸다." );
 
 				LF();
 
 				DECL_MAIN( const short sum = t_1 ^ t_2 );
-				OUTPUT_VALUE( sum );
-				OUTPUT_BINARY( sum );
+				OUT_VALUE( sum );
+				OUT_BINARY( sum );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "2단계 : 겹치는 bit 만 뽑아서 shift 한다.( 실질적인 덧셈 처리 )" );
+				OUT_NOTE( "2단계 : 겹치는 bit 만 뽑아서 shift 한다.( 실질적인 덧셈 처리 )" );
 
 				LF();
 
 				DECL_MAIN( const short temp = ( t_1 & t_2 ) );
-				OUTPUT_VALUE( temp );
-				OUTPUT_BINARY( temp );
+				OUT_VALUE( temp );
+				OUT_BINARY( temp );
 
 				LF();
 
 				DECL_MAIN( const short carry = ( temp << 1 ) );
-				OUTPUT_VALUE( carry );
-				OUTPUT_BINARY( carry );
+				OUT_VALUE( carry );
+				OUT_BINARY( carry );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "3	단계 : 완료" );
+				OUT_NOTE( "3	단계 : 완료" );
 
 				LF();
 
 				DECL_MAIN( const short result = ( ( t_1 ^ t_2 ) + ( ( t_1 & t_2 ) << 1 ) ) );
-				OUTPUT_VALUE( result );
-				OUTPUT_BINARY( result );
+				OUT_VALUE( result );
+				OUT_BINARY( result );
 			}
 
 			LS();
@@ -581,14 +581,14 @@ namespace play_c_bit_operation
 		{
 			LS();
 
-			OUTPUT_NOTE( "bit 연산 만으로 덧셈 처리 해보자." );
+			OUT_NOTE( "bit 연산 만으로 덧셈 처리 해보자." );
 
 			LS();
 
 			DECL_MAIN( short t_1 = 1 );
 			DECL_MAIN( short t_2 = 3 );
-			OUTPUT_BINARY( t_1 );
-			OUTPUT_BINARY( t_2 );
+			OUT_BINARY( t_1 );
+			OUT_BINARY( t_2 );
 
 			LF();
 
@@ -598,19 +598,19 @@ namespace play_c_bit_operation
 			LS();
 
 			{
-				OUTPUT_NOTE( "cycle 1" );
+				OUT_NOTE( "cycle 1" );
 
 				LF();
 
 				PROC_MAIN( sum = t_1 ^ t_2 );
-				OUTPUT_VALUE( sum );
-				OUTPUT_BINARY( sum );
+				OUT_VALUE( sum );
+				OUT_BINARY( sum );
 
 				LF();
 
 				PROC_MAIN( carry = ( ( t_1 & t_2 ) << 1 ) );
-				OUTPUT_VALUE( carry );
-				OUTPUT_BINARY( carry );
+				OUT_VALUE( carry );
+				OUT_BINARY( carry );
 			}
 
 			LS();
@@ -623,19 +623,19 @@ namespace play_c_bit_operation
 			LS();
 
 			{
-				OUTPUT_NOTE( "cycle 2" );
+				OUT_NOTE( "cycle 2" );
 
 				LF();
 
 				PROC_MAIN( sum = t_1 ^ t_2 );
-				OUTPUT_VALUE( sum );
-				OUTPUT_BINARY( sum );
+				OUT_VALUE( sum );
+				OUT_BINARY( sum );
 
 				LF();
 
 				PROC_MAIN( carry = ( ( t_1 & t_2 ) << 1 ) );
-				OUTPUT_VALUE( carry );
-				OUTPUT_BINARY( carry );
+				OUT_VALUE( carry );
+				OUT_BINARY( carry );
 			}
 
 			LS();
@@ -659,56 +659,56 @@ namespace play_c_bit_operation
 		{
 			LS();
 
-			OUTPUT_NOTE( "개념 잡기" );
+			OUT_NOTE( "개념 잡기" );
 
 			LS();
 
 			DECL_MAIN( const short t_1 = 4 );
 			DECL_MAIN( const short t_2 = 1 );
-			OUTPUT_BINARY( t_1 );
-			OUTPUT_BINARY( t_2 );
+			OUT_BINARY( t_1 );
+			OUT_BINARY( t_2 );
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "1단계 : 겹치지 않는 bit 만 뽑아낸다." );
+				OUT_NOTE( "1단계 : 겹치지 않는 bit 만 뽑아낸다." );
 
 				LF();
 
 				DECL_MAIN( const short sub = t_1 ^ t_2 );
-				OUTPUT_VALUE( sub );
-				OUTPUT_BINARY( sub );
+				OUT_VALUE( sub );
+				OUT_BINARY( sub );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "2단계 : 앞의 수를 뒤집어 겹치는 bit 만 뽑아서 shift 한다.( 실질적인 뺄셈 처리 )" );
+				OUT_NOTE( "2단계 : 앞의 수를 뒤집어 겹치는 bit 만 뽑아서 shift 한다.( 실질적인 뺄셈 처리 )" );
 
 				LF();
 
-				OUTPUT_BINARY( short( ~t_1 ) );
-				OUTPUT_BINARY( t_2 );
-				OUTPUT_BINARY( short( ( ~t_1 ) & t_2 ) );
-				OUTPUT_BINARY( short( ( ( ~t_1 ) & t_2 ) <<1 ) );
+				OUT_BINARY( short( ~t_1 ) );
+				OUT_BINARY( t_2 );
+				OUT_BINARY( short( ( ~t_1 ) & t_2 ) );
+				OUT_BINARY( short( ( ( ~t_1 ) & t_2 ) <<1 ) );
 
 				LF();
 
 				DECL_MAIN( const short borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
-				OUTPUT_VALUE( borrow );
-				OUTPUT_BINARY( borrow );
+				OUT_VALUE( borrow );
+				OUT_BINARY( borrow );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "3완료" );
+				OUT_NOTE( "3완료" );
 
 				LF();
 
 				DECL_MAIN( const short result = ( ( t_1 ^ t_2 ) - ( ( ( ~t_1 ) & t_2 ) << 1 ) ) );
-				OUTPUT_VALUE( result );
-				OUTPUT_BINARY( result );
+				OUT_VALUE( result );
+				OUT_BINARY( result );
 			}
 
 			LS();
@@ -732,14 +732,14 @@ namespace play_c_bit_operation
 		{
 			LS();
 
-			OUTPUT_NOTE( "bit 연산 만으로 뺄셈 처리 해보자." );
+			OUT_NOTE( "bit 연산 만으로 뺄셈 처리 해보자." );
 
 			LS();
 
 			DECL_MAIN( short t_1 = 2 );
 			DECL_MAIN( short t_2 = 1 );
-			OUTPUT_BINARY( t_1 );
-			OUTPUT_BINARY( t_2 );
+			OUT_BINARY( t_1 );
+			OUT_BINARY( t_2 );
 
 			LS();
 
@@ -749,19 +749,19 @@ namespace play_c_bit_operation
 			LS();
 
 			{
-				OUTPUT_NOTE( "cycle 1" );
+				OUT_NOTE( "cycle 1" );
 
 				LF();
 
 				PROC_MAIN( sub = t_1 ^ t_2 );
-				OUTPUT_VALUE( sub );
-				OUTPUT_BINARY( sub );
+				OUT_VALUE( sub );
+				OUT_BINARY( sub );
 
 				LF();
 
 				PROC_MAIN( borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
-				OUTPUT_VALUE( borrow );
-				OUTPUT_BINARY( borrow );
+				OUT_VALUE( borrow );
+				OUT_BINARY( borrow );
 			}
 
 			LS();
@@ -774,19 +774,19 @@ namespace play_c_bit_operation
 			LS();
 
 			{
-				OUTPUT_NOTE( "cycle 2" );
+				OUT_NOTE( "cycle 2" );
 
 				LF();
 
 				PROC_MAIN( sub = t_1 ^ t_2 );
-				OUTPUT_VALUE( sub );
-				OUTPUT_BINARY( sub );
+				OUT_VALUE( sub );
+				OUT_BINARY( sub );
 
 				LF();
 
 				PROC_MAIN( borrow = ( ( ( ~t_1 ) & t_2 ) << 1 ) );
-				OUTPUT_VALUE( borrow );
-				OUTPUT_BINARY( borrow );
+				OUT_VALUE( borrow );
+				OUT_BINARY( borrow );
 			}
 
 			LS();
@@ -859,36 +859,36 @@ namespace play_c_bit_operation
 
 			{
 				DECL_MAIN( const int i = -1 );
-				OUTPUT_BINARY( i );
+				OUT_BINARY( i );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( const int i = 1 );
-				OUTPUT_BINARY( i << 4 );
+				OUT_BINARY( i << 4 );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "부호가 있는 type의 최상위 비트가 1 일 때 >> 연산을 수행하면 이전 비트가 유지된다." );
+				OUT_SUBJECT( "부호가 있는 type의 최상위 비트가 1 일 때 >> 연산을 수행하면 이전 비트가 유지된다." );
 
 				LF();
 
 				DECL_MAIN( const int i = -1 );
-				OUTPUT_BINARY( i >> 4 );
+				OUT_BINARY( i >> 4 );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "부호가 없는 type의 최상위 비트가 1 일 때 >> 연산을 수행하면 이전 비트는 초기화 된다." );
+				OUT_SUBJECT( "부호가 없는 type의 최상위 비트가 1 일 때 >> 연산을 수행하면 이전 비트는 초기화 된다." );
 
 				LF();
 
 				DECL_MAIN( const unsigned int i = -1 );
-				OUTPUT_BINARY( i >> 4 );
+				OUT_BINARY( i >> 4 );
 			}
 
 			LS();

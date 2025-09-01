@@ -23,62 +23,62 @@ namespace std_memory_shared_ptr_test
 
 			{
 				DECL_MAIN( std::shared_ptr<int> sp );
-				OUTPUT_CODE( *sp );
-				OUTPUT_COMMENT( "Not Working" );
+				OUT_CODE( *sp );
+				OUT_COMMENT( "Not Working" );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( std::shared_ptr<int> sp( new int( 10 ) ) );
-				OUTPUT_VALUE( *sp );
+				OUT_VALUE( *sp );
 			}
 
 			LS();
 			
 			{
-				OUTPUT_NOTE( "const sp 는 [* const] 에 가깝다." );
+				OUT_NOTE( "const sp 는 [* const] 에 가깝다." );
 
 				LF();
 
 				DECL_MAIN( std::shared_ptr<int> sp1( new int( 10 ) ) );
 				DECL_MAIN( const std::shared_ptr<int> sp2 = sp1 );
-				OUTPUT_CODE( sp2 = nullptr );
-				OUTPUT_COMMENT( "지정된 pointer 변경 불가." );
+				OUT_CODE( sp2 = nullptr );
+				OUT_COMMENT( "지정된 pointer 변경 불가." );
 
 				LF();
 
 				PROC_MAIN( *sp2 = 11 );
-				OUTPUT_VALUE( *sp2 );
-				OUTPUT_COMMENT( "값 변경 가능" );
+				OUT_VALUE( *sp2 );
+				OUT_COMMENT( "값 변경 가능" );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "Shared Pointer Has Const Value" );
+				OUT_NOTE( "Shared Pointer Has Const Value" );
 
 				LF();
 
 				DECL_MAIN( std::shared_ptr<const int> sp( new int( 10 ) ) );
-				OUTPUT_VALUE( *sp );
+				OUT_VALUE( *sp );
 
 				LF();
 
-				OUTPUT_CODE( *sp = 11 );
-				OUTPUT_COMMENT( "Failed : Change Value" );
+				OUT_CODE( *sp = 11 );
+				OUT_COMMENT( "Failed : Change Value" );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "Make Shared" );
+				OUT_NOTE( "Make Shared" );
 
 				LF();
 
 				DECL_MAIN( auto sp = std::make_shared<int>( 10 ) );
-				OUTPUT_VALUE( sizeof( sp ) );
-				OUTPUT_VALUE( *sp );
+				OUT_VALUE( sizeof( sp ) );
+				OUT_VALUE( *sp );
 			}
 
 			LS();
@@ -104,14 +104,14 @@ namespace std_memory_shared_ptr_test
 
 			{
 				DECL_MAIN( std::shared_ptr<int> sp );
-				OUTPUT_VALUE( sizeof( sp ) );
+				OUT_VALUE( sizeof( sp ) );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( std::shared_ptr<int> sp( new int( 10 ) ) );
-				OUTPUT_VALUE( sizeof( sp ) );
+				OUT_VALUE( sizeof( sp ) );
 			}
 
 			LS();
@@ -137,21 +137,21 @@ namespace std_memory_shared_ptr_test
 
 			{
 				DECL_MAIN( std::shared_ptr<int> sp );
-				OUTPUT_BINARY( sp );
+				OUT_BINARY( sp );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( std::shared_ptr<int> sp( new int( 3 ) ) );
-				OUTPUT_BINARY( sp.get() );
-				OUTPUT_BINARY( sp );
+				OUT_BINARY( sp.get() );
+				OUT_BINARY( sp );
 
 				LF();
 
 				PROC_MAIN( sp.reset( new int( 3 ) ) );
-				OUTPUT_BINARY( sp.get() );
-				OUTPUT_BINARY( sp );
+				OUT_BINARY( sp.get() );
+				OUT_BINARY( sp );
 			}
 
 			LS();
@@ -175,9 +175,9 @@ namespace std_memory_shared_ptr_test
 		{
 			LS();
 
-			OUTPUT_NOTE( "std::make_shared 로 메모리를 할당하면 ref count 와 weak count 를 위한 공간을..." );
-			OUTPUT_NOTE( "메모리의 앞 부분에 붙여서 메모리를 할당한다." );
-			OUTPUT_NOTE( "구조 : ref count + weak count + obj" );
+			OUT_NOTE( "std::make_shared 로 메모리를 할당하면 ref count 와 weak count 를 위한 공간을..." );
+			OUT_NOTE( "메모리의 앞 부분에 붙여서 메모리를 할당한다." );
+			OUT_NOTE( "구조 : ref count + weak count + obj" );
 
 			LS();
 
@@ -187,35 +187,35 @@ namespace std_memory_shared_ptr_test
 
 			DECL_MAIN( int32_t* p = (int32_t* )sp.get() );
 			PROC_MAIN( p -= 2 );
-			OUTPUT_BINARIES( p, 3 );
+			OUT_BINARIES( p, 3 );
 
 			LS();
 
 			{
 				DECL_MAIN( auto tp_1 = sp );
-				OUTPUT_BINARIES( p, 3 );
+				OUT_BINARIES( p, 3 );
 
 				LF();
 
 				DECL_MAIN( auto tp_2 = sp );
-				OUTPUT_BINARIES( p, 3 );
+				OUT_BINARIES( p, 3 );
 
 				LF();
 
 				PROC_MAIN( tp_2.reset() );
-				OUTPUT_BINARIES( p, 3 );
+				OUT_BINARIES( p, 3 );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( std::weak_ptr<int> wp_1 = sp );
-				OUTPUT_BINARIES( p, 3 );
+				OUT_BINARIES( p, 3 );
 
 				LF();
 
 				PROC_MAIN( wp_1.reset() );
-				OUTPUT_BINARIES( p, 3 );
+				OUT_BINARIES( p, 3 );
 			}
 
 			LS();

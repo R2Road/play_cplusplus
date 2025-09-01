@@ -23,23 +23,23 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Current Path" );
+				OUT_SUBJECT( "Current Path" );
 
 				LF();
 
 				DECL_MAIN( const std::filesystem::path p = std::filesystem::current_path() );
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Temp Directory Path" );
+				OUT_SUBJECT( "Temp Directory Path" );
 
 				LF();
 
 				DECL_MAIN( std::filesystem::path p = std::filesystem::temp_directory_path() );
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 			}
 
 			LS();
@@ -63,17 +63,17 @@ namespace std_filesystem_test
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "Target Path" );
+			OUT_SUBJECT( "Target Path" );
 
 			LF();
 
 			DECL_MAIN( const std::filesystem::path p = std::filesystem::current_path() );
-			OUTPUT_VALUE( p );
+			OUT_VALUE( p );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "View Directory" );
+				OUT_SUBJECT( "View Directory" );
 
 				LF();
 
@@ -112,7 +112,7 @@ namespace std_filesystem_test
 			LS();
 
 			DECL_MAIN( const auto target_path = std::filesystem::current_path() / "src" );
-			OUTPUT_VALUE( target_path );
+			OUT_VALUE( target_path );
 
 			LS();
 
@@ -163,12 +163,12 @@ namespace std_filesystem_test
 		{
 			LS();
 
-			OUTPUT_VALUE( std::filesystem::current_path() );
+			OUT_VALUE( std::filesystem::current_path() );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Append" );
+				OUT_SUBJECT( "Append" );
 
 				LF();
 
@@ -180,13 +180,13 @@ namespace std_filesystem_test
 
 				LF();
 
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Operator /" );
+				OUT_SUBJECT( "Operator /" );
 
 				LF();
 
@@ -198,13 +198,13 @@ namespace std_filesystem_test
 
 				LF();
 
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Operator /=" );
+				OUT_SUBJECT( "Operator /=" );
 
 				LF();
 
@@ -216,7 +216,7 @@ namespace std_filesystem_test
 
 				LF();
 
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 			}
 
 			LS();
@@ -240,8 +240,8 @@ namespace std_filesystem_test
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "has_parent_path" );
-			OUTPUT_SUBJECT( "parent_path" );
+			OUT_SUBJECT( "has_parent_path" );
+			OUT_SUBJECT( "parent_path" );
 
 			LS();
 
@@ -251,7 +251,7 @@ namespace std_filesystem_test
 				LF();
 
 				EXPECT_FALSE( p.has_parent_path() );
-				OUTPUT_VALUE( p.parent_path() );
+				OUT_VALUE( p.parent_path() );
 			}
 
 			LS();
@@ -262,7 +262,7 @@ namespace std_filesystem_test
 				LF();
 
 				EXPECT_FALSE( p.has_parent_path() );
-				OUTPUT_VALUE( p.parent_path() );
+				OUT_VALUE( p.parent_path() );
 			}
 
 			LS();
@@ -273,7 +273,7 @@ namespace std_filesystem_test
 				LF();
 
 				EXPECT_TRUE( p.has_parent_path() );
-				OUTPUT_VALUE( p.parent_path() );
+				OUT_VALUE( p.parent_path() );
 			}
 
 			LS();
@@ -298,7 +298,7 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Remove File Name" );
+				OUT_SUBJECT( "Remove File Name" );
 
 				LF();
 
@@ -306,7 +306,7 @@ namespace std_filesystem_test
 
 				LF();
 
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 
 				LF();
 
@@ -314,13 +314,13 @@ namespace std_filesystem_test
 
 				LF();
 
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Remove File Name And Separator" );
+				OUT_SUBJECT( "Remove File Name And Separator" );
 
 				LF();
 
@@ -328,7 +328,7 @@ namespace std_filesystem_test
 
 				LF();
 
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 
 				LF();
 
@@ -336,7 +336,7 @@ namespace std_filesystem_test
 
 				LF();
 
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 			}
 
 			LS();
@@ -361,37 +361,37 @@ namespace std_filesystem_test
 			LS();
 
 			DECL_MAIN( std::filesystem::path p = std::filesystem::current_path() );
-			OUTPUT_VALUE( p );
+			OUT_VALUE( p );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Replace Extension" );
+				OUT_SUBJECT( "Replace Extension" );
 
 				LF();
 
 				PROC_MAIN( p /= "test.txt" );
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 
 				LF();
 
 				PROC_MAIN( p.replace_extension( "json" ) );
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Replace File Name" );
+				OUT_SUBJECT( "Replace File Name" );
 
 				LF();
 
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 
 				LF();
 
 				PROC_MAIN( p.replace_filename( "new_filename" ) );
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 			}
 
 			LS();
@@ -429,12 +429,12 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "디렉토리 유/무 확인" );
+				OUT_SUBJECT( "디렉토리 유/무 확인" );
 
 				LF();
 
 				DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 
 				LF();
 
@@ -444,13 +444,13 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "파일 유/무 확인" );
+				OUT_SUBJECT( "파일 유/무 확인" );
 
 				LF();
 
 				DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
 				PROC_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-				OUTPUT_VALUE( p );
+				OUT_VALUE( p );
 
 				LF();
 
@@ -490,7 +490,7 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "디렉토리 생성" );
+				OUT_SUBJECT( "디렉토리 생성" );
 
 				LF();
 
@@ -501,7 +501,7 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "이미 있는 디렉토리 생성 시도" );
+				OUT_SUBJECT( "이미 있는 디렉토리 생성 시도" );
 
 				LF();
 
@@ -510,13 +510,13 @@ namespace std_filesystem_test
 
 			LS();
 
-			OUTPUT_COMMENT( "아무 키 누르면 디렉토리 삭제" );
+			OUT_COMMENT( "아무 키 누르면 디렉토리 삭제" );
 			_getch();
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "디렉토리 삭제" );
+				OUT_SUBJECT( "디렉토리 삭제" );
 
 				LF();
 
@@ -527,7 +527,7 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "없는 디렉토리 삭제 시도" );
+				OUT_SUBJECT( "없는 디렉토리 삭제 시도" );
 
 				LF();
 
@@ -561,7 +561,7 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "디렉토리 목록 생성" );
+				OUT_SUBJECT( "디렉토리 목록 생성" );
 
 				LF();
 
@@ -576,11 +576,11 @@ namespace std_filesystem_test
 
 				LF();
 
-				OUTPUT_NOTE( "현재 경로와 생성 하려는 경로가 바로 맞닿을 수 없는 경우 중간 경로를 함께 생성한다." );
+				OUT_NOTE( "현재 경로와 생성 하려는 경로가 바로 맞닿을 수 없는 경우 중간 경로를 함께 생성한다." );
 
 				LS();
 
-				OUTPUT_SUBJECT( "이미 있는 디렉토리 목록 생성 시도" );
+				OUT_SUBJECT( "이미 있는 디렉토리 목록 생성 시도" );
 
 				LF();
 
@@ -589,13 +589,13 @@ namespace std_filesystem_test
 
 			LS();
 
-			OUTPUT_COMMENT( "아무 키 누르면 디렉토리 목록 삭제" );
+			OUT_COMMENT( "아무 키 누르면 디렉토리 목록 삭제" );
 			_getch();
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "자식 디렉토리가 있는 경우 함께 삭제한다." );
+				OUT_SUBJECT( "자식 디렉토리가 있는 경우 함께 삭제한다." );
 
 				LF();
 
@@ -606,7 +606,7 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "없는 디렉토리 목록 삭제 시도" );
+				OUT_SUBJECT( "없는 디렉토리 목록 삭제 시도" );
 
 				LF();
 
@@ -641,7 +641,7 @@ namespace std_filesystem_test
 			LS();
 
 			{
-				OUTPUT_VALUE( std::filesystem::file_size( p ) );
+				OUT_VALUE( std::filesystem::file_size( p ) );
 			}
 
 			LS();

@@ -22,19 +22,19 @@ namespace std_numeric_test
 		{
 			LS();
 
-			OUTPUT_VALUE( std::numeric_limits<int>::min() );
-			OUTPUT_BINARY( std::numeric_limits<int>::min() );
+			OUT_VALUE( std::numeric_limits<int>::min() );
+			OUT_BINARY( std::numeric_limits<int>::min() );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "min 값 직접 만들기" );
+				OUT_SUBJECT( "min 값 직접 만들기" );
 
 				LF();
 
 				DECL_MAIN( const int a = 1 << ( ( sizeof( int ) * 8 ) - 1 ) );
-				OUTPUT_VALUE( a );
-				OUTPUT_BINARY( a );
+				OUT_VALUE( a );
+				OUT_BINARY( a );
 
 				LF();
 
@@ -63,29 +63,29 @@ namespace std_numeric_test
 		{
 			LS();
 
-			OUTPUT_VALUE( std::numeric_limits<int>::max() );
-			OUTPUT_BINARY( std::numeric_limits<int>::max() );
+			OUT_VALUE( std::numeric_limits<int>::max() );
+			OUT_BINARY( std::numeric_limits<int>::max() );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "max 값 직접 만들기" );
+				OUT_SUBJECT( "max 값 직접 만들기" );
 
 				LF();
 
 				DECL_MAIN( int a = -1 );
-				OUTPUT_BINARY( a );
+				OUT_BINARY( a );
 
 				LF();
 
 				DECL_MAIN( const int mask = 1 << ( ( sizeof( int ) * 8 ) - 1 ) );
-				OUTPUT_BINARY( mask );
+				OUT_BINARY( mask );
 
 				LF();
 
 				PROC_MAIN( a ^= mask );
-				OUTPUT_VALUE( a );
-				OUTPUT_BINARY( a );
+				OUT_VALUE( a );
+				OUT_BINARY( a );
 
 				LF();
 
@@ -95,7 +95,7 @@ namespace std_numeric_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "-1 >> 1 은 작동하지 않는다." );
+				OUT_NOTE( "-1 >> 1 은 작동하지 않는다." );
 
 				LF();
 
@@ -104,8 +104,8 @@ namespace std_numeric_test
 
 				LF();
 
-				OUTPUT_VALUE( a );
-				OUTPUT_BINARY( a );
+				OUT_VALUE( a );
+				OUT_BINARY( a );
 			}
 
 			LS();
@@ -130,7 +130,7 @@ namespace std_numeric_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Sum" );
+				OUT_SUBJECT( "Sum" );
 
 				LF();
 
@@ -139,13 +139,13 @@ namespace std_numeric_test
 
 				LF();
 
-				OUTPUT_VALUE( result );
+				OUT_VALUE( result );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Minus" );
+				OUT_SUBJECT( "Minus" );
 
 				LF();
 
@@ -154,13 +154,13 @@ namespace std_numeric_test
 
 				LF();
 
-				OUTPUT_VALUE( result );
+				OUT_VALUE( result );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Multiply" );
+				OUT_SUBJECT( "Multiply" );
 
 				LF();
 
@@ -169,7 +169,7 @@ namespace std_numeric_test
 
 				LF();
 
-				OUTPUT_VALUE( result );
+				OUT_VALUE( result );
 			}
 
 			LS();
@@ -365,7 +365,7 @@ namespace std_numeric_test
 				std::cout << r2tm::tab << "+ View" << r2tm::linefeed2;
 				for( auto i : temp_list )
 				{
-					OUTPUT_VALUE( i );
+					OUT_VALUE( i );
 				}
 			}
 

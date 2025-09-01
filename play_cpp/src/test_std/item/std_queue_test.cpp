@@ -21,7 +21,7 @@ namespace std_queue_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "FIFO, Simple( iterator 없음 )" );
+				OUT_NOTE( "FIFO, Simple( iterator 없음 )" );
 			}
 
 			LS();
@@ -38,7 +38,7 @@ namespace std_queue_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "r-value Move Constructor" );
+				OUT_NOTE( "r-value Move Constructor" );
 
 				LF();
 
@@ -72,8 +72,8 @@ namespace std_queue_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "빈 컨테이너에 font(), back() 쓰지마라." );
-				OUTPUT_NOTE( "release | debug 모두 access violation" );
+				OUT_NOTE( "빈 컨테이너에 font(), back() 쓰지마라." );
+				OUT_NOTE( "release | debug 모두 access violation" );
 
 				LF();
 
@@ -81,8 +81,8 @@ namespace std_queue_test
 
 				LF();
 
-				OUTPUT_CODE( q.front() );
-				OUTPUT_CODE( q.back() );
+				OUT_CODE( q.front() );
+				OUT_CODE( q.back() );
 			}
 
 			LS();
@@ -97,8 +97,8 @@ namespace std_queue_test
 
 				LF();
 
-				OUTPUT_VALUE( q.front() );
-				OUTPUT_VALUE( q.back() );
+				OUT_VALUE( q.front() );
+				OUT_VALUE( q.back() );
 			}
 
 			LS();
@@ -113,8 +113,8 @@ namespace std_queue_test
 
 				LF();
 
-				OUTPUT_VALUE( q.front() );
-				OUTPUT_VALUE( q.back() );
+				OUT_VALUE( q.front() );
+				OUT_VALUE( q.back() );
 			}
 
 			LS();
@@ -204,12 +204,12 @@ namespace std_queue_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "빈 컨테이너에 pop() 쓰지마라." );
-				OUTPUT_NOTE( "release | debug 예외 발생" );
+				OUT_NOTE( "빈 컨테이너에 pop() 쓰지마라." );
+				OUT_NOTE( "release | debug 예외 발생" );
 
 				LF();
 
-				OUTPUT_CODE( q.pop() );
+				OUT_CODE( q.pop() );
 			}
 
 			LS();
@@ -234,9 +234,9 @@ namespace std_queue_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "Front, Back 외에는 값의 확인이 불가능 하다." );
-				OUTPUT_NOTE( "Iterator 도 없다." );
-				OUTPUT_NOTE( "그럼 값을 꺼내는 것 말고는 순회할 방법이 없다???" );
+				OUT_NOTE( "Front, Back 외에는 값의 확인이 불가능 하다." );
+				OUT_NOTE( "Iterator 도 없다." );
+				OUT_NOTE( "그럼 값을 꺼내는 것 말고는 순회할 방법이 없다???" );
 			}
 
 			LS();
@@ -249,7 +249,7 @@ namespace std_queue_test
 				while( !q.empty() )
 				{
 					const auto& i = q.front();
-					OUTPUT_VALUE( i );
+					OUT_VALUE( i );
 
 					q.pop();
 				}

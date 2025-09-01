@@ -23,58 +23,58 @@ namespace std_atomic_test
 		{
 			LS();
 
-			OUTPUT_NOTE( "Primitive Type 가능" );
-			OUTPUT_NOTE( "크기 변화는 없다" );
+			OUT_NOTE( "Primitive Type 가능" );
+			OUT_NOTE( "크기 변화는 없다" );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "기본 생성자" );
+				OUT_SUBJECT( "기본 생성자" );
 
 				LF();
 
 				{
 					DECL_MAIN( std::atomic<bool> a );
-					OUTPUT_SIZE( a );
-					OUTPUT_BINARIES( &a, 1 );
+					OUT_SIZE( a );
+					OUT_BINARIES( &a, 1 );
 				}
 
 				LF();
 
 				{
 					DECL_MAIN( std::atomic<char> a );
-					OUTPUT_SIZE( a );
-					OUTPUT_BINARIES( &a, 1 );
+					OUT_SIZE( a );
+					OUT_BINARIES( &a, 1 );
 				}
 
 				LF();
 
 				{
 					DECL_MAIN( std::atomic<int> a );
-					OUTPUT_SIZE( a );
-					OUTPUT_BINARIES( &a, 1 );
+					OUT_SIZE( a );
+					OUT_BINARIES( &a, 1 );
 				}
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "초기값 할당 가능" );
+				OUT_SUBJECT( "초기값 할당 가능" );
 
 				LF();
 
 				{
 					DECL_MAIN( std::atomic<int64_t> a( 7 ) );
-					OUTPUT_SIZE( a );
-					OUTPUT_BINARIES( &a, 1 );
+					OUT_SIZE( a );
+					OUT_BINARIES( &a, 1 );
 				}
 
 				LF();
 
 				{
 					DECL_MAIN( std::atomic<void*> a = nullptr );
-					OUTPUT_SIZE( a );
-					OUTPUT_BINARIES( &a, 1 );
+					OUT_SIZE( a );
+					OUT_BINARIES( &a, 1 );
 				}
 			}
 
@@ -99,59 +99,59 @@ namespace std_atomic_test
 		{
 			LS();
 
-			OUTPUT_NOTE( "Primitive Type 1개를 멤버로 가지는 Type 가능" );
+			OUT_NOTE( "Primitive Type 1개를 멤버로 가지는 Type 가능" );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "User Defined Type 1" );
+				OUT_SUBJECT( "User Defined Type 1" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				struct S
 				{
 					int i;
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
 				DECL_MAIN( std::atomic<S> a );
-				OUTPUT_SIZE( a );
-				OUTPUT_BINARIES( &a, 1 );
+				OUT_SIZE( a );
+				OUT_BINARIES( &a, 1 );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "User Defined Type 2" );
+				OUT_SUBJECT( "User Defined Type 2" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				struct S
 				{
 					int i;
 					float f;
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_CODE( std::atomic<S> a );
+				OUT_CODE( std::atomic<S> a );
 
 				LF();
 
-				OUTPUT_NOTE( "Not Working" );
-				OUTPUT_NOTE( "static_assert 에 의한 C2338 발생" );
+				OUT_NOTE( "Not Working" );
+				OUT_NOTE( "static_assert 에 의한 C2338 발생" );
 			}
 
 			LS();
 
-			OUTPUT_NOTE( "멤버가 2개 이상인 struct 의 atomic을 만들면" );
-			OUTPUT_NOTE( "static assert가 걸렸다 말았다 한다." );
-			OUTPUT_NOTE( "vs2017에 버그가 있는듯." );
+			OUT_NOTE( "멤버가 2개 이상인 struct 의 atomic을 만들면" );
+			OUT_NOTE( "static assert가 걸렸다 말았다 한다." );
+			OUT_NOTE( "vs2017에 버그가 있는듯." );
 
 			LS();
 
@@ -175,37 +175,37 @@ namespace std_atomic_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Primitive Type" );
+				OUT_SUBJECT( "Primitive Type" );
 
 				LF();
 
-				OUTPUT_VALUE( std::atomic<bool>().is_lock_free() );
-				OUTPUT_VALUE( std::atomic<char>().is_lock_free() );
-				OUTPUT_VALUE( std::atomic<short>().is_lock_free() );
-				OUTPUT_VALUE( std::atomic<int>().is_lock_free() );
-				OUTPUT_VALUE( std::atomic<float>().is_lock_free() );
-				OUTPUT_VALUE( std::atomic<double>().is_lock_free() );
-				OUTPUT_VALUE( std::atomic<int64_t>().is_lock_free() );
-				OUTPUT_VALUE( std::atomic<void*>().is_lock_free() );
+				OUT_VALUE( std::atomic<bool>().is_lock_free() );
+				OUT_VALUE( std::atomic<char>().is_lock_free() );
+				OUT_VALUE( std::atomic<short>().is_lock_free() );
+				OUT_VALUE( std::atomic<int>().is_lock_free() );
+				OUT_VALUE( std::atomic<float>().is_lock_free() );
+				OUT_VALUE( std::atomic<double>().is_lock_free() );
+				OUT_VALUE( std::atomic<int64_t>().is_lock_free() );
+				OUT_VALUE( std::atomic<void*>().is_lock_free() );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "User Defined Type 1" );
+				OUT_SUBJECT( "User Defined Type 1" );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				struct S
 				{
 					int i;
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( std::atomic<S>().is_lock_free() );
+				OUT_VALUE( std::atomic<S>().is_lock_free() );
 			}
 
 			LS();
@@ -231,7 +231,7 @@ namespace std_atomic_test
 
 			LS();
 
-			OUTPUT_SOURCE_READY_N_BEGIN;
+			OUT_SOURCE_READY_N_BEGIN;
 			const auto l = [&n]( int index, int attmpt )
 			{
 				printf( "\t\tThread Start : %d\n", index );
@@ -243,7 +243,7 @@ namespace std_atomic_test
 
 				printf( "\t\tThread End : %d\n", index );
 			};
-			OUTPUT_SOURCE_END;
+			OUT_SOURCE_END;
 
 			LS();
 
@@ -263,7 +263,7 @@ namespace std_atomic_test
 			LS();
 
 			EXPECT_NE( 100000 * 5, n );
-			OUTPUT_VALUE( n );
+			OUT_VALUE( n );
 
 			LS();
 
@@ -319,7 +319,7 @@ namespace std_atomic_test
 			LS();
 
 			EXPECT_EQ( 100000 * 5, n );
-			OUTPUT_VALUE( n );
+			OUT_VALUE( n );
 
 			LS();
 

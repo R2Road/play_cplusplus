@@ -31,9 +31,9 @@ namespace std_tuple_test
 
 				LF();
 
-				OUTPUT_VALUE( std::get<0>( t ) );
-				OUTPUT_VALUE( std::get<1>( t ) );
-				OUTPUT_VALUE( std::get<2>( t ) );
+				OUT_VALUE( std::get<0>( t ) );
+				OUT_VALUE( std::get<1>( t ) );
+				OUT_VALUE( std::get<2>( t ) );
 			}
 
 
@@ -50,9 +50,9 @@ namespace std_tuple_test
 
 				LF();
 
-				OUTPUT_VALUE( std::get<0>( t ) );
-				OUTPUT_VALUE( std::get<1>( t ) );
-				OUTPUT_VALUE( std::get<2>( t ) );
+				OUT_VALUE( std::get<0>( t ) );
+				OUT_VALUE( std::get<1>( t ) );
+				OUT_VALUE( std::get<2>( t ) );
 			}
 
 
@@ -64,9 +64,9 @@ namespace std_tuple_test
 
 				LF();
 
-				OUTPUT_VALUE( std::get<0>( t ) );
-				OUTPUT_VALUE( std::get<1>( t ) );
-				OUTPUT_VALUE( std::get<2>( t ) );
+				OUT_VALUE( std::get<0>( t ) );
+				OUT_VALUE( std::get<1>( t ) );
+				OUT_VALUE( std::get<2>( t ) );
 			}
 
 

@@ -22,7 +22,7 @@ namespace std_unordered_map_test
 		{
 			LS();
 
-			OUTPUT_FILE( "src/test_std/item/std_unordered_map_test_helper_cstring.hpp" );
+			OUT_FILE( "src/test_std/item/std_unordered_map_test_helper_cstring.hpp" );
 
 			LS();
 
@@ -48,22 +48,22 @@ namespace std_unordered_map_test
 
 			{
 				DECL_MAIN( const auto itr = container.find( CStringNSize{ "1", 1 } ) );
-				OUTPUT_VALUE( itr->second );
+				OUT_VALUE( itr->second );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( const auto itr = container.find( CStringNSize{ "4", 1 } ) );
-				OUTPUT_VALUE( itr->second );
+				OUT_VALUE( itr->second );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "char* 의 메모리 관리를 직접 해야 한다." );
-				OUTPUT_NOTE( "char* 대신에 std::string_view 를 쓰는게 좋겠다." );
-				OUTPUT_NOTE( "그냥 std::string 을 쓰는게 좋지 않을까?" );
+				OUT_NOTE( "char* 의 메모리 관리를 직접 해야 한다." );
+				OUT_NOTE( "char* 대신에 std::string_view 를 쓰는게 좋겠다." );
+				OUT_NOTE( "그냥 std::string 을 쓰는게 좋지 않을까?" );
 			}
 
 			LS();

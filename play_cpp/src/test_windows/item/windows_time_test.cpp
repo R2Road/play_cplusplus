@@ -70,7 +70,7 @@ namespace window_time_test
 
 						{
 							PROC_MAIN( current_tick = GetTickCount() );
-							OUTPUT_VALUE( current_tick );
+							OUT_VALUE( current_tick );
 
 							last_tick = current_tick;
 						}
@@ -78,13 +78,13 @@ namespace window_time_test
 						LF();
 
 						{
-							OUTPUT_VALUE( GetTickCount64() );
+							OUT_VALUE( GetTickCount64() );
 						}
 
 						LF();
 
 						{
-							OUTPUT_VALUE( timeGetTime() );
+							OUT_VALUE( timeGetTime() );
 						}
 
 						LS();

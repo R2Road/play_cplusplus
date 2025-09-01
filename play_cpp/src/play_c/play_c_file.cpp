@@ -22,7 +22,7 @@ namespace play_c_file
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Open" );
+				OUT_SUBJECT( "Open" );
 
 				LF();
 
@@ -31,7 +31,7 @@ namespace play_c_file
 
 				SS();
 
-				OUTPUT_SUBJECT( "Close" );
+				OUT_SUBJECT( "Close" );
 
 				LF();
 
@@ -39,7 +39,7 @@ namespace play_c_file
 
 				SS();
 
-				OUTPUT_SUBJECT( "fclose 를 한 번 더 불러도 문제 없다." );
+				OUT_SUBJECT( "fclose 를 한 번 더 불러도 문제 없다." );
 
 				LF();
 
@@ -49,11 +49,11 @@ namespace play_c_file
 			LS();
 
 			{
-				OUTPUT_NOTE( "이러면 터진다." );
+				OUT_NOTE( "이러면 터진다." );
 
 				LF();
 
-				OUTPUT_CODE( fclose( nullptr ) );
+				OUT_CODE( fclose( nullptr ) );
 			}
 
 			LS();
@@ -77,7 +77,7 @@ namespace play_c_file
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "한 문자씩 읽는다." );
+			OUT_SUBJECT( "한 문자씩 읽는다." );
 
 			LS();
 
@@ -128,7 +128,7 @@ namespace play_c_file
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "한 줄씩 읽는다." );
+			OUT_SUBJECT( "한 줄씩 읽는다." );
 
 			LS();
 
@@ -183,11 +183,11 @@ namespace play_c_file
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "fscanf는 줄을 무시하고 읽는다." );
+			OUT_SUBJECT( "fscanf는 줄을 무시하고 읽는다." );
 
 			LS();
 
-			OUTPUT_FILE( "resources/c_file_test_getformat_1.txt" );
+			OUT_FILE( "resources/c_file_test_getformat_1.txt" );
 
 			LS();
 
@@ -251,7 +251,7 @@ namespace play_c_file
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "파일 없음 확인" );
+				OUT_SUBJECT( "파일 없음 확인" );
 
 				LF();
 
@@ -262,7 +262,7 @@ namespace play_c_file
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "파일 생성" );
+				OUT_SUBJECT( "파일 생성" );
 
 				LF();
 
@@ -275,7 +275,7 @@ namespace play_c_file
 
 				LF();
 
-				OUTPUT_SUBJECT( "파일 있음 확인" );
+				OUT_SUBJECT( "파일 있음 확인" );
 
 				LF();
 
@@ -286,7 +286,7 @@ namespace play_c_file
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "파일 삭제" );
+				OUT_SUBJECT( "파일 삭제" );
 
 				LF();
 
@@ -294,7 +294,7 @@ namespace play_c_file
 
 				LF();
 
-				OUTPUT_SUBJECT( "파일 없음 확인" );
+				OUT_SUBJECT( "파일 없음 확인" );
 
 				LF();
 

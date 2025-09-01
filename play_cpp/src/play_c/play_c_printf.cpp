@@ -50,7 +50,7 @@ namespace play_c_printf
 			LS();
 
 			{
-				OUTPUT_NOTE( "8 : oct : %%o" );
+				OUT_NOTE( "8 : oct : %%o" );
 
 				LF();
 
@@ -60,7 +60,7 @@ namespace play_c_printf
 			LS();
 
 			{
-				OUTPUT_NOTE( "10 : dec : %%d" );
+				OUT_NOTE( "10 : dec : %%d" );
 
 				LF();
 
@@ -70,7 +70,7 @@ namespace play_c_printf
 			LS();
 
 			{
-				OUTPUT_NOTE( "16 : hex : %%x" );
+				OUT_NOTE( "16 : hex : %%x" );
 
 				LF();
 

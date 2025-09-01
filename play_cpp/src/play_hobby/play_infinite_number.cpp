@@ -69,19 +69,19 @@ namespace play_infinite_number
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "short의 범위" );
+				OUT_SUBJECT( "short의 범위" );
 
 				LF();
 
-				OUTPUT_VALUE( std::numeric_limits<short>::min() );
-				OUTPUT_VALUE( std::numeric_limits<short>::max() );
+				OUT_VALUE( std::numeric_limits<short>::min() );
+				OUT_VALUE( std::numeric_limits<short>::max() );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "999 + 999 의 결과로 다음 자릿수에는 1이 추가 된다." );
-				OUTPUT_SUBJECT( "캐리값 처리에 편리하다." );
+				OUT_SUBJECT( "999 + 999 의 결과로 다음 자릿수에는 1이 추가 된다." );
+				OUT_SUBJECT( "캐리값 처리에 편리하다." );
 
 				LF();
 
@@ -90,13 +90,13 @@ namespace play_infinite_number
 
 				LF();
 
-				OUTPUT_VALUE( s_1 + s_2 );
+				OUT_VALUE( s_1 + s_2 );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "기대 하고 있는 출력 방식" );
+				OUT_SUBJECT( "기대 하고 있는 출력 방식" );
 
 				LF();
 
@@ -136,7 +136,7 @@ namespace play_infinite_number
 
 				LF();
 
-				OUTPUT_VALUE(infinite_number.Get() );
+				OUT_VALUE(infinite_number.Get() );
 			}
 
 			LS();
@@ -177,12 +177,12 @@ namespace play_infinite_number
 			{
 				unsigned int i = -1;
 				unsigned int j = i % 10;
-				OUTPUT_VALUE( j );
+				OUT_VALUE( j );
 
 				LF();
 
-				OUTPUT_BINARY( i );
-				OUTPUT_BINARY( j );
+				OUT_BINARY( i );
+				OUT_BINARY( j );
 
 				std::to_string( j );
 			}

@@ -25,7 +25,7 @@ namespace std_bitset_test
 				EXPECT_FALSE( b.all() );
 				EXPECT_FALSE( b.any() );
 				EXPECT_TRUE( b.none() );
-				OUTPUT_VALUE( b.size() );
+				OUT_VALUE( b.size() );
 			}
 
 			LS();
@@ -35,7 +35,7 @@ namespace std_bitset_test
 				EXPECT_FALSE( b.all() );
 				EXPECT_TRUE( b.any() );
 				EXPECT_FALSE( b.none() );
-				OUTPUT_VALUE( b.size() );
+				OUT_VALUE( b.size() );
 			}
 
 			LS();
@@ -45,7 +45,7 @@ namespace std_bitset_test
 				EXPECT_FALSE( b.all() );
 				EXPECT_TRUE( b.any() );
 				EXPECT_FALSE( b.none() );
-				OUTPUT_VALUE( b.size() );
+				OUT_VALUE( b.size() );
 			}
 
 			LS();
@@ -55,7 +55,7 @@ namespace std_bitset_test
 				EXPECT_TRUE( b.all() );
 				EXPECT_TRUE( b.any() );
 				EXPECT_FALSE( b.none() );
-				OUTPUT_VALUE( b.size() );
+				OUT_VALUE( b.size() );
 			}
 
 			LS();
@@ -85,7 +85,7 @@ namespace std_bitset_test
 
 			{
 				EXPECT_FALSE( b.test( 0 ) );
-				OUTPUT_VALUE( b.to_string() );
+				OUT_VALUE( b.to_string() );
 			}
 
 			LS();
@@ -93,7 +93,7 @@ namespace std_bitset_test
 			{
 				PROC_MAIN( b.set( 0, true ) );
 				EXPECT_TRUE( b.test( 0 ) );
-				OUTPUT_VALUE( b.to_string() );
+				OUT_VALUE( b.to_string() );
 			}
 
 			LS();
@@ -101,7 +101,7 @@ namespace std_bitset_test
 			{
 				PROC_MAIN( b.set( 0, false ) );
 				EXPECT_FALSE( b.test( 0 ) );
-				OUTPUT_VALUE( b.to_string() );
+				OUT_VALUE( b.to_string() );
 			}
 
 			LS();
@@ -109,12 +109,12 @@ namespace std_bitset_test
 			{
 				PROC_MAIN( b.set( 0, true ) );
 				PROC_MAIN( b.set( 2, true ) );
-				OUTPUT_VALUE( b.to_string() );
+				OUT_VALUE( b.to_string() );
 
 				LF();
 
 				PROC_MAIN( b = 0 );
-				OUTPUT_VALUE( b.to_string() );
+				OUT_VALUE( b.to_string() );
 			}
 
 			LS();
@@ -138,46 +138,46 @@ namespace std_bitset_test
 		{
 			LS();
 
-			OUTPUT_NOTE( "크기는 4byte 단위로 증가." );
+			OUT_NOTE( "크기는 4byte 단위로 증가." );
 
 			LS();
 
 			{
 				DECL_MAIN( std::bitset<1> container );
-				OUTPUT_VALUE( sizeof( container ) );
-				OUTPUT_VALUE( container.size() );
+				OUT_VALUE( sizeof( container ) );
+				OUT_VALUE( container.size() );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( std::bitset<8> container );
-				OUTPUT_VALUE( sizeof( container ) );
-				OUTPUT_VALUE( container.size() );
+				OUT_VALUE( sizeof( container ) );
+				OUT_VALUE( container.size() );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( std::bitset<16> container );
-				OUTPUT_VALUE( sizeof( container ) );
-				OUTPUT_VALUE( container.size() );
+				OUT_VALUE( sizeof( container ) );
+				OUT_VALUE( container.size() );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( std::bitset<32> container );
-				OUTPUT_VALUE( sizeof( container ) );
-				OUTPUT_VALUE( container.size() );
+				OUT_VALUE( sizeof( container ) );
+				OUT_VALUE( container.size() );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( std::bitset<48> container );
-				OUTPUT_VALUE( sizeof( container ) );
-				OUTPUT_VALUE( container.size() );
+				OUT_VALUE( sizeof( container ) );
+				OUT_VALUE( container.size() );
 			}
 
 			LS();
@@ -202,12 +202,12 @@ namespace std_bitset_test
 			LS();
 
 			DECL_MAIN( std::bitset<10> b = 0b10101 );
-			OUTPUT_VALUE( b.to_string() );
+			OUT_VALUE( b.to_string() );
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "bit 연산이 안되는 큰 단점." );
+				OUT_NOTE( "bit 연산이 안되는 큰 단점." );
 
 				LF();
 

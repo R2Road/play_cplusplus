@@ -20,43 +20,43 @@ namespace std_array_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			OUTPUT_SOURCE_READY;
+			OUT_SOURCE_READY;
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Declaration" );
+				OUT_SUBJECT( "Declaration" );
 
 				LF();
 
 				{
-					OUTPUT_SOURCE_BEGIN;
+					OUT_SOURCE_BEGIN;
 					std::array<int, 3u> test_array;
-					OUTPUT_SOURCE_END;
+					OUT_SOURCE_END;
 				}
 
 				LF();
 
 				{
-					OUTPUT_SOURCE_BEGIN;
+					OUT_SOURCE_BEGIN;
 					std::array<int, 3u> test_array{ { 1, 2, 3 } };
-					OUTPUT_SOURCE_END;
+					OUT_SOURCE_END;
 				}
 
 				LF();
 
 				{
-					OUTPUT_SOURCE_BEGIN;
+					OUT_SOURCE_BEGIN;
 					std::array<int, 3u> test_array = { 1, 2, 3 };
-					OUTPUT_SOURCE_END;
+					OUT_SOURCE_END;
 				}
 
 				LF();
 
 				{
-					OUTPUT_SOURCE_BEGIN;
+					OUT_SOURCE_BEGIN;
 					std::array aa{ 1, 2, 3 };
-					OUTPUT_SOURCE_END;
+					OUT_SOURCE_END;
 					std::cout << r2tm::tab2 << "* Note : Since c++17" << r2tm::linefeed;
 				}
 			}
@@ -64,7 +64,7 @@ namespace std_array_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "struct" );
+				OUT_SUBJECT( "struct" );
 
 				LF();
 
@@ -72,9 +72,9 @@ namespace std_array_test
 
 				LF();
 
-				OUTPUT_SOURCE_BEGIN;
+				OUT_SOURCE_BEGIN;
 				using A = std::array<S, 2u>;
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				SS();
 
@@ -82,9 +82,9 @@ namespace std_array_test
 
 					LF();
 
-					OUTPUT_SOURCE_BEGIN;
+					OUT_SOURCE_BEGIN;
 					const A a( { { { 1, 2 }, { 3, 4 } } } );
-					OUTPUT_SOURCE_END;
+					OUT_SOURCE_END;
 
 					LF();
 
@@ -97,9 +97,9 @@ namespace std_array_test
 				LF();
 
 				{
-					OUTPUT_SOURCE_BEGIN;
+					OUT_SOURCE_BEGIN;
 					const A b = { { { 5, 6 }, { 7, 8 } } };
-					OUTPUT_SOURCE_END;
+					OUT_SOURCE_END;
 
 					LF();
 

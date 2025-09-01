@@ -18,10 +18,10 @@ namespace play_tree
 		{
 			LS();
 
-			OUTPUT_NOTE( "Tree 의 특징" );
-			OUTPUT_COMMENT( "그래프의 일종" );
-			OUTPUT_COMMENT( "순환하지 않는 그래프" );
-			OUTPUT_COMMENT( "정점의 개수가 N 일때 연결선이 N - 1 개" );
+			OUT_NOTE( "Tree 의 특징" );
+			OUT_COMMENT( "그래프의 일종" );
+			OUT_COMMENT( "순환하지 않는 그래프" );
+			OUT_COMMENT( "정점의 개수가 N 일때 연결선이 N - 1 개" );
 
 			LS();
 

@@ -203,7 +203,7 @@ namespace windows_screen_buffer_test
 			LS();
 
 			{
-				OUTPUT_COMMENT( "ReadConsoleOutputCharacterW 를 활용해 가져온 문자열은 인코딩이 필요한 것 같다." );
+				OUT_COMMENT( "ReadConsoleOutputCharacterW 를 활용해 가져온 문자열은 인코딩이 필요한 것 같다." );
 			}
 
 			LS();

@@ -20,14 +20,14 @@ namespace template_basic_test
 		{
 			LS();
 
-			OUTPUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 1, 15 );
+			OUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 1, 15 );
 
 			LS();
 
 			{
 				DECL_MAIN( MemberVariableTest_01<int> m );
 				PROC_MAIN( m.t = 111 );
-				OUTPUT_VALUE( m.t );
+				OUT_VALUE( m.t );
 			}
 
 			LS();
@@ -37,8 +37,8 @@ namespace template_basic_test
 				std::cout << "MemberVariableTest_02<int, float> m\n";
 				PROC_MAIN( m.t1 = 111 );
 				PROC_MAIN( m.t2 = 222 );
-				OUTPUT_VALUE( m.t1 );
-				OUTPUT_VALUE( m.t2 );
+				OUT_VALUE( m.t1 );
+				OUT_VALUE( m.t2 );
 			}
 
 			LS();
@@ -62,12 +62,12 @@ namespace template_basic_test
 		{
 			LS();
 
-			OUTPUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 17, 36 );
+			OUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 17, 36 );
 
 			LS();
 
 			{
-				OUTPUT_CODE( int i = Template_Fn_R_() );
+				OUT_CODE( int i = Template_Fn_R_() );
 				std::cout << "\t" "> " "변수에 할당하는 행위는 Template 의 타입 추론에 영향을 주지 못한다." << r2tm::linefeed;
 
 				LF();
@@ -88,7 +88,7 @@ namespace template_basic_test
 			LS();
 
 			{
-				OUTPUT_CODE( int i = Template_Fn_R_A1( 123 ) );
+				OUT_CODE( int i = Template_Fn_R_A1( 123 ) );
 				std::cout << "\t" "> " "함수 인자 타입과 반환값의 타입이 다르다면 반환값의 인자 추론에 영향을 주지 못한다." << r2tm::linefeed;
 
 			}
@@ -114,7 +114,7 @@ namespace template_basic_test
 		{
 			LS();
 
-			OUTPUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 38, 61 );
+			OUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 38, 61 );
 
 			LS();
 
@@ -208,7 +208,7 @@ namespace template_basic_test
 			{
 				ConstantContainer<int, 2> c;
 
-				OUTPUT_VALUE( c() );
+				OUT_VALUE( c() );
 
 			}
 
@@ -219,7 +219,7 @@ namespace template_basic_test
 
 				LF();
 
-				OUTPUT_NOTE( "error C7592: 'float' 형식의 비형식 템플릿 매개 변수에는 최소한 '/std:c++20'이(가) 필요합니다." );
+				OUT_NOTE( "error C7592: 'float' 형식의 비형식 템플릿 매개 변수에는 최소한 '/std:c++20'이(가) 필요합니다." );
 
 			}
 
@@ -245,7 +245,7 @@ namespace template_basic_test
 			LS();
 
 			{
-				OUTPUT_FILE( "src/test_template/item/template_basic_test___parentheses___helper.hpp" );
+				OUT_FILE( "src/test_template/item/template_basic_test___parentheses___helper.hpp" );
 			}
 
 			LS();

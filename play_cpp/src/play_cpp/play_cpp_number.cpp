@@ -19,7 +19,7 @@ namespace play_cpp_number
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Binary" );
+				OUT_SUBJECT( "Binary" );
 
 				LF();
 
@@ -27,13 +27,13 @@ namespace play_cpp_number
 
 				LF();
 
-				OUTPUT_VALUE( num );
+				OUT_VALUE( num );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Oct" );
+				OUT_SUBJECT( "Oct" );
 
 				LF();
 
@@ -41,13 +41,13 @@ namespace play_cpp_number
 
 				LF();
 
-				OUTPUT_VALUE( num );
+				OUT_VALUE( num );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Dec" );
+				OUT_SUBJECT( "Dec" );
 
 				LF();
 
@@ -55,13 +55,13 @@ namespace play_cpp_number
 
 				LF();
 
-				OUTPUT_VALUE( num );
+				OUT_VALUE( num );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Hex" );
+				OUT_SUBJECT( "Hex" );
 
 				LF();
 
@@ -69,7 +69,7 @@ namespace play_cpp_number
 
 				LF();
 
-				OUTPUT_VALUE( num );
+				OUT_VALUE( num );
 			}
 
 			LS();

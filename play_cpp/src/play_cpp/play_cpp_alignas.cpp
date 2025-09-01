@@ -21,67 +21,67 @@ namespace play_cpp_alignas
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				struct alignas( 32 ) EmptyStruct {};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( alignof( EmptyStruct ) );
-				OUTPUT_SIZE( EmptyStruct );
+				OUT_VALUE( alignof( EmptyStruct ) );
+				OUT_SIZE( EmptyStruct );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				struct alignas( 8 ) CharIntFloatStruct
 				{
 					char c;
 					int i;
 					float f;
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( alignof( CharIntFloatStruct ) );
-				OUTPUT_SIZE( CharIntFloatStruct );
+				OUT_VALUE( alignof( CharIntFloatStruct ) );
+				OUT_SIZE( CharIntFloatStruct );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				struct alignas( 0 ) IntStruct
 				{
 					int i;
 				};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( alignof( IntStruct ) );
-				OUTPUT_SIZE( IntStruct );
+				OUT_VALUE( alignof( IntStruct ) );
+				OUT_SIZE( IntStruct );
 
 				LF();
 
-				OUTPUT_NOTE( "Ignore 0" );
+				OUT_NOTE( "Ignore 0" );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				//struct alignas( 1 ) IntStruct
 				//{
 				//	int i;
 				//};
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_NOTE( "1 is Error : At Least A Default Size Is Required" );
+				OUT_NOTE( "1 is Error : At Least A Default Size Is Required" );
 			}
 
 			LS();

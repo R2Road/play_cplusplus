@@ -21,7 +21,7 @@ namespace std_functional_invoke_test
 		{
 			LS();
 
-			OUTPUT_FILE( "src/test_std/item/std_functional_invoke_test_helper.hpp" );
+			OUT_FILE( "src/test_std/item/std_functional_invoke_test_helper.hpp" );
 
 			LS();
 
@@ -41,7 +41,7 @@ namespace std_functional_invoke_test
 				LF();
 
 				DECL_MAIN( S2 s_2 );
-				OUTPUT_VALUE( std::invoke( &S2::n, &s_2 ) );
+				OUT_VALUE( std::invoke( &S2::n, &s_2 ) );
 			}
 
 			LS();

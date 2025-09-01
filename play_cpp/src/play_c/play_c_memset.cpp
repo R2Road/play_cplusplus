@@ -22,43 +22,43 @@ namespace play_c_memset
 
 			DECL_MAIN( const uint32_t buffer_size = 6 );
 			DECL_MAIN( char buffer[buffer_size] = { 0 } );
-			OUTPUT_BINARIES( buffer, buffer_size );
+			OUT_BINARIES( buffer, buffer_size );
 
 			LS();
 
 			{
 				PROC_MAIN( memset( buffer, 1, 1 ) );
-				OUTPUT_BINARIES( buffer, buffer_size );
+				OUT_BINARIES( buffer, buffer_size );
 			}
 
 			LS();
 
 			{
 				PROC_MAIN( memset( buffer, 2, sizeof( buffer ) ) );
-				OUTPUT_BINARIES( buffer, buffer_size );
+				OUT_BINARIES( buffer, buffer_size );
 			}
 
 			LS();
 
 			{
 				PROC_MAIN( memset( buffer, -1, sizeof( buffer ) / 2 ) );
-				OUTPUT_BINARIES( buffer, buffer_size );
+				OUT_BINARIES( buffer, buffer_size );
 			}
 
 			LS();
 
 			{
 				PROC_MAIN( memset( buffer, 255, sizeof( buffer ) ) );
-				OUTPUT_BINARIES( buffer, buffer_size );
+				OUT_BINARIES( buffer, buffer_size );
 
 				LF();
 
 				PROC_MAIN( memset( buffer, 258, sizeof( buffer ) ) );
-				OUTPUT_BINARIES( buffer, buffer_size );
+				OUT_BINARIES( buffer, buffer_size );
 
 				LF();
 
-				OUTPUT_NOTE( "값을 byte 단위로 쓴다." );
+				OUT_NOTE( "값을 byte 단위로 쓴다." );
 			}
 
 			LS();
@@ -82,29 +82,29 @@ namespace play_c_memset
 		{
 			LS();
 
-			OUTPUT_NOTE( "값을 byte 단위로 쓴다." );
-			OUTPUT_NOTE( "4바이트 int의 경우 1을 할당하면" );
-			OUTPUT_NOTE( "00000001 00000001 00000001 00000001" );
-			OUTPUT_NOTE( "가 된다. 헷갈리지 마." );
+			OUT_NOTE( "값을 byte 단위로 쓴다." );
+			OUT_NOTE( "4바이트 int의 경우 1을 할당하면" );
+			OUT_NOTE( "00000001 00000001 00000001 00000001" );
+			OUT_NOTE( "가 된다. 헷갈리지 마." );
 
 			LS();
 
 			DECL_MAIN( const uint32_t buffer_size = 6 );
 			DECL_MAIN( int buffer[buffer_size] = { 0 } );
-			OUTPUT_BINARIES( buffer, buffer_size );
+			OUT_BINARIES( buffer, buffer_size );
 
 			LS();
 
 			{
 				PROC_MAIN( memset( buffer, 1, 1 ) );
-				OUTPUT_BINARIES( buffer, buffer_size );
+				OUT_BINARIES( buffer, buffer_size );
 			}
 
 			LS();
 
 			{
 				PROC_MAIN( memset( buffer, 2, sizeof( buffer ) ) );
-				OUTPUT_BINARIES( buffer, buffer_size );
+				OUT_BINARIES( buffer, buffer_size );
 			}
 
 			LS();

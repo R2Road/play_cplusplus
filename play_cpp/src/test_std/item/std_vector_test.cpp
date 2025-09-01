@@ -51,7 +51,7 @@ namespace std_vector_test
 
 				std::cout << r2tm::linefeed2;
 
-				OUTPUT_NOTE( "resize 는 capacity 가 증가한 경우 메모리를 할당하고 이전 데이터를 카피한다." );
+				OUT_NOTE( "resize 는 capacity 가 증가한 경우 메모리를 할당하고 이전 데이터를 카피한다." );
 			}
 
 			LS();
@@ -92,44 +92,44 @@ namespace std_vector_test
 			LS();
 
 			{
-				OUTPUT_NOTE( "size가 줄어들 때 메모리가 재할당 되는지 궁금했다. > 재할당 없다." );
-				OUTPUT_NOTE( "줄어든 size가 이전 크기로 돌아갈 때 메모리가 재할당 되는지 궁금했다. > 재할당 없다." );
+				OUT_NOTE( "size가 줄어들 때 메모리가 재할당 되는지 궁금했다. > 재할당 없다." );
+				OUT_NOTE( "줄어든 size가 이전 크기로 돌아갈 때 메모리가 재할당 되는지 궁금했다. > 재할당 없다." );
 			}
 
 			LS();
 
 			DECL_MAIN( std::vector<int> container( { 1, 2, 3, 4 } ) );
-			OUTPUT_VALUE( container.size() );
-			OUTPUT_VALUE( container.capacity() );
-			OUTPUT_VALUE( container.data() );
+			OUT_VALUE( container.size() );
+			OUT_VALUE( container.capacity() );
+			OUT_VALUE( container.data() );
 
 			LS();
 			{
 				PROC_MAIN( container.resize( 4 ) );
-				OUTPUT_VALUE( container.size() );
-				OUTPUT_VALUE( container.capacity() );
-				OUTPUT_VALUE( container.data() );
+				OUT_VALUE( container.size() );
+				OUT_VALUE( container.capacity() );
+				OUT_VALUE( container.data() );
 
 				std::cout << r2tm::linefeed2;
 
 				PROC_MAIN( container.resize( 2 ) );
-				OUTPUT_VALUE( container.size() );
-				OUTPUT_VALUE( container.capacity() );
-				OUTPUT_VALUE( container.data() );
+				OUT_VALUE( container.size() );
+				OUT_VALUE( container.capacity() );
+				OUT_VALUE( container.data() );
 
 				std::cout << r2tm::linefeed2;
 
 				PROC_MAIN( container.resize( 4 ) );
-				OUTPUT_VALUE( container.size() );
-				OUTPUT_VALUE( container.capacity() );
-				OUTPUT_VALUE( container.data() );
+				OUT_VALUE( container.size() );
+				OUT_VALUE( container.capacity() );
+				OUT_VALUE( container.data() );
 
 				std::cout << r2tm::linefeed2;
 
 				PROC_MAIN( container.resize( 10 ) );
-				OUTPUT_VALUE( container.size() );
-				OUTPUT_VALUE( container.capacity() );
-				OUTPUT_VALUE( container.data() );
+				OUT_VALUE( container.size() );
+				OUT_VALUE( container.capacity() );
+				OUT_VALUE( container.data() );
 			}
 
 			LS();
@@ -154,9 +154,9 @@ namespace std_vector_test
 			LS();
 
 			DECL_MAIN( std::vector<int> container( { 2, 3 } ) );
-			OUTPUT_VALUE( container.size() );
-			OUTPUT_VALUE( container.capacity() );
-			OUTPUT_VALUE( container.data() );
+			OUT_VALUE( container.size() );
+			OUT_VALUE( container.capacity() );
+			OUT_VALUE( container.data() );
 
 			LF();
 
@@ -166,9 +166,9 @@ namespace std_vector_test
 
 			{
 				PROC_MAIN( container.clear() );
-				OUTPUT_VALUE( container.size() );
-				OUTPUT_VALUE( container.capacity() );
-				OUTPUT_VALUE( container.data() );
+				OUT_VALUE( container.size() );
+				OUT_VALUE( container.capacity() );
+				OUT_VALUE( container.data() );
 
 				LF();
 
@@ -179,9 +179,9 @@ namespace std_vector_test
 
 			{
 				PROC_MAIN( container.resize( 2u ) );
-				OUTPUT_VALUE( container.size() );
-				OUTPUT_VALUE( container.capacity() );
-				OUTPUT_VALUE( container.data() );
+				OUT_VALUE( container.size() );
+				OUT_VALUE( container.capacity() );
+				OUT_VALUE( container.data() );
 
 				LF();
 
@@ -189,7 +189,7 @@ namespace std_vector_test
 
 				LF();
 
-				OUTPUT_NOTE( "clear 는 최종적으로 Allocator에 Destory 요청하지만 메모리를 해제하는 것은 아니다." );
+				OUT_NOTE( "clear 는 최종적으로 Allocator에 Destory 요청하지만 메모리를 해제하는 것은 아니다." );
 			}
 
 			LS();
@@ -214,34 +214,34 @@ namespace std_vector_test
 			LS();
 
 			DECL_MAIN( std::vector<int> container( { 2, 3 } ) );
-			OUTPUT_VALUE( container.capacity() );
-			OUTPUT_VALUE( container.data() );
+			OUT_VALUE( container.capacity() );
+			OUT_VALUE( container.data() );
 
 			LS();
 
 			{
 				PROC_MAIN( container.reserve( 1u ) );
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
-				OUTPUT_VALUE( container.capacity() );
-				OUTPUT_VALUE( container.data() );
+				OUT_VALUE( container.capacity() );
+				OUT_VALUE( container.data() );
 
 				LF();
 
 				PROC_MAIN( container.reserve( 2u ) );
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
-				OUTPUT_VALUE( container.capacity() );
-				OUTPUT_VALUE( container.data() );
+				OUT_VALUE( container.capacity() );
+				OUT_VALUE( container.data() );
 
 				LF();
 
 				PROC_MAIN( container.reserve( 4u ) );
 				std::cout << r2tm::tab << "> container : " << container << r2tm::linefeed;
-				OUTPUT_VALUE( container.capacity() );
-				OUTPUT_VALUE( container.data() );
+				OUT_VALUE( container.capacity() );
+				OUT_VALUE( container.data() );
 
 				LF();
 
-				OUTPUT_NOTE( "capacity 가 증가하면 메모리는 재할당 된다." );
+				OUT_NOTE( "capacity 가 증가하면 메모리는 재할당 된다." );
 			}
 
 			LS();
@@ -278,7 +278,7 @@ namespace std_vector_test
 			LS();
 
 			{
-				OUTPUT_CODE( container.resize( 10 ) );
+				OUT_CODE( container.resize( 10 ) );
 
 				LF();
 
@@ -307,9 +307,9 @@ namespace std_vector_test
 			LS();
 
 			DECL_MAIN( std::vector<bool> container );
-			OUTPUT_VALUE( container.capacity() );
-			OUTPUT_VALUE( container._Myvec.capacity() );
-			OUTPUT_VALUE( container.begin()._Myptr );
+			OUT_VALUE( container.capacity() );
+			OUT_VALUE( container._Myvec.capacity() );
+			OUT_VALUE( container.begin()._Myptr );
 
 			LS();
 
@@ -318,10 +318,10 @@ namespace std_vector_test
 
 				LF();
 
-				OUTPUT_VALUE( container.capacity() );
-				OUTPUT_VALUE( container._Myvec.capacity() );
-				OUTPUT_BINARIES( &container._Myvec.front(), 1 );
-				OUTPUT_VALUE( container.begin()._Myptr );
+				OUT_VALUE( container.capacity() );
+				OUT_VALUE( container._Myvec.capacity() );
+				OUT_BINARIES( &container._Myvec.front(), 1 );
+				OUT_VALUE( container.begin()._Myptr );
 			}
 
 			LS();
@@ -331,10 +331,10 @@ namespace std_vector_test
 
 				LF();
 
-				OUTPUT_VALUE( container.capacity() );
-				OUTPUT_VALUE( container._Myvec.capacity() );
-				OUTPUT_BINARIES( &container._Myvec.front(), 2 );
-				OUTPUT_VALUE( container.begin()._Myptr );
+				OUT_VALUE( container.capacity() );
+				OUT_VALUE( container._Myvec.capacity() );
+				OUT_BINARIES( &container._Myvec.front(), 2 );
+				OUT_VALUE( container.begin()._Myptr );
 			}
 
 			LS();
@@ -346,10 +346,10 @@ namespace std_vector_test
 
 				LF();
 
-				OUTPUT_VALUE( container.capacity() );
-				OUTPUT_VALUE( container._Myvec.capacity() );
-				OUTPUT_BINARIES( &container._Myvec.front(), 2 );
-				OUTPUT_VALUE( container.begin()._Myptr );
+				OUT_VALUE( container.capacity() );
+				OUT_VALUE( container._Myvec.capacity() );
+				OUT_BINARIES( &container._Myvec.front(), 2 );
+				OUT_VALUE( container.begin()._Myptr );
 			}
 
 			LS();
@@ -359,10 +359,10 @@ namespace std_vector_test
 
 				LF();
 
-				OUTPUT_VALUE( container.capacity() );
-				OUTPUT_VALUE( container._Myvec.capacity() );
-				OUTPUT_BINARIES( &container._Myvec.front(), 2 );
-				OUTPUT_VALUE( container.begin()._Myptr );
+				OUT_VALUE( container.capacity() );
+				OUT_VALUE( container._Myvec.capacity() );
+				OUT_BINARIES( &container._Myvec.front(), 2 );
+				OUT_VALUE( container.begin()._Myptr );
 			}
 
 			LS();
@@ -392,7 +392,7 @@ namespace std_vector_test
 			LS();
 
 			{
-				OUTPUT_CODE( container_2.erase( container_1.begin() ) );
+				OUT_CODE( container_2.erase( container_1.begin() ) );
 
 				LF();
 
@@ -426,11 +426,11 @@ namespace std_vector_test
 
 			{
 #if defined( DEBUG ) || defined( _DEBUG )
-				OUTPUT_CODE( auto cur = container_1.end() );
-				OUTPUT_CODE( ( *cur ) );
+				OUT_CODE( auto cur = container_1.end() );
+				OUT_CODE( ( *cur ) );
 #else
 				DECL_MAIN( auto cur = container_1.end() );
-				OUTPUT_VALUE( ( *cur ) );
+				OUT_VALUE( ( *cur ) );
 #endif
 				LF();
 
@@ -441,13 +441,13 @@ namespace std_vector_test
 
 			{
 #if defined( DEBUG ) || defined( _DEBUG )
-				OUTPUT_CODE( auto cur = container_1.end() );
-				OUTPUT_CODE( ++cur );
+				OUT_CODE( auto cur = container_1.end() );
+				OUT_CODE( ++cur );
 #else
 				DECL_MAIN( auto cur = container_1.end() );
 				PROC_MAIN( ++cur );
 
-				OUTPUT_VALUE( ( *cur ) );
+				OUT_VALUE( ( *cur ) );
 #endif
 				LF();
 
@@ -459,7 +459,7 @@ namespace std_vector_test
 			{
 				DECL_MAIN( auto cur = container_1.end() );
 				PROC_MAIN( --cur );
-				OUTPUT_VALUE( ( *cur ) );
+				OUT_VALUE( ( *cur ) );
 			}
 
 			LS();
@@ -489,19 +489,19 @@ namespace std_vector_test
 			LS();
 
 			{
-				OUTPUT_VALUE( v_1.data() );
-				OUTPUT_VALUE( v_2.data() );
+				OUT_VALUE( v_1.data() );
+				OUT_VALUE( v_2.data() );
 
 				LF();
 
 				PROC_MAIN( v_1 = std::move( v_2 ) );
-				OUTPUT_VALUE( v_1 );
-				OUTPUT_VALUE( v_2 );
+				OUT_VALUE( v_1 );
+				OUT_VALUE( v_2 );
 
 				LF();
 
-				OUTPUT_VALUE( v_1.data() );
-				OUTPUT_VALUE( v_2.data() );
+				OUT_VALUE( v_1.data() );
+				OUT_VALUE( v_2.data() );
 			}
 
 			LS();

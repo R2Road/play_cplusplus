@@ -23,7 +23,7 @@ namespace std_fstream_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "없는 파일 열기" );
+				OUT_SUBJECT( "없는 파일 열기" );
 
 				LF();
 
@@ -43,7 +43,7 @@ namespace std_fstream_test
 
 			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROC_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-			OUTPUT_VALUE( p );
+			OUT_VALUE( p );
 
 			LS();
 
@@ -52,7 +52,7 @@ namespace std_fstream_test
 
 				LF();
 
-				OUTPUT_SUBJECT( "있는 파일 열기" );
+				OUT_SUBJECT( "있는 파일 열기" );
 
 				LF();
 
@@ -69,7 +69,7 @@ namespace std_fstream_test
 
 				LF();
 
-				OUTPUT_NOTE( "파일을 닫아도 유효성 검사를 통과 한다." );
+				OUT_NOTE( "파일을 닫아도 유효성 검사를 통과 한다." );
 
 				LF();
 
@@ -80,7 +80,7 @@ namespace std_fstream_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "open 함수로 열기" );
+				OUT_SUBJECT( "open 함수로 열기" );
 
 				LF();
 
@@ -120,7 +120,7 @@ namespace std_fstream_test
 
 			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROC_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-			OUTPUT_VALUE( p );
+			OUT_VALUE( p );
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
 			LS();
@@ -131,19 +131,19 @@ namespace std_fstream_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "std::ifstream::get" );
+				OUT_SUBJECT( "std::ifstream::get" );
 
 				LF();
 
-				OUTPUT_VALUE( static_cast<char>( ifs.get() ) );
-				OUTPUT_VALUE( static_cast<char>( ifs.get() ) );
-				OUTPUT_VALUE( static_cast<char>( ifs.get() ) );
+				OUT_VALUE( static_cast<char>( ifs.get() ) );
+				OUT_VALUE( static_cast<char>( ifs.get() ) );
+				OUT_VALUE( static_cast<char>( ifs.get() ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "while" );
+				OUT_SUBJECT( "while" );
 
 				LF();
 
@@ -179,7 +179,7 @@ namespace std_fstream_test
 
 			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROC_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-			OUTPUT_VALUE( p );
+			OUT_VALUE( p );
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
 			LS();
@@ -190,7 +190,7 @@ namespace std_fstream_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "std::getline" );
+				OUT_SUBJECT( "std::getline" );
 
 				LF();
 
@@ -202,7 +202,7 @@ namespace std_fstream_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "while" );
+				OUT_SUBJECT( "while" );
 
 				LF();
 
@@ -238,7 +238,7 @@ namespace std_fstream_test
 
 			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROC_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-			OUTPUT_VALUE( p );
+			OUT_VALUE( p );
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
 			LS();
@@ -249,7 +249,7 @@ namespace std_fstream_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "std::ifstream::getline" );
+				OUT_SUBJECT( "std::ifstream::getline" );
 
 				LF();
 
@@ -261,7 +261,7 @@ namespace std_fstream_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "while" );
+				OUT_SUBJECT( "while" );
 
 				LF();
 
@@ -297,7 +297,7 @@ namespace std_fstream_test
 
 			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROC_SUB( p.append( "resources" ).append( "std_fstream_test_0.txt" ) );
-			OUTPUT_VALUE( p );
+			OUT_VALUE( p );
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
 			LS();
@@ -308,7 +308,7 @@ namespace std_fstream_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Operator >>" );
+				OUT_SUBJECT( "Operator >>" );
 
 				LF();
 
@@ -320,7 +320,7 @@ namespace std_fstream_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "while" );
+				OUT_SUBJECT( "while" );
 
 				LF();
 
@@ -356,12 +356,12 @@ namespace std_fstream_test
 
 			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
 			PROC_SUB( p.append( "resources" ).append( "temp.txt" ) );
-			OUTPUT_VALUE( p );
+			OUT_VALUE( p );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "파일 없음 확인" );
+				OUT_SUBJECT( "파일 없음 확인" );
 
 				LF();
 
@@ -376,7 +376,7 @@ namespace std_fstream_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "파일 생성" );
+				OUT_SUBJECT( "파일 생성" );
 
 				LF();
 
@@ -392,7 +392,7 @@ namespace std_fstream_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "파일 있음 확인" );
+				OUT_SUBJECT( "파일 있음 확인" );
 
 				LF();
 
@@ -402,7 +402,7 @@ namespace std_fstream_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "파일 삭제" );
+				OUT_SUBJECT( "파일 삭제" );
 
 				LF();
 
@@ -412,7 +412,7 @@ namespace std_fstream_test
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "파일 없음 확인" );
+				OUT_SUBJECT( "파일 없음 확인" );
 
 				LF();
 

@@ -121,30 +121,30 @@ namespace play_cpp_char
 			LS();
 
 			{
-				OUTPUT_NOTE( "escape 문자들이 무시되고 입력된 그대로 출력된다." );
+				OUT_NOTE( "escape 문자들이 무시되고 입력된 그대로 출력된다." );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				const char* str = R"(
                                 Test
                                 Test \n
                                 Test \t
 				)";
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
-				OUTPUT_VALUE( str );
+				OUT_VALUE( str );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "delimeter : 따옴표 사용이 문제가 되는 경우( www 주소를 다룬다거나 )에..." );
-				OUTPUT_NOTE( "명확하게 구분지어 주기 위해 사용한다." );
-				OUTPUT_NOTE( "앞 뒤 같은 문자열로 맞춰주면 된다." );
-				OUTPUT_NOTE( "최대 16자." );
+				OUT_NOTE( "delimeter : 따옴표 사용이 문제가 되는 경우( www 주소를 다룬다거나 )에..." );
+				OUT_NOTE( "명확하게 구분지어 주기 위해 사용한다." );
+				OUT_NOTE( "앞 뒤 같은 문자열로 맞춰주면 된다." );
+				OUT_NOTE( "최대 16자." );
 
 				LF();
 
@@ -152,7 +152,7 @@ namespace play_cpp_char
 
 				LF();
 
-				OUTPUT_VALUE( str );
+				OUT_VALUE( str );
 			}
 
 			LS();

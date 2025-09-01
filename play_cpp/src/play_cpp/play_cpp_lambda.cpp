@@ -22,9 +22,9 @@ namespace play_cpp_lambda
 		{
 			LS();
 
-			OUTPUT_NOTE( "lambda 특성" );
-			OUTPUT_COMMENT( "익명 클래스와 operator() 의 조합." );
-			OUTPUT_COMMENT( "class의 this pointer를 capture 하면 friend 로 지정된다." );
+			OUT_NOTE( "lambda 특성" );
+			OUT_COMMENT( "익명 클래스와 operator() 의 조합." );
+			OUT_COMMENT( "class의 this pointer를 capture 하면 friend 로 지정된다." );
 
 			LS();
 
@@ -37,14 +37,14 @@ namespace play_cpp_lambda
 
 			{
 				DECL_MAIN( auto l = []()->int { return 1; }; );
-				OUTPUT_VALUE( l() );
+				OUT_VALUE( l() );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( auto l = []( const int i )->int { return i; }; );
-				OUTPUT_VALUE( l( 3 ) );
+				OUT_VALUE( l( 3 ) );
 			}
 
 			LS();
@@ -80,8 +80,8 @@ namespace play_cpp_lambda
 			LS();
 
 			{
-				OUTPUT_NOTE( "Captures Default to Const Value" );
-				OUTPUT_NOTE( "https://www.learncpp.com/cpp-tutorial/lambda-captures/" );
+				OUT_NOTE( "Captures Default to Const Value" );
+				OUT_NOTE( "https://www.learncpp.com/cpp-tutorial/lambda-captures/" );
 
 				LF();
 
@@ -412,28 +412,28 @@ namespace play_cpp_lambda
 
 			{
 				DECL_MAIN( auto l = []() {} );
-				OUTPUT_VALUE( sizeof( l ) );
+				OUT_VALUE( sizeof( l ) );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( auto l = []() { int i = 0; i = 1; } );
-				OUTPUT_VALUE( sizeof( l ) );
+				OUT_VALUE( sizeof( l ) );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( auto l = [i = 0]() {} );
-				OUTPUT_VALUE( sizeof( l ) );
+				OUT_VALUE( sizeof( l ) );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( auto l = [ll = 0ll]() {} );
-				OUTPUT_VALUE( sizeof( l ) );
+				OUT_VALUE( sizeof( l ) );
 			}
 
 			LS();
@@ -462,7 +462,7 @@ namespace play_cpp_lambda
 				DECL_MAIN( int64_t j = 255 );
 				( i ); ( j ); // warning 제거
 				DECL_MAIN( auto l = [=]() {} );
-				OUTPUT_VALUE( sizeof( l ) );
+				OUT_VALUE( sizeof( l ) );
 
 				LF();
 
@@ -476,8 +476,8 @@ namespace play_cpp_lambda
 				DECL_MAIN( int64_t j = 255 );
 				( j ); // warning 제거
 				DECL_MAIN( auto l = [=]() { std::cout << i << r2tm::linefeed; } );
-				OUTPUT_VALUE( sizeof( l ) );
-				OUTPUT_BINARY( l );
+				OUT_VALUE( sizeof( l ) );
+				OUT_BINARY( l );
 
 				LF();
 
@@ -487,15 +487,15 @@ namespace play_cpp_lambda
 			LS();
 
 			{
-				OUTPUT_NOTE( "capture 했지만 사용하지 않은 변수들은 제거되는 모양이다. 스팩? 최적화?" );
+				OUT_NOTE( "capture 했지만 사용하지 않은 변수들은 제거되는 모양이다. 스팩? 최적화?" );
 
 				LF();
 
 				DECL_MAIN( int64_t i = 1 );
 				DECL_MAIN( int64_t j = 255 );
 				DECL_MAIN( auto l = [=]() { std::cout << i << j << r2tm::linefeed; } );
-				OUTPUT_VALUE( sizeof( l ) );
-				OUTPUT_BINARY( l );
+				OUT_VALUE( sizeof( l ) );
+				OUT_BINARY( l );
 
 				LF();
 
@@ -532,7 +532,7 @@ namespace play_cpp_lambda
 				DECL_MAIN( S s2 );
 				( s1 ); ( s2 ); // warning 제거
 				DECL_MAIN( auto l = [&]() {} );
-				OUTPUT_VALUE( sizeof( l ) );
+				OUT_VALUE( sizeof( l ) );
 
 				LF();
 
@@ -546,8 +546,8 @@ namespace play_cpp_lambda
 				DECL_MAIN( S s2 );
 				( s2 ); // warning 제거
 				DECL_MAIN( auto l = [&]() { std::cout << s1.i << r2tm::linefeed; } );
-				OUTPUT_VALUE( sizeof( l ) );
-				OUTPUT_BINARY( l );
+				OUT_VALUE( sizeof( l ) );
+				OUT_BINARY( l );
 
 				LF();
 
@@ -557,15 +557,15 @@ namespace play_cpp_lambda
 			LS();
 
 			{
-				OUTPUT_NOTE( "capture 했지만 사용하지 않은 변수들은 제거되는 모양이다. 스팩? 최적화?" );
+				OUT_NOTE( "capture 했지만 사용하지 않은 변수들은 제거되는 모양이다. 스팩? 최적화?" );
 
 				LF();
 
 				DECL_MAIN( S s1 );
 				DECL_MAIN( S s2 );
 				DECL_MAIN( auto l = [&]() { std::cout << s1.i << s2.j << r2tm::linefeed; } );
-				OUTPUT_VALUE( sizeof( l ) );
-				OUTPUT_BINARY( l );
+				OUT_VALUE( sizeof( l ) );
+				OUT_BINARY( l );
 
 				LF();
 
@@ -594,34 +594,34 @@ namespace play_cpp_lambda
 			LS();
 
 			{
-				OUTPUT_NOTE( "this capture는 익명 class 안에 this를 담는 멤버 변수가 하나 추가된다." );
-				OUTPUT_NOTE( "람다 안에서 사용한 this는 capture 한 this로 여겨진다." );
+				OUT_NOTE( "this capture는 익명 class 안에 this를 담는 멤버 변수가 하나 추가된다." );
+				OUT_NOTE( "람다 안에서 사용한 this는 capture 한 this로 여겨진다." );
 
 				LF();
 
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				struct
 				{
 					int i = 0;
 					void Do() {
-						OUTPUT_BINARY( this );
+						OUT_BINARY( this );
 
 						LF();
 
 						auto l = [this, j = 255ll]()
 						{
 							( this->i );
-							OUTPUT_VALUE( this );
+							OUT_VALUE( this );
 						};
-						OUTPUT_SIZE( l );
-						OUTPUT_BINARY( l );
+						OUT_SIZE( l );
+						OUT_BINARY( l );
 
 						LF();
 
 						PROC_MAIN( l() );
 					}
 				} s;
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 
@@ -631,12 +631,12 @@ namespace play_cpp_lambda
 			LS();
 
 			{
-				OUTPUT_NOTE( "람다 안에서 자신의 this pointer를 목표로한 this 사용이 안된다." );
+				OUT_NOTE( "람다 안에서 자신의 this pointer를 목표로한 this 사용이 안된다." );
 
 				LF();
 
-				OUTPUT_CODE( int i = 0 );
-				OUTPUT_CODE( auto l = [=]() { std::cout << this->i << r2tm::linefeed; } );
+				OUT_CODE( int i = 0 );
+				OUT_CODE( auto l = [=]() { std::cout << this->i << r2tm::linefeed; } );
 			}
 
 			LS();
@@ -663,35 +663,35 @@ namespace play_cpp_lambda
 
 			{
 				DECL_MAIN( auto l = []() {} );
-				OUTPUT_VALUE( sizeof( l ) );
+				OUT_VALUE( sizeof( l ) );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( std::function<void()> f = []() {} );
-				OUTPUT_VALUE( sizeof( f ) );
+				OUT_VALUE( sizeof( f ) );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( auto l = [ll = 10ll]() {} );
-				OUTPUT_VALUE( sizeof( l ) );
+				OUT_VALUE( sizeof( l ) );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( std::function<void()> f = [ll = 10ll]() {} );
-				OUTPUT_VALUE( sizeof( f ) );
+				OUT_VALUE( sizeof( f ) );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( std::function<void()> f = LocalFunction );
-				OUTPUT_VALUE( sizeof( f ) );
+				OUT_VALUE( sizeof( f ) );
 			}
 
 			LS();
@@ -704,7 +704,7 @@ namespace play_cpp_lambda
 				} );
 				DECL_MAIN( S s );
 				DECL_MAIN( std::function<void()> f = std::bind( &S::f, &s ) );
-				OUTPUT_VALUE( sizeof( f ) );
+				OUT_VALUE( sizeof( f ) );
 			}
 
 			LS();

@@ -26,8 +26,8 @@ namespace play_cpp_new
 
 				LF();
 
-				OUTPUT_VALUE( *i );
-				OUTPUT_BINARY( *i );
+				OUT_VALUE( *i );
+				OUT_BINARY( *i );
 
 				LF();
 
@@ -42,8 +42,8 @@ namespace play_cpp_new
 
 				LF();
 
-				OUTPUT_VALUE( *i );
-				OUTPUT_BINARY( *i );
+				OUT_VALUE( *i );
+				OUT_BINARY( *i );
 
 				LF();
 
@@ -58,8 +58,8 @@ namespace play_cpp_new
 
 				LF();
 
-				OUTPUT_VALUE( *i );
-				OUTPUT_BINARY( *i );
+				OUT_VALUE( *i );
+				OUT_BINARY( *i );
 
 				LF();
 
@@ -89,8 +89,8 @@ namespace play_cpp_new
 
 			{
 				DECL_MAIN( int* i = new int[10] );
-				OUTPUT_VALUE( *i );
-				OUTPUT_VALUE( i[1] );
+				OUT_VALUE( *i );
+				OUT_VALUE( i[1] );
 
 				LF();
 
@@ -111,8 +111,8 @@ namespace play_cpp_new
 
 				LF();
 
-				OUTPUT_VALUE( i[3] );
-				OUTPUT_VALUE( i[4] );
+				OUT_VALUE( i[3] );
+				OUT_VALUE( i[4] );
 
 				LF();
 
@@ -123,7 +123,7 @@ namespace play_cpp_new
 
 			{
 				DECL_MAIN( char* str = new char[7] );
-				OUTPUT_VALUE( str );
+				OUT_VALUE( str );
 
 				LF();
 
@@ -172,26 +172,26 @@ namespace play_cpp_new
 				DECL_MAIN( int i = 123 );
 				DECL_MAIN( float* fp = new (&i) float );
 
-				OUTPUT_VALUE( *fp );
+				OUT_VALUE( *fp );
 
 				LF();
 
 				PROC_MAIN( *fp = 3.14f );
-				OUTPUT_VALUE( *fp );
+				OUT_VALUE( *fp );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( int i = 65 );
-				OUTPUT_VALUE( i );
-				OUTPUT_BINARY( i );
+				OUT_VALUE( i );
+				OUT_BINARY( i );
 
 				LF();
 
 				DECL_MAIN( char* cp = new ( &i ) char );
-				OUTPUT_VALUE( *cp );
-				OUTPUT_BINARY( *cp );
+				OUT_VALUE( *cp );
+				OUT_BINARY( *cp );
 			}
 
 			LS();

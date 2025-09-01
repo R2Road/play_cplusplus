@@ -27,7 +27,7 @@ namespace play_cpp_class_private_inheritance
 		{
 			LS();
 
-			OUTPUT_FILE( "src/play_cpp/play_cpp_class_private_inheritance_helper___virtual_interface.hpp" );
+			OUT_FILE( "src/play_cpp/play_cpp_class_private_inheritance_helper___virtual_interface.hpp" );
 
 			LS();
 
@@ -71,7 +71,7 @@ namespace play_cpp_class_private_inheritance
 		{
 			LS();
 
-			OUTPUT_FILE( "src/play_cpp/play_cpp_class_private_inheritance_helper___pure_virtual_interface.hpp" );
+			OUT_FILE( "src/play_cpp/play_cpp_class_private_inheritance_helper___pure_virtual_interface.hpp" );
 
 			LS();
 
@@ -115,7 +115,7 @@ namespace play_cpp_class_private_inheritance
 		{
 			LS();
 
-			OUTPUT_FILE( "src/play_cpp/play_cpp_class_private_inheritance_helper___demo1.hpp" );
+			OUT_FILE( "src/play_cpp/play_cpp_class_private_inheritance_helper___demo1.hpp" );
 
 			LS();
 
@@ -167,22 +167,22 @@ namespace play_cpp_class_private_inheritance
 			LS();
 
 			{
-				OUTPUT_CODE( T1().Do() );
-				OUTPUT_COMMENT( "Not Working" );
-				OUTPUT_CODE( T1().i );
-				OUTPUT_COMMENT( "Not Working" );
+				OUT_CODE( T1().Do() );
+				OUT_COMMENT( "Not Working" );
+				OUT_CODE( T1().i );
+				OUT_COMMENT( "Not Working" );
 			}
 
 			LS();
 
 			{
 				PROC_MAIN( T2().Do() );
-				OUTPUT_VALUE( T2().i );
+				OUT_VALUE( T2().i );
 			}
 
 			LS();
 
-			OUTPUT_NOTE( "private 상속한 멤버를 using 으로 열어줄 수 있다." );
+			OUT_NOTE( "private 상속한 멤버를 using 으로 열어줄 수 있다." );
 
 			LS();
 
@@ -205,23 +205,23 @@ namespace play_cpp_class_private_inheritance
 		{
 			LS();
 
-			OUTPUT_FILE( "src/play_cpp/play_cpp_class_private_inheritance_helper___ienum.hpp" );
+			OUT_FILE( "src/play_cpp/play_cpp_class_private_inheritance_helper___ienum.hpp" );
 
 			LS();
 
 			{
-				OUTPUT_VALUE( sizeof( play_cpp_class_private_inheritance_helper___ienum::iEnum ) );
-				OUTPUT_VALUE( sizeof( play_cpp_class_private_inheritance_helper___ienum::T ) );
+				OUT_VALUE( sizeof( play_cpp_class_private_inheritance_helper___ienum::iEnum ) );
+				OUT_VALUE( sizeof( play_cpp_class_private_inheritance_helper___ienum::T ) );
 
 				LF();
 
 				DECL_MAIN( play_cpp_class_private_inheritance_helper___ienum::T t );
-				OUTPUT_VALUE( t.Do() );
+				OUT_VALUE( t.Do() );
 			}
 
 			LS();
 
-			OUTPUT_NOTE( "굳이 이런 짓을 해야만 하는가?" );
+			OUT_NOTE( "굳이 이런 짓을 해야만 하는가?" );
 
 			LS();
 
@@ -244,20 +244,20 @@ namespace play_cpp_class_private_inheritance
 		{
 			LS();
 
-			OUTPUT_FILE( "src/play_cpp/play_cpp_class_helper___nvi.hpp" );
+			OUT_FILE( "src/play_cpp/play_cpp_class_helper___nvi.hpp" );
 
 			LS();
 
 			{
 				DECL_MAIN( play_cpp_class_helper___nvi::D1 d1 );
-				OUTPUT_VALUE( d1.Do() );
+				OUT_VALUE( d1.Do() );
 			}
 
 			LS();
 
 			{
 				DECL_MAIN( play_cpp_class_helper___nvi::D2 d2 );
-				OUTPUT_VALUE( d2.Do() );
+				OUT_VALUE( d2.Do() );
 			}
 
 			LS();

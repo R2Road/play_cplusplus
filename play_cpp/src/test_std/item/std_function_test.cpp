@@ -34,7 +34,7 @@ namespace std_function_test
 		{
 			LS();
 
-			OUTPUT_NOTE( "REF : https://en.cppreference.com/w/cpp/utility/functional/function" );
+			OUT_NOTE( "REF : https://en.cppreference.com/w/cpp/utility/functional/function" );
 
 			LS();
 			
@@ -93,7 +93,7 @@ namespace std_function_test
 
 				LF();
 
-				OUTPUT_VALUE( f( s ) );
+				OUT_VALUE( f( s ) );
 			}
 
 			LS();

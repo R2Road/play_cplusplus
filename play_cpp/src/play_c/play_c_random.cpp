@@ -24,13 +24,13 @@ namespace play_c_random
 			{
 				for( int i = 0; 5 > i; ++i )
 				{
-					OUTPUT_VALUE( rand() );
+					OUT_VALUE( rand() );
 				}
 
 				LF();
 
-				OUTPUT_NOTE( "Same Value Printed When Every Single Execute" );
-				OUTPUT_NOTE( "프로그램 새로 기동해도 rand() 가 반환하는 값과 순서는 같다." );
+				OUT_NOTE( "Same Value Printed When Every Single Execute" );
+				OUT_NOTE( "프로그램 새로 기동해도 rand() 가 반환하는 값과 순서는 같다." );
 			}
 
 			LS();
@@ -42,13 +42,13 @@ namespace play_c_random
 
 				for( int i = 0; 5 > i; ++i )
 				{
-					OUTPUT_VALUE( rand() );
+					OUT_VALUE( rand() );
 				}
 
 				LF();
 
-				OUTPUT_NOTE( "srand( 1 ) is Default" );
-				OUTPUT_NOTE( "srand( n ) is init rand() Sequence" );
+				OUT_NOTE( "srand( 1 ) is Default" );
+				OUT_NOTE( "srand( n ) is init rand() Sequence" );
 			}
 
 			LS();

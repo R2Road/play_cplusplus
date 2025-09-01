@@ -29,8 +29,8 @@ namespace play_c_pointer
 				LF();
 
 				std::cout << r2tm::tab << "+ adress" << r2tm::linefeed;
-				OUTPUT_VALUE( &i );
-				OUTPUT_VALUE( ip );
+				OUT_VALUE( &i );
+				OUT_VALUE( ip );
 			}
 
 			LS();
@@ -59,36 +59,36 @@ namespace play_c_pointer
 			LS();
 
 			{
-				OUTPUT_NOTE( "adress of ip" );
-				OUTPUT_VALUE( ip );
+				OUT_NOTE( "adress of ip" );
+				OUT_VALUE( ip );
 
 				LF();
 
-				OUTPUT_NOTE( "adress of ip + 1" );
-				OUTPUT_VALUE( ip + 1 );
+				OUT_NOTE( "adress of ip + 1" );
+				OUT_VALUE( ip + 1 );
 
 				LF();
 
-				OUTPUT_NOTE( "offset : ( ip + 1 ) ~ ip" );
-				OUTPUT_VALUE( ip + 1 );
-				OUTPUT_VALUE( ( ( ip + 1 ) - ip ) );
+				OUT_NOTE( "offset : ( ip + 1 ) ~ ip" );
+				OUT_VALUE( ip + 1 );
+				OUT_VALUE( ( ( ip + 1 ) - ip ) );
 
 				LF();
 
-				OUTPUT_NOTE( "offset : ( ip + 2 ) ~ ip" );
-				OUTPUT_VALUE( ip + 2 );
-				OUTPUT_VALUE( ( ( ip + 2 ) - ip ) );
+				OUT_NOTE( "offset : ( ip + 2 ) ~ ip" );
+				OUT_VALUE( ip + 2 );
+				OUT_VALUE( ( ( ip + 2 ) - ip ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "offset : ( char* )( ip + 2 ) ~ ( char* )ip" );
-				OUTPUT_VALUE( ( (char*)( ip + 2 ) ) - ( (char*)ip ) );
+				OUT_NOTE( "offset : ( char* )( ip + 2 ) ~ ( char* )ip" );
+				OUT_VALUE( ( (char*)( ip + 2 ) ) - ( (char*)ip ) );
 
 				LF();
 
-				OUTPUT_NOTE( "포인터간 연산은 Type의 영향을 받는다." );
+				OUT_NOTE( "포인터간 연산은 Type의 영향을 받는다." );
 			}
 
 			LS();
@@ -96,13 +96,13 @@ namespace play_c_pointer
 			{
 				DECL_MAIN( const auto t1 = reinterpret_cast<std::size_t>( ip ) );
 				DECL_MAIN( const auto t2 = reinterpret_cast<std::size_t>( ip + 1 ) );
-				OUTPUT_VALUE( t1 );
-				OUTPUT_VALUE( t2 );
+				OUT_VALUE( t1 );
+				OUT_VALUE( t2 );
 
 				std::cout << r2tm::linefeed2;
 
-				OUTPUT_NOTE( "offset : t2 ~ t1" );
-				OUTPUT_VALUE( t2 - t1 );
+				OUT_NOTE( "offset : t2 ~ t1" );
+				OUT_VALUE( t2 - t1 );
 			}
 
 			LS();
@@ -255,14 +255,14 @@ namespace play_c_pointer
 				LF();
 
 				EXPECT_EQ( empty_string, other_empty_string );
-				OUTPUT_VALUE( (void*)empty_string );
-				OUTPUT_VALUE( (void*)other_empty_string );
+				OUT_VALUE( (void*)empty_string );
+				OUT_VALUE( (void*)other_empty_string );
 			}
 
 			LS();
 
 			{
-				OUTPUT_NOTE( "같은 내용의 정적 문자열들은 주소가 같다." );
+				OUT_NOTE( "같은 내용의 정적 문자열들은 주소가 같다." );
 
 				LF();
 
@@ -273,10 +273,10 @@ namespace play_c_pointer
 
 				LF();
 
-				OUTPUT_VALUE( (void*)space_x1_string_1 );
-				OUTPUT_VALUE( (void*)space_x1_string_2 );
-				OUTPUT_VALUE( (void*)space_x2_string_1 );
-				OUTPUT_VALUE( (void*)space_x2_string_2 );
+				OUT_VALUE( (void*)space_x1_string_1 );
+				OUT_VALUE( (void*)space_x1_string_2 );
+				OUT_VALUE( (void*)space_x2_string_1 );
+				OUT_VALUE( (void*)space_x2_string_2 );
 			}
 
 			LS();
@@ -315,44 +315,44 @@ namespace play_c_pointer
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "본체 주소" );
+				OUT_SUBJECT( "본체 주소" );
 
 				LF();
 
-				OUTPUT_VALUE( s );
-				OUTPUT_VALUE( ( int64_t )s);
+				OUT_VALUE( s );
+				OUT_VALUE( ( int64_t )s);
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "첫 멤버의 주소는 본체의 주소와 같다." );
+				OUT_SUBJECT( "첫 멤버의 주소는 본체의 주소와 같다." );
 
 				LF();
 
-				OUTPUT_VALUE( &s->i );
-				OUTPUT_VALUE( ( int64_t )( &s->i ) );
+				OUT_VALUE( &s->i );
+				OUT_VALUE( ( int64_t )( &s->i ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "첫 멤버 주소 + 첫 멤버 크기" );
+				OUT_SUBJECT( "첫 멤버 주소 + 첫 멤버 크기" );
 
 				LF();
 
-				OUTPUT_VALUE( &s->j );
-				OUTPUT_VALUE( ( int64_t )( &s->j ) );
+				OUT_VALUE( &s->j );
+				OUT_VALUE( ( int64_t )( &s->j ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "멤버의 거리" );
+				OUT_SUBJECT( "멤버의 거리" );
 
 				LF();
 
-				OUTPUT_VALUE( ( int64_t )( &s->j ) - ( int64_t )( &s->i ) );
+				OUT_VALUE( ( int64_t )( &s->j ) - ( int64_t )( &s->i ) );
 			}
 
 			LS();
@@ -396,43 +396,43 @@ namespace play_c_pointer
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Stack S" );
+				OUT_SUBJECT( "Stack S" );
 
 				LF();
 
-				OUTPUT_VALUE( &stack_s );
-				OUTPUT_VALUE( ( int64_t )( &stack_s ) );
+				OUT_VALUE( &stack_s );
+				OUT_VALUE( ( int64_t )( &stack_s ) );
 
 				LF();
 
-				OUTPUT_VALUE( &stack_s.i );
-				OUTPUT_VALUE( ( int64_t )( &stack_s.i ) );
+				OUT_VALUE( &stack_s.i );
+				OUT_VALUE( ( int64_t )( &stack_s.i ) );
 
 				LF();
 
-				OUTPUT_VALUE( &stack_s.j );
-				OUTPUT_VALUE( ( int64_t )( &stack_s.j ) );
+				OUT_VALUE( &stack_s.j );
+				OUT_VALUE( ( int64_t )( &stack_s.j ) );
 			}
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Heap S" );
+				OUT_SUBJECT( "Heap S" );
 
 				LF();
 
-				OUTPUT_VALUE( heap_s );
-				OUTPUT_VALUE( ( int64_t )heap_s );
+				OUT_VALUE( heap_s );
+				OUT_VALUE( ( int64_t )heap_s );
 
 				LF();
 
-				OUTPUT_VALUE( &heap_s->i );
-				OUTPUT_VALUE( ( int64_t )( &heap_s->i ) );
+				OUT_VALUE( &heap_s->i );
+				OUT_VALUE( ( int64_t )( &heap_s->i ) );
 
 				LF();
 
-				OUTPUT_VALUE( &heap_s->j );
-				OUTPUT_VALUE( ( int64_t )( &heap_s->j ) );
+				OUT_VALUE( &heap_s->j );
+				OUT_VALUE( ( int64_t )( &heap_s->j ) );
 			}
 
 			LS();

@@ -26,7 +26,7 @@ namespace std_cin_test
 
 				LF();
 
-				OUTPUT_VALUE( s );
+				OUT_VALUE( s );
 			}
 
 			LS();

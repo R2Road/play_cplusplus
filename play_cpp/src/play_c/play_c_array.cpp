@@ -29,7 +29,7 @@ namespace play_c_array
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "array 초기화는 쉽게 {} 로 하기로 하자." );
+			OUT_SUBJECT( "array 초기화는 쉽게 {} 로 하기로 하자." );
 
 			LF();
 
@@ -39,13 +39,13 @@ namespace play_c_array
 
 			{
 				{
-					OUTPUT_SUBJECT( "선언만" );
+					OUT_SUBJECT( "선언만" );
 
 					LF();
 
-					OUTPUT_SOURCE_READY_N_BEGIN;
+					OUT_SOURCE_READY_N_BEGIN;
 					int array[length];
-					OUTPUT_SOURCE_END;
+					OUT_SOURCE_END;
 
 					LF();
 
@@ -55,13 +55,13 @@ namespace play_c_array
 				SS();
 
 				{
-					OUTPUT_SUBJECT( "{ 0 }" );
+					OUT_SUBJECT( "{ 0 }" );
 
 					LF();
 
-					OUTPUT_SOURCE_READY_N_BEGIN;
+					OUT_SOURCE_READY_N_BEGIN;
 					const int array[length] = { 0 };
-					OUTPUT_SOURCE_END;
+					OUT_SOURCE_END;
 
 					LF();
 
@@ -71,13 +71,13 @@ namespace play_c_array
 				SS();
 
 				{
-					OUTPUT_SUBJECT( "{ 0, }" );
+					OUT_SUBJECT( "{ 0, }" );
 
 					LF();
 
-					OUTPUT_SOURCE_READY_N_BEGIN;
+					OUT_SOURCE_READY_N_BEGIN;
 					const int array[5] = { 0, };
-					OUTPUT_SOURCE_END;
+					OUT_SOURCE_END;
 
 					LF();
 
@@ -87,13 +87,13 @@ namespace play_c_array
 				SS();
 
 				{
-					OUTPUT_SUBJECT( "{ " "\'\\0\', }" );
+					OUT_SUBJECT( "{ " "\'\\0\', }" );
 
 					LF();
 
-					OUTPUT_SOURCE_READY_N_BEGIN;
+					OUT_SOURCE_READY_N_BEGIN;
 					const int array[5] = { '\0', };
-					OUTPUT_SOURCE_END;
+					OUT_SOURCE_END;
 
 					LF();
 
@@ -103,13 +103,13 @@ namespace play_c_array
 				SS();
 
 				{
-					OUTPUT_SUBJECT( "{}" );
+					OUT_SUBJECT( "{}" );
 
 					LF();
 
-					OUTPUT_SOURCE_READY_N_BEGIN;
+					OUT_SOURCE_READY_N_BEGIN;
 					const int array[5] = {};
-					OUTPUT_SOURCE_END;
+					OUT_SOURCE_END;
 
 					LF();
 
@@ -138,7 +138,7 @@ namespace play_c_array
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "배열은 열 우선으로 메모리가 배치된다." );
+			OUT_SUBJECT( "배열은 열 우선으로 메모리가 배치된다." );
 
 			LS();
 
@@ -149,7 +149,7 @@ namespace play_c_array
 
 				SS();
 
-				OUTPUT_VALUE( ( int64_t )a );
+				OUT_VALUE( ( int64_t )a );
 
 				SS();
 
@@ -193,13 +193,13 @@ namespace play_c_array
 			LS();
 
 			{
-				OUTPUT_NOTE( "배열에 접근하는 방식에 따라서" );
-				OUTPUT_NOTE( "cache hit 에 유리하도록 선언/접근 방식을 조절하자." );
+				OUT_NOTE( "배열에 접근하는 방식에 따라서" );
+				OUT_NOTE( "cache hit 에 유리하도록 선언/접근 방식을 조절하자." );
 
 				LF();
 
-				OUTPUT_CODE( int a[w][h] );
-				OUTPUT_CODE( int a[h][w] );
+				OUT_CODE( int a[w][h] );
+				OUT_CODE( int a[h][w] );
 			}
 
 			LS();

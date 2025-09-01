@@ -36,7 +36,7 @@ namespace play_c_macro
 
 				LF();
 
-				OUTPUT_VALUE( MACRO2STRING( test_int ) );
+				OUT_VALUE( MACRO2STRING( test_int ) );
 			}
 
 			LS();
