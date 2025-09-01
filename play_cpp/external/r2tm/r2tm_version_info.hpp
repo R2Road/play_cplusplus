@@ -26,7 +26,7 @@ namespace r2tm
 
 		const char VersionNumber_1 = '2';
 		const char VersionNumber_2 = '0';
-		const char VersionNumber_3 = '1';
+		const char VersionNumber_3 = '3';
 		const char VersionNumber_4 = '0';
 		const char VersionNumber_5 = '0';
 
@@ -38,23 +38,26 @@ namespace r2tm
 			"### Road 2 Version 2.1.0.0.0 ###"
 			"\n"
 			"\n"	"[o] " "update    inspector  : Add - CLEAR_INPUT"
+			"\n"	"[o] " "update    inspector  : Add - OUT_ALIGN"
+			"\n"	"[o] " "update    inspector  : Add - DIR_OPEN"
+			"\n"	"[o] " "update    inspector  : Rename - OUT_... > OUT_..."
 			"\n"	"[ ] " "update    struct     : ..."
 		;
 
 		const char* const String4Road2Version_1_8_0_0_0 =
 					"### Road 2 Version 1.8.0.0.0 ###"
 			"\n"
-			"\n"	"[o] " "update    function   : r2tm::Inspector - OUTPUT_NOTE"
+			"\n"	"[o] " "update    function   : r2tm::Inspector - OUT_NOTE"
 			"\n"	"[o] " "update    struct     : r2tm::WindowsUtility::CursorPoint - 생성자 추가, 연산자 +, += 추가"
-			"\n"	"[o] " "update    inspector  : Add - OUTPUT_SOURCE_READY, OUTPUT_SOURCE_BEGIN, OUTPUT_SOURCE_END"
-			"\n"	"[o] " "update    inspector  : Add - OUTPUT_SOURCE_READY_N_BEGIN"
+			"\n"	"[o] " "update    inspector  : Add - OUT_SOURCE_READY, OUT_SOURCE_BEGIN, OUT_SOURCE_END"
+			"\n"	"[o] " "update    inspector  : Add - OUT_SOURCE_READY_N_BEGIN"
 			"\n"	"[o] " "update    inspector  : DECL_MAIN, DECL_SUB - 문자 출력을 먼저 하고 코드 실행"
 			"\n"	"[o] " "update    inspector  : EXPECT_FALSE, EXPECT_NE - 눈에 잘 보이는 색상으로 변경"
 			"\n"	"[o] " "add       class      : r2tm::CacheCleaner"
 			"\n"	"[o] " "add       method     : r2tm::SwtopWatch > Reset"
 			"\n"	"[o] " "add       method     : r2tm::SwtopWatch > PrintAverageTime_MilliSeconds, MicroSeconds, NanoSeconds, All"
 			"\n"	"[o] " "update    class      : r2tm::CacheCleaner : Add > 복사 생성자 추가, 대입 연산자 제거"
-			"\n"	"[o] " "update    inspector  : OUTPUT_SUBJECT: 출력 문자 변경  '+' > '#'"
+			"\n"	"[o] " "update    inspector  : OUT_SUBJECT: 출력 문자 변경  '+' > '#'"
 			"\n"	"[o] " "update    class      : enum r2tm::eColor > enum class 적용"
 			"\n"	"[o] " "add       method     : r2tm::ColorModifier > GetColor"
 			"\n"	"[o] " "add       method     : r2tm::StopWatch > GetAccumulateTime, GetAccumulateCount"
@@ -66,9 +69,9 @@ namespace r2tm
 			"\n"	"[o] " "update    inspector  : Input 관련 파일 분리 : r2tm_Input"
 			"\n"	"[o] " "update    inspector  : Add - GET_KEY"
 			"\n"	"[o] " "add       method     : r2tm::WindowsUtility::GetCursorX, GetCursorY"
-			"\n"	"[o] " "update    inspector  : Add - OUTPUT_ADDRESS"
+			"\n"	"[o] " "update    inspector  : Add - OUT_ADDRESS"
 			"\n"	"[o] " "update    inspector  : 출력 문자열 조정 - ex) DECLARATION > DECL"
-			"\n"	"[o] " "update    inspector  : Macro 이름 조정 - ex) DECL_MAIN > DECL_MAIN"
+			"\n"	"[o] " "update    inspector  : Macro 이름 조정 - ex) DECLARATION_MAIN > DECL_MAIN"
 			"\n"	"[o] " "전체 소스파일중 헤더파일의 확장자를 h 에서 hpp로 변경"
 		;
 
@@ -76,8 +79,8 @@ namespace r2tm
 					"### Road 2 Version 1.7.0.0.0 ###"
 			"\n"
 			"\n"	"[o] " "add method           : r2tm::WindowsUtility::FillString"
-			"\n"	"[o] " "update inspector     : Add - OUTPUT_STRING"
-			"\n"	"[o] " "update inspector     : OUTPUT_SIZE - 크기 뒤에 byte 문자열 출력"
+			"\n"	"[o] " "update inspector     : Add - OUT_STRING"
+			"\n"	"[o] " "update inspector     : OUT_SIZE - 크기 뒤에 byte 문자열 출력"
 			"\n"	"[o] " "rename method        : r2tm::StopWatch - PrintMinAndMaxTime_NanoSeconds"
 			"\n"	"[o] " "add    method        : r2tm::StopWatch - PrintMinAndMaxTime_MilliSeconds"
 			"\n"	"[o] " "add    method        : r2tm::StopWatch - PrintMinAndMaxTime_MicroSeconds"
@@ -92,11 +95,11 @@ namespace r2tm
 		const char* const String4Road2Version_1_6_0_0_0 =
 					"### Road 2 Version 1.6.0.0.0 ###"
 			"\n"
-			"\n"	"[o] " "update inspector : Add - OUTPUT_SUBJECT"
-			"\n"	"[o] " "update inspector : Add - OUTPUT_SIZE"
+			"\n"	"[o] " "update inspector : Add - OUT_SUBJECT"
+			"\n"	"[o] " "update inspector : Add - OUT_SIZE"
 			"\n"	"[o] " "update ostream : Add - LF(), LF2(), LF3(), LS()"
 			"\n"	"[o] " "update menuprocessor : Add - AddExit"
-			"\n"	"[o] " "update inspector : Apply Color - OUTPUT_NOTE, OUTPUT_SUBJECT, OUTPUT_COMMENT, OUTPUT_CODE"
+			"\n"	"[o] " "update inspector : Apply Color - OUT_NOTE, OUT_SUBJECT, OUT_COMMENT, OUT_CODE"
 		;
 
 		const char* const String4Road2Version_1_5_0_0_0 =
@@ -117,12 +120,12 @@ namespace r2tm
 					"### Road 2 Version 1.3.0.0.0 ###"
 			"\n"
 			"\n"	"[o] " "update inspector : EXPECT_EQ, EXPECT_NE - 실패시 값 출력"
-			"\n"	"[o] " "update inspector : OUTPUT_BINARY - 가시성 개선"
+			"\n"	"[o] " "update inspector : OUT_BINARY - 가시성 개선"
 			"\n"	"[o] " "update inspector : inspector 의 debug break ON/OFF 설정"
-			"\n"	"[o] " "update inspector : Add - OUTPUT_NOTE"
-			"\n"	"[o] " "update inspector : Add - OUTPUT_COMMENT"
-			"\n"	"[o] " "update inspector : OUTPUT_FILE 에서 line index 출력"
-			"\n"	"[o] " "update inspector : Add - OUTPUT_FILE_RANGE"
+			"\n"	"[o] " "update inspector : Add - OUT_NOTE"
+			"\n"	"[o] " "update inspector : Add - OUT_COMMENT"
+			"\n"	"[o] " "update inspector : OUT_FILE 에서 line index 출력"
+			"\n"	"[o] " "update inspector : Add - OUT_FILE_RANGE"
 		;
 		
 		const char* const String4Road2Version_1_2_0_0_0 =

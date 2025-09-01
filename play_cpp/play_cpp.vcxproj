@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="external\r2tm\r2tm_cache_cleaner.cpp" />
     <ClCompile Include="external\r2tm\r2tm_director.cpp" />
+    <ClCompile Include="external\r2tm\r2tm_file.cpp" />
     <ClCompile Include="external\r2tm\r2tm_input.cpp" />
     <ClCompile Include="external\r2tm\r2tm_menu_processor.cpp" />
     <ClCompile Include="external\r2tm\r2tm_print_binary.cpp" />
@@ -212,6 +213,7 @@
     <ClInclude Include="external\r2tm\r2tm_color.hpp" />
     <ClInclude Include="external\r2tm\r2tm_color_modifier.hpp" />
     <ClInclude Include="external\r2tm\r2tm_director.hpp" />
+    <ClInclude Include="external\r2tm\r2tm_file.hpp" />
     <ClInclude Include="external\r2tm\r2tm_input.hpp" />
     <ClInclude Include="external\r2tm\r2tm_inspector.hpp" />
     <ClInclude Include="external\r2tm\r2tm_interface_item.hpp" />
