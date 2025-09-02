@@ -6,18 +6,18 @@
 
 #include "menu_std.hpp"
 
-r2tm::TitleFunctionT STDStringMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_STDString::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "<string>";
 	};
 }
-r2tm::DescriptionFunctionT STDStringMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_STDString::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT STDStringMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_STDString::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
@@ -45,6 +45,6 @@ r2tm::WriteFunctionT STDStringMenu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 27, STDMenu() );
+		mp->AddMenu( 27, Menu_STD() );
 	};
 }

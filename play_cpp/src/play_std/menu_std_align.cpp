@@ -6,18 +6,18 @@
 
 #include "menu_std_memory.hpp"
 
-r2tm::TitleFunctionT STDAlignMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_STDAlign::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "STDAlign";
 	};
 }
-r2tm::DescriptionFunctionT STDAlignMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_STDAlign::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT STDAlignMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_STDAlign::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
@@ -29,6 +29,6 @@ r2tm::WriteFunctionT STDAlignMenu::GetWriteFunction() const
 		mp->AddSplit();
 
 
-		mp->AddMenu( 27, STDMemoryMenu() );
+		mp->AddMenu( 27, Menu_STDMemory() );
 	};
 }

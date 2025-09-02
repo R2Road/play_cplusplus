@@ -10,18 +10,18 @@
 
 #include "menu_std.hpp"
 
-r2tm::TitleFunctionT STDFunctionalMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_STDFunctional::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "<functional>";
 	};
 }
-r2tm::DescriptionFunctionT STDFunctionalMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_STDFunctional::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT STDFunctionalMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_STDFunctional::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
@@ -70,6 +70,6 @@ r2tm::WriteFunctionT STDFunctionalMenu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 27, STDMenu() );
+		mp->AddMenu( 27, Menu_STD() );
 	};
 }

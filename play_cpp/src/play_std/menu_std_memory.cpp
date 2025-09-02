@@ -9,18 +9,18 @@
 
 #include "menu_std.hpp"
 
-r2tm::TitleFunctionT STDMemoryMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_STDMemory::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "<memory>";
 	};
 }
-r2tm::DescriptionFunctionT STDMemoryMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_STDMemory::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT STDMemoryMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_STDMemory::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
@@ -48,7 +48,7 @@ r2tm::WriteFunctionT STDMemoryMenu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 'z', STDAlignMenu() );
+		mp->AddMenu( 'z', Menu_STDAlign() );
 
 
 
@@ -56,6 +56,6 @@ r2tm::WriteFunctionT STDMemoryMenu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 27, STDMenu() );
+		mp->AddMenu( 27, Menu_STD() );
 	};
 }

@@ -7,18 +7,18 @@
 
 #include "menu_std.hpp"
 
-r2tm::TitleFunctionT STDThreadMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_STDThread::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Thread";
 	};
 }
-r2tm::DescriptionFunctionT STDThreadMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_STDThread::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT STDThreadMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_STDThread::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
@@ -55,6 +55,6 @@ r2tm::WriteFunctionT STDThreadMenu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 27, STDMenu() );
+		mp->AddMenu( 27, Menu_STD() );
 	};
 }

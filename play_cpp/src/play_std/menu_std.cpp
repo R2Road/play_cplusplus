@@ -25,29 +25,29 @@
 #include "menu_std_string_view.hpp"
 #include "menu_std_thread.hpp"
 
-r2tm::TitleFunctionT STDMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_STD::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "STD";
 	};
 }
-r2tm::DescriptionFunctionT STDMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_STD::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT STDMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_STD::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
 		mp->AddItem( '1', play_std_system::Demo() );
-		mp->AddMenu( '2', STDCoutMenu() );
-		mp->AddMenu( '3', STDCinMenu() );
-		mp->AddMenu( '4', STDFileSystemMenu() );
-		mp->AddMenu( '5', STDFstreamMenu() );
-		mp->AddMenu( '6', STDOptionalMenu() );
-		mp->AddMenu( '7', STDStringMenu() );
-		mp->AddMenu( '8', STDStringViewMenu() );
+		mp->AddMenu( '2', Menu_STDCout() );
+		mp->AddMenu( '3', Menu_STDCin() );
+		mp->AddMenu( '4', Menu_STDFileSystem() );
+		mp->AddMenu( '5', Menu_STDFstream() );
+		mp->AddMenu( '6', Menu_STDOptional() );
+		mp->AddMenu( '7', Menu_STDString() );
+		mp->AddMenu( '8', Menu_STDStringView() );
 
 
 
@@ -64,7 +64,7 @@ r2tm::WriteFunctionT STDMenu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 'q', STDFunctionalMenu() );
+		mp->AddMenu( 'q', Menu_STDFunctional() );
 
 
 
@@ -81,10 +81,10 @@ r2tm::WriteFunctionT STDMenu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 'z', STDMemoryMenu() );
-		mp->AddMenu( 'x', STDNumericMenu() );
-		mp->AddMenu( 'c', STDContainerMenu() );
-		mp->AddMenu( 'v', STDThreadMenu() );
+		mp->AddMenu( 'z', Menu_STDMemory() );
+		mp->AddMenu( 'x', Menu_STDNumeric() );
+		mp->AddMenu( 'c', Menu_STDContainer() );
+		mp->AddMenu( 'v', Menu_STDThread() );
 
 
 

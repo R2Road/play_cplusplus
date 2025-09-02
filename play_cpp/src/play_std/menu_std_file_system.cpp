@@ -6,18 +6,18 @@
 
 #include "menu_std.hpp"
 
-r2tm::TitleFunctionT STDFileSystemMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_STDFileSystem::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "<filesystem>";
 	};
 }
-r2tm::DescriptionFunctionT STDFileSystemMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_STDFileSystem::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT STDFileSystemMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_STDFileSystem::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
@@ -59,6 +59,6 @@ r2tm::WriteFunctionT STDFileSystemMenu::GetWriteFunction() const
 		mp->AddSplit();
 
 
-		mp->AddMenu( 27, STDMenu() );
+		mp->AddMenu( 27, Menu_STD() );
 	};
 }
