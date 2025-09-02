@@ -34,6 +34,10 @@ namespace r2tm
 		{
 			fclose( fp );
 		}
+		else
+		{
+			__debugbreak();
+		}
 
 		printf( "\x1B[90m" "[/FILE]" "\033[0m" "\n" );
 	}
@@ -72,6 +76,10 @@ namespace r2tm
 		if( nullptr != fp )
 		{
 			fclose( fp );
+		}
+		else
+		{
+			__debugbreak();
 		}
 
 		printf( "\x1B[90m" "[/FILE]" "\033[0m" "\n" );

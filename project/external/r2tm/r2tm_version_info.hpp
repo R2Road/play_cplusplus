@@ -27,7 +27,7 @@ namespace r2tm
 		const char VersionNumber_1 = '2';
 		const char VersionNumber_2 = '0';
 		const char VersionNumber_3 = '3';
-		const char VersionNumber_4 = '0';
+		const char VersionNumber_4 = '1';
 		const char VersionNumber_5 = '0';
 
 		const char String4Version[18] = { 'r', '2', 't', 'm', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '.', VersionNumber_4, '.', VersionNumber_5, '\0' };
@@ -40,8 +40,11 @@ namespace r2tm
 			"\n"	"[o] " "update    inspector  : Add - CLEAR_INPUT"
 			"\n"	"[o] " "update    inspector  : Add - OUT_ALIGN"
 			"\n"	"[o] " "update    inspector  : Add - DIR_OPEN"
-			"\n"	"[o] " "update    inspector  : Rename - OUT_... > OUT_..."
-			"\n"	"[ ] " "update    struct     : ..."
+			"\n"	"[o] " "update    inspector  : Rename - OUTPUT_... > OUT_..."
+			"\n"
+			"\n"    "------------------------------------------------------------"
+			"\n"
+			"\n"	"[o] " "update    inspector  : r2tm_print_file - 파일 열기 실패시 __debugbreak 작동"
 		;
 
 		const char* const String4Road2Version_1_8_0_0_0 =
