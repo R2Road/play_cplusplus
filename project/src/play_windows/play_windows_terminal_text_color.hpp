@@ -2,43 +2,40 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace windows_terminal_flickering_research
+namespace play_windows_terminal_text_color
 {
-	class OneByOne : public r2tm::iItem
+	class ColorTable : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
-	class OneByOne_WithOut_CLS : public r2tm::iItem
+	class TextColor1 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
-
-	class LineByLine : public r2tm::iItem
+	class TextColor2 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
-
-	class PageByPage : public r2tm::iItem
-	{
-	public:
-		r2tm::TitleFunctionT GetTitleFunction() const override;
-		r2tm::DoFunctionT GetDoFunction() const override;
-	};
-
-	class PageByPage_WithOut_CLS_1 : public r2tm::iItem
+	class AdjustColorTable : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class PageByPage_WithOut_CLS_2 : public r2tm::iItem
+	class ColorTable2 : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+	class TextColor3 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

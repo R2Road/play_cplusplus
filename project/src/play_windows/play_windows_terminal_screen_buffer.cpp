@@ -1,4 +1,4 @@
-#include "windows_screen_buffer_test.h"
+#include "play_windows_terminal_screen_buffer.hpp"
 
 #include <assert.h>
 #include <conio.h> // _kbhit(), _getch()
@@ -12,7 +12,7 @@
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
 
-namespace windows_screen_buffer_test
+namespace play_windows_terminal_screen_buffer
 {
 	r2tm::TitleFunctionT FillBuffer::GetTitleFunction() const
 	{

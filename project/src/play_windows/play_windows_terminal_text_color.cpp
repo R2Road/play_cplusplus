@@ -1,4 +1,4 @@
-#include "windows_terminal_text_color_test.h"
+#include "play_windows_terminal_text_color.hpp"
 
 #include <bitset>
 #include <conio.h>
@@ -11,7 +11,7 @@
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_inspector.hpp"
 
-namespace windows_terminal_text_color_test
+namespace play_windows_terminal_text_color
 {
 	r2tm::TitleFunctionT ColorTable::GetTitleFunction() const
 	{

@@ -1,4 +1,4 @@
-#include "windows_terminal_input_test.h"
+#include "play_windows_terminal_input.hpp"
 
 #include <assert.h>
 #include <conio.h> // _kbhit(), _getch()
@@ -11,7 +11,7 @@
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
 
-namespace windows_terminal_input_test
+namespace play_windows_terminal_input
 {
 	void ShowCurrentConsoleMode()
 	{

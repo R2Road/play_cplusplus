@@ -1,4 +1,4 @@
-#include "windows_terminal_basic_test.h"
+#include "play_windows_terminal_basic.hpp"
 
 #include <bitset>
 #include <conio.h>
@@ -14,7 +14,7 @@
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
 
-namespace windows_terminal_basic_test
+namespace play_windows_terminal_basic
 {
 	r2tm::TitleFunctionT BufferInfo::GetTitleFunction() const
 	{

@@ -2,9 +2,9 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace windows_terminal_dc_test
+namespace play_windows_time
 {
-	class Pixel : public r2tm::iItem
+	class Basic : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

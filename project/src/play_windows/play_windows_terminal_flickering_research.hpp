@@ -2,44 +2,43 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace windows_screen_buffer_test
+namespace play_windows_terminal_flickering_research
 {
-	class FillBuffer : public r2tm::iItem
+	class OneByOne : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+	class OneByOne_WithOut_CLS : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Write2Buffer_WriteConsole : public r2tm::iItem
+	class LineByLine : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Write2Buffer_WriteConsoleOutput : public r2tm::iItem
+	class PageByPage : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class ReadConsoleOutputTest : public r2tm::iItem
+	class PageByPage_WithOut_CLS_1 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class ETCTest : public r2tm::iItem
-	{
-	public:
-		r2tm::TitleFunctionT GetTitleFunction() const override;
-		r2tm::DoFunctionT GetDoFunction() const override;
-	};
-
-	class DoubleBuffering : public r2tm::iItem
+	class PageByPage_WithOut_CLS_2 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

@@ -4,7 +4,7 @@
 
 #include "play_c/play_c_time.hpp"
 #include "play_std/play_std_chrono.hpp"
-#include "test_windows/item/windows_time_test.h"
+#include "play_windows/play_windows_time.hpp"
 
 #include "menu_root.hpp"
 
@@ -34,7 +34,7 @@ r2tm::WriteFunctionT Menu_Time::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'q', window_time_test::Basic() );
+		mp->AddItem( 'q', play_windows_time::Basic() );
 
 
 

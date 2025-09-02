@@ -23,7 +23,7 @@
 #include "play_time/menu_time.hpp"
 #include "play_various/menu_various.hpp"
 #include "play_template/menu_template.hpp"
-#include "test_windows/WindowsMenu.h"
+#include "play_windows/menu_windows.hpp"
 
 r2tm::TitleFunctionT Menu_Root::GetTitleFunction() const
 {
@@ -76,7 +76,7 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 
 
 		mp->AddMessage( "¿Ï·á", r2tm::eColor::FG_LightGreen );
-		mp->AddMenu( 'q', WindowsMenu() );
+		mp->AddMenu( 'q', Menu_Windows() );
 		mp->AddMenu( 'w', Menu_C() );
 		mp->AddMenu( 'e', Menu_CPP() );
 		mp->AddMenu( 'r', Menu_STD() );

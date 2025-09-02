@@ -2,16 +2,16 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace windows_sound_test
+namespace play_windows_terminal_message
 {
-	class PlaySoundTest : public r2tm::iItem
+	class ConsoleControlHandler : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class BeepTest : public r2tm::iItem
+	class MessageHook : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

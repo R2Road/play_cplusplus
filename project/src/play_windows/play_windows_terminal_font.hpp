@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace windows_terminal_font_test
+namespace play_windows_terminal_font
 {
 	class FontInfo : public r2tm::iItem
 	{

@@ -1,4 +1,4 @@
-#include "windows_terminal_message_test.h"
+#include "play_windows_terminal_message.hpp"
 
 #include <assert.h>
 #include <conio.h>
@@ -9,7 +9,7 @@
 
 #include "r2tm/r2tm_ostream.hpp"
 
-namespace windows_terminal_message_test
+namespace play_windows_terminal_message
 {
 	BOOL WINAPI CtrlHandler( DWORD fdwCtrlType )
 	{

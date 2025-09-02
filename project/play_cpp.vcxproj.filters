@@ -7,12 +7,6 @@
     <Filter Include="utility">
       <UniqueIdentifier>{b470e37a-ab48-4294-91e6-d840afb5ce71}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test_windows">
-      <UniqueIdentifier>{8067c90e-f3a8-481b-9de8-239c1fd0385a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test_windows\item">
-      <UniqueIdentifier>{5a415f0f-d9ca-4c8d-931c-02fee8c5145d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="play_hobby">
       <UniqueIdentifier>{3c5e3fee-a097-460f-9772-dbfd7cefa3ae}</UniqueIdentifier>
     </Filter>
@@ -64,6 +58,9 @@
     <Filter Include="play_template">
       <UniqueIdentifier>{31104b3b-edc7-4367-b673-b82d2f7ad11f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="play_windows">
+      <UniqueIdentifier>{8067c90e-f3a8-481b-9de8-239c1fd0385a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -71,33 +68,6 @@
       <Filter>algorithm</Filter>
     </ClCompile>
     <ClCompile Include="src\menu_root.cpp" />
-    <ClCompile Include="src\test_windows\item\windows_sound_test.cpp">
-      <Filter>test_windows\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_windows\item\windows_time_test.cpp">
-      <Filter>test_windows\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_windows\item\windows_terminal_input_test.cpp">
-      <Filter>test_windows\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_windows\item\windows_terminal_message_test.cpp">
-      <Filter>test_windows\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_windows\item\windows_terminal_basic_test.cpp">
-      <Filter>test_windows\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_windows\WindowsTerminalFondAndTextColorMenu.cpp">
-      <Filter>test_windows</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_windows\WindowsTerminalBasicMenu.cpp">
-      <Filter>test_windows</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_windows\FlickeringResearchMenu.cpp">
-      <Filter>test_windows</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_windows\WindowsMenu.cpp">
-      <Filter>test_windows</Filter>
-    </ClCompile>
     <ClCompile Include="src\play_hobby\menu_hobby.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
@@ -112,21 +82,6 @@
     </ClCompile>
     <ClCompile Include="src\play_hobby\menu_tree.cpp">
       <Filter>play_hobby</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_windows\item\windows_screen_buffer_test.cpp">
-      <Filter>test_windows\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_windows\item\windows_terminal_text_color_test.cpp">
-      <Filter>test_windows\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_windows\item\windows_terminal_font_test.cpp">
-      <Filter>test_windows\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_windows\item\windows_terminal_dc_test.cpp">
-      <Filter>test_windows\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_windows\item\windows_terminal_flickering_research.cpp">
-      <Filter>test_windows\item</Filter>
     </ClCompile>
     <ClCompile Include="src\utility\play_cpp_utility_PathBuilder.cpp">
       <Filter>utility</Filter>
@@ -624,6 +579,48 @@
     <ClCompile Include="src\play_template\play_template_variadic.cpp">
       <Filter>play_template</Filter>
     </ClCompile>
+    <ClCompile Include="src\play_windows\menu_windows_terminal_flickering_research.cpp">
+      <Filter>play_windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_windows\menu_windows.cpp">
+      <Filter>play_windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_windows\menu_windows_terminal_basic.cpp">
+      <Filter>play_windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_windows\menu_windows_terminal_fond_and_color.cpp">
+      <Filter>play_windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_windows\play_windows_terminal_screen_buffer.cpp">
+      <Filter>play_windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_windows\play_windows_sound.cpp">
+      <Filter>play_windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_windows\play_windows_terminal_basic.cpp">
+      <Filter>play_windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_windows\play_windows_terminal_dc.cpp">
+      <Filter>play_windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_windows\play_windows_terminal_flickering_research.cpp">
+      <Filter>play_windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_windows\play_windows_terminal_font.cpp">
+      <Filter>play_windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_windows\play_windows_terminal_input.cpp">
+      <Filter>play_windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_windows\play_windows_terminal_message.cpp">
+      <Filter>play_windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_windows\play_windows_terminal_text_color.cpp">
+      <Filter>play_windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_windows\play_windows_time.cpp">
+      <Filter>play_windows</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -633,33 +630,6 @@
       <Filter>algorithm</Filter>
     </ClInclude>
     <ClInclude Include="src\menu_root.hpp" />
-    <ClInclude Include="src\test_windows\item\windows_sound_test.h">
-      <Filter>test_windows\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_windows\item\windows_time_test.h">
-      <Filter>test_windows\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_windows\item\windows_terminal_input_test.h">
-      <Filter>test_windows\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_windows\item\windows_terminal_message_test.h">
-      <Filter>test_windows\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_windows\item\windows_terminal_basic_test.h">
-      <Filter>test_windows\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_windows\WindowsTerminalFondAndTextColorMenu.h">
-      <Filter>test_windows</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_windows\WindowsTerminalBasicMenu.h">
-      <Filter>test_windows</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_windows\FlickeringResearchMenu.h">
-      <Filter>test_windows</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_windows\WindowsMenu.h">
-      <Filter>test_windows</Filter>
-    </ClInclude>
     <ClInclude Include="src\play_hobby\menu_hobby.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
@@ -674,21 +644,6 @@
     </ClInclude>
     <ClInclude Include="src\play_hobby\menu_tree.hpp">
       <Filter>play_hobby</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_windows\item\windows_screen_buffer_test.h">
-      <Filter>test_windows\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_windows\item\windows_terminal_text_color_test.h">
-      <Filter>test_windows\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_windows\item\windows_terminal_font_test.h">
-      <Filter>test_windows\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_windows\item\windows_terminal_dc_test.h">
-      <Filter>test_windows\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_windows\item\windows_terminal_flickering_research.h">
-      <Filter>test_windows\item</Filter>
     </ClInclude>
     <ClInclude Include="src\utility\play_cpp_utility_PathBuilder.h">
       <Filter>utility</Filter>
@@ -1368,6 +1323,48 @@
     </ClInclude>
     <ClInclude Include="src\play_template\play_template_variadic.hpp">
       <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_windows\menu_windows_terminal_flickering_research.hpp">
+      <Filter>play_windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_windows\menu_windows.hpp">
+      <Filter>play_windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_windows\menu_windows_terminal_basic.hpp">
+      <Filter>play_windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_windows\menu_windows_terminal_fond_and_color.hpp">
+      <Filter>play_windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_windows\play_windows_terminal_screen_buffer.hpp">
+      <Filter>play_windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_windows\play_windows_sound.hpp">
+      <Filter>play_windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_windows\play_windows_terminal_basic.hpp">
+      <Filter>play_windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_windows\play_windows_terminal_dc.hpp">
+      <Filter>play_windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_windows\play_windows_terminal_flickering_research.hpp">
+      <Filter>play_windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_windows\play_windows_terminal_font.hpp">
+      <Filter>play_windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_windows\play_windows_terminal_input.hpp">
+      <Filter>play_windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_windows\play_windows_terminal_message.hpp">
+      <Filter>play_windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_windows\play_windows_terminal_text_color.hpp">
+      <Filter>play_windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_windows\play_windows_time.hpp">
+      <Filter>play_windows</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-#include "windows_sound_test.h"
+#include "play_windows_sound.hpp"
 
 #include <conio.h>
 
@@ -11,7 +11,7 @@
 
 #include "utility/play_cpp_utility_PathBuilder.h"
 
-namespace windows_sound_test
+namespace play_windows_sound
 {
 	r2tm::TitleFunctionT PlaySoundTest::GetTitleFunction() const
 	{

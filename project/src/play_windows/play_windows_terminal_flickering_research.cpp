@@ -1,4 +1,4 @@
-#include "windows_terminal_flickering_research.h"
+#include "play_windows_terminal_flickering_research.hpp"
 
 #include <conio.h> // _kbhit(), _getch()
 
@@ -9,7 +9,7 @@
 
 #include "utility/play_cpp_utility_CharacterBuffer.h"
 
-namespace windows_terminal_flickering_research
+namespace play_windows_terminal_flickering_research
 {
 	r2tm::TitleFunctionT OneByOne::GetTitleFunction() const
 	{

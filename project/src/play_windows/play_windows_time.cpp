@@ -1,4 +1,4 @@
-#include "windows_time_test.h"
+#include "play_windows_time.hpp"
 
 #include <conio.h>
 
@@ -12,7 +12,7 @@
 
 #include "r2/r2_fps_timer.hpp"
 
-namespace window_time_test
+namespace play_windows_time
 {
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{

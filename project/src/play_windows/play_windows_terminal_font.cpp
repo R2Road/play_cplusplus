@@ -1,4 +1,4 @@
-#include "windows_terminal_font_test.h"
+#include "play_windows_terminal_font.hpp"
 
 #include <conio.h> // _kbhit(), _getch()
 #include <cwchar>
@@ -20,7 +20,7 @@ void ShowFontInfo( const CONSOLE_FONT_INFOEX & cfie )
 	std::wcout << r2tm::tab2 << "FaceName : " << cfie.FaceName << r2tm::linefeed;
 }
 
-namespace windows_terminal_font_test
+namespace play_windows_terminal_font
 {
 	r2tm::TitleFunctionT FontInfo::GetTitleFunction() const
 	{

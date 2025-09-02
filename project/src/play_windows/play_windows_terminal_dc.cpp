@@ -1,4 +1,4 @@
-#include "windows_terminal_dc_test.h"
+#include "play_windows_terminal_dc.hpp"
 
 #include <conio.h> // _kbhit(), _getch()
 
@@ -7,7 +7,7 @@
 
 #include "r2tm/r2tm_ostream.hpp"
 
-namespace windows_terminal_dc_test
+namespace play_windows_terminal_dc
 {
 	r2tm::TitleFunctionT Pixel::GetTitleFunction() const
 	{
