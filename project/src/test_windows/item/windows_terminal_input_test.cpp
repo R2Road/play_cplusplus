@@ -163,7 +163,7 @@ namespace windows_terminal_input_test
 
 			{
 				OUT_NOTE( "Press Any Key : Rollback" );
-				_getch();
+				WAIT_ANY_KEY;
 
 				//
 				// Rollback
@@ -377,8 +377,8 @@ namespace windows_terminal_input_test
 						// 커서 좌표 만드는 방법 1
 						//
 						COORD coord = { 0, 0 };
-						coord.X = ( p.x / fi.dwFontSize.X );
-						coord.Y = ( p.y / fi.dwFontSize.Y );
+						coord.X = ( (SHORT)p.x / fi.dwFontSize.X );
+						coord.Y = ( (SHORT)p.y / fi.dwFontSize.Y );
 
 						//
 						// 커서 좌표 만드는 방법 2

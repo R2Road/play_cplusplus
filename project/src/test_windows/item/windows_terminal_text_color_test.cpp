@@ -147,11 +147,6 @@ namespace windows_terminal_text_color_test
 			LS();
 
 			{
-				const char background_color = BACKGROUND_RED;
-				const char text_color = FOREGROUND_GREEN;
-
-				const WORD current_color = background_color | text_color | COMMON_LVB_GRID_HORIZONTAL;
-
 				std::cout << r2tm::tab;
 				SetConsoleTextAttribute( stdHandle, FOREGROUND_GREEN );
 				std::cout << "SetConsoleTextAttribute( ";

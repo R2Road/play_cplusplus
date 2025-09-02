@@ -184,7 +184,9 @@ namespace play_infinite_number
 				OUT_BINARY( i );
 				OUT_BINARY( j );
 
-				std::to_string( j );
+				LF();
+
+				OUT_VALUE( std::to_string( j ) );
 			}
 
 			LS();

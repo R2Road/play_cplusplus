@@ -521,7 +521,7 @@ namespace etc_test
 				{
 					static const int w = 8;
 
-					const unsigned mask = -1;
+					const unsigned int mask = (unsigned int)-1;
 					const unsigned int* up = reinterpret_cast<const unsigned int*>( &f );
 					std::cout << r2tm::tab << std::left
 
