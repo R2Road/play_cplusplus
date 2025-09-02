@@ -1,10 +1,10 @@
-#include "template_specialization_test.h"
-#include "template_specialization_test_helper_basic.hpp"
+#include "play_template_specialization.hpp"
+#include "play_template_specialization_helper___basic.hpp"
 
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 
-namespace template_specialization_test
+namespace play_template_specialization
 {
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
@@ -19,7 +19,7 @@ namespace template_specialization_test
 		{
 			LS();
 
-			OUT_FILE( "src/test_template/item/template_specialization_test_helper_basic.hpp" );
+			OUT_FILE( "src/play_template/play_template_specialization_helper___basic.hpp" );
 
 			LS();
 

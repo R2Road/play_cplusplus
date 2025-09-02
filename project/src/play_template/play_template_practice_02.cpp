@@ -1,10 +1,10 @@
-#include "template_practice_test_02.h"
-#include "template_practice_test_02_helper_basic.hpp"
+#include "play_template_practice_02.hpp"
+#include "play_template_practice_02_helper___basic.hpp"
 
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 
-namespace template_practice_test_02
+namespace play_template_practice_02
 {
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
@@ -19,7 +19,7 @@ namespace template_practice_test_02
 		{
 			LS();
 
-			OUT_FILE( "src/test_template/item/template_practice_test_02_helper_basic.hpp" );
+			OUT_FILE( "src/play_template/play_template_practice_02_helper___basic.hpp" );
 
 			LS();
 

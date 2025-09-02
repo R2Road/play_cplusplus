@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_inspector.hpp"
 
-namespace template_basic_test
+namespace play_template_basic
 {
 	template<class R, class ... A>
 	class ParenthesesHelper;

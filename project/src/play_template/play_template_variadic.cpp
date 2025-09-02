@@ -1,4 +1,4 @@
-#include "template_variadic_test.h"
+#include "play_template_variadic.hpp"
 
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_inspector.hpp"
@@ -11,7 +11,7 @@ namespace
 		static constexpr std::size_t size = sizeof...( Types );
 	};
 }
-namespace template_variadic_test
+namespace play_template_variadic
 {
 	r2tm::TitleFunctionT SizeOfArgs::GetTitleFunction() const
 	{
@@ -82,7 +82,7 @@ namespace
 		( print( args ), ... );
 	}
 }
-namespace template_variadic_test
+namespace play_template_variadic
 {
 	r2tm::TitleFunctionT PrintValues::GetTitleFunction() const
 	{
@@ -98,7 +98,7 @@ namespace template_variadic_test
 			LS();
 
 			{
-				PROC_MAIN( print_args_1( 1, 2, 3, 4, "template_variadic_test", 3.141592 ) );
+				PROC_MAIN( print_args_1( 1, 2, 3, 4, "play_template_variadic", 3.141592 ) );
 			}
 
 			LS();
@@ -111,7 +111,7 @@ namespace template_variadic_test
 				std::cout << r2tm::tab3 << "( std::cout << ... << args );" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "}" << r2tm::linefeed2;
 
-				PROC_MAIN( print_args_2( 1, 2, 3, 4, "template_variadic_test", 3.141592 ) );
+				PROC_MAIN( print_args_2( 1, 2, 3, 4, "play_template_variadic", 3.141592 ) );
 				LF();
 			}
 
@@ -125,7 +125,7 @@ namespace template_variadic_test
 				std::cout << r2tm::tab3 << "( print( args ), ... );" << r2tm::linefeed;
 				std::cout << r2tm::tab2 << "}" << r2tm::linefeed2;
 
-				PROC_MAIN( print_args_3( 1, 2, 3, 4, "template_variadic_test", 3.141592 ) );
+				PROC_MAIN( print_args_3( 1, 2, 3, 4, "play_template_variadic", 3.141592 ) );
 			}
 
 			LS();
@@ -166,7 +166,7 @@ namespace
 		static constexpr int result = N + SumArgs<IntegerList...>::result;
 	};
 }
-namespace template_variadic_test
+namespace play_template_variadic
 {
 	r2tm::TitleFunctionT SumValues::GetTitleFunction() const
 	{
@@ -253,7 +253,7 @@ namespace
 		return ( integer - ... - integer_list ); // fold
 	}
 }
-namespace template_variadic_test
+namespace play_template_variadic
 {
 	r2tm::TitleFunctionT SubtractValues::GetTitleFunction() const
 	{
@@ -382,7 +382,7 @@ namespace
 		}
 	};
 }
-namespace template_variadic_test
+namespace play_template_variadic
 {
 	r2tm::TitleFunctionT Test::GetTitleFunction() const
 	{

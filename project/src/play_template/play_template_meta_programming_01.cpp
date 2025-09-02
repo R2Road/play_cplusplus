@@ -1,4 +1,4 @@
-#include "template_meta_programming_01_test.h"
+#include "play_template_meta_programming_01.hpp"
 
 #include "r2tm/r2tm_ostream.hpp"
 
@@ -30,7 +30,7 @@ namespace
 		static const int f = 1;
 	};
 }
-namespace template_meta_programming_test
+namespace play_template_meta_programming_01
 {
 	r2tm::TitleFunctionT CalculateFactorial::GetTitleFunction() const
 	{
@@ -82,7 +82,7 @@ namespace template_meta_programming_test
 
 
 
-namespace template_meta_programming_test
+namespace play_template_meta_programming_01
 {
 	template<int A, int B>
 	struct GCDCalculator
@@ -130,7 +130,7 @@ namespace template_meta_programming_test
 
 
 
-namespace template_meta_programming_test
+namespace play_template_meta_programming_01
 {
 	template<int N, int D>
 	struct Ratio_VER0
@@ -169,7 +169,7 @@ namespace template_meta_programming_test
 
 
 
-namespace template_meta_programming_test
+namespace play_template_meta_programming_01
 {
 	template<class Ratio1, class Ratio2>
 	struct Ratio_VER0_Operator_Sum
@@ -217,7 +217,7 @@ namespace template_meta_programming_test
 
 
 
-namespace template_meta_programming_test
+namespace play_template_meta_programming_01
 {
 	template<int N, int D>
 	struct Ratio_VER1
@@ -272,7 +272,7 @@ namespace template_meta_programming_test
 
 
 
-namespace template_meta_programming_test
+namespace play_template_meta_programming_01
 {
 	template<class Ratio1, class Ratio2>
 	struct Ratio_VER1_Operator_Sum
@@ -327,7 +327,7 @@ namespace template_meta_programming_test
 
 
 
-namespace template_meta_programming_test
+namespace play_template_meta_programming_01
 {
 	r2tm::TitleFunctionT SumRatioAndOperator1::GetTitleFunction() const
 	{
@@ -381,7 +381,7 @@ namespace template_meta_programming_test
 
 
 
-namespace template_meta_programming_test
+namespace play_template_meta_programming_01
 {
 	template<class Ratio1, class Ratio2>
 	struct Ratio_VER1_Operator_Sum2

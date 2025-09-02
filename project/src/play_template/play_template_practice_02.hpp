@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace template_specialization_test
+namespace play_template_practice_02
 {
 	class Basic : public r2tm::iItem
 	{

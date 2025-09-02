@@ -1,4 +1,4 @@
-#include "template_meta_programming_03_test.h"
+#include "play_template_meta_programming_03.hpp"
 
 #include "r2tm/r2tm_ostream.hpp"
 
@@ -26,7 +26,7 @@ namespace
 		ThisT val;
 	};
 }
-namespace template_meta_programming_test
+namespace play_template_meta_programming_01
 {
 	r2tm::TitleFunctionT MultiTypePackage::GetTitleFunction() const
 	{

@@ -1,4 +1,4 @@
-namespace template_basic_test
+namespace play_template_basic
 {
 	template<typename T>
 	struct MemberVariableTest_01
@@ -14,7 +14,7 @@ namespace template_basic_test
 	};
 }
 
-namespace template_basic_test
+namespace play_template_basic
 {
 	template<typename ReturnValueT>
 	ReturnValueT Template_Fn_R_()
@@ -35,7 +35,7 @@ namespace template_basic_test
 	}
 }
 
-namespace template_basic_test
+namespace play_template_basic
 {
 	void FN_V_0() { puts( "void FN_V_0()" ); }
 

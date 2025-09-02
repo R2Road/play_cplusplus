@@ -22,7 +22,7 @@
 #include "play_std/menu_std.hpp"
 #include "play_time/menu_time.hpp"
 #include "play_various/menu_various.hpp"
-#include "test_template/TemplateMenu.h"
+#include "play_template/menu_template.hpp"
 #include "test_windows/WindowsMenu.h"
 
 r2tm::TitleFunctionT Menu_Root::GetTitleFunction() const
@@ -80,7 +80,7 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 		mp->AddMenu( 'w', Menu_C() );
 		mp->AddMenu( 'e', Menu_CPP() );
 		mp->AddMenu( 'r', Menu_STD() );
-		mp->AddMenu( 't', TemplateMenu() );
+		mp->AddMenu( 't', Menu_Template() );
 		mp->AddMenu( 'y', Menu_Time() );
 		mp->AddMenu( 'u', Menu_Random() );
 		mp->AddMenu( 'i', Menu_Debug() );

@@ -1,10 +1,10 @@
-#include "template_practice_part_01_test.h"
+#include "play_template_practice_part_01.hpp"
 
 #include <algorithm>
 
 #include "r2tm/r2tm_ostream.hpp"
 
-namespace template_practice_part_01_test
+namespace play_template_practice_part_01
 {
 	template<int N>
 	struct Buffer
@@ -53,7 +53,7 @@ namespace template_practice_part_01_test
 	}
 }
 
-namespace template_practice_part_01_test
+namespace play_template_practice_part_01
 {
 	//template<typename... Types>
 	//class FindMax;

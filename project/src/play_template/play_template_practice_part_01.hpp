@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace template_practice_part_01_test
+namespace play_template_practice_part_01
 {
 	class BufferWithTemplate : public r2tm::iItem
 	{

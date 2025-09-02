@@ -13,12 +13,6 @@
     <Filter Include="test_windows\item">
       <UniqueIdentifier>{5a415f0f-d9ca-4c8d-931c-02fee8c5145d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test_template">
-      <UniqueIdentifier>{31104b3b-edc7-4367-b673-b82d2f7ad11f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test_template\item">
-      <UniqueIdentifier>{8417e009-0b74-46fc-a4f1-d8ae80ed09e9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="play_hobby">
       <UniqueIdentifier>{3c5e3fee-a097-460f-9772-dbfd7cefa3ae}</UniqueIdentifier>
     </Filter>
@@ -67,6 +61,9 @@
     <Filter Include="play_performancee">
       <UniqueIdentifier>{19c6e25a-79ed-4d96-b56f-dd8f953eeaed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="play_template">
+      <UniqueIdentifier>{31104b3b-edc7-4367-b673-b82d2f7ad11f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -100,42 +97,6 @@
     </ClCompile>
     <ClCompile Include="src\test_windows\WindowsMenu.cpp">
       <Filter>test_windows</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_template\item\template_meta_programming_01_test.cpp">
-      <Filter>test_template\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_template\item\template_meta_programming_02_test.cpp">
-      <Filter>test_template\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_template\item\template_meta_programming_03_test.cpp">
-      <Filter>test_template\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_template\item\template_practice_part_01_test.cpp">
-      <Filter>test_template\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_template\item\template_variadic_test.cpp">
-      <Filter>test_template\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_template\TemplateMenu.cpp">
-      <Filter>test_template</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_template\TemplateMetaProgrammingMenu.cpp">
-      <Filter>test_template</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_template\TemplatePracticeMenu.cpp">
-      <Filter>test_template</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_template\TemplateVariadicMenu.cpp">
-      <Filter>test_template</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_template\item\template_specialization_test.cpp">
-      <Filter>test_template\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_template\item\template_practice_test_02.cpp">
-      <Filter>test_template\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_template\item\template_basic_test.cpp">
-      <Filter>test_template\item</Filter>
     </ClCompile>
     <ClCompile Include="src\play_hobby\menu_hobby.cpp">
       <Filter>play_hobby</Filter>
@@ -627,6 +588,42 @@
     <ClCompile Include="src\play_performance\play_performance_container_iteration.cpp">
       <Filter>play_performancee</Filter>
     </ClCompile>
+    <ClCompile Include="src\play_template\menu_template.cpp">
+      <Filter>play_template</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_template\menu_template_meta_programming.cpp">
+      <Filter>play_template</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_template\menu_template_variadic.cpp">
+      <Filter>play_template</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_template\menu_template_practice.cpp">
+      <Filter>play_template</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_template\play_template_basic.cpp">
+      <Filter>play_template</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_template\play_template_meta_programming_01.cpp">
+      <Filter>play_template</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_template\play_template_meta_programming_02.cpp">
+      <Filter>play_template</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_template\play_template_meta_programming_03.cpp">
+      <Filter>play_template</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_template\play_template_practice_02.cpp">
+      <Filter>play_template</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_template\play_template_practice_part_01.cpp">
+      <Filter>play_template</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_template\play_template_specialization.cpp">
+      <Filter>play_template</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_template\play_template_variadic.cpp">
+      <Filter>play_template</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -663,51 +660,6 @@
     <ClInclude Include="src\test_windows\WindowsMenu.h">
       <Filter>test_windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_template\item\template_meta_programming_01_test.h">
-      <Filter>test_template\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_template\item\template_meta_programming_02_test.h">
-      <Filter>test_template\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_template\item\template_meta_programming_03_test.h">
-      <Filter>test_template\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_template\item\template_practice_part_01_test.h">
-      <Filter>test_template\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_template\item\template_variadic_test.h">
-      <Filter>test_template\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_template\TemplateVariadicMenu.h">
-      <Filter>test_template</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_template\TemplateMenu.h">
-      <Filter>test_template</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_template\TemplateMetaProgrammingMenu.h">
-      <Filter>test_template</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_template\TemplatePracticeMenu.h">
-      <Filter>test_template</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_template\item\template_specialization_test.h">
-      <Filter>test_template\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_template\item\template_specialization_test_helper_basic.hpp">
-      <Filter>test_template\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_template\item\template_practice_test_02.h">
-      <Filter>test_template\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_template\item\template_practice_test_02_helper_basic.hpp">
-      <Filter>test_template\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_template\item\template_basic_test.h">
-      <Filter>test_template\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_template\item\template_basic_test_helper.hpp">
-      <Filter>test_template\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\play_hobby\menu_hobby.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
@@ -743,9 +695,6 @@
     </ClInclude>
     <ClInclude Include="src\utility\play_cpp_utility_CharacterBuffer.h">
       <Filter>utility</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_template\item\template_basic_test___parentheses___helper.hpp">
-      <Filter>test_template\item</Filter>
     </ClInclude>
     <ClInclude Include="src\play_math\menu_play_math.h">
       <Filter>play_math</Filter>
@@ -1371,6 +1320,54 @@
     </ClInclude>
     <ClInclude Include="src\play_performance\play_performance_container_iteration.hpp">
       <Filter>play_performancee</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_template\menu_template.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_template\menu_template_meta_programming.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_template\menu_template_variadic.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_template\menu_template_practice.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_template\play_template_basic.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_template\play_template_basic_helper.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_template\play_template_basic_helper___parentheses.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_template\play_template_meta_programming_01.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_template\play_template_meta_programming_02.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_template\play_template_meta_programming_03.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_template\play_template_practice_02.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_template\play_template_practice_02_helper___basic.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_template\play_template_practice_part_01.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_template\play_template_specialization.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_template\play_template_specialization_helper___basic.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_template\play_template_variadic.hpp">
+      <Filter>play_template</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

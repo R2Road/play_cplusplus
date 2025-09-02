@@ -1,7 +1,7 @@
 #include <stdint.h>
 #include "r2tm/r2tm_ostream.hpp"
 
-namespace template_specialization_test
+namespace play_template_specialization
 {
 	template<typename T>
 	void TemplateFunc( const T value )

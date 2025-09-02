@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace template_basic_test
+namespace play_template_basic
 {
 	class MemberVariable : public r2tm::iItem
 	{

@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace template_meta_programming_test
+namespace play_template_meta_programming_01
 {
 	class CalculateFactorial : public r2tm::iItem
 	{

@@ -3,7 +3,7 @@
 
 #include <map>
 
-namespace template_practice_test_02
+namespace play_template_practice_02
 {
 	void FN_V_A0()
 	{

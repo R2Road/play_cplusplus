@@ -1,10 +1,10 @@
-#include "template_meta_programming_02_test.h"
+#include "play_template_meta_programming_02.hpp"
 
 #include <string>
 
 #include "r2tm/r2tm_ostream.hpp"
 
-namespace template_meta_programming_test
+namespace play_template_meta_programming_01
 {
 	template<char... chars>
 	struct ConvertCharacter2String_1
@@ -56,7 +56,7 @@ namespace
 	};
 	template<int N> std::string ConvertInteger2String_1<N>::c = std::to_string( N );
 }
-namespace template_meta_programming_test
+namespace play_template_meta_programming_01
 {
 	r2tm::TitleFunctionT Integer2String::GetTitleFunction() const
 	{
@@ -99,7 +99,7 @@ namespace
 		static constexpr size_t place_value = 0;
 	};
 }
-namespace template_meta_programming_test
+namespace play_template_meta_programming_01
 {
 	r2tm::TitleFunctionT CalculatePlaceValue::GetTitleFunction() const
 	{
@@ -166,7 +166,7 @@ namespace
 	// 위의 ConvertInteger2String_2 의 전방 선언 코드를 지우고 가장 아래의 템플릿 코드를 가장 위로 올려도 정상 작동 한다.
 	// 전방 선언은 템플릿 코드의 번역 순서에 따라 발생하는 문제를 해결해준다.
 }
-namespace template_meta_programming_test
+namespace play_template_meta_programming_01
 {
 	r2tm::TitleFunctionT Integer2String_II::GetTitleFunction() const
 	{

@@ -1,11 +1,11 @@
-#include "template_basic_test.h"
-#include "template_basic_test_helper.hpp"
-#include "template_basic_test___parentheses___helper.hpp"
+#include "play_template_basic.hpp"
+#include "play_template_basic_helper.hpp"
+#include "play_template_basic_helper___parentheses.hpp"
 
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 
-namespace template_basic_test
+namespace play_template_basic
 {
 	r2tm::TitleFunctionT MemberVariable::GetTitleFunction() const
 	{
@@ -20,7 +20,7 @@ namespace template_basic_test
 		{
 			LS();
 
-			OUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 1, 15 );
+			OUT_FILE_RANGE( "src/play_template/play_template_basic_helper.hpp", 1, 15 );
 
 			LS();
 
@@ -62,7 +62,7 @@ namespace template_basic_test
 		{
 			LS();
 
-			OUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 17, 36 );
+			OUT_FILE_RANGE( "src/play_template/play_template_basic_helper.hpp", 17, 36 );
 
 			LS();
 
@@ -114,7 +114,7 @@ namespace template_basic_test
 		{
 			LS();
 
-			OUT_FILE_RANGE( "src/test_template/item/template_basic_test_helper.hpp", 38, 61 );
+			OUT_FILE_RANGE( "src/play_template/play_template_basic_helper.hpp", 38, 61 );
 
 			LS();
 
@@ -245,7 +245,7 @@ namespace template_basic_test
 			LS();
 
 			{
-				OUT_FILE( "src/test_template/item/template_basic_test___parentheses___helper.hpp" );
+				OUT_FILE( "src/play_template/play_template_basic_helper___parentheses.hpp" );
 			}
 
 			LS();

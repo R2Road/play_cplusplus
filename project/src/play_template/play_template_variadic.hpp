@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace template_variadic_test
+namespace play_template_variadic
 {
 	class SizeOfArgs : public r2tm::iItem
 	{
