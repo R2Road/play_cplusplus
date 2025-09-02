@@ -16,13 +16,13 @@
 #include "play_debug/menu_debug.h"
 #include "play_hobby/menu_hobby.hpp"
 #include "play_math/menu_play_math.h"
+#include "play_random/menu_random.hpp"
 #include "play_rendering_pipeline/menu_play_rendering_pipeline.h"
 #include "play_std/menu_std.hpp"
+#include "play_time/menu_time.hpp"
+#include "play_various/menu_various.hpp"
 #include "test_performance/PerformanceMenu.h"
 #include "test_template/TemplateMenu.h"
-#include "test_various/ETCMenu.h"
-#include "test_various/RandomMenu.h"
-#include "test_various/TimeMenu.h"
 #include "test_windows/WindowsMenu.h"
 
 r2tm::TitleFunctionT Menu_Root::GetTitleFunction() const
@@ -81,8 +81,8 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 		mp->AddMenu( 'e', Menu_CPP() );
 		mp->AddMenu( 'r', Menu_STD() );
 		mp->AddMenu( 't', TemplateMenu() );
-		mp->AddMenu( 'y', TimeMenu() );
-		mp->AddMenu( 'u', RandomMenu() );
+		mp->AddMenu( 'y', Menu_Time() );
+		mp->AddMenu( 'u', Menu_Random() );
 		mp->AddMenu( 'i', Menu_Debug() );
 
 
@@ -93,7 +93,7 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 		
 		mp->AddMenu( 'a', Menu_Play_Math() );
 		mp->AddMenu( 's', Menu_Play_Rendering_Pipeline() );
-		mp->AddMenu( 'd', ETCMenu() );
+		mp->AddMenu( 'd', Menu_Various() );
 
 
 

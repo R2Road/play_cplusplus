@@ -1,4 +1,4 @@
-#include "RandomMenu.h"
+#include "menu_random.hpp"
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
@@ -7,18 +7,18 @@
 
 #include "menu_root.hpp"
 
-r2tm::TitleFunctionT RandomMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Random::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Random";
 	};
 }
-r2tm::DescriptionFunctionT RandomMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Random::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT RandomMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Random::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{

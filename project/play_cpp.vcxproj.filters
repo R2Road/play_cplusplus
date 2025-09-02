@@ -19,12 +19,6 @@
     <Filter Include="test_performancee\item">
       <UniqueIdentifier>{06e38cf0-4703-4437-8b43-c4920f4e1e4b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test_various">
-      <UniqueIdentifier>{b19241a3-88bd-445e-80a0-e5851f32d0b1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test_various\item">
-      <UniqueIdentifier>{d628ba0d-95c6-439f-843e-25cfcef096aa}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test_template">
       <UniqueIdentifier>{31104b3b-edc7-4367-b673-b82d2f7ad11f}</UniqueIdentifier>
     </Filter>
@@ -66,6 +60,15 @@
     </Filter>
     <Filter Include="play_std">
       <UniqueIdentifier>{eeee77b9-6aa6-40c1-a16f-2bddd142ced0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="play_various">
+      <UniqueIdentifier>{b19241a3-88bd-445e-80a0-e5851f32d0b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="play_random">
+      <UniqueIdentifier>{b488658b-a8a1-4444-9bc1-db805488b7f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="play_time">
+      <UniqueIdentifier>{c3a6e1ba-8a93-4781-a736-789cec9682be}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -109,18 +112,6 @@
     </ClCompile>
     <ClCompile Include="src\test_windows\WindowsMenu.cpp">
       <Filter>test_windows</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_various\TimeMenu.cpp">
-      <Filter>test_various</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_various\ETCMenu.cpp">
-      <Filter>test_various</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_various\item\etc_0_test.cpp">
-      <Filter>test_various\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_various\RandomMenu.cpp">
-      <Filter>test_various</Filter>
     </ClCompile>
     <ClCompile Include="src\test_template\item\template_meta_programming_01_test.cpp">
       <Filter>test_template\item</Filter>
@@ -627,6 +618,18 @@
     <ClCompile Include="src\play_std\play_std_vector.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
+    <ClCompile Include="src\play_various\menu_various.cpp">
+      <Filter>play_various</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_various\play_various_0.cpp">
+      <Filter>play_various</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_random\menu_random.cpp">
+      <Filter>play_random</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_time\menu_time.cpp">
+      <Filter>play_time</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -671,18 +674,6 @@
     </ClInclude>
     <ClInclude Include="src\test_windows\WindowsMenu.h">
       <Filter>test_windows</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_various\TimeMenu.h">
-      <Filter>test_various</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_various\ETCMenu.h">
-      <Filter>test_various</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_various\item\etc_0_test.h">
-      <Filter>test_various\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_various\RandomMenu.h">
-      <Filter>test_various</Filter>
     </ClInclude>
     <ClInclude Include="src\test_template\item\template_meta_programming_01_test.h">
       <Filter>test_template\item</Filter>
@@ -1371,6 +1362,18 @@
     </ClInclude>
     <ClInclude Include="src\play_std\play_std_vector.hpp">
       <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_various\menu_various.hpp">
+      <Filter>play_various</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_various\play_various_0.hpp">
+      <Filter>play_various</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_random\menu_random.hpp">
+      <Filter>play_random</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_time\menu_time.hpp">
+      <Filter>play_time</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

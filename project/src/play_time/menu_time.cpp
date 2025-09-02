@@ -1,4 +1,4 @@
-#include "TimeMenu.h"
+#include "menu_time.hpp"
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
@@ -8,18 +8,18 @@
 
 #include "menu_root.hpp"
 
-r2tm::TitleFunctionT TimeMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Time::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Time";
 	};
 }
-r2tm::DescriptionFunctionT TimeMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Time::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT TimeMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Time::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{

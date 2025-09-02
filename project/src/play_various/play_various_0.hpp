@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace etc_test
+namespace play_various_0
 {
 	class ShowBinary : public r2tm::iItem
 	{

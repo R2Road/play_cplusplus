@@ -1,4 +1,4 @@
-#include "etc_0_test.h"
+#include "play_various_0.hpp"
 
 #include <array>
 #include <bitset>
@@ -9,7 +9,7 @@
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 
-namespace etc_test
+namespace play_various_0
 {
 	r2tm::TitleFunctionT ShowBinary::GetTitleFunction() const
 	{

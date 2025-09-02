@@ -124,6 +124,7 @@
     <ClCompile Include="src\play_math\play_math_vector2_transform.cpp" />
     <ClCompile Include="src\play_math\play_math_vector3.cpp" />
     <ClCompile Include="src\play_math\play_math_vector3_transform.cpp" />
+    <ClCompile Include="src\play_random\menu_random.cpp" />
     <ClCompile Include="src\play_rendering_pipeline\menu_play_rendering_pipeline.cpp" />
     <ClCompile Include="src\play_rendering_pipeline\play_rendering_pipeline.cpp" />
     <ClCompile Include="src\play_std\menu_std.cpp" />
@@ -172,6 +173,9 @@
     <ClCompile Include="src\play_std\play_std_unordered_map.cpp" />
     <ClCompile Include="src\play_std\play_std_variant.cpp" />
     <ClCompile Include="src\play_std\play_std_vector.cpp" />
+    <ClCompile Include="src\play_time\menu_time.cpp" />
+    <ClCompile Include="src\play_various\menu_various.cpp" />
+    <ClCompile Include="src\play_various\play_various_0.cpp" />
     <ClCompile Include="src\test_performance\item\performance_1_test.cpp" />
     <ClCompile Include="src\test_performance\item\performance_container_iteration_test.cpp" />
     <ClCompile Include="src\test_performance\PerformanceMenu.cpp" />
@@ -187,10 +191,6 @@
     <ClCompile Include="src\test_template\TemplateMetaProgrammingMenu.cpp" />
     <ClCompile Include="src\test_template\TemplatePracticeMenu.cpp" />
     <ClCompile Include="src\test_template\TemplateVariadicMenu.cpp" />
-    <ClCompile Include="src\test_various\ETCMenu.cpp" />
-    <ClCompile Include="src\test_various\item\etc_0_test.cpp" />
-    <ClCompile Include="src\test_various\RandomMenu.cpp" />
-    <ClCompile Include="src\test_various\TimeMenu.cpp" />
     <ClCompile Include="src\test_windows\WindowsTerminalFondAndTextColorMenu.cpp" />
     <ClCompile Include="src\test_windows\WindowsTerminalBasicMenu.cpp" />
     <ClCompile Include="src\test_windows\FlickeringResearchMenu.cpp" />
@@ -365,6 +365,7 @@
     <ClInclude Include="src\menu_root.hpp" />
     <ClInclude Include="src\play_math\play_math___helper_common.h" />
     <ClInclude Include="src\play_math\play_math___helper_vector4.h" />
+    <ClInclude Include="src\play_random\menu_random.hpp" />
     <ClInclude Include="src\play_rendering_pipeline\menu_play_rendering_pipeline.h" />
     <ClInclude Include="src\play_rendering_pipeline\play_rendering_pipeline.h" />
     <ClInclude Include="src\play_std\menu_std.hpp" />
@@ -419,6 +420,9 @@
     <ClInclude Include="src\play_std\play_std_unordered_map_helper___cstring.hpp" />
     <ClInclude Include="src\play_std\play_std_variant.hpp" />
     <ClInclude Include="src\play_std\play_std_vector.hpp" />
+    <ClInclude Include="src\play_time\menu_time.hpp" />
+    <ClInclude Include="src\play_various\menu_various.hpp" />
+    <ClInclude Include="src\play_various\play_various_0.hpp" />
     <ClInclude Include="src\test_performance\item\performance_1_test.h" />
     <ClInclude Include="src\test_performance\item\performance_container_iteration_test.h" />
     <ClInclude Include="src\test_performance\PerformanceMenu.h" />
@@ -438,10 +442,6 @@
     <ClInclude Include="src\test_template\TemplateMetaProgrammingMenu.h" />
     <ClInclude Include="src\test_template\TemplatePracticeMenu.h" />
     <ClInclude Include="src\test_template\TemplateVariadicMenu.h" />
-    <ClInclude Include="src\test_various\ETCMenu.h" />
-    <ClInclude Include="src\test_various\item\etc_0_test.h" />
-    <ClInclude Include="src\test_various\RandomMenu.h" />
-    <ClInclude Include="src\test_various\TimeMenu.h" />
     <ClInclude Include="src\test_windows\WindowsTerminalFondAndTextColorMenu.h" />
     <ClInclude Include="src\test_windows\WindowsTerminalBasicMenu.h" />
     <ClInclude Include="src\test_windows\FlickeringResearchMenu.h" />
