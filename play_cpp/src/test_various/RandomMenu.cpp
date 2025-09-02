@@ -3,7 +3,7 @@
 #include "r2tm/r2tm_menu_processor.hpp"
 
 #include "play_c/play_c_random.hpp"
-#include "test_std/item/std_random_test.h"
+#include "play_std/play_std_random.hpp"
 
 #include "menu_root.hpp"
 
@@ -28,9 +28,9 @@ r2tm::WriteFunctionT RandomMenu::GetWriteFunction() const
 		mp->AddLineFeed();
 
 
-		mp->AddItem( 'q', std_random_test::Basic() );
-		mp->AddItem( 'w', std_random_test::StatusSaveAndLoad() );
-		mp->AddItem( 'e', std_random_test::DiscreateDistribution() );
+		mp->AddItem( 'q', play_std_random::Basic() );
+		mp->AddItem( 'w', play_std_random::StatusSaveAndLoad() );
+		mp->AddItem( 'e', play_std_random::DiscreateDistribution() );
 
 
 		mp->AddSplit();

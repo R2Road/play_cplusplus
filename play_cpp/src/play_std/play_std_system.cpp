@@ -1,0 +1,32 @@
+#include "play_std_system.hpp"
+
+#include <cstdlib>
+
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
+
+namespace play_std_system
+{
+	r2tm::TitleFunctionT Demo::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::system : Demo";
+		};
+	}
+	r2tm::DoFunctionT Demo::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				PROC_MAIN( std::system( "dir /w" ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+}

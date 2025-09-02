@@ -3,7 +3,7 @@
 #include "r2tm/r2tm_menu_processor.hpp"
 
 #include "play_c/play_c_time.hpp"
-#include "test_std/item/std_chrono_test.h"
+#include "play_std/play_std_chrono.hpp"
 #include "test_windows/item/windows_time_test.h"
 
 #include "menu_root.hpp"
@@ -42,11 +42,11 @@ r2tm::WriteFunctionT TimeMenu::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'a', std_chrono_test::Epoch() );
-		mp->AddItem( 's', std_chrono_test::SystemClock() );
-		mp->AddItem( 'd', std_chrono_test::SteadyClock() );
-		mp->AddItem( 'f', std_chrono_test::SteadyClock_Duration() );
-		mp->AddItem( 'g', std_chrono_test::Demo() );
+		mp->AddItem( 'a', play_std_chrono::Epoch() );
+		mp->AddItem( 's', play_std_chrono::SystemClock() );
+		mp->AddItem( 'd', play_std_chrono::SteadyClock() );
+		mp->AddItem( 'f', play_std_chrono::SteadyClock_Duration() );
+		mp->AddItem( 'g', play_std_chrono::Demo() );
 
 
 

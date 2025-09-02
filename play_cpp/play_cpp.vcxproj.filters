@@ -19,12 +19,6 @@
     <Filter Include="test_performancee\item">
       <UniqueIdentifier>{06e38cf0-4703-4437-8b43-c4920f4e1e4b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test_std">
-      <UniqueIdentifier>{eeee77b9-6aa6-40c1-a16f-2bddd142ced0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test_std\item">
-      <UniqueIdentifier>{3e075bee-01f0-40df-a7cb-d0b6b5f09418}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test_various">
       <UniqueIdentifier>{b19241a3-88bd-445e-80a0-e5851f32d0b1}</UniqueIdentifier>
     </Filter>
@@ -70,6 +64,9 @@
     <Filter Include="play_c">
       <UniqueIdentifier>{5e31479a-288d-46e3-8a1d-85fb424f6364}</UniqueIdentifier>
     </Filter>
+    <Filter Include="play_std">
+      <UniqueIdentifier>{eeee77b9-6aa6-40c1-a16f-2bddd142ced0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -110,92 +107,8 @@
     <ClCompile Include="src\test_performance\PerformanceMenu.cpp">
       <Filter>test_performancee</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_std\STDContainerMenu.cpp">
-      <Filter>test_std</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\STDCoutMenu.cpp">
-      <Filter>test_std</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\STDFileSystemMenu.cpp">
-      <Filter>test_std</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\STDMemoryMenu.cpp">
-      <Filter>test_std</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\STDMenu.cpp">
-      <Filter>test_std</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\STDNumericMenu.cpp">
-      <Filter>test_std</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\STDThreadMenu.cpp">
-      <Filter>test_std</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_algorithm_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_array_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_chrono_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_cout_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_fstream_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_function_2_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_function_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_list_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_numeric_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_optional_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_random_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_regex_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_thread_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_tuple_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_variant_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_vector_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\STDOptionalMenu.cpp">
-      <Filter>test_std</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_windows\WindowsMenu.cpp">
       <Filter>test_windows</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_string_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\STDStringMenu.cpp">
-      <Filter>test_std</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_filesystem_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\STDAlignMenu.cpp">
-      <Filter>test_std</Filter>
     </ClCompile>
     <ClCompile Include="src\test_various\TimeMenu.cpp">
       <Filter>test_various</Filter>
@@ -236,38 +149,14 @@
     <ClCompile Include="src\test_template\TemplateVariadicMenu.cpp">
       <Filter>test_template</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_std\STDStringViewMenu.cpp">
-      <Filter>test_std</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_string_view_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_template\item\template_specialization_test.cpp">
       <Filter>test_template\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\STDFunctionalMenu.cpp">
-      <Filter>test_std</Filter>
     </ClCompile>
     <ClCompile Include="src\test_template\item\template_practice_test_02.cpp">
       <Filter>test_template\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_template\item\template_basic_test.cpp">
       <Filter>test_template\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_memory_unique_ptr_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_memory_unique_ptr_test_helper_forward_declaration.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_memory_shared_ptr_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_bitset_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_atomic_test.cpp">
-      <Filter>test_std\item</Filter>
     </ClCompile>
     <ClCompile Include="src\play_hobby\menu_hobby.cpp">
       <Filter>play_hobby</Filter>
@@ -284,12 +173,6 @@
     <ClCompile Include="src\play_hobby\menu_tree.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_std\item\std_functional_mem_fn_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_functional_invoke_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_windows\item\windows_screen_buffer_test.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
@@ -305,35 +188,11 @@
     <ClCompile Include="src\test_windows\item\windows_terminal_flickering_research.cpp">
       <Filter>test_windows\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_std\item\std_memory_align_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_queue_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_unordered_map_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_functional_hash_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\STDFstreamMenu.cpp">
-      <Filter>test_std</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_system_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\utility\play_cpp_utility_PathBuilder.cpp">
       <Filter>utility</Filter>
     </ClCompile>
     <ClCompile Include="src\utility\play_cpp_utility_CharacterBuffer.cpp">
       <Filter>utility</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\item\std_cin_test.cpp">
-      <Filter>test_std\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_std\STDCinMenu.cpp">
-      <Filter>test_std</Filter>
     </ClCompile>
     <ClCompile Include="src\play_math\menu_play_math.cpp">
       <Filter>play_math</Filter>
@@ -630,6 +489,144 @@
     <ClCompile Include="external\r2tm\r2tm_file.cpp">
       <Filter>_external\r2tm</Filter>
     </ClCompile>
+    <ClCompile Include="src\play_std\menu_std.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\menu_std_align.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\menu_std_cin.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\menu_std_container.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\menu_std_cout.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\menu_std_file_system.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\menu_std_fstream.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\menu_std_functional.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\menu_std_memory.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\menu_std_numeric.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\menu_std_optional.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\menu_std_string.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\menu_std_string_view.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\menu_std_thread.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_algorithm.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_array.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_atomic.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_bitset.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_chrono.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_cin.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_cout.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_filesystem.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_fstream.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_function.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_function_2.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_functional_hash.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_functional_invoke.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_functional_mem_fn.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_list.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_memory_align.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_memory_shared_ptr.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_memory_unique_ptr.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_memory_unique_ptr_helper___forward_declaration.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_numeric.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_optional.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_queue.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_random.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_regex.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_string.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_string_view.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_system.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_thread.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_tuple.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_unordered_map.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_variant.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_std\play_std_vector.cpp">
+      <Filter>play_std</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -672,92 +669,8 @@
     <ClInclude Include="src\test_performance\PerformanceMenu.h">
       <Filter>test_performancee</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_std\STDContainerMenu.h">
-      <Filter>test_std</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\STDCoutMenu.h">
-      <Filter>test_std</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\STDFileSystemMenu.h">
-      <Filter>test_std</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\STDMemoryMenu.h">
-      <Filter>test_std</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\STDMenu.h">
-      <Filter>test_std</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\STDNumericMenu.h">
-      <Filter>test_std</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\STDThreadMenu.h">
-      <Filter>test_std</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_algorithm_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_array_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_chrono_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_cout_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_fstream_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_function_2_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_function_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_list_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_numeric_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_optional_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_random_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_regex_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_thread_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_tuple_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_variant_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_vector_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\STDOptionalMenu.h">
-      <Filter>test_std</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_windows\WindowsMenu.h">
       <Filter>test_windows</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_string_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\STDStringMenu.h">
-      <Filter>test_std</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_filesystem_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\STDAlignMenu.h">
-      <Filter>test_std</Filter>
     </ClInclude>
     <ClInclude Include="src\test_various\TimeMenu.h">
       <Filter>test_various</Filter>
@@ -798,17 +711,8 @@
     <ClInclude Include="src\test_template\TemplatePracticeMenu.h">
       <Filter>test_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_std\STDStringViewMenu.h">
-      <Filter>test_std</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_string_view_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_template\item\template_specialization_test.h">
       <Filter>test_template\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\STDFunctionalMenu.h">
-      <Filter>test_std</Filter>
     </ClInclude>
     <ClInclude Include="src\test_template\item\template_specialization_test_helper_basic.hpp">
       <Filter>test_template\item</Filter>
@@ -825,24 +729,6 @@
     <ClInclude Include="src\test_template\item\template_basic_test_helper.hpp">
       <Filter>test_template\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_std\item\std_memory_unique_ptr_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_memory_unique_ptr_test_helper_forward_declaration.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_memory_shared_ptr_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_memory_unique_ptr_test_helper_template_deleter.hpp">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_bitset_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_atomic_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\play_hobby\menu_hobby.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
@@ -857,18 +743,6 @@
     </ClInclude>
     <ClInclude Include="src\play_hobby\menu_tree.hpp">
       <Filter>play_hobby</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_functional_mem_fn_test_helper.hpp">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_functional_mem_fn_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_functional_invoke_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_functional_invoke_test_helper.hpp">
-      <Filter>test_std\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_windows\item\windows_screen_buffer_test.h">
       <Filter>test_windows\item</Filter>
@@ -885,44 +759,11 @@
     <ClInclude Include="src\test_windows\item\windows_terminal_flickering_research.h">
       <Filter>test_windows\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_std\item\std_memory_align_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_queue_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_unordered_map_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_functional_hash_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_functional_hash_test_helper_cstring.hpp">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_unordered_map_test_helper_cstring.hpp">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\STDFstreamMenu.h">
-      <Filter>test_std</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_system_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_thread_test_helper_declaration2.hpp">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\utility\play_cpp_utility_PathBuilder.h">
       <Filter>utility</Filter>
     </ClInclude>
     <ClInclude Include="src\utility\play_cpp_utility_CharacterBuffer.h">
       <Filter>utility</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\item\std_cin_test.h">
-      <Filter>test_std\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_std\STDCinMenu.h">
-      <Filter>test_std</Filter>
     </ClInclude>
     <ClInclude Include="src\test_template\item\template_basic_test___parentheses___helper.hpp">
       <Filter>test_template\item</Filter>
@@ -1374,6 +1215,162 @@
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_file.hpp">
       <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\menu_std.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\menu_std_align.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\menu_std_cin.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\menu_std_container.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\menu_std_cout.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\menu_std_file_system.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\menu_std_fstream.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\menu_std_functional.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\menu_std_memory.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\menu_std_numeric.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\menu_std_optional.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\menu_std_string.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\menu_std_string_view.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\menu_std_thread.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_algorithm.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_array.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_atomic.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_bitset.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_chrono.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_cin.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_cout.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_filesystem.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_fstream.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_function.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_function_2.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_functional_hash.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_functional_hash_helper___cstring.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_functional_invoke.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_functional_invoke_helper.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_functional_mem_fn.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_functional_mem_fn_helper.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_list.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_memory_align.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_memory_shared_ptr.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_memory_unique_ptr.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_memory_unique_ptr_helper___forward_declaration.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_memory_unique_ptr_helper___template_deleter.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_numeric.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_optional.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_queue.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_random.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_regex.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_string.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_string_view.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_system.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_thread.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_thread_helper___declaration2.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_tuple.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_unordered_map.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_unordered_map_helper___cstring.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_variant.hpp">
+      <Filter>play_std</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_std\play_std_vector.hpp">
+      <Filter>play_std</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
