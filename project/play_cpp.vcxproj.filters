@@ -13,12 +13,6 @@
     <Filter Include="test_windows\item">
       <UniqueIdentifier>{5a415f0f-d9ca-4c8d-931c-02fee8c5145d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test_performancee">
-      <UniqueIdentifier>{19c6e25a-79ed-4d96-b56f-dd8f953eeaed}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test_performancee\item">
-      <UniqueIdentifier>{06e38cf0-4703-4437-8b43-c4920f4e1e4b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test_template">
       <UniqueIdentifier>{31104b3b-edc7-4367-b673-b82d2f7ad11f}</UniqueIdentifier>
     </Filter>
@@ -70,6 +64,9 @@
     <Filter Include="play_time">
       <UniqueIdentifier>{c3a6e1ba-8a93-4781-a736-789cec9682be}</UniqueIdentifier>
     </Filter>
+    <Filter Include="play_performancee">
+      <UniqueIdentifier>{19c6e25a-79ed-4d96-b56f-dd8f953eeaed}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -100,15 +97,6 @@
     </ClCompile>
     <ClCompile Include="src\test_windows\FlickeringResearchMenu.cpp">
       <Filter>test_windows</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_performance\item\performance_1_test.cpp">
-      <Filter>test_performancee\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_performance\item\performance_container_iteration_test.cpp">
-      <Filter>test_performancee\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_performance\PerformanceMenu.cpp">
-      <Filter>test_performancee</Filter>
     </ClCompile>
     <ClCompile Include="src\test_windows\WindowsMenu.cpp">
       <Filter>test_windows</Filter>
@@ -630,6 +618,15 @@
     <ClCompile Include="src\play_time\menu_time.cpp">
       <Filter>play_time</Filter>
     </ClCompile>
+    <ClCompile Include="src\play_performance\menu_performance.cpp">
+      <Filter>play_performancee</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_performance\play_performance_1.cpp">
+      <Filter>play_performancee</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play_performance\play_performance_container_iteration.cpp">
+      <Filter>play_performancee</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
@@ -662,15 +659,6 @@
     </ClInclude>
     <ClInclude Include="src\test_windows\FlickeringResearchMenu.h">
       <Filter>test_windows</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_performance\item\performance_1_test.h">
-      <Filter>test_performancee\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_performance\item\performance_container_iteration_test.h">
-      <Filter>test_performancee\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_performance\PerformanceMenu.h">
-      <Filter>test_performancee</Filter>
     </ClInclude>
     <ClInclude Include="src\test_windows\WindowsMenu.h">
       <Filter>test_windows</Filter>
@@ -1374,6 +1362,15 @@
     </ClInclude>
     <ClInclude Include="src\play_time\menu_time.hpp">
       <Filter>play_time</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_performance\menu_performance.hpp">
+      <Filter>play_performancee</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_performance\play_performance_1.hpp">
+      <Filter>play_performancee</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play_performance\play_performance_container_iteration.hpp">
+      <Filter>play_performancee</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

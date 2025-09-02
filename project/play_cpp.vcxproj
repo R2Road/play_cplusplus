@@ -124,6 +124,9 @@
     <ClCompile Include="src\play_math\play_math_vector2_transform.cpp" />
     <ClCompile Include="src\play_math\play_math_vector3.cpp" />
     <ClCompile Include="src\play_math\play_math_vector3_transform.cpp" />
+    <ClCompile Include="src\play_performance\menu_performance.cpp" />
+    <ClCompile Include="src\play_performance\play_performance_1.cpp" />
+    <ClCompile Include="src\play_performance\play_performance_container_iteration.cpp" />
     <ClCompile Include="src\play_random\menu_random.cpp" />
     <ClCompile Include="src\play_rendering_pipeline\menu_play_rendering_pipeline.cpp" />
     <ClCompile Include="src\play_rendering_pipeline\play_rendering_pipeline.cpp" />
@@ -176,9 +179,6 @@
     <ClCompile Include="src\play_time\menu_time.cpp" />
     <ClCompile Include="src\play_various\menu_various.cpp" />
     <ClCompile Include="src\play_various\play_various_0.cpp" />
-    <ClCompile Include="src\test_performance\item\performance_1_test.cpp" />
-    <ClCompile Include="src\test_performance\item\performance_container_iteration_test.cpp" />
-    <ClCompile Include="src\test_performance\PerformanceMenu.cpp" />
     <ClCompile Include="src\test_template\item\template_basic_test.cpp" />
     <ClCompile Include="src\test_template\item\template_meta_programming_01_test.cpp" />
     <ClCompile Include="src\test_template\item\template_meta_programming_02_test.cpp" />
@@ -365,6 +365,9 @@
     <ClInclude Include="src\menu_root.hpp" />
     <ClInclude Include="src\play_math\play_math___helper_common.h" />
     <ClInclude Include="src\play_math\play_math___helper_vector4.h" />
+    <ClInclude Include="src\play_performance\menu_performance.hpp" />
+    <ClInclude Include="src\play_performance\play_performance_1.hpp" />
+    <ClInclude Include="src\play_performance\play_performance_container_iteration.hpp" />
     <ClInclude Include="src\play_random\menu_random.hpp" />
     <ClInclude Include="src\play_rendering_pipeline\menu_play_rendering_pipeline.h" />
     <ClInclude Include="src\play_rendering_pipeline\play_rendering_pipeline.h" />
@@ -423,9 +426,6 @@
     <ClInclude Include="src\play_time\menu_time.hpp" />
     <ClInclude Include="src\play_various\menu_various.hpp" />
     <ClInclude Include="src\play_various\play_various_0.hpp" />
-    <ClInclude Include="src\test_performance\item\performance_1_test.h" />
-    <ClInclude Include="src\test_performance\item\performance_container_iteration_test.h" />
-    <ClInclude Include="src\test_performance\PerformanceMenu.h" />
     <ClInclude Include="src\test_template\item\template_basic_test.h" />
     <ClInclude Include="src\test_template\item\template_basic_test_helper.hpp" />
     <ClInclude Include="src\test_template\item\template_basic_test___parentheses___helper.hpp" />

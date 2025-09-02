@@ -1,32 +1,32 @@
-#include "PerformanceMenu.h"
+#include "menu_performance.hpp"
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
-#include "item/performance_1_test.h"
-#include "item/performance_container_iteration_test.h"
+#include "play_performance_1.hpp"
+#include "play_performance_container_iteration.hpp"
 
 #include "menu_root.hpp"
 
-r2tm::TitleFunctionT PerformanceMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Performance::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Performance";
 	};
 }
-r2tm::DescriptionFunctionT PerformanceMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Performance::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT PerformanceMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Performance::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', performance_1_test::IncrementOperator() );
-		mp->AddItem( '2', performance_1_test::Loop() );
-		mp->AddItem( '3', performance_1_test::LoopWithBuildInArray() );
-		mp->AddItem( '4', performance_1_test::LoopWithSTDArray() );
-		mp->AddItem( '5', performance_1_test::CompareIteratorOperator() );
+		mp->AddItem( '1', play_performance_1::IncrementOperator() );
+		mp->AddItem( '2', play_performance_1::Loop() );
+		mp->AddItem( '3', play_performance_1::LoopWithBuildInArray() );
+		mp->AddItem( '4', play_performance_1::LoopWithSTDArray() );
+		mp->AddItem( '5', play_performance_1::CompareIteratorOperator() );
 
 		mp->AddLineFeed();
 

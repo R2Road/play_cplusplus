@@ -1,4 +1,4 @@
-#include "performance_1_test.h"
+#include "play_performance_1.hpp"
 
 #include <array>
 #include <memory>
@@ -8,7 +8,7 @@
 
 #include "r2tm/r2tm_stop_watch.hpp"
 
-namespace performance_1_test
+namespace play_performance_1
 {
 	r2tm::TitleFunctionT IncrementOperator::GetTitleFunction() const
 	{

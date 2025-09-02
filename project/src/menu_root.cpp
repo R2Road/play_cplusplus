@@ -16,12 +16,12 @@
 #include "play_debug/menu_debug.h"
 #include "play_hobby/menu_hobby.hpp"
 #include "play_math/menu_play_math.h"
+#include "play_performance/menu_performance.hpp"
 #include "play_random/menu_random.hpp"
 #include "play_rendering_pipeline/menu_play_rendering_pipeline.h"
 #include "play_std/menu_std.hpp"
 #include "play_time/menu_time.hpp"
 #include "play_various/menu_various.hpp"
-#include "test_performance/PerformanceMenu.h"
 #include "test_template/TemplateMenu.h"
 #include "test_windows/WindowsMenu.h"
 
@@ -102,7 +102,7 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 
 
 		mp->AddMenu( 'z', Menu_Algorithm() );
-		mp->AddMenu( 'x', PerformanceMenu() );
+		mp->AddMenu( 'x', Menu_Performance() );
 		mp->AddMenu( 'c', Menu_CPU() );
 
 

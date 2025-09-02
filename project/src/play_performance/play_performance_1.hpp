@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace performance_1_test
+namespace play_performance_1
 {
 	class IncrementOperator : public r2tm::iItem
 	{
