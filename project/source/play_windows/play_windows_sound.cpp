@@ -9,7 +9,7 @@
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 
-#include "utility/play_cpp_utility_PathBuilder.h"
+#include "utility/play_cpp_utility_path_builder.hpp"
 
 namespace play_windows_sound
 {

@@ -205,8 +205,8 @@
     <ClCompile Include="source\play_windows\play_windows_terminal_message.cpp" />
     <ClCompile Include="source\play_windows\play_windows_terminal_text_color.cpp" />
     <ClCompile Include="source\play_windows\play_windows_time.cpp" />
-    <ClCompile Include="source\utility\play_cpp_utility_CharacterBuffer.cpp" />
-    <ClCompile Include="source\utility\play_cpp_utility_PathBuilder.cpp" />
+    <ClCompile Include="source\utility\play_cpp_utility_character_buffer.cpp" />
+    <ClCompile Include="source\utility\play_cpp_utility_path_builder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="external\r2tm\r2tm_cache_cleaner.hpp" />
@@ -456,8 +456,8 @@
     <ClInclude Include="source\play_windows\play_windows_terminal_message.hpp" />
     <ClInclude Include="source\play_windows\play_windows_terminal_text_color.hpp" />
     <ClInclude Include="source\play_windows\play_windows_time.hpp" />
-    <ClInclude Include="source\utility\play_cpp_utility_CharacterBuffer.h" />
-    <ClInclude Include="source\utility\play_cpp_utility_PathBuilder.h" />
+    <ClInclude Include="source\utility\play_cpp_utility_character_buffer.hpp" />
+    <ClInclude Include="source\utility\play_cpp_utility_path_builder.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="source\play_cpp\play_cpp_enum_helper___xmacro_2.def" />

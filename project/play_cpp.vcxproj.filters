@@ -4,9 +4,6 @@
     <Filter Include="algorithm">
       <UniqueIdentifier>{bb464bee-2936-45c5-9434-19d5decd9078}</UniqueIdentifier>
     </Filter>
-    <Filter Include="utility">
-      <UniqueIdentifier>{b470e37a-ab48-4294-91e6-d840afb5ce71}</UniqueIdentifier>
-    </Filter>
     <Filter Include="play_hobby">
       <UniqueIdentifier>{3c5e3fee-a097-460f-9772-dbfd7cefa3ae}</UniqueIdentifier>
     </Filter>
@@ -61,6 +58,9 @@
     <Filter Include="play_windows">
       <UniqueIdentifier>{8067c90e-f3a8-481b-9de8-239c1fd0385a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="_utility">
+      <UniqueIdentifier>{b470e37a-ab48-4294-91e6-d840afb5ce71}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp" />
@@ -83,11 +83,11 @@
     <ClCompile Include="source\play_hobby\menu_tree.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="source\utility\play_cpp_utility_PathBuilder.cpp">
-      <Filter>utility</Filter>
+    <ClCompile Include="source\utility\play_cpp_utility_path_builder.cpp">
+      <Filter>_utility</Filter>
     </ClCompile>
-    <ClCompile Include="source\utility\play_cpp_utility_CharacterBuffer.cpp">
-      <Filter>utility</Filter>
+    <ClCompile Include="source\utility\play_cpp_utility_character_buffer.cpp">
+      <Filter>_utility</Filter>
     </ClCompile>
     <ClCompile Include="source\play_math\menu_play_math.cpp">
       <Filter>play_math</Filter>
@@ -645,11 +645,11 @@
     <ClInclude Include="source\play_hobby\menu_tree.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="source\utility\play_cpp_utility_PathBuilder.h">
-      <Filter>utility</Filter>
+    <ClInclude Include="source\utility\play_cpp_utility_path_builder.hpp">
+      <Filter>_utility</Filter>
     </ClInclude>
-    <ClInclude Include="source\utility\play_cpp_utility_CharacterBuffer.h">
-      <Filter>utility</Filter>
+    <ClInclude Include="source\utility\play_cpp_utility_character_buffer.hpp">
+      <Filter>_utility</Filter>
     </ClInclude>
     <ClInclude Include="source\play_math\menu_play_math.h">
       <Filter>play_math</Filter>
