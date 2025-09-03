@@ -59,7 +59,7 @@ namespace r2algorithm_astar
 			}
 
 			// Collect Open List
-			r2::Direction8Bitwise dir8;
+			r2::Direction8Bitwise dir8( r2::Direction8Bitwise::eState::Up );
 			r2::PointInt temp_point;
 			for( int i = 0; 8 > i; ++i, dir8.Rotate( true ) )
 			{
@@ -165,7 +165,7 @@ namespace r2algorithm_astar
 			}
 
 			// Collect Open List
-			r2::Direction8Bitwise dir8;
+			r2::Direction8Bitwise dir8( r2::Direction8Bitwise::eState::Up );
 			r2::PointInt temp_point;
 			for( int i = 0; 8 > i; ++i, dir8.Rotate( true ) )
 			{
@@ -273,7 +273,7 @@ namespace r2algorithm_astar
 			}
 
 			// Collect Open List
-			r2::Direction8Bitwise dir8;
+			r2::Direction8Bitwise dir8( r2::Direction8Bitwise::eState::Up );
 			r2::PointInt temp_point;
 			for( int i = 0; 8 > i; ++i, dir8.Rotate( true ) )
 			{
@@ -382,7 +382,7 @@ namespace r2algorithm_astar
 			}
 
 			// Collect Open List
-			r2::Direction8Bitwise dir8;
+			r2::Direction8Bitwise dir8( r2::Direction8Bitwise::eState::Up );
 			r2::PointInt temp_point;
 			for( int i = 0; 8 > i; ++i, dir8.Rotate( true ) )
 			{
@@ -499,7 +499,7 @@ namespace r2algorithm_astar
 			}
 
 			// Collect Open List
-			r2::Direction8Bitwise dir8;
+			r2::Direction8Bitwise dir8( r2::Direction8Bitwise::eState::Up );
 			r2::PointInt temp_point;
 			for( int i = 0; 8 > i; ++i, dir8.Rotate( true ) )
 			{
@@ -600,7 +600,7 @@ namespace r2algorithm_astar
 			}
 
 			// Collect Open List
-			r2::Direction8Bitwise dir8;
+			r2::Direction8Bitwise dir8( r2::Direction8Bitwise::eState::Up );
 			r2::PointInt temp_point;
 			for( int i = 0; 8 > i; ++i, dir8.Rotate( true ) )
 			{
@@ -702,7 +702,7 @@ namespace r2algorithm_astar
 			}
 
 			// Collect Open List
-			r2::Direction8Bitwise dir8;
+			r2::Direction8Bitwise dir8( r2::Direction8Bitwise::eState::Up );
 			r2::PointInt temp_point;
 			for( int i = 0; 8 > i; ++i, dir8.Rotate( true ) )
 			{
