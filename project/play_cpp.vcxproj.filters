@@ -63,72 +63,72 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\algorithm\r2algorithm_astar_PathBuilder.cpp">
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\algorithm\r2algorithm_astar_PathBuilder.cpp">
       <Filter>algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu_root.cpp" />
-    <ClCompile Include="src\play_hobby\menu_hobby.cpp">
+    <ClCompile Include="source\menu_root.cpp" />
+    <ClCompile Include="source\play_hobby\menu_hobby.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\menu_list_based_on_array.cpp">
+    <ClCompile Include="source\play_hobby\menu_list_based_on_array.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\menu_memory_pool.cpp">
+    <ClCompile Include="source\play_hobby\menu_memory_pool.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\menu_property.cpp">
+    <ClCompile Include="source\play_hobby\menu_property.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\menu_tree.cpp">
+    <ClCompile Include="source\play_hobby\menu_tree.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\utility\play_cpp_utility_PathBuilder.cpp">
+    <ClCompile Include="source\utility\play_cpp_utility_PathBuilder.cpp">
       <Filter>utility</Filter>
     </ClCompile>
-    <ClCompile Include="src\utility\play_cpp_utility_CharacterBuffer.cpp">
+    <ClCompile Include="source\utility\play_cpp_utility_CharacterBuffer.cpp">
       <Filter>utility</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_math\menu_play_math.cpp">
+    <ClCompile Include="source\play_math\menu_play_math.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_math\play_math_basic.cpp">
+    <ClCompile Include="source\play_math\play_math_basic.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_math\play_math_vector3.cpp">
+    <ClCompile Include="source\play_math\play_math_vector3.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_math\play_math_vector2_transform.cpp">
+    <ClCompile Include="source\play_math\play_math_vector2_transform.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_math\play_math_vector3_transform.cpp">
+    <ClCompile Include="source\play_math\play_math_vector3_transform.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_rendering_pipeline\menu_play_rendering_pipeline.cpp">
+    <ClCompile Include="source\play_rendering_pipeline\menu_play_rendering_pipeline.cpp">
       <Filter>play_rendering_pipeline</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_rendering_pipeline\play_rendering_pipeline.cpp">
+    <ClCompile Include="source\play_rendering_pipeline\play_rendering_pipeline.cpp">
       <Filter>play_rendering_pipeline</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_math\play_math_numbers.cpp">
+    <ClCompile Include="source\play_math\play_math_numbers.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_math\play_math_quaternion.cpp">
+    <ClCompile Include="source\play_math\play_math_quaternion.cpp">
       <Filter>play_math</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_debug\menu_debug.cpp">
+    <ClCompile Include="source\play_debug\menu_debug.cpp">
       <Filter>play_debug</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_debug\play_debug.cpp">
+    <ClCompile Include="source\play_debug\play_debug.cpp">
       <Filter>play_debug</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpu\menu_cpu.cpp">
+    <ClCompile Include="source\play_cpu\menu_cpu.cpp">
       <Filter>play_cpu</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpu\play_cpu_basic.cpp">
+    <ClCompile Include="source\play_cpu\play_cpu_basic.cpp">
       <Filter>play_cpu</Filter>
     </ClCompile>
-    <ClCompile Include="src\key_viewer.cpp" />
+    <ClCompile Include="source\key_viewer.cpp" />
     <ClCompile Include="external\r2tm\r2tm_cache_cleaner.cpp">
       <Filter>_external\r2tm</Filter>
     </ClCompile>
@@ -177,544 +177,544 @@
     <ClCompile Include="external\r2\r2_direction8_bitwise.cpp">
       <Filter>_external\r2</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\play_infinite_number.cpp">
+    <ClCompile Include="source\play_hobby\play_infinite_number.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\play_list_based_on_array.cpp">
+    <ClCompile Include="source\play_hobby\play_list_based_on_array.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\play_memory_pool.cpp">
+    <ClCompile Include="source\play_hobby\play_memory_pool.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\play_property.cpp">
+    <ClCompile Include="source\play_hobby\play_property.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\play_serialize.cpp">
+    <ClCompile Include="source\play_hobby\play_serialize.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\play_spin_lock.cpp">
+    <ClCompile Include="source\play_hobby\play_spin_lock.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\play_tree.cpp">
+    <ClCompile Include="source\play_hobby\play_tree.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\menu_infinite_number.cpp">
+    <ClCompile Include="source\play_hobby\menu_infinite_number.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_hobby\menu_serialize.cpp">
+    <ClCompile Include="source\play_hobby\menu_serialize.cpp">
       <Filter>play_hobby</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_algorithm\algorithm_helper.cpp">
+    <ClCompile Include="source\play_algorithm\algorithm_helper.cpp">
       <Filter>play_algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_algorithm\menu_algorithm.cpp">
+    <ClCompile Include="source\play_algorithm\menu_algorithm.cpp">
       <Filter>play_algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_algorithm\menu_maze_generation.cpp">
+    <ClCompile Include="source\play_algorithm\menu_maze_generation.cpp">
       <Filter>play_algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_algorithm\menu_procedural_terrain_generation.cpp">
+    <ClCompile Include="source\play_algorithm\menu_procedural_terrain_generation.cpp">
       <Filter>play_algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_algorithm\play_algorithm_astar.cpp">
+    <ClCompile Include="source\play_algorithm\play_algorithm_astar.cpp">
       <Filter>play_algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_algorithm\play_algorithm_bubble_sort.cpp">
+    <ClCompile Include="source\play_algorithm\play_algorithm_bubble_sort.cpp">
       <Filter>play_algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_algorithm\play_algorithm_etc.cpp">
+    <ClCompile Include="source\play_algorithm\play_algorithm_etc.cpp">
       <Filter>play_algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_algorithm\play_algorithm_insertion_sort.cpp">
+    <ClCompile Include="source\play_algorithm\play_algorithm_insertion_sort.cpp">
       <Filter>play_algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_algorithm\play_algorithm_maze.cpp">
+    <ClCompile Include="source\play_algorithm\play_algorithm_maze.cpp">
       <Filter>play_algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_algorithm\play_algorithm_selection_sort.cpp">
+    <ClCompile Include="source\play_algorithm\play_algorithm_selection_sort.cpp">
       <Filter>play_algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_algorithm\play_maze_generation_kruskals.cpp">
+    <ClCompile Include="source\play_algorithm\play_maze_generation_kruskals.cpp">
       <Filter>play_algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_algorithm\play_procedural_terrain_generation_1.cpp">
+    <ClCompile Include="source\play_algorithm\play_procedural_terrain_generation_1.cpp">
       <Filter>play_algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_algorithm\play_procedural_terrain_generation_2.cpp">
+    <ClCompile Include="source\play_algorithm\play_procedural_terrain_generation_2.cpp">
       <Filter>play_algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_algorithm\play_procedural_terrain_generation_3.cpp">
+    <ClCompile Include="source\play_algorithm\play_procedural_terrain_generation_3.cpp">
       <Filter>play_algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\menu_align.cpp">
+    <ClCompile Include="source\play_cpp\menu_align.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\menu_char.cpp">
+    <ClCompile Include="source\play_cpp\menu_char.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\menu_class.cpp">
+    <ClCompile Include="source\play_cpp\menu_class.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\menu_cpp.cpp">
+    <ClCompile Include="source\play_cpp\menu_cpp.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\menu_enum.cpp">
+    <ClCompile Include="source\play_cpp\menu_enum.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\menu_lambda.cpp">
+    <ClCompile Include="source\play_cpp\menu_lambda.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\menu_namespace.cpp">
+    <ClCompile Include="source\play_cpp\menu_namespace.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\menu_new.cpp">
+    <ClCompile Include="source\play_cpp\menu_new.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\play_cpp_alignas.cpp">
+    <ClCompile Include="source\play_cpp\play_cpp_alignas.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\play_cpp_alignof.cpp">
+    <ClCompile Include="source\play_cpp\play_cpp_alignof.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\play_cpp_braces.cpp">
+    <ClCompile Include="source\play_cpp\play_cpp_braces.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\play_cpp_char.cpp">
+    <ClCompile Include="source\play_cpp\play_cpp_char.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\play_cpp_class.cpp">
+    <ClCompile Include="source\play_cpp\play_cpp_class.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\play_cpp_class_private_inheritance.cpp">
+    <ClCompile Include="source\play_cpp\play_cpp_class_private_inheritance.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\play_cpp_enum.cpp">
+    <ClCompile Include="source\play_cpp\play_cpp_enum.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\play_cpp_korean.cpp">
+    <ClCompile Include="source\play_cpp\play_cpp_korean.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\play_cpp_lambda.cpp">
+    <ClCompile Include="source\play_cpp\play_cpp_lambda.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\play_cpp_locale.cpp">
+    <ClCompile Include="source\play_cpp\play_cpp_locale.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\play_cpp_namespace.cpp">
+    <ClCompile Include="source\play_cpp\play_cpp_namespace.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\play_cpp_new.cpp">
+    <ClCompile Include="source\play_cpp\play_cpp_new.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\play_cpp_number.cpp">
+    <ClCompile Include="source\play_cpp\play_cpp_number.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\play_cpp_structured_binding.cpp">
+    <ClCompile Include="source\play_cpp\play_cpp_structured_binding.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_cpp\play_cpp_using.cpp">
+    <ClCompile Include="source\play_cpp\play_cpp_using.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\menu_c.cpp">
+    <ClCompile Include="source\play_c\menu_c.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\menu_c_bit_operation.cpp">
+    <ClCompile Include="source\play_c\menu_c_bit_operation.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\menu_c_file.cpp">
+    <ClCompile Include="source\play_c\menu_c_file.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\menu_c_operator.cpp">
+    <ClCompile Include="source\play_c\menu_c_operator.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\menu_c_pointer.cpp">
+    <ClCompile Include="source\play_c\menu_c_pointer.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\menu_c_union.cpp">
+    <ClCompile Include="source\play_c\menu_c_union.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\play_c_array.cpp">
+    <ClCompile Include="source\play_c\play_c_array.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\play_c_atexit.cpp">
+    <ClCompile Include="source\play_c\play_c_atexit.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\play_c_bit_operation.cpp">
+    <ClCompile Include="source\play_c\play_c_bit_operation.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\play_c_file.cpp">
+    <ClCompile Include="source\play_c\play_c_file.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\play_c_macro.cpp">
+    <ClCompile Include="source\play_c\play_c_macro.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\play_c_memset.cpp">
+    <ClCompile Include="source\play_c\play_c_memset.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\play_c_operator_priority.cpp">
+    <ClCompile Include="source\play_c\play_c_operator_priority.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\play_c_operator_ternary.cpp">
+    <ClCompile Include="source\play_c\play_c_operator_ternary.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\play_c_pointer.cpp">
+    <ClCompile Include="source\play_c\play_c_pointer.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\play_c_printf.cpp">
+    <ClCompile Include="source\play_c\play_c_printf.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\play_c_random.cpp">
+    <ClCompile Include="source\play_c\play_c_random.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\play_c_sizeof.cpp">
+    <ClCompile Include="source\play_c\play_c_sizeof.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\play_c_struct.cpp">
+    <ClCompile Include="source\play_c\play_c_struct.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\play_c_system.cpp">
+    <ClCompile Include="source\play_c\play_c_system.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\play_c_time.cpp">
+    <ClCompile Include="source\play_c\play_c_time.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_c\play_c_union.cpp">
+    <ClCompile Include="source\play_c\play_c_union.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
     <ClCompile Include="external\r2tm\r2tm_file.cpp">
       <Filter>_external\r2tm</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\menu_std.cpp">
+    <ClCompile Include="source\play_std\menu_std.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\menu_std_align.cpp">
+    <ClCompile Include="source\play_std\menu_std_align.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\menu_std_cin.cpp">
+    <ClCompile Include="source\play_std\menu_std_cin.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\menu_std_container.cpp">
+    <ClCompile Include="source\play_std\menu_std_container.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\menu_std_cout.cpp">
+    <ClCompile Include="source\play_std\menu_std_cout.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\menu_std_file_system.cpp">
+    <ClCompile Include="source\play_std\menu_std_file_system.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\menu_std_fstream.cpp">
+    <ClCompile Include="source\play_std\menu_std_fstream.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\menu_std_functional.cpp">
+    <ClCompile Include="source\play_std\menu_std_functional.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\menu_std_memory.cpp">
+    <ClCompile Include="source\play_std\menu_std_memory.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\menu_std_numeric.cpp">
+    <ClCompile Include="source\play_std\menu_std_numeric.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\menu_std_optional.cpp">
+    <ClCompile Include="source\play_std\menu_std_optional.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\menu_std_string.cpp">
+    <ClCompile Include="source\play_std\menu_std_string.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\menu_std_string_view.cpp">
+    <ClCompile Include="source\play_std\menu_std_string_view.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\menu_std_thread.cpp">
+    <ClCompile Include="source\play_std\menu_std_thread.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_algorithm.cpp">
+    <ClCompile Include="source\play_std\play_std_algorithm.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_array.cpp">
+    <ClCompile Include="source\play_std\play_std_array.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_atomic.cpp">
+    <ClCompile Include="source\play_std\play_std_atomic.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_bitset.cpp">
+    <ClCompile Include="source\play_std\play_std_bitset.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_chrono.cpp">
+    <ClCompile Include="source\play_std\play_std_chrono.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_cin.cpp">
+    <ClCompile Include="source\play_std\play_std_cin.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_cout.cpp">
+    <ClCompile Include="source\play_std\play_std_cout.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_filesystem.cpp">
+    <ClCompile Include="source\play_std\play_std_filesystem.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_fstream.cpp">
+    <ClCompile Include="source\play_std\play_std_fstream.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_function.cpp">
+    <ClCompile Include="source\play_std\play_std_function.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_function_2.cpp">
+    <ClCompile Include="source\play_std\play_std_function_2.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_functional_hash.cpp">
+    <ClCompile Include="source\play_std\play_std_functional_hash.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_functional_invoke.cpp">
+    <ClCompile Include="source\play_std\play_std_functional_invoke.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_functional_mem_fn.cpp">
+    <ClCompile Include="source\play_std\play_std_functional_mem_fn.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_list.cpp">
+    <ClCompile Include="source\play_std\play_std_list.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_memory_align.cpp">
+    <ClCompile Include="source\play_std\play_std_memory_align.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_memory_shared_ptr.cpp">
+    <ClCompile Include="source\play_std\play_std_memory_shared_ptr.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_memory_unique_ptr.cpp">
+    <ClCompile Include="source\play_std\play_std_memory_unique_ptr.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_memory_unique_ptr_helper___forward_declaration.cpp">
+    <ClCompile Include="source\play_std\play_std_memory_unique_ptr_helper___forward_declaration.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_numeric.cpp">
+    <ClCompile Include="source\play_std\play_std_numeric.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_optional.cpp">
+    <ClCompile Include="source\play_std\play_std_optional.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_queue.cpp">
+    <ClCompile Include="source\play_std\play_std_queue.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_random.cpp">
+    <ClCompile Include="source\play_std\play_std_random.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_regex.cpp">
+    <ClCompile Include="source\play_std\play_std_regex.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_string.cpp">
+    <ClCompile Include="source\play_std\play_std_string.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_string_view.cpp">
+    <ClCompile Include="source\play_std\play_std_string_view.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_system.cpp">
+    <ClCompile Include="source\play_std\play_std_system.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_thread.cpp">
+    <ClCompile Include="source\play_std\play_std_thread.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_tuple.cpp">
+    <ClCompile Include="source\play_std\play_std_tuple.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_unordered_map.cpp">
+    <ClCompile Include="source\play_std\play_std_unordered_map.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_variant.cpp">
+    <ClCompile Include="source\play_std\play_std_variant.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_std\play_std_vector.cpp">
+    <ClCompile Include="source\play_std\play_std_vector.cpp">
       <Filter>play_std</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_various\menu_various.cpp">
+    <ClCompile Include="source\play_various\menu_various.cpp">
       <Filter>play_various</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_various\play_various_0.cpp">
+    <ClCompile Include="source\play_various\play_various_0.cpp">
       <Filter>play_various</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_random\menu_random.cpp">
+    <ClCompile Include="source\play_random\menu_random.cpp">
       <Filter>play_random</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_time\menu_time.cpp">
+    <ClCompile Include="source\play_time\menu_time.cpp">
       <Filter>play_time</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_performance\menu_performance.cpp">
+    <ClCompile Include="source\play_performance\menu_performance.cpp">
       <Filter>play_performancee</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_performance\play_performance_1.cpp">
+    <ClCompile Include="source\play_performance\play_performance_1.cpp">
       <Filter>play_performancee</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_performance\play_performance_container_iteration.cpp">
+    <ClCompile Include="source\play_performance\play_performance_container_iteration.cpp">
       <Filter>play_performancee</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_template\menu_template.cpp">
+    <ClCompile Include="source\play_template\menu_template.cpp">
       <Filter>play_template</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_template\menu_template_meta_programming.cpp">
+    <ClCompile Include="source\play_template\menu_template_meta_programming.cpp">
       <Filter>play_template</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_template\menu_template_variadic.cpp">
+    <ClCompile Include="source\play_template\menu_template_variadic.cpp">
       <Filter>play_template</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_template\menu_template_practice.cpp">
+    <ClCompile Include="source\play_template\menu_template_practice.cpp">
       <Filter>play_template</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_template\play_template_basic.cpp">
+    <ClCompile Include="source\play_template\play_template_basic.cpp">
       <Filter>play_template</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_template\play_template_meta_programming_01.cpp">
+    <ClCompile Include="source\play_template\play_template_meta_programming_01.cpp">
       <Filter>play_template</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_template\play_template_meta_programming_02.cpp">
+    <ClCompile Include="source\play_template\play_template_meta_programming_02.cpp">
       <Filter>play_template</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_template\play_template_meta_programming_03.cpp">
+    <ClCompile Include="source\play_template\play_template_meta_programming_03.cpp">
       <Filter>play_template</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_template\play_template_practice_02.cpp">
+    <ClCompile Include="source\play_template\play_template_practice_02.cpp">
       <Filter>play_template</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_template\play_template_practice_part_01.cpp">
+    <ClCompile Include="source\play_template\play_template_practice_part_01.cpp">
       <Filter>play_template</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_template\play_template_specialization.cpp">
+    <ClCompile Include="source\play_template\play_template_specialization.cpp">
       <Filter>play_template</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_template\play_template_variadic.cpp">
+    <ClCompile Include="source\play_template\play_template_variadic.cpp">
       <Filter>play_template</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_windows\menu_windows_terminal_flickering_research.cpp">
+    <ClCompile Include="source\play_windows\menu_windows_terminal_flickering_research.cpp">
       <Filter>play_windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_windows\menu_windows.cpp">
+    <ClCompile Include="source\play_windows\menu_windows.cpp">
       <Filter>play_windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_windows\menu_windows_terminal_basic.cpp">
+    <ClCompile Include="source\play_windows\menu_windows_terminal_basic.cpp">
       <Filter>play_windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_windows\menu_windows_terminal_fond_and_color.cpp">
+    <ClCompile Include="source\play_windows\menu_windows_terminal_fond_and_color.cpp">
       <Filter>play_windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_windows\play_windows_terminal_screen_buffer.cpp">
+    <ClCompile Include="source\play_windows\play_windows_terminal_screen_buffer.cpp">
       <Filter>play_windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_windows\play_windows_sound.cpp">
+    <ClCompile Include="source\play_windows\play_windows_sound.cpp">
       <Filter>play_windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_windows\play_windows_terminal_basic.cpp">
+    <ClCompile Include="source\play_windows\play_windows_terminal_basic.cpp">
       <Filter>play_windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_windows\play_windows_terminal_dc.cpp">
+    <ClCompile Include="source\play_windows\play_windows_terminal_dc.cpp">
       <Filter>play_windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_windows\play_windows_terminal_flickering_research.cpp">
+    <ClCompile Include="source\play_windows\play_windows_terminal_flickering_research.cpp">
       <Filter>play_windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_windows\play_windows_terminal_font.cpp">
+    <ClCompile Include="source\play_windows\play_windows_terminal_font.cpp">
       <Filter>play_windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_windows\play_windows_terminal_input.cpp">
+    <ClCompile Include="source\play_windows\play_windows_terminal_input.cpp">
       <Filter>play_windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_windows\play_windows_terminal_message.cpp">
+    <ClCompile Include="source\play_windows\play_windows_terminal_message.cpp">
       <Filter>play_windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_windows\play_windows_terminal_text_color.cpp">
+    <ClCompile Include="source\play_windows\play_windows_terminal_text_color.cpp">
       <Filter>play_windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\play_windows\play_windows_time.cpp">
+    <ClCompile Include="source\play_windows\play_windows_time.cpp">
       <Filter>play_windows</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\algorithm\r2algorithm_astar_Constant.h">
+    <ClInclude Include="source\algorithm\r2algorithm_astar_Constant.h">
       <Filter>algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\algorithm\r2algorithm_astar_PathBuilder.h">
+    <ClInclude Include="source\algorithm\r2algorithm_astar_PathBuilder.h">
       <Filter>algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu_root.hpp" />
-    <ClInclude Include="src\play_hobby\menu_hobby.hpp">
+    <ClInclude Include="source\menu_root.hpp" />
+    <ClInclude Include="source\play_hobby\menu_hobby.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\menu_list_based_on_array.hpp">
+    <ClInclude Include="source\play_hobby\menu_list_based_on_array.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\menu_memory_pool.hpp">
+    <ClInclude Include="source\play_hobby\menu_memory_pool.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\menu_property.hpp">
+    <ClInclude Include="source\play_hobby\menu_property.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\menu_tree.hpp">
+    <ClInclude Include="source\play_hobby\menu_tree.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\utility\play_cpp_utility_PathBuilder.h">
+    <ClInclude Include="source\utility\play_cpp_utility_PathBuilder.h">
       <Filter>utility</Filter>
     </ClInclude>
-    <ClInclude Include="src\utility\play_cpp_utility_CharacterBuffer.h">
+    <ClInclude Include="source\utility\play_cpp_utility_CharacterBuffer.h">
       <Filter>utility</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\menu_play_math.h">
+    <ClInclude Include="source\play_math\menu_play_math.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math_basic.h">
+    <ClInclude Include="source\play_math\play_math_basic.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math___helper_vector3.h">
+    <ClInclude Include="source\play_math\play_math___helper_vector3.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math_vector3.h">
+    <ClInclude Include="source\play_math\play_math_vector3.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math___helper_common.h">
+    <ClInclude Include="source\play_math\play_math___helper_common.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math___helper_vector2.h">
+    <ClInclude Include="source\play_math\play_math___helper_vector2.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math_vector2_transform.h">
+    <ClInclude Include="source\play_math\play_math_vector2_transform.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math___helper_matrix22.h">
+    <ClInclude Include="source\play_math\play_math___helper_matrix22.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math_vector3_transform.h">
+    <ClInclude Include="source\play_math\play_math_vector3_transform.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math___helper_matrix33.h">
+    <ClInclude Include="source\play_math\play_math___helper_matrix33.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math___helper_vector4.h">
+    <ClInclude Include="source\play_math\play_math___helper_vector4.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math___helper_matrix44.h">
+    <ClInclude Include="source\play_math\play_math___helper_matrix44.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_rendering_pipeline\play_rendering_pipeline.h">
+    <ClInclude Include="source\play_rendering_pipeline\play_rendering_pipeline.h">
       <Filter>play_rendering_pipeline</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_rendering_pipeline\menu_play_rendering_pipeline.h">
+    <ClInclude Include="source\play_rendering_pipeline\menu_play_rendering_pipeline.h">
       <Filter>play_rendering_pipeline</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math_numbers.h">
+    <ClInclude Include="source\play_math\play_math_numbers.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math_quaternion.h">
+    <ClInclude Include="source\play_math\play_math_quaternion.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_math\play_math___helper_quaternion.h">
+    <ClInclude Include="source\play_math\play_math___helper_quaternion.h">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_debug\menu_debug.h">
+    <ClInclude Include="source\play_debug\menu_debug.h">
       <Filter>play_debug</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_debug\play_debug.h">
+    <ClInclude Include="source\play_debug\play_debug.h">
       <Filter>play_debug</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpu\menu_cpu.h">
+    <ClInclude Include="source\play_cpu\menu_cpu.h">
       <Filter>play_cpu</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpu\play_cpu_basic.h">
+    <ClInclude Include="source\play_cpu\play_cpu_basic.h">
       <Filter>play_cpu</Filter>
     </ClInclude>
-    <ClInclude Include="src\key_viewer.h" />
+    <ClInclude Include="source\key_viewer.h" />
     <ClInclude Include="external\r2tm\r2tm_cache_cleaner.hpp">
       <Filter>_external\r2tm</Filter>
     </ClInclude>
@@ -853,522 +853,522 @@
     <ClInclude Include="external\r2\r2_direction4_bitwise_state.hpp">
       <Filter>_external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\play_infinite_number.hpp">
+    <ClInclude Include="source\play_hobby\play_infinite_number.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\play_list_based_on_array.hpp">
+    <ClInclude Include="source\play_hobby\play_list_based_on_array.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\play_memory_pool.hpp">
+    <ClInclude Include="source\play_hobby\play_memory_pool.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\play_property.hpp">
+    <ClInclude Include="source\play_hobby\play_property.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\play_serialize.hpp">
+    <ClInclude Include="source\play_hobby\play_serialize.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\play_spin_lock.hpp">
+    <ClInclude Include="source\play_hobby\play_spin_lock.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\play_tree.hpp">
+    <ClInclude Include="source\play_hobby\play_tree.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\menu_infinite_number.hpp">
+    <ClInclude Include="source\play_hobby\menu_infinite_number.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_hobby\menu_serialize.hpp">
+    <ClInclude Include="source\play_hobby\menu_serialize.hpp">
       <Filter>play_hobby</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_algorithm\algorithm_helper.hpp">
+    <ClInclude Include="source\play_algorithm\algorithm_helper.hpp">
       <Filter>play_algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_algorithm\menu_algorithm.hpp">
+    <ClInclude Include="source\play_algorithm\menu_algorithm.hpp">
       <Filter>play_algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_algorithm\menu_maze_generation.hpp">
+    <ClInclude Include="source\play_algorithm\menu_maze_generation.hpp">
       <Filter>play_algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_algorithm\menu_procedural_terrain_generation.hpp">
+    <ClInclude Include="source\play_algorithm\menu_procedural_terrain_generation.hpp">
       <Filter>play_algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_algorithm\play_algorithm_astar.hpp">
+    <ClInclude Include="source\play_algorithm\play_algorithm_astar.hpp">
       <Filter>play_algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_algorithm\play_algorithm_bubble_sort.hpp">
+    <ClInclude Include="source\play_algorithm\play_algorithm_bubble_sort.hpp">
       <Filter>play_algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_algorithm\play_algorithm_etc.hpp">
+    <ClInclude Include="source\play_algorithm\play_algorithm_etc.hpp">
       <Filter>play_algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_algorithm\play_algorithm_insertion_sort.hpp">
+    <ClInclude Include="source\play_algorithm\play_algorithm_insertion_sort.hpp">
       <Filter>play_algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_algorithm\play_algorithm_maze.hpp">
+    <ClInclude Include="source\play_algorithm\play_algorithm_maze.hpp">
       <Filter>play_algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_algorithm\play_algorithm_selection_sort.hpp">
+    <ClInclude Include="source\play_algorithm\play_algorithm_selection_sort.hpp">
       <Filter>play_algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_algorithm\play_maze_generation_kruskals.hpp">
+    <ClInclude Include="source\play_algorithm\play_maze_generation_kruskals.hpp">
       <Filter>play_algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_algorithm\play_procedural_terrain_generation_1.hpp">
+    <ClInclude Include="source\play_algorithm\play_procedural_terrain_generation_1.hpp">
       <Filter>play_algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_algorithm\play_procedural_terrain_generation_2.hpp">
+    <ClInclude Include="source\play_algorithm\play_procedural_terrain_generation_2.hpp">
       <Filter>play_algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_algorithm\play_procedural_terrain_generation_3.hpp">
+    <ClInclude Include="source\play_algorithm\play_procedural_terrain_generation_3.hpp">
       <Filter>play_algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\menu_align.hpp">
+    <ClInclude Include="source\play_cpp\menu_align.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\menu_char.hpp">
+    <ClInclude Include="source\play_cpp\menu_char.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\menu_class.hpp">
+    <ClInclude Include="source\play_cpp\menu_class.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\menu_cpp.hpp">
+    <ClInclude Include="source\play_cpp\menu_cpp.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\menu_enum.hpp">
+    <ClInclude Include="source\play_cpp\menu_enum.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\menu_lambda.hpp">
+    <ClInclude Include="source\play_cpp\menu_lambda.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\menu_namespace.hpp">
+    <ClInclude Include="source\play_cpp\menu_namespace.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\menu_new.hpp">
+    <ClInclude Include="source\play_cpp\menu_new.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_alignas.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_alignas.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_alignof.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_alignof.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_braces.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_braces.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_char.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_char.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_class.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_class.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_class_helper___member_adress.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_class_helper___member_adress.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_class_helper___nvi.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_class_helper___nvi.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_class_helper___offset_singleton.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_class_helper___offset_singleton.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_class_helper___size_with_enum.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_class_helper___size_with_enum.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_class_helper___print_name.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_class_helper___print_name.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_class_private_inheritance.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_class_private_inheritance.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_class_private_inheritance_helper___demo1.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_class_private_inheritance_helper___demo1.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_class_private_inheritance_helper___ienum.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_class_private_inheritance_helper___ienum.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_class_private_inheritance_helper___pure_virtual_interface.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_class_private_inheritance_helper___pure_virtual_interface.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_class_private_inheritance_helper___virtual_interface.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_class_private_inheritance_helper___virtual_interface.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_enum.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_enum.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_enum_helper___convert_with_template.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_enum_helper___convert_with_template.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_enum_helper___make_enum_with_macro.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_enum_helper___make_enum_with_macro.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_enum_helper___xmacro_1.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_enum_helper___xmacro_1.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_enum_helper___xmacro_2.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_enum_helper___xmacro_2.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_korean.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_korean.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_lambda.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_lambda.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_locale.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_locale.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_namespace.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_namespace.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_new.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_new.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_number.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_number.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_structured_binding.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_structured_binding.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_cpp\play_cpp_using.hpp">
+    <ClInclude Include="source\play_cpp\play_cpp_using.hpp">
       <Filter>play_cpp</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\menu_c.hpp">
+    <ClInclude Include="source\play_c\menu_c.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\menu_c_bit_operation.hpp">
+    <ClInclude Include="source\play_c\menu_c_bit_operation.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\menu_c_file.hpp">
+    <ClInclude Include="source\play_c\menu_c_file.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\menu_c_operator.hpp">
+    <ClInclude Include="source\play_c\menu_c_operator.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\menu_c_pointer.hpp">
+    <ClInclude Include="source\play_c\menu_c_pointer.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\menu_c_union.hpp">
+    <ClInclude Include="source\play_c\menu_c_union.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\play_c_array.hpp">
+    <ClInclude Include="source\play_c\play_c_array.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\play_c_atexit.hpp">
+    <ClInclude Include="source\play_c\play_c_atexit.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\play_c_bit_operation.hpp">
+    <ClInclude Include="source\play_c\play_c_bit_operation.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\play_c_file.hpp">
+    <ClInclude Include="source\play_c\play_c_file.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\play_c_macro.hpp">
+    <ClInclude Include="source\play_c\play_c_macro.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\play_c_memset.hpp">
+    <ClInclude Include="source\play_c\play_c_memset.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\play_c_operator_priority.hpp">
+    <ClInclude Include="source\play_c\play_c_operator_priority.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\play_c_operator_ternary.hpp">
+    <ClInclude Include="source\play_c\play_c_operator_ternary.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\play_c_pointer.hpp">
+    <ClInclude Include="source\play_c\play_c_pointer.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\play_c_printf.hpp">
+    <ClInclude Include="source\play_c\play_c_printf.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\play_c_random.hpp">
+    <ClInclude Include="source\play_c\play_c_random.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\play_c_sizeof.hpp">
+    <ClInclude Include="source\play_c\play_c_sizeof.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\play_c_struct.hpp">
+    <ClInclude Include="source\play_c\play_c_struct.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\play_c_system.hpp">
+    <ClInclude Include="source\play_c\play_c_system.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\play_c_time.hpp">
+    <ClInclude Include="source\play_c\play_c_time.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_c\play_c_union.hpp">
+    <ClInclude Include="source\play_c\play_c_union.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_file.hpp">
       <Filter>_external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\menu_std.hpp">
+    <ClInclude Include="source\play_std\menu_std.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\menu_std_align.hpp">
+    <ClInclude Include="source\play_std\menu_std_align.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\menu_std_cin.hpp">
+    <ClInclude Include="source\play_std\menu_std_cin.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\menu_std_container.hpp">
+    <ClInclude Include="source\play_std\menu_std_container.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\menu_std_cout.hpp">
+    <ClInclude Include="source\play_std\menu_std_cout.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\menu_std_file_system.hpp">
+    <ClInclude Include="source\play_std\menu_std_file_system.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\menu_std_fstream.hpp">
+    <ClInclude Include="source\play_std\menu_std_fstream.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\menu_std_functional.hpp">
+    <ClInclude Include="source\play_std\menu_std_functional.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\menu_std_memory.hpp">
+    <ClInclude Include="source\play_std\menu_std_memory.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\menu_std_numeric.hpp">
+    <ClInclude Include="source\play_std\menu_std_numeric.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\menu_std_optional.hpp">
+    <ClInclude Include="source\play_std\menu_std_optional.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\menu_std_string.hpp">
+    <ClInclude Include="source\play_std\menu_std_string.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\menu_std_string_view.hpp">
+    <ClInclude Include="source\play_std\menu_std_string_view.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\menu_std_thread.hpp">
+    <ClInclude Include="source\play_std\menu_std_thread.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_algorithm.hpp">
+    <ClInclude Include="source\play_std\play_std_algorithm.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_array.hpp">
+    <ClInclude Include="source\play_std\play_std_array.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_atomic.hpp">
+    <ClInclude Include="source\play_std\play_std_atomic.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_bitset.hpp">
+    <ClInclude Include="source\play_std\play_std_bitset.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_chrono.hpp">
+    <ClInclude Include="source\play_std\play_std_chrono.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_cin.hpp">
+    <ClInclude Include="source\play_std\play_std_cin.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_cout.hpp">
+    <ClInclude Include="source\play_std\play_std_cout.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_filesystem.hpp">
+    <ClInclude Include="source\play_std\play_std_filesystem.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_fstream.hpp">
+    <ClInclude Include="source\play_std\play_std_fstream.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_function.hpp">
+    <ClInclude Include="source\play_std\play_std_function.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_function_2.hpp">
+    <ClInclude Include="source\play_std\play_std_function_2.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_functional_hash.hpp">
+    <ClInclude Include="source\play_std\play_std_functional_hash.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_functional_hash_helper___cstring.hpp">
+    <ClInclude Include="source\play_std\play_std_functional_hash_helper___cstring.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_functional_invoke.hpp">
+    <ClInclude Include="source\play_std\play_std_functional_invoke.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_functional_invoke_helper.hpp">
+    <ClInclude Include="source\play_std\play_std_functional_invoke_helper.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_functional_mem_fn.hpp">
+    <ClInclude Include="source\play_std\play_std_functional_mem_fn.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_functional_mem_fn_helper.hpp">
+    <ClInclude Include="source\play_std\play_std_functional_mem_fn_helper.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_list.hpp">
+    <ClInclude Include="source\play_std\play_std_list.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_memory_align.hpp">
+    <ClInclude Include="source\play_std\play_std_memory_align.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_memory_shared_ptr.hpp">
+    <ClInclude Include="source\play_std\play_std_memory_shared_ptr.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_memory_unique_ptr.hpp">
+    <ClInclude Include="source\play_std\play_std_memory_unique_ptr.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_memory_unique_ptr_helper___forward_declaration.hpp">
+    <ClInclude Include="source\play_std\play_std_memory_unique_ptr_helper___forward_declaration.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_memory_unique_ptr_helper___template_deleter.hpp">
+    <ClInclude Include="source\play_std\play_std_memory_unique_ptr_helper___template_deleter.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_numeric.hpp">
+    <ClInclude Include="source\play_std\play_std_numeric.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_optional.hpp">
+    <ClInclude Include="source\play_std\play_std_optional.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_queue.hpp">
+    <ClInclude Include="source\play_std\play_std_queue.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_random.hpp">
+    <ClInclude Include="source\play_std\play_std_random.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_regex.hpp">
+    <ClInclude Include="source\play_std\play_std_regex.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_string.hpp">
+    <ClInclude Include="source\play_std\play_std_string.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_string_view.hpp">
+    <ClInclude Include="source\play_std\play_std_string_view.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_system.hpp">
+    <ClInclude Include="source\play_std\play_std_system.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_thread.hpp">
+    <ClInclude Include="source\play_std\play_std_thread.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_thread_helper___declaration2.hpp">
+    <ClInclude Include="source\play_std\play_std_thread_helper___declaration2.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_tuple.hpp">
+    <ClInclude Include="source\play_std\play_std_tuple.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_unordered_map.hpp">
+    <ClInclude Include="source\play_std\play_std_unordered_map.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_unordered_map_helper___cstring.hpp">
+    <ClInclude Include="source\play_std\play_std_unordered_map_helper___cstring.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_variant.hpp">
+    <ClInclude Include="source\play_std\play_std_variant.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_std\play_std_vector.hpp">
+    <ClInclude Include="source\play_std\play_std_vector.hpp">
       <Filter>play_std</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_various\menu_various.hpp">
+    <ClInclude Include="source\play_various\menu_various.hpp">
       <Filter>play_various</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_various\play_various_0.hpp">
+    <ClInclude Include="source\play_various\play_various_0.hpp">
       <Filter>play_various</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_random\menu_random.hpp">
+    <ClInclude Include="source\play_random\menu_random.hpp">
       <Filter>play_random</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_time\menu_time.hpp">
+    <ClInclude Include="source\play_time\menu_time.hpp">
       <Filter>play_time</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_performance\menu_performance.hpp">
+    <ClInclude Include="source\play_performance\menu_performance.hpp">
       <Filter>play_performancee</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_performance\play_performance_1.hpp">
+    <ClInclude Include="source\play_performance\play_performance_1.hpp">
       <Filter>play_performancee</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_performance\play_performance_container_iteration.hpp">
+    <ClInclude Include="source\play_performance\play_performance_container_iteration.hpp">
       <Filter>play_performancee</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_template\menu_template.hpp">
+    <ClInclude Include="source\play_template\menu_template.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_template\menu_template_meta_programming.hpp">
+    <ClInclude Include="source\play_template\menu_template_meta_programming.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_template\menu_template_variadic.hpp">
+    <ClInclude Include="source\play_template\menu_template_variadic.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_template\menu_template_practice.hpp">
+    <ClInclude Include="source\play_template\menu_template_practice.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_template\play_template_basic.hpp">
+    <ClInclude Include="source\play_template\play_template_basic.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_template\play_template_basic_helper.hpp">
+    <ClInclude Include="source\play_template\play_template_basic_helper.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_template\play_template_basic_helper___parentheses.hpp">
+    <ClInclude Include="source\play_template\play_template_basic_helper___parentheses.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_template\play_template_meta_programming_01.hpp">
+    <ClInclude Include="source\play_template\play_template_meta_programming_01.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_template\play_template_meta_programming_02.hpp">
+    <ClInclude Include="source\play_template\play_template_meta_programming_02.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_template\play_template_meta_programming_03.hpp">
+    <ClInclude Include="source\play_template\play_template_meta_programming_03.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_template\play_template_practice_02.hpp">
+    <ClInclude Include="source\play_template\play_template_practice_02.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_template\play_template_practice_02_helper___basic.hpp">
+    <ClInclude Include="source\play_template\play_template_practice_02_helper___basic.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_template\play_template_practice_part_01.hpp">
+    <ClInclude Include="source\play_template\play_template_practice_part_01.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_template\play_template_specialization.hpp">
+    <ClInclude Include="source\play_template\play_template_specialization.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_template\play_template_specialization_helper___basic.hpp">
+    <ClInclude Include="source\play_template\play_template_specialization_helper___basic.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_template\play_template_variadic.hpp">
+    <ClInclude Include="source\play_template\play_template_variadic.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_windows\menu_windows_terminal_flickering_research.hpp">
+    <ClInclude Include="source\play_windows\menu_windows_terminal_flickering_research.hpp">
       <Filter>play_windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_windows\menu_windows.hpp">
+    <ClInclude Include="source\play_windows\menu_windows.hpp">
       <Filter>play_windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_windows\menu_windows_terminal_basic.hpp">
+    <ClInclude Include="source\play_windows\menu_windows_terminal_basic.hpp">
       <Filter>play_windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_windows\menu_windows_terminal_fond_and_color.hpp">
+    <ClInclude Include="source\play_windows\menu_windows_terminal_fond_and_color.hpp">
       <Filter>play_windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_windows\play_windows_terminal_screen_buffer.hpp">
+    <ClInclude Include="source\play_windows\play_windows_terminal_screen_buffer.hpp">
       <Filter>play_windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_windows\play_windows_sound.hpp">
+    <ClInclude Include="source\play_windows\play_windows_sound.hpp">
       <Filter>play_windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_windows\play_windows_terminal_basic.hpp">
+    <ClInclude Include="source\play_windows\play_windows_terminal_basic.hpp">
       <Filter>play_windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_windows\play_windows_terminal_dc.hpp">
+    <ClInclude Include="source\play_windows\play_windows_terminal_dc.hpp">
       <Filter>play_windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_windows\play_windows_terminal_flickering_research.hpp">
+    <ClInclude Include="source\play_windows\play_windows_terminal_flickering_research.hpp">
       <Filter>play_windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_windows\play_windows_terminal_font.hpp">
+    <ClInclude Include="source\play_windows\play_windows_terminal_font.hpp">
       <Filter>play_windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_windows\play_windows_terminal_input.hpp">
+    <ClInclude Include="source\play_windows\play_windows_terminal_input.hpp">
       <Filter>play_windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_windows\play_windows_terminal_message.hpp">
+    <ClInclude Include="source\play_windows\play_windows_terminal_message.hpp">
       <Filter>play_windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_windows\play_windows_terminal_text_color.hpp">
+    <ClInclude Include="source\play_windows\play_windows_terminal_text_color.hpp">
       <Filter>play_windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\play_windows\play_windows_time.hpp">
+    <ClInclude Include="source\play_windows\play_windows_time.hpp">
       <Filter>play_windows</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\play_cpp\play_cpp_enum_helper___xmacro_2.def">
+    <None Include="source\play_cpp\play_cpp_enum_helper___xmacro_2.def">
       <Filter>play_cpp</Filter>
     </None>
   </ItemGroup>
