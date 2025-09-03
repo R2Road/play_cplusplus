@@ -27,7 +27,7 @@ namespace play_c_file
 				LF();
 
 				DECL_MAIN( FILE* fp = nullptr );
-				EXPECT_EQ( 0, fopen_s( &fp, "resources/c_file_test_openandclose_1.txt", "rb" ) );
+				EXPECT_EQ( 0, fopen_s( &fp, "resources/rsc___play_c_file___open_and_close_1.hpp", "rb" ) );
 
 				SS();
 
@@ -82,7 +82,7 @@ namespace play_c_file
 			LS();
 
 			DECL_MAIN( FILE* fp = nullptr );
-			EXPECT_EQ( 0, fopen_s( &fp, "resources/c_file_test_openandclose_1.txt", "rb" ) );
+			EXPECT_EQ( 0, fopen_s( &fp, "resources/rsc___play_c_file___open_and_close_1.hpp", "rb" ) );
 
 			LS();
 
@@ -133,7 +133,7 @@ namespace play_c_file
 			LS();
 
 			DECL_MAIN( FILE* fp = nullptr );
-			EXPECT_EQ( 0, fopen_s( &fp, "resources/c_file_test_openandclose_1.txt", "rb" ) );
+			EXPECT_EQ( 0, fopen_s( &fp, "resources/rsc___play_c_file___open_and_close_1.hpp", "rb" ) );
 
 			LF();
 
@@ -187,7 +187,7 @@ namespace play_c_file
 
 			LS();
 
-			OUT_FILE( "resources/c_file_test_getformat_1.txt" );
+			OUT_FILE( "resources/rsc___play_c_file___get_format_1.txt" );
 
 			LS();
 
@@ -199,7 +199,7 @@ namespace play_c_file
 
 			LS();
 
-			EXPECT_EQ( 0, fopen_s( &fp, "resources/c_file_test_getformat_1.txt", "rb" ) );
+			EXPECT_EQ( 0, fopen_s( &fp, "resources/rsc___play_c_file___get_format_1.txt", "rb" ) );
 
 			LS();
 
