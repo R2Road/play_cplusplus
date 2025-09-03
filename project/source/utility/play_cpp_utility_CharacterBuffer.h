@@ -4,7 +4,6 @@
 #include <vector>
 
 #include "r2/r2_grid_index_converter.hpp"
-#include "r2/r2_rect_int.hpp"
 
 namespace play_cpp_utility
 {
