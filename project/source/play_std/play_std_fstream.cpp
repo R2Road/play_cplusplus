@@ -42,7 +42,7 @@ namespace play_std_fstream
 			LS();
 
 			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
-			PROC_SUB( p.append( "resources" ).append( "play_std_fstream_0.txt" ) );
+			PROC_SUB( p.append( "resources" ).append( "rsc___play_std_fstream.txt" ) );
 			OUT_VALUE( p );
 
 			LS();
@@ -119,7 +119,7 @@ namespace play_std_fstream
 			LS();
 
 			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
-			PROC_SUB( p.append( "resources" ).append( "play_std_fstream_0.txt" ) );
+			PROC_SUB( p.append( "resources" ).append( "rsc___play_std_fstream.txt" ) );
 			OUT_VALUE( p );
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
@@ -178,7 +178,7 @@ namespace play_std_fstream
 			LS();
 
 			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
-			PROC_SUB( p.append( "resources" ).append( "play_std_fstream_0.txt" ) );
+			PROC_SUB( p.append( "resources" ).append( "rsc___play_std_fstream.txt" ) );
 			OUT_VALUE( p );
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
@@ -237,7 +237,7 @@ namespace play_std_fstream
 			LS();
 
 			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
-			PROC_SUB( p.append( "resources" ).append( "play_std_fstream_0.txt" ) );
+			PROC_SUB( p.append( "resources" ).append( "rsc___play_std_fstream.txt" ) );
 			OUT_VALUE( p );
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
@@ -296,7 +296,7 @@ namespace play_std_fstream
 			LS();
 
 			DECL_SUB( std::filesystem::path p = std::filesystem::current_path() );
-			PROC_SUB( p.append( "resources" ).append( "play_std_fstream_0.txt" ) );
+			PROC_SUB( p.append( "resources" ).append( "rsc___play_std_fstream.txt" ) );
 			OUT_VALUE( p );
 			EXPECT_TRUE( std::filesystem::exists( p ) );
 
