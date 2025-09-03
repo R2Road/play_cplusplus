@@ -37,35 +37,8 @@ namespace
 		}
 	}
 
-	void ShowPath( const r2::PointInt entry_point, const r2::PointInt exit_point, const std::list<r2::PointInt>& path )
-	{
-		const r2tm::WindowsUtility::CursorPoint pivot_point{ 0, 4 };
-
-		for( const auto p : path )
-		{
-			r2tm::WindowsUtility::FillCharacter(
-				  pivot_point.x + static_cast<short>( p.GetX() * 2 )
-				, pivot_point.y + static_cast<short>( p.GetY() )
-				, '*'
-				, r2tm::WindowsUtility::eColor::FG_LightGreen
-			);
-		}
-
-		r2tm::WindowsUtility::FillCharacter(
-			  pivot_point.x + static_cast<short>( entry_point.GetX() * 2 )
-			, pivot_point.y + static_cast<short>( entry_point.GetY() )
-			, 'S'
-			, r2tm::WindowsUtility::eColor::FG_LightBlue
-		);
-		r2tm::WindowsUtility::FillCharacter(
-			  pivot_point.x + static_cast<short>( exit_point.GetX() * 2 )
-			, pivot_point.y + static_cast<short>( exit_point.GetY() )
-			, 'E'
-			, r2tm::WindowsUtility::eColor::FG_LightRed
-		);
-	}
-
-	void ShowPath( const r2::PointInt entry_point, const r2::PointInt exit_point, const std::vector<r2::PointInt>& path )
+	template<typename PathT>
+	void ShowPath( const r2::PointInt entry_point, const r2::PointInt exit_point, const PathT& path )
 	{
 		const r2tm::WindowsUtility::CursorPoint pivot_point{ 0, 4 };
 
