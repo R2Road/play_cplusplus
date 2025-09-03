@@ -1,5 +1,6 @@
 #include "play_algorithm_astar.hpp"
 
+#include "r2tm/r2tm_color_modifier.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_stop_watch.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
@@ -29,7 +30,7 @@ namespace
 			}
 			else
 			{
-				std::cout << "@ ";
+				std::cout << clm( r2tm::eColor::FG_Gray ) << "@ " << clm();
 			}
 
 			++x;
@@ -42,24 +43,26 @@ namespace
 
 		for( const auto p : path )
 		{
-			r2tm::WindowsUtility::MoveCursorPoint(
-				pivot_point.x + static_cast<short>( p.GetX() * 2 )
+			r2tm::WindowsUtility::FillCharacter(
+				  pivot_point.x + static_cast<short>( p.GetX() * 2 )
 				, pivot_point.y + static_cast<short>( p.GetY() )
+				, '*'
+				, r2tm::WindowsUtility::eColor::FG_LightGreen
 			);
-
-			std::cout << '*';
 		}
 
-		r2tm::WindowsUtility::MoveCursorPoint(
-				pivot_point.x + static_cast<short>( entry_point.GetX() * 2 )
-				, pivot_point.y + static_cast<short>( entry_point.GetY() )
+		r2tm::WindowsUtility::FillCharacter(
+			  pivot_point.x + static_cast<short>( entry_point.GetX() * 2 )
+			, pivot_point.y + static_cast<short>( entry_point.GetY() )
+			, 'S'
+			, r2tm::WindowsUtility::eColor::FG_LightBlue
 		);
-		std::cout << '1';
-		r2tm::WindowsUtility::MoveCursorPoint(
-				pivot_point.x + static_cast<short>( exit_point.GetX() * 2 )
-				, pivot_point.y + static_cast<short>( exit_point.GetY() )
+		r2tm::WindowsUtility::FillCharacter(
+			  pivot_point.x + static_cast<short>( exit_point.GetX() * 2 )
+			, pivot_point.y + static_cast<short>( exit_point.GetY() )
+			, 'E'
+			, r2tm::WindowsUtility::eColor::FG_LightRed
 		);
-		std::cout << '2';
 	}
 
 	void ShowPath( const r2::PointInt entry_point, const r2::PointInt exit_point, const std::vector<r2::PointInt>& path )
@@ -68,24 +71,26 @@ namespace
 
 		for( const auto p : path )
 		{
-			r2tm::WindowsUtility::MoveCursorPoint(
-				pivot_point.x + static_cast<short>( p.GetX() * 2 )
+			r2tm::WindowsUtility::FillCharacter(
+				  pivot_point.x + static_cast<short>( p.GetX() * 2 )
 				, pivot_point.y + static_cast<short>( p.GetY() )
-				);
-
-			std::cout << '*';
+				, '*'
+				, r2tm::WindowsUtility::eColor::FG_LightGreen
+			);
 		}
 
-		r2tm::WindowsUtility::MoveCursorPoint(
-				pivot_point.x + static_cast<short>( entry_point.GetX() * 2 )
-				, pivot_point.y + static_cast<short>( entry_point.GetY() )
-			);
-		std::cout << '1';
-		r2tm::WindowsUtility::MoveCursorPoint(
-				pivot_point.x + static_cast<short>( exit_point.GetX() * 2 )
-				, pivot_point.y + static_cast<short>( exit_point.GetY() )
-			);
-		std::cout << '2';
+		r2tm::WindowsUtility::FillCharacter(
+			  pivot_point.x + static_cast<short>( entry_point.GetX() * 2 )
+			, pivot_point.y + static_cast<short>( entry_point.GetY() )
+			, 'S'
+			, r2tm::WindowsUtility::eColor::FG_LightBlue
+		);
+		r2tm::WindowsUtility::FillCharacter(
+			  pivot_point.x + static_cast<short>( exit_point.GetX() * 2 )
+			, pivot_point.y + static_cast<short>( exit_point.GetY() )
+			, 'E'
+			, r2tm::WindowsUtility::eColor::FG_LightRed
+		);
 	}
 }
 
