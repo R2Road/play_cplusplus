@@ -1,16 +1,13 @@
 #include "play_algorithm_astar.hpp"
 
 #include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_stop_watch.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
-
-#include "algorithm/r2algorithm_astar_Constant.h"
-#include "algorithm/r2algorithm_astar_PathBuilder.h"
 
 #include "r2/r2_grid_based_on_vector.hpp"
 #include "r2/r2_point.hpp"
 
-#include "r2tm/r2tm_stop_watch.hpp"
-
+#include "algorithm/r2algorithm_astar_PathBuilder.h"
 using namespace r2algorithm_astar;
 
 namespace
