@@ -207,7 +207,7 @@ namespace play_std_memory_unique_ptr
 		{
 			LS();
 
-			OUT_FILE( "src/play_std/play_std_memory_unique_ptr_helper___template_deleter.hpp" );
+			OUT_FILE( "source/play_std/play_std_memory_unique_ptr_helper___template_deleter.hpp" );
 
 			LS();
 
@@ -241,11 +241,11 @@ namespace play_std_memory_unique_ptr
 		{
 			LS();
 
-			OUT_FILE( "src/play_std/play_std_memory_unique_ptr_helper___forward_declaration.hpp" );
+			OUT_FILE( "source/play_std/play_std_memory_unique_ptr_helper___forward_declaration.hpp" );
 
 			LS();
 
-			OUT_FILE( "src/play_std/play_std_memory_unique_ptr_helper___forward_declaration.cpp" );
+			OUT_FILE( "source/play_std/play_std_memory_unique_ptr_helper___forward_declaration.cpp" );
 
 			LS();
 

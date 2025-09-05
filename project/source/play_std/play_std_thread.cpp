@@ -79,7 +79,7 @@ namespace play_std_thread
 		{
 			LS();
 
-			OUT_FILE( "src/play_std/play_std_thread_helper___declaration2.hpp" );
+			OUT_FILE( "source/play_std/play_std_thread_helper___declaration2.hpp" );
 			using namespace play_std_thread_helper___declaration2;
 
 			LS();

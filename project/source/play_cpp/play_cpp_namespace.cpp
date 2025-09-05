@@ -47,7 +47,7 @@ namespace play_cpp_namespace
 
 			LS();
 
-			OUT_FILE_RANGE( "src/play_cpp/play_cpp_namespace.cpp", 6, 29 );
+			OUT_FILE_RANGE( "source/play_cpp/play_cpp_namespace.cpp", 6, 29 );
 
 			LS();
 
@@ -81,7 +81,7 @@ namespace play_cpp_namespace
 
 			LS();
 
-			OUT_FILE_RANGE( "src/play_cpp/play_cpp_namespace.cpp", 6, 29 );
+			OUT_FILE_RANGE( "source/play_cpp/play_cpp_namespace.cpp", 6, 29 );
 
 			LS();
 

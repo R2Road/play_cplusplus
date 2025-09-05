@@ -27,7 +27,7 @@ namespace play_cpp_class_private_inheritance
 		{
 			LS();
 
-			OUT_FILE( "src/play_cpp/play_cpp_class_private_inheritance_helper___virtual_interface.hpp" );
+			OUT_FILE( "source/play_cpp/play_cpp_class_private_inheritance_helper___virtual_interface.hpp" );
 
 			LS();
 
@@ -71,7 +71,7 @@ namespace play_cpp_class_private_inheritance
 		{
 			LS();
 
-			OUT_FILE( "src/play_cpp/play_cpp_class_private_inheritance_helper___pure_virtual_interface.hpp" );
+			OUT_FILE( "source/play_cpp/play_cpp_class_private_inheritance_helper___pure_virtual_interface.hpp" );
 
 			LS();
 
@@ -115,7 +115,7 @@ namespace play_cpp_class_private_inheritance
 		{
 			LS();
 
-			OUT_FILE( "src/play_cpp/play_cpp_class_private_inheritance_helper___demo1.hpp" );
+			OUT_FILE( "source/play_cpp/play_cpp_class_private_inheritance_helper___demo1.hpp" );
 
 			LS();
 
@@ -205,7 +205,7 @@ namespace play_cpp_class_private_inheritance
 		{
 			LS();
 
-			OUT_FILE( "src/play_cpp/play_cpp_class_private_inheritance_helper___ienum.hpp" );
+			OUT_FILE( "source/play_cpp/play_cpp_class_private_inheritance_helper___ienum.hpp" );
 
 			LS();
 
@@ -244,7 +244,7 @@ namespace play_cpp_class_private_inheritance
 		{
 			LS();
 
-			OUT_FILE( "src/play_cpp/play_cpp_class_helper___nvi.hpp" );
+			OUT_FILE( "source/play_cpp/play_cpp_class_helper___nvi.hpp" );
 
 			LS();
 

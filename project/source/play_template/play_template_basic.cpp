@@ -20,7 +20,7 @@ namespace play_template_basic
 		{
 			LS();
 
-			OUT_FILE_RANGE( "src/play_template/play_template_basic_helper.hpp", 1, 15 );
+			OUT_FILE_RANGE( "source/play_template/play_template_basic_helper.hpp", 1, 15 );
 
 			LS();
 
@@ -62,7 +62,7 @@ namespace play_template_basic
 		{
 			LS();
 
-			OUT_FILE_RANGE( "src/play_template/play_template_basic_helper.hpp", 17, 36 );
+			OUT_FILE_RANGE( "source/play_template/play_template_basic_helper.hpp", 17, 36 );
 
 			LS();
 
@@ -114,7 +114,7 @@ namespace play_template_basic
 		{
 			LS();
 
-			OUT_FILE_RANGE( "src/play_template/play_template_basic_helper.hpp", 38, 61 );
+			OUT_FILE_RANGE( "source/play_template/play_template_basic_helper.hpp", 38, 61 );
 
 			LS();
 
@@ -245,7 +245,7 @@ namespace play_template_basic
 			LS();
 
 			{
-				OUT_FILE( "src/play_template/play_template_basic_helper___parentheses.hpp" );
+				OUT_FILE( "source/play_template/play_template_basic_helper___parentheses.hpp" );
 			}
 
 			LS();

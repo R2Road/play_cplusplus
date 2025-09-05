@@ -21,7 +21,7 @@ namespace play_std_functional_invoke
 		{
 			LS();
 
-			OUT_FILE( "src/play_std/play_std_functional_invoke_helper.hpp" );
+			OUT_FILE( "source/play_std/play_std_functional_invoke_helper.hpp" );
 
 			LS();
 

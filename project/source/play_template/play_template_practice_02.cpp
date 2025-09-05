@@ -19,7 +19,7 @@ namespace play_template_practice_02
 		{
 			LS();
 
-			OUT_FILE( "src/play_template/play_template_practice_02_helper___basic.hpp" );
+			OUT_FILE( "source/play_template/play_template_practice_02_helper___basic.hpp" );
 
 			LS();
 

@@ -19,7 +19,7 @@ namespace play_template_specialization
 		{
 			LS();
 
-			OUT_FILE( "src/play_template/play_template_specialization_helper___basic.hpp" );
+			OUT_FILE( "source/play_template/play_template_specialization_helper___basic.hpp" );
 
 			LS();
 

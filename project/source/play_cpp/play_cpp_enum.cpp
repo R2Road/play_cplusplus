@@ -149,7 +149,7 @@ namespace play_cpp_enum
 		{
 			LS();
 
-			OUT_FILE( "src/play_cpp/play_cpp_enum_helper___convert_with_template.hpp" );
+			OUT_FILE( "source/play_cpp/play_cpp_enum_helper___convert_with_template.hpp" );
 
 			LF();
 
@@ -227,7 +227,7 @@ namespace play_cpp_enum
 
 			LS();
 			
-			OUT_FILE( "src/play_cpp/play_cpp_enum_helper___make_enum_with_macro.hpp" );
+			OUT_FILE( "source/play_cpp/play_cpp_enum_helper___make_enum_with_macro.hpp" );
 
 			LS();
 
@@ -280,7 +280,7 @@ namespace play_cpp_enum
 			LS();
 
 			{
-				OUT_FILE( "src/play_cpp/play_cpp_enum_helper___xmacro_1.hpp" );
+				OUT_FILE( "source/play_cpp/play_cpp_enum_helper___xmacro_1.hpp" );
 			}
 
 			LS();
@@ -330,11 +330,11 @@ namespace play_cpp_enum
 			LS();
 
 			{
-				OUT_FILE( "src/play_cpp/play_cpp_enum_helper___xmacro_2.def" );
+				OUT_FILE( "source/play_cpp/play_cpp_enum_helper___xmacro_2.def" );
 
 				LF();
 
-				OUT_FILE( "src/play_cpp/play_cpp_enum_helper___xmacro_2.hpp" );
+				OUT_FILE( "source/play_cpp/play_cpp_enum_helper___xmacro_2.hpp" );
 			}
 
 			LS();

@@ -129,7 +129,7 @@ namespace play_std_functional_mem_fn
 		{
 			LS();
 
-			OUT_FILE( "src/play_std/play_std_functional_mem_fn_helper.hpp" );
+			OUT_FILE( "source/play_std/play_std_functional_mem_fn_helper.hpp" );
 
 			LS();
 

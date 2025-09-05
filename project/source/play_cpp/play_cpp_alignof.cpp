@@ -159,7 +159,7 @@ namespace play_cpp_alignof
 
 			LS();
 
-			OUT_FILE_RANGE( "src/play_cpp/play_cpp_alignof.cpp", 125, 158 );
+			OUT_FILE_RANGE( __FILE__, 125, 158 );
 
 			LS();
 

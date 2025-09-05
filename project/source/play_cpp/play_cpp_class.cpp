@@ -373,7 +373,7 @@ namespace play_cpp_class
 		{
 			LS();
 
-			OUT_FILE( "src/play_cpp/play_cpp_class_helper___print_name.hpp" );
+			OUT_FILE( "source/play_cpp/play_cpp_class_helper___print_name.hpp" );
 
 			LS();
 
@@ -496,7 +496,7 @@ namespace play_cpp_class
 		{
 			LS();
 
-			OUT_FILE( "src/play_cpp/play_cpp_class_helper___member_adress.hpp" );
+			OUT_FILE( "source/play_cpp/play_cpp_class_helper___member_adress.hpp" );
 
 			LF();
 
@@ -542,7 +542,7 @@ namespace play_cpp_class
 		{
 			LS();
 
-			OUT_FILE( "src/play_cpp/play_cpp_class_helper___member_adress.hpp" );
+			OUT_FILE( "source/play_cpp/play_cpp_class_helper___member_adress.hpp" );
 
 			LF();
 
@@ -777,7 +777,7 @@ namespace play_cpp_class
 		{
 			LS();
 
-			OUT_FILE( "src/play_cpp/play_cpp_class_helper___offset_singleton.hpp" );
+			OUT_FILE( "source/play_cpp/play_cpp_class_helper___offset_singleton.hpp" );
 
 			LS();
 
@@ -996,7 +996,7 @@ namespace play_cpp_class
 			LS();
 
 			{
-				OUT_FILE( "src/play_cpp/play_cpp_class_helper___size_with_enum.hpp" );
+				OUT_FILE( "source/play_cpp/play_cpp_class_helper___size_with_enum.hpp" );
 
 				LF();
 
