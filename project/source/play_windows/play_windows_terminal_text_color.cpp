@@ -2,6 +2,7 @@
 
 #include <bitset>
 #include <conio.h>
+#include <iomanip>
 #include <stdio.h>
 
 #define NOMINMAX
@@ -13,6 +14,27 @@
 
 namespace play_windows_terminal_text_color
 {
+	void PrintColorTable_Item( const char* str_index, const char* str_name, const COLORREF c )
+	{
+		std::cout
+			<< std::left
+
+			<< "               "
+
+			<< str_index
+
+			<< "   |   "
+
+			<< std::setw( 15 ) << str_name
+
+			<< "   |   "
+
+			<< "     "  "R : " << std::setw( 3 ) << ( int )GetRValue( c )
+			<< "     "  "G : " << std::setw( 3 ) << ( int )GetGValue( c )
+			<< "     "  "B : " << std::setw( 3 ) << ( int )GetBValue( c )
+			<< r2tm::linefeed
+		;
+	}
 	r2tm::TitleFunctionT ColorTable::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -26,24 +48,43 @@ namespace play_windows_terminal_text_color
 		{
 			LS();
 
+			DECL_MAIN( HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE ) );
+			DECL_MAIN( CONSOLE_SCREEN_BUFFER_INFOEX info );
+
+			SS();
+
 			{
-				std::cout << r2tm::tab << "+ Color Table" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "Black" << r2tm::tab3 << "0" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "Blue" << r2tm::tab3 << "1" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "Green" << r2tm::tab3 << "2" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "Aqua" << r2tm::tab3 << "3" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "Red" << r2tm::tab3 << "4" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "Purple" << r2tm::tab3 << "5" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "Yellow" << r2tm::tab3 << "6" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "White" << r2tm::tab3 << "7" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "Gray" << r2tm::tab3 << "8" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "Light Blue" << r2tm::tab2 << "9" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "Light Green" << r2tm::tab2 << "A" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "Light Aqua" << r2tm::tab2 << "B" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "Light Led" << r2tm::tab2 << "C" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "Light Purple" << r2tm::tab2 << "D" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "Light Yellow" << r2tm::tab2 << "E" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "Bright White" << r2tm::tab2 << "F" << r2tm::linefeed;
+				OUT_SUBJECT( "정보 획득" );
+
+				LF();
+
+				PROC_MAIN( info.cbSize = sizeof( CONSOLE_SCREEN_BUFFER_INFOEX ) );
+				PROC_MAIN( GetConsoleScreenBufferInfoEx( stdHandle, &info ) );
+			}
+
+			SS();
+
+			{
+				OUT_SUBJECT( "Color Table" );
+
+				LF();
+
+				PrintColorTable_Item( "0"  , "Black"        , info.ColorTable[0] );
+				PrintColorTable_Item( "1"  , "Blue"         , info.ColorTable[1] );
+				PrintColorTable_Item( "2"  , "Green"        , info.ColorTable[2] );
+				PrintColorTable_Item( "3"  , "Aqua"         , info.ColorTable[3] );
+				PrintColorTable_Item( "4"  , "Red"          , info.ColorTable[4] );
+				PrintColorTable_Item( "5"  , "Purple"       , info.ColorTable[5] );
+				PrintColorTable_Item( "6"  , "Yellow"       , info.ColorTable[6] );
+				PrintColorTable_Item( "7"  , "White"        , info.ColorTable[7] );
+				PrintColorTable_Item( "8"  , "Gray"         , info.ColorTable[8] );
+				PrintColorTable_Item( "9"  , "Light Blue"   , info.ColorTable[9] );
+				PrintColorTable_Item( "A"  , "Light Green"  , info.ColorTable[10] );
+				PrintColorTable_Item( "B"  , "Light Aqua"   , info.ColorTable[11] );
+				PrintColorTable_Item( "C"  , "Light Led"    , info.ColorTable[12] );
+				PrintColorTable_Item( "D"  , "Light Purple" , info.ColorTable[13] );
+				PrintColorTable_Item( "E"  , "Light Yellow" , info.ColorTable[14] );
+				PrintColorTable_Item( "F"  , "Bright White" , info.ColorTable[15] );
 			}
 
 			LS();
@@ -180,46 +221,68 @@ namespace play_windows_terminal_text_color
 		{
 			LS();
 
-			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+			DECL_MAIN( HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE ) );
+			DECL_MAIN( CONSOLE_SCREEN_BUFFER_INFOEX info );
+			DECL_MAIN( COLORREF color_backup );
+
+			LF();
+
+			PROC_MAIN( info.cbSize = sizeof( CONSOLE_SCREEN_BUFFER_INFOEX ) );
+			PROC_MAIN( GetConsoleScreenBufferInfoEx( stdHandle, &info ) );
+
+			SS();
 
 			{
-				CONSOLE_SCREEN_BUFFER_INFOEX info;
-				info.cbSize = sizeof( CONSOLE_SCREEN_BUFFER_INFOEX );
-				std::cout << r2tm::tab << "CONSOLE_SCREEN_BUFFER_INFOEX info;" << r2tm::linefeed;
-				std::cout << r2tm::tab << "info.cbSize = sizeof( CONSOLE_SCREEN_BUFFER_INFOEX );" << r2tm::linefeed;
+				OUT_SUBJECT( "복구를 위해 기존 색상 저장" );
+
 				LF();
 
-				GetConsoleScreenBufferInfoEx( stdHandle, &info );
-				std::cout << r2tm::tab << "GetConsoleScreenBufferInfoEx( stdHandle, &info );" << r2tm::linefeed;
-				LF();
-
-				info.ColorTable[1] = RGB( 255, 100, 100 );
-				std::cout << r2tm::tab << "info.ColorTable[1] = RGB( 255, 100, 100 );" << r2tm::linefeed;
-				LF();
-
-				SetConsoleScreenBufferInfoEx( stdHandle, &info );
-				std::cout << r2tm::tab << "SetConsoleScreenBufferInfoEx( stdHandle, &info );" << r2tm::linefeed;
-				LF();
+				PROC_MAIN( color_backup = info.ColorTable[1] );
 			}
 
 			LS();
 
 			{
-				char background_color = 8;
-				char text_color = 1;
+				OUT_SUBJECT( "컬러 테이블 조정" );
+				OUT_COMMENT( "1번 Blue 를 임의의 색상으로 변경" );
 
-				WORD current_color = 0;
-				current_color = background_color << 4;
-				current_color |= text_color;
+				LF();
 
-				std::cout << r2tm::tab << "SetConsoleTextAttribute( stdHandle, current_color );" << r2tm::linefeed;
-				SetConsoleTextAttribute( stdHandle, current_color );
-
-				std::cout << r2tm::tab2 << "- " << std::hex << (int)background_color << " : background Color" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "- " << std::hex << (int)text_color << " : text Color" << r2tm::linefeed;
+				PROC_MAIN( info.ColorTable[1] = RGB( 255, 100, 100 ) );
+				PROC_MAIN( SetConsoleScreenBufferInfoEx( stdHandle, &info ) );
 			}
 
-			SetConsoleTextAttribute( stdHandle, 7 ); // bg - black( 0 ), text - white( 7 )
+			LS();
+
+			{
+				OUT_SUBJECT( "변경한 컬러로 문자열 출력" );
+
+				LF();
+
+				DECL_MAIN( const char background_color = 0 );
+				DECL_MAIN( const char foreground_color = 1 );
+				PROC_MAIN( SetConsoleTextAttribute( stdHandle, WORD( background_color << 4 | foreground_color ) ) );
+
+				LF();
+
+				std::cout << r2tm::tab2 << "색상 확인용 문자열" << r2tm::linefeed;
+
+				LF();
+
+				PROC_MAIN( SetConsoleTextAttribute( stdHandle, 7 ) ); // bg - black( 0 ), text - white( 7 )
+			}
+
+			LS();
+
+			{
+				OUT_SUBJECT( "아무키나 누르면 컬러 테이블 복구 처리 시작" );
+				WAIT_ANY_KEY;
+
+				LF();
+
+				PROC_MAIN( info.ColorTable[1] = color_backup );
+				PROC_MAIN( SetConsoleScreenBufferInfoEx( stdHandle, &info ) );
+			}
 
 			LS();
 
