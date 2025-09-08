@@ -7,8 +7,6 @@
 
 #include "r2/r2_version_info.hpp"
 
-#include "key_viewer.h"
-
 #include "play_algorithm/menu_algorithm.hpp"
 #include "play_c/menu_c.hpp"
 #include "play_cpp/menu_cpp.hpp"
@@ -24,6 +22,8 @@
 #include "play_various/menu_various.hpp"
 #include "play_template/menu_template.hpp"
 #include "play_windows/menu_windows.hpp"
+
+#include "viewer/key_viewer.hpp"
 
 r2tm::TitleFunctionT Menu_Root::GetTitleFunction() const
 {

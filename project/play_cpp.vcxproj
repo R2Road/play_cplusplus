@@ -37,7 +37,6 @@
     <ClCompile Include="external\r2\r2_random.cpp" />
     <ClCompile Include="external\r2\r2_rect_int.cpp" />
     <ClCompile Include="source\algorithm\r2algorithm_astar_PathBuilder.cpp" />
-    <ClCompile Include="source\key_viewer.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\play_algorithm\algorithm_helper.cpp" />
     <ClCompile Include="source\play_algorithm\menu_algorithm.cpp" />
@@ -207,6 +206,7 @@
     <ClCompile Include="source\play_windows\play_windows_time.cpp" />
     <ClCompile Include="source\utility\play_cpp_utility_character_buffer.cpp" />
     <ClCompile Include="source\utility\play_cpp_utility_path_builder.cpp" />
+    <ClCompile Include="source\viewer\key_viewer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="external\r2tm\r2tm_cache_cleaner.hpp" />
@@ -258,7 +258,6 @@
     <ClInclude Include="external\r2\r2_version_info.hpp" />
     <ClInclude Include="source\algorithm\r2algorithm_astar_PathBuilder.h" />
     <ClInclude Include="source\algorithm\r2algorithm_astar_Constant.h" />
-    <ClInclude Include="source\key_viewer.h" />
     <ClInclude Include="source\play_algorithm\algorithm_helper.hpp" />
     <ClInclude Include="source\play_algorithm\menu_algorithm.hpp" />
     <ClInclude Include="source\play_algorithm\menu_maze_generation.hpp" />
@@ -458,6 +457,7 @@
     <ClInclude Include="source\play_windows\play_windows_time.hpp" />
     <ClInclude Include="source\utility\play_cpp_utility_character_buffer.hpp" />
     <ClInclude Include="source\utility\play_cpp_utility_path_builder.hpp" />
+    <ClInclude Include="source\viewer\key_viewer.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="source\play_cpp\play_cpp_enum_helper___xmacro_2.def" />

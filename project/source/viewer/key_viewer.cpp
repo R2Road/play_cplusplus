@@ -1,4 +1,4 @@
-#include "key_viewer.h"
+#include "key_viewer.hpp"
 
 #include "r2tm/r2tm_color_modifier.hpp"
 #include "r2tm/r2tm_inspector.hpp"
@@ -29,7 +29,7 @@ namespace key_viewer
 
 			{
 				const auto start_point = r2tm::WindowsUtility::GetCursorPoint();
-				const short line_limit = start_point.y + 30;
+				const short line_limit = start_point.y + 25;
 
 				r2tm::WindowsUtility::MoveCursorPoint( start_point.x, line_limit );
 				LS();
@@ -41,7 +41,7 @@ namespace key_viewer
 
 					input = GET_KEY;
 
-					if( line_limit <= r2tm::WindowsUtility::GetCursorPoint().y )
+					if( line_limit <= r2tm::WindowsUtility::GetCursorY() )
 					{
 						r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( start_point );
 					}
@@ -50,8 +50,6 @@ namespace key_viewer
 
 				} while( 27 != input ); // ESC
 			}
-
-			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

@@ -61,6 +61,9 @@
     <Filter Include="_utility">
       <UniqueIdentifier>{b470e37a-ab48-4294-91e6-d840afb5ce71}</UniqueIdentifier>
     </Filter>
+    <Filter Include="_viewer">
+      <UniqueIdentifier>{20496577-aadf-4b48-b1f1-7faa9f3e8b31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp" />
@@ -128,7 +131,6 @@
     <ClCompile Include="source\play_cpu\play_cpu_basic.cpp">
       <Filter>play_cpu</Filter>
     </ClCompile>
-    <ClCompile Include="source\key_viewer.cpp" />
     <ClCompile Include="external\r2tm\r2tm_cache_cleaner.cpp">
       <Filter>_external\r2tm</Filter>
     </ClCompile>
@@ -621,6 +623,9 @@
     <ClCompile Include="source\play_windows\play_windows_time.cpp">
       <Filter>play_windows</Filter>
     </ClCompile>
+    <ClCompile Include="source\viewer\key_viewer.cpp">
+      <Filter>_viewer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\algorithm\r2algorithm_astar_Constant.h">
@@ -714,7 +719,6 @@
     <ClInclude Include="source\play_cpu\play_cpu_basic.h">
       <Filter>play_cpu</Filter>
     </ClInclude>
-    <ClInclude Include="source\key_viewer.h" />
     <ClInclude Include="external\r2tm\r2tm_cache_cleaner.hpp">
       <Filter>_external\r2tm</Filter>
     </ClInclude>
@@ -1365,6 +1369,9 @@
     </ClInclude>
     <ClInclude Include="source\play_windows\play_windows_time.hpp">
       <Filter>play_windows</Filter>
+    </ClInclude>
+    <ClInclude Include="source\viewer\key_viewer.hpp">
+      <Filter>_viewer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
