@@ -137,7 +137,7 @@ namespace play_windows_terminal_basic
 	{
 		return []()->const char*
 		{
-			return "FullScreen";
+			return "Full Screen";
 		};
 	}
 	r2tm::DoFunctionT FullScreen::GetDoFunction() const
@@ -146,9 +146,7 @@ namespace play_windows_terminal_basic
 		{
 			LS();
 
-			{
-				std::cout << r2tm::tab << "# Alt + Enter" << r2tm::linefeed;
-			}
+			OUT_SUBJECT( "Alt + Enter" );
 
 			LS();
 
@@ -158,12 +156,12 @@ namespace play_windows_terminal_basic
 
 			LS();
 
-			std::cout << "Press Any Key : Roll Back Window Size" << r2tm::linefeed;
-			_getch();
-
-			LS();
-
 			{
+				OUT_SUBJECT( "아무키 누르면 윈도우 크기 복구" );
+				WAIT_ANY_KEY;
+
+				LF();
+
 				PROC_MAIN( SendMessage( ::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000 ) );
 			}
 
