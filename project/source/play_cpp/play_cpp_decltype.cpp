@@ -110,6 +110,11 @@ namespace play_cpp_decltype
 					{
 						return get();
 					}
+
+					auto get3() const
+					{
+						return get(); // 그냥 auto 를 쓰는게...
+					}
 				};
 				OUT_SOURCE_END;
 			}
