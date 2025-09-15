@@ -626,6 +626,9 @@
     <ClCompile Include="source\viewer\key_viewer.cpp">
       <Filter>_viewer</Filter>
     </ClCompile>
+    <ClCompile Include="source\play_cpp\play_cpp_decltype.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\algorithm\r2algorithm_astar_Constant.h">
@@ -1372,6 +1375,9 @@
     </ClInclude>
     <ClInclude Include="source\viewer\key_viewer.hpp">
       <Filter>_viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="source\play_cpp\play_cpp_decltype.hpp">
+      <Filter>play_cpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

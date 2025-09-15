@@ -66,6 +66,7 @@
     <ClCompile Include="source\play_cpp\play_cpp_char.cpp" />
     <ClCompile Include="source\play_cpp\play_cpp_class.cpp" />
     <ClCompile Include="source\play_cpp\play_cpp_class_private_inheritance.cpp" />
+    <ClCompile Include="source\play_cpp\play_cpp_decltype.cpp" />
     <ClCompile Include="source\play_cpp\play_cpp_enum.cpp" />
     <ClCompile Include="source\play_cpp\play_cpp_korean.cpp" />
     <ClCompile Include="source\play_cpp\play_cpp_lambda.cpp" />
@@ -295,6 +296,7 @@
     <ClInclude Include="source\play_cpp\play_cpp_class_private_inheritance_helper___ienum.hpp" />
     <ClInclude Include="source\play_cpp\play_cpp_class_private_inheritance_helper___pure_virtual_interface.hpp" />
     <ClInclude Include="source\play_cpp\play_cpp_class_private_inheritance_helper___virtual_interface.hpp" />
+    <ClInclude Include="source\play_cpp\play_cpp_decltype.hpp" />
     <ClInclude Include="source\play_cpp\play_cpp_enum.hpp" />
     <ClInclude Include="source\play_cpp\play_cpp_enum_helper___convert_with_template.hpp" />
     <ClInclude Include="source\play_cpp\play_cpp_enum_helper___make_enum_with_macro.hpp" />
