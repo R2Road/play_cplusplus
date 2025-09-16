@@ -49,6 +49,13 @@ namespace play_cpp_lambda
 
 			LS();
 
+			{
+				DECL_MAIN( auto l = []( const int i )->int { return i; }; );
+				OUT_VALUE( l( 3 ) );
+			}
+
+			LS();
+
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}

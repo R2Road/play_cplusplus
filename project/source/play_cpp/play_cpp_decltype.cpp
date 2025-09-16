@@ -243,7 +243,7 @@ namespace play_cpp_decltype
 			LS();
 
 			{
-				OUT_SUBJECT( "¶÷´Ù ¿Í ÅÛÇÃ¸´" );
+				OUT_SUBJECT( "ÅÛÇÃ¸´" );
 
 				LF();
 
@@ -266,7 +266,8 @@ namespace play_cpp_decltype
 				LF();
 
 				PROC_MAIN( lambda_func_1( S(), S() ) );
-				PROC_MAIN( lambda_func_1( S(), S() ) );
+				PROC_MAIN( lambda_func_2( S(), S() ) );
+				PROC_MAIN( lambda_func_3( S(), S() ) );
 			}
 
 			LS();
