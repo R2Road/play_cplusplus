@@ -39,6 +39,7 @@ r2tm::WriteFunctionT Menu_CPP::GetWriteFunction() const
 		mp->AddItem( '4', play_cpp_decltype::Basic() );
 		mp->AddItem( '5', play_cpp_decltype::Function() );
 		mp->AddItem( '6', play_cpp_decltype::Lambda() );
+		mp->AddItem( '7', play_cpp_decltype::Template() );
 
 
 		mp->AddLineFeed();

@@ -1,4 +1,5 @@
 #include "play_cpp_decltype.hpp"
+#include "play_cpp_decltype_helper___template.hpp"
 
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_inspector.hpp"
@@ -215,6 +216,57 @@ namespace play_cpp_decltype
 
 				PROC_MAIN( l( S(), S() ) );
 				PROC_MAIN( l2( S(), S() ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+
+
+
+	r2tm::TitleFunctionT Template::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "decltype : Template";
+		};
+	}
+	r2tm::DoFunctionT Template::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUT_SUBJECT( "람다 와 템플릿" );
+
+				LF();
+
+				OUT_FILE( "source/play_cpp/play_cpp_decltype_helper___template.hpp" );
+
+				LF();
+
+				OUT_SOURCE_READY_N_BEGIN;
+				struct S
+				{
+					float f = 1.f;
+
+					double operator+( S a ) const
+					{
+						return ( double )( a.f + f );
+					}
+				};
+				OUT_SOURCE_END;
+
+				LF();
+
+				PROC_MAIN( lambda_func_1( S(), S() ) );
+				PROC_MAIN( lambda_func_1( S(), S() ) );
 			}
 
 			LS();

@@ -297,6 +297,7 @@
     <ClInclude Include="source\play_cpp\play_cpp_class_private_inheritance_helper___pure_virtual_interface.hpp" />
     <ClInclude Include="source\play_cpp\play_cpp_class_private_inheritance_helper___virtual_interface.hpp" />
     <ClInclude Include="source\play_cpp\play_cpp_decltype.hpp" />
+    <ClInclude Include="source\play_cpp\play_cpp_decltype_helper___template.hpp" />
     <ClInclude Include="source\play_cpp\play_cpp_enum.hpp" />
     <ClInclude Include="source\play_cpp\play_cpp_enum_helper___convert_with_template.hpp" />
     <ClInclude Include="source\play_cpp\play_cpp_enum_helper___make_enum_with_macro.hpp" />
