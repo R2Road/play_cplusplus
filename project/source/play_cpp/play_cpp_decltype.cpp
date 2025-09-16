@@ -169,7 +169,17 @@ namespace play_cpp_decltype
 				{
 					return a;
 				};
+
+				auto l2 = []( int a ) -> auto // 이 것 역시 auto를 쓰는게...
+				{
+					return a;
+				};
 				OUT_SOURCE_END;
+
+				LF();
+
+				PROC_MAIN( l( 1 ) );
+				PROC_MAIN( l2( 1 ) );
 			}
 
 			LS();
@@ -194,7 +204,17 @@ namespace play_cpp_decltype
 				{
 					return a + b;
 				};
+
+				auto l2 = []( S a, S b ) -> auto // 이 것 역시 auto를 쓰는게...
+				{
+					return a + b;
+				};
 				OUT_SOURCE_END;
+
+				LF();
+
+				PROC_MAIN( l( S(), S() ) );
+				PROC_MAIN( l2( S(), S() ) );
 			}
 
 			LS();
