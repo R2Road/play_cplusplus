@@ -5,6 +5,7 @@
 #include "play_template_basic.hpp"
 #include "play_template_practice_02.hpp"
 #include "play_template_specialization.hpp"
+#include "play_template_type_extract.hpp"
 
 #include "menu_template_meta_programming.hpp"
 #include "menu_template_practice.hpp"
@@ -49,6 +50,7 @@ r2tm::WriteFunctionT Menu_Template::GetWriteFunction() const
 
 
 		mp->AddItem( 'q', play_template_specialization::Basic() );
+		mp->AddItem( 'w', play_template_type_extract::TypeExtract_4_MemberPointer() );
 
 
 

@@ -629,6 +629,9 @@
     <ClCompile Include="source\play_cpp\play_cpp_decltype.cpp">
       <Filter>play_cpp</Filter>
     </ClCompile>
+    <ClCompile Include="source\play_template\play_template_type_extract.cpp">
+      <Filter>play_template</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\algorithm\r2algorithm_astar_Constant.h">
@@ -1381,6 +1384,12 @@
     </ClInclude>
     <ClInclude Include="source\play_cpp\play_cpp_decltype_helper___template.hpp">
       <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="source\play_template\play_template_type_extract.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="source\play_template\play_template_type_extract_helper___type_extractor_4_member_pointer.hpp">
+      <Filter>play_template</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
