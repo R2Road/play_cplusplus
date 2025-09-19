@@ -137,6 +137,11 @@ namespace play_cpp_class
 
 				DECL_MAIN( auto p = &S::b );
 				OUT_VALUE( ( s.*p ) );
+
+				LF();
+
+				DECL_MAIN( int S::* p2 = &S::b );
+				OUT_VALUE( ( s.*p2 ) );
 			}
 
 			LS();
