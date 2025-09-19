@@ -32,7 +32,11 @@ namespace play_cpp_class
 			OUT_SOURCE_READY_N_BEGIN;
 			struct S
 			{
-				void Func() { printf( "\t" "> " "[Call] Func" "\n" ); }
+				bool Func( int i )
+				{
+					printf( "\t" "> " "[Call] Func : %d" "\n", i );
+					return true;
+				}
 			};
 			OUT_SOURCE_END;
 
@@ -47,7 +51,7 @@ namespace play_cpp_class
 
 				LF();
 
-				PROC_MAIN( s.Func() );
+				EXPECT_TRUE( s.Func( 2 ) );
 			}
 
 			LS();
@@ -57,7 +61,7 @@ namespace play_cpp_class
 
 				LF();
 
-				PROC_MAIN( s.S::Func() );
+				EXPECT_TRUE( s.S::Func( 2 ) );
 			}
 
 			LS();
@@ -68,7 +72,12 @@ namespace play_cpp_class
 				LF();
 
 				DECL_MAIN( auto m = &S::Func );
-				PROC_MAIN( ( s.*m )( ) );
+				EXPECT_TRUE( ( s.*m )( 2 ) );
+
+				LF();
+
+				DECL_MAIN( bool ( S::*m2 )( int ) = &S::Func);
+				EXPECT_TRUE( ( s.*m2 )( 2 ) );
 			}
 
 			LS();
