@@ -671,12 +671,10 @@ namespace play_cpp_lambda
 			{
 				DECL_MAIN( auto l = []() {} );
 				OUT_VALUE( sizeof( l ) );
-			}
 
-			LS();
+				SS();
 
-			{
-				DECL_MAIN( std::function<void()> f = []() {} );
+				DECL_MAIN( std::function<void()> f = l );
 				OUT_VALUE( sizeof( f ) );
 			}
 
@@ -685,12 +683,10 @@ namespace play_cpp_lambda
 			{
 				DECL_MAIN( auto l = [ll = 10ll]() {} );
 				OUT_VALUE( sizeof( l ) );
-			}
 
-			LS();
+				SS();
 
-			{
-				DECL_MAIN( std::function<void()> f = [ll = 10ll]() {} );
+				DECL_MAIN( std::function<void()> f = l );
 				OUT_VALUE( sizeof( f ) );
 			}
 
@@ -706,11 +702,37 @@ namespace play_cpp_lambda
 			{
 				DECL_MAIN( struct S
 				{
-					int i[100];
 					void f() {}
 				} );
 				DECL_MAIN( S s );
 				DECL_MAIN( std::function<void()> f = std::bind( &S::f, &s ) );
+				OUT_VALUE( sizeof( f ) );
+			}
+
+			LS();
+
+			{
+				OUT_SUBJECT( "람다 크기가 어떻게 되건 std::function의 크기는 변화가 없다." );
+				OUT_SUBJECT( "내부적으로 메모리 할당이 일어나고 있다고 봐야 할 것이다." );
+
+				LF();
+
+				DECL_MAIN( struct S
+				{
+					int i[100];
+				} );
+
+				LF();
+
+				DECL_MAIN( auto l = [s = S{}]()->void
+				{
+					std::cout << "i[0] : " << s.i[0] << r2tm::linefeed;
+				} );
+				OUT_SIZE( l );
+
+				LF();
+
+				DECL_MAIN( std::function<void()> f = l );
 				OUT_VALUE( sizeof( f ) );
 			}
 
