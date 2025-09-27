@@ -117,6 +117,7 @@
     <ClCompile Include="source\play_hobby\menu_property.cpp" />
     <ClCompile Include="source\play_hobby\menu_tree.cpp" />
     <ClCompile Include="source\play_math\menu_play_math.cpp" />
+    <ClCompile Include="source\play_math\menu_play_math_geometry.cpp" />
     <ClCompile Include="source\play_math\play_math_basic.cpp" />
     <ClCompile Include="source\menu_root.cpp" />
     <ClCompile Include="source\play_math\play_math_numbers.cpp" />
@@ -353,6 +354,7 @@
     <ClInclude Include="source\play_hobby\menu_property.hpp" />
     <ClInclude Include="source\play_hobby\menu_tree.hpp" />
     <ClInclude Include="source\play_math\menu_play_math.h" />
+    <ClInclude Include="source\play_math\menu_play_math_geometry.hpp" />
     <ClInclude Include="source\play_math\play_math_numbers.h" />
     <ClInclude Include="source\play_math\play_math_quaternion.h" />
     <ClInclude Include="source\play_math\play_math_vector2_transform.h" />

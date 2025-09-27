@@ -632,6 +632,9 @@
     <ClCompile Include="source\play_template\play_template_type_extract.cpp">
       <Filter>play_template</Filter>
     </ClCompile>
+    <ClCompile Include="source\play_math\menu_play_math_geometry.cpp">
+      <Filter>play_math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\algorithm\r2algorithm_astar_Constant.h">
@@ -1390,6 +1393,9 @@
     </ClInclude>
     <ClInclude Include="source\play_template\play_template_type_extract_helper___type_extractor_4_member_pointer.hpp">
       <Filter>play_template</Filter>
+    </ClInclude>
+    <ClInclude Include="source\play_math\menu_play_math_geometry.hpp">
+      <Filter>play_math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
