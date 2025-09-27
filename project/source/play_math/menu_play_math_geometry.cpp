@@ -4,10 +4,10 @@
 
 #include "menu_play_math.hpp"
 
-#include "play_math_quaternion.hpp"
-#include "play_math_vector2_transform.hpp"
-#include "play_math_vector3.hpp"
-#include "play_math_vector3_transform.hpp"
+#include "play_math_geometry_quaternion.hpp"
+#include "play_math_geometry_vector2_transform.hpp"
+#include "play_math_geometry_vector3.hpp"
+#include "play_math_geometry_vector3_transform.hpp"
 
 r2tm::TitleFunctionT Menu_Play_Math_Geomrtry::GetTitleFunction() const
 {

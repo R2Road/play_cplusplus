@@ -1,10 +1,10 @@
 #pragma once
 
 #include "r2/r2_epsilon.hpp"
-#include "play_math/play_math___helper_vector3.hpp"
-#include "play_math/play_math___helper_vector4.hpp"
+#include "play_math/play_math_geometry___helper_vector3.hpp"
+#include "play_math/play_math_geometry___helper_vector4.hpp"
 
-namespace play_math
+namespace play_math_geometry
 {
 	struct Quat
 	{
@@ -86,7 +86,7 @@ namespace play_math
 
 #include "r2tm/r2tm_ostream.hpp"
 
-namespace play_math
+namespace play_math_geometry
 {
 	inline std::ostream& operator<<( std::ostream& o, const Quat& q )
 	{

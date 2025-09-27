@@ -1,9 +1,9 @@
-#include "play_math_quaternion.hpp"
-#include "play_math___helper_common.hpp"
-#include "play_math___helper_quaternion.hpp"
-#include "play_math___helper_vector3.hpp"
-#include "play_math___helper_matrix44.hpp"
-using namespace play_math;
+#include "play_math_geometry_quaternion.hpp"
+#include "play_math_geometry___helper_common.hpp"
+#include "play_math_geometry___helper_quaternion.hpp"
+#include "play_math_geometry___helper_vector3.hpp"
+#include "play_math_geometry___helper_matrix44.hpp"
+using namespace play_math_geometry;
 
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"

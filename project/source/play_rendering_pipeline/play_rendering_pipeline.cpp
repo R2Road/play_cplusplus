@@ -2,11 +2,11 @@
 
 #include <conio.h>
 
-#include "play_math/play_math___helper_common.hpp"
-#include "play_math/play_math___helper_quaternion.hpp"
-#include "play_math/play_math___helper_vector4.hpp"
-#include "play_math/play_math___helper_matrix44.hpp"
-using namespace play_math;
+#include "play_math/play_math_geometry___helper_common.hpp"
+#include "play_math/play_math_geometry___helper_quaternion.hpp"
+#include "play_math/play_math_geometry___helper_vector4.hpp"
+#include "play_math/play_math_geometry___helper_matrix44.hpp"
+using namespace play_math_geometry;
 
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"

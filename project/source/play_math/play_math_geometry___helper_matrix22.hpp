@@ -2,7 +2,7 @@
 
 #include "r2/r2_epsilon.hpp"
 
-namespace play_math
+namespace play_math_geometry
 {
 	struct Mat22
 	{
@@ -59,9 +59,9 @@ namespace play_math
 
 
 
-#include "play_math___helper_vector2.hpp"
+#include "play_math_geometry___helper_vector2.hpp"
 
-namespace play_math
+namespace play_math_geometry
 {
 	inline Vec2 operator*( const Mat22& m, const Vec2& v )
 	{
@@ -83,7 +83,7 @@ namespace play_math
 
 #include "r2tm/r2tm_ostream.hpp"
 
-namespace play_math
+namespace play_math_geometry
 {
 	inline std::ostream& operator<<( std::ostream& o, const Mat22& v )
 	{

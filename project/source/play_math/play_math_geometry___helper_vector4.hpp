@@ -2,7 +2,7 @@
 
 #include "r2/r2_epsilon.hpp"
 
-namespace play_math
+namespace play_math_geometry
 {
 	struct Vec4
 	{
@@ -134,7 +134,7 @@ namespace play_math
 
 #include "r2tm/r2tm_ostream.hpp"
 
-namespace play_math
+namespace play_math_geometry
 {
 	inline std::ostream& operator<<( std::ostream& o, const Vec4& v )
 	{

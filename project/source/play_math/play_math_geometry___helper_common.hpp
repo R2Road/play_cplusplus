@@ -3,7 +3,7 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-namespace play_math
+namespace play_math_geometry
 {
 	const float R_PI = static_cast< float >( M_PI );
 	const float R_2PI = R_PI * 2;

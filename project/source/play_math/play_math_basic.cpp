@@ -1,6 +1,6 @@
 #include "play_math_basic.hpp"
-#include "play_math___helper_common.hpp"
-using namespace play_math;
+#include "play_math_geometry___helper_common.hpp"
+using namespace play_math_geometry;
 
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
