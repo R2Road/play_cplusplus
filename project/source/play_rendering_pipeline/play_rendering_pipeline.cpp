@@ -2,10 +2,10 @@
 
 #include <conio.h>
 
-#include "play_math/play_math___helper_common.h"
-#include "play_math/play_math___helper_quaternion.h"
-#include "play_math/play_math___helper_vector4.h"
-#include "play_math/play_math___helper_matrix44.h"
+#include "play_math/play_math___helper_common.hpp"
+#include "play_math/play_math___helper_quaternion.hpp"
+#include "play_math/play_math___helper_vector4.hpp"
+#include "play_math/play_math___helper_matrix44.hpp"
 using namespace play_math;
 
 #include "r2tm/r2tm_inspector.hpp"
