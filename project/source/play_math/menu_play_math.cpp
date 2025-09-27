@@ -6,6 +6,7 @@
 
 #include "play_math_basic.hpp"
 #include "play_math_numbers.hpp"
+#include "play_math_sequence.hpp"
 
 #include "menu_play_math_geometry.hpp"
 
@@ -42,7 +43,15 @@ r2tm::WriteFunctionT Menu_Play_Math::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 'q', Menu_Play_Math_Geomrtry() );
+		mp->AddItem( 'q', play_math_sequence::ArithmeticSequence_Sum() );
+
+
+
+		mp->AddLineFeed();
+
+
+
+		mp->AddMenu( 'z', Menu_Play_Math_Geomrtry() );
 
 
 
