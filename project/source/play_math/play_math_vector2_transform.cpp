@@ -1,7 +1,7 @@
-#include "play_math_vector2_transform.h"
-#include "play_math___helper_common.h"
-#include "play_math___helper_vector2.h"
-#include "play_math___helper_matrix22.h"
+#include "play_math_vector2_transform.hpp"
+#include "play_math___helper_common.hpp"
+#include "play_math___helper_vector2.hpp"
+#include "play_math___helper_matrix22.hpp"
 using namespace play_math;
 
 #include "r2tm/r2tm_inspector.hpp"

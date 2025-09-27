@@ -1,11 +1,11 @@
-#include "menu_play_math.h"
+#include "menu_play_math.hpp"
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
 #include "menu_root.hpp"
 
-#include "play_math_basic.h"
-#include "play_math_numbers.h"
+#include "play_math_basic.hpp"
+#include "play_math_numbers.hpp"
 
 #include "menu_play_math_geometry.hpp"
 

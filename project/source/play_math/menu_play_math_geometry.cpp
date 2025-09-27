@@ -2,12 +2,12 @@
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
-#include "menu_play_math.h"
+#include "menu_play_math.hpp"
 
-#include "play_math_quaternion.h"
-#include "play_math_vector2_transform.h"
-#include "play_math_vector3.h"
-#include "play_math_vector3_transform.h"
+#include "play_math_quaternion.hpp"
+#include "play_math_vector2_transform.hpp"
+#include "play_math_vector3.hpp"
+#include "play_math_vector3_transform.hpp"
 
 r2tm::TitleFunctionT Menu_Play_Math_Geomrtry::GetTitleFunction() const
 {

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "r2/r2_epsilon.hpp"
-#include "play_math/play_math___helper_vector3.h"
-#include "play_math/play_math___helper_vector4.h"
+#include "play_math/play_math___helper_vector3.hpp"
+#include "play_math/play_math___helper_vector4.hpp"
 
 namespace play_math
 {

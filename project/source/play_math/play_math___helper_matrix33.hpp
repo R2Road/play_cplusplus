@@ -78,7 +78,7 @@ namespace play_math
 
 
 
-#include "play_math___helper_vector3.h"
+#include "play_math___helper_vector3.hpp"
 
 namespace play_math
 {

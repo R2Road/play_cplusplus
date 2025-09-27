@@ -1,7 +1,7 @@
-#include "play_math_vector3_transform.h"
-#include "play_math___helper_common.h"
-#include "play_math___helper_vector3.h"
-#include "play_math___helper_matrix33.h"
+#include "play_math_vector3_transform.hpp"
+#include "play_math___helper_common.hpp"
+#include "play_math___helper_vector3.hpp"
+#include "play_math___helper_matrix33.hpp"
 using namespace play_math;
 
 #include "r2tm/r2tm_inspector.hpp"

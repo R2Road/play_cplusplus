@@ -665,40 +665,40 @@
     <ClInclude Include="source\utility\play_cpp_utility_character_buffer.hpp">
       <Filter>_utility</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_math\menu_play_math.h">
+    <ClInclude Include="source\play_math\menu_play_math.hpp">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_math\play_math_basic.h">
+    <ClInclude Include="source\play_math\play_math_basic.hpp">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_math\play_math___helper_vector3.h">
+    <ClInclude Include="source\play_math\play_math___helper_vector3.hpp">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_math\play_math_vector3.h">
+    <ClInclude Include="source\play_math\play_math_vector3.hpp">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_math\play_math___helper_common.h">
+    <ClInclude Include="source\play_math\play_math___helper_common.hpp">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_math\play_math___helper_vector2.h">
+    <ClInclude Include="source\play_math\play_math___helper_vector2.hpp">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_math\play_math_vector2_transform.h">
+    <ClInclude Include="source\play_math\play_math_vector2_transform.hpp">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_math\play_math___helper_matrix22.h">
+    <ClInclude Include="source\play_math\play_math___helper_matrix22.hpp">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_math\play_math_vector3_transform.h">
+    <ClInclude Include="source\play_math\play_math_vector3_transform.hpp">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_math\play_math___helper_matrix33.h">
+    <ClInclude Include="source\play_math\play_math___helper_matrix33.hpp">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_math\play_math___helper_vector4.h">
+    <ClInclude Include="source\play_math\play_math___helper_vector4.hpp">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_math\play_math___helper_matrix44.h">
+    <ClInclude Include="source\play_math\play_math___helper_matrix44.hpp">
       <Filter>play_math</Filter>
     </ClInclude>
     <ClInclude Include="source\play_rendering_pipeline\play_rendering_pipeline.h">
@@ -707,13 +707,13 @@
     <ClInclude Include="source\play_rendering_pipeline\menu_play_rendering_pipeline.h">
       <Filter>play_rendering_pipeline</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_math\play_math_numbers.h">
+    <ClInclude Include="source\play_math\play_math_numbers.hpp">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_math\play_math_quaternion.h">
+    <ClInclude Include="source\play_math\play_math_quaternion.hpp">
       <Filter>play_math</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_math\play_math___helper_quaternion.h">
+    <ClInclude Include="source\play_math\play_math___helper_quaternion.hpp">
       <Filter>play_math</Filter>
     </ClInclude>
     <ClInclude Include="source\play_debug\menu_debug.h">

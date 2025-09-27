@@ -13,7 +13,7 @@
 #include "play_cpu/menu_cpu.h"
 #include "play_debug/menu_debug.h"
 #include "play_hobby/menu_hobby.hpp"
-#include "play_math/menu_play_math.h"
+#include "play_math/menu_play_math.hpp"
 #include "play_performance/menu_performance.hpp"
 #include "play_random/menu_random.hpp"
 #include "play_rendering_pipeline/menu_play_rendering_pipeline.h"
