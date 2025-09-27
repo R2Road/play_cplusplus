@@ -19,7 +19,9 @@ namespace play_template_type_extract
 		{
 			LS();
 
-			OUT_SUBJECT( "Template 특수화 과정에서 여러 타입 정보를 가진 타입을 분리할 수 있다." );
+			OUT_SUBJECT( "개괄" );
+			OUT_COMMENT( "Template 인자가 여러 타입의 합성으로 만들어졌다면." );
+			OUT_COMMENT( "특수화를 통해 타입을 분리할 수 있다." );
 
 			LS();
 
