@@ -3,10 +3,10 @@
 namespace play_template_type_extract
 {
 	template<typename T>
-	struct Helper_TypeExtracter_4_MemberPointer;
+	struct Helper___TypeExtracter___MemberValuePointer;
 
 	template<typename RetType, typename ClassType>
-	struct Helper_TypeExtracter_4_MemberPointer<RetType ClassType::*>
+	struct Helper___TypeExtracter___MemberValuePointer<RetType ClassType::*>
 	{
 		using RetT = RetType;
 		using ClassT = ClassType;

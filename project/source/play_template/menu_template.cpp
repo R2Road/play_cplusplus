@@ -50,7 +50,7 @@ r2tm::WriteFunctionT Menu_Template::GetWriteFunction() const
 
 
 		mp->AddItem( 'q', play_template_specialization::Basic() );
-		mp->AddItem( 'w', play_template_type_extract::TypeExtract_4_MemberPointer() );
+		mp->AddItem( 'w', play_template_type_extract::Member_Value_Pointer() );
 
 
 

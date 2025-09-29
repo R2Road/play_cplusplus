@@ -1,19 +1,19 @@
 #include "play_template_type_extract.hpp"
-#include "play_template_type_extract_helper___type_extractor_4_member_pointer.hpp"
+#include "play_template_type_extract_helper___member_value_pointer.hpp"
 
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 
 namespace play_template_type_extract
 {
-	r2tm::TitleFunctionT TypeExtract_4_MemberPointer::GetTitleFunction() const
+	r2tm::TitleFunctionT Member_Value_Pointer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Type Extract 4 Member Pointer";
+			return "Type Extract : Member Value Pointer";
 		};
 	}
-	r2tm::DoFunctionT TypeExtract_4_MemberPointer::GetDoFunction() const
+	r2tm::DoFunctionT Member_Value_Pointer::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -25,7 +25,7 @@ namespace play_template_type_extract
 
 			LS();
 
-			OUT_FILE( "source/play_template/play_template_type_extract_helper___type_extractor_4_member_pointer.hpp" );
+			OUT_FILE( "source/play_template/play_template_type_extract_helper___member_value_pointer.hpp" );
 
 			LS();
 
@@ -37,7 +37,7 @@ namespace play_template_type_extract
 
 				LF();
 
-				DECL_MAIN( using TT = Helper_TypeExtracter_4_MemberPointer<int S::*> );
+				DECL_MAIN( using TT = Helper___TypeExtracter___MemberValuePointer<int S::*> );
 
 				LF();
 

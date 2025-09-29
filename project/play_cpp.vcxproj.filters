@@ -1394,7 +1394,7 @@
     <ClInclude Include="source\play_template\play_template_type_extract.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_template\play_template_type_extract_helper___type_extractor_4_member_pointer.hpp">
+    <ClInclude Include="source\play_template\play_template_type_extract_helper___member_value_pointer.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
     <ClInclude Include="source\play_math\menu_play_math_geometry.hpp">

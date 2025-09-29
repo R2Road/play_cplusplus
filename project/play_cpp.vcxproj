@@ -446,7 +446,7 @@
     <ClInclude Include="source\play_template\play_template_practice_part_01.hpp" />
     <ClInclude Include="source\play_template\play_template_specialization.hpp" />
     <ClInclude Include="source\play_template\play_template_specialization_helper___basic.hpp" />
-    <ClInclude Include="source\play_template\play_template_type_extract_helper___type_extractor_4_member_pointer.hpp" />
+    <ClInclude Include="source\play_template\play_template_type_extract_helper___member_value_pointer.hpp" />
     <ClInclude Include="source\play_template\play_template_variadic.hpp" />
     <ClInclude Include="source\play_time\menu_time.hpp" />
     <ClInclude Include="source\play_various\menu_various.hpp" />
