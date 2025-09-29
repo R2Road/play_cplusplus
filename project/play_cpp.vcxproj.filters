@@ -1403,6 +1403,9 @@
     <ClInclude Include="source\play_math\play_math_sequence.hpp">
       <Filter>play_math</Filter>
     </ClInclude>
+    <ClInclude Include="source\play_template\play_template_type_extract_helper___function_pointer.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="source\play_cpp\play_cpp_enum_helper___xmacro_2.def">
