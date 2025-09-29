@@ -376,8 +376,8 @@
     <ClInclude Include="source\play_performance\play_performance_1.hpp" />
     <ClInclude Include="source\play_performance\play_performance_container_iteration.hpp" />
     <ClInclude Include="source\play_random\menu_random.hpp" />
-    <ClInclude Include="source\play_rendering_pipeline\menu_play_rendering_pipeline.h" />
-    <ClInclude Include="source\play_rendering_pipeline\play_rendering_pipeline.h" />
+    <ClInclude Include="source\play_rendering_pipeline\menu_play_rendering_pipeline.hpp" />
+    <ClInclude Include="source\play_rendering_pipeline\play_rendering_pipeline.hpp" />
     <ClInclude Include="source\play_std\menu_std.hpp" />
     <ClInclude Include="source\play_std\menu_std_align.hpp" />
     <ClInclude Include="source\play_std\menu_std_cin.hpp" />

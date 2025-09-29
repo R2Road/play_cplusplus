@@ -1,10 +1,10 @@
-#include "menu_play_rendering_pipeline.h"
+#include "menu_play_rendering_pipeline.hpp"
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
 #include "menu_root.hpp"
 
-#include "play_rendering_pipeline.h"
+#include "play_rendering_pipeline.hpp"
 
 r2tm::TitleFunctionT Menu_Play_Rendering_Pipeline::GetTitleFunction() const
 {

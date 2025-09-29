@@ -16,7 +16,7 @@
 #include "play_math/menu_play_math.hpp"
 #include "play_performance/menu_performance.hpp"
 #include "play_random/menu_random.hpp"
-#include "play_rendering_pipeline/menu_play_rendering_pipeline.h"
+#include "play_rendering_pipeline/menu_play_rendering_pipeline.hpp"
 #include "play_std/menu_std.hpp"
 #include "play_time/menu_time.hpp"
 #include "play_various/menu_various.hpp"

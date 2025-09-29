@@ -1,4 +1,4 @@
-#include "play_rendering_pipeline.h"
+#include "play_rendering_pipeline.hpp"
 
 #include <conio.h>
 
