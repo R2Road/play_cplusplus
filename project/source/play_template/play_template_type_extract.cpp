@@ -50,6 +50,23 @@ namespace play_template_type_extract
 
 			LS();
 
+			{
+				DECL_MAIN( int i = 77 );
+				i = {};
+
+				LF();
+
+				DECL_MAIN( using TT = Helper___TypeExtracter___MemberValuePointer<int*> );
+
+				LF();
+
+				OUT_SOURCE_READY_N_BEGIN;
+				std::cout << ( std::is_same<TT::ValueT, decltype( i )>::value ? "SUCCESS" : "FAILED" ) << r2tm::linefeed;
+				OUT_SOURCE_END;
+			}
+
+			LS();
+
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
