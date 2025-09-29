@@ -4,7 +4,7 @@
 
 namespace play_template_type_extract
 {
-	class Member_Value_Pointer : public r2tm::iItem
+	class Value_Pointer : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
