@@ -5,10 +5,10 @@ namespace play_template_type_extract
 	template<typename T>
 	struct Helper___TypeExtracter___MemberValuePointer;
 
-	template<typename RetType, typename ClassType>
-	struct Helper___TypeExtracter___MemberValuePointer<RetType ClassType::*>
+	template<typename Value_T, typename Owner_T>
+	struct Helper___TypeExtracter___MemberValuePointer<Value_T Owner_T::*>
 	{
-		using RetT = RetType;
-		using ClassT = ClassType;
+		using ValueT = Value_T;
+		using OwnerT = Owner_T;
 	};
 }

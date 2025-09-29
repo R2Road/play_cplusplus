@@ -43,8 +43,8 @@ namespace play_template_type_extract
 				LF();
 
 				OUT_SOURCE_READY_N_BEGIN;
-				std::cout << ( std::is_same<TT::RetT, int>::value ? "SUCCESS" : "FAILED" ) << r2tm::linefeed;
-				std::cout << ( std::is_same<TT::ClassT, S>::value ? "SUCCESS" : "FAILED" ) << r2tm::linefeed;
+				std::cout << ( std::is_same<TT::ValueT, int>::value ? "SUCCESS" : "FAILED" ) << r2tm::linefeed;
+				std::cout << ( std::is_same<TT::OwnerT, S>::value ? "SUCCESS" : "FAILED" ) << r2tm::linefeed;
 				OUT_SOURCE_END;
 			}
 
