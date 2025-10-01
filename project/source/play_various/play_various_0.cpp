@@ -585,4 +585,94 @@ namespace play_various_0
 				return r2tm::eDoLeaveAction::Pause;
 			};
 	}
+
+
+
+	class MyClass {
+	public:
+		int value = 99;
+
+		// 비가상 멤버 함수
+		void print_status() {
+			// 이 함수 내에서 ECX 레지스터의 값이 'this' 포인터로 사용됨
+			std::cout << "Value via assembly call: " << this->value << std::endl;
+		}
+	};
+
+	// 멤버 함수 포인터 타입 정의
+	using MemberFuncPtr = void ( MyClass::* )( );
+
+	void ForceMemberCall_x86( MyClass* obj, MemberFuncPtr func_ptr ) {
+
+		// 멤버 함수 포인터에서 실제 함수 주소 추출 (비가상 함수의 경우 단순 주소)
+		// MSVC의 멤버 함수 포인터는 일반적으로 8바이트 (함수 주소 + delta/vtable index)
+		// 비가상 함수의 경우 첫 4바이트(32bit)가 실제 함수 주소입니다.
+
+		unsigned int func_addr;
+		// memcpy 대신 union을 사용하는 것이 안전하고 명확합니다.
+		union {
+			MemberFuncPtr ptr;
+			unsigned int parts[2]; // x86에서 주소 4바이트 + delta 4바이트 가정
+		} u;
+		u.ptr = func_ptr;
+		func_addr = u.parts[0]; // 함수 주소 (첫 4바이트) 추출
+
+		std::cout << "Attempting to call address: 0x" << std::hex << func_addr << std::dec << std::endl;
+
+		__asm {
+			// 1. ECX에 'this' 포인터 (obj) 로드 (__thiscall 규약)
+			//    'obj' 변수의 값을 ECX 레지스터로 옮깁니다.
+			mov ecx, obj
+
+			// 2. 함수 주소(func_addr)를 EAX에 로드
+			mov eax, func_addr
+
+			// 3. EAX 레지스터가 가진 주소로 CALL (함수 호출)
+			//    CALL 명령어는 반환 주소를 스택에 PUSH하고 EIP를 함수 주소로 변경
+			call eax
+
+			// __thiscall은 Callee가 스택을 정리하므로, 여기서는 스택 정리 코드가 필요 없음
+		}
+	}
+	r2tm::TitleFunctionT Forced_Call::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Forced Call";
+		};
+	}
+	r2tm::DoFunctionT Forced_Call::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUT_SUBJECT( "비가상 멤버 함수를 어셈블리로 강제 호출" );
+
+			LS();
+
+			{
+				DECL_MAIN( MyClass s );
+				DECL_MAIN( MemberFuncPtr ptr = &MyClass::print_status );
+
+				SS();
+
+				{
+					OUT_NOTE( "정상 호출" );
+					PROC_MAIN( ( s.*ptr )( ) );
+				}
+
+				SS();
+
+				{
+					OUT_NOTE( "강제 호출" );
+					PROC_MAIN( ForceMemberCall_x86( &s, ptr ) );
+				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

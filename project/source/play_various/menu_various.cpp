@@ -36,6 +36,7 @@ r2tm::WriteFunctionT Menu_Various::GetWriteFunction() const
 		mp->AddItem( 'q', play_various_0::E() );
 		mp->AddItem( 'w', play_various_0::Init_Class_Array() );
 		mp->AddItem( 'e', play_various_0::Float_Binary() );
+		mp->AddItem( 'r', play_various_0::Forced_Call() );
 
 
 		mp->AddSplit();
