@@ -2,6 +2,7 @@
 #include "play_template_meta_programming_helper___factorial.hpp"
 #include "play_template_meta_programming_helper___factorial_printer.hpp"
 #include "play_template_meta_programming_helper___greatest_common_divisior.hpp"
+#include "play_template_meta_programming_helper___greatest_common_divisior_process_printer.hpp"
 
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_inspector.hpp"
@@ -144,6 +145,49 @@ namespace play_template_meta_programming_01
 				LF();
 
 				OUT_VALUE( result );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT GreatestCommonDivisor_ProcessPrinter::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Greatest Common Divisor : Process Printer";
+		};
+	}
+	r2tm::DoFunctionT GreatestCommonDivisor_ProcessPrinter::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUT_SUBJECT( "template¿ª ≈Î«— ¿Á±Õ" );
+
+			LS();
+
+			OUT_FILE( "source/play_template/play_template_meta_programming_helper___greatest_common_divisior_process_printer.hpp" );
+
+			LS();
+
+			{
+				OUT_SOURCE_READY_N_BEGIN;
+				GCD_ProcessPrinter<9, 3>::Do();
+				OUT_SOURCE_END;
+			}
+
+			LS();
+
+			{
+				OUT_SOURCE_READY_N_BEGIN;
+				GCD_ProcessPrinter<5, 2>::Do();
+				OUT_SOURCE_END;
 			}
 
 			LS();
