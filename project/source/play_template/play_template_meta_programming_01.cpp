@@ -1,6 +1,6 @@
 #include "play_template_meta_programming_01.hpp"
 #include "play_template_meta_programming_helper___factorial.hpp"
-#include "play_template_meta_programming_helper___factorial_printer.hpp"
+#include "play_template_meta_programming_helper___factorial_process_printer.hpp"
 #include "play_template_meta_programming_helper___greatest_common_divisior.hpp"
 #include "play_template_meta_programming_helper___greatest_common_divisior_process_printer.hpp"
 
@@ -58,14 +58,14 @@ namespace play_template_meta_programming_01
 
 
 
-	r2tm::TitleFunctionT Factorial_Printer::GetTitleFunction() const
+	r2tm::TitleFunctionT Factorial_ProcessPrinter::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Factorial Printer";
+			return "Factorial : Process Printer";
 		};
 	}
-	r2tm::DoFunctionT Factorial_Printer::GetDoFunction() const
+	r2tm::DoFunctionT Factorial_ProcessPrinter::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -75,20 +75,20 @@ namespace play_template_meta_programming_01
 
 			LS();
 
-			OUT_FILE( "source/play_template/play_template_meta_programming_helper___factorial_printer.hpp" );
+			OUT_FILE( "source/play_template/play_template_meta_programming_helper___factorial_process_printer.hpp" );
 
 			LS();
 
 			{
-				PROC_MAIN( Helper_FactorialPrinter<2>() );
+				PROC_MAIN( Helper_Factorial_ProcessPrinter<2>() );
 
 				LF2();
 
-				PROC_MAIN( Helper_FactorialPrinter<4>() );
+				PROC_MAIN( Helper_Factorial_ProcessPrinter<4>() );
 
 				LF2();
 
-				PROC_MAIN( Helper_FactorialPrinter<10>() );
+				PROC_MAIN( Helper_Factorial_ProcessPrinter<10>() );
 
 				LF();
 			}

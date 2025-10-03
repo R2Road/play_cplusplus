@@ -11,7 +11,7 @@ namespace play_template_meta_programming_01
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Factorial_Printer : public r2tm::iItem
+	class Factorial_ProcessPrinter : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

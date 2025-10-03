@@ -1409,7 +1409,7 @@
     <ClInclude Include="source\play_template\play_template_meta_programming_helper___factorial.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_template\play_template_meta_programming_helper___factorial_printer.hpp">
+    <ClInclude Include="source\play_template\play_template_meta_programming_helper___factorial_process_printer.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
     <ClInclude Include="source\play_template\play_template_meta_programming_helper___greatest_common_divisior.hpp">
