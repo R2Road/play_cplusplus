@@ -1,6 +1,7 @@
 #include "play_template_meta_programming_01.hpp"
 #include "play_template_meta_programming_helper___factorial.hpp"
 #include "play_template_meta_programming_helper___factorial_printer.hpp"
+#include "play_template_meta_programming_helper___greatest_common_divisior.hpp"
 
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_inspector.hpp"
@@ -102,18 +103,6 @@ namespace play_template_meta_programming_01
 
 namespace play_template_meta_programming_01
 {
-	template<int A, int B>
-	struct GCDCalculator
-	{
-		static const int value = GCDCalculator<B, A % B>::value;
-	};
-
-	template<int A>
-	struct GCDCalculator<A, 0>
-	{
-		static const int value = A;
-	};
-
 	r2tm::TitleFunctionT GreatestCommonDivisor::GetTitleFunction() const
 	{
 		return []()->const char*
