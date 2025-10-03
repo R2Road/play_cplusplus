@@ -7,26 +7,26 @@
 namespace play_template_meta_programming_01
 {
 	template<typename Search_T, typename TypeList_T, int CurrentIndex = 0>
-	struct Helper_TypeSearch
+	struct Helper_GetTypeIndex
 	{
-		static constexpr bool value = false;
+		static constexpr int value = -1;
 	};
 
 	// 패턴 매칭을 활용해 전달된 Helper_TypeList 에서 타입을 꺼낸다.
 	template<typename Search_T, typename This_T, typename ... Args_T, int CurrentIndex>
-	struct Helper_TypeSearch<Search_T, Helper_TypeList<This_T, Args_T...>, CurrentIndex>
+	struct Helper_GetTypeIndex<Search_T, Helper_TypeList<This_T, Args_T...>, CurrentIndex>
 	{
-		static constexpr bool value =
+		static constexpr int value =
 			(
-				  std::is_same<Search_T, This_T>::value
-				? true
-				: Helper_TypeSearch<Search_T, Helper_TypeList<Args_T...>, CurrentIndex + 1>::value
-			);
+				std::is_same<Search_T, This_T>::value
+				? CurrentIndex
+				: Helper_GetTypeIndex<Search_T, Helper_TypeList<Args_T...>, CurrentIndex + 1>::value
+				);
 	};
 
 	template<typename Search_T, int CurrentIndex>
-	struct Helper_TypeSearch<Search_T, Helper_TypeList<>, CurrentIndex>
+	struct Helper_GetTypeIndex<Search_T, Helper_TypeList<>, CurrentIndex>
 	{
-		static constexpr bool value = false;
+		static constexpr int value = -1;
 	};
 }

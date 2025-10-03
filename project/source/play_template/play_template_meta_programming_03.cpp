@@ -1,4 +1,5 @@
 #include "play_template_meta_programming_03.hpp"
+#include "play_template_meta_programming_helper___type_index.hpp"
 #include "play_template_meta_programming_helper___type_list.hpp"
 #include "play_template_meta_programming_helper___type_search.hpp"
 
@@ -79,7 +80,80 @@ namespace play_template_meta_programming_01
 				OUT_SOURCE_READY;
 
 				OUT_SOURCE_BEGIN;
-				using TL = Helper_TypeList<int, float, char, double, long>;
+				using TL = Helper_TypeList<int, float, char>;
+				OUT_SOURCE_END;
+
+				SS();
+
+				{
+					OUT_SOURCE_BEGIN;
+					const auto result = Helper_TypeSearch<int, TL>::value;
+					OUT_SOURCE_END;
+
+					LF();
+
+					OUT_VALUE( ( result ? "true" : "false" ) );
+				}
+
+				SS();
+
+				{
+					OUT_SOURCE_BEGIN;
+					const auto result = Helper_TypeSearch<char, TL>::value;
+					OUT_SOURCE_END;
+
+					LF();
+
+					OUT_VALUE( ( result ? "true" : "false" ) );
+				}
+
+				SS();
+
+				{
+					OUT_SOURCE_BEGIN;
+					const auto result = Helper_TypeSearch<double, TL>::value;
+					OUT_SOURCE_END;
+
+					LF();
+
+					OUT_VALUE( ( result ? "true" : "false" ) );
+				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT TypeIndex::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "TypeIndex";
+		};
+	}
+	r2tm::DoFunctionT TypeIndex::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUT_SUBJECT( "패턴 매칭으로 type list 에서 타입을 꺼낼 수 있다." );
+
+			LS();
+
+			OUT_FILE( "source/play_template/play_template_meta_programming_helper___type_index.hpp" );
+
+			LS();
+
+			{
+				OUT_SOURCE_READY;
+
+				OUT_SOURCE_BEGIN;
+				using TL = Helper_TypeList<int, float, char>;
 				OUT_SOURCE_END;
 
 				SS();
@@ -99,6 +173,18 @@ namespace play_template_meta_programming_01
 				{
 					OUT_SOURCE_BEGIN;
 					const auto index = Helper_GetTypeIndex<char, TL>::value;
+					OUT_SOURCE_END;
+
+					LF();
+
+					OUT_VALUE( index );
+				}
+
+				SS();
+
+				{
+					OUT_SOURCE_BEGIN;
+					const auto index = Helper_GetTypeIndex<double, TL>::value;
 					OUT_SOURCE_END;
 
 					LF();

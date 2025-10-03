@@ -441,6 +441,7 @@
     <ClInclude Include="source\play_template\play_template_meta_programming_helper___factorial_process_printer.hpp" />
     <ClInclude Include="source\play_template\play_template_meta_programming_helper___greatest_common_divisior.hpp" />
     <ClInclude Include="source\play_template\play_template_meta_programming_helper___greatest_common_divisior_process_printer.hpp" />
+    <ClInclude Include="source\play_template\play_template_meta_programming_helper___type_index.hpp" />
     <ClInclude Include="source\play_template\play_template_meta_programming_helper___type_list.hpp" />
     <ClInclude Include="source\play_template\play_template_meta_programming_helper___type_search.hpp" />
     <ClInclude Include="source\play_template\play_template_type_extract.hpp" />
