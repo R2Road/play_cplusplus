@@ -9,12 +9,12 @@ namespace play_template_meta_programming_01
 	template<int A, int B>
 	struct GCDCalculator
 	{
-		static const int value = GCDCalculator<B, A% B>::value;
+		static constexpr const int value = GCDCalculator<B, A% B>::value;
 	};
 
 	template<int A>
 	struct GCDCalculator<A, 0>
 	{
-		static const int value = A;
+		static constexpr const int value = A;
 	};
 }
