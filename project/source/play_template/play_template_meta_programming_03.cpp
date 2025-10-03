@@ -1,5 +1,6 @@
 #include "play_template_meta_programming_03.hpp"
 #include "play_template_meta_programming_helper___type_list.hpp"
+#include "play_template_meta_programming_helper___type_search.hpp"
 
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
@@ -66,7 +67,11 @@ namespace play_template_meta_programming_01
 		{
 			LS();
 
-			OUT_FILE( "source/play_template/play_template_meta_programming_helper___type_list.hpp" );
+			OUT_SUBJECT( "패턴 매칭으로 type list 에서 타입을 꺼낼 수 있다." );
+
+			LS();
+
+			OUT_FILE( "source/play_template/play_template_meta_programming_helper___type_search.hpp" );
 
 			LS();
 
