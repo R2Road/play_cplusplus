@@ -3,6 +3,7 @@
 #include "play_template_meta_programming_helper___factorial_printer.hpp"
 
 #include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 namespace play_template_meta_programming_01
 {
@@ -20,31 +21,31 @@ namespace play_template_meta_programming_01
 			LS();
 
 			{
-				std::cout << "\t" << "+ Helper_Factorial<2>::f" << r2tm::linefeed;
+				PROC_MAIN( FactorialPrinter<2>() );
 
-				std::cout << "\t\t" << "calc : ";
-				FactorialPrinter<2>();
-				std::cout << "\t\t" << "result : " << Helper_Factorial<2>::f << r2tm::linefeed;
+				LF();
+
+				OUT_VALUE( Helper_Factorial<2>::f );
 			}
 
 			LS();
 
 			{
-				std::cout << "\t" << "+ Helper_Factorial<4>::f" << r2tm::linefeed;
+				PROC_MAIN( FactorialPrinter<4>() );
 
-				std::cout << "\t\t" << "calc : ";
-				FactorialPrinter<4>();
-				std::cout << "\t\t" << "result : " << Helper_Factorial<4>::f << r2tm::linefeed;
+				LF();
+
+				OUT_VALUE( Helper_Factorial<4>::f );
 			}
 
 			LS();
 
 			{
-				std::cout << "\t" << "+ Helper_Factorial<10>::f" << r2tm::linefeed;
+				PROC_MAIN( FactorialPrinter<10>() );
 
-				std::cout << "\t\t" << "calc : ";
-				FactorialPrinter<10>();
-				std::cout << "\t\t" << "result : " << Helper_Factorial<10>::f << r2tm::linefeed;
+				LF();
+
+				OUT_VALUE( Helper_Factorial<10>::f );
 			}
 
 			LS();
