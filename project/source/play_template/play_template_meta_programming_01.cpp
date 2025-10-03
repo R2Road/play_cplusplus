@@ -116,16 +116,34 @@ namespace play_template_meta_programming_01
 		{
 			LS();
 
+			OUT_SUBJECT( "template¿ª ≈Î«— ¿Á±Õ" );
+
+			LS();
+
+			OUT_FILE( "source/play_template/play_template_meta_programming_helper___greatest_common_divisior.hpp" );
+
+			LS();
+
 			{
-				std::cout << "\t + " << "GCDCalculator<9, 3>::value" << r2tm::linefeed;
-				std::cout << "\t\t - Result : " << GCDCalculator<9, 3>::value << r2tm::linefeed;
+				OUT_SOURCE_READY_N_BEGIN;
+				auto result = GCDCalculator<9, 3>::value;
+				OUT_SOURCE_END;
+
+				LF();
+
+				OUT_VALUE( result );
 			}
 
 			LS();
 
 			{
-				std::cout << "\t + " << "GCDCalculator<5, 2>::value" << r2tm::linefeed;
-				std::cout << "\t\t - Result : " << GCDCalculator<5, 2>::value << r2tm::linefeed;
+				OUT_SOURCE_READY_N_BEGIN;
+				auto result = GCDCalculator<5, 2>::value;
+				OUT_SOURCE_END;
+
+				LF();
+
+				OUT_VALUE( result );
 			}
 
 			LS();
