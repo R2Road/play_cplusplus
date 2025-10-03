@@ -6,6 +6,53 @@
 
 namespace play_template_meta_programming_01
 {
+	r2tm::TitleFunctionT TypeList::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "TypeList";
+		};
+	}
+	r2tm::DoFunctionT TypeList::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUT_SUBJECT( "type을 저장하는 template을 만들어 쓰는 것으로 간결함을 얻을 수 있다." );
+			OUT_SUBJECT( "같은 template 인자를 받더라도 특수화가 가능하다." );
+
+			LS();
+
+			OUT_FILE( "source/play_template/play_template_meta_programming_helper___type_list.hpp" );
+
+			LS();
+
+			{
+				OUT_SOURCE_READY;
+
+				OUT_SOURCE_BEGIN;
+				using TL = Helper_TypeList<int, float, char, double, long>;
+
+				using C1 = Helper_TypeList_Checker<TL>::type;
+				using C2 = Helper_TypeList_Checker<int, float, char, double, long>::type;
+
+				const auto result = std::is_same_v<C1, C2>;
+				OUT_SOURCE_END;
+
+				LF();
+
+				OUT_VALUE( ( result ? "true" : "false" ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT TypeSearch::GetTitleFunction() const
 	{
 		return []()->const char*

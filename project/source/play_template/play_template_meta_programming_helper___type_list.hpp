@@ -4,8 +4,24 @@
 
 namespace play_template_meta_programming_01
 {
-	template<typename ... Args_T>
+	template<typename ... TypeList_T>
 	struct Helper_TypeList;
+
+
+
+	template<typename ... TypeList_T>
+	struct Helper_TypeList_Checker
+	{
+		using type = Helper_TypeList<TypeList_T ...>;
+	};
+
+	template<typename ... TypeList_T>
+	struct Helper_TypeList_Checker<Helper_TypeList<TypeList_T ...>>
+	{
+		using type = Helper_TypeList<TypeList_T ...>;
+	};
+
+
 
 
 	// 기본 형 선언
