@@ -20,31 +20,31 @@ namespace play_template_meta_programming_01
 			LS();
 
 			{
-				std::cout << "\t" << "+ Factorial<2>::f" << r2tm::linefeed;
+				std::cout << "\t" << "+ Helper_Factorial<2>::f" << r2tm::linefeed;
 
 				std::cout << "\t\t" << "calc : ";
 				FactorialPrinter<2>();
-				std::cout << "\t\t" << "result : " << Factorial<2>::f << r2tm::linefeed;
+				std::cout << "\t\t" << "result : " << Helper_Factorial<2>::f << r2tm::linefeed;
 			}
 
 			LS();
 
 			{
-				std::cout << "\t" << "+ Factorial<4>::f" << r2tm::linefeed;
+				std::cout << "\t" << "+ Helper_Factorial<4>::f" << r2tm::linefeed;
 
 				std::cout << "\t\t" << "calc : ";
 				FactorialPrinter<4>();
-				std::cout << "\t\t" << "result : " << Factorial<4>::f << r2tm::linefeed;
+				std::cout << "\t\t" << "result : " << Helper_Factorial<4>::f << r2tm::linefeed;
 			}
 
 			LS();
 
 			{
-				std::cout << "\t" << "+ Factorial<10>::f" << r2tm::linefeed;
+				std::cout << "\t" << "+ Helper_Factorial<10>::f" << r2tm::linefeed;
 
 				std::cout << "\t\t" << "calc : ";
 				FactorialPrinter<10>();
-				std::cout << "\t\t" << "result : " << Factorial<10>::f << r2tm::linefeed;
+				std::cout << "\t\t" << "result : " << Helper_Factorial<10>::f << r2tm::linefeed;
 			}
 
 			LS();
