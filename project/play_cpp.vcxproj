@@ -437,6 +437,8 @@
     <ClInclude Include="source\play_template\play_template_basic.hpp" />
     <ClInclude Include="source\play_template\play_template_basic_helper.hpp" />
     <ClInclude Include="source\play_template\play_template_basic_helper___parentheses.hpp" />
+    <ClInclude Include="source\play_template\play_template_meta_programming_helper___factorial.hpp" />
+    <ClInclude Include="source\play_template\play_template_meta_programming_helper___factorial_printer.hpp" />
     <ClInclude Include="source\play_template\play_template_type_extract.hpp" />
     <ClInclude Include="source\play_template\play_template_meta_programming_01.hpp" />
     <ClInclude Include="source\play_template\play_template_meta_programming_02.hpp" />
