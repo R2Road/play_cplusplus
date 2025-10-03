@@ -58,7 +58,8 @@ r2tm::WriteFunctionT Menu_TemplateMetaProgramming::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'z', play_template_meta_programming_01::MultiTypePackage() );
+		mp->AddItem( 'z', play_template_meta_programming_01::TypeSearch() );
+		mp->AddItem( 'x', play_template_meta_programming_01::MultiTypePackage() );
 
 
 

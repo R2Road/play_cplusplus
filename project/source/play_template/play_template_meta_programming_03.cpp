@@ -1,6 +1,66 @@
 #include "play_template_meta_programming_03.hpp"
+#include "play_template_meta_programming_helper___type_list.hpp"
 
+#include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
+
+namespace play_template_meta_programming_01
+{
+	r2tm::TitleFunctionT TypeSearch::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "TypeSearch";
+		};
+	}
+	r2tm::DoFunctionT TypeSearch::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUT_FILE( "source/play_template/play_template_meta_programming_helper___type_list.hpp" );
+
+			LS();
+
+			{
+				OUT_SOURCE_READY;
+
+				OUT_SOURCE_BEGIN;
+				using TL = Helper_TypeList<int, float, char, double, long>;
+				OUT_SOURCE_END;
+
+				SS();
+
+				{
+					OUT_SOURCE_BEGIN;
+					const auto index = Helper_GetTypeIndex<int, TL>::value;
+					OUT_SOURCE_END;
+
+					LF();
+
+					OUT_VALUE( index );
+				}
+
+				SS();
+
+				{
+					OUT_SOURCE_BEGIN;
+					const auto index = Helper_GetTypeIndex<char, TL>::value;
+					OUT_SOURCE_END;
+
+					LF();
+
+					OUT_VALUE( index );
+				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+}
 
 namespace
 {
