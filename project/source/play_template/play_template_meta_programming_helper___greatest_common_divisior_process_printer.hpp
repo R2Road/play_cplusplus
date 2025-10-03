@@ -13,7 +13,7 @@ namespace play_template_meta_programming_01
 		static void Do()
 		{
 			std::cout << A << " : " << B << r2tm::linefeed;
-			GCD_ProcessPrinter<B, A% B>::Do();
+			GCD_ProcessPrinter<B, A % B>::Do();
 		}
 	};
 
