@@ -25,7 +25,7 @@ namespace play_template_meta_programming_01
 			LS();
 
 			{
-				PROC_MAIN( FactorialPrinter<2>() );
+				PROC_MAIN( Helper_FactorialPrinter<2>() );
 
 				LF();
 
@@ -35,7 +35,7 @@ namespace play_template_meta_programming_01
 			LS();
 
 			{
-				PROC_MAIN( FactorialPrinter<4>() );
+				PROC_MAIN( Helper_FactorialPrinter<4>() );
 
 				LF();
 
@@ -45,7 +45,7 @@ namespace play_template_meta_programming_01
 			LS();
 
 			{
-				PROC_MAIN( FactorialPrinter<10>() );
+				PROC_MAIN( Helper_FactorialPrinter<10>() );
 
 				LF();
 
