@@ -20,36 +20,75 @@ namespace play_template_meta_programming_01
 		{
 			LS();
 
+			OUT_SUBJECT( "template¿ª ≈Î«— ¿Á±Õ" );
+
+			LS();
+
 			OUT_FILE( "source/play_template/play_template_meta_programming_helper___factorial.hpp" );
+
+			LS();
+
+			{
+				OUT_VALUE( Helper_Factorial<1>::f );
+
+				LF();
+
+				OUT_VALUE( Helper_Factorial<2>::f );
+
+				LF();
+
+				OUT_VALUE( Helper_Factorial<3>::f );
+
+				LF();
+
+				OUT_VALUE( Helper_Factorial<4>::f );
+
+				LF();
+
+				OUT_VALUE( Helper_Factorial<5>::f );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Factorial_Printer::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Factorial Printer";
+		};
+	}
+	r2tm::DoFunctionT Factorial_Printer::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUT_SUBJECT( "template¿ª ≈Î«— ¿Á±Õ" );
+
+			LS();
+
+			OUT_FILE( "source/play_template/play_template_meta_programming_helper___factorial_printer.hpp" );
 
 			LS();
 
 			{
 				PROC_MAIN( Helper_FactorialPrinter<2>() );
 
-				LF();
+				LF2();
 
-				OUT_VALUE( Helper_Factorial<2>::f );
-			}
-
-			LS();
-
-			{
 				PROC_MAIN( Helper_FactorialPrinter<4>() );
 
-				LF();
+				LF2();
 
-				OUT_VALUE( Helper_Factorial<4>::f );
-			}
-
-			LS();
-
-			{
 				PROC_MAIN( Helper_FactorialPrinter<10>() );
 
 				LF();
-
-				OUT_VALUE( Helper_Factorial<10>::f );
 			}
 
 			LS();

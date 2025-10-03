@@ -24,13 +24,14 @@ r2tm::WriteFunctionT Menu_TemplateMetaProgramming::GetWriteFunction() const
 	return[]( r2tm::MenuProcessor* mp )
 	{
 		mp->AddItem( '1', play_template_meta_programming_01::Factorial() );
-		mp->AddItem( '2', play_template_meta_programming_01::GreatestCommonDivisor() );
-		mp->AddItem( '3', play_template_meta_programming_01::BasicRatio() );
-		mp->AddItem( '4', play_template_meta_programming_01::SumBasicRatio() );
-		mp->AddItem( '5', play_template_meta_programming_01::RatioWithGCD() );
-		mp->AddItem( '6', play_template_meta_programming_01::SumRatioWithGCD() );
-		mp->AddItem( '7', play_template_meta_programming_01::SumRatioAndOperator1() );
-		mp->AddItem( '8', play_template_meta_programming_01::SumRatioAndOperator2() );
+		mp->AddItem( '2', play_template_meta_programming_01::Factorial_Printer() );
+		mp->AddItem( '3', play_template_meta_programming_01::GreatestCommonDivisor() );
+		mp->AddItem( '4', play_template_meta_programming_01::BasicRatio() );
+		mp->AddItem( '5', play_template_meta_programming_01::SumBasicRatio() );
+		mp->AddItem( '6', play_template_meta_programming_01::RatioWithGCD() );
+		mp->AddItem( '7', play_template_meta_programming_01::SumRatioWithGCD() );
+		mp->AddItem( '8', play_template_meta_programming_01::SumRatioAndOperator1() );
+		mp->AddItem( '9', play_template_meta_programming_01::SumRatioAndOperator2() );
 
 
 		mp->AddLineFeed();

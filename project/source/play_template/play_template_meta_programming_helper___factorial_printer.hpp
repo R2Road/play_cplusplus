@@ -5,15 +5,29 @@
 namespace play_template_meta_programming_01
 {
 	template<int N>
+	void Helper_FactorialPrinter();
+
+
+
+	template<int N>
+	void Helper_Factorial_FormatPrinter()
+	{
+		Helper_FactorialPrinter<N>();
+		std::cout << " * ";
+	};
+
+
+
+	template<int N>
 	void Helper_FactorialPrinter()
 	{
-		std::cout << N << " * ";
-		Helper_FactorialPrinter<N - 1>();
+		Helper_Factorial_FormatPrinter<N - 1>();
+		std::cout << N;
 	};
 
 	template<>
 	void Helper_FactorialPrinter<1>()
 	{
-		std::cout << 1 << r2tm::linefeed;
+		std::cout << 1;
 	};
 }
