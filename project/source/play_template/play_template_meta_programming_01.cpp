@@ -127,7 +127,7 @@ namespace play_template_meta_programming_01
 
 			{
 				OUT_SOURCE_READY_N_BEGIN;
-				auto result = GCDCalculator<9, 3>::value;
+				auto result = GCD_Calculator<9, 3>::value;
 				OUT_SOURCE_END;
 
 				LF();
@@ -139,7 +139,7 @@ namespace play_template_meta_programming_01
 
 			{
 				OUT_SOURCE_READY_N_BEGIN;
-				auto result = GCDCalculator<5, 2>::value;
+				auto result = GCD_Calculator<5, 2>::value;
 				OUT_SOURCE_END;
 
 				LF();
@@ -291,7 +291,7 @@ namespace play_template_meta_programming_01
 	template<int N, int D>
 	struct Ratio_VER1
 	{
-		using gcd = GCDCalculator<N, D>;
+		using gcd = GCD_Calculator<N, D>;
 
 		static const int Numerator = N / gcd::value;
 		static const int Denominator = D / gcd::value;
@@ -351,7 +351,7 @@ namespace play_template_meta_programming_01
 			, Ratio1::Denominator * Ratio2::Denominator
 		>;
 
-		using gcd = GCDCalculator<orig::Numerator, orig::Denominator>;
+		using gcd = GCD_Calculator<orig::Numerator, orig::Denominator>;
 
 		static const int Numerator = orig::Numerator / gcd::value;
 		static const int Denominator = orig::Denominator / gcd::value;
