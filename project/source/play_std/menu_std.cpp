@@ -55,16 +55,9 @@ r2tm::WriteFunctionT Menu_STD::GetWriteFunction() const
 
 
 
-		mp->AddItem( '8', play_std_tuple::Basic() );
-		mp->AddItem( '9', play_std_variant::Basic() );
-
-
-
-		mp->AddLineFeed();
-
-
-
-		mp->AddMenu( 'q', Menu_STDFunctional() );
+		mp->AddItem( 'q', play_std_tuple::Basic() );
+		mp->AddItem( 'w', play_std_variant::Basic() );
+		mp->AddMenu( 'e', Menu_STDFunctional() );
 
 
 
