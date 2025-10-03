@@ -23,7 +23,7 @@ r2tm::WriteFunctionT Menu_TemplateMetaProgramming::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', play_template_meta_programming_01::CalculateFactorial() );
+		mp->AddItem( '1', play_template_meta_programming_01::Factorial() );
 		mp->AddItem( '2', play_template_meta_programming_01::GreatestCommonDivisor() );
 		mp->AddItem( '3', play_template_meta_programming_01::BasicRatio() );
 		mp->AddItem( '4', play_template_meta_programming_01::SumBasicRatio() );

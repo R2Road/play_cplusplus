@@ -6,14 +6,14 @@
 
 namespace play_template_meta_programming_01
 {
-	r2tm::TitleFunctionT CalculateFactorial::GetTitleFunction() const
+	r2tm::TitleFunctionT Factorial::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Factorial";
 		};
 	}
-	r2tm::DoFunctionT CalculateFactorial::GetDoFunction() const
+	r2tm::DoFunctionT Factorial::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

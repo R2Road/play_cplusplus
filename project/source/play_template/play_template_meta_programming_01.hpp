@@ -4,7 +4,7 @@
 
 namespace play_template_meta_programming_01
 {
-	class CalculateFactorial : public r2tm::iItem
+	class Factorial : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
