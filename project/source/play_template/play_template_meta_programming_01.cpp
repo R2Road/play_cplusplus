@@ -20,6 +20,10 @@ namespace play_template_meta_programming_01
 		{
 			LS();
 
+			OUT_FILE( "source/play_template/play_template_meta_programming_helper___factorial.hpp" );
+
+			LS();
+
 			{
 				PROC_MAIN( FactorialPrinter<2>() );
 
