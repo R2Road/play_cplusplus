@@ -602,8 +602,8 @@ namespace play_various_0
 	// 멤버 함수 포인터 타입 정의
 	using MemberFuncPtr = void ( MyClass::* )( );
 
+#ifdef _M_IX86
 	void ForceMemberCall_x86( MyClass* obj, MemberFuncPtr func_ptr ) {
-
 		// 멤버 함수 포인터에서 실제 함수 주소 추출 (비가상 함수의 경우 단순 주소)
 		// MSVC의 멤버 함수 포인터는 일반적으로 8바이트 (함수 주소 + delta/vtable index)
 		// 비가상 함수의 경우 첫 4바이트(32bit)가 실제 함수 주소입니다.
@@ -634,6 +634,10 @@ namespace play_various_0
 			// __thiscall은 Callee가 스택을 정리하므로, 여기서는 스택 정리 코드가 필요 없음
 		}
 	}
+#else
+	void ForceMemberCall_x86( MyClass*, MemberFuncPtr ) {
+	}
+#endif
 	r2tm::TitleFunctionT Forced_Call::GetTitleFunction() const
 	{
 		return []()->const char*
