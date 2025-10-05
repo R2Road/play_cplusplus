@@ -1,6 +1,7 @@
 #include "play_template_meta_programming_03.hpp"
 #include "play_template_meta_programming_helper___type_index.hpp"
 #include "play_template_meta_programming_helper___type_list.hpp"
+#include "play_template_meta_programming_helper___type_package.hpp"
 #include "play_template_meta_programming_helper___type_search.hpp"
 
 #include "r2tm/r2tm_inspector.hpp"
@@ -200,82 +201,8 @@ namespace play_template_meta_programming_01
 	}
 }
 
-namespace
-{
-	template<typename... Types>
-	class Helper_TypePackage;
 
-	template<>
-	class Helper_TypePackage<>
-	{};
 
-	template<typename _This_T, typename ... _Rest_T>
-	class Helper_TypePackage<_This_T, _Rest_T ...> : private Helper_TypePackage<_Rest_T ...>
-	{
-	public:
-		using ThisT = _This_T;
-		using BaseT = Helper_TypePackage<_Rest_T...>;
-
-		constexpr Helper_TypePackage() = default;
-
-		template<class _This2, class... _Rest2>
-		constexpr Helper_TypePackage( _This2&& arg, _Rest2&& ... args ) : BaseT( args... ), val( arg ) {}
-
-		template<typename T>
-		constexpr T& get_from_type()
-		{
-			if constexpr ( std::is_same_v<T, ThisT> )
-			{
-				return val;
-			}
-			else
-			{
-				return BaseT::template get_from_type<T>();
-			}
-		}
-
-		template<typename T>
-		constexpr T& get_from_type() const
-		{
-			if constexpr( std::is_same_v<T, ThisT> )
-			{
-				return val;
-			}
-			else
-			{
-				return BaseT::template get_from_type<T>();
-			}
-		}
-
-		template<int N, int CurrentIndex = 0>
-		constexpr auto& get_from_index()
-		{
-			if constexpr ( N == CurrentIndex )
-			{
-				return val;
-			}
-			else
-			{
-				return BaseT::template get_from_index<N, CurrentIndex + 1>();
-			}
-		}
-
-		template<int N, int CurrentIndex = 0>
-		constexpr auto& get_from_index() const
-		{
-			if constexpr( N == CurrentIndex )
-			{
-				return val;
-			}
-			else
-			{
-				return BaseT::template get_from_index<N, CurrentIndex + 1>();
-			}
-		}
-
-		ThisT val;
-	};
-}
 namespace play_template_meta_programming_01
 {
 	r2tm::TitleFunctionT TypePackage::GetTitleFunction() const
@@ -289,11 +216,15 @@ namespace play_template_meta_programming_01
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			OUT_SOURCE_READY;
+
+			LS();
+
+			OUT_FILE( "source/play_template/play_template_meta_programming_helper___type_package.hpp" );
 
 			LS();
 
 			{
+				OUT_SOURCE_READY;
 				OUT_SOURCE_BEGIN;
 				Helper_TypePackage<int, float, char> p{ 123, 345.678f, 'Q' };
 				OUT_SOURCE_END;

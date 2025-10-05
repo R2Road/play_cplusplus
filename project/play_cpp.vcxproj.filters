@@ -1427,6 +1427,9 @@
     <ClInclude Include="source\play_template\play_template_meta_programming_helper___type_index.hpp">
       <Filter>play_template</Filter>
     </ClInclude>
+    <ClInclude Include="source\play_template\play_template_meta_programming_helper___type_package.hpp">
+      <Filter>play_template</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="source\play_cpp\play_cpp_enum_helper___xmacro_2.def">
