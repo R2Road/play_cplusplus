@@ -53,6 +53,8 @@ namespace play_template_meta_programming_01
 		template<int N>
 		constexpr auto& get_from_index()
 		{
+			static_assert( N < sizeof ... ( Rest_T ) + 1 );
+
 			if constexpr( 0 == N )
 			{
 				return val;
@@ -66,6 +68,8 @@ namespace play_template_meta_programming_01
 		template<int N>
 		constexpr const auto& get_from_index() const
 		{
+			static_assert( N < sizeof ... ( Rest_T ) + 1 );
+
 			if constexpr( 0 == N )
 			{
 				return val;
