@@ -21,7 +21,7 @@ namespace play_template_meta_programming_01
 		constexpr Helper_TypePackage() = default;
 
 		template<class This_T2, class... Rest_T2>
-		constexpr Helper_TypePackage( This_T2&& arg, Rest_T2&& ... args ) : BaseT( std::forward<Rest_T2>( args ) ... ), val( arg )
+		constexpr Helper_TypePackage( This_T2&& arg, Rest_T2&& ... args ) : BaseT( std::forward<Rest_T2>( args ) ... ), val( std::forward<This_T2>( arg ) )
 		{}
 
 		template<typename T>
