@@ -224,9 +224,31 @@ namespace play_template_meta_programming_01
 			LS();
 
 			{
+
 				OUT_SOURCE_READY;
 				OUT_SOURCE_BEGIN;
 				Helper_TypePackage<int, float, char> p{ 123, 345.678f, 'Q' };
+				OUT_SOURCE_END;
+
+				LF();
+
+				OUT_VALUE( p.get_from_type<int>() );
+				OUT_VALUE( p.get_from_type<float>() );
+				OUT_VALUE( p.get_from_type<char>() );
+
+				LF();
+
+				OUT_VALUE( p.get_from_index<0>() );
+				OUT_VALUE( p.get_from_index<1>() );
+				OUT_VALUE( p.get_from_index<2>() );
+			}
+
+			LS();
+
+			{
+				OUT_SOURCE_READY;
+				OUT_SOURCE_BEGIN;
+				const Helper_TypePackage<int, float, char> p{ 123, 345.678f, 'Q' };
 				OUT_SOURCE_END;
 
 				LF();

@@ -38,7 +38,7 @@ namespace play_template_meta_programming_01
 		}
 
 		template<typename T>
-		constexpr T& get_from_type() const
+		constexpr const T& get_from_type() const
 		{
 			if constexpr( std::is_same_v<T, ThisT> )
 			{
@@ -64,7 +64,7 @@ namespace play_template_meta_programming_01
 		}
 
 		template<int N>
-		constexpr auto& get_from_index() const
+		constexpr const auto& get_from_index() const
 		{
 			if constexpr( 0 == N )
 			{
