@@ -11,18 +11,18 @@ namespace play_template_meta_programming_01
 	class Helper_TypePackage<>
 	{};
 
-	template<typename _This_T, typename ... _Rest_T>
-	class Helper_TypePackage<_This_T, _Rest_T ...> : private Helper_TypePackage<_Rest_T ...>
+	template<typename This_T, typename ... Rest_T>
+	class Helper_TypePackage<This_T, Rest_T ...> : private Helper_TypePackage<Rest_T ...>
 	{
 	public:
-		using ThisT = _This_T;
-		using BaseT = Helper_TypePackage<_Rest_T...>;
+		using ThisT = This_T;
+		using BaseT = Helper_TypePackage<Rest_T...>;
 
 		constexpr Helper_TypePackage() = default;
 
-		template<class _This2, class... _Rest2>
-		constexpr Helper_TypePackage( _This2&& arg, _Rest2&& ... args ) : BaseT( args... ), val( arg ) {
-		}
+		template<class This_T2, class... Rest_T2>
+		constexpr Helper_TypePackage( This_T2&& arg, Rest_T2&& ... args ) : BaseT( args... ), val( arg )
+		{}
 
 		template<typename T>
 		constexpr T& get_from_type()
