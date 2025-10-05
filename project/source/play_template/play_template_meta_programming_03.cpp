@@ -203,23 +203,23 @@ namespace play_template_meta_programming_01
 namespace
 {
 	template<typename... Types>
-	class MTPackage;
+	class Helper_TypePackage;
 
 	template<>
-	class MTPackage<>
+	class Helper_TypePackage<>
 	{};
 
 	template<typename _This_T, typename ... _Rest_T>
-	class MTPackage<_This_T, _Rest_T ...> : private MTPackage<_Rest_T ...>
+	class Helper_TypePackage<_This_T, _Rest_T ...> : private Helper_TypePackage<_Rest_T ...>
 	{
 	public:
 		using ThisT = _This_T;
-		using BaseT = MTPackage<_Rest_T...>;
+		using BaseT = Helper_TypePackage<_Rest_T...>;
 
-		constexpr MTPackage() = default;
+		constexpr Helper_TypePackage() = default;
 
 		template<class _This2, class... _Rest2>
-		constexpr MTPackage( _This2&& arg, _Rest2&& ... args ) : BaseT( args... ), val( arg ) {}
+		constexpr Helper_TypePackage( _This2&& arg, _Rest2&& ... args ) : BaseT( args... ), val( arg ) {}
 
 		template<typename T>
 		constexpr T& get_from_type()
@@ -278,14 +278,14 @@ namespace
 }
 namespace play_template_meta_programming_01
 {
-	r2tm::TitleFunctionT MultiTypePackage::GetTitleFunction() const
+	r2tm::TitleFunctionT TypePackage::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Multi Type Package( In Progress )";
+			return "Type Package";
 		};
 	}
-	r2tm::DoFunctionT MultiTypePackage::GetDoFunction() const
+	r2tm::DoFunctionT TypePackage::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -295,7 +295,7 @@ namespace play_template_meta_programming_01
 
 			{
 				OUT_SOURCE_BEGIN;
-				MTPackage<int, float, char> p{ 123, 345.678f, 'Q' };
+				Helper_TypePackage<int, float, char> p{ 123, 345.678f, 'Q' };
 				OUT_SOURCE_END;
 
 				LF();
