@@ -50,32 +50,33 @@ namespace play_template_meta_programming_01
 			}
 		}
 
-		template<int N, int CurrentIndex = 0>
+		template<int N>
 		constexpr auto& get_from_index()
 		{
-			if constexpr( N == CurrentIndex )
+			if constexpr( 0 == N )
 			{
 				return val;
 			}
 			else
 			{
-				return BaseT::template get_from_index<N, CurrentIndex + 1>();
+				return BaseT::template get_from_index<N - 1>();
 			}
 		}
 
-		template<int N, int CurrentIndex = 0>
+		template<int N>
 		constexpr auto& get_from_index() const
 		{
-			if constexpr( N == CurrentIndex )
+			if constexpr( 0 == N )
 			{
 				return val;
 			}
 			else
 			{
-				return BaseT::template get_from_index<N, CurrentIndex + 1>();
+				return BaseT::template get_from_index<N - 1>();
 			}
 		}
 
+	private:
 		ThisT val;
 	};
 }
