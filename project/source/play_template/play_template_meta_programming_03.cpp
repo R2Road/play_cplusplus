@@ -209,17 +209,69 @@ namespace
 	class MTPackage<>
 	{};
 
-	template<typename _This, typename... _Rest>
-	class MTPackage<_This, _Rest...> : private MTPackage<_Rest...>
+	template<typename _This_T, typename ... _Rest_T>
+	class MTPackage<_This_T, _Rest_T ...> : private MTPackage<_Rest_T ...>
 	{
 	public:
-		using ThisT = _This;
-		using BaseT = MTPackage<_Rest...>;
+		using ThisT = _This_T;
+		using BaseT = MTPackage<_Rest_T...>;
 
-		constexpr MTPackage() : BaseT(), val() {}
+		constexpr MTPackage() = default;
 
 		template<class _This2, class... _Rest2>
-		constexpr MTPackage( _This2 arg, _Rest2... args ) : BaseT( args... ), val( arg ) {}
+		constexpr MTPackage( _This2&& arg, _Rest2&& ... args ) : BaseT( args... ), val( arg ) {}
+
+		template<typename T>
+		constexpr T& get_from_type()
+		{
+			if constexpr ( std::is_same_v<T, ThisT> )
+			{
+				return val;
+			}
+			else
+			{
+				return BaseT::template get_from_type<T>();
+			}
+		}
+
+		template<typename T>
+		constexpr T& get_from_type() const
+		{
+			if constexpr( std::is_same_v<T, ThisT> )
+			{
+				return val;
+			}
+			else
+			{
+				return BaseT::template get_from_type<T>();
+			}
+		}
+
+		template<int N, int CurrentIndex = 0>
+		constexpr auto& get_from_index()
+		{
+			if constexpr ( N == CurrentIndex )
+			{
+				return val;
+			}
+			else
+			{
+				return BaseT::template get_from_index<N, CurrentIndex + 1>();
+			}
+		}
+
+		template<int N, int CurrentIndex = 0>
+		constexpr auto& get_from_index() const
+		{
+			if constexpr( N == CurrentIndex )
+			{
+				return val;
+			}
+			else
+			{
+				return BaseT::template get_from_index<N, CurrentIndex + 1>();
+			}
+		}
 
 		ThisT val;
 	};
@@ -237,14 +289,26 @@ namespace play_template_meta_programming_01
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
+			OUT_SOURCE_READY;
+
 			LS();
 
 			{
-				std::cout << "\t" << "+ MTPackage<int, float, char> mtp{ 1, 2.f, '3' };" << r2tm::linefeed;
+				OUT_SOURCE_BEGIN;
+				MTPackage<int, float, char> p{ 123, 345.678f, 'Q' };
+				OUT_SOURCE_END;
 
-				MTPackage<int, float, char> mtp{ 1, 2.f, '3' };
+				LF();
 
-				std::cout << "\t\t" << "result : " << mtp.val << r2tm::linefeed;
+				OUT_VALUE( p.get_from_type<int>() );
+				OUT_VALUE( p.get_from_type<float>() );
+				OUT_VALUE( p.get_from_type<char>() );
+
+				LF();
+
+				OUT_VALUE( p.get_from_index<0>() );
+				OUT_VALUE( p.get_from_index<1>() );
+				OUT_VALUE( p.get_from_index<2>() );
 			}
 
 			LS();
