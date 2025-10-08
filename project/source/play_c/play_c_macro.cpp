@@ -1,4 +1,5 @@
 #include "play_c_macro.hpp"
+#include "play_c_macro_helper___to_string.hpp"
 
 #include <list>
 #include <numeric> // std::iota
@@ -11,8 +12,6 @@
 
 namespace play_c_macro
 {
-#define MACRO2STRING( x ) #x
-
 	r2tm::TitleFunctionT ToString::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -26,8 +25,7 @@ namespace play_c_macro
 		{
 			LS();
 
-			std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
-			std::cout << r2tm::tab2 << "#define MACRO2STRING( x ) #x" << r2tm::linefeed;
+			OUT_FILE( "source/play_c/play_c_macro_helper___to_string.hpp" );
 
 			LS();
 
