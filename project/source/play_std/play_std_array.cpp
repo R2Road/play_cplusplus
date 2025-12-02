@@ -152,55 +152,85 @@ namespace play_std_array
 
 			LS();
 
+			OUT_SOURCE_BEGIN;
+			struct S
 			{
-				OUT_SUBJECT( "struct" );
+				int i = 0;
+				int j = 0;
+			};
+
+			using A = std::array<S, 2u>;
+			OUT_SOURCE_END;
+
+			const auto L = []( const A& a )
+			{
+				for( const auto& i : a )
+				{
+					std::cout << "   " << i.i << "   " << i.j;
+				}
+				LF();
+			};
+
+			LS();
+
+			{
+				{
+					OUT_SOURCE_BEGIN;
+					const A a;
+					OUT_SOURCE_END;
+
+					L( a );
+				}
 
 				LF();
-
-				DECL_MAIN( struct S {
-					int i = 0; int j = 0;
-				} );
-
-				LF();
-
-				OUT_SOURCE_BEGIN;
-				using A = std::array<S, 2u>;
-				OUT_SOURCE_END;
-
-				SS();
 
 				{
+					OUT_SOURCE_BEGIN;
+					const A a( {} );
+					OUT_SOURCE_END;
 
-					LF();
+					L( a );
+				}
 
+				LF();
+
+				{
+					OUT_SOURCE_BEGIN;
+					const A a( { {} } );
+					OUT_SOURCE_END;
+
+					L( a );
+				}
+
+				LF();
+
+				{
+					OUT_SOURCE_BEGIN;
+					const A a( { { {}, {} } } );
+					OUT_SOURCE_END;
+
+					L( a );
+				}
+
+				LF();
+
+				{
 					OUT_SOURCE_BEGIN;
 					const A a( { { { 1, 2 }, { 3, 4 } } } );
 					OUT_SOURCE_END;
 
-					LF();
-
-					for( const auto& i : a )
-					{
-						std::cout << "   " << i.i << "   " << i.j;
-					}
+					L( a );
 				}
 
 				LF();
 
 				{
 					OUT_SOURCE_BEGIN;
-					const A b = { { { 5, 6 }, { 7, 8 } } };
+					const A a = { { { 5, 6 }, { 7, 8 } } };
 					OUT_SOURCE_END;
 
-					LF();
-
-					for( const auto& i : b )
-					{
-						std::cout << "   " << i.i << "   " << i.j;
-					}
+					L( a );
 				}
-
-				LF();
 			}
 
 			LS();
