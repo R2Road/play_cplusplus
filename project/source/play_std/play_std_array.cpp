@@ -9,6 +9,16 @@
 
 namespace play_std_array
 {
+	template<class T, size_t N>
+	void PrintArray( const std::array<T, N>& arr )
+	{
+		for( const auto& i : arr )
+		{
+			std::cout << i << r2tm::tab;
+		}
+		LF();
+	}
+
 	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -25,40 +35,94 @@ namespace play_std_array
 			LS();
 
 			{
-				OUT_SUBJECT( "Declaration" );
+				OUT_SUBJECT( "기본" );
 
 				LF();
 
 				{
 					OUT_SOURCE_BEGIN;
-					std::array<int, 3u> test_array;
+					std::array<int, 3u> a;
 					OUT_SOURCE_END;
+
+					PrintArray( a );
+				}
+			}
+
+			SS();
+
+			{
+				OUT_SUBJECT( "생성자" );
+
+				LF();
+
+				{
+					OUT_SOURCE_BEGIN;
+					std::array<int, 3u> a{};
+					OUT_SOURCE_END;
+
+					PrintArray( a );
 				}
 
 				LF();
 
 				{
 					OUT_SOURCE_BEGIN;
-					std::array<int, 3u> test_array{ { 1, 2, 3 } };
+					std::array<int, 3u> a{ {} };
 					OUT_SOURCE_END;
+
+					PrintArray( a );
 				}
 
 				LF();
 
 				{
 					OUT_SOURCE_BEGIN;
-					std::array<int, 3u> test_array = { 1, 2, 3 };
+					std::array<int, 3u> a{ { 1, 2 } };
 					OUT_SOURCE_END;
+
+					PrintArray( a );
+				}
+			}
+
+			SS();
+
+			{
+				OUT_SUBJECT( "=" );
+
+				LF();
+
+				{
+					OUT_SOURCE_BEGIN;
+					std::array<int, 3u> a = {};
+					OUT_SOURCE_END;
+
+					PrintArray( a );
 				}
 
 				LF();
 
 				{
 					OUT_SOURCE_BEGIN;
-					std::array aa{ 1, 2, 3 };
+					std::array<int, 3u> a = { 1, 2 };
 					OUT_SOURCE_END;
-					std::cout << r2tm::tab2 << "* Note : Since c++17" << r2tm::linefeed;
+
+					PrintArray( a );
 				}
+			}
+
+			LS();
+
+			{
+
+				OUT_NOTE( "Since c++17" );
+
+				LF();
+
+				OUT_SOURCE_BEGIN;
+				std::array a{ 1, 2 };
+				OUT_SOURCE_END;
+
+				PrintArray( a );
 			}
 
 			LS();
