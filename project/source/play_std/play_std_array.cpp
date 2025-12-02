@@ -63,12 +63,39 @@ namespace play_std_array
 
 			LS();
 
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Declaration_Struct::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::array : Declaration Struct";
+		};
+	}
+	r2tm::DoFunctionT Declaration_Struct::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			OUT_SOURCE_READY;
+
+			LS();
+
+			OUT_SUBJECT( "std::array 에 struct 를 담았을 때의 초기화" );
+
+			LS();
+
 			{
 				OUT_SUBJECT( "struct" );
 
 				LF();
 
-				DECL_MAIN( struct S { int i = 0; int j = 0; } );
+				DECL_MAIN( struct S {
+					int i = 0; int j = 0;
+				} );
 
 				LF();
 

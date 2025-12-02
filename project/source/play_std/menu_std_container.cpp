@@ -27,8 +27,9 @@ r2tm::WriteFunctionT Menu_STDContainer::GetWriteFunction() const
 	return[]( r2tm::MenuProcessor* mp )
 	{
 		mp->AddItem( '1', play_std_array::Declaration() );
-		mp->AddItem( '2', play_std_array::Fill() );
-		mp->AddItem( '3', play_std_array::Copy() );
+		mp->AddItem( '2', play_std_array::Declaration_Struct() );
+		mp->AddItem( '3', play_std_array::Fill() );
+		mp->AddItem( '4', play_std_array::Copy() );
 
 
 		mp->AddLineFeed();
