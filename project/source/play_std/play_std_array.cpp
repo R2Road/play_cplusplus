@@ -369,4 +369,75 @@ namespace play_std_array
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Array_Within_Struct::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::array : Array Within Struct";
+		};
+	}
+	r2tm::DoFunctionT Array_Within_Struct::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			OUT_SOURCE_READY;
+
+			LS();
+
+			OUT_SUBJECT( "struct 멤버인 Array의 초기화" );
+
+			LS();
+
+			OUT_SOURCE_BEGIN;
+			using A = std::array<int, 3u>;
+			OUT_SOURCE_END;
+
+			const auto L = []( const A& a )
+			{
+				for( const auto& i : a )
+				{
+					std::cout << "   " << i;
+				}
+				LF();
+			};
+
+			LS();
+
+			{
+				{
+					OUT_SOURCE_BEGIN;
+					struct S
+					{
+						std::array<int, 3u> a;
+					} s;
+					OUT_SOURCE_END;
+
+					L( s.a );
+				}
+
+				LF();
+
+				{
+					OUT_SOURCE_BEGIN;
+					struct S
+					{
+						S() : a()
+						{}
+
+						std::array<int, 3u> a;
+					} s;
+					OUT_SOURCE_END;
+
+					L( s.a );
+				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
