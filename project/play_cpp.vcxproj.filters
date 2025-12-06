@@ -64,6 +64,9 @@
     <Filter Include="_viewer">
       <UniqueIdentifier>{20496577-aadf-4b48-b1f1-7faa9f3e8b31}</UniqueIdentifier>
     </Filter>
+    <Filter Include="play_basic">
+      <UniqueIdentifier>{e893495c-b39c-494b-9462-73f4c80c3af4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp" />
@@ -637,6 +640,9 @@
     </ClCompile>
     <ClCompile Include="source\play_math\play_math_sequence.cpp">
       <Filter>play_math</Filter>
+    </ClCompile>
+    <ClCompile Include="source\play_basic\menu_basic.cpp">
+      <Filter>play_basic</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1432,6 +1438,9 @@
     </ClInclude>
     <ClInclude Include="source\play_c\play_c_macro_helper___to_string.hpp">
       <Filter>play_c</Filter>
+    </ClInclude>
+    <ClInclude Include="source\play_basic\menu_basic.hpp">
+      <Filter>play_basic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

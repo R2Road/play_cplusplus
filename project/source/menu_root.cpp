@@ -8,6 +8,7 @@
 #include "r2/r2_version_info.hpp"
 
 #include "play_algorithm/menu_algorithm.hpp"
+#include "play_basic/menu_basic.hpp"
 #include "play_c/menu_c.hpp"
 #include "play_cpp/menu_cpp.hpp"
 #include "play_cpu/menu_cpu.h"
@@ -77,13 +78,14 @@ r2tm::WriteFunctionT Menu_Root::GetWriteFunction() const
 
 		mp->AddMessage( "¿Ï·á", r2tm::eColor::FG_LightGreen );
 		mp->AddMenu( 'q', Menu_Windows() );
-		mp->AddMenu( 'w', Menu_C() );
-		mp->AddMenu( 'e', Menu_CPP() );
-		mp->AddMenu( 'r', Menu_STD() );
-		mp->AddMenu( 't', Menu_Template() );
-		mp->AddMenu( 'y', Menu_Time() );
-		mp->AddMenu( 'u', Menu_Random() );
-		mp->AddMenu( 'i', Menu_Debug() );
+		mp->AddMenu( 'w', Menu_Basic() );
+		mp->AddMenu( 'e', Menu_C() );
+		mp->AddMenu( 'r', Menu_CPP() );
+		mp->AddMenu( 't', Menu_STD() );
+		mp->AddMenu( 'y', Menu_Template() );
+		mp->AddMenu( 'u', Menu_Time() );
+		mp->AddMenu( 'i', Menu_Random() );
+		mp->AddMenu( 'o', Menu_Debug() );
 
 
 
