@@ -2,6 +2,8 @@
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
+#include "play_basic.hpp"
+
 #include "menu_root.hpp"
 
 r2tm::TitleFunctionT Menu_Basic::GetTitleFunction() const
@@ -19,7 +21,7 @@ r2tm::WriteFunctionT Menu_Basic::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
-
+		mp->AddItem( '1', play_basic::Primitive_Type_Size() );
 
 
 		mp->AddSplit();

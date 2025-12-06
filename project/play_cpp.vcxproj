@@ -53,6 +53,7 @@
     <ClCompile Include="source\play_algorithm\play_procedural_terrain_generation_2.cpp" />
     <ClCompile Include="source\play_algorithm\play_procedural_terrain_generation_3.cpp" />
     <ClCompile Include="source\play_basic\menu_basic.cpp" />
+    <ClCompile Include="source\play_basic\play_basic.cpp" />
     <ClCompile Include="source\play_cpp\menu_align.cpp" />
     <ClCompile Include="source\play_cpp\menu_char.cpp" />
     <ClCompile Include="source\play_cpp\menu_class.cpp" />
@@ -278,6 +279,7 @@
     <ClInclude Include="source\play_algorithm\play_procedural_terrain_generation_2.hpp" />
     <ClInclude Include="source\play_algorithm\play_procedural_terrain_generation_3.hpp" />
     <ClInclude Include="source\play_basic\menu_basic.hpp" />
+    <ClInclude Include="source\play_basic\play_basic.hpp" />
     <ClInclude Include="source\play_cpp\menu_align.hpp" />
     <ClInclude Include="source\play_cpp\menu_char.hpp" />
     <ClInclude Include="source\play_cpp\menu_class.hpp" />
