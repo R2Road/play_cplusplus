@@ -460,6 +460,13 @@ namespace play_windows_terminal_input
 
 				while( 1 )
 				{
+					//
+					// 메세지 루프를 다루지 않는 콘솔 어플리케이션에서
+					// 키 상태 정확히 가져오기 위해서는 GetKeyState 를 한 번 호출해야 한다.
+					// 
+					// GetKeyboardState가 정상 작동 하려면 큐에 쌓여있는 키 관련 메세지 들을 처리 해줘야 한다.
+					// GetKeyState는 쌓여 있는 키 관련 메세지의 처리를 유도하는 효과가 있다.
+					//
 					GetKeyState( 0 );
 					if( GetKeyboardState( states ) )
 					{
