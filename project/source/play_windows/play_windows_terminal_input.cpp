@@ -455,13 +455,11 @@ namespace play_windows_terminal_input
 
 			{
 				int key_value;
-				BYTE states[256];
+				BYTE states[256] = {};
 				char str_flags[257] = { '\0', };
 
 				while( 1 )
 				{
-					memset( states, 0, sizeof( states ) );
-
 					GetKeyState( 0 );
 					if( GetKeyboardState( states ) )
 					{
