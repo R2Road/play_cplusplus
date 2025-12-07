@@ -441,6 +441,7 @@ namespace play_windows_terminal_input
 
 			OUT_STRING( "[ ESC ] Exit" );
 			OUT_STRING( "[SPACE] Do" );
+			OUT_STRING( "[L_SHIFT] Do" );
 
 			LS();
 
@@ -457,6 +458,8 @@ namespace play_windows_terminal_input
 				int key_value;
 				BYTE states[256] = {};
 				char str_flags[257] = { '\0', };
+
+				const auto pivot_cursor_point = r2tm::WindowsUtility::GetCursorPoint();
 
 				while( 1 )
 				{
@@ -481,7 +484,7 @@ namespace play_windows_terminal_input
 							str_flags[i] = key_value > 0 ? 'O' : 'X';
 						}
 						
-						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 19 } );
+						r2tm::WindowsUtility::MoveCursorPoint( pivot_cursor_point );
 						printf_s(
 							"%s"
 							"\n\n"
@@ -489,6 +492,11 @@ namespace play_windows_terminal_input
 							, str_flags
 							, (int)states[VK_SPACE]
 						);
+
+						LF();
+
+						OUT_BINARY( ( int )states[VK_SPACE] );
+						OUT_BINARY( ( int )states[VK_LSHIFT] );
 
 						//
 						// ESC
