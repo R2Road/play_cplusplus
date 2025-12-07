@@ -450,10 +450,6 @@ namespace play_windows_terminal_input
 
 			LS();
 
-			std::cout << r2tm::linefeed3 << r2tm::linefeed2;
-
-			LS();
-
 			{
 				int key_value;
 				BYTE states[256] = {};
