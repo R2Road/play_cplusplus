@@ -515,4 +515,143 @@ namespace play_performance_1
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT StructMemberAccess::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Struct Member Access";
+		};
+	}
+	r2tm::DoFunctionT StructMemberAccess::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUT_SUBJECT( "struct 멤버에 데이터를 쓸 때" );
+			OUT_SUBJECT( "각 멤버에 개별 접근해서 데이터를 쓰는 것과" );
+			OUT_SUBJECT( "= { ... } 구문을 통해 통짜로 쓸때의 성능 차이를 확인해보자." );
+
+			LS();
+
+			OUT_SOURCE_READY_N_BEGIN;
+			const unsigned int attempt_count = 100000;
+
+			struct TestStruct
+			{
+				int i = 0;
+				int j = 0;
+			};
+			TestStruct test_container[attempt_count];
+			OUT_SOURCE_END;
+
+			int temp_1 = 0;
+			int temp_2 = 0;
+			TestStruct temp_struct;
+			r2tm::StopWatch stop_watch;
+
+			LS();
+
+			{
+				OUT_SUBJECT( "개별 쓰기 | .i =, .j =" );
+
+				LF();
+
+				stop_watch.Reset();
+				for( int test_index = 0; 5 > test_index; ++test_index )
+				{
+					temp_1 = 0;
+					temp_2 = 0;
+
+					stop_watch.Start();
+					for( auto& cur : test_container )
+					{
+						cur.i = temp_1;
+						cur.j = temp_2;
+
+						++temp_1;
+						++temp_2;
+					}
+					stop_watch.Stop();
+
+					std::cout << r2tm::tab2;
+					stop_watch.PrintElapsedTime_All();
+					LF();
+				}
+			}
+
+			LS();
+
+			{
+				OUT_SUBJECT( "통짜 쓰기 | = {}" );
+
+				LF();
+
+				stop_watch.Reset();
+				for( int test_index = 0; 5 > test_index; ++test_index )
+				{
+					temp_1 = 0;
+					temp_2 = 0;
+
+					stop_watch.Start();
+					for( auto& cur : test_container )
+					{
+						cur = { temp_1, temp_2 };
+
+						++temp_1;
+						++temp_2;
+					}
+					stop_watch.Stop();
+
+					std::cout << r2tm::tab2;
+					stop_watch.PrintElapsedTime_All();
+					LF();
+				}
+			}
+
+			LS();
+
+			{
+				OUT_SUBJECT( "temp_struct 에 값을 할당하고 통짜 쓰기 | =" );
+
+				LF();
+
+				stop_watch.Reset();
+				for( int test_index = 0; 5 > test_index; ++test_index )
+				{
+					temp_1 = 0;
+					temp_2 = 0;
+
+					stop_watch.Start();
+					for( auto& cur : test_container )
+					{
+						temp_struct.i = temp_1;
+						temp_struct.j = temp_2;
+						cur = temp_struct;
+
+						++temp_1;
+						++temp_2;
+					}
+					stop_watch.Stop();
+
+					std::cout << r2tm::tab2;
+					stop_watch.PrintElapsedTime_All();
+					LF();
+				}
+			}
+
+			LS();
+
+			OUT_NOTE( "Debug 에서 2 ~ 3배, Release 에서 10배 차이 난다." );
+			OUT_NOTE( "{} 가 불리는 과정에서 스택에 메모리 할당이 일어나기 때문인가?" );
+			OUT_NOTE( "임시 객체에 데이터를 쓰고 그걸 대입했을 때 성능이 비슷한것을 보니 operator= 작동에 부하가 있는 것 같다." );
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

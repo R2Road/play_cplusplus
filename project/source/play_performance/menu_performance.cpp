@@ -27,6 +27,7 @@ r2tm::WriteFunctionT Menu_Performance::GetWriteFunction() const
 		mp->AddItem( '3', play_performance_1::LoopWithBuildInArray() );
 		mp->AddItem( '4', play_performance_1::LoopWithSTDArray() );
 		mp->AddItem( '5', play_performance_1::CompareIteratorOperator() );
+		mp->AddItem( '6', play_performance_1::StructMemberAccess() );
 
 		mp->AddLineFeed();
 
