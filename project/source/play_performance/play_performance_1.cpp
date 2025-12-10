@@ -4,6 +4,7 @@
 #include <memory>
 #include <numeric>
 
+#include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 
 #include "r2tm/r2tm_stop_watch.hpp"
@@ -446,6 +447,7 @@ namespace play_performance_1
 		{
 			LS();
 
+			OUT_SOURCE_READY_N_BEGIN;
 			const unsigned int attempt_count = 100000;
 
 			struct TestStruct
@@ -453,16 +455,7 @@ namespace play_performance_1
 				int i = 1;
 			};
 			std::array<TestStruct, attempt_count> test_container;
-
-			{
-				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "const unsigned int attempt_count = 100000;" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "struct TestStruct" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "{" << r2tm::linefeed;
-				std::cout << r2tm::tab3 << "int i = 1;" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "}" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "std::array<TestStruct, attempt_count> test_container;" << r2tm::linefeed;
-			}
+			OUT_SOURCE_END;
 
 			unsigned int sum_result = 0;
 			r2tm::StopWatch stop_watch;
@@ -470,7 +463,9 @@ namespace play_performance_1
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ For And Iterator Operator->" << r2tm::linefeed2;
+				OUT_SUBJECT( "For And Iterator Operator->" );
+
+				LF();
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
@@ -493,7 +488,9 @@ namespace play_performance_1
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ For And Iterator Operator*" << r2tm::linefeed2;
+				OUT_SUBJECT( "For And Iterator Operator*" );
+
+				LF();
 
 				for( int test_index = 0; 5 > test_index; ++test_index )
 				{
