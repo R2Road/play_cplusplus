@@ -329,9 +329,6 @@
     <ClCompile Include="source\play_c\menu_c_file.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="source\play_c\menu_c_operator.cpp">
-      <Filter>play_c</Filter>
-    </ClCompile>
     <ClCompile Include="source\play_c\menu_c_pointer.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
@@ -354,12 +351,6 @@
       <Filter>play_c</Filter>
     </ClCompile>
     <ClCompile Include="source\play_c\play_c_memset.cpp">
-      <Filter>play_c</Filter>
-    </ClCompile>
-    <ClCompile Include="source\play_c\play_c_operator_priority.cpp">
-      <Filter>play_c</Filter>
-    </ClCompile>
-    <ClCompile Include="source\play_c\play_c_operator_ternary.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
     <ClCompile Include="source\play_c\play_c_pointer.cpp">
@@ -645,6 +636,15 @@
       <Filter>play_basic</Filter>
     </ClCompile>
     <ClCompile Include="source\play_basic\play_basic.cpp">
+      <Filter>play_basic</Filter>
+    </ClCompile>
+    <ClCompile Include="source\play_basic\menu_basic___operator.cpp">
+      <Filter>play_basic</Filter>
+    </ClCompile>
+    <ClCompile Include="source\play_basic\play_basic___operator_priority.cpp">
+      <Filter>play_basic</Filter>
+    </ClCompile>
+    <ClCompile Include="source\play_basic\play_basic___operator_ternary.cpp">
       <Filter>play_basic</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1064,9 +1064,6 @@
     <ClInclude Include="source\play_c\menu_c_file.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_c\menu_c_operator.hpp">
-      <Filter>play_c</Filter>
-    </ClInclude>
     <ClInclude Include="source\play_c\menu_c_pointer.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
@@ -1089,12 +1086,6 @@
       <Filter>play_c</Filter>
     </ClInclude>
     <ClInclude Include="source\play_c\play_c_memset.hpp">
-      <Filter>play_c</Filter>
-    </ClInclude>
-    <ClInclude Include="source\play_c\play_c_operator_priority.hpp">
-      <Filter>play_c</Filter>
-    </ClInclude>
-    <ClInclude Include="source\play_c\play_c_operator_ternary.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
     <ClInclude Include="source\play_c\play_c_pointer.hpp">
@@ -1446,6 +1437,15 @@
       <Filter>play_basic</Filter>
     </ClInclude>
     <ClInclude Include="source\play_basic\play_basic.hpp">
+      <Filter>play_basic</Filter>
+    </ClInclude>
+    <ClInclude Include="source\play_basic\menu_basic___operator.hpp">
+      <Filter>play_basic</Filter>
+    </ClInclude>
+    <ClInclude Include="source\play_basic\play_basic___operator_priority.hpp">
+      <Filter>play_basic</Filter>
+    </ClInclude>
+    <ClInclude Include="source\play_basic\play_basic___operator_ternary.hpp">
       <Filter>play_basic</Filter>
     </ClInclude>
   </ItemGroup>

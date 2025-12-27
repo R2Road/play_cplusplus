@@ -1,9 +1,9 @@
-#include "play_c_operator_ternary.hpp"
+#include "play_basic___operator_ternary.hpp"
 
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 
-namespace play_c_operator_ternary
+namespace play_basic___operator_ternary
 {
 	void void_func() {}
 

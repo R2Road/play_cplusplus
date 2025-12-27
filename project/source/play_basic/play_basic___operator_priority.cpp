@@ -1,11 +1,11 @@
-#include "play_c_operator_priority.hpp"
+#include "play_basic___operator_priority.hpp"
 
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 
 #pragma warning( disable : 4127 )
 
-namespace play_c_operator_priority
+namespace play_basic___operator_priority
 {
 	void void_func() {}
 

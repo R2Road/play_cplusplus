@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace play_c_operator_ternary
+namespace play_basic___operator_ternary
 {
 	class Basic : public r2tm::iItem
 	{

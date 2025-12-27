@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace play_c_operator_priority
+namespace play_basic___operator_priority
 {
 	class Basic : public r2tm::iItem
 	{

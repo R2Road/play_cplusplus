@@ -53,7 +53,10 @@
     <ClCompile Include="source\play_algorithm\play_procedural_terrain_generation_2.cpp" />
     <ClCompile Include="source\play_algorithm\play_procedural_terrain_generation_3.cpp" />
     <ClCompile Include="source\play_basic\menu_basic.cpp" />
+    <ClCompile Include="source\play_basic\menu_basic___operator.cpp" />
     <ClCompile Include="source\play_basic\play_basic.cpp" />
+    <ClCompile Include="source\play_basic\play_basic___operator_priority.cpp" />
+    <ClCompile Include="source\play_basic\play_basic___operator_ternary.cpp" />
     <ClCompile Include="source\play_cpp\menu_align.cpp" />
     <ClCompile Include="source\play_cpp\menu_char.cpp" />
     <ClCompile Include="source\play_cpp\menu_class.cpp" />
@@ -83,7 +86,6 @@
     <ClCompile Include="source\play_c\menu_c.cpp" />
     <ClCompile Include="source\play_c\menu_c_bit_operation.cpp" />
     <ClCompile Include="source\play_c\menu_c_file.cpp" />
-    <ClCompile Include="source\play_c\menu_c_operator.cpp" />
     <ClCompile Include="source\play_c\menu_c_pointer.cpp" />
     <ClCompile Include="source\play_c\menu_c_union.cpp" />
     <ClCompile Include="source\play_c\play_c_array.cpp" />
@@ -92,8 +94,6 @@
     <ClCompile Include="source\play_c\play_c_file.cpp" />
     <ClCompile Include="source\play_c\play_c_macro.cpp" />
     <ClCompile Include="source\play_c\play_c_memset.cpp" />
-    <ClCompile Include="source\play_c\play_c_operator_priority.cpp" />
-    <ClCompile Include="source\play_c\play_c_operator_ternary.cpp" />
     <ClCompile Include="source\play_c\play_c_pointer.cpp" />
     <ClCompile Include="source\play_c\play_c_printf.cpp" />
     <ClCompile Include="source\play_c\play_c_random.cpp" />
@@ -279,7 +279,10 @@
     <ClInclude Include="source\play_algorithm\play_procedural_terrain_generation_2.hpp" />
     <ClInclude Include="source\play_algorithm\play_procedural_terrain_generation_3.hpp" />
     <ClInclude Include="source\play_basic\menu_basic.hpp" />
+    <ClInclude Include="source\play_basic\menu_basic___operator.hpp" />
     <ClInclude Include="source\play_basic\play_basic.hpp" />
+    <ClInclude Include="source\play_basic\play_basic___operator_priority.hpp" />
+    <ClInclude Include="source\play_basic\play_basic___operator_ternary.hpp" />
     <ClInclude Include="source\play_cpp\menu_align.hpp" />
     <ClInclude Include="source\play_cpp\menu_char.hpp" />
     <ClInclude Include="source\play_cpp\menu_class.hpp" />
@@ -323,7 +326,6 @@
     <ClInclude Include="source\play_c\menu_c.hpp" />
     <ClInclude Include="source\play_c\menu_c_bit_operation.hpp" />
     <ClInclude Include="source\play_c\menu_c_file.hpp" />
-    <ClInclude Include="source\play_c\menu_c_operator.hpp" />
     <ClInclude Include="source\play_c\menu_c_pointer.hpp" />
     <ClInclude Include="source\play_c\menu_c_union.hpp" />
     <ClInclude Include="source\play_c\play_c_array.hpp" />
@@ -333,8 +335,6 @@
     <ClInclude Include="source\play_c\play_c_macro.hpp" />
     <ClInclude Include="source\play_c\play_c_macro_helper___to_string.hpp" />
     <ClInclude Include="source\play_c\play_c_memset.hpp" />
-    <ClInclude Include="source\play_c\play_c_operator_priority.hpp" />
-    <ClInclude Include="source\play_c\play_c_operator_ternary.hpp" />
     <ClInclude Include="source\play_c\play_c_pointer.hpp" />
     <ClInclude Include="source\play_c\play_c_printf.hpp" />
     <ClInclude Include="source\play_c\play_c_random.hpp" />

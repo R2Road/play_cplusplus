@@ -14,7 +14,6 @@
 
 #include "menu_c_bit_operation.hpp"
 #include "menu_c_file.hpp"
-#include "menu_c_operator.hpp"
 #include "menu_c_pointer.hpp"
 #include "menu_c_union.hpp"
 
@@ -37,10 +36,9 @@ r2tm::WriteFunctionT Menu_C::GetWriteFunction() const
 	{
 		mp->AddItem( '1', play_c_array::Init() );
 		mp->AddItem( '2', play_c_array::Address() );
-		mp->AddMenu( '3', Menu_C_Operator() );
-		mp->AddItem( '4', play_c_struct::ByteAlignment() );
-		mp->AddItem( '5', play_c_struct::PragmaPack() );
-		mp->AddItem( '6', play_c_struct::Array_Size_0() );
+		mp->AddItem( '3', play_c_struct::ByteAlignment() );
+		mp->AddItem( '4', play_c_struct::PragmaPack() );
+		mp->AddItem( '5', play_c_struct::Array_Size_0() );
 		
 
 
