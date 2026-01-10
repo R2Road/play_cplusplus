@@ -21,20 +21,17 @@ namespace play_basic_union
 			LS();
 
 			OUT_SOURCE_READY_N_BEGIN;
-			union U {
+			union U
+			{
 				int32_t a;
 				int64_t b;
-			};
+			} u;
 			OUT_SOURCE_END;
 
 			LS();
 
 			{
 				OUT_SUBJECT( "공용체 구성요소는 메모리 주소가 같다." );
-
-				LF();
-
-				DECL_MAIN( U u );
 
 				LF();
 
@@ -45,10 +42,6 @@ namespace play_basic_union
 			LS();
 
 			{
-				DECL_MAIN( U u );
-
-				LF();
-
 				OUT_NOTE( "아래의 초기화 코드가 없으면..." );
 				OUT_NOTE( "[error C4700: 초기화되지 않은 'u' 지역 변수를 사용했습니다.]" );
 				OUT_NOTE( "...가 발생한다." );
@@ -66,7 +59,7 @@ namespace play_basic_union
 				union {
 					int32_t a = 0;
 					int64_t b;
-				} u;
+				} u2;
 				OUT_SOURCE_END;
 
 				LF();
@@ -75,7 +68,7 @@ namespace play_basic_union
 
 				LF();
 
-				OUT_VALUE( u.a );
+				OUT_VALUE( u2.a );
 			}
 
 			LS();
