@@ -332,9 +332,6 @@
     <ClCompile Include="source\play_c\menu_c_pointer.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
-    <ClCompile Include="source\play_c\menu_c_union.cpp">
-      <Filter>play_c</Filter>
-    </ClCompile>
     <ClCompile Include="source\play_c\play_c_array.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
@@ -372,9 +369,6 @@
       <Filter>play_c</Filter>
     </ClCompile>
     <ClCompile Include="source\play_c\play_c_time.cpp">
-      <Filter>play_c</Filter>
-    </ClCompile>
-    <ClCompile Include="source\play_c\play_c_union.cpp">
       <Filter>play_c</Filter>
     </ClCompile>
     <ClCompile Include="external\r2tm\r2tm_file.cpp">
@@ -645,6 +639,12 @@
       <Filter>play_basic</Filter>
     </ClCompile>
     <ClCompile Include="source\play_basic\play_basic___operator_ternary.cpp">
+      <Filter>play_basic</Filter>
+    </ClCompile>
+    <ClCompile Include="source\play_basic\play_basic_union.cpp">
+      <Filter>play_basic</Filter>
+    </ClCompile>
+    <ClCompile Include="source\play_basic\menu_basic___union.cpp">
       <Filter>play_basic</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1067,9 +1067,6 @@
     <ClInclude Include="source\play_c\menu_c_pointer.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
-    <ClInclude Include="source\play_c\menu_c_union.hpp">
-      <Filter>play_c</Filter>
-    </ClInclude>
     <ClInclude Include="source\play_c\play_c_array.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
@@ -1107,9 +1104,6 @@
       <Filter>play_c</Filter>
     </ClInclude>
     <ClInclude Include="source\play_c\play_c_time.hpp">
-      <Filter>play_c</Filter>
-    </ClInclude>
-    <ClInclude Include="source\play_c\play_c_union.hpp">
       <Filter>play_c</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_file.hpp">
@@ -1446,6 +1440,12 @@
       <Filter>play_basic</Filter>
     </ClInclude>
     <ClInclude Include="source\play_basic\play_basic___operator_ternary.hpp">
+      <Filter>play_basic</Filter>
+    </ClInclude>
+    <ClInclude Include="source\play_basic\play_basic_union.hpp">
+      <Filter>play_basic</Filter>
+    </ClInclude>
+    <ClInclude Include="source\play_basic\menu_basic___union.hpp">
       <Filter>play_basic</Filter>
     </ClInclude>
   </ItemGroup>

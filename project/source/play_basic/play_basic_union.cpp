@@ -1,11 +1,11 @@
-#include "play_c_union.hpp"
+#include "play_basic_union.hpp"
 
 #include <string>
 
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 
-namespace play_c_union
+namespace play_basic_union
 {
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{

@@ -10,12 +10,10 @@
 #include "play_c_sizeof.hpp"
 #include "play_c_struct.hpp"
 #include "play_c_system.hpp"
-#include "play_c_union.hpp"
 
 #include "menu_c_bit_operation.hpp"
 #include "menu_c_file.hpp"
 #include "menu_c_pointer.hpp"
-#include "menu_c_union.hpp"
 
 #include "menu_root.hpp"
 
@@ -63,9 +61,8 @@ r2tm::WriteFunctionT Menu_C::GetWriteFunction() const
 
 		mp->AddMenu( 'a', Menu_C_Pointer() );
 		mp->AddMenu( 's', Menu_C_BitOperation() );
-		mp->AddMenu( 'd', Menu_C_Union() );
-		mp->AddItem( 'f', play_c_system::Pause() );
-		mp->AddItem( 'g', play_c_atexit::Basic() );
+		mp->AddItem( 'd', play_c_system::Pause() );
+		mp->AddItem( 'f', play_c_atexit::Basic() );
 
 
 		mp->AddLineFeed();

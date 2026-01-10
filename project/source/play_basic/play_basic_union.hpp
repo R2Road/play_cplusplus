@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace play_c_union
+namespace play_basic_union
 {
 	class Basic : public r2tm::iItem
 	{
