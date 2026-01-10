@@ -24,8 +24,14 @@ r2tm::WriteFunctionT Menu_Basic::GetWriteFunction() const
 	return[]( r2tm::MenuProcessor* mp )
 	{
 		mp->AddItem( '1', play_basic::Primitive_Type_Size() );
-		mp->AddMenu( '2', Menu_Basic___Operator() );
-		mp->AddMenu( '3', Menu_Basic___Union() );
+		mp->AddItem( '2', play_basic::Pointer_Type_Size() );
+
+
+		mp->AddLineFeed();
+
+
+		mp->AddMenu( 'q', Menu_Basic___Operator() );
+		mp->AddMenu( 'w', Menu_Basic___Union() );
 
 
 		mp->AddSplit();

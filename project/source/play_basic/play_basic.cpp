@@ -66,4 +66,112 @@ namespace play_basic
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Pointer_Type_Size::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Pointer Type Size";
+		};
+	}
+	r2tm::DoFunctionT Pointer_Type_Size::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUT_SUBJECT( "기본 제공 타입" );
+
+				LF();
+
+				OUT_SIZE( short* );
+
+				LF();
+
+				OUT_SIZE( long double* );
+			}
+
+			LS();
+
+			{
+				OUT_SUBJECT( "struct/class" );
+
+				LF();
+
+				DECL_MAIN( struct S {} s );
+
+				LF();
+
+				OUT_SIZE( &s );
+			}
+
+			LS();
+
+			{
+				OUT_SUBJECT( "함수" );
+
+				LF();
+
+				OUT_SOURCE_READY_N_BEGIN;
+				struct S
+				{
+					static void Func() {}
+				};
+				OUT_SOURCE_END;
+
+				LF();
+
+				OUT_SIZE( &S::Func );
+			}
+
+			LS();
+
+			{
+				OUT_SUBJECT( "일반 멤버 함수" );
+
+				LF();
+
+				OUT_SOURCE_READY_N_BEGIN;
+				struct S
+				{
+					void Func() {}
+				} s;
+				OUT_SOURCE_END;
+
+				LF();
+
+				OUT_SIZE( &S::Func );
+			}
+
+			LS();
+
+			{
+				OUT_SUBJECT( "가상 멤버 함수" );
+
+				LF();
+
+				OUT_SOURCE_READY_N_BEGIN;
+				struct B
+				{
+					virtual void Func() = 0;
+				};
+				struct S : public B
+				{
+					void Func() override {}
+				} s;
+				OUT_SOURCE_END;
+
+				LF();
+
+				OUT_SIZE( &S::Func );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
