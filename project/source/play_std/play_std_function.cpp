@@ -21,14 +21,14 @@ namespace
 
 namespace play_std_function
 {
-	r2tm::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Declaration_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "std::function : Basic";
+			return "std::function : Declaration : 1";
 		};
 	}
-	r2tm::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Declaration_1::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

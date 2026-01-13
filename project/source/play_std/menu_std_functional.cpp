@@ -41,7 +41,7 @@ r2tm::WriteFunctionT Menu_STDFunctional::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'q', play_std_function::Basic() );
+		mp->AddItem( 'q', play_std_function::Declaration_1() );
 		mp->AddItem( 'w', play_std_function::Declaration_2() );
 
 

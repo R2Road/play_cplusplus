@@ -4,7 +4,7 @@
 
 namespace play_std_function
 {
-	class Basic : public r2tm::iItem
+	class Declaration_1 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
