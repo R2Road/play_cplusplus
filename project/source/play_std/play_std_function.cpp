@@ -39,6 +39,10 @@ namespace play_std_function
 			LS();
 			
 			{
+				OUT_SUBJECT( "기본 생성자" );
+
+				LF();
+
 				DECL_MAIN( std::function<void()> f );
 				EXPECT_TRUE( nullptr == f );
 				EXPECT_FALSE( f );
@@ -47,7 +51,20 @@ namespace play_std_function
 			LS();
 
 			{
-				DECL_MAIN( std::function<void()> f = TestFunction_1 );
+				OUT_SUBJECT( "함수 포인터를 받는 생성자" );
+
+				LF();
+
+				OUT_SOURCE_READY_N_BEGIN;
+				struct S
+				{
+					static void TestFunction_1() {}
+				};
+				OUT_SOURCE_END;
+
+				LF();
+
+				DECL_MAIN( std::function<void()> f = &S::TestFunction_1 );
 				EXPECT_TRUE( nullptr != f );
 				EXPECT_TRUE( f );
 			}
@@ -55,6 +72,10 @@ namespace play_std_function
 			LS();
 
 			{
+				OUT_SUBJECT( "람다를 받는 생성자" );
+
+				LF();
+
 				DECL_MAIN( std::function<void()> f = []() {} );
 				EXPECT_TRUE( nullptr != f );
 				EXPECT_TRUE( f );
@@ -63,6 +84,10 @@ namespace play_std_function
 			LS();
 
 			{
+				OUT_SUBJECT( "std::bind" );
+
+				LF();
+
 				DECL_MAIN( std::function<void()> f = std::bind( LocalFunction, 10 ) );
 				EXPECT_TRUE( nullptr != f );
 				EXPECT_TRUE( f );
