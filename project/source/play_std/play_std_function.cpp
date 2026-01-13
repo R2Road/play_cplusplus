@@ -119,8 +119,19 @@ namespace play_std_function
 			LS();
 
 			{
-				DECL_MAIN( struct S { void Do( int ) {} } );
-				DECL_MAIN( S s );
+				OUT_SUBJECT( "멤버 함수 포인터를 받는 생성자. 객체를 받아서 작동" );
+
+				LF();
+
+				OUT_SOURCE_READY_N_BEGIN;
+				struct S
+				{
+					void Do( int ) {}
+				} s;
+				OUT_SOURCE_END;
+
+				LF();
+
 				DECL_MAIN( std::function<void( S&, int )> f = &S::Do );
 				EXPECT_TRUE( nullptr != f );
 				EXPECT_TRUE( f );
@@ -133,8 +144,19 @@ namespace play_std_function
 			LS();
 
 			{
-				DECL_MAIN( struct S { int i = 1234; } );
-				DECL_MAIN( S s );
+				OUT_SUBJECT( "멤버 변수 포인터를 받는 생성자. 객체를 받아서 작동" );
+
+				LF();
+
+				OUT_SOURCE_READY_N_BEGIN;
+				struct S
+				{
+					int i = 1234;
+				} s;
+				OUT_SOURCE_END;
+
+				LF();
+
 				DECL_MAIN( std::function<int( S& )> f = &S::i );
 				EXPECT_TRUE( nullptr != f );
 				EXPECT_TRUE( f );
@@ -147,7 +169,19 @@ namespace play_std_function
 			LS();
 
 			{
-				DECL_MAIN( struct S { int operator()() { return 0; } } );
+				OUT_SUBJECT( "operator() 를 받는 생성자" );
+
+				LF();
+
+				OUT_SOURCE_READY_N_BEGIN;
+				struct S
+				{
+					int operator()() { return 0; }
+				};
+				OUT_SOURCE_END;
+
+				LF();
+
 				DECL_MAIN( std::function<int()> f = S() );
 				EXPECT_TRUE( nullptr != f );
 				EXPECT_TRUE( f );
