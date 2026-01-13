@@ -70,6 +70,29 @@ namespace play_std_function
 
 			LS();
 
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Declaration_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "std::function : Declaration : 2";
+		};
+	}
+	r2tm::DoFunctionT Declaration_2::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUT_NOTE( "REF : https://en.cppreference.com/w/cpp/utility/functional/function" );
+
+			LS();
+
 			{
 				DECL_MAIN( struct S { void Do( int ) {} } );
 				DECL_MAIN( S s );

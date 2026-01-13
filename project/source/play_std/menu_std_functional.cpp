@@ -42,6 +42,7 @@ r2tm::WriteFunctionT Menu_STDFunctional::GetWriteFunction() const
 
 
 		mp->AddItem( 'q', play_std_function::Basic() );
+		mp->AddItem( 'w', play_std_function::Declaration_2() );
 
 
 
@@ -49,11 +50,11 @@ r2tm::WriteFunctionT Menu_STDFunctional::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'w', play_std_function::Equality_FunctionPointer_1() );
-		mp->AddItem( 'e', play_std_function::Equality_FunctionPointer_2() );
-		mp->AddItem( 'r', play_std_function::Equality_FunctionPointer_3() );
-		mp->AddItem( 't', play_std_function_2::Equality_STDBind_1() );
-		mp->AddItem( 'y', play_std_function::Equality_Lambda_1() );
+		mp->AddItem( 'a', play_std_function::Equality_FunctionPointer_1() );
+		mp->AddItem( 's', play_std_function::Equality_FunctionPointer_2() );
+		mp->AddItem( 'd', play_std_function::Equality_FunctionPointer_3() );
+		mp->AddItem( 'f', play_std_function_2::Equality_STDBind_1() );
+		mp->AddItem( 'g', play_std_function::Equality_Lambda_1() );
 
 
 
@@ -61,8 +62,8 @@ r2tm::WriteFunctionT Menu_STDFunctional::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'a', play_std_functional_hash::Basic() );
-		mp->AddItem( 's', play_std_functional_hash::CString() );
+		mp->AddItem( 'z', play_std_functional_hash::Basic() );
+		mp->AddItem( 'x', play_std_functional_hash::CString() );
 
 
 
