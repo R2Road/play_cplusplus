@@ -45,24 +45,24 @@ r2tm::WriteFunctionT Menu_CPP::GetWriteFunction() const
 		mp->AddLineFeed();
 
 
-		mp->AddMenu( '6', Menu_Char() );
-		mp->AddMenu( '7', Menu_Align() );
-		mp->AddMenu( '8', EnumMenu() );
+		mp->AddMenu( 'q', Menu_Char() );
+		mp->AddMenu( 'w', Menu_Align() );
+		mp->AddMenu( 'e', EnumMenu() );
 
 
 		mp->AddLineFeed();
 
 
-		mp->AddMenu( 'q', Menu_New() );
-		mp->AddMenu( 'w', menu_lambda() );
-		mp->AddItem( 'e', play_cpp_using::Basic() );
+		mp->AddMenu( 'a', Menu_New() );
+		mp->AddMenu( 's', menu_lambda() );
+		mp->AddItem( 'd', play_cpp_using::Basic() );
 
 
 		mp->AddLineFeed();
 
 
-		mp->AddItem( 'a', play_cpp_structured_binding::Basic() );
-		mp->AddItem( 'b', play_cpp_number::Prefix() );
+		mp->AddItem( 'z', play_cpp_structured_binding::Basic() );
+		mp->AddItem( 'x', play_cpp_number::Prefix() );
 
 
 		mp->AddSplit();
