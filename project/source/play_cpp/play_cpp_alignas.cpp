@@ -247,7 +247,8 @@ namespace play_cpp_alignas
 
 				LF();
 
-				OUT_COMMENT( "짝수로 맞춰라. 4, 8 byte가 최적. " );
+				OUT_COMMENT( "짝수로 맞춰라." );
+				OUT_COMMENT( "1, 2, 4, 8 byte가 적합. " );
 			}
 
 			LS();
