@@ -173,7 +173,7 @@ namespace play_cpp_alignas
 
 			{
 				OUT_SOURCE_READY_N_BEGIN;
-				//struct alignas( 1 ) IntStruct
+				//struct alignas( 1 ) intstruct
 				//{
 				//	int i;
 				//};
@@ -181,7 +181,7 @@ namespace play_cpp_alignas
 
 				LF();
 
-				OUT_COMMENT( "E1881 : 본 객체 크기보다 작아선 안된다." );
+				OUT_COMMENT( "E1881 : 정렬이 가능한 최소 크기 보다 작아선 안된다." );
 				OUT_COMMENT( "작동 하지만 무시된다." );
 			}
 
