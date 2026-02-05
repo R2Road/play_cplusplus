@@ -20,6 +20,10 @@ namespace play_cpp_alignas
 		{
 			LS();
 
+			OUT_SUBJECT( "지정한 크기로 byte 정렬이 작동된다." );
+
+			LS();
+
 			{
 				OUT_SOURCE_READY_N_BEGIN;
 				struct alignas( 32 ) EmptyStruct {};
@@ -28,7 +32,39 @@ namespace play_cpp_alignas
 				LF();
 
 				OUT_VALUE( alignof( EmptyStruct ) );
+
+				LF();
+
 				OUT_SIZE( EmptyStruct );
+
+				LF();
+
+				OUT_COMMENT( "객체 크기 이상이라면 지정한 크기로 정렬" );
+			}
+
+			LS();
+
+			{
+				OUT_SOURCE_READY_N_BEGIN;
+				struct CharIntFloatStruct
+				{
+					char c;
+					int i;
+					float f;
+				};
+				OUT_SOURCE_END;
+
+				LF();
+
+				OUT_VALUE( alignof( CharIntFloatStruct ) );
+
+				LF();
+
+				OUT_SIZE( CharIntFloatStruct );
+
+				LF();
+
+				OUT_COMMENT( "지정하지 않았다면 기본 규칙이 적용" );
 			}
 
 			LS();
@@ -46,7 +82,14 @@ namespace play_cpp_alignas
 				LF();
 
 				OUT_VALUE( alignof( CharIntFloatStruct ) );
+
+				LF();
+
 				OUT_SIZE( CharIntFloatStruct );
+
+				LF();
+
+				OUT_COMMENT( "객체 크기 이하라면 지정 크기에 맞추어 정렬" );
 			}
 
 			LS();
