@@ -71,6 +71,40 @@ namespace play_cpp_alignas
 
 			LS();
 
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Short_Byte::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Align As : Short Byte";
+		};
+	}
+	r2tm::DoFunctionT Short_Byte::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUT_SOURCE_READY_N_BEGIN;
+				struct alignas( 1 ) S
+				{
+					char i;
+				};
+				OUT_SOURCE_END;
+
+				LF();
+
+				OUT_SIZE( S );
+			}
+
+			LS();
+
 			{
 				OUT_SOURCE_READY_N_BEGIN;
 				//struct alignas( 1 ) IntStruct
@@ -81,7 +115,8 @@ namespace play_cpp_alignas
 
 				LF();
 
-				OUT_NOTE( "1 is Error : At Least A Default Size Is Required" );
+				OUT_COMMENT( "E1881 : 본 객체 크기보다 작아선 안된다." );
+				OUT_COMMENT( "작동 하지만 무시된다." );
 			}
 
 			LS();

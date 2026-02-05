@@ -34,7 +34,8 @@ r2tm::WriteFunctionT Menu_Align::GetWriteFunction() const
 
 
 		mp->AddItem( 'q', play_cpp_alignas::AlignAs() );
-		mp->AddItem( 'w', play_cpp_alignas::Odd_Byte() );
+		mp->AddItem( 'w', play_cpp_alignas::Short_Byte() );
+		mp->AddItem( 'e', play_cpp_alignas::Odd_Byte() );
 
 
 
