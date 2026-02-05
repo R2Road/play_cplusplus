@@ -89,4 +89,69 @@ namespace play_cpp_alignas
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Odd_Byte::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Align As : Odd Byte";
+		};
+	}
+	r2tm::DoFunctionT Odd_Byte::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUT_SUBJECT( "홀수 크기의 데이터 덩어리는 존재 하지 않는 것이 모두에게 이롭다." );
+
+			LS();
+
+			{
+				OUT_SOURCE_READY_N_BEGIN;
+				struct No_AlignAs
+				{
+					char a;
+					char b;
+					char c;
+				};
+				OUT_SOURCE_END;
+
+				LF();
+
+				OUT_SIZE( No_AlignAs );
+
+				LF();
+
+				OUT_COMMENT( "이런 녀석을 내버려 두지 마라." );
+			}
+
+			LS();
+
+			{
+				OUT_SOURCE_READY_N_BEGIN;
+				struct alignas( int ) Yes_AlignAs
+				{
+					char a;
+					char b;
+					char c;
+				};
+				OUT_SOURCE_END;
+
+				LF();
+
+				OUT_SIZE( Yes_AlignAs );
+
+				LF();
+
+				OUT_COMMENT( "짝수로 맞춰라. 4, 8 byte가 최적. " );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
