@@ -51,9 +51,28 @@ namespace play_cpp_alignas
 
 			LS();
 
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Zero_Byte::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Align As : Zero Byte";
+		};
+	}
+	r2tm::DoFunctionT Zero_Byte::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
 			{
 				OUT_SOURCE_READY_N_BEGIN;
-				struct alignas( 0 ) IntStruct
+				struct alignas( 0 ) S
 				{
 					int i;
 				};
@@ -61,12 +80,16 @@ namespace play_cpp_alignas
 
 				LF();
 
-				OUT_VALUE( alignof( IntStruct ) );
-				OUT_SIZE( IntStruct );
+				OUT_VALUE( alignof( S ) );
 
 				LF();
 
-				OUT_NOTE( "Ignore 0" );
+				OUT_SIZE( S );
+
+				LF();
+
+				OUT_NOTE( "0은 무시된다." );
+				OUT_NOTE( "경고/에러가 발생하지 않는다." );
 			}
 
 			LS();
