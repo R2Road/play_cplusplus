@@ -6,9 +6,9 @@
 #include "play_cpp_number.hpp"
 #include "play_cpp_using.hpp"
 #include "play_cpp_braces.hpp"
-#include "play_cpp_decltype.hpp"
 
 #include "menu_align.hpp"
+#include "menu_decltype.hpp"
 #include "menu_enum.hpp"
 #include "menu_lambda.hpp"
 #include "menu_namespace.hpp"
@@ -36,10 +36,8 @@ r2tm::WriteFunctionT Menu_CPP::GetWriteFunction() const
 		mp->AddMenu( '1', Menu_Class() );
 		mp->AddMenu( '2', Menu_NameSpace() );
 		mp->AddItem( '3', play_cpp_braces::Braces_PrimitiveType() );
-		mp->AddItem( '4', play_cpp_decltype::Basic() );
-		mp->AddItem( '5', play_cpp_decltype::Function() );
-		mp->AddItem( '6', play_cpp_decltype::Lambda() );
-		mp->AddItem( '7', play_cpp_decltype::Template() );
+		mp->AddMenu( '4', Menu_Decltype() );
+		
 
 
 		mp->AddLineFeed();

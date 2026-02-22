@@ -647,6 +647,9 @@
     <ClCompile Include="source\play_basic\menu_basic___union.cpp">
       <Filter>play_basic</Filter>
     </ClCompile>
+    <ClCompile Include="source\play_cpp\menu_decltype.cpp">
+      <Filter>play_cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\algorithm\r2algorithm_astar_Constant.h">
@@ -1447,6 +1450,9 @@
     </ClInclude>
     <ClInclude Include="source\play_basic\menu_basic___union.hpp">
       <Filter>play_basic</Filter>
+    </ClInclude>
+    <ClInclude Include="source\play_cpp\menu_decltype.hpp">
+      <Filter>play_cpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -63,6 +63,7 @@
     <ClCompile Include="source\play_cpp\menu_char.cpp" />
     <ClCompile Include="source\play_cpp\menu_class.cpp" />
     <ClCompile Include="source\play_cpp\menu_cpp.cpp" />
+    <ClCompile Include="source\play_cpp\menu_decltype.cpp" />
     <ClCompile Include="source\play_cpp\menu_enum.cpp" />
     <ClCompile Include="source\play_cpp\menu_lambda.cpp" />
     <ClCompile Include="source\play_cpp\menu_namespace.cpp" />
@@ -289,6 +290,7 @@
     <ClInclude Include="source\play_cpp\menu_char.hpp" />
     <ClInclude Include="source\play_cpp\menu_class.hpp" />
     <ClInclude Include="source\play_cpp\menu_cpp.hpp" />
+    <ClInclude Include="source\play_cpp\menu_decltype.hpp" />
     <ClInclude Include="source\play_cpp\menu_enum.hpp" />
     <ClInclude Include="source\play_cpp\menu_lambda.hpp" />
     <ClInclude Include="source\play_cpp\menu_namespace.hpp" />
