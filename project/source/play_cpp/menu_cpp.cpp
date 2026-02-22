@@ -6,6 +6,7 @@
 #include "play_cpp_number.hpp"
 #include "play_cpp_using.hpp"
 #include "play_cpp_braces.hpp"
+#include "play_cpp_noexcept.hpp"
 
 #include "menu_align.hpp"
 #include "menu_decltype.hpp"
@@ -37,6 +38,7 @@ r2tm::WriteFunctionT Menu_CPP::GetWriteFunction() const
 		mp->AddMenu( '2', Menu_NameSpace() );
 		mp->AddItem( '3', play_cpp_braces::Braces_PrimitiveType() );
 		mp->AddMenu( '4', Menu_Decltype() );
+		mp->AddItem( '5', play_cpp_noexcept::Basic() );
 		
 
 

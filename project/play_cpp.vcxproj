@@ -81,6 +81,7 @@
     <ClCompile Include="source\play_cpp\play_cpp_locale.cpp" />
     <ClCompile Include="source\play_cpp\play_cpp_namespace.cpp" />
     <ClCompile Include="source\play_cpp\play_cpp_new.cpp" />
+    <ClCompile Include="source\play_cpp\play_cpp_noexcept.cpp" />
     <ClCompile Include="source\play_cpp\play_cpp_number.cpp" />
     <ClCompile Include="source\play_cpp\play_cpp_structured_binding.cpp" />
     <ClCompile Include="source\play_cpp\play_cpp_using.cpp" />
@@ -322,6 +323,7 @@
     <ClInclude Include="source\play_cpp\play_cpp_locale.hpp" />
     <ClInclude Include="source\play_cpp\play_cpp_namespace.hpp" />
     <ClInclude Include="source\play_cpp\play_cpp_new.hpp" />
+    <ClInclude Include="source\play_cpp\play_cpp_noexcept.hpp" />
     <ClInclude Include="source\play_cpp\play_cpp_number.hpp" />
     <ClInclude Include="source\play_cpp\play_cpp_structured_binding.hpp" />
     <ClInclude Include="source\play_cpp\play_cpp_using.hpp" />
