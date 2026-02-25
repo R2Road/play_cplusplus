@@ -67,6 +67,9 @@
     <Filter Include="play_basic">
       <UniqueIdentifier>{e893495c-b39c-494b-9462-73f4c80c3af4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="play_std_container">
+      <UniqueIdentifier>{eeb8c5e7-8f1e-4ef4-86af-c054316d2991}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp" />
@@ -652,6 +655,9 @@
     </ClCompile>
     <ClCompile Include="source\play_cpp\play_cpp_noexcept.cpp">
       <Filter>play_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="source\play_std\menu_std_vector.cpp">
+      <Filter>play_std</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1459,6 +1465,9 @@
     </ClInclude>
     <ClInclude Include="source\play_cpp\play_cpp_noexcept.hpp">
       <Filter>play_cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="source\play_std\menu_std_vector.hpp">
+      <Filter>play_std</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -150,6 +150,7 @@
     <ClCompile Include="source\play_std\menu_std_string.cpp" />
     <ClCompile Include="source\play_std\menu_std_string_view.cpp" />
     <ClCompile Include="source\play_std\menu_std_thread.cpp" />
+    <ClCompile Include="source\play_std\menu_std_vector.cpp" />
     <ClCompile Include="source\play_std\play_std_algorithm.cpp" />
     <ClCompile Include="source\play_std\play_std_array.cpp" />
     <ClCompile Include="source\play_std\play_std_atomic.cpp" />
@@ -401,6 +402,7 @@
     <ClInclude Include="source\play_std\menu_std_string.hpp" />
     <ClInclude Include="source\play_std\menu_std_string_view.hpp" />
     <ClInclude Include="source\play_std\menu_std_thread.hpp" />
+    <ClInclude Include="source\play_std\menu_std_vector.hpp" />
     <ClInclude Include="source\play_std\play_std_algorithm.hpp" />
     <ClInclude Include="source\play_std\play_std_array.hpp" />
     <ClInclude Include="source\play_std\play_std_atomic.hpp" />

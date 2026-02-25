@@ -20,7 +20,7 @@ namespace play_std_vector
 	{
 		return []()->const char*
 		{
-			return "std::vector : Resize";
+			return "Resize";
 		};
 	}
 	r2tm::DoFunctionT Resize::GetDoFunction() const
@@ -82,7 +82,7 @@ namespace play_std_vector
 	{
 		return []()->const char*
 		{
-			return "std::vector : Resize And Memory";
+			return "Resize And Memory";
 		};
 	}
 	r2tm::DoFunctionT Resize_And_Memory::GetDoFunction() const
@@ -144,7 +144,7 @@ namespace play_std_vector
 	{
 		return []()->const char*
 		{
-			return "std::vector : Clear";
+			return "Clear";
 		};
 	}
 	r2tm::DoFunctionT Clear::GetDoFunction() const
@@ -204,7 +204,7 @@ namespace play_std_vector
 	{
 		return []()->const char*
 		{
-			return "std::vector : Reserve";
+			return "Reserve";
 		};
 	}
 	r2tm::DoFunctionT Reserve::GetDoFunction() const
@@ -256,7 +256,7 @@ namespace play_std_vector
 	{
 		return []()->const char*
 		{
-			return "std::vector : None Default Constructor";
+			return "None Default Constructor";
 		};
 	}
 	r2tm::DoFunctionT NoneDefaultConstructor::GetDoFunction() const
@@ -297,7 +297,7 @@ namespace play_std_vector
 	{
 		return []()->const char*
 		{
-			return "std::vector : Bool";
+			return "Bool";
 		};
 	}
 	r2tm::DoFunctionT BoolVector::GetDoFunction() const
@@ -377,7 +377,7 @@ namespace play_std_vector
 	{
 		return []()->const char*
 		{
-			return "std::vector : Others Iterator";
+			return "Others Iterator";
 		};
 	}
 	r2tm::DoFunctionT OthersIterator::GetDoFunction() const
@@ -411,7 +411,7 @@ namespace play_std_vector
 	{
 		return []()->const char*
 		{
-			return "std::vector : End Iterator";
+			return "End Iterator";
 		};
 	}
 	r2tm::DoFunctionT EndIterator::GetDoFunction() const
@@ -474,7 +474,7 @@ namespace play_std_vector
 	{
 		return []()->const char*
 		{
-			return "std::vector : Move";
+			return "Move";
 		};
 	}
 	r2tm::DoFunctionT Move::GetDoFunction() const

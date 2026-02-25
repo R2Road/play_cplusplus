@@ -7,9 +7,9 @@
 #include "play_std_list.hpp"
 #include "play_std_queue.hpp"
 #include "play_std_unordered_map.hpp"
-#include "play_std_vector.hpp"
 
 #include "menu_std.hpp"
+#include "menu_std_vector.hpp"
 
 r2tm::TitleFunctionT Menu_STDContainer::GetTitleFunction() const
 {
@@ -56,15 +56,7 @@ r2tm::WriteFunctionT Menu_STDContainer::GetWriteFunction() const
 		mp->AddLineFeed();
 
 
-		mp->AddItem( 'a', play_std_vector::Resize() );
-		mp->AddItem( 's', play_std_vector::Resize_And_Memory() );
-		mp->AddItem( 'd', play_std_vector::Clear() );
-		mp->AddItem( 'f', play_std_vector::Reserve() );
-		mp->AddItem( 'g', play_std_vector::NoneDefaultConstructor() );
-		mp->AddItem( 'h', play_std_vector::BoolVector() );
-		mp->AddItem( 'j', play_std_vector::OthersIterator() );
-		mp->AddItem( 'k', play_std_vector::EndIterator() );
-		mp->AddItem( 'l', play_std_vector::Move() );
+		mp->AddMenu( 'a', Menu_STD_Vector());
 
 
 		mp->AddLineFeed();
