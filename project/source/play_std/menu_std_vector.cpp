@@ -42,9 +42,10 @@ r2tm::WriteFunctionT Menu_STD_Vector::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'a', play_std_vector::OthersIterator() );
-		mp->AddItem( 's', play_std_vector::EndIterator() );
-		mp->AddItem( 'd', play_std_vector::Move() );
+		mp->AddItem( 'a', play_std_vector::Iterator_Declatation() );
+		mp->AddItem( 's', play_std_vector::OthersIterator() );
+		mp->AddItem( 'd', play_std_vector::EndIterator() );
+		mp->AddItem( 'f', play_std_vector::Move() );
 
 
 

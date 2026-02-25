@@ -477,6 +477,52 @@ namespace play_std_vector
 
 
 
+	r2tm::TitleFunctionT Iterator_Declatation::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Iterator Declaration";
+		};
+	}
+	r2tm::DoFunctionT Iterator_Declatation::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			OUT_SOURCE_READY;
+
+			LS();
+
+			{
+				OUT_SUBJECT( "기본 생성자" );
+
+				LF();
+
+				OUT_SOURCE_BEGIN;
+				std::vector<int>::iterator i;
+				OUT_SOURCE_END;
+
+				SS();
+
+				OUT_SIZE( i );
+
+				LF();
+
+				OUT_BINARY( i );
+
+				LF();
+
+				OUT_COMMENT( "Debug : 24 byte" );
+				OUT_COMMENT( "Release : 8 byte" );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT EndIterator::GetTitleFunction() const
 	{
 		return []()->const char*
