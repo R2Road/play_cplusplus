@@ -21,11 +21,12 @@ r2tm::WriteFunctionT Menu_STD_Vector::GetWriteFunction() const
 {
 	return[]( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', play_std_vector::Resize() );
-		mp->AddItem( '2', play_std_vector::Resize_And_Memory() );
-		mp->AddItem( '3', play_std_vector::Clear() );
-		mp->AddItem( '4', play_std_vector::Reserve() );
-		mp->AddItem( '5', play_std_vector::NoneDefaultConstructor() );
+		mp->AddItem( '1', play_std_vector::Declaration() );
+		mp->AddItem( '2', play_std_vector::Resize() );
+		mp->AddItem( '3', play_std_vector::Resize_And_Memory() );
+		mp->AddItem( '4', play_std_vector::Clear() );
+		mp->AddItem( '5', play_std_vector::Reserve() );
+		mp->AddItem( '6', play_std_vector::NoneDefaultConstructor() );
 
 
 

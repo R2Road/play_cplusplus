@@ -16,6 +16,76 @@ namespace play_std_vector
 		return o;
 	}
 
+
+	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Declaration";
+		};
+	}
+	r2tm::DoFunctionT Declaration::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUT_SOURCE_READY;
+
+			{
+				OUT_SUBJECT( "기본 생성자" );
+
+				LF();
+
+				OUT_SOURCE_BEGIN;
+				std::vector<int> container;
+				OUT_SOURCE_END;
+
+				SS();
+
+				EXPECT_EQ( 0u, container.capacity() );
+				EXPECT_EQ( 0u, container.size() );
+				OUT_NOTE( "미리 할당되는 메모리는 없다." );
+
+				LF();
+
+				OUT_SIZE( container );
+
+				LF();
+
+				OUT_BINARY( container );
+			}
+
+			LS();
+
+			{
+				OUT_SUBJECT( "기본 생성자 : T의 크기에 컨테이너의 크기가 영향을 받는가?" );
+
+				LF();
+
+				OUT_SOURCE_BEGIN;
+				std::vector<long long> container;
+				OUT_SOURCE_END;
+
+				SS();
+
+				OUT_SIZE( container );
+
+				LF();
+
+				OUT_BINARY( container );
+
+				LF();
+
+				OUT_NOTE( "T 의 크기는 컨테이너 크기에 영향을 주지 않는다. " );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
 	r2tm::TitleFunctionT Resize::GetTitleFunction() const
 	{
 		return []()->const char*
